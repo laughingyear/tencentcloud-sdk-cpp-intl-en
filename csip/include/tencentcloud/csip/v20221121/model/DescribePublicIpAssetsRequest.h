@@ -45,15 +45,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Filter conditions
-                     * @return Filter Filter conditions
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取Filter parameter
+                     * @return Filter Filter parameter
                      * 
                      */
                     Filter GetFilter() const;
 
                     /**
-                     * 设置Filter conditions
-                     * @param _filter Filter conditions
+                     * 设置Filter parameter
+                     * @param _filter Filter parameter
                      * 
                      */
                     void SetFilter(const Filter& _filter);
@@ -66,15 +87,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取CSC tags of the asset
-                     * @return Tags CSC tags of the asset
+                     * 获取Security Center Custom Tag
+                     * @return Tags Security Center Custom Tag
                      * 
                      */
                     std::vector<AssetTag> GetTags() const;
 
                     /**
-                     * 设置CSC tags of the asset
-                     * @param _tags CSC tags of the asset
+                     * 设置Security Center Custom Tag
+                     * @param _tags Security Center Custom Tag
                      * 
                      */
                     void SetTags(const std::vector<AssetTag>& _tags);
@@ -89,13 +110,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Filter conditions
+                     * Group Account Member ID
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * Filter parameter
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * CSC tags of the asset
+                     * Security Center Custom Tag
                      */
                     std::vector<AssetTag> m_tags;
                     bool m_tagsHasBeenSet;

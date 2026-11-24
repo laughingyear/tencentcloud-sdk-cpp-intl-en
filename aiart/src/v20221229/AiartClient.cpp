@@ -40,46 +40,53 @@ AiartClient::AiartClient(const Credential &credential, const string &region, con
 }
 
 
-AiartClient::ImageToImageOutcome AiartClient::ImageToImage(const ImageToImageRequest &request)
+AiartClient::ChangeClothesOutcome AiartClient::ChangeClothes(const ChangeClothesRequest &request)
 {
-    auto outcome = MakeRequest(request, "ImageToImage");
+    auto outcome = MakeRequest(request, "ChangeClothes");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ImageToImageResponse rsp = ImageToImageResponse();
+        ChangeClothesResponse rsp = ChangeClothesResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ImageToImageOutcome(rsp);
+            return ChangeClothesOutcome(rsp);
         else
-            return ImageToImageOutcome(o.GetError());
+            return ChangeClothesOutcome(o.GetError());
     }
     else
     {
-        return ImageToImageOutcome(outcome.GetError());
+        return ChangeClothesOutcome(outcome.GetError());
     }
 }
 
-void AiartClient::ImageToImageAsync(const ImageToImageRequest& request, const ImageToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void AiartClient::ChangeClothesAsync(const ChangeClothesRequest& request, const ChangeClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImageToImage(request), context);
-    };
+    using Req = const ChangeClothesRequest&;
+    using Resp = ChangeClothesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeClothes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
-AiartClient::ImageToImageOutcomeCallable AiartClient::ImageToImageCallable(const ImageToImageRequest &request)
+AiartClient::ChangeClothesOutcomeCallable AiartClient::ChangeClothesCallable(const ChangeClothesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImageToImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ImageToImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeClothesOutcome>>();
+    ChangeClothesAsync(
+    request,
+    [prom](
+        const AiartClient*,
+        const ChangeClothesRequest&,
+        ChangeClothesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

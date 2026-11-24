@@ -48,21 +48,21 @@ namespace TencentCloud
                      * 获取Take the intersection when filtering with multiple conditions.
 <li> LicenseStatus authorization status information: 0 - not used; 1 - partially used; 2 - used up; 3 - unavailable; 4 - available</li>
 <li> BuyTime: time of purchase</li>
-<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-monthly subscription; 2: Ultimate Edition-monthly subscription</li>
+<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-yearly/monthly subscription; 2: Ultimate Edition-yearly/monthly subscription</li>
 <li>DeadlineStatus expiration status: NotExpired -not expired; expire - expired (including terminated); nearexpiry - about to expire</li>
 <li>ResourceId resource ID</li>
 <li>Keywords IP filtering</li>
-<li>PayMode payment mode. 0: pay-as-you-go; 1: monthly subscription</li>
+<li>PayMode payment mode. 0: pay-as-you-go; 1: yearly/monthly subscription</li>
 <li>OrderStatus order status. 1: normal; 2: isolated; 3: terminated</li>
 <li>DealNames sub-order number, with a maximum length of 10, exceeding this will result in a failure.</li>
                      * @return Filters Take the intersection when filtering with multiple conditions.
 <li> LicenseStatus authorization status information: 0 - not used; 1 - partially used; 2 - used up; 3 - unavailable; 4 - available</li>
 <li> BuyTime: time of purchase</li>
-<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-monthly subscription; 2: Ultimate Edition-monthly subscription</li>
+<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-yearly/monthly subscription; 2: Ultimate Edition-yearly/monthly subscription</li>
 <li>DeadlineStatus expiration status: NotExpired -not expired; expire - expired (including terminated); nearexpiry - about to expire</li>
 <li>ResourceId resource ID</li>
 <li>Keywords IP filtering</li>
-<li>PayMode payment mode. 0: pay-as-you-go; 1: monthly subscription</li>
+<li>PayMode payment mode. 0: pay-as-you-go; 1: yearly/monthly subscription</li>
 <li>OrderStatus order status. 1: normal; 2: isolated; 3: terminated</li>
 <li>DealNames sub-order number, with a maximum length of 10, exceeding this will result in a failure.</li>
                      * 
@@ -73,21 +73,21 @@ namespace TencentCloud
                      * 设置Take the intersection when filtering with multiple conditions.
 <li> LicenseStatus authorization status information: 0 - not used; 1 - partially used; 2 - used up; 3 - unavailable; 4 - available</li>
 <li> BuyTime: time of purchase</li>
-<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-monthly subscription; 2: Ultimate Edition-monthly subscription</li>
+<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-yearly/monthly subscription; 2: Ultimate Edition-yearly/monthly subscription</li>
 <li>DeadlineStatus expiration status: NotExpired -not expired; expire - expired (including terminated); nearexpiry - about to expire</li>
 <li>ResourceId resource ID</li>
 <li>Keywords IP filtering</li>
-<li>PayMode payment mode. 0: pay-as-you-go; 1: monthly subscription</li>
+<li>PayMode payment mode. 0: pay-as-you-go; 1: yearly/monthly subscription</li>
 <li>OrderStatus order status. 1: normal; 2: isolated; 3: terminated</li>
 <li>DealNames sub-order number, with a maximum length of 10, exceeding this will result in a failure.</li>
                      * @param _filters Take the intersection when filtering with multiple conditions.
 <li> LicenseStatus authorization status information: 0 - not used; 1 - partially used; 2 - used up; 3 - unavailable; 4 - available</li>
 <li> BuyTime: time of purchase</li>
-<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-monthly subscription; 2: Ultimate Edition-monthly subscription</li>
+<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-yearly/monthly subscription; 2: Ultimate Edition-yearly/monthly subscription</li>
 <li>DeadlineStatus expiration status: NotExpired -not expired; expire - expired (including terminated); nearexpiry - about to expire</li>
 <li>ResourceId resource ID</li>
 <li>Keywords IP filtering</li>
-<li>PayMode payment mode. 0: pay-as-you-go; 1: monthly subscription</li>
+<li>PayMode payment mode. 0: pay-as-you-go; 1: yearly/monthly subscription</li>
 <li>OrderStatus order status. 1: normal; 2: isolated; 3: terminated</li>
 <li>DealNames sub-order number, with a maximum length of 10, exceeding this will result in a failure.</li>
                      * 
@@ -164,17 +164,59 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取ASC for ascending order; DESC for descending order.
+                     * @return Order ASC for ascending order; DESC for descending order.
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置ASC for ascending order; DESC for descending order.
+                     * @param _order ASC for ascending order; DESC for descending order.
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取Number of LicenseCnt authorizations.
+                     * @return By Number of LicenseCnt authorizations.
+                     * 
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置Number of LicenseCnt authorizations.
+                     * @param _by Number of LicenseCnt authorizations.
+                     * 
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     * 
+                     */
+                    bool ByHasBeenSet() const;
+
                 private:
 
                     /**
                      * Take the intersection when filtering with multiple conditions.
 <li> LicenseStatus authorization status information: 0 - not used; 1 - partially used; 2 - used up; 3 - unavailable; 4 - available</li>
 <li> BuyTime: time of purchase</li>
-<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-monthly subscription; 2: Ultimate Edition-monthly subscription</li>
+<li> LicenseType authorization type. 0: Pro Edition-pay-as-you-go; 1: Pro Edition-yearly/monthly subscription; 2: Ultimate Edition-yearly/monthly subscription</li>
 <li>DeadlineStatus expiration status: NotExpired -not expired; expire - expired (including terminated); nearexpiry - about to expire</li>
 <li>ResourceId resource ID</li>
 <li>Keywords IP filtering</li>
-<li>PayMode payment mode. 0: pay-as-you-go; 1: monthly subscription</li>
+<li>PayMode payment mode. 0: pay-as-you-go; 1: yearly/monthly subscription</li>
 <li>OrderStatus order status. 1: normal; 2: isolated; 3: terminated</li>
 <li>DealNames sub-order number, with a maximum length of 10, exceeding this will result in a failure.</li>
                      */
@@ -198,6 +240,18 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * ASC for ascending order; DESC for descending order.
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * Number of LicenseCnt authorizations.
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
 
                 };
             }

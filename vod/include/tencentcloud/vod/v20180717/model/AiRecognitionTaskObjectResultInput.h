@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input type of object recognition task.
+                * Object recognition task input type.
                 */
                 class AiRecognitionTaskObjectResultInput : public AbstractModel
                 {

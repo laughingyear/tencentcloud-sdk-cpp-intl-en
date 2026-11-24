@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
-                     * @return PublicNetworkChargeType Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
+                     * 获取Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Yearly/monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
+                     * @return PublicNetworkChargeType Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Yearly/monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
                      * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
-                     * 设置Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
-                     * @param _publicNetworkChargeType Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
+                     * 设置Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Yearly/monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
+                     * @param _publicNetworkChargeType Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Yearly/monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
                      * 
                      */
                     void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取Public network bandwidth in MB
-                     * @return PublicNetworkMonthly Public network bandwidth in MB
+                     * 获取Public network bandwidth, in MB. value must be 0 or a multiple of 3.
+                     * @return PublicNetworkMonthly Public network bandwidth, in MB. value must be 0 or a multiple of 3.
                      * 
                      */
                     int64_t GetPublicNetworkMonthly() const;
 
                     /**
-                     * 设置Public network bandwidth in MB
-                     * @param _publicNetworkMonthly Public network bandwidth in MB
+                     * 设置Public network bandwidth, in MB. value must be 0 or a multiple of 3.
+                     * @param _publicNetworkMonthly Public network bandwidth, in MB. value must be 0 or a multiple of 3.
                      * 
                      */
                     void SetPublicNetworkMonthly(const int64_t& _publicNetworkMonthly);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
+                     * Public network bandwidth billing mode (`BANDWIDTH_PREPAID`: Yearly/monthly subscription; `BANDWIDTH_POSTPAID_BY_HOUR`: Bill-by-hour)
                      */
                     std::string m_publicNetworkChargeType;
                     bool m_publicNetworkChargeTypeHasBeenSet;
 
                     /**
-                     * Public network bandwidth in MB
+                     * Public network bandwidth, in MB. value must be 0 or a multiple of 3.
                      */
                     int64_t m_publicNetworkMonthly;
                     bool m_publicNetworkMonthlyHasBeenSet;

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of terrorism content
+                * Task control parameters for authentication that involve unsafe information
                 */
                 class TerrorismConfigureInfo : public AbstractModel
                 {
@@ -49,19 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Parameters for recognition of terrorism content in images
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return ImgReviewInfo Parameters for recognition of terrorism content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Task control parameter for image recognition involving unsafe information.
+                     * @return ImgReviewInfo Task control parameter for image recognition involving unsafe information.
                      * 
                      */
                     TerrorismImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
-                     * 设置Parameters for recognition of terrorism content in images
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _imgReviewInfo Parameters for recognition of terrorism content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Task control parameter for image recognition involving unsafe information.
+                     * @param _imgReviewInfo Task control parameter for image recognition involving unsafe information.
                      * 
                      */
                     void SetImgReviewInfo(const TerrorismImgReviewTemplateInfo& _imgReviewInfo);
@@ -74,19 +70,15 @@ Note: This field may return `null`, indicating that no valid value can be found.
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for OCR-based recognition of terrorism content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return OcrReviewInfo Parameters for OCR-based recognition of terrorism content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Task control parameter for text identification involving unsafe information.
+                     * @return OcrReviewInfo Task control parameter for text identification involving unsafe information.
                      * 
                      */
                     TerrorismOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for OCR-based recognition of terrorism content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _ocrReviewInfo Parameters for OCR-based recognition of terrorism content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Task control parameter for text identification involving unsafe information.
+                     * @param _ocrReviewInfo Task control parameter for text identification involving unsafe information.
                      * 
                      */
                     void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfo& _ocrReviewInfo);
@@ -101,15 +93,13 @@ Note: This field may return `null`, indicating that no valid value can be found.
                 private:
 
                     /**
-                     * Parameters for recognition of terrorism content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Task control parameter for image recognition involving unsafe information.
                      */
                     TerrorismImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for OCR-based recognition of terrorism content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Task control parameter for text identification involving unsafe information.
                      */
                     TerrorismOcrReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

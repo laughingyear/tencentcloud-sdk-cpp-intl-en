@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Release on WeChat Mini Program task information
+                * WeChat Mini Program publishing task information
                 */
                 class WechatMiniProgramPublishTask : public AbstractModel
                 {
@@ -69,12 +69,12 @@ namespace TencentCloud
 
                     /**
                      * 获取Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING
+PROCESSING: Processing;
 FINISH: completed.
                      * @return Status Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING
+PROCESSING: Processing;
 FINISH: completed.
                      * 
                      */
@@ -82,12 +82,12 @@ FINISH: completed.
 
                     /**
                      * 设置Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING
+PROCESSING: Processing;
 FINISH: completed.
                      * @param _status Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING
+PROCESSING: Processing;
 FINISH: completed.
                      * 
                      */
@@ -101,23 +101,23 @@ FINISH: completed.
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code
+                     * 获取Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-                     * @return ErrCode Error code
+<li>Other value: failure.</li>
+                     * @return ErrCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other value: failure.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code
+                     * 设置Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-                     * @param _errCode Error code
+<li>Other value: failure.</li>
+                     * @param _errCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other value: failure.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -151,15 +151,15 @@ FINISH: completed.
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取ID of published video file.
-                     * @return FileId ID of published video file.
+                     * 获取Publish the video file ID.
+                     * @return FileId Publish the video file ID.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置ID of published video file.
-                     * @param _fileId ID of published video file.
+                     * 设置Publish the video file ID.
+                     * @param _fileId Publish the video file ID.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -172,15 +172,15 @@ FINISH: completed.
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取ID of the transcoding template corresponding to the published video. 0 represents the source video.
-                     * @return SourceDefinition ID of the transcoding template corresponding to the published video. 0 represents the source video.
+                     * 获取Transcoding template ID of the published video. 0 represents the original video.
+                     * @return SourceDefinition Transcoding template ID of the published video. 0 represents the original video.
                      * 
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
-                     * 设置ID of the transcoding template corresponding to the published video. 0 represents the source video.
-                     * @param _sourceDefinition ID of the transcoding template corresponding to the published video. 0 represents the source video.
+                     * 设置Transcoding template ID of the published video. 0 represents the original video.
+                     * @param _sourceDefinition Transcoding template ID of the published video. 0 represents the original video.
                      * 
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
@@ -193,27 +193,27 @@ FINISH: completed.
                     bool SourceDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Status of video release on WeChat Mini Program. Valid values:
-<li>Pass: successfully published;</li>
-<li>Failed: failed to publish;</li>
-<li>Rejected: rejected.</li>
-                     * @return PublishResult Status of video release on WeChat Mini Program. Valid values:
-<li>Pass: successfully published;</li>
-<li>Failed: failed to publish;</li>
-<li>Rejected: rejected.</li>
+                     * 获取WeChat Mini Program Video Publishing status. Parameter Value:
+<li>Pass: published successfully;</li>
+<li>Failed: Release failure;</li>
+<li>Rejected: The audio and video moderation failed to pass.</li>
+                     * @return PublishResult WeChat Mini Program Video Publishing status. Parameter Value:
+<li>Pass: published successfully;</li>
+<li>Failed: Release failure;</li>
+<li>Rejected: The audio and video moderation failed to pass.</li>
                      * 
                      */
                     std::string GetPublishResult() const;
 
                     /**
-                     * 设置Status of video release on WeChat Mini Program. Valid values:
-<li>Pass: successfully published;</li>
-<li>Failed: failed to publish;</li>
-<li>Rejected: rejected.</li>
-                     * @param _publishResult Status of video release on WeChat Mini Program. Valid values:
-<li>Pass: successfully published;</li>
-<li>Failed: failed to publish;</li>
-<li>Rejected: rejected.</li>
+                     * 设置WeChat Mini Program Video Publishing status. Parameter Value:
+<li>Pass: published successfully;</li>
+<li>Failed: Release failure;</li>
+<li>Rejected: The audio and video moderation failed to pass.</li>
+                     * @param _publishResult WeChat Mini Program Video Publishing status. Parameter Value:
+<li>Pass: published successfully;</li>
+<li>Failed: Release failure;</li>
+<li>Rejected: The audio and video moderation failed to pass.</li>
                      * 
                      */
                     void SetPublishResult(const std::string& _publishResult);
@@ -235,17 +235,17 @@ FINISH: completed.
 
                     /**
                      * Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING
+PROCESSING: Processing;
 FINISH: completed.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code
+                     * Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other value: failure.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
@@ -257,22 +257,22 @@ FINISH: completed.
                     bool m_messageHasBeenSet;
 
                     /**
-                     * ID of published video file.
+                     * Publish the video file ID.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * ID of the transcoding template corresponding to the published video. 0 represents the source video.
+                     * Transcoding template ID of the published video. 0 represents the original video.
                      */
                     uint64_t m_sourceDefinition;
                     bool m_sourceDefinitionHasBeenSet;
 
                     /**
-                     * Status of video release on WeChat Mini Program. Valid values:
-<li>Pass: successfully published;</li>
-<li>Failed: failed to publish;</li>
-<li>Rejected: rejected.</li>
+                     * WeChat Mini Program Video Publishing status. Parameter Value:
+<li>Pass: published successfully;</li>
+<li>Failed: Release failure;</li>
+<li>Rejected: The audio and video moderation failed to pass.</li>
                      */
                     std::string m_publishResult;
                     bool m_publishResultHasBeenSet;

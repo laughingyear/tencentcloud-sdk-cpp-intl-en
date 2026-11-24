@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Price details by AZ, used for creating the cluster price list
+                * Price list for cluster creation, which contains price details in different AZs.
                 */
                 class ZoneDetailPriceResult : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AZ ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ZoneId AZ ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取AZ ID.
+                     * @return ZoneId AZ ID.
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置AZ ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _zoneId AZ ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置AZ ID.
+                     * @param _zoneId AZ ID.
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -73,15 +69,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Price details by node
-                     * @return NodeDetailPrice Price details by node
+                     * 获取Price details for different nodes.
+                     * @return NodeDetailPrice Price details for different nodes.
                      * 
                      */
                     std::vector<NodeDetailPriceResult> GetNodeDetailPrice() const;
 
                     /**
-                     * 设置Price details by node
-                     * @param _nodeDetailPrice Price details by node
+                     * 设置Price details for different nodes.
+                     * @param _nodeDetailPrice Price details for different nodes.
                      * 
                      */
                     void SetNodeDetailPrice(const std::vector<NodeDetailPriceResult>& _nodeDetailPrice);
@@ -96,14 +92,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * AZ ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * AZ ID.
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Price details by node
+                     * Price details for different nodes.
                      */
                     std::vector<NodeDetailPriceResult> m_nodeDetailPrice;
                     bool m_nodeDetailPriceHasBeenSet;

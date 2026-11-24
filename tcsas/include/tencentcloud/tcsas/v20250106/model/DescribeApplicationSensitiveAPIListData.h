@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of sensitive APIs of an application
+                * Superapp sensitive API list data.
                 */
                 class DescribeApplicationSensitiveAPIListData : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取APIID
-                     * @return APIId APIID
+                     * 获取<p>APIID</p>
+                     * @return APIId <p>APIID</p>
                      * 
                      */
                     std::string GetAPIId() const;
 
                     /**
-                     * 设置APIID
-                     * @param _aPIId APIID
+                     * 设置<p>APIID</p>
+                     * @param _aPIId <p>APIID</p>
                      * 
                      */
                     void SetAPIId(const std::string& _aPIId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool APIIdHasBeenSet() const;
 
                     /**
-                     * 获取API name
-                     * @return APIName API name
+                     * 获取<p>API name.</p>
+                     * @return APIName <p>API name.</p>
                      * 
                      */
                     std::string GetAPIName() const;
 
                     /**
-                     * 设置API name
-                     * @param _aPIName API name
+                     * 设置<p>API name.</p>
+                     * @param _aPIName <p>API name.</p>
                      * 
                      */
                     void SetAPIName(const std::string& _aPIName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool APINameHasBeenSet() const;
 
                     /**
-                     * 获取API request method
-                     * @return APIMethod API request method
+                     * 获取<p>API method.</p>
+                     * @return APIMethod <p>API method.</p>
                      * 
                      */
                     std::string GetAPIMethod() const;
 
                     /**
-                     * 设置API request method
-                     * @param _aPIMethod API request method
+                     * 设置<p>API method.</p>
+                     * @param _aPIMethod <p>API method.</p>
                      * 
                      */
                     void SetAPIMethod(const std::string& _aPIMethod);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool APIMethodHasBeenSet() const;
 
                     /**
-                     * 获取API description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIDesc API description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>API description.</p>
+                     * @return APIDesc <p>API description.</p>
                      * 
                      */
                     std::string GetAPIDesc() const;
 
                     /**
-                     * 设置API description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIDesc API description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>API description.</p>
+                     * @param _aPIDesc <p>API description.</p>
                      * 
                      */
                     void SetAPIDesc(const std::string& _aPIDesc);
@@ -135,15 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APIDescHasBeenSet() const;
 
                     /**
-                     * 获取Creator
-                     * @return CreateUser Creator
+                     * 获取<p>Creator.</p>
+                     * @return CreateUser <p>Creator.</p>
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置Creator
-                     * @param _createUser Creator
+                     * 设置<p>Creator.</p>
+                     * @param _createUser <p>Creator.</p>
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -156,15 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-                     * @return CreateTime Creation time
+                     * 获取<p>Creation time.</p>
+                     * @return CreateTime <p>Creation time.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-                     * @param _createTime Creation time
+                     * 设置<p>Creation time.</p>
+                     * @param _createTime <p>Creation time.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -177,15 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Updater
-                     * @return UpdateUser Updater
+                     * 获取<p>Last modifier.</p>
+                     * @return UpdateUser <p>Last modifier.</p>
                      * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
-                     * 设置Updater
-                     * @param _updateUser Updater
+                     * 设置<p>Last modifier.</p>
+                     * @param _updateUser <p>Last modifier.</p>
                      * 
                      */
                     void SetUpdateUser(const std::string& _updateUser);
@@ -198,15 +194,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateUserHasBeenSet() const;
 
                     /**
-                     * 获取Update time
-                     * @return UpdateTime Update time
+                     * 获取<p>Last modified time.</p>
+                     * @return UpdateTime <p>Last modified time.</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Update time
-                     * @param _updateTime Update time
+                     * 设置<p>Last modified time.</p>
+                     * @param _updateTime <p>Last modified time.</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -219,19 +215,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Superapp ID.</p>
+                     * @return ApplicationId <p>Superapp ID.</p>
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Superapp ID.</p>
+                     * @param _applicationId <p>Superapp ID.</p>
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -244,19 +236,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Superapp name.</p>
+                     * @return ApplicationName <p>Superapp name.</p>
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Superapp name.</p>
+                     * @param _applicationName <p>Superapp name.</p>
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -269,19 +257,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Team ID.</p>
+                     * @return TeamId <p>Team ID.</p>
                      * 
                      */
                     std::string GetTeamId() const;
 
                     /**
-                     * 设置Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Team ID.</p>
+                     * @param _teamId <p>Team ID.</p>
                      * 
                      */
                     void SetTeamId(const std::string& _teamId);
@@ -294,19 +278,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Team name.</p>
+                     * @return TeamName <p>Team name.</p>
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Team name.</p>
+                     * @param _teamName <p>Team name.</p>
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -319,19 +299,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamNameHasBeenSet() const;
 
                     /**
-                     * 获取Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationLogo Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Superapp icon.</p>
+                     * @return ApplicationLogo <p>Superapp icon.</p>
                      * 
                      */
                     std::string GetApplicationLogo() const;
 
                     /**
-                     * 设置Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationLogo Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Superapp icon.</p>
+                     * @param _applicationLogo <p>Superapp icon.</p>
                      * 
                      */
                     void SetApplicationLogo(const std::string& _applicationLogo);
@@ -344,19 +320,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationLogoHasBeenSet() const;
 
                     /**
-                     * 获取API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIType API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>API type. Valid values: 1: System; 2: Custom.</p>
+                     * @return APIType <p>API type. Valid values: 1: System; 2: Custom.</p>
                      * 
                      */
                     int64_t GetAPIType() const;
 
                     /**
-                     * 设置API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIType API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>API type. Valid values: 1: System; 2: Custom.</p>
+                     * @param _aPIType <p>API type. Valid values: 1: System; 2: Custom.</p>
                      * 
                      */
                     void SetAPIType(const int64_t& _aPIType);
@@ -369,19 +341,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APITypeHasBeenSet() const;
 
                     /**
-                     * 获取API status. 0: Public; 1: Restricted
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Status API status. 0: Public; 1: Restricted
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>API status. Valid values: 0: Public; 1: Restricted.</p>
+                     * @return Status <p>API status. Valid values: 0: Public; 1: Restricted.</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置API status. 0: Public; 1: Restricted
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _status API status. 0: Public; 1: Restricted
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>API status. Valid values: 0: Public; 1: Restricted.</p>
+                     * @param _status <p>API status. Valid values: 0: Public; 1: Restricted.</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -393,105 +361,124 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Applicable scope: Valid values: 0: Mini program; 1: Mini game; 100: Both.</p>
+                     * @return UseScope <p>Applicable scope: Valid values: 0: Mini program; 1: Mini game; 100: Both.</p>
+                     * 
+                     */
+                    int64_t GetUseScope() const;
+
+                    /**
+                     * 设置<p>Applicable scope: Valid values: 0: Mini program; 1: Mini game; 100: Both.</p>
+                     * @param _useScope <p>Applicable scope: Valid values: 0: Mini program; 1: Mini game; 100: Both.</p>
+                     * 
+                     */
+                    void SetUseScope(const int64_t& _useScope);
+
+                    /**
+                     * 判断参数 UseScope 是否已赋值
+                     * @return UseScope 是否已赋值
+                     * 
+                     */
+                    bool UseScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * APIID
+                     * <p>APIID</p>
                      */
                     std::string m_aPIId;
                     bool m_aPIIdHasBeenSet;
 
                     /**
-                     * API name
+                     * <p>API name.</p>
                      */
                     std::string m_aPIName;
                     bool m_aPINameHasBeenSet;
 
                     /**
-                     * API request method
+                     * <p>API method.</p>
                      */
                     std::string m_aPIMethod;
                     bool m_aPIMethodHasBeenSet;
 
                     /**
-                     * API description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>API description.</p>
                      */
                     std::string m_aPIDesc;
                     bool m_aPIDescHasBeenSet;
 
                     /**
-                     * Creator
+                     * <p>Creator.</p>
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * Creation time
+                     * <p>Creation time.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Updater
+                     * <p>Last modifier.</p>
                      */
                     std::string m_updateUser;
                     bool m_updateUserHasBeenSet;
 
                     /**
-                     * Update time
+                     * <p>Last modified time.</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Superapp ID.</p>
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Superapp name.</p>
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Team ID.</p>
                      */
                     std::string m_teamId;
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Team name.</p>
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;
 
                     /**
-                     * Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Superapp icon.</p>
                      */
                     std::string m_applicationLogo;
                     bool m_applicationLogoHasBeenSet;
 
                     /**
-                     * API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>API type. Valid values: 1: System; 2: Custom.</p>
                      */
                     int64_t m_aPIType;
                     bool m_aPITypeHasBeenSet;
 
                     /**
-                     * API status. 0: Public; 1: Restricted
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>API status. Valid values: 0: Public; 1: Restricted.</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>Applicable scope: Valid values: 0: Mini program; 1: Mini game; 100: Both.</p>
+                     */
+                    int64_t m_useScope;
+                    bool m_useScopeHasBeenSet;
 
                 };
             }

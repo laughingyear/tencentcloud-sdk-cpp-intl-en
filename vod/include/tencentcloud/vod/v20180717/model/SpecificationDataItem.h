@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Statistics of task with specified specification.
+                * Statistical data for the task of the specified specification.
                 */
                 class SpecificationDataItem : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取Statistics.
-                     * @return Data Statistics.
+                     * 获取Statistical data.
+                     * @return Data Statistical data.
                      * 
                      */
                     std::vector<TaskStatDataItem> GetData() const;
 
                     /**
-                     * 设置Statistics.
-                     * @param _data Statistics.
+                     * 设置Statistical data.
+                     * @param _data Statistical data.
                      * 
                      */
                     void SetData(const std::vector<TaskStatDataItem>& _data);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * Statistics.
+                     * Statistical data.
                      */
                     std::vector<TaskStatDataItem> m_data;
                     bool m_dataHasBeenSet;

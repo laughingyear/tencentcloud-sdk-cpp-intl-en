@@ -24,6 +24,8 @@
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
+#include <tencentcloud/mps/v20190612/model/BatchSubTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkTask.h>
 
 
 namespace TencentCloud
@@ -47,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The event type. Valid values:
-<li>WorkflowTask</li>
-<li>EditMediaTask</li>
-<li>ScheduleTask (scheme)</li>
-                     * @return EventType The event type. Valid values:
-<li>WorkflowTask</li>
-<li>EditMediaTask</li>
-<li>ScheduleTask (scheme)</li>
+                     * 获取Supported event types. Currently, the valid values include:
+<li>WorkflowTask: video workflow processing task.</li>
+<li>EditMediaTask: video editing task.</li>
+<li>ScheduleTask: orchestration task.</li>
+                     * @return EventType Supported event types. Currently, the valid values include:
+<li>WorkflowTask: video workflow processing task.</li>
+<li>EditMediaTask: video editing task.</li>
+<li>ScheduleTask: orchestration task.</li>
                      * 
                      */
                     std::string GetEventType() const;
@@ -67,10 +69,8 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取The information of a video processing task. Information will be returned only if `EventType` is `WorkflowTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return WorkflowTaskEvent The information of a video processing task. Information will be returned only if `EventType` is `WorkflowTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Video processing task information. This field has a value only when EventType is WorkflowTask.
+                     * @return WorkflowTaskEvent Video processing task information. This field has a value only when EventType is WorkflowTask.
                      * 
                      */
                     WorkflowTask GetWorkflowTaskEvent() const;
@@ -83,10 +83,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool WorkflowTaskEventHasBeenSet() const;
 
                     /**
-                     * 获取The information of a video editing task. Information will be returned only if `EventType` is `EditMediaTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EditMediaTaskEvent The information of a video editing task. Information will be returned only if `EventType` is `EditMediaTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Video editing task information. This field has a value only when EventType is EditMediaTask.
+                     * @return EditMediaTaskEvent Video editing task information. This field has a value only when EventType is EditMediaTask.
                      * 
                      */
                     EditMediaTask GetEditMediaTaskEvent() const;
@@ -99,8 +97,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool EditMediaTaskEventHasBeenSet() const;
 
                     /**
-                     * 获取The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
-                     * @return SessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
@@ -113,8 +111,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 获取Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
@@ -127,10 +125,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取The information of a scheme. Information will be returned only if `EventType` is `ScheduleTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ScheduleTaskEvent The information of a scheme. Information will be returned only if `EventType` is `ScheduleTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Orchestration task information. This field has a value only when EventType is ScheduleTask.
+                     * @return ScheduleTaskEvent Orchestration task information. This field has a value only when EventType is ScheduleTask.
                      * 
                      */
                     ScheduleTask GetScheduleTaskEvent() const;
@@ -143,13 +139,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ScheduleTaskEventHasBeenSet() const;
 
                     /**
-                     * 获取- The expiration time (Unix timestamp) of the notification's signature.
-- By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks.
-- The format of this parameter is a decimal Unix timestamp, i.e., the number of seconds that have elapsed since 00:00 (UTC/GMT time) on January 1, 1970.
+                     * 获取-Expiration time. The event notification signature expires at this UNIX timestamp.
+-The default expiration time for notifications from Media Processing Service (MPS) is 10 minutes. If the time specified by the Timestamp value in a notification has expired, the notification can be deemed invalid, which can prevent network replay attacks.
+-Timestamp is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
 
-                     * @return Timestamp - The expiration time (Unix timestamp) of the notification's signature.
-- By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks.
-- The format of this parameter is a decimal Unix timestamp, i.e., the number of seconds that have elapsed since 00:00 (UTC/GMT time) on January 1, 1970.
+                     * @return Timestamp -Expiration time. The event notification signature expires at this UNIX timestamp.
+-The default expiration time for notifications from Media Processing Service (MPS) is 10 minutes. If the time specified by the Timestamp value in a notification has expired, the notification can be deemed invalid, which can prevent network replay attacks.
+-Timestamp is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
 
                      * 
                      */
@@ -176,54 +172,79 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool SignHasBeenSet() const;
 
+                    /**
+                     * 获取Batch operation information. This field has a value only when EventType is BatchTask.
+                     * @return BatchTaskEvent Batch operation information. This field has a value only when EventType is BatchTask.
+                     * 
+                     */
+                    BatchSubTaskResult GetBatchTaskEvent() const;
+
+                    /**
+                     * 判断参数 BatchTaskEvent 是否已赋值
+                     * @return BatchTaskEvent 是否已赋值
+                     * 
+                     */
+                    bool BatchTaskEventHasBeenSet() const;
+
+                    /**
+                     * 获取Information about the digital watermark extraction task. This field has a value only when EventType is ExtractBlindWatermark.
+                     * @return ExtractBlindWatermarkTask Information about the digital watermark extraction task. This field has a value only when EventType is ExtractBlindWatermark.
+                     * 
+                     */
+                    ExtractBlindWatermarkTask GetExtractBlindWatermarkTask() const;
+
+                    /**
+                     * 判断参数 ExtractBlindWatermarkTask 是否已赋值
+                     * @return ExtractBlindWatermarkTask 是否已赋值
+                     * 
+                     */
+                    bool ExtractBlindWatermarkTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The event type. Valid values:
-<li>WorkflowTask</li>
-<li>EditMediaTask</li>
-<li>ScheduleTask (scheme)</li>
+                     * Supported event types. Currently, the valid values include:
+<li>WorkflowTask: video workflow processing task.</li>
+<li>EditMediaTask: video editing task.</li>
+<li>ScheduleTask: orchestration task.</li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * The information of a video processing task. Information will be returned only if `EventType` is `WorkflowTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Video processing task information. This field has a value only when EventType is WorkflowTask.
                      */
                     WorkflowTask m_workflowTaskEvent;
                     bool m_workflowTaskEventHasBeenSet;
 
                     /**
-                     * The information of a video editing task. Information will be returned only if `EventType` is `EditMediaTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Video editing task information. This field has a value only when EventType is EditMediaTask.
                      */
                     EditMediaTask m_editMediaTaskEvent;
                     bool m_editMediaTaskEventHasBeenSet;
 
                     /**
-                     * The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * The information of a scheme. Information will be returned only if `EventType` is `ScheduleTask`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Orchestration task information. This field has a value only when EventType is ScheduleTask.
                      */
                     ScheduleTask m_scheduleTaskEvent;
                     bool m_scheduleTaskEventHasBeenSet;
 
                     /**
-                     * - The expiration time (Unix timestamp) of the notification's signature.
-- By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks.
-- The format of this parameter is a decimal Unix timestamp, i.e., the number of seconds that have elapsed since 00:00 (UTC/GMT time) on January 1, 1970.
+                     * -Expiration time. The event notification signature expires at this UNIX timestamp.
+-The default expiration time for notifications from Media Processing Service (MPS) is 10 minutes. If the time specified by the Timestamp value in a notification has expired, the notification can be deemed invalid, which can prevent network replay attacks.
+-Timestamp is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
 
                      */
                     int64_t m_timestamp;
@@ -234,6 +255,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     std::string m_sign;
                     bool m_signHasBeenSet;
+
+                    /**
+                     * Batch operation information. This field has a value only when EventType is BatchTask.
+                     */
+                    BatchSubTaskResult m_batchTaskEvent;
+                    bool m_batchTaskEventHasBeenSet;
+
+                    /**
+                     * Information about the digital watermark extraction task. This field has a value only when EventType is ExtractBlindWatermark.
+                     */
+                    ExtractBlindWatermarkTask m_extractBlindWatermarkTask;
+                    bool m_extractBlindWatermarkTaskHasBeenSet;
 
                 };
             }

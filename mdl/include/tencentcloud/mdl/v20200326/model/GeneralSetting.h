@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mdl/v20200326/model/StaticImageSettings.h>
+#include <tencentcloud/mdl/v20200326/model/MotionGraphicsSetting.h>
+#include <tencentcloud/mdl/v20200326/model/ThumbnailSettings.h>
 
 
 namespace TencentCloud
@@ -36,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * General setting.
+                * Common configuration.
                 */
                 class GeneralSetting : public AbstractModel
                 {
@@ -48,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Static graphic overlay configuration.
-                     * @return StaticImageSettings Static graphic overlay configuration.
+                     * 获取Static image overlay configuration.
+                     * @return StaticImageSettings Static image overlay configuration.
                      * 
                      */
                     StaticImageSettings GetStaticImageSettings() const;
 
                     /**
-                     * 设置Static graphic overlay configuration.
-                     * @param _staticImageSettings Static graphic overlay configuration.
+                     * 设置Static image overlay configuration.
+                     * @param _staticImageSettings Static image overlay configuration.
                      * 
                      */
                     void SetStaticImageSettings(const StaticImageSettings& _staticImageSettings);
@@ -68,13 +70,67 @@ namespace TencentCloud
                      */
                     bool StaticImageSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取Real-time graphic overlay configuration.
+                     * @return MotionGraphicsSettings Real-time graphic overlay configuration.
+                     * 
+                     */
+                    MotionGraphicsSetting GetMotionGraphicsSettings() const;
+
+                    /**
+                     * 设置Real-time graphic overlay configuration.
+                     * @param _motionGraphicsSettings Real-time graphic overlay configuration.
+                     * 
+                     */
+                    void SetMotionGraphicsSettings(const MotionGraphicsSetting& _motionGraphicsSettings);
+
+                    /**
+                     * 判断参数 MotionGraphicsSettings 是否已赋值
+                     * @return MotionGraphicsSettings 是否已赋值
+                     * 
+                     */
+                    bool MotionGraphicsSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取Thumbnail configuration
+                     * @return ThumbnailSettings Thumbnail configuration
+                     * 
+                     */
+                    ThumbnailSettings GetThumbnailSettings() const;
+
+                    /**
+                     * 设置Thumbnail configuration
+                     * @param _thumbnailSettings Thumbnail configuration
+                     * 
+                     */
+                    void SetThumbnailSettings(const ThumbnailSettings& _thumbnailSettings);
+
+                    /**
+                     * 判断参数 ThumbnailSettings 是否已赋值
+                     * @return ThumbnailSettings 是否已赋值
+                     * 
+                     */
+                    bool ThumbnailSettingsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Static graphic overlay configuration.
+                     * Static image overlay configuration.
                      */
                     StaticImageSettings m_staticImageSettings;
                     bool m_staticImageSettingsHasBeenSet;
+
+                    /**
+                     * Real-time graphic overlay configuration.
+                     */
+                    MotionGraphicsSetting m_motionGraphicsSettings;
+                    bool m_motionGraphicsSettingsHasBeenSet;
+
+                    /**
+                     * Thumbnail configuration
+                     */
+                    ThumbnailSettings m_thumbnailSettings;
+                    bool m_thumbnailSettingsHasBeenSet;
 
                 };
             }

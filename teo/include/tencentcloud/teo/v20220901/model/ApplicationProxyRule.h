@@ -142,26 +142,26 @@ Note: Up to 20 ports can be input for each rule.
                     bool OriginTypeHasBeenSet() const;
 
                     /**
-                     * 获取Origin server information.
+                     * 获取Details of the origin server:
 <li>When OriginType is custom, it indicates one or more origin servers, such as `["8.8.8.8","9.9.9.9"]` or `OriginValue=["test.com"]`;</li>
-<li>When OriginType is loadbalancer, it indicates a cloud load balancer, such as ["lb-xdffsfasdfs"];</li>
+<li>When OriginType is loadbalancer, it indicates a load balancer, such as ["lb-3pbiw4d9iqz0"];</li>
 <li>When OriginType is origins, it requires one and only one element, indicating the origin server group ID, such as ["origin-537f5b41-162a-11ed-abaa-525400c5da15"].</li>
-                     * @return OriginValue Origin server information.
+                     * @return OriginValue Details of the origin server:
 <li>When OriginType is custom, it indicates one or more origin servers, such as `["8.8.8.8","9.9.9.9"]` or `OriginValue=["test.com"]`;</li>
-<li>When OriginType is loadbalancer, it indicates a cloud load balancer, such as ["lb-xdffsfasdfs"];</li>
+<li>When OriginType is loadbalancer, it indicates a load balancer, such as ["lb-3pbiw4d9iqz0"];</li>
 <li>When OriginType is origins, it requires one and only one element, indicating the origin server group ID, such as ["origin-537f5b41-162a-11ed-abaa-525400c5da15"].</li>
                      * 
                      */
                     std::vector<std::string> GetOriginValue() const;
 
                     /**
-                     * 设置Origin server information.
+                     * 设置Details of the origin server:
 <li>When OriginType is custom, it indicates one or more origin servers, such as `["8.8.8.8","9.9.9.9"]` or `OriginValue=["test.com"]`;</li>
-<li>When OriginType is loadbalancer, it indicates a cloud load balancer, such as ["lb-xdffsfasdfs"];</li>
+<li>When OriginType is loadbalancer, it indicates a load balancer, such as ["lb-3pbiw4d9iqz0"];</li>
 <li>When OriginType is origins, it requires one and only one element, indicating the origin server group ID, such as ["origin-537f5b41-162a-11ed-abaa-525400c5da15"].</li>
-                     * @param _originValue Origin server information.
+                     * @param _originValue Details of the origin server:
 <li>When OriginType is custom, it indicates one or more origin servers, such as `["8.8.8.8","9.9.9.9"]` or `OriginValue=["test.com"]`;</li>
-<li>When OriginType is loadbalancer, it indicates a cloud load balancer, such as ["lb-xdffsfasdfs"];</li>
+<li>When OriginType is loadbalancer, it indicates a load balancer, such as ["lb-3pbiw4d9iqz0"];</li>
 <li>When OriginType is origins, it requires one and only one element, indicating the origin server group ID, such as ["origin-537f5b41-162a-11ed-abaa-525400c5da15"].</li>
                      * 
                      */
@@ -303,19 +303,15 @@ Note: Up to 20 ports can be input for each rule.
                     bool SessionPersistHasBeenSet() const;
 
                     /**
-                     * 获取Duration for session persistence. The value takes effect only when SessionPersist is true.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @return SessionPersistTime Duration for session persistence. The value takes effect only when SessionPersist is true.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 获取Duration for session persistence, in seconds. The value takes effect only when SessionPersist is true.
+                     * @return SessionPersistTime Duration for session persistence, in seconds. The value takes effect only when SessionPersist is true.
                      * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
-                     * 设置Duration for session persistence. The value takes effect only when SessionPersist is true.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @param _sessionPersistTime Duration for session persistence. The value takes effect only when SessionPersist is true.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 设置Duration for session persistence, in seconds. The value takes effect only when SessionPersist is true.
+                     * @param _sessionPersistTime Duration for session persistence, in seconds. The value takes effect only when SessionPersist is true.
                      * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
@@ -357,19 +353,15 @@ Note: This field may return null, which indicates a failure to obtain a valid va
                     bool OriginPortHasBeenSet() const;
 
                     /**
-                     * 获取Rule tag.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @return RuleTag Rule tag.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 获取Tag of the rule.
+                     * @return RuleTag Tag of the rule.
                      * 
                      */
                     std::string GetRuleTag() const;
 
                     /**
-                     * 设置Rule tag.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @param _ruleTag Rule tag.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 设置Tag of the rule.
+                     * @param _ruleTag Tag of the rule.
                      * 
                      */
                     void SetRuleTag(const std::string& _ruleTag);
@@ -410,9 +402,9 @@ Note: Up to 20 ports can be input for each rule.
                     bool m_originTypeHasBeenSet;
 
                     /**
-                     * Origin server information.
+                     * Details of the origin server:
 <li>When OriginType is custom, it indicates one or more origin servers, such as `["8.8.8.8","9.9.9.9"]` or `OriginValue=["test.com"]`;</li>
-<li>When OriginType is loadbalancer, it indicates a cloud load balancer, such as ["lb-xdffsfasdfs"];</li>
+<li>When OriginType is loadbalancer, it indicates a load balancer, such as ["lb-3pbiw4d9iqz0"];</li>
 <li>When OriginType is origins, it requires one and only one element, indicating the origin server group ID, such as ["origin-537f5b41-162a-11ed-abaa-525400c5da15"].</li>
                      */
                     std::vector<std::string> m_originValue;
@@ -454,8 +446,7 @@ Note: Up to 20 ports can be input for each rule.
                     bool m_sessionPersistHasBeenSet;
 
                     /**
-                     * Duration for session persistence. The value takes effect only when SessionPersist is true.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * Duration for session persistence, in seconds. The value takes effect only when SessionPersist is true.
                      */
                     uint64_t m_sessionPersistTime;
                     bool m_sessionPersistTimeHasBeenSet;
@@ -469,8 +460,7 @@ Note: This field may return null, which indicates a failure to obtain a valid va
                     bool m_originPortHasBeenSet;
 
                     /**
-                     * Rule tag.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * Tag of the rule.
                      */
                     std::string m_ruleTag;
                     bool m_ruleTagHasBeenSet;

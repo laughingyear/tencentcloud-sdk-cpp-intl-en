@@ -31,9 +31,10 @@ CreateAccountRequest::CreateAccountRequest() :
     m_countryCodeHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_verifyCodeHasBeenSet(false),
-    m_extendedHasBeenSet(false),
     m_tradeOneHasBeenSet(false),
-    m_tradeTwoHasBeenSet(false)
+    m_tradeTwoHasBeenSet(false),
+    m_extendedHasBeenSet(false),
+    m_customerNameHasBeenSet(false)
 {
 }
 
@@ -108,14 +109,6 @@ string CreateAccountRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_verifyCode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_extendedHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Extended";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_extended.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_tradeOneHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -130,6 +123,22 @@ string CreateAccountRequest::ToJsonString() const
         string key = "TradeTwo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tradeTwo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extendedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extended";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extended.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -268,22 +277,6 @@ bool CreateAccountRequest::VerifyCodeHasBeenSet() const
     return m_verifyCodeHasBeenSet;
 }
 
-string CreateAccountRequest::GetExtended() const
-{
-    return m_extended;
-}
-
-void CreateAccountRequest::SetExtended(const string& _extended)
-{
-    m_extended = _extended;
-    m_extendedHasBeenSet = true;
-}
-
-bool CreateAccountRequest::ExtendedHasBeenSet() const
-{
-    return m_extendedHasBeenSet;
-}
-
 string CreateAccountRequest::GetTradeOne() const
 {
     return m_tradeOne;
@@ -314,6 +307,38 @@ void CreateAccountRequest::SetTradeTwo(const string& _tradeTwo)
 bool CreateAccountRequest::TradeTwoHasBeenSet() const
 {
     return m_tradeTwoHasBeenSet;
+}
+
+string CreateAccountRequest::GetExtended() const
+{
+    return m_extended;
+}
+
+void CreateAccountRequest::SetExtended(const string& _extended)
+{
+    m_extended = _extended;
+    m_extendedHasBeenSet = true;
+}
+
+bool CreateAccountRequest::ExtendedHasBeenSet() const
+{
+    return m_extendedHasBeenSet;
+}
+
+string CreateAccountRequest::GetCustomerName() const
+{
+    return m_customerName;
+}
+
+void CreateAccountRequest::SetCustomerName(const string& _customerName)
+{
+    m_customerName = _customerName;
+    m_customerNameHasBeenSet = true;
+}
+
+bool CreateAccountRequest::CustomerNameHasBeenSet() const
+{
+    return m_customerNameHasBeenSet;
 }
 
 

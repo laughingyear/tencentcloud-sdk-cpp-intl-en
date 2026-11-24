@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Member id
-                     * @return MemberId Member id
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置Member id
-                     * @param _memberId Member id
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取Filter conditions
-                     * @return Filter Filter conditions
+                     * 获取Filter
+                     * @return Filter Filter
                      * 
                      */
                     Filter GetFilter() const;
 
                     /**
-                     * 设置Filter conditions
-                     * @param _filter Filter conditions
+                     * 设置Filter
+                     * @param _filter Filter
                      * 
                      */
                     void SetFilter(const Filter& _filter);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Member id
+                     * Group Account Member ID
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * Filter conditions
+                     * Filter
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;

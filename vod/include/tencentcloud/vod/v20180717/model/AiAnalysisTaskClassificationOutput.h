@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent categorization
+                * Intelligent classification result info
                 */
                 class AiAnalysisTaskClassificationOutput : public AbstractModel
                 {
@@ -48,19 +48,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of intelligently generated video categories
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `ClassificationSetFileUrl`.
-                     * @return ClassificationSet List of intelligently generated video categories
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `ClassificationSetFileUrl`.
+                     * 获取Video intelligent classification list.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ClassificationSetFileUrl.
+                     * @return ClassificationSet Video intelligent classification list.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ClassificationSetFileUrl.
                      * 
                      */
                     std::vector<MediaAiAnalysisClassificationItem> GetClassificationSet() const;
 
                     /**
-                     * 设置List of intelligently generated video categories
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `ClassificationSetFileUrl`.
-                     * @param _classificationSet List of intelligently generated video categories
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `ClassificationSetFileUrl`.
+                     * 设置Video intelligent classification list.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ClassificationSetFileUrl.
+                     * @param _classificationSet Video intelligent classification list.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ClassificationSetFileUrl.
                      * 
                      */
                     void SetClassificationSet(const std::vector<MediaAiAnalysisClassificationItem>& _classificationSet);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool ClassificationSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for intelligently generated video categories. The file is in JSON format and has the same data structure as `ClassificationSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `ClassificationSetFileUrlExpireTime`.
-                     * @return ClassificationSetFileUrl URL to the file for intelligently generated video categories. The file is in JSON format and has the same data structure as `ClassificationSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `ClassificationSetFileUrlExpireTime`.
+                     * 获取Video intelligent classification list file URL. The content of the file is in JSON format, and its data structure is consistent with the ClassificationSet fields. (The file is not retained permanently. It will be deleted after reaching the ClassificationSetFileUrlExpireTime time point.)
+                     * @return ClassificationSetFileUrl Video intelligent classification list file URL. The content of the file is in JSON format, and its data structure is consistent with the ClassificationSet fields. (The file is not retained permanently. It will be deleted after reaching the ClassificationSetFileUrlExpireTime time point.)
                      * 
                      */
                     std::string GetClassificationSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for intelligently generated video categories. The file is in JSON format and has the same data structure as `ClassificationSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `ClassificationSetFileUrlExpireTime`.
-                     * @param _classificationSetFileUrl URL to the file for intelligently generated video categories. The file is in JSON format and has the same data structure as `ClassificationSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `ClassificationSetFileUrlExpireTime`.
+                     * 设置Video intelligent classification list file URL. The content of the file is in JSON format, and its data structure is consistent with the ClassificationSet fields. (The file is not retained permanently. It will be deleted after reaching the ClassificationSetFileUrlExpireTime time point.)
+                     * @param _classificationSetFileUrl Video intelligent classification list file URL. The content of the file is in JSON format, and its data structure is consistent with the ClassificationSet fields. (The file is not retained permanently. It will be deleted after reaching the ClassificationSetFileUrlExpireTime time point.)
                      * 
                      */
                     void SetClassificationSetFileUrl(const std::string& _classificationSetFileUrl);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool ClassificationSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for intelligently generated video categories, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return ClassificationSetFileUrlExpireTime Expiration time of the URL to the file for intelligently generated video categories, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the video intelligent classification list file URL in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return ClassificationSetFileUrlExpireTime Expiration time of the video intelligent classification list file URL in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetClassificationSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for intelligently generated video categories, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _classificationSetFileUrlExpireTime Expiration time of the URL to the file for intelligently generated video categories, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the video intelligent classification list file URL in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _classificationSetFileUrlExpireTime Expiration time of the video intelligent classification list file URL in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetClassificationSetFileUrlExpireTime(const std::string& _classificationSetFileUrlExpireTime);
@@ -117,20 +117,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of intelligently generated video categories
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `ClassificationSetFileUrl`.
+                     * Video intelligent classification list.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ClassificationSetFileUrl.
                      */
                     std::vector<MediaAiAnalysisClassificationItem> m_classificationSet;
                     bool m_classificationSetHasBeenSet;
 
                     /**
-                     * URL to the file for intelligently generated video categories. The file is in JSON format and has the same data structure as `ClassificationSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `ClassificationSetFileUrlExpireTime`.
+                     * Video intelligent classification list file URL. The content of the file is in JSON format, and its data structure is consistent with the ClassificationSet fields. (The file is not retained permanently. It will be deleted after reaching the ClassificationSetFileUrlExpireTime time point.)
                      */
                     std::string m_classificationSetFileUrl;
                     bool m_classificationSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for intelligently generated video categories, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the video intelligent classification list file URL in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_classificationSetFileUrlExpireTime;
                     bool m_classificationSetFileUrlExpireTimeHasBeenSet;

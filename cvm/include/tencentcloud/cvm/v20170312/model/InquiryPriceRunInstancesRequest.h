@@ -31,8 +31,10 @@
 #include <tencentcloud/cvm/v20170312/model/EnhancedService.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/Metadata.h>
 #include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
+#include <tencentcloud/cvm/v20170312/model/NetworkInterfaces.h>
 
 
 namespace TencentCloud
@@ -80,18 +82,18 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取[Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
+                     * 获取[Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.tencentcloud.com/cvm/image/index?rid=1&tab=PUBLIC_IMAGE&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
-                     * @return ImageId [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
+                     * @return ImageId [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.tencentcloud.com/cvm/image/index?rid=1&tab=PUBLIC_IMAGE&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置[Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
+                     * 设置[Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.tencentcloud.com/cvm/image/index?rid=1&tab=PUBLIC_IMAGE&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
-                     * @param _imageId [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
+                     * @param _imageId [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.tencentcloud.com/cvm/image/index?rid=1&tab=PUBLIC_IMAGE&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      * 
                      */
@@ -147,15 +149,19 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) to retrieve the latest specification list or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). If the parameter is not specified, `S1.SMALL1` will be used by default.
-                     * @return InstanceType The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) to retrieve the latest specification list or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). If the parameter is not specified, `S1.SMALL1` will be used by default.
+                     * 获取Instance model. Different instance models specify different resource specifications.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, specifies the specific values obtained BY calling the [DescribeInstanceTypeConfig](https://www.tencentcloud.com/document/product/1119/45686?lang=en) api for the latest specification table or referring to [instance specifications](https://www.tencentcloud.com/document/product/213/11518). if not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><br><li>for instances created with the payment mode CDHPAID, indicates this parameter uses the prefix "CDH_" and is generated based on CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+                     * @return InstanceType Instance model. Different instance models specify different resource specifications.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, specifies the specific values obtained BY calling the [DescribeInstanceTypeConfig](https://www.tencentcloud.com/document/product/1119/45686?lang=en) api for the latest specification table or referring to [instance specifications](https://www.tencentcloud.com/document/product/213/11518). if not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><br><li>for instances created with the payment mode CDHPAID, indicates this parameter uses the prefix "CDH_" and is generated based on CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) to retrieve the latest specification list or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). If the parameter is not specified, `S1.SMALL1` will be used by default.
-                     * @param _instanceType The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) to retrieve the latest specification list or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). If the parameter is not specified, `S1.SMALL1` will be used by default.
+                     * 设置Instance model. Different instance models specify different resource specifications.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, specifies the specific values obtained BY calling the [DescribeInstanceTypeConfig](https://www.tencentcloud.com/document/product/1119/45686?lang=en) api for the latest specification table or referring to [instance specifications](https://www.tencentcloud.com/document/product/213/11518). if not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><br><li>for instances created with the payment mode CDHPAID, indicates this parameter uses the prefix "CDH_" and is generated based on CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+                     * @param _instanceType Instance model. Different instance models specify different resource specifications.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, specifies the specific values obtained BY calling the [DescribeInstanceTypeConfig](https://www.tencentcloud.com/document/product/1119/45686?lang=en) api for the latest specification table or referring to [instance specifications](https://www.tencentcloud.com/document/product/213/11518). if not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><br><li>for instances created with the payment mode CDHPAID, indicates this parameter uses the prefix "CDH_" and is generated based on CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -210,15 +216,15 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
-                     * 获取VPC configurations (VPC ID, subnet ID, etc). If it’s not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
-                     * @return VirtualPrivateCloud VPC configurations (VPC ID, subnet ID, etc). If it’s not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
+                     * 获取VPC configurations (VPC ID, subnet ID, etc). If It's not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
+                     * @return VirtualPrivateCloud VPC configurations (VPC ID, subnet ID, etc). If It's not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
                      * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
-                     * 设置VPC configurations (VPC ID, subnet ID, etc). If it’s not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
-                     * @param _virtualPrivateCloud VPC configurations (VPC ID, subnet ID, etc). If it’s not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
+                     * 设置VPC configurations (VPC ID, subnet ID, etc). If It's not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
+                     * @param _virtualPrivateCloud VPC configurations (VPC ID, subnet ID, etc). If It's not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
                      * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
@@ -231,15 +237,15 @@ namespace TencentCloud
                     bool VirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取Configuration of public network bandwidth. If it’s not specified, 0 Mbps is used by default.
-                     * @return InternetAccessible Configuration of public network bandwidth. If it’s not specified, 0 Mbps is used by default.
+                     * 获取Configuration of public network bandwidth. If it's not specified, 0 Mbps is used by default.
+                     * @return InternetAccessible Configuration of public network bandwidth. If it's not specified, 0 Mbps is used by default.
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置Configuration of public network bandwidth. If it’s not specified, 0 Mbps is used by default.
-                     * @param _internetAccessible Configuration of public network bandwidth. If it’s not specified, 0 Mbps is used by default.
+                     * 设置Configuration of public network bandwidth. If it's not specified, 0 Mbps is used by default.
+                     * @param _internetAccessible Configuration of public network bandwidth. If it's not specified, 0 Mbps is used by default.
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -273,15 +279,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
-                     * @return InstanceName Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * 获取Instance display name. <li>if no instance display name is specified, it will display 'unnamed' by default.</li> <li>when purchasing multiple instances, if the pattern string `{R:x}` is specified, it means generating numbers `[x, x+n-1]`, where `n` represents the number of purchased instances. for example, `server_{R:3}`: when purchasing 1 instance, the instance display name is `server_3`; when purchasing 2 instances, the instance display names are `server_3` and `server_4` respectively. supports specifying multiple pattern strings `{R:x}`.</li> <li>when purchasing multiple instances without specifying a pattern string, suffixes `1, 2...n` will be added to the instance display name, where `n` represents the number of purchased instances. for example, `server_`: when purchasing 2 instances, the instance display names are `server_1` and `server_2` respectively.</li> <li>supports up to 128 characters (including pattern strings).</li>.
+                     * @return InstanceName Instance display name. <li>if no instance display name is specified, it will display 'unnamed' by default.</li> <li>when purchasing multiple instances, if the pattern string `{R:x}` is specified, it means generating numbers `[x, x+n-1]`, where `n` represents the number of purchased instances. for example, `server_{R:3}`: when purchasing 1 instance, the instance display name is `server_3`; when purchasing 2 instances, the instance display names are `server_3` and `server_4` respectively. supports specifying multiple pattern strings `{R:x}`.</li> <li>when purchasing multiple instances without specifying a pattern string, suffixes `1, 2...n` will be added to the instance display name, where `n` represents the number of purchased instances. for example, `server_`: when purchasing 2 instances, the instance display names are `server_1` and `server_2` respectively.</li> <li>supports up to 128 characters (including pattern strings).</li>.
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
-                     * @param _instanceName Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * 设置Instance display name. <li>if no instance display name is specified, it will display 'unnamed' by default.</li> <li>when purchasing multiple instances, if the pattern string `{R:x}` is specified, it means generating numbers `[x, x+n-1]`, where `n` represents the number of purchased instances. for example, `server_{R:3}`: when purchasing 1 instance, the instance display name is `server_3`; when purchasing 2 instances, the instance display names are `server_3` and `server_4` respectively. supports specifying multiple pattern strings `{R:x}`.</li> <li>when purchasing multiple instances without specifying a pattern string, suffixes `1, 2...n` will be added to the instance display name, where `n` represents the number of purchased instances. for example, `server_`: when purchasing 2 instances, the instance display names are `server_1` and `server_2` respectively.</li> <li>supports up to 128 characters (including pattern strings).</li>.
+                     * @param _instanceName Instance display name. <li>if no instance display name is specified, it will display 'unnamed' by default.</li> <li>when purchasing multiple instances, if the pattern string `{R:x}` is specified, it means generating numbers `[x, x+n-1]`, where `n` represents the number of purchased instances. for example, `server_{R:3}`: when purchasing 1 instance, the instance display name is `server_3`; when purchasing 2 instances, the instance display names are `server_3` and `server_4` respectively. supports specifying multiple pattern strings `{R:x}`.</li> <li>when purchasing multiple instances without specifying a pattern string, suffixes `1, 2...n` will be added to the instance display name, where `n` represents the number of purchased instances. for example, `server_`: when purchasing 2 instances, the instance display names are `server_1` and `server_2` respectively.</li> <li>supports up to 128 characters (including pattern strings).</li>.
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -315,15 +321,15 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
-                     * @return SecurityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
+                     * 获取Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
+                     * @return SecurityGroupIds Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
-                     * @param _securityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
+                     * 设置Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
+                     * @param _securityGroupIds Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -441,6 +447,35 @@ namespace TencentCloud
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
+                     * 获取Custom metadata, supports creating key-value pairs of custom metadata when creating a CVM.
+
+**Note: this field is in beta test.**.
+                     * @return Metadata Custom metadata, supports creating key-value pairs of custom metadata when creating a CVM.
+
+**Note: this field is in beta test.**.
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置Custom metadata, supports creating key-value pairs of custom metadata when creating a CVM.
+
+**Note: this field is in beta test.**.
+                     * @param _metadata Custom metadata, supports creating key-value pairs of custom metadata when creating a CVM.
+
+**Note: this field is in beta test.**.
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
+                    /**
                      * 获取HPC cluster ID.
                      * @return HpcClusterId HPC cluster ID.
                      * 
@@ -483,15 +518,15 @@ namespace TencentCloud
                     bool CpuTopologyHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return LaunchTemplate 
+                     * 获取Instance launch template.
+                     * @return LaunchTemplate Instance launch template.
                      * 
                      */
                     LaunchTemplate GetLaunchTemplate() const;
 
                     /**
-                     * 设置
-                     * @param _launchTemplate 
+                     * 设置Instance launch template.
+                     * @param _launchTemplate Instance launch template.
                      * 
                      */
                     void SetLaunchTemplate(const LaunchTemplate& _launchTemplate);
@@ -503,6 +538,27 @@ namespace TencentCloud
                      */
                     bool LaunchTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @return NetworkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    std::vector<NetworkInterfaces> GetNetworkInterfaces() const;
+
+                    /**
+                     * 设置Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @param _networkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    void SetNetworkInterfaces(const std::vector<NetworkInterfaces>& _networkInterfaces);
+
+                    /**
+                     * 判断参数 NetworkInterfaces 是否已赋值
+                     * @return NetworkInterfaces 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,7 +569,7 @@ namespace TencentCloud
                     bool m_placementHasBeenSet;
 
                     /**
-                     * [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
+                     * [Image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images: <br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [CVM console](https://console.tencentcloud.com/cvm/image/index?rid=1&tab=PUBLIC_IMAGE&imageType=PUBLIC_IMAGE) to query the information. </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1) and look for `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      */
                     std::string m_imageId;
@@ -532,7 +588,8 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) to retrieve the latest specification list or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). If the parameter is not specified, `S1.SMALL1` will be used by default.
+                     * Instance model. Different instance models specify different resource specifications.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, specifies the specific values obtained BY calling the [DescribeInstanceTypeConfig](https://www.tencentcloud.com/document/product/1119/45686?lang=en) api for the latest specification table or referring to [instance specifications](https://www.tencentcloud.com/document/product/213/11518). if not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><br><li>for instances created with the payment mode CDHPAID, indicates this parameter uses the prefix "CDH_" and is generated based on CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -550,13 +607,13 @@ namespace TencentCloud
                     bool m_dataDisksHasBeenSet;
 
                     /**
-                     * VPC configurations (VPC ID, subnet ID, etc). If it’s not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
+                     * VPC configurations (VPC ID, subnet ID, etc). If It's not specified, the classic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` can only be 1.
                      */
                     VirtualPrivateCloud m_virtualPrivateCloud;
                     bool m_virtualPrivateCloudHasBeenSet;
 
                     /**
-                     * Configuration of public network bandwidth. If it’s not specified, 0 Mbps is used by default.
+                     * Configuration of public network bandwidth. If it's not specified, 0 Mbps is used by default.
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
@@ -568,7 +625,7 @@ namespace TencentCloud
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * Instance display name. <li>if no instance display name is specified, it will display 'unnamed' by default.</li> <li>when purchasing multiple instances, if the pattern string `{R:x}` is specified, it means generating numbers `[x, x+n-1]`, where `n` represents the number of purchased instances. for example, `server_{R:3}`: when purchasing 1 instance, the instance display name is `server_3`; when purchasing 2 instances, the instance display names are `server_3` and `server_4` respectively. supports specifying multiple pattern strings `{R:x}`.</li> <li>when purchasing multiple instances without specifying a pattern string, suffixes `1, 2...n` will be added to the instance display name, where `n` represents the number of purchased instances. for example, `server_`: when purchasing 2 instances, the instance display names are `server_1` and `server_2` respectively.</li> <li>supports up to 128 characters (including pattern strings).</li>.
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -580,7 +637,7 @@ namespace TencentCloud
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
+                     * Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -616,6 +673,14 @@ namespace TencentCloud
                     bool m_instanceMarketOptionsHasBeenSet;
 
                     /**
+                     * Custom metadata, supports creating key-value pairs of custom metadata when creating a CVM.
+
+**Note: this field is in beta test.**.
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
+
+                    /**
                      * HPC cluster ID.
                      */
                     std::string m_hpcClusterId;
@@ -628,10 +693,16 @@ namespace TencentCloud
                     bool m_cpuTopologyHasBeenSet;
 
                     /**
-                     * 
+                     * Instance launch template.
                      */
                     LaunchTemplate m_launchTemplate;
                     bool m_launchTemplateHasBeenSet;
+
+                    /**
+                     * Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     */
+                    std::vector<NetworkInterfaces> m_networkInterfaces;
+                    bool m_networkInterfacesHasBeenSet;
 
                 };
             }

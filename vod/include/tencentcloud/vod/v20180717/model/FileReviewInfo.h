@@ -48,27 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Audio/Video moderation details\*.
+                     * 获取Media review information\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MediaReviewInfo Audio/Video moderation details\*.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
+                     * @return MediaReviewInfo Media review information\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      * 
                      */
                     ReviewInfo GetMediaReviewInfo() const;
 
                     /**
-                     * 设置Audio/Video moderation details\*.
+                     * 设置Media review information\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mediaReviewInfo Audio/Video moderation details\*.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
+                     * @param _mediaReviewInfo Media review information\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      * 
                      */
                     void SetMediaReviewInfo(const ReviewInfo& _mediaReviewInfo);
@@ -81,27 +77,23 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MediaReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Thumbnail moderation details\*.
+                     * 获取Media cover review info\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CoverReviewInfo Thumbnail moderation details\*.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
+                     * @return CoverReviewInfo Media cover review info\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      * 
                      */
                     ReviewInfo GetCoverReviewInfo() const;
 
                     /**
-                     * 设置Thumbnail moderation details\*.
+                     * 设置Media cover review info\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _coverReviewInfo Thumbnail moderation details\*.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
+                     * @param _coverReviewInfo Media cover review info\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      * 
                      */
                     void SetCoverReviewInfo(const ReviewInfo& _coverReviewInfo);
@@ -116,19 +108,17 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Audio/Video moderation details\*.
+                     * Media review information\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      */
                     ReviewInfo m_mediaReviewInfo;
                     bool m_mediaReviewInfoHasBeenSet;
 
                     /**
-                     * Thumbnail moderation details\*.
+                     * Media cover review info\*.
 
-\* This parameter only contains the information of moderation tasks initiated by the [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) or [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1) API.
-Note: This field may return null, indicating that no valid values can be obtained.
+\* Only show the review result info initiated by [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1).
                      */
                     ReviewInfo m_coverReviewInfo;
                     bool m_coverReviewInfoHasBeenSet;

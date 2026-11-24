@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TotalCount Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Total quantity.
+                     * @return TotalCount Total quantity.
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -61,10 +59,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取List of scan reports
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Data List of scan reports
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Task Log List
+                     * @return Data Task Log List
                      * 
                      */
                     std::vector<ScanTaskInfo> GetData() const;
@@ -77,8 +73,8 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取List of account UINs
-                     * @return UINList List of account UINs
+                     * 获取Host Account ID List
+                     * @return UINList Host Account ID List
                      * 
                      */
                     std::vector<std::string> GetUINList() const;
@@ -93,21 +89,19 @@ Note: This field may return·null, indicating that no valid values can be obtain
                 private:
 
                     /**
-                     * Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Total quantity.
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * List of scan reports
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Task Log List
                      */
                     std::vector<ScanTaskInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * List of account UINs
+                     * Host Account ID List
                      */
                     std::vector<std::string> m_uINList;
                     bool m_uINListHasBeenSet;

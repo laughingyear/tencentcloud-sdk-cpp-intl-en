@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output of intelligent object recognition.
+                * Intelligent object recognition output.
                 */
                 class AiRecognitionTaskObjectResultOutput : public AbstractModel
                 {
@@ -48,19 +48,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Intelligent object recognition result set
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
-                     * @return ResultSet Intelligent object recognition result set
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * 获取Intelligent object recognition result set.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ResultSetFileUrl.
+                     * @return ResultSet Intelligent object recognition result set.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ResultSetFileUrl.
                      * 
                      */
                     std::vector<AiRecognitionTaskObjectResultItem> GetResultSet() const;
 
                     /**
-                     * 设置Intelligent object recognition result set
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
-                     * @param _resultSet Intelligent object recognition result set
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * 设置Intelligent object recognition result set.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ResultSetFileUrl.
+                     * @param _resultSet Intelligent object recognition result set.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ResultSetFileUrl.
                      * 
                      */
                     void SetResultSet(const std::vector<AiRecognitionTaskObjectResultItem>& _resultSet);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool ResultSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file of the object recognition result set. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
-                     * @return ResultSetFileUrl URL to the file of the object recognition result set. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * 获取Intelligent object recognition result set file URL. The content of the file is in JSON format, and the data structure is consistent with the fields of ResultSet. (The file is not retained permanently. It will be deleted after reaching the ResultSetFileUrlExpireTime time point.)
+                     * @return ResultSetFileUrl Intelligent object recognition result set file URL. The content of the file is in JSON format, and the data structure is consistent with the fields of ResultSet. (The file is not retained permanently. It will be deleted after reaching the ResultSetFileUrlExpireTime time point.)
                      * 
                      */
                     std::string GetResultSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file of the object recognition result set. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
-                     * @param _resultSetFileUrl URL to the file of the object recognition result set. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * 设置Intelligent object recognition result set file URL. The content of the file is in JSON format, and the data structure is consistent with the fields of ResultSet. (The file is not retained permanently. It will be deleted after reaching the ResultSetFileUrlExpireTime time point.)
+                     * @param _resultSetFileUrl Intelligent object recognition result set file URL. The content of the file is in JSON format, and the data structure is consistent with the fields of ResultSet. (The file is not retained permanently. It will be deleted after reaching the ResultSetFileUrlExpireTime time point.)
                      * 
                      */
                     void SetResultSetFileUrl(const std::string& _resultSetFileUrl);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool ResultSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the object recognition result set, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732)
-                     * @return ResultSetFileUrlExpireTime Expiration time of the URL to the object recognition result set, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732)
+                     * 获取Expiration time of the intelligent object recognition result set file URL, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return ResultSetFileUrlExpireTime Expiration time of the intelligent object recognition result set file URL, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetResultSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the object recognition result set, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732)
-                     * @param _resultSetFileUrlExpireTime Expiration time of the URL to the object recognition result set, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732)
+                     * 设置Expiration time of the intelligent object recognition result set file URL, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _resultSetFileUrlExpireTime Expiration time of the intelligent object recognition result set file URL, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetResultSetFileUrlExpireTime(const std::string& _resultSetFileUrlExpireTime);
@@ -117,20 +117,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Intelligent object recognition result set
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * Intelligent object recognition result set.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to ResultSetFileUrl.
                      */
                     std::vector<AiRecognitionTaskObjectResultItem> m_resultSet;
                     bool m_resultSetHasBeenSet;
 
                     /**
-                     * URL to the file of the object recognition result set. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * Intelligent object recognition result set file URL. The content of the file is in JSON format, and the data structure is consistent with the fields of ResultSet. (The file is not retained permanently. It will be deleted after reaching the ResultSetFileUrlExpireTime time point.)
                      */
                     std::string m_resultSetFileUrl;
                     bool m_resultSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the object recognition result set, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732)
+                     * Expiration time of the intelligent object recognition result set file URL, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_resultSetFileUrlExpireTime;
                     bool m_resultSetFileUrlExpireTimeHasBeenSet;

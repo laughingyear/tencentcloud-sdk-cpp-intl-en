@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Offset time of video timestamp in seconds.
-                     * @return TimeOffset Offset time of video timestamp in seconds.
+                     * 获取Video offset time of the timestamp, in seconds.
+                     * @return TimeOffset Video offset time of the timestamp, in seconds.
                      * 
                      */
                     double GetTimeOffset() const;
 
                     /**
-                     * 设置Offset time of video timestamp in seconds.
-                     * @param _timeOffset Offset time of video timestamp in seconds.
+                     * 设置Video offset time of the timestamp, in seconds.
+                     * @param _timeOffset Video offset time of the timestamp, in seconds.
                      * 
                      */
                     void SetTimeOffset(const double& _timeOffset);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Content string of timestamp containing 1-128 characters.
-                     * @return Content Content string of timestamp containing 1-128 characters.
+                     * 获取Content string for marking points. Limited to 1-128 characters.
+                     * @return Content Content string for marking points. Limited to 1-128 characters.
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置Content string of timestamp containing 1-128 characters.
-                     * @param _content Content string of timestamp containing 1-128 characters.
+                     * 设置Content string for marking points. Limited to 1-128 characters.
+                     * @param _content Content string for marking points. Limited to 1-128 characters.
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Offset time of video timestamp in seconds.
+                     * Video offset time of the timestamp, in seconds.
                      */
                     double m_timeOffset;
                     bool m_timeOffsetHasBeenSet;
 
                     /**
-                     * Content string of timestamp containing 1-128 characters.
+                     * Content string for marking points. Limited to 1-128 characters.
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

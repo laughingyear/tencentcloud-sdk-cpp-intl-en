@@ -25,10 +25,12 @@ using namespace std;
 ModifyEnvironmentAttributesRequest::ModifyEnvironmentAttributesRequest() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_retentionPolicyHasBeenSet(false),
-    m_autoSubscriptionCreationHasBeenSet(false)
+    m_autoSubscriptionCreationHasBeenSet(false),
+    m_subscriptionExpirationTimeHasBeenSet(false),
+    m_subscriptionExpirationTimeEnableHasBeenSet(false)
 {
 }
 
@@ -55,20 +57,20 @@ string ModifyEnvironmentAttributesRequest::ToJsonString() const
         d.AddMember(iKey, m_msgTTL, allocator);
     }
 
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_retentionPolicyHasBeenSet)
@@ -86,6 +88,22 @@ string ModifyEnvironmentAttributesRequest::ToJsonString() const
         string key = "AutoSubscriptionCreation";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoSubscriptionCreation, allocator);
+    }
+
+    if (m_subscriptionExpirationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionExpirationTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subscriptionExpirationTime, allocator);
+    }
+
+    if (m_subscriptionExpirationTimeEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionExpirationTimeEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subscriptionExpirationTimeEnable, allocator);
     }
 
 
@@ -128,22 +146,6 @@ bool ModifyEnvironmentAttributesRequest::MsgTTLHasBeenSet() const
     return m_msgTTLHasBeenSet;
 }
 
-string ModifyEnvironmentAttributesRequest::GetRemark() const
-{
-    return m_remark;
-}
-
-void ModifyEnvironmentAttributesRequest::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool ModifyEnvironmentAttributesRequest::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
-}
-
 string ModifyEnvironmentAttributesRequest::GetClusterId() const
 {
     return m_clusterId;
@@ -158,6 +160,22 @@ void ModifyEnvironmentAttributesRequest::SetClusterId(const string& _clusterId)
 bool ModifyEnvironmentAttributesRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string ModifyEnvironmentAttributesRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void ModifyEnvironmentAttributesRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ModifyEnvironmentAttributesRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 RetentionPolicy ModifyEnvironmentAttributesRequest::GetRetentionPolicy() const
@@ -190,6 +208,38 @@ void ModifyEnvironmentAttributesRequest::SetAutoSubscriptionCreation(const bool&
 bool ModifyEnvironmentAttributesRequest::AutoSubscriptionCreationHasBeenSet() const
 {
     return m_autoSubscriptionCreationHasBeenSet;
+}
+
+uint64_t ModifyEnvironmentAttributesRequest::GetSubscriptionExpirationTime() const
+{
+    return m_subscriptionExpirationTime;
+}
+
+void ModifyEnvironmentAttributesRequest::SetSubscriptionExpirationTime(const uint64_t& _subscriptionExpirationTime)
+{
+    m_subscriptionExpirationTime = _subscriptionExpirationTime;
+    m_subscriptionExpirationTimeHasBeenSet = true;
+}
+
+bool ModifyEnvironmentAttributesRequest::SubscriptionExpirationTimeHasBeenSet() const
+{
+    return m_subscriptionExpirationTimeHasBeenSet;
+}
+
+bool ModifyEnvironmentAttributesRequest::GetSubscriptionExpirationTimeEnable() const
+{
+    return m_subscriptionExpirationTimeEnable;
+}
+
+void ModifyEnvironmentAttributesRequest::SetSubscriptionExpirationTimeEnable(const bool& _subscriptionExpirationTimeEnable)
+{
+    m_subscriptionExpirationTimeEnable = _subscriptionExpirationTimeEnable;
+    m_subscriptionExpirationTimeEnableHasBeenSet = true;
+}
+
+bool ModifyEnvironmentAttributesRequest::SubscriptionExpirationTimeEnableHasBeenSet() const
+{
+    return m_subscriptionExpirationTimeEnableHasBeenSet;
 }
 
 

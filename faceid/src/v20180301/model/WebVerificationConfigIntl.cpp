@@ -33,7 +33,13 @@ WebVerificationConfigIntl::WebVerificationConfigIntl() :
     m_languageHasBeenSet(false),
     m_autoDowngradeHasBeenSet(false),
     m_actionListHasBeenSet(false),
-    m_livenessRetryLimitHasBeenSet(false)
+    m_livenessRetryLimitHasBeenSet(false),
+    m_livenessTimeoutHasBeenSet(false),
+    m_selectedWarningCodesHasBeenSet(false),
+    m_allowExpiredDocumentHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_ocrWaitPolicyHasBeenSet(false),
+    m_webhookUrlHasBeenSet(false)
 {
 }
 
@@ -172,6 +178,66 @@ CoreInternalOutcome WebVerificationConfigIntl::Deserialize(const rapidjson::Valu
         m_livenessRetryLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("LivenessTimeout") && !value["LivenessTimeout"].IsNull())
+    {
+        if (!value["LivenessTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.LivenessTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_livenessTimeout = value["LivenessTimeout"].GetUint64();
+        m_livenessTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("SelectedWarningCodes") && !value["SelectedWarningCodes"].IsNull())
+    {
+        if (!value["SelectedWarningCodes"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.SelectedWarningCodes` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selectedWarningCodes = string(value["SelectedWarningCodes"].GetString());
+        m_selectedWarningCodesHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowExpiredDocument") && !value["AllowExpiredDocument"].IsNull())
+    {
+        if (!value["AllowExpiredDocument"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.AllowExpiredDocument` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowExpiredDocument = value["AllowExpiredDocument"].GetBool();
+        m_allowExpiredDocumentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("OcrWaitPolicy") && !value["OcrWaitPolicy"].IsNull())
+    {
+        if (!value["OcrWaitPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.OcrWaitPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ocrWaitPolicy = string(value["OcrWaitPolicy"].GetString());
+        m_ocrWaitPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebhookUrl") && !value["WebhookUrl"].IsNull())
+    {
+        if (!value["WebhookUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVerificationConfigIntl.WebhookUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webhookUrl = string(value["WebhookUrl"].GetString());
+        m_webhookUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +347,54 @@ void WebVerificationConfigIntl::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "LivenessRetryLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_livenessRetryLimit, allocator);
+    }
+
+    if (m_livenessTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_livenessTimeout, allocator);
+    }
+
+    if (m_selectedWarningCodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectedWarningCodes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selectedWarningCodes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowExpiredDocumentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowExpiredDocument";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowExpiredDocument, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ocrWaitPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrWaitPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrWaitPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webhookUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webhookUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +606,101 @@ void WebVerificationConfigIntl::SetLivenessRetryLimit(const int64_t& _livenessRe
 bool WebVerificationConfigIntl::LivenessRetryLimitHasBeenSet() const
 {
     return m_livenessRetryLimitHasBeenSet;
+}
+
+uint64_t WebVerificationConfigIntl::GetLivenessTimeout() const
+{
+    return m_livenessTimeout;
+}
+
+void WebVerificationConfigIntl::SetLivenessTimeout(const uint64_t& _livenessTimeout)
+{
+    m_livenessTimeout = _livenessTimeout;
+    m_livenessTimeoutHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::LivenessTimeoutHasBeenSet() const
+{
+    return m_livenessTimeoutHasBeenSet;
+}
+
+string WebVerificationConfigIntl::GetSelectedWarningCodes() const
+{
+    return m_selectedWarningCodes;
+}
+
+void WebVerificationConfigIntl::SetSelectedWarningCodes(const string& _selectedWarningCodes)
+{
+    m_selectedWarningCodes = _selectedWarningCodes;
+    m_selectedWarningCodesHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::SelectedWarningCodesHasBeenSet() const
+{
+    return m_selectedWarningCodesHasBeenSet;
+}
+
+bool WebVerificationConfigIntl::GetAllowExpiredDocument() const
+{
+    return m_allowExpiredDocument;
+}
+
+void WebVerificationConfigIntl::SetAllowExpiredDocument(const bool& _allowExpiredDocument)
+{
+    m_allowExpiredDocument = _allowExpiredDocument;
+    m_allowExpiredDocumentHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::AllowExpiredDocumentHasBeenSet() const
+{
+    return m_allowExpiredDocumentHasBeenSet;
+}
+
+string WebVerificationConfigIntl::GetVersion() const
+{
+    return m_version;
+}
+
+void WebVerificationConfigIntl::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string WebVerificationConfigIntl::GetOcrWaitPolicy() const
+{
+    return m_ocrWaitPolicy;
+}
+
+void WebVerificationConfigIntl::SetOcrWaitPolicy(const string& _ocrWaitPolicy)
+{
+    m_ocrWaitPolicy = _ocrWaitPolicy;
+    m_ocrWaitPolicyHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::OcrWaitPolicyHasBeenSet() const
+{
+    return m_ocrWaitPolicyHasBeenSet;
+}
+
+string WebVerificationConfigIntl::GetWebhookUrl() const
+{
+    return m_webhookUrl;
+}
+
+void WebVerificationConfigIntl::SetWebhookUrl(const string& _webhookUrl)
+{
+    m_webhookUrl = _webhookUrl;
+    m_webhookUrlHasBeenSet = true;
+}
+
+bool WebVerificationConfigIntl::WebhookUrlHasBeenSet() const
+{
+    return m_webhookUrlHasBeenSet;
 }
 

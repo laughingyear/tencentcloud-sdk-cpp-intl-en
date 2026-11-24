@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Color enhancement configuration.
+                * Color enhancement control parameters
                 */
                 class ColorEnhanceInfo : public AbstractModel
                 {
@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable color enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable color enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取<p>Color enhancement control switch</p><p>Enumeration values: </p><ul><li>ON: Enable color enhancement</li><li>OFF: Disable color enhancement</li></ul>
+                     * @return Switch <p>Color enhancement control switch</p><p>Enumeration values: </p><ul><li>ON: Enable color enhancement</li><li>OFF: Disable color enhancement</li></ul>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable color enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable color enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置<p>Color enhancement control switch</p><p>Enumeration values: </p><ul><li>ON: Enable color enhancement</li><li>OFF: Disable color enhancement</li></ul>
+                     * @param _switch <p>Color enhancement control switch</p><p>Enumeration values: </p><ul><li>ON: Enable color enhancement</li><li>OFF: Disable color enhancement</li></ul>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,31 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The color enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @return Type The color enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 获取<p>Color enhancement type. Valid only when the color enhancement control switch is ON. Available values:</p><li>weak: light color enhancement;</li><li>normal: normal color enhancement;</li><li>strong: strong color enhancement.</li>Default value: weak.
+                     * @return Type <p>Color enhancement type. Valid only when the color enhancement control switch is ON. Available values:</p><li>weak: light color enhancement;</li><li>normal: normal color enhancement;</li><li>strong: strong color enhancement.</li>Default value: weak.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The color enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @param _type The color enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 设置<p>Color enhancement type. Valid only when the color enhancement control switch is ON. Available values:</p><li>weak: light color enhancement;</li><li>normal: normal color enhancement;</li><li>strong: strong color enhancement.</li>Default value: weak.
+                     * @param _type <p>Color enhancement type. Valid only when the color enhancement control switch is ON. Available values:</p><li>weak: light color enhancement;</li><li>normal: normal color enhancement;</li><li>strong: strong color enhancement.</li>Default value: weak.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,19 +91,13 @@ Default value: `weak`.
                 private:
 
                     /**
-                     * Whether to enable color enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * <p>Color enhancement control switch</p><p>Enumeration values: </p><ul><li>ON: Enable color enhancement</li><li>OFF: Disable color enhancement</li></ul>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The color enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * <p>Color enhancement type. Valid only when the color enhancement control switch is ON. Available values:</p><li>weak: light color enhancement;</li><li>normal: normal color enhancement;</li><li>strong: strong color enhancement.</li>Default value: weak.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -26,9 +26,15 @@ using namespace std;
 DescribeImageTaskDetailResponse::DescribeImageTaskDetailResponse() :
     m_taskTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_errCodeHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
+    m_messageHasBeenSet(false),
     m_imageProcessTaskResultSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_definitionHasBeenSet(false),
+    m_imageTaskHasBeenSet(false),
+    m_inputInfoHasBeenSet(false)
 {
 }
 
@@ -86,6 +92,36 @@ CoreInternalOutcome DescribeImageTaskDetailResponse::Deserialize(const string &p
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrCode") && !rsp["ErrCode"].IsNull())
+    {
+        if (!rsp["ErrCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCode = rsp["ErrCode"].GetInt64();
+        m_errCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrMsg") && !rsp["ErrMsg"].IsNull())
+    {
+        if (!rsp["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(rsp["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ImageProcessTaskResultSet") && !rsp["ImageProcessTaskResultSet"].IsNull())
     {
         if (!rsp["ImageProcessTaskResultSet"].IsArray())
@@ -126,6 +162,50 @@ CoreInternalOutcome DescribeImageTaskDetailResponse::Deserialize(const string &p
         m_finishTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Definition") && !rsp["Definition"].IsNull())
+    {
+        if (!rsp["Definition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = rsp["Definition"].GetInt64();
+        m_definitionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageTask") && !rsp["ImageTask"].IsNull())
+    {
+        if (!rsp["ImageTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageTask.Deserialize(rsp["ImageTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InputInfo") && !rsp["InputInfo"].IsNull())
+    {
+        if (!rsp["InputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputInfo.Deserialize(rsp["InputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +230,30 @@ string DescribeImageTaskDetailResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_errCode, allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageProcessTaskResultSetHasBeenSet)
@@ -181,6 +285,32 @@ string DescribeImageTaskDetailResponse::ToJsonString() const
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_imageTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_inputInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -215,6 +345,36 @@ bool DescribeImageTaskDetailResponse::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+int64_t DescribeImageTaskDetailResponse::GetErrCode() const
+{
+    return m_errCode;
+}
+
+bool DescribeImageTaskDetailResponse::ErrCodeHasBeenSet() const
+{
+    return m_errCodeHasBeenSet;
+}
+
+string DescribeImageTaskDetailResponse::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+bool DescribeImageTaskDetailResponse::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+string DescribeImageTaskDetailResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool DescribeImageTaskDetailResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
+}
+
 vector<ImageProcessTaskResult> DescribeImageTaskDetailResponse::GetImageProcessTaskResultSet() const
 {
     return m_imageProcessTaskResultSet;
@@ -243,6 +403,36 @@ string DescribeImageTaskDetailResponse::GetFinishTime() const
 bool DescribeImageTaskDetailResponse::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+int64_t DescribeImageTaskDetailResponse::GetDefinition() const
+{
+    return m_definition;
+}
+
+bool DescribeImageTaskDetailResponse::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
+}
+
+ImageTaskInput DescribeImageTaskDetailResponse::GetImageTask() const
+{
+    return m_imageTask;
+}
+
+bool DescribeImageTaskDetailResponse::ImageTaskHasBeenSet() const
+{
+    return m_imageTaskHasBeenSet;
+}
+
+MediaInputInfo DescribeImageTaskDetailResponse::GetInputInfo() const
+{
+    return m_inputInfo;
+}
+
+bool DescribeImageTaskDetailResponse::InputInfoHasBeenSet() const
+{
+    return m_inputInfoHasBeenSet;
 }
 
 

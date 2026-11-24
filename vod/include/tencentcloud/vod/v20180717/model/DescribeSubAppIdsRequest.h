@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Subapplication name.
-                     * @return Name Subapplication name.
+                     * 获取Application name
+                     * @return Name Application name
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Subapplication name.
-                     * @param _name Subapplication name.
+                     * 设置Application name
+                     * @param _name Application name
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Tag information. You can query the list of subapplications with specified tags.
-                     * @return Tags Tag information. You can query the list of subapplications with specified tags.
+                     * 获取Tag information. Query the application list of a specified tag.
+                     * @return Tags Tag information. Query the application list of a specified tag.
                      * 
                      */
                     std::vector<ResourceTag> GetTags() const;
 
                     /**
-                     * 设置Tag information. You can query the list of subapplications with specified tags.
-                     * @param _tags Tag information. You can query the list of subapplications with specified tags.
+                     * 设置Tag information. Query the application list of a specified tag.
+                     * @param _tags Tag information. Query the application list of a specified tag.
                      * 
                      */
                     void SetTags(const std::vector<ResourceTag>& _tags);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取Page number offset from the beginning of paginated queries. Default value: 0.
-                     * @return Offset Page number offset from the beginning of paginated queries. Default value: 0.
+                     * 获取Starting offset for pagination pull. Default value: 0.
+                     * @return Offset Starting offset for pagination pull. Default value: 0.
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置Page number offset from the beginning of paginated queries. Default value: 0.
-                     * @param _offset Page number offset from the beginning of paginated queries. Default value: 0.
+                     * 设置Starting offset for pagination pull. Default value: 0.
+                     * @param _offset Starting offset for pagination pull. Default value: 0.
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Maximum return results of pulling paginated queries. Default: 200; maximum: 200.
-                     * @return Limit Maximum return results of pulling paginated queries. Default: 200; maximum: 200.
+                     * 获取Maximum number of results returned for pagination pull. Default value: 200; maximum value: 200.
+                     * @return Limit Maximum number of results returned for pagination pull. Default value: 200; maximum value: 200.
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Maximum return results of pulling paginated queries. Default: 200; maximum: 200.
-                     * @param _limit Maximum return results of pulling paginated queries. Default: 200; maximum: 200.
+                     * 设置Maximum number of results returned for pagination pull. Default value: 200; maximum value: 200.
+                     * @param _limit Maximum number of results returned for pagination pull. Default value: 200; maximum value: 200.
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Subapplication name.
+                     * Application name
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Tag information. You can query the list of subapplications with specified tags.
+                     * Tag information. Query the application list of a specified tag.
                      */
                     std::vector<ResourceTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * Page number offset from the beginning of paginated queries. Default value: 0.
+                     * Starting offset for pagination pull. Default value: 0.
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Maximum return results of pulling paginated queries. Default: 200; maximum: 200.
+                     * Maximum number of results returned for pagination pull. Default value: 200; maximum value: 200.
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

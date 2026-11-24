@@ -31,7 +31,13 @@ AiAnalysisResult::AiAnalysisResult() :
     m_segmentTaskHasBeenSet(false),
     m_headTailTaskHasBeenSet(false),
     m_descriptionTaskHasBeenSet(false),
-    m_horizontalToVerticalTaskHasBeenSet(false)
+    m_horizontalToVerticalTaskHasBeenSet(false),
+    m_dubbingTaskHasBeenSet(false),
+    m_videoRemakeTaskHasBeenSet(false),
+    m_videoComprehensionTaskHasBeenSet(false),
+    m_cutoutTaskHasBeenSet(false),
+    m_reelTaskHasBeenSet(false),
+    m_genericTaskHasBeenSet(false)
 {
 }
 
@@ -220,6 +226,108 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_horizontalToVerticalTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("DubbingTask") && !value["DubbingTask"].IsNull())
+    {
+        if (!value["DubbingTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.DubbingTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dubbingTask.Deserialize(value["DubbingTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dubbingTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoRemakeTask") && !value["VideoRemakeTask"].IsNull())
+    {
+        if (!value["VideoRemakeTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.VideoRemakeTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoRemakeTask.Deserialize(value["VideoRemakeTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoRemakeTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoComprehensionTask") && !value["VideoComprehensionTask"].IsNull())
+    {
+        if (!value["VideoComprehensionTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.VideoComprehensionTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoComprehensionTask.Deserialize(value["VideoComprehensionTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoComprehensionTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("CutoutTask") && !value["CutoutTask"].IsNull())
+    {
+        if (!value["CutoutTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.CutoutTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cutoutTask.Deserialize(value["CutoutTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cutoutTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReelTask") && !value["ReelTask"].IsNull())
+    {
+        if (!value["ReelTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.ReelTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reelTask.Deserialize(value["ReelTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reelTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("GenericTask") && !value["GenericTask"].IsNull())
+    {
+        if (!value["GenericTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.GenericTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_genericTask.Deserialize(value["GenericTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_genericTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +431,60 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_horizontalToVerticalTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dubbingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DubbingTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dubbingTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoRemakeTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoRemakeTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoRemakeTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoComprehensionTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoComprehensionTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoComprehensionTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cutoutTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CutoutTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cutoutTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reelTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReelTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reelTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_genericTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenericTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_genericTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -502,5 +664,101 @@ void AiAnalysisResult::SetHorizontalToVerticalTask(const AiAnalysisTaskHorizonta
 bool AiAnalysisResult::HorizontalToVerticalTaskHasBeenSet() const
 {
     return m_horizontalToVerticalTaskHasBeenSet;
+}
+
+AiAnalysisTaskDubbingResult AiAnalysisResult::GetDubbingTask() const
+{
+    return m_dubbingTask;
+}
+
+void AiAnalysisResult::SetDubbingTask(const AiAnalysisTaskDubbingResult& _dubbingTask)
+{
+    m_dubbingTask = _dubbingTask;
+    m_dubbingTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::DubbingTaskHasBeenSet() const
+{
+    return m_dubbingTaskHasBeenSet;
+}
+
+AiAnalysisTaskVideoRemakeResult AiAnalysisResult::GetVideoRemakeTask() const
+{
+    return m_videoRemakeTask;
+}
+
+void AiAnalysisResult::SetVideoRemakeTask(const AiAnalysisTaskVideoRemakeResult& _videoRemakeTask)
+{
+    m_videoRemakeTask = _videoRemakeTask;
+    m_videoRemakeTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::VideoRemakeTaskHasBeenSet() const
+{
+    return m_videoRemakeTaskHasBeenSet;
+}
+
+AiAnalysisTaskVideoComprehensionResult AiAnalysisResult::GetVideoComprehensionTask() const
+{
+    return m_videoComprehensionTask;
+}
+
+void AiAnalysisResult::SetVideoComprehensionTask(const AiAnalysisTaskVideoComprehensionResult& _videoComprehensionTask)
+{
+    m_videoComprehensionTask = _videoComprehensionTask;
+    m_videoComprehensionTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::VideoComprehensionTaskHasBeenSet() const
+{
+    return m_videoComprehensionTaskHasBeenSet;
+}
+
+AiAnalysisTaskCutoutResult AiAnalysisResult::GetCutoutTask() const
+{
+    return m_cutoutTask;
+}
+
+void AiAnalysisResult::SetCutoutTask(const AiAnalysisTaskCutoutResult& _cutoutTask)
+{
+    m_cutoutTask = _cutoutTask;
+    m_cutoutTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::CutoutTaskHasBeenSet() const
+{
+    return m_cutoutTaskHasBeenSet;
+}
+
+AiAnalysisTaskReelResult AiAnalysisResult::GetReelTask() const
+{
+    return m_reelTask;
+}
+
+void AiAnalysisResult::SetReelTask(const AiAnalysisTaskReelResult& _reelTask)
+{
+    m_reelTask = _reelTask;
+    m_reelTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::ReelTaskHasBeenSet() const
+{
+    return m_reelTaskHasBeenSet;
+}
+
+AiAnalysisTaskGenericResult AiAnalysisResult::GetGenericTask() const
+{
+    return m_genericTask;
+}
+
+void AiAnalysisResult::SetGenericTask(const AiAnalysisTaskGenericResult& _genericTask)
+{
+    m_genericTask = _genericTask;
+    m_genericTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::GenericTaskHasBeenSet() const
+{
+    return m_genericTaskHasBeenSet;
 }
 

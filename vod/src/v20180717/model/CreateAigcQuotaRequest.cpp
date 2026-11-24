@@ -1,0 +1,251 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vod/v20180717/model/CreateAigcQuotaRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Vod::V20180717::Model;
+using namespace std;
+
+CreateAigcQuotaRequest::CreateAigcQuotaRequest() :
+    m_subAppIdHasBeenSet(false),
+    m_quotaTypeHasBeenSet(false),
+    m_quotaLimitHasBeenSet(false),
+    m_apiTokenHasBeenSet(false),
+    m_quotaPeriodHasBeenSet(false),
+    m_resetDayHasBeenSet(false),
+    m_modelQuotaSwitchHasBeenSet(false),
+    m_modelQuotasHasBeenSet(false)
+{
+}
+
+string CreateAigcQuotaRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_quotaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quotaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_quotaLimit, allocator);
+    }
+
+    if (m_apiTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quotaPeriod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resetDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetDay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resetDay, allocator);
+    }
+
+    if (m_modelQuotaSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelQuotaSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelQuotaSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelQuotasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelQuotas";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_modelQuotas.begin(); itr != m_modelQuotas.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+uint64_t CreateAigcQuotaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateAigcQuotaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
+string CreateAigcQuotaRequest::GetQuotaType() const
+{
+    return m_quotaType;
+}
+
+void CreateAigcQuotaRequest::SetQuotaType(const string& _quotaType)
+{
+    m_quotaType = _quotaType;
+    m_quotaTypeHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::QuotaTypeHasBeenSet() const
+{
+    return m_quotaTypeHasBeenSet;
+}
+
+uint64_t CreateAigcQuotaRequest::GetQuotaLimit() const
+{
+    return m_quotaLimit;
+}
+
+void CreateAigcQuotaRequest::SetQuotaLimit(const uint64_t& _quotaLimit)
+{
+    m_quotaLimit = _quotaLimit;
+    m_quotaLimitHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::QuotaLimitHasBeenSet() const
+{
+    return m_quotaLimitHasBeenSet;
+}
+
+string CreateAigcQuotaRequest::GetApiToken() const
+{
+    return m_apiToken;
+}
+
+void CreateAigcQuotaRequest::SetApiToken(const string& _apiToken)
+{
+    m_apiToken = _apiToken;
+    m_apiTokenHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::ApiTokenHasBeenSet() const
+{
+    return m_apiTokenHasBeenSet;
+}
+
+string CreateAigcQuotaRequest::GetQuotaPeriod() const
+{
+    return m_quotaPeriod;
+}
+
+void CreateAigcQuotaRequest::SetQuotaPeriod(const string& _quotaPeriod)
+{
+    m_quotaPeriod = _quotaPeriod;
+    m_quotaPeriodHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::QuotaPeriodHasBeenSet() const
+{
+    return m_quotaPeriodHasBeenSet;
+}
+
+uint64_t CreateAigcQuotaRequest::GetResetDay() const
+{
+    return m_resetDay;
+}
+
+void CreateAigcQuotaRequest::SetResetDay(const uint64_t& _resetDay)
+{
+    m_resetDay = _resetDay;
+    m_resetDayHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::ResetDayHasBeenSet() const
+{
+    return m_resetDayHasBeenSet;
+}
+
+string CreateAigcQuotaRequest::GetModelQuotaSwitch() const
+{
+    return m_modelQuotaSwitch;
+}
+
+void CreateAigcQuotaRequest::SetModelQuotaSwitch(const string& _modelQuotaSwitch)
+{
+    m_modelQuotaSwitch = _modelQuotaSwitch;
+    m_modelQuotaSwitchHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::ModelQuotaSwitchHasBeenSet() const
+{
+    return m_modelQuotaSwitchHasBeenSet;
+}
+
+vector<AigcModelQuota> CreateAigcQuotaRequest::GetModelQuotas() const
+{
+    return m_modelQuotas;
+}
+
+void CreateAigcQuotaRequest::SetModelQuotas(const vector<AigcModelQuota>& _modelQuotas)
+{
+    m_modelQuotas = _modelQuotas;
+    m_modelQuotasHasBeenSet = true;
+}
+
+bool CreateAigcQuotaRequest::ModelQuotasHasBeenSet() const
+{
+    return m_modelQuotasHasBeenSet;
+}
+
+

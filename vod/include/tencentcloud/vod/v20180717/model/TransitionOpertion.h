@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Transition operation
+                * Transition
                 */
                 class TransitionOpertion : public AbstractModel
                 {
@@ -47,199 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Transition type. Valid values:
-<ul>
-<li>Video image transition operation, which is used for transition with video image between two video segments:
-<ul>
-<li>ImageFadeInFadeOut: video image fade-in/fade-out.</li>
-<li>BowTieHorizontal: horizontal bow.</li>
-<li>BowTieVertical: vertical bow.</li>
-<li>ButterflyWaveScrawler: waggling.</li>
-<li>Cannabisleaf: maple leaf.</li>
-<li> Circle: curved circling.</li>
-<li>CircleCrop: circle gathering.</li>
-<li>Circleopen: elliptic gathering.</li>
-<li>Crosswarp: horizontal warping.</li>
-<li>Cube: cube.</li>
-<li>DoomScreenTransition: curtain.</li>
-<li>Doorway: doorway.</li>
-<li>Dreamy: wave.</li>
-<li>DreamyZoom: horizontal gathering.</li>
-<li>FilmBurn: evening glow.</li>
-<li>GlitchMemories: joggling.</li>
-<li>Heart: heart.</li>
-<li>InvertedPageCurl: page turning.</li>
-<li>Luma: corroding.</li>
-<li>Mosaic: grid.</li>
-<li>Pinwheel: pinwheel.</li>
-<li>PolarFunction: elliptic diffusing.</li>
-<li>PolkaDotsCurtain: curved diffusing.</li>
-<li>Radial: radar scan.</li>
-<li>RotateScaleFade: vertical rotating.</li>
-<li>Squeeze: vertical gathering.</li>
-<li>Swap: zooming in.</li>
-<li>Swirl: swirling.</li>
-<li>UndulatingBurnOutSwirl: water spreading.</li>
-<li>Windowblinds: blinds.</li>
-<li>WipeDown: collapsing down.</li>
-<li>WipeLeft: collapsing to the left.</li>
-<li>WipeRight: collapsing to the right.</li>
-<li>WipeUp: collapsing up.</li>
-<li>ZoomInCircles: ripples.</li>
-</ul>
-</li>
-<li>Audio transition operation, which is used for transition between two audio segments:
-<ul>
-<li>AudioFadeInFadeOut: audio fade-in/fade-out.</li>
-</ul>
-</li>
-</ul>
-                     * @return Type Transition type. Valid values:
-<ul>
-<li>Video image transition operation, which is used for transition with video image between two video segments:
-<ul>
-<li>ImageFadeInFadeOut: video image fade-in/fade-out.</li>
-<li>BowTieHorizontal: horizontal bow.</li>
-<li>BowTieVertical: vertical bow.</li>
-<li>ButterflyWaveScrawler: waggling.</li>
-<li>Cannabisleaf: maple leaf.</li>
-<li> Circle: curved circling.</li>
-<li>CircleCrop: circle gathering.</li>
-<li>Circleopen: elliptic gathering.</li>
-<li>Crosswarp: horizontal warping.</li>
-<li>Cube: cube.</li>
-<li>DoomScreenTransition: curtain.</li>
-<li>Doorway: doorway.</li>
-<li>Dreamy: wave.</li>
-<li>DreamyZoom: horizontal gathering.</li>
-<li>FilmBurn: evening glow.</li>
-<li>GlitchMemories: joggling.</li>
-<li>Heart: heart.</li>
-<li>InvertedPageCurl: page turning.</li>
-<li>Luma: corroding.</li>
-<li>Mosaic: grid.</li>
-<li>Pinwheel: pinwheel.</li>
-<li>PolarFunction: elliptic diffusing.</li>
-<li>PolkaDotsCurtain: curved diffusing.</li>
-<li>Radial: radar scan.</li>
-<li>RotateScaleFade: vertical rotating.</li>
-<li>Squeeze: vertical gathering.</li>
-<li>Swap: zooming in.</li>
-<li>Swirl: swirling.</li>
-<li>UndulatingBurnOutSwirl: water spreading.</li>
-<li>Windowblinds: blinds.</li>
-<li>WipeDown: collapsing down.</li>
-<li>WipeLeft: collapsing to the left.</li>
-<li>WipeRight: collapsing to the right.</li>
-<li>WipeUp: collapsing up.</li>
-<li>ZoomInCircles: ripples.</li>
-</ul>
-</li>
-<li>Audio transition operation, which is used for transition between two audio segments:
-<ul>
-<li>AudioFadeInFadeOut: audio fade-in/fade-out.</li>
-</ul>
-</li>
-</ul>
+                     * 获取<p>Transition type. Valid values:</p><ul><li>Image transition operations for transition processing between two video clip images:<ul><li>ImageFadeInFadeOut: image fade-in and fade-out. </li><li>BowTieHorizontal: horizontal bow. </li><li>BowTieVertical: vertical bow. </li><li>ButterflyWaveScrawler: shake. </li><li>Cannabisleaf: maple leaf. </li><li>Circle: arc retract and release. </li><li>CircleCrop: ring gather. </li><li>Circleopen: elliptic gather. </li><li>Crosswarp: horizontal warping. </li><li>Cube: cube. </li><li>DoomScreenTransition: curtain. </li><li>Doorway: porch. </li><li>Dreamy: wave. </li><li>DreamyZoom: horizontal gathering. </li><li>FilmBurn: fire cloud. </li><li>GlitchMemories: jitter. </li><li>Heart: heart. </li><li>InvertedPageCurl: page turning. </li><li>Luma: corrode. </li><li>Mosaic: nine-grid. </li><li>Pinwheel: windmill. </li><li>PolarFunction: elliptic diffusion. </li><li>PolkaDotsCurtain: arc diffusion. </li><li>Radial: radar scanning. </li><li>RotateScaleFade: up-down retraction. </li><li>Squeeze: vertical gathering. </li><li>Swap: zoom in and switch. </li><li>Swirl: spiral. </li><li>UndulatingBurnOutSwirl: water flow spread. </li><li>Windowblinds: window blind. </li><li>WipeDown: collapse downward. </li><li>WipeLeft: collapse left. </li><li>WipeRight: collapse right. </li><li>WipeUp: collapse upward. </li><li>ZoomInCircles: water ripple. </li></ul></li><li>Audio transition operations for transition processing between two audio clips:<ul><li>AudioFadeInFadeOut: sound fade-in and fade-out. </li></ul></li></ul>
+                     * @return Type <p>Transition type. Valid values:</p><ul><li>Image transition operations for transition processing between two video clip images:<ul><li>ImageFadeInFadeOut: image fade-in and fade-out. </li><li>BowTieHorizontal: horizontal bow. </li><li>BowTieVertical: vertical bow. </li><li>ButterflyWaveScrawler: shake. </li><li>Cannabisleaf: maple leaf. </li><li>Circle: arc retract and release. </li><li>CircleCrop: ring gather. </li><li>Circleopen: elliptic gather. </li><li>Crosswarp: horizontal warping. </li><li>Cube: cube. </li><li>DoomScreenTransition: curtain. </li><li>Doorway: porch. </li><li>Dreamy: wave. </li><li>DreamyZoom: horizontal gathering. </li><li>FilmBurn: fire cloud. </li><li>GlitchMemories: jitter. </li><li>Heart: heart. </li><li>InvertedPageCurl: page turning. </li><li>Luma: corrode. </li><li>Mosaic: nine-grid. </li><li>Pinwheel: windmill. </li><li>PolarFunction: elliptic diffusion. </li><li>PolkaDotsCurtain: arc diffusion. </li><li>Radial: radar scanning. </li><li>RotateScaleFade: up-down retraction. </li><li>Squeeze: vertical gathering. </li><li>Swap: zoom in and switch. </li><li>Swirl: spiral. </li><li>UndulatingBurnOutSwirl: water flow spread. </li><li>Windowblinds: window blind. </li><li>WipeDown: collapse downward. </li><li>WipeLeft: collapse left. </li><li>WipeRight: collapse right. </li><li>WipeUp: collapse upward. </li><li>ZoomInCircles: water ripple. </li></ul></li><li>Audio transition operations for transition processing between two audio clips:<ul><li>AudioFadeInFadeOut: sound fade-in and fade-out. </li></ul></li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Transition type. Valid values:
-<ul>
-<li>Video image transition operation, which is used for transition with video image between two video segments:
-<ul>
-<li>ImageFadeInFadeOut: video image fade-in/fade-out.</li>
-<li>BowTieHorizontal: horizontal bow.</li>
-<li>BowTieVertical: vertical bow.</li>
-<li>ButterflyWaveScrawler: waggling.</li>
-<li>Cannabisleaf: maple leaf.</li>
-<li> Circle: curved circling.</li>
-<li>CircleCrop: circle gathering.</li>
-<li>Circleopen: elliptic gathering.</li>
-<li>Crosswarp: horizontal warping.</li>
-<li>Cube: cube.</li>
-<li>DoomScreenTransition: curtain.</li>
-<li>Doorway: doorway.</li>
-<li>Dreamy: wave.</li>
-<li>DreamyZoom: horizontal gathering.</li>
-<li>FilmBurn: evening glow.</li>
-<li>GlitchMemories: joggling.</li>
-<li>Heart: heart.</li>
-<li>InvertedPageCurl: page turning.</li>
-<li>Luma: corroding.</li>
-<li>Mosaic: grid.</li>
-<li>Pinwheel: pinwheel.</li>
-<li>PolarFunction: elliptic diffusing.</li>
-<li>PolkaDotsCurtain: curved diffusing.</li>
-<li>Radial: radar scan.</li>
-<li>RotateScaleFade: vertical rotating.</li>
-<li>Squeeze: vertical gathering.</li>
-<li>Swap: zooming in.</li>
-<li>Swirl: swirling.</li>
-<li>UndulatingBurnOutSwirl: water spreading.</li>
-<li>Windowblinds: blinds.</li>
-<li>WipeDown: collapsing down.</li>
-<li>WipeLeft: collapsing to the left.</li>
-<li>WipeRight: collapsing to the right.</li>
-<li>WipeUp: collapsing up.</li>
-<li>ZoomInCircles: ripples.</li>
-</ul>
-</li>
-<li>Audio transition operation, which is used for transition between two audio segments:
-<ul>
-<li>AudioFadeInFadeOut: audio fade-in/fade-out.</li>
-</ul>
-</li>
-</ul>
-                     * @param _type Transition type. Valid values:
-<ul>
-<li>Video image transition operation, which is used for transition with video image between two video segments:
-<ul>
-<li>ImageFadeInFadeOut: video image fade-in/fade-out.</li>
-<li>BowTieHorizontal: horizontal bow.</li>
-<li>BowTieVertical: vertical bow.</li>
-<li>ButterflyWaveScrawler: waggling.</li>
-<li>Cannabisleaf: maple leaf.</li>
-<li> Circle: curved circling.</li>
-<li>CircleCrop: circle gathering.</li>
-<li>Circleopen: elliptic gathering.</li>
-<li>Crosswarp: horizontal warping.</li>
-<li>Cube: cube.</li>
-<li>DoomScreenTransition: curtain.</li>
-<li>Doorway: doorway.</li>
-<li>Dreamy: wave.</li>
-<li>DreamyZoom: horizontal gathering.</li>
-<li>FilmBurn: evening glow.</li>
-<li>GlitchMemories: joggling.</li>
-<li>Heart: heart.</li>
-<li>InvertedPageCurl: page turning.</li>
-<li>Luma: corroding.</li>
-<li>Mosaic: grid.</li>
-<li>Pinwheel: pinwheel.</li>
-<li>PolarFunction: elliptic diffusing.</li>
-<li>PolkaDotsCurtain: curved diffusing.</li>
-<li>Radial: radar scan.</li>
-<li>RotateScaleFade: vertical rotating.</li>
-<li>Squeeze: vertical gathering.</li>
-<li>Swap: zooming in.</li>
-<li>Swirl: swirling.</li>
-<li>UndulatingBurnOutSwirl: water spreading.</li>
-<li>Windowblinds: blinds.</li>
-<li>WipeDown: collapsing down.</li>
-<li>WipeLeft: collapsing to the left.</li>
-<li>WipeRight: collapsing to the right.</li>
-<li>WipeUp: collapsing up.</li>
-<li>ZoomInCircles: ripples.</li>
-</ul>
-</li>
-<li>Audio transition operation, which is used for transition between two audio segments:
-<ul>
-<li>AudioFadeInFadeOut: audio fade-in/fade-out.</li>
-</ul>
-</li>
-</ul>
+                     * 设置<p>Transition type. Valid values:</p><ul><li>Image transition operations for transition processing between two video clip images:<ul><li>ImageFadeInFadeOut: image fade-in and fade-out. </li><li>BowTieHorizontal: horizontal bow. </li><li>BowTieVertical: vertical bow. </li><li>ButterflyWaveScrawler: shake. </li><li>Cannabisleaf: maple leaf. </li><li>Circle: arc retract and release. </li><li>CircleCrop: ring gather. </li><li>Circleopen: elliptic gather. </li><li>Crosswarp: horizontal warping. </li><li>Cube: cube. </li><li>DoomScreenTransition: curtain. </li><li>Doorway: porch. </li><li>Dreamy: wave. </li><li>DreamyZoom: horizontal gathering. </li><li>FilmBurn: fire cloud. </li><li>GlitchMemories: jitter. </li><li>Heart: heart. </li><li>InvertedPageCurl: page turning. </li><li>Luma: corrode. </li><li>Mosaic: nine-grid. </li><li>Pinwheel: windmill. </li><li>PolarFunction: elliptic diffusion. </li><li>PolkaDotsCurtain: arc diffusion. </li><li>Radial: radar scanning. </li><li>RotateScaleFade: up-down retraction. </li><li>Squeeze: vertical gathering. </li><li>Swap: zoom in and switch. </li><li>Swirl: spiral. </li><li>UndulatingBurnOutSwirl: water flow spread. </li><li>Windowblinds: window blind. </li><li>WipeDown: collapse downward. </li><li>WipeLeft: collapse left. </li><li>WipeRight: collapse right. </li><li>WipeUp: collapse upward. </li><li>ZoomInCircles: water ripple. </li></ul></li><li>Audio transition operations for transition processing between two audio clips:<ul><li>AudioFadeInFadeOut: sound fade-in and fade-out. </li></ul></li></ul>
+                     * @param _type <p>Transition type. Valid values:</p><ul><li>Image transition operations for transition processing between two video clip images:<ul><li>ImageFadeInFadeOut: image fade-in and fade-out. </li><li>BowTieHorizontal: horizontal bow. </li><li>BowTieVertical: vertical bow. </li><li>ButterflyWaveScrawler: shake. </li><li>Cannabisleaf: maple leaf. </li><li>Circle: arc retract and release. </li><li>CircleCrop: ring gather. </li><li>Circleopen: elliptic gather. </li><li>Crosswarp: horizontal warping. </li><li>Cube: cube. </li><li>DoomScreenTransition: curtain. </li><li>Doorway: porch. </li><li>Dreamy: wave. </li><li>DreamyZoom: horizontal gathering. </li><li>FilmBurn: fire cloud. </li><li>GlitchMemories: jitter. </li><li>Heart: heart. </li><li>InvertedPageCurl: page turning. </li><li>Luma: corrode. </li><li>Mosaic: nine-grid. </li><li>Pinwheel: windmill. </li><li>PolarFunction: elliptic diffusion. </li><li>PolkaDotsCurtain: arc diffusion. </li><li>Radial: radar scanning. </li><li>RotateScaleFade: up-down retraction. </li><li>Squeeze: vertical gathering. </li><li>Swap: zoom in and switch. </li><li>Swirl: spiral. </li><li>UndulatingBurnOutSwirl: water flow spread. </li><li>Windowblinds: window blind. </li><li>WipeDown: collapse downward. </li><li>WipeLeft: collapse left. </li><li>WipeRight: collapse right. </li><li>WipeUp: collapse upward. </li><li>ZoomInCircles: water ripple. </li></ul></li><li>Audio transition operations for transition processing between two audio clips:<ul><li>AudioFadeInFadeOut: sound fade-in and fade-out. </li></ul></li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -254,53 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Transition type. Valid values:
-<ul>
-<li>Video image transition operation, which is used for transition with video image between two video segments:
-<ul>
-<li>ImageFadeInFadeOut: video image fade-in/fade-out.</li>
-<li>BowTieHorizontal: horizontal bow.</li>
-<li>BowTieVertical: vertical bow.</li>
-<li>ButterflyWaveScrawler: waggling.</li>
-<li>Cannabisleaf: maple leaf.</li>
-<li> Circle: curved circling.</li>
-<li>CircleCrop: circle gathering.</li>
-<li>Circleopen: elliptic gathering.</li>
-<li>Crosswarp: horizontal warping.</li>
-<li>Cube: cube.</li>
-<li>DoomScreenTransition: curtain.</li>
-<li>Doorway: doorway.</li>
-<li>Dreamy: wave.</li>
-<li>DreamyZoom: horizontal gathering.</li>
-<li>FilmBurn: evening glow.</li>
-<li>GlitchMemories: joggling.</li>
-<li>Heart: heart.</li>
-<li>InvertedPageCurl: page turning.</li>
-<li>Luma: corroding.</li>
-<li>Mosaic: grid.</li>
-<li>Pinwheel: pinwheel.</li>
-<li>PolarFunction: elliptic diffusing.</li>
-<li>PolkaDotsCurtain: curved diffusing.</li>
-<li>Radial: radar scan.</li>
-<li>RotateScaleFade: vertical rotating.</li>
-<li>Squeeze: vertical gathering.</li>
-<li>Swap: zooming in.</li>
-<li>Swirl: swirling.</li>
-<li>UndulatingBurnOutSwirl: water spreading.</li>
-<li>Windowblinds: blinds.</li>
-<li>WipeDown: collapsing down.</li>
-<li>WipeLeft: collapsing to the left.</li>
-<li>WipeRight: collapsing to the right.</li>
-<li>WipeUp: collapsing up.</li>
-<li>ZoomInCircles: ripples.</li>
-</ul>
-</li>
-<li>Audio transition operation, which is used for transition between two audio segments:
-<ul>
-<li>AudioFadeInFadeOut: audio fade-in/fade-out.</li>
-</ul>
-</li>
-</ul>
+                     * <p>Transition type. Valid values:</p><ul><li>Image transition operations for transition processing between two video clip images:<ul><li>ImageFadeInFadeOut: image fade-in and fade-out. </li><li>BowTieHorizontal: horizontal bow. </li><li>BowTieVertical: vertical bow. </li><li>ButterflyWaveScrawler: shake. </li><li>Cannabisleaf: maple leaf. </li><li>Circle: arc retract and release. </li><li>CircleCrop: ring gather. </li><li>Circleopen: elliptic gather. </li><li>Crosswarp: horizontal warping. </li><li>Cube: cube. </li><li>DoomScreenTransition: curtain. </li><li>Doorway: porch. </li><li>Dreamy: wave. </li><li>DreamyZoom: horizontal gathering. </li><li>FilmBurn: fire cloud. </li><li>GlitchMemories: jitter. </li><li>Heart: heart. </li><li>InvertedPageCurl: page turning. </li><li>Luma: corrode. </li><li>Mosaic: nine-grid. </li><li>Pinwheel: windmill. </li><li>PolarFunction: elliptic diffusion. </li><li>PolkaDotsCurtain: arc diffusion. </li><li>Radial: radar scanning. </li><li>RotateScaleFade: up-down retraction. </li><li>Squeeze: vertical gathering. </li><li>Swap: zoom in and switch. </li><li>Swirl: spiral. </li><li>UndulatingBurnOutSwirl: water flow spread. </li><li>Windowblinds: window blind. </li><li>WipeDown: collapse downward. </li><li>WipeLeft: collapse left. </li><li>WipeRight: collapse right. </li><li>WipeUp: collapse upward. </li><li>ZoomInCircles: water ripple. </li></ul></li><li>Audio transition operations for transition processing between two audio clips:<ul><li>AudioFadeInFadeOut: sound fade-in and fade-out. </li></ul></li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

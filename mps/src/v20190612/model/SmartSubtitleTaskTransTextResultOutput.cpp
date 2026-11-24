@@ -22,7 +22,10 @@ using namespace std;
 
 SmartSubtitleTaskTransTextResultOutput::SmartSubtitleTaskTransTextResultOutput() :
     m_segmentSetHasBeenSet(false),
-    m_subtitlePathHasBeenSet(false)
+    m_subtitlePathHasBeenSet(false),
+    m_outputStorageHasBeenSet(false),
+    m_pathHasBeenSet(false),
+    m_subtitleResultsHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,53 @@ CoreInternalOutcome SmartSubtitleTaskTransTextResultOutput::Deserialize(const ra
         m_subtitlePathHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
+    {
+        if (!value["OutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskTransTextResultOutput.OutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskTransTextResultOutput.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleResults") && !value["SubtitleResults"].IsNull())
+    {
+        if (!value["SubtitleResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskTransTextResultOutput.SubtitleResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubtitleResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubtitleTransResultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subtitleResults.push_back(item);
+        }
+        m_subtitleResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +139,38 @@ void SmartSubtitleTaskTransTextResultOutput::ToJsonObject(rapidjson::Value &valu
         string key = "SubtitlePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subtitleResults.begin(); itr != m_subtitleResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -124,5 +206,53 @@ void SmartSubtitleTaskTransTextResultOutput::SetSubtitlePath(const string& _subt
 bool SmartSubtitleTaskTransTextResultOutput::SubtitlePathHasBeenSet() const
 {
     return m_subtitlePathHasBeenSet;
+}
+
+TaskOutputStorage SmartSubtitleTaskTransTextResultOutput::GetOutputStorage() const
+{
+    return m_outputStorage;
+}
+
+void SmartSubtitleTaskTransTextResultOutput::SetOutputStorage(const TaskOutputStorage& _outputStorage)
+{
+    m_outputStorage = _outputStorage;
+    m_outputStorageHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskTransTextResultOutput::OutputStorageHasBeenSet() const
+{
+    return m_outputStorageHasBeenSet;
+}
+
+string SmartSubtitleTaskTransTextResultOutput::GetPath() const
+{
+    return m_path;
+}
+
+void SmartSubtitleTaskTransTextResultOutput::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskTransTextResultOutput::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
+}
+
+vector<SubtitleTransResultItem> SmartSubtitleTaskTransTextResultOutput::GetSubtitleResults() const
+{
+    return m_subtitleResults;
+}
+
+void SmartSubtitleTaskTransTextResultOutput::SetSubtitleResults(const vector<SubtitleTransResultItem>& _subtitleResults)
+{
+    m_subtitleResults = _subtitleResults;
+    m_subtitleResultsHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskTransTextResultOutput::SubtitleResultsHasBeenSet() const
+{
+    return m_subtitleResultsHasBeenSet;
 }
 

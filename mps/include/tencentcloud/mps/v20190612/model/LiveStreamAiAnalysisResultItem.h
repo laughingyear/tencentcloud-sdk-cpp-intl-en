@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SegmentRecognitionItem.h>
+#include <tencentcloud/mps/v20190612/model/MediaAiAnalysisHighlightItem.h>
+#include <tencentcloud/mps/v20190612/model/LiveAiAnalysisDescriptionItem.h>
 
 
 namespace TencentCloud
@@ -36,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Live stream AI analysis result.
                 */
                 class LiveStreamAiAnalysisResultItem : public AbstractModel
                 {
@@ -48,15 +50,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return Type 
+                     * 获取Result type. Valid values:
+<li>SegmentRecognition: video splitting.</li>
+<li>Highlight: highlight.</li>
+<li>Description: summary.</li>
+                     * @return Type Result type. Valid values:
+<li>SegmentRecognition: video splitting.</li>
+<li>Highlight: highlight.</li>
+<li>Description: summary.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置
-                     * @param _type 
+                     * 设置Result type. Valid values:
+<li>SegmentRecognition: video splitting.</li>
+<li>Highlight: highlight.</li>
+<li>Description: summary.</li>
+                     * @param _type Result type. Valid values:
+<li>SegmentRecognition: video splitting.</li>
+<li>Highlight: highlight.</li>
+<li>Description: summary.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +83,19 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SegmentResultSet 
+                     * 获取Split result. When `Type` is
+Valid for SegmentRecognition.
+                     * @return SegmentResultSet Split result. When `Type` is
+Valid for SegmentRecognition.
                      * 
                      */
                     std::vector<SegmentRecognitionItem> GetSegmentResultSet() const;
 
                     /**
-                     * 设置
-                     * @param _segmentResultSet 
+                     * 设置Split result. When `Type` is
+Valid for SegmentRecognition.
+                     * @param _segmentResultSet Split result. When `Type` is
+Valid for SegmentRecognition.
                      * 
                      */
                     void SetSegmentResultSet(const std::vector<SegmentRecognitionItem>& _segmentResultSet);
@@ -89,19 +107,77 @@ namespace TencentCloud
                      */
                     bool SegmentResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取Highlight result. This field is valid when Type is set to Highlight.
+                     * @return HighlightResultSet Highlight result. This field is valid when Type is set to Highlight.
+                     * 
+                     */
+                    std::vector<MediaAiAnalysisHighlightItem> GetHighlightResultSet() const;
+
+                    /**
+                     * 设置Highlight result. This field is valid when Type is set to Highlight.
+                     * @param _highlightResultSet Highlight result. This field is valid when Type is set to Highlight.
+                     * 
+                     */
+                    void SetHighlightResultSet(const std::vector<MediaAiAnalysisHighlightItem>& _highlightResultSet);
+
+                    /**
+                     * 判断参数 HighlightResultSet 是否已赋值
+                     * @return HighlightResultSet 是否已赋值
+                     * 
+                     */
+                    bool HighlightResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取Summary result. It is valid when Type is Description.
+                     * @return DescriptionResult Summary result. It is valid when Type is Description.
+                     * 
+                     */
+                    LiveAiAnalysisDescriptionItem GetDescriptionResult() const;
+
+                    /**
+                     * 设置Summary result. It is valid when Type is Description.
+                     * @param _descriptionResult Summary result. It is valid when Type is Description.
+                     * 
+                     */
+                    void SetDescriptionResult(const LiveAiAnalysisDescriptionItem& _descriptionResult);
+
+                    /**
+                     * 判断参数 DescriptionResult 是否已赋值
+                     * @return DescriptionResult 是否已赋值
+                     * 
+                     */
+                    bool DescriptionResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 
+                     * Result type. Valid values:
+<li>SegmentRecognition: video splitting.</li>
+<li>Highlight: highlight.</li>
+<li>Description: summary.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 
+                     * Split result. When `Type` is
+Valid for SegmentRecognition.
                      */
                     std::vector<SegmentRecognitionItem> m_segmentResultSet;
                     bool m_segmentResultSetHasBeenSet;
+
+                    /**
+                     * Highlight result. This field is valid when Type is set to Highlight.
+                     */
+                    std::vector<MediaAiAnalysisHighlightItem> m_highlightResultSet;
+                    bool m_highlightResultSetHasBeenSet;
+
+                    /**
+                     * Summary result. It is valid when Type is Description.
+                     */
+                    LiveAiAnalysisDescriptionItem m_descriptionResult;
+                    bool m_descriptionResultHasBeenSet;
 
                 };
             }

@@ -32,13 +32,16 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_aiQualityControlTaskHasBeenSet(false),
+    m_smartSubtitlesTaskHasBeenSet(false),
+    m_smartEraseTaskHasBeenSet(false),
+    m_aIDubbingTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_smartSubtitlesTaskHasBeenSet(false),
+    m_activitiesHasBeenSet(false),
     m_skipMateDataHasBeenSet(false)
 {
 }
@@ -129,6 +132,33 @@ string ProcessMediaRequest::ToJsonString() const
         m_aiQualityControlTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_smartSubtitlesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitlesTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartEraseTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aIDubbingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIDubbingTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIDubbingTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_taskNotifyConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -178,13 +208,19 @@ string ProcessMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_smartSubtitlesTaskHasBeenSet)
+    if (m_activitiesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SmartSubtitlesTask";
+        string key = "Activities";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_smartSubtitlesTask.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_activities.begin(); itr != m_activities.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_skipMateDataHasBeenSet)
@@ -347,6 +383,54 @@ bool ProcessMediaRequest::AiQualityControlTaskHasBeenSet() const
     return m_aiQualityControlTaskHasBeenSet;
 }
 
+SmartSubtitlesTaskInput ProcessMediaRequest::GetSmartSubtitlesTask() const
+{
+    return m_smartSubtitlesTask;
+}
+
+void ProcessMediaRequest::SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask)
+{
+    m_smartSubtitlesTask = _smartSubtitlesTask;
+    m_smartSubtitlesTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::SmartSubtitlesTaskHasBeenSet() const
+{
+    return m_smartSubtitlesTaskHasBeenSet;
+}
+
+SmartEraseTaskInput ProcessMediaRequest::GetSmartEraseTask() const
+{
+    return m_smartEraseTask;
+}
+
+void ProcessMediaRequest::SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask)
+{
+    m_smartEraseTask = _smartEraseTask;
+    m_smartEraseTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::SmartEraseTaskHasBeenSet() const
+{
+    return m_smartEraseTaskHasBeenSet;
+}
+
+AIDubbingTaskInput ProcessMediaRequest::GetAIDubbingTask() const
+{
+    return m_aIDubbingTask;
+}
+
+void ProcessMediaRequest::SetAIDubbingTask(const AIDubbingTaskInput& _aIDubbingTask)
+{
+    m_aIDubbingTask = _aIDubbingTask;
+    m_aIDubbingTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AIDubbingTaskHasBeenSet() const
+{
+    return m_aIDubbingTaskHasBeenSet;
+}
+
 TaskNotifyConfig ProcessMediaRequest::GetTaskNotifyConfig() const
 {
     return m_taskNotifyConfig;
@@ -443,20 +527,20 @@ bool ProcessMediaRequest::ResourceIdHasBeenSet() const
     return m_resourceIdHasBeenSet;
 }
 
-SmartSubtitlesTaskInput ProcessMediaRequest::GetSmartSubtitlesTask() const
+vector<Activity> ProcessMediaRequest::GetActivities() const
 {
-    return m_smartSubtitlesTask;
+    return m_activities;
 }
 
-void ProcessMediaRequest::SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask)
+void ProcessMediaRequest::SetActivities(const vector<Activity>& _activities)
 {
-    m_smartSubtitlesTask = _smartSubtitlesTask;
-    m_smartSubtitlesTaskHasBeenSet = true;
+    m_activities = _activities;
+    m_activitiesHasBeenSet = true;
 }
 
-bool ProcessMediaRequest::SmartSubtitlesTaskHasBeenSet() const
+bool ProcessMediaRequest::ActivitiesHasBeenSet() const
 {
-    return m_smartSubtitlesTaskHasBeenSet;
+    return m_activitiesHasBeenSet;
 }
 
 int64_t ProcessMediaRequest::GetSkipMateData() const

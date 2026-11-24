@@ -1,0 +1,141 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Vod
+    {
+        namespace V20180717
+        {
+            namespace Model
+            {
+                /**
+                * Comprehensive enhancement control
+                */
+                class ImageQualityEnhanceInfo : public AbstractModel
+                {
+                public:
+                    ImageQualityEnhanceInfo();
+                    ~ImageQualityEnhanceInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取Comprehensive enhancement control switch. Valid values:
+<li>ON: enable comprehensive enhancement;</li>
+<li>OFF: disables comprehensive enhancement.</li>
+                     * @return Switch Comprehensive enhancement control switch. Valid values:
+<li>ON: enable comprehensive enhancement;</li>
+<li>OFF: disables comprehensive enhancement.</li>
+                     * 
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置Comprehensive enhancement control switch. Valid values:
+<li>ON: enable comprehensive enhancement;</li>
+<li>OFF: disables comprehensive enhancement.</li>
+                     * @param _switch Comprehensive enhancement control switch. Valid values:
+<li>ON: enable comprehensive enhancement;</li>
+<li>OFF: disables comprehensive enhancement.</li>
+                     * 
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     * 
+                     */
+                    bool SwitchHasBeenSet() const;
+
+                    /**
+                     * 获取Comprehensive enhancement type. Valid only when the comprehensive enhancement control switch is ON. Available values:
+<li>weak: light comprehensive enhancement;</li>
+<li>normal: Normal comprehensive enhancement;</li>
+<li>strong: Strong comprehensive enhancement.</li>
+Default value: weak.
+                     * @return Type Comprehensive enhancement type. Valid only when the comprehensive enhancement control switch is ON. Available values:
+<li>weak: light comprehensive enhancement;</li>
+<li>normal: Normal comprehensive enhancement;</li>
+<li>strong: Strong comprehensive enhancement.</li>
+Default value: weak.
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置Comprehensive enhancement type. Valid only when the comprehensive enhancement control switch is ON. Available values:
+<li>weak: light comprehensive enhancement;</li>
+<li>normal: Normal comprehensive enhancement;</li>
+<li>strong: Strong comprehensive enhancement.</li>
+Default value: weak.
+                     * @param _type Comprehensive enhancement type. Valid only when the comprehensive enhancement control switch is ON. Available values:
+<li>weak: light comprehensive enhancement;</li>
+<li>normal: Normal comprehensive enhancement;</li>
+<li>strong: Strong comprehensive enhancement.</li>
+Default value: weak.
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * Comprehensive enhancement control switch. Valid values:
+<li>ON: enable comprehensive enhancement;</li>
+<li>OFF: disables comprehensive enhancement.</li>
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
+
+                    /**
+                     * Comprehensive enhancement type. Valid only when the comprehensive enhancement control switch is ON. Available values:
+<li>weak: light comprehensive enhancement;</li>
+<li>normal: Normal comprehensive enhancement;</li>
+<li>strong: Strong comprehensive enhancement.</li>
+Default value: weak.
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_

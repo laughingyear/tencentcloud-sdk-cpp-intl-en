@@ -87,38 +87,46 @@ namespace TencentCloud
 
                     /**
                      * 获取Metric list. Valid values:
-<Li>l4Flow_connections: number of concurrent connections;</li>
-<Li>l4Flow_flux: total traffic;</li>
-<Li>l4Flow_inFlux: inbound traffic;</li>
-<Li>l4Flow_outFlux: outbound traffic.</li>
-<Li>l4Flow_inBandwidth: inbound peak bandwidth.</li>
-<Li>l4Flow_outBandwidth: outbound peak bandwidth.</li>
+<ul><li>**l4Flow_flux**: Total client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inFlux**: Inbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_outFlux**: Outbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inBandwidth**: Peak inbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_outBandwidth**: Peak outbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_connections**: Concurrent client connections. Unit: count. Value type: Integer.</li>
+<li>**l4Flow_newConnectionsRate**: New connection rate. Unit: connections/second. Value type: Float. Rounded to two decimal places.</li></ul>**Note**:<ul><li>Metrics with an <code>Integer</code> value type return time-series data via <code>Data.N.TypeValue</code>;</li>
+<li>Metrics with a <code>Float</code> value type return time-series data via <code>Data.N.FloatTypeValue</code>.</li></ul>
                      * @return MetricNames Metric list. Valid values:
-<Li>l4Flow_connections: number of concurrent connections;</li>
-<Li>l4Flow_flux: total traffic;</li>
-<Li>l4Flow_inFlux: inbound traffic;</li>
-<Li>l4Flow_outFlux: outbound traffic.</li>
-<Li>l4Flow_inBandwidth: inbound peak bandwidth.</li>
-<Li>l4Flow_outBandwidth: outbound peak bandwidth.</li>
+<ul><li>**l4Flow_flux**: Total client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inFlux**: Inbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_outFlux**: Outbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inBandwidth**: Peak inbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_outBandwidth**: Peak outbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_connections**: Concurrent client connections. Unit: count. Value type: Integer.</li>
+<li>**l4Flow_newConnectionsRate**: New connection rate. Unit: connections/second. Value type: Float. Rounded to two decimal places.</li></ul>**Note**:<ul><li>Metrics with an <code>Integer</code> value type return time-series data via <code>Data.N.TypeValue</code>;</li>
+<li>Metrics with a <code>Float</code> value type return time-series data via <code>Data.N.FloatTypeValue</code>.</li></ul>
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置Metric list. Valid values:
-<Li>l4Flow_connections: number of concurrent connections;</li>
-<Li>l4Flow_flux: total traffic;</li>
-<Li>l4Flow_inFlux: inbound traffic;</li>
-<Li>l4Flow_outFlux: outbound traffic.</li>
-<Li>l4Flow_inBandwidth: inbound peak bandwidth.</li>
-<Li>l4Flow_outBandwidth: outbound peak bandwidth.</li>
+<ul><li>**l4Flow_flux**: Total client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inFlux**: Inbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_outFlux**: Outbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inBandwidth**: Peak inbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_outBandwidth**: Peak outbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_connections**: Concurrent client connections. Unit: count. Value type: Integer.</li>
+<li>**l4Flow_newConnectionsRate**: New connection rate. Unit: connections/second. Value type: Float. Rounded to two decimal places.</li></ul>**Note**:<ul><li>Metrics with an <code>Integer</code> value type return time-series data via <code>Data.N.TypeValue</code>;</li>
+<li>Metrics with a <code>Float</code> value type return time-series data via <code>Data.N.FloatTypeValue</code>.</li></ul>
                      * @param _metricNames Metric list. Valid values:
-<Li>l4Flow_connections: number of concurrent connections;</li>
-<Li>l4Flow_flux: total traffic;</li>
-<Li>l4Flow_inFlux: inbound traffic;</li>
-<Li>l4Flow_outFlux: outbound traffic.</li>
-<Li>l4Flow_inBandwidth: inbound peak bandwidth.</li>
-<Li>l4Flow_outBandwidth: outbound peak bandwidth.</li>
+<ul><li>**l4Flow_flux**: Total client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inFlux**: Inbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_outFlux**: Outbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inBandwidth**: Peak inbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_outBandwidth**: Peak outbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_connections**: Concurrent client connections. Unit: count. Value type: Integer.</li>
+<li>**l4Flow_newConnectionsRate**: New connection rate. Unit: connections/second. Value type: Float. Rounded to two decimal places.</li></ul>**Note**:<ul><li>Metrics with an <code>Integer</code> value type return time-series data via <code>Data.N.TypeValue</code>;</li>
+<li>Metrics with a <code>Float</code> value type return time-series data via <code>Data.N.FloatTypeValue</code>.</li></ul>
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -131,15 +139,19 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
-                     * @return ZoneIds Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * 获取Site ID. This parameter will change from selectable to required after May 30, 2024. For details, see the announcement: [Tencent Cloud EdgeOne: Tencent Cloud API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1).
+Import up to 100 zone-ids. To query all site data under the Tencent Cloud root account, use `*` as a replacement. Querying account-level data requires permission for all site resources of this API.
+                     * @return ZoneIds Site ID. This parameter will change from selectable to required after May 30, 2024. For details, see the announcement: [Tencent Cloud EdgeOne: Tencent Cloud API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1).
+Import up to 100 zone-ids. To query all site data under the Tencent Cloud root account, use `*` as a replacement. Querying account-level data requires permission for all site resources of this API.
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
-                     * @param _zoneIds Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * 设置Site ID. This parameter will change from selectable to required after May 30, 2024. For details, see the announcement: [Tencent Cloud EdgeOne: Tencent Cloud API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1).
+Import up to 100 zone-ids. To query all site data under the Tencent Cloud root account, use `*` as a replacement. Querying account-level data requires permission for all site resources of this API.
+                     * @param _zoneIds Site ID. This parameter will change from selectable to required after May 30, 2024. For details, see the announcement: [Tencent Cloud EdgeOne: Tencent Cloud API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1).
+Import up to 100 zone-ids. To query all site data under the Tencent Cloud root account, use `*` as a replacement. Querying account-level data requires permission for all site resources of this API.
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -173,35 +185,19 @@ namespace TencentCloud
                     bool ProxyIdsHasBeenSet() const;
 
                     /**
-                     * 获取The query granularity. Values:
-<li>`min`: 1 minute;</li>
-<li>`5min`: 5 minutes;</li>
-<li>`hour`: 1 hour;</li>
-<li>`day`: 1 day.</li>If this field is not specified, the granularity will be determined based on the query period. <br>Period <= 1 hour: `min`; <br>1 hour < period <= 2 days: `5min`; <br>2 days < period <= 7 days: `hour`; <br>Period > 7 days: `day`.
-
-                     * @return Interval The query granularity. Values:
-<li>`min`: 1 minute;</li>
-<li>`5min`: 5 minutes;</li>
-<li>`hour`: 1 hour;</li>
-<li>`day`: 1 day.</li>If this field is not specified, the granularity will be determined based on the query period. <br>Period <= 1 hour: `min`; <br>1 hour < period <= 2 days: `5min`; <br>2 days < period <= 7 days: `hour`; <br>Period > 7 days: `day`.
-
+                     * 获取Time granularity of the query. Valid values:
+<ul><li>**min**: 1 minute;</li><Li>**5min**: 5 minutes;</li><Li>**hour**: 1 hour;</li><Li>**day**: 1 day.</li></ul>If this parameter is not input, the granularity will be automatically inferred based on the interval between the start time and end time. Specifically, data will be queried with a granularity of <code>min</code>, <code>5min</code>, <code>hour</code>, and <code>day</code> respectively when the period is no more than 1 hour, no more than 2 days, no more than 7 days, and over 7 days.
+                     * @return Interval Time granularity of the query. Valid values:
+<ul><li>**min**: 1 minute;</li><Li>**5min**: 5 minutes;</li><Li>**hour**: 1 hour;</li><Li>**day**: 1 day.</li></ul>If this parameter is not input, the granularity will be automatically inferred based on the interval between the start time and end time. Specifically, data will be queried with a granularity of <code>min</code>, <code>5min</code>, <code>hour</code>, and <code>day</code> respectively when the period is no more than 1 hour, no more than 2 days, no more than 7 days, and over 7 days.
                      * 
                      */
                     std::string GetInterval() const;
 
                     /**
-                     * 设置The query granularity. Values:
-<li>`min`: 1 minute;</li>
-<li>`5min`: 5 minutes;</li>
-<li>`hour`: 1 hour;</li>
-<li>`day`: 1 day.</li>If this field is not specified, the granularity will be determined based on the query period. <br>Period <= 1 hour: `min`; <br>1 hour < period <= 2 days: `5min`; <br>2 days < period <= 7 days: `hour`; <br>Period > 7 days: `day`.
-
-                     * @param _interval The query granularity. Values:
-<li>`min`: 1 minute;</li>
-<li>`5min`: 5 minutes;</li>
-<li>`hour`: 1 hour;</li>
-<li>`day`: 1 day.</li>If this field is not specified, the granularity will be determined based on the query period. <br>Period <= 1 hour: `min`; <br>1 hour < period <= 2 days: `5min`; <br>2 days < period <= 7 days: `hour`; <br>Period > 7 days: `day`.
-
+                     * 设置Time granularity of the query. Valid values:
+<ul><li>**min**: 1 minute;</li><Li>**5min**: 5 minutes;</li><Li>**hour**: 1 hour;</li><Li>**day**: 1 day.</li></ul>If this parameter is not input, the granularity will be automatically inferred based on the interval between the start time and end time. Specifically, data will be queried with a granularity of <code>min</code>, <code>5min</code>, <code>hour</code>, and <code>day</code> respectively when the period is no more than 1 hour, no more than 2 days, no more than 7 days, and over 7 days.
+                     * @param _interval Time granularity of the query. Valid values:
+<ul><li>**min**: 1 minute;</li><Li>**5min**: 5 minutes;</li><Li>**hour**: 1 hour;</li><Li>**day**: 1 day.</li></ul>If this parameter is not input, the granularity will be automatically inferred based on the interval between the start time and end time. Specifically, data will be queried with a granularity of <code>min</code>, <code>5min</code>, <code>hour</code>, and <code>day</code> respectively when the period is no more than 1 hour, no more than 2 days, no more than 7 days, and over 7 days.
                      * 
                      */
                     void SetInterval(const std::string& _interval);
@@ -214,23 +210,23 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取Filter criteria. The detailed key values of filter criteria are as follows:
-<li>ruleId: filter by forwarding rule ID.</li>
-<li>proxyId: filter by L4 proxy instance ID.</li>
-                     * @return Filters Filter criteria. The detailed key values of filter criteria are as follows:
-<li>ruleId: filter by forwarding rule ID.</li>
-<li>proxyId: filter by L4 proxy instance ID.</li>
+                     * 获取Filter criteria. The detailed key values of filter criteria are as follows:.
+<ul><li>**ruleId**: filter by forwarding rule ID.</li>
+<li>**proxyId**: filter by L4 proxy instance ID.</li></ul>
+                     * @return Filters Filter criteria. The detailed key values of filter criteria are as follows:.
+<ul><li>**ruleId**: filter by forwarding rule ID.</li>
+<li>**proxyId**: filter by L4 proxy instance ID.</li></ul>
                      * 
                      */
                     std::vector<QueryCondition> GetFilters() const;
 
                     /**
-                     * 设置Filter criteria. The detailed key values of filter criteria are as follows:
-<li>ruleId: filter by forwarding rule ID.</li>
-<li>proxyId: filter by L4 proxy instance ID.</li>
-                     * @param _filters Filter criteria. The detailed key values of filter criteria are as follows:
-<li>ruleId: filter by forwarding rule ID.</li>
-<li>proxyId: filter by L4 proxy instance ID.</li>
+                     * 设置Filter criteria. The detailed key values of filter criteria are as follows:.
+<ul><li>**ruleId**: filter by forwarding rule ID.</li>
+<li>**proxyId**: filter by L4 proxy instance ID.</li></ul>
+                     * @param _filters Filter criteria. The detailed key values of filter criteria are as follows:.
+<ul><li>**ruleId**: filter by forwarding rule ID.</li>
+<li>**proxyId**: filter by L4 proxy instance ID.</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<QueryCondition>& _filters);
@@ -245,21 +241,21 @@ namespace TencentCloud
                     /**
                      * 获取Data ownership region. This parameter is deprecated. Please filter data by client region in Filters.country.
                      * @return Area Data ownership region. This parameter is deprecated. Please filter data by client region in Filters.country.
-                     * 
+                     * @deprecated
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置Data ownership region. This parameter is deprecated. Please filter data by client region in Filters.country.
                      * @param _area Data ownership region. This parameter is deprecated. Please filter data by client region in Filters.country.
-                     * 
+                     * @deprecated
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AreaHasBeenSet() const;
 
@@ -279,18 +275,21 @@ namespace TencentCloud
 
                     /**
                      * Metric list. Valid values:
-<Li>l4Flow_connections: number of concurrent connections;</li>
-<Li>l4Flow_flux: total traffic;</li>
-<Li>l4Flow_inFlux: inbound traffic;</li>
-<Li>l4Flow_outFlux: outbound traffic.</li>
-<Li>l4Flow_inBandwidth: inbound peak bandwidth.</li>
-<Li>l4Flow_outBandwidth: outbound peak bandwidth.</li>
+<ul><li>**l4Flow_flux**: Total client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inFlux**: Inbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_outFlux**: Outbound client traffic. Unit: Byte. Value type: Integer.</li>
+<li>**l4Flow_inBandwidth**: Peak inbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_outBandwidth**: Peak outbound client bandwidth. Unit: bps. Value type: Integer.</li>
+<li>**l4Flow_connections**: Concurrent client connections. Unit: count. Value type: Integer.</li>
+<li>**l4Flow_newConnectionsRate**: New connection rate. Unit: connections/second. Value type: Float. Rounded to two decimal places.</li></ul>**Note**:<ul><li>Metrics with an <code>Integer</code> value type return time-series data via <code>Data.N.TypeValue</code>;</li>
+<li>Metrics with a <code>Float</code> value type return time-series data via <code>Data.N.FloatTypeValue</code>.</li></ul>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * Site ID. This parameter will change from selectable to required after May 30, 2024. For details, see the announcement: [Tencent Cloud EdgeOne: Tencent Cloud API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1).
+Import up to 100 zone-ids. To query all site data under the Tencent Cloud root account, use `*` as a replacement. Querying account-level data requires permission for all site resources of this API.
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -302,20 +301,16 @@ namespace TencentCloud
                     bool m_proxyIdsHasBeenSet;
 
                     /**
-                     * The query granularity. Values:
-<li>`min`: 1 minute;</li>
-<li>`5min`: 5 minutes;</li>
-<li>`hour`: 1 hour;</li>
-<li>`day`: 1 day.</li>If this field is not specified, the granularity will be determined based on the query period. <br>Period <= 1 hour: `min`; <br>1 hour < period <= 2 days: `5min`; <br>2 days < period <= 7 days: `hour`; <br>Period > 7 days: `day`.
-
+                     * Time granularity of the query. Valid values:
+<ul><li>**min**: 1 minute;</li><Li>**5min**: 5 minutes;</li><Li>**hour**: 1 hour;</li><Li>**day**: 1 day.</li></ul>If this parameter is not input, the granularity will be automatically inferred based on the interval between the start time and end time. Specifically, data will be queried with a granularity of <code>min</code>, <code>5min</code>, <code>hour</code>, and <code>day</code> respectively when the period is no more than 1 hour, no more than 2 days, no more than 7 days, and over 7 days.
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * Filter criteria. The detailed key values of filter criteria are as follows:
-<li>ruleId: filter by forwarding rule ID.</li>
-<li>proxyId: filter by L4 proxy instance ID.</li>
+                     * Filter criteria. The detailed key values of filter criteria are as follows:.
+<ul><li>**ruleId**: filter by forwarding rule ID.</li>
+<li>**proxyId**: filter by L4 proxy instance ID.</li></ul>
                      */
                     std::vector<QueryCondition> m_filters;
                     bool m_filtersHasBeenSet;

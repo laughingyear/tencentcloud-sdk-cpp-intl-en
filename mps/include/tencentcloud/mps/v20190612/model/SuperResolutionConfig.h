@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Super resolution configuration.
+                * Super-resolution configuration.
                 */
                 class SuperResolutionConfig : public AbstractModel
                 {
@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @return Switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @return Switch Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @param _switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @param _switch Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
@@ -80,31 +80,27 @@ Default value: ON.
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The strength. Valid values:
-<li>lq: For low-resolution videos with obvious noise</li>
-<li>hq: For high-resolution videos</li>
+                     * 获取Type. Valid values:
+<li>lq: super resolution for low resolution videos with considerable noise;</li>
+<li>hq: For high resolution video super-resolution.</li>
 Default value: lq.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Type The strength. Valid values:
-<li>lq: For low-resolution videos with obvious noise</li>
-<li>hq: For high-resolution videos</li>
+                     * @return Type Type. Valid values:
+<li>lq: super resolution for low resolution videos with considerable noise;</li>
+<li>hq: For high resolution video super-resolution.</li>
 Default value: lq.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The strength. Valid values:
-<li>lq: For low-resolution videos with obvious noise</li>
-<li>hq: For high-resolution videos</li>
+                     * 设置Type. Valid values:
+<li>lq: super resolution for low resolution videos with considerable noise;</li>
+<li>hq: For high resolution video super-resolution.</li>
 Default value: lq.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _type The strength. Valid values:
-<li>lq: For low-resolution videos with obvious noise</li>
-<li>hq: For high-resolution videos</li>
+                     * @param _type Type. Valid values:
+<li>lq: super resolution for low resolution videos with considerable noise;</li>
+<li>hq: For high resolution video super-resolution.</li>
 Default value: lq.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -117,27 +113,23 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The ratio of the target resolution to the original resolution. Valid values:
-<li>2</li>
+                     * 获取Upscaling multiple. Available values:
+<li>2: currently only support 2x super resolution.</li>
 Default value: 2.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Size The ratio of the target resolution to the original resolution. Valid values:
-<li>2</li>
+                     * @return Size Upscaling multiple. Available values:
+<li>2: currently only support 2x super resolution.</li>
 Default value: 2.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置The ratio of the target resolution to the original resolution. Valid values:
-<li>2</li>
+                     * 设置Upscaling multiple. Available values:
+<li>2: currently only support 2x super resolution.</li>
 Default value: 2.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _size The ratio of the target resolution to the original resolution. Valid values:
-<li>2</li>
+                     * @param _size Upscaling multiple. Available values:
+<li>2: currently only support 2x super resolution.</li>
 Default value: 2.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -152,29 +144,27 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The strength. Valid values:
-<li>lq: For low-resolution videos with obvious noise</li>
-<li>hq: For high-resolution videos</li>
+                     * Type. Valid values:
+<li>lq: super resolution for low resolution videos with considerable noise;</li>
+<li>hq: For high resolution video super-resolution.</li>
 Default value: lq.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The ratio of the target resolution to the original resolution. Valid values:
-<li>2</li>
+                     * Upscaling multiple. Available values:
+<li>2: currently only support 2x super resolution.</li>
 Default value: 2.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;

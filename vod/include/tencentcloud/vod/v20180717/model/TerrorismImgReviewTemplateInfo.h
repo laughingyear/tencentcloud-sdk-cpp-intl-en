@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of terrorism content in images
+                * Task control parameter for image recognition involving unsafe content
                 */
                 class TerrorismImgReviewTemplateInfo : public AbstractModel
                 {
@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable recognition of terrorism content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @return Switch Whether to enable recognition of terrorism content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取<p>Task switch for image recognition involving unsafe information. Available values:</p><li>ON: Turn on the task for image recognition involving unsafe information;</li><li>OFF: Turn off the task for image recognition involving unsafe information.</li>
+                     * @return Switch <p>Task switch for image recognition involving unsafe information. Available values:</p><li>ON: Turn on the task for image recognition involving unsafe information;</li><li>OFF: Turn off the task for image recognition involving unsafe information.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable recognition of terrorism content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @param _switch Whether to enable recognition of terrorism content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置<p>Task switch for image recognition involving unsafe information. Available values:</p><li>ON: Turn on the task for image recognition involving unsafe information;</li><li>OFF: Turn off the task for image recognition involving unsafe information.</li>
+                     * @param _switch <p>Task switch for image recognition involving unsafe information. Available values:</p><li>ON: Turn on the task for image recognition involving unsafe information;</li><li>OFF: Turn off the task for image recognition involving unsafe information.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,51 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Filter labels for recognition of terrorism content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`guns`: weapons and guns</li>
-<li>`crowd`: crowd</li>
-<li>`bloody`: bloody scenes</li>
-<li>`police`: police force</li>
-<li>`banners`: terrorism flags</li>
-<li>`militant`: militants</li>
-<li>`explosion`: explosions and fires</li>
-<li>`terrorists`: terrorists</li>
-<li>`scenario`: terrorism images</li>
-                     * @return LabelSet Filter labels for recognition of terrorism content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`guns`: weapons and guns</li>
-<li>`crowd`: crowd</li>
-<li>`bloody`: bloody scenes</li>
-<li>`police`: police force</li>
-<li>`banners`: terrorism flags</li>
-<li>`militant`: militants</li>
-<li>`explosion`: explosions and fires</li>
-<li>`terrorists`: terrorists</li>
-<li>`scenario`: terrorism images</li>
+                     * 获取<p>Image recognition involves filter tags for unsafe information. If the review result contains the selected tag, the result will be returned. If the filter tag is empty, all auditing results will be returned. Optional values:</p><li>guns: weapons and firearms;</li><li>crowd: crowd gathering;</li><li>bloody: graphic violence;</li><li>police: police force;</li><li>banners: terrorism flags;</li><li>militant: militant;</li><li>explosion: explosions and fires;</li><li>terrorists: terrorist figures;</li><li>scenario: terrorism scenes.</li>
+                     * @return LabelSet <p>Image recognition involves filter tags for unsafe information. If the review result contains the selected tag, the result will be returned. If the filter tag is empty, all auditing results will be returned. Optional values:</p><li>guns: weapons and firearms;</li><li>crowd: crowd gathering;</li><li>bloody: graphic violence;</li><li>police: police force;</li><li>banners: terrorism flags;</li><li>militant: militant;</li><li>explosion: explosions and fires;</li><li>terrorists: terrorist figures;</li><li>scenario: terrorism scenes.</li>
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置Filter labels for recognition of terrorism content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`guns`: weapons and guns</li>
-<li>`crowd`: crowd</li>
-<li>`bloody`: bloody scenes</li>
-<li>`police`: police force</li>
-<li>`banners`: terrorism flags</li>
-<li>`militant`: militants</li>
-<li>`explosion`: explosions and fires</li>
-<li>`terrorists`: terrorists</li>
-<li>`scenario`: terrorism images</li>
-                     * @param _labelSet Filter labels for recognition of terrorism content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`guns`: weapons and guns</li>
-<li>`crowd`: crowd</li>
-<li>`bloody`: bloody scenes</li>
-<li>`police`: police force</li>
-<li>`banners`: terrorism flags</li>
-<li>`militant`: militants</li>
-<li>`explosion`: explosions and fires</li>
-<li>`terrorists`: terrorists</li>
-<li>`scenario`: terrorism images</li>
+                     * 设置<p>Image recognition involves filter tags for unsafe information. If the review result contains the selected tag, the result will be returned. If the filter tag is empty, all auditing results will be returned. Optional values:</p><li>guns: weapons and firearms;</li><li>crowd: crowd gathering;</li><li>bloody: graphic violence;</li><li>police: police force;</li><li>banners: terrorism flags;</li><li>militant: militant;</li><li>explosion: explosions and fires;</li><li>terrorists: terrorist figures;</li><li>scenario: terrorism scenes.</li>
+                     * @param _labelSet <p>Image recognition involves filter tags for unsafe information. If the review result contains the selected tag, the result will be returned. If the filter tag is empty, all auditing results will be returned. Optional values:</p><li>guns: weapons and firearms;</li><li>crowd: crowd gathering;</li><li>bloody: graphic violence;</li><li>police: police force;</li><li>banners: terrorism flags;</li><li>militant: militant;</li><li>explosion: explosions and fires;</li><li>terrorists: terrorist figures;</li><li>scenario: terrorism scenes.</li>
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -133,15 +89,15 @@ namespace TencentCloud
                     bool LabelSetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `90` will be used by default. Value range: 0-100
-                     * @return BlockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `90` will be used by default. Value range: 0-100
+                     * 获取<p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. If not specified, it defaults to 90 points. Value range: 0–100.</p>
+                     * @return BlockConfidence <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. If not specified, it defaults to 90 points. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `90` will be used by default. Value range: 0-100
-                     * @param _blockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `90` will be used by default. Value range: 0-100
+                     * 设置<p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. If not specified, it defaults to 90 points. Value range: 0–100.</p>
+                     * @param _blockConfidence <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. If not specified, it defaults to 90 points. Value range: 0–100.</p>
                      * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
@@ -154,15 +110,15 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `80` will be used by default. Value range: 0-100
-                     * @return ReviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `80` will be used by default. Value range: 0-100
+                     * 获取<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, it defaults to 80 points. Value range: 0–100.</p>
+                     * @return ReviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, it defaults to 80 points. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `80` will be used by default. Value range: 0-100
-                     * @param _reviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `80` will be used by default. Value range: 0-100
+                     * 设置<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, it defaults to 80 points. Value range: 0–100.</p>
+                     * @param _reviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, it defaults to 80 points. Value range: 0–100.</p>
                      * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
@@ -177,36 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable recognition of terrorism content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * <p>Task switch for image recognition involving unsafe information. Available values:</p><li>ON: Turn on the task for image recognition involving unsafe information;</li><li>OFF: Turn off the task for image recognition involving unsafe information.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Filter labels for recognition of terrorism content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`guns`: weapons and guns</li>
-<li>`crowd`: crowd</li>
-<li>`bloody`: bloody scenes</li>
-<li>`police`: police force</li>
-<li>`banners`: terrorism flags</li>
-<li>`militant`: militants</li>
-<li>`explosion`: explosions and fires</li>
-<li>`terrorists`: terrorists</li>
-<li>`scenario`: terrorism images</li>
+                     * <p>Image recognition involves filter tags for unsafe information. If the review result contains the selected tag, the result will be returned. If the filter tag is empty, all auditing results will be returned. Optional values:</p><li>guns: weapons and firearms;</li><li>crowd: crowd gathering;</li><li>bloody: graphic violence;</li><li>police: police force;</li><li>banners: terrorism flags;</li><li>militant: militant;</li><li>explosion: explosions and fires;</li><li>terrorists: terrorist figures;</li><li>scenario: terrorism scenes.</li>
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**
-                     * Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `90` will be used by default. Value range: 0-100
+                     * <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. If not specified, it defaults to 90 points. Value range: 0–100.</p>
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `80` will be used by default. Value range: 0-100
+                     * <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, it defaults to 80 points. Value range: 0–100.</p>
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

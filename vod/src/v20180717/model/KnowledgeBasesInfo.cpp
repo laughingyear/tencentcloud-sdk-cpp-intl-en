@@ -1,0 +1,188 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vod/v20180717/model/KnowledgeBasesInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Vod::V20180717::Model;
+using namespace std;
+
+KnowledgeBasesInfo::KnowledgeBasesInfo() :
+    m_basesHasBeenSet(false),
+    m_knowledgeAnalysisInfosHasBeenSet(false),
+    m_knowledgeBaseDetailsHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome KnowledgeBasesInfo::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Bases") && !value["Bases"].IsNull())
+    {
+        if (!value["Bases"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBasesInfo.Bases` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Bases"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bases.push_back((*itr).GetString());
+        }
+        m_basesHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeAnalysisInfos") && !value["KnowledgeAnalysisInfos"].IsNull())
+    {
+        if (!value["KnowledgeAnalysisInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBasesInfo.KnowledgeAnalysisInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgeAnalysisInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeAnalysisInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeAnalysisInfos.push_back(item);
+        }
+        m_knowledgeAnalysisInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeBaseDetails") && !value["KnowledgeBaseDetails"].IsNull())
+    {
+        if (!value["KnowledgeBaseDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBasesInfo.KnowledgeBaseDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgeBaseDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeBaseDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeBaseDetails.push_back(item);
+        }
+        m_knowledgeBaseDetailsHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void KnowledgeBasesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_basesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bases";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bases.begin(); itr != m_bases.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_knowledgeAnalysisInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeAnalysisInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeAnalysisInfos.begin(); itr != m_knowledgeAnalysisInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_knowledgeBaseDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeBaseDetails.begin(); itr != m_knowledgeBaseDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+}
+
+
+vector<string> KnowledgeBasesInfo::GetBases() const
+{
+    return m_bases;
+}
+
+void KnowledgeBasesInfo::SetBases(const vector<string>& _bases)
+{
+    m_bases = _bases;
+    m_basesHasBeenSet = true;
+}
+
+bool KnowledgeBasesInfo::BasesHasBeenSet() const
+{
+    return m_basesHasBeenSet;
+}
+
+vector<KnowledgeAnalysisInfo> KnowledgeBasesInfo::GetKnowledgeAnalysisInfos() const
+{
+    return m_knowledgeAnalysisInfos;
+}
+
+void KnowledgeBasesInfo::SetKnowledgeAnalysisInfos(const vector<KnowledgeAnalysisInfo>& _knowledgeAnalysisInfos)
+{
+    m_knowledgeAnalysisInfos = _knowledgeAnalysisInfos;
+    m_knowledgeAnalysisInfosHasBeenSet = true;
+}
+
+bool KnowledgeBasesInfo::KnowledgeAnalysisInfosHasBeenSet() const
+{
+    return m_knowledgeAnalysisInfosHasBeenSet;
+}
+
+vector<KnowledgeBaseDetail> KnowledgeBasesInfo::GetKnowledgeBaseDetails() const
+{
+    return m_knowledgeBaseDetails;
+}
+
+void KnowledgeBasesInfo::SetKnowledgeBaseDetails(const vector<KnowledgeBaseDetail>& _knowledgeBaseDetails)
+{
+    m_knowledgeBaseDetails = _knowledgeBaseDetails;
+    m_knowledgeBaseDetailsHasBeenSet = true;
+}
+
+bool KnowledgeBasesInfo::KnowledgeBaseDetailsHasBeenSet() const
+{
+    return m_knowledgeBaseDetailsHasBeenSet;
+}
+

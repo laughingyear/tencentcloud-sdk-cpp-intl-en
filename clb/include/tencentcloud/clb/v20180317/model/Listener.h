@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CLB listener ID
-                     * @return ListenerId CLB listener ID
+                     * 获取<p>CLB listener ID</p>
+                     * @return ListenerId <p>CLB listener ID</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置CLB listener ID
-                     * @param _listenerId CLB listener ID
+                     * 设置<p>CLB listener ID</p>
+                     * @param _listenerId <p>CLB listener ID</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取Listener protocol
-                     * @return Protocol Listener protocol
+                     * 获取<p>Listener protocol. Available values: TCP, UDP, HTTP, HTTPS, TCP_SSL, QUIC</p>
+                     * @return Protocol <p>Listener protocol. Available values: TCP, UDP, HTTP, HTTPS, TCP_SSL, QUIC</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置Listener protocol
-                     * @param _protocol Listener protocol
+                     * 设置<p>Listener protocol. Available values: TCP, UDP, HTTP, HTTPS, TCP_SSL, QUIC</p>
+                     * @param _protocol <p>Listener protocol. Available values: TCP, UDP, HTTP, HTTPS, TCP_SSL, QUIC</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取Listener port
-                     * @return Port Listener port
+                     * 获取<p>Listener port, port range: 1–65535</p>
+                     * @return Port <p>Listener port, port range: 1–65535</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置Listener port
-                     * @param _port Listener port
+                     * 设置<p>Listener port, port range: 1–65535</p>
+                     * @param _port <p>Listener port, port range: 1–65535</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取Information of certificates bound to the listener
+                     * 获取<p>Listener bound certificate information</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Certificate Information of certificates bound to the listener
+                     * @return Certificate <p>Listener bound certificate information</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     CertificateOutput GetCertificate() const;
 
                     /**
-                     * 设置Information of certificates bound to the listener
+                     * 设置<p>Listener bound certificate information</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _certificate Information of certificates bound to the listener
+                     * @param _certificate <p>Listener bound certificate information</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -139,18 +139,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取Health check information of the listener
+                     * 获取<p>Health check information of the listener</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return HealthCheck Health check information of the listener
+                     * @return HealthCheck <p>Health check information of the listener</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置Health check information of the listener
+                     * 设置<p>Health check information of the listener</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _healthCheck Health check information of the listener
+                     * @param _healthCheck <p>Health check information of the listener</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -164,15 +164,19 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取Request scheduling method. WRR, LEAST_CONN, and IP_HASH respectively indicate weighted round robin, least connections, and IP hash.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Scheduler Request scheduling method. WRR, LEAST_CONN, and IP_HASH respectively indicate weighted round robin, least connections, and IP hash.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Requested scheduling method. WRR, LEAST_CONN, and IP_HASH indicate weighted round-robin, least connection, and IP Hash respectively.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return Scheduler <p>Requested scheduling method. WRR, LEAST_CONN, and IP_HASH indicate weighted round-robin, least connection, and IP Hash respectively.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置Request scheduling method. WRR, LEAST_CONN, and IP_HASH respectively indicate weighted round robin, least connections, and IP hash.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _scheduler Request scheduling method. WRR, LEAST_CONN, and IP_HASH respectively indicate weighted round robin, least connections, and IP hash.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Requested scheduling method. WRR, LEAST_CONN, and IP_HASH indicate weighted round-robin, least connection, and IP Hash respectively.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _scheduler <p>Requested scheduling method. WRR, LEAST_CONN, and IP_HASH indicate weighted round-robin, least connection, and IP Hash respectively.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -185,18 +189,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取Session persistence time
+                     * 获取<p>Session persistence time, unit: second. Available values: 30-3600, default 0, disabled by default. This parameter is applicable only to TCP/UDP listener.</p><p>Unit: second</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SessionExpireTime Session persistence time
+                     * @return SessionExpireTime <p>Session persistence time, unit: second. Available values: 30-3600, default 0, disabled by default. This parameter is applicable only to TCP/UDP listener.</p><p>Unit: second</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置Session persistence time
+                     * 设置<p>Session persistence time, unit: second. Available values: 30-3600, default 0, disabled by default. This parameter is applicable only to TCP/UDP listener.</p><p>Unit: second</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionExpireTime Session persistence time
+                     * @param _sessionExpireTime <p>Session persistence time, unit: second. Available values: 30-3600, default 0, disabled by default. This parameter is applicable only to TCP/UDP listener.</p><p>Unit: second</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -210,19 +214,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable SNI. `1`: Enable; `0`: Do not enable. This parameter is only meaningful for HTTPS listeners.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return SniSwitch Whether to enable SNI. `1`: Enable; `0`: Do not enable. This parameter is only meaningful for HTTPS listeners.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether to enable SNI feature. 1: enable, 0: disabled (this parameter is applicable only to HTTPS listeners)</p>
+                     * @return SniSwitch <p>Whether to enable SNI feature. 1: enable, 0: disabled (this parameter is applicable only to HTTPS listeners)</p>
                      * 
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
-                     * 设置Whether to enable SNI. `1`: Enable; `0`: Do not enable. This parameter is only meaningful for HTTPS listeners.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _sniSwitch Whether to enable SNI. `1`: Enable; `0`: Do not enable. This parameter is only meaningful for HTTPS listeners.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether to enable SNI feature. 1: enable, 0: disabled (this parameter is applicable only to HTTPS listeners)</p>
+                     * @param _sniSwitch <p>Whether to enable SNI feature. 1: enable, 0: disabled (this parameter is applicable only to HTTPS listeners)</p>
                      * 
                      */
                     void SetSniSwitch(const int64_t& _sniSwitch);
@@ -235,18 +235,18 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool SniSwitchHasBeenSet() const;
 
                     /**
-                     * 获取All forwarding rules under a listener (this parameter is meaningful only for HTTP/HTTPS listeners)
+                     * 获取<p>All forwarding rules under a listener (this parameter is only meaningful for HTTP/HTTPS listeners)</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Rules All forwarding rules under a listener (this parameter is meaningful only for HTTP/HTTPS listeners)
+                     * @return Rules <p>All forwarding rules under a listener (this parameter is only meaningful for HTTP/HTTPS listeners)</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<RuleOutput> GetRules() const;
 
                     /**
-                     * 设置All forwarding rules under a listener (this parameter is meaningful only for HTTP/HTTPS listeners)
+                     * 设置<p>All forwarding rules under a listener (this parameter is only meaningful for HTTP/HTTPS listeners)</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _rules All forwarding rules under a listener (this parameter is meaningful only for HTTP/HTTPS listeners)
+                     * @param _rules <p>All forwarding rules under a listener (this parameter is only meaningful for HTTP/HTTPS listeners)</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -260,19 +260,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取Listener name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ListenerName Listener name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Listener name</p>
+                     * @return ListenerName <p>Listener name</p>
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置Listener name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _listenerName Listener name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Listener name</p>
+                     * @param _listenerName <p>Listener name</p>
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -285,19 +281,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取Listener creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Listener creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Listener creation time.</p>
+                     * @return CreateTime <p>Listener creation time.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Listener creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Listener creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Listener creation time.</p>
+                     * @param _createTime <p>Listener creation time.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -310,19 +302,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取End port of a port range
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EndPort End port of a port range
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>End port of the port range: 2–65535</p>
+                     * @return EndPort <p>End port of the port range: 2–65535</p>
                      * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
-                     * 设置End port of a port range
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _endPort End port of a port range
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>End port of the port range: 2–65535</p>
+                     * @param _endPort <p>End port of the port range: 2–65535</p>
                      * 
                      */
                     void SetEndPort(const int64_t& _endPort);
@@ -335,18 +323,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool EndPortHasBeenSet() const;
 
                     /**
-                     * 获取Real server type
+                     * 获取<p>Backend server type. Available values: NODE, POLARIS, TARGETGROUP, TARGETGROUP-V2.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TargetType Real server type
+                     * @return TargetType <p>Backend server type. Available values: NODE, POLARIS, TARGETGROUP, TARGETGROUP-V2.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置Real server type
+                     * 设置<p>Backend server type. Available values: NODE, POLARIS, TARGETGROUP, TARGETGROUP-V2.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _targetType Real server type
+                     * @param _targetType <p>Backend server type. Available values: NODE, POLARIS, TARGETGROUP, TARGETGROUP-V2.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -360,18 +348,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取Basic information of a bound target group. This field will be returned when a target group is bound to a listener.
+                     * 获取<p>Bound target group basic information; return this field when listener binding target group.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TargetGroup Basic information of a bound target group. This field will be returned when a target group is bound to a listener.
+                     * @return TargetGroup <p>Bound target group basic information; return this field when listener binding target group.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     BasicTargetGroupInfo GetTargetGroup() const;
 
                     /**
-                     * 设置Basic information of a bound target group. This field will be returned when a target group is bound to a listener.
+                     * 设置<p>Bound target group basic information; return this field when listener binding target group.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _targetGroup Basic information of a bound target group. This field will be returned when a target group is bound to a listener.
+                     * @param _targetGroup <p>Bound target group basic information; return this field when listener binding target group.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
@@ -385,19 +373,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TargetGroupHasBeenSet() const;
 
                     /**
-                     * 获取Session persistence type. Valid values: Normal: the default session persistence type; QUIC_CID: session persistence by QUIC connection ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SessionType Session persistence type. Valid values: Normal: the default session persistence type; QUIC_CID: session persistence by QUIC connection ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Session persistence type. NORMAL means the default session persistence type. QUIC_CID refers to maintaining the session based on Quic Connection ID.</p>
+                     * @return SessionType <p>Session persistence type. NORMAL means the default session persistence type. QUIC_CID refers to maintaining the session based on Quic Connection ID.</p>
                      * 
                      */
                     std::string GetSessionType() const;
 
                     /**
-                     * 设置Session persistence type. Valid values: Normal: the default session persistence type; QUIC_CID: session persistence by QUIC connection ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionType Session persistence type. Valid values: Normal: the default session persistence type; QUIC_CID: session persistence by QUIC connection ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Session persistence type. NORMAL means the default session persistence type. QUIC_CID refers to maintaining the session based on Quic Connection ID.</p>
+                     * @param _sessionType <p>Session persistence type. NORMAL means the default session persistence type. QUIC_CID refers to maintaining the session based on Quic Connection ID.</p>
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -410,19 +394,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SessionTypeHasBeenSet() const;
 
                     /**
-                     * 获取Whether a persistent connection is enabled (1: enabled; 0: disabled). This parameter can only be configured in HTTP/HTTPS listeners.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return KeepaliveEnable Whether a persistent connection is enabled (1: enabled; 0: disabled). This parameter can only be configured in HTTP/HTTPS listeners.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Whether to enable long connections. 1: enable, 0: disable (this parameter is applicable only to HTTP/HTTPS listeners)</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return KeepaliveEnable <p>Whether to enable long connections. 1: enable, 0: disable (this parameter is applicable only to HTTP/HTTPS listeners)</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
-                     * 设置Whether a persistent connection is enabled (1: enabled; 0: disabled). This parameter can only be configured in HTTP/HTTPS listeners.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _keepaliveEnable Whether a persistent connection is enabled (1: enabled; 0: disabled). This parameter can only be configured in HTTP/HTTPS listeners.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Whether to enable long connections. 1: enable, 0: disable (this parameter is applicable only to HTTP/HTTPS listeners)</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _keepaliveEnable <p>Whether to enable long connections. 1: enable, 0: disable (this parameter is applicable only to HTTP/HTTPS listeners)</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
@@ -435,19 +419,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool KeepaliveEnableHasBeenSet() const;
 
                     /**
-                     * 获取Only the NAT64 CLB TCP listeners are supported.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return Toa Only the NAT64 CLB TCP listeners are supported.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Only supports Nat64 CLB TCP listener</p>
+                     * @return Toa <p>Only supports Nat64 CLB TCP listener</p>
                      * 
                      */
                     bool GetToa() const;
 
                     /**
-                     * 设置Only the NAT64 CLB TCP listeners are supported.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _toa Only the NAT64 CLB TCP listeners are supported.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Only supports Nat64 CLB TCP listener</p>
+                     * @param _toa <p>Only supports Nat64 CLB TCP listener</p>
                      * 
                      */
                     void SetToa(const bool& _toa);
@@ -460,19 +440,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool ToaHasBeenSet() const;
 
                     /**
-                     * 获取Whether to send the TCP RST packet to the client when unbinding a real server. This parameter is applicable to TCP listeners only.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return DeregisterTargetRst Whether to send the TCP RST packet to the client when unbinding a real server. This parameter is applicable to TCP listeners only.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Rescheduling feature, which provides a switch for scaling out the backend service. If the switch is toggled on, rescheduling is triggered when the backend service is unbound. This parameter is applicable only to TCP/UDP listeners.</p>
+                     * @return DeregisterTargetRst <p>Rescheduling feature, which provides a switch for scaling out the backend service. If the switch is toggled on, rescheduling is triggered when the backend service is unbound. This parameter is applicable only to TCP/UDP listeners.</p>
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
-                     * 设置Whether to send the TCP RST packet to the client when unbinding a real server. This parameter is applicable to TCP listeners only.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _deregisterTargetRst Whether to send the TCP RST packet to the client when unbinding a real server. This parameter is applicable to TCP listeners only.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Rescheduling feature, which provides a switch for scaling out the backend service. If the switch is toggled on, rescheduling is triggered when the backend service is unbound. This parameter is applicable only to TCP/UDP listeners.</p>
+                     * @param _deregisterTargetRst <p>Rescheduling feature, which provides a switch for scaling out the backend service. If the switch is toggled on, rescheduling is triggered when the backend service is unbound. This parameter is applicable only to TCP/UDP listeners.</p>
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -485,19 +461,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool DeregisterTargetRstHasBeenSet() const;
 
                     /**
-                     * 获取Attribute of listener
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return AttrFlags Attribute of listener
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Listener attribute.</p>
+                     * @return AttrFlags <p>Listener attribute.</p>
                      * 
                      */
                     std::vector<std::string> GetAttrFlags() const;
 
                     /**
-                     * 设置Attribute of listener
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _attrFlags Attribute of listener
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Listener attribute.</p>
+                     * @param _attrFlags <p>Listener attribute.</p>
                      * 
                      */
                     void SetAttrFlags(const std::vector<std::string>& _attrFlags);
@@ -510,19 +482,19 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool AttrFlagsHasBeenSet() const;
 
                     /**
-                     * 获取List of bound target groups
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return TargetGroupList List of bound target groups
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>List of bound target groups</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return TargetGroupList <p>List of bound target groups</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<BasicTargetGroupInfo> GetTargetGroupList() const;
 
                     /**
-                     * 设置List of bound target groups
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _targetGroupList List of bound target groups
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>List of bound target groups</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _targetGroupList <p>List of bound target groups</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetTargetGroupList(const std::vector<BasicTargetGroupInfo>& _targetGroupList);
@@ -535,19 +507,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool TargetGroupListHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of concurrent listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return MaxConn Maximum number of concurrent listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Maximum number of connections to a listener. -1 means no speed limit at the listener dimension.</p>
+                     * @return MaxConn <p>Maximum number of connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      * 
                      */
                     int64_t GetMaxConn() const;
 
                     /**
-                     * 设置Maximum number of concurrent listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _maxConn Maximum number of concurrent listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Maximum number of connections to a listener. -1 means no speed limit at the listener dimension.</p>
+                     * @param _maxConn <p>Maximum number of connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      * 
                      */
                     void SetMaxConn(const int64_t& _maxConn);
@@ -560,19 +528,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool MaxConnHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of new listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return MaxCps Maximum number of new listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Maximum number of new connections to a listener. -1 means no speed limit at the listener dimension.</p>
+                     * @return MaxCps <p>Maximum number of new connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      * 
                      */
                     int64_t GetMaxCps() const;
 
                     /**
-                     * 设置Maximum number of new listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _maxCps Maximum number of new listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Maximum number of new connections to a listener. -1 means no speed limit at the listener dimension.</p>
+                     * @param _maxCps <p>Maximum number of new connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      * 
                      */
                     void SetMaxCps(const int64_t& _maxCps);
@@ -585,19 +549,19 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool MaxCpsHasBeenSet() const;
 
                     /**
-                     * 获取Connection idle timeout period (in seconds). It’s only available to TCP listeners. Value range: 300-900 for shared and dedicated instances; 300-2000 for LCU-supported CLB instances. It defaults to 900.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return IdleConnectTimeout Connection idle timeout period (in seconds). It’s only available to TCP listeners. Value range: 300-900 for shared and dedicated instances; 300-2000 for LCU-supported CLB instances. It defaults to 900.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Idle connection timeout is only supported for TCP listeners. Default value: 900. Value range: 300–900 for shared instances and dedicated instances and 300–1980 for LCU-supported instances.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return IdleConnectTimeout <p>Idle connection timeout is only supported for TCP listeners. Default value: 900. Value range: 300–900 for shared instances and dedicated instances and 300–1980 for LCU-supported instances.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetIdleConnectTimeout() const;
 
                     /**
-                     * 设置Connection idle timeout period (in seconds). It’s only available to TCP listeners. Value range: 300-900 for shared and dedicated instances; 300-2000 for LCU-supported CLB instances. It defaults to 900.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _idleConnectTimeout Connection idle timeout period (in seconds). It’s only available to TCP listeners. Value range: 300-900 for shared and dedicated instances; 300-2000 for LCU-supported CLB instances. It defaults to 900.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Idle connection timeout is only supported for TCP listeners. Default value: 900. Value range: 300–900 for shared instances and dedicated instances and 300–1980 for LCU-supported instances.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _idleConnectTimeout <p>Idle connection timeout is only supported for TCP listeners. Default value: 900. Value range: 300–900 for shared instances and dedicated instances and 300–1980 for LCU-supported instances.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetIdleConnectTimeout(const int64_t& _idleConnectTimeout);
@@ -610,15 +574,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取Scheduling time. After forced rescheduling is triggered, long connections will be disconnected and reassigned within the set scheduling time.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return RescheduleInterval Scheduling time. After forced rescheduling is triggered, long connections will be disconnected and reassigned within the set scheduling time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Rescheduling trigger duration. Value range: 0–3600. Unit: s. This parameter is applicable only to TCP/UDP listeners. After rescheduling is triggered, persistent connections will be disconnected and reassigned within the scheduled time window. </p><p>Unit: s.</p>
+                     * @return RescheduleInterval <p>Rescheduling trigger duration. Value range: 0–3600. Unit: s. This parameter is applicable only to TCP/UDP listeners. After rescheduling is triggered, persistent connections will be disconnected and reassigned within the scheduled time window. </p><p>Unit: s.</p>
                      * 
                      */
                     uint64_t GetRescheduleInterval() const;
 
                     /**
-                     * 设置Scheduling time. After forced rescheduling is triggered, long connections will be disconnected and reassigned within the set scheduling time.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _rescheduleInterval Scheduling time. After forced rescheduling is triggered, long connections will be disconnected and reassigned within the set scheduling time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Rescheduling trigger duration. Value range: 0–3600. Unit: s. This parameter is applicable only to TCP/UDP listeners. After rescheduling is triggered, persistent connections will be disconnected and reassigned within the scheduled time window. </p><p>Unit: s.</p>
+                     * @param _rescheduleInterval <p>Rescheduling trigger duration. Value range: 0–3600. Unit: s. This parameter is applicable only to TCP/UDP listeners. After rescheduling is triggered, persistent connections will be disconnected and reassigned within the scheduled time window. </p><p>Unit: s.</p>
                      * 
                      */
                     void SetRescheduleInterval(const uint64_t& _rescheduleInterval);
@@ -630,170 +594,215 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                      */
                     bool RescheduleIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Data compression mode</p>
+                     * @return DataCompressMode <p>Data compression mode</p>
+                     * 
+                     */
+                    std::string GetDataCompressMode() const;
+
+                    /**
+                     * 设置<p>Data compression mode</p>
+                     * @param _dataCompressMode <p>Data compression mode</p>
+                     * 
+                     */
+                    void SetDataCompressMode(const std::string& _dataCompressMode);
+
+                    /**
+                     * 判断参数 DataCompressMode 是否已赋值
+                     * @return DataCompressMode 是否已赋值
+                     * 
+                     */
+                    bool DataCompressModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Rescheduling startup time: After the rescheduling startup time is configured, rescheduling is triggered when the startup time is arrived.</p>
+                     * @return RescheduleStartTime <p>Rescheduling startup time: After the rescheduling startup time is configured, rescheduling is triggered when the startup time is arrived.</p>
+                     * 
+                     */
+                    int64_t GetRescheduleStartTime() const;
+
+                    /**
+                     * 设置<p>Rescheduling startup time: After the rescheduling startup time is configured, rescheduling is triggered when the startup time is arrived.</p>
+                     * @param _rescheduleStartTime <p>Rescheduling startup time: After the rescheduling startup time is configured, rescheduling is triggered when the startup time is arrived.</p>
+                     * 
+                     */
+                    void SetRescheduleStartTime(const int64_t& _rescheduleStartTime);
+
+                    /**
+                     * 判断参数 RescheduleStartTime 是否已赋值
+                     * @return RescheduleStartTime 是否已赋值
+                     * 
+                     */
+                    bool RescheduleStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CLB listener ID
+                     * <p>CLB listener ID</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * Listener protocol
+                     * <p>Listener protocol. Available values: TCP, UDP, HTTP, HTTPS, TCP_SSL, QUIC</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * Listener port
+                     * <p>Listener port, port range: 1–65535</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * Information of certificates bound to the listener
+                     * <p>Listener bound certificate information</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     CertificateOutput m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * Health check information of the listener
+                     * <p>Health check information of the listener</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * Request scheduling method. WRR, LEAST_CONN, and IP_HASH respectively indicate weighted round robin, least connections, and IP hash.Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Requested scheduling method. WRR, LEAST_CONN, and IP_HASH indicate weighted round-robin, least connection, and IP Hash respectively.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * Session persistence time
+                     * <p>Session persistence time, unit: second. Available values: 30-3600, default 0, disabled by default. This parameter is applicable only to TCP/UDP listener.</p><p>Unit: second</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * Whether to enable SNI. `1`: Enable; `0`: Do not enable. This parameter is only meaningful for HTTPS listeners.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * <p>Whether to enable SNI feature. 1: enable, 0: disabled (this parameter is applicable only to HTTPS listeners)</p>
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
 
                     /**
-                     * All forwarding rules under a listener (this parameter is meaningful only for HTTP/HTTPS listeners)
+                     * <p>All forwarding rules under a listener (this parameter is only meaningful for HTTP/HTTPS listeners)</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<RuleOutput> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * Listener name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Listener name</p>
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * Listener creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Listener creation time.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * End port of a port range
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>End port of the port range: 2–65535</p>
                      */
                     int64_t m_endPort;
                     bool m_endPortHasBeenSet;
 
                     /**
-                     * Real server type
+                     * <p>Backend server type. Available values: NODE, POLARIS, TARGETGROUP, TARGETGROUP-V2.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * Basic information of a bound target group. This field will be returned when a target group is bound to a listener.
+                     * <p>Bound target group basic information; return this field when listener binding target group.</p>
 Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     BasicTargetGroupInfo m_targetGroup;
                     bool m_targetGroupHasBeenSet;
 
                     /**
-                     * Session persistence type. Valid values: Normal: the default session persistence type; QUIC_CID: session persistence by QUIC connection ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Session persistence type. NORMAL means the default session persistence type. QUIC_CID refers to maintaining the session based on Quic Connection ID.</p>
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
 
                     /**
-                     * Whether a persistent connection is enabled (1: enabled; 0: disabled). This parameter can only be configured in HTTP/HTTPS listeners.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Whether to enable long connections. 1: enable, 0: disable (this parameter is applicable only to HTTP/HTTPS listeners)</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
-                     * Only the NAT64 CLB TCP listeners are supported.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Only supports Nat64 CLB TCP listener</p>
                      */
                     bool m_toa;
                     bool m_toaHasBeenSet;
 
                     /**
-                     * Whether to send the TCP RST packet to the client when unbinding a real server. This parameter is applicable to TCP listeners only.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Rescheduling feature, which provides a switch for scaling out the backend service. If the switch is toggled on, rescheduling is triggered when the backend service is unbound. This parameter is applicable only to TCP/UDP listeners.</p>
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
 
                     /**
-                     * Attribute of listener
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Listener attribute.</p>
                      */
                     std::vector<std::string> m_attrFlags;
                     bool m_attrFlagsHasBeenSet;
 
                     /**
-                     * List of bound target groups
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>List of bound target groups</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<BasicTargetGroupInfo> m_targetGroupList;
                     bool m_targetGroupListHasBeenSet;
 
                     /**
-                     * Maximum number of concurrent listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Maximum number of connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      */
                     int64_t m_maxConn;
                     bool m_maxConnHasBeenSet;
 
                     /**
-                     * Maximum number of new listener connections. If it’s set to `-1`, the listener speed is not limited. 
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Maximum number of new connections to a listener. -1 means no speed limit at the listener dimension.</p>
                      */
                     int64_t m_maxCps;
                     bool m_maxCpsHasBeenSet;
 
                     /**
-                     * Connection idle timeout period (in seconds). It’s only available to TCP listeners. Value range: 300-900 for shared and dedicated instances; 300-2000 for LCU-supported CLB instances. It defaults to 900.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Idle connection timeout is only supported for TCP listeners. Default value: 900. Value range: 300–900 for shared instances and dedicated instances and 300–1980 for LCU-supported instances.</p>
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
 
                     /**
-                     * Scheduling time. After forced rescheduling is triggered, long connections will be disconnected and reassigned within the set scheduling time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Rescheduling trigger duration. Value range: 0–3600. Unit: s. This parameter is applicable only to TCP/UDP listeners. After rescheduling is triggered, persistent connections will be disconnected and reassigned within the scheduled time window. </p><p>Unit: s.</p>
                      */
                     uint64_t m_rescheduleInterval;
                     bool m_rescheduleIntervalHasBeenSet;
+
+                    /**
+                     * <p>Data compression mode</p>
+                     */
+                    std::string m_dataCompressMode;
+                    bool m_dataCompressModeHasBeenSet;
+
+                    /**
+                     * <p>Rescheduling startup time: After the rescheduling startup time is configured, rescheduling is triggered when the startup time is arrived.</p>
+                     */
+                    int64_t m_rescheduleStartTime;
+                    bool m_rescheduleStartTimeHasBeenSet;
 
                 };
             }

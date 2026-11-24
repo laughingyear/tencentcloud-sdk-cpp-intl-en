@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SuperResolutionConfig.h>
+#include <tencentcloud/mps/v20190612/model/AdvancedSuperResolutionConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageDenoiseConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ColorEnhanceConfig.h>
@@ -55,18 +56,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Super-resolution configuration.
-
                      * @return SuperResolution Super-resolution configuration.
-
                      * 
                      */
                     SuperResolutionConfig GetSuperResolution() const;
 
                     /**
                      * 设置Super-resolution configuration.
-
                      * @param _superResolution Super-resolution configuration.
-
                      * 
                      */
                     void SetSuperResolution(const SuperResolutionConfig& _superResolution);
@@ -79,19 +76,36 @@ namespace TencentCloud
                     bool SuperResolutionHasBeenSet() const;
 
                     /**
+                     * 获取Advanced super-resolution configuration.
+                     * @return AdvancedSuperResolutionConfig Advanced super-resolution configuration.
+                     * 
+                     */
+                    AdvancedSuperResolutionConfig GetAdvancedSuperResolutionConfig() const;
+
+                    /**
+                     * 设置Advanced super-resolution configuration.
+                     * @param _advancedSuperResolutionConfig Advanced super-resolution configuration.
+                     * 
+                     */
+                    void SetAdvancedSuperResolutionConfig(const AdvancedSuperResolutionConfig& _advancedSuperResolutionConfig);
+
+                    /**
+                     * 判断参数 AdvancedSuperResolutionConfig 是否已赋值
+                     * @return AdvancedSuperResolutionConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedSuperResolutionConfigHasBeenSet() const;
+
+                    /**
                      * 获取Denoising configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Denoise Denoising configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     ImageDenoiseConfig GetDenoise() const;
 
                     /**
                      * 设置Denoising configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _denoise Denoising configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetDenoise(const ImageDenoiseConfig& _denoise);
@@ -105,18 +119,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Comprehensive enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return ImageQualityEnhance Comprehensive enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     ImageQualityEnhanceConfig GetImageQualityEnhance() const;
 
                     /**
                      * 设置Comprehensive enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _imageQualityEnhance Comprehensive enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetImageQualityEnhance(const ImageQualityEnhanceConfig& _imageQualityEnhance);
@@ -130,18 +140,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Color enhancement configuration.
-
                      * @return ColorEnhance Color enhancement configuration.
-
                      * 
                      */
                     ColorEnhanceConfig GetColorEnhance() const;
 
                     /**
                      * 设置Color enhancement configuration.
-
                      * @param _colorEnhance Color enhancement configuration.
-
                      * 
                      */
                     void SetColorEnhance(const ColorEnhanceConfig& _colorEnhance);
@@ -155,18 +161,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Detail enhancement configuration.
-
                      * @return SharpEnhance Detail enhancement configuration.
-
                      * 
                      */
                     SharpEnhanceConfig GetSharpEnhance() const;
 
                     /**
                      * 设置Detail enhancement configuration.
-
                      * @param _sharpEnhance Detail enhancement configuration.
-
                      * 
                      */
                     void SetSharpEnhance(const SharpEnhanceConfig& _sharpEnhance);
@@ -180,18 +182,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Face enhancement configuration.
-
                      * @return FaceEnhance Face enhancement configuration.
-
                      * 
                      */
                     FaceEnhanceConfig GetFaceEnhance() const;
 
                     /**
                      * 设置Face enhancement configuration.
-
                      * @param _faceEnhance Face enhancement configuration.
-
                      * 
                      */
                     void SetFaceEnhance(const FaceEnhanceConfig& _faceEnhance);
@@ -205,18 +203,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Low-light enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return LowLightEnhance Low-light enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     LowLightEnhanceConfig GetLowLightEnhance() const;
 
                     /**
                      * 设置Low-light enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _lowLightEnhance Low-light enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetLowLightEnhance(const LowLightEnhanceConfig& _lowLightEnhance);
@@ -232,49 +226,48 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * Super-resolution configuration.
-
                      */
                     SuperResolutionConfig m_superResolution;
                     bool m_superResolutionHasBeenSet;
 
                     /**
+                     * Advanced super-resolution configuration.
+                     */
+                    AdvancedSuperResolutionConfig m_advancedSuperResolutionConfig;
+                    bool m_advancedSuperResolutionConfigHasBeenSet;
+
+                    /**
                      * Denoising configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     ImageDenoiseConfig m_denoise;
                     bool m_denoiseHasBeenSet;
 
                     /**
                      * Comprehensive enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     ImageQualityEnhanceConfig m_imageQualityEnhance;
                     bool m_imageQualityEnhanceHasBeenSet;
 
                     /**
                      * Color enhancement configuration.
-
                      */
                     ColorEnhanceConfig m_colorEnhance;
                     bool m_colorEnhanceHasBeenSet;
 
                     /**
                      * Detail enhancement configuration.
-
                      */
                     SharpEnhanceConfig m_sharpEnhance;
                     bool m_sharpEnhanceHasBeenSet;
 
                     /**
                      * Face enhancement configuration.
-
                      */
                     FaceEnhanceConfig m_faceEnhance;
                     bool m_faceEnhanceHasBeenSet;
 
                     /**
                      * Low-light enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     LowLightEnhanceConfig m_lowLightEnhance;
                     bool m_lowLightEnhanceHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specifies the serverless cluster id.
-                     * @return ClusterId Specifies the serverless cluster id.
+                     * 获取<p>serverless cluster id</p>
+                     * @return ClusterId <p>serverless cluster id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Specifies the serverless cluster id.
-                     * @param _clusterId Specifies the serverless cluster id.
+                     * 设置<p>serverless cluster id</p>
+                     * @param _clusterId <p>serverless cluster id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Specifies whether the cluster automatically pauses. valid values for the optional range.
-<li>yes</li>
-<li>no</li>
-                     * @return AutoPause Specifies whether the cluster automatically pauses. valid values for the optional range.
-<li>yes</li>
-<li>no</li>
+                     * 获取<p>Whether the cluster auto pauses, optional range</p><li>yes</li><li>no</li>
+                     * @return AutoPause <p>Whether the cluster auto pauses, optional range</p><li>yes</li><li>no</li>
                      * 
                      */
                     std::string GetAutoPause() const;
 
                     /**
-                     * 设置Specifies whether the cluster automatically pauses. valid values for the optional range.
-<li>yes</li>
-<li>no</li>
-                     * @param _autoPause Specifies whether the cluster automatically pauses. valid values for the optional range.
-<li>yes</li>
-<li>no</li>
+                     * 设置<p>Whether the cluster auto pauses, optional range</p><li>yes</li><li>no</li>
+                     * @param _autoPause <p>Whether the cluster auto pauses, optional range</p><li>yes</li><li>no</li>
                      * 
                      */
                     void SetAutoPause(const std::string& _autoPause);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool AutoPauseHasBeenSet() const;
 
                     /**
-                     * 获取Specifies the delay for cluster auto-pause in seconds. the value range is [600,691200]. the default value is 600.
-                     * @return AutoPauseDelay Specifies the delay for cluster auto-pause in seconds. the value range is [600,691200]. the default value is 600.
+                     * 获取<p>Delay of Cluster Auto-Pause, in seconds. Optional range: [600,691200]. Default: 600</p>
+                     * @return AutoPauseDelay <p>Delay of Cluster Auto-Pause, in seconds. Optional range: [600,691200]. Default: 600</p>
                      * 
                      */
                     int64_t GetAutoPauseDelay() const;
 
                     /**
-                     * 设置Specifies the delay for cluster auto-pause in seconds. the value range is [600,691200]. the default value is 600.
-                     * @param _autoPauseDelay Specifies the delay for cluster auto-pause in seconds. the value range is [600,691200]. the default value is 600.
+                     * 设置<p>Delay of Cluster Auto-Pause, in seconds. Optional range: [600,691200]. Default: 600</p>
+                     * @param _autoPauseDelay <p>Delay of Cluster Auto-Pause, in seconds. Optional range: [600,691200]. Default: 600</p>
                      * 
                      */
                     void SetAutoPauseDelay(const int64_t& _autoPauseDelay);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool AutoPauseDelayHasBeenSet() const;
 
                     /**
-                     * 获取The parameter is temporarily unavailable.
-                     * @return AutoScaleUpDelay The parameter is temporarily unavailable.
+                     * 获取<p>This parameter is temporarily unavailable.</p>
+                     * @return AutoScaleUpDelay <p>This parameter is temporarily unavailable.</p>
                      * 
                      */
                     int64_t GetAutoScaleUpDelay() const;
 
                     /**
-                     * 设置The parameter is temporarily unavailable.
-                     * @param _autoScaleUpDelay The parameter is temporarily unavailable.
+                     * 设置<p>This parameter is temporarily unavailable.</p>
+                     * @param _autoScaleUpDelay <p>This parameter is temporarily unavailable.</p>
                      * 
                      */
                     void SetAutoScaleUpDelay(const int64_t& _autoScaleUpDelay);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool AutoScaleUpDelayHasBeenSet() const;
 
                     /**
-                     * 获取The parameter is temporarily unavailable.
-                     * @return AutoScaleDownDelay The parameter is temporarily unavailable.
+                     * 获取<p>This parameter is temporarily unavailable.</p>
+                     * @return AutoScaleDownDelay <p>This parameter is temporarily unavailable.</p>
                      * 
                      */
                     int64_t GetAutoScaleDownDelay() const;
 
                     /**
-                     * 设置The parameter is temporarily unavailable.
-                     * @param _autoScaleDownDelay The parameter is temporarily unavailable.
+                     * 设置<p>This parameter is temporarily unavailable.</p>
+                     * @param _autoScaleDownDelay <p>This parameter is temporarily unavailable.</p>
                      * 
                      */
                     void SetAutoScaleDownDelay(const int64_t& _autoScaleDownDelay);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool AutoScaleDownDelayHasBeenSet() const;
 
                     /**
-                     * 获取Minimum value of cpu. for the optional range, refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @return MinCpu Minimum value of cpu. for the optional range, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 获取<p>Minimum cpu value. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
+                     * @return MinCpu <p>Minimum cpu value. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      * 
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置Minimum value of cpu. for the optional range, refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @param _minCpu Minimum value of cpu. for the optional range, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 设置<p>Minimum cpu value. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
+                     * @param _minCpu <p>Minimum cpu value. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      * 
                      */
                     void SetMinCpu(const double& _minCpu);
@@ -177,15 +169,15 @@ namespace TencentCloud
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of cpu, optional range refers to the API response of DescribeServerlessInstanceSpecs.
-                     * @return MaxCpu Maximum value of cpu, optional range refers to the API response of DescribeServerlessInstanceSpecs.
+                     * 获取<p>Maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
+                     * @return MaxCpu <p>Maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      * 
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置Maximum value of cpu, optional range refers to the API response of DescribeServerlessInstanceSpecs.
-                     * @param _maxCpu Maximum value of cpu, optional range refers to the API response of DescribeServerlessInstanceSpecs.
+                     * 设置<p>Maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
+                     * @param _maxCpu <p>Maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      * 
                      */
                     void SetMaxCpu(const double& _maxCpu);
@@ -198,15 +190,15 @@ namespace TencentCloud
                     bool MaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取Minimum cpu value of a read-only instance. for valid values, refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @return MinRoCpu Minimum cpu value of a read-only instance. for valid values, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 获取<p>Minimum cpu value of the read-only instance. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
+                     * @return MinRoCpu <p>Minimum cpu value of the read-only instance. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      * 
                      */
                     double GetMinRoCpu() const;
 
                     /**
-                     * 设置Minimum cpu value of a read-only instance. for valid values, refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @param _minRoCpu Minimum cpu value of a read-only instance. for valid values, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 设置<p>Minimum cpu value of the read-only instance. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
+                     * @param _minRoCpu <p>Minimum cpu value of the read-only instance. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      * 
                      */
                     void SetMinRoCpu(const double& _minRoCpu);
@@ -219,15 +211,15 @@ namespace TencentCloud
                     bool MinRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of read-only cpu, optional range refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @return MaxRoCpu Maximum value of read-only cpu, optional range refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 获取<p>Read-only maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
+                     * @return MaxRoCpu <p>Read-only maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      * 
                      */
                     double GetMaxRoCpu() const;
 
                     /**
-                     * 设置Maximum value of read-only cpu, optional range refer to the API response of DescribeServerlessInstanceSpecs.
-                     * @param _maxRoCpu Maximum value of read-only cpu, optional range refer to the API response of DescribeServerlessInstanceSpecs.
+                     * 设置<p>Read-only maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
+                     * @param _maxRoCpu <p>Read-only maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      * 
                      */
                     void SetMaxRoCpu(const double& _maxRoCpu);
@@ -240,15 +232,15 @@ namespace TencentCloud
                     bool MaxRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取Specifies the minimum count of read-only nodes.
-                     * @return MinRoCount Specifies the minimum count of read-only nodes.
+                     * 获取<p>Minimum number of read-only nodes</p>
+                     * @return MinRoCount <p>Minimum number of read-only nodes</p>
                      * 
                      */
                     int64_t GetMinRoCount() const;
 
                     /**
-                     * 设置Specifies the minimum count of read-only nodes.
-                     * @param _minRoCount Specifies the minimum count of read-only nodes.
+                     * 设置<p>Minimum number of read-only nodes</p>
+                     * @param _minRoCount <p>Minimum number of read-only nodes</p>
                      * 
                      */
                     void SetMinRoCount(const int64_t& _minRoCount);
@@ -261,15 +253,15 @@ namespace TencentCloud
                     bool MinRoCountHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of read-only nodes.
-                     * @return MaxRoCount Maximum number of read-only nodes.
+                     * 获取<p>Maximum number of read-only nodes</p>
+                     * @return MaxRoCount <p>Maximum number of read-only nodes</p>
                      * 
                      */
                     int64_t GetMaxRoCount() const;
 
                     /**
-                     * 设置Maximum number of read-only nodes.
-                     * @param _maxRoCount Maximum number of read-only nodes.
+                     * 设置<p>Maximum number of read-only nodes</p>
+                     * @param _maxRoCount <p>Maximum number of read-only nodes</p>
                      * 
                      */
                     void SetMaxRoCount(const int64_t& _maxRoCount);
@@ -281,75 +273,154 @@ namespace TencentCloud
                      */
                     bool MaxRoCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether archive is enabled, optional range<li>yes</li><li>no</li>Default value: yes</p>
+                     * @return AutoArchive <p>Whether archive is enabled, optional range<li>yes</li><li>no</li>Default value: yes</p>
+                     * 
+                     */
+                    std::string GetAutoArchive() const;
+
+                    /**
+                     * 设置<p>Whether archive is enabled, optional range<li>yes</li><li>no</li>Default value: yes</p>
+                     * @param _autoArchive <p>Whether archive is enabled, optional range<li>yes</li><li>no</li>Default value: yes</p>
+                     * 
+                     */
+                    void SetAutoArchive(const std::string& _autoArchive);
+
+                    /**
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Upgrade type. Default value: upgradeImmediate. Available values: upgradeImmediate: complete the modification immediately; upgradeInMaintain: complete the modification during the maintenance window</p>
+                     * @return UpgradeType <p>Upgrade type. Default value: upgradeImmediate. Available values: upgradeImmediate: complete the modification immediately; upgradeInMaintain: complete the modification during the maintenance window</p>
+                     * 
+                     */
+                    std::string GetUpgradeType() const;
+
+                    /**
+                     * 设置<p>Upgrade type. Default value: upgradeImmediate. Available values: upgradeImmediate: complete the modification immediately; upgradeInMaintain: complete the modification during the maintenance window</p>
+                     * @param _upgradeType <p>Upgrade type. Default value: upgradeImmediate. Available values: upgradeImmediate: complete the modification immediately; upgradeInMaintain: complete the modification during the maintenance window</p>
+                     * 
+                     */
+                    void SetUpgradeType(const std::string& _upgradeType);
+
+                    /**
+                     * 判断参数 UpgradeType 是否已赋值
+                     * @return UpgradeType 是否已赋值
+                     * 
+                     */
+                    bool UpgradeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>List of security groups that the newly-added read-only instances need to bind to. This only binds security groups to read-only instances newly generated during this adjustment of policies, and existing instances are not bound.</p>
+                     * @return SecurityGroupIdsForNewRo <p>List of security groups that the newly-added read-only instances need to bind to. This only binds security groups to read-only instances newly generated during this adjustment of policies, and existing instances are not bound.</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIdsForNewRo() const;
+
+                    /**
+                     * 设置<p>List of security groups that the newly-added read-only instances need to bind to. This only binds security groups to read-only instances newly generated during this adjustment of policies, and existing instances are not bound.</p>
+                     * @param _securityGroupIdsForNewRo <p>List of security groups that the newly-added read-only instances need to bind to. This only binds security groups to read-only instances newly generated during this adjustment of policies, and existing instances are not bound.</p>
+                     * 
+                     */
+                    void SetSecurityGroupIdsForNewRo(const std::vector<std::string>& _securityGroupIdsForNewRo);
+
+                    /**
+                     * 判断参数 SecurityGroupIdsForNewRo 是否已赋值
+                     * @return SecurityGroupIdsForNewRo 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsForNewRoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Specifies the serverless cluster id.
+                     * <p>serverless cluster id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Specifies whether the cluster automatically pauses. valid values for the optional range.
-<li>yes</li>
-<li>no</li>
+                     * <p>Whether the cluster auto pauses, optional range</p><li>yes</li><li>no</li>
                      */
                     std::string m_autoPause;
                     bool m_autoPauseHasBeenSet;
 
                     /**
-                     * Specifies the delay for cluster auto-pause in seconds. the value range is [600,691200]. the default value is 600.
+                     * <p>Delay of Cluster Auto-Pause, in seconds. Optional range: [600,691200]. Default: 600</p>
                      */
                     int64_t m_autoPauseDelay;
                     bool m_autoPauseDelayHasBeenSet;
 
                     /**
-                     * The parameter is temporarily unavailable.
+                     * <p>This parameter is temporarily unavailable.</p>
                      */
                     int64_t m_autoScaleUpDelay;
                     bool m_autoScaleUpDelayHasBeenSet;
 
                     /**
-                     * The parameter is temporarily unavailable.
+                     * <p>This parameter is temporarily unavailable.</p>
                      */
                     int64_t m_autoScaleDownDelay;
                     bool m_autoScaleDownDelayHasBeenSet;
 
                     /**
-                     * Minimum value of cpu. for the optional range, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * <p>Minimum cpu value. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * Maximum value of cpu, optional range refers to the API response of DescribeServerlessInstanceSpecs.
+                     * <p>Maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
-                     * Minimum cpu value of a read-only instance. for valid values, refer to the API response of DescribeServerlessInstanceSpecs.
+                     * <p>Minimum cpu value of the read-only instance. For the optional range, see the API response of DescribeServerlessInstanceSpecs</p>
                      */
                     double m_minRoCpu;
                     bool m_minRoCpuHasBeenSet;
 
                     /**
-                     * Maximum value of read-only cpu, optional range refer to the API response of DescribeServerlessInstanceSpecs.
+                     * <p>Read-only maximum value of cpu. For the optional range, see the API response of DescribeServerlessInstanceSpecs.</p>
                      */
                     double m_maxRoCpu;
                     bool m_maxRoCpuHasBeenSet;
 
                     /**
-                     * Specifies the minimum count of read-only nodes.
+                     * <p>Minimum number of read-only nodes</p>
                      */
                     int64_t m_minRoCount;
                     bool m_minRoCountHasBeenSet;
 
                     /**
-                     * Maximum number of read-only nodes.
+                     * <p>Maximum number of read-only nodes</p>
                      */
                     int64_t m_maxRoCount;
                     bool m_maxRoCountHasBeenSet;
+
+                    /**
+                     * <p>Whether archive is enabled, optional range<li>yes</li><li>no</li>Default value: yes</p>
+                     */
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
+
+                    /**
+                     * <p>Upgrade type. Default value: upgradeImmediate. Available values: upgradeImmediate: complete the modification immediately; upgradeInMaintain: complete the modification during the maintenance window</p>
+                     */
+                    std::string m_upgradeType;
+                    bool m_upgradeTypeHasBeenSet;
+
+                    /**
+                     * <p>List of security groups that the newly-added read-only instances need to bind to. This only binds security groups to read-only instances newly generated during this adjustment of policies, and existing instances are not bound.</p>
+                     */
+                    std::vector<std::string> m_securityGroupIdsForNewRo;
+                    bool m_securityGroupIdsForNewRoHasBeenSet;
 
                 };
             }

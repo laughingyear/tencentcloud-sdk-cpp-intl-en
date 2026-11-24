@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of media files. Up to 20 ones can be submitted at a time.
-                     * @return FileIds List of media files. Up to 20 ones can be submitted at a time.
+                     * 获取Media file list. A maximum of 20 entries can be submitted each time.
+                     * @return FileIds Media file list. A maximum of 20 entries can be submitted each time.
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置List of media files. Up to 20 ones can be submitted at a time.
-                     * @param _fileIds List of media files. Up to 20 ones can be submitted at a time.
+                     * 设置Media file list. A maximum of 20 entries can be submitted each time.
+                     * @param _fileIds Media file list. A maximum of 20 entries can be submitted each time.
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取forbid: forbids, recover: unblocks.
-                     * @return Operation forbid: forbids, recover: unblocks.
+                     * 获取forbid: forbid. recover: unblock.
+                     * @return Operation forbid: forbid. recover: unblock.
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置forbid: forbids, recover: unblocks.
-                     * @param _operation forbid: forbids, recover: unblocks.
+                     * 设置forbid: forbid. recover: unblock.
+                     * @param _operation forbid: forbid. recover: unblock.
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of media files. Up to 20 ones can be submitted at a time.
+                     * Media file list. A maximum of 20 entries can be submitted each time.
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * forbid: forbids, recover: unblocks.
+                     * forbid: forbid. recover: unblock.
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

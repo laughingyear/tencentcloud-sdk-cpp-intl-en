@@ -1,0 +1,274 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AIGCVIDEOREDRAWOUTPUTFILEINFO_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_AIGCVIDEOREDRAWOUTPUTFILEINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MediaMetaData.h>
+
+
+namespace TencentCloud
+{
+    namespace Vod
+    {
+        namespace V20180717
+        {
+            namespace Model
+            {
+                /**
+                * Output file information for an AIGC video conversion task.
+                */
+                class AigcVideoRedrawOutputFileInfo : public AbstractModel
+                {
+                public:
+                    AigcVideoRedrawOutputFileInfo();
+                    ~AigcVideoRedrawOutputFileInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>Storage mode. Valid values: <li>Permanent: permanent storage;</li> <li>Temporary: temporary storage;</li>Default value: Temporary</p>
+                     * @return StorageMode <p>Storage mode. Valid values: <li>Permanent: permanent storage;</li> <li>Temporary: temporary storage;</li>Default value: Temporary</p>
+                     * 
+                     */
+                    std::string GetStorageMode() const;
+
+                    /**
+                     * 设置<p>Storage mode. Valid values: <li>Permanent: permanent storage;</li> <li>Temporary: temporary storage;</li>Default value: Temporary</p>
+                     * @param _storageMode <p>Storage mode. Valid values: <li>Permanent: permanent storage;</li> <li>Temporary: temporary storage;</li>Default value: Temporary</p>
+                     * 
+                     */
+                    void SetStorageMode(const std::string& _storageMode);
+
+                    /**
+                     * 判断参数 StorageMode 是否已赋值
+                     * @return StorageMode 是否已赋值
+                     * 
+                     */
+                    bool StorageModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Output filename, up to 64 characters. By default, the system specifies the generated filename. Valid when StorageMode is Permanent.</p>
+                     * @return MediaName <p>Output filename, up to 64 characters. By default, the system specifies the generated filename. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    std::string GetMediaName() const;
+
+                    /**
+                     * 设置<p>Output filename, up to 64 characters. By default, the system specifies the generated filename. Valid when StorageMode is Permanent.</p>
+                     * @param _mediaName <p>Output filename, up to 64 characters. By default, the system specifies the generated filename. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    void SetMediaName(const std::string& _mediaName);
+
+                    /**
+                     * 判断参数 MediaName 是否已赋值
+                     * @return MediaName 是否已赋值
+                     * 
+                     */
+                    bool MediaNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">Create Category</a> API. Valid when StorageMode is Permanent.</p>
+                     * @return ClassId <p>Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">Create Category</a> API. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    int64_t GetClassId() const;
+
+                    /**
+                     * 设置<p>Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">Create Category</a> API. Valid when StorageMode is Permanent.</p>
+                     * @param _classId <p>Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">Create Category</a> API. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    void SetClassId(const int64_t& _classId);
+
+                    /**
+                     * 判断参数 ClassId 是否已赋值
+                     * @return ClassId 是否已赋值
+                     * 
+                     */
+                    bool ClassIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Expiry date of the output file. The file will be deleted after this time. By default, it never expires. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @return ExpireTime <p>Expiry date of the output file. The file will be deleted after this time. By default, it never expires. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置<p>Expiry date of the output file. The file will be deleted after this time. By default, it never expires. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @param _expireTime <p>Expiry date of the output file. The file will be deleted after this time. By default, it never expires. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>File type, for example, mp4 and flv.</p>
+                     * @return FileType <p>File type, for example, mp4 and flv.</p>
+                     * 
+                     */
+                    std::string GetFileType() const;
+
+                    /**
+                     * 设置<p>File type, for example, mp4 and flv.</p>
+                     * @param _fileType <p>File type, for example, mp4 and flv.</p>
+                     * 
+                     */
+                    void SetFileType(const std::string& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     * 
+                     */
+                    bool FileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Media file playback address.</p>
+                     * @return FileUrl <p>Media file playback address.</p>
+                     * 
+                     */
+                    std::string GetFileUrl() const;
+
+                    /**
+                     * 设置<p>Media file playback address.</p>
+                     * @param _fileUrl <p>Media file playback address.</p>
+                     * 
+                     */
+                    void SetFileUrl(const std::string& _fileUrl);
+
+                    /**
+                     * 判断参数 FileUrl 是否已赋值
+                     * @return FileUrl 是否已赋值
+                     * 
+                     */
+                    bool FileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Media file ID. Valid when StorageMode is Permanent.</p>
+                     * @return FileId <p>Media file ID. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>Media file ID. Valid when StorageMode is Permanent.</p>
+                     * @param _fileId <p>Media file ID. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Meta-information of the output video. Valid when StorageMode is Permanent.</p>
+                     * @return MetaData <p>Meta-information of the output video. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置<p>Meta-information of the output video. Valid when StorageMode is Permanent.</p>
+                     * @param _metaData <p>Meta-information of the output video. Valid when StorageMode is Permanent.</p>
+                     * 
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     * 
+                     */
+                    bool MetaDataHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>Storage mode. Valid values: <li>Permanent: permanent storage;</li> <li>Temporary: temporary storage;</li>Default value: Temporary</p>
+                     */
+                    std::string m_storageMode;
+                    bool m_storageModeHasBeenSet;
+
+                    /**
+                     * <p>Output filename, up to 64 characters. By default, the system specifies the generated filename. Valid when StorageMode is Permanent.</p>
+                     */
+                    std::string m_mediaName;
+                    bool m_mediaNameHasBeenSet;
+
+                    /**
+                     * <p>Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">Create Category</a> API. Valid when StorageMode is Permanent.</p>
+                     */
+                    int64_t m_classId;
+                    bool m_classIdHasBeenSet;
+
+                    /**
+                     * <p>Expiry date of the output file. The file will be deleted after this time. By default, it never expires. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>File type, for example, mp4 and flv.</p>
+                     */
+                    std::string m_fileType;
+                    bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * <p>Media file playback address.</p>
+                     */
+                    std::string m_fileUrl;
+                    bool m_fileUrlHasBeenSet;
+
+                    /**
+                     * <p>Media file ID. Valid when StorageMode is Permanent.</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
+
+                    /**
+                     * <p>Meta-information of the output video. Valid when StorageMode is Permanent.</p>
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AIGCVIDEOREDRAWOUTPUTFILEINFO_H_

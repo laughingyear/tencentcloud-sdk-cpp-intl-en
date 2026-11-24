@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Extract copyright watermark task input
+                * Input of the Copyright Watermark Extraction Task
                 */
                 class ExtractCopyRightWatermarkTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The media URL from which the watermark needs to be extracted.
-                     * @return Url The media URL from which the watermark needs to be extracted.
+                     * 获取URL of the media requiring watermark extraction.
+                     * @return Url URL of the media requiring watermark extraction.
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置The media URL from which the watermark needs to be extracted.
-                     * @param _url The media URL from which the watermark needs to be extracted.
+                     * 设置URL of the media requiring watermark extraction.
+                     * @param _url URL of the media requiring watermark extraction.
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The media URL from which the watermark needs to be extracted.
+                     * URL of the media requiring watermark extraction.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

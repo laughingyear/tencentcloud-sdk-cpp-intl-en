@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameters of subtile information
+                * Subtitle information input parameter.
                 */
                 class MediaSubtitleInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Subtitle name. Length limit: 64 characters
-                     * @return Name Subtitle name. Length limit: 64 characters
+                     * 获取Subtitle name. Length limit: 64 characters.
+                     * @return Name Subtitle name. Length limit: 64 characters.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Subtitle name. Length limit: 64 characters
-                     * @param _name Subtitle name. Length limit: 64 characters
+                     * 设置Subtitle name. Length limit: 64 characters.
+                     * @param _name Subtitle name. Length limit: 64 characters.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,67 +68,71 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Subtitle language. Common values:
-<li>`zh`: Chinese</li>
-<li>`en`: English</li>
-<li>`ja`: Japanese</li>
-<li>`ko`: Korean</li>
-<li>`vi`: Vietnamese</li>
-<li>`ms`: Malay</li>
-<li>`th`: Thai</li>
-<li>`pt`: Portuguese</li>
-<li>`tr`: Turkish</li>
-<li>`ar`: Arabic</li>
-<li>`es`: Spanish</li>
-<li>`hi`: Hindi</li>
-<li>`fr`: French</li>For other valid values, see [RFC 5646](https://tools.ietf.org/html/rfc5646).
-                     * @return Language Subtitle language. Common values:
-<li>`zh`: Chinese</li>
-<li>`en`: English</li>
-<li>`ja`: Japanese</li>
-<li>`ko`: Korean</li>
-<li>`vi`: Vietnamese</li>
-<li>`ms`: Malay</li>
-<li>`th`: Thai</li>
-<li>`pt`: Portuguese</li>
-<li>`tr`: Turkish</li>
-<li>`ar`: Arabic</li>
-<li>`es`: Spanish</li>
-<li>`hi`: Hindi</li>
-<li>`fr`: French</li>For other valid values, see [RFC 5646](https://tools.ietf.org/html/rfc5646).
+                     * 获取Subtitle language. Common values are as follows:
+<li>zh: Chinese;</li>
+<li>en: English;</li>
+<li>ja: Japanese;</li>
+<li>ko: Korean;</li>
+<li>vi: Vietnamese;</li>
+<li>ms: Malay;</li>
+<li>th: Thai;</li>
+<li>pt: Portuguese;</li>
+<li>tr: Turkish;</li>
+<li>ar: Arabic;</li>
+<li>es: Spanish;</li>
+<li>hi: Hindi;</li>
+<li>fr: French.</li>
+For other values, see [RFC5646](https://tools.ietf.org/html/rfc5646).
+                     * @return Language Subtitle language. Common values are as follows:
+<li>zh: Chinese;</li>
+<li>en: English;</li>
+<li>ja: Japanese;</li>
+<li>ko: Korean;</li>
+<li>vi: Vietnamese;</li>
+<li>ms: Malay;</li>
+<li>th: Thai;</li>
+<li>pt: Portuguese;</li>
+<li>tr: Turkish;</li>
+<li>ar: Arabic;</li>
+<li>es: Spanish;</li>
+<li>hi: Hindi;</li>
+<li>fr: French.</li>
+For other values, see [RFC5646](https://tools.ietf.org/html/rfc5646).
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置Subtitle language. Common values:
-<li>`zh`: Chinese</li>
-<li>`en`: English</li>
-<li>`ja`: Japanese</li>
-<li>`ko`: Korean</li>
-<li>`vi`: Vietnamese</li>
-<li>`ms`: Malay</li>
-<li>`th`: Thai</li>
-<li>`pt`: Portuguese</li>
-<li>`tr`: Turkish</li>
-<li>`ar`: Arabic</li>
-<li>`es`: Spanish</li>
-<li>`hi`: Hindi</li>
-<li>`fr`: French</li>For other valid values, see [RFC 5646](https://tools.ietf.org/html/rfc5646).
-                     * @param _language Subtitle language. Common values:
-<li>`zh`: Chinese</li>
-<li>`en`: English</li>
-<li>`ja`: Japanese</li>
-<li>`ko`: Korean</li>
-<li>`vi`: Vietnamese</li>
-<li>`ms`: Malay</li>
-<li>`th`: Thai</li>
-<li>`pt`: Portuguese</li>
-<li>`tr`: Turkish</li>
-<li>`ar`: Arabic</li>
-<li>`es`: Spanish</li>
-<li>`hi`: Hindi</li>
-<li>`fr`: French</li>For other valid values, see [RFC 5646](https://tools.ietf.org/html/rfc5646).
+                     * 设置Subtitle language. Common values are as follows:
+<li>zh: Chinese;</li>
+<li>en: English;</li>
+<li>ja: Japanese;</li>
+<li>ko: Korean;</li>
+<li>vi: Vietnamese;</li>
+<li>ms: Malay;</li>
+<li>th: Thai;</li>
+<li>pt: Portuguese;</li>
+<li>tr: Turkish;</li>
+<li>ar: Arabic;</li>
+<li>es: Spanish;</li>
+<li>hi: Hindi;</li>
+<li>fr: French.</li>
+For other values, see [RFC5646](https://tools.ietf.org/html/rfc5646).
+                     * @param _language Subtitle language. Common values are as follows:
+<li>zh: Chinese;</li>
+<li>en: English;</li>
+<li>ja: Japanese;</li>
+<li>ko: Korean;</li>
+<li>vi: Vietnamese;</li>
+<li>ms: Malay;</li>
+<li>th: Thai;</li>
+<li>pt: Portuguese;</li>
+<li>tr: Turkish;</li>
+<li>ar: Arabic;</li>
+<li>es: Spanish;</li>
+<li>hi: Hindi;</li>
+<li>fr: French.</li>
+For other values, see [RFC5646](https://tools.ietf.org/html/rfc5646).
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -141,18 +145,18 @@ namespace TencentCloud
                     bool LanguageHasBeenSet() const;
 
                     /**
-                     * 获取Subtitle format. Valid value:
+                     * 获取Subtitle format. Valid values:
 <li>vtt</li>
-                     * @return Format Subtitle format. Valid value:
+                     * @return Format Subtitle format. Valid values:
 <li>vtt</li>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置Subtitle format. Valid value:
+                     * 设置Subtitle format. Valid values:
 <li>vtt</li>
-                     * @param _format Subtitle format. Valid value:
+                     * @param _format Subtitle format. Valid values:
 <li>vtt</li>
                      * 
                      */
@@ -166,15 +170,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取Subtitle content, which is [Base64-encoded](https://tools.ietf.org/html/rfc4648) strings
-                     * @return Content Subtitle content, which is [Base64-encoded](https://tools.ietf.org/html/rfc4648) strings
+                     * 获取Caption content as an encoded string after [Base64](https://tools.ietf.org/html/rfc4648) encoding.
+                     * @return Content Caption content as an encoded string after [Base64](https://tools.ietf.org/html/rfc4648) encoding.
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置Subtitle content, which is [Base64-encoded](https://tools.ietf.org/html/rfc4648) strings
-                     * @param _content Subtitle content, which is [Base64-encoded](https://tools.ietf.org/html/rfc4648) strings
+                     * 设置Caption content as an encoded string after [Base64](https://tools.ietf.org/html/rfc4648) encoding.
+                     * @param _content Caption content as an encoded string after [Base64](https://tools.ietf.org/html/rfc4648) encoding.
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -187,15 +191,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle ID. It can be up to 16 characters long, can contain letters, numbers, underscores (_), and hyphens (-), and cannot be identical to an existing subtitle ID.
-                     * @return Id The subtitle ID. It can be up to 16 characters long, can contain letters, numbers, underscores (_), and hyphens (-), and cannot be identical to an existing subtitle ID.
+                     * 获取Unique identifier of the subtitle. The length cannot exceed 16 characters. It can contain upper- and lower-case letters, digits, underscores (_), and hyphens (-). It cannot duplicate the unique identifier of an existing subtitle in the media file.
+                     * @return Id Unique identifier of the subtitle. The length cannot exceed 16 characters. It can contain upper- and lower-case letters, digits, underscores (_), and hyphens (-). It cannot duplicate the unique identifier of an existing subtitle in the media file.
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置The subtitle ID. It can be up to 16 characters long, can contain letters, numbers, underscores (_), and hyphens (-), and cannot be identical to an existing subtitle ID.
-                     * @param _id The subtitle ID. It can be up to 16 characters long, can contain letters, numbers, underscores (_), and hyphens (-), and cannot be identical to an existing subtitle ID.
+                     * 设置Unique identifier of the subtitle. The length cannot exceed 16 characters. It can contain upper- and lower-case letters, digits, underscores (_), and hyphens (-). It cannot duplicate the unique identifier of an existing subtitle in the media file.
+                     * @param _id Unique identifier of the subtitle. The length cannot exceed 16 characters. It can contain upper- and lower-case letters, digits, underscores (_), and hyphens (-). It cannot duplicate the unique identifier of an existing subtitle in the media file.
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -210,45 +214,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Subtitle name. Length limit: 64 characters
+                     * Subtitle name. Length limit: 64 characters.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Subtitle language. Common values:
-<li>`zh`: Chinese</li>
-<li>`en`: English</li>
-<li>`ja`: Japanese</li>
-<li>`ko`: Korean</li>
-<li>`vi`: Vietnamese</li>
-<li>`ms`: Malay</li>
-<li>`th`: Thai</li>
-<li>`pt`: Portuguese</li>
-<li>`tr`: Turkish</li>
-<li>`ar`: Arabic</li>
-<li>`es`: Spanish</li>
-<li>`hi`: Hindi</li>
-<li>`fr`: French</li>For other valid values, see [RFC 5646](https://tools.ietf.org/html/rfc5646).
+                     * Subtitle language. Common values are as follows:
+<li>zh: Chinese;</li>
+<li>en: English;</li>
+<li>ja: Japanese;</li>
+<li>ko: Korean;</li>
+<li>vi: Vietnamese;</li>
+<li>ms: Malay;</li>
+<li>th: Thai;</li>
+<li>pt: Portuguese;</li>
+<li>tr: Turkish;</li>
+<li>ar: Arabic;</li>
+<li>es: Spanish;</li>
+<li>hi: Hindi;</li>
+<li>fr: French.</li>
+For other values, see [RFC5646](https://tools.ietf.org/html/rfc5646).
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
 
                     /**
-                     * Subtitle format. Valid value:
+                     * Subtitle format. Valid values:
 <li>vtt</li>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * Subtitle content, which is [Base64-encoded](https://tools.ietf.org/html/rfc4648) strings
+                     * Caption content as an encoded string after [Base64](https://tools.ietf.org/html/rfc4648) encoding.
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * The subtitle ID. It can be up to 16 characters long, can contain letters, numbers, underscores (_), and hyphens (-), and cannot be identical to an existing subtitle ID.
+                     * Unique identifier of the subtitle. The length cannot exceed 16 characters. It can contain upper- and lower-case letters, digits, underscores (_), and hyphens (-). It cannot duplicate the unique identifier of an existing subtitle in the media file.
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

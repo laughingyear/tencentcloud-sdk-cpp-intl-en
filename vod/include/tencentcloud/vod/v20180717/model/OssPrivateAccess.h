@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Access authentication configuration for OSS origin
+                * Authentication for origin-pull from Alibaba Cloud OSS
                 */
                 class OssPrivateAccess : public AbstractModel
                 {
@@ -47,15 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Alibaba Cloud OSS return-to-origin authentication configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @return Switch Alibaba Cloud OSS return-to-origin authentication configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 获取Switch for authentication configuration for origin-pull from Alibaba Cloud OSS. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @return Switch Switch for authentication configuration for origin-pull from Alibaba Cloud OSS. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Alibaba Cloud OSS return-to-origin authentication configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @param _switch Alibaba Cloud OSS return-to-origin authentication configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 设置Switch for authentication configuration for origin-pull from Alibaba Cloud OSS. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @param _switch Switch for authentication configuration for origin-pull from Alibaba Cloud OSS. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -131,15 +139,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取BucketName.
-                     * @return Bucket BucketName.
+                     * 获取Bucket Name.
+                     * @return Bucket Bucket Name.
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置BucketName.
-                     * @param _bucket BucketName.
+                     * 设置Bucket Name.
+                     * @param _bucket Bucket Name.
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -154,7 +162,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Alibaba Cloud OSS return-to-origin authentication configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * Switch for authentication configuration for origin-pull from Alibaba Cloud OSS. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
@@ -178,7 +188,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * BucketName.
+                     * Bucket Name.
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;

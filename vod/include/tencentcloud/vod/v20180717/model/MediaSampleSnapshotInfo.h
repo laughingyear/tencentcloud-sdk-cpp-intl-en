@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of sampled screenshot of VOD file
+                * Sampling screenshot information of VOD files
                 */
                 class MediaSampleSnapshotInfo : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Information set of sampled screenshots with the specified specifications. Each element represents a set of sampled screenshots with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SampleSnapshotSet Information set of sampled screenshots with the specified specifications. Each element represents a set of sampled screenshots with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取A collection of sampling screenshot information for a specific specification, where each element represents a set of sampled screenshots of the same spec.
+                     * @return SampleSnapshotSet A collection of sampling screenshot information for a specific specification, where each element represents a set of sampled screenshots of the same spec.
                      * 
                      */
                     std::vector<MediaSampleSnapshotItem> GetSampleSnapshotSet() const;
 
                     /**
-                     * 设置Information set of sampled screenshots with the specified specifications. Each element represents a set of sampled screenshots with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sampleSnapshotSet Information set of sampled screenshots with the specified specifications. Each element represents a set of sampled screenshots with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置A collection of sampling screenshot information for a specific specification, where each element represents a set of sampled screenshots of the same spec.
+                     * @param _sampleSnapshotSet A collection of sampling screenshot information for a specific specification, where each element represents a set of sampled screenshots of the same spec.
                      * 
                      */
                     void SetSampleSnapshotSet(const std::vector<MediaSampleSnapshotItem>& _sampleSnapshotSet);
@@ -75,8 +71,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Information set of sampled screenshots with the specified specifications. Each element represents a set of sampled screenshots with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * A collection of sampling screenshot information for a specific specification, where each element represents a set of sampled screenshots of the same spec.
                      */
                     std::vector<MediaSampleSnapshotItem> m_sampleSnapshotSet;
                     bool m_sampleSnapshotSetHasBeenSet;

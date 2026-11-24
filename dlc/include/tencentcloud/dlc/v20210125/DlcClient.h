@@ -27,6 +27,8 @@
 #include <tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AttachDataMaskPolicyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AttachDataMaskPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDataEngineResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDataMaskStrategyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDataMaskStrategyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h>
@@ -73,12 +77,16 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserRoleRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserRoleResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteCHDFSBindingProductRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteCHDFSBindingProductResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteDataMaskStrategyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteDataMaskStrategyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserRequest.h>
@@ -109,6 +117,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataMaskStrategiesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataMaskStrategiesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
@@ -127,6 +137,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeQueryResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h>
@@ -223,6 +235,8 @@
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateDataMaskStrategyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateDataMaskStrategyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateRowFilterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateRowFilterResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigRequest.h>
@@ -249,6 +263,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AlterDMSDatabaseResponse> AlterDMSDatabaseOutcome;
                 typedef std::future<AlterDMSDatabaseOutcome> AlterDMSDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AlterDMSDatabaseRequest&, AlterDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachDataMaskPolicyResponse> AttachDataMaskPolicyOutcome;
+                typedef std::future<AttachDataMaskPolicyOutcome> AttachDataMaskPolicyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AttachDataMaskPolicyRequest&, AttachDataMaskPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDataMaskPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
@@ -291,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataEngineResponse> CreateDataEngineOutcome;
                 typedef std::future<CreateDataEngineOutcome> CreateDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateDataEngineRequest&, CreateDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDataMaskStrategyResponse> CreateDataMaskStrategyOutcome;
+                typedef std::future<CreateDataMaskStrategyOutcome> CreateDataMaskStrategyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateDataMaskStrategyRequest&, CreateDataMaskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataMaskStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
                 typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
@@ -318,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserRoleResponse> CreateUserRoleOutcome;
+                typedef std::future<CreateUserRoleOutcome> CreateUserRoleOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateUserRoleRequest&, CreateUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkGroupResponse> CreateWorkGroupOutcome;
                 typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateWorkGroupRequest&, CreateWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkGroupAsyncHandler;
@@ -327,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataEngineResponse> DeleteDataEngineOutcome;
                 typedef std::future<DeleteDataEngineOutcome> DeleteDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteDataEngineRequest&, DeleteDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDataMaskStrategyResponse> DeleteDataMaskStrategyOutcome;
+                typedef std::future<DeleteDataMaskStrategyOutcome> DeleteDataMaskStrategyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteDataMaskStrategyRequest&, DeleteDataMaskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataMaskStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSparkAppResponse> DeleteSparkAppOutcome;
                 typedef std::future<DeleteSparkAppOutcome> DeleteSparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteSparkAppRequest&, DeleteSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkAppAsyncHandler;
@@ -372,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataEnginesScaleDetailResponse> DescribeDataEnginesScaleDetailOutcome;
                 typedef std::future<DescribeDataEnginesScaleDetailOutcome> DescribeDataEnginesScaleDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginesScaleDetailRequest&, DescribeDataEnginesScaleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginesScaleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataMaskStrategiesResponse> DescribeDataMaskStrategiesOutcome;
+                typedef std::future<DescribeDataMaskStrategiesOutcome> DescribeDataMaskStrategiesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDataMaskStrategiesRequest&, DescribeDataMaskStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataMaskStrategiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEngineUsageInfoResponse> DescribeEngineUsageInfoOutcome;
                 typedef std::future<DescribeEngineUsageInfoOutcome> DescribeEngineUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeEngineUsageInfoRequest&, DescribeEngineUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineUsageInfoAsyncHandler;
@@ -399,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
                 typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionImageVersionResponse> DescribeSessionImageVersionOutcome;
+                typedef std::future<DescribeSessionImageVersionOutcome> DescribeSessionImageVersionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSessionImageVersionRequest&, DescribeSessionImageVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionImageVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSparkAppJobResponse> DescribeSparkAppJobOutcome;
                 typedef std::future<DescribeSparkAppJobOutcome> DescribeSparkAppJobOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppJobRequest&, DescribeSparkAppJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppJobAsyncHandler;
@@ -543,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDataEngineConfigResponse> UpdateDataEngineConfigOutcome;
                 typedef std::future<UpdateDataEngineConfigOutcome> UpdateDataEngineConfigOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateDataEngineConfigRequest&, UpdateDataEngineConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataEngineConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDataMaskStrategyResponse> UpdateDataMaskStrategyOutcome;
+                typedef std::future<UpdateDataMaskStrategyOutcome> UpdateDataMaskStrategyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateDataMaskStrategyRequest&, UpdateDataMaskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataMaskStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateRowFilterResponse> UpdateRowFilterOutcome;
                 typedef std::future<UpdateRowFilterOutcome> UpdateRowFilterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateRowFilterRequest&, UpdateRowFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRowFilterAsyncHandler;
@@ -572,6 +607,15 @@ namespace TencentCloud
                 AlterDMSDatabaseOutcome AlterDMSDatabase(const Model::AlterDMSDatabaseRequest &request);
                 void AlterDMSDatabaseAsync(const Model::AlterDMSDatabaseRequest& request, const AlterDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AlterDMSDatabaseOutcomeCallable AlterDMSDatabaseCallable(const Model::AlterDMSDatabaseRequest& request);
+
+                /**
+                 *This API is used to bind a DMask policy.
+                 * @param req AttachDataMaskPolicyRequest
+                 * @return AttachDataMaskPolicyOutcome
+                 */
+                AttachDataMaskPolicyOutcome AttachDataMaskPolicy(const Model::AttachDataMaskPolicyRequest &request);
+                void AttachDataMaskPolicyAsync(const Model::AttachDataMaskPolicyRequest& request, const AttachDataMaskPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachDataMaskPolicyOutcomeCallable AttachDataMaskPolicyCallable(const Model::AttachDataMaskPolicyRequest& request);
 
                 /**
                  *This API is used to bind the authentication policy to the user.
@@ -700,6 +744,15 @@ namespace TencentCloud
                 CreateDataEngineOutcomeCallable CreateDataEngineCallable(const Model::CreateDataEngineRequest& request);
 
                 /**
+                 *This API is used to create a DMask policy.
+                 * @param req CreateDataMaskStrategyRequest
+                 * @return CreateDataMaskStrategyOutcome
+                 */
+                CreateDataMaskStrategyOutcome CreateDataMaskStrategy(const Model::CreateDataMaskStrategyRequest &request);
+                void CreateDataMaskStrategyAsync(const Model::CreateDataMaskStrategyRequest& request, const CreateDataMaskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataMaskStrategyOutcomeCallable CreateDataMaskStrategyCallable(const Model::CreateDataMaskStrategyRequest& request);
+
+                /**
                  *This API is used to create a managed internal table. It has been disused.
                  * @param req CreateInternalTableRequest
                  * @return CreateInternalTableOutcome
@@ -781,6 +834,15 @@ namespace TencentCloud
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
+                 *This API is used to create a user role.
+                 * @param req CreateUserRoleRequest
+                 * @return CreateUserRoleOutcome
+                 */
+                CreateUserRoleOutcome CreateUserRole(const Model::CreateUserRoleRequest &request);
+                void CreateUserRoleAsync(const Model::CreateUserRoleRequest& request, const CreateUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserRoleOutcomeCallable CreateUserRoleCallable(const Model::CreateUserRoleRequest& request);
+
+                /**
                  *This API is used to create working groups.
                  * @param req CreateWorkGroupRequest
                  * @return CreateWorkGroupOutcome
@@ -806,6 +868,15 @@ namespace TencentCloud
                 DeleteDataEngineOutcome DeleteDataEngine(const Model::DeleteDataEngineRequest &request);
                 void DeleteDataEngineAsync(const Model::DeleteDataEngineRequest& request, const DeleteDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataEngineOutcomeCallable DeleteDataEngineCallable(const Model::DeleteDataEngineRequest& request);
+
+                /**
+                 *This API is used to delete a data masking policy.
+                 * @param req DeleteDataMaskStrategyRequest
+                 * @return DeleteDataMaskStrategyOutcome
+                 */
+                DeleteDataMaskStrategyOutcome DeleteDataMaskStrategy(const Model::DeleteDataMaskStrategyRequest &request);
+                void DeleteDataMaskStrategyAsync(const Model::DeleteDataMaskStrategyRequest& request, const DeleteDataMaskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDataMaskStrategyOutcomeCallable DeleteDataMaskStrategyCallable(const Model::DeleteDataMaskStrategyRequest& request);
 
                 /**
                  *This API is used to delete a Spark job.
@@ -943,6 +1014,15 @@ namespace TencentCloud
                 DescribeDataEnginesScaleDetailOutcomeCallable DescribeDataEnginesScaleDetailCallable(const Model::DescribeDataEnginesScaleDetailRequest& request);
 
                 /**
+                 *This API is used to query the DMask list.
+                 * @param req DescribeDataMaskStrategiesRequest
+                 * @return DescribeDataMaskStrategiesOutcome
+                 */
+                DescribeDataMaskStrategiesOutcome DescribeDataMaskStrategies(const Model::DescribeDataMaskStrategiesRequest &request);
+                void DescribeDataMaskStrategiesAsync(const Model::DescribeDataMaskStrategiesRequest& request, const DescribeDataMaskStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataMaskStrategiesOutcomeCallable DescribeDataMaskStrategiesCallable(const Model::DescribeDataMaskStrategiesRequest& request);
+
+                /**
                  *This API is used to query the resource usage of a data engine based on its ID.
                  * @param req DescribeEngineUsageInfoRequest
                  * @return DescribeEngineUsageInfoOutcome
@@ -1022,6 +1102,15 @@ namespace TencentCloud
                 DescribeResultDownloadOutcome DescribeResultDownload(const Model::DescribeResultDownloadRequest &request);
                 void DescribeResultDownloadAsync(const Model::DescribeResultDownloadRequest& request, const DescribeResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResultDownloadOutcomeCallable DescribeResultDownloadCallable(const Model::DescribeResultDownloadRequest& request);
+
+                /**
+                 *This API is used to retrieve all built-in images of all minor versions under a specified major version.
+                 * @param req DescribeSessionImageVersionRequest
+                 * @return DescribeSessionImageVersionOutcome
+                 */
+                DescribeSessionImageVersionOutcome DescribeSessionImageVersion(const Model::DescribeSessionImageVersionRequest &request);
+                void DescribeSessionImageVersionAsync(const Model::DescribeSessionImageVersionRequest& request, const DescribeSessionImageVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionImageVersionOutcomeCallable DescribeSessionImageVersionCallable(const Model::DescribeSessionImageVersionRequest& request);
 
                 /**
                  *u200cThis API is used to query the information of a Spark job.
@@ -1454,6 +1543,15 @@ namespace TencentCloud
                 UpdateDataEngineConfigOutcome UpdateDataEngineConfig(const Model::UpdateDataEngineConfigRequest &request);
                 void UpdateDataEngineConfigAsync(const Model::UpdateDataEngineConfigRequest& request, const UpdateDataEngineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDataEngineConfigOutcomeCallable UpdateDataEngineConfigCallable(const Model::UpdateDataEngineConfigRequest& request);
+
+                /**
+                 *This API is used to update the DMask policy.
+                 * @param req UpdateDataMaskStrategyRequest
+                 * @return UpdateDataMaskStrategyOutcome
+                 */
+                UpdateDataMaskStrategyOutcome UpdateDataMaskStrategy(const Model::UpdateDataMaskStrategyRequest &request);
+                void UpdateDataMaskStrategyAsync(const Model::UpdateDataMaskStrategyRequest& request, const UpdateDataMaskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDataMaskStrategyOutcomeCallable UpdateDataMaskStrategyCallable(const Model::UpdateDataMaskStrategyRequest& request);
 
                 /**
                  *This API is used to update row filters. Please note that it updates filters only but not catalogs, databases, or tables.

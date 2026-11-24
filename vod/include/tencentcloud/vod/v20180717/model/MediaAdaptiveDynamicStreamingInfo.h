@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Adaptive bitrate streaming information
+                * Adaptive bitrate information.
                 */
                 class MediaAdaptiveDynamicStreamingInfo : public AbstractModel
                 {
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Information array of adaptive bitrate streaming.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return AdaptiveDynamicStreamingSet Information array of adaptive bitrate streaming.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<AdaptiveDynamicStreamingInfoItem> GetAdaptiveDynamicStreamingSet() const;
 
                     /**
                      * 设置Information array of adaptive bitrate streaming.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _adaptiveDynamicStreamingSet Information array of adaptive bitrate streaming.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAdaptiveDynamicStreamingSet(const std::vector<AdaptiveDynamicStreamingInfoItem>& _adaptiveDynamicStreamingSet);
@@ -76,7 +72,6 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Information array of adaptive bitrate streaming.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<AdaptiveDynamicStreamingInfoItem> m_adaptiveDynamicStreamingSet;
                     bool m_adaptiveDynamicStreamingSetHasBeenSet;

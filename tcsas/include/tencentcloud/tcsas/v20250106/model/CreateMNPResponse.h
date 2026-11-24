@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Response mini program ID
-                     * @return Data Response mini program ID
+                     * 获取<p>Returned mini program ID.</p>
+                     * @return Data <p>Returned mini program ID.</p>
                      * 
                      */
                     ResourceIdStringInfo GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Response mini program ID
+                     * <p>Returned mini program ID.</p>
                      */
                     ResourceIdStringInfo m_data;
                     bool m_dataHasBeenSet;

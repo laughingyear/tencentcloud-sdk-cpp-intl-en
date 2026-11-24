@@ -33,6 +33,7 @@
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h>
 #include <tencentcloud/cvm/v20170312/model/Metadata.h>
+#include <tencentcloud/cvm/v20170312/model/NetworkInterfaces.h>
 
 
 namespace TencentCloud
@@ -97,15 +98,15 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取Specify an effective [mirror](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
-                     * @return ImageId Specify an effective [mirror](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
+                     * 获取Specify an effective [mirror](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
+                     * @return ImageId Specify an effective [mirror](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置Specify an effective [mirror](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
-                     * @param _imageId Specify an effective [mirror](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
+                     * 设置Specify an effective [mirror](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
+                     * @param _imageId Specify an effective [mirror](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -141,10 +142,10 @@ namespace TencentCloud
                     /**
                      * 获取Instance model. Different instance models specify different resource specifications.
 
-<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained BY calling the [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) api to get the latest specification table or referring to the [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained by calling the DescribeInstanceTypeConfigs api to get the latest specification table or referring to the [instance specifications](https://www.tencentcloud.com/document/product/213/11518) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * @return InstanceType Instance model. Different instance models specify different resource specifications.
 
-<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained BY calling the [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) api to get the latest specification table or referring to the [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained by calling the DescribeInstanceTypeConfigs api to get the latest specification table or referring to the [instance specifications](https://www.tencentcloud.com/document/product/213/11518) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -152,10 +153,10 @@ namespace TencentCloud
                     /**
                      * 设置Instance model. Different instance models specify different resource specifications.
 
-<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained BY calling the [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) api to get the latest specification table or referring to the [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained by calling the DescribeInstanceTypeConfigs api to get the latest specification table or referring to the [instance specifications](https://www.tencentcloud.com/document/product/213/11518) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * @param _instanceType Instance model. Different instance models specify different resource specifications.
 
-<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained BY calling the [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) api to get the latest specification table or referring to the [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained by calling the DescribeInstanceTypeConfigs api to get the latest specification table or referring to the [instance specifications](https://www.tencentcloud.com/document/product/213/11518) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -252,15 +253,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1).
-                     * @return InstanceCount Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1).
+                     * 获取Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://www.tencentcloud.com/document/product/213/2664).
+                     * @return InstanceCount Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://www.tencentcloud.com/document/product/213/2664).
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1).
-                     * @param _instanceCount Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1).
+                     * 设置Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://www.tencentcloud.com/document/product/213/2664).
+                     * @param _instanceCount Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://www.tencentcloud.com/document/product/213/2664).
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -315,15 +316,15 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808?from_cn_redirect=1). if not specified, the default security group is bound.
-                     * @return SecurityGroupIds Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808?from_cn_redirect=1). if not specified, the default security group is bound.
+                     * 获取Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/api/215/15808). if not specified, the default security group is bound.
+                     * @return SecurityGroupIds Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/api/215/15808). if not specified, the default security group is bound.
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808?from_cn_redirect=1). if not specified, the default security group is bound.
-                     * @param _securityGroupIds Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808?from_cn_redirect=1). if not specified, the default security group is bound.
+                     * 设置Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/api/215/15808). if not specified, the default security group is bound.
+                     * @param _securityGroupIds Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/api/215/15808). if not specified, the default security group is bound.
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -483,15 +484,15 @@ namespace TencentCloud
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
-                     * 获取User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for Windows (https://intl.cloud.tencent.com/document/product/213/17526?from_cn_redirect=1) and Linux (https://intl.cloud.tencent.com/document/product/213/17525?from_cn_redirect=1).
-                     * @return UserData User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for Windows (https://intl.cloud.tencent.com/document/product/213/17526?from_cn_redirect=1) and Linux (https://intl.cloud.tencent.com/document/product/213/17525?from_cn_redirect=1).
+                     * 获取User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for [Windows](https://www.tencentcloud.com/document/product/213/17526) and [Linux](https://www.tencentcloud.com/document/product/213/17525).
+                     * @return UserData User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for [Windows](https://www.tencentcloud.com/document/product/213/17526) and [Linux](https://www.tencentcloud.com/document/product/213/17525).
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for Windows (https://intl.cloud.tencent.com/document/product/213/17526?from_cn_redirect=1) and Linux (https://intl.cloud.tencent.com/document/product/213/17525?from_cn_redirect=1).
-                     * @param _userData User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for Windows (https://intl.cloud.tencent.com/document/product/213/17526?from_cn_redirect=1) and Linux (https://intl.cloud.tencent.com/document/product/213/17525?from_cn_redirect=1).
+                     * 设置User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for [Windows](https://www.tencentcloud.com/document/product/213/17526) and [Linux](https://www.tencentcloud.com/document/product/213/17525).
+                     * @param _userData User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for [Windows](https://www.tencentcloud.com/document/product/213/17526) and [Linux](https://www.tencentcloud.com/document/product/213/17525).
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -583,15 +584,15 @@ false (default): sends a normal request. after passing the check, creates an ins
                     bool HpcClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Instance [billing mode](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
-                     * @return InstanceChargeType Instance [billing mode](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
+                     * 获取Instance [billing mode](https://www.tencentcloud.com/document/product/213/2180).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
+                     * @return InstanceChargeType Instance [billing mode](https://www.tencentcloud.com/document/product/213/2180).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置Instance [billing mode](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
-                     * @param _instanceChargeType Instance [billing mode](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
+                     * 设置Instance [billing mode](https://www.tencentcloud.com/document/product/213/2180).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
+                     * @param _instanceChargeType Instance [billing mode](https://www.tencentcloud.com/document/product/213/2180).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -644,6 +645,47 @@ false (default): sends a normal request. after passing the check, creates an ins
                      * 
                      */
                     bool DisableApiTerminationHasBeenSet() const;
+
+                    /**
+                     * 获取Whether jumbo frames are enabled for the instance. Valid values:
+- true: Jumbo frames are enabled. Only instance types that support jumbo frames can be set to true.
+- false: Jumbo frames are disabled. Only instance types that support jumbo frames can be set to false.
+
+
+ Supported instance types: [Instance Types](https://www.tencentcloud.com/zh/document/api/213/11518)
+                     * @return EnableJumboFrame Whether jumbo frames are enabled for the instance. Valid values:
+- true: Jumbo frames are enabled. Only instance types that support jumbo frames can be set to true.
+- false: Jumbo frames are disabled. Only instance types that support jumbo frames can be set to false.
+
+
+ Supported instance types: [Instance Types](https://www.tencentcloud.com/zh/document/api/213/11518)
+                     * 
+                     */
+                    bool GetEnableJumboFrame() const;
+
+                    /**
+                     * 设置Whether jumbo frames are enabled for the instance. Valid values:
+- true: Jumbo frames are enabled. Only instance types that support jumbo frames can be set to true.
+- false: Jumbo frames are disabled. Only instance types that support jumbo frames can be set to false.
+
+
+ Supported instance types: [Instance Types](https://www.tencentcloud.com/zh/document/api/213/11518)
+                     * @param _enableJumboFrame Whether jumbo frames are enabled for the instance. Valid values:
+- true: Jumbo frames are enabled. Only instance types that support jumbo frames can be set to true.
+- false: Jumbo frames are disabled. Only instance types that support jumbo frames can be set to false.
+
+
+ Supported instance types: [Instance Types](https://www.tencentcloud.com/zh/document/api/213/11518)
+                     * 
+                     */
+                    void SetEnableJumboFrame(const bool& _enableJumboFrame);
+
+                    /**
+                     * 判断参数 EnableJumboFrame 是否已赋值
+                     * @return EnableJumboFrame 是否已赋值
+                     * 
+                     */
+                    bool EnableJumboFrameHasBeenSet() const;
 
                     /**
                      * 获取Description list of tags. by specifying this parameter, tags can be bound to the instance launch template.
@@ -728,6 +770,27 @@ Note: this field is in beta test.
                      */
                     bool TemplateDataModifyActionHasBeenSet() const;
 
+                    /**
+                     * 获取Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @return NetworkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    std::vector<NetworkInterfaces> GetNetworkInterfaces() const;
+
+                    /**
+                     * 设置Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @param _networkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    void SetNetworkInterfaces(const std::vector<NetworkInterfaces>& _networkInterfaces);
+
+                    /**
+                     * 判断参数 NetworkInterfaces 是否已赋值
+                     * @return NetworkInterfaces 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -743,7 +806,7 @@ Note: this field is in beta test.
                     bool m_placementHasBeenSet;
 
                     /**
-                     * Specify an effective [mirror](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
+                     * Specify an effective [mirror](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. there are four image types: <li>PUBLIC image</li> <li>custom image</li> <li>shared image</li> <li>service market image</li>  you can obtain available mirror ids in the following ways: <li>the mirror ids of `PUBLIC image`, `custom image` and `shared image` can be queried by logging in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_image); the mirror ids of `service market image` can be queried through the [cloud market](https://market.cloud.tencent.com/list).</li> <li>call the api [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), input InstanceType to obtain the list of images supported by the current model, and take the `ImageId` field from the return information.</li>.
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -757,7 +820,7 @@ Note: this field is in beta test.
                     /**
                      * Instance model. Different instance models specify different resource specifications.
 
-<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained BY calling the [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) api to get the latest specification table or referring to the [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
+<br><li>For instances created with the payment modes PREPAID or POSTPAID_BY_HOUR, the specific values can be obtained by calling the DescribeInstanceTypeConfigs api to get the latest specification table or referring to the [instance specifications](https://www.tencentcloud.com/document/product/213/11518) description. if this parameter is not specified, the system will dynamically assign a default model based on the current resource sales situation in a region.</li><li>for instances created with the payment mode CDHPAID, this parameter has the prefix "CDH_" and is generated based on the CPU and memory configuration. the specific format is: CDH_XCXG. for example, for creating a CDH instance with 1 CPU core and 1 gb memory, this parameter should be CDH_1C1G.</li>.
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -787,7 +850,7 @@ Note: this field is in beta test.
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1).
+                     * Number of instances to purchase. value range for monthly subscription instances: [1, 300]. value range for pay-as-you-go instances: [1, 100]. default value: 1. the number of instances to purchase must not exceed the remaining user quota. for specific quota limitations, see [CVM instance purchase limitations](https://www.tencentcloud.com/document/product/213/2664).
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
@@ -805,7 +868,7 @@ Note: this field is in beta test.
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808?from_cn_redirect=1). if not specified, the default security group is bound.
+                     * Security group to which an instance belongs. this parameter can be obtained by calling the sgId field in the returned value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/api/215/15808). if not specified, the default security group is bound.
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -853,7 +916,7 @@ Note: this field is in beta test.
                     bool m_instanceMarketOptionsHasBeenSet;
 
                     /**
-                     * User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for Windows (https://intl.cloud.tencent.com/document/product/213/17526?from_cn_redirect=1) and Linux (https://intl.cloud.tencent.com/document/product/213/17525?from_cn_redirect=1).
+                     * User data provided for an instance must be encoded in base64. valid values for maximum data size are up to 16 KB. for details on obtaining this parameter, see running commands at startup for [Windows](https://www.tencentcloud.com/document/product/213/17526) and [Linux](https://www.tencentcloud.com/document/product/213/17525).
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
@@ -881,7 +944,7 @@ false (default): sends a normal request. after passing the check, creates an ins
                     bool m_hpcClusterIdHasBeenSet;
 
                     /**
-                     * Instance [billing mode](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
+                     * Instance [billing mode](https://www.tencentcloud.com/document/product/213/2180).<br><li>PREPAID: prepaid, that is, monthly subscription.</li><li>POSTPAID_BY_HOUR: pay-as-you-go by hour.</li><li>CDHPAID: CDH instance (created based on CDH; the resources of the host are free of charge).</li><li>SPOTPAID: spot payment.</li>Default value: POSTPAID_BY_HOUR.
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -897,6 +960,17 @@ false (default): sends a normal request. after passing the check, creates an ins
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * Whether jumbo frames are enabled for the instance. Valid values:
+- true: Jumbo frames are enabled. Only instance types that support jumbo frames can be set to true.
+- false: Jumbo frames are disabled. Only instance types that support jumbo frames can be set to false.
+
+
+ Supported instance types: [Instance Types](https://www.tencentcloud.com/zh/document/api/213/11518)
+                     */
+                    bool m_enableJumboFrame;
+                    bool m_enableJumboFrameHasBeenSet;
 
                     /**
                      * Description list of tags. by specifying this parameter, tags can be bound to the instance launch template.
@@ -920,6 +994,12 @@ Note: this field is in beta test.
                      */
                     std::string m_templateDataModifyAction;
                     bool m_templateDataModifyActionHasBeenSet;
+
+                    /**
+                     * Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     */
+                    std::vector<NetworkInterfaces> m_networkInterfaces;
+                    bool m_networkInterfacesHasBeenSet;
 
                 };
             }

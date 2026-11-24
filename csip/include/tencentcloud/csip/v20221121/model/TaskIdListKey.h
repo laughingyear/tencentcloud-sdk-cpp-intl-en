@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of task IDs
+                * Task ID List Key
                 */
                 class TaskIdListKey : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task ID
-                     * @return TaskId Task ID
+                     * 获取Task ID.
+                     * @return TaskId Task ID.
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置Task ID
-                     * @param _taskId Task ID
+                     * 设置Task ID.
+                     * @param _taskId Task ID.
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取APP ID
+                     * @return TargetAppId APP ID
+                     * 
+                     */
+                    std::string GetTargetAppId() const;
+
+                    /**
+                     * 设置APP ID
+                     * @param _targetAppId APP ID
+                     * 
+                     */
+                    void SetTargetAppId(const std::string& _targetAppId);
+
+                    /**
+                     * 判断参数 TargetAppId 是否已赋值
+                     * @return TargetAppId 是否已赋值
+                     * 
+                     */
+                    bool TargetAppIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Task ID
+                     * Task ID.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * APP ID
+                     */
+                    std::string m_targetAppId;
+                    bool m_targetAppIdHasBeenSet;
 
                 };
             }

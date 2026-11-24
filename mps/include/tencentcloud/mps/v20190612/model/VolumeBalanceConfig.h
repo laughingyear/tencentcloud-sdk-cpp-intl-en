@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The volume equalization configuration.
+                * Volume equalization configuration
                 */
                 class VolumeBalanceConfig : public AbstractModel
                 {
@@ -47,27 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable the feature. Valid values:
-<li>`ON`</li>
-<li>`OFF` </li>
-Default value: `ON`.
-                     * @return Switch Whether to enable the feature. Valid values:
-<li>`ON`</li>
-<li>`OFF` </li>
-Default value: `ON`.
+                     * 获取Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+Default value: ON.
+                     * @return Switch Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+Default value: ON.
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable the feature. Valid values:
-<li>`ON`</li>
-<li>`OFF` </li>
-Default value: `ON`.
-                     * @param _switch Whether to enable the feature. Valid values:
-<li>`ON`</li>
-<li>`OFF` </li>
-Default value: `ON`.
+                     * 设置Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+Default value: ON.
+                     * @param _switch Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+Default value: ON.
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -80,31 +80,27 @@ Default value: `ON`.
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The type. Valid values:
-<li>`loudNorm`: Loudness normalization.</li>
-<li>`gainControl`: Volume leveling.</li>
-Default value: `loudNorm`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Type The type. Valid values:
-<li>`loudNorm`: Loudness normalization.</li>
-<li>`gainControl`: Volume leveling.</li>
-Default value: `loudNorm`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Type. Valid values:
+<li>loudNorm: loudness normalization</li>
+<li>gainControl: reduce abrupt change</li>
+Default value: loudNorm.
+                     * @return Type Type. Valid values:
+<li>loudNorm: loudness normalization</li>
+<li>gainControl: reduce abrupt change</li>
+Default value: loudNorm.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The type. Valid values:
-<li>`loudNorm`: Loudness normalization.</li>
-<li>`gainControl`: Volume leveling.</li>
-Default value: `loudNorm`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _type The type. Valid values:
-<li>`loudNorm`: Loudness normalization.</li>
-<li>`gainControl`: Volume leveling.</li>
-Default value: `loudNorm`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Type. Valid values:
+<li>loudNorm: loudness normalization</li>
+<li>gainControl: reduce abrupt change</li>
+Default value: loudNorm.
+                     * @param _type Type. Valid values:
+<li>loudNorm: loudness normalization</li>
+<li>gainControl: reduce abrupt change</li>
+Default value: loudNorm.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -119,20 +115,19 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Whether to enable the feature. Valid values:
-<li>`ON`</li>
-<li>`OFF` </li>
-Default value: `ON`.
+                     * Capability configuration switch. Valid values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+Default value: ON.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The type. Valid values:
-<li>`loudNorm`: Loudness normalization.</li>
-<li>`gainControl`: Volume leveling.</li>
-Default value: `loudNorm`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Type. Valid values:
+<li>loudNorm: loudness normalization</li>
+<li>gainControl: reduce abrupt change</li>
+Default value: loudNorm.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

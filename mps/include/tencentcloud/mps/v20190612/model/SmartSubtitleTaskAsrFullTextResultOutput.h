@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextSegmentItem.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleResult.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
 namespace TencentCloud
@@ -48,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of segments for full speech recognition.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return SegmentSet List of segments for full speech recognition.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>List of segments for full speech recognition.</p>
+                     * @return SegmentSet <p>List of segments for full speech recognition.</p>
                      * 
                      */
                     std::vector<SmartSubtitleTaskAsrFullTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of segments for full speech recognition.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _segmentSet List of segments for full speech recognition.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>List of segments for full speech recognition.</p>
+                     * @param _segmentSet <p>List of segments for full speech recognition.</p>
                      * 
                      */
                     void SetSegmentSet(const std::vector<SmartSubtitleTaskAsrFullTextSegmentItem>& _segmentSet);
@@ -73,15 +71,36 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取Subtitle file path.
-                     * @return SubtitlePath Subtitle file path.
+                     * 获取<p>Subtitle file path</p>
+                     * @return Path <p>Subtitle file path</p>
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置<p>Subtitle file path</p>
+                     * @param _path <p>Subtitle file path</p>
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Subtitle file URL.</p>
+                     * @return SubtitlePath <p>Subtitle file URL.</p>
                      * 
                      */
                     std::string GetSubtitlePath() const;
 
                     /**
-                     * 设置Subtitle file path.
-                     * @param _subtitlePath Subtitle file path.
+                     * 设置<p>Subtitle file URL.</p>
+                     * @param _subtitlePath <p>Subtitle file URL.</p>
                      * 
                      */
                     void SetSubtitlePath(const std::string& _subtitlePath);
@@ -93,20 +112,79 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool SubtitlePathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Subtitle recognition result info.</p>
+                     * @return SubtitleInfo <p>Subtitle recognition result info.</p>
+                     * 
+                     */
+                    SubtitleResult GetSubtitleInfo() const;
+
+                    /**
+                     * 设置<p>Subtitle recognition result info.</p>
+                     * @param _subtitleInfo <p>Subtitle recognition result info.</p>
+                     * 
+                     */
+                    void SetSubtitleInfo(const SubtitleResult& _subtitleInfo);
+
+                    /**
+                     * 判断参数 SubtitleInfo 是否已赋值
+                     * @return SubtitleInfo 是否已赋值
+                     * 
+                     */
+                    bool SubtitleInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Storage location of the subtitle file.</p>
+                     * @return OutputStorage <p>Storage location of the subtitle file.</p>
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置<p>Storage location of the subtitle file.</p>
+                     * @param _outputStorage <p>Storage location of the subtitle file.</p>
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * List of segments for full speech recognition.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>List of segments for full speech recognition.</p>
                      */
                     std::vector<SmartSubtitleTaskAsrFullTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * Subtitle file path.
+                     * <p>Subtitle file path</p>
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
+
+                    /**
+                     * <p>Subtitle file URL.</p>
                      */
                     std::string m_subtitlePath;
                     bool m_subtitlePathHasBeenSet;
+
+                    /**
+                     * <p>Subtitle recognition result info.</p>
+                     */
+                    SubtitleResult m_subtitleInfo;
+                    bool m_subtitleInfoHasBeenSet;
+
+                    /**
+                     * <p>Storage location of the subtitle file.</p>
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
 
                 };
             }

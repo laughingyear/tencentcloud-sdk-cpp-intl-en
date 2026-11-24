@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of pornographic content
+                * Task control parameter for authentication involving offensive content
                 */
                 class PornConfigureInfo : public AbstractModel
                 {
@@ -50,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Parameters for recognition of pornographic content in images
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return ImgReviewInfo Parameters for recognition of pornographic content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Image recognition involves control parameters for offensive information.
+                     * @return ImgReviewInfo Image recognition involves control parameters for offensive information.
                      * 
                      */
                     PornImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
-                     * 设置Parameters for recognition of pornographic content in images
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _imgReviewInfo Parameters for recognition of pornographic content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Image recognition involves control parameters for offensive information.
+                     * @param _imgReviewInfo Image recognition involves control parameters for offensive information.
                      * 
                      */
                     void SetImgReviewInfo(const PornImgReviewTemplateInfo& _imgReviewInfo);
@@ -75,19 +71,15 @@ Note: This field may return `null`, indicating that no valid value can be found.
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for ASR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return AsrReviewInfo Parameters for ASR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Control parameters for offensive information involved in ASR-based recognition.
+                     * @return AsrReviewInfo Control parameters for offensive information involved in ASR-based recognition.
                      * 
                      */
                     PornAsrReviewTemplateInfo GetAsrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for ASR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _asrReviewInfo Parameters for ASR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Control parameters for offensive information involved in ASR-based recognition.
+                     * @param _asrReviewInfo Control parameters for offensive information involved in ASR-based recognition.
                      * 
                      */
                     void SetAsrReviewInfo(const PornAsrReviewTemplateInfo& _asrReviewInfo);
@@ -100,19 +92,15 @@ Note: This field may return `null`, indicating that no valid value can be found.
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for OCR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return OcrReviewInfo Parameters for OCR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Control parameters for text recognition involving offensive information.
+                     * @return OcrReviewInfo Control parameters for text recognition involving offensive information.
                      * 
                      */
                     PornOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for OCR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _ocrReviewInfo Parameters for OCR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Control parameters for text recognition involving offensive information.
+                     * @param _ocrReviewInfo Control parameters for text recognition involving offensive information.
                      * 
                      */
                     void SetOcrReviewInfo(const PornOcrReviewTemplateInfo& _ocrReviewInfo);
@@ -127,22 +115,19 @@ Note: This field may return `null`, indicating that no valid value can be found.
                 private:
 
                     /**
-                     * Parameters for recognition of pornographic content in images
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Image recognition involves control parameters for offensive information.
                      */
                     PornImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for ASR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Control parameters for offensive information involved in ASR-based recognition.
                      */
                     PornAsrReviewTemplateInfo m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for OCR-based recognition of pornographic content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Control parameters for text recognition involving offensive information.
                      */
                     PornOcrReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

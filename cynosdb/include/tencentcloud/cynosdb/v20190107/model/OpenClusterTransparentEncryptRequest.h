@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster ID
-                     * @return ClusterId Cluster ID
+                     * 获取Cluster ID.
+                     * @return ClusterId Cluster ID.
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Cluster ID
-                     * @param _clusterId Cluster ID
+                     * 设置Cluster ID.
+                     * @param _clusterId Cluster ID.
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Key type (cloud, custom).
-                     * @return KeyType Key type (cloud, custom).
+                     * 获取Key type (cloud, custom)
+                     * @return KeyType Key type (cloud, custom)
                      * 
                      */
                     std::string GetKeyType() const;
 
                     /**
-                     * 设置Key type (cloud, custom).
-                     * @param _keyType Key type (cloud, custom).
+                     * 设置Key type (cloud, custom)
+                     * @param _keyType Key type (cloud, custom)
                      * 
                      */
                     void SetKeyType(const std::string& _keyType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool KeyTypeHasBeenSet() const;
 
                     /**
-                     * 获取Key Id.
-                     * @return KeyId Key Id.
+                     * 获取Secret Id
+                     * @return KeyId Secret Id
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置Key Id.
-                     * @param _keyId Key Id.
+                     * 设置Secret Id
+                     * @param _keyId Secret Id
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取Key region.
-                     * @return KeyRegion Key region.
+                     * 获取Key region
+                     * @return KeyRegion Key region
                      * 
                      */
                     std::string GetKeyRegion() const;
 
                     /**
-                     * 设置Key region.
-                     * @param _keyRegion Key region.
+                     * 设置Key region
+                     * @param _keyRegion Key region
                      * 
                      */
                     void SetKeyRegion(const std::string& _keyRegion);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool KeyRegionHasBeenSet() const;
 
+                    /**
+                     * 获取Whether global encryption is enabled
+                     * @return IsOpenGlobalEncryption Whether global encryption is enabled
+                     * 
+                     */
+                    bool GetIsOpenGlobalEncryption() const;
+
+                    /**
+                     * 设置Whether global encryption is enabled
+                     * @param _isOpenGlobalEncryption Whether global encryption is enabled
+                     * 
+                     */
+                    void SetIsOpenGlobalEncryption(const bool& _isOpenGlobalEncryption);
+
+                    /**
+                     * 判断参数 IsOpenGlobalEncryption 是否已赋值
+                     * @return IsOpenGlobalEncryption 是否已赋值
+                     * 
+                     */
+                    bool IsOpenGlobalEncryptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cluster ID
+                     * Cluster ID.
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Key type (cloud, custom).
+                     * Key type (cloud, custom)
                      */
                     std::string m_keyType;
                     bool m_keyTypeHasBeenSet;
 
                     /**
-                     * Key Id.
+                     * Secret Id
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * Key region.
+                     * Key region
                      */
                     std::string m_keyRegion;
                     bool m_keyRegionHasBeenSet;
+
+                    /**
+                     * Whether global encryption is enabled
+                     */
+                    bool m_isOpenGlobalEncryption;
+                    bool m_isOpenGlobalEncryptionHasBeenSet;
 
                 };
             }

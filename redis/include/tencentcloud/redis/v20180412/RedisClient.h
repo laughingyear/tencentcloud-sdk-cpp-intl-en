@@ -43,8 +43,12 @@
 #include <tencentcloud/redis/v20180412/model/ClearInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/CloneInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/CloneInstancesResponse.h>
+#include <tencentcloud/redis/v20180412/model/CloseLogRequest.h>
+#include <tencentcloud/redis/v20180412/model/CloseLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/CloseSSLRequest.h>
 #include <tencentcloud/redis/v20180412/model/CloseSSLResponse.h>
+#include <tencentcloud/redis/v20180412/model/CreateExportTaskRequest.h>
+#include <tencentcloud/redis/v20180412/model/CreateExportTaskResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateReplicationGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateReplicationGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/DeleteExportTaskRequest.h>
+#include <tencentcloud/redis/v20180412/model/DeleteExportTaskResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteParamTemplateRequest.h>
@@ -65,6 +71,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDetailResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupEncryptConfigRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupEncryptConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBandwidthRangeRequest.h>
@@ -73,6 +81,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeExportTasksRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeExportTasksResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeGlobalReplicationAreaRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeGlobalReplicationAreaResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h>
@@ -109,6 +119,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstancePasswordPolicyRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstancePasswordPolicyResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsRequest.h>
@@ -121,6 +133,10 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeLogInstanceListRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeLogInstanceListResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeLogsRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeLogsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoRequest.h>
@@ -145,6 +161,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSecondLevelBackupInfoRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSecondLevelBackupInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
@@ -177,6 +195,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyBackupEncryptRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyBackupEncryptResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsRequest.h>
@@ -187,6 +207,10 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAvailabilityZonesRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAvailabilityZonesResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceBackupModeRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceBackupModeResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceChargeTypeRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceChargeTypeResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryRequest.h>
@@ -195,8 +219,12 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyLogRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
@@ -205,10 +233,18 @@
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifySSLEncryptionModeRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifySSLEncryptionModeResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyValkeyModuleRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyValkeyModuleResponse.h>
+#include <tencentcloud/redis/v20180412/model/OpenLogRequest.h>
+#include <tencentcloud/redis/v20180412/model/OpenLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/OpenSSLRequest.h>
 #include <tencentcloud/redis/v20180412/model/OpenSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
@@ -225,8 +261,12 @@
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
 #include <tencentcloud/redis/v20180412/model/SwitchProxyRequest.h>
 #include <tencentcloud/redis/v20180412/model/SwitchProxyResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpdateSSLCertRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpdateSSLCertResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h>
@@ -279,9 +319,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneInstancesResponse> CloneInstancesOutcome;
                 typedef std::future<CloneInstancesOutcome> CloneInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CloneInstancesRequest&, CloneInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseLogResponse> CloseLogOutcome;
+                typedef std::future<CloseLogOutcome> CloseLogOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CloseLogRequest&, CloseLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseSSLResponse> CloseSSLOutcome;
                 typedef std::future<CloseSSLOutcome> CloseSSLOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CloseSSLRequest&, CloseSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSSLAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExportTaskResponse> CreateExportTaskOutcome;
+                typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CreateExportTaskRequest&, CreateExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceAccountResponse> CreateInstanceAccountOutcome;
                 typedef std::future<CreateInstanceAccountOutcome> CreateInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateInstanceAccountRequest&, CreateInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAccountAsyncHandler;
@@ -294,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReplicationGroupResponse> CreateReplicationGroupOutcome;
                 typedef std::future<CreateReplicationGroupOutcome> CreateReplicationGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateReplicationGroupRequest&, CreateReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExportTaskResponse> DeleteExportTaskOutcome;
+                typedef std::future<DeleteExportTaskOutcome> DeleteExportTaskOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DeleteExportTaskRequest&, DeleteExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
                 typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
@@ -312,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadRestrictionResponse> DescribeBackupDownloadRestrictionOutcome;
                 typedef std::future<DescribeBackupDownloadRestrictionOutcome> DescribeBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupDownloadRestrictionRequest&, DescribeBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupEncryptConfigResponse> DescribeBackupEncryptConfigOutcome;
+                typedef std::future<DescribeBackupEncryptConfigOutcome> DescribeBackupEncryptConfigOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeBackupEncryptConfigRequest&, DescribeBackupEncryptConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupEncryptConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
@@ -324,6 +376,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportTasksResponse> DescribeExportTasksOutcome;
+                typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeExportTasksRequest&, DescribeExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlobalReplicationAreaResponse> DescribeGlobalReplicationAreaOutcome;
                 typedef std::future<DescribeGlobalReplicationAreaOutcome> DescribeGlobalReplicationAreaOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeGlobalReplicationAreaRequest&, DescribeGlobalReplicationAreaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalReplicationAreaAsyncHandler;
@@ -378,6 +433,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePasswordPolicyResponse> DescribeInstancePasswordPolicyOutcome;
+                typedef std::future<DescribeInstancePasswordPolicyOutcome> DescribeInstancePasswordPolicyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstancePasswordPolicyRequest&, DescribeInstancePasswordPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePasswordPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceSecurityGroupResponse> DescribeInstanceSecurityGroupOutcome;
                 typedef std::future<DescribeInstanceSecurityGroupOutcome> DescribeInstanceSecurityGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceSecurityGroupRequest&, DescribeInstanceSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSecurityGroupAsyncHandler;
@@ -396,6 +454,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogInstanceListResponse> DescribeLogInstanceListOutcome;
+                typedef std::future<DescribeLogInstanceListOutcome> DescribeLogInstanceListOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeLogInstanceListRequest&, DescribeLogInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
+                typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMaintenanceWindowResponse> DescribeMaintenanceWindowOutcome;
                 typedef std::future<DescribeMaintenanceWindowOutcome> DescribeMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeMaintenanceWindowRequest&, DescribeMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceWindowAsyncHandler;
@@ -432,6 +496,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
                 typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecondLevelBackupInfoResponse> DescribeSecondLevelBackupInfoOutcome;
+                typedef std::future<DescribeSecondLevelBackupInfoOutcome> DescribeSecondLevelBackupInfoOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeSecondLevelBackupInfoRequest&, DescribeSecondLevelBackupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecondLevelBackupInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
                 typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
@@ -480,6 +547,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupEncryptResponse> ModifyBackupEncryptOutcome;
+                typedef std::future<ModifyBackupEncryptOutcome> ModifyBackupEncryptOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyBackupEncryptRequest&, ModifyBackupEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupEncryptAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConnectionConfigResponse> ModifyConnectionConfigOutcome;
                 typedef std::future<ModifyConnectionConfigOutcome> ModifyConnectionConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyConnectionConfigRequest&, ModifyConnectionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectionConfigAsyncHandler;
@@ -495,6 +565,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceAvailabilityZonesResponse> ModifyInstanceAvailabilityZonesOutcome;
                 typedef std::future<ModifyInstanceAvailabilityZonesOutcome> ModifyInstanceAvailabilityZonesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceAvailabilityZonesRequest&, ModifyInstanceAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAvailabilityZonesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceBackupModeResponse> ModifyInstanceBackupModeOutcome;
+                typedef std::future<ModifyInstanceBackupModeOutcome> ModifyInstanceBackupModeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceBackupModeRequest&, ModifyInstanceBackupModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceBackupModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceChargeTypeResponse> ModifyInstanceChargeTypeOutcome;
+                typedef std::future<ModifyInstanceChargeTypeOutcome> ModifyInstanceChargeTypeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceChargeTypeRequest&, ModifyInstanceChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceChargeTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceEventResponse> ModifyInstanceEventOutcome;
                 typedef std::future<ModifyInstanceEventOutcome> ModifyInstanceEventOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceEventRequest&, ModifyInstanceEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceEventAsyncHandler;
@@ -507,9 +583,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstancePasswordResponse> ModifyInstancePasswordOutcome;
                 typedef std::future<ModifyInstancePasswordOutcome> ModifyInstancePasswordOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstancePasswordRequest&, ModifyInstancePasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancePasswordPolicyResponse> ModifyInstancePasswordPolicyOutcome;
+                typedef std::future<ModifyInstancePasswordPolicyOutcome> ModifyInstancePasswordPolicyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstancePasswordPolicyRequest&, ModifyInstancePasswordPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePasswordPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceReadOnlyResponse> ModifyInstanceReadOnlyOutcome;
                 typedef std::future<ModifyInstanceReadOnlyOutcome> ModifyInstanceReadOnlyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceReadOnlyRequest&, ModifyInstanceReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceReadOnlyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLogResponse> ModifyLogOutcome;
+                typedef std::future<ModifyLogOutcome> ModifyLogOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyLogRequest&, ModifyLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
                 typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
@@ -522,12 +604,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReplicationGroupResponse> ModifyReplicationGroupOutcome;
                 typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyReplicationGroupRequest&, ModifyReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReplicationGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySSLEncryptionModeResponse> ModifySSLEncryptionModeOutcome;
+                typedef std::future<ModifySSLEncryptionModeOutcome> ModifySSLEncryptionModeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifySSLEncryptionModeRequest&, ModifySSLEncryptionModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySSLEncryptionModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyValkeyModuleResponse> ModifyValkeyModuleOutcome;
+                typedef std::future<ModifyValkeyModuleOutcome> ModifyValkeyModuleOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyValkeyModuleRequest&, ModifyValkeyModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyValkeyModuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenLogResponse> OpenLogOutcome;
+                typedef std::future<OpenLogOutcome> OpenLogOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::OpenLogRequest&, OpenLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenSSLResponse> OpenSSLOutcome;
                 typedef std::future<OpenSSLOutcome> OpenSSLOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::OpenSSLRequest&, OpenSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
                 typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveReplicationGroupResponse> RemoveReplicationGroupOutcome;
+                typedef std::future<RemoveReplicationGroupOutcome> RemoveReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::RemoveReplicationGroupRequest&, RemoveReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveReplicationInstanceResponse> RemoveReplicationInstanceOutcome;
                 typedef std::future<RemoveReplicationInstanceOutcome> RemoveReplicationInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RemoveReplicationInstanceRequest&, RemoveReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveReplicationInstanceAsyncHandler;
@@ -552,9 +646,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchProxyResponse> SwitchProxyOutcome;
                 typedef std::future<SwitchProxyOutcome> SwitchProxyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::SwitchProxyRequest&, SwitchProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSSLCertResponse> UpdateSSLCertOutcome;
+                typedef std::future<UpdateSSLCertOutcome> UpdateSSLCertOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpdateSSLCertRequest&, UpdateSSLCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSSLCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeInstanceProductVersionResponse> UpgradeInstanceProductVersionOutcome;
+                typedef std::future<UpgradeInstanceProductVersionOutcome> UpgradeInstanceProductVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceProductVersionRequest&, UpgradeInstanceProductVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceProductVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
                 typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
@@ -661,6 +761,15 @@ namespace TencentCloud
                 CloneInstancesOutcomeCallable CloneInstancesCallable(const Model::CloneInstancesRequest& request);
 
                 /**
+                 *Disable logs
+                 * @param req CloseLogRequest
+                 * @return CloseLogOutcome
+                 */
+                CloseLogOutcome CloseLog(const Model::CloseLogRequest &request);
+                void CloseLogAsync(const Model::CloseLogRequest& request, const CloseLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseLogOutcomeCallable CloseLogCallable(const Model::CloseLogRequest& request);
+
+                /**
                  *This API is used to disable SSL encryption and authentication.
                  * @param req CloseSSLRequest
                  * @return CloseSSLOutcome
@@ -668,6 +777,15 @@ namespace TencentCloud
                 CloseSSLOutcome CloseSSL(const Model::CloseSSLRequest &request);
                 void CloseSSLAsync(const Model::CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseSSLOutcomeCallable CloseSSLCallable(const Model::CloseSSLRequest& request);
+
+                /**
+                 *This API is used to create a log download task.
+                 * @param req CreateExportTaskRequest
+                 * @return CreateExportTaskOutcome
+                 */
+                CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest &request);
+                void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExportTaskOutcomeCallable CreateExportTaskCallable(const Model::CreateExportTaskRequest& request);
 
                 /**
                  *This API is used to customize the account for accessing instances.
@@ -706,6 +824,15 @@ namespace TencentCloud
                 CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request);
 
                 /**
+                 *This API is used to delete log download tasks.
+                 * @param req DeleteExportTaskRequest
+                 * @return DeleteExportTaskOutcome
+                 */
+                DeleteExportTaskOutcome DeleteExportTask(const Model::DeleteExportTaskRequest &request);
+                void DeleteExportTaskAsync(const Model::DeleteExportTaskRequest& request, const DeleteExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExportTaskOutcomeCallable DeleteExportTaskCallable(const Model::DeleteExportTaskRequest& request);
+
+                /**
                  *This API is used to delete instance sub-accounts.
                  * @param req DeleteInstanceAccountRequest
                  * @return DeleteInstanceAccountOutcome
@@ -724,7 +851,7 @@ namespace TencentCloud
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
 
                 /**
-                 *This API is used to remove a replication group member. Note: This API is being deprecated. Use [RemoveReplicationInstance](https://intl.cloud.tencent.com/document/product/239/90099?from_cn_redirect=1) instead.
+                 *This API is used to remove replication group members. Note: This API is offline. Please use RemoveReplicationInstance.
                  * @param req DeleteReplicationInstanceRequest
                  * @return DeleteReplicationInstanceOutcome
                  */
@@ -758,6 +885,15 @@ namespace TencentCloud
                 DescribeBackupDownloadRestrictionOutcome DescribeBackupDownloadRestriction(const Model::DescribeBackupDownloadRestrictionRequest &request);
                 void DescribeBackupDownloadRestrictionAsync(const Model::DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupDownloadRestrictionOutcomeCallable DescribeBackupDownloadRestrictionCallable(const Model::DescribeBackupDownloadRestrictionRequest& request);
+
+                /**
+                 *This API is used to query information related to backup encryption for an instance, including the enabled status and encryption keys.
+                 * @param req DescribeBackupEncryptConfigRequest
+                 * @return DescribeBackupEncryptConfigOutcome
+                 */
+                DescribeBackupEncryptConfigOutcome DescribeBackupEncryptConfig(const Model::DescribeBackupEncryptConfigRequest &request);
+                void DescribeBackupEncryptConfigAsync(const Model::DescribeBackupEncryptConfigRequest& request, const DescribeBackupEncryptConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupEncryptConfigOutcomeCallable DescribeBackupEncryptConfigCallable(const Model::DescribeBackupEncryptConfigRequest& request);
 
                 /**
                  *This API is used to query the download address of a backup RDB file.
@@ -796,7 +932,16 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
-                 *This API is used to query the supported regions for global replication.
+                 *This API is used to query download tasks for log files.
+                 * @param req DescribeExportTasksRequest
+                 * @return DescribeExportTasksOutcome
+                 */
+                DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest &request);
+                void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request);
+
+                /**
+                 *This API is used to query the information on regions supported for global replication.
                  * @param req DescribeGlobalReplicationAreaRequest
                  * @return DescribeGlobalReplicationAreaOutcome
                  */
@@ -805,7 +950,7 @@ namespace TencentCloud
                 DescribeGlobalReplicationAreaOutcomeCallable DescribeGlobalReplicationAreaCallable(const Model::DescribeGlobalReplicationAreaRequest& request);
 
                 /**
-                 *This API is used to query the information of an instance sub-account.
+                 *This API is used to view instance account information.
                  * @param req DescribeInstanceAccountRequest
                  * @return DescribeInstanceAccountOutcome
                  */
@@ -859,7 +1004,7 @@ namespace TencentCloud
                 DescribeInstanceLogDeliveryOutcomeCallable DescribeInstanceLogDeliveryCallable(const Model::DescribeInstanceLogDeliveryRequest& request);
 
                 /**
-                 *The API for querying big keys of a TencentDB for Redis instance was disused on October 31, 2022. For more information, see [API for Querying Instance Big Key Will Be Disused](https://intl.cloud.tencent.com/document/product/239/81005?from_cn_redirect=1).
+                 *Tencent Cloud Database Redis decommissioned the API for querying large keys of instances on October 31, 2022. For the specific notice, please refer to the decommissioning announcement of the API for querying large keys of instances.
                  * @param req DescribeInstanceMonitorBigKeyRequest
                  * @return DescribeInstanceMonitorBigKeyOutcome
                  */
@@ -868,7 +1013,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorBigKeyOutcomeCallable DescribeInstanceMonitorBigKeyCallable(const Model::DescribeInstanceMonitorBigKeyRequest& request);
 
                 /**
-                 *The API for querying big keys of a TencentDB for Redis instance was disused on October 31, 2022. For more information, see [API for Querying Instance Big Key Will Be Disused](https://intl.cloud.tencent.com/document/product/239/81005?from_cn_redirect=1).
+                 *TencentDB for Redis decommissioned the API for querying large keys in instances on October 31, 2022. For the specific announcement, please refer to the decommissioning announcement of the API for querying large keys in instances.
                  * @param req DescribeInstanceMonitorBigKeySizeDistRequest
                  * @return DescribeInstanceMonitorBigKeySizeDistOutcome
                  */
@@ -877,7 +1022,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorBigKeySizeDistOutcomeCallable DescribeInstanceMonitorBigKeySizeDistCallable(const Model::DescribeInstanceMonitorBigKeySizeDistRequest& request);
 
                 /**
-                 *The API for querying big keys of a TencentDB for Redis instance was disused on October 31, 2022. For more information, see [API for Querying Instance Big Key Will Be Disused](https://intl.cloud.tencent.com/document/product/239/81005?from_cn_redirect=1).
+                 *TencentDB for Redis decommissioned the API for querying large keys in instances on October 31, 2022. For the specific announcement, please refer to the decommissioning announcement of the API for querying large keys in instances.
                  * @param req DescribeInstanceMonitorBigKeyTypeDistRequest
                  * @return DescribeInstanceMonitorBigKeyTypeDistOutcome
                  */
@@ -895,7 +1040,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorHotKeyOutcomeCallable DescribeInstanceMonitorHotKeyCallable(const Model::DescribeInstanceMonitorHotKeyRequest& request);
 
                 /**
-                 *This API is used to query the access source information of an instance.
+                 *This API is no longer used. Please use the TencentDB for DBbrain API [DescribeProxyProcessStatistics](https://www.tencentcloud.com/document/product/1130/84544?from_cn_redirect=1) to obtain the instance access source.
                  * @param req DescribeInstanceMonitorSIPRequest
                  * @return DescribeInstanceMonitorSIPOutcome
                  */
@@ -913,7 +1058,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorTookDistOutcomeCallable DescribeInstanceMonitorTookDistCallable(const Model::DescribeInstanceMonitorTookDistRequest& request);
 
                 /**
-                 *This API is used to query an instance access command.
+                 *This API is used to query instance access commands.
                  * @param req DescribeInstanceMonitorTopNCmdRequest
                  * @return DescribeInstanceMonitorTopNCmdOutcome
                  */
@@ -940,7 +1085,7 @@ namespace TencentCloud
                 DescribeInstanceNodeInfoOutcomeCallable DescribeInstanceNodeInfoCallable(const Model::DescribeInstanceNodeInfoRequest& request);
 
                 /**
-                 *This API is used to query the list of parameter modifications.
+                 *This API is used to query the parameter modification record list.
                  * @param req DescribeInstanceParamRecordsRequest
                  * @return DescribeInstanceParamRecordsOutcome
                  */
@@ -956,6 +1101,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *This API is used to query the current password complexity configuration of a specified instance.
+                 * @param req DescribeInstancePasswordPolicyRequest
+                 * @return DescribeInstancePasswordPolicyOutcome
+                 */
+                DescribeInstancePasswordPolicyOutcome DescribeInstancePasswordPolicy(const Model::DescribeInstancePasswordPolicyRequest &request);
+                void DescribeInstancePasswordPolicyAsync(const Model::DescribeInstancePasswordPolicyRequest& request, const DescribeInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePasswordPolicyOutcomeCallable DescribeInstancePasswordPolicyCallable(const Model::DescribeInstancePasswordPolicyRequest& request);
 
                 /**
                  *This API is used to query the security group information of an instance.
@@ -1012,6 +1166,24 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *This API is used to query log instances.
+                 * @param req DescribeLogInstanceListRequest
+                 * @return DescribeLogInstanceListOutcome
+                 */
+                DescribeLogInstanceListOutcome DescribeLogInstanceList(const Model::DescribeLogInstanceListRequest &request);
+                void DescribeLogInstanceListAsync(const Model::DescribeLogInstanceListRequest& request, const DescribeLogInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogInstanceListOutcomeCallable DescribeLogInstanceListCallable(const Model::DescribeLogInstanceListRequest& request);
+
+                /**
+                 *This API is used to query logs.
+                 * @param req DescribeLogsRequest
+                 * @return DescribeLogsOutcome
+                 */
+                DescribeLogsOutcome DescribeLogs(const Model::DescribeLogsRequest &request);
+                void DescribeLogsAsync(const Model::DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
+
+                /**
                  *This API is used to query the instance maintenance window. Instances that require the version or architecture upgrade will undergo time switching during the maintenance window.
                  * @param req DescribeMaintenanceWindowRequest
                  * @return DescribeMaintenanceWindowOutcome
@@ -1030,7 +1202,7 @@ namespace TencentCloud
                 DescribeParamTemplateInfoOutcomeCallable DescribeParamTemplateInfoCallable(const Model::DescribeParamTemplateInfoRequest& request);
 
                 /**
-                 *This API is used to query the list of parameter templates.
+                 *This API is used to query the parameter template list.
                  * @param req DescribeParamTemplatesRequest
                  * @return DescribeParamTemplatesOutcome
                  */
@@ -1118,6 +1290,15 @@ namespace TencentCloud
                 DescribeSSLStatusOutcome DescribeSSLStatus(const Model::DescribeSSLStatusRequest &request);
                 void DescribeSSLStatusAsync(const Model::DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
+
+                /**
+                 *This API is used to query second-level backup information for the instance.
+                 * @param req DescribeSecondLevelBackupInfoRequest
+                 * @return DescribeSecondLevelBackupInfoOutcome
+                 */
+                DescribeSecondLevelBackupInfoOutcome DescribeSecondLevelBackupInfo(const Model::DescribeSecondLevelBackupInfoRequest &request);
+                void DescribeSecondLevelBackupInfoAsync(const Model::DescribeSecondLevelBackupInfoRequest& request, const DescribeSecondLevelBackupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecondLevelBackupInfoOutcomeCallable DescribeSecondLevelBackupInfoCallable(const Model::DescribeSecondLevelBackupInfoRequest& request);
 
                 /**
                  *This API is used to query the records of slow query.
@@ -1237,7 +1418,7 @@ namespace TencentCloud
                 ManualBackupInstanceOutcomeCallable ManualBackupInstanceCallable(const Model::ManualBackupInstanceRequest& request);
 
                 /**
-                 *This API is used to change the instance access password. Due to a spelling error in the original API name, it has been corrected to [ModifyInstancePassword](https://intl.cloud.tencent.com/document/product/239/111555?from_cn_redirect=1). It is recommended to use the corrected API.
+                 *This API is used to change the instance access password. As the API name contains a spelling error, it has been corrected to [ModifyInstancePassword](https://www.tencentcloud.com/document/product/239/111555?from_cn_redirect=1). The corrected API is recommended for use.
                  * @param req ModfiyInstancePasswordRequest
                  * @return ModfiyInstancePasswordOutcome
                  */
@@ -1262,6 +1443,15 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcome ModifyBackupDownloadRestriction(const Model::ModifyBackupDownloadRestrictionRequest &request);
                 void ModifyBackupDownloadRestrictionAsync(const Model::ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
+
+                /**
+                 *This API is used to turn on or disable backup encryption and modify backup key functionality.
+                 * @param req ModifyBackupEncryptRequest
+                 * @return ModifyBackupEncryptOutcome
+                 */
+                ModifyBackupEncryptOutcome ModifyBackupEncrypt(const Model::ModifyBackupEncryptRequest &request);
+                void ModifyBackupEncryptAsync(const Model::ModifyBackupEncryptRequest& request, const ModifyBackupEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupEncryptOutcomeCallable ModifyBackupEncryptCallable(const Model::ModifyBackupEncryptRequest& request);
 
                 /**
                  *This API is used to modify the connection configuration of an instance, including the bandwidth and maximum number of connections.
@@ -1291,7 +1481,7 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *This API is used to modify the instance sub-account.
+                 *This API is used to modify an instance account.
                  * @param req ModifyInstanceAccountRequest
                  * @return ModifyInstanceAccountOutcome
                  */
@@ -1307,6 +1497,24 @@ namespace TencentCloud
                 ModifyInstanceAvailabilityZonesOutcome ModifyInstanceAvailabilityZones(const Model::ModifyInstanceAvailabilityZonesRequest &request);
                 void ModifyInstanceAvailabilityZonesAsync(const Model::ModifyInstanceAvailabilityZonesRequest& request, const ModifyInstanceAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceAvailabilityZonesOutcomeCallable ModifyInstanceAvailabilityZonesCallable(const Model::ModifyInstanceAvailabilityZonesRequest& request);
+
+                /**
+                 *This API is used to modify the backup mode of an instance.
+                 * @param req ModifyInstanceBackupModeRequest
+                 * @return ModifyInstanceBackupModeOutcome
+                 */
+                ModifyInstanceBackupModeOutcome ModifyInstanceBackupMode(const Model::ModifyInstanceBackupModeRequest &request);
+                void ModifyInstanceBackupModeAsync(const Model::ModifyInstanceBackupModeRequest& request, const ModifyInstanceBackupModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceBackupModeOutcomeCallable ModifyInstanceBackupModeCallable(const Model::ModifyInstanceBackupModeRequest& request);
+
+                /**
+                 *This API is used to change the billing type of an instance.
+                 * @param req ModifyInstanceChargeTypeRequest
+                 * @return ModifyInstanceChargeTypeOutcome
+                 */
+                ModifyInstanceChargeTypeOutcome ModifyInstanceChargeType(const Model::ModifyInstanceChargeTypeRequest &request);
+                void ModifyInstanceChargeTypeAsync(const Model::ModifyInstanceChargeTypeRequest& request, const ModifyInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceChargeTypeOutcomeCallable ModifyInstanceChargeTypeCallable(const Model::ModifyInstanceChargeTypeRequest& request);
 
                 /**
                  *This API is used to modify the operations event execution schedule of an instance.
@@ -1345,6 +1553,15 @@ namespace TencentCloud
                 ModifyInstancePasswordOutcomeCallable ModifyInstancePasswordCallable(const Model::ModifyInstancePasswordRequest& request);
 
                 /**
+                 *This API is used to modify the password complexity of an instance.
+                 * @param req ModifyInstancePasswordPolicyRequest
+                 * @return ModifyInstancePasswordPolicyOutcome
+                 */
+                ModifyInstancePasswordPolicyOutcome ModifyInstancePasswordPolicy(const Model::ModifyInstancePasswordPolicyRequest &request);
+                void ModifyInstancePasswordPolicyAsync(const Model::ModifyInstancePasswordPolicyRequest& request, const ModifyInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancePasswordPolicyOutcomeCallable ModifyInstancePasswordPolicyCallable(const Model::ModifyInstancePasswordPolicyRequest& request);
+
+                /**
                  *This API is used to set the instance input mode.
                  * @param req ModifyInstanceReadOnlyRequest
                  * @return ModifyInstanceReadOnlyOutcome
@@ -1352,6 +1569,15 @@ namespace TencentCloud
                 ModifyInstanceReadOnlyOutcome ModifyInstanceReadOnly(const Model::ModifyInstanceReadOnlyRequest &request);
                 void ModifyInstanceReadOnlyAsync(const Model::ModifyInstanceReadOnlyRequest& request, const ModifyInstanceReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceReadOnlyOutcomeCallable ModifyInstanceReadOnlyCallable(const Model::ModifyInstanceReadOnlyRequest& request);
+
+                /**
+                 *change log
+                 * @param req ModifyLogRequest
+                 * @return ModifyLogOutcome
+                 */
+                ModifyLogOutcome ModifyLog(const Model::ModifyLogRequest &request);
+                void ModifyLogAsync(const Model::ModifyLogRequest& request, const ModifyLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogOutcomeCallable ModifyLogCallable(const Model::ModifyLogRequest& request);
 
                 /**
                  *This API is used to modify the time of instance maintenance window. Instances that require the version or architecture upgrade will undergo time switching during the maintenance window. Note: If the version or architecture upgrade has been initiated for an instance, its maintenance window cannot be modified.
@@ -1390,6 +1616,33 @@ namespace TencentCloud
                 ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request);
 
                 /**
+                 *This API is used to change the SSL encryption mode.
+                 * @param req ModifySSLEncryptionModeRequest
+                 * @return ModifySSLEncryptionModeOutcome
+                 */
+                ModifySSLEncryptionModeOutcome ModifySSLEncryptionMode(const Model::ModifySSLEncryptionModeRequest &request);
+                void ModifySSLEncryptionModeAsync(const Model::ModifySSLEncryptionModeRequest& request, const ModifySSLEncryptionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySSLEncryptionModeOutcomeCallable ModifySSLEncryptionModeCallable(const Model::ModifySSLEncryptionModeRequest& request);
+
+                /**
+                 *This API is used to modify the enable status of the Valkey instance extension module.
+                 * @param req ModifyValkeyModuleRequest
+                 * @return ModifyValkeyModuleOutcome
+                 */
+                ModifyValkeyModuleOutcome ModifyValkeyModule(const Model::ModifyValkeyModuleRequest &request);
+                void ModifyValkeyModuleAsync(const Model::ModifyValkeyModuleRequest& request, const ModifyValkeyModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyValkeyModuleOutcomeCallable ModifyValkeyModuleCallable(const Model::ModifyValkeyModuleRequest& request);
+
+                /**
+                 *Enable logging
+                 * @param req OpenLogRequest
+                 * @return OpenLogOutcome
+                 */
+                OpenLogOutcome OpenLog(const Model::OpenLogRequest &request);
+                void OpenLogAsync(const Model::OpenLogRequest& request, const OpenLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenLogOutcomeCallable OpenLogCallable(const Model::OpenLogRequest& request);
+
+                /**
                  *This API is used to enable SSL encryption and authentication.
                  * @param req OpenSSLRequest
                  * @return OpenSSLOutcome
@@ -1406,6 +1659,15 @@ namespace TencentCloud
                 ReleaseWanAddressOutcome ReleaseWanAddress(const Model::ReleaseWanAddressRequest &request);
                 void ReleaseWanAddressAsync(const Model::ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
+
+                /**
+                 *This API is used to delete a replication group.
+                 * @param req RemoveReplicationGroupRequest
+                 * @return RemoveReplicationGroupOutcome
+                 */
+                RemoveReplicationGroupOutcome RemoveReplicationGroup(const Model::RemoveReplicationGroupRequest &request);
+                void RemoveReplicationGroupAsync(const Model::RemoveReplicationGroupRequest& request, const RemoveReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveReplicationGroupOutcomeCallable RemoveReplicationGroupCallable(const Model::RemoveReplicationGroupRequest& request);
 
                 /**
                  *This API is used to remove instances from a replication group.
@@ -1435,7 +1697,7 @@ namespace TencentCloud
                 ResetPasswordOutcomeCallable ResetPasswordCallable(const Model::ResetPasswordRequest& request);
 
                 /**
-                 *This API is used to restore a Redis instance.
+                 *This API is used to restore an instance.
                  * @param req RestoreInstanceRequest
                  * @return RestoreInstanceOutcome
                  */
@@ -1480,6 +1742,15 @@ namespace TencentCloud
                 SwitchProxyOutcomeCallable SwitchProxyCallable(const Model::SwitchProxyRequest& request);
 
                 /**
+                 *This API is used to update SSL key information.
+                 * @param req UpdateSSLCertRequest
+                 * @return UpdateSSLCertOutcome
+                 */
+                UpdateSSLCertOutcome UpdateSSLCert(const Model::UpdateSSLCertRequest &request);
+                void UpdateSSLCertAsync(const Model::UpdateSSLCertRequest& request, const UpdateSSLCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSSLCertOutcomeCallable UpdateSSLCertCallable(const Model::UpdateSSLCertRequest& request);
+
+                /**
                  *This API is used to change the configuration specifications of an instance.
                  * @param req UpgradeInstanceRequest
                  * @return UpgradeInstanceOutcome
@@ -1487,6 +1758,15 @@ namespace TencentCloud
                 UpgradeInstanceOutcome UpgradeInstance(const Model::UpgradeInstanceRequest &request);
                 void UpgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
+
+                /**
+                 *This API is used to upgrade the instance type from common I to common II.
+                 * @param req UpgradeInstanceProductVersionRequest
+                 * @return UpgradeInstanceProductVersionOutcome
+                 */
+                UpgradeInstanceProductVersionOutcome UpgradeInstanceProductVersion(const Model::UpgradeInstanceProductVersionRequest &request);
+                void UpgradeInstanceProductVersionAsync(const Model::UpgradeInstanceProductVersionRequest& request, const UpgradeInstanceProductVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeInstanceProductVersionOutcomeCallable UpgradeInstanceProductVersionCallable(const Model::UpgradeInstanceProductVersionRequest& request);
 
                 /**
                  *This API is used to upgrade the current instance to a later version or upgrade the current standard architecture to a cluster architecture.
@@ -1516,7 +1796,7 @@ namespace TencentCloud
                 UpgradeSmallVersionOutcomeCallable UpgradeSmallVersionCallable(const Model::UpgradeSmallVersionRequest& request);
 
                 /**
-                 *This API is used to upgrade an instance to support multiple AZs.
+                 *This API is deprecated.
                  * @param req UpgradeVersionToMultiAvailabilityZonesRequest
                  * @return UpgradeVersionToMultiAvailabilityZonesOutcome
                  */

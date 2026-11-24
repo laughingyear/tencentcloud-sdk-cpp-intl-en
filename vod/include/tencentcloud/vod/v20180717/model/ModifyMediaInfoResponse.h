@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取URL of new video cover.
-* Note: this returned value is valid only if the request carries `CoverData`.*
-                     * @return CoverUrl URL of new video cover.
-* Note: this returned value is valid only if the request carries `CoverData`.*
+                     * 获取<p>New video cover URL.</p><ul><li>Note: This return value is valid only when the request carries CoverData. *</li></ul>
+                     * @return CoverUrl <p>New video cover URL.</p><ul><li>Note: This return value is valid only when the request carries CoverData. *</li></ul>
                      * 
                      */
                     std::string GetCoverUrl() const;
@@ -61,8 +59,8 @@ namespace TencentCloud
                     bool CoverUrlHasBeenSet() const;
 
                     /**
-                     * 获取Added subtitle information
-                     * @return AddedSubtitleSet Added subtitle information
+                     * 获取<p>New subtitle information.</p>
+                     * @return AddedSubtitleSet <p>New subtitle information.</p>
                      * 
                      */
                     std::vector<MediaSubtitleItem> GetAddedSubtitleSet() const;
@@ -77,14 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * URL of new video cover.
-* Note: this returned value is valid only if the request carries `CoverData`.*
+                     * <p>New video cover URL.</p><ul><li>Note: This return value is valid only when the request carries CoverData. *</li></ul>
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
 
                     /**
-                     * Added subtitle information
+                     * <p>New subtitle information.</p>
                      */
                     std::vector<MediaSubtitleItem> m_addedSubtitleSet;
                     bool m_addedSubtitleSetHasBeenSet;

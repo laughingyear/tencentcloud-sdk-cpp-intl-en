@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of video splitting recognition task
+                * Control parameter of the video splitting recognition task
                 */
                 class SegmentConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of video splitting recognition task. Valid values:
-<li>ON: enables intelligent video splitting recognition task;</li>
-<li>OFF: disables intelligent video splitting recognition task.</li>
-                     * @return Switch Switch of video splitting recognition task. Valid values:
-<li>ON: enables intelligent video splitting recognition task;</li>
-<li>OFF: disables intelligent video splitting recognition task.</li>
+                     * 获取Video splitting recognition task switch. Value range:
+<li>ON: enable the intelligent video splitting recognition task;</li>
+<li>OFF: Disable the intelligent video splitting recognition task.</li>
+                     * @return Switch Video splitting recognition task switch. Value range:
+<li>ON: enable the intelligent video splitting recognition task;</li>
+<li>OFF: Disable the intelligent video splitting recognition task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of video splitting recognition task. Valid values:
-<li>ON: enables intelligent video splitting recognition task;</li>
-<li>OFF: disables intelligent video splitting recognition task.</li>
-                     * @param _switch Switch of video splitting recognition task. Valid values:
-<li>ON: enables intelligent video splitting recognition task;</li>
-<li>OFF: disables intelligent video splitting recognition task.</li>
+                     * 设置Video splitting recognition task switch. Value range:
+<li>ON: enable the intelligent video splitting recognition task;</li>
+<li>OFF: Disable the intelligent video splitting recognition task.</li>
+                     * @param _switch Video splitting recognition task switch. Value range:
+<li>ON: enable the intelligent video splitting recognition task;</li>
+<li>OFF: Disable the intelligent video splitting recognition task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Switch of video splitting recognition task. Valid values:
-<li>ON: enables intelligent video splitting recognition task;</li>
-<li>OFF: disables intelligent video splitting recognition task.</li>
+                     * Video splitting recognition task switch. Value range:
+<li>ON: enable the intelligent video splitting recognition task;</li>
+<li>OFF: Disable the intelligent video splitting recognition task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

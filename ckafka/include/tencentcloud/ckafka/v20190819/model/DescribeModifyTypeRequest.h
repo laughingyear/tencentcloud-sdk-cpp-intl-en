@@ -1,0 +1,296 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEMODIFYTYPEREQUEST_H_
+#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEMODIFYTYPEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Ckafka
+    {
+        namespace V20190819
+        {
+            namespace Model
+            {
+                /**
+                * DescribeModifyType request structure.
+                */
+                class DescribeModifyTypeRequest : public AbstractModel
+                {
+                public:
+                    DescribeModifyTypeRequest();
+                    ~DescribeModifyTypeRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>ckafka cluster instance Id</p>
+                     * @return InstanceId <p>ckafka cluster instance Id</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>ckafka cluster instance Id</p>
+                     * @param _instanceId <p>ckafka cluster instance Id</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Bandwidth after upgrade, unit mb</p>
+                     * @return BandWidth <p>Bandwidth after upgrade, unit mb</p>
+                     * 
+                     */
+                    int64_t GetBandWidth() const;
+
+                    /**
+                     * 设置<p>Bandwidth after upgrade, unit mb</p>
+                     * @param _bandWidth <p>Bandwidth after upgrade, unit mb</p>
+                     * 
+                     */
+                    void SetBandWidth(const int64_t& _bandWidth);
+
+                    /**
+                     * 判断参数 BandWidth 是否已赋值
+                     * @return BandWidth 是否已赋值
+                     * 
+                     */
+                    bool BandWidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Disk capacity after upgrade, in GB</p>
+                     * @return DiskSize <p>Disk capacity after upgrade, in GB</p>
+                     * 
+                     */
+                    int64_t GetDiskSize() const;
+
+                    /**
+                     * 设置<p>Disk capacity after upgrade, in GB</p>
+                     * @param _diskSize <p>Disk capacity after upgrade, in GB</p>
+                     * 
+                     */
+                    void SetDiskSize(const int64_t& _diskSize);
+
+                    /**
+                     * 判断参数 DiskSize 是否已赋值
+                     * @return DiskSize 是否已赋值
+                     * 
+                     */
+                    bool DiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Disk type, such as CLOUD_PREMIUM</p>
+                     * @return DiskType <p>Disk type, such as CLOUD_PREMIUM</p>
+                     * 
+                     */
+                    std::string GetDiskType() const;
+
+                    /**
+                     * 设置<p>Disk type, such as CLOUD_PREMIUM</p>
+                     * @param _diskType <p>Disk type, such as CLOUD_PREMIUM</p>
+                     * 
+                     */
+                    void SetDiskType(const std::string& _diskType);
+
+                    /**
+                     * 判断参数 DiskType 是否已赋值
+                     * @return DiskType 是否已赋值
+                     * 
+                     */
+                    bool DiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Number of partitions</p>
+                     * @return Partition <p>Number of partitions</p>
+                     * 
+                     */
+                    int64_t GetPartition() const;
+
+                    /**
+                     * 设置<p>Number of partitions</p>
+                     * @param _partition <p>Number of partitions</p>
+                     * 
+                     */
+                    void SetPartition(const int64_t& _partition);
+
+                    /**
+                     * 判断参数 Partition 是否已赋值
+                     * @return Partition 是否已赋值
+                     * 
+                     */
+                    bool PartitionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>topic count</p>
+                     * @return Topic <p>topic count</p>
+                     * 
+                     */
+                    int64_t GetTopic() const;
+
+                    /**
+                     * 设置<p>topic count</p>
+                     * @param _topic <p>topic count</p>
+                     * 
+                     */
+                    void SetTopic(const int64_t& _topic);
+
+                    /**
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
+                     * 
+                     */
+                    bool TopicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Instance type such as sp_ckafka_profession</p>
+                     * @return Type <p>Instance type such as sp_ckafka_profession</p>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>Instance type such as sp_ckafka_profession</p>
+                     * @param _type <p>Instance type such as sp_ckafka_profession</p>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Resize portal</p>
+                     * @return ModifyEntry <p>Resize portal</p>
+                     * 
+                     */
+                    std::string GetModifyEntry() const;
+
+                    /**
+                     * 设置<p>Resize portal</p>
+                     * @param _modifyEntry <p>Resize portal</p>
+                     * 
+                     */
+                    void SetModifyEntry(const std::string& _modifyEntry);
+
+                    /**
+                     * 判断参数 ModifyEntry 是否已赋值
+                     * @return ModifyEntry 是否已赋值
+                     * 
+                     */
+                    bool ModifyEntryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to modify AZ  false: Not modify AZ  true: Modify AZ  Default false</p>
+                     * @return ModifyZone <p>Whether to modify AZ  false: Not modify AZ  true: Modify AZ  Default false</p>
+                     * 
+                     */
+                    bool GetModifyZone() const;
+
+                    /**
+                     * 设置<p>Whether to modify AZ  false: Not modify AZ  true: Modify AZ  Default false</p>
+                     * @param _modifyZone <p>Whether to modify AZ  false: Not modify AZ  true: Modify AZ  Default false</p>
+                     * 
+                     */
+                    void SetModifyZone(const bool& _modifyZone);
+
+                    /**
+                     * 判断参数 ModifyZone 是否已赋值
+                     * @return ModifyZone 是否已赋值
+                     * 
+                     */
+                    bool ModifyZoneHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>ckafka cluster instance Id</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>Bandwidth after upgrade, unit mb</p>
+                     */
+                    int64_t m_bandWidth;
+                    bool m_bandWidthHasBeenSet;
+
+                    /**
+                     * <p>Disk capacity after upgrade, in GB</p>
+                     */
+                    int64_t m_diskSize;
+                    bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * <p>Disk type, such as CLOUD_PREMIUM</p>
+                     */
+                    std::string m_diskType;
+                    bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * <p>Number of partitions</p>
+                     */
+                    int64_t m_partition;
+                    bool m_partitionHasBeenSet;
+
+                    /**
+                     * <p>topic count</p>
+                     */
+                    int64_t m_topic;
+                    bool m_topicHasBeenSet;
+
+                    /**
+                     * <p>Instance type such as sp_ckafka_profession</p>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>Resize portal</p>
+                     */
+                    std::string m_modifyEntry;
+                    bool m_modifyEntryHasBeenSet;
+
+                    /**
+                     * <p>Whether to modify AZ  false: Not modify AZ  true: Modify AZ  Default false</p>
+                     */
+                    bool m_modifyZone;
+                    bool m_modifyZoneHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEMODIFYTYPEREQUEST_H_

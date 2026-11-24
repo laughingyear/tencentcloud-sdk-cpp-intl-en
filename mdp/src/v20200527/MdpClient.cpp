@@ -62,25 +62,32 @@ MdpClient::BindLinearAssemblyCDNDomainWithChannelOutcome MdpClient::BindLinearAs
 
 void MdpClient::BindLinearAssemblyCDNDomainWithChannelAsync(const BindLinearAssemblyCDNDomainWithChannelRequest& request, const BindLinearAssemblyCDNDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindLinearAssemblyCDNDomainWithChannel(request), context);
-    };
+    using Req = const BindLinearAssemblyCDNDomainWithChannelRequest&;
+    using Resp = BindLinearAssemblyCDNDomainWithChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindLinearAssemblyCDNDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::BindLinearAssemblyCDNDomainWithChannelOutcomeCallable MdpClient::BindLinearAssemblyCDNDomainWithChannelCallable(const BindLinearAssemblyCDNDomainWithChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindLinearAssemblyCDNDomainWithChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->BindLinearAssemblyCDNDomainWithChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindLinearAssemblyCDNDomainWithChannelOutcome>>();
+    BindLinearAssemblyCDNDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const BindLinearAssemblyCDNDomainWithChannelRequest&,
+        BindLinearAssemblyCDNDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::BindNewLVBDomainWithChannelOutcome MdpClient::BindNewLVBDomainWithChannel(const BindNewLVBDomainWithChannelRequest &request)
@@ -105,25 +112,82 @@ MdpClient::BindNewLVBDomainWithChannelOutcome MdpClient::BindNewLVBDomainWithCha
 
 void MdpClient::BindNewLVBDomainWithChannelAsync(const BindNewLVBDomainWithChannelRequest& request, const BindNewLVBDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindNewLVBDomainWithChannel(request), context);
-    };
+    using Req = const BindNewLVBDomainWithChannelRequest&;
+    using Resp = BindNewLVBDomainWithChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindNewLVBDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::BindNewLVBDomainWithChannelOutcomeCallable MdpClient::BindNewLVBDomainWithChannelCallable(const BindNewLVBDomainWithChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindNewLVBDomainWithChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->BindNewLVBDomainWithChannel(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<BindNewLVBDomainWithChannelOutcome>>();
+    BindNewLVBDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const BindNewLVBDomainWithChannelRequest&,
+        BindNewLVBDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::BindSSAICDNDomainWithChannelOutcome MdpClient::BindSSAICDNDomainWithChannel(const BindSSAICDNDomainWithChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindSSAICDNDomainWithChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindSSAICDNDomainWithChannelResponse rsp = BindSSAICDNDomainWithChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindSSAICDNDomainWithChannelOutcome(rsp);
+        else
+            return BindSSAICDNDomainWithChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return BindSSAICDNDomainWithChannelOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::BindSSAICDNDomainWithChannelAsync(const BindSSAICDNDomainWithChannelRequest& request, const BindSSAICDNDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindSSAICDNDomainWithChannelRequest&;
+    using Resp = BindSSAICDNDomainWithChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindSSAICDNDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::BindSSAICDNDomainWithChannelOutcomeCallable MdpClient::BindSSAICDNDomainWithChannelCallable(const BindSSAICDNDomainWithChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindSSAICDNDomainWithChannelOutcome>>();
+    BindSSAICDNDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const BindSSAICDNDomainWithChannelRequest&,
+        BindSSAICDNDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageChannelOutcome MdpClient::CreateStreamPackageChannel(const CreateStreamPackageChannelRequest &request)
@@ -148,25 +212,32 @@ MdpClient::CreateStreamPackageChannelOutcome MdpClient::CreateStreamPackageChann
 
 void MdpClient::CreateStreamPackageChannelAsync(const CreateStreamPackageChannelRequest& request, const CreateStreamPackageChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageChannel(request), context);
-    };
+    using Req = const CreateStreamPackageChannelRequest&;
+    using Resp = CreateStreamPackageChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageChannelOutcomeCallable MdpClient::CreateStreamPackageChannelCallable(const CreateStreamPackageChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageChannelOutcome>>();
+    CreateStreamPackageChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageChannelRequest&,
+        CreateStreamPackageChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageChannelEndpointOutcome MdpClient::CreateStreamPackageChannelEndpoint(const CreateStreamPackageChannelEndpointRequest &request)
@@ -191,25 +262,32 @@ MdpClient::CreateStreamPackageChannelEndpointOutcome MdpClient::CreateStreamPack
 
 void MdpClient::CreateStreamPackageChannelEndpointAsync(const CreateStreamPackageChannelEndpointRequest& request, const CreateStreamPackageChannelEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageChannelEndpoint(request), context);
-    };
+    using Req = const CreateStreamPackageChannelEndpointRequest&;
+    using Resp = CreateStreamPackageChannelEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageChannelEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageChannelEndpointOutcomeCallable MdpClient::CreateStreamPackageChannelEndpointCallable(const CreateStreamPackageChannelEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageChannelEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageChannelEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageChannelEndpointOutcome>>();
+    CreateStreamPackageChannelEndpointAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageChannelEndpointRequest&,
+        CreateStreamPackageChannelEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageHarvestJobOutcome MdpClient::CreateStreamPackageHarvestJob(const CreateStreamPackageHarvestJobRequest &request)
@@ -234,25 +312,32 @@ MdpClient::CreateStreamPackageHarvestJobOutcome MdpClient::CreateStreamPackageHa
 
 void MdpClient::CreateStreamPackageHarvestJobAsync(const CreateStreamPackageHarvestJobRequest& request, const CreateStreamPackageHarvestJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageHarvestJob(request), context);
-    };
+    using Req = const CreateStreamPackageHarvestJobRequest&;
+    using Resp = CreateStreamPackageHarvestJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageHarvestJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageHarvestJobOutcomeCallable MdpClient::CreateStreamPackageHarvestJobCallable(const CreateStreamPackageHarvestJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageHarvestJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageHarvestJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageHarvestJobOutcome>>();
+    CreateStreamPackageHarvestJobAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageHarvestJobRequest&,
+        CreateStreamPackageHarvestJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageLinearAssemblyChannelOutcome MdpClient::CreateStreamPackageLinearAssemblyChannel(const CreateStreamPackageLinearAssemblyChannelRequest &request)
@@ -277,25 +362,32 @@ MdpClient::CreateStreamPackageLinearAssemblyChannelOutcome MdpClient::CreateStre
 
 void MdpClient::CreateStreamPackageLinearAssemblyChannelAsync(const CreateStreamPackageLinearAssemblyChannelRequest& request, const CreateStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const CreateStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = CreateStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::CreateStreamPackageLinearAssemblyChannelCallable(const CreateStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageLinearAssemblyChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageLinearAssemblyChannelOutcome>>();
+    CreateStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageLinearAssemblyChannelRequest&,
+        CreateStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageLinearAssemblyProgramOutcome MdpClient::CreateStreamPackageLinearAssemblyProgram(const CreateStreamPackageLinearAssemblyProgramRequest &request)
@@ -320,25 +412,32 @@ MdpClient::CreateStreamPackageLinearAssemblyProgramOutcome MdpClient::CreateStre
 
 void MdpClient::CreateStreamPackageLinearAssemblyProgramAsync(const CreateStreamPackageLinearAssemblyProgramRequest& request, const CreateStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageLinearAssemblyProgram(request), context);
-    };
+    using Req = const CreateStreamPackageLinearAssemblyProgramRequest&;
+    using Resp = CreateStreamPackageLinearAssemblyProgramResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageLinearAssemblyProgram", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageLinearAssemblyProgramOutcomeCallable MdpClient::CreateStreamPackageLinearAssemblyProgramCallable(const CreateStreamPackageLinearAssemblyProgramRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageLinearAssemblyProgramOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageLinearAssemblyProgram(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageLinearAssemblyProgramOutcome>>();
+    CreateStreamPackageLinearAssemblyProgramAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageLinearAssemblyProgramRequest&,
+        CreateStreamPackageLinearAssemblyProgramOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageSSAIChannelOutcome MdpClient::CreateStreamPackageSSAIChannel(const CreateStreamPackageSSAIChannelRequest &request)
@@ -363,25 +462,32 @@ MdpClient::CreateStreamPackageSSAIChannelOutcome MdpClient::CreateStreamPackageS
 
 void MdpClient::CreateStreamPackageSSAIChannelAsync(const CreateStreamPackageSSAIChannelRequest& request, const CreateStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageSSAIChannel(request), context);
-    };
+    using Req = const CreateStreamPackageSSAIChannelRequest&;
+    using Resp = CreateStreamPackageSSAIChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageSSAIChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageSSAIChannelOutcomeCallable MdpClient::CreateStreamPackageSSAIChannelCallable(const CreateStreamPackageSSAIChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageSSAIChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageSSAIChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageSSAIChannelOutcome>>();
+    CreateStreamPackageSSAIChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageSSAIChannelRequest&,
+        CreateStreamPackageSSAIChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageSourceOutcome MdpClient::CreateStreamPackageSource(const CreateStreamPackageSourceRequest &request)
@@ -406,25 +512,32 @@ MdpClient::CreateStreamPackageSourceOutcome MdpClient::CreateStreamPackageSource
 
 void MdpClient::CreateStreamPackageSourceAsync(const CreateStreamPackageSourceRequest& request, const CreateStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageSource(request), context);
-    };
+    using Req = const CreateStreamPackageSourceRequest&;
+    using Resp = CreateStreamPackageSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageSourceOutcomeCallable MdpClient::CreateStreamPackageSourceCallable(const CreateStreamPackageSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageSourceOutcome>>();
+    CreateStreamPackageSourceAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageSourceRequest&,
+        CreateStreamPackageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::CreateStreamPackageSourceLocationOutcome MdpClient::CreateStreamPackageSourceLocation(const CreateStreamPackageSourceLocationRequest &request)
@@ -449,25 +562,82 @@ MdpClient::CreateStreamPackageSourceLocationOutcome MdpClient::CreateStreamPacka
 
 void MdpClient::CreateStreamPackageSourceLocationAsync(const CreateStreamPackageSourceLocationRequest& request, const CreateStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStreamPackageSourceLocation(request), context);
-    };
+    using Req = const CreateStreamPackageSourceLocationRequest&;
+    using Resp = CreateStreamPackageSourceLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageSourceLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::CreateStreamPackageSourceLocationOutcomeCallable MdpClient::CreateStreamPackageSourceLocationCallable(const CreateStreamPackageSourceLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStreamPackageSourceLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStreamPackageSourceLocation(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageSourceLocationOutcome>>();
+    CreateStreamPackageSourceLocationAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageSourceLocationRequest&,
+        CreateStreamPackageSourceLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::CreateStreamPackageVodRemuxTaskOutcome MdpClient::CreateStreamPackageVodRemuxTask(const CreateStreamPackageVodRemuxTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStreamPackageVodRemuxTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStreamPackageVodRemuxTaskResponse rsp = CreateStreamPackageVodRemuxTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStreamPackageVodRemuxTaskOutcome(rsp);
+        else
+            return CreateStreamPackageVodRemuxTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStreamPackageVodRemuxTaskOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::CreateStreamPackageVodRemuxTaskAsync(const CreateStreamPackageVodRemuxTaskRequest& request, const CreateStreamPackageVodRemuxTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateStreamPackageVodRemuxTaskRequest&;
+    using Resp = CreateStreamPackageVodRemuxTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateStreamPackageVodRemuxTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::CreateStreamPackageVodRemuxTaskOutcomeCallable MdpClient::CreateStreamPackageVodRemuxTaskCallable(const CreateStreamPackageVodRemuxTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateStreamPackageVodRemuxTaskOutcome>>();
+    CreateStreamPackageVodRemuxTaskAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const CreateStreamPackageVodRemuxTaskRequest&,
+        CreateStreamPackageVodRemuxTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageChannelEndpointsOutcome MdpClient::DeleteStreamPackageChannelEndpoints(const DeleteStreamPackageChannelEndpointsRequest &request)
@@ -492,25 +662,32 @@ MdpClient::DeleteStreamPackageChannelEndpointsOutcome MdpClient::DeleteStreamPac
 
 void MdpClient::DeleteStreamPackageChannelEndpointsAsync(const DeleteStreamPackageChannelEndpointsRequest& request, const DeleteStreamPackageChannelEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageChannelEndpoints(request), context);
-    };
+    using Req = const DeleteStreamPackageChannelEndpointsRequest&;
+    using Resp = DeleteStreamPackageChannelEndpointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageChannelEndpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageChannelEndpointsOutcomeCallable MdpClient::DeleteStreamPackageChannelEndpointsCallable(const DeleteStreamPackageChannelEndpointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageChannelEndpointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageChannelEndpoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageChannelEndpointsOutcome>>();
+    DeleteStreamPackageChannelEndpointsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageChannelEndpointsRequest&,
+        DeleteStreamPackageChannelEndpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageChannelsOutcome MdpClient::DeleteStreamPackageChannels(const DeleteStreamPackageChannelsRequest &request)
@@ -535,25 +712,32 @@ MdpClient::DeleteStreamPackageChannelsOutcome MdpClient::DeleteStreamPackageChan
 
 void MdpClient::DeleteStreamPackageChannelsAsync(const DeleteStreamPackageChannelsRequest& request, const DeleteStreamPackageChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageChannels(request), context);
-    };
+    using Req = const DeleteStreamPackageChannelsRequest&;
+    using Resp = DeleteStreamPackageChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageChannelsOutcomeCallable MdpClient::DeleteStreamPackageChannelsCallable(const DeleteStreamPackageChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageChannelsOutcome>>();
+    DeleteStreamPackageChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageChannelsRequest&,
+        DeleteStreamPackageChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageHarvestJobOutcome MdpClient::DeleteStreamPackageHarvestJob(const DeleteStreamPackageHarvestJobRequest &request)
@@ -578,25 +762,32 @@ MdpClient::DeleteStreamPackageHarvestJobOutcome MdpClient::DeleteStreamPackageHa
 
 void MdpClient::DeleteStreamPackageHarvestJobAsync(const DeleteStreamPackageHarvestJobRequest& request, const DeleteStreamPackageHarvestJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageHarvestJob(request), context);
-    };
+    using Req = const DeleteStreamPackageHarvestJobRequest&;
+    using Resp = DeleteStreamPackageHarvestJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageHarvestJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageHarvestJobOutcomeCallable MdpClient::DeleteStreamPackageHarvestJobCallable(const DeleteStreamPackageHarvestJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageHarvestJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageHarvestJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageHarvestJobOutcome>>();
+    DeleteStreamPackageHarvestJobAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageHarvestJobRequest&,
+        DeleteStreamPackageHarvestJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageHarvestJobsOutcome MdpClient::DeleteStreamPackageHarvestJobs(const DeleteStreamPackageHarvestJobsRequest &request)
@@ -621,25 +812,32 @@ MdpClient::DeleteStreamPackageHarvestJobsOutcome MdpClient::DeleteStreamPackageH
 
 void MdpClient::DeleteStreamPackageHarvestJobsAsync(const DeleteStreamPackageHarvestJobsRequest& request, const DeleteStreamPackageHarvestJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageHarvestJobs(request), context);
-    };
+    using Req = const DeleteStreamPackageHarvestJobsRequest&;
+    using Resp = DeleteStreamPackageHarvestJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageHarvestJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageHarvestJobsOutcomeCallable MdpClient::DeleteStreamPackageHarvestJobsCallable(const DeleteStreamPackageHarvestJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageHarvestJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageHarvestJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageHarvestJobsOutcome>>();
+    DeleteStreamPackageHarvestJobsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageHarvestJobsRequest&,
+        DeleteStreamPackageHarvestJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyChannelOutcome MdpClient::DeleteStreamPackageLinearAssemblyChannel(const DeleteStreamPackageLinearAssemblyChannelRequest &request)
@@ -664,25 +862,32 @@ MdpClient::DeleteStreamPackageLinearAssemblyChannelOutcome MdpClient::DeleteStre
 
 void MdpClient::DeleteStreamPackageLinearAssemblyChannelAsync(const DeleteStreamPackageLinearAssemblyChannelRequest& request, const DeleteStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const DeleteStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = DeleteStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::DeleteStreamPackageLinearAssemblyChannelCallable(const DeleteStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageLinearAssemblyChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageLinearAssemblyChannelOutcome>>();
+    DeleteStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageLinearAssemblyChannelRequest&,
+        DeleteStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyChannelsOutcome MdpClient::DeleteStreamPackageLinearAssemblyChannels(const DeleteStreamPackageLinearAssemblyChannelsRequest &request)
@@ -707,25 +912,32 @@ MdpClient::DeleteStreamPackageLinearAssemblyChannelsOutcome MdpClient::DeleteStr
 
 void MdpClient::DeleteStreamPackageLinearAssemblyChannelsAsync(const DeleteStreamPackageLinearAssemblyChannelsRequest& request, const DeleteStreamPackageLinearAssemblyChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageLinearAssemblyChannels(request), context);
-    };
+    using Req = const DeleteStreamPackageLinearAssemblyChannelsRequest&;
+    using Resp = DeleteStreamPackageLinearAssemblyChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageLinearAssemblyChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyChannelsOutcomeCallable MdpClient::DeleteStreamPackageLinearAssemblyChannelsCallable(const DeleteStreamPackageLinearAssemblyChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageLinearAssemblyChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageLinearAssemblyChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageLinearAssemblyChannelsOutcome>>();
+    DeleteStreamPackageLinearAssemblyChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageLinearAssemblyChannelsRequest&,
+        DeleteStreamPackageLinearAssemblyChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyProgramOutcome MdpClient::DeleteStreamPackageLinearAssemblyProgram(const DeleteStreamPackageLinearAssemblyProgramRequest &request)
@@ -750,25 +962,32 @@ MdpClient::DeleteStreamPackageLinearAssemblyProgramOutcome MdpClient::DeleteStre
 
 void MdpClient::DeleteStreamPackageLinearAssemblyProgramAsync(const DeleteStreamPackageLinearAssemblyProgramRequest& request, const DeleteStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageLinearAssemblyProgram(request), context);
-    };
+    using Req = const DeleteStreamPackageLinearAssemblyProgramRequest&;
+    using Resp = DeleteStreamPackageLinearAssemblyProgramResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageLinearAssemblyProgram", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyProgramOutcomeCallable MdpClient::DeleteStreamPackageLinearAssemblyProgramCallable(const DeleteStreamPackageLinearAssemblyProgramRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageLinearAssemblyProgramOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageLinearAssemblyProgram(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageLinearAssemblyProgramOutcome>>();
+    DeleteStreamPackageLinearAssemblyProgramAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageLinearAssemblyProgramRequest&,
+        DeleteStreamPackageLinearAssemblyProgramOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyProgramsOutcome MdpClient::DeleteStreamPackageLinearAssemblyPrograms(const DeleteStreamPackageLinearAssemblyProgramsRequest &request)
@@ -793,25 +1012,32 @@ MdpClient::DeleteStreamPackageLinearAssemblyProgramsOutcome MdpClient::DeleteStr
 
 void MdpClient::DeleteStreamPackageLinearAssemblyProgramsAsync(const DeleteStreamPackageLinearAssemblyProgramsRequest& request, const DeleteStreamPackageLinearAssemblyProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageLinearAssemblyPrograms(request), context);
-    };
+    using Req = const DeleteStreamPackageLinearAssemblyProgramsRequest&;
+    using Resp = DeleteStreamPackageLinearAssemblyProgramsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageLinearAssemblyPrograms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageLinearAssemblyProgramsOutcomeCallable MdpClient::DeleteStreamPackageLinearAssemblyProgramsCallable(const DeleteStreamPackageLinearAssemblyProgramsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageLinearAssemblyProgramsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageLinearAssemblyPrograms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageLinearAssemblyProgramsOutcome>>();
+    DeleteStreamPackageLinearAssemblyProgramsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageLinearAssemblyProgramsRequest&,
+        DeleteStreamPackageLinearAssemblyProgramsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageSSAIChannelOutcome MdpClient::DeleteStreamPackageSSAIChannel(const DeleteStreamPackageSSAIChannelRequest &request)
@@ -836,25 +1062,32 @@ MdpClient::DeleteStreamPackageSSAIChannelOutcome MdpClient::DeleteStreamPackageS
 
 void MdpClient::DeleteStreamPackageSSAIChannelAsync(const DeleteStreamPackageSSAIChannelRequest& request, const DeleteStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageSSAIChannel(request), context);
-    };
+    using Req = const DeleteStreamPackageSSAIChannelRequest&;
+    using Resp = DeleteStreamPackageSSAIChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageSSAIChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageSSAIChannelOutcomeCallable MdpClient::DeleteStreamPackageSSAIChannelCallable(const DeleteStreamPackageSSAIChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageSSAIChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageSSAIChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageSSAIChannelOutcome>>();
+    DeleteStreamPackageSSAIChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageSSAIChannelRequest&,
+        DeleteStreamPackageSSAIChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageSourceOutcome MdpClient::DeleteStreamPackageSource(const DeleteStreamPackageSourceRequest &request)
@@ -879,25 +1112,32 @@ MdpClient::DeleteStreamPackageSourceOutcome MdpClient::DeleteStreamPackageSource
 
 void MdpClient::DeleteStreamPackageSourceAsync(const DeleteStreamPackageSourceRequest& request, const DeleteStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageSource(request), context);
-    };
+    using Req = const DeleteStreamPackageSourceRequest&;
+    using Resp = DeleteStreamPackageSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageSourceOutcomeCallable MdpClient::DeleteStreamPackageSourceCallable(const DeleteStreamPackageSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageSourceOutcome>>();
+    DeleteStreamPackageSourceAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageSourceRequest&,
+        DeleteStreamPackageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DeleteStreamPackageSourceLocationOutcome MdpClient::DeleteStreamPackageSourceLocation(const DeleteStreamPackageSourceLocationRequest &request)
@@ -922,25 +1162,132 @@ MdpClient::DeleteStreamPackageSourceLocationOutcome MdpClient::DeleteStreamPacka
 
 void MdpClient::DeleteStreamPackageSourceLocationAsync(const DeleteStreamPackageSourceLocationRequest& request, const DeleteStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStreamPackageSourceLocation(request), context);
-    };
+    using Req = const DeleteStreamPackageSourceLocationRequest&;
+    using Resp = DeleteStreamPackageSourceLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageSourceLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DeleteStreamPackageSourceLocationOutcomeCallable MdpClient::DeleteStreamPackageSourceLocationCallable(const DeleteStreamPackageSourceLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStreamPackageSourceLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStreamPackageSourceLocation(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageSourceLocationOutcome>>();
+    DeleteStreamPackageSourceLocationAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageSourceLocationRequest&,
+        DeleteStreamPackageSourceLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::DeleteStreamPackageVodRemuxTaskOutcome MdpClient::DeleteStreamPackageVodRemuxTask(const DeleteStreamPackageVodRemuxTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStreamPackageVodRemuxTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStreamPackageVodRemuxTaskResponse rsp = DeleteStreamPackageVodRemuxTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStreamPackageVodRemuxTaskOutcome(rsp);
+        else
+            return DeleteStreamPackageVodRemuxTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStreamPackageVodRemuxTaskOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::DeleteStreamPackageVodRemuxTaskAsync(const DeleteStreamPackageVodRemuxTaskRequest& request, const DeleteStreamPackageVodRemuxTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteStreamPackageVodRemuxTaskRequest&;
+    using Resp = DeleteStreamPackageVodRemuxTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageVodRemuxTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::DeleteStreamPackageVodRemuxTaskOutcomeCallable MdpClient::DeleteStreamPackageVodRemuxTaskCallable(const DeleteStreamPackageVodRemuxTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageVodRemuxTaskOutcome>>();
+    DeleteStreamPackageVodRemuxTaskAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageVodRemuxTaskRequest&,
+        DeleteStreamPackageVodRemuxTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MdpClient::DeleteStreamPackageVodRemuxTasksOutcome MdpClient::DeleteStreamPackageVodRemuxTasks(const DeleteStreamPackageVodRemuxTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStreamPackageVodRemuxTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStreamPackageVodRemuxTasksResponse rsp = DeleteStreamPackageVodRemuxTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStreamPackageVodRemuxTasksOutcome(rsp);
+        else
+            return DeleteStreamPackageVodRemuxTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStreamPackageVodRemuxTasksOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::DeleteStreamPackageVodRemuxTasksAsync(const DeleteStreamPackageVodRemuxTasksRequest& request, const DeleteStreamPackageVodRemuxTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteStreamPackageVodRemuxTasksRequest&;
+    using Resp = DeleteStreamPackageVodRemuxTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteStreamPackageVodRemuxTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::DeleteStreamPackageVodRemuxTasksOutcomeCallable MdpClient::DeleteStreamPackageVodRemuxTasksCallable(const DeleteStreamPackageVodRemuxTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteStreamPackageVodRemuxTasksOutcome>>();
+    DeleteStreamPackageVodRemuxTasksAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DeleteStreamPackageVodRemuxTasksRequest&,
+        DeleteStreamPackageVodRemuxTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeLinearAssemblyCDNDomainWithChannelOutcome MdpClient::DescribeLinearAssemblyCDNDomainWithChannel(const DescribeLinearAssemblyCDNDomainWithChannelRequest &request)
@@ -965,25 +1312,32 @@ MdpClient::DescribeLinearAssemblyCDNDomainWithChannelOutcome MdpClient::Describe
 
 void MdpClient::DescribeLinearAssemblyCDNDomainWithChannelAsync(const DescribeLinearAssemblyCDNDomainWithChannelRequest& request, const DescribeLinearAssemblyCDNDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLinearAssemblyCDNDomainWithChannel(request), context);
-    };
+    using Req = const DescribeLinearAssemblyCDNDomainWithChannelRequest&;
+    using Resp = DescribeLinearAssemblyCDNDomainWithChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLinearAssemblyCDNDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeLinearAssemblyCDNDomainWithChannelOutcomeCallable MdpClient::DescribeLinearAssemblyCDNDomainWithChannelCallable(const DescribeLinearAssemblyCDNDomainWithChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLinearAssemblyCDNDomainWithChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLinearAssemblyCDNDomainWithChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLinearAssemblyCDNDomainWithChannelOutcome>>();
+    DescribeLinearAssemblyCDNDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeLinearAssemblyCDNDomainWithChannelRequest&,
+        DescribeLinearAssemblyCDNDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeLinearAssemblyCDNDomainWithChannelsOutcome MdpClient::DescribeLinearAssemblyCDNDomainWithChannels(const DescribeLinearAssemblyCDNDomainWithChannelsRequest &request)
@@ -1008,25 +1362,32 @@ MdpClient::DescribeLinearAssemblyCDNDomainWithChannelsOutcome MdpClient::Describ
 
 void MdpClient::DescribeLinearAssemblyCDNDomainWithChannelsAsync(const DescribeLinearAssemblyCDNDomainWithChannelsRequest& request, const DescribeLinearAssemblyCDNDomainWithChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLinearAssemblyCDNDomainWithChannels(request), context);
-    };
+    using Req = const DescribeLinearAssemblyCDNDomainWithChannelsRequest&;
+    using Resp = DescribeLinearAssemblyCDNDomainWithChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLinearAssemblyCDNDomainWithChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeLinearAssemblyCDNDomainWithChannelsOutcomeCallable MdpClient::DescribeLinearAssemblyCDNDomainWithChannelsCallable(const DescribeLinearAssemblyCDNDomainWithChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLinearAssemblyCDNDomainWithChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLinearAssemblyCDNDomainWithChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLinearAssemblyCDNDomainWithChannelsOutcome>>();
+    DescribeLinearAssemblyCDNDomainWithChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeLinearAssemblyCDNDomainWithChannelsRequest&,
+        DescribeLinearAssemblyCDNDomainWithChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageChannelOutcome MdpClient::DescribeStreamPackageChannel(const DescribeStreamPackageChannelRequest &request)
@@ -1051,25 +1412,32 @@ MdpClient::DescribeStreamPackageChannelOutcome MdpClient::DescribeStreamPackageC
 
 void MdpClient::DescribeStreamPackageChannelAsync(const DescribeStreamPackageChannelRequest& request, const DescribeStreamPackageChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageChannel(request), context);
-    };
+    using Req = const DescribeStreamPackageChannelRequest&;
+    using Resp = DescribeStreamPackageChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageChannelOutcomeCallable MdpClient::DescribeStreamPackageChannelCallable(const DescribeStreamPackageChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageChannelOutcome>>();
+    DescribeStreamPackageChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageChannelRequest&,
+        DescribeStreamPackageChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageChannelsOutcome MdpClient::DescribeStreamPackageChannels(const DescribeStreamPackageChannelsRequest &request)
@@ -1094,25 +1462,32 @@ MdpClient::DescribeStreamPackageChannelsOutcome MdpClient::DescribeStreamPackage
 
 void MdpClient::DescribeStreamPackageChannelsAsync(const DescribeStreamPackageChannelsRequest& request, const DescribeStreamPackageChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageChannels(request), context);
-    };
+    using Req = const DescribeStreamPackageChannelsRequest&;
+    using Resp = DescribeStreamPackageChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageChannelsOutcomeCallable MdpClient::DescribeStreamPackageChannelsCallable(const DescribeStreamPackageChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageChannelsOutcome>>();
+    DescribeStreamPackageChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageChannelsRequest&,
+        DescribeStreamPackageChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageHarvestJobOutcome MdpClient::DescribeStreamPackageHarvestJob(const DescribeStreamPackageHarvestJobRequest &request)
@@ -1137,25 +1512,32 @@ MdpClient::DescribeStreamPackageHarvestJobOutcome MdpClient::DescribeStreamPacka
 
 void MdpClient::DescribeStreamPackageHarvestJobAsync(const DescribeStreamPackageHarvestJobRequest& request, const DescribeStreamPackageHarvestJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageHarvestJob(request), context);
-    };
+    using Req = const DescribeStreamPackageHarvestJobRequest&;
+    using Resp = DescribeStreamPackageHarvestJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageHarvestJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageHarvestJobOutcomeCallable MdpClient::DescribeStreamPackageHarvestJobCallable(const DescribeStreamPackageHarvestJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageHarvestJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageHarvestJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageHarvestJobOutcome>>();
+    DescribeStreamPackageHarvestJobAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageHarvestJobRequest&,
+        DescribeStreamPackageHarvestJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageHarvestJobsOutcome MdpClient::DescribeStreamPackageHarvestJobs(const DescribeStreamPackageHarvestJobsRequest &request)
@@ -1180,25 +1562,32 @@ MdpClient::DescribeStreamPackageHarvestJobsOutcome MdpClient::DescribeStreamPack
 
 void MdpClient::DescribeStreamPackageHarvestJobsAsync(const DescribeStreamPackageHarvestJobsRequest& request, const DescribeStreamPackageHarvestJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageHarvestJobs(request), context);
-    };
+    using Req = const DescribeStreamPackageHarvestJobsRequest&;
+    using Resp = DescribeStreamPackageHarvestJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageHarvestJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageHarvestJobsOutcomeCallable MdpClient::DescribeStreamPackageHarvestJobsCallable(const DescribeStreamPackageHarvestJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageHarvestJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageHarvestJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageHarvestJobsOutcome>>();
+    DescribeStreamPackageHarvestJobsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageHarvestJobsRequest&,
+        DescribeStreamPackageHarvestJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelOutcome MdpClient::DescribeStreamPackageLinearAssemblyChannel(const DescribeStreamPackageLinearAssemblyChannelRequest &request)
@@ -1223,25 +1612,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyChannelOutcome MdpClient::Describe
 
 void MdpClient::DescribeStreamPackageLinearAssemblyChannelAsync(const DescribeStreamPackageLinearAssemblyChannelRequest& request, const DescribeStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyChannelCallable(const DescribeStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyChannelOutcome>>();
+    DescribeStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyChannelRequest&,
+        DescribeStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelAlertsOutcome MdpClient::DescribeStreamPackageLinearAssemblyChannelAlerts(const DescribeStreamPackageLinearAssemblyChannelAlertsRequest &request)
@@ -1266,25 +1662,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyChannelAlertsOutcome MdpClient::De
 
 void MdpClient::DescribeStreamPackageLinearAssemblyChannelAlertsAsync(const DescribeStreamPackageLinearAssemblyChannelAlertsRequest& request, const DescribeStreamPackageLinearAssemblyChannelAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyChannelAlerts(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyChannelAlertsRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyChannelAlertsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyChannelAlerts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelAlertsOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyChannelAlertsCallable(const DescribeStreamPackageLinearAssemblyChannelAlertsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyChannelAlertsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyChannelAlerts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyChannelAlertsOutcome>>();
+    DescribeStreamPackageLinearAssemblyChannelAlertsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyChannelAlertsRequest&,
+        DescribeStreamPackageLinearAssemblyChannelAlertsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelsOutcome MdpClient::DescribeStreamPackageLinearAssemblyChannels(const DescribeStreamPackageLinearAssemblyChannelsRequest &request)
@@ -1309,25 +1712,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyChannelsOutcome MdpClient::Describ
 
 void MdpClient::DescribeStreamPackageLinearAssemblyChannelsAsync(const DescribeStreamPackageLinearAssemblyChannelsRequest& request, const DescribeStreamPackageLinearAssemblyChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyChannels(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyChannelsRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyChannelsOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyChannelsCallable(const DescribeStreamPackageLinearAssemblyChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyChannelsOutcome>>();
+    DescribeStreamPackageLinearAssemblyChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyChannelsRequest&,
+        DescribeStreamPackageLinearAssemblyChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramOutcome MdpClient::DescribeStreamPackageLinearAssemblyProgram(const DescribeStreamPackageLinearAssemblyProgramRequest &request)
@@ -1352,25 +1762,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyProgramOutcome MdpClient::Describe
 
 void MdpClient::DescribeStreamPackageLinearAssemblyProgramAsync(const DescribeStreamPackageLinearAssemblyProgramRequest& request, const DescribeStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyProgram(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyProgramRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyProgramResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyProgram", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyProgramCallable(const DescribeStreamPackageLinearAssemblyProgramRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyProgramOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyProgram(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyProgramOutcome>>();
+    DescribeStreamPackageLinearAssemblyProgramAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyProgramRequest&,
+        DescribeStreamPackageLinearAssemblyProgramOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedules(const DescribeStreamPackageLinearAssemblyProgramSchedulesRequest &request)
@@ -1395,25 +1812,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome MdpClient:
 
 void MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedulesAsync(const DescribeStreamPackageLinearAssemblyProgramSchedulesRequest& request, const DescribeStreamPackageLinearAssemblyProgramSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyProgramSchedules(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyProgramSchedulesRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyProgramSchedulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyProgramSchedules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedulesOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyProgramSchedulesCallable(const DescribeStreamPackageLinearAssemblyProgramSchedulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyProgramSchedules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome>>();
+    DescribeStreamPackageLinearAssemblyProgramSchedulesAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyProgramSchedulesRequest&,
+        DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramsOutcome MdpClient::DescribeStreamPackageLinearAssemblyPrograms(const DescribeStreamPackageLinearAssemblyProgramsRequest &request)
@@ -1438,25 +1862,32 @@ MdpClient::DescribeStreamPackageLinearAssemblyProgramsOutcome MdpClient::Describ
 
 void MdpClient::DescribeStreamPackageLinearAssemblyProgramsAsync(const DescribeStreamPackageLinearAssemblyProgramsRequest& request, const DescribeStreamPackageLinearAssemblyProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageLinearAssemblyPrograms(request), context);
-    };
+    using Req = const DescribeStreamPackageLinearAssemblyProgramsRequest&;
+    using Resp = DescribeStreamPackageLinearAssemblyProgramsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageLinearAssemblyPrograms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageLinearAssemblyProgramsOutcomeCallable MdpClient::DescribeStreamPackageLinearAssemblyProgramsCallable(const DescribeStreamPackageLinearAssemblyProgramsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageLinearAssemblyProgramsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageLinearAssemblyPrograms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageLinearAssemblyProgramsOutcome>>();
+    DescribeStreamPackageLinearAssemblyProgramsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageLinearAssemblyProgramsRequest&,
+        DescribeStreamPackageLinearAssemblyProgramsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSSAIChannelOutcome MdpClient::DescribeStreamPackageSSAIChannel(const DescribeStreamPackageSSAIChannelRequest &request)
@@ -1481,25 +1912,32 @@ MdpClient::DescribeStreamPackageSSAIChannelOutcome MdpClient::DescribeStreamPack
 
 void MdpClient::DescribeStreamPackageSSAIChannelAsync(const DescribeStreamPackageSSAIChannelRequest& request, const DescribeStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSSAIChannel(request), context);
-    };
+    using Req = const DescribeStreamPackageSSAIChannelRequest&;
+    using Resp = DescribeStreamPackageSSAIChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSSAIChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSSAIChannelOutcomeCallable MdpClient::DescribeStreamPackageSSAIChannelCallable(const DescribeStreamPackageSSAIChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSSAIChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSSAIChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSSAIChannelOutcome>>();
+    DescribeStreamPackageSSAIChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSSAIChannelRequest&,
+        DescribeStreamPackageSSAIChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSSAIChannelsOutcome MdpClient::DescribeStreamPackageSSAIChannels(const DescribeStreamPackageSSAIChannelsRequest &request)
@@ -1524,25 +1962,82 @@ MdpClient::DescribeStreamPackageSSAIChannelsOutcome MdpClient::DescribeStreamPac
 
 void MdpClient::DescribeStreamPackageSSAIChannelsAsync(const DescribeStreamPackageSSAIChannelsRequest& request, const DescribeStreamPackageSSAIChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSSAIChannels(request), context);
-    };
+    using Req = const DescribeStreamPackageSSAIChannelsRequest&;
+    using Resp = DescribeStreamPackageSSAIChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSSAIChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSSAIChannelsOutcomeCallable MdpClient::DescribeStreamPackageSSAIChannelsCallable(const DescribeStreamPackageSSAIChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSSAIChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSSAIChannels(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSSAIChannelsOutcome>>();
+    DescribeStreamPackageSSAIChannelsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSSAIChannelsRequest&,
+        DescribeStreamPackageSSAIChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::DescribeStreamPackageSSAIUsageOutcome MdpClient::DescribeStreamPackageSSAIUsage(const DescribeStreamPackageSSAIUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageSSAIUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageSSAIUsageResponse rsp = DescribeStreamPackageSSAIUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageSSAIUsageOutcome(rsp);
+        else
+            return DescribeStreamPackageSSAIUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageSSAIUsageOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::DescribeStreamPackageSSAIUsageAsync(const DescribeStreamPackageSSAIUsageRequest& request, const DescribeStreamPackageSSAIUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageSSAIUsageRequest&;
+    using Resp = DescribeStreamPackageSSAIUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSSAIUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::DescribeStreamPackageSSAIUsageOutcomeCallable MdpClient::DescribeStreamPackageSSAIUsageCallable(const DescribeStreamPackageSSAIUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSSAIUsageOutcome>>();
+    DescribeStreamPackageSSAIUsageAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSSAIUsageRequest&,
+        DescribeStreamPackageSSAIUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourceOutcome MdpClient::DescribeStreamPackageSource(const DescribeStreamPackageSourceRequest &request)
@@ -1567,25 +2062,32 @@ MdpClient::DescribeStreamPackageSourceOutcome MdpClient::DescribeStreamPackageSo
 
 void MdpClient::DescribeStreamPackageSourceAsync(const DescribeStreamPackageSourceRequest& request, const DescribeStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSource(request), context);
-    };
+    using Req = const DescribeStreamPackageSourceRequest&;
+    using Resp = DescribeStreamPackageSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourceOutcomeCallable MdpClient::DescribeStreamPackageSourceCallable(const DescribeStreamPackageSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourceOutcome>>();
+    DescribeStreamPackageSourceAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourceRequest&,
+        DescribeStreamPackageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourceAlertsOutcome MdpClient::DescribeStreamPackageSourceAlerts(const DescribeStreamPackageSourceAlertsRequest &request)
@@ -1610,25 +2112,32 @@ MdpClient::DescribeStreamPackageSourceAlertsOutcome MdpClient::DescribeStreamPac
 
 void MdpClient::DescribeStreamPackageSourceAlertsAsync(const DescribeStreamPackageSourceAlertsRequest& request, const DescribeStreamPackageSourceAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSourceAlerts(request), context);
-    };
+    using Req = const DescribeStreamPackageSourceAlertsRequest&;
+    using Resp = DescribeStreamPackageSourceAlertsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSourceAlerts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourceAlertsOutcomeCallable MdpClient::DescribeStreamPackageSourceAlertsCallable(const DescribeStreamPackageSourceAlertsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourceAlertsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSourceAlerts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourceAlertsOutcome>>();
+    DescribeStreamPackageSourceAlertsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourceAlertsRequest&,
+        DescribeStreamPackageSourceAlertsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourceLocationOutcome MdpClient::DescribeStreamPackageSourceLocation(const DescribeStreamPackageSourceLocationRequest &request)
@@ -1653,25 +2162,32 @@ MdpClient::DescribeStreamPackageSourceLocationOutcome MdpClient::DescribeStreamP
 
 void MdpClient::DescribeStreamPackageSourceLocationAsync(const DescribeStreamPackageSourceLocationRequest& request, const DescribeStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSourceLocation(request), context);
-    };
+    using Req = const DescribeStreamPackageSourceLocationRequest&;
+    using Resp = DescribeStreamPackageSourceLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSourceLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourceLocationOutcomeCallable MdpClient::DescribeStreamPackageSourceLocationCallable(const DescribeStreamPackageSourceLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourceLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSourceLocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourceLocationOutcome>>();
+    DescribeStreamPackageSourceLocationAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourceLocationRequest&,
+        DescribeStreamPackageSourceLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourceLocationAlertsOutcome MdpClient::DescribeStreamPackageSourceLocationAlerts(const DescribeStreamPackageSourceLocationAlertsRequest &request)
@@ -1696,25 +2212,32 @@ MdpClient::DescribeStreamPackageSourceLocationAlertsOutcome MdpClient::DescribeS
 
 void MdpClient::DescribeStreamPackageSourceLocationAlertsAsync(const DescribeStreamPackageSourceLocationAlertsRequest& request, const DescribeStreamPackageSourceLocationAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSourceLocationAlerts(request), context);
-    };
+    using Req = const DescribeStreamPackageSourceLocationAlertsRequest&;
+    using Resp = DescribeStreamPackageSourceLocationAlertsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSourceLocationAlerts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourceLocationAlertsOutcomeCallable MdpClient::DescribeStreamPackageSourceLocationAlertsCallable(const DescribeStreamPackageSourceLocationAlertsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourceLocationAlertsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSourceLocationAlerts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourceLocationAlertsOutcome>>();
+    DescribeStreamPackageSourceLocationAlertsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourceLocationAlertsRequest&,
+        DescribeStreamPackageSourceLocationAlertsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourceLocationsOutcome MdpClient::DescribeStreamPackageSourceLocations(const DescribeStreamPackageSourceLocationsRequest &request)
@@ -1739,25 +2262,32 @@ MdpClient::DescribeStreamPackageSourceLocationsOutcome MdpClient::DescribeStream
 
 void MdpClient::DescribeStreamPackageSourceLocationsAsync(const DescribeStreamPackageSourceLocationsRequest& request, const DescribeStreamPackageSourceLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSourceLocations(request), context);
-    };
+    using Req = const DescribeStreamPackageSourceLocationsRequest&;
+    using Resp = DescribeStreamPackageSourceLocationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSourceLocations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourceLocationsOutcomeCallable MdpClient::DescribeStreamPackageSourceLocationsCallable(const DescribeStreamPackageSourceLocationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourceLocationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSourceLocations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourceLocationsOutcome>>();
+    DescribeStreamPackageSourceLocationsAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourceLocationsRequest&,
+        DescribeStreamPackageSourceLocationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::DescribeStreamPackageSourcesOutcome MdpClient::DescribeStreamPackageSources(const DescribeStreamPackageSourcesRequest &request)
@@ -1782,25 +2312,132 @@ MdpClient::DescribeStreamPackageSourcesOutcome MdpClient::DescribeStreamPackageS
 
 void MdpClient::DescribeStreamPackageSourcesAsync(const DescribeStreamPackageSourcesRequest& request, const DescribeStreamPackageSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPackageSources(request), context);
-    };
+    using Req = const DescribeStreamPackageSourcesRequest&;
+    using Resp = DescribeStreamPackageSourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageSources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::DescribeStreamPackageSourcesOutcomeCallable MdpClient::DescribeStreamPackageSourcesCallable(const DescribeStreamPackageSourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPackageSourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPackageSources(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageSourcesOutcome>>();
+    DescribeStreamPackageSourcesAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageSourcesRequest&,
+        DescribeStreamPackageSourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::DescribeStreamPackageVodRemuxTaskOutcome MdpClient::DescribeStreamPackageVodRemuxTask(const DescribeStreamPackageVodRemuxTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageVodRemuxTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageVodRemuxTaskResponse rsp = DescribeStreamPackageVodRemuxTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageVodRemuxTaskOutcome(rsp);
+        else
+            return DescribeStreamPackageVodRemuxTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageVodRemuxTaskOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::DescribeStreamPackageVodRemuxTaskAsync(const DescribeStreamPackageVodRemuxTaskRequest& request, const DescribeStreamPackageVodRemuxTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageVodRemuxTaskRequest&;
+    using Resp = DescribeStreamPackageVodRemuxTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageVodRemuxTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::DescribeStreamPackageVodRemuxTaskOutcomeCallable MdpClient::DescribeStreamPackageVodRemuxTaskCallable(const DescribeStreamPackageVodRemuxTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageVodRemuxTaskOutcome>>();
+    DescribeStreamPackageVodRemuxTaskAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageVodRemuxTaskRequest&,
+        DescribeStreamPackageVodRemuxTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MdpClient::DescribeStreamPackageVodRemuxTasksOutcome MdpClient::DescribeStreamPackageVodRemuxTasks(const DescribeStreamPackageVodRemuxTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageVodRemuxTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageVodRemuxTasksResponse rsp = DescribeStreamPackageVodRemuxTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageVodRemuxTasksOutcome(rsp);
+        else
+            return DescribeStreamPackageVodRemuxTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageVodRemuxTasksOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::DescribeStreamPackageVodRemuxTasksAsync(const DescribeStreamPackageVodRemuxTasksRequest& request, const DescribeStreamPackageVodRemuxTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageVodRemuxTasksRequest&;
+    using Resp = DescribeStreamPackageVodRemuxTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageVodRemuxTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::DescribeStreamPackageVodRemuxTasksOutcomeCallable MdpClient::DescribeStreamPackageVodRemuxTasksCallable(const DescribeStreamPackageVodRemuxTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageVodRemuxTasksOutcome>>();
+    DescribeStreamPackageVodRemuxTasksAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const DescribeStreamPackageVodRemuxTasksRequest&,
+        DescribeStreamPackageVodRemuxTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageChannelOutcome MdpClient::ModifyStreamPackageChannel(const ModifyStreamPackageChannelRequest &request)
@@ -1825,25 +2462,32 @@ MdpClient::ModifyStreamPackageChannelOutcome MdpClient::ModifyStreamPackageChann
 
 void MdpClient::ModifyStreamPackageChannelAsync(const ModifyStreamPackageChannelRequest& request, const ModifyStreamPackageChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageChannel(request), context);
-    };
+    using Req = const ModifyStreamPackageChannelRequest&;
+    using Resp = ModifyStreamPackageChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageChannelOutcomeCallable MdpClient::ModifyStreamPackageChannelCallable(const ModifyStreamPackageChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageChannelOutcome>>();
+    ModifyStreamPackageChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageChannelRequest&,
+        ModifyStreamPackageChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageChannelEndpointOutcome MdpClient::ModifyStreamPackageChannelEndpoint(const ModifyStreamPackageChannelEndpointRequest &request)
@@ -1868,25 +2512,32 @@ MdpClient::ModifyStreamPackageChannelEndpointOutcome MdpClient::ModifyStreamPack
 
 void MdpClient::ModifyStreamPackageChannelEndpointAsync(const ModifyStreamPackageChannelEndpointRequest& request, const ModifyStreamPackageChannelEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageChannelEndpoint(request), context);
-    };
+    using Req = const ModifyStreamPackageChannelEndpointRequest&;
+    using Resp = ModifyStreamPackageChannelEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageChannelEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageChannelEndpointOutcomeCallable MdpClient::ModifyStreamPackageChannelEndpointCallable(const ModifyStreamPackageChannelEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageChannelEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageChannelEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageChannelEndpointOutcome>>();
+    ModifyStreamPackageChannelEndpointAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageChannelEndpointRequest&,
+        ModifyStreamPackageChannelEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageChannelInputAuthInfoOutcome MdpClient::ModifyStreamPackageChannelInputAuthInfo(const ModifyStreamPackageChannelInputAuthInfoRequest &request)
@@ -1911,25 +2562,32 @@ MdpClient::ModifyStreamPackageChannelInputAuthInfoOutcome MdpClient::ModifyStrea
 
 void MdpClient::ModifyStreamPackageChannelInputAuthInfoAsync(const ModifyStreamPackageChannelInputAuthInfoRequest& request, const ModifyStreamPackageChannelInputAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageChannelInputAuthInfo(request), context);
-    };
+    using Req = const ModifyStreamPackageChannelInputAuthInfoRequest&;
+    using Resp = ModifyStreamPackageChannelInputAuthInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageChannelInputAuthInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageChannelInputAuthInfoOutcomeCallable MdpClient::ModifyStreamPackageChannelInputAuthInfoCallable(const ModifyStreamPackageChannelInputAuthInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageChannelInputAuthInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageChannelInputAuthInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageChannelInputAuthInfoOutcome>>();
+    ModifyStreamPackageChannelInputAuthInfoAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageChannelInputAuthInfoRequest&,
+        ModifyStreamPackageChannelInputAuthInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageLinearAssemblyChannelOutcome MdpClient::ModifyStreamPackageLinearAssemblyChannel(const ModifyStreamPackageLinearAssemblyChannelRequest &request)
@@ -1954,25 +2612,32 @@ MdpClient::ModifyStreamPackageLinearAssemblyChannelOutcome MdpClient::ModifyStre
 
 void MdpClient::ModifyStreamPackageLinearAssemblyChannelAsync(const ModifyStreamPackageLinearAssemblyChannelRequest& request, const ModifyStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const ModifyStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = ModifyStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::ModifyStreamPackageLinearAssemblyChannelCallable(const ModifyStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageLinearAssemblyChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageLinearAssemblyChannelOutcome>>();
+    ModifyStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageLinearAssemblyChannelRequest&,
+        ModifyStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageLinearAssemblyProgramOutcome MdpClient::ModifyStreamPackageLinearAssemblyProgram(const ModifyStreamPackageLinearAssemblyProgramRequest &request)
@@ -1997,25 +2662,32 @@ MdpClient::ModifyStreamPackageLinearAssemblyProgramOutcome MdpClient::ModifyStre
 
 void MdpClient::ModifyStreamPackageLinearAssemblyProgramAsync(const ModifyStreamPackageLinearAssemblyProgramRequest& request, const ModifyStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageLinearAssemblyProgram(request), context);
-    };
+    using Req = const ModifyStreamPackageLinearAssemblyProgramRequest&;
+    using Resp = ModifyStreamPackageLinearAssemblyProgramResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageLinearAssemblyProgram", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageLinearAssemblyProgramOutcomeCallable MdpClient::ModifyStreamPackageLinearAssemblyProgramCallable(const ModifyStreamPackageLinearAssemblyProgramRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageLinearAssemblyProgramOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageLinearAssemblyProgram(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageLinearAssemblyProgramOutcome>>();
+    ModifyStreamPackageLinearAssemblyProgramAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageLinearAssemblyProgramRequest&,
+        ModifyStreamPackageLinearAssemblyProgramOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageSSAIChannelOutcome MdpClient::ModifyStreamPackageSSAIChannel(const ModifyStreamPackageSSAIChannelRequest &request)
@@ -2040,25 +2712,32 @@ MdpClient::ModifyStreamPackageSSAIChannelOutcome MdpClient::ModifyStreamPackageS
 
 void MdpClient::ModifyStreamPackageSSAIChannelAsync(const ModifyStreamPackageSSAIChannelRequest& request, const ModifyStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageSSAIChannel(request), context);
-    };
+    using Req = const ModifyStreamPackageSSAIChannelRequest&;
+    using Resp = ModifyStreamPackageSSAIChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageSSAIChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageSSAIChannelOutcomeCallable MdpClient::ModifyStreamPackageSSAIChannelCallable(const ModifyStreamPackageSSAIChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageSSAIChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageSSAIChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageSSAIChannelOutcome>>();
+    ModifyStreamPackageSSAIChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageSSAIChannelRequest&,
+        ModifyStreamPackageSSAIChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageSourceOutcome MdpClient::ModifyStreamPackageSource(const ModifyStreamPackageSourceRequest &request)
@@ -2083,25 +2762,32 @@ MdpClient::ModifyStreamPackageSourceOutcome MdpClient::ModifyStreamPackageSource
 
 void MdpClient::ModifyStreamPackageSourceAsync(const ModifyStreamPackageSourceRequest& request, const ModifyStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageSource(request), context);
-    };
+    using Req = const ModifyStreamPackageSourceRequest&;
+    using Resp = ModifyStreamPackageSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageSourceOutcomeCallable MdpClient::ModifyStreamPackageSourceCallable(const ModifyStreamPackageSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageSourceOutcome>>();
+    ModifyStreamPackageSourceAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageSourceRequest&,
+        ModifyStreamPackageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::ModifyStreamPackageSourceLocationOutcome MdpClient::ModifyStreamPackageSourceLocation(const ModifyStreamPackageSourceLocationRequest &request)
@@ -2126,25 +2812,32 @@ MdpClient::ModifyStreamPackageSourceLocationOutcome MdpClient::ModifyStreamPacka
 
 void MdpClient::ModifyStreamPackageSourceLocationAsync(const ModifyStreamPackageSourceLocationRequest& request, const ModifyStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStreamPackageSourceLocation(request), context);
-    };
+    using Req = const ModifyStreamPackageSourceLocationRequest&;
+    using Resp = ModifyStreamPackageSourceLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStreamPackageSourceLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::ModifyStreamPackageSourceLocationOutcomeCallable MdpClient::ModifyStreamPackageSourceLocationCallable(const ModifyStreamPackageSourceLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStreamPackageSourceLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStreamPackageSourceLocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStreamPackageSourceLocationOutcome>>();
+    ModifyStreamPackageSourceLocationAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const ModifyStreamPackageSourceLocationRequest&,
+        ModifyStreamPackageSourceLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::StartStreamPackageLinearAssemblyChannelOutcome MdpClient::StartStreamPackageLinearAssemblyChannel(const StartStreamPackageLinearAssemblyChannelRequest &request)
@@ -2169,25 +2862,82 @@ MdpClient::StartStreamPackageLinearAssemblyChannelOutcome MdpClient::StartStream
 
 void MdpClient::StartStreamPackageLinearAssemblyChannelAsync(const StartStreamPackageLinearAssemblyChannelRequest& request, const StartStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const StartStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = StartStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::StartStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::StartStreamPackageLinearAssemblyChannelCallable(const StartStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->StartStreamPackageLinearAssemblyChannel(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<StartStreamPackageLinearAssemblyChannelOutcome>>();
+    StartStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const StartStreamPackageLinearAssemblyChannelRequest&,
+        StartStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::StartStreamPackageVodRemuxTaskOutcome MdpClient::StartStreamPackageVodRemuxTask(const StartStreamPackageVodRemuxTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartStreamPackageVodRemuxTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartStreamPackageVodRemuxTaskResponse rsp = StartStreamPackageVodRemuxTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartStreamPackageVodRemuxTaskOutcome(rsp);
+        else
+            return StartStreamPackageVodRemuxTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StartStreamPackageVodRemuxTaskOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::StartStreamPackageVodRemuxTaskAsync(const StartStreamPackageVodRemuxTaskRequest& request, const StartStreamPackageVodRemuxTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartStreamPackageVodRemuxTaskRequest&;
+    using Resp = StartStreamPackageVodRemuxTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartStreamPackageVodRemuxTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::StartStreamPackageVodRemuxTaskOutcomeCallable MdpClient::StartStreamPackageVodRemuxTaskCallable(const StartStreamPackageVodRemuxTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartStreamPackageVodRemuxTaskOutcome>>();
+    StartStreamPackageVodRemuxTaskAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const StartStreamPackageVodRemuxTaskRequest&,
+        StartStreamPackageVodRemuxTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::StopStreamPackageLinearAssemblyChannelOutcome MdpClient::StopStreamPackageLinearAssemblyChannel(const StopStreamPackageLinearAssemblyChannelRequest &request)
@@ -2212,25 +2962,32 @@ MdpClient::StopStreamPackageLinearAssemblyChannelOutcome MdpClient::StopStreamPa
 
 void MdpClient::StopStreamPackageLinearAssemblyChannelAsync(const StopStreamPackageLinearAssemblyChannelRequest& request, const StopStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopStreamPackageLinearAssemblyChannel(request), context);
-    };
+    using Req = const StopStreamPackageLinearAssemblyChannelRequest&;
+    using Resp = StopStreamPackageLinearAssemblyChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopStreamPackageLinearAssemblyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::StopStreamPackageLinearAssemblyChannelOutcomeCallable MdpClient::StopStreamPackageLinearAssemblyChannelCallable(const StopStreamPackageLinearAssemblyChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopStreamPackageLinearAssemblyChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->StopStreamPackageLinearAssemblyChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopStreamPackageLinearAssemblyChannelOutcome>>();
+    StopStreamPackageLinearAssemblyChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const StopStreamPackageLinearAssemblyChannelRequest&,
+        StopStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::UnbindCdnDomainWithChannelOutcome MdpClient::UnbindCdnDomainWithChannel(const UnbindCdnDomainWithChannelRequest &request)
@@ -2255,25 +3012,32 @@ MdpClient::UnbindCdnDomainWithChannelOutcome MdpClient::UnbindCdnDomainWithChann
 
 void MdpClient::UnbindCdnDomainWithChannelAsync(const UnbindCdnDomainWithChannelRequest& request, const UnbindCdnDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindCdnDomainWithChannel(request), context);
-    };
+    using Req = const UnbindCdnDomainWithChannelRequest&;
+    using Resp = UnbindCdnDomainWithChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindCdnDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::UnbindCdnDomainWithChannelOutcomeCallable MdpClient::UnbindCdnDomainWithChannelCallable(const UnbindCdnDomainWithChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindCdnDomainWithChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindCdnDomainWithChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindCdnDomainWithChannelOutcome>>();
+    UnbindCdnDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const UnbindCdnDomainWithChannelRequest&,
+        UnbindCdnDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MdpClient::UnbindLinearAssemblyCDNDomainWithChannelOutcome MdpClient::UnbindLinearAssemblyCDNDomainWithChannel(const UnbindLinearAssemblyCDNDomainWithChannelRequest &request)
@@ -2298,24 +3062,81 @@ MdpClient::UnbindLinearAssemblyCDNDomainWithChannelOutcome MdpClient::UnbindLine
 
 void MdpClient::UnbindLinearAssemblyCDNDomainWithChannelAsync(const UnbindLinearAssemblyCDNDomainWithChannelRequest& request, const UnbindLinearAssemblyCDNDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindLinearAssemblyCDNDomainWithChannel(request), context);
-    };
+    using Req = const UnbindLinearAssemblyCDNDomainWithChannelRequest&;
+    using Resp = UnbindLinearAssemblyCDNDomainWithChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindLinearAssemblyCDNDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MdpClient::UnbindLinearAssemblyCDNDomainWithChannelOutcomeCallable MdpClient::UnbindLinearAssemblyCDNDomainWithChannelCallable(const UnbindLinearAssemblyCDNDomainWithChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindLinearAssemblyCDNDomainWithChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindLinearAssemblyCDNDomainWithChannel(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<UnbindLinearAssemblyCDNDomainWithChannelOutcome>>();
+    UnbindLinearAssemblyCDNDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const UnbindLinearAssemblyCDNDomainWithChannelRequest&,
+        UnbindLinearAssemblyCDNDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MdpClient::UnbindSSAICDNDomainWithChannelOutcome MdpClient::UnbindSSAICDNDomainWithChannel(const UnbindSSAICDNDomainWithChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindSSAICDNDomainWithChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindSSAICDNDomainWithChannelResponse rsp = UnbindSSAICDNDomainWithChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindSSAICDNDomainWithChannelOutcome(rsp);
+        else
+            return UnbindSSAICDNDomainWithChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindSSAICDNDomainWithChannelOutcome(outcome.GetError());
+    }
+}
+
+void MdpClient::UnbindSSAICDNDomainWithChannelAsync(const UnbindSSAICDNDomainWithChannelRequest& request, const UnbindSSAICDNDomainWithChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindSSAICDNDomainWithChannelRequest&;
+    using Resp = UnbindSSAICDNDomainWithChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindSSAICDNDomainWithChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MdpClient::UnbindSSAICDNDomainWithChannelOutcomeCallable MdpClient::UnbindSSAICDNDomainWithChannelCallable(const UnbindSSAICDNDomainWithChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindSSAICDNDomainWithChannelOutcome>>();
+    UnbindSSAICDNDomainWithChannelAsync(
+    request,
+    [prom](
+        const MdpClient*,
+        const UnbindSSAICDNDomainWithChannelRequest&,
+        UnbindSSAICDNDomainWithChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

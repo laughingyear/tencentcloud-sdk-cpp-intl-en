@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Describes the accessibility of an instance in the public network, including its network billing method, maximum bandwidth, etc.
+                * Describes the public network accessibility of the instance's primary network interface, including the public network billing mode, maximum bandwidth, and other settings.
                 */
                 class InternetAccessible : public AbstractModel
                 {
@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Network connection billing plan. Valid value: <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour.
-                     * @return InternetChargeType Network connection billing plan. Valid value: <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour.
+                     * 获取Network connection billing plan. Valid value:
+
+<li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour. </li>
+<li>BANDWIDTH_PACKAGE: Bandwidth package user. </li>
+                     * @return InternetChargeType Network connection billing plan. Valid value:
+
+<li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour. </li>
+<li>BANDWIDTH_PACKAGE: Bandwidth package user. </li>
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置Network connection billing plan. Valid value: <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour.
-                     * @param _internetChargeType Network connection billing plan. Valid value: <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour.
+                     * 设置Network connection billing plan. Valid value:
+
+<li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour. </li>
+<li>BANDWIDTH_PACKAGE: Bandwidth package user. </li>
+                     * @param _internetChargeType Network connection billing plan. Valid value:
+
+<li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour. </li>
+<li>BANDWIDTH_PACKAGE: Bandwidth package user. </li>
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -68,15 +80,15 @@ namespace TencentCloud
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/12523?from_cn_redirect=1).
-                     * @return InternetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/12523?from_cn_redirect=1).
+                     * 获取The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/12523).
+                     * @return InternetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/12523).
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/12523?from_cn_redirect=1).
-                     * @param _internetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/12523?from_cn_redirect=1).
+                     * 设置The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/12523).
+                     * @param _internetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/12523).
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -131,51 +143,47 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取The EIP line type. 
- <li>BGP Default: BGP</li>
+                     * 获取Line type. for details on various types of lines and supported regions, refer to [EIP IP address types](https://www.tencentcloud.com/document/product/213/5733). default value: BGP.
+<Li>BGP: specifies the general bgp line.</li>.
+For a user with static single-line IP allowlist enabled, valid values include:.
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
 
-For a user who has activated the static single-line IP allowlist, possible values are:
 
- <li>CMCC: China Mobile</li>
- <li>CTCC: China Telecom</li>
- <li>CUCC: China Unicom</li>
+                     * @return InternetServiceProvider Line type. for details on various types of lines and supported regions, refer to [EIP IP address types](https://www.tencentcloud.com/document/product/213/5733). default value: BGP.
+<Li>BGP: specifies the general bgp line.</li>.
+For a user with static single-line IP allowlist enabled, valid values include:.
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
 
-Note: Only certain regions support static single-line IP addresses.
-                     * @return InternetServiceProvider The EIP line type. 
- <li>BGP Default: BGP</li>
 
-For a user who has activated the static single-line IP allowlist, possible values are:
-
- <li>CMCC: China Mobile</li>
- <li>CTCC: China Telecom</li>
- <li>CUCC: China Unicom</li>
-
-Note: Only certain regions support static single-line IP addresses.
                      * 
                      */
                     std::string GetInternetServiceProvider() const;
 
                     /**
-                     * 设置The EIP line type. 
- <li>BGP Default: BGP</li>
+                     * 设置Line type. for details on various types of lines and supported regions, refer to [EIP IP address types](https://www.tencentcloud.com/document/product/213/5733). default value: BGP.
+<Li>BGP: specifies the general bgp line.</li>.
+For a user with static single-line IP allowlist enabled, valid values include:.
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
 
-For a user who has activated the static single-line IP allowlist, possible values are:
 
- <li>CMCC: China Mobile</li>
- <li>CTCC: China Telecom</li>
- <li>CUCC: China Unicom</li>
+                     * @param _internetServiceProvider Line type. for details on various types of lines and supported regions, refer to [EIP IP address types](https://www.tencentcloud.com/document/product/213/5733). default value: BGP.
+<Li>BGP: specifies the general bgp line.</li>.
+For a user with static single-line IP allowlist enabled, valid values include:.
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
 
-Note: Only certain regions support static single-line IP addresses.
-                     * @param _internetServiceProvider The EIP line type. 
- <li>BGP Default: BGP</li>
 
-For a user who has activated the static single-line IP allowlist, possible values are:
-
- <li>CMCC: China Mobile</li>
- <li>CTCC: China Telecom</li>
- <li>CUCC: China Unicom</li>
-
-Note: Only certain regions support static single-line IP addresses.
                      * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
@@ -188,55 +196,43 @@ Note: Only certain regions support static single-line IP addresses.
                     bool InternetServiceProviderHasBeenSet() const;
 
                     /**
-                     * 获取AddressType. Default value: `WanIP`.
+                     * 获取Specifies the public IP type.
 
-For beta users of dedicated IP, the value can be:
-<li>HighQualityEIP: Dedicated IP</li>
-Note that dedicated IPs are only available in partial regions.
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: specifies a high quality ip. high quality ip is only supported in Singapore and hong kong (china).</li>.
+<li> AntiDDoSEIP: specifies the anti-ddos eip. only partial regions support anti-ddos eip. details visible in the [elastic IP product overview](https://www.tencentcloud.com/document/product/213/5733).</li>.
+If needed, assign a public IPv4 address to the resource by specifying the IPv4 address type.
 
-For beta users of Anti-DDoS IP, the value can be:
-<li>AntiDDoSEIP: Anti-DDoS EIP</li>
-Note that Anti-DDoS IPs are only available in partial regions.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
+                     * @return IPv4AddressType Specifies the public IP type.
 
-This feature is currently in gradually released phase. To access it, please contact us.
-                     * @return IPv4AddressType AddressType. Default value: `WanIP`.
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: specifies a high quality ip. high quality ip is only supported in Singapore and hong kong (china).</li>.
+<li> AntiDDoSEIP: specifies the anti-ddos eip. only partial regions support anti-ddos eip. details visible in the [elastic IP product overview](https://www.tencentcloud.com/document/product/213/5733).</li>.
+If needed, assign a public IPv4 address to the resource by specifying the IPv4 address type.
 
-For beta users of dedicated IP, the value can be:
-<li>HighQualityEIP: Dedicated IP</li>
-Note that dedicated IPs are only available in partial regions.
-
-For beta users of Anti-DDoS IP, the value can be:
-<li>AntiDDoSEIP: Anti-DDoS EIP</li>
-Note that Anti-DDoS IPs are only available in partial regions.
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      * 
                      */
                     std::string GetIPv4AddressType() const;
 
                     /**
-                     * 设置AddressType. Default value: `WanIP`.
+                     * 设置Specifies the public IP type.
 
-For beta users of dedicated IP, the value can be:
-<li>HighQualityEIP: Dedicated IP</li>
-Note that dedicated IPs are only available in partial regions.
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: specifies a high quality ip. high quality ip is only supported in Singapore and hong kong (china).</li>.
+<li> AntiDDoSEIP: specifies the anti-ddos eip. only partial regions support anti-ddos eip. details visible in the [elastic IP product overview](https://www.tencentcloud.com/document/product/213/5733).</li>.
+If needed, assign a public IPv4 address to the resource by specifying the IPv4 address type.
 
-For beta users of Anti-DDoS IP, the value can be:
-<li>AntiDDoSEIP: Anti-DDoS EIP</li>
-Note that Anti-DDoS IPs are only available in partial regions.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
+                     * @param _iPv4AddressType Specifies the public IP type.
 
-This feature is currently in gradually released phase. To access it, please contact us.
-                     * @param _iPv4AddressType AddressType. Default value: `WanIP`.
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: specifies a high quality ip. high quality ip is only supported in Singapore and hong kong (china).</li>.
+<li> AntiDDoSEIP: specifies the anti-ddos eip. only partial regions support anti-ddos eip. details visible in the [elastic IP product overview](https://www.tencentcloud.com/document/product/213/5733).</li>.
+If needed, assign a public IPv4 address to the resource by specifying the IPv4 address type.
 
-For beta users of dedicated IP, the value can be:
-<li>HighQualityEIP: Dedicated IP</li>
-Note that dedicated IPs are only available in partial regions.
-
-For beta users of Anti-DDoS IP, the value can be:
-<li>AntiDDoSEIP: Anti-DDoS EIP</li>
-Note that Anti-DDoS IPs are only available in partial regions.
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      * 
                      */
                     void SetIPv4AddressType(const std::string& _iPv4AddressType);
@@ -249,47 +245,35 @@ This feature is currently in gradually released phase. To access it, please cont
                     bool IPv4AddressTypeHasBeenSet() const;
 
                     /**
-                     * 获取Indicates the type of EIPv6. Valid values:
+                     * 获取Indicates the type of elastic public IPv6.
+<Li>EIPv6: elastic ip version 6.</li>.
+<Li>HighQualityEIPv6: specifies the high quality ipv6. highqualityeipv6 is only supported in hong kong (china).</li>.
+If needed, assign an elastic IPv6 address for resource allocation.
 
-<li>EIPv6: common IPv6</li>
-<li>HighQualityEIPv6: dedicated IPv6</li>
-Note: Contact the product team to enable the dedicated IPv6 allowlist. The dedicated IPv6 is only supported in some regions. 
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
+                     * @return IPv6AddressType Indicates the type of elastic public IPv6.
+<Li>EIPv6: elastic ip version 6.</li>.
+<Li>HighQualityEIPv6: specifies the high quality ipv6. highqualityeipv6 is only supported in hong kong (china).</li>.
+If needed, assign an elastic IPv6 address for resource allocation.
 
-Default: `EIPv6`
-
-This feature is currently in gradually released phase. To access it, please contact us.
-                     * @return IPv6AddressType Indicates the type of EIPv6. Valid values:
-
-<li>EIPv6: common IPv6</li>
-<li>HighQualityEIPv6: dedicated IPv6</li>
-Note: Contact the product team to enable the dedicated IPv6 allowlist. The dedicated IPv6 is only supported in some regions. 
-
-Default: `EIPv6`
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      * 
                      */
                     std::string GetIPv6AddressType() const;
 
                     /**
-                     * 设置Indicates the type of EIPv6. Valid values:
+                     * 设置Indicates the type of elastic public IPv6.
+<Li>EIPv6: elastic ip version 6.</li>.
+<Li>HighQualityEIPv6: specifies the high quality ipv6. highqualityeipv6 is only supported in hong kong (china).</li>.
+If needed, assign an elastic IPv6 address for resource allocation.
 
-<li>EIPv6: common IPv6</li>
-<li>HighQualityEIPv6: dedicated IPv6</li>
-Note: Contact the product team to enable the dedicated IPv6 allowlist. The dedicated IPv6 is only supported in some regions. 
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
+                     * @param _iPv6AddressType Indicates the type of elastic public IPv6.
+<Li>EIPv6: elastic ip version 6.</li>.
+<Li>HighQualityEIPv6: specifies the high quality ipv6. highqualityeipv6 is only supported in hong kong (china).</li>.
+If needed, assign an elastic IPv6 address for resource allocation.
 
-Default: `EIPv6`
-
-This feature is currently in gradually released phase. To access it, please contact us.
-                     * @param _iPv6AddressType Indicates the type of EIPv6. Valid values:
-
-<li>EIPv6: common IPv6</li>
-<li>HighQualityEIPv6: dedicated IPv6</li>
-Note: Contact the product team to enable the dedicated IPv6 allowlist. The dedicated IPv6 is only supported in some regions. 
-
-Default: `EIPv6`
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      * 
                      */
                     void SetIPv6AddressType(const std::string& _iPv6AddressType);
@@ -302,15 +286,19 @@ This feature is currently in gradually released phase. To access it, please cont
                     bool IPv6AddressTypeHasBeenSet() const;
 
                     /**
-                     * 获取Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
-                     * @return AntiDDoSPackageId Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * 获取DDoS protection package unique ID. this field is required when applying for a ddos protection IP.
+
+                     * @return AntiDDoSPackageId DDoS protection package unique ID. this field is required when applying for a ddos protection IP.
+
                      * 
                      */
                     std::string GetAntiDDoSPackageId() const;
 
                     /**
-                     * 设置Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
-                     * @param _antiDDoSPackageId Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * 设置DDoS protection package unique ID. this field is required when applying for a ddos protection IP.
+
+                     * @param _antiDDoSPackageId DDoS protection package unique ID. this field is required when applying for a ddos protection IP.
+
                      * 
                      */
                     void SetAntiDDoSPackageId(const std::string& _antiDDoSPackageId);
@@ -325,13 +313,16 @@ This feature is currently in gradually released phase. To access it, please cont
                 private:
 
                     /**
-                     * Network connection billing plan. Valid value: <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour.
+                     * Network connection billing plan. Valid value:
+
+<li>TRAFFIC_POSTPAID_BY_HOUR: pay after use. You are billed for your traffic, by the hour. </li>
+<li>BANDWIDTH_PACKAGE: Bandwidth package user. </li>
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/12523?from_cn_redirect=1).
+                     * The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/12523).
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
@@ -349,52 +340,46 @@ This feature is currently in gradually released phase. To access it, please cont
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * The EIP line type. 
- <li>BGP Default: BGP</li>
+                     * Line type. for details on various types of lines and supported regions, refer to [EIP IP address types](https://www.tencentcloud.com/document/product/213/5733). default value: BGP.
+<Li>BGP: specifies the general bgp line.</li>.
+For a user with static single-line IP allowlist enabled, valid values include:.
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
 
-For a user who has activated the static single-line IP allowlist, possible values are:
 
- <li>CMCC: China Mobile</li>
- <li>CTCC: China Telecom</li>
- <li>CUCC: China Unicom</li>
-
-Note: Only certain regions support static single-line IP addresses.
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
 
                     /**
-                     * AddressType. Default value: `WanIP`.
+                     * Specifies the public IP type.
 
-For beta users of dedicated IP, the value can be:
-<li>HighQualityEIP: Dedicated IP</li>
-Note that dedicated IPs are only available in partial regions.
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: specifies a high quality ip. high quality ip is only supported in Singapore and hong kong (china).</li>.
+<li> AntiDDoSEIP: specifies the anti-ddos eip. only partial regions support anti-ddos eip. details visible in the [elastic IP product overview](https://www.tencentcloud.com/document/product/213/5733).</li>.
+If needed, assign a public IPv4 address to the resource by specifying the IPv4 address type.
 
-For beta users of Anti-DDoS IP, the value can be:
-<li>AntiDDoSEIP: Anti-DDoS EIP</li>
-Note that Anti-DDoS IPs are only available in partial regions.
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      */
                     std::string m_iPv4AddressType;
                     bool m_iPv4AddressTypeHasBeenSet;
 
                     /**
-                     * Indicates the type of EIPv6. Valid values:
+                     * Indicates the type of elastic public IPv6.
+<Li>EIPv6: elastic ip version 6.</li>.
+<Li>HighQualityEIPv6: specifies the high quality ipv6. highqualityeipv6 is only supported in hong kong (china).</li>.
+If needed, assign an elastic IPv6 address for resource allocation.
 
-<li>EIPv6: common IPv6</li>
-<li>HighQualityEIPv6: dedicated IPv6</li>
-Note: Contact the product team to enable the dedicated IPv6 allowlist. The dedicated IPv6 is only supported in some regions. 
-
-Default: `EIPv6`
-
-This feature is currently in gradually released phase. To access it, please contact us.
+This feature is in beta test in selected regions. [submit a ticket for consultation](https://console.tencentcloud.com/workorder/category) if needed.
                      */
                     std::string m_iPv6AddressType;
                     bool m_iPv6AddressTypeHasBeenSet;
 
                     /**
-                     * Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * DDoS protection package unique ID. this field is required when applying for a ddos protection IP.
+
                      */
                     std::string m_antiDDoSPackageId;
                     bool m_antiDDoSPackageIdHasBeenSet;

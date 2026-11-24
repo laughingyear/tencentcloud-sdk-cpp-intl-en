@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Name of called backend API.
-                     * @return FunctionName Name of called backend API.
+                     * 获取<p>Backend interface name invoked.</p>
+                     * @return FunctionName <p>Backend interface name invoked.</p>
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置Name of called backend API.
-                     * @param _functionName Name of called backend API.
+                     * 设置<p>Backend interface name invoked.</p>
+                     * @param _functionName <p>Backend interface name invoked.</p>
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取API parameter. For specific parameter format, negotiate with the backend before calling.
-                     * @return FunctionArg API parameter. For specific parameter format, negotiate with the backend before calling.
+                     * 获取<p>API parameter. The specific parameter format should be coordinated with the backend during the call.</p>
+                     * @return FunctionArg <p>API parameter. The specific parameter format should be coordinated with the backend during the call.</p>
                      * 
                      */
                     std::string GetFunctionArg() const;
 
                     /**
-                     * 设置API parameter. For specific parameter format, negotiate with the backend before calling.
-                     * @param _functionArg API parameter. For specific parameter format, negotiate with the backend before calling.
+                     * 设置<p>API parameter. The specific parameter format should be coordinated with the backend during the call.</p>
+                     * @param _functionArg <p>API parameter. The specific parameter format should be coordinated with the backend during the call.</p>
                      * 
                      */
                     void SetFunctionArg(const std::string& _functionArg);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FunctionArgHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether default or newly created), this field must be filled in as the app ID.</b></p>
+                     * @return SubAppId <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether default or newly created), this field must be filled in as the app ID.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether default or newly created), this field must be filled in as the app ID.</b></p>
+                     * @param _subAppId <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether default or newly created), this field must be filled in as the app ID.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 获取<p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @return SessionContext <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 设置<p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @param _sessionContext <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-                     * @return SessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
+                     * 获取<p>Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @return SessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-                     * @param _sessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
+                     * 设置<p>Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @param _sessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取Reserved field for special purposes.
-                     * @return ExtInfo Reserved field for special purposes.
+                     * 获取<p>Reserved field, used for special purposes.</p>
+                     * @return ExtInfo <p>Reserved field, used for special purposes.</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置Reserved field for special purposes.
-                     * @param _extInfo Reserved field for special purposes.
+                     * 设置<p>Reserved field, used for special purposes.</p>
+                     * @param _extInfo <p>Reserved field, used for special purposes.</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Name of called backend API.
+                     * <p>Backend interface name invoked.</p>
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * API parameter. For specific parameter format, negotiate with the backend before calling.
+                     * <p>API parameter. The specific parameter format should be coordinated with the backend during the call.</p>
                      */
                     std::string m_functionArg;
                     bool m_functionArgHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether default or newly created), this field must be filled in as the app ID.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
+                     * <p>Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * Reserved field for special purposes.
+                     * <p>Reserved field, used for special purposes.</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether the rule takes effect. Valid values: `0` (no); `1` (yes).
-                     * @return IsEnabled Whether the rule takes effect. Valid values: `0` (no); `1` (yes).
+                     * 获取Whether the Rule Is Effective. 0: Not Effective; 1: Effective
+                     * @return IsEnabled Whether the Rule Is Effective. 0: Not Effective; 1: Effective
                      * 
                      */
                     int64_t GetIsEnabled() const;
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool IsEnabledHasBeenSet() const;
 
                     /**
-                     * 获取Scope. Valid values: `MANUAL` (specified servers); `ALL` (all images).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return RangeType Scope. Valid values: `MANUAL` (specified servers); `ALL` (all images).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Authorization Scope Category. MANUAL: Selected Host Nodes; ALL: All Images
+                     * @return RangeType Authorization Scope Category. MANUAL: Selected Host Nodes; ALL: All Images
                      * 
                      */
                     std::string GetRangeType() const;
@@ -74,10 +72,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RangeTypeHasBeenSet() const;
 
                     /**
-                     * 获取Number of servers when the scope is `MANUAL`
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return HostCount Number of servers when the scope is `MANUAL`
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Number of Hosts When Authorization Scope Is Optional Host
+                     * @return HostCount Number of Hosts When Authorization Scope Is Optional Host
                      * 
                      */
                     int64_t GetHostCount() const;
@@ -90,10 +86,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool HostCountHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of image licenses per day. `0`: Unlimited.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MaxDailyCount Maximum number of image licenses per day. `0`: Unlimited.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Maximum Number of Authorized Mirrors Per Day. 0: Unlimited
+                     * @return MaxDailyCount Maximum Number of Authorized Mirrors Per Day. 0: Unlimited
                      * 
                      */
                     int64_t GetMaxDailyCount() const;
@@ -106,10 +100,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MaxDailyCountHasBeenSet() const;
 
                     /**
-                     * 获取Rule ID, which is `0` if not specified.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return RuleId Rule ID, which is `0` if not specified.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Rule ID. Set it to 0 when it is not configured.
+                     * @return RuleId Rule ID. Set it to 0 when it is not configured.
                      * 
                      */
                     int64_t GetRuleId() const;
@@ -121,41 +113,77 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取Auto-Scan Switch. 0: Off; 1: On
+                     * @return AutoScanEnabled Auto-Scan Switch. 0: Off; 1: On
+                     * 
+                     */
+                    int64_t GetAutoScanEnabled() const;
+
+                    /**
+                     * 判断参数 AutoScanEnabled 是否已赋值
+                     * @return AutoScanEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoScanEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取Auto-Scan Range
+                     * @return ScanType Auto-Scan Range
+                     * 
+                     */
+                    std::vector<std::string> GetScanType() const;
+
+                    /**
+                     * 判断参数 ScanType 是否已赋值
+                     * @return ScanType 是否已赋值
+                     * 
+                     */
+                    bool ScanTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Whether the rule takes effect. Valid values: `0` (no); `1` (yes).
+                     * Whether the Rule Is Effective. 0: Not Effective; 1: Effective
                      */
                     int64_t m_isEnabled;
                     bool m_isEnabledHasBeenSet;
 
                     /**
-                     * Scope. Valid values: `MANUAL` (specified servers); `ALL` (all images).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Authorization Scope Category. MANUAL: Selected Host Nodes; ALL: All Images
                      */
                     std::string m_rangeType;
                     bool m_rangeTypeHasBeenSet;
 
                     /**
-                     * Number of servers when the scope is `MANUAL`
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Number of Hosts When Authorization Scope Is Optional Host
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
-                     * Maximum number of image licenses per day. `0`: Unlimited.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Maximum Number of Authorized Mirrors Per Day. 0: Unlimited
                      */
                     int64_t m_maxDailyCount;
                     bool m_maxDailyCountHasBeenSet;
 
                     /**
-                     * Rule ID, which is `0` if not specified.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Rule ID. Set it to 0 when it is not configured.
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * Auto-Scan Switch. 0: Off; 1: On
+                     */
+                    int64_t m_autoScanEnabled;
+                    bool m_autoScanEnabledHasBeenSet;
+
+                    /**
+                     * Auto-Scan Range
+                     */
+                    std::vector<std::string> m_scanType;
+                    bool m_scanTypeHasBeenSet;
 
                 };
             }

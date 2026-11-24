@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Diagnostic result item.
                 */
                 class DiagnoseResult : public AbstractModel
                 {
@@ -52,21 +52,19 @@ DecodeParamException: decoding parameter exception.
 TimeStampException: timestamp exception.
 FrameException: frame rate exception.
 StreamStatusException: stream status exception.
-StreamInfo: stream information exception.
-StreamAbnormalCharacteristics: stream characteristics exception.
+StreamInfo: Stream information exception
+StreamAbnormalCharacteristics: stream characteristic exception.
 DecodeException: decoding exception.
 HLSRequirements: HLS format exception.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Category Diagnosed exception category. Valid values:
 DecodeParamException: decoding parameter exception.
 TimeStampException: timestamp exception.
 FrameException: frame rate exception.
 StreamStatusException: stream status exception.
-StreamInfo: stream information exception.
-StreamAbnormalCharacteristics: stream characteristics exception.
+StreamInfo: Stream information exception
+StreamAbnormalCharacteristics: stream characteristic exception.
 DecodeException: decoding exception.
 HLSRequirements: HLS format exception.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetCategory() const;
@@ -77,21 +75,19 @@ DecodeParamException: decoding parameter exception.
 TimeStampException: timestamp exception.
 FrameException: frame rate exception.
 StreamStatusException: stream status exception.
-StreamInfo: stream information exception.
-StreamAbnormalCharacteristics: stream characteristics exception.
+StreamInfo: Stream information exception
+StreamAbnormalCharacteristics: stream characteristic exception.
 DecodeException: decoding exception.
 HLSRequirements: HLS format exception.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _category Diagnosed exception category. Valid values:
 DecodeParamException: decoding parameter exception.
 TimeStampException: timestamp exception.
 FrameException: frame rate exception.
 StreamStatusException: stream status exception.
-StreamInfo: stream information exception.
-StreamAbnormalCharacteristics: stream characteristics exception.
+StreamInfo: Stream information exception
+StreamAbnormalCharacteristics: stream characteristic exception.
 DecodeException: decoding exception.
 HLSRequirements: HLS format exception.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -108,21 +104,27 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
 VideoResolutionChanged: video resolution change.
 AudioSampleRateChanged: audio sample rate change.
-AudioChannelsChanged: audio channel quantity change.ParameterSetsChanged: stream parameter set information change.
+AudioChannelsChanged: audio channels changed
+ParameterSetsChanged: stream parameter set information change.
 DarOrSarInvalid: video aspect ratio exception.
-TimestampFallback: DTS timestamp rollback.DtsJitter: DTS jitter too high.
+TimestampFallback: DTS timestamp fallback
+DtsJitter: DTS jitter too high.
 PtsJitter: PTS jitter too high.
 AACDurationDeviation: improper AAC frame timestamp interval.
 AudioDroppingFrames: audio frame dropping.
 VideoDroppingFrames: video frame dropping.
 AVTimestampInterleave: improper audio-video interleaving.
-PtsLessThanDts: PTS less than DTS for media streams.
-ReceiveFpsJitter: significant jitter in the network receive frame rate.ReceiveFpsTooSmall: network receive video frame rate too low.FpsJitter: significant jitter in the stream frame rate calculated via PTS.StreamOpenFailed: stream open failure.
+PtsLessThanDts: The pts of the media stream is less than dts.
+ReceiveFpsJitter: excessive network received frame rate jitter.
+ReceiveFpsTooSmall: network received video frame rate too small.
+FpsJitter: Excessive stream frame rate jitter calculated by PTS.
+StreamOpenFailed: stream open failure.
 StreamEnd: stream end.
 StreamParseFailed: stream parsing failure.
 VideoFirstFrameNotIdr: first frame not an IDR frame.
 StreamNALUError: NALU start code error.
-TsStreamNoAud: no AUD NALU in the H26x stream of MPEG-TS.AudioStreamLack: no audio stream.
+TsStreamNoAud: The H26x stream of MPEG-TS misses AUD NALU
+AudioStreamLack: no audio stream.
 VideoStreamLack: no video stream.
 LackAudioRecover: missing audio stream recovery.
 LackVideoRecover: missing video stream recovery.
@@ -134,7 +136,8 @@ AudioOutOfPhase: opposite phase in dual-channel audio.
 VideoDuplicatedFrame: duplicate frames in video streams.
 AudioDuplicatedFrame: duplicate frames in audio streams.
 VideoRotation: video rotation.
-TsMultiPrograms: multiple programs in MPEG2-TS streams.Mp4InvalidCodecFourcc: codec FourCC in MP4 not meeting Apple HLS requirements.
+TsMultiPrograms: MPEG2-TS stream has multiple programs
+Mp4InvalidCodecFourcc: The codec fourcc in MP4 does not meet Apple HLS requirements
 HLSBadM3u8Format: invalid M3U8 file.
 HLSInvalidMasterM3u8: invalid main M3U8 file.
 HLSInvalidMediaM3u8: invalid media M3U8 file.
@@ -142,29 +145,34 @@ HLSMasterM3u8Recommended: parameters recommended by standards missing in main M3
 HLSMediaM3u8Recommended: parameters recommended by standards missing in media M3U8.
 HLSMediaM3u8DiscontinuityExist: EXT-X-DISCONTINUITY in media M3U8.
 HLSMediaSegmentsStreamNumChange: changed number of streams in segments.
-HLSMediaSegmentsPTSJitterDeviation: PTS jumps between segments without EXT-X-DISCONTINUITY.
+HLSMediaSegmentsPTSJitterDeviation: PTS jumps between slices without EXT-X-DISCONTINUITY.
 HLSMediaSegmentsDTSJitterDeviation: DTS jumps between segments without EXT-X-DISCONTINUITY.
-TimecodeTrackExist: TMCD track in MP4.
-Note: This field may return null, indicating that no valid values can be obtained.
+TimecodeTrackExist: MP4 has a tmcd track
                      * @return Type Diagnosed specific exception type. Valid values:
 
 VideoResolutionChanged: video resolution change.
 AudioSampleRateChanged: audio sample rate change.
-AudioChannelsChanged: audio channel quantity change.ParameterSetsChanged: stream parameter set information change.
+AudioChannelsChanged: audio channels changed
+ParameterSetsChanged: stream parameter set information change.
 DarOrSarInvalid: video aspect ratio exception.
-TimestampFallback: DTS timestamp rollback.DtsJitter: DTS jitter too high.
+TimestampFallback: DTS timestamp fallback
+DtsJitter: DTS jitter too high.
 PtsJitter: PTS jitter too high.
 AACDurationDeviation: improper AAC frame timestamp interval.
 AudioDroppingFrames: audio frame dropping.
 VideoDroppingFrames: video frame dropping.
 AVTimestampInterleave: improper audio-video interleaving.
-PtsLessThanDts: PTS less than DTS for media streams.
-ReceiveFpsJitter: significant jitter in the network receive frame rate.ReceiveFpsTooSmall: network receive video frame rate too low.FpsJitter: significant jitter in the stream frame rate calculated via PTS.StreamOpenFailed: stream open failure.
+PtsLessThanDts: The pts of the media stream is less than dts.
+ReceiveFpsJitter: excessive network received frame rate jitter.
+ReceiveFpsTooSmall: network received video frame rate too small.
+FpsJitter: Excessive stream frame rate jitter calculated by PTS.
+StreamOpenFailed: stream open failure.
 StreamEnd: stream end.
 StreamParseFailed: stream parsing failure.
 VideoFirstFrameNotIdr: first frame not an IDR frame.
 StreamNALUError: NALU start code error.
-TsStreamNoAud: no AUD NALU in the H26x stream of MPEG-TS.AudioStreamLack: no audio stream.
+TsStreamNoAud: The H26x stream of MPEG-TS misses AUD NALU
+AudioStreamLack: no audio stream.
 VideoStreamLack: no video stream.
 LackAudioRecover: missing audio stream recovery.
 LackVideoRecover: missing video stream recovery.
@@ -176,7 +184,8 @@ AudioOutOfPhase: opposite phase in dual-channel audio.
 VideoDuplicatedFrame: duplicate frames in video streams.
 AudioDuplicatedFrame: duplicate frames in audio streams.
 VideoRotation: video rotation.
-TsMultiPrograms: multiple programs in MPEG2-TS streams.Mp4InvalidCodecFourcc: codec FourCC in MP4 not meeting Apple HLS requirements.
+TsMultiPrograms: MPEG2-TS stream has multiple programs
+Mp4InvalidCodecFourcc: The codec fourcc in MP4 does not meet Apple HLS requirements
 HLSBadM3u8Format: invalid M3U8 file.
 HLSInvalidMasterM3u8: invalid main M3U8 file.
 HLSInvalidMediaM3u8: invalid media M3U8 file.
@@ -184,10 +193,9 @@ HLSMasterM3u8Recommended: parameters recommended by standards missing in main M3
 HLSMediaM3u8Recommended: parameters recommended by standards missing in media M3U8.
 HLSMediaM3u8DiscontinuityExist: EXT-X-DISCONTINUITY in media M3U8.
 HLSMediaSegmentsStreamNumChange: changed number of streams in segments.
-HLSMediaSegmentsPTSJitterDeviation: PTS jumps between segments without EXT-X-DISCONTINUITY.
+HLSMediaSegmentsPTSJitterDeviation: PTS jumps between slices without EXT-X-DISCONTINUITY.
 HLSMediaSegmentsDTSJitterDeviation: DTS jumps between segments without EXT-X-DISCONTINUITY.
-TimecodeTrackExist: TMCD track in MP4.
-Note: This field may return null, indicating that no valid values can be obtained.
+TimecodeTrackExist: MP4 has a tmcd track
                      * 
                      */
                     std::string GetType() const;
@@ -197,21 +205,27 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
 VideoResolutionChanged: video resolution change.
 AudioSampleRateChanged: audio sample rate change.
-AudioChannelsChanged: audio channel quantity change.ParameterSetsChanged: stream parameter set information change.
+AudioChannelsChanged: audio channels changed
+ParameterSetsChanged: stream parameter set information change.
 DarOrSarInvalid: video aspect ratio exception.
-TimestampFallback: DTS timestamp rollback.DtsJitter: DTS jitter too high.
+TimestampFallback: DTS timestamp fallback
+DtsJitter: DTS jitter too high.
 PtsJitter: PTS jitter too high.
 AACDurationDeviation: improper AAC frame timestamp interval.
 AudioDroppingFrames: audio frame dropping.
 VideoDroppingFrames: video frame dropping.
 AVTimestampInterleave: improper audio-video interleaving.
-PtsLessThanDts: PTS less than DTS for media streams.
-ReceiveFpsJitter: significant jitter in the network receive frame rate.ReceiveFpsTooSmall: network receive video frame rate too low.FpsJitter: significant jitter in the stream frame rate calculated via PTS.StreamOpenFailed: stream open failure.
+PtsLessThanDts: The pts of the media stream is less than dts.
+ReceiveFpsJitter: excessive network received frame rate jitter.
+ReceiveFpsTooSmall: network received video frame rate too small.
+FpsJitter: Excessive stream frame rate jitter calculated by PTS.
+StreamOpenFailed: stream open failure.
 StreamEnd: stream end.
 StreamParseFailed: stream parsing failure.
 VideoFirstFrameNotIdr: first frame not an IDR frame.
 StreamNALUError: NALU start code error.
-TsStreamNoAud: no AUD NALU in the H26x stream of MPEG-TS.AudioStreamLack: no audio stream.
+TsStreamNoAud: The H26x stream of MPEG-TS misses AUD NALU
+AudioStreamLack: no audio stream.
 VideoStreamLack: no video stream.
 LackAudioRecover: missing audio stream recovery.
 LackVideoRecover: missing video stream recovery.
@@ -223,7 +237,8 @@ AudioOutOfPhase: opposite phase in dual-channel audio.
 VideoDuplicatedFrame: duplicate frames in video streams.
 AudioDuplicatedFrame: duplicate frames in audio streams.
 VideoRotation: video rotation.
-TsMultiPrograms: multiple programs in MPEG2-TS streams.Mp4InvalidCodecFourcc: codec FourCC in MP4 not meeting Apple HLS requirements.
+TsMultiPrograms: MPEG2-TS stream has multiple programs
+Mp4InvalidCodecFourcc: The codec fourcc in MP4 does not meet Apple HLS requirements
 HLSBadM3u8Format: invalid M3U8 file.
 HLSInvalidMasterM3u8: invalid main M3U8 file.
 HLSInvalidMediaM3u8: invalid media M3U8 file.
@@ -231,29 +246,34 @@ HLSMasterM3u8Recommended: parameters recommended by standards missing in main M3
 HLSMediaM3u8Recommended: parameters recommended by standards missing in media M3U8.
 HLSMediaM3u8DiscontinuityExist: EXT-X-DISCONTINUITY in media M3U8.
 HLSMediaSegmentsStreamNumChange: changed number of streams in segments.
-HLSMediaSegmentsPTSJitterDeviation: PTS jumps between segments without EXT-X-DISCONTINUITY.
+HLSMediaSegmentsPTSJitterDeviation: PTS jumps between slices without EXT-X-DISCONTINUITY.
 HLSMediaSegmentsDTSJitterDeviation: DTS jumps between segments without EXT-X-DISCONTINUITY.
-TimecodeTrackExist: TMCD track in MP4.
-Note: This field may return null, indicating that no valid values can be obtained.
+TimecodeTrackExist: MP4 has a tmcd track
                      * @param _type Diagnosed specific exception type. Valid values:
 
 VideoResolutionChanged: video resolution change.
 AudioSampleRateChanged: audio sample rate change.
-AudioChannelsChanged: audio channel quantity change.ParameterSetsChanged: stream parameter set information change.
+AudioChannelsChanged: audio channels changed
+ParameterSetsChanged: stream parameter set information change.
 DarOrSarInvalid: video aspect ratio exception.
-TimestampFallback: DTS timestamp rollback.DtsJitter: DTS jitter too high.
+TimestampFallback: DTS timestamp fallback
+DtsJitter: DTS jitter too high.
 PtsJitter: PTS jitter too high.
 AACDurationDeviation: improper AAC frame timestamp interval.
 AudioDroppingFrames: audio frame dropping.
 VideoDroppingFrames: video frame dropping.
 AVTimestampInterleave: improper audio-video interleaving.
-PtsLessThanDts: PTS less than DTS for media streams.
-ReceiveFpsJitter: significant jitter in the network receive frame rate.ReceiveFpsTooSmall: network receive video frame rate too low.FpsJitter: significant jitter in the stream frame rate calculated via PTS.StreamOpenFailed: stream open failure.
+PtsLessThanDts: The pts of the media stream is less than dts.
+ReceiveFpsJitter: excessive network received frame rate jitter.
+ReceiveFpsTooSmall: network received video frame rate too small.
+FpsJitter: Excessive stream frame rate jitter calculated by PTS.
+StreamOpenFailed: stream open failure.
 StreamEnd: stream end.
 StreamParseFailed: stream parsing failure.
 VideoFirstFrameNotIdr: first frame not an IDR frame.
 StreamNALUError: NALU start code error.
-TsStreamNoAud: no AUD NALU in the H26x stream of MPEG-TS.AudioStreamLack: no audio stream.
+TsStreamNoAud: The H26x stream of MPEG-TS misses AUD NALU
+AudioStreamLack: no audio stream.
 VideoStreamLack: no video stream.
 LackAudioRecover: missing audio stream recovery.
 LackVideoRecover: missing video stream recovery.
@@ -265,7 +285,8 @@ AudioOutOfPhase: opposite phase in dual-channel audio.
 VideoDuplicatedFrame: duplicate frames in video streams.
 AudioDuplicatedFrame: duplicate frames in audio streams.
 VideoRotation: video rotation.
-TsMultiPrograms: multiple programs in MPEG2-TS streams.Mp4InvalidCodecFourcc: codec FourCC in MP4 not meeting Apple HLS requirements.
+TsMultiPrograms: MPEG2-TS stream has multiple programs
+Mp4InvalidCodecFourcc: The codec fourcc in MP4 does not meet Apple HLS requirements
 HLSBadM3u8Format: invalid M3U8 file.
 HLSInvalidMasterM3u8: invalid main M3U8 file.
 HLSInvalidMediaM3u8: invalid media M3U8 file.
@@ -273,10 +294,9 @@ HLSMasterM3u8Recommended: parameters recommended by standards missing in main M3
 HLSMediaM3u8Recommended: parameters recommended by standards missing in media M3U8.
 HLSMediaM3u8DiscontinuityExist: EXT-X-DISCONTINUITY in media M3U8.
 HLSMediaSegmentsStreamNumChange: changed number of streams in segments.
-HLSMediaSegmentsPTSJitterDeviation: PTS jumps between segments without EXT-X-DISCONTINUITY.
+HLSMediaSegmentsPTSJitterDeviation: PTS jumps between slices without EXT-X-DISCONTINUITY.
 HLSMediaSegmentsDTSJitterDeviation: DTS jumps between segments without EXT-X-DISCONTINUITY.
-TimecodeTrackExist: TMCD track in MP4.
-Note: This field may return null, indicating that no valid values can be obtained.
+TimecodeTrackExist: MP4 has a tmcd track
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -289,15 +309,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Timestamp 
+                     * 获取PTS timestamp when the anomaly is diagnosed.
+                     * @return Timestamp PTS timestamp when the anomaly is diagnosed.
                      * 
                      */
                     double GetTimestamp() const;
 
                     /**
-                     * 设置
-                     * @param _timestamp 
+                     * 设置PTS timestamp when the anomaly is diagnosed.
+                     * @param _timestamp PTS timestamp when the anomaly is diagnosed.
                      * 
                      */
                     void SetTimestamp(const double& _timestamp);
@@ -310,15 +330,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Description 
+                     * 获取Exception description from diagnosis.
+                     * @return Description Exception description from diagnosis.
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置
-                     * @param _description 
+                     * 设置Exception description from diagnosis.
+                     * @param _description Exception description from diagnosis.
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -331,15 +351,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return DateTime 
+                     * 获取Diagnose the abnormal UTC+8 time in ISO date format.
+                     * @return DateTime Diagnose the abnormal UTC+8 time in ISO date format.
                      * 
                      */
                     std::string GetDateTime() const;
 
                     /**
-                     * 设置
-                     * @param _dateTime 
+                     * 设置Diagnose the abnormal UTC+8 time in ISO date format.
+                     * @param _dateTime Diagnose the abnormal UTC+8 time in ISO date format.
                      * 
                      */
                     void SetDateTime(const std::string& _dateTime);
@@ -356,16 +376,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 Fatal: affecting subsequent playback and parsing.
 Error: may affect playback.
 Warning: potential risk, which may not necessarily affect playback.
-Notice: important stream information.
+Notice: Important stream information
 Info: general stream information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return SeverityLevel Diagnosed exception level. Valid values:
 Fatal: affecting subsequent playback and parsing.
 Error: may affect playback.
 Warning: potential risk, which may not necessarily affect playback.
-Notice: important stream information.
+Notice: Important stream information
 Info: general stream information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetSeverityLevel() const;
@@ -375,16 +393,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 Fatal: affecting subsequent playback and parsing.
 Error: may affect playback.
 Warning: potential risk, which may not necessarily affect playback.
-Notice: important stream information.
+Notice: Important stream information
 Info: general stream information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _severityLevel Diagnosed exception level. Valid values:
 Fatal: affecting subsequent playback and parsing.
 Error: may affect playback.
 Warning: potential risk, which may not necessarily affect playback.
-Notice: important stream information.
+Notice: Important stream information
 Info: general stream information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSeverityLevel(const std::string& _severityLevel);
@@ -404,11 +420,10 @@ DecodeParamException: decoding parameter exception.
 TimeStampException: timestamp exception.
 FrameException: frame rate exception.
 StreamStatusException: stream status exception.
-StreamInfo: stream information exception.
-StreamAbnormalCharacteristics: stream characteristics exception.
+StreamInfo: Stream information exception
+StreamAbnormalCharacteristics: stream characteristic exception.
 DecodeException: decoding exception.
 HLSRequirements: HLS format exception.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -418,21 +433,27 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
 VideoResolutionChanged: video resolution change.
 AudioSampleRateChanged: audio sample rate change.
-AudioChannelsChanged: audio channel quantity change.ParameterSetsChanged: stream parameter set information change.
+AudioChannelsChanged: audio channels changed
+ParameterSetsChanged: stream parameter set information change.
 DarOrSarInvalid: video aspect ratio exception.
-TimestampFallback: DTS timestamp rollback.DtsJitter: DTS jitter too high.
+TimestampFallback: DTS timestamp fallback
+DtsJitter: DTS jitter too high.
 PtsJitter: PTS jitter too high.
 AACDurationDeviation: improper AAC frame timestamp interval.
 AudioDroppingFrames: audio frame dropping.
 VideoDroppingFrames: video frame dropping.
 AVTimestampInterleave: improper audio-video interleaving.
-PtsLessThanDts: PTS less than DTS for media streams.
-ReceiveFpsJitter: significant jitter in the network receive frame rate.ReceiveFpsTooSmall: network receive video frame rate too low.FpsJitter: significant jitter in the stream frame rate calculated via PTS.StreamOpenFailed: stream open failure.
+PtsLessThanDts: The pts of the media stream is less than dts.
+ReceiveFpsJitter: excessive network received frame rate jitter.
+ReceiveFpsTooSmall: network received video frame rate too small.
+FpsJitter: Excessive stream frame rate jitter calculated by PTS.
+StreamOpenFailed: stream open failure.
 StreamEnd: stream end.
 StreamParseFailed: stream parsing failure.
 VideoFirstFrameNotIdr: first frame not an IDR frame.
 StreamNALUError: NALU start code error.
-TsStreamNoAud: no AUD NALU in the H26x stream of MPEG-TS.AudioStreamLack: no audio stream.
+TsStreamNoAud: The H26x stream of MPEG-TS misses AUD NALU
+AudioStreamLack: no audio stream.
 VideoStreamLack: no video stream.
 LackAudioRecover: missing audio stream recovery.
 LackVideoRecover: missing video stream recovery.
@@ -444,7 +465,8 @@ AudioOutOfPhase: opposite phase in dual-channel audio.
 VideoDuplicatedFrame: duplicate frames in video streams.
 AudioDuplicatedFrame: duplicate frames in audio streams.
 VideoRotation: video rotation.
-TsMultiPrograms: multiple programs in MPEG2-TS streams.Mp4InvalidCodecFourcc: codec FourCC in MP4 not meeting Apple HLS requirements.
+TsMultiPrograms: MPEG2-TS stream has multiple programs
+Mp4InvalidCodecFourcc: The codec fourcc in MP4 does not meet Apple HLS requirements
 HLSBadM3u8Format: invalid M3U8 file.
 HLSInvalidMasterM3u8: invalid main M3U8 file.
 HLSInvalidMediaM3u8: invalid media M3U8 file.
@@ -452,28 +474,27 @@ HLSMasterM3u8Recommended: parameters recommended by standards missing in main M3
 HLSMediaM3u8Recommended: parameters recommended by standards missing in media M3U8.
 HLSMediaM3u8DiscontinuityExist: EXT-X-DISCONTINUITY in media M3U8.
 HLSMediaSegmentsStreamNumChange: changed number of streams in segments.
-HLSMediaSegmentsPTSJitterDeviation: PTS jumps between segments without EXT-X-DISCONTINUITY.
+HLSMediaSegmentsPTSJitterDeviation: PTS jumps between slices without EXT-X-DISCONTINUITY.
 HLSMediaSegmentsDTSJitterDeviation: DTS jumps between segments without EXT-X-DISCONTINUITY.
-TimecodeTrackExist: TMCD track in MP4.
-Note: This field may return null, indicating that no valid values can be obtained.
+TimecodeTrackExist: MP4 has a tmcd track
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 
+                     * PTS timestamp when the anomaly is diagnosed.
                      */
                     double m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 
+                     * Exception description from diagnosis.
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 
+                     * Diagnose the abnormal UTC+8 time in ISO date format.
                      */
                     std::string m_dateTime;
                     bool m_dateTimeHasBeenSet;
@@ -483,9 +504,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
 Fatal: affecting subsequent playback and parsing.
 Error: may affect playback.
 Warning: potential risk, which may not necessarily affect playback.
-Notice: important stream information.
+Notice: Important stream information
 Info: general stream information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_severityLevel;
                     bool m_severityLevelHasBeenSet;

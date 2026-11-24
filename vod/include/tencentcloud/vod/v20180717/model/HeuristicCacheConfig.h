@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Heuristic cache configuration
+                * Heuristic custom time cache configuration
                 */
                 class HeuristicCacheConfig : public AbstractModel
                 {
@@ -47,15 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Heuristic custom time cache configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @return HeuristicCacheTimeSwitch Heuristic custom time cache configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 获取Heuristic custom time cache configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @return HeuristicCacheTimeSwitch Heuristic custom time cache configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     std::string GetHeuristicCacheTimeSwitch() const;
 
                     /**
-                     * 设置Heuristic custom time cache configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @param _heuristicCacheTimeSwitch Heuristic custom time cache configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 设置Heuristic custom time cache configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @param _heuristicCacheTimeSwitch Heuristic custom time cache configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     void SetHeuristicCacheTimeSwitch(const std::string& _heuristicCacheTimeSwitch);
@@ -91,7 +99,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Heuristic custom time cache configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * Heuristic custom time cache configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      */
                     std::string m_heuristicCacheTimeSwitch;
                     bool m_heuristicCacheTimeSwitchHasBeenSet;

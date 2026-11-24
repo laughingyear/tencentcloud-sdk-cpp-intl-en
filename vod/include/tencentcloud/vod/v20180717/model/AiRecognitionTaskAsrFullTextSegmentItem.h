@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Full speech recognition segment.
+                * Segment undergone full speech recognition.
                 */
                 class AiRecognitionTaskAsrFullTextSegmentItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Confidence of recognized segment. Value range: 0-100.
-                     * @return Confidence Confidence of recognized segment. Value range: 0-100.
+                     * 获取Confidence of a recognized segment. Value range: 0-100.
+                     * @return Confidence Confidence of a recognized segment. Value range: 0-100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of recognized segment. Value range: 0-100.
-                     * @param _confidence Confidence of recognized segment. Value range: 0-100.
+                     * 设置Confidence of a recognized segment. Value range: 0-100.
+                     * @param _confidence Confidence of a recognized segment. Value range: 0-100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Start time offset of recognized segment in seconds.
-                     * @return StartTimeOffset Start time offset of recognized segment in seconds.
+                     * 获取Start time offset of a recognized segment, in seconds.
+                     * @return StartTimeOffset Start time offset of a recognized segment, in seconds.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Start time offset of recognized segment in seconds.
-                     * @param _startTimeOffset Start time offset of recognized segment in seconds.
+                     * 设置Start time offset of a recognized segment, in seconds.
+                     * @param _startTimeOffset Start time offset of a recognized segment, in seconds.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取End time offset of recognition segment in seconds.
-                     * @return EndTimeOffset End time offset of recognition segment in seconds.
+                     * 获取End time offset of a recognized segment, in seconds.
+                     * @return EndTimeOffset End time offset of a recognized segment, in seconds.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置End time offset of recognition segment in seconds.
-                     * @param _endTimeOffset End time offset of recognition segment in seconds.
+                     * 设置End time offset of a recognized segment, in seconds.
+                     * @param _endTimeOffset End time offset of a recognized segment, in seconds.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -133,19 +133,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Confidence of recognized segment. Value range: 0-100.
+                     * Confidence of a recognized segment. Value range: 0-100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Start time offset of recognized segment in seconds.
+                     * Start time offset of a recognized segment, in seconds.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * End time offset of recognition segment in seconds.
+                     * End time offset of a recognized segment, in seconds.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

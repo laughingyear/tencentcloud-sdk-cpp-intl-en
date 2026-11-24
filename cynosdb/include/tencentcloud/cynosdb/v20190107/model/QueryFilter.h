@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Query filter
+                * Query filter. Filter criteria for the DescribeClusterAndInstances API.
                 */
                 class QueryFilter : public AbstractModel
                 {
@@ -47,36 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @return Names Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * 
-                     */
-                    std::vector<std::string> GetNames() const;
-
-                    /**
-                     * 设置Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @param _names Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * 
-                     */
-                    void SetNames(const std::vector<std::string>& _names);
-
-                    /**
-                     * 判断参数 Names 是否已赋值
-                     * @return Names 是否已赋值
-                     * 
-                     */
-                    bool NamesHasBeenSet() const;
-
-                    /**
-                     * 获取Search string
-                     * @return Values Search string
+                     * 获取Field value list, one-to-one with Names. InstanceId/ClusterId use exact match, and InstanceName uses fuzzy match by default.
+                     * @return Values Field value list, one-to-one with Names. InstanceId/ClusterId use exact match, and InstanceName uses fuzzy match by default.
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置Search string
-                     * @param _values Search string
+                     * 设置Field value list, one-to-one with Names. InstanceId/ClusterId use exact match, and InstanceName uses fuzzy match by default.
+                     * @param _values Field value list, one-to-one with Names. InstanceId/ClusterId use exact match, and InstanceName uses fuzzy match by default.
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -89,15 +68,36 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取Whether to use exact match
-                     * @return ExactMatch Whether to use exact match
+                     * 获取List of search field names. Only the following 3 fields are supported (case-insensitive, multiple values use OR relationship): ClusterId (filter by cluster ID, exact match), InstanceId (reverse-check the cluster by instance ID), InstanceName (reverse-check the cluster by instance name, default LIKE fuzzy matching, exact match when ExactMatch=true). When InstanceId and InstanceName are both imported, take the intersection (AND semantics).
+                     * @return Names List of search field names. Only the following 3 fields are supported (case-insensitive, multiple values use OR relationship): ClusterId (filter by cluster ID, exact match), InstanceId (reverse-check the cluster by instance ID), InstanceName (reverse-check the cluster by instance name, default LIKE fuzzy matching, exact match when ExactMatch=true). When InstanceId and InstanceName are both imported, take the intersection (AND semantics).
+                     * 
+                     */
+                    std::vector<std::string> GetNames() const;
+
+                    /**
+                     * 设置List of search field names. Only the following 3 fields are supported (case-insensitive, multiple values use OR relationship): ClusterId (filter by cluster ID, exact match), InstanceId (reverse-check the cluster by instance ID), InstanceName (reverse-check the cluster by instance name, default LIKE fuzzy matching, exact match when ExactMatch=true). When InstanceId and InstanceName are both imported, take the intersection (AND semantics).
+                     * @param _names List of search field names. Only the following 3 fields are supported (case-insensitive, multiple values use OR relationship): ClusterId (filter by cluster ID, exact match), InstanceId (reverse-check the cluster by instance ID), InstanceName (reverse-check the cluster by instance name, default LIKE fuzzy matching, exact match when ExactMatch=true). When InstanceId and InstanceName are both imported, take the intersection (AND semantics).
+                     * 
+                     */
+                    void SetNames(const std::vector<std::string>& _names);
+
+                    /**
+                     * 判断参数 Names 是否已赋值
+                     * @return Names 是否已赋值
+                     * 
+                     */
+                    bool NamesHasBeenSet() const;
+
+                    /**
+                     * 获取Exact match. Only applicable to InstanceName: true for exact match, false (default) for LIKE fuzzy matching.
+                     * @return ExactMatch Exact match. Only applicable to InstanceName: true for exact match, false (default) for LIKE fuzzy matching.
                      * 
                      */
                     bool GetExactMatch() const;
 
                     /**
-                     * 设置Whether to use exact match
-                     * @param _exactMatch Whether to use exact match
+                     * 设置Exact match. Only applicable to InstanceName: true for exact match, false (default) for LIKE fuzzy matching.
+                     * @param _exactMatch Exact match. Only applicable to InstanceName: true for exact match, false (default) for LIKE fuzzy matching.
                      * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ExactMatchHasBeenSet() const;
 
                     /**
-                     * 获取Search field
-                     * @return Name Search field
+                     * 获取Search field name (single field mode; either this parameter or Names). Supported: ClusterId, InstanceId, InstanceName.
+                     * @return Name Search field name (single field mode; either this parameter or Names). Supported: ClusterId, InstanceId, InstanceName.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Search field
-                     * @param _name Search field
+                     * 设置Search field name (single field mode; either this parameter or Names). Supported: ClusterId, InstanceId, InstanceName.
+                     * @param _name Search field name (single field mode; either this parameter or Names). Supported: ClusterId, InstanceId, InstanceName.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -131,54 +131,54 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Operator
-                     * @return Operator Operator
-                     * 
+                     * 获取Operator (reserved field, currently disabled). Available values: >, >=, !=, =, <, <=
+                     * @return Operator Operator (reserved field, currently disabled). Available values: >, >=, !=, =, <, <=
+                     * @deprecated
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置Operator
-                     * @param _operator Operator
-                     * 
+                     * 设置Operator (reserved field, currently disabled). Available values: >, >=, !=, =, <, <=
+                     * @param _operator Operator (reserved field, currently disabled). Available values: >, >=, !=, =, <, <=
+                     * @deprecated
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 
                 private:
 
                     /**
-                     * Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     */
-                    std::vector<std::string> m_names;
-                    bool m_namesHasBeenSet;
-
-                    /**
-                     * Search string
+                     * Field value list, one-to-one with Names. InstanceId/ClusterId use exact match, and InstanceName uses fuzzy match by default.
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * Whether to use exact match
+                     * List of search field names. Only the following 3 fields are supported (case-insensitive, multiple values use OR relationship): ClusterId (filter by cluster ID, exact match), InstanceId (reverse-check the cluster by instance ID), InstanceName (reverse-check the cluster by instance name, default LIKE fuzzy matching, exact match when ExactMatch=true). When InstanceId and InstanceName are both imported, take the intersection (AND semantics).
+                     */
+                    std::vector<std::string> m_names;
+                    bool m_namesHasBeenSet;
+
+                    /**
+                     * Exact match. Only applicable to InstanceName: true for exact match, false (default) for LIKE fuzzy matching.
                      */
                     bool m_exactMatch;
                     bool m_exactMatchHasBeenSet;
 
                     /**
-                     * Search field
+                     * Search field name (single field mode; either this parameter or Names). Supported: ClusterId, InstanceId, InstanceName.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Operator
+                     * Operator (reserved field, currently disabled). Available values: >, >=, !=, =, <, <=
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

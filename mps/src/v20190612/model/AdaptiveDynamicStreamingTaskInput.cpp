@@ -23,13 +23,19 @@ using namespace std;
 AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
+    m_blindWatermarkHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_subStreamObjectNameHasBeenSet(false),
     m_segmentObjectNameHasBeenSet(false),
     m_addOnSubtitlesHasBeenSet(false),
     m_drmInfoHasBeenSet(false),
-    m_definitionTypeHasBeenSet(false)
+    m_definitionTypeHasBeenSet(false),
+    m_subtitleTemplateHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false),
+    m_keyPTSListHasBeenSet(false),
+    m_addOnAudiosHasBeenSet(false),
+    m_stdExtStreamInfosHasBeenSet(false)
 {
 }
 
@@ -66,6 +72,23 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
             m_watermarkSet.push_back(item);
         }
         m_watermarkSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlindWatermark") && !value["BlindWatermark"].IsNull())
+    {
+        if (!value["BlindWatermark"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.BlindWatermark` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_blindWatermark.Deserialize(value["BlindWatermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_blindWatermarkHasBeenSet = true;
     }
 
     if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
@@ -162,6 +185,86 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_definitionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleTemplate") && !value["SubtitleTemplate"].IsNull())
+    {
+        if (!value["SubtitleTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleTemplate.Deserialize(value["SubtitleTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleTemplateHasBeenSet = true;
+    }
+
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyPTSList") && !value["KeyPTSList"].IsNull())
+    {
+        if (!value["KeyPTSList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.KeyPTSList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyPTSList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyPTSList.push_back((*itr).GetInt64());
+        }
+        m_keyPTSListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddOnAudios") && !value["AddOnAudios"].IsNull())
+    {
+        if (!value["AddOnAudios"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.AddOnAudios` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddOnAudios"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddOnAudio item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addOnAudios.push_back(item);
+        }
+        m_addOnAudiosHasBeenSet = true;
+    }
+
+    if (value.HasMember("StdExtStreamInfos") && !value["StdExtStreamInfos"].IsNull())
+    {
+        if (!value["StdExtStreamInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.StdExtStreamInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StdExtStreamInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdaptiveStreamTemplate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_stdExtStreamInfos.push_back(item);
+        }
+        m_stdExtStreamInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +293,15 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_blindWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlindWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_blindWatermark.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputStorageHasBeenSet)
@@ -257,6 +369,66 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         value.AddMember(iKey, rapidjson::Value(m_definitionType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyPTSListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyPTSList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyPTSList.begin(); itr != m_keyPTSList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_addOnAudiosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddOnAudios";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addOnAudios.begin(); itr != m_addOnAudios.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_stdExtStreamInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtStreamInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_stdExtStreamInfos.begin(); itr != m_stdExtStreamInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -290,6 +462,22 @@ void AdaptiveDynamicStreamingTaskInput::SetWatermarkSet(const vector<WatermarkIn
 bool AdaptiveDynamicStreamingTaskInput::WatermarkSetHasBeenSet() const
 {
     return m_watermarkSetHasBeenSet;
+}
+
+BlindWatermarkInput AdaptiveDynamicStreamingTaskInput::GetBlindWatermark() const
+{
+    return m_blindWatermark;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetBlindWatermark(const BlindWatermarkInput& _blindWatermark)
+{
+    m_blindWatermark = _blindWatermark;
+    m_blindWatermarkHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::BlindWatermarkHasBeenSet() const
+{
+    return m_blindWatermarkHasBeenSet;
 }
 
 TaskOutputStorage AdaptiveDynamicStreamingTaskInput::GetOutputStorage() const
@@ -402,5 +590,85 @@ void AdaptiveDynamicStreamingTaskInput::SetDefinitionType(const string& _definit
 bool AdaptiveDynamicStreamingTaskInput::DefinitionTypeHasBeenSet() const
 {
     return m_definitionTypeHasBeenSet;
+}
+
+SubtitleTemplate AdaptiveDynamicStreamingTaskInput::GetSubtitleTemplate() const
+{
+    return m_subtitleTemplate;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate)
+{
+    m_subtitleTemplate = _subtitleTemplate;
+    m_subtitleTemplateHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::SubtitleTemplateHasBeenSet() const
+{
+    return m_subtitleTemplateHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTaskInput::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
+}
+
+vector<int64_t> AdaptiveDynamicStreamingTaskInput::GetKeyPTSList() const
+{
+    return m_keyPTSList;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetKeyPTSList(const vector<int64_t>& _keyPTSList)
+{
+    m_keyPTSList = _keyPTSList;
+    m_keyPTSListHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::KeyPTSListHasBeenSet() const
+{
+    return m_keyPTSListHasBeenSet;
+}
+
+vector<AddOnAudio> AdaptiveDynamicStreamingTaskInput::GetAddOnAudios() const
+{
+    return m_addOnAudios;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetAddOnAudios(const vector<AddOnAudio>& _addOnAudios)
+{
+    m_addOnAudios = _addOnAudios;
+    m_addOnAudiosHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::AddOnAudiosHasBeenSet() const
+{
+    return m_addOnAudiosHasBeenSet;
+}
+
+vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTaskInput::GetStdExtStreamInfos() const
+{
+    return m_stdExtStreamInfos;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetStdExtStreamInfos(const vector<AdaptiveStreamTemplate>& _stdExtStreamInfos)
+{
+    m_stdExtStreamInfos = _stdExtStreamInfos;
+    m_stdExtStreamInfosHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::StdExtStreamInfosHasBeenSet() const
+{
+    return m_stdExtStreamInfosHasBeenSet;
 }
 

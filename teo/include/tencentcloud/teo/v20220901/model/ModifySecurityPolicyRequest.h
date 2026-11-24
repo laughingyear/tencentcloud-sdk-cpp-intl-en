@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Security policy configuration. <li>When the `CustomRule` in the `SecurityPolicy` parameter is set, the `AclConfg` and `IpTableConfg` in the `SecurityConfig` parameter will be ignored;</li> <li>when the `ManagedRule` in the `SecurityPolicy` parameter is set, the `WafConfig` in the `SecurityConfig` parameter will be ignored.</li> <li>For custom rules and managed rule policy configuration, using `SecurityPolicy` parameter to configure settings is recommended.</li>
-                     * @return SecurityConfig Security policy configuration. <li>When the `CustomRule` in the `SecurityPolicy` parameter is set, the `AclConfg` and `IpTableConfg` in the `SecurityConfig` parameter will be ignored;</li> <li>when the `ManagedRule` in the `SecurityPolicy` parameter is set, the `WafConfig` in the `SecurityConfig` parameter will be ignored.</li> <li>For custom rules and managed rule policy configuration, using `SecurityPolicy` parameter to configure settings is recommended.</li>
+                     * 获取Security policy configuration. <li>when ExceptionRules in the SecurityPolicy parameter is set, ExceptConfig in the SecurityConfig parameter will be ignored;</li> <li>when CustomRules in the SecurityPolicy parameter is set, AclConfig and IpTableConfig in the SecurityConfig parameter will be ignored;</li> <li>when HttpDDoSProtection and RateLimitingRules in the SecurityPolicy parameter are set, RateLimitConfig in the SecurityConfig parameter will be ignored;</li> <li>when ManagedRule in the SecurityPolicy parameter is set, WafConfig in the SecurityConfig parameter will be ignored;</li> <li>when BotManagement in the SecurityPolicy parameter is set, BotConfig in the SecurityConfig parameter will be ignored;</li> <li>for exception rules, custom rules, rate limiting, managed rules, and Bot management policy configuration, recommend using the SecurityPolicy parameter for settings.</li>.
+                     * @return SecurityConfig Security policy configuration. <li>when ExceptionRules in the SecurityPolicy parameter is set, ExceptConfig in the SecurityConfig parameter will be ignored;</li> <li>when CustomRules in the SecurityPolicy parameter is set, AclConfig and IpTableConfig in the SecurityConfig parameter will be ignored;</li> <li>when HttpDDoSProtection and RateLimitingRules in the SecurityPolicy parameter are set, RateLimitConfig in the SecurityConfig parameter will be ignored;</li> <li>when ManagedRule in the SecurityPolicy parameter is set, WafConfig in the SecurityConfig parameter will be ignored;</li> <li>when BotManagement in the SecurityPolicy parameter is set, BotConfig in the SecurityConfig parameter will be ignored;</li> <li>for exception rules, custom rules, rate limiting, managed rules, and Bot management policy configuration, recommend using the SecurityPolicy parameter for settings.</li>.
                      * 
                      */
                     SecurityConfig GetSecurityConfig() const;
 
                     /**
-                     * 设置Security policy configuration. <li>When the `CustomRule` in the `SecurityPolicy` parameter is set, the `AclConfg` and `IpTableConfg` in the `SecurityConfig` parameter will be ignored;</li> <li>when the `ManagedRule` in the `SecurityPolicy` parameter is set, the `WafConfig` in the `SecurityConfig` parameter will be ignored.</li> <li>For custom rules and managed rule policy configuration, using `SecurityPolicy` parameter to configure settings is recommended.</li>
-                     * @param _securityConfig Security policy configuration. <li>When the `CustomRule` in the `SecurityPolicy` parameter is set, the `AclConfg` and `IpTableConfg` in the `SecurityConfig` parameter will be ignored;</li> <li>when the `ManagedRule` in the `SecurityPolicy` parameter is set, the `WafConfig` in the `SecurityConfig` parameter will be ignored.</li> <li>For custom rules and managed rule policy configuration, using `SecurityPolicy` parameter to configure settings is recommended.</li>
+                     * 设置Security policy configuration. <li>when ExceptionRules in the SecurityPolicy parameter is set, ExceptConfig in the SecurityConfig parameter will be ignored;</li> <li>when CustomRules in the SecurityPolicy parameter is set, AclConfig and IpTableConfig in the SecurityConfig parameter will be ignored;</li> <li>when HttpDDoSProtection and RateLimitingRules in the SecurityPolicy parameter are set, RateLimitConfig in the SecurityConfig parameter will be ignored;</li> <li>when ManagedRule in the SecurityPolicy parameter is set, WafConfig in the SecurityConfig parameter will be ignored;</li> <li>when BotManagement in the SecurityPolicy parameter is set, BotConfig in the SecurityConfig parameter will be ignored;</li> <li>for exception rules, custom rules, rate limiting, managed rules, and Bot management policy configuration, recommend using the SecurityPolicy parameter for settings.</li>.
+                     * @param _securityConfig Security policy configuration. <li>when ExceptionRules in the SecurityPolicy parameter is set, ExceptConfig in the SecurityConfig parameter will be ignored;</li> <li>when CustomRules in the SecurityPolicy parameter is set, AclConfig and IpTableConfig in the SecurityConfig parameter will be ignored;</li> <li>when HttpDDoSProtection and RateLimitingRules in the SecurityPolicy parameter are set, RateLimitConfig in the SecurityConfig parameter will be ignored;</li> <li>when ManagedRule in the SecurityPolicy parameter is set, WafConfig in the SecurityConfig parameter will be ignored;</li> <li>when BotManagement in the SecurityPolicy parameter is set, BotConfig in the SecurityConfig parameter will be ignored;</li> <li>for exception rules, custom rules, rate limiting, managed rules, and Bot management policy configuration, recommend using the SecurityPolicy parameter for settings.</li>.
                      * 
                      */
                     void SetSecurityConfig(const SecurityConfig& _securityConfig);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool SecurityConfigHasBeenSet() const;
 
                     /**
-                     * 获取Security policy configuration. The parameter is recommended to use for custom policies and managed rule configurations of web protection, it supports configuring security policies with expression grammar.	
-                     * @return SecurityPolicy Security policy configuration. The parameter is recommended to use for custom policies and managed rule configurations of web protection, it supports configuring security policies with expression grammar.	
+                     * 获取Security policy configuration. recommend using for Web exception rules, custom policies, rate rules, managed rules, and Bot management configuration. supports configuring security policies with expression grammar.
+                     * @return SecurityPolicy Security policy configuration. recommend using for Web exception rules, custom policies, rate rules, managed rules, and Bot management configuration. supports configuring security policies with expression grammar.
                      * 
                      */
                     SecurityPolicy GetSecurityPolicy() const;
 
                     /**
-                     * 设置Security policy configuration. The parameter is recommended to use for custom policies and managed rule configurations of web protection, it supports configuring security policies with expression grammar.	
-                     * @param _securityPolicy Security policy configuration. The parameter is recommended to use for custom policies and managed rule configurations of web protection, it supports configuring security policies with expression grammar.	
+                     * 设置Security policy configuration. recommend using for Web exception rules, custom policies, rate rules, managed rules, and Bot management configuration. supports configuring security policies with expression grammar.
+                     * @param _securityPolicy Security policy configuration. recommend using for Web exception rules, custom policies, rate rules, managed rules, and Bot management configuration. supports configuring security policies with expression grammar.
                      * 
                      */
                     void SetSecurityPolicy(const SecurityPolicy& _securityPolicy);
@@ -179,13 +179,13 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Security policy configuration. <li>When the `CustomRule` in the `SecurityPolicy` parameter is set, the `AclConfg` and `IpTableConfg` in the `SecurityConfig` parameter will be ignored;</li> <li>when the `ManagedRule` in the `SecurityPolicy` parameter is set, the `WafConfig` in the `SecurityConfig` parameter will be ignored.</li> <li>For custom rules and managed rule policy configuration, using `SecurityPolicy` parameter to configure settings is recommended.</li>
+                     * Security policy configuration. <li>when ExceptionRules in the SecurityPolicy parameter is set, ExceptConfig in the SecurityConfig parameter will be ignored;</li> <li>when CustomRules in the SecurityPolicy parameter is set, AclConfig and IpTableConfig in the SecurityConfig parameter will be ignored;</li> <li>when HttpDDoSProtection and RateLimitingRules in the SecurityPolicy parameter are set, RateLimitConfig in the SecurityConfig parameter will be ignored;</li> <li>when ManagedRule in the SecurityPolicy parameter is set, WafConfig in the SecurityConfig parameter will be ignored;</li> <li>when BotManagement in the SecurityPolicy parameter is set, BotConfig in the SecurityConfig parameter will be ignored;</li> <li>for exception rules, custom rules, rate limiting, managed rules, and Bot management policy configuration, recommend using the SecurityPolicy parameter for settings.</li>.
                      */
                     SecurityConfig m_securityConfig;
                     bool m_securityConfigHasBeenSet;
 
                     /**
-                     * Security policy configuration. The parameter is recommended to use for custom policies and managed rule configurations of web protection, it supports configuring security policies with expression grammar.	
+                     * Security policy configuration. recommend using for Web exception rules, custom policies, rate rules, managed rules, and Bot management configuration. supports configuring security policies with expression grammar.
                      */
                     SecurityPolicy m_securityPolicy;
                     bool m_securityPolicyHasBeenSet;

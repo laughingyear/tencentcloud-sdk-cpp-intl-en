@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output of intelligent face recognition.
+                * Intelligent face recognition output.
                 */
                 class AiRecognitionTaskFaceResultOutput : public AbstractModel
                 {

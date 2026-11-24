@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The details of a moderation template.
+                * Moderation template details
                 */
                 class ReviewTemplate : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The unique ID of the moderation template.
-                     * @return Definition The unique ID of the moderation template.
+                     * 获取Unique tag of the moderation template.
+                     * @return Definition Unique tag of the moderation template.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置The unique ID of the moderation template.
-                     * @param _definition The unique ID of the moderation template.
+                     * 设置Unique tag of the moderation template.
+                     * @param _definition Unique tag of the moderation template.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The template name.
-                     * @return Name The template name.
+                     * 获取Template Name
+                     * @return Name Template Name
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置The template name.
-                     * @param _name The template name.
+                     * 设置Template Name
+                     * @param _name Template Name
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取The template description.
-                     * @return Comment The template description.
+                     * 获取Template description information.
+                     * @return Comment Template description information.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置The template description.
-                     * @param _comment The template description.
+                     * 设置Template description information.
+                     * @param _comment Template description information.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -110,23 +110,23 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取The template type. Valid values:
-<li>Preset</li>
-<li>Custom</li>
-                     * @return Type The template type. Valid values:
-<li>Preset</li>
-<li>Custom</li>
+                     * 获取Template type. Available values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
+                     * @return Type Template type. Available values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The template type. Valid values:
-<li>Preset</li>
-<li>Custom</li>
-                     * @param _type The template type. Valid values:
-<li>Preset</li>
-<li>Custom</li>
+                     * 设置Template type. Available values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
+                     * @param _type Template type. Available values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The violation labels used.
-                     * @return Labels The violation labels used.
+                     * 获取List of violation labels to return.
+                     * @return Labels List of violation labels to return.
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
-                     * 设置The violation labels used.
-                     * @param _labels The violation labels used.
+                     * 设置List of violation labels to return.
+                     * @param _labels List of violation labels to return.
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取The template creation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime The template creation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置The template creation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime The template creation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取The last updated time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return UpdateTime The last updated time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return UpdateTime Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置The last updated time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _updateTime The last updated time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _updateTime Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -204,45 +204,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The unique ID of the moderation template.
+                     * Unique tag of the moderation template.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The template name.
+                     * Template Name
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * The template description.
+                     * Template description information.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * The template type. Valid values:
-<li>Preset</li>
-<li>Custom</li>
+                     * Template type. Available values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The violation labels used.
+                     * List of violation labels to return.
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * The template creation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * The last updated time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

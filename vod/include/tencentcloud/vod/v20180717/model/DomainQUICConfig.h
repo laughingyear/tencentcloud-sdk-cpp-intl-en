@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The QUIC configuration of a domain.
+                * QUIC configuration message of the domain name
                 */
                 class DomainQUICConfig : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The QUIC status. Valid values:
-<li>`Enabled`</li>
-<li>`Disabled`</li>
-                     * @return Status The QUIC status. Valid values:
-<li>`Enabled`</li>
-<li>`Disabled`</li>
+                     * 获取QUIC configuration status. Available values:
+<li>Enabled: enablement;</li>
+<li>Disabled: Disabled.</li>
+                     * @return Status QUIC configuration status. Available values:
+<li>Enabled: enablement;</li>
+<li>Disabled: Disabled.</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置The QUIC status. Valid values:
-<li>`Enabled`</li>
-<li>`Disabled`</li>
-                     * @param _status The QUIC status. Valid values:
-<li>`Enabled`</li>
-<li>`Disabled`</li>
+                     * 设置QUIC configuration status. Available values:
+<li>Enabled: enablement;</li>
+<li>Disabled: Disabled.</li>
+                     * @param _status QUIC configuration status. Available values:
+<li>Enabled: enablement;</li>
+<li>Disabled: Disabled.</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The QUIC status. Valid values:
-<li>`Enabled`</li>
-<li>`Disabled`</li>
+                     * QUIC configuration status. Available values:
+<li>Enabled: enablement;</li>
+<li>Disabled: Disabled.</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

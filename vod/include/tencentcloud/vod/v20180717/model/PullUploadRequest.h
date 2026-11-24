@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The URL of the media to pull, which can be in HLS format, but not DASH format.
-For more information about supported extensions, see [Media types](https://intl.cloud.tencent.com/document/product/266/9760#media-types). Please make sure the URL is accessible.
-                     * @return MediaUrl The URL of the media to pull, which can be in HLS format, but not DASH format.
-For more information about supported extensions, see [Media types](https://intl.cloud.tencent.com/document/product/266/9760#media-types). Please make sure the URL is accessible.
+                     * 获取<p>Media URL to be pulled. Pulling Dash format is not currently supported (HLS is supported).<br>For supported extensions, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>. Please ensure the media URL can be accessed.</p>
+                     * @return MediaUrl <p>Media URL to be pulled. Pulling Dash format is not currently supported (HLS is supported).<br>For supported extensions, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>. Please ensure the media URL can be accessed.</p>
                      * 
                      */
                     std::string GetMediaUrl() const;
 
                     /**
-                     * 设置The URL of the media to pull, which can be in HLS format, but not DASH format.
-For more information about supported extensions, see [Media types](https://intl.cloud.tencent.com/document/product/266/9760#media-types). Please make sure the URL is accessible.
-                     * @param _mediaUrl The URL of the media to pull, which can be in HLS format, but not DASH format.
-For more information about supported extensions, see [Media types](https://intl.cloud.tencent.com/document/product/266/9760#media-types). Please make sure the URL is accessible.
+                     * 设置<p>Media URL to be pulled. Pulling Dash format is not currently supported (HLS is supported).<br>For supported extensions, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>. Please ensure the media URL can be accessed.</p>
+                     * @param _mediaUrl <p>Media URL to be pulled. Pulling Dash format is not currently supported (HLS is supported).<br>For supported extensions, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>. Please ensure the media URL can be accessed.</p>
                      * 
                      */
                     void SetMediaUrl(const std::string& _mediaUrl);
@@ -68,19 +64,15 @@ For more information about supported extensions, see [Media types](https://intl.
                     bool MediaUrlHasBeenSet() const;
 
                     /**
-                     * 获取The file format (extension). For information about supported extensions, see [Media Types](https://intl.cloud.tencent.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B).
-If you do not specify this parameter or pass in an empty string, the file obtained will have the same extension as `MediaUrl`.
-                     * @return MediaType The file format (extension). For information about supported extensions, see [Media Types](https://intl.cloud.tencent.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B).
-If you do not specify this parameter or pass in an empty string, the file obtained will have the same extension as `MediaUrl`.
+                     * 获取<p>Media file type (extension). For supported types, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>.<br>If MediaType is not specified or is an empty string, the file type is automatically obtained based on MediaUrl.</p>
+                     * @return MediaType <p>Media file type (extension). For supported types, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>.<br>If MediaType is not specified or is an empty string, the file type is automatically obtained based on MediaUrl.</p>
                      * 
                      */
                     std::string GetMediaType() const;
 
                     /**
-                     * 设置The file format (extension). For information about supported extensions, see [Media Types](https://intl.cloud.tencent.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B).
-If you do not specify this parameter or pass in an empty string, the file obtained will have the same extension as `MediaUrl`.
-                     * @param _mediaType The file format (extension). For information about supported extensions, see [Media Types](https://intl.cloud.tencent.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B).
-If you do not specify this parameter or pass in an empty string, the file obtained will have the same extension as `MediaUrl`.
+                     * 设置<p>Media file type (extension). For supported types, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>.<br>If MediaType is not specified or is an empty string, the file type is automatically obtained based on MediaUrl.</p>
+                     * @param _mediaType <p>Media file type (extension). For supported types, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>.<br>If MediaType is not specified or is an empty string, the file type is automatically obtained based on MediaUrl.</p>
                      * 
                      */
                     void SetMediaType(const std::string& _mediaType);
@@ -93,15 +85,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool MediaTypeHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -114,15 +106,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Media name.
-                     * @return MediaName Media name.
+                     * 获取<p>Media name.</p>
+                     * @return MediaName <p>Media name.</p>
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置Media name.
-                     * @param _mediaName Media name.
+                     * 设置<p>Media name.</p>
+                     * @param _mediaName <p>Media name.</p>
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -135,15 +127,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取The URL of the video to pull. Supported formats include GIF, JPEG (JPG), and PNG.
-                     * @return CoverUrl The URL of the video to pull. Supported formats include GIF, JPEG (JPG), and PNG.
+                     * 获取<p>Video cover URL to fetch. Supported file formats: gif, jpeg (jpg), png.</p>
+                     * @return CoverUrl <p>Video cover URL to fetch. Supported file formats: gif, jpeg (jpg), png.</p>
                      * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
-                     * 设置The URL of the video to pull. Supported formats include GIF, JPEG (JPG), and PNG.
-                     * @param _coverUrl The URL of the video to pull. Supported formats include GIF, JPEG (JPG), and PNG.
+                     * 设置<p>Video cover URL to fetch. Supported file formats: gif, jpeg (jpg), png.</p>
+                     * @param _coverUrl <p>Video cover URL to fetch. Supported file formats: gif, jpeg (jpg), png.</p>
                      * 
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
@@ -156,15 +148,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool CoverUrlHasBeenSet() const;
 
                     /**
-                     * 获取Subsequent task for media. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
-                     * @return Procedure Subsequent task for media. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
+                     * 获取<p>For media subsequent task operation, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">Upload specified task flow</a>.</p>
+                     * @return Procedure <p>For media subsequent task operation, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">Upload specified task flow</a>.</p>
                      * 
                      */
                     std::string GetProcedure() const;
 
                     /**
-                     * 设置Subsequent task for media. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
-                     * @param _procedure Subsequent task for media. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
+                     * 设置<p>For media subsequent task operation, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">Upload specified task flow</a>.</p>
+                     * @param _procedure <p>For media subsequent task operation, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">Upload specified task flow</a>.</p>
                      * 
                      */
                     void SetProcedure(const std::string& _procedure);
@@ -177,15 +169,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool ProcedureHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return ExpireTime Expiration time of media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取<p>Media file expiry time. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @return ExpireTime <p>Media file expiry time. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置Expiration time of media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _expireTime Expiration time of media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置<p>Media file expiry time. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @param _expireTime <p>Media file expiry time. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -198,23 +190,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取Specifies upload region. This is only applicable to users that have special requirements for the upload region:
-<li>If it is left empty, the upload region is your [default region](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4);</li>
-<li>If it is specified, please make sure that the upload region has been [enabled for storage](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
-                     * @return StorageRegion Specifies upload region. This is only applicable to users that have special requirements for the upload region:
-<li>If it is left empty, the upload region is your [default region](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4);</li>
-<li>If it is specified, please make sure that the upload region has been [enabled for storage](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
+                     * 获取<p>Specify an upload park. This is applicable only to users with special requirements for upload regions:</p><li>If left empty, files are uploaded to your [default region](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4) by default.</li><li>If you specify an upload park, please confirm that the corresponding storage regions have been enabled in [upload storage settings](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
+                     * @return StorageRegion <p>Specify an upload park. This is applicable only to users with special requirements for upload regions:</p><li>If left empty, files are uploaded to your [default region](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4) by default.</li><li>If you specify an upload park, please confirm that the corresponding storage regions have been enabled in [upload storage settings](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
                      * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
-                     * 设置Specifies upload region. This is only applicable to users that have special requirements for the upload region:
-<li>If it is left empty, the upload region is your [default region](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4);</li>
-<li>If it is specified, please make sure that the upload region has been [enabled for storage](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
-                     * @param _storageRegion Specifies upload region. This is only applicable to users that have special requirements for the upload region:
-<li>If it is left empty, the upload region is your [default region](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4);</li>
-<li>If it is specified, please make sure that the upload region has been [enabled for storage](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
+                     * 设置<p>Specify an upload park. This is applicable only to users with special requirements for upload regions:</p><li>If left empty, files are uploaded to your [default region](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4) by default.</li><li>If you specify an upload park, please confirm that the corresponding storage regions have been enabled in [upload storage settings](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
+                     * @param _storageRegion <p>Specify an upload park. This is applicable only to users with special requirements for upload regions:</p><li>If left empty, files are uploaded to your [default region](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4) by default.</li><li>If you specify an upload park, please confirm that the corresponding storage regions have been enabled in [upload storage settings](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
                      * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
@@ -227,15 +211,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool StorageRegionHasBeenSet() const;
 
                     /**
-                     * 获取Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-                     * @return ClassId Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
+                     * 获取<p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">create category</a> API to obtain the category ID.</p>
+                     * @return ClassId <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">create category</a> API to obtain the category ID.</p>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-                     * @param _classId Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
+                     * 设置<p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">create category</a> API to obtain the category ID.</p>
+                     * @param _classId <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">create category</a> API to obtain the category ID.</p>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -248,15 +232,36 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. After `Procedure` is specified, the task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. After `Procedure` is specified, the task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 获取<p>Task priority. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * @return TasksPriority <p>Task priority. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * 
+                     */
+                    int64_t GetTasksPriority() const;
+
+                    /**
+                     * 设置<p>Task priority. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * @param _tasksPriority <p>Task priority. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * 
+                     */
+                    void SetTasksPriority(const int64_t& _tasksPriority);
+
+                    /**
+                     * 判断参数 TasksPriority 是否已赋值
+                     * @return TasksPriority 是否已赋值
+                     * 
+                     */
+                    bool TasksPriorityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Source context. This is used to pass user request information. When specifying a Procedure task, the task flow status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @return SessionContext <p>Source context. This is used to pass user request information. When specifying a Procedure task, the task flow status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. After `Procedure` is specified, the task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @param _sessionContext The source context which is used to pass through the user request information. After `Procedure` is specified, the task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 设置<p>Source context. This is used to pass user request information. When specifying a Procedure task, the task flow status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @param _sessionContext <p>Source context. This is used to pass user request information. When specifying a Procedure task, the task flow status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -269,15 +274,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取Used to identify duplicate requests. After you send a request, if any request with the same `SessionId` has already been sent in the last three days (72 hours), an error message will be returned. `SessionId` contains up to 50 characters. If this parameter is not carried or is an empty string, no deduplication will be performed.
-                     * @return SessionId Used to identify duplicate requests. After you send a request, if any request with the same `SessionId` has already been sent in the last three days (72 hours), an error message will be returned. `SessionId` contains up to 50 characters. If this parameter is not carried or is an empty string, no deduplication will be performed.
+                     * 获取<p>Identifier for deduplication. If a request with the same identifier has been sent within the past three days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @return SessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past three days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置Used to identify duplicate requests. After you send a request, if any request with the same `SessionId` has already been sent in the last three days (72 hours), an error message will be returned. `SessionId` contains up to 50 characters. If this parameter is not carried or is an empty string, no deduplication will be performed.
-                     * @param _sessionId Used to identify duplicate requests. After you send a request, if any request with the same `SessionId` has already been sent in the last three days (72 hours), an error message will be returned. `SessionId` contains up to 50 characters. If this parameter is not carried or is an empty string, no deduplication will be performed.
+                     * 设置<p>Identifier for deduplication. If a request with the same identifier has been sent within the past three days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @param _sessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past three days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -290,15 +295,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取Reserved field for special purposes.
-                     * @return ExtInfo Reserved field for special purposes.
+                     * 获取<p>Reserved field, used for special purpose.</p>
+                     * @return ExtInfo <p>Reserved field, used for special purpose.</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置Reserved field for special purposes.
-                     * @param _extInfo Reserved field for special purposes.
+                     * 设置<p>Reserved field, used for special purpose.</p>
+                     * @param _extInfo <p>Reserved field, used for special purpose.</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -311,15 +316,15 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                     bool ExtInfoHasBeenSet() const;
 
                     /**
-                     * 获取Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) API will return the value of this field. It can contain up to 250 characters.
-                     * @return SourceContext Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) API will return the value of this field. It can contain up to 250 characters.
+                     * 获取<p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters.</p>
+                     * @return SourceContext <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters.</p>
                      * 
                      */
                     std::string GetSourceContext() const;
 
                     /**
-                     * 设置Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) API will return the value of this field. It can contain up to 250 characters.
-                     * @param _sourceContext Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) API will return the value of this field. It can contain up to 250 characters.
+                     * 设置<p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters.</p>
+                     * @param _sourceContext <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters.</p>
                      * 
                      */
                     void SetSourceContext(const std::string& _sourceContext);
@@ -331,89 +336,118 @@ If you do not specify this parameter or pass in an empty string, the file obtain
                      */
                     bool SourceContextHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Media storage path, starting with /.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can specify a storage path.</p>
+                     * @return MediaStoragePath <p>Media storage path, starting with /.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can specify a storage path.</p>
+                     * 
+                     */
+                    std::string GetMediaStoragePath() const;
+
+                    /**
+                     * 设置<p>Media storage path, starting with /.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can specify a storage path.</p>
+                     * @param _mediaStoragePath <p>Media storage path, starting with /.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can specify a storage path.</p>
+                     * 
+                     */
+                    void SetMediaStoragePath(const std::string& _mediaStoragePath);
+
+                    /**
+                     * 判断参数 MediaStoragePath 是否已赋值
+                     * @return MediaStoragePath 是否已赋值
+                     * 
+                     */
+                    bool MediaStoragePathHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The URL of the media to pull, which can be in HLS format, but not DASH format.
-For more information about supported extensions, see [Media types](https://intl.cloud.tencent.com/document/product/266/9760#media-types). Please make sure the URL is accessible.
+                     * <p>Media URL to be pulled. Pulling Dash format is not currently supported (HLS is supported).<br>For supported extensions, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>. Please ensure the media URL can be accessed.</p>
                      */
                     std::string m_mediaUrl;
                     bool m_mediaUrlHasBeenSet;
 
                     /**
-                     * The file format (extension). For information about supported extensions, see [Media Types](https://intl.cloud.tencent.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B).
-If you do not specify this parameter or pass in an empty string, the file obtained will have the same extension as `MediaUrl`.
+                     * <p>Media file type (extension). For supported types, see <a href="https://www.tencentcloud.com/document/product/266/9760?from_cn_redirect=1#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B">Media Type</a>.<br>If MediaType is not specified or is an empty string, the file type is automatically obtained based on MediaUrl.</p>
                      */
                     std::string m_mediaType;
                     bool m_mediaTypeHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Media name.
+                     * <p>Media name.</p>
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * The URL of the video to pull. Supported formats include GIF, JPEG (JPG), and PNG.
+                     * <p>Video cover URL to fetch. Supported file formats: gif, jpeg (jpg), png.</p>
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
 
                     /**
-                     * Subsequent task for media. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
+                     * <p>For media subsequent task operation, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">Upload specified task flow</a>.</p>
                      */
                     std::string m_procedure;
                     bool m_procedureHasBeenSet;
 
                     /**
-                     * Expiration time of media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * <p>Media file expiry time. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * Specifies upload region. This is only applicable to users that have special requirements for the upload region:
-<li>If it is left empty, the upload region is your [default region](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4);</li>
-<li>If it is specified, please make sure that the upload region has been [enabled for storage](https://intl.cloud.tencent.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
+                     * <p>Specify an upload park. This is applicable only to users with special requirements for upload regions:</p><li>If left empty, files are uploaded to your [default region](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4) by default.</li><li>If you specify an upload park, please confirm that the corresponding storage regions have been enabled in [upload storage settings](https://www.tencentcloud.com/document/product/266/14059?from=11329?from_cn_redirect=1#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).</li>
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;
 
                     /**
-                     * Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
+                     * <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">create category</a> API to obtain the category ID.</p>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. After `Procedure` is specified, the task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * <p>Task priority. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     */
+                    int64_t m_tasksPriority;
+                    bool m_tasksPriorityHasBeenSet;
+
+                    /**
+                     * <p>Source context. This is used to pass user request information. When specifying a Procedure task, the task flow status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * Used to identify duplicate requests. After you send a request, if any request with the same `SessionId` has already been sent in the last three days (72 hours), an error message will be returned. `SessionId` contains up to 50 characters. If this parameter is not carried or is an empty string, no deduplication will be performed.
+                     * <p>Identifier for deduplication. If a request with the same identifier has been sent within the past three days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * Reserved field for special purposes.
+                     * <p>Reserved field, used for special purpose.</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
 
                     /**
-                     * Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) API will return the value of this field. It can contain up to 250 characters.
+                     * <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters.</p>
                      */
                     std::string m_sourceContext;
                     bool m_sourceContextHasBeenSet;
+
+                    /**
+                     * <p>Media storage path, starting with /.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can specify a storage path.</p>
+                     */
+                    std::string m_mediaStoragePath;
+                    bool m_mediaStoragePathHasBeenSet;
 
                 };
             }

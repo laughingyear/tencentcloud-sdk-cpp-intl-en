@@ -49,6 +49,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesDisasterRecoverGroupsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h>
@@ -121,6 +123,10 @@
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h>
@@ -143,6 +149,10 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesProjectRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesProjectResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesRenewFlagRequest.h>
@@ -161,6 +171,8 @@
 #include <tencentcloud/cvm/v20170312/model/RemoveChcAssistVpcResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RemoveChcDeployVpcRequest.h>
 #include <tencentcloud/cvm/v20170312/model/RemoveChcDeployVpcResponse.h>
+#include <tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/RenewInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.h>
@@ -234,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImagesResponse> DeleteImagesOutcome;
                 typedef std::future<DeleteImagesOutcome> DeleteImagesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteImagesRequest&, DeleteImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstancesDisasterRecoverGroupsResponse> DeleteInstancesDisasterRecoverGroupsOutcome;
+                typedef std::future<DeleteInstancesDisasterRecoverGroupsOutcome> DeleteInstancesDisasterRecoverGroupsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteInstancesDisasterRecoverGroupsRequest&, DeleteInstancesDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancesDisasterRecoverGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
@@ -342,6 +357,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePricePurchaseReservedInstancesOfferingResponse> InquirePricePurchaseReservedInstancesOfferingOutcome;
                 typedef std::future<InquirePricePurchaseReservedInstancesOfferingOutcome> InquirePricePurchaseReservedInstancesOfferingOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquirePricePurchaseReservedInstancesOfferingRequest&, InquirePricePurchaseReservedInstancesOfferingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePricePurchaseReservedInstancesOfferingAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceModifyInstancesChargeTypeResponse> InquiryPriceModifyInstancesChargeTypeOutcome;
+                typedef std::future<InquiryPriceModifyInstancesChargeTypeOutcome> InquiryPriceModifyInstancesChargeTypeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::InquiryPriceModifyInstancesChargeTypeRequest&, InquiryPriceModifyInstancesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceModifyInstancesChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceRenewInstancesResponse> InquiryPriceRenewInstancesOutcome;
+                typedef std::future<InquiryPriceRenewInstancesOutcome> InquiryPriceRenewInstancesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::InquiryPriceRenewInstancesRequest&, InquiryPriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceResetInstanceResponse> InquiryPriceResetInstanceOutcome;
                 typedef std::future<InquiryPriceResetInstanceOutcome> InquiryPriceResetInstanceOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceResetInstanceRequest&, InquiryPriceResetInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceResetInstanceAsyncHandler;
@@ -375,6 +396,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancesChargeTypeResponse> ModifyInstancesChargeTypeOutcome;
+                typedef std::future<ModifyInstancesChargeTypeOutcome> ModifyInstancesChargeTypeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyInstancesChargeTypeRequest&, ModifyInstancesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancesDisasterRecoverGroupResponse> ModifyInstancesDisasterRecoverGroupOutcome;
+                typedef std::future<ModifyInstancesDisasterRecoverGroupOutcome> ModifyInstancesDisasterRecoverGroupOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyInstancesDisasterRecoverGroupRequest&, ModifyInstancesDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesProjectResponse> ModifyInstancesProjectOutcome;
                 typedef std::future<ModifyInstancesProjectOutcome> ModifyInstancesProjectOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyInstancesProjectRequest&, ModifyInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesProjectAsyncHandler;
@@ -402,6 +429,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveChcDeployVpcResponse> RemoveChcDeployVpcOutcome;
                 typedef std::future<RemoveChcDeployVpcOutcome> RemoveChcDeployVpcOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::RemoveChcDeployVpcRequest&, RemoveChcDeployVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveChcDeployVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
+                typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetInstanceResponse> ResetInstanceOutcome;
                 typedef std::future<ResetInstanceOutcome> ResetInstanceOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ResetInstanceRequest&, ResetInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstanceAsyncHandler;
@@ -437,7 +467,6 @@ namespace TencentCloud
 
                 /**
                  *This API is used to create CDH instances with specified configuration.
-* When HostChargeType is PREPAID, the HostChargePrepaid parameter must be specified.
                  * @param req AllocateHostsRequest
                  * @return AllocateHostsOutcome
                  */
@@ -532,7 +561,7 @@ If you currently use a password to log in, you will no longer be able to do so a
 
 An instance launch template is a configuration data and can be used to create instances. Its content includes configurations required to create instances, such as instance type, types and sizes of data disk and system disk, and security group and other information.
 
-This API is used to create an instance launch template. After the initial creation of the instance template, its template version is the default version 1. A new version can be created using CreateLaunchTemplateVersion (https://intl.cloud.tencent.com/document/product/213/66326?from_cn_redirect=1), and the version number will increment. By default, when specifying an instance launch template in RunInstances (https://intl.cloud.tencent.com/document/product/213/15730?from_cn_redirect=1), if the template version number is not specified, the default version will be used.
+This API is used to create an instance launch template. After the initial creation of the instance template, its template version is the default version 1. A new version can be created using [CreateLaunchTemplateVersion](https://www.tencentcloud.com/document/api/213/45361), and the version number will increment. By default, when specifying an instance launch template in [RunInstances](https://www.tencentcloud.com/document/api/213/33237), if the template version number is not specified, the default version will be used.
                  * @param req CreateLaunchTemplateRequest
                  * @return CreateLaunchTemplateOutcome
                  */
@@ -570,6 +599,15 @@ This API is used to create an instance launch template. After the initial creati
                 DeleteImagesOutcome DeleteImages(const Model::DeleteImagesRequest &request);
                 void DeleteImagesAsync(const Model::DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImagesOutcomeCallable DeleteImagesCallable(const Model::DeleteImagesRequest& request);
+
+                /**
+                 *This API is used to batch remove CVM instances from specified placement groups.
+                 * @param req DeleteInstancesDisasterRecoverGroupsRequest
+                 * @return DeleteInstancesDisasterRecoverGroupsOutcome
+                 */
+                DeleteInstancesDisasterRecoverGroupsOutcome DeleteInstancesDisasterRecoverGroups(const Model::DeleteInstancesDisasterRecoverGroupsRequest &request);
+                void DeleteInstancesDisasterRecoverGroupsAsync(const Model::DeleteInstancesDisasterRecoverGroupsRequest& request, const DeleteInstancesDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstancesDisasterRecoverGroupsOutcomeCallable DeleteInstancesDisasterRecoverGroupsCallable(const Model::DeleteInstancesDisasterRecoverGroupsRequest& request);
 
                 /**
                  *This API is used to delete the key pairs hosted in Tencent Cloud.
@@ -623,7 +661,7 @@ This API is used to create an instance launch template. After the initial creati
                 DescribeChcHostsOutcomeCallable DescribeChcHostsCallable(const Model::DescribeChcHostsRequest& request);
 
                 /**
-                 *This API is used to query the quota of [spread placement groups](https://intl.cloud.tencent.com/document/product/213/15486?from_cn_redirect=1).
+                 *This API is used to query the quota of [spread placement groups](https://www.tencentcloud.com/document/product/213/15486).
                  * @param req DescribeDisasterRecoverGroupQuotaRequest
                  * @return DescribeDisasterRecoverGroupQuotaOutcome
                  */
@@ -924,6 +962,29 @@ This API is used to create an instance launch template. After the initial creati
                 InquirePricePurchaseReservedInstancesOfferingOutcomeCallable InquirePricePurchaseReservedInstancesOfferingCallable(const Model::InquirePricePurchaseReservedInstancesOfferingRequest& request);
 
                 /**
+                 *This API is used to inquire about the price for switching billing modes of instance.
+
+
+This API is used to indicate that instances with no charge when shut down, instances of the model families Batch Computing BC1 and Batch Computing BS1, instances of scheduled termination, and spot instances do not support this operation.
+                 * @param req InquiryPriceModifyInstancesChargeTypeRequest
+                 * @return InquiryPriceModifyInstancesChargeTypeOutcome
+                 */
+                InquiryPriceModifyInstancesChargeTypeOutcome InquiryPriceModifyInstancesChargeType(const Model::InquiryPriceModifyInstancesChargeTypeRequest &request);
+                void InquiryPriceModifyInstancesChargeTypeAsync(const Model::InquiryPriceModifyInstancesChargeTypeRequest& request, const InquiryPriceModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceModifyInstancesChargeTypeOutcomeCallable InquiryPriceModifyInstancesChargeTypeCallable(const Model::InquiryPriceModifyInstancesChargeTypeRequest& request);
+
+                /**
+                 *This API is used to inquire about the price for renewing a monthly subscription instance.
+
+This API is used to query the renewal price of monthly subscription instances.
+                 * @param req InquiryPriceRenewInstancesRequest
+                 * @return InquiryPriceRenewInstancesOutcome
+                 */
+                InquiryPriceRenewInstancesOutcome InquiryPriceRenewInstances(const Model::InquiryPriceRenewInstancesRequest &request);
+                void InquiryPriceRenewInstancesAsync(const Model::InquiryPriceRenewInstancesRequest& request, const InquiryPriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewInstancesOutcomeCallable InquiryPriceRenewInstancesCallable(const Model::InquiryPriceRenewInstancesRequest& request);
+
+                /**
                  *This API is used to inquire about the price for reinstalling an instance.
 
 * If you have specified the parameter `ImageId`, inquire about the price for reinstallation by using the specified image. Otherwise, inquire about the price for reinstallation based on the image currently used by the instance.
@@ -951,7 +1012,7 @@ This API is used to create an instance launch template. After the initial creati
                 /**
                  *This API is used to query the price for adjusting the instance model.
 
-* Currently, you can only use this API to query the prices of instances whose [system disk type](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* Currently, you can only use this API to query the prices of instances whose [system disk type](https://www.tencentcloud.com/document/product/213/15753) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
 * Currently, you cannot use this API to query the prices of [CDH](https://intl.cloud.tencent.com/document/product/416?from_cn_redirect=1) instances.
                  * @param req InquiryPriceResetInstancesTypeRequest
                  * @return InquiryPriceResetInstancesTypeOutcome
@@ -963,7 +1024,7 @@ This API is used to create an instance launch template. After the initial creati
                 /**
                  *This API is used to query the price for expanding data disks of an instance.
 
-* Currently, you can only use this API to query the price of non-elastic data disks whose [disk type](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315?from_cn_redirect=1) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
+* Currently, you can only use this API to query the price of non-elastic data disks whose [disk type](https://www.tencentcloud.com/document/product/213/15753) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315?from_cn_redirect=1) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
 * Currently, you cannot use this API to query the price for [CDH](https://intl.cloud.tencent.com/document/product/416?from_cn_redirect=1) instances. *Also, you can only query the price of expanding one data disk at a time.
                  * @param req InquiryPriceResizeInstanceDisksRequest
                  * @return InquiryPriceResizeInstanceDisksOutcome
@@ -1034,13 +1095,14 @@ This API is used to create an instance launch template. After the initial creati
                 ModifyImageSharePermissionOutcomeCallable ModifyImageSharePermissionCallable(const Model::ModifyImageSharePermissionRequest& request);
 
                 /**
-                 *The API is used to modify the attributes of an instance. Only the name and the associated security groups can be modified for now.
+                 *This API is used to modify instance attributes.
 
-* An attribute must be specified in the request.
-* "Instance name" is a custom name for easier management. Tencent Cloud does not use the name for online support or instance management.
-* Batch operations are supported. Each request can modify up to 100 instances.
-* When you modify the security groups associated with an instance is modified, the original security groups are disassociated.
-* You can use the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) to query the instance operation result. If the 'LatestOperationState' in the response is **SUCCESS**, the operation is successful.
+This API is used to modify one attribute of the instance per request. The attribute must be specified.
+The instance name is only for user convenience in management. Tencent Cloud does not use this name as the basis for online support or to perform instance management operations.
+This API is used to support batch operations. The maximum of 100 batch instances per request is supported.
+This API is used to modify the security group association. The originally associated security group of the instance will be unbound.
+* You can query the result of the instance operation by calling the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
+This API is used to modify the hostname. The instance restarts immediately after hostname modification, and the new hostname takes effect after restart.
                  * @param req ModifyInstancesAttributeRequest
                  * @return ModifyInstancesAttributeOutcome
                  */
@@ -1049,12 +1111,34 @@ This API is used to create an instance launch template. After the initial creati
                 ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
 
                 /**
+                 *This API is used to switch the billing mode of an instance.
+
+This API is used to perform operations that do not support instances with no charge when shut down, instances of the model families Batch Compute BC1 and Batch Compute BS1, or instances of scheduled termination.
+* You can query the result of the instance operation by calling the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
+                 * @param req ModifyInstancesChargeTypeRequest
+                 * @return ModifyInstancesChargeTypeOutcome
+                 */
+                ModifyInstancesChargeTypeOutcome ModifyInstancesChargeType(const Model::ModifyInstancesChargeTypeRequest &request);
+                void ModifyInstancesChargeTypeAsync(const Model::ModifyInstancesChargeTypeRequest& request, const ModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesChargeTypeOutcomeCallable ModifyInstancesChargeTypeCallable(const Model::ModifyInstancesChargeTypeRequest& request);
+
+                /**
+                 *This API is used to adjust the placement group of an instance.
+* Currently only basic networks or Virtual Private Cloud (VPC) instances are supported.
+                 * @param req ModifyInstancesDisasterRecoverGroupRequest
+                 * @return ModifyInstancesDisasterRecoverGroupOutcome
+                 */
+                ModifyInstancesDisasterRecoverGroupOutcome ModifyInstancesDisasterRecoverGroup(const Model::ModifyInstancesDisasterRecoverGroupRequest &request);
+                void ModifyInstancesDisasterRecoverGroupAsync(const Model::ModifyInstancesDisasterRecoverGroupRequest& request, const ModifyInstancesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesDisasterRecoverGroupOutcomeCallable ModifyInstancesDisasterRecoverGroupCallable(const Model::ModifyInstancesDisasterRecoverGroupRequest& request);
+
+                /**
                  *This API is used to change the project to which an instance is assigned.
 
 * Project is a virtual concept. You can create multiple projects under one account, manage different resources in each project, and assign different instances to different projects. You may use the [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1) API to query instances and use the project ID to filter the results.
 * You cannot modify the project of an instance that is bound to a load balancer. You need to unbind the load balancer from the instance by using the [DeregisterInstancesFromLoadBalancer](https://intl.cloud.tencent.com/document/api/214/1258?from_cn_redirect=1) API before using this API.
 * Batch operations are supported. Up to 100 instances per request is allowed.
-* You can use the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) to query the operation result. If the `LatestOperationState` in the response is `SUCCESS`, the operation is successful.
+* You can use the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) to query the operation result. If the `LatestOperationState` in the response is `SUCCESS`, the operation is successful.
                  * @param req ModifyInstancesProjectRequest
                  * @return ModifyInstancesProjectOutcome
                  */
@@ -1066,7 +1150,7 @@ This API is used to create an instance launch template. After the initial creati
                  *This API is used to modify the renewal flag of monthly subscription instances.
 
 * After an instance is marked as auto-renewal, it will be automatically renewed for one month each time it expires.
-* Batch operations are supported. The maximum number of instances for each request is 100.* You can query the result of the instance operation by calling the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
+* Batch operations are supported. The maximum number of instances for each request is 100.* You can query the result of the instance operation by calling the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
                  * @param req ModifyInstancesRenewFlagRequest
                  * @return ModifyInstancesRenewFlagOutcome
                  */
@@ -1078,7 +1162,7 @@ This API is used to create an instance launch template. After the initial creati
                  *This API is used to modify the VPC attributes of an instance, such as the VPC IP address.
 * This action will shut down the instance, and restart it after the modification is completed.
 * To migrate an instance to another VPC/subnet, specify the new VPC and subnet directly. Make sure that the instance to migrate is not bound to an [ENI](https://intl.cloud.tencent.com/document/product/576?from_cn_redirect=1) or [CLB](https://intl.cloud.tencent.com/document/product/214?from_cn_redirect=1) instances.
-* You can use the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) to query the operation result. If the `LatestOperationState` in the response is `SUCCESS`, the operation is successful.
+* You can use the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) to query the operation result. If the `LatestOperationState` in the response is `SUCCESS`, the operation is successful.
                  * @param req ModifyInstancesVpcAttributeRequest
                  * @return ModifyInstancesVpcAttributeOutcome
                  */
@@ -1152,6 +1236,19 @@ This API is used to create an instance launch template. After the initial creati
                 RemoveChcDeployVpcOutcomeCallable RemoveChcDeployVpcCallable(const Model::RemoveChcDeployVpcRequest& request);
 
                 /**
+                 *This API is used to renew annual and monthly subscription instances.
+
+This API is used to operate on monthly subscription instances only.
+This API is used to ensure your account balance is sufficient for renewal. You can check the balance via the [DescribeAccountBalance API](https://www.tencentcloud.com/document/api/555/50284).
+* You can query the result of the instance operation by calling the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
+                 * @param req RenewInstancesRequest
+                 * @return RenewInstancesOutcome
+                 */
+                RenewInstancesOutcome RenewInstances(const Model::RenewInstancesRequest &request);
+                void RenewInstancesAsync(const Model::RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewInstancesOutcomeCallable RenewInstancesCallable(const Model::RenewInstancesRequest& request);
+
+                /**
                  *This API (ResetInstance) is used to reinstall the operating system on a specified instance.
 
 
@@ -1160,7 +1257,7 @@ This API is used to create an instance launch template. After the initial creati
 * The system disk will be formatted and reset. Ensure that there are no important files in the system disk.
 * If you do not specify a password, a random password will be sent via Message Center.
 * Currently, only instances with a [system disk type](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#SystemDisk) of `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`, or `CLOUD_BSSD` are supported for implementing operating system switching through this API.
-* You can query the result of the instance operation by calling the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
+* You can query the result of the instance operation by calling the API [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258). If the latest operation status (LatestOperationState) of the instance is **SUCCESS**, the operation is successful.
                  * @param req ResetInstanceRequest
                  * @return ResetInstanceOutcome
                  */
@@ -1186,7 +1283,7 @@ This API is used to create an instance launch template. After the initial creati
 * To modify the password of the administrator account: the name of the administrator account varies with the operating system. In Windows, it is `Administrator`; in Ubuntu, it is `ubuntu`; in Linux, it is `root`.
 * To reset the password of a running instance, you need to set the parameter `ForceStop` to `True` for a forced shutdown. If not, only passwords of stopped instances can be reset.
 * Batch operations are supported. You can reset the passwords of up to 100 instances to the same value once.
-* You can call the [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) API and find the result of the operation in the response parameter `LatestOperationState`. If the value is `SUCCESS`, the operation is successful.
+* You can call the [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) API and find the result of the operation in the response parameter `LatestOperationState`. If the value is `SUCCESS`, the operation is successful.
                  * @param req ResetInstancesPasswordRequest
                  * @return ResetInstancesPasswordOutcome
                  */
@@ -1196,7 +1293,7 @@ This API is used to create an instance launch template. After the initial creati
 
                 /**
                  *This API is used to change the model of an instance.
-* You can only use this API to change the models of instances whose [system disk type](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* You can only use this API to change the models of instances whose [system disk type](https://www.tencentcloud.com/zh/document/product/213/15753) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
 * Currently, you cannot use this API to change the models of [CDH](https://intl.cloud.tencent.com/document/product/416?from_cn_redirect=1) instances.
                  * @param req ResetInstancesTypeRequest
                  * @return ResetInstancesTypeOutcome
@@ -1208,7 +1305,7 @@ This API is used to create an instance launch template. After the initial creati
                 /**
                  *This API (ResizeInstanceDisks) is used to expand the data disks of an instance.
 
-* Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315?from_cn_redirect=1) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
+* Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://www.tencentcloud.com/document/product/213/15753) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://www.tencentcloud.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
 * Currently, this API does not support [CDH](https://intl.cloud.tencent.com/document/product/416?from_cn_redirect=1) instances.
 * Currently, only one data disk can be expanded at a time.
                  * @param req ResizeInstanceDisksRequest
@@ -1221,10 +1318,10 @@ This API is used to create an instance launch template. After the initial creati
                 /**
                  *This API is used to create one or more instances with a specified configuration.
 
-* After an instance is created successfully, it will start up automatically, and the [instance status](https://intl.cloud.tencent.com/document/api/213/9452?from_cn_redirect=1#instance_state) will become "Running".
+* After an instance is created successfully, it will start up automatically, and the [instance status](https://www.tencentcloud.com/document/product/213/15753#InstanceStatus) will become "Running".
 * If you create a pay-as-you-go instance billed on an hourly basis, an amount equivalent to the hourly rate will be frozen. Make sure your account balance is sufficient before calling this API.
-* The number of instances you can purchase through this API is subject to the [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664?from_cn_redirect=1). Instances created through this API and in the CVM console are counted toward the quota.
-* This API is an async API. An instance ID list is returned after the creation request is sent. However, it does not mean the creation has been completed. The status of the instance will be `Creating` during the creation. You can use [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728?from_cn_redirect=1) to query the status of the instance. If the status changes from `Creating` to `Running`, it means that the instance has been created successfully.
+* The number of instances you can purchase through this API is subject to the [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664). Instances created through this API and in the CVM console are counted toward the quota.
+* This API is an async API. An instance ID list is returned after the creation request is sent. However, it does not mean the creation has been completed. The status of the instance will be `Creating` during the creation. You can use [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) to query the status of the instance. If the status changes from `Creating` to `Running`, it means that the instance has been created successfully.
                  * @param req RunInstancesRequest
                  * @return RunInstancesOutcome
                  */

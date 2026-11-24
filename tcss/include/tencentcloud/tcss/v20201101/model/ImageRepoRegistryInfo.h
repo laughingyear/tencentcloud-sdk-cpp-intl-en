@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Container security image repository list
                 */
                 class ImageRepoRegistryInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return RegistryId 
+                     * 获取Repository ID
+                     * @return RegistryId Repository ID
                      * 
                      */
                     uint64_t GetRegistryId() const;
 
                     /**
-                     * 设置
-                     * @param _registryId 
+                     * 设置Repository ID
+                     * @param _registryId Repository ID
                      * 
                      */
                     void SetRegistryId(const uint64_t& _registryId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Name 
+                     * 获取Repository Name
+                     * @return Name Repository Name
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置
-                     * @param _name 
+                     * 设置Repository Name
+                     * @param _name Repository Name
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return RegistryType 
+                     * 获取Repository type, list: harbor, tcr
+                     * @return RegistryType Repository type, list: harbor, tcr
                      * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
-                     * 设置
-                     * @param _registryType 
+                     * 设置Repository type, list: harbor, tcr
+                     * @param _registryType Repository type, list: harbor, tcr
                      * 
                      */
                     void SetRegistryType(const std::string& _registryType);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Url 
+                     * 获取Warehouse url
+                     * @return Url Warehouse url
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置
-                     * @param _url 
+                     * 设置Warehouse url
+                     * @param _url Warehouse url
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return NetType 
+                     * 获取Network type, list: public
+                     * @return NetType Network type, list: public
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置
-                     * @param _netType 
+                     * 设置Network type, list: public
+                     * @param _netType Network type, list: public
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return RegistryRegion 
+                     * 获取Region, list: default
+                     * @return RegistryRegion Region, list: default
                      * 
                      */
                     std::string GetRegistryRegion() const;
 
                     /**
-                     * 设置
-                     * @param _registryRegion 
+                     * 设置Region, list: default
+                     * @param _registryRegion Region, list: default
                      * 
                      */
                     void SetRegistryRegion(const std::string& _registryRegion);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RegistryRegionHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return RegistryVersion 
+                     * 获取warehouse version
+                     * @return RegistryVersion warehouse version
                      * 
                      */
                     std::string GetRegistryVersion() const;
 
                     /**
-                     * 设置
-                     * @param _registryVersion 
+                     * 设置warehouse version
+                     * @param _registryVersion warehouse version
                      * 
                      */
                     void SetRegistryVersion(const std::string& _registryVersion);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool RegistryVersionHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ConnectMsg 
+                     * 获取Repository connection error message (to be deprecated). Use ConnDetectException.
+                     * @return ConnectMsg Repository connection error message (to be deprecated). Use ConnDetectException.
                      * 
                      */
                     std::string GetConnectMsg() const;
 
                     /**
-                     * 设置
-                     * @param _connectMsg 
+                     * 设置Repository connection error message (to be deprecated). Use ConnDetectException.
+                     * @param _connectMsg Repository connection error message (to be deprecated). Use ConnDetectException.
                      * 
                      */
                     void SetConnectMsg(const std::string& _connectMsg);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ConnectMsgHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ConnDetectType 
+                     * 获取Connectivity Check Method
+                     * @return ConnDetectType Connectivity Check Method
                      * 
                      */
                     std::string GetConnDetectType() const;
 
                     /**
-                     * 设置
-                     * @param _connDetectType 
+                     * 设置Connectivity Check Method
+                     * @param _connDetectType Connectivity Check Method
                      * 
                      */
                     void SetConnDetectType(const std::string& _connDetectType);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ConnDetectTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ConnDetectHostCount 
+                     * 获取Connectivity Check Host Count
+                     * @return ConnDetectHostCount Connectivity Check Host Count
                      * 
                      */
                     uint64_t GetConnDetectHostCount() const;
 
                     /**
-                     * 设置
-                     * @param _connDetectHostCount 
+                     * 设置Connectivity Check Host Count
+                     * @param _connDetectHostCount Connectivity Check Host Count
                      * 
                      */
                     void SetConnDetectHostCount(const uint64_t& _connDetectHostCount);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ConnDetectHostCountHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ConnDetectDetail 
+                     * 获取Connectivity Check Details
+                     * @return ConnDetectDetail Connectivity Check Details
                      * 
                      */
                     std::vector<RegistryConnDetectResult> GetConnDetectDetail() const;
 
                     /**
-                     * 设置
-                     * @param _connDetectDetail 
+                     * 设置Connectivity Check Details
+                     * @param _connDetectDetail Connectivity Check Details
                      * 
                      */
                     void SetConnDetectDetail(const std::vector<RegistryConnDetectResult>& _connDetectDetail);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ConnDetectDetailHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return InstanceID 
+                     * 获取Instance ID in TCR Scenario
+                     * @return InstanceID Instance ID in TCR Scenario
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置
-                     * @param _instanceID 
+                     * 设置Instance ID in TCR Scenario
+                     * @param _instanceID Instance ID in TCR Scenario
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return LatestSyncTime 
+                     * 获取Most Recent Time for Successful Synchronization
+                     * @return LatestSyncTime Most Recent Time for Successful Synchronization
                      * 
                      */
                     std::string GetLatestSyncTime() const;
 
                     /**
-                     * 设置
-                     * @param _latestSyncTime 
+                     * 设置Most Recent Time for Successful Synchronization
+                     * @param _latestSyncTime Most Recent Time for Successful Synchronization
                      * 
                      */
                     void SetLatestSyncTime(const std::string& _latestSyncTime);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool LatestSyncTimeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SyncStatus 
+                     * 获取Synchronization status
+                     * @return SyncStatus Synchronization status
                      * 
                      */
                     std::string GetSyncStatus() const;
 
                     /**
-                     * 设置
-                     * @param _syncStatus 
+                     * 设置Synchronization status
+                     * @param _syncStatus Synchronization status
                      * 
                      */
                     void SetSyncStatus(const std::string& _syncStatus);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool SyncStatusHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SyncFailReason 
+                     * 获取Synchronization Failure Reason
+                     * @return SyncFailReason Synchronization Failure Reason
                      * 
                      */
                     std::string GetSyncFailReason() const;
 
                     /**
-                     * 设置
-                     * @param _syncFailReason 
+                     * 设置Synchronization Failure Reason
+                     * @param _syncFailReason Synchronization Failure Reason
                      * 
                      */
                     void SetSyncFailReason(const std::string& _syncFailReason);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool SyncFailReasonHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SyncSolution 
+                     * 获取Synchronization Failure Solution
+                     * @return SyncSolution Synchronization Failure Solution
                      * 
                      */
                     std::string GetSyncSolution() const;
 
                     /**
-                     * 设置
-                     * @param _syncSolution 
+                     * 设置Synchronization Failure Solution
+                     * @param _syncSolution Synchronization Failure Solution
                      * 
                      */
                     void SetSyncSolution(const std::string& _syncSolution);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool SyncSolutionHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SyncMessage 
+                     * 获取Synchronization Failure Information
+                     * @return SyncMessage Synchronization Failure Information
                      * 
                      */
                     std::string GetSyncMessage() const;
 
                     /**
-                     * 设置
-                     * @param _syncMessage 
+                     * 设置Synchronization Failure Information
+                     * @param _syncMessage Synchronization Failure Information
                      * 
                      */
                     void SetSyncMessage(const std::string& _syncMessage);
@@ -404,109 +404,136 @@ namespace TencentCloud
                      */
                     bool SyncMessageHasBeenSet() const;
 
+                    /**
+                     * 获取Synchronization method. 0: full synchronization; 1: incremental synchronization.	
+                     * @return SyncMode Synchronization method. 0: full synchronization; 1: incremental synchronization.	
+                     * 
+                     */
+                    uint64_t GetSyncMode() const;
+
+                    /**
+                     * 设置Synchronization method. 0: full synchronization; 1: incremental synchronization.	
+                     * @param _syncMode Synchronization method. 0: full synchronization; 1: incremental synchronization.	
+                     * 
+                     */
+                    void SetSyncMode(const uint64_t& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 
+                     * Repository ID
                      */
                     uint64_t m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 
+                     * Repository Name
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 
+                     * Repository type, list: harbor, tcr
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
 
                     /**
-                     * 
+                     * Warehouse url
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 
+                     * Network type, list: public
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 
+                     * Region, list: default
                      */
                     std::string m_registryRegion;
                     bool m_registryRegionHasBeenSet;
 
                     /**
-                     * 
+                     * warehouse version
                      */
                     std::string m_registryVersion;
                     bool m_registryVersionHasBeenSet;
 
                     /**
-                     * 
+                     * Repository connection error message (to be deprecated). Use ConnDetectException.
                      */
                     std::string m_connectMsg;
                     bool m_connectMsgHasBeenSet;
 
                     /**
-                     * 
+                     * Connectivity Check Method
                      */
                     std::string m_connDetectType;
                     bool m_connDetectTypeHasBeenSet;
 
                     /**
-                     * 
+                     * Connectivity Check Host Count
                      */
                     uint64_t m_connDetectHostCount;
                     bool m_connDetectHostCountHasBeenSet;
 
                     /**
-                     * 
+                     * Connectivity Check Details
                      */
                     std::vector<RegistryConnDetectResult> m_connDetectDetail;
                     bool m_connDetectDetailHasBeenSet;
 
                     /**
-                     * 
+                     * Instance ID in TCR Scenario
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 
+                     * Most Recent Time for Successful Synchronization
                      */
                     std::string m_latestSyncTime;
                     bool m_latestSyncTimeHasBeenSet;
 
                     /**
-                     * 
+                     * Synchronization status
                      */
                     std::string m_syncStatus;
                     bool m_syncStatusHasBeenSet;
 
                     /**
-                     * 
+                     * Synchronization Failure Reason
                      */
                     std::string m_syncFailReason;
                     bool m_syncFailReasonHasBeenSet;
 
                     /**
-                     * 
+                     * Synchronization Failure Solution
                      */
                     std::string m_syncSolution;
                     bool m_syncSolutionHasBeenSet;
 
                     /**
-                     * 
+                     * Synchronization Failure Information
                      */
                     std::string m_syncMessage;
                     bool m_syncMessageHasBeenSet;
+
+                    /**
+                     * Synchronization method. 0: full synchronization; 1: incremental synchronization.	
+                     */
+                    uint64_t m_syncMode;
+                    bool m_syncModeHasBeenSet;
 
                 };
             }

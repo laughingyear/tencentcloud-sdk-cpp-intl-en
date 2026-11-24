@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Animated image generating task type
+                * Rotating image task type
                 */
                 class AnimatedGraphicTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Animated image generating template ID
-                     * @return Definition Animated image generating template ID
+                     * 获取Video-to-GIF conversion template ID.
+                     * @return Definition Video-to-GIF conversion template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Animated image generating template ID
-                     * @param _definition Animated image generating template ID
+                     * 设置Video-to-GIF conversion template ID.
+                     * @param _definition Video-to-GIF conversion template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Start time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will start at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will start at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will start at the nth second before the end of the video.</li>
-                     * @return StartTimeOffset Start time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will start at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will start at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will start at the nth second before the end of the video.</li>
+                     * 获取Start time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it starts from the beginning of the video.</li>
+<li>When the value is greater than 0 (assuming n), it means starting from the nth second of the video;</li>
+<li>When the value is less than 0 (assuming -n), it means starting from the position n seconds before the video ends.</li>
+                     * @return StartTimeOffset Start time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it starts from the beginning of the video.</li>
+<li>When the value is greater than 0 (assuming n), it means starting from the nth second of the video;</li>
+<li>When the value is less than 0 (assuming -n), it means starting from the position n seconds before the video ends.</li>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Start time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will start at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will start at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will start at the nth second before the end of the video.</li>
-                     * @param _startTimeOffset Start time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will start at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will start at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will start at the nth second before the end of the video.</li>
+                     * 设置Start time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it starts from the beginning of the video.</li>
+<li>When the value is greater than 0 (assuming n), it means starting from the nth second of the video;</li>
+<li>When the value is less than 0 (assuming -n), it means starting from the position n seconds before the video ends.</li>
+                     * @param _startTimeOffset Start time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it starts from the beginning of the video.</li>
+<li>When the value is greater than 0 (assuming n), it means starting from the nth second of the video;</li>
+<li>When the value is less than 0 (assuming -n), it means starting from the position n seconds before the video ends.</li>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -101,27 +101,27 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取End time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will end at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will end at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will end at the nth second before the end of the video.</li>
-                     * @return EndTimeOffset End time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will end at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will end at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will end at the nth second before the end of the video.</li>
+                     * 获取End time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it will last until the end of a video.</li>
+<li>When the value is greater than 0 (assuming n), it means the video ends at the nth second.</li>
+<li>When the value is less than 0 (assuming -n), it means termination n seconds before the video ends.</li>
+                     * @return EndTimeOffset End time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it will last until the end of a video.</li>
+<li>When the value is greater than 0 (assuming n), it means the video ends at the nth second.</li>
+<li>When the value is less than 0 (assuming -n), it means termination n seconds before the video ends.</li>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置End time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will end at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will end at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will end at the nth second before the end of the video.</li>
-                     * @param _endTimeOffset End time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will end at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will end at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will end at the nth second before the end of the video.</li>
+                     * 设置End time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it will last until the end of a video.</li>
+<li>When the value is greater than 0 (assuming n), it means the video ends at the nth second.</li>
+<li>When the value is less than 0 (assuming -n), it means termination n seconds before the video ends.</li>
+                     * @param _endTimeOffset End time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it will last until the end of a video.</li>
+<li>When the value is greater than 0 (assuming n), it means the video ends at the nth second.</li>
+<li>When the value is less than 0 (assuming -n), it means termination n seconds before the video ends.</li>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -136,25 +136,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Animated image generating template ID
+                     * Video-to-GIF conversion template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Start time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will start at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will start at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will start at the nth second before the end of the video.</li>
+                     * Start time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it starts from the beginning of the video.</li>
+<li>When the value is greater than 0 (assuming n), it means starting from the nth second of the video;</li>
+<li>When the value is less than 0 (assuming -n), it means starting from the position n seconds before the video ends.</li>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * End time offset of an animated image in the video, in seconds.
-<li>If this parameter is left empty or set to 0, the animated image will end at the same time as the video.</li>
-<li>If this parameter is set to a positive number (n for example), the animated image will end at the nth second of the video.</li>
-<li>If this parameter is set to a negative number (-n for example), the animated image will end at the nth second before the end of the video.</li>
+                     * End time offset of the GIF in the video, in seconds.
+<li>If not set or set to 0, it will last until the end of a video.</li>
+<li>When the value is greater than 0 (assuming n), it means the video ends at the nth second.</li>
+<li>When the value is less than 0 (assuming -n), it means termination n seconds before the video ends.</li>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

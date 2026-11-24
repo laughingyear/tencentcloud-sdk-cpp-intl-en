@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Number of parameters
-                     * @return TotalCount Number of parameters
+                     * 获取Number of parameters.
+                     * @return TotalCount Number of parameters.
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取Instance parameter list.
-                     * @return Items Instance parameter list.
+                     * 获取Instance parameter list
+                     * @return Items Instance parameter list
                      * 
                      */
                     std::vector<ParamInfo> GetItems() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Number of parameters
+                     * Number of parameters.
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * Instance parameter list.
+                     * Instance parameter list
                      */
                     std::vector<ParamInfo> m_items;
                     bool m_itemsHasBeenSet;

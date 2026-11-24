@@ -64,19 +64,19 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Operation type. Valid value:
-<li>Abort: terminate a task. You can only terminate initiated tasks in `WAITING` status.</li>
-                     * @return OperationType Operation type. Valid value:
-<li>Abort: terminate a task. You can only terminate initiated tasks in `WAITING` status.</li>
+                     * 获取Operation type. Value range:
+<li>Abort: Abort task. Only initiated and pending (WAITING) tasks can be aborted.</li>
+                     * @return OperationType Operation type. Value range:
+<li>Abort: Abort task. Only initiated and pending (WAITING) tasks can be aborted.</li>
                      * 
                      */
                     std::string GetOperationType() const;
 
                     /**
-                     * 设置Operation type. Valid value:
-<li>Abort: terminate a task. You can only terminate initiated tasks in `WAITING` status.</li>
-                     * @param _operationType Operation type. Valid value:
-<li>Abort: terminate a task. You can only terminate initiated tasks in `WAITING` status.</li>
+                     * 设置Operation type. Value range:
+<li>Abort: Abort task. Only initiated and pending (WAITING) tasks can be aborted.</li>
+                     * @param _operationType Operation type. Value range:
+<li>Abort: Abort task. Only initiated and pending (WAITING) tasks can be aborted.</li>
                      * 
                      */
                     void SetOperationType(const std::string& _operationType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OperationTypeHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>ID of the VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>ID of the VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>ID of the VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>ID of the VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Operation type. Valid value:
-<li>Abort: terminate a task. You can only terminate initiated tasks in `WAITING` status.</li>
+                     * Operation type. Value range:
+<li>Abort: Abort task. Only initiated and pending (WAITING) tasks can be aborted.</li>
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>ID of the VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

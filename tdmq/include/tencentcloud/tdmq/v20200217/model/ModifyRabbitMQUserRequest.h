@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster instance ID
-                     * @return InstanceId Cluster instance ID
+                     * 获取<p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
+                     * @return InstanceId <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Cluster instance ID
-                     * @param _instanceId Cluster instance ID
+                     * 设置<p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
+                     * @param _instanceId <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Username, which is used for login.
-                     * @return User Username, which is used for login.
+                     * 获取<p>Username, such as rabbitmq. To find an effective userName, log in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a>, click a cluster in the list, enter cluster details, and locate the list of users under the user and permission management tab so as to find the username. Modification of the admin password is not supported currently.</p>
+                     * @return User <p>Username, such as rabbitmq. To find an effective userName, log in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a>, click a cluster in the list, enter cluster details, and locate the list of users under the user and permission management tab so as to find the username. Modification of the admin password is not supported currently.</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置Username, which is used for login.
-                     * @param _user Username, which is used for login.
+                     * 设置<p>Username, such as rabbitmq. To find an effective userName, log in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a>, click a cluster in the list, enter cluster details, and locate the list of users under the user and permission management tab so as to find the username. Modification of the admin password is not supported currently.</p>
+                     * @param _user <p>Username, such as rabbitmq. To find an effective userName, log in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a>, click a cluster in the list, enter cluster details, and locate the list of users under the user and permission management tab so as to find the username. Modification of the admin password is not supported currently.</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取Password, which is used for login.
-                     * @return Password Password, which is used for login.
+                     * 获取<p>Password, used when logging in. Requirements: Cannot be empty, 8-64 characters, must contain at least two of the following: lowercase letter, uppercase letter, digit, special character [()`~!@#$%^&*_=|{}[]:;',.?/].</p>
+                     * @return Password <p>Password, used when logging in. Requirements: Cannot be empty, 8-64 characters, must contain at least two of the following: lowercase letter, uppercase letter, digit, special character [()`~!@#$%^&*_=|{}[]:;',.?/].</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置Password, which is used for login.
-                     * @param _password Password, which is used for login.
+                     * 设置<p>Password, used when logging in. Requirements: Cannot be empty, 8-64 characters, must contain at least two of the following: lowercase letter, uppercase letter, digit, special character [()`~!@#$%^&*_=|{}[]:;',.?/].</p>
+                     * @param _password <p>Password, used when logging in. Requirements: Cannot be empty, 8-64 characters, must contain at least two of the following: lowercase letter, uppercase letter, digit, special character [()`~!@#$%^&*_=|{}[]:;',.?/].</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取Description. If this parameter is not passed in, it won't be modified.
-                     * @return Description Description. If this parameter is not passed in, it won't be modified.
+                     * 获取<p>Description. Leave it empty to keep it unchanged.</p>
+                     * @return Description <p>Description. Leave it empty to keep it unchanged.</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置Description. If this parameter is not passed in, it won't be modified.
-                     * @param _description Description. If this parameter is not passed in, it won't be modified.
+                     * 设置<p>Description. Leave it empty to keep it unchanged.</p>
+                     * @param _description <p>Description. Leave it empty to keep it unchanged.</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取User tag, which defines a user's permission scope for accessing RabbitMQ Management. If this parameter is not passed in, it won't be modified.
-                     * @return Tags User tag, which defines a user's permission scope for accessing RabbitMQ Management. If this parameter is not passed in, it won't be modified.
+                     * 获取<p>User tag, used to determine the access permission of the user to RabbitMQ Management<br>management: ordinary console user, monitoring: console user with management privileges, other value: non-console user</p>
+                     * @return Tags <p>User tag, used to determine the access permission of the user to RabbitMQ Management<br>management: ordinary console user, monitoring: console user with management privileges, other value: non-console user</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置User tag, which defines a user's permission scope for accessing RabbitMQ Management. If this parameter is not passed in, it won't be modified.
-                     * @param _tags User tag, which defines a user's permission scope for accessing RabbitMQ Management. If this parameter is not passed in, it won't be modified.
+                     * 设置<p>User tag, used to determine the access permission of the user to RabbitMQ Management<br>management: ordinary console user, monitoring: console user with management privileges, other value: non-console user</p>
+                     * @param _tags <p>User tag, used to determine the access permission of the user to RabbitMQ Management<br>management: ordinary console user, monitoring: console user with management privileges, other value: non-console user</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取The maximum number of connections for the user. If this parameter is not passed in, it won't be modified.
-                     * @return MaxConnections The maximum number of connections for the user. If this parameter is not passed in, it won't be modified.
+                     * 获取<p>Maximum number of connections for this user. Leave it blank to keep unchanged.</p>
+                     * @return MaxConnections <p>Maximum number of connections for this user. Leave it blank to keep unchanged.</p>
                      * 
                      */
                     int64_t GetMaxConnections() const;
 
                     /**
-                     * 设置The maximum number of connections for the user. If this parameter is not passed in, it won't be modified.
-                     * @param _maxConnections The maximum number of connections for the user. If this parameter is not passed in, it won't be modified.
+                     * 设置<p>Maximum number of connections for this user. Leave it blank to keep unchanged.</p>
+                     * @param _maxConnections <p>Maximum number of connections for this user. Leave it blank to keep unchanged.</p>
                      * 
                      */
                     void SetMaxConnections(const int64_t& _maxConnections);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool MaxConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取The maximum number of channels for the user. If this parameter is not passed in, it won't be modified.
-                     * @return MaxChannels The maximum number of channels for the user. If this parameter is not passed in, it won't be modified.
+                     * 获取<p>Maximum number of channels for the user's. Leave blank to keep unchanged.</p>
+                     * @return MaxChannels <p>Maximum number of channels for the user's. Leave blank to keep unchanged.</p>
                      * 
                      */
                     int64_t GetMaxChannels() const;
 
                     /**
-                     * 设置The maximum number of channels for the user. If this parameter is not passed in, it won't be modified.
-                     * @param _maxChannels The maximum number of channels for the user. If this parameter is not passed in, it won't be modified.
+                     * 设置<p>Maximum number of channels for the user's. Leave blank to keep unchanged.</p>
+                     * @param _maxChannels <p>Maximum number of channels for the user's. Leave blank to keep unchanged.</p>
                      * 
                      */
                     void SetMaxChannels(const int64_t& _maxChannels);
@@ -189,49 +189,76 @@ namespace TencentCloud
                      */
                     bool MaxChannelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether cam authentication is enabled</p>
+                     * @return EnableCamAuth <p>Whether cam authentication is enabled</p>
+                     * 
+                     */
+                    bool GetEnableCamAuth() const;
+
+                    /**
+                     * 设置<p>Whether cam authentication is enabled</p>
+                     * @param _enableCamAuth <p>Whether cam authentication is enabled</p>
+                     * 
+                     */
+                    void SetEnableCamAuth(const bool& _enableCamAuth);
+
+                    /**
+                     * 判断参数 EnableCamAuth 是否已赋值
+                     * @return EnableCamAuth 是否已赋值
+                     * 
+                     */
+                    bool EnableCamAuthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cluster instance ID
+                     * <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Username, which is used for login.
+                     * <p>Username, such as rabbitmq. To find an effective userName, log in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a>, click a cluster in the list, enter cluster details, and locate the list of users under the user and permission management tab so as to find the username. Modification of the admin password is not supported currently.</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * Password, which is used for login.
+                     * <p>Password, used when logging in. Requirements: Cannot be empty, 8-64 characters, must contain at least two of the following: lowercase letter, uppercase letter, digit, special character [()`~!@#$%^&*_=|{}[]:;',.?/].</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * Description. If this parameter is not passed in, it won't be modified.
+                     * <p>Description. Leave it empty to keep it unchanged.</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * User tag, which defines a user's permission scope for accessing RabbitMQ Management. If this parameter is not passed in, it won't be modified.
+                     * <p>User tag, used to determine the access permission of the user to RabbitMQ Management<br>management: ordinary console user, monitoring: console user with management privileges, other value: non-console user</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * The maximum number of connections for the user. If this parameter is not passed in, it won't be modified.
+                     * <p>Maximum number of connections for this user. Leave it blank to keep unchanged.</p>
                      */
                     int64_t m_maxConnections;
                     bool m_maxConnectionsHasBeenSet;
 
                     /**
-                     * The maximum number of channels for the user. If this parameter is not passed in, it won't be modified.
+                     * <p>Maximum number of channels for the user's. Leave blank to keep unchanged.</p>
                      */
                     int64_t m_maxChannels;
                     bool m_maxChannelsHasBeenSet;
+
+                    /**
+                     * <p>Whether cam authentication is enabled</p>
+                     */
+                    bool m_enableCamAuth;
+                    bool m_enableCamAuthHasBeenSet;
 
                 };
             }

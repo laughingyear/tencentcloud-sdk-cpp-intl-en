@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取The end time. The query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
-                     * @return EndTime The end time. The query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
+                     * 获取End time. the query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
+                     * @return EndTime End time. the query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置The end time. The query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
-                     * @param _endTime The end time. The query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
+                     * 设置End time. the query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
+                     * @param _endTime End time. the query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
-                     * @return ZoneIds Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * 获取Site ID set. this parameter will change from option to required after may 30, 2024. for details, see the notice: [tencent cloud EdgeOne API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1). a maximum of 100 site ids can be imported. use `*` to query all site data under the tencent cloud root account. querying account-level data requires all resource permissions for all sites in this interface.
+                     * @return ZoneIds Site ID set. this parameter will change from option to required after may 30, 2024. for details, see the notice: [tencent cloud EdgeOne API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1). a maximum of 100 site ids can be imported. use `*` to query all site data under the tencent cloud root account. querying account-level data requires all resource permissions for all sites in this interface.
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
-                     * @param _zoneIds Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * 设置Site ID set. this parameter will change from option to required after may 30, 2024. for details, see the notice: [tencent cloud EdgeOne API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1). a maximum of 100 site ids can be imported. use `*` to query all site data under the tencent cloud root account. querying account-level data requires all resource permissions for all sites in this interface.
+                     * @param _zoneIds Site ID set. this parameter will change from option to required after may 30, 2024. for details, see the notice: [tencent cloud EdgeOne API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1). a maximum of 100 site ids can be imported. use `*` to query all site data under the tencent cloud root account. querying account-level data requires all resource permissions for all sites in this interface.
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -289,7 +289,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * The end time. The query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
+                     * End time. the query time range (`EndTime` - `StartTime`) must be less than or equal to 31 days.
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -301,7 +301,7 @@ namespace TencentCloud
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * Zone ID set. This parameter is required. A maximum of 100 zone IDs can be passed in. If you need to query data for all zones under the Tencent Cloud main account, please use "*" instead. To query account-level data, you need to have full resource permissions for all zones of this interface.
+                     * Site ID set. this parameter will change from option to required after may 30, 2024. for details, see the notice: [tencent cloud EdgeOne API change notification](https://www.tencentcloud.com/document/product/1552/104902?from_cn_redirect=1). a maximum of 100 site ids can be imported. use `*` to query all site data under the tencent cloud root account. querying account-level data requires all resource permissions for all sites in this interface.
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

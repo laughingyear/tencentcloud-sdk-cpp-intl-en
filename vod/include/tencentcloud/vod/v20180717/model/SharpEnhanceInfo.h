@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Detail enhancement configuration.
+                * Detail enhancement control
                 */
                 class SharpEnhanceInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable detail enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable detail enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Detail enhancement control switch. Valid values:
+<li>ON: enable detail enhancement;</li>
+<li>OFF: disables detail enhancement</li>
+                     * @return Switch Detail enhancement control switch. Valid values:
+<li>ON: enable detail enhancement;</li>
+<li>OFF: disables detail enhancement</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable detail enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable detail enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Detail enhancement control switch. Valid values:
+<li>ON: enable detail enhancement;</li>
+<li>OFF: disables detail enhancement</li>
+                     * @param _switch Detail enhancement control switch. Valid values:
+<li>ON: enable detail enhancement;</li>
+<li>OFF: disables detail enhancement</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,19 +76,19 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The detail enhancement strength. Value range: 0.0 – 1.0. This parameter is valid only if `Switch` is `ON`.
-Default value: `0.0`.
-                     * @return Intensity The detail enhancement strength. Value range: 0.0 – 1.0. This parameter is valid only if `Switch` is `ON`.
-Default value: `0.0`.
+                     * 获取Detail enhancement intensity. Valid only when the detail enhancement control switch is ON. Value range: 0.0–1.0.
+Default: 0.0.
+                     * @return Intensity Detail enhancement intensity. Valid only when the detail enhancement control switch is ON. Value range: 0.0–1.0.
+Default: 0.0.
                      * 
                      */
                     double GetIntensity() const;
 
                     /**
-                     * 设置The detail enhancement strength. Value range: 0.0 – 1.0. This parameter is valid only if `Switch` is `ON`.
-Default value: `0.0`.
-                     * @param _intensity The detail enhancement strength. Value range: 0.0 – 1.0. This parameter is valid only if `Switch` is `ON`.
-Default value: `0.0`.
+                     * 设置Detail enhancement intensity. Valid only when the detail enhancement control switch is ON. Value range: 0.0–1.0.
+Default: 0.0.
+                     * @param _intensity Detail enhancement intensity. Valid only when the detail enhancement control switch is ON. Value range: 0.0–1.0.
+Default: 0.0.
                      * 
                      */
                     void SetIntensity(const double& _intensity);
@@ -103,16 +103,16 @@ Default value: `0.0`.
                 private:
 
                     /**
-                     * Whether to enable detail enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Detail enhancement control switch. Valid values:
+<li>ON: enable detail enhancement;</li>
+<li>OFF: disables detail enhancement</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The detail enhancement strength. Value range: 0.0 – 1.0. This parameter is valid only if `Switch` is `ON`.
-Default value: `0.0`.
+                     * Detail enhancement intensity. Valid only when the detail enhancement control switch is ON. Value range: 0.0–1.0.
+Default: 0.0.
                      */
                     double m_intensity;
                     bool m_intensityHasBeenSet;

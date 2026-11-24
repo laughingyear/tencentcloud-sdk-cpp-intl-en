@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Type of the task. `0`: Preview; `1`: Download
-                     * @return Type Type of the task. `0`: Preview; `1`: Download
+                     * 获取0: Preview; 1: Download
+                     * @return Type 0: Preview; 1: Download
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置Type of the task. `0`: Preview; `1`: Download
-                     * @param _type Type of the task. `0`: Preview; `1`: Download
+                     * 设置0: Preview; 1: Download
+                     * @param _type 0: Preview; 1: Download
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -66,15 +66,36 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取List of task report IDs
-                     * @return ReportItemKeyList List of task report IDs
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取Task Report ID List
+                     * @return ReportItemKeyList Task Report ID List
                      * 
                      */
                     std::vector<ReportItemKey> GetReportItemKeyList() const;
 
                     /**
-                     * 设置List of task report IDs
-                     * @param _reportItemKeyList List of task report IDs
+                     * 设置Task Report ID List
+                     * @param _reportItemKeyList Task Report ID List
                      * 
                      */
                     void SetReportItemKeyList(const std::vector<ReportItemKey>& _reportItemKeyList);
@@ -87,15 +108,15 @@ namespace TencentCloud
                     bool ReportItemKeyListHasBeenSet() const;
 
                     /**
-                     * 获取List of task IDs in the report
-                     * @return ReportTaskIdList List of task IDs in the report
+                     * 获取List of Task IDs in the Report
+                     * @return ReportTaskIdList List of Task IDs in the Report
                      * 
                      */
                     std::vector<ReportTaskIdList> GetReportTaskIdList() const;
 
                     /**
-                     * 设置List of task IDs in the report
-                     * @param _reportTaskIdList List of task IDs in the report
+                     * 设置List of Task IDs in the Report
+                     * @param _reportTaskIdList List of Task IDs in the Report
                      * 
                      */
                     void SetReportTaskIdList(const std::vector<ReportTaskIdList>& _reportTaskIdList);
@@ -110,19 +131,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Type of the task. `0`: Preview; `1`: Download
+                     * 0: Preview; 1: Download
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * List of task report IDs
+                     * Group Account Member ID
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * Task Report ID List
                      */
                     std::vector<ReportItemKey> m_reportItemKeyList;
                     bool m_reportItemKeyListHasBeenSet;
 
                     /**
-                     * List of task IDs in the report
+                     * List of Task IDs in the Report
                      */
                     std::vector<ReportTaskIdList> m_reportTaskIdList;
                     bool m_reportTaskIdListHasBeenSet;

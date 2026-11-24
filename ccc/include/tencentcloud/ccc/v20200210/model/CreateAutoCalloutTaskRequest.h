@@ -24,6 +24,9 @@
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
 #include <tencentcloud/ccc/v20200210/model/TimeRange.h>
+#include <tencentcloud/ccc/v20200210/model/RetryTagItem.h>
+#include <tencentcloud/ccc/v20200210/model/AvailableTimeConfig.h>
+#include <tencentcloud/ccc/v20200210/model/TriggerStrategyItem.h>
 
 
 namespace TencentCloud
@@ -235,15 +238,15 @@ namespace TencentCloud
                     bool TriesHasBeenSet() const;
 
                     /**
-                     * 获取Custom variables (supported only in advanced versions).
-                     * @return Variables Custom variables (supported only in advanced versions).
+                     * 获取Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
+                     * @return Variables Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
                      * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
-                     * 设置Custom variables (supported only in advanced versions).
-                     * @param _variables Custom variables (supported only in advanced versions).
+                     * 设置Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
+                     * @param _variables Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
                      * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
@@ -256,15 +259,15 @@ namespace TencentCloud
                     bool VariablesHasBeenSet() const;
 
                     /**
-                     * 获取UUI
-                     * @return UUI UUI
+                     * 获取User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
+                     * @return UUI User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
                      * 
                      */
                     std::string GetUUI() const;
 
                     /**
-                     * 设置UUI
-                     * @param _uUI UUI
+                     * 设置User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
+                     * @param _uUI User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
                      * 
                      */
                     void SetUUI(const std::string& _uUI);
@@ -360,6 +363,136 @@ namespace TencentCloud
                      */
                     bool AIAgentIdHasBeenSet() const;
 
+                    /**
+                     * 获取Retry interval for task failure. value range: 600-86400 seconds.
+                     * @return RetryInterval Retry interval for task failure. value range: 600-86400 seconds.
+                     * 
+                     */
+                    int64_t GetRetryInterval() const;
+
+                    /**
+                     * 设置Retry interval for task failure. value range: 600-86400 seconds.
+                     * @param _retryInterval Retry interval for task failure. value range: 600-86400 seconds.
+                     * 
+                     */
+                    void SetRetryInterval(const int64_t& _retryInterval);
+
+                    /**
+                     * 判断参数 RetryInterval 是否已赋值
+                     * @return RetryInterval 是否已赋值
+                     * 
+                     */
+                    bool RetryIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取Maximum ringing duration. auto hang up when the duration threshold is reached. only own number supports this parameter.
+                     * @return MaxRingTimeoutSecond Maximum ringing duration. auto hang up when the duration threshold is reached. only own number supports this parameter.
+                     * 
+                     */
+                    int64_t GetMaxRingTimeoutSecond() const;
+
+                    /**
+                     * 设置Maximum ringing duration. auto hang up when the duration threshold is reached. only own number supports this parameter.
+                     * @param _maxRingTimeoutSecond Maximum ringing duration. auto hang up when the duration threshold is reached. only own number supports this parameter.
+                     * 
+                     */
+                    void SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond);
+
+                    /**
+                     * 判断参数 MaxRingTimeoutSecond 是否已赋值
+                     * @return MaxRingTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool MaxRingTimeoutSecondHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Retry according to the specified hang-up reasons (optional hang-up status codes: 202, 203, 204, 205, 206, 207, 208, 210, 212, 213, 215, 216, 217, 218, 219, 221, 222, 234). This only takes effect for tasks using AIAgentID. For the description of hang-up status codes</p>
+<p><a href="https://cloud.tencent.com/document/product/679/123938">see details</a></p>
+                     * @return RetryHangupTypes <p>Retry according to the specified hang-up reasons (optional hang-up status codes: 202, 203, 204, 205, 206, 207, 208, 210, 212, 213, 215, 216, 217, 218, 219, 221, 222, 234). This only takes effect for tasks using AIAgentID. For the description of hang-up status codes</p>
+<p><a href="https://cloud.tencent.com/document/product/679/123938">see details</a></p>
+                     * 
+                     */
+                    std::vector<std::string> GetRetryHangupTypes() const;
+
+                    /**
+                     * 设置<p>Retry according to the specified hang-up reasons (optional hang-up status codes: 202, 203, 204, 205, 206, 207, 208, 210, 212, 213, 215, 216, 217, 218, 219, 221, 222, 234). This only takes effect for tasks using AIAgentID. For the description of hang-up status codes</p>
+<p><a href="https://cloud.tencent.com/document/product/679/123938">see details</a></p>
+                     * @param _retryHangupTypes <p>Retry according to the specified hang-up reasons (optional hang-up status codes: 202, 203, 204, 205, 206, 207, 208, 210, 212, 213, 215, 216, 217, 218, 219, 221, 222, 234). This only takes effect for tasks using AIAgentID. For the description of hang-up status codes</p>
+<p><a href="https://cloud.tencent.com/document/product/679/123938">see details</a></p>
+                     * 
+                     */
+                    void SetRetryHangupTypes(const std::vector<std::string>& _retryHangupTypes);
+
+                    /**
+                     * 判断参数 RetryHangupTypes 是否已赋值
+                     * @return RetryHangupTypes 是否已赋值
+                     * 
+                     */
+                    bool RetryHangupTypesHasBeenSet() const;
+
+                    /**
+                     * 获取Retry based on the specified post-dialogue tag. It only takes effect for AIAgentID tasks that use the dialogue model. Tag information can be queried in the agent configuration.
+                     * @return RetryTags Retry based on the specified post-dialogue tag. It only takes effect for AIAgentID tasks that use the dialogue model. Tag information can be queried in the agent configuration.
+                     * 
+                     */
+                    std::vector<RetryTagItem> GetRetryTags() const;
+
+                    /**
+                     * 设置Retry based on the specified post-dialogue tag. It only takes effect for AIAgentID tasks that use the dialogue model. Tag information can be queried in the agent configuration.
+                     * @param _retryTags Retry based on the specified post-dialogue tag. It only takes effect for AIAgentID tasks that use the dialogue model. Tag information can be queried in the agent configuration.
+                     * 
+                     */
+                    void SetRetryTags(const std::vector<RetryTagItem>& _retryTags);
+
+                    /**
+                     * 判断参数 RetryTags 是否已赋值
+                     * @return RetryTags 是否已赋值
+                     * 
+                     */
+                    bool RetryTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Effective working time configuration. It is recommended to use this field instead of the AvailableTime field. If both are used simultaneously, AvailableTime takes priority.</p>
+                     * @return AvailableWorkTimeConfig <p>Effective working time configuration. It is recommended to use this field instead of the AvailableTime field. If both are used simultaneously, AvailableTime takes priority.</p>
+                     * 
+                     */
+                    std::vector<AvailableTimeConfig> GetAvailableWorkTimeConfig() const;
+
+                    /**
+                     * 设置<p>Effective working time configuration. It is recommended to use this field instead of the AvailableTime field. If both are used simultaneously, AvailableTime takes priority.</p>
+                     * @param _availableWorkTimeConfig <p>Effective working time configuration. It is recommended to use this field instead of the AvailableTime field. If both are used simultaneously, AvailableTime takes priority.</p>
+                     * 
+                     */
+                    void SetAvailableWorkTimeConfig(const std::vector<AvailableTimeConfig>& _availableWorkTimeConfig);
+
+                    /**
+                     * 判断参数 AvailableWorkTimeConfig 是否已赋值
+                     * @return AvailableWorkTimeConfig 是否已赋值
+                     * 
+                     */
+                    bool AvailableWorkTimeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Trigger Strategy</p>
+                     * @return TriggerStrategy <p>Trigger Strategy</p>
+                     * 
+                     */
+                    std::vector<TriggerStrategyItem> GetTriggerStrategy() const;
+
+                    /**
+                     * 设置<p>Trigger Strategy</p>
+                     * @param _triggerStrategy <p>Trigger Strategy</p>
+                     * 
+                     */
+                    void SetTriggerStrategy(const std::vector<TriggerStrategyItem>& _triggerStrategy);
+
+                    /**
+                     * 判断参数 TriggerStrategy 是否已赋值
+                     * @return TriggerStrategy 是否已赋值
+                     * 
+                     */
+                    bool TriggerStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,13 +550,13 @@ namespace TencentCloud
                     bool m_triesHasBeenSet;
 
                     /**
-                     * Custom variables (supported only in advanced versions).
+                     * Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
 
                     /**
-                     * UUI
+                     * User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;
@@ -451,6 +584,43 @@ namespace TencentCloud
                      */
                     int64_t m_aIAgentId;
                     bool m_aIAgentIdHasBeenSet;
+
+                    /**
+                     * Retry interval for task failure. value range: 600-86400 seconds.
+                     */
+                    int64_t m_retryInterval;
+                    bool m_retryIntervalHasBeenSet;
+
+                    /**
+                     * Maximum ringing duration. auto hang up when the duration threshold is reached. only own number supports this parameter.
+                     */
+                    int64_t m_maxRingTimeoutSecond;
+                    bool m_maxRingTimeoutSecondHasBeenSet;
+
+                    /**
+                     * <p>Retry according to the specified hang-up reasons (optional hang-up status codes: 202, 203, 204, 205, 206, 207, 208, 210, 212, 213, 215, 216, 217, 218, 219, 221, 222, 234). This only takes effect for tasks using AIAgentID. For the description of hang-up status codes</p>
+<p><a href="https://cloud.tencent.com/document/product/679/123938">see details</a></p>
+                     */
+                    std::vector<std::string> m_retryHangupTypes;
+                    bool m_retryHangupTypesHasBeenSet;
+
+                    /**
+                     * Retry based on the specified post-dialogue tag. It only takes effect for AIAgentID tasks that use the dialogue model. Tag information can be queried in the agent configuration.
+                     */
+                    std::vector<RetryTagItem> m_retryTags;
+                    bool m_retryTagsHasBeenSet;
+
+                    /**
+                     * <p>Effective working time configuration. It is recommended to use this field instead of the AvailableTime field. If both are used simultaneously, AvailableTime takes priority.</p>
+                     */
+                    std::vector<AvailableTimeConfig> m_availableWorkTimeConfig;
+                    bool m_availableWorkTimeConfigHasBeenSet;
+
+                    /**
+                     * <p>Trigger Strategy</p>
+                     */
+                    std::vector<TriggerStrategyItem> m_triggerStrategy;
+                    bool m_triggerStrategyHasBeenSet;
 
                 };
             }

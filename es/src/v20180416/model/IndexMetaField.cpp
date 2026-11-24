@@ -23,6 +23,7 @@ using namespace std;
 IndexMetaField::IndexMetaField() :
     m_indexTypeHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_indexMetaJsonHasBeenSet(false),
     m_indexStatusHasBeenSet(false),
     m_indexStorageHasBeenSet(false),
     m_indexCreateTimeHasBeenSet(false),
@@ -33,6 +34,7 @@ IndexMetaField::IndexMetaField() :
     m_indexPolicyFieldHasBeenSet(false),
     m_indexOptionsFieldHasBeenSet(false),
     m_indexSettingsFieldHasBeenSet(false),
+    m_indexAliasesFieldHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_indexDocsHasBeenSet(false)
 {
@@ -61,6 +63,16 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         }
         m_indexName = string(value["IndexName"].GetString());
         m_indexNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexMetaJson") && !value["IndexMetaJson"].IsNull())
+    {
+        if (!value["IndexMetaJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexMetaJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexMetaJson = string(value["IndexMetaJson"].GetString());
+        m_indexMetaJsonHasBeenSet = true;
     }
 
     if (value.HasMember("IndexStatus") && !value["IndexStatus"].IsNull())
@@ -194,6 +206,19 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         m_indexSettingsFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexAliasesField") && !value["IndexAliasesField"].IsNull())
+    {
+        if (!value["IndexAliasesField"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexAliasesField` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IndexAliasesField"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_indexAliasesField.push_back((*itr).GetString());
+        }
+        m_indexAliasesFieldHasBeenSet = true;
+    }
+
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
         if (!value["AppId"].IsUint64())
@@ -235,6 +260,14 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IndexName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexMetaJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexMetaJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexMetaJson.c_str(), allocator).Move(), allocator);
     }
 
     if (m_indexStatusHasBeenSet)
@@ -327,6 +360,19 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_indexSettingsField.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_indexAliasesFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexAliasesField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_indexAliasesField.begin(); itr != m_indexAliasesField.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -376,6 +422,22 @@ void IndexMetaField::SetIndexName(const string& _indexName)
 bool IndexMetaField::IndexNameHasBeenSet() const
 {
     return m_indexNameHasBeenSet;
+}
+
+string IndexMetaField::GetIndexMetaJson() const
+{
+    return m_indexMetaJson;
+}
+
+void IndexMetaField::SetIndexMetaJson(const string& _indexMetaJson)
+{
+    m_indexMetaJson = _indexMetaJson;
+    m_indexMetaJsonHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexMetaJsonHasBeenSet() const
+{
+    return m_indexMetaJsonHasBeenSet;
 }
 
 string IndexMetaField::GetIndexStatus() const
@@ -536,6 +598,22 @@ void IndexMetaField::SetIndexSettingsField(const IndexSettingsField& _indexSetti
 bool IndexMetaField::IndexSettingsFieldHasBeenSet() const
 {
     return m_indexSettingsFieldHasBeenSet;
+}
+
+vector<string> IndexMetaField::GetIndexAliasesField() const
+{
+    return m_indexAliasesField;
+}
+
+void IndexMetaField::SetIndexAliasesField(const vector<string>& _indexAliasesField)
+{
+    m_indexAliasesField = _indexAliasesField;
+    m_indexAliasesFieldHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexAliasesFieldHasBeenSet() const
+{
+    return m_indexAliasesFieldHasBeenSet;
 }
 
 uint64_t IndexMetaField::GetAppId() const

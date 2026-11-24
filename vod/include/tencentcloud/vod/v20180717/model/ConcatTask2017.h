@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The details of a video splicing task. This parameter is only valid for tasks initiated by the v2017 video splicing API.
+                * Video splicing task information. This structure is only used for tasks initiated via the 2017 video splicing API.
                 */
                 class ConcatTask2017 : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Information of source file for video splicing.
-                     * @return FileInfoSet Information of source file for video splicing.
+                     * 获取Source file information for video splicing.
+                     * @return FileInfoSet Source file information for video splicing.
                      * 
                      */
                     std::vector<ConcatFileInfo2017> GetFileInfoSet() const;
 
                     /**
-                     * 设置Information of source file for video splicing.
-                     * @param _fileInfoSet Information of source file for video splicing.
+                     * 设置Source file information for video splicing.
+                     * @param _fileInfoSet Source file information for video splicing.
                      * 
                      */
                     void SetFileInfoSet(const std::vector<ConcatFileInfo2017>& _fileInfoSet);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Information of source file for video splicing.
+                     * Source file information for video splicing.
                      */
                     std::vector<ConcatFileInfo2017> m_fileInfoSet;
                     bool m_fileInfoSetHasBeenSet;

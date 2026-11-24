@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/teo/v20220901/model/TCEOCaptchaOption.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Teo::V20220901::Model;
+using namespace std;
+
+TCEOCaptchaOption::TCEOCaptchaOption() :
+    m_captchaModeHasBeenSet(false),
+    m_mobileCaptchaModeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome TCEOCaptchaOption::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("CaptchaMode") && !value["CaptchaMode"].IsNull())
+    {
+        if (!value["CaptchaMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCEOCaptchaOption.CaptchaMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_captchaMode = string(value["CaptchaMode"].GetString());
+        m_captchaModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MobileCaptchaMode") && !value["MobileCaptchaMode"].IsNull())
+    {
+        if (!value["MobileCaptchaMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCEOCaptchaOption.MobileCaptchaMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mobileCaptchaMode = string(value["MobileCaptchaMode"].GetString());
+        m_mobileCaptchaModeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void TCEOCaptchaOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_captchaModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_captchaMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mobileCaptchaModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MobileCaptchaMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobileCaptchaMode.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string TCEOCaptchaOption::GetCaptchaMode() const
+{
+    return m_captchaMode;
+}
+
+void TCEOCaptchaOption::SetCaptchaMode(const string& _captchaMode)
+{
+    m_captchaMode = _captchaMode;
+    m_captchaModeHasBeenSet = true;
+}
+
+bool TCEOCaptchaOption::CaptchaModeHasBeenSet() const
+{
+    return m_captchaModeHasBeenSet;
+}
+
+string TCEOCaptchaOption::GetMobileCaptchaMode() const
+{
+    return m_mobileCaptchaMode;
+}
+
+void TCEOCaptchaOption::SetMobileCaptchaMode(const string& _mobileCaptchaMode)
+{
+    m_mobileCaptchaMode = _mobileCaptchaMode;
+    m_mobileCaptchaModeHasBeenSet = true;
+}
+
+bool TCEOCaptchaOption::MobileCaptchaModeHasBeenSet() const
+{
+    return m_mobileCaptchaModeHasBeenSet;
+}
+

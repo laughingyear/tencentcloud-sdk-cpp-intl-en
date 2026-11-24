@@ -43,35 +43,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Query indicators, the values u200bu200bare:
-<li>Traffic: traffic, unit is Byte. </li>
-<li>Bandwidth: Bandwidth, unit is Bps. </li>
-<li>Requests: Number of requests. </li>
-<li>QUICRequests: Number of QUIC requests. </li>
-<li>IpVisit: Number of IP visits. </li>
-                     * @return Metric Query indicators, the values u200bu200bare:
-<li>Traffic: traffic, unit is Byte. </li>
-<li>Bandwidth: Bandwidth, unit is Bps. </li>
-<li>Requests: Number of requests. </li>
-<li>QUICRequests: Number of QUIC requests. </li>
-<li>IpVisit: Number of IP visits. </li>
+                     * 获取Queried metric. Valid values:
+<li>Traffic: Total Traffic, in bytes.</li>
+<li>Bandwidth: bandwidth, in Bps.</li>
+<li>Requests: request count.</li>
+<li>QUICRequests: number of QUIC requests.</li>
+<li>IpVisit: number of IP visits.</li>
+                     * @return Metric Queried metric. Valid values:
+<li>Traffic: Total Traffic, in bytes.</li>
+<li>Bandwidth: bandwidth, in Bps.</li>
+<li>Requests: request count.</li>
+<li>QUICRequests: number of QUIC requests.</li>
+<li>IpVisit: number of IP visits.</li>
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置Query indicators, the values u200bu200bare:
-<li>Traffic: traffic, unit is Byte. </li>
-<li>Bandwidth: Bandwidth, unit is Bps. </li>
-<li>Requests: Number of requests. </li>
-<li>QUICRequests: Number of QUIC requests. </li>
-<li>IpVisit: Number of IP visits. </li>
-                     * @param _metric Query indicators, the values u200bu200bare:
-<li>Traffic: traffic, unit is Byte. </li>
-<li>Bandwidth: Bandwidth, unit is Bps. </li>
-<li>Requests: Number of requests. </li>
-<li>QUICRequests: Number of QUIC requests. </li>
-<li>IpVisit: Number of IP visits. </li>
+                     * 设置Queried metric. Valid values:
+<li>Traffic: Total Traffic, in bytes.</li>
+<li>Bandwidth: bandwidth, in Bps.</li>
+<li>Requests: request count.</li>
+<li>QUICRequests: number of QUIC requests.</li>
+<li>IpVisit: number of IP visits.</li>
+                     * @param _metric Queried metric. Valid values:
+<li>Traffic: Total Traffic, in bytes.</li>
+<li>Bandwidth: bandwidth, in Bps.</li>
+<li>Requests: request count.</li>
+<li>QUICRequests: number of QUIC requests.</li>
+<li>IpVisit: number of IP visits.</li>
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -84,15 +84,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取Start time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
-                     * @return StartTime Start time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * 获取Start time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return StartTime Start time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置Start time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
-                     * @param _startTime Start time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * 设置Start time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _startTime Start time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -105,15 +105,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取End time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
-                     * @return EndTime End time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * 获取End time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return EndTime End time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置End time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
-                     * @param _endTime End time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * 设置End time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _endTime End time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -126,15 +126,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -147,15 +147,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取List of domain names. The usage data of up to 20 domain names can be queried at a time. The usage data of all domain names is returned by default.
-                     * @return DomainNames List of domain names. The usage data of up to 20 domain names can be queried at a time. The usage data of all domain names is returned by default.
+                     * 获取Domain name list. Up to 20 domain names can be queried for data at a time. By default, the combined usage data of all domain names is returned.
+                     * @return DomainNames Domain name list. Up to 20 domain names can be queried for data at a time. By default, the combined usage data of all domain names is returned.
                      * 
                      */
                     std::vector<std::string> GetDomainNames() const;
 
                     /**
-                     * 设置List of domain names. The usage data of up to 20 domain names can be queried at a time. The usage data of all domain names is returned by default.
-                     * @param _domainNames List of domain names. The usage data of up to 20 domain names can be queried at a time. The usage data of all domain names is returned by default.
+                     * 设置Domain name list. Up to 20 domain names can be queried for data at a time. By default, the combined usage data of all domain names is returned.
+                     * @param _domainNames Domain name list. Up to 20 domain names can be queried for data at a time. By default, the combined usage data of all domain names is returned.
                      * 
                      */
                     void SetDomainNames(const std::vector<std::string>& _domainNames);
@@ -168,55 +168,55 @@ namespace TencentCloud
                     bool DomainNamesHasBeenSet() const;
 
                     /**
-                     * 获取Service region. Valid values:
-<li>Chinese Mainland</li>
-<li>Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand</li>
-<li>Asia Pacific Region 2: Taiwan (China), Japan, Malaysia, Indonesia, and South Korea</li>
-<li>Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions</li>
-<li>Middle East</li>
-<li>Europe</li>
-<li>North America</li>
-<li>South America</li>
-<li>Africa</li>
-Default value: Chinese Mainland
-                     * @return Area Service region. Valid values:
-<li>Chinese Mainland</li>
-<li>Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand</li>
-<li>Asia Pacific Region 2: Taiwan (China), Japan, Malaysia, Indonesia, and South Korea</li>
-<li>Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions</li>
-<li>Middle East</li>
-<li>Europe</li>
-<li>North America</li>
-<li>South America</li>
-<li>Africa</li>
-Default value: Chinese Mainland
+                     * 获取Service area. Valid values:
+<li>Chinese Mainland: Chinese mainland.</li>
+<li>Asia Pacific Region 1: Asia Pacific zone 1, including Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand. </li>
+<li>Asia Pacific Region 2: Asia Pacific zone 2, including Taiwan (China), Japan, Malaysia, Indonesia, and South Korea. </li>
+<li>Asia Pacific Region 3: Asia Pacific zone 3, including the Philippines, India, Australia, and other countries and regions in Asia Pacific. </li>
+<li>Middle East: Middle East. </li>
+<li>Europe: Europe.</li>
+<li>North America: North America.</li>
+<li>South America: South America.</li>
+<li>Africa: Africa.</li>
+Default value: Chinese mainland.
+                     * @return Area Service area. Valid values:
+<li>Chinese Mainland: Chinese mainland.</li>
+<li>Asia Pacific Region 1: Asia Pacific zone 1, including Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand. </li>
+<li>Asia Pacific Region 2: Asia Pacific zone 2, including Taiwan (China), Japan, Malaysia, Indonesia, and South Korea. </li>
+<li>Asia Pacific Region 3: Asia Pacific zone 3, including the Philippines, India, Australia, and other countries and regions in Asia Pacific. </li>
+<li>Middle East: Middle East. </li>
+<li>Europe: Europe.</li>
+<li>North America: North America.</li>
+<li>South America: South America.</li>
+<li>Africa: Africa.</li>
+Default value: Chinese mainland.
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置Service region. Valid values:
-<li>Chinese Mainland</li>
-<li>Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand</li>
-<li>Asia Pacific Region 2: Taiwan (China), Japan, Malaysia, Indonesia, and South Korea</li>
-<li>Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions</li>
-<li>Middle East</li>
-<li>Europe</li>
-<li>North America</li>
-<li>South America</li>
-<li>Africa</li>
-Default value: Chinese Mainland
-                     * @param _area Service region. Valid values:
-<li>Chinese Mainland</li>
-<li>Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand</li>
-<li>Asia Pacific Region 2: Taiwan (China), Japan, Malaysia, Indonesia, and South Korea</li>
-<li>Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions</li>
-<li>Middle East</li>
-<li>Europe</li>
-<li>North America</li>
-<li>South America</li>
-<li>Africa</li>
-Default value: Chinese Mainland
+                     * 设置Service area. Valid values:
+<li>Chinese Mainland: Chinese mainland.</li>
+<li>Asia Pacific Region 1: Asia Pacific zone 1, including Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand. </li>
+<li>Asia Pacific Region 2: Asia Pacific zone 2, including Taiwan (China), Japan, Malaysia, Indonesia, and South Korea. </li>
+<li>Asia Pacific Region 3: Asia Pacific zone 3, including the Philippines, India, Australia, and other countries and regions in Asia Pacific. </li>
+<li>Middle East: Middle East. </li>
+<li>Europe: Europe.</li>
+<li>North America: North America.</li>
+<li>South America: South America.</li>
+<li>Africa: Africa.</li>
+Default value: Chinese mainland.
+                     * @param _area Service area. Valid values:
+<li>Chinese Mainland: Chinese mainland.</li>
+<li>Asia Pacific Region 1: Asia Pacific zone 1, including Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand. </li>
+<li>Asia Pacific Region 2: Asia Pacific zone 2, including Taiwan (China), Japan, Malaysia, Indonesia, and South Korea. </li>
+<li>Asia Pacific Region 3: Asia Pacific zone 3, including the Philippines, India, Australia, and other countries and regions in Asia Pacific. </li>
+<li>Middle East: Middle East. </li>
+<li>Europe: Europe.</li>
+<li>North America: North America.</li>
+<li>South America: South America.</li>
+<li>Africa: Africa.</li>
+Default value: Chinese mainland.
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -229,151 +229,151 @@ Default value: Chinese Mainland
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取District where users are located. When `Area` is `Chinese Mainland`, valid values for `Districts` are as follows. Otherwise, `Districts` can be ignored.
-<li>Beijing</li>
-<li>Inner Mongolia</li>
-<li>Shanxi</li>
-<li>Hebei</li>
-<li>Tianjin</li>
-<li>Ningxia</li>
-<li>Shaanxi</li>
-<li>Gansu</li>
-<li>Qinghai</li>
-<li>Xinjiang</li>
-<li>Heilongjiang</li>
-<li>Jilin</li>
-<li>Liaoning</li>
-<li>Fujian</li>
-<li>Jiangsu</li>
-<li>Anhui</li>
-<li>Shandong</li>
-<li>Shanghai</li>
-<li>Zhejiang</li>
-<li>Henan</li>
-<li>Hubei</li>
-<li>Jiangxi</li>
-<li>Hunan</li>
-<li>Guizhou</li>
-<li>Yunnan</li>
-<li>Chongqing</li>
-<li>Sichuan</li>
-<li>Xizang</li>
-<li>Guangdong</li>
-<li>Guangxi</li>
-<li>Hainan</li>
-<li>Hong Kong, Macao and Taiwan</li>
-<li>Outside Chinese Mainland</li>
-<li>Other</li>
-                     * @return Districts District where users are located. When `Area` is `Chinese Mainland`, valid values for `Districts` are as follows. Otherwise, `Districts` can be ignored.
-<li>Beijing</li>
-<li>Inner Mongolia</li>
-<li>Shanxi</li>
-<li>Hebei</li>
-<li>Tianjin</li>
-<li>Ningxia</li>
-<li>Shaanxi</li>
-<li>Gansu</li>
-<li>Qinghai</li>
-<li>Xinjiang</li>
-<li>Heilongjiang</li>
-<li>Jilin</li>
-<li>Liaoning</li>
-<li>Fujian</li>
-<li>Jiangsu</li>
-<li>Anhui</li>
-<li>Shandong</li>
-<li>Shanghai</li>
-<li>Zhejiang</li>
-<li>Henan</li>
-<li>Hubei</li>
-<li>Jiangxi</li>
-<li>Hunan</li>
-<li>Guizhou</li>
-<li>Yunnan</li>
-<li>Chongqing</li>
-<li>Sichuan</li>
-<li>Xizang</li>
-<li>Guangdong</li>
-<li>Guangxi</li>
-<li>Hainan</li>
-<li>Hong Kong, Macao and Taiwan</li>
-<li>Outside Chinese Mainland</li>
-<li>Other</li>
+                     * 获取User's located region. When Area is Chinese Mainland, the value is the following region information. When Area is other values, the Districts parameter is ignored.
+<li>Beijing: Beijing.</li>
+<li>Inner Mongolia: Inner Mongolia.</li>
+<li>Shanxi: Shanxi.</li>
+<li>Hebei: Hebei.</li>
+<li>Tianjin: Tianjin.</li>
+<li>Ningxia: Ningxia.</li>
+<li>Shaanxi: Shaanxi.</li>
+<li>Gansu: Gansu.</li>
+<li>Qinghai: Qinghai.</li>
+<li>Xinjiang: Xinjiang.</li>
+<li>Heilongjiang: Heilongjiang.</li>
+<li>Jilin: Jilin.</li>
+<li>Liaoning: Liaoning.</li>
+<li>Fujian: Fujian.</li>
+<li>Jiangsu: Jiangsu.</li>
+<li>Anhui: Anhui.</li>
+<li>Shandong: Shandong.</li>
+<li>Shanghai: Shanghai.</li>
+<li>Zhejiang: Zhejiang.</li>
+<li>Henan: Henan.</li>
+<li>Hubei: Hubei.</li>
+<li>Jiangxi: Jiangxi.</li>
+<li>Hu’nan: Hunan.</li>
+<li>Guizhou: Guizhou.</li>
+<li>Yunnan: Yunnan.</li>
+<li>Chongqing: Chongqing.</li>
+<li>Sichuan: Sichuan.</li>
+<li>Xizang: Tibet.</li>
+<li>Guangdong: Guangdong.</li>
+<li>Guangxi: Guangxi.</li>
+<li>Hainan: Hainan.</li>
+<li>Hong Kong, Macao and Taiwan: Hong Kong (China), Macao (China), and Taiwan (China).</li>
+<li>Outside Chinese Mainland: overseas.</li>
+<li>Other: Other.</li>
+                     * @return Districts User's located region. When Area is Chinese Mainland, the value is the following region information. When Area is other values, the Districts parameter is ignored.
+<li>Beijing: Beijing.</li>
+<li>Inner Mongolia: Inner Mongolia.</li>
+<li>Shanxi: Shanxi.</li>
+<li>Hebei: Hebei.</li>
+<li>Tianjin: Tianjin.</li>
+<li>Ningxia: Ningxia.</li>
+<li>Shaanxi: Shaanxi.</li>
+<li>Gansu: Gansu.</li>
+<li>Qinghai: Qinghai.</li>
+<li>Xinjiang: Xinjiang.</li>
+<li>Heilongjiang: Heilongjiang.</li>
+<li>Jilin: Jilin.</li>
+<li>Liaoning: Liaoning.</li>
+<li>Fujian: Fujian.</li>
+<li>Jiangsu: Jiangsu.</li>
+<li>Anhui: Anhui.</li>
+<li>Shandong: Shandong.</li>
+<li>Shanghai: Shanghai.</li>
+<li>Zhejiang: Zhejiang.</li>
+<li>Henan: Henan.</li>
+<li>Hubei: Hubei.</li>
+<li>Jiangxi: Jiangxi.</li>
+<li>Hu’nan: Hunan.</li>
+<li>Guizhou: Guizhou.</li>
+<li>Yunnan: Yunnan.</li>
+<li>Chongqing: Chongqing.</li>
+<li>Sichuan: Sichuan.</li>
+<li>Xizang: Tibet.</li>
+<li>Guangdong: Guangdong.</li>
+<li>Guangxi: Guangxi.</li>
+<li>Hainan: Hainan.</li>
+<li>Hong Kong, Macao and Taiwan: Hong Kong (China), Macao (China), and Taiwan (China).</li>
+<li>Outside Chinese Mainland: overseas.</li>
+<li>Other: Other.</li>
                      * 
                      */
                     std::vector<std::string> GetDistricts() const;
 
                     /**
-                     * 设置District where users are located. When `Area` is `Chinese Mainland`, valid values for `Districts` are as follows. Otherwise, `Districts` can be ignored.
-<li>Beijing</li>
-<li>Inner Mongolia</li>
-<li>Shanxi</li>
-<li>Hebei</li>
-<li>Tianjin</li>
-<li>Ningxia</li>
-<li>Shaanxi</li>
-<li>Gansu</li>
-<li>Qinghai</li>
-<li>Xinjiang</li>
-<li>Heilongjiang</li>
-<li>Jilin</li>
-<li>Liaoning</li>
-<li>Fujian</li>
-<li>Jiangsu</li>
-<li>Anhui</li>
-<li>Shandong</li>
-<li>Shanghai</li>
-<li>Zhejiang</li>
-<li>Henan</li>
-<li>Hubei</li>
-<li>Jiangxi</li>
-<li>Hunan</li>
-<li>Guizhou</li>
-<li>Yunnan</li>
-<li>Chongqing</li>
-<li>Sichuan</li>
-<li>Xizang</li>
-<li>Guangdong</li>
-<li>Guangxi</li>
-<li>Hainan</li>
-<li>Hong Kong, Macao and Taiwan</li>
-<li>Outside Chinese Mainland</li>
-<li>Other</li>
-                     * @param _districts District where users are located. When `Area` is `Chinese Mainland`, valid values for `Districts` are as follows. Otherwise, `Districts` can be ignored.
-<li>Beijing</li>
-<li>Inner Mongolia</li>
-<li>Shanxi</li>
-<li>Hebei</li>
-<li>Tianjin</li>
-<li>Ningxia</li>
-<li>Shaanxi</li>
-<li>Gansu</li>
-<li>Qinghai</li>
-<li>Xinjiang</li>
-<li>Heilongjiang</li>
-<li>Jilin</li>
-<li>Liaoning</li>
-<li>Fujian</li>
-<li>Jiangsu</li>
-<li>Anhui</li>
-<li>Shandong</li>
-<li>Shanghai</li>
-<li>Zhejiang</li>
-<li>Henan</li>
-<li>Hubei</li>
-<li>Jiangxi</li>
-<li>Hunan</li>
-<li>Guizhou</li>
-<li>Yunnan</li>
-<li>Chongqing</li>
-<li>Sichuan</li>
-<li>Xizang</li>
-<li>Guangdong</li>
-<li>Guangxi</li>
-<li>Hainan</li>
-<li>Hong Kong, Macao and Taiwan</li>
-<li>Outside Chinese Mainland</li>
-<li>Other</li>
+                     * 设置User's located region. When Area is Chinese Mainland, the value is the following region information. When Area is other values, the Districts parameter is ignored.
+<li>Beijing: Beijing.</li>
+<li>Inner Mongolia: Inner Mongolia.</li>
+<li>Shanxi: Shanxi.</li>
+<li>Hebei: Hebei.</li>
+<li>Tianjin: Tianjin.</li>
+<li>Ningxia: Ningxia.</li>
+<li>Shaanxi: Shaanxi.</li>
+<li>Gansu: Gansu.</li>
+<li>Qinghai: Qinghai.</li>
+<li>Xinjiang: Xinjiang.</li>
+<li>Heilongjiang: Heilongjiang.</li>
+<li>Jilin: Jilin.</li>
+<li>Liaoning: Liaoning.</li>
+<li>Fujian: Fujian.</li>
+<li>Jiangsu: Jiangsu.</li>
+<li>Anhui: Anhui.</li>
+<li>Shandong: Shandong.</li>
+<li>Shanghai: Shanghai.</li>
+<li>Zhejiang: Zhejiang.</li>
+<li>Henan: Henan.</li>
+<li>Hubei: Hubei.</li>
+<li>Jiangxi: Jiangxi.</li>
+<li>Hu’nan: Hunan.</li>
+<li>Guizhou: Guizhou.</li>
+<li>Yunnan: Yunnan.</li>
+<li>Chongqing: Chongqing.</li>
+<li>Sichuan: Sichuan.</li>
+<li>Xizang: Tibet.</li>
+<li>Guangdong: Guangdong.</li>
+<li>Guangxi: Guangxi.</li>
+<li>Hainan: Hainan.</li>
+<li>Hong Kong, Macao and Taiwan: Hong Kong (China), Macao (China), and Taiwan (China).</li>
+<li>Outside Chinese Mainland: overseas.</li>
+<li>Other: Other.</li>
+                     * @param _districts User's located region. When Area is Chinese Mainland, the value is the following region information. When Area is other values, the Districts parameter is ignored.
+<li>Beijing: Beijing.</li>
+<li>Inner Mongolia: Inner Mongolia.</li>
+<li>Shanxi: Shanxi.</li>
+<li>Hebei: Hebei.</li>
+<li>Tianjin: Tianjin.</li>
+<li>Ningxia: Ningxia.</li>
+<li>Shaanxi: Shaanxi.</li>
+<li>Gansu: Gansu.</li>
+<li>Qinghai: Qinghai.</li>
+<li>Xinjiang: Xinjiang.</li>
+<li>Heilongjiang: Heilongjiang.</li>
+<li>Jilin: Jilin.</li>
+<li>Liaoning: Liaoning.</li>
+<li>Fujian: Fujian.</li>
+<li>Jiangsu: Jiangsu.</li>
+<li>Anhui: Anhui.</li>
+<li>Shandong: Shandong.</li>
+<li>Shanghai: Shanghai.</li>
+<li>Zhejiang: Zhejiang.</li>
+<li>Henan: Henan.</li>
+<li>Hubei: Hubei.</li>
+<li>Jiangxi: Jiangxi.</li>
+<li>Hu’nan: Hunan.</li>
+<li>Guizhou: Guizhou.</li>
+<li>Yunnan: Yunnan.</li>
+<li>Chongqing: Chongqing.</li>
+<li>Sichuan: Sichuan.</li>
+<li>Xizang: Tibet.</li>
+<li>Guangdong: Guangdong.</li>
+<li>Guangxi: Guangxi.</li>
+<li>Hainan: Hainan.</li>
+<li>Hong Kong, Macao and Taiwan: Hong Kong (China), Macao (China), and Taiwan (China).</li>
+<li>Outside Chinese Mainland: overseas.</li>
+<li>Other: Other.</li>
                      * 
                      */
                     void SetDistricts(const std::vector<std::string>& _districts);
@@ -386,47 +386,47 @@ Default value: Chinese Mainland
                     bool DistrictsHasBeenSet() const;
 
                     /**
-                     * 获取ISP of users. When `Area` is `Chinese Mainland`, valid values for `Isps` are as follows. Otherwise, `Isps` can be ignored.
-<li>China Telecom</li>
-<li>China Unicom</li>
-<li>CERNET</li>
-<li>Great Wall Broadband Network</li>
-<li>China Mobile</li>
-<li>China Mobile Tietong</li>
-<li>ISPs outside Chinese Mainland</li>
-<li>Other ISPs</li>
-                     * @return Isps ISP of users. When `Area` is `Chinese Mainland`, valid values for `Isps` are as follows. Otherwise, `Isps` can be ignored.
-<li>China Telecom</li>
-<li>China Unicom</li>
-<li>CERNET</li>
-<li>Great Wall Broadband Network</li>
-<li>China Mobile</li>
-<li>China Mobile Tietong</li>
-<li>ISPs outside Chinese Mainland</li>
-<li>Other ISPs</li>
+                     * 获取User's Operator Information. When Area is Chinese Mainland, the value is the following carrier information. When Area is other values, ignore the Isps parameter.
+<li>China Telecom: China Telecom.</li>
+<li>China Unicom: China Unicom. </li>
+<li>CERNET: China Education Network.</li>
+<li>Great Wall Broadband Network: Great Wall Broadband.</li>
+<li>China Mobile: China Mobile.</li>
+<li>China Mobile Tietong: China Tietong.</li>
+<li>ISPs outside Chinese Mainland: overseas carriers.</li>
+<li>Other ISPs: other ISPs.</li>
+                     * @return Isps User's Operator Information. When Area is Chinese Mainland, the value is the following carrier information. When Area is other values, ignore the Isps parameter.
+<li>China Telecom: China Telecom.</li>
+<li>China Unicom: China Unicom. </li>
+<li>CERNET: China Education Network.</li>
+<li>Great Wall Broadband Network: Great Wall Broadband.</li>
+<li>China Mobile: China Mobile.</li>
+<li>China Mobile Tietong: China Tietong.</li>
+<li>ISPs outside Chinese Mainland: overseas carriers.</li>
+<li>Other ISPs: other ISPs.</li>
                      * 
                      */
                     std::vector<std::string> GetIsps() const;
 
                     /**
-                     * 设置ISP of users. When `Area` is `Chinese Mainland`, valid values for `Isps` are as follows. Otherwise, `Isps` can be ignored.
-<li>China Telecom</li>
-<li>China Unicom</li>
-<li>CERNET</li>
-<li>Great Wall Broadband Network</li>
-<li>China Mobile</li>
-<li>China Mobile Tietong</li>
-<li>ISPs outside Chinese Mainland</li>
-<li>Other ISPs</li>
-                     * @param _isps ISP of users. When `Area` is `Chinese Mainland`, valid values for `Isps` are as follows. Otherwise, `Isps` can be ignored.
-<li>China Telecom</li>
-<li>China Unicom</li>
-<li>CERNET</li>
-<li>Great Wall Broadband Network</li>
-<li>China Mobile</li>
-<li>China Mobile Tietong</li>
-<li>ISPs outside Chinese Mainland</li>
-<li>Other ISPs</li>
+                     * 设置User's Operator Information. When Area is Chinese Mainland, the value is the following carrier information. When Area is other values, ignore the Isps parameter.
+<li>China Telecom: China Telecom.</li>
+<li>China Unicom: China Unicom. </li>
+<li>CERNET: China Education Network.</li>
+<li>Great Wall Broadband Network: Great Wall Broadband.</li>
+<li>China Mobile: China Mobile.</li>
+<li>China Mobile Tietong: China Tietong.</li>
+<li>ISPs outside Chinese Mainland: overseas carriers.</li>
+<li>Other ISPs: other ISPs.</li>
+                     * @param _isps User's Operator Information. When Area is Chinese Mainland, the value is the following carrier information. When Area is other values, ignore the Isps parameter.
+<li>China Telecom: China Telecom.</li>
+<li>China Unicom: China Unicom. </li>
+<li>CERNET: China Education Network.</li>
+<li>Great Wall Broadband Network: Great Wall Broadband.</li>
+<li>China Mobile: China Mobile.</li>
+<li>China Mobile Tietong: China Tietong.</li>
+<li>ISPs outside Chinese Mainland: overseas carriers.</li>
+<li>Other ISPs: other ISPs.</li>
                      * 
                      */
                     void SetIsps(const std::vector<std::string>& _isps);
@@ -439,27 +439,27 @@ Default value: Chinese Mainland
                     bool IspsHasBeenSet() const;
 
                     /**
-                     * 获取Time granularity of every piece of data in minutes. Valid values:
-<li>5: 5-minute granularity. The data at 5-minute granularity in the query period will be returned.</li>
-<li>1440: 1-day granularity. The data at 1-day granularity in the query period will be returned. If the query period is larger than 24 hours, only data at 1-day granularity can be queried.</li>
-If the difference between `StartTime` and `EndTime` is larger than 24 hours, the default value of `DataInterval` is 1440.
-                     * @return DataInterval Time granularity of every piece of data in minutes. Valid values:
-<li>5: 5-minute granularity. The data at 5-minute granularity in the query period will be returned.</li>
-<li>1440: 1-day granularity. The data at 1-day granularity in the query period will be returned. If the query period is larger than 24 hours, only data at 1-day granularity can be queried.</li>
-If the difference between `StartTime` and `EndTime` is larger than 24 hours, the default value of `DataInterval` is 1440.
+                     * 获取Time granularity of each data entry. Unit: minute. Valid values:
+<li>5: 5 minutes. Return detailed data at a 5-minute granularity within the specified query time.</li>
+<li>1440: day granularity, returns data at 1-day granularity within the specified query time. If the duration between the start time and end time is more than 24 hours, only day granularity data is supported.</li>
+When the time span between StartTime and EndTime is more than 24 hours, DataInterval defaults to 1440.
+                     * @return DataInterval Time granularity of each data entry. Unit: minute. Valid values:
+<li>5: 5 minutes. Return detailed data at a 5-minute granularity within the specified query time.</li>
+<li>1440: day granularity, returns data at 1-day granularity within the specified query time. If the duration between the start time and end time is more than 24 hours, only day granularity data is supported.</li>
+When the time span between StartTime and EndTime is more than 24 hours, DataInterval defaults to 1440.
                      * 
                      */
                     uint64_t GetDataInterval() const;
 
                     /**
-                     * 设置Time granularity of every piece of data in minutes. Valid values:
-<li>5: 5-minute granularity. The data at 5-minute granularity in the query period will be returned.</li>
-<li>1440: 1-day granularity. The data at 1-day granularity in the query period will be returned. If the query period is larger than 24 hours, only data at 1-day granularity can be queried.</li>
-If the difference between `StartTime` and `EndTime` is larger than 24 hours, the default value of `DataInterval` is 1440.
-                     * @param _dataInterval Time granularity of every piece of data in minutes. Valid values:
-<li>5: 5-minute granularity. The data at 5-minute granularity in the query period will be returned.</li>
-<li>1440: 1-day granularity. The data at 1-day granularity in the query period will be returned. If the query period is larger than 24 hours, only data at 1-day granularity can be queried.</li>
-If the difference between `StartTime` and `EndTime` is larger than 24 hours, the default value of `DataInterval` is 1440.
+                     * 设置Time granularity of each data entry. Unit: minute. Valid values:
+<li>5: 5 minutes. Return detailed data at a 5-minute granularity within the specified query time.</li>
+<li>1440: day granularity, returns data at 1-day granularity within the specified query time. If the duration between the start time and end time is more than 24 hours, only day granularity data is supported.</li>
+When the time span between StartTime and EndTime is more than 24 hours, DataInterval defaults to 1440.
+                     * @param _dataInterval Time granularity of each data entry. Unit: minute. Valid values:
+<li>5: 5 minutes. Return detailed data at a 5-minute granularity within the specified query time.</li>
+<li>1440: day granularity, returns data at 1-day granularity within the specified query time. If the duration between the start time and end time is more than 24 hours, only day granularity data is supported.</li>
+When the time span between StartTime and EndTime is more than 24 hours, DataInterval defaults to 1440.
                      * 
                      */
                     void SetDataInterval(const uint64_t& _dataInterval);
@@ -474,115 +474,115 @@ If the difference between `StartTime` and `EndTime` is larger than 24 hours, the
                 private:
 
                     /**
-                     * Query indicators, the values u200bu200bare:
-<li>Traffic: traffic, unit is Byte. </li>
-<li>Bandwidth: Bandwidth, unit is Bps. </li>
-<li>Requests: Number of requests. </li>
-<li>QUICRequests: Number of QUIC requests. </li>
-<li>IpVisit: Number of IP visits. </li>
+                     * Queried metric. Valid values:
+<li>Traffic: Total Traffic, in bytes.</li>
+<li>Bandwidth: bandwidth, in Bps.</li>
+<li>Requests: request count.</li>
+<li>QUICRequests: number of QUIC requests.</li>
+<li>IpVisit: number of IP visits.</li>
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * Start time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * Start time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * End time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?lang=en&pg=).
+                     * End time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * List of domain names. The usage data of up to 20 domain names can be queried at a time. The usage data of all domain names is returned by default.
+                     * Domain name list. Up to 20 domain names can be queried for data at a time. By default, the combined usage data of all domain names is returned.
                      */
                     std::vector<std::string> m_domainNames;
                     bool m_domainNamesHasBeenSet;
 
                     /**
-                     * Service region. Valid values:
-<li>Chinese Mainland</li>
-<li>Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand</li>
-<li>Asia Pacific Region 2: Taiwan (China), Japan, Malaysia, Indonesia, and South Korea</li>
-<li>Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions</li>
-<li>Middle East</li>
-<li>Europe</li>
-<li>North America</li>
-<li>South America</li>
-<li>Africa</li>
-Default value: Chinese Mainland
+                     * Service area. Valid values:
+<li>Chinese Mainland: Chinese mainland.</li>
+<li>Asia Pacific Region 1: Asia Pacific zone 1, including Hong Kong (China), Macao (China), Singapore, Vietnam, and Thailand. </li>
+<li>Asia Pacific Region 2: Asia Pacific zone 2, including Taiwan (China), Japan, Malaysia, Indonesia, and South Korea. </li>
+<li>Asia Pacific Region 3: Asia Pacific zone 3, including the Philippines, India, Australia, and other countries and regions in Asia Pacific. </li>
+<li>Middle East: Middle East. </li>
+<li>Europe: Europe.</li>
+<li>North America: North America.</li>
+<li>South America: South America.</li>
+<li>Africa: Africa.</li>
+Default value: Chinese mainland.
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * District where users are located. When `Area` is `Chinese Mainland`, valid values for `Districts` are as follows. Otherwise, `Districts` can be ignored.
-<li>Beijing</li>
-<li>Inner Mongolia</li>
-<li>Shanxi</li>
-<li>Hebei</li>
-<li>Tianjin</li>
-<li>Ningxia</li>
-<li>Shaanxi</li>
-<li>Gansu</li>
-<li>Qinghai</li>
-<li>Xinjiang</li>
-<li>Heilongjiang</li>
-<li>Jilin</li>
-<li>Liaoning</li>
-<li>Fujian</li>
-<li>Jiangsu</li>
-<li>Anhui</li>
-<li>Shandong</li>
-<li>Shanghai</li>
-<li>Zhejiang</li>
-<li>Henan</li>
-<li>Hubei</li>
-<li>Jiangxi</li>
-<li>Hunan</li>
-<li>Guizhou</li>
-<li>Yunnan</li>
-<li>Chongqing</li>
-<li>Sichuan</li>
-<li>Xizang</li>
-<li>Guangdong</li>
-<li>Guangxi</li>
-<li>Hainan</li>
-<li>Hong Kong, Macao and Taiwan</li>
-<li>Outside Chinese Mainland</li>
-<li>Other</li>
+                     * User's located region. When Area is Chinese Mainland, the value is the following region information. When Area is other values, the Districts parameter is ignored.
+<li>Beijing: Beijing.</li>
+<li>Inner Mongolia: Inner Mongolia.</li>
+<li>Shanxi: Shanxi.</li>
+<li>Hebei: Hebei.</li>
+<li>Tianjin: Tianjin.</li>
+<li>Ningxia: Ningxia.</li>
+<li>Shaanxi: Shaanxi.</li>
+<li>Gansu: Gansu.</li>
+<li>Qinghai: Qinghai.</li>
+<li>Xinjiang: Xinjiang.</li>
+<li>Heilongjiang: Heilongjiang.</li>
+<li>Jilin: Jilin.</li>
+<li>Liaoning: Liaoning.</li>
+<li>Fujian: Fujian.</li>
+<li>Jiangsu: Jiangsu.</li>
+<li>Anhui: Anhui.</li>
+<li>Shandong: Shandong.</li>
+<li>Shanghai: Shanghai.</li>
+<li>Zhejiang: Zhejiang.</li>
+<li>Henan: Henan.</li>
+<li>Hubei: Hubei.</li>
+<li>Jiangxi: Jiangxi.</li>
+<li>Hu’nan: Hunan.</li>
+<li>Guizhou: Guizhou.</li>
+<li>Yunnan: Yunnan.</li>
+<li>Chongqing: Chongqing.</li>
+<li>Sichuan: Sichuan.</li>
+<li>Xizang: Tibet.</li>
+<li>Guangdong: Guangdong.</li>
+<li>Guangxi: Guangxi.</li>
+<li>Hainan: Hainan.</li>
+<li>Hong Kong, Macao and Taiwan: Hong Kong (China), Macao (China), and Taiwan (China).</li>
+<li>Outside Chinese Mainland: overseas.</li>
+<li>Other: Other.</li>
                      */
                     std::vector<std::string> m_districts;
                     bool m_districtsHasBeenSet;
 
                     /**
-                     * ISP of users. When `Area` is `Chinese Mainland`, valid values for `Isps` are as follows. Otherwise, `Isps` can be ignored.
-<li>China Telecom</li>
-<li>China Unicom</li>
-<li>CERNET</li>
-<li>Great Wall Broadband Network</li>
-<li>China Mobile</li>
-<li>China Mobile Tietong</li>
-<li>ISPs outside Chinese Mainland</li>
-<li>Other ISPs</li>
+                     * User's Operator Information. When Area is Chinese Mainland, the value is the following carrier information. When Area is other values, ignore the Isps parameter.
+<li>China Telecom: China Telecom.</li>
+<li>China Unicom: China Unicom. </li>
+<li>CERNET: China Education Network.</li>
+<li>Great Wall Broadband Network: Great Wall Broadband.</li>
+<li>China Mobile: China Mobile.</li>
+<li>China Mobile Tietong: China Tietong.</li>
+<li>ISPs outside Chinese Mainland: overseas carriers.</li>
+<li>Other ISPs: other ISPs.</li>
                      */
                     std::vector<std::string> m_isps;
                     bool m_ispsHasBeenSet;
 
                     /**
-                     * Time granularity of every piece of data in minutes. Valid values:
-<li>5: 5-minute granularity. The data at 5-minute granularity in the query period will be returned.</li>
-<li>1440: 1-day granularity. The data at 1-day granularity in the query period will be returned. If the query period is larger than 24 hours, only data at 1-day granularity can be queried.</li>
-If the difference between `StartTime` and `EndTime` is larger than 24 hours, the default value of `DataInterval` is 1440.
+                     * Time granularity of each data entry. Unit: minute. Valid values:
+<li>5: 5 minutes. Return detailed data at a 5-minute granularity within the specified query time.</li>
+<li>1440: day granularity, returns data at 1-day granularity within the specified query time. If the duration between the start time and end time is more than 24 hours, only day granularity data is supported.</li>
+When the time span between StartTime and EndTime is more than 24 hours, DataInterval defaults to 1440.
                      */
                     uint64_t m_dataInterval;
                     bool m_dataIntervalHasBeenSet;

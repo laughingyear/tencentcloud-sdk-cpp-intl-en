@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Domain name
-                     * @return Domain Domain name
+                     * 获取<p>Domain name.</p>
+                     * @return Domain <p>Domain name.</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置Domain name
-                     * @param _domain Domain name
+                     * 设置<p>Domain name.</p>
+                     * @param _domain <p>Domain name.</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取The operation type of this API call, optional value:
-<li>Set: Set the certificate required for the domain name HTTPS;</li>
-<li>Clear: Clear the domain name HTTPS configuration, after clearing, the domain name cannot support </li>
-                     * @return Operation The operation type of this API call, optional value:
-<li>Set: Set the certificate required for the domain name HTTPS;</li>
-<li>Clear: Clear the domain name HTTPS configuration, after clearing, the domain name cannot support </li>
+                     * 获取<p>Operation type of this API call. Available values:</p><li>Set: certificate required for setting domain HTTPS;</li><li>Clear: clear domain HTTPS configuration. After clearance, the domain cannot support HTTPS access.</li>
+                     * @return Operation <p>Operation type of this API call. Available values:</p><li>Set: certificate required for setting domain HTTPS;</li><li>Clear: clear domain HTTPS configuration. After clearance, the domain cannot support HTTPS access.</li>
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置The operation type of this API call, optional value:
-<li>Set: Set the certificate required for the domain name HTTPS;</li>
-<li>Clear: Clear the domain name HTTPS configuration, after clearing, the domain name cannot support </li>
-                     * @param _operation The operation type of this API call, optional value:
-<li>Set: Set the certificate required for the domain name HTTPS;</li>
-<li>Clear: Clear the domain name HTTPS configuration, after clearing, the domain name cannot support </li>
+                     * 设置<p>Operation type of this API call. Available values:</p><li>Set: certificate required for setting domain HTTPS;</li><li>Clear: clear domain HTTPS configuration. After clearance, the domain cannot support HTTPS access.</li>
+                     * @param _operation <p>Operation type of this API call. Available values:</p><li>Set: certificate required for setting domain HTTPS;</li><li>Clear: clear domain HTTPS configuration. After clearance, the domain cannot support HTTPS access.</li>
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @return SubAppId <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @param _subAppId <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取[Tencent Cloud SSL](https://intl.cloud.tencent.com/document/product/400/7572?from_cn_redirect=1) uploaded certificate ID. No need to fill in this field when clearing domain HTTPS configuration
-                     * @return CertID [Tencent Cloud SSL](https://intl.cloud.tencent.com/document/product/400/7572?from_cn_redirect=1) uploaded certificate ID. No need to fill in this field when clearing domain HTTPS configuration
+                     * 获取<p>ID of the certificate uploaded to <a href="https://www.tencentcloud.com/document/product/400/7572?from_cn_redirect=1">Tencent Cloud SSL</a>. This field is not required when clearing domain HTTPS configuration.</p>
+                     * @return CertID <p>ID of the certificate uploaded to <a href="https://www.tencentcloud.com/document/product/400/7572?from_cn_redirect=1">Tencent Cloud SSL</a>. This field is not required when clearing domain HTTPS configuration.</p>
                      * 
                      */
                     std::string GetCertID() const;
 
                     /**
-                     * 设置[Tencent Cloud SSL](https://intl.cloud.tencent.com/document/product/400/7572?from_cn_redirect=1) uploaded certificate ID. No need to fill in this field when clearing domain HTTPS configuration
-                     * @param _certID [Tencent Cloud SSL](https://intl.cloud.tencent.com/document/product/400/7572?from_cn_redirect=1) uploaded certificate ID. No need to fill in this field when clearing domain HTTPS configuration
+                     * 设置<p>ID of the certificate uploaded to <a href="https://www.tencentcloud.com/document/product/400/7572?from_cn_redirect=1">Tencent Cloud SSL</a>. This field is not required when clearing domain HTTPS configuration.</p>
+                     * @param _certID <p>ID of the certificate uploaded to <a href="https://www.tencentcloud.com/document/product/400/7572?from_cn_redirect=1">Tencent Cloud SSL</a>. This field is not required when clearing domain HTTPS configuration.</p>
                      * 
                      */
                     void SetCertID(const std::string& _certID);
@@ -137,27 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Domain name
+                     * <p>Domain name.</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * The operation type of this API call, optional value:
-<li>Set: Set the certificate required for the domain name HTTPS;</li>
-<li>Clear: Clear the domain name HTTPS configuration, after clearing, the domain name cannot support </li>
+                     * <p>Operation type of this API call. Available values:</p><li>Set: certificate required for setting domain HTTPS;</li><li>Clear: clear domain HTTPS configuration. After clearance, the domain cannot support HTTPS access.</li>
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>On-demand <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * [Tencent Cloud SSL](https://intl.cloud.tencent.com/document/product/400/7572?from_cn_redirect=1) uploaded certificate ID. No need to fill in this field when clearing domain HTTPS configuration
+                     * <p>ID of the certificate uploaded to <a href="https://www.tencentcloud.com/document/product/400/7572?from_cn_redirect=1">Tencent Cloud SSL</a>. This field is not required when clearing domain HTTPS configuration.</p>
                      */
                     std::string m_certID;
                     bool m_certIDHasBeenSet;

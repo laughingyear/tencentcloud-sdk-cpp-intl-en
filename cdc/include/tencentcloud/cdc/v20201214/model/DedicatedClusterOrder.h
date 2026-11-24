@@ -71,84 +71,84 @@ namespace TencentCloud
                     /**
                      * 获取CDC type id (moved to the next level, obsolete and will be deleted later)
                      * @return DedicatedClusterTypeId CDC type id (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     std::string GetDedicatedClusterTypeId() const;
 
                     /**
                      * 设置CDC type id (moved to the next level, obsolete and will be deleted later)
                      * @param _dedicatedClusterTypeId CDC type id (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     void SetDedicatedClusterTypeId(const std::string& _dedicatedClusterTypeId);
 
                     /**
                      * 判断参数 DedicatedClusterTypeId 是否已赋值
                      * @return DedicatedClusterTypeId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DedicatedClusterTypeIdHasBeenSet() const;
 
                     /**
                      * 获取List of supported storage types (moved to the next level, obsolete and will be deleted later)
                      * @return SupportedStorageType List of supported storage types (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedStorageType() const;
 
                     /**
                      * 设置List of supported storage types (moved to the next level, obsolete and will be deleted later)
                      * @param _supportedStorageType List of supported storage types (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedStorageType(const std::vector<std::string>& _supportedStorageType);
 
                     /**
                      * 判断参数 SupportedStorageType 是否已赋值
                      * @return SupportedStorageType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedStorageTypeHasBeenSet() const;
 
                     /**
                      * 获取Supported uplink switch transmission rate (GiB) (moved to the next level, obsolete and will be deleted later)
                      * @return SupportedUplinkSpeed Supported uplink switch transmission rate (GiB) (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetSupportedUplinkSpeed() const;
 
                     /**
                      * 设置Supported uplink switch transmission rate (GiB) (moved to the next level, obsolete and will be deleted later)
                      * @param _supportedUplinkSpeed Supported uplink switch transmission rate (GiB) (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedUplinkSpeed(const std::vector<int64_t>& _supportedUplinkSpeed);
 
                     /**
                      * 判断参数 SupportedUplinkSpeed 是否已赋值
                      * @return SupportedUplinkSpeed 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedUplinkSpeedHasBeenSet() const;
 
                     /**
                      * 获取List of supported instance families (moved to the next level, obsolete and will be deleted later)
                      * @return SupportedInstanceFamily List of supported instance families (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedInstanceFamily() const;
 
                     /**
                      * 设置List of supported instance families (moved to the next level, obsolete and will be deleted later)
                      * @param _supportedInstanceFamily List of supported instance families (moved to the next level, obsolete and will be deleted later)
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedInstanceFamily(const std::vector<std::string>& _supportedInstanceFamily);
 
                     /**
                      * 判断参数 SupportedInstanceFamily 是否已赋值
                      * @return SupportedInstanceFamily 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedInstanceFamilyHasBeenSet() const;
 

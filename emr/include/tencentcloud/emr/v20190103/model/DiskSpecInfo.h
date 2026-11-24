@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Node disk information
+                * Node disk information.
                 */
                 class DiskSpecInfo : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The number of disks.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Count The number of disks.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Number of disks.
+                     * @return Count Number of disks.
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置The number of disks.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _count The number of disks.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Number of disks.
+                     * @param _count Number of disks.
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -72,79 +68,99 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取The system disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
+                     * 获取System disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
 
-The data disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
-<li>`CLOUD_HSSD`: Enhanced SSD</li>
-<li>`CLOUD_THROUGHPUT`: Throughput HDD</li>
-<li>CLOUD_TSSD: ulTra SSD</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DiskType The system disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
+Data disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
 
-The data disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
-<li>`CLOUD_HSSD`: Enhanced SSD</li>
-<li>`CLOUD_THROUGHPUT`: Throughput HDD</li>
-<li>CLOUD_TSSD: ulTra SSD</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+<li>CLOUD_HSSD: Enhanced SSD</li>
+<li>CLOUD_THROUGHPUT: Throughput-Optimized Cloud Disk</li>
+<li>CLOUD_TSSD: Tremendous SSD</li>
+<li>CLOUD_BIGDATA: Big Data Cloud Disk</li>
+<li>CLOUD_HIGHIO: High-IO Cloud Disk</li>
+<li>CLOUD_BSSD: Balanced SSD</li>
+<li>REMOTE_SSD: Remote SSD Disk</li>
+
+                     * @return DiskType System disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
+
+Data disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
+
+<li>CLOUD_HSSD: Enhanced SSD</li>
+<li>CLOUD_THROUGHPUT: Throughput-Optimized Cloud Disk</li>
+<li>CLOUD_TSSD: Tremendous SSD</li>
+<li>CLOUD_BIGDATA: Big Data Cloud Disk</li>
+<li>CLOUD_HIGHIO: High-IO Cloud Disk</li>
+<li>CLOUD_BSSD: Balanced SSD</li>
+<li>REMOTE_SSD: Remote SSD Disk</li>
+
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置The system disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
+                     * 设置System disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
 
-The data disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
-<li>`CLOUD_HSSD`: Enhanced SSD</li>
-<li>`CLOUD_THROUGHPUT`: Throughput HDD</li>
-<li>CLOUD_TSSD: ulTra SSD</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _diskType The system disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
+Data disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
 
-The data disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
-<li>`CLOUD_HSSD`: Enhanced SSD</li>
-<li>`CLOUD_THROUGHPUT`: Throughput HDD</li>
-<li>CLOUD_TSSD: ulTra SSD</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+<li>CLOUD_HSSD: Enhanced SSD</li>
+<li>CLOUD_THROUGHPUT: Throughput-Optimized Cloud Disk</li>
+<li>CLOUD_TSSD: Tremendous SSD</li>
+<li>CLOUD_BIGDATA: Big Data Cloud Disk</li>
+<li>CLOUD_HIGHIO: High-IO Cloud Disk</li>
+<li>CLOUD_BSSD: Balanced SSD</li>
+<li>REMOTE_SSD: Remote SSD Disk</li>
+
+                     * @param _diskType System disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
+
+Data disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
+
+<li>CLOUD_HSSD: Enhanced SSD</li>
+<li>CLOUD_THROUGHPUT: Throughput-Optimized Cloud Disk</li>
+<li>CLOUD_TSSD: Tremendous SSD</li>
+<li>CLOUD_BIGDATA: Big Data Cloud Disk</li>
+<li>CLOUD_HIGHIO: High-IO Cloud Disk</li>
+<li>CLOUD_BSSD: Balanced SSD</li>
+<li>REMOTE_SSD: Remote SSD Disk</li>
+
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -157,19 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取The disk capacity in GB.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DiskSize The disk capacity in GB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Data capacity (GB).
+                     * @return DiskSize Data capacity (GB).
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置The disk capacity in GB.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _diskSize The disk capacity in GB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Data capacity (GB).
+                     * @param _diskSize Data capacity (GB).
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -181,43 +193,73 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取Additional performance.
+                     * @return ExtraPerformance Additional performance.
+                     * 
+                     */
+                    int64_t GetExtraPerformance() const;
+
+                    /**
+                     * 设置Additional performance.
+                     * @param _extraPerformance Additional performance.
+                     * 
+                     */
+                    void SetExtraPerformance(const int64_t& _extraPerformance);
+
+                    /**
+                     * 判断参数 ExtraPerformance 是否已赋值
+                     * @return ExtraPerformance 是否已赋值
+                     * 
+                     */
+                    bool ExtraPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The number of disks.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Number of disks.
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * The system disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
+                     * System disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
 
-The data disk type. Valid values:
-<li>`CLOUD_SSD`: Cloud SSD</li>
-<li>`CLOUD_PREMIUM`: Premium cloud disk</li>
-<li>`CLOUD_BASIC`: Cloud HDD</li>
-<li>`LOCAL_BASIC`: Local disk</li>
-<li>`LOCAL_SSD`: Local SSD</li>
-<li>`CLOUD_HSSD`: Enhanced SSD</li>
-<li>`CLOUD_THROUGHPUT`: Throughput HDD</li>
-<li>CLOUD_TSSD: ulTra SSD</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+Data disk type. Valid values:
+<li>CLOUD_SSD: Cloud SSD</li>
+<li>CLOUD_PREMIUM: Premium Disk</li>
+<li>CLOUD_BASIC: Cloud Basic Disk</li>
+<li>LOCAL_BASIC: Local Basic Disk</li>
+<li>LOCAL_SSD: Local SSD</li>
+
+<li>CLOUD_HSSD: Enhanced SSD</li>
+<li>CLOUD_THROUGHPUT: Throughput-Optimized Cloud Disk</li>
+<li>CLOUD_TSSD: Tremendous SSD</li>
+<li>CLOUD_BIGDATA: Big Data Cloud Disk</li>
+<li>CLOUD_HIGHIO: High-IO Cloud Disk</li>
+<li>CLOUD_BSSD: Balanced SSD</li>
+<li>REMOTE_SSD: Remote SSD Disk</li>
+
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * The disk capacity in GB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Data capacity (GB).
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * Additional performance.
+                     */
+                    int64_t m_extraPerformance;
+                    bool m_extraPerformanceHasBeenSet;
 
                 };
             }

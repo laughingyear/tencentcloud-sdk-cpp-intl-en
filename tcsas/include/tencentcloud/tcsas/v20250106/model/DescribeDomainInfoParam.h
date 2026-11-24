@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Domain information
+                * Response parameters for querying domain information.
                 */
                 class DescribeDomainInfoParam : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Multiple domain separators ';'
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DomainUrl Multiple domain separators ';'
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Multiple domains concatenated with semicolons (;). 
+                     * @return DomainUrl Multiple domains concatenated with semicolons (;). 
                      * 
                      */
                     std::string GetDomainUrl() const;
 
                     /**
-                     * 设置Multiple domain separators ';'
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _domainUrl Multiple domain separators ';'
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Multiple domains concatenated with semicolons (;). 
+                     * @param _domainUrl Multiple domains concatenated with semicolons (;). 
                      * 
                      */
                     void SetDomainUrl(const std::string& _domainUrl);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DomainUrlHasBeenSet() const;
 
                     /**
-                     * 获取Domain type 1-requests domain 2-WebView load domain
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DomainType Domain type 1-requests domain 2-WebView load domain
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Domain type. Valid values: 1 Requests domain; 2 web-view domain.
+                     * @return DomainType Domain type. Valid values: 1 Requests domain; 2 web-view domain.
                      * 
                      */
                     int64_t GetDomainType() const;
 
                     /**
-                     * 设置Domain type 1-requests domain 2-WebView load domain
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _domainType Domain type 1-requests domain 2-WebView load domain
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Domain type. Valid values: 1 Requests domain; 2 web-view domain.
+                     * @param _domainType Domain type. Valid values: 1 Requests domain; 2 web-view domain.
                      * 
                      */
                     void SetDomainType(const int64_t& _domainType);
@@ -99,15 +91,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Multiple domain separators ';'
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Multiple domains concatenated with semicolons (;). 
                      */
                     std::string m_domainUrl;
                     bool m_domainUrlHasBeenSet;
 
                     /**
-                     * Domain type 1-requests domain 2-WebView load domain
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Domain type. Valid values: 1 Requests domain; 2 web-view domain.
                      */
                     int64_t m_domainType;
                     bool m_domainTypeHasBeenSet;

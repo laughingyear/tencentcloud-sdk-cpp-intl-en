@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcsas/v20250106/model/MNPVersionSubPackageInfo.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result of the task to create a mini program version
+                * Response for querying the mini program version creation result.
                 */
                 class DescribeMNPVersionResp : public AbstractModel
                 {
@@ -47,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPId Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Mini program appid.</p>
+                     * @return MNPId <p>Mini program appid.</p>
                      * 
                      */
                     std::string GetMNPId() const;
 
                     /**
-                     * 设置Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPId Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Mini program appid.</p>
+                     * @param _mNPId <p>Mini program appid.</p>
                      * 
                      */
                     void SetMNPId(const std::string& _mNPId);
@@ -72,19 +69,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPIdHasBeenSet() const;
 
                     /**
-                     * 获取Task ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TaskId Task ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Task ID.</p>
+                     * @return TaskId <p>Task ID.</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置Task ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _taskId Task ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Task ID.</p>
+                     * @param _taskId <p>Task ID.</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -97,19 +90,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取1: Pending; 20: Running; 30: Failed; 60: Succeeded 
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TaskStatus 1: Pending; 20: Running; 30: Failed; 60: Succeeded 
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.
+                     * @return TaskStatus Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.
                      * 
                      */
                     int64_t GetTaskStatus() const;
 
                     /**
-                     * 设置1: Pending; 20: Running; 30: Failed; 60: Succeeded 
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _taskStatus 1: Pending; 20: Running; 30: Failed; 60: Succeeded 
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.
+                     * @param _taskStatus Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.
                      * 
                      */
                     void SetTaskStatus(const int64_t& _taskStatus);
@@ -122,19 +111,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取Task status message
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TaskMsg Task status message
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Task status information.</p>
+                     * @return TaskMsg <p>Task status information.</p>
                      * 
                      */
                     std::string GetTaskMsg() const;
 
                     /**
-                     * 设置Task status message
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _taskMsg Task status message
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Task status information.</p>
+                     * @param _taskMsg <p>Task status information.</p>
                      * 
                      */
                     void SetTaskMsg(const std::string& _taskMsg);
@@ -146,35 +131,139 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool TaskMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Mini program version ID (returned upon successful compilation).</p>
+                     * @return MNPVersionId <p>Mini program version ID (returned upon successful compilation).</p>
+                     * 
+                     */
+                    int64_t GetMNPVersionId() const;
+
+                    /**
+                     * 设置<p>Mini program version ID (returned upon successful compilation).</p>
+                     * @param _mNPVersionId <p>Mini program version ID (returned upon successful compilation).</p>
+                     * 
+                     */
+                    void SetMNPVersionId(const int64_t& _mNPVersionId);
+
+                    /**
+                     * 判断参数 MNPVersionId 是否已赋值
+                     * @return MNPVersionId 是否已赋值
+                     * 
+                     */
+                    bool MNPVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>QR code expiration time.</p>
+                     * @return ExpireTime <p>QR code expiration time.</p>
+                     * 
+                     */
+                    int64_t GetExpireTime() const;
+
+                    /**
+                     * 设置<p>QR code expiration time.</p>
+                     * @param _expireTime <p>QR code expiration time.</p>
+                     * 
+                     */
+                    void SetExpireTime(const int64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Version QR code.</p>
+                     * @return QRCode <p>Version QR code.</p>
+                     * 
+                     */
+                    std::string GetQRCode() const;
+
+                    /**
+                     * 设置<p>Version QR code.</p>
+                     * @param _qRCode <p>Version QR code.</p>
+                     * 
+                     */
+                    void SetQRCode(const std::string& _qRCode);
+
+                    /**
+                     * 判断参数 QRCode 是否已赋值
+                     * @return QRCode 是否已赋值
+                     * 
+                     */
+                    bool QRCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Compilation package information.</p>
+                     * @return SubPackageInfos <p>Compilation package information.</p>
+                     * 
+                     */
+                    std::vector<MNPVersionSubPackageInfo> GetSubPackageInfos() const;
+
+                    /**
+                     * 设置<p>Compilation package information.</p>
+                     * @param _subPackageInfos <p>Compilation package information.</p>
+                     * 
+                     */
+                    void SetSubPackageInfos(const std::vector<MNPVersionSubPackageInfo>& _subPackageInfos);
+
+                    /**
+                     * 判断参数 SubPackageInfos 是否已赋值
+                     * @return SubPackageInfos 是否已赋值
+                     * 
+                     */
+                    bool SubPackageInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Mini program appid.</p>
                      */
                     std::string m_mNPId;
                     bool m_mNPIdHasBeenSet;
 
                     /**
-                     * Task ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Task ID.</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 1: Pending; 20: Running; 30: Failed; 60: Succeeded 
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * Task status message
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Task status information.</p>
                      */
                     std::string m_taskMsg;
                     bool m_taskMsgHasBeenSet;
+
+                    /**
+                     * <p>Mini program version ID (returned upon successful compilation).</p>
+                     */
+                    int64_t m_mNPVersionId;
+                    bool m_mNPVersionIdHasBeenSet;
+
+                    /**
+                     * <p>QR code expiration time.</p>
+                     */
+                    int64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>Version QR code.</p>
+                     */
+                    std::string m_qRCode;
+                    bool m_qRCodeHasBeenSet;
+
+                    /**
+                     * <p>Compilation package information.</p>
+                     */
+                    std::vector<MNPVersionSubPackageInfo> m_subPackageInfos;
+                    bool m_subPackageInfosHasBeenSet;
 
                 };
             }

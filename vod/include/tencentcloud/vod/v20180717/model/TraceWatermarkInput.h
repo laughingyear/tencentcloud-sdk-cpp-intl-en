@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of a digital watermark.
+                * Traceability watermark parameters
                 */
                 class TraceWatermarkInput : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to use digital watermarks. This parameter is required. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @return Switch Whether to use digital watermarks. This parameter is required. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取Traceability watermark task switch. Required. Available values:
+<li>ON: enable traceability watermark</li>
+<li>OFF: Disable traceability watermark.</li>
+                     * @return Switch Traceability watermark task switch. Required. Available values:
+<li>ON: enable traceability watermark</li>
+<li>OFF: Disable traceability watermark.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to use digital watermarks. This parameter is required. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @param _switch Whether to use digital watermarks. This parameter is required. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置Traceability watermark task switch. Required. Available values:
+<li>ON: enable traceability watermark</li>
+<li>OFF: Disable traceability watermark.</li>
+                     * @param _switch Traceability watermark task switch. Required. Available values:
+<li>ON: enable traceability watermark</li>
+<li>OFF: Disable traceability watermark.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,38 +76,38 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取This parameter has been deprecated.
-                     * @return Definition This parameter has been deprecated.
-                     * 
+                     * 获取Deprecated. Do not use.
+                     * @return Definition Deprecated. Do not use.
+                     * @deprecated
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置This parameter has been deprecated.
-                     * @param _definition This parameter has been deprecated.
-                     * 
+                     * 设置Deprecated. Do not use.
+                     * @param _definition Deprecated. Do not use.
+                     * @deprecated
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DefinitionHasBeenSet() const;
 
                 private:
 
                     /**
-                     * Whether to use digital watermarks. This parameter is required. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * Traceability watermark task switch. Required. Available values:
+<li>ON: enable traceability watermark</li>
+<li>OFF: Disable traceability watermark.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * This parameter has been deprecated.
+                     * Deprecated. Do not use.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

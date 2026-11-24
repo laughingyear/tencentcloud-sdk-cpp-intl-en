@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -67,9 +67,11 @@ namespace TencentCloud
                      * 获取Watermark type filter. Valid values:
 <li>image: image watermark;</li>
 <li>text: text watermark.</li>
+<li>svg: SVG watermark.</li>
                      * @return Type Watermark type filter. Valid values:
 <li>image: image watermark;</li>
 <li>text: text watermark.</li>
+<li>svg: SVG watermark.</li>
                      * 
                      */
                     std::string GetType() const;
@@ -78,9 +80,11 @@ namespace TencentCloud
                      * 设置Watermark type filter. Valid values:
 <li>image: image watermark;</li>
 <li>text: text watermark.</li>
+<li>svg: SVG watermark.</li>
                      * @param _type Watermark type filter. Valid values:
 <li>image: image watermark;</li>
 <li>text: text watermark.</li>
+<li>svg: SVG watermark.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -114,15 +118,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Unique ID filter of watermarking templates. Array length limit: 100.
-                     * @return Definitions Unique ID filter of watermarking templates. Array length limit: 100.
+                     * 获取Filtering condition for the unique identifier of the watermark template. The array length cannot exceed 100.
+                     * @return Definitions Filtering condition for the unique identifier of the watermark template. The array length cannot exceed 100.
                      * 
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置Unique ID filter of watermarking templates. Array length limit: 100.
-                     * @param _definitions Unique ID filter of watermarking templates. Array length limit: 100.
+                     * 设置Filtering condition for the unique identifier of the watermark template. The array length cannot exceed 100.
+                     * @param _definitions Filtering condition for the unique identifier of the watermark template. The array length cannot exceed 100.
                      * 
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
@@ -136,10 +140,10 @@ namespace TencentCloud
 
                     /**
                      * 获取Number of returned entries
-<li>Default value: 10;</li>
+<li>Default value: 10.</li>
 <li>Maximum value: 100.</li>
                      * @return Limit Number of returned entries
-<li>Default value: 10;</li>
+<li>Default value: 10.</li>
 <li>Maximum value: 100.</li>
                      * 
                      */
@@ -147,10 +151,10 @@ namespace TencentCloud
 
                     /**
                      * 设置Number of returned entries
-<li>Default value: 10;</li>
+<li>Default value: 10.</li>
 <li>Maximum value: 100.</li>
                      * @param _limit Number of returned entries
-<li>Default value: 10;</li>
+<li>Default value: 10.</li>
 <li>Maximum value: 100.</li>
                      * 
                      */
@@ -166,7 +170,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
@@ -175,6 +179,7 @@ namespace TencentCloud
                      * Watermark type filter. Valid values:
 <li>image: image watermark;</li>
 <li>text: text watermark.</li>
+<li>svg: SVG watermark.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -186,14 +191,14 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Unique ID filter of watermarking templates. Array length limit: 100.
+                     * Filtering condition for the unique identifier of the watermark template. The array length cannot exceed 100.
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;
 
                     /**
                      * Number of returned entries
-<li>Default value: 10;</li>
+<li>Default value: 10.</li>
 <li>Maximum value: 100.</li>
                      */
                     uint64_t m_limit;

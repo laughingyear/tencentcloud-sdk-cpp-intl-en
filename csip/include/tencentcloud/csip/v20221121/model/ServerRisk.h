@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Service risk
+                * Service Risk
                 */
                 class ServerRisk : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Service tag
-                     * @return ServiceTag Service tag
+                     * 获取Mapping Tag
+                     * @return ServiceTag Mapping Tag
                      * 
                      */
                     std::string GetServiceTag() const;
 
                     /**
-                     * 设置Service tag
-                     * @param _serviceTag Service tag
+                     * 设置Mapping Tag
+                     * @param _serviceTag Mapping Tag
                      * 
                      */
                     void SetServiceTag(const std::string& _serviceTag);
@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool ServiceTagHasBeenSet() const;
 
                     /**
-                     * 获取Port
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Port Port
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Port.
+                     * @return Port Port.
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置Port
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _port Port
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Port.
+                     * @param _port Port.
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -94,15 +90,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取Affected assets
-                     * @return AffectAsset Affected assets
+                     * 获取Affect assets
+                     * @return AffectAsset Affect assets
                      * 
                      */
                     std::string GetAffectAsset() const;
 
                     /**
-                     * 设置Affected assets
-                     * @param _affectAsset Affected assets
+                     * 设置Affect assets
+                     * @param _affectAsset Affect assets
                      * 
                      */
                     void SetAffectAsset(const std::string& _affectAsset);
@@ -115,15 +111,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AffectAssetHasBeenSet() const;
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取Instance ID.
+                     * @return InstanceId Instance ID.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置Instance ID.
+                     * @param _instanceId Instance ID.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -136,15 +132,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Instance name
-                     * @return InstanceName Instance name
+                     * 获取Instance name.
+                     * @return InstanceName Instance name.
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Instance name
-                     * @param _instanceName Instance name
+                     * 设置Instance name.
+                     * @param _instanceName Instance name.
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -178,15 +174,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取Risk level
-                     * @return Level Risk level
+                     * 获取Risk level. low: low risk. high: high risk. middle: medium risk. info: notification. extreme: critical
+                     * @return Level Risk level. low: low risk. high: high risk. middle: medium risk. info: notification. extreme: critical
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置Risk level
-                     * @param _level Risk level
+                     * 设置Risk level. low: low risk. high: high risk. middle: medium risk. info: notification. extreme: critical
+                     * @param _level Risk level. low: low risk. high: high risk. middle: medium risk. info: notification. extreme: critical
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -199,15 +195,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取Network protocol
-                     * @return Protocol Network protocol
+                     * 获取Protocol
+                     * @return Protocol Protocol
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置Network protocol
-                     * @param _protocol Network protocol
+                     * 设置Protocol
+                     * @param _protocol Protocol
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -220,15 +216,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取Components
-                     * @return Component Components
+                     * 获取component
+                     * @return Component component
                      * 
                      */
                     std::string GetComponent() const;
 
                     /**
-                     * 设置Components
-                     * @param _component Components
+                     * 设置component
+                     * @param _component component
                      * 
                      */
                     void SetComponent(const std::string& _component);
@@ -241,15 +237,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ComponentHasBeenSet() const;
 
                     /**
-                     * 获取Service
-                     * @return Service Service
+                     * 获取Service.
+                     * @return Service Service.
                      * 
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置Service
-                     * @param _service Service
+                     * 设置Service.
+                     * @param _service Service.
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -262,15 +258,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取Last detected 
-                     * @return RecentTime Last detected 
+                     * 获取Latest Recognition Time
+                     * @return RecentTime Latest Recognition Time
                      * 
                      */
                     std::string GetRecentTime() const;
 
                     /**
-                     * 设置Last detected 
-                     * @param _recentTime Last detected 
+                     * 设置Latest Recognition Time
+                     * @param _recentTime Latest Recognition Time
                      * 
                      */
                     void SetRecentTime(const std::string& _recentTime);
@@ -283,15 +279,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool RecentTimeHasBeenSet() const;
 
                     /**
-                     * 获取First detected
-                     * @return FirstTime First detected
+                     * 获取First Recognition Time
+                     * @return FirstTime First Recognition Time
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
-                     * 设置First detected
-                     * @param _firstTime First detected
+                     * 设置First Recognition Time
+                     * @param _firstTime First Recognition Time
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -304,19 +300,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool FirstTimeHasBeenSet() const;
 
                     /**
-                     * 获取Risk Details
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return RiskDetails Risk Details
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Risk details
+                     * @return RiskDetails Risk details
                      * 
                      */
                     std::string GetRiskDetails() const;
 
                     /**
-                     * 设置Risk Details
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _riskDetails Risk Details
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Risk details
+                     * @param _riskDetails Risk details
                      * 
                      */
                     void SetRiskDetails(const std::string& _riskDetails);
@@ -350,15 +342,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
-                     * @return Status Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * 获取Status. 0-Unprocessed; 1-Disposed; 2-Ignored; 3-Defended by Cloud Firewall.
+                     * @return Status Status. 0-Unprocessed; 1-Disposed; 2-Ignored; 3-Defended by Cloud Firewall.
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
-                     * @param _status Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * 设置Status. 0-Unprocessed; 1-Disposed; 2-Ignored; 3-Defended by Cloud Firewall.
+                     * @param _status Status. 0-Unprocessed; 1-Disposed; 2-Ignored; 3-Defended by Cloud Firewall.
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -371,15 +363,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Unique ID of the asset
-                     * @return Id Unique ID of the asset
+                     * 获取Unique ID of Asset
+                     * @return Id Unique ID of Asset
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Unique ID of the asset
-                     * @param _id Unique ID of the asset
+                     * 设置Unique ID of Asset
+                     * @param _id Unique ID of Asset
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -392,15 +384,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取User `appid`
-                     * @return AppId User `appid`
+                     * 获取User appid.
+                     * @return AppId User appid.
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置User `appid`
-                     * @param _appId User `appid`
+                     * 设置User appid.
+                     * @param _appId User appid.
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -413,19 +405,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Nick User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取User Nickname
+                     * @return Nick User Nickname
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _nick User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置User Nickname
+                     * @param _nick User Nickname
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -438,19 +426,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取User UIN
+                     * @return Uin User UIN
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置User UIN
+                     * @param _uin User UIN
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -463,19 +447,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取Service snapshot
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return ServiceSnapshot Service snapshot
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Service Snapshot
+                     * @return ServiceSnapshot Service Snapshot
                      * 
                      */
                     std::string GetServiceSnapshot() const;
 
                     /**
-                     * 设置Service snapshot
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _serviceSnapshot Service snapshot
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Service Snapshot
+                     * @param _serviceSnapshot Service Snapshot
                      * 
                      */
                     void SetServiceSnapshot(const std::string& _serviceSnapshot);
@@ -488,19 +468,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ServiceSnapshotHasBeenSet() const;
 
                     /**
-                     * 获取Service access URL.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Url Service access URL.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Service Access URL
+                     * @return Url Service Access URL
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Service access URL.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _url Service access URL.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Service Access URL
+                     * @param _url Service Access URL
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -513,19 +489,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Data entry key
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Index Data entry key
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取List Index Value
+                     * @return Index List Index Value
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
-                     * 设置Data entry key
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _index Data entry key
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置List Index Value
+                     * @param _index List Index Value
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -538,19 +510,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取List of risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return RiskList List of risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Risk list
+                     * @return RiskList Risk list
                      * 
                      */
                     std::vector<ServerRiskSuggestion> GetRiskList() const;
 
                     /**
-                     * 设置List of risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _riskList List of risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Risk list
+                     * @param _riskList Risk list
                      * 
                      */
                     void SetRiskList(const std::vector<ServerRiskSuggestion>& _riskList);
@@ -563,19 +531,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool RiskListHasBeenSet() const;
 
                     /**
-                     * 获取List of fix suggestions 
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return SuggestionList List of fix suggestions 
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Recommendation List
+                     * @return SuggestionList Recommendation List
                      * 
                      */
                     std::vector<ServerRiskSuggestion> GetSuggestionList() const;
 
                     /**
-                     * 设置List of fix suggestions 
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _suggestionList List of fix suggestions 
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Recommendation List
+                     * @param _suggestionList Recommendation List
                      * 
                      */
                     void SetSuggestionList(const std::vector<ServerRiskSuggestion>& _suggestionList);
@@ -588,19 +552,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool SuggestionListHasBeenSet() const;
 
                     /**
-                     * 获取HTTP response code
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return StatusCode HTTP response code
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取HTTP Response Status Code
+                     * @return StatusCode HTTP Response Status Code
                      * 
                      */
                     std::string GetStatusCode() const;
 
                     /**
-                     * 设置HTTP response code
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _statusCode HTTP response code
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置HTTP Response Status Code
+                     * @param _statusCode HTTP Response Status Code
                      * 
                      */
                     void SetStatusCode(const std::string& _statusCode);
@@ -612,35 +572,76 @@ Note: This field may return·null, indicating that no valid values can be obtain
                      */
                     bool StatusCodeHasBeenSet() const;
 
+                    /**
+                     * 获取New risk level. high_risk: high risk. suspect: suspected. Normal: no risk data yet.
+                     * @return NewLevel New risk level. high_risk: high risk. suspect: suspected. Normal: no risk data yet.
+                     * 
+                     */
+                    std::string GetNewLevel() const;
+
+                    /**
+                     * 设置New risk level. high_risk: high risk. suspect: suspected. Normal: no risk data yet.
+                     * @param _newLevel New risk level. high_risk: high risk. suspect: suspected. Normal: no risk data yet.
+                     * 
+                     */
+                    void SetNewLevel(const std::string& _newLevel);
+
+                    /**
+                     * 判断参数 NewLevel 是否已赋值
+                     * @return NewLevel 是否已赋值
+                     * 
+                     */
+                    bool NewLevelHasBeenSet() const;
+
+                    /**
+                     * 获取Status. 0: unprocessed; 1: processed; 2: ignored; 3: defended by Cloud Firewall; 4: no action is required.
+                     * @return XspmStatus Status. 0: unprocessed; 1: processed; 2: ignored; 3: defended by Cloud Firewall; 4: no action is required.
+                     * 
+                     */
+                    uint64_t GetXspmStatus() const;
+
+                    /**
+                     * 设置Status. 0: unprocessed; 1: processed; 2: ignored; 3: defended by Cloud Firewall; 4: no action is required.
+                     * @param _xspmStatus Status. 0: unprocessed; 1: processed; 2: ignored; 3: defended by Cloud Firewall; 4: no action is required.
+                     * 
+                     */
+                    void SetXspmStatus(const uint64_t& _xspmStatus);
+
+                    /**
+                     * 判断参数 XspmStatus 是否已赋值
+                     * @return XspmStatus 是否已赋值
+                     * 
+                     */
+                    bool XspmStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Service tag
+                     * Mapping Tag
                      */
                     std::string m_serviceTag;
                     bool m_serviceTagHasBeenSet;
 
                     /**
-                     * Port
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Port.
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * Affected assets
+                     * Affect assets
                      */
                     std::string m_affectAsset;
                     bool m_affectAssetHasBeenSet;
 
                     /**
-                     * Instance ID
+                     * Instance ID.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Instance name
+                     * Instance name.
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -652,44 +653,43 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * Risk level
+                     * Risk level. low: low risk. high: high risk. middle: medium risk. info: notification. extreme: critical
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * Network protocol
+                     * Protocol
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * Components
+                     * component
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
-                     * Service
+                     * Service.
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * Last detected 
+                     * Latest Recognition Time
                      */
                     std::string m_recentTime;
                     bool m_recentTimeHasBeenSet;
 
                     /**
-                     * First detected
+                     * First Recognition Time
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;
 
                     /**
-                     * Risk Details
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Risk details
                      */
                     std::string m_riskDetails;
                     bool m_riskDetailsHasBeenSet;
@@ -701,78 +701,82 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * Status. 0-Unprocessed; 1-Disposed; 2-Ignored; 3-Defended by Cloud Firewall.
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Unique ID of the asset
+                     * Unique ID of Asset
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * User `appid`
+                     * User appid.
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * User Nickname
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * User UIN
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * Service snapshot
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Service Snapshot
                      */
                     std::string m_serviceSnapshot;
                     bool m_serviceSnapshotHasBeenSet;
 
                     /**
-                     * Service access URL.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Service Access URL
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Data entry key
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * List Index Value
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * List of risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Risk list
                      */
                     std::vector<ServerRiskSuggestion> m_riskList;
                     bool m_riskListHasBeenSet;
 
                     /**
-                     * List of fix suggestions 
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Recommendation List
                      */
                     std::vector<ServerRiskSuggestion> m_suggestionList;
                     bool m_suggestionListHasBeenSet;
 
                     /**
-                     * HTTP response code
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * HTTP Response Status Code
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;
+
+                    /**
+                     * New risk level. high_risk: high risk. suspect: suspected. Normal: no risk data yet.
+                     */
+                    std::string m_newLevel;
+                    bool m_newLevelHasBeenSet;
+
+                    /**
+                     * Status. 0: unprocessed; 1: processed; 2: ignored; 3: defended by Cloud Firewall; 4: no action is required.
+                     */
+                    uint64_t m_xspmStatus;
+                    bool m_xspmStatusHasBeenSet;
 
                 };
             }

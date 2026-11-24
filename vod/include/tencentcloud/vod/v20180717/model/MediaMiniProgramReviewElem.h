@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  
+                * Mini Program Audio and Video review overview meta information
                 */
                 class MediaMiniProgramReviewElem : public AbstractModel
                 {
@@ -47,43 +47,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Audit type. 
-<li>Porn: porn image,</li>
-<li>Porn.Ocr: porn text,</li>
-<li>Porn.Asr: porn speech,</li>
-<li>Terrorism: terrorism image,</li>
-<li>Political: politically sensitive image,</li>
-<li>Political.Ocr: politically sensitive text</li>
-<li>Political.Asr: politically sensitive speech</li>
-                     * @return Type Audit type. 
-<li>Porn: porn image,</li>
-<li>Porn.Ocr: porn text,</li>
-<li>Porn.Asr: porn speech,</li>
-<li>Terrorism: terrorism image,</li>
-<li>Political: politically sensitive image,</li>
-<li>Political.Ocr: politically sensitive text</li>
-<li>Political.Asr: politically sensitive speech</li>
+                     * 获取Audio and video moderation type. 
+<li>Porn: The visual involves offensive content,</li>
+<li>Porn.Ocr: The text involves offensive content,</li>
+<li>Porn.Asr: Sound involves offensive content,</li>
+<li>Terrorism: The visual involves unsafe information,</li>
+<li>Political: The visual involves inappropriate information,</li>
+<li>Political.Ocr: The text involves inappropriate information,</li>
+<li>Political.Asr: The sound involves inappropriate information.</li>
+                     * @return Type Audio and video moderation type. 
+<li>Porn: The visual involves offensive content,</li>
+<li>Porn.Ocr: The text involves offensive content,</li>
+<li>Porn.Asr: Sound involves offensive content,</li>
+<li>Terrorism: The visual involves unsafe information,</li>
+<li>Political: The visual involves inappropriate information,</li>
+<li>Political.Ocr: The text involves inappropriate information,</li>
+<li>Political.Asr: The sound involves inappropriate information.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Audit type. 
-<li>Porn: porn image,</li>
-<li>Porn.Ocr: porn text,</li>
-<li>Porn.Asr: porn speech,</li>
-<li>Terrorism: terrorism image,</li>
-<li>Political: politically sensitive image,</li>
-<li>Political.Ocr: politically sensitive text</li>
-<li>Political.Asr: politically sensitive speech</li>
-                     * @param _type Audit type. 
-<li>Porn: porn image,</li>
-<li>Porn.Ocr: porn text,</li>
-<li>Porn.Asr: porn speech,</li>
-<li>Terrorism: terrorism image,</li>
-<li>Political: politically sensitive image,</li>
-<li>Political.Ocr: politically sensitive text</li>
-<li>Political.Asr: politically sensitive speech</li>
+                     * 设置Audio and video moderation type. 
+<li>Porn: The visual involves offensive content,</li>
+<li>Porn.Ocr: The text involves offensive content,</li>
+<li>Porn.Asr: Sound involves offensive content,</li>
+<li>Terrorism: The visual involves unsafe information,</li>
+<li>Political: The visual involves inappropriate information,</li>
+<li>Political.Ocr: The text involves inappropriate information,</li>
+<li>Political.Asr: The sound involves inappropriate information.</li>
+                     * @param _type Audio and video moderation type. 
+<li>Porn: The visual involves offensive content,</li>
+<li>Porn.Ocr: The text involves offensive content,</li>
+<li>Porn.Asr: Sound involves offensive content,</li>
+<li>Terrorism: The visual involves unsafe information,</li>
+<li>Political: The visual involves inappropriate information,</li>
+<li>Political.Ocr: The text involves inappropriate information,</li>
+<li>Political.Asr: The sound involves inappropriate information.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -96,27 +96,27 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Audit suggestion.
-<li>pass: normal,</li>
-<li>block: violating,</li>
-<li>review: suspected of violation.</li>
-                     * @return Suggestion Audit suggestion.
-<li>pass: normal,</li>
-<li>block: violating,</li>
-<li>review: suspected of violation.</li>
+                     * 获取Audio/video moderation feedback.
+<li>pass: confirm normal,</li>
+<li>block: confirmed violation,</li>
+<li>review: suspected violation.</li>
+                     * @return Suggestion Audio/video moderation feedback.
+<li>pass: confirm normal,</li>
+<li>block: confirmed violation,</li>
+<li>review: suspected violation.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Audit suggestion.
-<li>pass: normal,</li>
-<li>block: violating,</li>
-<li>review: suspected of violation.</li>
-                     * @param _suggestion Audit suggestion.
-<li>pass: normal,</li>
-<li>block: violating,</li>
-<li>review: suspected of violation.</li>
+                     * 设置Audio/video moderation feedback.
+<li>pass: confirm normal,</li>
+<li>block: confirmed violation,</li>
+<li>review: suspected violation.</li>
+                     * @param _suggestion Audio/video moderation feedback.
+<li>pass: confirm normal,</li>
+<li>block: confirmed violation,</li>
+<li>review: suspected violation.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of audit result between 0 and 100.
-                     * @return Confidence Confidence of audit result between 0 and 100.
+                     * 获取Confidence of the audio/video moderation result. Value range: 0-100.
+                     * @return Confidence Confidence of the audio/video moderation result. Value range: 0-100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of audit result between 0 and 100.
-                     * @param _confidence Confidence of audit result between 0 and 100.
+                     * 设置Confidence of the audio/video moderation result. Value range: 0-100.
+                     * @param _confidence Confidence of the audio/video moderation result. Value range: 0-100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -152,29 +152,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Audit type. 
-<li>Porn: porn image,</li>
-<li>Porn.Ocr: porn text,</li>
-<li>Porn.Asr: porn speech,</li>
-<li>Terrorism: terrorism image,</li>
-<li>Political: politically sensitive image,</li>
-<li>Political.Ocr: politically sensitive text</li>
-<li>Political.Asr: politically sensitive speech</li>
+                     * Audio and video moderation type. 
+<li>Porn: The visual involves offensive content,</li>
+<li>Porn.Ocr: The text involves offensive content,</li>
+<li>Porn.Asr: Sound involves offensive content,</li>
+<li>Terrorism: The visual involves unsafe information,</li>
+<li>Political: The visual involves inappropriate information,</li>
+<li>Political.Ocr: The text involves inappropriate information,</li>
+<li>Political.Asr: The sound involves inappropriate information.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Audit suggestion.
-<li>pass: normal,</li>
-<li>block: violating,</li>
-<li>review: suspected of violation.</li>
+                     * Audio/video moderation feedback.
+<li>pass: confirm normal,</li>
+<li>block: confirmed violation,</li>
+<li>review: suspected violation.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Confidence of audit result between 0 and 100.
+                     * Confidence of the audio/video moderation result. Value range: 0-100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;

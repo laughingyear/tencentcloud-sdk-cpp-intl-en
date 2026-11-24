@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AiParagraphInfo.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
 namespace TencentCloud
@@ -133,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Segmentation result.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Paragraphs Segmentation result.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<AiParagraphInfo> GetParagraphs() const;
 
                     /**
                      * 设置Segmentation result.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _paragraphs Segmentation result.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetParagraphs(const std::vector<AiParagraphInfo>& _paragraphs);
@@ -155,6 +152,90 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      * 
                      */
                     bool ParagraphsHasBeenSet() const;
+
+                    /**
+                     * 获取Address of the mind map of a summary task.
+                     * @return MindMapUrl Address of the mind map of a summary task.
+                     * 
+                     */
+                    std::string GetMindMapUrl() const;
+
+                    /**
+                     * 设置Address of the mind map of a summary task.
+                     * @param _mindMapUrl Address of the mind map of a summary task.
+                     * 
+                     */
+                    void SetMindMapUrl(const std::string& _mindMapUrl);
+
+                    /**
+                     * 判断参数 MindMapUrl 是否已赋值
+                     * @return MindMapUrl 是否已赋值
+                     * 
+                     */
+                    bool MindMapUrlHasBeenSet() const;
+
+                    /**
+                     * 获取Path of the mind map of a summary task.
+                     * @return MindMapPath Path of the mind map of a summary task.
+                     * 
+                     */
+                    std::string GetMindMapPath() const;
+
+                    /**
+                     * 设置Path of the mind map of a summary task.
+                     * @param _mindMapPath Path of the mind map of a summary task.
+                     * 
+                     */
+                    void SetMindMapPath(const std::string& _mindMapPath);
+
+                    /**
+                     * 判断参数 MindMapPath 是否已赋值
+                     * @return MindMapPath 是否已赋值
+                     * 
+                     */
+                    bool MindMapPathHasBeenSet() const;
+
+                    /**
+                     * 获取Subtitle file path of the video.
+                     * @return SubtitlePath Subtitle file path of the video.
+                     * 
+                     */
+                    std::string GetSubtitlePath() const;
+
+                    /**
+                     * 设置Subtitle file path of the video.
+                     * @param _subtitlePath Subtitle file path of the video.
+                     * 
+                     */
+                    void SetSubtitlePath(const std::string& _subtitlePath);
+
+                    /**
+                     * 判断参数 SubtitlePath 是否已赋值
+                     * @return SubtitlePath 是否已赋值
+                     * 
+                     */
+                    bool SubtitlePathHasBeenSet() const;
+
+                    /**
+                     * 获取Storage location of the summary file.
+                     * @return OutputStorage Storage location of the summary file.
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置Storage location of the summary file.
+                     * @param _outputStorage Storage location of the summary file.
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
 
                 private:
 
@@ -184,10 +265,33 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Segmentation result.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<AiParagraphInfo> m_paragraphs;
                     bool m_paragraphsHasBeenSet;
+
+                    /**
+                     * Address of the mind map of a summary task.
+                     */
+                    std::string m_mindMapUrl;
+                    bool m_mindMapUrlHasBeenSet;
+
+                    /**
+                     * Path of the mind map of a summary task.
+                     */
+                    std::string m_mindMapPath;
+                    bool m_mindMapPathHasBeenSet;
+
+                    /**
+                     * Subtitle file path of the video.
+                     */
+                    std::string m_subtitlePath;
+                    bool m_subtitlePathHasBeenSet;
+
+                    /**
+                     * Storage location of the summary file.
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
 
                 };
             }

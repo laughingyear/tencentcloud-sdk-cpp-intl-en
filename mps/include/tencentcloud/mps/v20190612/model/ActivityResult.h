@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The execution result of a scheme.
+                * Output of the orchestration task
                 */
                 class ActivityResult : public AbstractModel
                 {
@@ -48,63 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Atomic task type.
-<Li>Transcode: transcoding</li>
-<Li>SampleSnapshot: sampled screenshot</li>
-<Li>AnimatedGraphics: conversion to GIF</li>
-<Li>SnapshotByTimeOffset: time point screenshot</li>
-<Li>ImageSprites: image sprite</li>
-<Li>AdaptiveDynamicStreaming: adaptive bitrate stream</li>
-<Li>AiContentReview: content review</li>
-<Li>AIRecognition: intelligent recognition</li>
-<Li>AIAnalysis: intelligent analysis</li>
-<li>AiQualityControl: media quality inspection.</li>
-
-<Li>SmartSubtitles: smart subtitle</li>
-                     * @return ActivityType Atomic task type.
-<Li>Transcode: transcoding</li>
-<Li>SampleSnapshot: sampled screenshot</li>
-<Li>AnimatedGraphics: conversion to GIF</li>
-<Li>SnapshotByTimeOffset: time point screenshot</li>
-<Li>ImageSprites: image sprite</li>
-<Li>AdaptiveDynamicStreaming: adaptive bitrate stream</li>
-<Li>AiContentReview: content review</li>
-<Li>AIRecognition: intelligent recognition</li>
-<Li>AIAnalysis: intelligent analysis</li>
-<li>AiQualityControl: media quality inspection.</li>
-
-<Li>SmartSubtitles: smart subtitle</li>
+                     * 获取<p>Atomic task type.</p><li>Transcode: Transcoding.</li><li>SampleSnapshot: Sampled screenshot.</li><li>AnimatedGraphics: Animated image.</li><li>SnapshotByTimeOffset: Time point screenshot.</li><li>ImageSprites: Sprite sheet.</li><li>AdaptiveDynamicStreaming: Adaptive bitrate stream.</li><li>AiContentReview: Content review.</li><li>AIRecognition: Intelligent recognition.</li><li>AIAnalysis: Intelligent analysis.</li><li>AiQualityControl: Media quality inspection.</li><li>SmartSubtitles: Smart subtitle.</li><li>SmartErase: Smart erasing.</li><li>Dubbing: AI dubbing.</li>
+                     * @return ActivityType <p>Atomic task type.</p><li>Transcode: Transcoding.</li><li>SampleSnapshot: Sampled screenshot.</li><li>AnimatedGraphics: Animated image.</li><li>SnapshotByTimeOffset: Time point screenshot.</li><li>ImageSprites: Sprite sheet.</li><li>AdaptiveDynamicStreaming: Adaptive bitrate stream.</li><li>AiContentReview: Content review.</li><li>AIRecognition: Intelligent recognition.</li><li>AIAnalysis: Intelligent analysis.</li><li>AiQualityControl: Media quality inspection.</li><li>SmartSubtitles: Smart subtitle.</li><li>SmartErase: Smart erasing.</li><li>Dubbing: AI dubbing.</li>
                      * 
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置Atomic task type.
-<Li>Transcode: transcoding</li>
-<Li>SampleSnapshot: sampled screenshot</li>
-<Li>AnimatedGraphics: conversion to GIF</li>
-<Li>SnapshotByTimeOffset: time point screenshot</li>
-<Li>ImageSprites: image sprite</li>
-<Li>AdaptiveDynamicStreaming: adaptive bitrate stream</li>
-<Li>AiContentReview: content review</li>
-<Li>AIRecognition: intelligent recognition</li>
-<Li>AIAnalysis: intelligent analysis</li>
-<li>AiQualityControl: media quality inspection.</li>
-
-<Li>SmartSubtitles: smart subtitle</li>
-                     * @param _activityType Atomic task type.
-<Li>Transcode: transcoding</li>
-<Li>SampleSnapshot: sampled screenshot</li>
-<Li>AnimatedGraphics: conversion to GIF</li>
-<Li>SnapshotByTimeOffset: time point screenshot</li>
-<Li>ImageSprites: image sprite</li>
-<Li>AdaptiveDynamicStreaming: adaptive bitrate stream</li>
-<Li>AiContentReview: content review</li>
-<Li>AIRecognition: intelligent recognition</li>
-<Li>AIAnalysis: intelligent analysis</li>
-<li>AiQualityControl: media quality inspection.</li>
-
-<Li>SmartSubtitles: smart subtitle</li>
+                     * 设置<p>Atomic task type.</p><li>Transcode: Transcoding.</li><li>SampleSnapshot: Sampled screenshot.</li><li>AnimatedGraphics: Animated image.</li><li>SnapshotByTimeOffset: Time point screenshot.</li><li>ImageSprites: Sprite sheet.</li><li>AdaptiveDynamicStreaming: Adaptive bitrate stream.</li><li>AiContentReview: Content review.</li><li>AIRecognition: Intelligent recognition.</li><li>AIAnalysis: Intelligent analysis.</li><li>AiQualityControl: Media quality inspection.</li><li>SmartSubtitles: Smart subtitle.</li><li>SmartErase: Smart erasing.</li><li>Dubbing: AI dubbing.</li>
+                     * @param _activityType <p>Atomic task type.</p><li>Transcode: Transcoding.</li><li>SampleSnapshot: Sampled screenshot.</li><li>AnimatedGraphics: Animated image.</li><li>SnapshotByTimeOffset: Time point screenshot.</li><li>ImageSprites: Sprite sheet.</li><li>AdaptiveDynamicStreaming: Adaptive bitrate stream.</li><li>AiContentReview: Content review.</li><li>AIRecognition: Intelligent recognition.</li><li>AIAnalysis: Intelligent analysis.</li><li>AiQualityControl: Media quality inspection.</li><li>SmartSubtitles: Smart subtitle.</li><li>SmartErase: Smart erasing.</li><li>Dubbing: AI dubbing.</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -117,15 +69,15 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取The execution results of the subtasks of the scheme.
-                     * @return ActivityResItem The execution results of the subtasks of the scheme.
+                     * 获取<p>Output of the atomic task.</p>
+                     * @return ActivityResItem <p>Output of the atomic task.</p>
                      * 
                      */
                     ActivityResItem GetActivityResItem() const;
 
                     /**
-                     * 设置The execution results of the subtasks of the scheme.
-                     * @param _activityResItem The execution results of the subtasks of the scheme.
+                     * 设置<p>Output of the atomic task.</p>
+                     * @param _activityResItem <p>Output of the atomic task.</p>
                      * 
                      */
                     void SetActivityResItem(const ActivityResItem& _activityResItem);
@@ -140,25 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Atomic task type.
-<Li>Transcode: transcoding</li>
-<Li>SampleSnapshot: sampled screenshot</li>
-<Li>AnimatedGraphics: conversion to GIF</li>
-<Li>SnapshotByTimeOffset: time point screenshot</li>
-<Li>ImageSprites: image sprite</li>
-<Li>AdaptiveDynamicStreaming: adaptive bitrate stream</li>
-<Li>AiContentReview: content review</li>
-<Li>AIRecognition: intelligent recognition</li>
-<Li>AIAnalysis: intelligent analysis</li>
-<li>AiQualityControl: media quality inspection.</li>
-
-<Li>SmartSubtitles: smart subtitle</li>
+                     * <p>Atomic task type.</p><li>Transcode: Transcoding.</li><li>SampleSnapshot: Sampled screenshot.</li><li>AnimatedGraphics: Animated image.</li><li>SnapshotByTimeOffset: Time point screenshot.</li><li>ImageSprites: Sprite sheet.</li><li>AdaptiveDynamicStreaming: Adaptive bitrate stream.</li><li>AiContentReview: Content review.</li><li>AIRecognition: Intelligent recognition.</li><li>AIAnalysis: Intelligent analysis.</li><li>AiQualityControl: Media quality inspection.</li><li>SmartSubtitles: Smart subtitle.</li><li>SmartErase: Smart erasing.</li><li>Dubbing: AI dubbing.</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * The execution results of the subtasks of the scheme.
+                     * <p>Output of the atomic task.</p>
                      */
                     ActivityResItem m_activityResItem;
                     bool m_activityResItemHasBeenSet;

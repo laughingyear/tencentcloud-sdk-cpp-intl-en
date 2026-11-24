@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Application details
+                * Superapp details.
                 */
                 class DescribeApplicationResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp ID.
+                     * @return ApplicationId Superapp ID.
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp ID.
+                     * @param _applicationId Superapp ID.
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取Product ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AppIdentityId Product ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Product ID.
+                     * @return AppIdentityId Product ID.
                      * 
                      */
                     int64_t GetAppIdentityId() const;
 
                     /**
-                     * 设置Product ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _appIdentityId Product ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Product ID.
+                     * @param _appIdentityId Product ID.
                      * 
                      */
                     void SetAppIdentityId(const int64_t& _appIdentityId);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AppIdentityIdHasBeenSet() const;
 
                     /**
-                     * 获取Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp name.
+                     * @return ApplicationName Superapp name.
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp name.
+                     * @param _applicationName Superapp name.
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Logo Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp icon.
+                     * @return Logo Superapp icon.
                      * 
                      */
                     std::string GetLogo() const;
 
                     /**
-                     * 设置Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _logo Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp icon.
+                     * @param _logo Superapp icon.
                      * 
                      */
                     void SetLogo(const std::string& _logo);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool LogoHasBeenSet() const;
 
                     /**
-                     * 获取Remarks
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Remark Remarks
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Remarks.
+                     * @return Remark Remarks.
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置Remarks
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _remark Remarks
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Remarks.
+                     * @param _remark Remarks.
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取Android package name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AndroidAppKey Android package name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Android superapp package name.
+                     * @return AndroidAppKey Android superapp package name.
                      * 
                      */
                     std::string GetAndroidAppKey() const;
 
                     /**
-                     * 设置Android package name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _androidAppKey Android package name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Android superapp package name.
+                     * @param _androidAppKey Android superapp package name.
                      * 
                      */
                     void SetAndroidAppKey(const std::string& _androidAppKey);
@@ -197,19 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AndroidAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取iOS bundleId
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return IosAppKey iOS bundleId
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取iOS superapp bundle ID.
+                     * @return IosAppKey iOS superapp bundle ID.
                      * 
                      */
                     std::string GetIosAppKey() const;
 
                     /**
-                     * 设置iOS bundleId
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _iosAppKey iOS bundleId
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置iOS superapp bundle ID.
+                     * @param _iosAppKey iOS superapp bundle ID.
                      * 
                      */
                     void SetIosAppKey(const std::string& _iosAppKey);
@@ -222,19 +194,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool IosAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Creator.
+                     * @return CreateUser Creator.
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Creator.
+                     * @param _createUser Creator.
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -247,19 +215,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Creation time.
+                     * @return CreateTime Creation time.
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Creation time.
+                     * @param _createTime Creation time.
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -272,19 +236,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Last modifier.
+                     * @return UpdateUser Last modifier.
                      * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
-                     * 设置Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Last modifier.
+                     * @param _updateUser Last modifier.
                      * 
                      */
                     void SetUpdateUser(const std::string& _updateUser);
@@ -297,19 +257,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateUserHasBeenSet() const;
 
                     /**
-                     * 获取Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Last modified time.
+                     * @return UpdateTime Last modified time.
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Last modified time.
+                     * @param _updateTime Last modified time.
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -322,19 +278,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Application description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Intro Application description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp introduction.
+                     * @return Intro Superapp introduction.
                      * 
                      */
                     std::string GetIntro() const;
 
                     /**
-                     * 设置Application description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _intro Application description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp introduction.
+                     * @param _intro Superapp introduction.
                      * 
                      */
                     void SetIntro(const std::string& _intro);
@@ -347,19 +299,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool IntroHasBeenSet() const;
 
                     /**
-                     * 获取Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team ID.
+                     * @return TeamId Team ID.
                      * 
                      */
                     std::string GetTeamId() const;
 
                     /**
-                     * 设置Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team ID.
+                     * @param _teamId Team ID.
                      * 
                      */
                     void SetTeamId(const std::string& _teamId);
@@ -372,19 +320,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team name.
+                     * @return TeamName Team name.
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team name.
+                     * @param _teamName Team name.
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -397,19 +341,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamNameHasBeenSet() const;
 
                     /**
-                     * 获取Number of sensitive APIs
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SensitiveApiCount Number of sensitive APIs
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Number of sensitive APIs.
+                     * @return SensitiveApiCount Number of sensitive APIs.
                      * 
                      */
                     int64_t GetSensitiveApiCount() const;
 
                     /**
-                     * 设置Number of sensitive APIs
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _sensitiveApiCount Number of sensitive APIs
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Number of sensitive APIs.
+                     * @param _sensitiveApiCount Number of sensitive APIs.
                      * 
                      */
                     void SetSensitiveApiCount(const int64_t& _sensitiveApiCount);
@@ -422,19 +362,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SensitiveApiCountHasBeenSet() const;
 
                     /**
-                     * 获取Application type. 1: Test; 2: Formal
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationType Application type. 1: Test; 2: Formal
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp type. Valid values: 1: Test; 2: Production.
+                     * @return ApplicationType Superapp type. Valid values: 1: Test; 2: Production.
                      * 
                      */
                     int64_t GetApplicationType() const;
 
                     /**
-                     * 设置Application type. 1: Test; 2: Formal
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationType Application type. 1: Test; 2: Formal
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp type. Valid values: 1: Test; 2: Production.
+                     * @param _applicationType Superapp type. Valid values: 1: Test; 2: Production.
                      * 
                      */
                     void SetApplicationType(const int64_t& _applicationType);
@@ -446,119 +382,130 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Superapp scheme.
+                     * @return Scheme Superapp scheme.
+                     * 
+                     */
+                    std::string GetScheme() const;
+
+                    /**
+                     * 设置Superapp scheme.
+                     * @param _scheme Superapp scheme.
+                     * 
+                     */
+                    void SetScheme(const std::string& _scheme);
+
+                    /**
+                     * 判断参数 Scheme 是否已赋值
+                     * @return Scheme 是否已赋值
+                     * 
+                     */
+                    bool SchemeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp ID.
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * Product ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Product ID.
                      */
                     int64_t m_appIdentityId;
                     bool m_appIdentityIdHasBeenSet;
 
                     /**
-                     * Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp name.
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp icon.
                      */
                     std::string m_logo;
                     bool m_logoHasBeenSet;
 
                     /**
-                     * Remarks
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Remarks.
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * Android package name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Android superapp package name.
                      */
                     std::string m_androidAppKey;
                     bool m_androidAppKeyHasBeenSet;
 
                     /**
-                     * iOS bundleId
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * iOS superapp bundle ID.
                      */
                     std::string m_iosAppKey;
                     bool m_iosAppKeyHasBeenSet;
 
                     /**
-                     * Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Creator.
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Creation time.
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Last modifier.
                      */
                     std::string m_updateUser;
                     bool m_updateUserHasBeenSet;
 
                     /**
-                     * Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Last modified time.
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * Application description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp introduction.
                      */
                     std::string m_intro;
                     bool m_introHasBeenSet;
 
                     /**
-                     * Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team ID.
                      */
                     std::string m_teamId;
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team name.
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;
 
                     /**
-                     * Number of sensitive APIs
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Number of sensitive APIs.
                      */
                     int64_t m_sensitiveApiCount;
                     bool m_sensitiveApiCountHasBeenSet;
 
                     /**
-                     * Application type. 1: Test; 2: Formal
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp type. Valid values: 1: Test; 2: Production.
                      */
                     int64_t m_applicationType;
                     bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * Superapp scheme.
+                     */
+                    std::string m_scheme;
+                    bool m_schemeHasBeenSet;
 
                 };
             }

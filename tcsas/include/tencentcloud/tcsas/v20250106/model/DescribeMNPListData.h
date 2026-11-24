@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcsas/v20250106/model/AgeRatingItem.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Mini program list
+                * Mini program list data.
                 */
                 class DescribeMNPListData : public AbstractModel
                 {
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Mini program ID
-                     * @return MNPId Mini program ID
+                     * 获取<p>Mini game appid.</p>
+                     * @return MNPId <p>Mini game appid.</p>
                      * 
                      */
                     std::string GetMNPId() const;
 
                     /**
-                     * 设置Mini program ID
-                     * @param _mNPId Mini program ID
+                     * 设置<p>Mini game appid.</p>
+                     * @param _mNPId <p>Mini game appid.</p>
                      * 
                      */
                     void SetMNPId(const std::string& _mNPId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool MNPIdHasBeenSet() const;
 
                     /**
-                     * 获取Mini program icon
-                     * @return MNPIcon Mini program icon
+                     * 获取<p>Mini game icon.</p>
+                     * @return MNPIcon <p>Mini game icon.</p>
                      * 
                      */
                     std::string GetMNPIcon() const;
 
                     /**
-                     * 设置Mini program icon
-                     * @param _mNPIcon Mini program icon
+                     * 设置<p>Mini game icon.</p>
+                     * @param _mNPIcon <p>Mini game icon.</p>
                      * 
                      */
                     void SetMNPIcon(const std::string& _mNPIcon);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool MNPIconHasBeenSet() const;
 
                     /**
-                     * 获取Mini program name
-                     * @return MNPName Mini program name
+                     * 获取<p>Mini game name.</p>
+                     * @return MNPName <p>Mini game name.</p>
                      * 
                      */
                     std::string GetMNPName() const;
 
                     /**
-                     * 设置Mini program name
-                     * @param _mNPName Mini program name
+                     * 设置<p>Mini game name.</p>
+                     * @param _mNPName <p>Mini game name.</p>
                      * 
                      */
                     void SetMNPName(const std::string& _mNPName);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool MNPNameHasBeenSet() const;
 
                     /**
-                     * 获取Name of the associated team
-                     * @return TeamName Name of the associated team
+                     * 获取<p>Team name.</p>
+                     * @return TeamName <p>Team name.</p>
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置Name of the associated team
-                     * @param _teamName Name of the associated team
+                     * 设置<p>Team name.</p>
+                     * @param _teamName <p>Team name.</p>
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool TeamNameHasBeenSet() const;
 
                     /**
-                     * 获取Mini program type
-                     * @return MNPType Mini program type
+                     * 获取<p>Mini game category.</p>
+                     * @return MNPType <p>Mini game category.</p>
                      * 
                      */
                     std::string GetMNPType() const;
 
                     /**
-                     * 设置Mini program type
-                     * @param _mNPType Mini program type
+                     * 设置<p>Mini game category.</p>
+                     * @param _mNPType <p>Mini game category.</p>
                      * 
                      */
                     void SetMNPType(const std::string& _mNPType);
@@ -152,19 +153,15 @@ namespace TencentCloud
                     bool MNPTypeHasBeenSet() const;
 
                     /**
-                     * 获取Whether the mini program is released. 1: Released; 2: Removed
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Status Whether the mini program is released. 1: Released; 2: Removed
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Mini game available status. Valid values: 1: Available; 2: Not available.</p>
+                     * @return Status <p>Mini game available status. Valid values: 1: Available; 2: Not available.</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Whether the mini program is released. 1: Released; 2: Removed
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _status Whether the mini program is released. 1: Released; 2: Removed
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Mini game available status. Valid values: 1: Available; 2: Not available.</p>
+                     * @param _status <p>Mini game available status. Valid values: 1: Available; 2: Not available.</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -177,19 +174,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Mini program introduction
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPIntro Mini program introduction
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Mini game introduction.</p>
+                     * @return MNPIntro <p>Mini game introduction.</p>
                      * 
                      */
                     std::string GetMNPIntro() const;
 
                     /**
-                     * 设置Mini program introduction
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPIntro Mini program introduction
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Mini game introduction.</p>
+                     * @param _mNPIntro <p>Mini game introduction.</p>
                      * 
                      */
                     void SetMNPIntro(const std::string& _mNPIntro);
@@ -202,19 +195,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPIntroHasBeenSet() const;
 
                     /**
-                     * 获取Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Creator.</p>
+                     * @return CreateUser <p>Creator.</p>
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Creator.</p>
+                     * @param _createUser <p>Creator.</p>
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -227,19 +216,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Creation time.</p>
+                     * @return CreateTime <p>Creation time.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Creation time.</p>
+                     * @param _createTime <p>Creation time.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -252,19 +237,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Last modifier.</p>
+                     * @return UpdateUser <p>Last modifier.</p>
                      * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
-                     * 设置Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Last modifier.</p>
+                     * @param _updateUser <p>Last modifier.</p>
                      * 
                      */
                     void SetUpdateUser(const std::string& _updateUser);
@@ -277,19 +258,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateUserHasBeenSet() const;
 
                     /**
-                     * 获取Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Last modified time.</p>
+                     * @return UpdateTime <p>Last modified time.</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Last modified time.</p>
+                     * @param _updateTime <p>Last modified time.</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -302,19 +279,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Superapp name.</p>
+                     * @return ApplicationName <p>Superapp name.</p>
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Superapp name.</p>
+                     * @param _applicationName <p>Superapp name.</p>
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -327,19 +300,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取Effective status of the bound application. 1: Not effective; 2: Effective
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EffectStatus Effective status of the bound application. 1: Not effective; 2: Effective
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Binding effective status for the superapp. Valid values: 1: Not effective; 2: Effective.</p>
+                     * @return EffectStatus <p>Binding effective status for the superapp. Valid values: 1: Not effective; 2: Effective.</p>
                      * 
                      */
                     int64_t GetEffectStatus() const;
 
                     /**
-                     * 设置Effective status of the bound application. 1: Not effective; 2: Effective
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _effectStatus Effective status of the bound application. 1: Not effective; 2: Effective
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Binding effective status for the superapp. Valid values: 1: Not effective; 2: Effective.</p>
+                     * @param _effectStatus <p>Binding effective status for the superapp. Valid values: 1: Not effective; 2: Effective.</p>
                      * 
                      */
                     void SetEffectStatus(const int64_t& _effectStatus);
@@ -352,19 +321,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool EffectStatusHasBeenSet() const;
 
                     /**
-                     * 获取ID of the application bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EffectMNPVersionId ID of the application bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Effective mini program version ID bound to the superapp.</p>
+                     * @return EffectMNPVersionId <p>Effective mini program version ID bound to the superapp.</p>
                      * 
                      */
                     int64_t GetEffectMNPVersionId() const;
 
                     /**
-                     * 设置ID of the application bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _effectMNPVersionId ID of the application bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Effective mini program version ID bound to the superapp.</p>
+                     * @param _effectMNPVersionId <p>Effective mini program version ID bound to the superapp.</p>
                      * 
                      */
                     void SetEffectMNPVersionId(const int64_t& _effectMNPVersionId);
@@ -377,19 +342,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool EffectMNPVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取Effective version number of the application that bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EffectMNPVersion Effective version number of the application that bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Effective mini program version number bound to the superapp.</p>
+                     * @return EffectMNPVersion <p>Effective mini program version number bound to the superapp.</p>
                      * 
                      */
                     std::string GetEffectMNPVersion() const;
 
                     /**
-                     * 设置Effective version number of the application that bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _effectMNPVersion Effective version number of the application that bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Effective mini program version number bound to the superapp.</p>
+                     * @param _effectMNPVersion <p>Effective mini program version number bound to the superapp.</p>
                      * 
                      */
                     void SetEffectMNPVersion(const std::string& _effectMNPVersion);
@@ -401,107 +362,178 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool EffectMNPVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Team ID.</p>
+                     * @return TeamId <p>Team ID.</p>
+                     * 
+                     */
+                    std::string GetTeamId() const;
+
+                    /**
+                     * 设置<p>Team ID.</p>
+                     * @param _teamId <p>Team ID.</p>
+                     * 
+                     */
+                    void SetTeamId(const std::string& _teamId);
+
+                    /**
+                     * 判断参数 TeamId 是否已赋值
+                     * @return TeamId 是否已赋值
+                     * 
+                     */
+                    bool TeamIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Team type ID. Valid values: 1: Mini program team; 2: Superapp team; 3: Service provider team.</p>
+                     * @return TeamTypeId <p>Team type ID. Valid values: 1: Mini program team; 2: Superapp team; 3: Service provider team.</p>
+                     * 
+                     */
+                    int64_t GetTeamTypeId() const;
+
+                    /**
+                     * 设置<p>Team type ID. Valid values: 1: Mini program team; 2: Superapp team; 3: Service provider team.</p>
+                     * @param _teamTypeId <p>Team type ID. Valid values: 1: Mini program team; 2: Superapp team; 3: Service provider team.</p>
+                     * 
+                     */
+                    void SetTeamTypeId(const int64_t& _teamTypeId);
+
+                    /**
+                     * 判断参数 TeamTypeId 是否已赋值
+                     * @return TeamTypeId 是否已赋值
+                     * 
+                     */
+                    bool TeamTypeIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Age rating information.</p>
+                     * @return AgeRatings <p>Age rating information.</p>
+                     * 
+                     */
+                    std::vector<AgeRatingItem> GetAgeRatings() const;
+
+                    /**
+                     * 设置<p>Age rating information.</p>
+                     * @param _ageRatings <p>Age rating information.</p>
+                     * 
+                     */
+                    void SetAgeRatings(const std::vector<AgeRatingItem>& _ageRatings);
+
+                    /**
+                     * 判断参数 AgeRatings 是否已赋值
+                     * @return AgeRatings 是否已赋值
+                     * 
+                     */
+                    bool AgeRatingsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Mini program ID
+                     * <p>Mini game appid.</p>
                      */
                     std::string m_mNPId;
                     bool m_mNPIdHasBeenSet;
 
                     /**
-                     * Mini program icon
+                     * <p>Mini game icon.</p>
                      */
                     std::string m_mNPIcon;
                     bool m_mNPIconHasBeenSet;
 
                     /**
-                     * Mini program name
+                     * <p>Mini game name.</p>
                      */
                     std::string m_mNPName;
                     bool m_mNPNameHasBeenSet;
 
                     /**
-                     * Name of the associated team
+                     * <p>Team name.</p>
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;
 
                     /**
-                     * Mini program type
+                     * <p>Mini game category.</p>
                      */
                     std::string m_mNPType;
                     bool m_mNPTypeHasBeenSet;
 
                     /**
-                     * Whether the mini program is released. 1: Released; 2: Removed
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Mini game available status. Valid values: 1: Available; 2: Not available.</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Mini program introduction
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Mini game introduction.</p>
                      */
                     std::string m_mNPIntro;
                     bool m_mNPIntroHasBeenSet;
 
                     /**
-                     * Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Creator.</p>
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Creation time.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Last modifier.</p>
                      */
                     std::string m_updateUser;
                     bool m_updateUserHasBeenSet;
 
                     /**
-                     * Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Last modified time.</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Superapp name.</p>
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * Effective status of the bound application. 1: Not effective; 2: Effective
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Binding effective status for the superapp. Valid values: 1: Not effective; 2: Effective.</p>
                      */
                     int64_t m_effectStatus;
                     bool m_effectStatusHasBeenSet;
 
                     /**
-                     * ID of the application bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Effective mini program version ID bound to the superapp.</p>
                      */
                     int64_t m_effectMNPVersionId;
                     bool m_effectMNPVersionIdHasBeenSet;
 
                     /**
-                     * Effective version number of the application that bound with the mini program
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Effective mini program version number bound to the superapp.</p>
                      */
                     std::string m_effectMNPVersion;
                     bool m_effectMNPVersionHasBeenSet;
+
+                    /**
+                     * <p>Team ID.</p>
+                     */
+                    std::string m_teamId;
+                    bool m_teamIdHasBeenSet;
+
+                    /**
+                     * <p>Team type ID. Valid values: 1: Mini program team; 2: Superapp team; 3: Service provider team.</p>
+                     */
+                    int64_t m_teamTypeId;
+                    bool m_teamTypeIdHasBeenSet;
+
+                    /**
+                     * <p>Age rating information.</p>
+                     */
+                    std::vector<AgeRatingItem> m_ageRatings;
+                    bool m_ageRatingsHasBeenSet;
 
                 };
             }

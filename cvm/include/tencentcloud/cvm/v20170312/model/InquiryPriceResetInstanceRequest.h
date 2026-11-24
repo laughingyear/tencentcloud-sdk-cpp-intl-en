@@ -150,6 +150,27 @@ namespace TencentCloud
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
+                    /**
+                     * 获取User data provided for the instance, which must be base64-encoded. The maximum supported data size is 16KB. For detailed instructions on obtaining this parameter, see [Windows](https://cloud.tencent.com/document/product/213/17526) and [Linux](https://cloud.tencent.com/document/product/213/17525) documentation on executing commands during startup.
+                     * @return UserData User data provided for the instance, which must be base64-encoded. The maximum supported data size is 16KB. For detailed instructions on obtaining this parameter, see [Windows](https://cloud.tencent.com/document/product/213/17526) and [Linux](https://cloud.tencent.com/document/product/213/17525) documentation on executing commands during startup.
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置User data provided for the instance, which must be base64-encoded. The maximum supported data size is 16KB. For detailed instructions on obtaining this parameter, see [Windows](https://cloud.tencent.com/document/product/213/17526) and [Linux](https://cloud.tencent.com/document/product/213/17525) documentation on executing commands during startup.
+                     * @param _userData User data provided for the instance, which must be base64-encoded. The maximum supported data size is 16KB. For detailed instructions on obtaining this parameter, see [Windows](https://cloud.tencent.com/document/product/213/17526) and [Linux](https://cloud.tencent.com/document/product/213/17525) documentation on executing commands during startup.
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,6 +202,12 @@ namespace TencentCloud
                      */
                     EnhancedService m_enhancedService;
                     bool m_enhancedServiceHasBeenSet;
+
+                    /**
+                     * User data provided for the instance, which must be base64-encoded. The maximum supported data size is 16KB. For detailed instructions on obtaining this parameter, see [Windows](https://cloud.tencent.com/document/product/213/17526) and [Linux](https://cloud.tencent.com/document/product/213/17525) documentation on executing commands during startup.
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

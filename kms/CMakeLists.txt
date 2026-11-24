@@ -36,6 +36,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DescribeDataKeysRequest.h
   include/tencentcloud/kms/v20190118/model/ListAlgorithmsResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeysResponse.h
+  include/tencentcloud/kms/v20190118/model/RegionQps.h
   include/tencentcloud/kms/v20190118/model/EnableDataKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionResponse.h
@@ -45,7 +46,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/EnableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h
   include/tencentcloud/kms/v20190118/model/ListAlgorithmsRequest.h
-  include/tencentcloud/kms/v20190118/model/Tag.h
+  include/tencentcloud/kms/v20190118/model/MemberAccount.h
   include/tencentcloud/kms/v20190118/model/ListKeyDetailResponse.h
   include/tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateAliasResponse.h
@@ -64,6 +65,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetParametersForImportResponse.h
   include/tencentcloud/kms/v20190118/model/DecryptResponse.h
+  include/tencentcloud/kms/v20190118/model/CreateKmsInstanceRequest.h
   include/tencentcloud/kms/v20190118/model/ListDataKeyDetailResponse.h
   include/tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ImportKeyMaterialRequest.h
@@ -87,11 +89,12 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/ImportDataKeyRequest.h
   include/tencentcloud/kms/v20190118/model/ListKeyDetailRequest.h
   include/tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyRequest.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignResponse.h
   include/tencentcloud/kms/v20190118/model/AlgorithmInfo.h
   include/tencentcloud/kms/v20190118/model/GetRegionsResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateDataKeyDescriptionResponse.h
   include/tencentcloud/kms/v20190118/model/ExclusiveHSM.h
-  include/tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h
+  include/tencentcloud/kms/v20190118/model/GetDataKeyCiphertextBlobRequest.h
   include/tencentcloud/kms/v20190118/model/EnableDataKeysResponse.h
   include/tencentcloud/kms/v20190118/model/GenerateDataKeyResponse.h
   include/tencentcloud/kms/v20190118/model/EnableDataKeysRequest.h
@@ -106,7 +109,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/ReEncryptResponse.h
   include/tencentcloud/kms/v20190118/model/EncryptResponse.h
   include/tencentcloud/kms/v20190118/model/GetDataKeyPlaintextRequest.h
-  include/tencentcloud/kms/v20190118/model/GetDataKeyCiphertextBlobRequest.h
+  include/tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h
   include/tencentcloud/kms/v20190118/model/DeleteImportedKeyMaterialRequest.h
   include/tencentcloud/kms/v20190118/model/EnableKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ImportDataKeyResponse.h
@@ -119,12 +122,13 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ListDataKeyDetailRequest.h
   include/tencentcloud/kms/v20190118/model/CancelDataKeyDeletionResponse.h
+  include/tencentcloud/kms/v20190118/model/RotateKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ListKeysRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DataKey.h
   include/tencentcloud/kms/v20190118/model/KeyMetadata.h
   include/tencentcloud/kms/v20190118/model/CancelKeyArchiveResponse.h
-  include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/CreateKmsInstanceResponse.h
   include/tencentcloud/kms/v20190118/model/DecryptRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignRequest.h
@@ -154,17 +158,20 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/EnableDataKeyRequest.h
   include/tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h
   include/tencentcloud/kms/v20190118/model/GetDataKeyCiphertextBlobResponse.h
-  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignResponse.h
+  include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
   include/tencentcloud/kms/v20190118/model/SignByAsymmetricKeyResponse.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptResponse.h
+  include/tencentcloud/kms/v20190118/model/RotateKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DisableDataKeysRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
   include/tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/InstanceChargePrepaid.h
   include/tencentcloud/kms/v20190118/model/CancelKeyArchiveRequest.h
+  include/tencentcloud/kms/v20190118/model/Tag.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRotationRequest.h
   )
 
@@ -187,6 +194,7 @@ set(kms_src
   src/v20190118/model/DescribeDataKeysRequest.cpp
   src/v20190118/model/ListAlgorithmsResponse.cpp
   src/v20190118/model/DisableKeysResponse.cpp
+  src/v20190118/model/RegionQps.cpp
   src/v20190118/model/EnableDataKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxKeyResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionResponse.cpp
@@ -196,7 +204,7 @@ set(kms_src
   src/v20190118/model/EnableKeyRequest.cpp
   src/v20190118/model/GetKeyRotationStatusRequest.cpp
   src/v20190118/model/ListAlgorithmsRequest.cpp
-  src/v20190118/model/Tag.cpp
+  src/v20190118/model/MemberAccount.cpp
   src/v20190118/model/ListKeyDetailResponse.cpp
   src/v20190118/model/GenerateDataKeyRequest.cpp
   src/v20190118/model/UpdateAliasResponse.cpp
@@ -215,6 +223,7 @@ set(kms_src
   src/v20190118/model/DescribeWhiteBoxKeyRequest.cpp
   src/v20190118/model/GetParametersForImportResponse.cpp
   src/v20190118/model/DecryptResponse.cpp
+  src/v20190118/model/CreateKmsInstanceRequest.cpp
   src/v20190118/model/ListDataKeyDetailResponse.cpp
   src/v20190118/model/CreateWhiteBoxKeyResponse.cpp
   src/v20190118/model/ImportKeyMaterialRequest.cpp
@@ -238,11 +247,12 @@ set(kms_src
   src/v20190118/model/ImportDataKeyRequest.cpp
   src/v20190118/model/ListKeyDetailRequest.cpp
   src/v20190118/model/DeleteWhiteBoxKeyRequest.cpp
+  src/v20190118/model/PostQuantumCryptoSignResponse.cpp
   src/v20190118/model/AlgorithmInfo.cpp
   src/v20190118/model/GetRegionsResponse.cpp
   src/v20190118/model/UpdateDataKeyDescriptionResponse.cpp
   src/v20190118/model/ExclusiveHSM.cpp
-  src/v20190118/model/CancelKeyDeletionRequest.cpp
+  src/v20190118/model/GetDataKeyCiphertextBlobRequest.cpp
   src/v20190118/model/EnableDataKeysResponse.cpp
   src/v20190118/model/GenerateDataKeyResponse.cpp
   src/v20190118/model/EnableDataKeysRequest.cpp
@@ -257,7 +267,7 @@ set(kms_src
   src/v20190118/model/ReEncryptResponse.cpp
   src/v20190118/model/EncryptResponse.cpp
   src/v20190118/model/GetDataKeyPlaintextRequest.cpp
-  src/v20190118/model/GetDataKeyCiphertextBlobRequest.cpp
+  src/v20190118/model/CancelKeyDeletionRequest.cpp
   src/v20190118/model/DeleteImportedKeyMaterialRequest.cpp
   src/v20190118/model/EnableKeyResponse.cpp
   src/v20190118/model/ImportDataKeyResponse.cpp
@@ -270,12 +280,13 @@ set(kms_src
   src/v20190118/model/DeleteWhiteBoxKeyResponse.cpp
   src/v20190118/model/ListDataKeyDetailRequest.cpp
   src/v20190118/model/CancelDataKeyDeletionResponse.cpp
+  src/v20190118/model/RotateKeyResponse.cpp
   src/v20190118/model/ListKeysRequest.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.cpp
   src/v20190118/model/DataKey.cpp
   src/v20190118/model/KeyMetadata.cpp
   src/v20190118/model/CancelKeyArchiveResponse.cpp
-  src/v20190118/model/GetPublicKeyResponse.cpp
+  src/v20190118/model/CreateKmsInstanceResponse.cpp
   src/v20190118/model/DecryptRequest.cpp
   src/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.cpp
   src/v20190118/model/PostQuantumCryptoSignRequest.cpp
@@ -305,17 +316,20 @@ set(kms_src
   src/v20190118/model/EnableDataKeyRequest.cpp
   src/v20190118/model/BindCloudResourceRequest.cpp
   src/v20190118/model/GetDataKeyCiphertextBlobResponse.cpp
-  src/v20190118/model/PostQuantumCryptoSignResponse.cpp
+  src/v20190118/model/GetPublicKeyResponse.cpp
   src/v20190118/model/SignByAsymmetricKeyResponse.cpp
   src/v20190118/model/PostQuantumCryptoVerifyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
   src/v20190118/model/PostQuantumCryptoDecryptResponse.cpp
+  src/v20190118/model/RotateKeyRequest.cpp
   src/v20190118/model/DisableDataKeysRequest.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp
   src/v20190118/model/UnbindCloudResourceResponse.cpp
   src/v20190118/model/DescribeKeyResponse.cpp
+  src/v20190118/model/InstanceChargePrepaid.cpp
   src/v20190118/model/CancelKeyArchiveRequest.cpp
+  src/v20190118/model/Tag.cpp
   src/v20190118/model/DisableKeyRotationRequest.cpp
   )
 

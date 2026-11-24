@@ -63,7 +63,15 @@ CreateClustersRequest::CreateClustersRequest() :
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_slaveZoneHasBeenSet(false),
-    m_instanceInitInfosHasBeenSet(false)
+    m_instanceInitInfosHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_proxyConfigHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false),
+    m_autoArchiveDelayHoursHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_cynosVersionHasBeenSet(false),
+    m_syncWayHasBeenSet(false),
+    m_semiSyncTimeoutHasBeenSet(false)
 {
 }
 
@@ -431,6 +439,71 @@ string CreateClustersRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_proxyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoArchiveDelayHoursHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchiveDelayHours";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoArchiveDelayHours, allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cynosVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CynosVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cynosVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_semiSyncTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemiSyncTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_semiSyncTimeout, allocator);
     }
 
 
@@ -1095,6 +1168,134 @@ void CreateClustersRequest::SetInstanceInitInfos(const vector<InstanceInitInfo>&
 bool CreateClustersRequest::InstanceInitInfosHasBeenSet() const
 {
     return m_instanceInitInfosHasBeenSet;
+}
+
+string CreateClustersRequest::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CreateClustersRequest::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CreateClustersRequest::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+ProxyConfig CreateClustersRequest::GetProxyConfig() const
+{
+    return m_proxyConfig;
+}
+
+void CreateClustersRequest::SetProxyConfig(const ProxyConfig& _proxyConfig)
+{
+    m_proxyConfig = _proxyConfig;
+    m_proxyConfigHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ProxyConfigHasBeenSet() const
+{
+    return m_proxyConfigHasBeenSet;
+}
+
+string CreateClustersRequest::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+void CreateClustersRequest::SetAutoArchive(const string& _autoArchive)
+{
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetAutoArchiveDelayHours() const
+{
+    return m_autoArchiveDelayHours;
+}
+
+void CreateClustersRequest::SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours)
+{
+    m_autoArchiveDelayHours = _autoArchiveDelayHours;
+    m_autoArchiveDelayHoursHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveDelayHoursHasBeenSet() const
+{
+    return m_autoArchiveDelayHoursHasBeenSet;
+}
+
+string CreateClustersRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void CreateClustersRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+string CreateClustersRequest::GetCynosVersion() const
+{
+    return m_cynosVersion;
+}
+
+void CreateClustersRequest::SetCynosVersion(const string& _cynosVersion)
+{
+    m_cynosVersion = _cynosVersion;
+    m_cynosVersionHasBeenSet = true;
+}
+
+bool CreateClustersRequest::CynosVersionHasBeenSet() const
+{
+    return m_cynosVersionHasBeenSet;
+}
+
+string CreateClustersRequest::GetSyncWay() const
+{
+    return m_syncWay;
+}
+
+void CreateClustersRequest::SetSyncWay(const string& _syncWay)
+{
+    m_syncWay = _syncWay;
+    m_syncWayHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SyncWayHasBeenSet() const
+{
+    return m_syncWayHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetSemiSyncTimeout() const
+{
+    return m_semiSyncTimeout;
+}
+
+void CreateClustersRequest::SetSemiSyncTimeout(const int64_t& _semiSyncTimeout)
+{
+    m_semiSyncTimeout = _semiSyncTimeout;
+    m_semiSyncTimeoutHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SemiSyncTimeoutHasBeenSet() const
+{
+    return m_semiSyncTimeoutHasBeenSet;
 }
 
 

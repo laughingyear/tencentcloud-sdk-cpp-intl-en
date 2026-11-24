@@ -161,15 +161,15 @@ zone = Availability zoneactionType = Transaction typepayMode = Billing modetags 
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取Fee type: cost-total cost, totalCost-original price cost
-                     * @return FeeType Fee type: cost-total cost, totalCost-original price cost
+                     * 获取Fee type: cost-discounted total cost, totalCost-original price cost
+                     * @return FeeType Fee type: cost-discounted total cost, totalCost-original price cost
                      * 
                      */
                     std::string GetFeeType() const;
 
                     /**
-                     * 设置Fee type: cost-total cost, totalCost-original price cost
-                     * @param _feeType Fee type: cost-total cost, totalCost-original price cost
+                     * 设置Fee type: cost-discounted total cost, totalCost-original price cost
+                     * @param _feeType Fee type: cost-discounted total cost, totalCost-original price cost
                      * 
                      */
                     void SetFeeType(const std::string& _feeType);
@@ -224,15 +224,15 @@ zone = Availability zoneactionType = Transaction typepayMode = Billing modetags 
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取Cost allocation tag value
-                     * @return TagKeyStr Cost allocation tag value
+                     * 获取Cost allocation tag key
+                     * @return TagKeyStr Cost allocation tag key
                      * 
                      */
                     std::string GetTagKeyStr() const;
 
                     /**
-                     * 设置Cost allocation tag value
-                     * @param _tagKeyStr Cost allocation tag value
+                     * 设置Cost allocation tag key
+                     * @param _tagKeyStr Cost allocation tag key
                      * 
                      */
                     void SetTagKeyStr(const std::string& _tagKeyStr);
@@ -322,7 +322,7 @@ zone = Availability zoneactionType = Transaction typepayMode = Billing modetags 
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * Fee type: cost-total cost, totalCost-original price cost
+                     * Fee type: cost-discounted total cost, totalCost-original price cost
                      */
                     std::string m_feeType;
                     bool m_feeTypeHasBeenSet;
@@ -340,7 +340,7 @@ zone = Availability zoneactionType = Transaction typepayMode = Billing modetags 
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * Cost allocation tag value
+                     * Cost allocation tag key
                      */
                     std::string m_tagKeyStr;
                     bool m_tagKeyStrHasBeenSet;

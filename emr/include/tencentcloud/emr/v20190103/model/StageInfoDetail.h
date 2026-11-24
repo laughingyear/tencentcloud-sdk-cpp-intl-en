@@ -1,0 +1,489 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_STAGEINFODETAIL_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_STAGEINFODETAIL_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Emr
+    {
+        namespace V20190103
+        {
+            namespace Model
+            {
+                /**
+                * Task step details.
+                */
+                class StageInfoDetail : public AbstractModel
+                {
+                public:
+                    StageInfoDetail();
+                    ~StageInfoDetail() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取Step.
+                     * @return Stage Step.
+                     * 
+                     */
+                    std::string GetStage() const;
+
+                    /**
+                     * 设置Step.
+                     * @param _stage Step.
+                     * 
+                     */
+                    void SetStage(const std::string& _stage);
+
+                    /**
+                     * 判断参数 Stage 是否已赋值
+                     * @return Stage 是否已赋值
+                     * 
+                     */
+                    bool StageHasBeenSet() const;
+
+                    /**
+                     * 获取Step name.
+                     * @return Name Step name.
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置Step name.
+                     * @param _name Step name.
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取Whether it is displayed.
+                     * @return IsShow Whether it is displayed.
+                     * 
+                     */
+                    bool GetIsShow() const;
+
+                    /**
+                     * 设置Whether it is displayed.
+                     * @param _isShow Whether it is displayed.
+                     * 
+                     */
+                    void SetIsShow(const bool& _isShow);
+
+                    /**
+                     * 判断参数 IsShow 是否已赋值
+                     * @return IsShow 是否已赋值
+                     * 
+                     */
+                    bool IsShowHasBeenSet() const;
+
+                    /**
+                     * 获取Whether it is a sub-flow.
+                     * @return IsSubFlow Whether it is a sub-flow.
+                     * 
+                     */
+                    bool GetIsSubFlow() const;
+
+                    /**
+                     * 设置Whether it is a sub-flow.
+                     * @param _isSubFlow Whether it is a sub-flow.
+                     * 
+                     */
+                    void SetIsSubFlow(const bool& _isSubFlow);
+
+                    /**
+                     * 判断参数 IsSubFlow 是否已赋值
+                     * @return IsSubFlow 是否已赋值
+                     * 
+                     */
+                    bool IsSubFlowHasBeenSet() const;
+
+                    /**
+                     * 获取Sub-flow tag.
+                     * @return SubFlowFlag Sub-flow tag.
+                     * 
+                     */
+                    std::string GetSubFlowFlag() const;
+
+                    /**
+                     * 设置Sub-flow tag.
+                     * @param _subFlowFlag Sub-flow tag.
+                     * 
+                     */
+                    void SetSubFlowFlag(const std::string& _subFlowFlag);
+
+                    /**
+                     * 判断参数 SubFlowFlag 是否已赋值
+                     * @return SubFlowFlag 是否已赋值
+                     * 
+                     */
+                    bool SubFlowFlagHasBeenSet() const;
+
+                    /**
+                     * 获取Step running status. Valid values: 0 (not started), 1 (in progress), 2 (completed), 3 (partially completed), and -1 (failed).
+                     * @return Status Step running status. Valid values: 0 (not started), 1 (in progress), 2 (completed), 3 (partially completed), and -1 (failed).
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置Step running status. Valid values: 0 (not started), 1 (in progress), 2 (completed), 3 (partially completed), and -1 (failed).
+                     * @param _status Step running status. Valid values: 0 (not started), 1 (in progress), 2 (completed), 3 (partially completed), and -1 (failed).
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取Step running status description.
+                     * @return Desc Step running status description.
+                     * 
+                     */
+                    std::string GetDesc() const;
+
+                    /**
+                     * 设置Step running status description.
+                     * @param _desc Step running status description.
+                     * 
+                     */
+                    void SetDesc(const std::string& _desc);
+
+                    /**
+                     * 判断参数 Desc 是否已赋值
+                     * @return Desc 是否已赋值
+                     * 
+                     */
+                    bool DescHasBeenSet() const;
+
+                    /**
+                     * 获取Running progress.
+                     * @return Progress Running progress.
+                     * 
+                     */
+                    double GetProgress() const;
+
+                    /**
+                     * 设置Running progress.
+                     * @param _progress Running progress.
+                     * 
+                     */
+                    void SetProgress(const double& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
+                     * 获取Start time.
+                     * @return Starttime Start time.
+                     * 
+                     */
+                    std::string GetStarttime() const;
+
+                    /**
+                     * 设置Start time.
+                     * @param _starttime Start time.
+                     * 
+                     */
+                    void SetStarttime(const std::string& _starttime);
+
+                    /**
+                     * 判断参数 Starttime 是否已赋值
+                     * @return Starttime 是否已赋值
+                     * 
+                     */
+                    bool StarttimeHasBeenSet() const;
+
+                    /**
+                     * 获取End time.
+                     * @return Endtime End time.
+                     * 
+                     */
+                    std::string GetEndtime() const;
+
+                    /**
+                     * 设置End time.
+                     * @param _endtime End time.
+                     * 
+                     */
+                    void SetEndtime(const std::string& _endtime);
+
+                    /**
+                     * 判断参数 Endtime 是否已赋值
+                     * @return Endtime 是否已赋值
+                     * 
+                     */
+                    bool EndtimeHasBeenSet() const;
+
+                    /**
+                     * 获取Whether detailed information is included.
+                     * @return HadWoodDetail Whether detailed information is included.
+                     * 
+                     */
+                    bool GetHadWoodDetail() const;
+
+                    /**
+                     * 设置Whether detailed information is included.
+                     * @param _hadWoodDetail Whether detailed information is included.
+                     * 
+                     */
+                    void SetHadWoodDetail(const bool& _hadWoodDetail);
+
+                    /**
+                     * 判断参数 HadWoodDetail 是否已赋值
+                     * @return HadWoodDetail 是否已赋值
+                     * 
+                     */
+                    bool HadWoodDetailHasBeenSet() const;
+
+                    /**
+                     * 获取Wood sub-flow ID.
+                     * @return WoodJobId Wood sub-flow ID.
+                     * 
+                     */
+                    uint64_t GetWoodJobId() const;
+
+                    /**
+                     * 设置Wood sub-flow ID.
+                     * @param _woodJobId Wood sub-flow ID.
+                     * 
+                     */
+                    void SetWoodJobId(const uint64_t& _woodJobId);
+
+                    /**
+                     * 判断参数 WoodJobId 是否已赋值
+                     * @return WoodJobId 是否已赋值
+                     * 
+                     */
+                    bool WoodJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取Multi-language version key.
+                     * @return LanguageKey Multi-language version key.
+                     * 
+                     */
+                    std::string GetLanguageKey() const;
+
+                    /**
+                     * 设置Multi-language version key.
+                     * @param _languageKey Multi-language version key.
+                     * 
+                     */
+                    void SetLanguageKey(const std::string& _languageKey);
+
+                    /**
+                     * 判断参数 LanguageKey 是否已赋值
+                     * @return LanguageKey 是否已赋值
+                     * 
+                     */
+                    bool LanguageKeyHasBeenSet() const;
+
+                    /**
+                     * 获取Reason for the stage failure.
+                     * @return FailedReason Reason for the stage failure.
+                     * 
+                     */
+                    std::string GetFailedReason() const;
+
+                    /**
+                     * 设置Reason for the stage failure.
+                     * @param _failedReason Reason for the stage failure.
+                     * 
+                     */
+                    void SetFailedReason(const std::string& _failedReason);
+
+                    /**
+                     * 判断参数 FailedReason 是否已赋值
+                     * @return FailedReason 是否已赋值
+                     * 
+                     */
+                    bool FailedReasonHasBeenSet() const;
+
+                    /**
+                     * 获取Step duration.
+                     * @return TimeConsuming Step duration.
+                     * 
+                     */
+                    std::string GetTimeConsuming() const;
+
+                    /**
+                     * 设置Step duration.
+                     * @param _timeConsuming Step duration.
+                     * 
+                     */
+                    void SetTimeConsuming(const std::string& _timeConsuming);
+
+                    /**
+                     * 判断参数 TimeConsuming 是否已赋值
+                     * @return TimeConsuming 是否已赋值
+                     * 
+                     */
+                    bool TimeConsumingHasBeenSet() const;
+
+                    /**
+                     * 获取ID used by the frontend.
+                     * @return Id ID used by the frontend.
+                     * 
+                     */
+                    int64_t GetId() const;
+
+                    /**
+                     * 设置ID used by the frontend.
+                     * @param _id ID used by the frontend.
+                     * 
+                     */
+                    void SetId(const int64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * Step.
+                     */
+                    std::string m_stage;
+                    bool m_stageHasBeenSet;
+
+                    /**
+                     * Step name.
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * Whether it is displayed.
+                     */
+                    bool m_isShow;
+                    bool m_isShowHasBeenSet;
+
+                    /**
+                     * Whether it is a sub-flow.
+                     */
+                    bool m_isSubFlow;
+                    bool m_isSubFlowHasBeenSet;
+
+                    /**
+                     * Sub-flow tag.
+                     */
+                    std::string m_subFlowFlag;
+                    bool m_subFlowFlagHasBeenSet;
+
+                    /**
+                     * Step running status. Valid values: 0 (not started), 1 (in progress), 2 (completed), 3 (partially completed), and -1 (failed).
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * Step running status description.
+                     */
+                    std::string m_desc;
+                    bool m_descHasBeenSet;
+
+                    /**
+                     * Running progress.
+                     */
+                    double m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
+                     * Start time.
+                     */
+                    std::string m_starttime;
+                    bool m_starttimeHasBeenSet;
+
+                    /**
+                     * End time.
+                     */
+                    std::string m_endtime;
+                    bool m_endtimeHasBeenSet;
+
+                    /**
+                     * Whether detailed information is included.
+                     */
+                    bool m_hadWoodDetail;
+                    bool m_hadWoodDetailHasBeenSet;
+
+                    /**
+                     * Wood sub-flow ID.
+                     */
+                    uint64_t m_woodJobId;
+                    bool m_woodJobIdHasBeenSet;
+
+                    /**
+                     * Multi-language version key.
+                     */
+                    std::string m_languageKey;
+                    bool m_languageKeyHasBeenSet;
+
+                    /**
+                     * Reason for the stage failure.
+                     */
+                    std::string m_failedReason;
+                    bool m_failedReasonHasBeenSet;
+
+                    /**
+                     * Step duration.
+                     */
+                    std::string m_timeConsuming;
+                    bool m_timeConsumingHasBeenSet;
+
+                    /**
+                     * ID used by the frontend.
+                     */
+                    int64_t m_id;
+                    bool m_idHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_STAGEINFODETAIL_H_

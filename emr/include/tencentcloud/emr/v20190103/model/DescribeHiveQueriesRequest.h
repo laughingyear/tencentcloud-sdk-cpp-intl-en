@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The cluster ID.
-                     * @return InstanceId The cluster ID.
+                     * 获取Cluster ID.
+                     * @return InstanceId Cluster ID.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置The cluster ID.
-                     * @param _instanceId The cluster ID.
+                     * 设置Cluster ID.
+                     * @param _instanceId Cluster ID.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取The start time in seconds.
-                     * @return StartTime The start time in seconds.
+                     * 获取Start time (s).
+                     * @return StartTime Start time (s).
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置The start time in seconds.
-                     * @param _startTime The start time in seconds.
+                     * 设置Start time (s).
+                     * @param _startTime Start time (s).
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取The end time in seconds. EndTime-StartTime should not exceed one day's duration, which is 86400 seconds.
-                     * @return EndTime The end time in seconds. EndTime-StartTime should not exceed one day's duration, which is 86400 seconds.
+                     * 获取End time (s). The difference between the values of EndTime and StartTime cannot exceed 86,400 seconds (one day).
+                     * @return EndTime End time (s). The difference between the values of EndTime and StartTime cannot exceed 86,400 seconds (one day).
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置The end time in seconds. EndTime-StartTime should not exceed one day's duration, which is 86400 seconds.
-                     * @param _endTime The end time in seconds. EndTime-StartTime should not exceed one day's duration, which is 86400 seconds.
+                     * 设置End time (s). The difference between the values of EndTime and StartTime cannot exceed 86,400 seconds (one day).
+                     * @param _endTime End time (s). The difference between the values of EndTime and StartTime cannot exceed 86,400 seconds (one day).
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取Starting offset for pagination. Start value: 0
-                     * @return Offset Starting offset for pagination. Start value: 0
+                     * 获取Starting offset for pages, starting from 0.
+                     * @return Offset Starting offset for pages, starting from 0.
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置Starting offset for pagination. Start value: 0
-                     * @param _offset Starting offset for pagination. Start value: 0
+                     * 设置Starting offset for pages, starting from 0.
+                     * @param _offset Starting offset for pages, starting from 0.
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Page size. Valid range: [1,100]
-                     * @return Limit Page size. Valid range: [1,100]
+                     * 获取Number of entries per page. Value range: [1, 100].
+                     * @return Limit Number of entries per page. Value range: [1, 100].
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Page size. Valid range: [1,100]
-                     * @param _limit Page size. Valid range: [1,100]
+                     * 设置Number of entries per page. Value range: [1, 100].
+                     * @param _limit Number of entries per page. Value range: [1, 100].
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -147,37 +147,118 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取Execution status, for example, ERROR.
+                     * @return State Execution status, for example, ERROR.
+                     * 
+                     */
+                    std::vector<std::string> GetState() const;
+
+                    /**
+                     * 设置Execution status, for example, ERROR.
+                     * @param _state Execution status, for example, ERROR.
+                     * 
+                     */
+                    void SetState(const std::vector<std::string>& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取Time point earlier than the end time.
+                     * @return EndTimeGte Time point earlier than the end time.
+                     * 
+                     */
+                    uint64_t GetEndTimeGte() const;
+
+                    /**
+                     * 设置Time point earlier than the end time.
+                     * @param _endTimeGte Time point earlier than the end time.
+                     * 
+                     */
+                    void SetEndTimeGte(const uint64_t& _endTimeGte);
+
+                    /**
+                     * 判断参数 EndTimeGte 是否已赋值
+                     * @return EndTimeGte 是否已赋值
+                     * 
+                     */
+                    bool EndTimeGteHasBeenSet() const;
+
+                    /**
+                     * 获取Time point later than the end time.
+                     * @return EndTimeLte Time point later than the end time.
+                     * 
+                     */
+                    uint64_t GetEndTimeLte() const;
+
+                    /**
+                     * 设置Time point later than the end time.
+                     * @param _endTimeLte Time point later than the end time.
+                     * 
+                     */
+                    void SetEndTimeLte(const uint64_t& _endTimeLte);
+
+                    /**
+                     * 判断参数 EndTimeLte 是否已赋值
+                     * @return EndTimeLte 是否已赋值
+                     * 
+                     */
+                    bool EndTimeLteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The cluster ID.
+                     * Cluster ID.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * The start time in seconds.
+                     * Start time (s).
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * The end time in seconds. EndTime-StartTime should not exceed one day's duration, which is 86400 seconds.
+                     * End time (s). The difference between the values of EndTime and StartTime cannot exceed 86,400 seconds (one day).
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * Starting offset for pagination. Start value: 0
+                     * Starting offset for pages, starting from 0.
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Page size. Valid range: [1,100]
+                     * Number of entries per page. Value range: [1, 100].
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * Execution status, for example, ERROR.
+                     */
+                    std::vector<std::string> m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * Time point earlier than the end time.
+                     */
+                    uint64_t m_endTimeGte;
+                    bool m_endTimeGteHasBeenSet;
+
+                    /**
+                     * Time point later than the end time.
+                     */
+                    uint64_t m_endTimeLte;
+                    bool m_endTimeLteHasBeenSet;
 
                 };
             }

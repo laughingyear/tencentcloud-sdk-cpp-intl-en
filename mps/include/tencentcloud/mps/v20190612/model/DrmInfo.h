@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The DRM encryption details.
+                * Drm encryption information.
                 */
                 class DrmInfo : public AbstractModel
                 {
@@ -50,34 +50,122 @@ namespace TencentCloud
 
                     /**
                      * 获取Encryption type.
-<li>simpleaes: AES-128 encryption</li>
-<li> widevine</li>
-<li>fairplay: not supported for DASH streams</li>
-<li> playready</li>
-Note: This field may return null, indicating that no valid value can be obtained.
+
+- simpleaes
+Can only be used for HLS. Format support: ts and mp4
+Only slice mode can be used. singlefile mode cannot be used.
+
+- fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or singlefile mode can be used.
+
+- widevine:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- playready:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- widevine+fairplay,playready+fairplay,widevine+playready+fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or single-file mode can be used.
+
+- widevine+playready:
+Applicable to HLS and MPEG-DASH. The segment format can only be mp4.
+For HLS format, you can use the slicing mode or singlefile mode.
+For MPEG-DASH, only can be used in singlefile mode.
                      * @return Type Encryption type.
-<li>simpleaes: AES-128 encryption</li>
-<li> widevine</li>
-<li>fairplay: not supported for DASH streams</li>
-<li> playready</li>
-Note: This field may return null, indicating that no valid value can be obtained.
+
+- simpleaes
+Can only be used for HLS. Format support: ts and mp4
+Only slice mode can be used. singlefile mode cannot be used.
+
+- fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or singlefile mode can be used.
+
+- widevine:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- playready:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- widevine+fairplay,playready+fairplay,widevine+playready+fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or single-file mode can be used.
+
+- widevine+playready:
+Applicable to HLS and MPEG-DASH. The segment format can only be mp4.
+For HLS format, you can use the slicing mode or singlefile mode.
+For MPEG-DASH, only can be used in singlefile mode.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Encryption type.
-<li>simpleaes: AES-128 encryption</li>
-<li> widevine</li>
-<li>fairplay: not supported for DASH streams</li>
-<li> playready</li>
-Note: This field may return null, indicating that no valid value can be obtained.
+
+- simpleaes
+Can only be used for HLS. Format support: ts and mp4
+Only slice mode can be used. singlefile mode cannot be used.
+
+- fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or singlefile mode can be used.
+
+- widevine:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- playready:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- widevine+fairplay,playready+fairplay,widevine+playready+fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or single-file mode can be used.
+
+- widevine+playready:
+Applicable to HLS and MPEG-DASH. The segment format can only be mp4.
+For HLS format, you can use the slicing mode or singlefile mode.
+For MPEG-DASH, only can be used in singlefile mode.
                      * @param _type Encryption type.
-<li>simpleaes: AES-128 encryption</li>
-<li> widevine</li>
-<li>fairplay: not supported for DASH streams</li>
-<li> playready</li>
-Note: This field may return null, indicating that no valid value can be obtained.
+
+- simpleaes
+Can only be used for HLS. Format support: ts and mp4
+Only slice mode can be used. singlefile mode cannot be used.
+
+- fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or singlefile mode can be used.
+
+- widevine:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- playready:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- widevine+fairplay,playready+fairplay,widevine+playready+fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or single-file mode can be used.
+
+- widevine+playready:
+Applicable to HLS and MPEG-DASH. The segment format can only be mp4.
+For HLS format, you can use the slicing mode or singlefile mode.
+For MPEG-DASH, only can be used in singlefile mode.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -90,19 +178,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The AES-128 encryption details.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SimpleAesDrm The AES-128 encryption details.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取SimpleAes encryption information.
+                     * @return SimpleAesDrm SimpleAes encryption information.
                      * 
                      */
                     SimpleAesDrm GetSimpleAesDrm() const;
 
                     /**
-                     * 设置The AES-128 encryption details.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _simpleAesDrm The AES-128 encryption details.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置SimpleAes encryption information.
+                     * @param _simpleAesDrm SimpleAes encryption information.
                      * 
                      */
                     void SetSimpleAesDrm(const SimpleAesDrm& _simpleAesDrm);
@@ -139,18 +223,39 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Encryption type.
-<li>simpleaes: AES-128 encryption</li>
-<li> widevine</li>
-<li>fairplay: not supported for DASH streams</li>
-<li> playready</li>
-Note: This field may return null, indicating that no valid value can be obtained.
+
+- simpleaes
+Can only be used for HLS. Format support: ts and mp4
+Only slice mode can be used. singlefile mode cannot be used.
+
+- fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or singlefile mode can be used.
+
+- widevine:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- playready:
+Can be used for HLS and DASH. The segment format can only be mp4.
+Output HLS: The slicing or singlefile mode can be used.
+Output DASH: can only be in singlefile mode
+
+- widevine+fairplay,playready+fairplay,widevine+playready+fairplay:
+Can only be used for HLS. The segment format can only be mp4.
+Slice mode or single-file mode can be used.
+
+- widevine+playready:
+Applicable to HLS and MPEG-DASH. The segment format can only be mp4.
+For HLS format, you can use the slicing mode or singlefile mode.
+For MPEG-DASH, only can be used in singlefile mode.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The AES-128 encryption details.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * SimpleAes encryption information.
                      */
                     SimpleAesDrm m_simpleAesDrm;
                     bool m_simpleAesDrmHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Copyright information
-                     * @return Text Copyright information
+                     * 获取Copyright information.
+                     * @return Text Copyright information.
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置Copyright information
-                     * @param _text Copyright information
+                     * 设置Copyright information.
+                     * @param _text Copyright information.
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Copyright information
+                     * Copyright information.
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;

@@ -1,0 +1,274 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCSAS_V20250106_MODEL_DESCRIBEMNGVERSIONRESP_H_
+#define TENCENTCLOUD_TCSAS_V20250106_MODEL_DESCRIBEMNGVERSIONRESP_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcsas/v20250106/model/MNPVersionSubPackageInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcsas
+    {
+        namespace V20250106
+        {
+            namespace Model
+            {
+                /**
+                * Response for querying the mini game version creation result.
+                */
+                class DescribeMNGVersionResp : public AbstractModel
+                {
+                public:
+                    DescribeMNGVersionResp();
+                    ~DescribeMNGVersionResp() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>Mini game appid.</p>
+                     * @return MNPId <p>Mini game appid.</p>
+                     * 
+                     */
+                    std::string GetMNPId() const;
+
+                    /**
+                     * 设置<p>Mini game appid.</p>
+                     * @param _mNPId <p>Mini game appid.</p>
+                     * 
+                     */
+                    void SetMNPId(const std::string& _mNPId);
+
+                    /**
+                     * 判断参数 MNPId 是否已赋值
+                     * @return MNPId 是否已赋值
+                     * 
+                     */
+                    bool MNPIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Task ID.</p>
+                     * @return TaskId <p>Task ID.</p>
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置<p>Task ID.</p>
+                     * @param _taskId <p>Task ID.</p>
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.</p>
+                     * @return TaskStatus <p>Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.</p>
+                     * 
+                     */
+                    int64_t GetTaskStatus() const;
+
+                    /**
+                     * 设置<p>Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.</p>
+                     * @param _taskStatus <p>Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.</p>
+                     * 
+                     */
+                    void SetTaskStatus(const int64_t& _taskStatus);
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Task status information.</p>
+                     * @return TaskMsg <p>Task status information.</p>
+                     * 
+                     */
+                    std::string GetTaskMsg() const;
+
+                    /**
+                     * 设置<p>Task status information.</p>
+                     * @param _taskMsg <p>Task status information.</p>
+                     * 
+                     */
+                    void SetTaskMsg(const std::string& _taskMsg);
+
+                    /**
+                     * 判断参数 TaskMsg 是否已赋值
+                     * @return TaskMsg 是否已赋值
+                     * 
+                     */
+                    bool TaskMsgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Mini game version ID (returned upon successful compilation).</p>
+                     * @return MNPVersionId <p>Mini game version ID (returned upon successful compilation).</p>
+                     * 
+                     */
+                    int64_t GetMNPVersionId() const;
+
+                    /**
+                     * 设置<p>Mini game version ID (returned upon successful compilation).</p>
+                     * @param _mNPVersionId <p>Mini game version ID (returned upon successful compilation).</p>
+                     * 
+                     */
+                    void SetMNPVersionId(const int64_t& _mNPVersionId);
+
+                    /**
+                     * 判断参数 MNPVersionId 是否已赋值
+                     * @return MNPVersionId 是否已赋值
+                     * 
+                     */
+                    bool MNPVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>QR code expiration time.</p>
+                     * @return ExpireTime <p>QR code expiration time.</p>
+                     * 
+                     */
+                    int64_t GetExpireTime() const;
+
+                    /**
+                     * 设置<p>QR code expiration time.</p>
+                     * @param _expireTime <p>QR code expiration time.</p>
+                     * 
+                     */
+                    void SetExpireTime(const int64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Version QR code.</p>
+                     * @return QRCode <p>Version QR code.</p>
+                     * 
+                     */
+                    std::string GetQRCode() const;
+
+                    /**
+                     * 设置<p>Version QR code.</p>
+                     * @param _qRCode <p>Version QR code.</p>
+                     * 
+                     */
+                    void SetQRCode(const std::string& _qRCode);
+
+                    /**
+                     * 判断参数 QRCode 是否已赋值
+                     * @return QRCode 是否已赋值
+                     * 
+                     */
+                    bool QRCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Compilation package information.</p>
+                     * @return SubPackageInfos <p>Compilation package information.</p>
+                     * 
+                     */
+                    std::vector<MNPVersionSubPackageInfo> GetSubPackageInfos() const;
+
+                    /**
+                     * 设置<p>Compilation package information.</p>
+                     * @param _subPackageInfos <p>Compilation package information.</p>
+                     * 
+                     */
+                    void SetSubPackageInfos(const std::vector<MNPVersionSubPackageInfo>& _subPackageInfos);
+
+                    /**
+                     * 判断参数 SubPackageInfos 是否已赋值
+                     * @return SubPackageInfos 是否已赋值
+                     * 
+                     */
+                    bool SubPackageInfosHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>Mini game appid.</p>
+                     */
+                    std::string m_mNPId;
+                    bool m_mNPIdHasBeenSet;
+
+                    /**
+                     * <p>Task ID.</p>
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>Task status. Valid values: 1: Pending; 20: Running; 30: Failed; 60: Succeeded.</p>
+                     */
+                    int64_t m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * <p>Task status information.</p>
+                     */
+                    std::string m_taskMsg;
+                    bool m_taskMsgHasBeenSet;
+
+                    /**
+                     * <p>Mini game version ID (returned upon successful compilation).</p>
+                     */
+                    int64_t m_mNPVersionId;
+                    bool m_mNPVersionIdHasBeenSet;
+
+                    /**
+                     * <p>QR code expiration time.</p>
+                     */
+                    int64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>Version QR code.</p>
+                     */
+                    std::string m_qRCode;
+                    bool m_qRCodeHasBeenSet;
+
+                    /**
+                     * <p>Compilation package information.</p>
+                     */
+                    std::vector<MNPVersionSubPackageInfo> m_subPackageInfos;
+                    bool m_subPackageInfosHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCSAS_V20250106_MODEL_DESCRIBEMNGVERSIONRESP_H_

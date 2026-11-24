@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of animated image generating in VOD file
+                * VOD file video motion graphic result information
                 */
                 class MediaAnimatedGraphicsInfo : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Result information of animated image generating task
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AnimatedGraphicsSet Result information of animated image generating task
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Video motion graphic result information
+                     * @return AnimatedGraphicsSet Video motion graphic result information
                      * 
                      */
                     std::vector<MediaAnimatedGraphicsItem> GetAnimatedGraphicsSet() const;
 
                     /**
-                     * 设置Result information of animated image generating task
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _animatedGraphicsSet Result information of animated image generating task
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Video motion graphic result information
+                     * @param _animatedGraphicsSet Video motion graphic result information
                      * 
                      */
                     void SetAnimatedGraphicsSet(const std::vector<MediaAnimatedGraphicsItem>& _animatedGraphicsSet);
@@ -75,8 +71,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Result information of animated image generating task
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Video motion graphic result information
                      */
                     std::vector<MediaAnimatedGraphicsItem> m_animatedGraphicsSet;
                     bool m_animatedGraphicsSetHasBeenSet;

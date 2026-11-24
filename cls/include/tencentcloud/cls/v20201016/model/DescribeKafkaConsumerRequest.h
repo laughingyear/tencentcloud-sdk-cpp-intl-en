@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Log Topic ID
-                     * @return FromTopicId Log Topic ID
+                     * 获取<p>Log topic Id.</p><ul><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56454?from_cn_redirect=1">getting the log topic list</a>.</li><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56456?from_cn_redirect=1">creating a log topic</a>.</li></ul>
+                     * @return FromTopicId <p>Log topic Id.</p><ul><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56454?from_cn_redirect=1">getting the log topic list</a>.</li><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56456?from_cn_redirect=1">creating a log topic</a>.</li></ul>
                      * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
-                     * 设置Log Topic ID
-                     * @param _fromTopicId Log Topic ID
+                     * 设置<p>Log topic Id.</p><ul><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56454?from_cn_redirect=1">getting the log topic list</a>.</li><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56456?from_cn_redirect=1">creating a log topic</a>.</li></ul>
+                     * @param _fromTopicId <p>Log topic Id.</p><ul><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56454?from_cn_redirect=1">getting the log topic list</a>.</li><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56456?from_cn_redirect=1">creating a log topic</a>.</li></ul>
                      * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Log Topic ID
+                     * <p>Log topic Id.</p><ul><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56454?from_cn_redirect=1">getting the log topic list</a>.</li><li>Get the log topic Id through <a href="https://www.tencentcloud.com/document/product/614/56456?from_cn_redirect=1">creating a log topic</a>.</li></ul>
                      */
                     std::string m_fromTopicId;
                     bool m_fromTopicIdHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The video quality remastering parameters.
+                * Image quality restoration control parameters.
                 */
                 class RepairInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable video quality remastering. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable video quality remastering. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Image quality restoration control switch. Available values:
+<li>ON: Enable image quality restoration;</li>
+<li>OFF: disables image quality restoration.</li>
+                     * @return Switch Image quality restoration control switch. Available values:
+<li>ON: Enable image quality restoration;</li>
+<li>OFF: disables image quality restoration.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable video quality remastering. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable video quality remastering. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Image quality restoration control switch. Available values:
+<li>ON: Enable image quality restoration;</li>
+<li>OFF: disables image quality restoration.</li>
+                     * @param _switch Image quality restoration control switch. Available values:
+<li>ON: Enable image quality restoration;</li>
+<li>OFF: disables image quality restoration.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,31 +76,31 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The video quality remastering type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @return Type The video quality remastering type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 获取Image quality restoration type. It is valid only when the image quality restoration control switch is ON. Available values:
+<li>weak: light image quality restoration;</li>
+<li>normal: normal image quality restoration;</li>
+<li>strong: strong image restoration.</li>
+Default value: weak.
+                     * @return Type Image quality restoration type. It is valid only when the image quality restoration control switch is ON. Available values:
+<li>weak: light image quality restoration;</li>
+<li>normal: normal image quality restoration;</li>
+<li>strong: strong image restoration.</li>
+Default value: weak.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The video quality remastering type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @param _type The video quality remastering type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 设置Image quality restoration type. It is valid only when the image quality restoration control switch is ON. Available values:
+<li>weak: light image quality restoration;</li>
+<li>normal: normal image quality restoration;</li>
+<li>strong: strong image restoration.</li>
+Default value: weak.
+                     * @param _type Image quality restoration type. It is valid only when the image quality restoration control switch is ON. Available values:
+<li>weak: light image quality restoration;</li>
+<li>normal: normal image quality restoration;</li>
+<li>strong: strong image restoration.</li>
+Default value: weak.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,19 +115,19 @@ Default value: `weak`.
                 private:
 
                     /**
-                     * Whether to enable video quality remastering. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Image quality restoration control switch. Available values:
+<li>ON: Enable image quality restoration;</li>
+<li>OFF: disables image quality restoration.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The video quality remastering type. This parameter is valid only if `Switch` is `ON`.
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * Image quality restoration type. It is valid only when the image quality restoration control switch is ON. Available values:
+<li>weak: light image quality restoration;</li>
+<li>normal: normal image quality restoration;</li>
+<li>strong: strong image restoration.</li>
+Default value: weak.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

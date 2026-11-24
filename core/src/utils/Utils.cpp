@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 Tencent. All Rights Reserved.
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <iomanip>
 #include <sstream>
 #include <random>
+#include <string>
 
 #if _MSC_VER
 #define snprintf _snprintf
@@ -34,9 +35,7 @@ using namespace std;
 
 string Utils::int2str(int64_t n)
 {
-    stringstream ss;
-    ss << n;
-    return ss.str();
+    return std::to_string(n);
 }
 
 void Utils::GetCurrentTimeAndUtcDate(int64_t &timestamp, string &utcDate)

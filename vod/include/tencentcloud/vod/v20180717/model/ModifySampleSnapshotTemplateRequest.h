@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of a sampled screencapturing template.
-                     * @return Definition Unique ID of a sampled screencapturing template.
+                     * 获取<p>Sampling screenshot template unique identifier.</p>
+                     * @return Definition <p>Sampling screenshot template unique identifier.</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of a sampled screencapturing template.
-                     * @param _definition Unique ID of a sampled screencapturing template.
+                     * 设置<p>Sampling screenshot template unique identifier.</p>
+                     * @param _definition <p>Sampling screenshot template unique identifier.</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Name of a sampled screencapturing template. Length limit: 64 characters.
-                     * @return Name Name of a sampled screencapturing template. Length limit: 64 characters.
+                     * 获取<p>Sample screenshot template name. Length limit: 64 characters.</p>
+                     * @return Name <p>Sample screenshot template name. Length limit: 64 characters.</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Name of a sampled screencapturing template. Length limit: 64 characters.
-                     * @param _name Name of a sampled screencapturing template. Length limit: 64 characters.
+                     * 设置<p>Sample screenshot template name. Length limit: 64 characters.</p>
+                     * @param _name <p>Sample screenshot template name. Length limit: 64 characters.</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,35 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the width (or long side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
-                     * @return Width Maximum value of the width (or long side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * 获取<p>The maximum value of the screenshot width (or long side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
+                     * @return Width <p>The maximum value of the screenshot width (or long side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置Maximum value of the width (or long side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
-                     * @param _width Maximum value of the width (or long side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * 设置<p>The maximum value of the screenshot width (or long side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
+                     * @param _width <p>The maximum value of the screenshot width (or long side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -147,35 +127,15 @@ Default value: 0.
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the height (or short side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
-                     * @return Height Maximum value of the height (or short side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * 获取<p>The maximum value of the screenshot height (or short side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, the Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
+                     * @return Height <p>The maximum value of the screenshot height (or short side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, the Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置Maximum value of the height (or short side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
-                     * @param _height Maximum value of the height (or short side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * 设置<p>The maximum value of the screenshot height (or short side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, the Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
+                     * @param _height <p>The maximum value of the screenshot height (or short side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, the Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -188,27 +148,15 @@ Default value: 0.
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
-Default value: open.
-                     * @return ResolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
-Default value: open.
+                     * 获取<p>Resolution adaptation. Available values:</p><li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side;</li><li>close: disable. At this point, Width represents the width of the video, and Height represents the height.</li>Default value: open.
+                     * @return ResolutionAdaptive <p>Resolution adaptation. Available values:</p><li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side;</li><li>close: disable. At this point, Width represents the width of the video, and Height represents the height.</li>Default value: open.
                      * 
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
-                     * 设置Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
-Default value: open.
-                     * @param _resolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
-Default value: open.
+                     * 设置<p>Resolution adaptation. Available values:</p><li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side;</li><li>close: disable. At this point, Width represents the width of the video, and Height represents the height.</li>Default value: open.
+                     * @param _resolutionAdaptive <p>Resolution adaptation. Available values:</p><li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side;</li><li>close: disable. At this point, Width represents the width of the video, and Height represents the height.</li>Default value: open.
                      * 
                      */
                     void SetResolutionAdaptive(const std::string& _resolutionAdaptive);
@@ -221,23 +169,15 @@ Default value: open.
                     bool ResolutionAdaptiveHasBeenSet() const;
 
                     /**
-                     * 获取Sampled screencapturing type. Valid values:
-<li>Percent: by percent.</li>
-<li>Time: by time interval.</li>
-                     * @return SampleType Sampled screencapturing type. Valid values:
-<li>Percent: by percent.</li>
-<li>Time: by time interval.</li>
+                     * 获取<p>Sampling screenshot type. Valid values:</p><li>Percent: By percent.</li><li>Time: By time interval.</li>
+                     * @return SampleType <p>Sampling screenshot type. Valid values:</p><li>Percent: By percent.</li><li>Time: By time interval.</li>
                      * 
                      */
                     std::string GetSampleType() const;
 
                     /**
-                     * 设置Sampled screencapturing type. Valid values:
-<li>Percent: by percent.</li>
-<li>Time: by time interval.</li>
-                     * @param _sampleType Sampled screencapturing type. Valid values:
-<li>Percent: by percent.</li>
-<li>Time: by time interval.</li>
+                     * 设置<p>Sampling screenshot type. Valid values:</p><li>Percent: By percent.</li><li>Time: By time interval.</li>
+                     * @param _sampleType <p>Sampling screenshot type. Valid values:</p><li>Percent: By percent.</li><li>Time: By time interval.</li>
                      * 
                      */
                     void SetSampleType(const std::string& _sampleType);
@@ -250,23 +190,15 @@ Default value: open.
                     bool SampleTypeHasBeenSet() const;
 
                     /**
-                     * 获取Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
-                     * @return SampleInterval Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+                     * 获取<p>Sampling interval.</p><li>When SampleType is Percent, specify the percentage of the sampling interval.</li><li>When SampleType is Time, specify the time of the sampling interval in seconds.</li>
+                     * @return SampleInterval <p>Sampling interval.</p><li>When SampleType is Percent, specify the percentage of the sampling interval.</li><li>When SampleType is Time, specify the time of the sampling interval in seconds.</li>
                      * 
                      */
                     uint64_t GetSampleInterval() const;
 
                     /**
-                     * 设置Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
-                     * @param _sampleInterval Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+                     * 设置<p>Sampling interval.</p><li>When SampleType is Percent, specify the percentage of the sampling interval.</li><li>When SampleType is Time, specify the time of the sampling interval in seconds.</li>
+                     * @param _sampleInterval <p>Sampling interval.</p><li>When SampleType is Percent, specify the percentage of the sampling interval.</li><li>When SampleType is Time, specify the time of the sampling interval in seconds.</li>
                      * 
                      */
                     void SetSampleInterval(const uint64_t& _sampleInterval);
@@ -279,15 +211,15 @@ Default value: open.
                     bool SampleIntervalHasBeenSet() const;
 
                     /**
-                     * 获取Image format. Valid values: jpg, png.
-                     * @return Format Image format. Valid values: jpg, png.
+                     * 获取<p>Image format. Valid values: jpg, png, and webp. Default value: jpg.</p>
+                     * @return Format <p>Image format. Valid values: jpg, png, and webp. Default value: jpg.</p>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置Image format. Valid values: jpg, png.
-                     * @param _format Image format. Valid values: jpg, png.
+                     * 设置<p>Image format. Valid values: jpg, png, and webp. Default value: jpg.</p>
+                     * @param _format <p>Image format. Valid values: jpg, png, and webp. Default value: jpg.</p>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -300,15 +232,15 @@ Default value: open.
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取Template description. Length limit: 256 characters.
-                     * @return Comment Template description. Length limit: 256 characters.
+                     * 获取<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @return Comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description. Length limit: 256 characters.
-                     * @param _comment Template description. Length limit: 256 characters.
+                     * 设置<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @param _comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -321,35 +253,15 @@ Default value: open.
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-<li>white: fill with white. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with white color blocks.</li>
-<li>gauss: fill with Gaussian blur. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur.</li>
-Default value: black.
-                     * @return FillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-<li>white: fill with white. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with white color blocks.</li>
-<li>gauss: fill with Gaussian blur. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur.</li>
-Default value: black.
+                     * 获取<p>Filling mode. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling modes:</p><li>stretch: stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li><li>black: keep the video aspect ratio unchanged, with the remaining edge part filled with black.</li><li>white: keep the video aspect ratio unchanged, with the remaining edge part filled with white.</li><li>gauss: Gaussian blur. Keep the video aspect ratio unchanged, with the remaining edge part filled with Gaussian blur.</li>Default value: black.
+                     * @return FillType <p>Filling mode. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling modes:</p><li>stretch: stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li><li>black: keep the video aspect ratio unchanged, with the remaining edge part filled with black.</li><li>white: keep the video aspect ratio unchanged, with the remaining edge part filled with white.</li><li>gauss: Gaussian blur. Keep the video aspect ratio unchanged, with the remaining edge part filled with Gaussian blur.</li>Default value: black.
                      * 
                      */
                     std::string GetFillType() const;
 
                     /**
-                     * 设置Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-<li>white: fill with white. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with white color blocks.</li>
-<li>gauss: fill with Gaussian blur. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur.</li>
-Default value: black.
-                     * @param _fillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-<li>white: fill with white. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with white color blocks.</li>
-<li>gauss: fill with Gaussian blur. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur.</li>
-Default value: black.
+                     * 设置<p>Filling mode. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling modes:</p><li>stretch: stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li><li>black: keep the video aspect ratio unchanged, with the remaining edge part filled with black.</li><li>white: keep the video aspect ratio unchanged, with the remaining edge part filled with white.</li><li>gauss: Gaussian blur. Keep the video aspect ratio unchanged, with the remaining edge part filled with Gaussian blur.</li>Default value: black.
+                     * @param _fillType <p>Filling mode. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling modes:</p><li>stretch: stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li><li>black: keep the video aspect ratio unchanged, with the remaining edge part filled with black.</li><li>white: keep the video aspect ratio unchanged, with the remaining edge part filled with white.</li><li>gauss: Gaussian blur. Keep the video aspect ratio unchanged, with the remaining edge part filled with Gaussian blur.</li>Default value: black.
                      * 
                      */
                     void SetFillType(const std::string& _fillType);
@@ -364,89 +276,67 @@ Default value: black.
                 private:
 
                     /**
-                     * Unique ID of a sampled screencapturing template.
+                     * <p>Sampling screenshot template unique identifier.</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in with the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Name of a sampled screencapturing template. Length limit: 64 characters.
+                     * <p>Sample screenshot template name. Length limit: 64 characters.</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Maximum value of the width (or long side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * <p>The maximum value of the screenshot width (or long side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Maximum value of the height (or short side) of a screenshot in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
-Default value: 0.
+                     * <p>The maximum value of the screenshot height (or short side). Valid values: 0 and [32, 4096]. Unit: px.<li>When Width and Height are both 0, the resolution is from the same source;</li><li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li><li>When Width is non-0 and Height is 0, the Height is scaled proportionally;</li><li>When both Width and Height are non-0, the resolution is specified by the user.</li>Default value: 0.</p>
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
-Default value: open.
+                     * <p>Resolution adaptation. Available values:</p><li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side;</li><li>close: disable. At this point, Width represents the width of the video, and Height represents the height.</li>Default value: open.
                      */
                     std::string m_resolutionAdaptive;
                     bool m_resolutionAdaptiveHasBeenSet;
 
                     /**
-                     * Sampled screencapturing type. Valid values:
-<li>Percent: by percent.</li>
-<li>Time: by time interval.</li>
+                     * <p>Sampling screenshot type. Valid values:</p><li>Percent: By percent.</li><li>Time: By time interval.</li>
                      */
                     std::string m_sampleType;
                     bool m_sampleTypeHasBeenSet;
 
                     /**
-                     * Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+                     * <p>Sampling interval.</p><li>When SampleType is Percent, specify the percentage of the sampling interval.</li><li>When SampleType is Time, specify the time of the sampling interval in seconds.</li>
                      */
                     uint64_t m_sampleInterval;
                     bool m_sampleIntervalHasBeenSet;
 
                     /**
-                     * Image format. Valid values: jpg, png.
+                     * <p>Image format. Valid values: jpg, png, and webp. Default value: jpg.</p>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * Template description. Length limit: 256 characters.
+                     * <p>Transcoding template description. Length limit: 256 characters.</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-<li>white: fill with white. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with white color blocks.</li>
-<li>gauss: fill with Gaussian blur. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur.</li>
-Default value: black.
+                     * <p>Filling mode. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling modes:</p><li>stretch: stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li><li>black: keep the video aspect ratio unchanged, with the remaining edge part filled with black.</li><li>white: keep the video aspect ratio unchanged, with the remaining edge part filled with white.</li><li>gauss: Gaussian blur. Keep the video aspect ratio unchanged, with the remaining edge part filled with Gaussian blur.</li>Default value: black.
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;

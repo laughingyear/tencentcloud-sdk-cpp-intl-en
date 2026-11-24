@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of source file for video splicing (v2017)
+                * Source file information for video stitching (2017)
                 */
                 class ConcatFileInfo2017 : public AbstractModel
                 {
@@ -47,27 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Error code
+                     * 获取Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Error code
+<li>Other value: failure.</li>
+                     * @return ErrCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code
+                     * 设置Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Error code
+<li>Other value: failure.</li>
+                     * @param _errCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -81,18 +77,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -105,19 +97,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取ID of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileId ID of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取ID of the source file for video splicing.
+                     * @return FileId ID of the source file for video splicing.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置ID of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileId ID of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置ID of the source file for video splicing.
+                     * @param _fileId ID of the source file for video splicing.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -130,19 +118,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Address of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileUrl Address of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Addresses of the source files for video stitching.
+                     * @return FileUrl Addresses of the source files for video stitching.
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置Address of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileUrl Address of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Addresses of the source files for video stitching.
+                     * @param _fileUrl Addresses of the source files for video stitching.
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -155,19 +139,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Format of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileType Format of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Format of the source file for video splicing.
+                     * @return FileType Format of the source file for video splicing.
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置Format of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileType Format of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Format of the source file for video splicing.
+                     * @param _fileType Format of the source file for video splicing.
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -182,38 +162,33 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Error code
+                     * Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * ID of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * ID of the source file for video splicing.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Address of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Addresses of the source files for video stitching.
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * Format of source file for video splicing.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Format of the source file for video splicing.
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;

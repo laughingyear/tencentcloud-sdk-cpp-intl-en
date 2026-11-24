@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of prohibited information detection in speech task
+                * Control parameters of the speech prohibition task
                 */
                 class ProhibitedAsrReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of prohibited information detection in speech task. Valid values:
-<li>ON: enables prohibited information detection in speech task;</li>
-<li>OFF: disables prohibited information detection in speech task.</li>
-                     * @return Switch Switch of prohibited information detection in speech task. Valid values:
-<li>ON: enables prohibited information detection in speech task;</li>
-<li>OFF: disables prohibited information detection in speech task.</li>
+                     * 获取Speech prohibition task switch. Available values:
+<li>ON: Turn on the speech prohibition task;</li>
+<li>OFF: disables the speech prohibition task.</li>
+                     * @return Switch Speech prohibition task switch. Available values:
+<li>ON: Turn on the speech prohibition task;</li>
+<li>OFF: disables the speech prohibition task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of prohibited information detection in speech task. Valid values:
-<li>ON: enables prohibited information detection in speech task;</li>
-<li>OFF: disables prohibited information detection in speech task.</li>
-                     * @param _switch Switch of prohibited information detection in speech task. Valid values:
-<li>ON: enables prohibited information detection in speech task;</li>
-<li>OFF: disables prohibited information detection in speech task.</li>
+                     * 设置Speech prohibition task switch. Available values:
+<li>ON: Turn on the speech prohibition task;</li>
+<li>OFF: disables the speech prohibition task.</li>
+                     * @param _switch Speech prohibition task switch. Available values:
+<li>ON: Turn on the speech prohibition task;</li>
+<li>OFF: disables the speech prohibition task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `100` will be used by default. Value range: 0-100
-                     * @return BlockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `100` will be used by default. Value range: 0-100
+                     * 获取Threshold score for suspected violations. If the review score reaches or exceeds this value, the content is deemed as suspected violation. Default value: 100. Value range: 0–100.
+                     * @return BlockConfidence Threshold score for suspected violations. If the review score reaches or exceeds this value, the content is deemed as suspected violation. Default value: 100. Value range: 0–100.
                      * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `100` will be used by default. Value range: 0-100
-                     * @param _blockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `100` will be used by default. Value range: 0-100
+                     * 设置Threshold score for suspected violations. If the review score reaches or exceeds this value, the content is deemed as suspected violation. Default value: 100. Value range: 0–100.
+                     * @param _blockConfidence Threshold score for suspected violations. If the review score reaches or exceeds this value, the content is deemed as suspected violation. Default value: 100. Value range: 0–100.
                      * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `75` will be used by default. Value range: 0-100
-                     * @return ReviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `75` will be used by default. Value range: 0-100
+                     * 获取Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, the default is 75 points. Value range: 0–100.
+                     * @return ReviewConfidence Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, the default is 75 points. Value range: 0–100.
                      * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `75` will be used by default. Value range: 0-100
-                     * @param _reviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `75` will be used by default. Value range: 0-100
+                     * 设置Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, the default is 75 points. Value range: 0–100.
+                     * @param _reviewConfidence Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, the default is 75 points. Value range: 0–100.
                      * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
@@ -120,21 +120,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Switch of prohibited information detection in speech task. Valid values:
-<li>ON: enables prohibited information detection in speech task;</li>
-<li>OFF: disables prohibited information detection in speech task.</li>
+                     * Speech prohibition task switch. Available values:
+<li>ON: Turn on the speech prohibition task;</li>
+<li>OFF: disables the speech prohibition task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. If this parameter is left empty, `100` will be used by default. Value range: 0-100
+                     * Threshold score for suspected violations. If the review score reaches or exceeds this value, the content is deemed as suspected violation. Default value: 100. Value range: 0–100.
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * Confidence score threshold for human review. If this threshold is reached, human review is needed. If this parameter is left empty, `75` will be used by default. Value range: 0-100
+                     * Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. If not specified, the default is 75 points. Value range: 0–100.
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

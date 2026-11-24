@@ -44,7 +44,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video content recognition template details.
+                * Description of the video content recognition template
                 */
                 class AIRecognitionTemplateItem : public AbstractModel
                 {
@@ -56,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of video content recognition template.
-                     * @return Definition Unique ID of video content recognition template.
+                     * 获取Unique ID of the video content recognition template.
+                     * @return Definition Unique ID of the video content recognition template.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of video content recognition template.
-                     * @param _definition Unique ID of video content recognition template.
+                     * 设置Unique ID of the video content recognition template.
+                     * @param _definition Unique ID of the video content recognition template.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -98,15 +98,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Video content recognition template description.
-                     * @return Comment Video content recognition template description.
+                     * 获取Description of the video content recognition template.
+                     * @return Comment Description of the video content recognition template.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Video content recognition template description.
-                     * @param _comment Video content recognition template description.
+                     * 设置Description of the video content recognition template.
+                     * @param _comment Description of the video content recognition template.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -119,23 +119,23 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Template type, values:
-<li>Preset: system preset template;</li>
-<li>Custom: user-defined template.</li>
-                     * @return Type Template type, values:
-<li>Preset: system preset template;</li>
-<li>Custom: user-defined template.</li>
+                     * 获取Template type. Valid values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
+                     * @return Type Template type. Valid values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Template type, values:
-<li>Preset: system preset template;</li>
-<li>Custom: user-defined template.</li>
-                     * @param _type Template type, values:
-<li>Preset: system preset template;</li>
-<li>Custom: user-defined template.</li>
+                     * 设置Template type. Valid values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
+                     * @param _type Template type. Valid values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,19 +148,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of opening and closing credits recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return HeadTailConfigure Control parameter of opening and closing credits recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Head and tail recognition control parameters.
+                     * @return HeadTailConfigure Head and tail recognition control parameters.
                      * 
                      */
                     HeadTailConfigureInfo GetHeadTailConfigure() const;
 
                     /**
-                     * 设置Control parameter of opening and closing credits recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _headTailConfigure Control parameter of opening and closing credits recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Head and tail recognition control parameters.
+                     * @param _headTailConfigure Head and tail recognition control parameters.
                      * 
                      */
                     void SetHeadTailConfigure(const HeadTailConfigureInfo& _headTailConfigure);
@@ -173,19 +169,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool HeadTailConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of splitting recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SegmentConfigure Control parameter of splitting recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Segmentation recognition control parameter.
+                     * @return SegmentConfigure Segmentation recognition control parameter.
                      * 
                      */
                     SegmentConfigureInfo GetSegmentConfigure() const;
 
                     /**
-                     * 设置Control parameter of splitting recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _segmentConfigure Control parameter of splitting recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Segmentation recognition control parameter.
+                     * @param _segmentConfigure Segmentation recognition control parameter.
                      * 
                      */
                     void SetSegmentConfigure(const SegmentConfigureInfo& _segmentConfigure);
@@ -199,18 +191,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Face recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return FaceConfigure Face recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     FaceConfigureInfo GetFaceConfigure() const;
 
                     /**
                      * 设置Face recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _faceConfigure Face recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetFaceConfigure(const FaceConfigureInfo& _faceConfigure);
@@ -223,19 +211,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FaceConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Full text recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return OcrFullTextConfigure Full text recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Text full-text recognition control parameters.
+                     * @return OcrFullTextConfigure Text full-text recognition control parameters.
                      * 
                      */
                     OcrFullTextConfigureInfo GetOcrFullTextConfigure() const;
 
                     /**
-                     * 设置Full text recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _ocrFullTextConfigure Full text recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Text full-text recognition control parameters.
+                     * @param _ocrFullTextConfigure Text full-text recognition control parameters.
                      * 
                      */
                     void SetOcrFullTextConfigure(const OcrFullTextConfigureInfo& _ocrFullTextConfigure);
@@ -248,19 +232,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OcrFullTextConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Text keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return OcrWordsConfigure Text keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Text keyword recognition control parameters.
+                     * @return OcrWordsConfigure Text keyword recognition control parameters.
                      * 
                      */
                     OcrWordsConfigureInfo GetOcrWordsConfigure() const;
 
                     /**
-                     * 设置Text keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _ocrWordsConfigure Text keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Text keyword recognition control parameters.
+                     * @param _ocrWordsConfigure Text keyword recognition control parameters.
                      * 
                      */
                     void SetOcrWordsConfigure(const OcrWordsConfigureInfo& _ocrWordsConfigure);
@@ -273,19 +253,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OcrWordsConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Full speech recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AsrFullTextConfigure Full speech recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Voice full-text recognition control parameters.
+<font color=red>Note: This parameter is no longer maintained. We recommend using the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not specified or is an empty string, no translation is performed, and the billing item is the same as full speech recognition).</font>
+                     * @return AsrFullTextConfigure Voice full-text recognition control parameters.
+<font color=red>Note: This parameter is no longer maintained. We recommend using the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not specified or is an empty string, no translation is performed, and the billing item is the same as full speech recognition).</font>
                      * 
                      */
                     AsrFullTextConfigureInfo GetAsrFullTextConfigure() const;
 
                     /**
-                     * 设置Full speech recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _asrFullTextConfigure Full speech recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Voice full-text recognition control parameters.
+<font color=red>Note: This parameter is no longer maintained. We recommend using the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not specified or is an empty string, no translation is performed, and the billing item is the same as full speech recognition).</font>
+                     * @param _asrFullTextConfigure Voice full-text recognition control parameters.
+<font color=red>Note: This parameter is no longer maintained. We recommend using the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not specified or is an empty string, no translation is performed, and the billing item is the same as full speech recognition).</font>
                      * 
                      */
                     void SetAsrFullTextConfigure(const AsrFullTextConfigureInfo& _asrFullTextConfigure);
@@ -298,19 +278,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AsrFullTextConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Speech keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AsrWordsConfigure Speech keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Voice keyword recognition control parameters.
+                     * @return AsrWordsConfigure Voice keyword recognition control parameters.
                      * 
                      */
                     AsrWordsConfigureInfo GetAsrWordsConfigure() const;
 
                     /**
-                     * 设置Speech keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _asrWordsConfigure Speech keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Voice keyword recognition control parameters.
+                     * @param _asrWordsConfigure Voice keyword recognition control parameters.
                      * 
                      */
                     void SetAsrWordsConfigure(const AsrWordsConfigureInfo& _asrWordsConfigure);
@@ -323,19 +299,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AsrWordsConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Voice translation control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AsrTranslateConfigure Voice translation control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Speech translation recognition control parameters.
+                     * @return AsrTranslateConfigure Speech translation recognition control parameters.
                      * 
                      */
                     AsrTranslateConfigureInfo GetAsrTranslateConfigure() const;
 
                     /**
-                     * 设置Voice translation control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _asrTranslateConfigure Voice translation control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Speech translation recognition control parameters.
+                     * @param _asrTranslateConfigure Speech translation recognition control parameters.
                      * 
                      */
                     void SetAsrTranslateConfigure(const AsrTranslateConfigureInfo& _asrTranslateConfigure);
@@ -348,19 +320,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AsrTranslateConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of object recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ObjectConfigure Control parameter of object recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Object recognition control parameters.
+                     * @return ObjectConfigure Object recognition control parameters.
                      * 
                      */
                     ObjectConfigureInfo GetObjectConfigure() const;
 
                     /**
-                     * 设置Control parameter of object recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _objectConfigure Control parameter of object recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Object recognition control parameters.
+                     * @param _objectConfigure Object recognition control parameters.
                      * 
                      */
                     void SetObjectConfigure(const ObjectConfigureInfo& _objectConfigure);
@@ -373,15 +341,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ObjectConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Screencapturing interval in seconds.
-                     * @return ScreenshotInterval Screencapturing interval in seconds.
+                     * 获取Screenshot time interval in seconds.
+                     * @return ScreenshotInterval Screenshot time interval in seconds.
                      * 
                      */
                     double GetScreenshotInterval() const;
 
                     /**
-                     * 设置Screencapturing interval in seconds.
-                     * @param _screenshotInterval Screencapturing interval in seconds.
+                     * 设置Screenshot time interval in seconds.
+                     * @param _screenshotInterval Screenshot time interval in seconds.
                      * 
                      */
                     void SetScreenshotInterval(const double& _screenshotInterval);
@@ -394,15 +362,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ScreenshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -415,15 +383,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return UpdateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return UpdateTime Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _updateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _updateTime Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -438,7 +406,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Unique ID of video content recognition template.
+                     * Unique ID of the video content recognition template.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -450,96 +418,88 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Video content recognition template description.
+                     * Description of the video content recognition template.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Template type, values:
-<li>Preset: system preset template;</li>
-<li>Custom: user-defined template.</li>
+                     * Template type. Valid values:
+<li>Preset: system-preset template;</li>
+<li>Custom: custom template.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Control parameter of opening and closing credits recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Head and tail recognition control parameters.
                      */
                     HeadTailConfigureInfo m_headTailConfigure;
                     bool m_headTailConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of splitting recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Segmentation recognition control parameter.
                      */
                     SegmentConfigureInfo m_segmentConfigure;
                     bool m_segmentConfigureHasBeenSet;
 
                     /**
                      * Face recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     FaceConfigureInfo m_faceConfigure;
                     bool m_faceConfigureHasBeenSet;
 
                     /**
-                     * Full text recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Text full-text recognition control parameters.
                      */
                     OcrFullTextConfigureInfo m_ocrFullTextConfigure;
                     bool m_ocrFullTextConfigureHasBeenSet;
 
                     /**
-                     * Text keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Text keyword recognition control parameters.
                      */
                     OcrWordsConfigureInfo m_ocrWordsConfigure;
                     bool m_ocrWordsConfigureHasBeenSet;
 
                     /**
-                     * Full speech recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Voice full-text recognition control parameters.
+<font color=red>Note: This parameter is no longer maintained. We recommend using the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not specified or is an empty string, no translation is performed, and the billing item is the same as full speech recognition).</font>
                      */
                     AsrFullTextConfigureInfo m_asrFullTextConfigure;
                     bool m_asrFullTextConfigureHasBeenSet;
 
                     /**
-                     * Speech keyword recognition control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Voice keyword recognition control parameters.
                      */
                     AsrWordsConfigureInfo m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
 
                     /**
-                     * Voice translation control parameter.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Speech translation recognition control parameters.
                      */
                     AsrTranslateConfigureInfo m_asrTranslateConfigure;
                     bool m_asrTranslateConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of object recognition.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Object recognition control parameters.
                      */
                     ObjectConfigureInfo m_objectConfigure;
                     bool m_objectConfigureHasBeenSet;
 
                     /**
-                     * Screencapturing interval in seconds.
+                     * Screenshot time interval in seconds.
                      */
                     double m_screenshotInterval;
                     bool m_screenshotIntervalHasBeenSet;
 
                     /**
-                     * Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template creation time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template last modified time, use [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

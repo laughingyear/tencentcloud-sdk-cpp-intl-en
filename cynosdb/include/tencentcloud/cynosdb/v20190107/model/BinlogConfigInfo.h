@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateBackupVaultItem.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Specifies the binlog configuration message.
+                * Binlog configuration information.
                 */
                 class BinlogConfigInfo : public AbstractModel
                 {
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specifies the retention time of binlogs.
-                     * @return BinlogSaveDays Specifies the retention time of binlogs.
+                     * 获取<p>binlog retention time</p>
+                     * @return BinlogSaveDays <p>binlog retention time</p>
                      * 
                      */
                     int64_t GetBinlogSaveDays() const;
 
                     /**
-                     * 设置Specifies the retention time of binlogs.
-                     * @param _binlogSaveDays Specifies the retention time of binlogs.
+                     * 设置<p>binlog retention time</p>
+                     * @param _binlogSaveDays <p>binlog retention time</p>
                      * 
                      */
                     void SetBinlogSaveDays(const int64_t& _binlogSaveDays);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool BinlogSaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取Whether binlog cross-region backup is enabled.
-                     * @return BinlogCrossRegionsEnable Whether binlog cross-region backup is enabled.
+                     * 获取<p>Whether binlog cross-region backup is enabled</p>
+                     * @return BinlogCrossRegionsEnable <p>Whether binlog cross-region backup is enabled</p>
                      * 
                      */
                     std::string GetBinlogCrossRegionsEnable() const;
 
                     /**
-                     * 设置Whether binlog cross-region backup is enabled.
-                     * @param _binlogCrossRegionsEnable Whether binlog cross-region backup is enabled.
+                     * 设置<p>Whether binlog cross-region backup is enabled</p>
+                     * @param _binlogCrossRegionsEnable <p>Whether binlog cross-region backup is enabled</p>
                      * 
                      */
                     void SetBinlogCrossRegionsEnable(const std::string& _binlogCrossRegionsEnable);
@@ -89,19 +90,15 @@ namespace TencentCloud
                     bool BinlogCrossRegionsEnableHasBeenSet() const;
 
                     /**
-                     * 获取binlog in a different region.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return BinlogCrossRegions binlog in a different region.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cross-region binlog</p>
+                     * @return BinlogCrossRegions <p>Cross-region binlog</p>
                      * 
                      */
                     std::vector<std::string> GetBinlogCrossRegions() const;
 
                     /**
-                     * 设置binlog in a different region.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _binlogCrossRegions binlog in a different region.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cross-region binlog</p>
+                     * @param _binlogCrossRegions <p>Cross-region binlog</p>
                      * 
                      */
                     void SetBinlogCrossRegions(const std::vector<std::string>& _binlogCrossRegions);
@@ -113,26 +110,79 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool BinlogCrossRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Cross-region backup retention period</p><p>Unit: day</p>
+                     * @return BinlogCrossRegionSaveDays <p>Cross-region backup retention period</p><p>Unit: day</p>
+                     * 
+                     */
+                    int64_t GetBinlogCrossRegionSaveDays() const;
+
+                    /**
+                     * 设置<p>Cross-region backup retention period</p><p>Unit: day</p>
+                     * @param _binlogCrossRegionSaveDays <p>Cross-region backup retention period</p><p>Unit: day</p>
+                     * 
+                     */
+                    void SetBinlogCrossRegionSaveDays(const int64_t& _binlogCrossRegionSaveDays);
+
+                    /**
+                     * 判断参数 BinlogCrossRegionSaveDays 是否已赋值
+                     * @return BinlogCrossRegionSaveDays 是否已赋值
+                     * 
+                     */
+                    bool BinlogCrossRegionSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Safe information</p>
+                     * @return AutoCopyVaults <p>Safe information</p>
+                     * 
+                     */
+                    std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
+
+                    /**
+                     * 设置<p>Safe information</p>
+                     * @param _autoCopyVaults <p>Safe information</p>
+                     * 
+                     */
+                    void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
+
+                    /**
+                     * 判断参数 AutoCopyVaults 是否已赋值
+                     * @return AutoCopyVaults 是否已赋值
+                     * 
+                     */
+                    bool AutoCopyVaultsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Specifies the retention time of binlogs.
+                     * <p>binlog retention time</p>
                      */
                     int64_t m_binlogSaveDays;
                     bool m_binlogSaveDaysHasBeenSet;
 
                     /**
-                     * Whether binlog cross-region backup is enabled.
+                     * <p>Whether binlog cross-region backup is enabled</p>
                      */
                     std::string m_binlogCrossRegionsEnable;
                     bool m_binlogCrossRegionsEnableHasBeenSet;
 
                     /**
-                     * binlog in a different region.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Cross-region binlog</p>
                      */
                     std::vector<std::string> m_binlogCrossRegions;
                     bool m_binlogCrossRegionsHasBeenSet;
+
+                    /**
+                     * <p>Cross-region backup retention period</p><p>Unit: day</p>
+                     */
+                    int64_t m_binlogCrossRegionSaveDays;
+                    bool m_binlogCrossRegionSaveDaysHasBeenSet;
+
+                    /**
+                     * <p>Safe information</p>
+                     */
+                    std::vector<CreateBackupVaultItem> m_autoCopyVaults;
+                    bool m_autoCopyVaultsHasBeenSet;
 
                 };
             }

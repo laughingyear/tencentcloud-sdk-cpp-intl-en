@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取Video abstract, used for offline scenarios.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Abstract Video abstract, used for offline scenarios.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Video summary, used for offline scenarios.
+                     * @return Abstract Video summary, used for offline scenarios.
                      * 
                      */
                     std::string GetAbstract() const;
 
                     /**
-                     * 设置Video abstract, used for offline scenarios.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _abstract Video abstract, used for offline scenarios.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Video summary, used for offline scenarios.
+                     * @param _abstract Video summary, used for offline scenarios.
                      * 
                      */
                     void SetAbstract(const std::string& _abstract);
@@ -102,8 +98,7 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * Video abstract, used for offline scenarios.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Video summary, used for offline scenarios.
                      */
                     std::string m_abstract;
                     bool m_abstractHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Tag key value. For details, see [Tags](https://intl.cloud.tencent.com/document/product/651?from_cn_redirect=1).
+                * Tag key value. For reference, see Tag (https://www.tencentcloud.com/document/product/651?from_cn_redirect=1).
                 */
                 class ResourceTag : public AbstractModel
                 {

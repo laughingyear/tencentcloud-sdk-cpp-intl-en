@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiQualityControlResultInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamRecordResultInfo.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAiSmartSubtitleResultInfo.h>
 
 
 namespace TencentCloud
@@ -51,17 +52,21 @@ namespace TencentCloud
 
                     /**
                      * 获取Live stream processing result type, including:
-<li>AiReviewResult: content auditing result.</li>
-<li>AiRecognitionResult: content recognition result.</li>
-<li>LiveRecordResult: live recording result.</li>
+<li>AiReviewResult: content moderation result;</li>
+<li>AiRecognitionResult: content recognition result;</li>
+<li>LiveRecordResult: live streaming result;</li>
 <li>AiQualityControlResult: media quality inspection result.</li>
-<li>ProcessEof: live stream processing result.</li>
+<li>AiAnalysisResult: content analysis result.</li>
+<li>AiSmartSubtitleResult: smart subtitle result;</li>
+<li>ProcessEof: end of live stream processing.</li>
                      * @return NotificationType Live stream processing result type, including:
-<li>AiReviewResult: content auditing result.</li>
-<li>AiRecognitionResult: content recognition result.</li>
-<li>LiveRecordResult: live recording result.</li>
+<li>AiReviewResult: content moderation result;</li>
+<li>AiRecognitionResult: content recognition result;</li>
+<li>LiveRecordResult: live streaming result;</li>
 <li>AiQualityControlResult: media quality inspection result.</li>
-<li>ProcessEof: live stream processing result.</li>
+<li>AiAnalysisResult: content analysis result.</li>
+<li>AiSmartSubtitleResult: smart subtitle result;</li>
+<li>ProcessEof: end of live stream processing.</li>
                      * 
                      */
                     std::string GetNotificationType() const;
@@ -88,10 +93,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Information of a live stream processing error, which is valid when `NotificationType` is `ProcessEof`.
-Note: when this field return null, means no valid values can be obtained.
-                     * @return ProcessEofInfo Information of a live stream processing error, which is valid when `NotificationType` is `ProcessEof`.
-Note: when this field return null, means no valid values can be obtained.
+                     * 获取Error information of live stream processing. Valid when NotificationType is ProcessEof.
+                     * @return ProcessEofInfo Error information of live stream processing. Valid when NotificationType is ProcessEof.
                      * 
                      */
                     LiveStreamProcessErrorInfo GetProcessEofInfo() const;
@@ -104,10 +107,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool ProcessEofInfoHasBeenSet() const;
 
                     /**
-                     * 获取Content audit result, which is valid when `NotificationType` is `AiReviewResult`.
-Note: when this field return null, means no valid values can be obtained.
-                     * @return AiReviewResultInfo Content audit result, which is valid when `NotificationType` is `AiReviewResult`.
-Note: when this field return null, means no valid values can be obtained.
+                     * 获取Content moderation result. Valid when NotificationType is AiReviewResult.
+                     * @return AiReviewResultInfo Content moderation result. Valid when NotificationType is AiReviewResult.
                      * 
                      */
                     LiveStreamAiReviewResultInfo GetAiReviewResultInfo() const;
@@ -120,8 +121,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool AiReviewResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取Content recognition result, which is valid if `NotificationType` is `AiRecognitionResult`.
-                     * @return AiRecognitionResultInfo Content recognition result, which is valid if `NotificationType` is `AiRecognitionResult`.
+                     * 获取Content recognition result. Valid when NotificationType is AiRecognitionResult.
+                     * @return AiRecognitionResultInfo Content recognition result. Valid when NotificationType is AiRecognitionResult.
                      * 
                      */
                     LiveStreamAiRecognitionResultInfo GetAiRecognitionResultInfo() const;
@@ -134,8 +135,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool AiRecognitionResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取Content analysis result, which is valid if `NotificationType` is `AiAnalysisResult`.
-                     * @return AiAnalysisResultInfo Content analysis result, which is valid if `NotificationType` is `AiAnalysisResult`.
+                     * 获取Content analysis result. Valid when NotificationType is AiAnalysisResult.
+                     * @return AiAnalysisResultInfo Content analysis result. Valid when NotificationType is AiAnalysisResult.
                      * 
                      */
                     LiveStreamAiAnalysisResultInfo GetAiAnalysisResultInfo() const;
@@ -148,8 +149,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool AiAnalysisResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取Media quality inspection result, which is valid if `NotificationType` is `AiQualityControlResult`.
-                     * @return AiQualityControlResultInfo Media quality inspection result, which is valid if `NotificationType` is `AiQualityControlResult`.
+                     * 获取Media quality inspection result. Valid when NotificationType is AiQualityControlResult.
+                     * @return AiQualityControlResultInfo Media quality inspection result. Valid when NotificationType is AiQualityControlResult.
                      * 
                      */
                     LiveStreamAiQualityControlResultInfo GetAiQualityControlResultInfo() const;
@@ -162,10 +163,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool AiQualityControlResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取Live recording result is valid when NotificationType is LiveRecordResult.
-Note: when this field return null, means no valid values can be obtained.
-                     * @return LiveRecordResultInfo Live recording result is valid when NotificationType is LiveRecordResult.
-Note: when this field return null, means no valid values can be obtained.
+                     * 获取Live streaming result is valid when NotificationType is LiveRecordResult.
+                     * @return LiveRecordResultInfo Live streaming result is valid when NotificationType is LiveRecordResult.
                      * 
                      */
                     LiveStreamRecordResultInfo GetLiveRecordResultInfo() const;
@@ -178,8 +177,22 @@ Note: when this field return null, means no valid values can be obtained.
                     bool LiveRecordResultInfoHasBeenSet() const;
 
                     /**
-                     * 获取The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
-                     * @return SessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
+                     * 获取Smart subtitle result. Valid when NotificationType is AiSmartSubtitleResult.
+                     * @return AiSmartSubtitleResultInfo Smart subtitle result. Valid when NotificationType is AiSmartSubtitleResult.
+                     * 
+                     */
+                    LiveStreamAiSmartSubtitleResultInfo GetAiSmartSubtitleResultInfo() const;
+
+                    /**
+                     * 判断参数 AiSmartSubtitleResultInfo 是否已赋值
+                     * @return AiSmartSubtitleResultInfo 是否已赋值
+                     * 
+                     */
+                    bool AiSmartSubtitleResultInfoHasBeenSet() const;
+
+                    /**
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
@@ -192,8 +205,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 获取Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
@@ -206,10 +219,8 @@ Note: when this field return null, means no valid values can be obtained.
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取- Expiration time, event notification signature expiration UNIX timestamp. - By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks. - The format of Timestamp is a decimal UNIX timestamp, which is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Timestamp - Expiration time, event notification signature expiration UNIX timestamp. - By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks. - The format of Timestamp is a decimal UNIX timestamp, which is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取- Expiration time: the UNIX Timestamp when the event notification signature expires. - Message notifications from media processing expire after 10 minutes by default. If the time specified by the Timestamp value in a message notification has expired, the notification is deemed invalid, which prevents network replay attacks. - Timestamp is in decimal UNIX Timestamp format, which is the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
+                     * @return Timestamp - Expiration time: the UNIX Timestamp when the event notification signature expires. - Message notifications from media processing expire after 10 minutes by default. If the time specified by the Timestamp value in a message notification has expired, the notification is deemed invalid, which prevents network replay attacks. - Timestamp is in decimal UNIX Timestamp format, which is the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
                      * 
                      */
                     int64_t GetTimestamp() const;
@@ -223,11 +234,7 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Event notification security signature. Sign = MD5 (Timestamp + NotifyKey). Note: Media Processing Service concatenates Timestamp and NotifyKey from TaskNotifyConfig as a string and calculates the Sign value through MD5. This value is included in the notification message. Your backend server can verify whether the Sign is correct using the same algorithm, to confirm whether the message is indeed from the Media Processing Service backend.
-
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Sign Event notification security signature. Sign = MD5 (Timestamp + NotifyKey). Note: Media Processing Service concatenates Timestamp and NotifyKey from TaskNotifyConfig as a string and calculates the Sign value through MD5. This value is included in the notification message. Your backend server can verify whether the Sign is correct using the same algorithm, to confirm whether the message is indeed from the Media Processing Service backend.
-
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetSign() const;
@@ -243,11 +250,13 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * Live stream processing result type, including:
-<li>AiReviewResult: content auditing result.</li>
-<li>AiRecognitionResult: content recognition result.</li>
-<li>LiveRecordResult: live recording result.</li>
+<li>AiReviewResult: content moderation result;</li>
+<li>AiRecognitionResult: content recognition result;</li>
+<li>LiveRecordResult: live streaming result;</li>
 <li>AiQualityControlResult: media quality inspection result.</li>
-<li>ProcessEof: live stream processing result.</li>
+<li>AiAnalysisResult: content analysis result.</li>
+<li>AiSmartSubtitleResult: smart subtitle result;</li>
+<li>ProcessEof: end of live stream processing.</li>
                      */
                     std::string m_notificationType;
                     bool m_notificationTypeHasBeenSet;
@@ -259,67 +268,67 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Information of a live stream processing error, which is valid when `NotificationType` is `ProcessEof`.
-Note: when this field return null, means no valid values can be obtained.
+                     * Error information of live stream processing. Valid when NotificationType is ProcessEof.
                      */
                     LiveStreamProcessErrorInfo m_processEofInfo;
                     bool m_processEofInfoHasBeenSet;
 
                     /**
-                     * Content audit result, which is valid when `NotificationType` is `AiReviewResult`.
-Note: when this field return null, means no valid values can be obtained.
+                     * Content moderation result. Valid when NotificationType is AiReviewResult.
                      */
                     LiveStreamAiReviewResultInfo m_aiReviewResultInfo;
                     bool m_aiReviewResultInfoHasBeenSet;
 
                     /**
-                     * Content recognition result, which is valid if `NotificationType` is `AiRecognitionResult`.
+                     * Content recognition result. Valid when NotificationType is AiRecognitionResult.
                      */
                     LiveStreamAiRecognitionResultInfo m_aiRecognitionResultInfo;
                     bool m_aiRecognitionResultInfoHasBeenSet;
 
                     /**
-                     * Content analysis result, which is valid if `NotificationType` is `AiAnalysisResult`.
+                     * Content analysis result. Valid when NotificationType is AiAnalysisResult.
                      */
                     LiveStreamAiAnalysisResultInfo m_aiAnalysisResultInfo;
                     bool m_aiAnalysisResultInfoHasBeenSet;
 
                     /**
-                     * Media quality inspection result, which is valid if `NotificationType` is `AiQualityControlResult`.
+                     * Media quality inspection result. Valid when NotificationType is AiQualityControlResult.
                      */
                     LiveStreamAiQualityControlResultInfo m_aiQualityControlResultInfo;
                     bool m_aiQualityControlResultInfoHasBeenSet;
 
                     /**
-                     * Live recording result is valid when NotificationType is LiveRecordResult.
-Note: when this field return null, means no valid values can be obtained.
+                     * Live streaming result is valid when NotificationType is LiveRecordResult.
                      */
                     LiveStreamRecordResultInfo m_liveRecordResultInfo;
                     bool m_liveRecordResultInfoHasBeenSet;
 
                     /**
-                     * The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or an empty string is entered, no deduplication will be performed.
+                     * Smart subtitle result. Valid when NotificationType is AiSmartSubtitleResult.
+                     */
+                    LiveStreamAiSmartSubtitleResultInfo m_aiSmartSubtitleResultInfo;
+                    bool m_aiSmartSubtitleResultInfoHasBeenSet;
+
+                    /**
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * Source context, which is used to pass through user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * - Expiration time, event notification signature expiration UNIX timestamp. - By default, notifications sent by MPS expire after 10 minutes. If the expiration time specified has elapsed, a notification will be considered invalid. This can prevent replay attacks. - The format of Timestamp is a decimal UNIX timestamp, which is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * - Expiration time: the UNIX Timestamp when the event notification signature expires. - Message notifications from media processing expire after 10 minutes by default. If the time specified by the Timestamp value in a message notification has expired, the notification is deemed invalid, which prevents network replay attacks. - Timestamp is in decimal UNIX Timestamp format, which is the seconds elapsed since January 1, 1970 (UTC/GMT midnight).
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * Event notification security signature. Sign = MD5 (Timestamp + NotifyKey). Note: Media Processing Service concatenates Timestamp and NotifyKey from TaskNotifyConfig as a string and calculates the Sign value through MD5. This value is included in the notification message. Your backend server can verify whether the Sign is correct using the same algorithm, to confirm whether the message is indeed from the Media Processing Service backend.
-
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_sign;
                     bool m_signHasBeenSet;

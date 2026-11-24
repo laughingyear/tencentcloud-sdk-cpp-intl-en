@@ -135,8 +135,6 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainRefererResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsResponse.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePullStreamTasksRequest.h>
@@ -187,12 +185,16 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarkRulesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarksRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarksResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeSumInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeSumInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeProvinceIspPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeProvinceIspPlayInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListRequest.h>
@@ -259,6 +261,8 @@
 #include <tencentcloud/live/v20180801/model/StopLiveRecordResponse.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
@@ -445,9 +449,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveDomainsResponse> DescribeLiveDomainsOutcome;
                 typedef std::future<DescribeLiveDomainsOutcome> DescribeLiveDomainsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainsRequest&, DescribeLiveDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLiveForbidStreamListResponse> DescribeLiveForbidStreamListOutcome;
-                typedef std::future<DescribeLiveForbidStreamListOutcome> DescribeLiveForbidStreamListOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::DescribeLiveForbidStreamListRequest&, DescribeLiveForbidStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveForbidStreamListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLivePlayAuthKeyResponse> DescribeLivePlayAuthKeyOutcome;
                 typedef std::future<DescribeLivePlayAuthKeyOutcome> DescribeLivePlayAuthKeyOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePlayAuthKeyRequest&, DescribeLivePlayAuthKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePlayAuthKeyAsyncHandler;
@@ -523,6 +524,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveWatermarksResponse> DescribeLiveWatermarksOutcome;
                 typedef std::future<DescribeLiveWatermarksOutcome> DescribeLiveWatermarksOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveWatermarksRequest&, DescribeLiveWatermarksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveWatermarksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginWhiteIpListResponse> DescribeOriginWhiteIpListOutcome;
+                typedef std::future<DescribeOriginWhiteIpListOutcome> DescribeOriginWhiteIpListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeOriginWhiteIpListRequest&, DescribeOriginWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePlayErrorCodeDetailInfoListResponse> DescribePlayErrorCodeDetailInfoListOutcome;
                 typedef std::future<DescribePlayErrorCodeDetailInfoListOutcome> DescribePlayErrorCodeDetailInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePlayErrorCodeDetailInfoListRequest&, DescribePlayErrorCodeDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayErrorCodeDetailInfoListAsyncHandler;
@@ -532,6 +536,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProvinceIspPlayInfoListResponse> DescribeProvinceIspPlayInfoListOutcome;
                 typedef std::future<DescribeProvinceIspPlayInfoListOutcome> DescribeProvinceIspPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeProvinceIspPlayInfoListRequest&, DescribeProvinceIspPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProvinceIspPlayInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePushBandwidthAndFluxListResponse> DescribePushBandwidthAndFluxListOutcome;
+                typedef std::future<DescribePushBandwidthAndFluxListOutcome> DescribePushBandwidthAndFluxListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribePushBandwidthAndFluxListRequest&, DescribePushBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePushBandwidthAndFluxListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordTaskResponse> DescribeRecordTaskOutcome;
                 typedef std::future<DescribeRecordTaskOutcome> DescribeRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeRecordTaskRequest&, DescribeRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTaskAsyncHandler;
@@ -631,6 +638,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRecordTaskResponse> StopRecordTaskOutcome;
                 typedef std::future<StopRecordTaskOutcome> StopRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopRecordTaskRequest&, StopRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopScreenshotTaskResponse> StopScreenshotTaskOutcome;
+                typedef std::future<StopScreenshotTaskOutcome> StopScreenshotTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopScreenshotTaskRequest&, StopScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScreenshotTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnBindLiveDomainCertResponse> UnBindLiveDomainCertOutcome;
                 typedef std::future<UnBindLiveDomainCertOutcome> UnBindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::UnBindLiveDomainCertRequest&, UnBindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindLiveDomainCertAsyncHandler;
@@ -1204,17 +1214,6 @@ Referer information is included in HTTP requests. After you enable referer confi
                 DescribeLiveDomainsOutcomeCallable DescribeLiveDomainsCallable(const Model::DescribeLiveDomainsRequest& request);
 
                 /**
-                 *This API is used to get the list of disabled streams.
-
-Note: this API is used for query only and should not be relied too much upon in important business scenarios.
-                 * @param req DescribeLiveForbidStreamListRequest
-                 * @return DescribeLiveForbidStreamListOutcome
-                 */
-                DescribeLiveForbidStreamListOutcome DescribeLiveForbidStreamList(const Model::DescribeLiveForbidStreamListRequest &request);
-                void DescribeLiveForbidStreamListAsync(const Model::DescribeLiveForbidStreamListRequest& request, const DescribeLiveForbidStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLiveForbidStreamListOutcomeCallable DescribeLiveForbidStreamListCallable(const Model::DescribeLiveForbidStreamListRequest& request);
-
-                /**
                  *This API is used to query the playback authentication key.
                  * @param req DescribeLivePlayAuthKeyRequest
                  * @return DescribeLivePlayAuthKeyOutcome
@@ -1463,6 +1462,15 @@ If the start time and end time are not on the same day or if the data of specifi
                 DescribeLiveWatermarksOutcomeCallable DescribeLiveWatermarksCallable(const Model::DescribeLiveWatermarksRequest& request);
 
                 /**
+                 *This API is used to obtain the pull stream IP whitelist list of the origin server.
+                 * @param req DescribeOriginWhiteIpListRequest
+                 * @return DescribeOriginWhiteIpListOutcome
+                 */
+                DescribeOriginWhiteIpListOutcome DescribeOriginWhiteIpList(const Model::DescribeOriginWhiteIpListRequest &request);
+                void DescribeOriginWhiteIpListAsync(const Model::DescribeOriginWhiteIpListRequest& request, const DescribeOriginWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginWhiteIpListOutcomeCallable DescribeOriginWhiteIpListCallable(const Model::DescribeOriginWhiteIpListRequest& request);
+
+                /**
                  *This API is used to query the information of downstream playback error codes, i.e., the occurrences of each HTTP error code (4xx and 5xx) at a 1-minute granularity in a certain period of time.
                  * @param req DescribePlayErrorCodeDetailInfoListRequest
                  * @return DescribePlayErrorCodeDetailInfoListOutcome
@@ -1488,6 +1496,15 @@ If the start time and end time are not on the same day or if the data of specifi
                 DescribeProvinceIspPlayInfoListOutcome DescribeProvinceIspPlayInfoList(const Model::DescribeProvinceIspPlayInfoListRequest &request);
                 void DescribeProvinceIspPlayInfoListAsync(const Model::DescribeProvinceIspPlayInfoListRequest& request, const DescribeProvinceIspPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProvinceIspPlayInfoListOutcomeCallable DescribeProvinceIspPlayInfoListCallable(const Model::DescribeProvinceIspPlayInfoListRequest& request);
+
+                /**
+                 *Live Streaming Push Bandwidth and Traffic Data Query. The push billing will first compare the global push usage with the global playback usage. If the billing conditions are met, billing will be issued based on the usage in each region. For details, refer to the Billing Documentation.(https://cloud.tencent.com/document/product/267/34175)
+                 * @param req DescribePushBandwidthAndFluxListRequest
+                 * @return DescribePushBandwidthAndFluxListOutcome
+                 */
+                DescribePushBandwidthAndFluxListOutcome DescribePushBandwidthAndFluxList(const Model::DescribePushBandwidthAndFluxListRequest &request);
+                void DescribePushBandwidthAndFluxListAsync(const Model::DescribePushBandwidthAndFluxListRequest& request, const DescribePushBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePushBandwidthAndFluxListOutcomeCallable DescribePushBandwidthAndFluxListCallable(const Model::DescribePushBandwidthAndFluxListRequest& request);
 
                 /**
                  *This API is used to retrieve a list of recording tasks that were started and ended within a specified time range. 
@@ -1798,6 +1815,15 @@ Referer information is included in HTTP requests. After you enable referer confi
                 StopRecordTaskOutcome StopRecordTask(const Model::StopRecordTaskRequest &request);
                 void StopRecordTaskAsync(const Model::StopRecordTaskRequest& request, const StopRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRecordTaskOutcomeCallable StopRecordTaskCallable(const Model::StopRecordTaskRequest& request);
+
+                /**
+                 *This API is used to terminate a screenshot task in advance. After the task is successfully terminated, it will not be started again.
+                 * @param req StopScreenshotTaskRequest
+                 * @return StopScreenshotTaskOutcome
+                 */
+                StopScreenshotTaskOutcome StopScreenshotTask(const Model::StopScreenshotTaskRequest &request);
+                void StopScreenshotTaskAsync(const Model::StopScreenshotTaskRequest& request, const StopScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopScreenshotTaskOutcomeCallable StopScreenshotTaskCallable(const Model::StopScreenshotTaskRequest& request);
 
                 /**
                  *This API is used to unbind a domain name certificate.

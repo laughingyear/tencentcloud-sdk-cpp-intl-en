@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Just In Time transcoding watermark template configuration.
+                * Watermark template configuration for JIT transcoding.
                 */
                 class WatermarkConfigureData : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable watermark. Possible values:
-<li>ON: means enabling watermark;</li>
-<li>OFF: means turning off watermark. </li>
-                     * @return Switch Whether to enable watermark. Possible values:
-<li>ON: means enabling watermark;</li>
-<li>OFF: means turning off watermark. </li>
+                     * 获取Whether to enable watermark. Valid values:
+<li>ON: Enable watermark;</li>
+<li>OFF: Turn off watermark.</li>
+                     * @return Switch Whether to enable watermark. Valid values:
+<li>ON: Enable watermark;</li>
+<li>OFF: Turn off watermark.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable watermark. Possible values:
-<li>ON: means enabling watermark;</li>
-<li>OFF: means turning off watermark. </li>
-                     * @param _switch Whether to enable watermark. Possible values:
-<li>ON: means enabling watermark;</li>
-<li>OFF: means turning off watermark. </li>
+                     * 设置Whether to enable watermark. Valid values:
+<li>ON: Enable watermark;</li>
+<li>OFF: Turn off watermark.</li>
+                     * @param _switch Whether to enable watermark. Valid values:
+<li>ON: Enable watermark;</li>
+<li>OFF: Turn off watermark.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Watermark URL.
-                     * @return Url Watermark URL.
+                     * 获取Watermark Url.
+                     * @return Url Watermark Url.
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Watermark URL.
-                     * @param _url Watermark URL.
+                     * 设置Watermark Url.
+                     * @param _url Watermark Url.
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -97,19 +97,19 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取The width of the watermark. 
-<li>The string ends with %, indicating that the watermark Width is a percentage of the video width, such as 10% indicating that the Width is 10% of the video width;</li>
-                     * @return Width The width of the watermark. 
-<li>The string ends with %, indicating that the watermark Width is a percentage of the video width, such as 10% indicating that the Width is 10% of the video width;</li>
+                     * 获取Width of a watermark.
+<li>If a string ends with %, it indicates that the `Width` of a watermark is a percentage of a video's width. For example, `10%` means that `Width` is 10% of a video's width.</li>
+                     * @return Width Width of a watermark.
+<li>If a string ends with %, it indicates that the `Width` of a watermark is a percentage of a video's width. For example, `10%` means that `Width` is 10% of a video's width.</li>
                      * 
                      */
                     std::string GetWidth() const;
 
                     /**
-                     * 设置The width of the watermark. 
-<li>The string ends with %, indicating that the watermark Width is a percentage of the video width, such as 10% indicating that the Width is 10% of the video width;</li>
-                     * @param _width The width of the watermark. 
-<li>The string ends with %, indicating that the watermark Width is a percentage of the video width, such as 10% indicating that the Width is 10% of the video width;</li>
+                     * 设置Width of a watermark.
+<li>If a string ends with %, it indicates that the `Width` of a watermark is a percentage of a video's width. For example, `10%` means that `Width` is 10% of a video's width.</li>
+                     * @param _width Width of a watermark.
+<li>If a string ends with %, it indicates that the `Width` of a watermark is a percentage of a video's width. For example, `10%` means that `Width` is 10% of a video's width.</li>
                      * 
                      */
                     void SetWidth(const std::string& _width);
@@ -122,19 +122,19 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取The height of the watermark. 
-<li>The string ends with %, indicating that the watermark Height is a percentage of the video height, for example, 10% means that the Height is 10% of the video height;</li>
-                     * @return Height The height of the watermark. 
-<li>The string ends with %, indicating that the watermark Height is a percentage of the video height, for example, 10% means that the Height is 10% of the video height;</li>
+                     * 获取Height of the watermark.
+<li>If a string ends with %, it indicates that the `Height` of a watermark is a percentage of a video's height. For example, `10%` means that `Height` is 10% of a video's height.</li>
+                     * @return Height Height of the watermark.
+<li>If a string ends with %, it indicates that the `Height` of a watermark is a percentage of a video's height. For example, `10%` means that `Height` is 10% of a video's height.</li>
                      * 
                      */
                     std::string GetHeight() const;
 
                     /**
-                     * 设置The height of the watermark. 
-<li>The string ends with %, indicating that the watermark Height is a percentage of the video height, for example, 10% means that the Height is 10% of the video height;</li>
-                     * @param _height The height of the watermark. 
-<li>The string ends with %, indicating that the watermark Height is a percentage of the video height, for example, 10% means that the Height is 10% of the video height;</li>
+                     * 设置Height of the watermark.
+<li>If a string ends with %, it indicates that the `Height` of a watermark is a percentage of a video's height. For example, `10%` means that `Height` is 10% of a video's height.</li>
+                     * @param _height Height of the watermark.
+<li>If a string ends with %, it indicates that the `Height` of a watermark is a percentage of a video's height. For example, `10%` means that `Height` is 10% of a video's height.</li>
                      * 
                      */
                     void SetHeight(const std::string& _height);
@@ -147,15 +147,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取The horizontal position of the watermark origin from the video image coordinate origin. The string ends with %, indicating that the watermark XPos specifies a percentage of the video width, such as 10% indicating that XPos is 10% of the video width.
-                     * @return XPos The horizontal position of the watermark origin from the video image coordinate origin. The string ends with %, indicating that the watermark XPos specifies a percentage of the video width, such as 10% indicating that XPos is 10% of the video width.
+                     * 获取Horizontal position of the watermark origin relative to the origin of coordinates of the video image. A string ending with % means the watermark XPos is a specified percentage of the video width. For example, 10% means XPos is 10% of the video width.
+                     * @return XPos Horizontal position of the watermark origin relative to the origin of coordinates of the video image. A string ending with % means the watermark XPos is a specified percentage of the video width. For example, 10% means XPos is 10% of the video width.
                      * 
                      */
                     std::string GetXPos() const;
 
                     /**
-                     * 设置The horizontal position of the watermark origin from the video image coordinate origin. The string ends with %, indicating that the watermark XPos specifies a percentage of the video width, such as 10% indicating that XPos is 10% of the video width.
-                     * @param _xPos The horizontal position of the watermark origin from the video image coordinate origin. The string ends with %, indicating that the watermark XPos specifies a percentage of the video width, such as 10% indicating that XPos is 10% of the video width.
+                     * 设置Horizontal position of the watermark origin relative to the origin of coordinates of the video image. A string ending with % means the watermark XPos is a specified percentage of the video width. For example, 10% means XPos is 10% of the video width.
+                     * @param _xPos Horizontal position of the watermark origin relative to the origin of coordinates of the video image. A string ending with % means the watermark XPos is a specified percentage of the video width. For example, 10% means XPos is 10% of the video width.
                      * 
                      */
                     void SetXPos(const std::string& _xPos);
@@ -168,15 +168,15 @@ namespace TencentCloud
                     bool XPosHasBeenSet() const;
 
                     /**
-                     * 获取The vertical position of the watermark origin from the video image coordinate origin. When the string ends with %, it means that the watermark YPos specifies a percentage of the video height. For example, 10% means that YPos is 10% of the video height.
-                     * @return YPos The vertical position of the watermark origin from the video image coordinate origin. When the string ends with %, it means that the watermark YPos specifies a percentage of the video height. For example, 10% means that YPos is 10% of the video height.
+                     * 获取Vertical position of the watermark origin relative to the origin of coordinates of the video image. When the string ends with %, the watermark YPos is the specified percentage of the video height. For example, 10% means YPos is 10% of the video height.
+                     * @return YPos Vertical position of the watermark origin relative to the origin of coordinates of the video image. When the string ends with %, the watermark YPos is the specified percentage of the video height. For example, 10% means YPos is 10% of the video height.
                      * 
                      */
                     std::string GetYPos() const;
 
                     /**
-                     * 设置The vertical position of the watermark origin from the video image coordinate origin. When the string ends with %, it means that the watermark YPos specifies a percentage of the video height. For example, 10% means that YPos is 10% of the video height.
-                     * @param _yPos The vertical position of the watermark origin from the video image coordinate origin. When the string ends with %, it means that the watermark YPos specifies a percentage of the video height. For example, 10% means that YPos is 10% of the video height.
+                     * 设置Vertical position of the watermark origin relative to the origin of coordinates of the video image. When the string ends with %, the watermark YPos is the specified percentage of the video height. For example, 10% means YPos is 10% of the video height.
+                     * @param _yPos Vertical position of the watermark origin relative to the origin of coordinates of the video image. When the string ends with %, the watermark YPos is the specified percentage of the video height. For example, 10% means YPos is 10% of the video height.
                      * 
                      */
                     void SetYPos(const std::string& _yPos);
@@ -191,41 +191,41 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable watermark. Possible values:
-<li>ON: means enabling watermark;</li>
-<li>OFF: means turning off watermark. </li>
+                     * Whether to enable watermark. Valid values:
+<li>ON: Enable watermark;</li>
+<li>OFF: Turn off watermark.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Watermark URL.
+                     * Watermark Url.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * The width of the watermark. 
-<li>The string ends with %, indicating that the watermark Width is a percentage of the video width, such as 10% indicating that the Width is 10% of the video width;</li>
+                     * Width of a watermark.
+<li>If a string ends with %, it indicates that the `Width` of a watermark is a percentage of a video's width. For example, `10%` means that `Width` is 10% of a video's width.</li>
                      */
                     std::string m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * The height of the watermark. 
-<li>The string ends with %, indicating that the watermark Height is a percentage of the video height, for example, 10% means that the Height is 10% of the video height;</li>
+                     * Height of the watermark.
+<li>If a string ends with %, it indicates that the `Height` of a watermark is a percentage of a video's height. For example, `10%` means that `Height` is 10% of a video's height.</li>
                      */
                     std::string m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * The horizontal position of the watermark origin from the video image coordinate origin. The string ends with %, indicating that the watermark XPos specifies a percentage of the video width, such as 10% indicating that XPos is 10% of the video width.
+                     * Horizontal position of the watermark origin relative to the origin of coordinates of the video image. A string ending with % means the watermark XPos is a specified percentage of the video width. For example, 10% means XPos is 10% of the video width.
                      */
                     std::string m_xPos;
                     bool m_xPosHasBeenSet;
 
                     /**
-                     * The vertical position of the watermark origin from the video image coordinate origin. When the string ends with %, it means that the watermark YPos specifies a percentage of the video height. For example, 10% means that YPos is 10% of the video height.
+                     * Vertical position of the watermark origin relative to the origin of coordinates of the video image. When the string ends with %, the watermark YPos is the specified percentage of the video height. For example, 10% means YPos is 10% of the video height.
                      */
                     std::string m_yPos;
                     bool m_yPosHasBeenSet;

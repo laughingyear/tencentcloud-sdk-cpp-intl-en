@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameter information of each AZ
+                * Parameter information for each AZ.
                 */
                 class MultiZoneSetting : public AbstractModel
                 {
@@ -50,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取"master", "standby", "third-party"
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @return ZoneTag "master", "standby", "third-party"
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 获取"master", "standby", and "third-party".
+                     * @return ZoneTag "master", "standby", and "third-party".
                      * 
                      */
                     std::string GetZoneTag() const;
 
                     /**
-                     * 设置"master", "standby", "third-party"
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @param _zoneTag "master", "standby", "third-party"
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 设置"master", "standby", and "third-party".
+                     * @param _zoneTag "master", "standby", and "third-party".
                      * 
                      */
                     void SetZoneTag(const std::string& _zoneTag);
@@ -75,15 +71,15 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                     bool ZoneTagHasBeenSet() const;
 
                     /**
-                     * 获取None
-                     * @return VPCSettings None
+                     * 获取None.
+                     * @return VPCSettings None.
                      * 
                      */
                     VPCSettings GetVPCSettings() const;
 
                     /**
-                     * 设置None
-                     * @param _vPCSettings None
+                     * 设置None.
+                     * @param _vPCSettings None.
                      * 
                      */
                     void SetVPCSettings(const VPCSettings& _vPCSettings);
@@ -96,15 +92,15 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                     bool VPCSettingsHasBeenSet() const;
 
                     /**
-                     * 获取None
-                     * @return Placement None
+                     * 获取None.
+                     * @return Placement None.
                      * 
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置None
-                     * @param _placement None
+                     * 设置None.
+                     * @param _placement None.
                      * 
                      */
                     void SetPlacement(const Placement& _placement);
@@ -117,15 +113,15 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取None
-                     * @return ResourceSpec None
+                     * 获取None.
+                     * @return ResourceSpec None.
                      * 
                      */
                     NewResourceSpec GetResourceSpec() const;
 
                     /**
-                     * 设置None
-                     * @param _resourceSpec None
+                     * 设置None.
+                     * @param _resourceSpec None.
                      * 
                      */
                     void SetResourceSpec(const NewResourceSpec& _resourceSpec);
@@ -140,26 +136,25 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                 private:
 
                     /**
-                     * "master", "standby", "third-party"
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * "master", "standby", and "third-party".
                      */
                     std::string m_zoneTag;
                     bool m_zoneTagHasBeenSet;
 
                     /**
-                     * None
+                     * None.
                      */
                     VPCSettings m_vPCSettings;
                     bool m_vPCSettingsHasBeenSet;
 
                     /**
-                     * None
+                     * None.
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * None
+                     * None.
                      */
                     NewResourceSpec m_resourceSpec;
                     bool m_resourceSpecHasBeenSet;

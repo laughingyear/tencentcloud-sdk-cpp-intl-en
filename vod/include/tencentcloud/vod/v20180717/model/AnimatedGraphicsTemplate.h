@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Details of an animated image generating template.
+                * Rotating image template description.
                 */
                 class AnimatedGraphicsTemplate : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of an animated image generating template.
-                     * @return Definition Unique ID of an animated image generating template.
+                     * 获取Unique identifier for rotation diagram template.
+                     * @return Definition Unique identifier for rotation diagram template.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of an animated image generating template.
-                     * @param _definition Unique ID of an animated image generating template.
+                     * 设置Unique identifier for rotation diagram template.
+                     * @param _definition Unique identifier for rotation diagram template.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -69,10 +69,10 @@ namespace TencentCloud
 
                     /**
                      * 获取Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * @return Type Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * 
                      */
@@ -80,10 +80,10 @@ namespace TencentCloud
 
                     /**
                      * 设置Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * @param _type Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * 
                      */
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Name of an animated image generating template.
-                     * @return Name Name of an animated image generating template.
+                     * 获取Rotating image template name.
+                     * @return Name Rotating image template name.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Name of an animated image generating template.
-                     * @param _name Name of an animated image generating template.
+                     * 设置Rotating image template name.
+                     * @param _name Rotating image template name.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Description of an animated image generating template.
-                     * @return Comment Description of an animated image generating template.
+                     * 获取Animated image template description information.
+                     * @return Comment Animated image template description information.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Description of an animated image generating template.
-                     * @param _comment Description of an animated image generating template.
+                     * 设置Animated image template description information.
+                     * @param _comment Animated image template description information.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -139,34 +139,34 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the width (or long side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 获取Maximum value of the animated gif width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @return Width Maximum value of the width (or long side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @return Width Maximum value of the animated gif width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置Maximum value of the width (or long side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 设置Maximum value of the animated gif width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @param _width Maximum value of the width (or long side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @param _width Maximum value of the animated gif width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
@@ -180,34 +180,34 @@ Default value: 0.
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the height (or short side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 获取Maximum value of the animated gif height (or short side). Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @return Height Maximum value of the height (or short side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @return Height Maximum value of the animated gif height (or short side). Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置Maximum value of the height (or short side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 设置Maximum value of the animated gif height (or short side). Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @param _height Maximum value of the height (or short side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @param _height Maximum value of the animated gif height (or short side). Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
@@ -221,26 +221,26 @@ Default value: 0.
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 获取Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height indicates the height of the video.</li>
 Default value: open.
-                     * @return ResolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @return ResolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height indicates the height of the video.</li>
 Default value: open.
                      * 
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
-                     * 设置Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 设置Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height indicates the height of the video.</li>
 Default value: open.
-                     * @param _resolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @param _resolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height indicates the height of the video.</li>
 Default value: open.
                      * 
                      */
@@ -254,15 +254,15 @@ Default value: open.
                     bool ResolutionAdaptiveHasBeenSet() const;
 
                     /**
-                     * 获取Animated image format.
-                     * @return Format Animated image format.
+                     * 获取Animated image file format.
+                     * @return Format Animated image file format.
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置Animated image format.
-                     * @param _format Animated image format.
+                     * 设置Animated image file format.
+                     * @param _format Animated image file format.
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -317,15 +317,15 @@ Default value: open.
                     bool QualityHasBeenSet() const;
 
                     /**
-                     * 获取Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template creation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Template creation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template creation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Template creation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -338,15 +338,15 @@ Default value: open.
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return UpdateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template last modified time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return UpdateTime Template last modified time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _updateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template last modified time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _updateTime Template last modified time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -361,64 +361,64 @@ Default value: open.
                 private:
 
                     /**
-                     * Unique ID of an animated image generating template.
+                     * Unique identifier for rotation diagram template.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Name of an animated image generating template.
+                     * Rotating image template name.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Description of an animated image generating template.
+                     * Animated image template description information.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Maximum value of the width (or long side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * Maximum value of the animated gif width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Maximum value of the height (or short side) of an animated image in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * Maximum value of the animated gif height (or short side). Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height indicates the height of the video.</li>
 Default value: open.
                      */
                     std::string m_resolutionAdaptive;
                     bool m_resolutionAdaptiveHasBeenSet;
 
                     /**
-                     * Animated image format.
+                     * Animated image file format.
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
@@ -436,13 +436,13 @@ Default value: open.
                     bool m_qualityHasBeenSet;
 
                     /**
-                     * Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template creation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template last modified time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

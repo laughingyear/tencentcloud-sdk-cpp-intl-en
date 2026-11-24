@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Billing details
+                * Billing inquiry result
                 */
                 class TradePrice : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Resource total price under prepaid mode, excluding discounts. unit: cent.
-                     * @return TotalPrice Resource total price under prepaid mode, excluding discounts. unit: cent.
+                     * 获取Resource total price under prepaid mode, excluding discounts. Unit: cent.
+                     * @return TotalPrice Resource total price under prepaid mode, excluding discounts. Unit: cent.
                      * 
                      */
                     int64_t GetTotalPrice() const;
 
                     /**
-                     * 设置Resource total price under prepaid mode, excluding discounts. unit: cent.
-                     * @param _totalPrice Resource total price under prepaid mode, excluding discounts. unit: cent.
+                     * 设置Resource total price under prepaid mode, excluding discounts. Unit: cent.
+                     * @param _totalPrice Resource total price under prepaid mode, excluding discounts. Unit: cent.
                      * 
                      */
                     void SetTotalPrice(const int64_t& _totalPrice);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TotalPriceHasBeenSet() const;
 
                     /**
-                     * 获取Total discount. `100` means no discount.
-                     * @return Discount Total discount. `100` means no discount.
+                     * 获取Total discount. 100 means 100% no discount.
+                     * @return Discount Total discount. 100 means 100% no discount.
                      * 
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置Total discount. `100` means no discount.
-                     * @param _discount Total discount. `100` means no discount.
+                     * 设置Total discount. 100 means 100% no discount.
+                     * @param _discount Total discount. 100 means 100% no discount.
                      * 
                      */
                     void SetDiscount(const double& _discount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取Discounted total price under prepaid mode, unit: fen. for example, the user enjoys a Discount = TotalPrice × Discount.
-                     * @return TotalPriceDiscount Discounted total price under prepaid mode, unit: fen. for example, the user enjoys a Discount = TotalPrice × Discount.
+                     * 获取Discounted total price under prepaid mode, unit: cent. For example, if a user enjoys a discount, it is TotalPrice × Discount.
+                     * @return TotalPriceDiscount Discounted total price under prepaid mode, unit: cent. For example, if a user enjoys a discount, it is TotalPrice × Discount.
                      * 
                      */
                     int64_t GetTotalPriceDiscount() const;
 
                     /**
-                     * 设置Discounted total price under prepaid mode, unit: fen. for example, the user enjoys a Discount = TotalPrice × Discount.
-                     * @param _totalPriceDiscount Discounted total price under prepaid mode, unit: fen. for example, the user enjoys a Discount = TotalPrice × Discount.
+                     * 设置Discounted total price under prepaid mode, unit: cent. For example, if a user enjoys a discount, it is TotalPrice × Discount.
+                     * @param _totalPriceDiscount Discounted total price under prepaid mode, unit: cent. For example, if a user enjoys a discount, it is TotalPrice × Discount.
                      * 
                      */
                     void SetTotalPriceDiscount(const int64_t& _totalPriceDiscount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TotalPriceDiscountHasBeenSet() const;
 
                     /**
-                     * 获取Unit resource price in postpaid mode, excluding discounts. unit: cent.
-                     * @return UnitPrice Unit resource price in postpaid mode, excluding discounts. unit: cent.
+                     * 获取Unit resource price in postpaid mode, excluding discounts. Unit: cent
+                     * @return UnitPrice Unit resource price in postpaid mode, excluding discounts. Unit: cent
                      * 
                      */
                     int64_t GetUnitPrice() const;
 
                     /**
-                     * 设置Unit resource price in postpaid mode, excluding discounts. unit: cent.
-                     * @param _unitPrice Unit resource price in postpaid mode, excluding discounts. unit: cent.
+                     * 设置Unit resource price in postpaid mode, excluding discounts. Unit: cent
+                     * @param _unitPrice Unit resource price in postpaid mode, excluding discounts. Unit: cent
                      * 
                      */
                     void SetUnitPrice(const int64_t& _unitPrice);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取Unit resource price in postpaid mode after Discount, unit: fen. for example, the user enjoys a Discount = unitprice × Discount.
-                     * @return UnitPriceDiscount Unit resource price in postpaid mode after Discount, unit: fen. for example, the user enjoys a Discount = unitprice × Discount.
+                     * 获取Unit resource price under postpaid mode after Discount, unit: cent. For example, if a user enjoys a Discount, it is UnitPrice × Discount.
+                     * @return UnitPriceDiscount Unit resource price under postpaid mode after Discount, unit: cent. For example, if a user enjoys a Discount, it is UnitPrice × Discount.
                      * 
                      */
                     int64_t GetUnitPriceDiscount() const;
 
                     /**
-                     * 设置Unit resource price in postpaid mode after Discount, unit: fen. for example, the user enjoys a Discount = unitprice × Discount.
-                     * @param _unitPriceDiscount Unit resource price in postpaid mode after Discount, unit: fen. for example, the user enjoys a Discount = unitprice × Discount.
+                     * 设置Unit resource price under postpaid mode after Discount, unit: cent. For example, if a user enjoys a Discount, it is UnitPrice × Discount.
+                     * @param _unitPriceDiscount Unit resource price under postpaid mode after Discount, unit: cent. For example, if a user enjoys a Discount, it is UnitPrice × Discount.
                      * 
                      */
                     void SetUnitPriceDiscount(const int64_t& _unitPriceDiscount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UnitPriceDiscountHasBeenSet() const;
 
                     /**
-                     * 获取Price unit
-                     * @return ChargeUnit Price unit
+                     * 获取Billing price unit
+                     * @return ChargeUnit Billing price unit
                      * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
-                     * 设置Price unit
-                     * @param _chargeUnit Price unit
+                     * 设置Billing price unit
+                     * @param _chargeUnit Billing price unit
                      * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
@@ -172,43 +172,124 @@ namespace TencentCloud
                      */
                     bool ChargeUnitHasBeenSet() const;
 
+                    /**
+                     * 获取High-precision price excluding discounts
+                     * @return UnitPriceHighPrecision High-precision price excluding discounts
+                     * 
+                     */
+                    std::string GetUnitPriceHighPrecision() const;
+
+                    /**
+                     * 设置High-precision price excluding discounts
+                     * @param _unitPriceHighPrecision High-precision price excluding discounts
+                     * 
+                     */
+                    void SetUnitPriceHighPrecision(const std::string& _unitPriceHighPrecision);
+
+                    /**
+                     * 判断参数 UnitPriceHighPrecision 是否已赋值
+                     * @return UnitPriceHighPrecision 是否已赋值
+                     * 
+                     */
+                    bool UnitPriceHighPrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取Discounted price at high precision
+                     * @return UnitPriceDiscountHighPrecision Discounted price at high precision
+                     * 
+                     */
+                    std::string GetUnitPriceDiscountHighPrecision() const;
+
+                    /**
+                     * 设置Discounted price at high precision
+                     * @param _unitPriceDiscountHighPrecision Discounted price at high precision
+                     * 
+                     */
+                    void SetUnitPriceDiscountHighPrecision(const std::string& _unitPriceDiscountHighPrecision);
+
+                    /**
+                     * 判断参数 UnitPriceDiscountHighPrecision 是否已赋值
+                     * @return UnitPriceDiscountHighPrecision 是否已赋值
+                     * 
+                     */
+                    bool UnitPriceDiscountHighPrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取Currency unit.
+                     * @return AmountUnit Currency unit.
+                     * 
+                     */
+                    std::string GetAmountUnit() const;
+
+                    /**
+                     * 设置Currency unit.
+                     * @param _amountUnit Currency unit.
+                     * 
+                     */
+                    void SetAmountUnit(const std::string& _amountUnit);
+
+                    /**
+                     * 判断参数 AmountUnit 是否已赋值
+                     * @return AmountUnit 是否已赋值
+                     * 
+                     */
+                    bool AmountUnitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Resource total price under prepaid mode, excluding discounts. unit: cent.
+                     * Resource total price under prepaid mode, excluding discounts. Unit: cent.
                      */
                     int64_t m_totalPrice;
                     bool m_totalPriceHasBeenSet;
 
                     /**
-                     * Total discount. `100` means no discount.
+                     * Total discount. 100 means 100% no discount.
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * Discounted total price under prepaid mode, unit: fen. for example, the user enjoys a Discount = TotalPrice × Discount.
+                     * Discounted total price under prepaid mode, unit: cent. For example, if a user enjoys a discount, it is TotalPrice × Discount.
                      */
                     int64_t m_totalPriceDiscount;
                     bool m_totalPriceDiscountHasBeenSet;
 
                     /**
-                     * Unit resource price in postpaid mode, excluding discounts. unit: cent.
+                     * Unit resource price in postpaid mode, excluding discounts. Unit: cent
                      */
                     int64_t m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
-                     * Unit resource price in postpaid mode after Discount, unit: fen. for example, the user enjoys a Discount = unitprice × Discount.
+                     * Unit resource price under postpaid mode after Discount, unit: cent. For example, if a user enjoys a Discount, it is UnitPrice × Discount.
                      */
                     int64_t m_unitPriceDiscount;
                     bool m_unitPriceDiscountHasBeenSet;
 
                     /**
-                     * Price unit
+                     * Billing price unit
                      */
                     std::string m_chargeUnit;
                     bool m_chargeUnitHasBeenSet;
+
+                    /**
+                     * High-precision price excluding discounts
+                     */
+                    std::string m_unitPriceHighPrecision;
+                    bool m_unitPriceHighPrecisionHasBeenSet;
+
+                    /**
+                     * Discounted price at high precision
+                     */
+                    std::string m_unitPriceDiscountHighPrecision;
+                    bool m_unitPriceDiscountHighPrecisionHasBeenSet;
+
+                    /**
+                     * Currency unit.
+                     */
+                    std::string m_amountUnit;
+                    bool m_amountUnitHasBeenSet;
 
                 };
             }

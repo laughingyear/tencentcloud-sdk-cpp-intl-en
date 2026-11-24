@@ -34,7 +34,11 @@ AdjustCdbProxyAddressRequest::AdjustCdbProxyAddressRequest() :
     m_proxyAddressIdHasBeenSet(false),
     m_transSplitHasBeenSet(false),
     m_connectionPoolHasBeenSet(false),
-    m_proxyAllocationHasBeenSet(false)
+    m_proxyAllocationHasBeenSet(false),
+    m_autoLoadBalanceHasBeenSet(false),
+    m_accessModeHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false)
 {
 }
 
@@ -146,6 +150,38 @@ string AdjustCdbProxyAddressRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoLoadBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoLoadBalance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoLoadBalance, allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apNodeAsRoNode, allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apQueryToOtherNode, allocator);
     }
 
 
@@ -346,6 +382,70 @@ void AdjustCdbProxyAddressRequest::SetProxyAllocation(const vector<ProxyAllocati
 bool AdjustCdbProxyAddressRequest::ProxyAllocationHasBeenSet() const
 {
     return m_proxyAllocationHasBeenSet;
+}
+
+bool AdjustCdbProxyAddressRequest::GetAutoLoadBalance() const
+{
+    return m_autoLoadBalance;
+}
+
+void AdjustCdbProxyAddressRequest::SetAutoLoadBalance(const bool& _autoLoadBalance)
+{
+    m_autoLoadBalance = _autoLoadBalance;
+    m_autoLoadBalanceHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::AutoLoadBalanceHasBeenSet() const
+{
+    return m_autoLoadBalanceHasBeenSet;
+}
+
+string AdjustCdbProxyAddressRequest::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void AdjustCdbProxyAddressRequest::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
+}
+
+bool AdjustCdbProxyAddressRequest::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void AdjustCdbProxyAddressRequest::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+bool AdjustCdbProxyAddressRequest::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void AdjustCdbProxyAddressRequest::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
 }
 
 

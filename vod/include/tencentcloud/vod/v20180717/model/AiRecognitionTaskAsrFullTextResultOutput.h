@@ -49,19 +49,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of full-text speech recognition segments
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
-                     * @return SegmentSet List of full-text speech recognition segments
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * 获取List of segments for full speech recognition.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @return SegmentSet List of segments for full speech recognition.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     std::vector<AiRecognitionTaskAsrFullTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of full-text speech recognition segments
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
-                     * @param _segmentSet List of full-text speech recognition segments
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * 设置List of segments for full speech recognition.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @param _segmentSet List of segments for full speech recognition.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskAsrFullTextSegmentItem>& _segmentSet);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file of the list for full-text speech recognition segments. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
-                     * @return SegmentSetFileUrl URL to the file of the list for full-text speech recognition segments. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * 获取URL of the speech full text recognition Segment List File. The content of the file is in JSON format, and its data structure is consistent with the fields of SegmentSet. (The file is not retained permanently. It will be deleted after reaching the SegmentSetFileUrlExpireTime time point.)
+                     * @return SegmentSetFileUrl URL of the speech full text recognition Segment List File. The content of the file is in JSON format, and its data structure is consistent with the fields of SegmentSet. (The file is not retained permanently. It will be deleted after reaching the SegmentSetFileUrlExpireTime time point.)
                      * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file of the list for full-text speech recognition segments. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
-                     * @param _segmentSetFileUrl URL to the file of the list for full-text speech recognition segments. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * 设置URL of the speech full text recognition Segment List File. The content of the file is in JSON format, and its data structure is consistent with the fields of SegmentSet. (The file is not retained permanently. It will be deleted after reaching the SegmentSetFileUrlExpireTime time point.)
+                     * @param _segmentSetFileUrl URL of the speech full text recognition Segment List File. The content of the file is in JSON format, and its data structure is consistent with the fields of SegmentSet. (The file is not retained permanently. It will be deleted after reaching the SegmentSetFileUrlExpireTime time point.)
                      * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取The expiration time of the URLs of full-text speech recognition segments in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format).
-                     * @return SegmentSetFileUrlExpireTime The expiration time of the URLs of full-text speech recognition segments in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format).
+                     * 获取Expiration time of the full speech recognition segment list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return SegmentSetFileUrlExpireTime Expiration time of the full speech recognition segment list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置The expiration time of the URLs of full-text speech recognition segments in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format).
-                     * @param _segmentSetFileUrlExpireTime The expiration time of the URLs of full-text speech recognition segments in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format).
+                     * 设置Expiration time of the full speech recognition segment list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _segmentSetFileUrlExpireTime Expiration time of the full speech recognition segment list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool SegmentSetFileUrlExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
-                     * @return SubtitleSet The subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * 获取Generated subtitle list, corresponding to SubtitleFormats in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * @return SubtitleSet Generated subtitle list, corresponding to SubtitleFormats in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      * 
                      */
                     std::vector<AiRecognitionTaskAsrFullTextResultOutputSubtitleItem> GetSubtitleSet() const;
 
                     /**
-                     * 设置The subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
-                     * @param _subtitleSet The subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * 设置Generated subtitle list, corresponding to SubtitleFormats in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * @param _subtitleSet Generated subtitle list, corresponding to SubtitleFormats in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      * 
                      */
                     void SetSubtitleSet(const std::vector<AiRecognitionTaskAsrFullTextResultOutputSubtitleItem>& _subtitleSet);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool SubtitleSetHasBeenSet() const;
 
                     /**
-                     * 获取The URLs of the subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
-                     * @return SubtitleUrl The URLs of the subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * 获取Generated subtitle file Url, corresponding to SubtitleFormat in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * @return SubtitleUrl Generated subtitle file Url, corresponding to SubtitleFormat in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      * 
                      */
                     std::string GetSubtitleUrl() const;
 
                     /**
-                     * 设置The URLs of the subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
-                     * @param _subtitleUrl The URLs of the subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * 设置Generated subtitle file Url, corresponding to SubtitleFormat in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * @param _subtitleUrl Generated subtitle file Url, corresponding to SubtitleFormat in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      * 
                      */
                     void SetSubtitleUrl(const std::string& _subtitleUrl);
@@ -160,32 +160,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of full-text speech recognition segments
-<font color=red>Note</font>: this list displays up to the first 100 results. You can get all the results from the file whose URL is `SegmentSetFileUrl`.
+                     * List of segments for full speech recognition.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      */
                     std::vector<AiRecognitionTaskAsrFullTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * URL to the file of the list for full-text speech recognition segments. The file format is JSON, and the data structure is the same as `SegmentSet`. The file will be deleted upon the expiration time `SegmentSetFileUrlExpireTime`, instead of being stored permanently.
+                     * URL of the speech full text recognition Segment List File. The content of the file is in JSON format, and its data structure is consistent with the fields of SegmentSet. (The file is not retained permanently. It will be deleted after reaching the SegmentSetFileUrlExpireTime time point.)
                      */
                     std::string m_segmentSetFileUrl;
                     bool m_segmentSetFileUrlHasBeenSet;
 
                     /**
-                     * The expiration time of the URLs of full-text speech recognition segments in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format).
+                     * Expiration time of the full speech recognition segment list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;
 
                     /**
-                     * The subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * Generated subtitle list, corresponding to SubtitleFormats in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      */
                     std::vector<AiRecognitionTaskAsrFullTextResultOutputSubtitleItem> m_subtitleSet;
                     bool m_subtitleSetHasBeenSet;
 
                     /**
-                     * The URLs of the subtitle files generated, whose format is determined by the `SubtitleFormats` parameter of [AsrFullTextConfigureInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
+                     * Generated subtitle file Url, corresponding to SubtitleFormat in speech full-text recognition task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#AsrFullTextConfigureInfo).
                      */
                     std::string m_subtitleUrl;
                     bool m_subtitleUrlHasBeenSet;

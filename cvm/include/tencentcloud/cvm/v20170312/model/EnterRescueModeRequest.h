@@ -108,23 +108,44 @@ namespace TencentCloud
                     /**
                      * 获取Whether to perform forced shutdown.
                      * @return ForceStop Whether to perform forced shutdown.
-                     * 
+                     * @deprecated
                      */
                     bool GetForceStop() const;
 
                     /**
                      * 设置Whether to perform forced shutdown.
                      * @param _forceStop Whether to perform forced shutdown.
-                     * 
+                     * @deprecated
                      */
                     void SetForceStop(const bool& _forceStop);
 
                     /**
                      * 判断参数 ForceStop 是否已赋值
                      * @return ForceStop 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ForceStopHasBeenSet() const;
+
+                    /**
+                     * 获取The shutdown mode of the instance. Valid values: <br><li>SOFT_FIRST: Indicates a forced shutdown after a graceful shutdown fails</li><br><li>HARD: Direct forced shutdown</li><br><li>SOFT: Soft shutdown only</li><br>Default value: SOFT.
+                     * @return StopType The shutdown mode of the instance. Valid values: <br><li>SOFT_FIRST: Indicates a forced shutdown after a graceful shutdown fails</li><br><li>HARD: Direct forced shutdown</li><br><li>SOFT: Soft shutdown only</li><br>Default value: SOFT.
+                     * 
+                     */
+                    std::string GetStopType() const;
+
+                    /**
+                     * 设置The shutdown mode of the instance. Valid values: <br><li>SOFT_FIRST: Indicates a forced shutdown after a graceful shutdown fails</li><br><li>HARD: Direct forced shutdown</li><br><li>SOFT: Soft shutdown only</li><br>Default value: SOFT.
+                     * @param _stopType The shutdown mode of the instance. Valid values: <br><li>SOFT_FIRST: Indicates a forced shutdown after a graceful shutdown fails</li><br><li>HARD: Direct forced shutdown</li><br><li>SOFT: Soft shutdown only</li><br>Default value: SOFT.
+                     * 
+                     */
+                    void SetStopType(const std::string& _stopType);
+
+                    /**
+                     * 判断参数 StopType 是否已赋值
+                     * @return StopType 是否已赋值
+                     * 
+                     */
+                    bool StopTypeHasBeenSet() const;
 
                 private:
 
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     bool m_forceStop;
                     bool m_forceStopHasBeenSet;
+
+                    /**
+                     * The shutdown mode of the instance. Valid values: <br><li>SOFT_FIRST: Indicates a forced shutdown after a graceful shutdown fails</li><br><li>HARD: Direct forced shutdown</li><br><li>SOFT: Soft shutdown only</li><br>Default value: SOFT.
+                     */
+                    std::string m_stopType;
+                    bool m_stopTypeHasBeenSet;
 
                 };
             }

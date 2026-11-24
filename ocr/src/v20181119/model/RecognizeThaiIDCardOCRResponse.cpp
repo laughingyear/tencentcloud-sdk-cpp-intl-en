@@ -40,7 +40,11 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_laserIDHasBeenSet(false),
     m_portraitImageHasBeenSet(false),
     m_warnCardInfosHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_cardCountHasBeenSet(false),
+    m_isCompleteHasBeenSet(false),
+    m_thaiFirstNameHasBeenSet(false),
+    m_thaiLastNameHasBeenSet(false)
 {
 }
 
@@ -251,6 +255,46 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardCount") && !rsp["CardCount"].IsNull())
+    {
+        if (!rsp["CardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCount = rsp["CardCount"].GetInt64();
+        m_cardCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsComplete") && !rsp["IsComplete"].IsNull())
+    {
+        if (!rsp["IsComplete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsComplete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isComplete = rsp["IsComplete"].GetBool();
+        m_isCompleteHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ThaiFirstName") && !rsp["ThaiFirstName"].IsNull())
+    {
+        if (!rsp["ThaiFirstName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ThaiFirstName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thaiFirstName = string(rsp["ThaiFirstName"].GetString());
+        m_thaiFirstNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ThaiLastName") && !rsp["ThaiLastName"].IsNull())
+    {
+        if (!rsp["ThaiLastName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ThaiLastName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thaiLastName = string(rsp["ThaiLastName"].GetString());
+        m_thaiLastNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -400,6 +444,38 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cardCount, allocator);
+    }
+
+    if (m_isCompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsComplete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isComplete, allocator);
+    }
+
+    if (m_thaiFirstNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThaiFirstName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thaiFirstName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thaiLastNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThaiLastName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thaiLastName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -582,6 +658,46 @@ string RecognizeThaiIDCardOCRResponse::GetAdvancedInfo() const
 bool RecognizeThaiIDCardOCRResponse::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+int64_t RecognizeThaiIDCardOCRResponse::GetCardCount() const
+{
+    return m_cardCount;
+}
+
+bool RecognizeThaiIDCardOCRResponse::CardCountHasBeenSet() const
+{
+    return m_cardCountHasBeenSet;
+}
+
+bool RecognizeThaiIDCardOCRResponse::GetIsComplete() const
+{
+    return m_isComplete;
+}
+
+bool RecognizeThaiIDCardOCRResponse::IsCompleteHasBeenSet() const
+{
+    return m_isCompleteHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetThaiFirstName() const
+{
+    return m_thaiFirstName;
+}
+
+bool RecognizeThaiIDCardOCRResponse::ThaiFirstNameHasBeenSet() const
+{
+    return m_thaiFirstNameHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetThaiLastName() const
+{
+    return m_thaiLastName;
+}
+
+bool RecognizeThaiIDCardOCRResponse::ThaiLastNameHasBeenSet() const
+{
+    return m_thaiLastNameHasBeenSet;
 }
 
 

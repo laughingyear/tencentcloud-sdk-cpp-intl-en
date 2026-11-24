@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task flow ID
-                     * @return FlowId Task flow ID
+                     * 获取Task flow id.
+                     * @return FlowId Task flow id.
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取Order ID for isolated instance (prepaid instance)
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return DealNames Order ID for isolated instance (prepaid instance)
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Order ID of the isolated instance (prepaid instance)
+                     * @return DealNames Order ID of the isolated instance (prepaid instance)
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -76,14 +74,13 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Task flow ID
+                     * Task flow id.
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * Order ID for isolated instance (prepaid instance)
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Order ID of the isolated instance (prepaid instance)
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;

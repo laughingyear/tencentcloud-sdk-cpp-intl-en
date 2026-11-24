@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TESHD parameter configuration.
+                * Parameter configuration for top speed Codec.
                 */
                 class TEHDConfigForUpdate : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
-                     * @return Type TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * 获取Top speed Codec type. Available values: <li>TEHD-100 means top speed Codec-100;</li> <li>OFF means disabling top speed Codec.</li> If not specified, no modification is made.
+                     * @return Type Top speed Codec type. Available values: <li>TEHD-100 means top speed Codec-100;</li> <li>OFF means disabling top speed Codec.</li> If not specified, no modification is made.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
-                     * @param _type TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * 设置Top speed Codec type. Available values: <li>TEHD-100 means top speed Codec-100;</li> <li>OFF means disabling top speed Codec.</li> If not specified, no modification is made.
+                     * @param _type Top speed Codec type. Available values: <li>TEHD-100 means top speed Codec-100;</li> <li>OFF means disabling top speed Codec.</li> If not specified, no modification is made.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Maximum bitrate. If this parameter is left blank, no modification will be made.
-                     * @return MaxVideoBitrate Maximum bitrate. If this parameter is left blank, no modification will be made.
+                     * 获取Maximum video bitrate. If this parameter is not specified, no modification is made.
+                     * @return MaxVideoBitrate Maximum video bitrate. If this parameter is not specified, no modification is made.
                      * 
                      */
                     uint64_t GetMaxVideoBitrate() const;
 
                     /**
-                     * 设置Maximum bitrate. If this parameter is left blank, no modification will be made.
-                     * @param _maxVideoBitrate Maximum bitrate. If this parameter is left blank, no modification will be made.
+                     * 设置Maximum video bitrate. If this parameter is not specified, no modification is made.
+                     * @param _maxVideoBitrate Maximum video bitrate. If this parameter is not specified, no modification is made.
                      * 
                      */
                     void SetMaxVideoBitrate(const uint64_t& _maxVideoBitrate);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * Top speed Codec type. Available values: <li>TEHD-100 means top speed Codec-100;</li> <li>OFF means disabling top speed Codec.</li> If not specified, no modification is made.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Maximum bitrate. If this parameter is left blank, no modification will be made.
+                     * Maximum video bitrate. If this parameter is not specified, no modification is made.
                      */
                     uint64_t m_maxVideoBitrate;
                     bool m_maxVideoBitrateHasBeenSet;

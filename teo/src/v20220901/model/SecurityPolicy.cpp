@@ -22,7 +22,14 @@ using namespace std;
 
 SecurityPolicy::SecurityPolicy() :
     m_customRulesHasBeenSet(false),
-    m_managedRulesHasBeenSet(false)
+    m_managedRulesHasBeenSet(false),
+    m_httpDDoSProtectionHasBeenSet(false),
+    m_rateLimitingRulesHasBeenSet(false),
+    m_exceptionRulesHasBeenSet(false),
+    m_botManagementHasBeenSet(false),
+    m_botManagementLiteHasBeenSet(false),
+    m_defaultDenySecurityActionParametersHasBeenSet(false),
+    m_securityHeadersToOriginHasBeenSet(false)
 {
 }
 
@@ -65,6 +72,125 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
         m_managedRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpDDoSProtection") && !value["HttpDDoSProtection"].IsNull())
+    {
+        if (!value["HttpDDoSProtection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.HttpDDoSProtection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_httpDDoSProtection.Deserialize(value["HttpDDoSProtection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_httpDDoSProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RateLimitingRules") && !value["RateLimitingRules"].IsNull())
+    {
+        if (!value["RateLimitingRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.RateLimitingRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rateLimitingRules.Deserialize(value["RateLimitingRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rateLimitingRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExceptionRules") && !value["ExceptionRules"].IsNull())
+    {
+        if (!value["ExceptionRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.ExceptionRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exceptionRules.Deserialize(value["ExceptionRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exceptionRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotManagement") && !value["BotManagement"].IsNull())
+    {
+        if (!value["BotManagement"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.BotManagement` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botManagement.Deserialize(value["BotManagement"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botManagementHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotManagementLite") && !value["BotManagementLite"].IsNull())
+    {
+        if (!value["BotManagementLite"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.BotManagementLite` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botManagementLite.Deserialize(value["BotManagementLite"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botManagementLiteHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultDenySecurityActionParameters") && !value["DefaultDenySecurityActionParameters"].IsNull())
+    {
+        if (!value["DefaultDenySecurityActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.DefaultDenySecurityActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_defaultDenySecurityActionParameters.Deserialize(value["DefaultDenySecurityActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_defaultDenySecurityActionParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityHeadersToOrigin") && !value["SecurityHeadersToOrigin"].IsNull())
+    {
+        if (!value["SecurityHeadersToOrigin"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.SecurityHeadersToOrigin` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityHeadersToOrigin.Deserialize(value["SecurityHeadersToOrigin"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityHeadersToOriginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +214,69 @@ void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_managedRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_httpDDoSProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpDDoSProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_httpDDoSProtection.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rateLimitingRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimitingRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rateLimitingRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exceptionRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceptionRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exceptionRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_botManagementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotManagement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botManagement.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_botManagementLiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotManagementLite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botManagementLite.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_defaultDenySecurityActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultDenySecurityActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_defaultDenySecurityActionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityHeadersToOriginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityHeadersToOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityHeadersToOrigin.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +312,117 @@ void SecurityPolicy::SetManagedRules(const ManagedRules& _managedRules)
 bool SecurityPolicy::ManagedRulesHasBeenSet() const
 {
     return m_managedRulesHasBeenSet;
+}
+
+HttpDDoSProtection SecurityPolicy::GetHttpDDoSProtection() const
+{
+    return m_httpDDoSProtection;
+}
+
+void SecurityPolicy::SetHttpDDoSProtection(const HttpDDoSProtection& _httpDDoSProtection)
+{
+    m_httpDDoSProtection = _httpDDoSProtection;
+    m_httpDDoSProtectionHasBeenSet = true;
+}
+
+bool SecurityPolicy::HttpDDoSProtectionHasBeenSet() const
+{
+    return m_httpDDoSProtectionHasBeenSet;
+}
+
+RateLimitingRules SecurityPolicy::GetRateLimitingRules() const
+{
+    return m_rateLimitingRules;
+}
+
+void SecurityPolicy::SetRateLimitingRules(const RateLimitingRules& _rateLimitingRules)
+{
+    m_rateLimitingRules = _rateLimitingRules;
+    m_rateLimitingRulesHasBeenSet = true;
+}
+
+bool SecurityPolicy::RateLimitingRulesHasBeenSet() const
+{
+    return m_rateLimitingRulesHasBeenSet;
+}
+
+ExceptionRules SecurityPolicy::GetExceptionRules() const
+{
+    return m_exceptionRules;
+}
+
+void SecurityPolicy::SetExceptionRules(const ExceptionRules& _exceptionRules)
+{
+    m_exceptionRules = _exceptionRules;
+    m_exceptionRulesHasBeenSet = true;
+}
+
+bool SecurityPolicy::ExceptionRulesHasBeenSet() const
+{
+    return m_exceptionRulesHasBeenSet;
+}
+
+BotManagement SecurityPolicy::GetBotManagement() const
+{
+    return m_botManagement;
+}
+
+void SecurityPolicy::SetBotManagement(const BotManagement& _botManagement)
+{
+    m_botManagement = _botManagement;
+    m_botManagementHasBeenSet = true;
+}
+
+bool SecurityPolicy::BotManagementHasBeenSet() const
+{
+    return m_botManagementHasBeenSet;
+}
+
+BotManagementLite SecurityPolicy::GetBotManagementLite() const
+{
+    return m_botManagementLite;
+}
+
+void SecurityPolicy::SetBotManagementLite(const BotManagementLite& _botManagementLite)
+{
+    m_botManagementLite = _botManagementLite;
+    m_botManagementLiteHasBeenSet = true;
+}
+
+bool SecurityPolicy::BotManagementLiteHasBeenSet() const
+{
+    return m_botManagementLiteHasBeenSet;
+}
+
+DefaultDenySecurityActionParameters SecurityPolicy::GetDefaultDenySecurityActionParameters() const
+{
+    return m_defaultDenySecurityActionParameters;
+}
+
+void SecurityPolicy::SetDefaultDenySecurityActionParameters(const DefaultDenySecurityActionParameters& _defaultDenySecurityActionParameters)
+{
+    m_defaultDenySecurityActionParameters = _defaultDenySecurityActionParameters;
+    m_defaultDenySecurityActionParametersHasBeenSet = true;
+}
+
+bool SecurityPolicy::DefaultDenySecurityActionParametersHasBeenSet() const
+{
+    return m_defaultDenySecurityActionParametersHasBeenSet;
+}
+
+SecurityHeadersToOrigin SecurityPolicy::GetSecurityHeadersToOrigin() const
+{
+    return m_securityHeadersToOrigin;
+}
+
+void SecurityPolicy::SetSecurityHeadersToOrigin(const SecurityHeadersToOrigin& _securityHeadersToOrigin)
+{
+    m_securityHeadersToOrigin = _securityHeadersToOrigin;
+    m_securityHeadersToOriginHasBeenSet = true;
+}
+
+bool SecurityPolicy::SecurityHeadersToOriginHasBeenSet() const
+{
+    return m_securityHeadersToOriginHasBeenSet;
 }
 

@@ -29,8 +29,10 @@ CreateProcedureTemplateRequest::CreateProcedureTemplateRequest() :
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
+    m_aiRecognitionTaskSetHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
-    m_reviewAudioVideoTaskHasBeenSet(false)
+    m_reviewAudioVideoTaskHasBeenSet(false),
+    m_importMediaKnowledgeTaskSetHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,21 @@ string CreateProcedureTemplateRequest::ToJsonString() const
         m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_aiRecognitionTaskSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiRecognitionTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aiRecognitionTaskSet.begin(); itr != m_aiRecognitionTaskSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_aiRecognitionTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -108,6 +125,21 @@ string CreateProcedureTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewAudioVideoTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_importMediaKnowledgeTaskSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportMediaKnowledgeTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_importMediaKnowledgeTaskSet.begin(); itr != m_importMediaKnowledgeTaskSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -214,6 +246,22 @@ bool CreateProcedureTemplateRequest::AiAnalysisTaskHasBeenSet() const
     return m_aiAnalysisTaskHasBeenSet;
 }
 
+vector<AiRecognitionTaskInput> CreateProcedureTemplateRequest::GetAiRecognitionTaskSet() const
+{
+    return m_aiRecognitionTaskSet;
+}
+
+void CreateProcedureTemplateRequest::SetAiRecognitionTaskSet(const vector<AiRecognitionTaskInput>& _aiRecognitionTaskSet)
+{
+    m_aiRecognitionTaskSet = _aiRecognitionTaskSet;
+    m_aiRecognitionTaskSetHasBeenSet = true;
+}
+
+bool CreateProcedureTemplateRequest::AiRecognitionTaskSetHasBeenSet() const
+{
+    return m_aiRecognitionTaskSetHasBeenSet;
+}
+
 AiRecognitionTaskInput CreateProcedureTemplateRequest::GetAiRecognitionTask() const
 {
     return m_aiRecognitionTask;
@@ -244,6 +292,22 @@ void CreateProcedureTemplateRequest::SetReviewAudioVideoTask(const ProcedureRevi
 bool CreateProcedureTemplateRequest::ReviewAudioVideoTaskHasBeenSet() const
 {
     return m_reviewAudioVideoTaskHasBeenSet;
+}
+
+vector<ImportMediaKnowledgeTaskInput> CreateProcedureTemplateRequest::GetImportMediaKnowledgeTaskSet() const
+{
+    return m_importMediaKnowledgeTaskSet;
+}
+
+void CreateProcedureTemplateRequest::SetImportMediaKnowledgeTaskSet(const vector<ImportMediaKnowledgeTaskInput>& _importMediaKnowledgeTaskSet)
+{
+    m_importMediaKnowledgeTaskSet = _importMediaKnowledgeTaskSet;
+    m_importMediaKnowledgeTaskSetHasBeenSet = true;
+}
+
+bool CreateProcedureTemplateRequest::ImportMediaKnowledgeTaskSetHasBeenSet() const
+{
+    return m_importMediaKnowledgeTaskSetHasBeenSet;
 }
 
 

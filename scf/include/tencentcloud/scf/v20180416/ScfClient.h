@@ -101,6 +101,8 @@
 #include <tencentcloud/scf/v20180416/model/UpdateAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h>
@@ -238,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateFunctionCodeResponse> UpdateFunctionCodeOutcome;
                 typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionCodeRequest&, UpdateFunctionCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationOutcome;
+                typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateFunctionConfigurationRequest&, UpdateFunctionConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateFunctionEventInvokeConfigResponse> UpdateFunctionEventInvokeConfigOutcome;
                 typedef std::future<UpdateFunctionEventInvokeConfigOutcome> UpdateFunctionEventInvokeConfigOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionEventInvokeConfigRequest&, UpdateFunctionEventInvokeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionEventInvokeConfigAsyncHandler;
@@ -276,7 +281,7 @@ An alias must point to a master version and can point to an additional version a
                 CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request);
 
                 /**
-                 *This API is used to create a namespace based on the input parameters.
+                 *This API is used to create a namespace based on the passed parameters.
                  * @param req CreateNamespaceRequest
                  * @return CreateNamespaceOutcome
                  */
@@ -285,7 +290,7 @@ An alias must point to a master version and can point to an additional version a
                 CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request);
 
                 /**
-                 *This API is used to create a trigger based on the input parameters.
+                 *This API is used to set up alarms for the new trigger mode based on parameters.
                  * @param req CreateTriggerRequest
                  * @return CreateTriggerOutcome
                  */
@@ -348,7 +353,7 @@ An alias must point to a master version and can point to an additional version a
                 DeleteReservedConcurrencyConfigOutcomeCallable DeleteReservedConcurrencyConfigCallable(const Model::DeleteReservedConcurrencyConfigRequest& request);
 
                 /**
-                 *This API is used to delete an existing trigger based on the input parameters.
+                 *This API is used to delete existing trigger modes based on parameters.
                  * @param req DeleteTriggerRequest
                  * @return DeleteTriggerOutcome
                  */
@@ -402,7 +407,7 @@ An alias must point to a master version and can point to an additional version a
                 GetFunctionEventInvokeConfigOutcomeCallable GetFunctionEventInvokeConfigCallable(const Model::GetFunctionEventInvokeConfigRequest& request);
 
                 /**
-                 *This API returns function running logs according to the specified conditions. Note that this API has been disused. You can use [GetRequestStatus](https://intl.cloud.tencent.com/document/product/583/65348?from_cn_redirect=1) instead. See also [Retrieving Logs](https://intl.cloud.tencent.com/document/product/583/52637?from_cn_redirect=1).
+                 *This API returns function running logs based on the specified log query conditions. This API is offline. To query the returned information of function request running, please use [GetRequestStatus](https://www.tencentcloud.com/document/product/583/65348?from_cn_redirect=1). To query function running logs, see [Log Search Guide](https://www.tencentcloud.com/document/product/583/52637?from_cn_redirect=1).
                  * @param req GetFunctionLogsRequest
                  * @return GetFunctionLogsOutcome
                  */
@@ -607,6 +612,15 @@ An alias must point to a master version and can point to an additional version a
                 UpdateFunctionCodeOutcome UpdateFunctionCode(const Model::UpdateFunctionCodeRequest &request);
                 void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateFunctionCodeOutcomeCallable UpdateFunctionCodeCallable(const Model::UpdateFunctionCodeRequest& request);
+
+                /**
+                 *This API is used to update function configurations based on input parameters.
+                 * @param req UpdateFunctionConfigurationRequest
+                 * @return UpdateFunctionConfigurationOutcome
+                 */
+                UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest &request);
+                void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request);
 
                 /**
                  *This API is used to update the async retry configuration of a function, including the number of retry attempts and message retention period.

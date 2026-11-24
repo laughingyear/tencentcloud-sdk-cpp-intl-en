@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CLB instance list
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return LoadBalancers CLB instance list
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>CLB list.</p>
+                     * @return LoadBalancers <p>CLB list.</p>
                      * 
                      */
                     std::vector<LoadBalancerHealth> GetLoadBalancers() const;
@@ -63,8 +61,7 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                 private:
 
                     /**
-                     * CLB instance list
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>CLB list.</p>
                      */
                     std::vector<LoadBalancerHealth> m_loadBalancers;
                     bool m_loadBalancersHasBeenSet;

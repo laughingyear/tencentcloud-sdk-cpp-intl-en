@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of an intelligent highlight generating task
+                * Intelligent highlight task control parameters
                 */
                 class HighlightsConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of an intelligent highlight generating task. Valid values:
-<li>ON: enable an intelligent highlight generating task;</li>
-<li>OFF: disable an intelligent highlight generating task.</li>
-                     * @return Switch Switch of an intelligent highlight generating task. Valid values:
-<li>ON: enable an intelligent highlight generating task;</li>
-<li>OFF: disable an intelligent highlight generating task.</li>
+                     * 获取Intelligent highlight task switch. Value range:
+<li>ON: enable the intelligent highlight task;</li>
+<li>OFF: disables the intelligent highlight task.</li>
+                     * @return Switch Intelligent highlight task switch. Value range:
+<li>ON: enable the intelligent highlight task;</li>
+<li>OFF: disables the intelligent highlight task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of an intelligent highlight generating task. Valid values:
-<li>ON: enable an intelligent highlight generating task;</li>
-<li>OFF: disable an intelligent highlight generating task.</li>
-                     * @param _switch Switch of an intelligent highlight generating task. Valid values:
-<li>ON: enable an intelligent highlight generating task;</li>
-<li>OFF: disable an intelligent highlight generating task.</li>
+                     * 设置Intelligent highlight task switch. Value range:
+<li>ON: enable the intelligent highlight task;</li>
+<li>OFF: disables the intelligent highlight task.</li>
+                     * @param _switch Intelligent highlight task switch. Value range:
+<li>ON: enable the intelligent highlight task;</li>
+<li>OFF: disables the intelligent highlight task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Switch of an intelligent highlight generating task. Valid values:
-<li>ON: enable an intelligent highlight generating task;</li>
-<li>OFF: disable an intelligent highlight generating task.</li>
+                     * Intelligent highlight task switch. Value range:
+<li>ON: enable the intelligent highlight task;</li>
+<li>OFF: disables the intelligent highlight task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

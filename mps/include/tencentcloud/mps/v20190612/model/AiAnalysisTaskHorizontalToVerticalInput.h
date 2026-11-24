@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Intelligent landscape-to-portrait template ID.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Definition Intelligent landscape-to-portrait template ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>ID of the horizontal-to-vertical video transformation template.</p>
+                     * @return Definition <p>ID of the horizontal-to-vertical video transformation template.</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Intelligent landscape-to-portrait template ID.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _definition Intelligent landscape-to-portrait template ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>ID of the horizontal-to-vertical video transformation template.</p>
+                     * @param _definition <p>ID of the horizontal-to-vertical video transformation template.</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -71,14 +67,40 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Extended parameter.</p>
+                     * @return ExtendedParameter <p>Extended parameter.</p>
+                     * 
+                     */
+                    std::string GetExtendedParameter() const;
+
+                    /**
+                     * 设置<p>Extended parameter.</p>
+                     * @param _extendedParameter <p>Extended parameter.</p>
+                     * 
+                     */
+                    void SetExtendedParameter(const std::string& _extendedParameter);
+
+                    /**
+                     * 判断参数 ExtendedParameter 是否已赋值
+                     * @return ExtendedParameter 是否已赋值
+                     * 
+                     */
+                    bool ExtendedParameterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Intelligent landscape-to-portrait template ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>ID of the horizontal-to-vertical video transformation template.</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * <p>Extended parameter.</p>
+                     */
+                    std::string m_extendedParameter;
+                    bool m_extendedParameterHasBeenSet;
 
                 };
             }

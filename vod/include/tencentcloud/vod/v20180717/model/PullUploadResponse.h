@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video pull for upload task ID, which can be used to query the status of pull for upload task.
-                     * @return TaskId Video pull for upload task ID, which can be used to query the status of pull for upload task.
+                     * 获取<p>Task ID for pulling and uploading videos. This can be used to query the pull upload task status.</p>
+                     * @return TaskId <p>Task ID for pulling and uploading videos. This can be used to query the pull upload task status.</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Video pull for upload task ID, which can be used to query the status of pull for upload task.
+                     * <p>Task ID for pulling and uploading videos. This can be used to query the pull upload task status.</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

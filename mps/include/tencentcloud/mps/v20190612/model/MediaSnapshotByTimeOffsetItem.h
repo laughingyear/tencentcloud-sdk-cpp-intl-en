@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of the time point screenshots in a VOD file
+                * Screenshot information of a VOD file at the specified time point
                 */
                 class MediaSnapshotByTimeOffsetItem : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specification of a time point screenshot template. 
-                     * @return Definition Specification of a time point screenshot template. 
+                     * 获取SnapshotByTimeOffset specification. See SnapshotByTimeOffset parameter template.
+                     * @return Definition SnapshotByTimeOffset specification. See SnapshotByTimeOffset parameter template.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Specification of a time point screenshot template. 
-                     * @param _definition Specification of a time point screenshot template. 
+                     * 设置SnapshotByTimeOffset specification. See SnapshotByTimeOffset parameter template.
+                     * @param _definition SnapshotByTimeOffset specification. See SnapshotByTimeOffset parameter template.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Information set of screenshots of the same specification. Each element represents a screenshot.
-                     * @return PicInfoSet Information set of screenshots of the same specification. Each element represents a screenshot.
+                     * 获取Screenshot information set of the same specification, where each element represents a screenshot.
+                     * @return PicInfoSet Screenshot information set of the same specification, where each element represents a screenshot.
                      * 
                      */
                     std::vector<MediaSnapshotByTimePicInfoItem> GetPicInfoSet() const;
 
                     /**
-                     * 设置Information set of screenshots of the same specification. Each element represents a screenshot.
-                     * @param _picInfoSet Information set of screenshots of the same specification. Each element represents a screenshot.
+                     * 设置Screenshot information set of the same specification, where each element represents a screenshot.
+                     * @param _picInfoSet Screenshot information set of the same specification, where each element represents a screenshot.
                      * 
                      */
                     void SetPicInfoSet(const std::vector<MediaSnapshotByTimePicInfoItem>& _picInfoSet);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool PicInfoSetHasBeenSet() const;
 
                     /**
-                     * 获取Location of a time point screenshot file.
-                     * @return Storage Location of a time point screenshot file.
+                     * 获取Storage location of the time point screenshot file.
+                     * @return Storage Storage location of the time point screenshot file.
                      * 
                      */
                     TaskOutputStorage GetStorage() const;
 
                     /**
-                     * 设置Location of a time point screenshot file.
-                     * @param _storage Location of a time point screenshot file.
+                     * 设置Storage location of the time point screenshot file.
+                     * @param _storage Storage location of the time point screenshot file.
                      * 
                      */
                     void SetStorage(const TaskOutputStorage& _storage);
@@ -114,19 +114,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Specification of a time point screenshot template. 
+                     * SnapshotByTimeOffset specification. See SnapshotByTimeOffset parameter template.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Information set of screenshots of the same specification. Each element represents a screenshot.
+                     * Screenshot information set of the same specification, where each element represents a screenshot.
                      */
                     std::vector<MediaSnapshotByTimePicInfoItem> m_picInfoSet;
                     bool m_picInfoSetHasBeenSet;
 
                     /**
-                     * Location of a time point screenshot file.
+                     * Storage location of the time point screenshot file.
                      */
                     TaskOutputStorage m_storage;
                     bool m_storageHasBeenSet;

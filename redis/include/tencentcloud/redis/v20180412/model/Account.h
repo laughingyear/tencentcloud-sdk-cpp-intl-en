@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return InstanceId Instance ID.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Instance ID.</p>
+                     * @return InstanceId <p>Instance ID.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _instanceId Instance ID.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Instance ID.</p>
+                     * @param _instanceId <p>Instance ID.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Account name.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return AccountName Account name.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Account name.</p>
+                     * @return AccountName <p>Account name.</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置Account name.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _accountName Account name.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Account name.</p>
+                     * @param _accountName <p>Account name.</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取Account description.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Remark Account description.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Account description.</p>
+                     * @return Remark <p>Account description.</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置Account description.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _remark Account description.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Account description.</p>
+                     * @param _remark <p>Account description.</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -122,31 +110,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取Read/write permission policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Privilege Read/write permission policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Read/write permission policy. - r: read-only. - w: write-only. - rw: read-write.</p>
+                     * @return Privilege <p>Read/write permission policy. - r: read-only. - w: write-only. - rw: read-write.</p>
                      * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置Read/write permission policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _privilege Read/write permission policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Read/write permission policy. - r: read-only. - w: write-only. - rw: read-write.</p>
+                     * @param _privilege <p>Read/write permission policy. - r: read-only. - w: write-only. - rw: read-write.</p>
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -159,27 +131,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取Read-only routing policy.
-- master: primary node.
-- replication: secondary node.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return ReadonlyPolicy Read-only routing policy.
-- master: primary node.
-- replication: secondary node.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Read-only Routing Policy. - master: Master node. - replication: Replica node.</p>
+                     * @return ReadonlyPolicy <p>Read-only Routing Policy. - master: Master node. - replication: Replica node.</p>
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
-                     * 设置Read-only routing policy.
-- master: primary node.
-- replication: secondary node.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _readonlyPolicy Read-only routing policy.
-- master: primary node.
-- replication: secondary node.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Read-only Routing Policy. - master: Master node. - replication: Replica node.</p>
+                     * @param _readonlyPolicy <p>Read-only Routing Policy. - master: Master node. - replication: Replica node.</p>
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -192,31 +152,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取Sub-account status.
-- 1: changing.
-- 2: valid.
-- 4: deleted.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Status Sub-account status.
-- 1: changing.
-- 2: valid.
-- 4: deleted.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Sub-account status. - 1: Account change in progress. - 2: Valid. - 4: Deleted.</p>
+                     * @return Status <p>Sub-account status. - 1: Account change in progress. - 2: Valid. - 4: Deleted.</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Sub-account status.
-- 1: changing.
-- 2: valid.
-- 4: deleted.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _status Sub-account status.
-- 1: changing.
-- 2: valid.
-- 4: deleted.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Sub-account status. - 1: Account change in progress. - 2: Valid. - 4: Deleted.</p>
+                     * @param _status <p>Sub-account status. - 1: Account change in progress. - 2: Valid. - 4: Deleted.</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -229,15 +173,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Creation time.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Creation time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Account creation time.</p><p>If the parameter is an empty string, the account was created in an earlier version where the recording feature was not supported.</p>
+                     * @return CreateTime <p>Account creation time.</p><p>If the parameter is an empty string, the account was created in an earlier version where the recording feature was not supported.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time.Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Creation time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Account creation time.</p><p>If the parameter is an empty string, the account was created in an earlier version where the recording feature was not supported.</p>
+                     * @param _createTime <p>Account creation time.</p><p>If the parameter is an empty string, the account was created in an earlier version where the recording feature was not supported.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -249,63 +193,76 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>The time when the account last changed the password.</p><p>If the parameter is an empty string, it means the account was created in an earlier version that did not support the password modification time recording feature.</p>
+                     * @return PasswordLastModifiedTime <p>The time when the account last changed the password.</p><p>If the parameter is an empty string, it means the account was created in an earlier version that did not support the password modification time recording feature.</p>
+                     * 
+                     */
+                    std::string GetPasswordLastModifiedTime() const;
+
+                    /**
+                     * 设置<p>The time when the account last changed the password.</p><p>If the parameter is an empty string, it means the account was created in an earlier version that did not support the password modification time recording feature.</p>
+                     * @param _passwordLastModifiedTime <p>The time when the account last changed the password.</p><p>If the parameter is an empty string, it means the account was created in an earlier version that did not support the password modification time recording feature.</p>
+                     * 
+                     */
+                    void SetPasswordLastModifiedTime(const std::string& _passwordLastModifiedTime);
+
+                    /**
+                     * 判断参数 PasswordLastModifiedTime 是否已赋值
+                     * @return PasswordLastModifiedTime 是否已赋值
+                     * 
+                     */
+                    bool PasswordLastModifiedTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Instance ID.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Account name.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Account name.</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * Account description.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Account description.</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * Read/write permission policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Read/write permission policy. - r: read-only. - w: write-only. - rw: read-write.</p>
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * Read-only routing policy.
-- master: primary node.
-- replication: secondary node.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Read-only Routing Policy. - master: Master node. - replication: Replica node.</p>
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * Sub-account status.
-- 1: changing.
-- 2: valid.
-- 4: deleted.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Sub-account status. - 1: Account change in progress. - 2: Valid. - 4: Deleted.</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Creation time.Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Account creation time.</p><p>If the parameter is an empty string, the account was created in an earlier version where the recording feature was not supported.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>The time when the account last changed the password.</p><p>If the parameter is an empty string, it means the account was created in an earlier version that did not support the password modification time recording feature.</p>
+                     */
+                    std::string m_passwordLastModifiedTime;
+                    bool m_passwordLastModifiedTimeHasBeenSet;
 
                 };
             }

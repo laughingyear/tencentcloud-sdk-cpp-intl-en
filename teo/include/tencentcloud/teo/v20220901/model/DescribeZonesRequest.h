@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The page offset. Default value: 0
-                     * @return Offset The page offset. Default value: 0
+                     * 获取The page offset. Default value: 0.
+                     * @return Offset The page offset. Default value: 0.
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置The page offset. Default value: 0
-                     * @param _offset The page offset. Default value: 0
+                     * 设置The page offset. Default value: 0.
+                     * @param _offset The page offset. Default value: 0.
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Filter conditions. Up to 20 values for each filter. If this parameter is not filled in, the information of all sites under the current account is returned. Detailed filtering conditions are as follows:
-<li>`zone-name`: Site name </li><li>`zone-id`: Site ID, such as zone-2noz78a8ev6k</li><li>`status`: Site status </li><li>`tag-key`: Tag key </li><li>`tag-value`: Tag value </li>Only `zone-name` supports fuzzy query.
-                     * @return Filters Filter conditions. Up to 20 values for each filter. If this parameter is not filled in, the information of all sites under the current account is returned. Detailed filtering conditions are as follows:
-<li>`zone-name`: Site name </li><li>`zone-id`: Site ID, such as zone-2noz78a8ev6k</li><li>`status`: Site status </li><li>`tag-key`: Tag key </li><li>`tag-value`: Tag value </li>Only `zone-name` supports fuzzy query.
+                     * 获取Filter criteria. the maximum number of Filters.Values is 20. if this parameter is left empty, it returns all authorized site information under the current appid. the detailed filter criteria are as follows: <li>zone-name: filter by site name.</li><li>zone-type: filter by website type. options:<br>??full: NS access type;<br>??partial: CNAME-based;<br>??partialComposite: no domain access;<br>??dnsPodAccess: DNSPod managed access;<br>??pages: pages access type;<br>??ai: edge reasoning access type.</li><li>zone-id: filter by site id in the format like zone-2noz78a8ev6k.</li><li>status: filter by site status. options:<br>??active: NS switchover completed;<br>??pending: NS to be switched;<br>??deleted: has been deleted.</li><li>tag-key: filter according to the tag key.</li><li>tag-value: filter by tag value.</li><li>alias-zone-name: filter by identical site identifier.</li>fuzzy query supports filtering fields named zone-name or alias-zone-name.
+                     * @return Filters Filter criteria. the maximum number of Filters.Values is 20. if this parameter is left empty, it returns all authorized site information under the current appid. the detailed filter criteria are as follows: <li>zone-name: filter by site name.</li><li>zone-type: filter by website type. options:<br>??full: NS access type;<br>??partial: CNAME-based;<br>??partialComposite: no domain access;<br>??dnsPodAccess: DNSPod managed access;<br>??pages: pages access type;<br>??ai: edge reasoning access type.</li><li>zone-id: filter by site id in the format like zone-2noz78a8ev6k.</li><li>status: filter by site status. options:<br>??active: NS switchover completed;<br>??pending: NS to be switched;<br>??deleted: has been deleted.</li><li>tag-key: filter according to the tag key.</li><li>tag-value: filter by tag value.</li><li>alias-zone-name: filter by identical site identifier.</li>fuzzy query supports filtering fields named zone-name or alias-zone-name.
                      * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
                     /**
-                     * 设置Filter conditions. Up to 20 values for each filter. If this parameter is not filled in, the information of all sites under the current account is returned. Detailed filtering conditions are as follows:
-<li>`zone-name`: Site name </li><li>`zone-id`: Site ID, such as zone-2noz78a8ev6k</li><li>`status`: Site status </li><li>`tag-key`: Tag key </li><li>`tag-value`: Tag value </li>Only `zone-name` supports fuzzy query.
-                     * @param _filters Filter conditions. Up to 20 values for each filter. If this parameter is not filled in, the information of all sites under the current account is returned. Detailed filtering conditions are as follows:
-<li>`zone-name`: Site name </li><li>`zone-id`: Site ID, such as zone-2noz78a8ev6k</li><li>`status`: Site status </li><li>`tag-key`: Tag key </li><li>`tag-value`: Tag value </li>Only `zone-name` supports fuzzy query.
+                     * 设置Filter criteria. the maximum number of Filters.Values is 20. if this parameter is left empty, it returns all authorized site information under the current appid. the detailed filter criteria are as follows: <li>zone-name: filter by site name.</li><li>zone-type: filter by website type. options:<br>??full: NS access type;<br>??partial: CNAME-based;<br>??partialComposite: no domain access;<br>??dnsPodAccess: DNSPod managed access;<br>??pages: pages access type;<br>??ai: edge reasoning access type.</li><li>zone-id: filter by site id in the format like zone-2noz78a8ev6k.</li><li>status: filter by site status. options:<br>??active: NS switchover completed;<br>??pending: NS to be switched;<br>??deleted: has been deleted.</li><li>tag-key: filter according to the tag key.</li><li>tag-value: filter by tag value.</li><li>alias-zone-name: filter by identical site identifier.</li>fuzzy query supports filtering fields named zone-name or alias-zone-name.
+                     * @param _filters Filter criteria. the maximum number of Filters.Values is 20. if this parameter is left empty, it returns all authorized site information under the current appid. the detailed filter criteria are as follows: <li>zone-name: filter by site name.</li><li>zone-type: filter by website type. options:<br>??full: NS access type;<br>??partial: CNAME-based;<br>??partialComposite: no domain access;<br>??dnsPodAccess: DNSPod managed access;<br>??pages: pages access type;<br>??ai: edge reasoning access type.</li><li>zone-id: filter by site id in the format like zone-2noz78a8ev6k.</li><li>status: filter by site status. options:<br>??active: NS switchover completed;<br>??pending: NS to be switched;<br>??deleted: has been deleted.</li><li>tag-key: filter according to the tag key.</li><li>tag-value: filter by tag value.</li><li>alias-zone-name: filter by identical site identifier.</li>fuzzy query supports filtering fields named zone-name or alias-zone-name.
                      * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
@@ -187,7 +183,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The page offset. Default value: 0
+                     * The page offset. Default value: 0.
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -199,8 +195,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Filter conditions. Up to 20 values for each filter. If this parameter is not filled in, the information of all sites under the current account is returned. Detailed filtering conditions are as follows:
-<li>`zone-name`: Site name </li><li>`zone-id`: Site ID, such as zone-2noz78a8ev6k</li><li>`status`: Site status </li><li>`tag-key`: Tag key </li><li>`tag-value`: Tag value </li>Only `zone-name` supports fuzzy query.
+                     * Filter criteria. the maximum number of Filters.Values is 20. if this parameter is left empty, it returns all authorized site information under the current appid. the detailed filter criteria are as follows: <li>zone-name: filter by site name.</li><li>zone-type: filter by website type. options:<br>??full: NS access type;<br>??partial: CNAME-based;<br>??partialComposite: no domain access;<br>??dnsPodAccess: DNSPod managed access;<br>??pages: pages access type;<br>??ai: edge reasoning access type.</li><li>zone-id: filter by site id in the format like zone-2noz78a8ev6k.</li><li>status: filter by site status. options:<br>??active: NS switchover completed;<br>??pending: NS to be switched;<br>??deleted: has been deleted.</li><li>tag-key: filter according to the tag key.</li><li>tag-value: filter by tag value.</li><li>alias-zone-name: filter by identical site identifier.</li>fuzzy query supports filtering fields named zone-name or alias-zone-name.
                      */
                     std::vector<AdvancedFilter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -45,9 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取The token identifying this web-based verification process, valid for 7,200s after issuance. It is required for getting the result after the verification process is completed.
-Example: https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442
+Example: `https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442`
                      * @return VerificationUrl The token identifying this web-based verification process, valid for 7,200s after issuance. It is required for getting the result after the verification process is completed.
-Example: https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442
+Example: `https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442`
                      * @deprecated
                      */
                     std::string GetVerificationUrl() const;
@@ -60,10 +60,8 @@ Example: https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBB
                     bool VerificationUrlHasBeenSet() const;
 
                     /**
-                     * 获取The token for the web-based verification, which is generated using the ApplyWebVerificationBizTokenIntl API.
-Example: 81EEF678-28EE-4759-A82E-6CBBBE6BC442
-                     * @return BizToken The token for the web-based verification, which is generated using the ApplyWebVerificationBizTokenIntl API.
-Example: 81EEF678-28EE-4759-A82E-6CBBBE6BC442
+                     * 获取A token that identifies a Web verification process, with a validity time of 10 minutes. after the process is complete, the token can be used to obtain the verification result.
+                     * @return BizToken A token that identifies a Web verification process, with a validity time of 10 minutes. after the process is complete, the token can be used to obtain the verification result.
                      * 
                      */
                     std::string GetBizToken() const;
@@ -95,14 +93,13 @@ Example: https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBB
 
                     /**
                      * The token identifying this web-based verification process, valid for 7,200s after issuance. It is required for getting the result after the verification process is completed.
-Example: https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442
+Example: `https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442`
                      */
                     std::string m_verificationUrl;
                     bool m_verificationUrlHasBeenSet;
 
                     /**
-                     * The token for the web-based verification, which is generated using the ApplyWebVerificationBizTokenIntl API.
-Example: 81EEF678-28EE-4759-A82E-6CBBBE6BC442
+                     * A token that identifies a Web verification process, with a validity time of 10 minutes. after the process is complete, the token can be used to obtain the verification result.
                      */
                     std::string m_bizToken;
                     bool m_bizTokenHasBeenSet;

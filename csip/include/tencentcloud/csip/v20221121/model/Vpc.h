@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of VPCs
+                * VPC List Data
                 */
                 class Vpc : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Subnet (32-bit mask)
-                     * @return Subnet Subnet (32-bit mask)
+                     * 获取Subnet (supports only 32-bit)
+                     * @return Subnet Subnet (supports only 32-bit)
                      * 
                      */
                     uint64_t GetSubnet() const;
 
                     /**
-                     * 设置Subnet (32-bit mask)
-                     * @param _subnet Subnet (32-bit mask)
+                     * 设置Subnet (supports only 32-bit)
+                     * @param _subnet Subnet (supports only 32-bit)
                      * 
                      */
                     void SetSubnet(const uint64_t& _subnet);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SubnetHasBeenSet() const;
 
                     /**
-                     * 获取Connected VPC (32-bit mask)
-                     * @return ConnectedVpc Connected VPC (32-bit mask)
+                     * 获取Interconnected VPC (supports only 32-bit)
+                     * @return ConnectedVpc Interconnected VPC (supports only 32-bit)
                      * 
                      */
                     uint64_t GetConnectedVpc() const;
 
                     /**
-                     * 设置Connected VPC (32-bit mask)
-                     * @param _connectedVpc Connected VPC (32-bit mask)
+                     * 设置Interconnected VPC (supports only 32-bit)
+                     * @param _connectedVpc Interconnected VPC (supports only 32-bit)
                      * 
                      */
                     void SetConnectedVpc(const uint64_t& _connectedVpc);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取Region
-                     * @return Region Region
+                     * 获取region
+                     * @return Region region
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置Region
-                     * @param _region Region
+                     * 设置region
+                     * @param _region region
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取CVM (only 32-bit)
-                     * @return CVM CVM (only 32-bit)
+                     * 获取CVM (supports only 32-bit)
+                     * @return CVM CVM (supports only 32-bit)
                      * 
                      */
                     uint64_t GetCVM() const;
 
                     /**
-                     * 设置CVM (only 32-bit)
-                     * @param _cVM CVM (only 32-bit)
+                     * 设置CVM (supports only 32-bit)
+                     * @param _cVM CVM (supports only 32-bit)
                      * 
                      */
                     void SetCVM(const uint64_t& _cVM);
@@ -153,19 +153,15 @@ namespace TencentCloud
                     bool CVMHasBeenSet() const;
 
                     /**
-                     * 获取Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Tag.
+                     * @return Tag Tag.
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
-                     * 设置Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Tag.
+                     * @param _tag Tag.
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -178,19 +174,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取DNS domain
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return DNS DNS domain
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取DNS Domain
+                     * @return DNS DNS Domain
                      * 
                      */
                     std::vector<std::string> GetDNS() const;
 
                     /**
-                     * 设置DNS domain
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _dNS DNS domain
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置DNS Domain
+                     * @param _dNS DNS Domain
                      * 
                      */
                     void SetDNS(const std::vector<std::string>& _dNS);
@@ -224,15 +216,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AssetNameHasBeenSet() const;
 
                     /**
-                     * 获取CIDR block
-                     * @return CIDR CIDR block
+                     * 获取CIDR Network Segmentation
+                     * @return CIDR CIDR Network Segmentation
                      * 
                      */
                     std::string GetCIDR() const;
 
                     /**
-                     * 设置CIDR block
-                     * @param _cIDR CIDR block
+                     * 设置CIDR Network Segmentation
+                     * @param _cIDR CIDR Network Segmentation
                      * 
                      */
                     void SetCIDR(const std::string& _cIDR);
@@ -287,15 +279,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取UIN
-                     * @return Uin UIN
+                     * 获取uin
+                     * @return Uin uin
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置UIN
-                     * @param _uin UIN
+                     * 设置uin
+                     * @param _uin uin
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -308,15 +300,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取User name
-                     * @return Nick User name
+                     * 获取Nickname
+                     * @return Nick Nickname
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置User name
-                     * @param _nick User name
+                     * 设置Nickname
+                     * @param _nick Nickname
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -329,19 +321,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsNewAsset Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取New Asset or Not. 1: New
+                     * @return IsNewAsset New Asset or Not. 1: New
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
-                     * 设置Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isNewAsset Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置New Asset or Not. 1: New
+                     * @param _isNewAsset New Asset or Not. 1: New
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -354,19 +342,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool IsNewAssetHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's a critical asset. `1`: Yes; `2`: No
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsCore Whether it's a critical asset. `1`: Yes; `2`: No
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Whether it is a core asset. 1-Yes, 2-No.
+                     * @return IsCore Whether it is a core asset. 1-Yes, 2-No.
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
-                     * 设置Whether it's a critical asset. `1`: Yes; `2`: No
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isCore Whether it's a critical asset. `1`: Yes; `2`: No
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Whether it is a core asset. 1-Yes, 2-No.
+                     * @param _isCore Whether it is a core asset. 1-Yes, 2-No.
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -381,13 +365,13 @@ Note: This field may return·null, indicating that no valid values can be obtain
                 private:
 
                     /**
-                     * Subnet (32-bit mask)
+                     * Subnet (supports only 32-bit)
                      */
                     uint64_t m_subnet;
                     bool m_subnetHasBeenSet;
 
                     /**
-                     * Connected VPC (32-bit mask)
+                     * Interconnected VPC (supports only 32-bit)
                      */
                     uint64_t m_connectedVpc;
                     bool m_connectedVpcHasBeenSet;
@@ -399,27 +383,25 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * Region
+                     * region
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * CVM (only 32-bit)
+                     * CVM (supports only 32-bit)
                      */
                     uint64_t m_cVM;
                     bool m_cVMHasBeenSet;
 
                     /**
-                     * Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Tag.
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * DNS domain
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * DNS Domain
                      */
                     std::vector<std::string> m_dNS;
                     bool m_dNSHasBeenSet;
@@ -431,7 +413,7 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_assetNameHasBeenSet;
 
                     /**
-                     * CIDR block
+                     * CIDR Network Segmentation
                      */
                     std::string m_cIDR;
                     bool m_cIDRHasBeenSet;
@@ -449,27 +431,25 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * UIN
+                     * uin
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * User name
+                     * Nickname
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * New Asset or Not. 1: New
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
 
                     /**
-                     * Whether it's a critical asset. `1`: Yes; `2`: No
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Whether it is a core asset. 1-Yes, 2-No.
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;

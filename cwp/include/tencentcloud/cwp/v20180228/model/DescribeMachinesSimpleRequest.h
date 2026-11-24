@@ -49,13 +49,13 @@ CVM: Cloud Virtual Machine
 BM: BM
 ECM: Edge Computing Machine
 LH: Lighthouse
-Other: Hybrid Cloud Zone
+Other: Hybrid Cloud Zone
                      * @return MachineType Type of the machine's zone
 CVM: Cloud Virtual Machine
 BM: BM
 ECM: Edge Computing Machine
 LH: Lighthouse
-Other: Hybrid Cloud Zone
+Other: Hybrid Cloud Zone
                      * 
                      */
                     std::string GetMachineType() const;
@@ -66,13 +66,13 @@ CVM: Cloud Virtual Machine
 BM: BM
 ECM: Edge Computing Machine
 LH: Lighthouse
-Other: Hybrid Cloud Zone
+Other: Hybrid Cloud Zone
                      * @param _machineType Type of the machine's zone
 CVM: Cloud Virtual Machine
 BM: BM
 ECM: Edge Computing Machine
 LH: Lighthouse
-Other: Hybrid Cloud Zone
+Other: Hybrid Cloud Zone
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -85,15 +85,15 @@ Other: Hybrid Cloud Zone
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取Machine region. For example, ap-guangzhou and ap-shanghai.
-                     * @return MachineRegion Machine region. For example, ap-guangzhou and ap-shanghai.
+                     * 获取Machine region. For example, ap-guangzhou, ap-shanghai. For non-Tencent Cloud hosts, use ap-others.
+                     * @return MachineRegion Machine region. For example, ap-guangzhou, ap-shanghai. For non-Tencent Cloud hosts, use ap-others.
                      * 
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置Machine region. For example, ap-guangzhou and ap-shanghai.
-                     * @param _machineRegion Machine region. For example, ap-guangzhou and ap-shanghai.
+                     * 设置Machine region. For example, ap-guangzhou, ap-shanghai. For non-Tencent Cloud hosts, use ap-others.
+                     * @param _machineRegion Machine region. For example, ap-guangzhou, ap-shanghai. For non-Tencent Cloud hosts, use ap-others.
                      * 
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
@@ -150,11 +150,11 @@ Other: Hybrid Cloud Zone
                     /**
                      * 获取Filtering criteria
 <li>Keywords - String - required: no - keywords for querying </li>
-<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in monthly subscription mode)</li>
+<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in yearly/monthly subscription mode)</li>
 <li>TagId - String - required: no - tag ID </li>
                      * @return Filters Filtering criteria
 <li>Keywords - String - required: no - keywords for querying </li>
-<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in monthly subscription mode)</li>
+<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in yearly/monthly subscription mode)</li>
 <li>TagId - String - required: no - tag ID </li>
                      * 
                      */
@@ -163,11 +163,11 @@ Other: Hybrid Cloud Zone
                     /**
                      * 设置Filtering criteria
 <li>Keywords - String - required: no - keywords for querying </li>
-<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in monthly subscription mode)</li>
+<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in yearly/monthly subscription mode)</li>
 <li>TagId - String - required: no - tag ID </li>
                      * @param _filters Filtering criteria
 <li>Keywords - String - required: no - keywords for querying </li>
-<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in monthly subscription mode)</li>
+<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in yearly/monthly subscription mode)</li>
 <li>TagId - String - required: no - tag ID </li>
                      * 
                      */
@@ -209,13 +209,13 @@ CVM: Cloud Virtual Machine
 BM: BM
 ECM: Edge Computing Machine
 LH: Lighthouse
-Other: Hybrid Cloud Zone
+Other: Hybrid Cloud Zone
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * Machine region. For example, ap-guangzhou and ap-shanghai.
+                     * Machine region. For example, ap-guangzhou, ap-shanghai. For non-Tencent Cloud hosts, use ap-others.
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;
@@ -235,7 +235,7 @@ Other: Hybrid Cloud Zone
                     /**
                      * Filtering criteria
 <li>Keywords - String - required: no - keywords for querying </li>
-<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in monthly subscription mode)</li>
+<li>Version - String required: no - current protection edition ( PRO_VERSION: Pro Edition | BASIC_VERSION: Basic Edition | Flagship: Ultimate Edition | ProtectedMachines: Pro + Ultimate Editions | UnFlagship: Non-Ultimate Edition | PRO_POST_PAY: Pro Edition in pay-as-you-go mode | PRO_PRE_PAY: Pro Edition in yearly/monthly subscription mode)</li>
 <li>TagId - String - required: no - tag ID </li>
                      */
                     std::vector<Filter> m_filters;

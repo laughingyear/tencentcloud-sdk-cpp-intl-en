@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status, including PROCESSING, SUCCESS, and FAIL.
-                     * @return Status Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status, including PROCESSING, SUCCESS, and FAIL.
-                     * @param _status Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
-                     * @return ErrCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
-                     * @param _errCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Translation task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Input Translation task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     SmartSubtitleTaskResultInput GetInput() const;
 
                     /**
                      * 设置Translation task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _input Translation task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetInput(const SmartSubtitleTaskResultInput& _input);
@@ -159,18 +155,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Translation task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Output Translation task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     SmartSubtitleTaskTransTextResultOutput GetOutput() const;
 
                     /**
                      * 设置Translation task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _output Translation task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetOutput(const SmartSubtitleTaskTransTextResultOutput& _output);
@@ -184,18 +176,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Task progress.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Progress Task progress.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 设置Task progress.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _progress Task progress.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetProgress(const uint64_t& _progress);
@@ -210,13 +198,13 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
@@ -235,21 +223,18 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * Translation task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     SmartSubtitleTaskResultInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * Translation task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     SmartSubtitleTaskTransTextResultOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * Task progress.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;

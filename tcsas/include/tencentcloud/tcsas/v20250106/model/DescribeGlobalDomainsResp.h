@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Global domain name page list
+                * Paginated global domain list.
                 */
                 class DescribeGlobalDomainsResp : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number of results
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TotalCount Total number of results
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Total number of entries.
+                     * @return TotalCount Total number of entries.
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置Total number of results
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _totalCount Total number of results
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Total number of entries.
+                     * @param _totalCount Total number of entries.
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -73,19 +69,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取Domain name information
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DataList Domain name information
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Domain information.
+                     * @return DataList Domain information.
                      * 
                      */
                     std::vector<DescribeGlobalDomainsListData> GetDataList() const;
 
                     /**
-                     * 设置Domain name information
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _dataList Domain name information
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Domain information.
+                     * @param _dataList Domain information.
                      * 
                      */
                     void SetDataList(const std::vector<DescribeGlobalDomainsListData>& _dataList);
@@ -100,15 +92,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Total number of results
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Total number of entries.
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * Domain name information
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Domain information.
                      */
                     std::vector<DescribeGlobalDomainsListData> m_dataList;
                     bool m_dataListHasBeenSet;

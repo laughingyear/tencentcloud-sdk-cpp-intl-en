@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of sensitive APIs that can be called by a mini program
+                * List data for querying callable sensitive APIs of a mini program.
                 */
                 class DescribeMNPSensitiveAPIPermissionListData : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIId API ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API ID.
+                     * @return APIId API ID.
                      * 
                      */
                     std::string GetAPIId() const;
 
                     /**
-                     * 设置API ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIId API ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API ID.
+                     * @param _aPIId API ID.
                      * 
                      */
                     void SetAPIId(const std::string& _aPIId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APIIdHasBeenSet() const;
 
                     /**
-                     * 获取API name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIName API name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API name.
+                     * @return APIName API name.
                      * 
                      */
                     std::string GetAPIName() const;
 
                     /**
-                     * 设置API name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIName API name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API name.
+                     * @param _aPIName API name.
                      * 
                      */
                     void SetAPIName(const std::string& _aPIName);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APINameHasBeenSet() const;
 
                     /**
-                     * 获取API request method
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIMethod API request method
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API method.
+                     * @return APIMethod API method.
                      * 
                      */
                     std::string GetAPIMethod() const;
 
                     /**
-                     * 设置API request method
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIMethod API request method
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API method.
+                     * @param _aPIMethod API method.
                      * 
                      */
                     void SetAPIMethod(const std::string& _aPIMethod);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APIMethodHasBeenSet() const;
 
                     /**
-                     * 获取API status
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIStatus API status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API status.
+                     * @return APIStatus API status.
                      * 
                      */
                     int64_t GetAPIStatus() const;
 
                     /**
-                     * 设置API status
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIStatus API status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API status.
+                     * @param _aPIStatus API status.
                      * 
                      */
                     void SetAPIStatus(const int64_t& _aPIStatus);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APIStatusHasBeenSet() const;
 
                     /**
-                     * 获取API application status
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIApplyStatus API application status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API application status.
+                     * @return APIApplyStatus API application status.
                      * 
                      */
                     int64_t GetAPIApplyStatus() const;
 
                     /**
-                     * 设置API application status
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIApplyStatus API application status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API application status.
+                     * @param _aPIApplyStatus API application status.
                      * 
                      */
                     void SetAPIApplyStatus(const int64_t& _aPIApplyStatus);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APIApplyStatusHasBeenSet() const;
 
                     /**
-                     * 获取Reason for rejection
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return RejectReason Reason for rejection
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Reason for rejection.
+                     * @return RejectReason Reason for rejection.
                      * 
                      */
                     std::string GetRejectReason() const;
 
                     /**
-                     * 设置Reason for rejection
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _rejectReason Reason for rejection
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Reason for rejection.
+                     * @param _rejectReason Reason for rejection.
                      * 
                      */
                     void SetRejectReason(const std::string& _rejectReason);
@@ -197,15 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RejectReasonHasBeenSet() const;
 
                     /**
-                     * 获取Approval ID
-                     * @return ApprovalNo Approval ID
+                     * 获取Approval number.
+                     * @return ApprovalNo Approval number.
                      * 
                      */
                     std::string GetApprovalNo() const;
 
                     /**
-                     * 设置Approval ID
-                     * @param _approvalNo Approval ID
+                     * 设置Approval number.
+                     * @param _approvalNo Approval number.
                      * 
                      */
                     void SetApprovalNo(const std::string& _approvalNo);
@@ -218,19 +194,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApprovalNoHasBeenSet() const;
 
                     /**
-                     * 获取Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp ID.
+                     * @return ApplicationId Superapp ID.
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationId Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp ID.
+                     * @param _applicationId Superapp ID.
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -243,19 +215,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationIcon Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp icon.
+                     * @return ApplicationIcon Superapp icon.
                      * 
                      */
                     std::string GetApplicationIcon() const;
 
                     /**
-                     * 设置Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationIcon Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp icon.
+                     * @param _applicationIcon Superapp icon.
                      * 
                      */
                     void SetApplicationIcon(const std::string& _applicationIcon);
@@ -268,19 +236,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationIconHasBeenSet() const;
 
                     /**
-                     * 获取Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ApplicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Superapp name.
+                     * @return ApplicationName Superapp name.
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置Application name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _applicationName Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Superapp name.
+                     * @param _applicationName Superapp name.
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -293,19 +257,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIType API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API type. Valid values: 1: System; 2: Custom.
+                     * @return APIType API type. Valid values: 1: System; 2: Custom.
                      * 
                      */
                     int64_t GetAPIType() const;
 
                     /**
-                     * 设置API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIType API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API type. Valid values: 1: System; 2: Custom.
+                     * @param _aPIType API type. Valid values: 1: System; 2: Custom.
                      * 
                      */
                     void SetAPIType(const int64_t& _aPIType);
@@ -318,19 +278,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool APITypeHasBeenSet() const;
 
                     /**
-                     * 获取API feature description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return APIDesc API feature description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取API feature description.
+                     * @return APIDesc API feature description.
                      * 
                      */
                     std::string GetAPIDesc() const;
 
                     /**
-                     * 设置API feature description
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aPIDesc API feature description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置API feature description.
+                     * @param _aPIDesc API feature description.
                      * 
                      */
                     void SetAPIDesc(const std::string& _aPIDesc);
@@ -345,84 +301,73 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * API ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API ID.
                      */
                     std::string m_aPIId;
                     bool m_aPIIdHasBeenSet;
 
                     /**
-                     * API name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API name.
                      */
                     std::string m_aPIName;
                     bool m_aPINameHasBeenSet;
 
                     /**
-                     * API request method
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API method.
                      */
                     std::string m_aPIMethod;
                     bool m_aPIMethodHasBeenSet;
 
                     /**
-                     * API status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API status.
                      */
                     int64_t m_aPIStatus;
                     bool m_aPIStatusHasBeenSet;
 
                     /**
-                     * API application status
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API application status.
                      */
                     int64_t m_aPIApplyStatus;
                     bool m_aPIApplyStatusHasBeenSet;
 
                     /**
-                     * Reason for rejection
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Reason for rejection.
                      */
                     std::string m_rejectReason;
                     bool m_rejectReasonHasBeenSet;
 
                     /**
-                     * Approval ID
+                     * Approval number.
                      */
                     std::string m_approvalNo;
                     bool m_approvalNoHasBeenSet;
 
                     /**
-                     * Application ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp ID.
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * Application icon
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp icon.
                      */
                     std::string m_applicationIcon;
                     bool m_applicationIconHasBeenSet;
 
                     /**
-                     * Application name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Superapp name.
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * API type. 1: System; 2: Custom
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API type. Valid values: 1: System; 2: Custom.
                      */
                     int64_t m_aPIType;
                     bool m_aPITypeHasBeenSet;
 
                     /**
-                     * API feature description
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * API feature description.
                      */
                     std::string m_aPIDesc;
                     bool m_aPIDescHasBeenSet;

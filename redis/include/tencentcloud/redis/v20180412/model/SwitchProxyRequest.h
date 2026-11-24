@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Proxy ID of an instance, which can be obtained through NodeId of the response parameter **Proxy** of the API [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/48603?from_cn_redirect=1).
-                     * @return ProxyID Proxy ID of an instance, which can be obtained through NodeId of the response parameter **Proxy** of the API [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/48603?from_cn_redirect=1).
+                     * 获取Instance ProxyID. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * @return ProxyID Instance ProxyID. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
                      * 
                      */
                     std::string GetProxyID() const;
 
                     /**
-                     * 设置Proxy ID of an instance, which can be obtained through NodeId of the response parameter **Proxy** of the API [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/48603?from_cn_redirect=1).
-                     * @param _proxyID Proxy ID of an instance, which can be obtained through NodeId of the response parameter **Proxy** of the API [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/48603?from_cn_redirect=1).
+                     * 设置Instance ProxyID. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * @param _proxyID Instance ProxyID. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
                      * 
                      */
                     void SetProxyID(const std::string& _proxyID);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProxyIDHasBeenSet() const;
 
+                    /**
+                     * 获取List of instance ProxyIDs. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * @return ProxyIDList List of instance ProxyIDs. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * 
+                     */
+                    std::vector<std::string> GetProxyIDList() const;
+
+                    /**
+                     * 设置List of instance ProxyIDs. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * @param _proxyIDList List of instance ProxyIDs. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     * 
+                     */
+                    void SetProxyIDList(const std::vector<std::string>& _proxyIDList);
+
+                    /**
+                     * 判断参数 ProxyIDList 是否已赋值
+                     * @return ProxyIDList 是否已赋值
+                     * 
+                     */
+                    bool ProxyIDListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Proxy ID of an instance, which can be obtained through NodeId of the response parameter **Proxy** of the API [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/48603?from_cn_redirect=1).
+                     * Instance ProxyID. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
                      */
                     std::string m_proxyID;
                     bool m_proxyIDHasBeenSet;
+
+                    /**
+                     * List of instance ProxyIDs. Obtain it through the NodeId in the Proxy response parameter of the DescribeInstanceNodeInfo interface (https://www.tencentcloud.com/document/product/239/48603?from_cn_redirect=1).
+                     */
+                    std::vector<std::string> m_proxyIDList;
+                    bool m_proxyIDListHasBeenSet;
 
                 };
             }

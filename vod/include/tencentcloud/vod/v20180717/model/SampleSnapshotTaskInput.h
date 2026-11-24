@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameter type of sampling screencapturing task
+                * Task input parameter type for sampling screenshot taking in a video
                 */
                 class SampleSnapshotTaskInput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Sampled screencapturing template ID.
-                     * @return Definition Sampled screencapturing template ID.
+                     * 获取Sampled screenshot template ID.
+                     * @return Definition Sampled screenshot template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Sampled screencapturing template ID.
-                     * @param _definition Sampled screencapturing template ID.
+                     * 设置Sampled screenshot template ID.
+                     * @param _definition Sampled screenshot template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return WatermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
+                     * @return WatermarkSet Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
-                     * 设置List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _watermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
+                     * @param _watermarkSet Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
@@ -96,14 +92,13 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Sampled screencapturing template ID.
+                     * Sampled screenshot template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;

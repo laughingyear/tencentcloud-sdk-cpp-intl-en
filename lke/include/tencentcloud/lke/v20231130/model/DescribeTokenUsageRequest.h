@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取Sub-business types of Tencent Cloud Agent Development Platform/TCADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
-                     * @return SubBizType Sub-business types of Tencent Cloud Agent Development Platform/TCADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * 获取Sub-business types of Tencent Cloud Agent Development Platform/ADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * @return SubBizType Sub-business types of Tencent Cloud Agent Development Platform/ADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      * 
                      */
                     std::string GetSubBizType() const;
 
                     /**
-                     * 设置Sub-business types of Tencent Cloud Agent Development Platform/TCADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
-                     * @param _subBizType Sub-business types of Tencent Cloud Agent Development Platform/TCADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * 设置Sub-business types of Tencent Cloud Agent Development Platform/ADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * @param _subBizType Sub-business types of Tencent Cloud Agent Development Platform/ADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      * 
                      */
                     void SetSubBizType(const std::string& _subBizType);
@@ -150,42 +150,42 @@ namespace TencentCloud
                     /**
                      * 获取Start timestamp, in seconds (default value: 0).
                      * @return StartTime Start timestamp, in seconds (default value: 0).
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置Start timestamp, in seconds (default value: 0).
                      * @param _startTime Start timestamp, in seconds (default value: 0).
-                     * 
+                     * @deprecated
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取End timestamp, in seconds (default value: 0, must be greater than the start timestamp).
                      * @return EndTime End timestamp, in seconds (default value: 0, must be greater than the start timestamp).
-                     * 
+                     * @deprecated
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置End timestamp, in seconds (default value: 0, must be greater than the start timestamp).
                      * @param _endTime End timestamp, in seconds (default value: 0, must be greater than the start timestamp).
-                     * 
+                     * @deprecated
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -231,6 +231,90 @@ namespace TencentCloud
                      */
                     bool SubScenesHasBeenSet() const;
 
+                    /**
+                     * 获取Application Type (knowledge_qa: Knowledge Q&A Application Management, shared_knowledge: Shared Knowledge Base)
+                     * @return AppType Application Type (knowledge_qa: Knowledge Q&A Application Management, shared_knowledge: Shared Knowledge Base)
+                     * 
+                     */
+                    std::string GetAppType() const;
+
+                    /**
+                     * 设置Application Type (knowledge_qa: Knowledge Q&A Application Management, shared_knowledge: Shared Knowledge Base)
+                     * @param _appType Application Type (knowledge_qa: Knowledge Q&A Application Management, shared_knowledge: Shared Knowledge Base)
+                     * 
+                     */
+                    void SetAppType(const std::string& _appType);
+
+                    /**
+                     * 判断参数 AppType 是否已赋值
+                     * @return AppType 是否已赋值
+                     * 
+                     */
+                    bool AppTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Space ID, used to limit the query scope. If left blank, data of all spaces will be returned.
+                     * @return SpaceId Space ID, used to limit the query scope. If left blank, data of all spaces will be returned.
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置Space ID, used to limit the query scope. If left blank, data of all spaces will be returned.
+                     * @param _spaceId Space ID, used to limit the query scope. If left blank, data of all spaces will be returned.
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Start time. Unix timestamp in seconds, empty by default.
+                     * @return StatStartTime Start time. Unix timestamp in seconds, empty by default.
+                     * 
+                     */
+                    int64_t GetStatStartTime() const;
+
+                    /**
+                     * 设置Start time. Unix timestamp in seconds, empty by default.
+                     * @param _statStartTime Start time. Unix timestamp in seconds, empty by default.
+                     * 
+                     */
+                    void SetStatStartTime(const int64_t& _statStartTime);
+
+                    /**
+                     * 判断参数 StatStartTime 是否已赋值
+                     * @return StatStartTime 是否已赋值
+                     * 
+                     */
+                    bool StatStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取End time. Unix timestamp in seconds, empty by default.
+                     * @return StatEndTime End time. Unix timestamp in seconds, empty by default.
+                     * 
+                     */
+                    int64_t GetStatEndTime() const;
+
+                    /**
+                     * 设置End time. Unix timestamp in seconds, empty by default.
+                     * @param _statEndTime End time. Unix timestamp in seconds, empty by default.
+                     * 
+                     */
+                    void SetStatEndTime(const int64_t& _statEndTime);
+
+                    /**
+                     * 判断参数 StatEndTime 是否已赋值
+                     * @return StatEndTime 是否已赋值
+                     * 
+                     */
+                    bool StatEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,7 +336,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * Sub-business types of Tencent Cloud Agent Development Platform/TCADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * Sub-business types of Tencent Cloud Agent Development Platform/ADP: FileParse (document parsing), embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      */
                     std::string m_subBizType;
                     bool m_subBizTypeHasBeenSet;
@@ -286,6 +370,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subScenes;
                     bool m_subScenesHasBeenSet;
+
+                    /**
+                     * Application Type (knowledge_qa: Knowledge Q&A Application Management, shared_knowledge: Shared Knowledge Base)
+                     */
+                    std::string m_appType;
+                    bool m_appTypeHasBeenSet;
+
+                    /**
+                     * Space ID, used to limit the query scope. If left blank, data of all spaces will be returned.
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
+
+                    /**
+                     * Start time. Unix timestamp in seconds, empty by default.
+                     */
+                    int64_t m_statStartTime;
+                    bool m_statStartTimeHasBeenSet;
+
+                    /**
+                     * End time. Unix timestamp in seconds, empty by default.
+                     */
+                    int64_t m_statEndTime;
+                    bool m_statEndTimeHasBeenSet;
 
                 };
             }

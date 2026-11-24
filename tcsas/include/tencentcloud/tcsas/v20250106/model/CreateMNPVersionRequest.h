@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Mini program ID
-                     * @return MNPId Mini program ID
+                     * 获取<p>Mini-program appid.</p>
+                     * @return MNPId <p>Mini-program appid.</p>
                      * 
                      */
                     std::string GetMNPId() const;
 
                     /**
-                     * 设置Mini program ID
-                     * @param _mNPId Mini program ID
+                     * 设置<p>Mini-program appid.</p>
+                     * @param _mNPId <p>Mini-program appid.</p>
                      * 
                      */
                     void SetMNPId(const std::string& _mNPId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MNPIdHasBeenSet() const;
 
                     /**
-                     * 获取Version number
-                     * @return MNPVersion Version number
+                     * 获取<p>Version number.</p>
+                     * @return MNPVersion <p>Version number.</p>
                      * 
                      */
                     std::string GetMNPVersion() const;
 
                     /**
-                     * 设置Version number
-                     * @param _mNPVersion Version number
+                     * 设置<p>Version number.</p>
+                     * @param _mNPVersion <p>Version number.</p>
                      * 
                      */
                     void SetMNPVersion(const std::string& _mNPVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MNPVersionHasBeenSet() const;
 
                     /**
-                     * 获取Address of the mini program package. You can export the package from IDE and upload it to a file server.
-                     * @return FileUrl Address of the mini program package. You can export the package from IDE and upload it to a file server.
+                     * 获取<p>URL of the mini program file exported from the IDE and uploaded to the file server.<p>
+                     * @return FileUrl <p>URL of the mini program file exported from the IDE and uploaded to the file server.<p>
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置Address of the mini program package. You can export the package from IDE and upload it to a file server.
-                     * @param _fileUrl Address of the mini program package. You can export the package from IDE and upload it to a file server.
+                     * 设置<p>URL of the mini program file exported from the IDE and uploaded to the file server.<p>
+                     * @param _fileUrl <p>URL of the mini program file exported from the IDE and uploaded to the file server.<p>
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Platform ID
-                     * @return PlatformId Platform ID
+                     * 获取<p>Platform ID.</p>
+                     * @return PlatformId <p>Platform ID.</p>
                      * 
                      */
                     std::string GetPlatformId() const;
 
                     /**
-                     * 设置Platform ID
-                     * @param _platformId Platform ID
+                     * 设置<p>Platform ID.</p>
+                     * @param _platformId <p>Platform ID.</p>
                      * 
                      */
                     void SetPlatformId(const std::string& _platformId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PlatformIdHasBeenSet() const;
 
                     /**
-                     * 获取Version introduction
-                     * @return MNPVersionIntro Version introduction
+                     * 获取<p>Version description.</p>
+                     * @return MNPVersionIntro <p>Version description.</p>
                      * 
                      */
                     std::string GetMNPVersionIntro() const;
 
                     /**
-                     * 设置Version introduction
-                     * @param _mNPVersionIntro Version introduction
+                     * 设置<p>Version description.</p>
+                     * @param _mNPVersionIntro <p>Version description.</p>
                      * 
                      */
                     void SetMNPVersionIntro(const std::string& _mNPVersionIntro);
@@ -147,37 +147,172 @@ namespace TencentCloud
                      */
                     bool MNPVersionIntroHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Version type. Valid values: 1: Debug version; 2: Development version. Default value: 2.</p>
+                     * @return VersionType <p>Version type. Valid values: 1: Debug version; 2: Development version. Default value: 2.</p>
+                     * 
+                     */
+                    int64_t GetVersionType() const;
+
+                    /**
+                     * 设置<p>Version type. Valid values: 1: Debug version; 2: Development version. Default value: 2.</p>
+                     * @param _versionType <p>Version type. Valid values: 1: Debug version; 2: Development version. Default value: 2.</p>
+                     * 
+                     */
+                    void SetVersionType(const int64_t& _versionType);
+
+                    /**
+                     * 判断参数 VersionType 是否已赋值
+                     * @return VersionType 是否已赋值
+                     * 
+                     */
+                    bool VersionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Compilation conditions.</p>
+                     * @return CompileCondition <p>Compilation conditions.</p>
+                     * 
+                     */
+                    std::string GetCompileCondition() const;
+
+                    /**
+                     * 设置<p>Compilation conditions.</p>
+                     * @param _compileCondition <p>Compilation conditions.</p>
+                     * 
+                     */
+                    void SetCompileCondition(const std::string& _compileCondition);
+
+                    /**
+                     * 判断参数 CompileCondition 是否已赋值
+                     * @return CompileCondition 是否已赋值
+                     * 
+                     */
+                    bool CompileConditionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Compilation configuration.</p>
+                     * @return CompileConfig <p>Compilation configuration.</p>
+                     * 
+                     */
+                    std::string GetCompileConfig() const;
+
+                    /**
+                     * 设置<p>Compilation configuration.</p>
+                     * @param _compileConfig <p>Compilation configuration.</p>
+                     * 
+                     */
+                    void SetCompileConfig(const std::string& _compileConfig);
+
+                    /**
+                     * 判断参数 CompileConfig 是否已赋值
+                     * @return CompileConfig 是否已赋值
+                     * 
+                     */
+                    bool CompileConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CICD ID</p>
+                     * @return PipelineId <p>CICD ID</p>
+                     * 
+                     */
+                    std::string GetPipelineId() const;
+
+                    /**
+                     * 设置<p>CICD ID</p>
+                     * @param _pipelineId <p>CICD ID</p>
+                     * 
+                     */
+                    void SetPipelineId(const std::string& _pipelineId);
+
+                    /**
+                     * 判断参数 PipelineId 是否已赋值
+                     * @return PipelineId 是否已赋值
+                     * 
+                     */
+                    bool PipelineIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Internal file URL.</p>
+                     * @return FileInnerUrl <p>Internal file URL.</p>
+                     * 
+                     */
+                    std::string GetFileInnerUrl() const;
+
+                    /**
+                     * 设置<p>Internal file URL.</p>
+                     * @param _fileInnerUrl <p>Internal file URL.</p>
+                     * 
+                     */
+                    void SetFileInnerUrl(const std::string& _fileInnerUrl);
+
+                    /**
+                     * 判断参数 FileInnerUrl 是否已赋值
+                     * @return FileInnerUrl 是否已赋值
+                     * 
+                     */
+                    bool FileInnerUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Mini program ID
+                     * <p>Mini-program appid.</p>
                      */
                     std::string m_mNPId;
                     bool m_mNPIdHasBeenSet;
 
                     /**
-                     * Version number
+                     * <p>Version number.</p>
                      */
                     std::string m_mNPVersion;
                     bool m_mNPVersionHasBeenSet;
 
                     /**
-                     * Address of the mini program package. You can export the package from IDE and upload it to a file server.
+                     * <p>URL of the mini program file exported from the IDE and uploaded to the file server.<p>
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * Platform ID
+                     * <p>Platform ID.</p>
                      */
                     std::string m_platformId;
                     bool m_platformIdHasBeenSet;
 
                     /**
-                     * Version introduction
+                     * <p>Version description.</p>
                      */
                     std::string m_mNPVersionIntro;
                     bool m_mNPVersionIntroHasBeenSet;
+
+                    /**
+                     * <p>Version type. Valid values: 1: Debug version; 2: Development version. Default value: 2.</p>
+                     */
+                    int64_t m_versionType;
+                    bool m_versionTypeHasBeenSet;
+
+                    /**
+                     * <p>Compilation conditions.</p>
+                     */
+                    std::string m_compileCondition;
+                    bool m_compileConditionHasBeenSet;
+
+                    /**
+                     * <p>Compilation configuration.</p>
+                     */
+                    std::string m_compileConfig;
+                    bool m_compileConfigHasBeenSet;
+
+                    /**
+                     * <p>CICD ID</p>
+                     */
+                    std::string m_pipelineId;
+                    bool m_pipelineIdHasBeenSet;
+
+                    /**
+                     * <p>Internal file URL.</p>
+                     */
+                    std::string m_fileInnerUrl;
+                    bool m_fileInnerUrlHasBeenSet;
 
                 };
             }

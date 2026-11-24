@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input for media quality enhance task.
+                * Input of the audio and video quality regeneration task.
                 */
                 class QualityEnhanceTaskInput : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Media quality enhance template ID.
-                     * @return Definition Media quality enhance template ID.
+                     * 获取Audio-visual quality rebirth template ID.
+                     * @return Definition Audio-visual quality rebirth template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Media quality enhance template ID.
-                     * @param _definition Media quality enhance template ID.
+                     * 设置Audio-visual quality rebirth template ID.
+                     * @param _definition Audio-visual quality rebirth template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Media quality enhance template ID.
+                     * Audio-visual quality rebirth template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

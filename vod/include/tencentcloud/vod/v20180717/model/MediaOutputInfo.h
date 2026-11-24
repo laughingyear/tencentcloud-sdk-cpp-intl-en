@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information parameter of file output by video processing
+                * Output file information parameters for video processing.
                 */
                 class MediaOutputInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Region of the bucket where an output file is stored, such as ap-guangzhou.
-                     * @return Region Region of the bucket where an output file is stored, such as ap-guangzhou.
+                     * 获取Region of the output file Bucket, for example, ap-guangzhou.
+                     * @return Region Region of the output file Bucket, for example, ap-guangzhou.
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置Region of the bucket where an output file is stored, such as ap-guangzhou.
-                     * @param _region Region of the bucket where an output file is stored, such as ap-guangzhou.
+                     * 设置Region of the output file Bucket, for example, ap-guangzhou.
+                     * @param _region Region of the output file Bucket, for example, ap-guangzhou.
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取Bucket of output file.
-                     * @return Bucket Bucket of output file.
+                     * 获取Output file Bucket.
+                     * @return Bucket Output file Bucket.
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置Bucket of output file.
-                     * @param _bucket Bucket of output file.
+                     * 设置Output file Bucket.
+                     * @param _bucket Output file Bucket.
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取Path to output file, which must end in "/".
-                     * @return Dir Path to output file, which must end in "/".
+                     * 获取Output file directory. The directory name must end with "/".
+                     * @return Dir Output file directory. The directory name must end with "/".
                      * 
                      */
                     std::string GetDir() const;
 
                     /**
-                     * 设置Path to output file, which must end in "/".
-                     * @param _dir Path to output file, which must end in "/".
+                     * 设置Output file directory. The directory name must end with "/".
+                     * @param _dir Output file directory. The directory name must end with "/".
                      * 
                      */
                     void SetDir(const std::string& _dir);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Region of the bucket where an output file is stored, such as ap-guangzhou.
+                     * Region of the output file Bucket, for example, ap-guangzhou.
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * Bucket of output file.
+                     * Output file Bucket.
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * Path to output file, which must end in "/".
+                     * Output file directory. The directory name must end with "/".
                      */
                     std::string m_dir;
                     bool m_dirHasBeenSet;

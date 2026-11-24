@@ -47,31 +47,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The encoding format of the video stream, optional values:
+                     * 获取Encoding format for video streams. Optional values:
 <li>libx264: H.264 encoding;</li>
 <li>libx265: H.265 encoding;</li>
 <li>av1: AOMedia Video 1 encoding;</li>
-<li>H.266: H.266 encoding. </li>
-                     * @return Codec The encoding format of the video stream, optional values:
+<li>H.266: H.266 encoding.</li>
+                     * @return Codec Encoding format for video streams. Optional values:
 <li>libx264: H.264 encoding;</li>
 <li>libx265: H.265 encoding;</li>
 <li>av1: AOMedia Video 1 encoding;</li>
-<li>H.266: H.266 encoding. </li>
+<li>H.266: H.266 encoding.</li>
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置The encoding format of the video stream, optional values:
+                     * 设置Encoding format for video streams. Optional values:
 <li>libx264: H.264 encoding;</li>
 <li>libx265: H.265 encoding;</li>
 <li>av1: AOMedia Video 1 encoding;</li>
-<li>H.266: H.266 encoding. </li>
-                     * @param _codec The encoding format of the video stream, optional values:
+<li>H.266: H.266 encoding.</li>
+                     * @param _codec Encoding format for video streams. Optional values:
 <li>libx264: H.264 encoding;</li>
 <li>libx265: H.265 encoding;</li>
 <li>av1: AOMedia Video 1 encoding;</li>
-<li>H.266: H.266 encoding. </li>
+<li>H.266: H.266 encoding.</li>
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -84,19 +84,19 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取The bit rate of the video stream, value range: 0 and [128, 35000], unit: kbps. 
-When the value is 0 or left blank, it means automatically selecting the best video bit rate.
-                     * @return Bitrate The bit rate of the video stream, value range: 0 and [128, 35000], unit: kbps. 
-When the value is 0 or left blank, it means automatically selecting the best video bit rate.
+                     * 获取Bitrate of video stream. Value range: 0 and [128, 100000]. Unit: kbps.
+When the value is 0 or not specified, VOD automatically sets the bitrate.
+                     * @return Bitrate Bitrate of video stream. Value range: 0 and [128, 100000]. Unit: kbps.
+When the value is 0 or not specified, VOD automatically sets the bitrate.
                      * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置The bit rate of the video stream, value range: 0 and [128, 35000], unit: kbps. 
-When the value is 0 or left blank, it means automatically selecting the best video bit rate.
-                     * @param _bitrate The bit rate of the video stream, value range: 0 and [128, 35000], unit: kbps. 
-When the value is 0 or left blank, it means automatically selecting the best video bit rate.
+                     * 设置Bitrate of video stream. Value range: 0 and [128, 100000]. Unit: kbps.
+When the value is 0 or not specified, VOD automatically sets the bitrate.
+                     * @param _bitrate Bitrate of video stream. Value range: 0 and [128, 100000]. Unit: kbps.
+When the value is 0 or not specified, VOD automatically sets the bitrate.
                      * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
@@ -109,26 +109,26 @@ When the value is 0 or left blank, it means automatically selecting the best vid
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
+                     * 获取Resolution adaptation. Available values:
+<li>open: enabled. At this point, Width represents the long side of the video, and Height represents the short side of the video;</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
-                     * @return ResolutionAdaptive Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
+                     * @return ResolutionAdaptive Resolution adaptation. Available values:
+<li>open: enabled. At this point, Width represents the long side of the video, and Height represents the short side of the video;</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      * 
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
-                     * 设置Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
+                     * 设置Resolution adaptation. Available values:
+<li>open: enabled. At this point, Width represents the long side of the video, and Height represents the short side of the video;</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
-                     * @param _resolutionAdaptive Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
+                     * @param _resolutionAdaptive Resolution adaptation. Available values:
+<li>open: enabled. At this point, Width represents the long side of the video, and Height represents the short side of the video;</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      * 
                      */
@@ -142,27 +142,35 @@ Default value: open.
                     bool ResolutionAdaptiveHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
-Default value: open.
-                     * @return Width Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
-Default value: open.
+                     * 获取Maximum value of the video stream width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
+Default value: 0.
+                     * @return Width Maximum value of the video stream width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
+Default value: 0.
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
-Default value: open.
-                     * @param _width Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
-Default value: open.
+                     * 设置Maximum value of the video stream width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
+Default value: 0.
+                     * @param _width Maximum value of the video stream width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
+Default value: 0.
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -175,34 +183,34 @@ Default value: open.
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取The maximum value of the video stream height (or short side), value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is based on the base resolution;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled according to the base resolution;</li> li>
-<li>When Width is non-0 and Height is 0, the Height is scaled according to the base resolution; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
+                     * 获取Maximum height (or short side) of the video stream. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @return Height The maximum value of the video stream height (or short side), value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is based on the base resolution;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled according to the base resolution;</li> li>
-<li>When Width is non-0 and Height is 0, the Height is scaled according to the base resolution; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
+                     * @return Height Maximum height (or short side) of the video stream. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置The maximum value of the video stream height (or short side), value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is based on the base resolution;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled according to the base resolution;</li> li>
-<li>When Width is non-0 and Height is 0, the Height is scaled according to the base resolution; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
+                     * 设置Maximum height (or short side) of the video stream. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @param _height The maximum value of the video stream height (or short side), value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is based on the base resolution;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled according to the base resolution;</li> li>
-<li>When Width is non-0 and Height is 0, the Height is scaled according to the base resolution; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
+                     * @param _height Maximum height (or short side) of the video stream. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
@@ -216,23 +224,23 @@ Default value: 0.
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Video frame rate, value range: [0, 100], unit: Hz. 
-When the value is 0, the frame rate will be automatically set for the video. 
-The default value is 0.
-                     * @return Fps Video frame rate, value range: [0, 100], unit: Hz. 
-When the value is 0, the frame rate will be automatically set for the video. 
-The default value is 0.
+                     * 获取Video frame rate. Value range: [0, 100]. Unit: Hz.
+When the value is 0, the frame rate is automatically set for the video.
+Default value: 0.
+                     * @return Fps Video frame rate. Value range: [0, 100]. Unit: Hz.
+When the value is 0, the frame rate is automatically set for the video.
+Default value: 0.
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置Video frame rate, value range: [0, 100], unit: Hz. 
-When the value is 0, the frame rate will be automatically set for the video. 
-The default value is 0.
-                     * @param _fps Video frame rate, value range: [0, 100], unit: Hz. 
-When the value is 0, the frame rate will be automatically set for the video. 
-The default value is 0.
+                     * 设置Video frame rate. Value range: [0, 100]. Unit: Hz.
+When the value is 0, the frame rate is automatically set for the video.
+Default value: 0.
+                     * @param _fps Video frame rate. Value range: [0, 100]. Unit: Hz.
+When the value is 0, the frame rate is automatically set for the video.
+Default value: 0.
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -247,55 +255,57 @@ The default value is 0.
                 private:
 
                     /**
-                     * The encoding format of the video stream, optional values:
+                     * Encoding format for video streams. Optional values:
 <li>libx264: H.264 encoding;</li>
 <li>libx265: H.265 encoding;</li>
 <li>av1: AOMedia Video 1 encoding;</li>
-<li>H.266: H.266 encoding. </li>
+<li>H.266: H.266 encoding.</li>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * The bit rate of the video stream, value range: 0 and [128, 35000], unit: kbps. 
-When the value is 0 or left blank, it means automatically selecting the best video bit rate.
+                     * Bitrate of video stream. Value range: 0 and [128, 100000]. Unit: kbps.
+When the value is 0 or not specified, VOD automatically sets the bitrate.
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
+                     * Resolution adaptation. Available values:
+<li>open: enabled. At this point, Width represents the long side of the video, and Height represents the short side of the video;</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      */
                     std::string m_resolutionAdaptive;
                     bool m_resolutionAdaptiveHasBeenSet;
 
                     /**
-                     * Resolution adaptive, optional values:
-<li>open: open, at this time, Width represents the long side of the video, and Height represents the short side of the video;</li>
-<li>close: closed, at this time , Width represents the width of the video, and Height represents the height of the video. </li>
-Default value: open.
+                     * Maximum value of the video stream width (or long edge) in px. Value range: 0 and [128, 4096].
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
+Default value: 0.
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * The maximum value of the video stream height (or short side), value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is based on the base resolution;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled according to the base resolution;</li> li>
-<li>When Width is non-0 and Height is 0, the Height is scaled according to the base resolution; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
+                     * Maximum height (or short side) of the video stream. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the base resolution is used.</li>
+<li>If Width is 0 but Height is not 0, the width will be scaled based on the benchmark resolution ratio.</li>
+<li>If Width is not 0 but Height is 0, the height will be scaled based on the benchmark resolution ratio.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Video frame rate, value range: [0, 100], unit: Hz. 
-When the value is 0, the frame rate will be automatically set for the video. 
-The default value is 0.
+                     * Video frame rate. Value range: [0, 100]. Unit: Hz.
+When the value is 0, the frame rate is automatically set for the video.
+Default value: 0.
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;

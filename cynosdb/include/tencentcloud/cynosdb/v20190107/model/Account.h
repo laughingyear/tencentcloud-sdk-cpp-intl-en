@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Database account name
-                     * @return AccountName Database account name
+                     * 获取<p>Database account name.</p>
+                     * @return AccountName <p>Database account name.</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置Database account name
-                     * @param _accountName Database account name
+                     * 设置<p>Database account name.</p>
+                     * @param _accountName <p>Database account name.</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -68,78 +68,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取Database account description
-                     * @return Description Database account description
-                     * 
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 设置Database account description
-                     * @param _description Database account description
-                     * 
-                     */
-                    void SetDescription(const std::string& _description);
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     * 
-                     */
-                    bool DescriptionHasBeenSet() const;
-
-                    /**
-                     * 获取Creation time
-                     * @return CreateTime Creation time
-                     * 
-                     */
-                    std::string GetCreateTime() const;
-
-                    /**
-                     * 设置Creation time
-                     * @param _createTime Creation time
-                     * 
-                     */
-                    void SetCreateTime(const std::string& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     * 
-                     */
-                    bool CreateTimeHasBeenSet() const;
-
-                    /**
-                     * 获取Update time
-                     * @return UpdateTime Update time
-                     * 
-                     */
-                    std::string GetUpdateTime() const;
-
-                    /**
-                     * 设置Update time
-                     * @param _updateTime Update time
-                     * 
-                     */
-                    void SetUpdateTime(const std::string& _updateTime);
-
-                    /**
-                     * 判断参数 UpdateTime 是否已赋值
-                     * @return UpdateTime 是否已赋值
-                     * 
-                     */
-                    bool UpdateTimeHasBeenSet() const;
-
-                    /**
-                     * 获取Host
-                     * @return Host Host
+                     * 获取<p>Host</p>
+                     * @return Host <p>Host</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置Host
-                     * @param _host Host
+                     * 设置<p>Host</p>
+                     * @param _host <p>Host</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -152,15 +89,78 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取The max connections
-                     * @return MaxUserConnections The max connections
+                     * 获取<p>Database account description</p>
+                     * @return Description <p>Database account description</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>Database account description</p>
+                     * @param _description <p>Database account description</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Creation time.</p>
+                     * @return CreateTime <p>Creation time.</p>
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置<p>Creation time.</p>
+                     * @param _createTime <p>Creation time.</p>
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Update time.</p>
+                     * @return UpdateTime <p>Update time.</p>
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置<p>Update time.</p>
+                     * @param _updateTime <p>Update time.</p>
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Maximum user connections</p>
+                     * @return MaxUserConnections <p>Maximum user connections</p>
                      * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
-                     * 设置The max connections
-                     * @param _maxUserConnections The max connections
+                     * 设置<p>Maximum user connections</p>
+                     * @param _maxUserConnections <p>Maximum user connections</p>
                      * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
@@ -172,43 +172,70 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether password rotation is enabled (0: turn off; 1: turn on)</p>
+                     * @return PasswordRotation <p>Whether password rotation is enabled (0: turn off; 1: turn on)</p>
+                     * 
+                     */
+                    int64_t GetPasswordRotation() const;
+
+                    /**
+                     * 设置<p>Whether password rotation is enabled (0: turn off; 1: turn on)</p>
+                     * @param _passwordRotation <p>Whether password rotation is enabled (0: turn off; 1: turn on)</p>
+                     * 
+                     */
+                    void SetPasswordRotation(const int64_t& _passwordRotation);
+
+                    /**
+                     * 判断参数 PasswordRotation 是否已赋值
+                     * @return PasswordRotation 是否已赋值
+                     * 
+                     */
+                    bool PasswordRotationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Database account name
+                     * <p>Database account name.</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * Database account description
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
-
-                    /**
-                     * Creation time
-                     */
-                    std::string m_createTime;
-                    bool m_createTimeHasBeenSet;
-
-                    /**
-                     * Update time
-                     */
-                    std::string m_updateTime;
-                    bool m_updateTimeHasBeenSet;
-
-                    /**
-                     * Host
+                     * <p>Host</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * The max connections
+                     * <p>Database account description</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>Creation time.</p>
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>Update time.</p>
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>Maximum user connections</p>
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * <p>Whether password rotation is enabled (0: turn off; 1: turn on)</p>
+                     */
+                    int64_t m_passwordRotation;
+                    bool m_passwordRotationHasBeenSet;
 
                 };
             }

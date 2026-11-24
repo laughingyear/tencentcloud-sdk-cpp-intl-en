@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Screenshot link.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Url Screenshot link.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Screenshot link.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _url Screenshot link.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -210,7 +206,6 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Screenshot link.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task ID of the rebuild, through which the status of the rebuild task can be queried.
-                     * @return TaskId The task ID of the rebuild, through which the status of the rebuild task can be queried.
+                     * 获取Video Rebirth Task ID, which can be used to query the status of video re-creation tasks.
+                     * @return TaskId Video Rebirth Task ID, which can be used to query the status of video re-creation tasks.
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The task ID of the rebuild, through which the status of the rebuild task can be queried.
+                     * Video Rebirth Task ID, which can be used to query the status of video re-creation tasks.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

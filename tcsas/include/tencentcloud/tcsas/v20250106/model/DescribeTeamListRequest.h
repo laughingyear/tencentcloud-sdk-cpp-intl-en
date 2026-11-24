@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Pagination offset
-                     * @return Offset Pagination offset
+                     * 获取<p>Pagination offset.</p>
+                     * @return Offset <p>Pagination offset.</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置Pagination offset
-                     * @param _offset Pagination offset
+                     * 设置<p>Pagination offset.</p>
+                     * @param _offset <p>Pagination offset.</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Number of results per page
-                     * @return Limit Number of results per page
+                     * 获取<p>Pagination count.</p>
+                     * @return Limit <p>Pagination count.</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置Number of results per page
-                     * @param _limit Number of results per page
+                     * 设置<p>Pagination count.</p>
+                     * @param _limit <p>Pagination count.</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Platform ID
-                     * @return PlatformId Platform ID
+                     * 获取<p>Platform ID.</p>
+                     * @return PlatformId <p>Platform ID.</p>
                      * 
                      */
                     std::string GetPlatformId() const;
 
                     /**
-                     * 设置Platform ID
-                     * @param _platformId Platform ID
+                     * 设置<p>Platform ID.</p>
+                     * @param _platformId <p>Platform ID.</p>
                      * 
                      */
                     void SetPlatformId(const std::string& _platformId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PlatformIdHasBeenSet() const;
 
                     /**
-                     * 获取Name of the team to be queried
-                     * @return Keyword Name of the team to be queried
+                     * 获取<p>Team name.</p>
+                     * @return Keyword <p>Team name.</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置Name of the team to be queried
-                     * @param _keyword Name of the team to be queried
+                     * 设置<p>Team name.</p>
+                     * @param _keyword <p>Team name.</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Pagination offset
+                     * <p>Pagination offset.</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Number of results per page
+                     * <p>Pagination count.</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Platform ID
+                     * <p>Platform ID.</p>
                      */
                     std::string m_platformId;
                     bool m_platformIdHasBeenSet;
 
                     /**
-                     * Name of the team to be queried
+                     * <p>Team name.</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

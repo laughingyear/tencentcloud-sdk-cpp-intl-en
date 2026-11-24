@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Moderation details.
+                * Moderation information.
                 */
                 class ReviewInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The moderation template ID.
-                     * @return Definition The moderation template ID.
+                     * 获取Content review template ID.
+                     * @return Definition Content review template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置The moderation template ID.
-                     * @param _definition The moderation template ID.
+                     * 设置Content review template ID.
+                     * @param _definition Content review template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The suggestion. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion The suggestion. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 获取Review result suggestion. Valid values:
+<li>pass: it is recommended to pass;</li>
+<li>review: suggest re-examination;</li>
+<li>block: suggest banning.</li>
+                     * @return Suggestion Review result suggestion. Valid values:
+<li>pass: it is recommended to pass;</li>
+<li>review: suggest re-examination;</li>
+<li>block: suggest banning.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置The suggestion. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion The suggestion. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 设置Review result suggestion. Valid values:
+<li>pass: it is recommended to pass;</li>
+<li>review: suggest re-examination;</li>
+<li>block: suggest banning.</li>
+                     * @param _suggestion Review result suggestion. Valid values:
+<li>pass: it is recommended to pass;</li>
+<li>review: suggest re-examination;</li>
+<li>block: suggest banning.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -101,67 +101,67 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取The moderation type in the format of `Form.Label`. This parameter is valid if `Suggestion` is `review` or `block`.
-`Form` indicates the type of inappropriate content detected. Valid values:
-<li>`Image` (people or icons in images)</li>
-<li>`OCR` (text in images)</li>
-<li>`ASR` (speech)</li>
-<li>`Voice`</li>
-`Label` indicates the violation label. Valid values:
-<li>`Porn` (pornographic content)</li>
-<li>`Terror` (terrorist content)</li>
-<li>`Polity` (politically sensitive content)</li>
-<li>`Ad` (advertisement)</li>
-<li>`Illegal` (illegal content)</li>
-<li>`Abuse`</li>
-<li>`Moan`</li>
-                     * @return TypeSet The moderation type in the format of `Form.Label`. This parameter is valid if `Suggestion` is `review` or `block`.
-`Form` indicates the type of inappropriate content detected. Valid values:
-<li>`Image` (people or icons in images)</li>
-<li>`OCR` (text in images)</li>
-<li>`ASR` (speech)</li>
-<li>`Voice`</li>
-`Label` indicates the violation label. Valid values:
-<li>`Porn` (pornographic content)</li>
-<li>`Terror` (terrorist content)</li>
-<li>`Polity` (politically sensitive content)</li>
-<li>`Ad` (advertisement)</li>
-<li>`Illegal` (illegal content)</li>
-<li>`Abuse`</li>
-<li>`Moan`</li>
+                     * 获取Moderation type. Valid when `Suggestion` is `review` or `block`. Format: `Form.Label`.
+Form refers to prohibited forms. Value range:
+<li>Image: people or icons in the image;</li>
+<li>OCR: text on the screen;</li>
+<li>ASR: text in speech.</li>
+<li>Voice: sound.</li>
+Label indicates prohibited tags. Value range:
+<li>Porn: Pornography;</li>
+<li>Terror: violence.</li>
+<li>Polity: inappropriate information;</li>
+<li>Ad: advertisement;</li>
+<li>Illegal: illegal;</li>
+<li>Abuse: abusive language;</li>
+<li>Moan: panting.</li>
+                     * @return TypeSet Moderation type. Valid when `Suggestion` is `review` or `block`. Format: `Form.Label`.
+Form refers to prohibited forms. Value range:
+<li>Image: people or icons in the image;</li>
+<li>OCR: text on the screen;</li>
+<li>ASR: text in speech.</li>
+<li>Voice: sound.</li>
+Label indicates prohibited tags. Value range:
+<li>Porn: Pornography;</li>
+<li>Terror: violence.</li>
+<li>Polity: inappropriate information;</li>
+<li>Ad: advertisement;</li>
+<li>Illegal: illegal;</li>
+<li>Abuse: abusive language;</li>
+<li>Moan: panting.</li>
                      * 
                      */
                     std::vector<std::string> GetTypeSet() const;
 
                     /**
-                     * 设置The moderation type in the format of `Form.Label`. This parameter is valid if `Suggestion` is `review` or `block`.
-`Form` indicates the type of inappropriate content detected. Valid values:
-<li>`Image` (people or icons in images)</li>
-<li>`OCR` (text in images)</li>
-<li>`ASR` (speech)</li>
-<li>`Voice`</li>
-`Label` indicates the violation label. Valid values:
-<li>`Porn` (pornographic content)</li>
-<li>`Terror` (terrorist content)</li>
-<li>`Polity` (politically sensitive content)</li>
-<li>`Ad` (advertisement)</li>
-<li>`Illegal` (illegal content)</li>
-<li>`Abuse`</li>
-<li>`Moan`</li>
-                     * @param _typeSet The moderation type in the format of `Form.Label`. This parameter is valid if `Suggestion` is `review` or `block`.
-`Form` indicates the type of inappropriate content detected. Valid values:
-<li>`Image` (people or icons in images)</li>
-<li>`OCR` (text in images)</li>
-<li>`ASR` (speech)</li>
-<li>`Voice`</li>
-`Label` indicates the violation label. Valid values:
-<li>`Porn` (pornographic content)</li>
-<li>`Terror` (terrorist content)</li>
-<li>`Polity` (politically sensitive content)</li>
-<li>`Ad` (advertisement)</li>
-<li>`Illegal` (illegal content)</li>
-<li>`Abuse`</li>
-<li>`Moan`</li>
+                     * 设置Moderation type. Valid when `Suggestion` is `review` or `block`. Format: `Form.Label`.
+Form refers to prohibited forms. Value range:
+<li>Image: people or icons in the image;</li>
+<li>OCR: text on the screen;</li>
+<li>ASR: text in speech.</li>
+<li>Voice: sound.</li>
+Label indicates prohibited tags. Value range:
+<li>Porn: Pornography;</li>
+<li>Terror: violence.</li>
+<li>Polity: inappropriate information;</li>
+<li>Ad: advertisement;</li>
+<li>Illegal: illegal;</li>
+<li>Abuse: abusive language;</li>
+<li>Moan: panting.</li>
+                     * @param _typeSet Moderation type. Valid when `Suggestion` is `review` or `block`. Format: `Form.Label`.
+Form refers to prohibited forms. Value range:
+<li>Image: people or icons in the image;</li>
+<li>OCR: text on the screen;</li>
+<li>ASR: text in speech.</li>
+<li>Voice: sound.</li>
+Label indicates prohibited tags. Value range:
+<li>Porn: Pornography;</li>
+<li>Terror: violence.</li>
+<li>Polity: inappropriate information;</li>
+<li>Ad: advertisement;</li>
+<li>Illegal: illegal;</li>
+<li>Abuse: abusive language;</li>
+<li>Moan: panting.</li>
                      * 
                      */
                     void SetTypeSet(const std::vector<std::string>& _typeSet);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool TypeSetHasBeenSet() const;
 
                     /**
-                     * 获取The moderation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return ReviewTime The moderation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Moderation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return ReviewTime Moderation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetReviewTime() const;
 
                     /**
-                     * 设置The moderation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _reviewTime The moderation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Moderation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _reviewTime Moderation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetReviewTime(const std::string& _reviewTime);
@@ -197,41 +197,41 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The moderation template ID.
+                     * Content review template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The suggestion. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * Review result suggestion. Valid values:
+<li>pass: it is recommended to pass;</li>
+<li>review: suggest re-examination;</li>
+<li>block: suggest banning.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * The moderation type in the format of `Form.Label`. This parameter is valid if `Suggestion` is `review` or `block`.
-`Form` indicates the type of inappropriate content detected. Valid values:
-<li>`Image` (people or icons in images)</li>
-<li>`OCR` (text in images)</li>
-<li>`ASR` (speech)</li>
-<li>`Voice`</li>
-`Label` indicates the violation label. Valid values:
-<li>`Porn` (pornographic content)</li>
-<li>`Terror` (terrorist content)</li>
-<li>`Polity` (politically sensitive content)</li>
-<li>`Ad` (advertisement)</li>
-<li>`Illegal` (illegal content)</li>
-<li>`Abuse`</li>
-<li>`Moan`</li>
+                     * Moderation type. Valid when `Suggestion` is `review` or `block`. Format: `Form.Label`.
+Form refers to prohibited forms. Value range:
+<li>Image: people or icons in the image;</li>
+<li>OCR: text on the screen;</li>
+<li>ASR: text in speech.</li>
+<li>Voice: sound.</li>
+Label indicates prohibited tags. Value range:
+<li>Porn: Pornography;</li>
+<li>Terror: violence.</li>
+<li>Polity: inappropriate information;</li>
+<li>Ad: advertisement;</li>
+<li>Illegal: illegal;</li>
+<li>Abuse: abusive language;</li>
+<li>Moan: panting.</li>
                      */
                     std::vector<std::string> m_typeSet;
                     bool m_typeSetHasBeenSet;
 
                     /**
-                     * The moderation time in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Moderation time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_reviewTime;
                     bool m_reviewTimeHasBeenSet;

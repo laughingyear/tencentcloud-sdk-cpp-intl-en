@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The AES-128 encryption details.
+                * SimpleAes encryption information.
                 */
                 class SimpleAesDrm : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The URI of decryption key.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Uri The URI of decryption key.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Request decryption key uri address.
+                     * @return Uri Request decryption key uri address.
                      * 
                      */
                     std::string GetUri() const;
 
                     /**
-                     * 设置The URI of decryption key.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _uri The URI of decryption key.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Request decryption key uri address.
+                     * @param _uri Request decryption key uri address.
                      * 
                      */
                     void SetUri(const std::string& _uri);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UriHasBeenSet() const;
 
                     /**
-                     * 获取The encryption key (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Key The encryption key (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Encryption key (32-byte hexadecimal string).
+                     * @return Key Encryption key (32-byte hexadecimal string).
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置The encryption key (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _key The encryption key (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Encryption key (32-byte hexadecimal string).
+                     * @param _key Encryption key (32-byte hexadecimal string).
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取The initialization vector for encryption (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Vector The initialization vector for encryption (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Encryption initialization vector (32-byte hexadecimal string).
+                     * @return Vector Encryption initialization vector (32-byte hexadecimal string).
                      * 
                      */
                     std::string GetVector() const;
 
                     /**
-                     * 设置The initialization vector for encryption (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _vector The initialization vector for encryption (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Encryption initialization vector (32-byte hexadecimal string).
+                     * @param _vector Encryption initialization vector (32-byte hexadecimal string).
                      * 
                      */
                     void SetVector(const std::string& _vector);
@@ -124,22 +112,19 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The URI of decryption key.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Request decryption key uri address.
                      */
                     std::string m_uri;
                     bool m_uriHasBeenSet;
 
                     /**
-                     * The encryption key (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Encryption key (32-byte hexadecimal string).
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * The initialization vector for encryption (a 32-byte string).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Encryption initialization vector (32-byte hexadecimal string).
                      */
                     std::string m_vector;
                     bool m_vectorHasBeenSet;

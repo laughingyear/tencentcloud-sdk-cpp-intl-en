@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The result of a content moderation task of a scheme.
+                * Type of the orchestration video moderation job result
                 */
                 class ScheduleReviewTaskResult : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @return Status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 获取<p>Task status. Valid values are PROCESSING, SUCCESS, and FAIL.</p>
+                     * @return Status <p>Task status. Valid values are PROCESSING, SUCCESS, and FAIL.</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @param _status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 设置<p>Task status. Valid values are PROCESSING, SUCCESS, and FAIL.</p>
+                     * @param _status <p>Task status. Valid values are PROCESSING, SUCCESS, and FAIL.</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取The error code. An empty string indicates the task is successful; any other value returned indicates the task has failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1041/40249).
-                     * @return ErrCodeExt The error code. An empty string indicates the task is successful; any other value returned indicates the task has failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1041/40249).
+                     * 获取<p>Error code. An empty string indicates that the task is successful, while other values indicate that the task has failed. For valid values, see the list of <a href="https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">MPS error codes</a>.</p>
+                     * @return ErrCodeExt <p>Error code. An empty string indicates that the task is successful, while other values indicate that the task has failed. For valid values, see the list of <a href="https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">MPS error codes</a>.</p>
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置The error code. An empty string indicates the task is successful; any other value returned indicates the task has failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1041/40249).
-                     * @param _errCodeExt The error code. An empty string indicates the task is successful; any other value returned indicates the task has failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1041/40249).
+                     * 设置<p>Error code. An empty string indicates that the task is successful, while other values indicate that the task has failed. For valid values, see the list of <a href="https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">MPS error codes</a>.</p>
+                     * @param _errCodeExt <p>Error code. An empty string indicates that the task is successful, while other values indicate that the task has failed. For valid values, see the list of <a href="https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">MPS error codes</a>.</p>
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取The error code. 0 indicates the task is successful; other values indicate the task has failed. This parameter is not recommended. Please use `ErrCodeExt` instead.
-                     * @return ErrCode The error code. 0 indicates the task is successful; other values indicate the task has failed. This parameter is not recommended. Please use `ErrCodeExt` instead.
+                     * 获取<p>Error code. 0 indicates success, and other values indicate failure. (This field is not recommended. Use the new error code field ErrCodeExt instead.)</p>
+                     * @return ErrCode <p>Error code. 0 indicates success, and other values indicate failure. (This field is not recommended. Use the new error code field ErrCodeExt instead.)</p>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置The error code. 0 indicates the task is successful; other values indicate the task has failed. This parameter is not recommended. Please use `ErrCodeExt` instead.
-                     * @param _errCode The error code. 0 indicates the task is successful; other values indicate the task has failed. This parameter is not recommended. Please use `ErrCodeExt` instead.
+                     * 设置<p>Error code. 0 indicates success, and other values indicate failure. (This field is not recommended. Use the new error code field ErrCodeExt instead.)</p>
+                     * @param _errCode <p>Error code. 0 indicates success, and other values indicate failure. (This field is not recommended. Use the new error code field ErrCodeExt instead.)</p>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取The error message.
-                     * @return Message The error message.
+                     * 获取<p>Error message.</p>
+                     * @return Message <p>Error message.</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置The error message.
-                     * @param _message The error message.
+                     * 设置<p>Error message.</p>
+                     * @param _message <p>Error message.</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取The input of the content moderation task.
-                     * @return Input The input of the content moderation task.
+                     * 获取<p>Input of the review task.</p>
+                     * @return Input <p>Input of the review task.</p>
                      * 
                      */
                     AiContentReviewTaskInput GetInput() const;
 
                     /**
-                     * 设置The input of the content moderation task.
-                     * @param _input The input of the content moderation task.
+                     * 设置<p>Input of the review task.</p>
+                     * @param _input <p>Input of the review task.</p>
                      * 
                      */
                     void SetInput(const AiContentReviewTaskInput& _input);
@@ -154,19 +154,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取The output of the content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Output The output of the content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Output of the moderation task.</p>
+                     * @return Output <p>Output of the moderation task.</p>
                      * 
                      */
                     std::vector<AiContentReviewResult> GetOutput() const;
 
                     /**
-                     * 设置The output of the content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _output The output of the content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Output of the moderation task.</p>
+                     * @param _output <p>Output of the moderation task.</p>
                      * 
                      */
                     void SetOutput(const std::vector<AiContentReviewResult>& _output);
@@ -178,44 +174,97 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Starting time of task execution, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * @return BeginProcessTime <p>Starting time of task execution, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * 
+                     */
+                    std::string GetBeginProcessTime() const;
+
+                    /**
+                     * 设置<p>Starting time of task execution, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * @param _beginProcessTime <p>Starting time of task execution, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * 
+                     */
+                    void SetBeginProcessTime(const std::string& _beginProcessTime);
+
+                    /**
+                     * 判断参数 BeginProcessTime 是否已赋值
+                     * @return BeginProcessTime 是否已赋值
+                     * 
+                     */
+                    bool BeginProcessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Task completion time, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * @return FinishTime <p>Task completion time, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * 
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置<p>Task completion time, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * @param _finishTime <p>Task completion time, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     * 
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * <p>Task status. Valid values are PROCESSING, SUCCESS, and FAIL.</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * The error code. An empty string indicates the task is successful; any other value returned indicates the task has failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1041/40249).
+                     * <p>Error code. An empty string indicates that the task is successful, while other values indicate that the task has failed. For valid values, see the list of <a href="https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">MPS error codes</a>.</p>
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * The error code. 0 indicates the task is successful; other values indicate the task has failed. This parameter is not recommended. Please use `ErrCodeExt` instead.
+                     * <p>Error code. 0 indicates success, and other values indicate failure. (This field is not recommended. Use the new error code field ErrCodeExt instead.)</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * The error message.
+                     * <p>Error message.</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * The input of the content moderation task.
+                     * <p>Input of the review task.</p>
                      */
                     AiContentReviewTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * The output of the content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Output of the moderation task.</p>
                      */
                     std::vector<AiContentReviewResult> m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * <p>Starting time of task execution, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     */
+                    std::string m_beginProcessTime;
+                    bool m_beginProcessTimeHasBeenSet;
+
+                    /**
+                     * <p>Task completion time, in <a href="https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52">ISO date and time format</a>.</p>
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

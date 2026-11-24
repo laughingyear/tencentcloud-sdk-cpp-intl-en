@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number
-                     * @return TotalCount Total number
+                     * 获取<p>Total quantity.</p>
+                     * @return TotalCount <p>Total quantity.</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,10 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取List of allowlists after merge
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return LoginWhiteCombinedInfos List of allowlists after merge
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Merged allowlist</p>
+                     * @return LoginWhiteCombinedInfos <p>Merged allowlist</p>
                      * 
                      */
                     std::vector<LoginWhiteCombinedInfo> GetLoginWhiteCombinedInfos() const;
@@ -77,14 +75,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Total number
+                     * <p>Total quantity.</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * List of allowlists after merge
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Merged allowlist</p>
                      */
                     std::vector<LoginWhiteCombinedInfo> m_loginWhiteCombinedInfos;
                     bool m_loginWhiteCombinedInfosHasBeenSet;

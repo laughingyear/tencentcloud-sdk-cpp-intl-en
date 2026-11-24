@@ -23,7 +23,10 @@ using namespace std;
 AddOnSubtitle::AddOnSubtitle() :
     m_typeHasBeenSet(false),
     m_subtitleHasBeenSet(false),
-    m_subtitleNameHasBeenSet(false)
+    m_subtitleNameHasBeenSet(false),
+    m_subtitleLanguageHasBeenSet(false),
+    m_outputFormatHasBeenSet(false),
+    m_defaultTrackHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,36 @@ CoreInternalOutcome AddOnSubtitle::Deserialize(const rapidjson::Value &value)
         m_subtitleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleLanguage") && !value["SubtitleLanguage"].IsNull())
+    {
+        if (!value["SubtitleLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddOnSubtitle.SubtitleLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleLanguage = string(value["SubtitleLanguage"].GetString());
+        m_subtitleLanguageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputFormat") && !value["OutputFormat"].IsNull())
+    {
+        if (!value["OutputFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddOnSubtitle.OutputFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputFormat = string(value["OutputFormat"].GetString());
+        m_outputFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultTrack") && !value["DefaultTrack"].IsNull())
+    {
+        if (!value["DefaultTrack"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddOnSubtitle.DefaultTrack` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultTrack = value["DefaultTrack"].GetBool();
+        m_defaultTrackHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +132,30 @@ void AddOnSubtitle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SubtitleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultTrackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultTrack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultTrack, allocator);
     }
 
 }
@@ -150,5 +207,53 @@ void AddOnSubtitle::SetSubtitleName(const string& _subtitleName)
 bool AddOnSubtitle::SubtitleNameHasBeenSet() const
 {
     return m_subtitleNameHasBeenSet;
+}
+
+string AddOnSubtitle::GetSubtitleLanguage() const
+{
+    return m_subtitleLanguage;
+}
+
+void AddOnSubtitle::SetSubtitleLanguage(const string& _subtitleLanguage)
+{
+    m_subtitleLanguage = _subtitleLanguage;
+    m_subtitleLanguageHasBeenSet = true;
+}
+
+bool AddOnSubtitle::SubtitleLanguageHasBeenSet() const
+{
+    return m_subtitleLanguageHasBeenSet;
+}
+
+string AddOnSubtitle::GetOutputFormat() const
+{
+    return m_outputFormat;
+}
+
+void AddOnSubtitle::SetOutputFormat(const string& _outputFormat)
+{
+    m_outputFormat = _outputFormat;
+    m_outputFormatHasBeenSet = true;
+}
+
+bool AddOnSubtitle::OutputFormatHasBeenSet() const
+{
+    return m_outputFormatHasBeenSet;
+}
+
+bool AddOnSubtitle::GetDefaultTrack() const
+{
+    return m_defaultTrack;
+}
+
+void AddOnSubtitle::SetDefaultTrack(const bool& _defaultTrack)
+{
+    m_defaultTrack = _defaultTrack;
+    m_defaultTrackHasBeenSet = true;
+}
+
+bool AddOnSubtitle::DefaultTrackHasBeenSet() const
+{
+    return m_defaultTrackHasBeenSet;
 }
 

@@ -45,15 +45,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取u200c-
-                     * @return Content u200c-
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取Asset
+                     * @return Content Asset
                      * 
                      */
                     std::vector<PublicIpDomainListKey> GetContent() const;
 
                     /**
-                     * 设置u200c-
-                     * @param _content u200c-
+                     * 设置Asset
+                     * @param _content Asset
                      * 
                      */
                     void SetContent(const std::vector<PublicIpDomainListKey>& _content);
@@ -66,15 +87,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取Whether to retain the path configuration. `1`: Retain; Others: Do not retain. It defaults to do not retain if not specified.
-                     * @return RetainPath Whether to retain the path configuration. `1`: Retain; Others: Do not retain. It defaults to do not retain if not specified.
+                     * 获取Whether to retain path configuration. 1: Yes; Other: No. No if not specified by default.
+                     * @return RetainPath Whether to retain path configuration. 1: Yes; Other: No. No if not specified by default.
                      * 
                      */
                     int64_t GetRetainPath() const;
 
                     /**
-                     * 设置Whether to retain the path configuration. `1`: Retain; Others: Do not retain. It defaults to do not retain if not specified.
-                     * @param _retainPath Whether to retain the path configuration. `1`: Retain; Others: Do not retain. It defaults to do not retain if not specified.
+                     * 设置Whether to retain path configuration. 1: Yes; Other: No. No if not specified by default.
+                     * @param _retainPath Whether to retain path configuration. 1: Yes; Other: No. No if not specified by default.
                      * 
                      */
                     void SetRetainPath(const int64_t& _retainPath);
@@ -87,15 +108,15 @@ namespace TencentCloud
                     bool RetainPathHasBeenSet() const;
 
                     /**
-                     * 获取Whether to ignore this asset in the future. `1`: Ignore; Others: Do not ignore. It defaults to ignore if not specified.
-                     * @return IgnoreAsset Whether to ignore this asset in the future. `1`: Ignore; Others: Do not ignore. It defaults to ignore if not specified.
+                     * 获取Whether to ignore this asset in the future. 1: Yes; Other: No. No if not specified by default.
+                     * @return IgnoreAsset Whether to ignore this asset in the future. 1: Yes; Other: No. No if not specified by default.
                      * 
                      */
                     int64_t GetIgnoreAsset() const;
 
                     /**
-                     * 设置Whether to ignore this asset in the future. `1`: Ignore; Others: Do not ignore. It defaults to ignore if not specified.
-                     * @param _ignoreAsset Whether to ignore this asset in the future. `1`: Ignore; Others: Do not ignore. It defaults to ignore if not specified.
+                     * 设置Whether to ignore this asset in the future. 1: Yes; Other: No. No if not specified by default.
+                     * @param _ignoreAsset Whether to ignore this asset in the future. 1: Yes; Other: No. No if not specified by default.
                      * 
                      */
                     void SetIgnoreAsset(const int64_t& _ignoreAsset);
@@ -108,15 +129,15 @@ namespace TencentCloud
                     bool IgnoreAssetHasBeenSet() const;
 
                     /**
-                     * 获取Asset tags
-                     * @return Tags Asset tags
+                     * 获取Asset tag
+                     * @return Tags Asset tag
                      * 
                      */
                     std::vector<AssetTag> GetTags() const;
 
                     /**
-                     * 设置Asset tags
-                     * @param _tags Asset tags
+                     * 设置Asset tag
+                     * @param _tags Asset tag
                      * 
                      */
                     void SetTags(const std::vector<AssetTag>& _tags);
@@ -129,15 +150,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取Deletion mode. Values: `ALL` (delete all). If it's not specified, `Content` is required.
-                     * @return Type Deletion mode. Values: `ALL` (delete all). If it's not specified, `Content` is required.
+                     * 获取Delete type. ALL: deleting all, which will directly ignore the content of Content; Other value: not all, and Content is required. Other value by default.
+                     * @return Type Delete type. ALL: deleting all, which will directly ignore the content of Content; Other value: not all, and Content is required. Other value by default.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Deletion mode. Values: `ALL` (delete all). If it's not specified, `Content` is required.
-                     * @param _type Deletion mode. Values: `ALL` (delete all). If it's not specified, `Content` is required.
+                     * 设置Delete type. ALL: deleting all, which will directly ignore the content of Content; Other value: not all, and Content is required. Other value by default.
+                     * @param _type Delete type. ALL: deleting all, which will directly ignore the content of Content; Other value: not all, and Content is required. Other value by default.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -152,31 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * u200c-
+                     * Group Account Member ID
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * Asset
                      */
                     std::vector<PublicIpDomainListKey> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * Whether to retain the path configuration. `1`: Retain; Others: Do not retain. It defaults to do not retain if not specified.
+                     * Whether to retain path configuration. 1: Yes; Other: No. No if not specified by default.
                      */
                     int64_t m_retainPath;
                     bool m_retainPathHasBeenSet;
 
                     /**
-                     * Whether to ignore this asset in the future. `1`: Ignore; Others: Do not ignore. It defaults to ignore if not specified.
+                     * Whether to ignore this asset in the future. 1: Yes; Other: No. No if not specified by default.
                      */
                     int64_t m_ignoreAsset;
                     bool m_ignoreAssetHasBeenSet;
 
                     /**
-                     * Asset tags
+                     * Asset tag
                      */
                     std::vector<AssetTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * Deletion mode. Values: `ALL` (delete all). If it's not specified, `Content` is required.
+                     * Delete type. ALL: deleting all, which will directly ignore the content of Content; Other value: not all, and Content is required. Other value by default.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

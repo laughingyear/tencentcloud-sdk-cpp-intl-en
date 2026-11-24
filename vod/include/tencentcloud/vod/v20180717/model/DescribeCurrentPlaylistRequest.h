@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<B>VOD [subapplication](https://intl.cloud.tencent.com/document/product/266/14574?from_cn_redirect=1) id.</b>.
-                     * @return SubAppId <B>VOD [subapplication](https://intl.cloud.tencent.com/document/product/266/14574?from_cn_redirect=1) id.</b>.
+                     * 获取<p><b>VOD <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID.</b></p>
+                     * @return SubAppId <p><b>VOD <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<B>VOD [subapplication](https://intl.cloud.tencent.com/document/product/266/14574?from_cn_redirect=1) id.</b>.
-                     * @param _subAppId <B>VOD [subapplication](https://intl.cloud.tencent.com/document/product/266/14574?from_cn_redirect=1) id.</b>.
+                     * 设置<p><b>VOD <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID.</b></p>
+                     * @param _subAppId <p><b>VOD <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取The unique identifier of the playlist.
-                     * @return RoundPlayId The unique identifier of the playlist.
+                     * 获取<p>Carousel playlist unique identifier.</p>
+                     * @return RoundPlayId <p>Carousel playlist unique identifier.</p>
                      * 
                      */
                     std::string GetRoundPlayId() const;
 
                     /**
-                     * 设置The unique identifier of the playlist.
-                     * @param _roundPlayId The unique identifier of the playlist.
+                     * 设置<p>Carousel playlist unique identifier.</p>
+                     * @param _roundPlayId <p>Carousel playlist unique identifier.</p>
                      * 
                      */
                     void SetRoundPlayId(const std::string& _roundPlayId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoundPlayIdHasBeenSet() const;
 
                     /**
-                     * 获取The length of the returned playlist. maximum is 10, default value is 5.
-                     * @return Limit The length of the returned playlist. maximum is 10, default value is 5.
+                     * 获取<p>Length of the returned playlist. Maximum: 10. Default value: 5.</p>
+                     * @return Limit <p>Length of the returned playlist. Maximum: 10. Default value: 5.</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置The length of the returned playlist. maximum is 10, default value is 5.
-                     * @param _limit The length of the returned playlist. maximum is 10, default value is 5.
+                     * 设置<p>Length of the returned playlist. Maximum: 10. Default value: 5.</p>
+                     * @param _limit <p>Length of the returned playlist. Maximum: 10. Default value: 5.</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <B>VOD [subapplication](https://intl.cloud.tencent.com/document/product/266/14574?from_cn_redirect=1) id.</b>.
+                     * <p><b>VOD <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * The unique identifier of the playlist.
+                     * <p>Carousel playlist unique identifier.</p>
                      */
                     std::string m_roundPlayId;
                     bool m_roundPlayIdHasBeenSet;
 
                     /**
-                     * The length of the returned playlist. maximum is 10, default value is 5.
+                     * <p>Length of the returned playlist. Maximum: 10. Default value: 5.</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

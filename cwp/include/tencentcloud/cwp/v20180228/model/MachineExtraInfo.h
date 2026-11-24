@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Server Basic Information
+                * 
                 */
                 class MachineExtraInfo : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Public IP address
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return WanIP Public IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return WanIP 
                      * 
                      */
                     std::string GetWanIP() const;
 
                     /**
-                     * 设置Public IP address
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _wanIP Public IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _wanIP 
                      * 
                      */
                     void SetWanIP(const std::string& _wanIP);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool WanIPHasBeenSet() const;
 
                     /**
-                     * 获取Private IP address
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return PrivateIP Private IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return PrivateIP 
                      * 
                      */
                     std::string GetPrivateIP() const;
 
                     /**
-                     * 设置Private IP address
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _privateIP Private IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _privateIP 
                      * 
                      */
                     void SetPrivateIP(const std::string& _privateIP);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool PrivateIPHasBeenSet() const;
 
                     /**
-                     * 获取Network Type. 1: VPC network; 2: Basic Network; 3: Non-Tencent Cloud Network
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return NetworkType Network Type. 1: VPC network; 2: Basic Network; 3: Non-Tencent Cloud Network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return NetworkType 
                      * 
                      */
                     int64_t GetNetworkType() const;
 
                     /**
-                     * 设置Network Type. 1: VPC network; 2: Basic Network; 3: Non-Tencent Cloud Network
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _networkType Network Type. 1: VPC network; 2: Basic Network; 3: Non-Tencent Cloud Network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _networkType 
                      * 
                      */
                     void SetNetworkType(const int64_t& _networkType);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取Network Name, returns vpc_id in the case of a VPC network
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return NetworkName Network Name, returns vpc_id in the case of a VPC network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return NetworkName 
                      * 
                      */
                     std::string GetNetworkName() const;
 
                     /**
-                     * 设置Network Name, returns vpc_id in the case of a VPC network
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _networkName Network Name, returns vpc_id in the case of a VPC network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _networkName 
                      * 
                      */
                     void SetNetworkName(const std::string& _networkName);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool NetworkNameHasBeenSet() const;
 
                     /**
-                     * 获取Instance ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return InstanceID Instance ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return InstanceID 
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置Instance ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _instanceID Instance ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _instanceID 
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取Host name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return HostName Host name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return HostName 
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置Host name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _hostName Host name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置
+                     * @param _hostName 
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -199,43 +175,37 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Public IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     std::string m_wanIP;
                     bool m_wanIPHasBeenSet;
 
                     /**
-                     * Private IP address
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     std::string m_privateIP;
                     bool m_privateIPHasBeenSet;
 
                     /**
-                     * Network Type. 1: VPC network; 2: Basic Network; 3: Non-Tencent Cloud Network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     int64_t m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * Network Name, returns vpc_id in the case of a VPC network
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     std::string m_networkName;
                     bool m_networkNameHasBeenSet;
 
                     /**
-                     * Instance ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * Host name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;

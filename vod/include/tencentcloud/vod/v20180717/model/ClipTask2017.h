@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The details of a video editing task. This parameter is only valid for tasks initiated by the v2017 video editing API.
+                * Video editing task information. This structure is only used for tasks initiated by the 2017 version of the video editing API.
                 */
                 class ClipTask2017 : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取ID of source file for video clipping task.
-                     * @return SrcFileId ID of source file for video clipping task.
+                     * 获取Video editing task source file ID.
+                     * @return SrcFileId Video editing task source file ID.
                      * 
                      */
                     std::string GetSrcFileId() const;
 
                     /**
-                     * 设置ID of source file for video clipping task.
-                     * @param _srcFileId ID of source file for video clipping task.
+                     * 设置Video editing task source file ID.
+                     * @param _srcFileId Video editing task source file ID.
                      * 
                      */
                     void SetSrcFileId(const std::string& _srcFileId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SrcFileIdHasBeenSet() const;
 
                     /**
-                     * 获取Information of file output by video clipping.
-                     * @return FileInfo Information of file output by video clipping.
+                     * 获取Video editing output file information.
+                     * @return FileInfo Video editing output file information.
                      * 
                      */
                     ClipFileInfo2017 GetFileInfo() const;
 
                     /**
-                     * 设置Information of file output by video clipping.
-                     * @param _fileInfo Information of file output by video clipping.
+                     * 设置Video editing output file information.
+                     * @param _fileInfo Video editing output file information.
                      * 
                      */
                     void SetFileInfo(const ClipFileInfo2017& _fileInfo);
@@ -119,13 +119,13 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * ID of source file for video clipping task.
+                     * Video editing task source file ID.
                      */
                     std::string m_srcFileId;
                     bool m_srcFileIdHasBeenSet;
 
                     /**
-                     * Information of file output by video clipping.
+                     * Video editing output file information.
                      */
                     ClipFileInfo2017 m_fileInfo;
                     bool m_fileInfoHasBeenSet;

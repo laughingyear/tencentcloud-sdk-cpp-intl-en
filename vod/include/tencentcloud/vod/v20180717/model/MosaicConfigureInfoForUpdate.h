@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for detecting video mosaic.
+                * Control parameters for video frame mosaic detection.
                 */
                 class MosaicConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video mosaic inspection switch, optional values:
+                     * 获取Video frame mosaic detection switch. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
-                     * @return Switch Video mosaic inspection switch, optional values:
+<li>OFF: disables it.</li>
+                     * @return Switch Video frame mosaic detection switch. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disables it.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Video mosaic inspection switch, optional values:
+                     * 设置Video frame mosaic detection switch. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
-                     * @param _switch Video mosaic inspection switch, optional values:
+<li>OFF: disables it.</li>
+                     * @param _switch Video frame mosaic detection switch. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disables it.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Video mosaic inspection switch, optional values:
+                     * Video frame mosaic detection switch. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disables it.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

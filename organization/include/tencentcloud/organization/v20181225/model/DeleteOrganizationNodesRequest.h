@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Organizational unit ID list
-                     * @return NodeIds Organizational unit ID list
+                     * 获取Organizational unit ID list.
+                     * @return NodeIds Organizational unit ID list.
                      * 
                      */
                     std::vector<uint64_t> GetNodeIds() const;
 
                     /**
-                     * 设置Organizational unit ID list
-                     * @param _nodeIds Organizational unit ID list
+                     * 设置Organizational unit ID list.
+                     * @param _nodeIds Organizational unit ID list.
                      * 
                      */
                     void SetNodeIds(const std::vector<uint64_t>& _nodeIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Organizational unit ID list
+                     * Organizational unit ID list.
                      */
                     std::vector<uint64_t> m_nodeIds;
                     bool m_nodeIdsHasBeenSet;

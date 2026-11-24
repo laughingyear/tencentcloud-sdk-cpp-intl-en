@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of pornographic content
+                * Task control parameters for authentication involving offensive content.
                 */
                 class PornConfigureInfoForUpdate : public AbstractModel
                 {
@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Parameters for recognition of pornographic content in images
-                     * @return ImgReviewInfo Parameters for recognition of pornographic content in images
+                     * 获取Image recognition involves control parameters for offensive information.
+                     * @return ImgReviewInfo Image recognition involves control parameters for offensive information.
                      * 
                      */
                     PornImgReviewTemplateInfoForUpdate GetImgReviewInfo() const;
 
                     /**
-                     * 设置Parameters for recognition of pornographic content in images
-                     * @param _imgReviewInfo Parameters for recognition of pornographic content in images
+                     * 设置Image recognition involves control parameters for offensive information.
+                     * @param _imgReviewInfo Image recognition involves control parameters for offensive information.
                      * 
                      */
                     void SetImgReviewInfo(const PornImgReviewTemplateInfoForUpdate& _imgReviewInfo);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for ASR-based recognition of pornographic content
-                     * @return AsrReviewInfo Parameters for ASR-based recognition of pornographic content
+                     * 获取Control parameters for offensive information involved in ASR-based recognition.
+                     * @return AsrReviewInfo Control parameters for offensive information involved in ASR-based recognition.
                      * 
                      */
                     PornAsrReviewTemplateInfoForUpdate GetAsrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for ASR-based recognition of pornographic content
-                     * @param _asrReviewInfo Parameters for ASR-based recognition of pornographic content
+                     * 设置Control parameters for offensive information involved in ASR-based recognition.
+                     * @param _asrReviewInfo Control parameters for offensive information involved in ASR-based recognition.
                      * 
                      */
                     void SetAsrReviewInfo(const PornAsrReviewTemplateInfoForUpdate& _asrReviewInfo);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for OCR-based recognition of pornographic content
-                     * @return OcrReviewInfo Parameters for OCR-based recognition of pornographic content
+                     * 获取Control parameters for text recognition involving offensive content.
+                     * @return OcrReviewInfo Control parameters for text recognition involving offensive content.
                      * 
                      */
                     PornOcrReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for OCR-based recognition of pornographic content
-                     * @param _ocrReviewInfo Parameters for OCR-based recognition of pornographic content
+                     * 设置Control parameters for text recognition involving offensive content.
+                     * @param _ocrReviewInfo Control parameters for text recognition involving offensive content.
                      * 
                      */
                     void SetOcrReviewInfo(const PornOcrReviewTemplateInfoForUpdate& _ocrReviewInfo);
@@ -115,19 +115,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Parameters for recognition of pornographic content in images
+                     * Image recognition involves control parameters for offensive information.
                      */
                     PornImgReviewTemplateInfoForUpdate m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for ASR-based recognition of pornographic content
+                     * Control parameters for offensive information involved in ASR-based recognition.
                      */
                     PornAsrReviewTemplateInfoForUpdate m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for OCR-based recognition of pornographic content
+                     * Control parameters for text recognition involving offensive content.
                      */
                     PornOcrReviewTemplateInfoForUpdate m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

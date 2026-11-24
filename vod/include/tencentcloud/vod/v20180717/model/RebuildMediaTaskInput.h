@@ -48,7 +48,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The input parameters of an audio/video remastering task.
+                * Input of the audio and video quality regeneration task.
                 */
                 class RebuildMediaTaskInput : public AbstractModel
                 {
@@ -60,15 +60,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The file ID.
-                     * @return FileId The file ID.
+                     * 获取Media file ID.
+                     * @return FileId Media file ID.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置The file ID.
-                     * @param _fileId The file ID.
+                     * 设置Media file ID.
+                     * @param _fileId Media file ID.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -81,15 +81,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取The start offset (seconds). If you do not specify this, the segment will start from the beginning of the video.
-                     * @return StartTimeOffset The start offset (seconds). If you do not specify this, the segment will start from the beginning of the video.
+                     * 获取Start offset time, in seconds. If not filled, it indicates cutting from the beginning of the video.
+                     * @return StartTimeOffset Start offset time, in seconds. If not filled, it indicates cutting from the beginning of the video.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置The start offset (seconds). If you do not specify this, the segment will start from the beginning of the video.
-                     * @param _startTimeOffset The start offset (seconds). If you do not specify this, the segment will start from the beginning of the video.
+                     * 设置Start offset time, in seconds. If not filled, it indicates cutting from the beginning of the video.
+                     * @param _startTimeOffset Start offset time, in seconds. If not filled, it indicates cutting from the beginning of the video.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -102,15 +102,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取The end offset (seconds). If you do not specify this, the segment will end at the end of the video.
-                     * @return EndTimeOffset The end offset (seconds). If you do not specify this, the segment will end at the end of the video.
+                     * 获取End offset time, in seconds. Not filled indicates cutting to the end of the video.
+                     * @return EndTimeOffset End offset time, in seconds. Not filled indicates cutting to the end of the video.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置The end offset (seconds). If you do not specify this, the segment will end at the end of the video.
-                     * @param _endTimeOffset The end offset (seconds). If you do not specify this, the segment will end at the end of the video.
+                     * 设置End offset time, in seconds. Not filled indicates cutting to the end of the video.
+                     * @param _endTimeOffset End offset time, in seconds. Not filled indicates cutting to the end of the video.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取The ID of the remaster template.
-                     * @return Definition The ID of the remaster template.
+                     * 获取Audio and video quality rebirth template number.
+                     * @return Definition Audio and video quality rebirth template number.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置The ID of the remaster template.
-                     * @param _definition The ID of the remaster template.
+                     * 设置Audio and video quality rebirth template number.
+                     * @param _definition Audio and video quality rebirth template number.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -144,15 +144,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The video quality remastering parameters.
-                     * @return RepairInfo The video quality remastering parameters.
+                     * 获取Image quality restoration control parameters.
+                     * @return RepairInfo Image quality restoration control parameters.
                      * 
                      */
                     RepairInfo GetRepairInfo() const;
 
                     /**
-                     * 设置The video quality remastering parameters.
-                     * @param _repairInfo The video quality remastering parameters.
+                     * 设置Image quality restoration control parameters.
+                     * @param _repairInfo Image quality restoration control parameters.
                      * 
                      */
                     void SetRepairInfo(const RepairInfo& _repairInfo);
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool RepairInfoHasBeenSet() const;
 
                     /**
-                     * 获取The smart frame interpolation parameters.
-                     * @return VideoFrameInterpolationInfo The smart frame interpolation parameters.
+                     * 获取Intelligent frame interpolation control parameters.
+                     * @return VideoFrameInterpolationInfo Intelligent frame interpolation control parameters.
                      * 
                      */
                     VideoFrameInterpolationInfo GetVideoFrameInterpolationInfo() const;
 
                     /**
-                     * 设置The smart frame interpolation parameters.
-                     * @param _videoFrameInterpolationInfo The smart frame interpolation parameters.
+                     * 设置Intelligent frame interpolation control parameters.
+                     * @param _videoFrameInterpolationInfo Intelligent frame interpolation control parameters.
                      * 
                      */
                     void SetVideoFrameInterpolationInfo(const VideoFrameInterpolationInfo& _videoFrameInterpolationInfo);
@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool VideoFrameInterpolationInfoHasBeenSet() const;
 
                     /**
-                     * 获取The super resolution parameters.
-                     * @return SuperResolutionInfo The super resolution parameters.
+                     * 获取Image super-resolution control parameters.
+                     * @return SuperResolutionInfo Image super-resolution control parameters.
                      * 
                      */
                     SuperResolutionInfo GetSuperResolutionInfo() const;
 
                     /**
-                     * 设置The super resolution parameters.
-                     * @param _superResolutionInfo The super resolution parameters.
+                     * 设置Image super-resolution control parameters.
+                     * @param _superResolutionInfo Image super-resolution control parameters.
                      * 
                      */
                     void SetSuperResolutionInfo(const SuperResolutionInfo& _superResolutionInfo);
@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool SuperResolutionInfoHasBeenSet() const;
 
                     /**
-                     * 获取The high dynamic range (HDR) parameters.
-                     * @return HDRInfo The high dynamic range (HDR) parameters.
+                     * 获取High dynamic range type control parameter.
+                     * @return HDRInfo High dynamic range type control parameter.
                      * 
                      */
                     HDRInfo GetHDRInfo() const;
 
                     /**
-                     * 设置The high dynamic range (HDR) parameters.
-                     * @param _hDRInfo The high dynamic range (HDR) parameters.
+                     * 设置High dynamic range type control parameter.
+                     * @param _hDRInfo High dynamic range type control parameter.
                      * 
                      */
                     void SetHDRInfo(const HDRInfo& _hDRInfo);
@@ -228,15 +228,15 @@ namespace TencentCloud
                     bool HDRInfoHasBeenSet() const;
 
                     /**
-                     * 获取The image noise removal parameters.
-                     * @return VideoDenoiseInfo The image noise removal parameters.
+                     * 获取Video noise reduction control parameters.
+                     * @return VideoDenoiseInfo Video noise reduction control parameters.
                      * 
                      */
                     VideoDenoiseInfo GetVideoDenoiseInfo() const;
 
                     /**
-                     * 设置The image noise removal parameters.
-                     * @param _videoDenoiseInfo The image noise removal parameters.
+                     * 设置Video noise reduction control parameters.
+                     * @param _videoDenoiseInfo Video noise reduction control parameters.
                      * 
                      */
                     void SetVideoDenoiseInfo(const VideoDenoiseInfo& _videoDenoiseInfo);
@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool VideoDenoiseInfoHasBeenSet() const;
 
                     /**
-                     * 获取The noise removal parameters.
-                     * @return AudioDenoiseInfo The noise removal parameters.
+                     * 获取Audio noise reduction control parameters.
+                     * @return AudioDenoiseInfo Audio noise reduction control parameters.
                      * 
                      */
                     AudioDenoiseInfo GetAudioDenoiseInfo() const;
 
                     /**
-                     * 设置The noise removal parameters.
-                     * @param _audioDenoiseInfo The noise removal parameters.
+                     * 设置Audio noise reduction control parameters.
+                     * @param _audioDenoiseInfo Audio noise reduction control parameters.
                      * 
                      */
                     void SetAudioDenoiseInfo(const AudioDenoiseInfo& _audioDenoiseInfo);
@@ -270,15 +270,15 @@ namespace TencentCloud
                     bool AudioDenoiseInfoHasBeenSet() const;
 
                     /**
-                     * 获取The color enhancement parameters.
-                     * @return ColorInfo The color enhancement parameters.
+                     * 获取Color enhancement control parameters.
+                     * @return ColorInfo Color enhancement control parameters.
                      * 
                      */
                     ColorEnhanceInfo GetColorInfo() const;
 
                     /**
-                     * 设置The color enhancement parameters.
-                     * @param _colorInfo The color enhancement parameters.
+                     * 设置Color enhancement control parameters.
+                     * @param _colorInfo Color enhancement control parameters.
                      * 
                      */
                     void SetColorInfo(const ColorEnhanceInfo& _colorInfo);
@@ -291,15 +291,15 @@ namespace TencentCloud
                     bool ColorInfoHasBeenSet() const;
 
                     /**
-                     * 获取The detail enhancement parameters.
-                     * @return SharpInfo The detail enhancement parameters.
+                     * 获取Detail enhancement control parameters.
+                     * @return SharpInfo Detail enhancement control parameters.
                      * 
                      */
                     SharpEnhanceInfo GetSharpInfo() const;
 
                     /**
-                     * 设置The detail enhancement parameters.
-                     * @param _sharpInfo The detail enhancement parameters.
+                     * 设置Detail enhancement control parameters.
+                     * @param _sharpInfo Detail enhancement control parameters.
                      * 
                      */
                     void SetSharpInfo(const SharpEnhanceInfo& _sharpInfo);
@@ -312,15 +312,15 @@ namespace TencentCloud
                     bool SharpInfoHasBeenSet() const;
 
                     /**
-                     * 获取The face enhancement parameters.
-                     * @return FaceInfo The face enhancement parameters.
+                     * 获取Face enhancement control parameters.
+                     * @return FaceInfo Face enhancement control parameters.
                      * 
                      */
                     FaceEnhanceInfo GetFaceInfo() const;
 
                     /**
-                     * 设置The face enhancement parameters.
-                     * @param _faceInfo The face enhancement parameters.
+                     * 设置Face enhancement control parameters.
+                     * @param _faceInfo Face enhancement control parameters.
                      * 
                      */
                     void SetFaceInfo(const FaceEnhanceInfo& _faceInfo);
@@ -333,15 +333,15 @@ namespace TencentCloud
                     bool FaceInfoHasBeenSet() const;
 
                     /**
-                     * 获取The low-light enhancement parameters.
-                     * @return LowLightInfo The low-light enhancement parameters.
+                     * 获取Low-light control parameters.
+                     * @return LowLightInfo Low-light control parameters.
                      * 
                      */
                     LowLightEnhanceInfo GetLowLightInfo() const;
 
                     /**
-                     * 设置The low-light enhancement parameters.
-                     * @param _lowLightInfo The low-light enhancement parameters.
+                     * 设置Low-light control parameters.
+                     * @param _lowLightInfo Low-light control parameters.
                      * 
                      */
                     void SetLowLightInfo(const LowLightEnhanceInfo& _lowLightInfo);
@@ -354,15 +354,15 @@ namespace TencentCloud
                     bool LowLightInfoHasBeenSet() const;
 
                     /**
-                     * 获取The banding removal parameters.
-                     * @return ScratchRepairInfo The banding removal parameters.
+                     * 获取Scratch removal control parameter.
+                     * @return ScratchRepairInfo Scratch removal control parameter.
                      * 
                      */
                     ScratchRepairInfo GetScratchRepairInfo() const;
 
                     /**
-                     * 设置The banding removal parameters.
-                     * @param _scratchRepairInfo The banding removal parameters.
+                     * 设置Scratch removal control parameter.
+                     * @param _scratchRepairInfo Scratch removal control parameter.
                      * 
                      */
                     void SetScratchRepairInfo(const ScratchRepairInfo& _scratchRepairInfo);
@@ -375,15 +375,15 @@ namespace TencentCloud
                     bool ScratchRepairInfoHasBeenSet() const;
 
                     /**
-                     * 获取The artifact removal (smoothing) parameters.
-                     * @return ArtifactRepairInfo The artifact removal (smoothing) parameters.
+                     * 获取Artifact (burr) removal control parameter.
+                     * @return ArtifactRepairInfo Artifact (burr) removal control parameter.
                      * 
                      */
                     ArtifactRepairInfo GetArtifactRepairInfo() const;
 
                     /**
-                     * 设置The artifact removal (smoothing) parameters.
-                     * @param _artifactRepairInfo The artifact removal (smoothing) parameters.
+                     * 设置Artifact (burr) removal control parameter.
+                     * @param _artifactRepairInfo Artifact (burr) removal control parameter.
                      * 
                      */
                     void SetArtifactRepairInfo(const ArtifactRepairInfo& _artifactRepairInfo);
@@ -396,15 +396,15 @@ namespace TencentCloud
                     bool ArtifactRepairInfoHasBeenSet() const;
 
                     /**
-                     * 获取The output parameters of the file.
-                     * @return TargetInfo The output parameters of the file.
+                     * 获取Output target parameters for audio-visual quality rebirth.
+                     * @return TargetInfo Output target parameters for audio-visual quality rebirth.
                      * 
                      */
                     RebuildMediaTargetInfo GetTargetInfo() const;
 
                     /**
-                     * 设置The output parameters of the file.
-                     * @param _targetInfo The output parameters of the file.
+                     * 设置Output target parameters for audio-visual quality rebirth.
+                     * @param _targetInfo Output target parameters for audio-visual quality rebirth.
                      * 
                      */
                     void SetTargetInfo(const RebuildMediaTargetInfo& _targetInfo);
@@ -419,103 +419,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The file ID.
+                     * Media file ID.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * The start offset (seconds). If you do not specify this, the segment will start from the beginning of the video.
+                     * Start offset time, in seconds. If not filled, it indicates cutting from the beginning of the video.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * The end offset (seconds). If you do not specify this, the segment will end at the end of the video.
+                     * End offset time, in seconds. Not filled indicates cutting to the end of the video.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * The ID of the remaster template.
+                     * Audio and video quality rebirth template number.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The video quality remastering parameters.
+                     * Image quality restoration control parameters.
                      */
                     RepairInfo m_repairInfo;
                     bool m_repairInfoHasBeenSet;
 
                     /**
-                     * The smart frame interpolation parameters.
+                     * Intelligent frame interpolation control parameters.
                      */
                     VideoFrameInterpolationInfo m_videoFrameInterpolationInfo;
                     bool m_videoFrameInterpolationInfoHasBeenSet;
 
                     /**
-                     * The super resolution parameters.
+                     * Image super-resolution control parameters.
                      */
                     SuperResolutionInfo m_superResolutionInfo;
                     bool m_superResolutionInfoHasBeenSet;
 
                     /**
-                     * The high dynamic range (HDR) parameters.
+                     * High dynamic range type control parameter.
                      */
                     HDRInfo m_hDRInfo;
                     bool m_hDRInfoHasBeenSet;
 
                     /**
-                     * The image noise removal parameters.
+                     * Video noise reduction control parameters.
                      */
                     VideoDenoiseInfo m_videoDenoiseInfo;
                     bool m_videoDenoiseInfoHasBeenSet;
 
                     /**
-                     * The noise removal parameters.
+                     * Audio noise reduction control parameters.
                      */
                     AudioDenoiseInfo m_audioDenoiseInfo;
                     bool m_audioDenoiseInfoHasBeenSet;
 
                     /**
-                     * The color enhancement parameters.
+                     * Color enhancement control parameters.
                      */
                     ColorEnhanceInfo m_colorInfo;
                     bool m_colorInfoHasBeenSet;
 
                     /**
-                     * The detail enhancement parameters.
+                     * Detail enhancement control parameters.
                      */
                     SharpEnhanceInfo m_sharpInfo;
                     bool m_sharpInfoHasBeenSet;
 
                     /**
-                     * The face enhancement parameters.
+                     * Face enhancement control parameters.
                      */
                     FaceEnhanceInfo m_faceInfo;
                     bool m_faceInfoHasBeenSet;
 
                     /**
-                     * The low-light enhancement parameters.
+                     * Low-light control parameters.
                      */
                     LowLightEnhanceInfo m_lowLightInfo;
                     bool m_lowLightInfoHasBeenSet;
 
                     /**
-                     * The banding removal parameters.
+                     * Scratch removal control parameter.
                      */
                     ScratchRepairInfo m_scratchRepairInfo;
                     bool m_scratchRepairInfoHasBeenSet;
 
                     /**
-                     * The artifact removal (smoothing) parameters.
+                     * Artifact (burr) removal control parameter.
                      */
                     ArtifactRepairInfo m_artifactRepairInfo;
                     bool m_artifactRepairInfoHasBeenSet;
 
                     /**
-                     * The output parameters of the file.
+                     * Output target parameters for audio-visual quality rebirth.
                      */
                     RebuildMediaTargetInfo m_targetInfo;
                     bool m_targetInfoHasBeenSet;

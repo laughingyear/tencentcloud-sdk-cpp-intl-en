@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Queue name, which is unique under the same account in a single region. It is a string of up to 64 characters. It can contain letters, digits, and hyphens (-) and must start with a letter.
-                     * @return QueueName Queue name, which is unique under the same account in a single region. It is a string of up to 64 characters. It can contain letters, digits, and hyphens (-) and must start with a letter.
+                     * 获取Queue name is unique under the same account in a single region. Queue name starts with a letter and can only contain letters, numbers, "-", and "_", with a maximum of 64 characters. It is case-insensitive.
+                     * @return QueueName Queue name is unique under the same account in a single region. Queue name starts with a letter and can only contain letters, numbers, "-", and "_", with a maximum of 64 characters. It is case-insensitive.
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置Queue name, which is unique under the same account in a single region. It is a string of up to 64 characters. It can contain letters, digits, and hyphens (-) and must start with a letter.
-                     * @param _queueName Queue name, which is unique under the same account in a single region. It is a string of up to 64 characters. It can contain letters, digits, and hyphens (-) and must start with a letter.
+                     * 设置Queue name is unique under the same account in a single region. Queue name starts with a letter and can only contain letters, numbers, "-", and "_", with a maximum of 64 characters. It is case-insensitive.
+                     * @param _queueName Queue name is unique under the same account in a single region. Queue name starts with a letter and can only contain letters, numbers, "-", and "_", with a maximum of 64 characters. It is case-insensitive.
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool VisibilityTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取Maximum message length. Value range: 1024–65536 bytes (i.e., 1–64 KB). Default value: 65536.
-                     * @return MaxMsgSize Maximum message length. Value range: 1024–65536 bytes (i.e., 1–64 KB). Default value: 65536.
+                     * 获取Maximum message length. value range: 1024-1048576 Byte (1-1024K). default value: 1048576.
+                     * @return MaxMsgSize Maximum message length. value range: 1024-1048576 Byte (1-1024K). default value: 1048576.
                      * 
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置Maximum message length. Value range: 1024–65536 bytes (i.e., 1–64 KB). Default value: 65536.
-                     * @param _maxMsgSize Maximum message length. Value range: 1024–65536 bytes (i.e., 1–64 KB). Default value: 65536.
+                     * 设置Maximum message length. value range: 1024-1048576 Byte (1-1024K). default value: 1048576.
+                     * @param _maxMsgSize Maximum message length. value range: 1024-1048576 Byte (1-1024K). default value: 1048576.
                      * 
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
@@ -403,7 +403,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Queue name, which is unique under the same account in a single region. It is a string of up to 64 characters. It can contain letters, digits, and hyphens (-) and must start with a letter.
+                     * Queue name is unique under the same account in a single region. Queue name starts with a letter and can only contain letters, numbers, "-", and "_", with a maximum of 64 characters. It is case-insensitive.
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
@@ -427,7 +427,7 @@ namespace TencentCloud
                     bool m_visibilityTimeoutHasBeenSet;
 
                     /**
-                     * Maximum message length. Value range: 1024–65536 bytes (i.e., 1–64 KB). Default value: 65536.
+                     * Maximum message length. value range: 1024-1048576 Byte (1-1024K). default value: 1048576.
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;

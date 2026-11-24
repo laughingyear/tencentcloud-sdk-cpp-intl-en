@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of politically sensitive content in images
+                * Image recognition involves task control parameters for inappropriate information.
                 */
                 class PoliticalImgReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable recognition of politically sensitive content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @return Switch Whether to enable recognition of politically sensitive content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取<p>Task switch for image recognition involving inappropriate information. Available values:</p><li>ON: Enable the task of image recognition involving inappropriate information;</li><li>OFF: Disable the task of image recognition involving inappropriate information.</li>
+                     * @return Switch <p>Task switch for image recognition involving inappropriate information. Available values:</p><li>ON: Enable the task of image recognition involving inappropriate information;</li><li>OFF: Disable the task of image recognition involving inappropriate information.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable recognition of politically sensitive content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @param _switch Whether to enable recognition of politically sensitive content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置<p>Task switch for image recognition involving inappropriate information. Available values:</p><li>ON: Enable the task of image recognition involving inappropriate information;</li><li>OFF: Disable the task of image recognition involving inappropriate information.</li>
+                     * @param _switch <p>Task switch for image recognition involving inappropriate information. Available values:</p><li>ON: Enable the task of image recognition involving inappropriate information;</li><li>OFF: Disable the task of image recognition involving inappropriate information.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,47 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Filter labels for recognition of politically sensitive content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`violation_photo`: banned images</li>
-<li>`politician`: politically sensitive people</li>
-<li>`entertainment`: people in the entertainment industry</li>
-<li>`sport`: sportspeople</li>
-<li>`entrepreneur`: businesspeople</li>
-<li>`scholar`: scholars</li>
-<li>`celebrity`: celebrities</li>
-<li>`military`: people in military</li>
-                     * @return LabelSet Filter labels for recognition of politically sensitive content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`violation_photo`: banned images</li>
-<li>`politician`: politically sensitive people</li>
-<li>`entertainment`: people in the entertainment industry</li>
-<li>`sport`: sportspeople</li>
-<li>`entrepreneur`: businesspeople</li>
-<li>`scholar`: scholars</li>
-<li>`celebrity`: celebrities</li>
-<li>`military`: people in military</li>
+                     * 获取<p>Filter tags for inappropriate information detected in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>violation_photo: violation icon;</li><li>politician: relevant people;</li><li>entertainment: people in the entertainment industry;</li><li>sport: sports celebrity;</li><li>entrepreneur: commercial figure;</li><li>scholar: educational scholars;</li><li>celebrity: celebrity;</li><li>military: relevant people.</li>
+                     * @return LabelSet <p>Filter tags for inappropriate information detected in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>violation_photo: violation icon;</li><li>politician: relevant people;</li><li>entertainment: people in the entertainment industry;</li><li>sport: sports celebrity;</li><li>entrepreneur: commercial figure;</li><li>scholar: educational scholars;</li><li>celebrity: celebrity;</li><li>military: relevant people.</li>
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置Filter labels for recognition of politically sensitive content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`violation_photo`: banned images</li>
-<li>`politician`: politically sensitive people</li>
-<li>`entertainment`: people in the entertainment industry</li>
-<li>`sport`: sportspeople</li>
-<li>`entrepreneur`: businesspeople</li>
-<li>`scholar`: scholars</li>
-<li>`celebrity`: celebrities</li>
-<li>`military`: people in military</li>
-                     * @param _labelSet Filter labels for recognition of politically sensitive content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`violation_photo`: banned images</li>
-<li>`politician`: politically sensitive people</li>
-<li>`entertainment`: people in the entertainment industry</li>
-<li>`sport`: sportspeople</li>
-<li>`entrepreneur`: businesspeople</li>
-<li>`scholar`: scholars</li>
-<li>`celebrity`: celebrities</li>
-<li>`military`: people in military</li>
+                     * 设置<p>Filter tags for inappropriate information detected in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>violation_photo: violation icon;</li><li>politician: relevant people;</li><li>entertainment: people in the entertainment industry;</li><li>sport: sports celebrity;</li><li>entrepreneur: commercial figure;</li><li>scholar: educational scholars;</li><li>celebrity: celebrity;</li><li>military: relevant people.</li>
+                     * @param _labelSet <p>Filter tags for inappropriate information detected in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>violation_photo: violation icon;</li><li>politician: relevant people;</li><li>entertainment: people in the entertainment industry;</li><li>sport: sports celebrity;</li><li>entrepreneur: commercial figure;</li><li>scholar: educational scholars;</li><li>celebrity: celebrity;</li><li>military: relevant people.</li>
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -129,15 +89,15 @@ namespace TencentCloud
                     bool LabelSetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
-                     * @return BlockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * 获取<p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. Value range: 0–100.</p>
+                     * @return BlockConfidence <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
-                     * @param _blockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * 设置<p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. Value range: 0–100.</p>
+                     * @param _blockConfidence <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. Value range: 0–100.</p>
                      * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
@@ -150,15 +110,15 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
-                     * @return ReviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * 获取<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is deemed necessary. Value range: 0–100.</p>
+                     * @return ReviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is deemed necessary. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
-                     * @param _reviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * 设置<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is deemed necessary. Value range: 0–100.</p>
+                     * @param _reviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is deemed necessary. Value range: 0–100.</p>
                      * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
@@ -173,35 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable recognition of politically sensitive content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * <p>Task switch for image recognition involving inappropriate information. Available values:</p><li>ON: Enable the task of image recognition involving inappropriate information;</li><li>OFF: Disable the task of image recognition involving inappropriate information.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Filter labels for recognition of politically sensitive content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>`violation_photo`: banned images</li>
-<li>`politician`: politically sensitive people</li>
-<li>`entertainment`: people in the entertainment industry</li>
-<li>`sport`: sportspeople</li>
-<li>`entrepreneur`: businesspeople</li>
-<li>`scholar`: scholars</li>
-<li>`celebrity`: celebrities</li>
-<li>`military`: people in military</li>
+                     * <p>Filter tags for inappropriate information detected in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>violation_photo: violation icon;</li><li>politician: relevant people;</li><li>entertainment: people in the entertainment industry;</li><li>sport: sports celebrity;</li><li>entrepreneur: commercial figure;</li><li>scholar: educational scholars;</li><li>celebrity: celebrity;</li><li>military: relevant people.</li>
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**
-                     * Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * <p>Threshold score for determining suspected violations. When the review score reaches or exceeds this threshold, it is considered a suspected violation. Value range: 0–100.</p>
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is deemed necessary. Value range: 0–100.</p>
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

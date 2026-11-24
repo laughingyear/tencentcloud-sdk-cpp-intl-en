@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output for intelligent recognition of politically sensitive content
+                * Involves inappropriate information.
                 */
                 class AiReviewPoliticalTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Confidence score for the detected politically sensitive content. Value range: 0-100
-                     * @return Confidence Confidence score for the detected politically sensitive content. Value range: 0-100
+                     * 获取Score of inappropriate information in the video. Value range: 0-100.
+                     * @return Confidence Score of inappropriate information in the video. Value range: 0-100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence score for the detected politically sensitive content. Value range: 0-100
-                     * @param _confidence Confidence score for the detected politically sensitive content. Value range: 0-100
+                     * 设置Score of inappropriate information in the video. Value range: 0-100.
+                     * @param _confidence Score of inappropriate information in the video. Value range: 0-100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,27 +69,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Processing suggestion for the detected politically sensitive content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion Processing suggestion for the detected politically sensitive content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 获取Result suggestions involving inappropriate information. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @return Suggestion Result suggestions involving inappropriate information. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Processing suggestion for the detected politically sensitive content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion Processing suggestion for the detected politically sensitive content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 设置Result suggestions involving inappropriate information. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @param _suggestion Result suggestions involving inappropriate information. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -102,31 +102,31 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Labels for the detected politically sensitive content. The relationship between the values of this parameter and those of the `LabelSet` parameter in [PoliticalImgReviewTemplateInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) is as follows:
+                     * 获取Result tag for videos involving inappropriate information. Mapping between the LabelSet parameter in the screen image authentication task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) of the audio/video moderation template and the value range of this parameter:
 violation_photo:
-<li>`violation_photo`: banned images</li>
-Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
-<li>`politician`: politically sensitive people</li>
-                     * @return Label Labels for the detected politically sensitive content. The relationship between the values of this parameter and those of the `LabelSet` parameter in [PoliticalImgReviewTemplateInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) is as follows:
+<li>violation_photo: Violation icon.</li>
+Other (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
+<li>politician: relevant people.</li>
+                     * @return Label Result tag for videos involving inappropriate information. Mapping between the LabelSet parameter in the screen image authentication task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) of the audio/video moderation template and the value range of this parameter:
 violation_photo:
-<li>`violation_photo`: banned images</li>
-Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
-<li>`politician`: politically sensitive people</li>
+<li>violation_photo: Violation icon.</li>
+Other (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
+<li>politician: relevant people.</li>
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置Labels for the detected politically sensitive content. The relationship between the values of this parameter and those of the `LabelSet` parameter in [PoliticalImgReviewTemplateInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) is as follows:
+                     * 设置Result tag for videos involving inappropriate information. Mapping between the LabelSet parameter in the screen image authentication task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) of the audio/video moderation template and the value range of this parameter:
 violation_photo:
-<li>`violation_photo`: banned images</li>
-Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
-<li>`politician`: politically sensitive people</li>
-                     * @param _label Labels for the detected politically sensitive content. The relationship between the values of this parameter and those of the `LabelSet` parameter in [PoliticalImgReviewTemplateInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) is as follows:
+<li>violation_photo: Violation icon.</li>
+Other (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
+<li>politician: relevant people.</li>
+                     * @param _label Result tag for videos involving inappropriate information. Mapping between the LabelSet parameter in the screen image authentication task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) of the audio/video moderation template and the value range of this parameter:
 violation_photo:
-<li>`violation_photo`: banned images</li>
-Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
-<li>`politician`: politically sensitive people</li>
+<li>violation_photo: Violation icon.</li>
+Other (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
+<li>politician: relevant people.</li>
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -139,19 +139,19 @@ Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/mili
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取List of video segments that contain detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @return SegmentSet List of video segments that contain detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 获取List of video segments suspected of involving inappropriate information.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @return SegmentSet List of video segments suspected of involving inappropriate information.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     std::vector<MediaContentReviewPoliticalSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of video segments that contain detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @param _segmentSet List of video segments that contain detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 设置List of video segments suspected of involving inappropriate information.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @param _segmentSet List of video segments suspected of involving inappropriate information.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewPoliticalSegmentItem>& _segmentSet);
@@ -164,15 +164,15 @@ Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/mili
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for video segments that contain detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @return SegmentSetFileUrl URL to the file for video segments that contain detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 获取URL of the segment list file that may contain inappropriate information. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file will not be retained permanently. It will be deleted after the SegmentSetFileUrlExpireTime is reached.)
+                     * @return SegmentSetFileUrl URL of the segment list file that may contain inappropriate information. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file will not be retained permanently. It will be deleted after the SegmentSetFileUrlExpireTime is reached.)
                      * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for video segments that contain detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @param _segmentSetFileUrl URL to the file for video segments that contain detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 设置URL of the segment list file that may contain inappropriate information. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file will not be retained permanently. It will be deleted after the SegmentSetFileUrlExpireTime is reached.)
+                     * @param _segmentSetFileUrl URL of the segment list file that may contain inappropriate information. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file will not be retained permanently. It will be deleted after the SegmentSetFileUrlExpireTime is reached.)
                      * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
@@ -185,15 +185,15 @@ Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/mili
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for video segments that contain politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return SegmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the URL of the Segment List File of the video suspected of involving inappropriate information in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return SegmentSetFileUrlExpireTime Expiration time of the URL of the Segment List File of the video suspected of involving inappropriate information in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for video segments that contain politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _segmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the URL of the Segment List File of the video suspected of involving inappropriate information in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _segmentSetFileUrlExpireTime Expiration time of the URL of the Segment List File of the video suspected of involving inappropriate information in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
@@ -208,45 +208,45 @@ Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/mili
                 private:
 
                     /**
-                     * Confidence score for the detected politically sensitive content. Value range: 0-100
+                     * Score of inappropriate information in the video. Value range: 0-100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Processing suggestion for the detected politically sensitive content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * Result suggestions involving inappropriate information. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Labels for the detected politically sensitive content. The relationship between the values of this parameter and those of the `LabelSet` parameter in [PoliticalImgReviewTemplateInfo](https://intl.cloud.tencent.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) is as follows:
+                     * Result tag for videos involving inappropriate information. Mapping between the LabelSet parameter in the screen image authentication task control parameter (https://www.tencentcloud.com/document/api/266/31773?from_cn_redirect=1#PoliticalImgReviewTemplateInfo) of the audio/video moderation template and the value range of this parameter:
 violation_photo:
-<li>`violation_photo`: banned images</li>
-Other values (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
-<li>`politician`: politically sensitive people</li>
+<li>violation_photo: Violation icon.</li>
+Other (politician/entertainment/sport/entrepreneur/scholar/celebrity/military):
+<li>politician: relevant people.</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * List of video segments that contain detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * List of video segments suspected of involving inappropriate information.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      */
                     std::vector<MediaContentReviewPoliticalSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * URL to the file for video segments that contain detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * URL of the segment list file that may contain inappropriate information. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file will not be retained permanently. It will be deleted after the SegmentSetFileUrlExpireTime is reached.)
                      */
                     std::string m_segmentSetFileUrl;
                     bool m_segmentSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for video segments that contain politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the URL of the Segment List File of the video suspected of involving inappropriate information in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;

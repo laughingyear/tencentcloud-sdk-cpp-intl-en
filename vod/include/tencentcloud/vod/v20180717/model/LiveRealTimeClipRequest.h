@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The live stream code.
-                     * @return StreamId The live stream code.
+                     * 获取<p>Push stream live code.</p>
+                     * @return StreamId <p>Push stream live code.</p>
                      * 
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置The live stream code.
-                     * @param _streamId The live stream code.
+                     * 设置<p>Push stream live code.</p>
+                     * @param _streamId <p>Push stream live code.</p>
                      * 
                      */
                     void SetStreamId(const std::string& _streamId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取Start time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return StartTime Start time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取<p>Start time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @return StartTime <p>Start time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置Start time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _startTime Start time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置<p>Start time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @param _startTime <p>Start time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取End time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return EndTime End time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取<p>End time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @return EndTime <p>End time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置End time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _endTime End time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置<p>End time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @param _endTime <p>End time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be set to the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be set to the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be set to the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be set to the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Whether to clip persistently. 0: no, 1: yes. Default: no.
-                     * @return IsPersistence Whether to clip persistently. 0: no, 1: yes. Default: no.
+                     * 获取<p>Whether solidified. 0: non-permanent, 1: solidified. Default non-permanent.</p>
+                     * @return IsPersistence <p>Whether solidified. 0: non-permanent, 1: solidified. Default non-permanent.</p>
                      * 
                      */
                     int64_t GetIsPersistence() const;
 
                     /**
-                     * 设置Whether to clip persistently. 0: no, 1: yes. Default: no.
-                     * @param _isPersistence Whether to clip persistently. 0: no, 1: yes. Default: no.
+                     * 设置<p>Whether solidified. 0: non-permanent, 1: solidified. Default non-permanent.</p>
+                     * @param _isPersistence <p>Whether solidified. 0: non-permanent, 1: solidified. Default non-permanent.</p>
                      * 
                      */
                     void SetIsPersistence(const int64_t& _isPersistence);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool IsPersistenceHasBeenSet() const;
 
                     /**
-                     * 获取Storage expiration time of video generated by persistent clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). `9999-12-31T23:59:59Z` means `never expire`. After the expiration, the media file and its related resources (such as transcoding results and image sprites) will be permanently deleted. This parameter will be valid only when `IsPersistence` is 1. By default, the video will never expire.
-                     * @return ExpireTime Storage expiration time of video generated by persistent clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). `9999-12-31T23:59:59Z` means `never expire`. After the expiration, the media file and its related resources (such as transcoding results and image sprites) will be permanently deleted. This parameter will be valid only when `IsPersistence` is 1. By default, the video will never expire.
+                     * 获取<p>Video storage expiry time after editing solidification. Format reference: <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>. Enter "9999-12-31T23:59:59Z" to indicate the video never expires. After expiry, the media file and its related resources (transcoding results, sprites, etc.) will be permanently deleted. Valid only when IsPersistence is 1. By default, videos solidified through editing never expire.</p>
+                     * @return ExpireTime <p>Video storage expiry time after editing solidification. Format reference: <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>. Enter "9999-12-31T23:59:59Z" to indicate the video never expires. After expiry, the media file and its related resources (transcoding results, sprites, etc.) will be permanently deleted. Valid only when IsPersistence is 1. By default, videos solidified through editing never expire.</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置Storage expiration time of video generated by persistent clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). `9999-12-31T23:59:59Z` means `never expire`. After the expiration, the media file and its related resources (such as transcoding results and image sprites) will be permanently deleted. This parameter will be valid only when `IsPersistence` is 1. By default, the video will never expire.
-                     * @param _expireTime Storage expiration time of video generated by persistent clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). `9999-12-31T23:59:59Z` means `never expire`. After the expiration, the media file and its related resources (such as transcoding results and image sprites) will be permanently deleted. This parameter will be valid only when `IsPersistence` is 1. By default, the video will never expire.
+                     * 设置<p>Video storage expiry time after editing solidification. Format reference: <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>. Enter "9999-12-31T23:59:59Z" to indicate the video never expires. After expiry, the media file and its related resources (transcoding results, sprites, etc.) will be permanently deleted. Valid only when IsPersistence is 1. By default, videos solidified through editing never expire.</p>
+                     * @param _expireTime <p>Video storage expiry time after editing solidification. Format reference: <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>. Enter "9999-12-31T23:59:59Z" to indicate the video never expires. After expiry, the media file and its related resources (transcoding results, sprites, etc.) will be permanently deleted. Valid only when IsPersistence is 1. By default, videos solidified through editing never expire.</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取VOD task flow processing for video generated by persistent clipping. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1). This parameter will be valid only when `IsPersistence` is 1.
-                     * @return Procedure VOD task flow processing for video generated by persistent clipping. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1). This parameter will be valid only when `IsPersistence` is 1.
+                     * 获取<p>Post-editing Solidified Video On-demand Task Flow Processing. For details, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">upload specified task flow</a>. Valid only when IsPersistence is 1.</p>
+                     * @return Procedure <p>Post-editing Solidified Video On-demand Task Flow Processing. For details, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">upload specified task flow</a>. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     std::string GetProcedure() const;
 
                     /**
-                     * 设置VOD task flow processing for video generated by persistent clipping. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1). This parameter will be valid only when `IsPersistence` is 1.
-                     * @param _procedure VOD task flow processing for video generated by persistent clipping. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1). This parameter will be valid only when `IsPersistence` is 1.
+                     * 设置<p>Post-editing Solidified Video On-demand Task Flow Processing. For details, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">upload specified task flow</a>. Valid only when IsPersistence is 1.</p>
+                     * @param _procedure <p>Post-editing Solidified Video On-demand Task Flow Processing. For details, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">upload specified task flow</a>. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     void SetProcedure(const std::string& _procedure);
@@ -191,23 +191,15 @@ namespace TencentCloud
                     bool ProcedureHasBeenSet() const;
 
                     /**
-                     * 获取The ID of the media file's category. You can use the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API to create a category and get the category ID.
-<li>The default value is `0`, which means the "Other" category.</li>
-This parameter is valid only if `IsPersistence` is `1`.
-                     * @return ClassId The ID of the media file's category. You can use the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API to create a category and get the category ID.
-<li>The default value is `0`, which means the "Other" category.</li>
-This parameter is valid only if `IsPersistence` is `1`.
+                     * 获取<p>Category ID, used to categorize and manage media. You can create a category via the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">Create Category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>Valid only when IsPersistence is 1.
+                     * @return ClassId <p>Category ID, used to categorize and manage media. You can create a category via the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">Create Category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>Valid only when IsPersistence is 1.
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置The ID of the media file's category. You can use the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API to create a category and get the category ID.
-<li>The default value is `0`, which means the "Other" category.</li>
-This parameter is valid only if `IsPersistence` is `1`.
-                     * @param _classId The ID of the media file's category. You can use the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API to create a category and get the category ID.
-<li>The default value is `0`, which means the "Other" category.</li>
-This parameter is valid only if `IsPersistence` is `1`.
+                     * 设置<p>Category ID, used to categorize and manage media. You can create a category via the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">Create Category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>Valid only when IsPersistence is 1.
+                     * @param _classId <p>Category ID, used to categorize and manage media. You can create a category via the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">Create Category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>Valid only when IsPersistence is 1.
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -220,15 +212,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context, which is used to pass through user request information. The [NewFileUpload](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 250 characters and is valid only if `IsPersistence` is `1`.
-                     * @return SourceContext The source context, which is used to pass through user request information. The [NewFileUpload](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 250 characters and is valid only if `IsPersistence` is `1`.
+                     * 获取<p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters. Valid only when IsPersistence is 1.</p>
+                     * @return SourceContext <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     std::string GetSourceContext() const;
 
                     /**
-                     * 设置The source context, which is used to pass through user request information. The [NewFileUpload](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 250 characters and is valid only if `IsPersistence` is `1`.
-                     * @param _sourceContext The source context, which is used to pass through user request information. The [NewFileUpload](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 250 characters and is valid only if `IsPersistence` is `1`.
+                     * 设置<p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters. Valid only when IsPersistence is 1.</p>
+                     * @param _sourceContext <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     void SetSourceContext(const std::string& _sourceContext);
@@ -241,15 +233,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool SourceContextHasBeenSet() const;
 
                     /**
-                     * 获取The session context, which is used to pass through user request information. If the `Procedure` parameter is specified, the [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 1,000 characters and is valid only if `IsPersistence` is `1`.
-                     * @return SessionContext The session context, which is used to pass through user request information. If the `Procedure` parameter is specified, the [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 1,000 characters and is valid only if `IsPersistence` is `1`.
+                     * 获取<p>Session context. This is used to pass user request information. When the Procedure parameter is specified, the <a href="https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1">task flow status change callback</a> returns the value of this field. The maximum length is 1000 characters. Valid only when IsPersistence is 1.</p>
+                     * @return SessionContext <p>Session context. This is used to pass user request information. When the Procedure parameter is specified, the <a href="https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1">task flow status change callback</a> returns the value of this field. The maximum length is 1000 characters. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The session context, which is used to pass through user request information. If the `Procedure` parameter is specified, the [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 1,000 characters and is valid only if `IsPersistence` is `1`.
-                     * @param _sessionContext The session context, which is used to pass through user request information. If the `Procedure` parameter is specified, the [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 1,000 characters and is valid only if `IsPersistence` is `1`.
+                     * 设置<p>Session context. This is used to pass user request information. When the Procedure parameter is specified, the <a href="https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1">task flow status change callback</a> returns the value of this field. The maximum length is 1000 characters. Valid only when IsPersistence is 1.</p>
+                     * @param _sessionContext <p>Session context. This is used to pass user request information. When the Procedure parameter is specified, the <a href="https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1">task flow status change callback</a> returns the value of this field. The maximum length is 1000 characters. Valid only when IsPersistence is 1.</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -262,15 +254,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取Whether the metadata of clipped video needs to be returned. 0: no, 1: yes. Default value: no.
-                     * @return MetaDataRequired Whether the metadata of clipped video needs to be returned. 0: no, 1: yes. Default value: no.
+                     * 获取<p>Whether to return edited video metadata. 0: not required, 1: required. By default, does not need.</p>
+                     * @return MetaDataRequired <p>Whether to return edited video metadata. 0: not required, 1: required. By default, does not need.</p>
                      * 
                      */
                     uint64_t GetMetaDataRequired() const;
 
                     /**
-                     * 设置Whether the metadata of clipped video needs to be returned. 0: no, 1: yes. Default value: no.
-                     * @param _metaDataRequired Whether the metadata of clipped video needs to be returned. 0: no, 1: yes. Default value: no.
+                     * 设置<p>Whether to return edited video metadata. 0: not required, 1: required. By default, does not need.</p>
+                     * @param _metaDataRequired <p>Whether to return edited video metadata. 0: not required, 1: required. By default, does not need.</p>
                      * 
                      */
                     void SetMetaDataRequired(const uint64_t& _metaDataRequired);
@@ -283,15 +275,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool MetaDataRequiredHasBeenSet() const;
 
                     /**
-                     * 获取Domain name used for live clipping. Time shifting must be enabled in LVB.
-                     * @return Host Domain name used for live clipping. Time shifting must be enabled in LVB.
+                     * 获取<p>The domain name added in VOD for time shift playback must be <a href="https://www.tencentcloud.com/document/product/266/52220?from_cn_redirect=1#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E">bound to a recording template and enabled for time-shift service</a> in cloud streaming. <strong>If the first call of this interface is after 2021-01-01T00:00:00Z, this field is required.</strong></p>
+                     * @return Host <p>The domain name added in VOD for time shift playback must be <a href="https://www.tencentcloud.com/document/product/266/52220?from_cn_redirect=1#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E">bound to a recording template and enabled for time-shift service</a> in cloud streaming. <strong>If the first call of this interface is after 2021-01-01T00:00:00Z, this field is required.</strong></p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置Domain name used for live clipping. Time shifting must be enabled in LVB.
-                     * @param _host Domain name used for live clipping. Time shifting must be enabled in LVB.
+                     * 设置<p>The domain name added in VOD for time shift playback must be <a href="https://www.tencentcloud.com/document/product/266/52220?from_cn_redirect=1#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E">bound to a recording template and enabled for time-shift service</a> in cloud streaming. <strong>If the first call of this interface is after 2021-01-01T00:00:00Z, this field is required.</strong></p>
+                     * @param _host <p>The domain name added in VOD for time shift playback must be <a href="https://www.tencentcloud.com/document/product/266/52220?from_cn_redirect=1#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E">bound to a recording template and enabled for time-shift service</a> in cloud streaming. <strong>If the first call of this interface is after 2021-01-01T00:00:00Z, this field is required.</strong></p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -304,23 +296,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取The information of the live stream to clip.
-<li>The video clip is cut from the original stream by default.</li>
-<li>If `Type` of `StreamInfo` is set to `Transcoding`, the video clip will be cut from the output stream of the transcoding template specified by `TemplateId`.</li>
-                     * @return StreamInfo The information of the live stream to clip.
-<li>The video clip is cut from the original stream by default.</li>
-<li>If `Type` of `StreamInfo` is set to `Transcoding`, the video clip will be cut from the output stream of the transcoding template specified by `TemplateId`.</li>
+                     * 获取<p>Live stream information for editing:</p><li>Edit the original stream by default.</li><li>If the Type specified in StreamInfo is Transcoding, edit the live streaming transcoding stream corresponding to TemplateId.</li>
+                     * @return StreamInfo <p>Live stream information for editing:</p><li>Edit the original stream by default.</li><li>If the Type specified in StreamInfo is Transcoding, edit the live streaming transcoding stream corresponding to TemplateId.</li>
                      * 
                      */
                     LiveRealTimeClipStreamInfo GetStreamInfo() const;
 
                     /**
-                     * 设置The information of the live stream to clip.
-<li>The video clip is cut from the original stream by default.</li>
-<li>If `Type` of `StreamInfo` is set to `Transcoding`, the video clip will be cut from the output stream of the transcoding template specified by `TemplateId`.</li>
-                     * @param _streamInfo The information of the live stream to clip.
-<li>The video clip is cut from the original stream by default.</li>
-<li>If `Type` of `StreamInfo` is set to `Transcoding`, the video clip will be cut from the output stream of the transcoding template specified by `TemplateId`.</li>
+                     * 设置<p>Live stream information for editing:</p><li>Edit the original stream by default.</li><li>If the Type specified in StreamInfo is Transcoding, edit the live streaming transcoding stream corresponding to TemplateId.</li>
+                     * @param _streamInfo <p>Live stream information for editing:</p><li>Edit the original stream by default.</li><li>If the Type specified in StreamInfo is Transcoding, edit the live streaming transcoding stream corresponding to TemplateId.</li>
                      * 
                      */
                     void SetStreamInfo(const LiveRealTimeClipStreamInfo& _streamInfo);
@@ -333,15 +317,15 @@ This parameter is valid only if `IsPersistence` is `1`.
                     bool StreamInfoHasBeenSet() const;
 
                     /**
-                     * 获取Reserved field. Do not enter a value for it.
-                     * @return ExtInfo Reserved field. Do not enter a value for it.
+                     * 获取<p>System reserved field. Do not fill in.</p>
+                     * @return ExtInfo <p>System reserved field. Do not fill in.</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置Reserved field. Do not enter a value for it.
-                     * @param _extInfo Reserved field. Do not enter a value for it.
+                     * 设置<p>System reserved field. Do not fill in.</p>
+                     * @param _extInfo <p>System reserved field. Do not fill in.</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -356,89 +340,85 @@ This parameter is valid only if `IsPersistence` is `1`.
                 private:
 
                     /**
-                     * The live stream code.
+                     * <p>Push stream live code.</p>
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * Start time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * <p>Start time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * End time of stream clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * <p>End time of stream clipping. For the format, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be set to the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Whether to clip persistently. 0: no, 1: yes. Default: no.
+                     * <p>Whether solidified. 0: non-permanent, 1: solidified. Default non-permanent.</p>
                      */
                     int64_t m_isPersistence;
                     bool m_isPersistenceHasBeenSet;
 
                     /**
-                     * Storage expiration time of video generated by persistent clipping in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). `9999-12-31T23:59:59Z` means `never expire`. After the expiration, the media file and its related resources (such as transcoding results and image sprites) will be permanently deleted. This parameter will be valid only when `IsPersistence` is 1. By default, the video will never expire.
+                     * <p>Video storage expiry time after editing solidification. Format reference: <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>. Enter "9999-12-31T23:59:59Z" to indicate the video never expires. After expiry, the media file and its related resources (transcoding results, sprites, etc.) will be permanently deleted. Valid only when IsPersistence is 1. By default, videos solidified through editing never expire.</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * VOD task flow processing for video generated by persistent clipping. For more information, please see [Specifying Task Flow After Upload](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1). This parameter will be valid only when `IsPersistence` is 1.
+                     * <p>Post-editing Solidified Video On-demand Task Flow Processing. For details, see <a href="https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1">upload specified task flow</a>. Valid only when IsPersistence is 1.</p>
                      */
                     std::string m_procedure;
                     bool m_procedureHasBeenSet;
 
                     /**
-                     * The ID of the media file's category. You can use the [CreateClass](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API to create a category and get the category ID.
-<li>The default value is `0`, which means the "Other" category.</li>
-This parameter is valid only if `IsPersistence` is `1`.
+                     * <p>Category ID, used to categorize and manage media. You can create a category via the <a href="https://www.tencentcloud.com/document/product/266/31772?from_cn_redirect=1">Create Category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>Valid only when IsPersistence is 1.
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * The source context, which is used to pass through user request information. The [NewFileUpload](https://intl.cloud.tencent.com/document/product/266/7830?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 250 characters and is valid only if `IsPersistence` is `1`.
+                     * <p>Source context. This is used to pass user request information. The <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">upload completion callback</a> returns the value of this field. The maximum length is 250 characters. Valid only when IsPersistence is 1.</p>
                      */
                     std::string m_sourceContext;
                     bool m_sourceContextHasBeenSet;
 
                     /**
-                     * The session context, which is used to pass through user request information. If the `Procedure` parameter is specified, the [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1) callback will return the value of this parameter. It can contain up to 1,000 characters and is valid only if `IsPersistence` is `1`.
+                     * <p>Session context. This is used to pass user request information. When the Procedure parameter is specified, the <a href="https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1">task flow status change callback</a> returns the value of this field. The maximum length is 1000 characters. Valid only when IsPersistence is 1.</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * Whether the metadata of clipped video needs to be returned. 0: no, 1: yes. Default value: no.
+                     * <p>Whether to return edited video metadata. 0: not required, 1: required. By default, does not need.</p>
                      */
                     uint64_t m_metaDataRequired;
                     bool m_metaDataRequiredHasBeenSet;
 
                     /**
-                     * Domain name used for live clipping. Time shifting must be enabled in LVB.
+                     * <p>The domain name added in VOD for time shift playback must be <a href="https://www.tencentcloud.com/document/product/266/52220?from_cn_redirect=1#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E">bound to a recording template and enabled for time-shift service</a> in cloud streaming. <strong>If the first call of this interface is after 2021-01-01T00:00:00Z, this field is required.</strong></p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * The information of the live stream to clip.
-<li>The video clip is cut from the original stream by default.</li>
-<li>If `Type` of `StreamInfo` is set to `Transcoding`, the video clip will be cut from the output stream of the transcoding template specified by `TemplateId`.</li>
+                     * <p>Live stream information for editing:</p><li>Edit the original stream by default.</li><li>If the Type specified in StreamInfo is Transcoding, edit the live streaming transcoding stream corresponding to TemplateId.</li>
                      */
                     LiveRealTimeClipStreamInfo m_streamInfo;
                     bool m_streamInfoHasBeenSet;
 
                     /**
-                     * Reserved field. Do not enter a value for it.
+                     * <p>System reserved field. Do not fill in.</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

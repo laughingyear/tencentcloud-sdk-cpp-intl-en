@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent cover generating
+                * Intelligent cover result information.
                 */
                 class AiAnalysisTaskCoverOutput : public AbstractModel
                 {
@@ -48,19 +48,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of intelligently generated thumbnails
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `CoverSetFileUrl`.
-                     * @return CoverSet List of intelligently generated thumbnails
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `CoverSetFileUrl`.
+                     * 获取List of smart covers.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to CoverSetFileUrl.
+                     * @return CoverSet List of smart covers.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to CoverSetFileUrl.
                      * 
                      */
                     std::vector<MediaAiAnalysisCoverItem> GetCoverSet() const;
 
                     /**
-                     * 设置List of intelligently generated thumbnails
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `CoverSetFileUrl`.
-                     * @param _coverSet List of intelligently generated thumbnails
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `CoverSetFileUrl`.
+                     * 设置List of smart covers.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to CoverSetFileUrl.
+                     * @param _coverSet List of smart covers.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to CoverSetFileUrl.
                      * 
                      */
                     void SetCoverSet(const std::vector<MediaAiAnalysisCoverItem>& _coverSet);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool CoverSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for intelligently generated thumbnails. The file is in JSON format and has the same data structure as `CoverSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `CoverSetFileUrlExpireTime`.
-                     * @return CoverSetFileUrl URL to the file for intelligently generated thumbnails. The file is in JSON format and has the same data structure as `CoverSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `CoverSetFileUrlExpireTime`.
+                     * 获取URL of the intelligent cover list file. The content of the file is in JSON format, and the data structure is consistent with the CoverSet fields. (The file is not retained permanently. It will be deleted after the CoverSetFileUrlExpireTime time point is reached.)
+                     * @return CoverSetFileUrl URL of the intelligent cover list file. The content of the file is in JSON format, and the data structure is consistent with the CoverSet fields. (The file is not retained permanently. It will be deleted after the CoverSetFileUrlExpireTime time point is reached.)
                      * 
                      */
                     std::string GetCoverSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for intelligently generated thumbnails. The file is in JSON format and has the same data structure as `CoverSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `CoverSetFileUrlExpireTime`.
-                     * @param _coverSetFileUrl URL to the file for intelligently generated thumbnails. The file is in JSON format and has the same data structure as `CoverSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `CoverSetFileUrlExpireTime`.
+                     * 设置URL of the intelligent cover list file. The content of the file is in JSON format, and the data structure is consistent with the CoverSet fields. (The file is not retained permanently. It will be deleted after the CoverSetFileUrlExpireTime time point is reached.)
+                     * @param _coverSetFileUrl URL of the intelligent cover list file. The content of the file is in JSON format, and the data structure is consistent with the CoverSet fields. (The file is not retained permanently. It will be deleted after the CoverSetFileUrlExpireTime time point is reached.)
                      * 
                      */
                     void SetCoverSetFileUrl(const std::string& _coverSetFileUrl);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool CoverSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for intelligently generated thumbnails, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return CoverSetFileUrlExpireTime Expiration time of the URL to the file for intelligently generated thumbnails, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the intelligent cover list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CoverSetFileUrlExpireTime Expiration time of the intelligent cover list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCoverSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for intelligently generated thumbnails, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _coverSetFileUrlExpireTime Expiration time of the URL to the file for intelligently generated thumbnails, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the intelligent cover list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _coverSetFileUrlExpireTime Expiration time of the intelligent cover list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCoverSetFileUrlExpireTime(const std::string& _coverSetFileUrlExpireTime);
@@ -117,20 +117,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of intelligently generated thumbnails
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `CoverSetFileUrl`.
+                     * List of smart covers.
+<font color=red>Note</font>: This list only shows the first 100 elements. To obtain the complete result, get it from the file corresponding to CoverSetFileUrl.
                      */
                     std::vector<MediaAiAnalysisCoverItem> m_coverSet;
                     bool m_coverSetHasBeenSet;
 
                     /**
-                     * URL to the file for intelligently generated thumbnails. The file is in JSON format and has the same data structure as `CoverSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `CoverSetFileUrlExpireTime`.
+                     * URL of the intelligent cover list file. The content of the file is in JSON format, and the data structure is consistent with the CoverSet fields. (The file is not retained permanently. It will be deleted after the CoverSetFileUrlExpireTime time point is reached.)
                      */
                     std::string m_coverSetFileUrl;
                     bool m_coverSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for intelligently generated thumbnails, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the intelligent cover list file URL, using the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_coverSetFileUrlExpireTime;
                     bool m_coverSetFileUrlExpireTimeHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of output audio stream
+                * Output audio stream information
                 */
                 class OutputAudioStream : public AbstractModel
                 {
@@ -47,10 +47,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Audio stream encoder. Valid values:
+                     * 获取Encoding format for audio streams. Optional values:
 <li>libfdk_aac: suitable for mp4 files.</li>
 Default value: libfdk_aac.
-                     * @return Codec Audio stream encoder. Valid values:
+                     * @return Codec Encoding format for audio streams. Optional values:
 <li>libfdk_aac: suitable for mp4 files.</li>
 Default value: libfdk_aac.
                      * 
@@ -58,10 +58,10 @@ Default value: libfdk_aac.
                     std::string GetCodec() const;
 
                     /**
-                     * 设置Audio stream encoder. Valid values:
+                     * 设置Encoding format for audio streams. Optional values:
 <li>libfdk_aac: suitable for mp4 files.</li>
 Default value: libfdk_aac.
-                     * @param _codec Audio stream encoder. Valid values:
+                     * @param _codec Encoding format for audio streams. Optional values:
 <li>libfdk_aac: suitable for mp4 files.</li>
 Default value: libfdk_aac.
                      * 
@@ -76,39 +76,39 @@ Default value: libfdk_aac.
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取Audio stream sample rate. Valid values:
-<li>16,000</li>
-<li>32,000</li>
-<li>44,100</li>
-<li>48,000</li>
-In Hz.
-Default value: 16,000.
-                     * @return SampleRate Audio stream sample rate. Valid values:
-<li>16,000</li>
-<li>32,000</li>
-<li>44,100</li>
-<li>48,000</li>
-In Hz.
-Default value: 16,000.
+                     * 获取Sampling rate of the audio stream. Available values:
+<li>16000</li>
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
+Unit: Hz.
+Default value: 16000.
+                     * @return SampleRate Sampling rate of the audio stream. Available values:
+<li>16000</li>
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
+Unit: Hz.
+Default value: 16000.
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置Audio stream sample rate. Valid values:
-<li>16,000</li>
-<li>32,000</li>
-<li>44,100</li>
-<li>48,000</li>
-In Hz.
-Default value: 16,000.
-                     * @param _sampleRate Audio stream sample rate. Valid values:
-<li>16,000</li>
-<li>32,000</li>
-<li>44,100</li>
-<li>48,000</li>
-In Hz.
-Default value: 16,000.
+                     * 设置Sampling rate of the audio stream. Available values:
+<li>16000</li>
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
+Unit: Hz.
+Default value: 16000.
+                     * @param _sampleRate Sampling rate of the audio stream. Available values:
+<li>16000</li>
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
+Unit: Hz.
+Default value: 16000.
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -121,26 +121,26 @@ Default value: 16,000.
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取Number of sound channels. Valid values:
+                     * 获取Number of audio channels. Available values:
 <li>1: mono.</li>
-<li>2: dual</li>
+<li>2: stereo</li>
 Default value: 2.
-                     * @return AudioChannel Number of sound channels. Valid values:
+                     * @return AudioChannel Number of audio channels. Available values:
 <li>1: mono.</li>
-<li>2: dual</li>
+<li>2: stereo</li>
 Default value: 2.
                      * 
                      */
                     int64_t GetAudioChannel() const;
 
                     /**
-                     * 设置Number of sound channels. Valid values:
+                     * 设置Number of audio channels. Available values:
 <li>1: mono.</li>
-<li>2: dual</li>
+<li>2: stereo</li>
 Default value: 2.
-                     * @param _audioChannel Number of sound channels. Valid values:
+                     * @param _audioChannel Number of audio channels. Available values:
 <li>1: mono.</li>
-<li>2: dual</li>
+<li>2: stereo</li>
 Default value: 2.
                      * 
                      */
@@ -154,19 +154,19 @@ Default value: 2.
                     bool AudioChannelHasBeenSet() const;
 
                     /**
-                     * 获取The bit rate of the audio stream, value range: 0 and [26, 256], unit: kbps. 
-When the value is 0, the audio bitrate will be automatically set.
-                     * @return Bitrate The bit rate of the audio stream, value range: 0 and [26, 256], unit: kbps. 
-When the value is 0, the audio bitrate will be automatically set.
+                     * 获取Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, the audio bitrate is set automatically.
+                     * @return Bitrate Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, the audio bitrate is set automatically.
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置The bit rate of the audio stream, value range: 0 and [26, 256], unit: kbps. 
-When the value is 0, the audio bitrate will be automatically set.
-                     * @param _bitrate The bit rate of the audio stream, value range: 0 and [26, 256], unit: kbps. 
-When the value is 0, the audio bitrate will be automatically set.
+                     * 设置Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, the audio bitrate is set automatically.
+                     * @param _bitrate Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, the audio bitrate is set automatically.
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -181,7 +181,7 @@ When the value is 0, the audio bitrate will be automatically set.
                 private:
 
                     /**
-                     * Audio stream encoder. Valid values:
+                     * Encoding format for audio streams. Optional values:
 <li>libfdk_aac: suitable for mp4 files.</li>
 Default value: libfdk_aac.
                      */
@@ -189,29 +189,29 @@ Default value: libfdk_aac.
                     bool m_codecHasBeenSet;
 
                     /**
-                     * Audio stream sample rate. Valid values:
-<li>16,000</li>
-<li>32,000</li>
-<li>44,100</li>
-<li>48,000</li>
-In Hz.
-Default value: 16,000.
+                     * Sampling rate of the audio stream. Available values:
+<li>16000</li>
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
+Unit: Hz.
+Default value: 16000.
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * Number of sound channels. Valid values:
+                     * Number of audio channels. Available values:
 <li>1: mono.</li>
-<li>2: dual</li>
+<li>2: stereo</li>
 Default value: 2.
                      */
                     int64_t m_audioChannel;
                     bool m_audioChannelHasBeenSet;
 
                     /**
-                     * The bit rate of the audio stream, value range: 0 and [26, 256], unit: kbps. 
-When the value is 0, the audio bitrate will be automatically set.
+                     * Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, the audio bitrate is set automatically.
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;

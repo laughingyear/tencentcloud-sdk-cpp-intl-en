@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool MsgTTLHasBeenSet() const;
 
                     /**
-                     * 获取Remarks (up to 128 characters).
-                     * @return Remark Remarks (up to 128 characters).
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置Remarks (up to 128 characters).
-                     * @param _remark Remarks (up to 128 characters).
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
-                    /**
                      * 获取Cluster ID
                      * @return ClusterId Cluster ID
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取Remarks (up to 128 characters).
+                     * @return Remark Remarks (up to 128 characters).
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置Remarks (up to 128 characters).
+                     * @param _remark Remarks (up to 128 characters).
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取Message retention policy
@@ -169,6 +169,48 @@ namespace TencentCloud
                      */
                     bool AutoSubscriptionCreationHasBeenSet() const;
 
+                    /**
+                     * 获取Offline subscription automatic expiration cleanup time
+                     * @return SubscriptionExpirationTime Offline subscription automatic expiration cleanup time
+                     * 
+                     */
+                    uint64_t GetSubscriptionExpirationTime() const;
+
+                    /**
+                     * 设置Offline subscription automatic expiration cleanup time
+                     * @param _subscriptionExpirationTime Offline subscription automatic expiration cleanup time
+                     * 
+                     */
+                    void SetSubscriptionExpirationTime(const uint64_t& _subscriptionExpirationTime);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTime 是否已赋值
+                     * @return SubscriptionExpirationTime 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Offline subscription automatic expiration cleanup time switch
+                     * @return SubscriptionExpirationTimeEnable Offline subscription automatic expiration cleanup time switch
+                     * 
+                     */
+                    bool GetSubscriptionExpirationTimeEnable() const;
+
+                    /**
+                     * 设置Offline subscription automatic expiration cleanup time switch
+                     * @param _subscriptionExpirationTimeEnable Offline subscription automatic expiration cleanup time switch
+                     * 
+                     */
+                    void SetSubscriptionExpirationTimeEnable(const bool& _subscriptionExpirationTimeEnable);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTimeEnable 是否已赋值
+                     * @return SubscriptionExpirationTimeEnable 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,16 +226,16 @@ namespace TencentCloud
                     bool m_msgTTLHasBeenSet;
 
                     /**
-                     * Remarks (up to 128 characters).
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
                      * Cluster ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * Remarks (up to 128 characters).
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * Message retention policy
@@ -206,6 +248,18 @@ namespace TencentCloud
                      */
                     bool m_autoSubscriptionCreation;
                     bool m_autoSubscriptionCreationHasBeenSet;
+
+                    /**
+                     * Offline subscription automatic expiration cleanup time
+                     */
+                    uint64_t m_subscriptionExpirationTime;
+                    bool m_subscriptionExpirationTimeHasBeenSet;
+
+                    /**
+                     * Offline subscription automatic expiration cleanup time switch
+                     */
+                    bool m_subscriptionExpirationTimeEnable;
+                    bool m_subscriptionExpirationTimeEnableHasBeenSet;
 
                 };
             }

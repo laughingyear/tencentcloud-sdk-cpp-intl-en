@@ -50,9 +50,11 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
     m_launchTemplateTagSpecificationHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_templateDataModifyActionHasBeenSet(false)
+    m_templateDataModifyActionHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -312,6 +314,14 @@ string CreateLaunchTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
+    }
+
     if (m_launchTemplateTagSpecificationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +352,21 @@ string CreateLaunchTemplateRequest::ToJsonString() const
         string key = "TemplateDataModifyAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateDataModifyAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -784,6 +809,22 @@ bool CreateLaunchTemplateRequest::DisableApiTerminationHasBeenSet() const
     return m_disableApiTerminationHasBeenSet;
 }
 
+bool CreateLaunchTemplateRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void CreateLaunchTemplateRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
+}
+
 vector<TagSpecification> CreateLaunchTemplateRequest::GetLaunchTemplateTagSpecification() const
 {
     return m_launchTemplateTagSpecification;
@@ -830,6 +871,22 @@ void CreateLaunchTemplateRequest::SetTemplateDataModifyAction(const string& _tem
 bool CreateLaunchTemplateRequest::TemplateDataModifyActionHasBeenSet() const
 {
     return m_templateDataModifyActionHasBeenSet;
+}
+
+vector<NetworkInterfaces> CreateLaunchTemplateRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void CreateLaunchTemplateRequest::SetNetworkInterfaces(const vector<NetworkInterfaces>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameters for ASR-based recognition of banned content
+                * Input parameter type for prohibited information recognition in Asr text in audio/video moderation
                 */
                 class AiReviewProhibitedAsrTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prohibited information detection template ID.
-                     * @return Definition Prohibited information detection template ID.
+                     * 获取Prohibited information recognition template ID.
+                     * @return Definition Prohibited information recognition template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Prohibited information detection template ID.
-                     * @param _definition Prohibited information detection template ID.
+                     * 设置Prohibited information recognition template ID.
+                     * @param _definition Prohibited information recognition template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prohibited information detection template ID.
+                     * Prohibited information recognition template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

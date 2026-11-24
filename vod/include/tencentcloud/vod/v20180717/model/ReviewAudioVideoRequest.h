@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The media file ID, which is assigned after upload and uniquely identifies a file in VOD. You can view the ID of a file in the [NewFileUpload](https://www.tencentcloud.com/document/product/266/33950) callback or in the [VOD console](https://console.tencentcloud.com/vod/media).
-                     * @return FileId The media file ID, which is assigned after upload and uniquely identifies a file in VOD. You can view the ID of a file in the [NewFileUpload](https://www.tencentcloud.com/document/product/266/33950) callback or in the [VOD console](https://console.tencentcloud.com/vod/media).
+                     * 获取Media file ID, the globally unique identifier of the file in VOD, assigned by the VOD backend after a successful upload. You can obtain this field in the video upload completion event notification (https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1) or the VOD console (https://console.cloud.tencent.com/vod/media).
+                     * @return FileId Media file ID, the globally unique identifier of the file in VOD, assigned by the VOD backend after a successful upload. You can obtain this field in the video upload completion event notification (https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1) or the VOD console (https://console.cloud.tencent.com/vod/media).
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置The media file ID, which is assigned after upload and uniquely identifies a file in VOD. You can view the ID of a file in the [NewFileUpload](https://www.tencentcloud.com/document/product/266/33950) callback or in the [VOD console](https://console.tencentcloud.com/vod/media).
-                     * @param _fileId The media file ID, which is assigned after upload and uniquely identifies a file in VOD. You can view the ID of a file in the [NewFileUpload](https://www.tencentcloud.com/document/product/266/33950) callback or in the [VOD console](https://console.tencentcloud.com/vod/media).
+                     * 设置Media file ID, the globally unique identifier of the file in VOD, assigned by the VOD backend after a successful upload. You can obtain this field in the video upload completion event notification (https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1) or the VOD console (https://console.cloud.tencent.com/vod/media).
+                     * @param _fileId Media file ID, the globally unique identifier of the file in VOD, assigned by the VOD backend after a successful upload. You can obtain this field in the video upload completion event notification (https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1) or the VOD console (https://console.cloud.tencent.com/vod/media).
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -64,15 +64,44 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取Media storage path.
+Only sub-apps in [FileID + Path mode](https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1) can initiate tasks through MediaStoragePath.
+Either FileId or MediaStoragePath must be provided.
+                     * @return MediaStoragePath Media storage path.
+Only sub-apps in [FileID + Path mode](https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1) can initiate tasks through MediaStoragePath.
+Either FileId or MediaStoragePath must be provided.
+                     * 
+                     */
+                    std::string GetMediaStoragePath() const;
+
+                    /**
+                     * 设置Media storage path.
+Only sub-apps in [FileID + Path mode](https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1) can initiate tasks through MediaStoragePath.
+Either FileId or MediaStoragePath must be provided.
+                     * @param _mediaStoragePath Media storage path.
+Only sub-apps in [FileID + Path mode](https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1) can initiate tasks through MediaStoragePath.
+Either FileId or MediaStoragePath must be provided.
+                     * 
+                     */
+                    void SetMediaStoragePath(const std::string& _mediaStoragePath);
+
+                    /**
+                     * 判断参数 MediaStoragePath 是否已赋值
+                     * @return MediaStoragePath 是否已赋值
+                     * 
+                     */
+                    bool MediaStoragePathHasBeenSet() const;
+
+                    /**
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services from December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services from December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services from December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services from December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -85,27 +114,27 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
-                     * @return ReviewContents The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * 获取Content to review. Optional values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media will be reviewed by default.
+                     * @return ReviewContents Content to review. Optional values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media will be reviewed by default.
                      * 
                      */
                     std::vector<std::string> GetReviewContents() const;
 
                     /**
-                     * 设置The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
-                     * @param _reviewContents The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * 设置Content to review. Optional values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media will be reviewed by default.
+                     * @param _reviewContents Content to review. Optional values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media will be reviewed by default.
                      * 
                      */
                     void SetReviewContents(const std::vector<std::string>& _reviewContents);
@@ -118,15 +147,19 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                     bool ReviewContentsHasBeenSet() const;
 
                     /**
-                     * 获取The moderation template ID. Valid values: <li>10 (default): The preset template, whose violation labels are `Porn` and `Terror`.</li>
-                     * @return Definition The moderation template ID. Valid values: <li>10 (default): The preset template, whose violation labels are `Porn` and `Terror`.</li>
+                     * 获取Content Review Template ID. Default value: 10. Value range:
+<li>10: [Preset template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF.5B.5D(id.3Averify)), supports detecting violation labels including Porn, Terror, Polity, and Moan.</li>
+                     * @return Definition Content Review Template ID. Default value: 10. Value range:
+<li>10: [Preset template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF.5B.5D(id.3Averify)), supports detecting violation labels including Porn, Terror, Polity, and Moan.</li>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置The moderation template ID. Valid values: <li>10 (default): The preset template, whose violation labels are `Porn` and `Terror`.</li>
-                     * @param _definition The moderation template ID. Valid values: <li>10 (default): The preset template, whose violation labels are `Porn` and `Terror`.</li>
+                     * 设置Content Review Template ID. Default value: 10. Value range:
+<li>10: [Preset template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF.5B.5D(id.3Averify)), supports detecting violation labels including Porn, Terror, Polity, and Moan.</li>
+                     * @param _definition Content Review Template ID. Default value: 10. Value range:
+<li>10: [Preset template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF.5B.5D(id.3Averify)), supports detecting violation labels including Porn, Terror, Polity, and Moan.</li>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -139,15 +172,15 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The priority of a task flow. The higher the value, the higher the priority. Value range: [-10, 10]. If this parameter is left empty, 0 will be used.
-                     * @return TasksPriority The priority of a task flow. The higher the value, the higher the priority. Value range: [-10, 10]. If this parameter is left empty, 0 will be used.
+                     * 获取Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If left blank, the default value is 0.
+                     * @return TasksPriority Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If left blank, the default value is 0.
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置The priority of a task flow. The higher the value, the higher the priority. Value range: [-10, 10]. If this parameter is left empty, 0 will be used.
-                     * @param _tasksPriority The priority of a task flow. The higher the value, the higher the priority. Value range: [-10, 10]. If this parameter is left empty, 0 will be used.
+                     * 设置Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If left blank, the default value is 0.
+                     * @param _tasksPriority Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If left blank, the default value is 0.
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -160,15 +193,15 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取The source context, which is used to pass through user request information. The `ReviewAudioVideoComplete` callback will return the value of this parameter. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context, which is used to pass through user request information. The `ReviewAudioVideoComplete` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * 获取Source context, used to pass through user request information. The value of this field will be returned in the audio/video moderation completed callback. Maximum length: 1000 characters.
+                     * @return SessionContext Source context, used to pass through user request information. The value of this field will be returned in the audio/video moderation completed callback. Maximum length: 1000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context, which is used to pass through user request information. The `ReviewAudioVideoComplete` callback will return the value of this parameter. It can contain up to 1,000 characters.
-                     * @param _sessionContext The source context, which is used to pass through user request information. The `ReviewAudioVideoComplete` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * 设置Source context, used to pass through user request information. The value of this field will be returned in the audio/video moderation completed callback. Maximum length: 1000 characters.
+                     * @param _sessionContext Source context, used to pass through user request information. The value of this field will be returned in the audio/video moderation completed callback. Maximum length: 1000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -181,15 +214,15 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取The session ID, which is used to identify duplicate requests. If there was a request with the same session ID in the last three days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
-                     * @return SessionId The session ID, which is used to identify duplicate requests. If there was a request with the same session ID in the last three days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past 3 days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past 3 days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置The session ID, which is used to identify duplicate requests. If there was a request with the same session ID in the last three days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
-                     * @param _sessionId The session ID, which is used to identify duplicate requests. If there was a request with the same session ID in the last three days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past 3 days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past 3 days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -202,15 +235,15 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取A reserved parameter.
-                     * @return ExtInfo A reserved parameter.
+                     * 获取Reserved field, used for special purposes.
+                     * @return ExtInfo Reserved field, used for special purposes.
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置A reserved parameter.
-                     * @param _extInfo A reserved parameter.
+                     * 设置Reserved field, used for special purposes.
+                     * @param _extInfo Reserved field, used for special purposes.
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -225,52 +258,61 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                 private:
 
                     /**
-                     * The media file ID, which is assigned after upload and uniquely identifies a file in VOD. You can view the ID of a file in the [NewFileUpload](https://www.tencentcloud.com/document/product/266/33950) callback or in the [VOD console](https://console.tencentcloud.com/vod/media).
+                     * Media file ID, the globally unique identifier of the file in VOD, assigned by the VOD backend after a successful upload. You can obtain this field in the video upload completion event notification (https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1) or the VOD console (https://console.cloud.tencent.com/vod/media).
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * Media storage path.
+Only sub-apps in [FileID + Path mode](https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1) can initiate tasks through MediaStoragePath.
+Either FileId or MediaStoragePath must be provided.
+                     */
+                    std::string m_mediaStoragePath;
+                    bool m_mediaStoragePathHasBeenSet;
+
+                    /**
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services from December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * Content to review. Optional values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media will be reviewed by default.
                      */
                     std::vector<std::string> m_reviewContents;
                     bool m_reviewContentsHasBeenSet;
 
                     /**
-                     * The moderation template ID. Valid values: <li>10 (default): The preset template, whose violation labels are `Porn` and `Terror`.</li>
+                     * Content Review Template ID. Default value: 10. Value range:
+<li>10: [Preset template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF.5B.5D(id.3Averify)), supports detecting violation labels including Porn, Terror, Polity, and Moan.</li>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The priority of a task flow. The higher the value, the higher the priority. Value range: [-10, 10]. If this parameter is left empty, 0 will be used.
+                     * Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If left blank, the default value is 0.
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * The source context, which is used to pass through user request information. The `ReviewAudioVideoComplete` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * Source context, used to pass through user request information. The value of this field will be returned in the audio/video moderation completed callback. Maximum length: 1000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * The session ID, which is used to identify duplicate requests. If there was a request with the same session ID in the last three days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past 3 days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * A reserved parameter.
+                     * Reserved field, used for special purposes.
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

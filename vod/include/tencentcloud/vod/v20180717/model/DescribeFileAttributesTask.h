@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of a task to get file attributes.
+                * File attribute acquisition task information
                 */
                 class DescribeFileAttributesTask : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task ID.
-                     * @return TaskId The task ID.
+                     * 获取Task ID.
+                     * @return TaskId Task ID.
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置The task ID.
-                     * @param _taskId The task ID.
+                     * 设置Task ID.
+                     * @param _taskId Task ID.
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @return Status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @param _status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -90,27 +90,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取The error code. `0` indicates the task is successful. Other values indicate that the task failed.
-<li>`40000`: Invalid input parameter.</li>
-<li>`60000`: Source file error (e.g., video data is corrupted).</li>
-<li>`70000`: Internal server error. Please try again.</li>
-                     * @return ErrCode The error code. `0` indicates the task is successful. Other values indicate that the task failed.
-<li>`40000`: Invalid input parameter.</li>
-<li>`60000`: Source file error (e.g., video data is corrupted).</li>
-<li>`70000`: Internal server error. Please try again.</li>
+                     * 获取Error code. 0 indicates success. Additional values indicate failure:
+<li>40000: Invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @return ErrCode Error code. 0 indicates success. Additional values indicate failure:
+<li>40000: Invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置The error code. `0` indicates the task is successful. Other values indicate that the task failed.
-<li>`40000`: Invalid input parameter.</li>
-<li>`60000`: Source file error (e.g., video data is corrupted).</li>
-<li>`70000`: Internal server error. Please try again.</li>
-                     * @param _errCode The error code. `0` indicates the task is successful. Other values indicate that the task failed.
-<li>`40000`: Invalid input parameter.</li>
-<li>`60000`: Source file error (e.g., video data is corrupted).</li>
-<li>`70000`: Internal server error. Please try again.</li>
+                     * 设置Error code. 0 indicates success. Additional values indicate failure:
+<li>40000: Invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @param _errCode Error code. 0 indicates success. Additional values indicate failure:
+<li>40000: Invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
-                     * @return ErrCodeExt The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
-                     * @param _errCodeExt The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -144,15 +144,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取The error message.
-                     * @return Message The error message.
+                     * 获取Error message.
+                     * @return Message Error message.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置The error message.
-                     * @param _message The error message.
+                     * 设置Error message.
+                     * @param _message Error message.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取The task progress. Value range: 0-100.
-                     * @return Progress The task progress. Value range: 0-100.
+                     * 获取Task progress. Value range: [0-100].
+                     * @return Progress Task progress. Value range: [0-100].
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置The task progress. Value range: 0-100.
-                     * @param _progress The task progress. Value range: 0-100.
+                     * 设置Task progress. Value range: [0-100].
+                     * @param _progress Task progress. Value range: [0-100].
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取The file ID
-                     * @return FileId The file ID
+                     * 获取Media file ID.
+                     * @return FileId Media file ID.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置The file ID
-                     * @param _fileId The file ID
+                     * 设置Media file ID.
+                     * @param _fileId Media file ID.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -207,19 +207,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取The output of the task to get file attributes.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Output The output of the task to get file attributes.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Output of a media file attribute retrieval task.
+                     * @return Output Output of a media file attribute retrieval task.
                      * 
                      */
                     DescribeFileAttributesTaskOutput GetOutput() const;
 
                     /**
-                     * 设置The output of the task to get file attributes.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _output The output of the task to get file attributes.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Output of a media file attribute retrieval task.
+                     * @param _output Output of a media file attribute retrieval task.
                      * 
                      */
                     void SetOutput(const DescribeFileAttributesTaskOutput& _output);
@@ -232,15 +228,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The session ID, which is used for de-duplication. If there was a request with the same session ID in the last seven days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
-                     * @return SessionId The session ID, which is used for de-duplication. If there was a request with the same session ID in the last seven days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置The session ID, which is used for de-duplication. If there was a request with the same session ID in the last seven days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
-                     * @param _sessionId The session ID, which is used for de-duplication. If there was a request with the same session ID in the last seven days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -253,15 +249,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context, which is used to pass through user request information. The `ProcedureStateChanged` callback will return the value of this parameter. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context, which is used to pass through user request information. The `ProcedureStateChanged` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context, which is used to pass through user request information. The `ProcedureStateChanged` callback will return the value of this parameter. It can contain up to 1,000 characters.
-                     * @param _sessionContext The source context, which is used to pass through user request information. The `ProcedureStateChanged` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -276,65 +272,64 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The task ID.
+                     * Task ID.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * The error code. `0` indicates the task is successful. Other values indicate that the task failed.
-<li>`40000`: Invalid input parameter.</li>
-<li>`60000`: Source file error (e.g., video data is corrupted).</li>
-<li>`70000`: Internal server error. Please try again.</li>
+                     * Error code. 0 indicates success. Additional values indicate failure:
+<li>40000: Invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * The error message.
+                     * Error message.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * The task progress. Value range: 0-100.
+                     * Task progress. Value range: [0-100].
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * The file ID
+                     * Media file ID.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * The output of the task to get file attributes.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Output of a media file attribute retrieval task.
                      */
                     DescribeFileAttributesTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The session ID, which is used for de-duplication. If there was a request with the same session ID in the last seven days, an error will be returned for the current request. The session ID can contain up to 50 characters. If you do not pass this parameter or pass in an empty string, duplicate sessions will not be identified.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The source context, which is used to pass through user request information. The `ProcedureStateChanged` callback will return the value of this parameter. It can contain up to 1,000 characters.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

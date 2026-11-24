@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Available specifications of Serverless instance.
-                     * @return Specs Available specifications of Serverless instance.
+                     * 获取<p>Available specifications for Serverless instances</p>
+                     * @return Specs <p>Available specifications for Serverless instances</p>
                      * 
                      */
                     std::vector<ServerlessSpec> GetSpecs() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Available specifications of Serverless instance.
+                     * <p>Available specifications for Serverless instances</p>
                      */
                     std::vector<ServerlessSpec> m_specs;
                     bool m_specsHasBeenSet;

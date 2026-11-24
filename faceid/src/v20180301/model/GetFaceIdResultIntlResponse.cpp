@@ -28,8 +28,11 @@ GetFaceIdResultIntlResponse::GetFaceIdResultIntlResponse() :
     m_descriptionHasBeenSet(false),
     m_bestFrameHasBeenSet(false),
     m_videoHasBeenSet(false),
+    m_actionVideoHasBeenSet(false),
     m_similarityHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_deviceInfoLevelHasBeenSet(false),
+    m_livenessInfoTagHasBeenSet(false)
 {
 }
 
@@ -107,6 +110,16 @@ CoreInternalOutcome GetFaceIdResultIntlResponse::Deserialize(const string &paylo
         m_videoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ActionVideo") && !rsp["ActionVideo"].IsNull())
+    {
+        if (!rsp["ActionVideo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionVideo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionVideo = string(rsp["ActionVideo"].GetString());
+        m_actionVideoHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Similarity") && !rsp["Similarity"].IsNull())
     {
         if (!rsp["Similarity"].IsLosslessDouble())
@@ -125,6 +138,29 @@ CoreInternalOutcome GetFaceIdResultIntlResponse::Deserialize(const string &paylo
         }
         m_extra = string(rsp["Extra"].GetString());
         m_extraHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeviceInfoLevel") && !rsp["DeviceInfoLevel"].IsNull())
+    {
+        if (!rsp["DeviceInfoLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfoLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceInfoLevel = string(rsp["DeviceInfoLevel"].GetString());
+        m_deviceInfoLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LivenessInfoTag") && !rsp["LivenessInfoTag"].IsNull())
+    {
+        if (!rsp["LivenessInfoTag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LivenessInfoTag` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LivenessInfoTag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_livenessInfoTag.push_back((*itr).GetString());
+        }
+        m_livenessInfoTagHasBeenSet = true;
     }
 
 
@@ -169,6 +205,14 @@ string GetFaceIdResultIntlResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_video.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_actionVideoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionVideo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionVideo.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_similarityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -183,6 +227,27 @@ string GetFaceIdResultIntlResponse::ToJsonString() const
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceInfoLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceInfoLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceInfoLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessInfoTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessInfoTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_livenessInfoTag.begin(); itr != m_livenessInfoTag.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -237,6 +302,16 @@ bool GetFaceIdResultIntlResponse::VideoHasBeenSet() const
     return m_videoHasBeenSet;
 }
 
+string GetFaceIdResultIntlResponse::GetActionVideo() const
+{
+    return m_actionVideo;
+}
+
+bool GetFaceIdResultIntlResponse::ActionVideoHasBeenSet() const
+{
+    return m_actionVideoHasBeenSet;
+}
+
 double GetFaceIdResultIntlResponse::GetSimilarity() const
 {
     return m_similarity;
@@ -255,6 +330,26 @@ string GetFaceIdResultIntlResponse::GetExtra() const
 bool GetFaceIdResultIntlResponse::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+string GetFaceIdResultIntlResponse::GetDeviceInfoLevel() const
+{
+    return m_deviceInfoLevel;
+}
+
+bool GetFaceIdResultIntlResponse::DeviceInfoLevelHasBeenSet() const
+{
+    return m_deviceInfoLevelHasBeenSet;
+}
+
+vector<string> GetFaceIdResultIntlResponse::GetLivenessInfoTag() const
+{
+    return m_livenessInfoTag;
+}
+
+bool GetFaceIdResultIntlResponse::LivenessInfoTagHasBeenSet() const
+{
+    return m_livenessInfoTagHasBeenSet;
 }
 
 

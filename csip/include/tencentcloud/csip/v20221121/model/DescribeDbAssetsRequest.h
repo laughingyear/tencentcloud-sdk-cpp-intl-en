@@ -44,15 +44,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取u200c-
-                     * @return Filter u200c-
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取Filter parameters
+                     * @return Filter Filter parameters
                      * 
                      */
                     Filter GetFilter() const;
 
                     /**
-                     * 设置u200c-
-                     * @param _filter u200c-
+                     * 设置Filter parameters
+                     * @param _filter Filter parameters
                      * 
                      */
                     void SetFilter(const Filter& _filter);
@@ -65,15 +86,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取Asset types. Values: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
-                     * @return AssetTypes Asset types. Values: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * 获取Asset type: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * @return AssetTypes Asset type: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
                      * 
                      */
                     std::vector<std::string> GetAssetTypes() const;
 
                     /**
-                     * 设置Asset types. Values: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
-                     * @param _assetTypes Asset types. Values: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * 设置Asset type: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * @param _assetTypes Asset type: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
                      * 
                      */
                     void SetAssetTypes(const std::vector<std::string>& _assetTypes);
@@ -88,13 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * u200c-
+                     * Group Account Member ID
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * Filter parameters
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * Asset types. Values: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
+                     * Asset type: MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS
                      */
                     std::vector<std::string> m_assetTypes;
                     bool m_assetTypesHasBeenSet;

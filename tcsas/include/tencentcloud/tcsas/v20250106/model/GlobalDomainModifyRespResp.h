@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Response of global domain name modification
+                * Response for modifying a global domain.
                 */
                 class GlobalDomainModifyRespResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0: Success; 1: Allowed domains; 2: Blocked domains
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Result 0: Success; 1: Allowed domains; 2: Blocked domains
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Operation result. Valid values: 0: Succeeded; 1: Exists in the allowlist; 2: Exists in the blocklist. 
+                     * @return Result Operation result. Valid values: 0: Succeeded; 1: Exists in the allowlist; 2: Exists in the blocklist. 
                      * 
                      */
                     int64_t GetResult() const;
 
                     /**
-                     * 设置0: Success; 1: Allowed domains; 2: Blocked domains
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _result 0: Success; 1: Allowed domains; 2: Blocked domains
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Operation result. Valid values: 0: Succeeded; 1: Exists in the allowlist; 2: Exists in the blocklist. 
+                     * @param _result Operation result. Valid values: 0: Succeeded; 1: Exists in the allowlist; 2: Exists in the blocklist. 
                      * 
                      */
                     void SetResult(const int64_t& _result);
@@ -74,8 +70,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * 0: Success; 1: Allowed domains; 2: Blocked domains
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Operation result. Valid values: 0: Succeeded; 1: Exists in the allowlist; 2: Exists in the blocklist. 
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;

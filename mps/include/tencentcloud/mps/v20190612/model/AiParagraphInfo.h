@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Summary Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _summary Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -93,15 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取Segment keywords.
-                     * @return Keywords Segment keywords.
+                     * 获取Segment keyword.
+                     * @return Keywords Segment keyword.
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置Segment keywords.
-                     * @param _keywords Segment keywords.
+                     * 设置Segment keyword.
+                     * @param _keywords Segment keyword.
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -114,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取Segmentation start time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return StartTimeOffset Segmentation start time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Starting time point of the segment, in seconds.
+                     * @return StartTimeOffset Starting time point of the segment, in seconds.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Segmentation start time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _startTimeOffset Segmentation start time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Starting time point of the segment, in seconds.
+                     * @param _startTimeOffset Starting time point of the segment, in seconds.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -139,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Segmentation end time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return EndTimeOffset Segmentation end time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取End time point of the segment, in seconds.
+                     * @return EndTimeOffset End time point of the segment, in seconds.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置Segmentation end time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _endTimeOffset Segmentation end time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置End time point of the segment, in seconds.
+                     * @param _endTimeOffset End time point of the segment, in seconds.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -167,7 +155,6 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
@@ -179,21 +166,19 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_titleHasBeenSet;
 
                     /**
-                     * Segment keywords.
+                     * Segment keyword.
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * Segmentation start time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Starting time point of the segment, in seconds.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * Segmentation end time point, in seconds.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * End time point of the segment, in seconds.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

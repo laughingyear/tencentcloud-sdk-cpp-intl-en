@@ -30,7 +30,10 @@ DescribeTeamDetailResp::DescribeTeamDetailResp() :
     m_bindMiniTeamCountHasBeenSet(false),
     m_bindTeamNameHasBeenSet(false),
     m_registerLinkHasBeenSet(false),
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_adminUserNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome DescribeTeamDetailResp::Deserialize(const rapidjson::Value &
         m_applicationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamDetailResp.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamDetailResp.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminUserName") && !value["AdminUserName"].IsNull())
+    {
+        if (!value["AdminUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamDetailResp.AdminUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminUserName = string(value["AdminUserName"].GetString());
+        m_adminUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void DescribeTeamDetailResp::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_adminUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void DescribeTeamDetailResp::SetApplicationName(const string& _applicationName)
 bool DescribeTeamDetailResp::ApplicationNameHasBeenSet() const
 {
     return m_applicationNameHasBeenSet;
+}
+
+int64_t DescribeTeamDetailResp::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void DescribeTeamDetailResp::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool DescribeTeamDetailResp::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+int64_t DescribeTeamDetailResp::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeTeamDetailResp::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeTeamDetailResp::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeTeamDetailResp::GetAdminUserName() const
+{
+    return m_adminUserName;
+}
+
+void DescribeTeamDetailResp::SetAdminUserName(const string& _adminUserName)
+{
+    m_adminUserName = _adminUserName;
+    m_adminUserNameHasBeenSet = true;
+}
+
+bool DescribeTeamDetailResp::AdminUserNameHasBeenSet() const
+{
+    return m_adminUserNameHasBeenSet;
 }
 

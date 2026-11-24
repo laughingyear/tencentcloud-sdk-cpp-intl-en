@@ -49,19 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Status Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Task status. Valid values are `PROCESSING`, `SUCCESS`, and `FAIL`.
+                     * @return Status Task status. Valid values are `PROCESSING`, `SUCCESS`, and `FAIL`.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _status Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Task status. Valid values are `PROCESSING`, `SUCCESS`, and `FAIL`.
+                     * @param _status Task status. Valid values are `PROCESSING`, `SUCCESS`, and `FAIL`.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -74,23 +70,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. 0: Task successful. Other values: Task failed.
-
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Error code. 0: Task successful. Other values: Task failed.
-
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Error code. 0: successful; other values: failed.
+                     * @return ErrCode Error code. 0: successful; other values: failed.
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code. 0: Task successful. Other values: Task failed.
-
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Error code. 0: Task successful. Other values: Task failed.
-
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Error code. 0: successful; other values: failed.
+                     * @param _errCode Error code. 0: successful; other values: failed.
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -104,22 +92,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Error message
-
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message
-
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message
-
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message
-
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -132,19 +112,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Intelligent landscape-to-portrait task input.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Input Intelligent landscape-to-portrait task input.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent horizontal-to-vertical task input.
+                     * @return Input Intelligent horizontal-to-vertical task input.
                      * 
                      */
                     AiAnalysisTaskHorizontalToVerticalInput GetInput() const;
 
                     /**
-                     * 设置Intelligent landscape-to-portrait task input.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _input Intelligent landscape-to-portrait task input.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent horizontal-to-vertical task input.
+                     * @param _input Intelligent horizontal-to-vertical task input.
                      * 
                      */
                     void SetInput(const AiAnalysisTaskHorizontalToVerticalInput& _input);
@@ -157,19 +133,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Intelligent landscape-to-portrait task output.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Output Intelligent landscape-to-portrait task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent horizontal-to-vertical task output.
+                     * @return Output Intelligent horizontal-to-vertical task output.
                      * 
                      */
                     AiAnalysisTaskHorizontalToVerticalOutput GetOutput() const;
 
                     /**
-                     * 设置Intelligent landscape-to-portrait task output.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _output Intelligent landscape-to-portrait task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent horizontal-to-vertical task output.
+                     * @param _output Intelligent horizontal-to-vertical task output.
                      * 
                      */
                     void SetOutput(const AiAnalysisTaskHorizontalToVerticalOutput& _output);
@@ -184,38 +156,31 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Task status. Valid values are `PROCESSING`, `SUCCESS`, and `FAIL`.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. 0: Task successful. Other values: Task failed.
-
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Error code. 0: successful; other values: failed.
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * Error message
-
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Intelligent landscape-to-portrait task input.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Intelligent horizontal-to-vertical task input.
                      */
                     AiAnalysisTaskHorizontalToVerticalInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Intelligent landscape-to-portrait task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Intelligent horizontal-to-vertical task output.
                      */
                     AiAnalysisTaskHorizontalToVerticalOutput m_output;
                     bool m_outputHasBeenSet;

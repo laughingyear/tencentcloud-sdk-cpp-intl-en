@@ -31,7 +31,12 @@ ModifySmartSubtitleTemplateRequest::ModifySmartSubtitleTemplateRequest() :
     m_subtitleFormatHasBeenSet(false),
     m_subtitleTypeHasBeenSet(false),
     m_asrHotWordsConfigureHasBeenSet(false),
-    m_translateDstLanguageHasBeenSet(false)
+    m_translateDstLanguageHasBeenSet(false),
+    m_processTypeHasBeenSet(false),
+    m_selectingSubtitleAreasConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_speakerModeHasBeenSet(false),
+    m_speakerLabelHasBeenSet(false)
 {
 }
 
@@ -113,6 +118,47 @@ string ModifySmartSubtitleTemplateRequest::ToJsonString() const
         string key = "TranslateDstLanguage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_translateDstLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processType, allocator);
+    }
+
+    if (m_selectingSubtitleAreasConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectingSubtitleAreasConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_selectingSubtitleAreasConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_speakerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerMode, allocator);
+    }
+
+    if (m_speakerLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerLabel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerLabel, allocator);
     }
 
 
@@ -265,6 +311,86 @@ void ModifySmartSubtitleTemplateRequest::SetTranslateDstLanguage(const string& _
 bool ModifySmartSubtitleTemplateRequest::TranslateDstLanguageHasBeenSet() const
 {
     return m_translateDstLanguageHasBeenSet;
+}
+
+uint64_t ModifySmartSubtitleTemplateRequest::GetProcessType() const
+{
+    return m_processType;
+}
+
+void ModifySmartSubtitleTemplateRequest::SetProcessType(const uint64_t& _processType)
+{
+    m_processType = _processType;
+    m_processTypeHasBeenSet = true;
+}
+
+bool ModifySmartSubtitleTemplateRequest::ProcessTypeHasBeenSet() const
+{
+    return m_processTypeHasBeenSet;
+}
+
+SelectingSubtitleAreasConfig ModifySmartSubtitleTemplateRequest::GetSelectingSubtitleAreasConfig() const
+{
+    return m_selectingSubtitleAreasConfig;
+}
+
+void ModifySmartSubtitleTemplateRequest::SetSelectingSubtitleAreasConfig(const SelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig)
+{
+    m_selectingSubtitleAreasConfig = _selectingSubtitleAreasConfig;
+    m_selectingSubtitleAreasConfigHasBeenSet = true;
+}
+
+bool ModifySmartSubtitleTemplateRequest::SelectingSubtitleAreasConfigHasBeenSet() const
+{
+    return m_selectingSubtitleAreasConfigHasBeenSet;
+}
+
+int64_t ModifySmartSubtitleTemplateRequest::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void ModifySmartSubtitleTemplateRequest::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool ModifySmartSubtitleTemplateRequest::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t ModifySmartSubtitleTemplateRequest::GetSpeakerMode() const
+{
+    return m_speakerMode;
+}
+
+void ModifySmartSubtitleTemplateRequest::SetSpeakerMode(const int64_t& _speakerMode)
+{
+    m_speakerMode = _speakerMode;
+    m_speakerModeHasBeenSet = true;
+}
+
+bool ModifySmartSubtitleTemplateRequest::SpeakerModeHasBeenSet() const
+{
+    return m_speakerModeHasBeenSet;
+}
+
+int64_t ModifySmartSubtitleTemplateRequest::GetSpeakerLabel() const
+{
+    return m_speakerLabel;
+}
+
+void ModifySmartSubtitleTemplateRequest::SetSpeakerLabel(const int64_t& _speakerLabel)
+{
+    m_speakerLabel = _speakerLabel;
+    m_speakerLabelHasBeenSet = true;
+}
+
+bool ModifySmartSubtitleTemplateRequest::SpeakerLabelHasBeenSet() const
+{
+    return m_speakerLabelHasBeenSet;
 }
 
 

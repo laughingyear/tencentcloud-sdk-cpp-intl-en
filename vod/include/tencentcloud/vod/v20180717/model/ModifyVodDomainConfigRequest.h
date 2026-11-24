@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/RefererAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/DomainQUICConfig.h>
+#include <tencentcloud/vod/v20180717/model/IPFilterPolicy.h>
 
 
 namespace TencentCloud
@@ -46,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Domain name
-                     * @return Domain Domain name
+                     * 获取<p>Domain name.</p>
+                     * @return Domain <p>Domain name.</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置Domain name
-                     * @param _domain Domain name
+                     * 设置<p>Domain name.</p>
+                     * @param _domain <p>Domain name.</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether the default application or a newly created application), this field must be filled in as the application ID.</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether the default application or a newly created application), this field must be filled in as the application ID.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether the default application or a newly created application), this field must be filled in as the application ID.</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether the default application or a newly created application), this field must be filled in as the application ID.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -88,15 +89,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取[Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/14046?from_cn_redirect=1) policy
-                     * @return RefererAuthPolicy [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/14046?from_cn_redirect=1) policy
+                     * 获取<p><a href="https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1">Referer hotlink protection</a> rule.</p>
+                     * @return RefererAuthPolicy <p><a href="https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1">Referer hotlink protection</a> rule.</p>
                      * 
                      */
                     RefererAuthPolicy GetRefererAuthPolicy() const;
 
                     /**
-                     * 设置[Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/14046?from_cn_redirect=1) policy
-                     * @param _refererAuthPolicy [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/14046?from_cn_redirect=1) policy
+                     * 设置<p><a href="https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1">Referer hotlink protection</a> rule.</p>
+                     * @param _refererAuthPolicy <p><a href="https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1">Referer hotlink protection</a> rule.</p>
                      * 
                      */
                     void SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy);
@@ -109,15 +110,15 @@ namespace TencentCloud
                     bool RefererAuthPolicyHasBeenSet() const;
 
                     /**
-                     * 获取[Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/14047?from_cn_redirect=1) policy
-                     * @return UrlSignatureAuthPolicy [Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/14047?from_cn_redirect=1) policy
+                     * 获取<p><a href="https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1">Key hotlink protection</a> rule.</p>
+                     * @return UrlSignatureAuthPolicy <p><a href="https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1">Key hotlink protection</a> rule.</p>
                      * 
                      */
                     UrlSignatureAuthPolicy GetUrlSignatureAuthPolicy() const;
 
                     /**
-                     * 设置[Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/14047?from_cn_redirect=1) policy
-                     * @param _urlSignatureAuthPolicy [Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/14047?from_cn_redirect=1) policy
+                     * 设置<p><a href="https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1">Key hotlink protection</a> rule.</p>
+                     * @param _urlSignatureAuthPolicy <p><a href="https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1">Key hotlink protection</a> rule.</p>
                      * 
                      */
                     void SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy);
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool UrlSignatureAuthPolicyHasBeenSet() const;
 
                     /**
-                     * 获取The QUIC configuration.
-                     * @return QUICConfig The QUIC configuration.
+                     * 获取<p>QUIC configuration.</p>
+                     * @return QUICConfig <p>QUIC configuration.</p>
                      * 
                      */
                     DomainQUICConfig GetQUICConfig() const;
 
                     /**
-                     * 设置The QUIC configuration.
-                     * @param _qUICConfig The QUIC configuration.
+                     * 设置<p>QUIC configuration.</p>
+                     * @param _qUICConfig <p>QUIC configuration.</p>
                      * 
                      */
                     void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
@@ -150,37 +151,64 @@ namespace TencentCloud
                      */
                     bool QUICConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IP access restriction rule.</p>
+                     * @return IPFilterPolicy <p>IP access restriction rule.</p>
+                     * 
+                     */
+                    IPFilterPolicy GetIPFilterPolicy() const;
+
+                    /**
+                     * 设置<p>IP access restriction rule.</p>
+                     * @param _iPFilterPolicy <p>IP access restriction rule.</p>
+                     * 
+                     */
+                    void SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy);
+
+                    /**
+                     * 判断参数 IPFilterPolicy 是否已赋值
+                     * @return IPFilterPolicy 是否已赋值
+                     * 
+                     */
+                    bool IPFilterPolicyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Domain name
+                     * <p>Domain name.</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, if they access resources in on-demand applications (whether the default application or a newly created application), this field must be filled in as the application ID.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/14046?from_cn_redirect=1) policy
+                     * <p><a href="https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1">Referer hotlink protection</a> rule.</p>
                      */
                     RefererAuthPolicy m_refererAuthPolicy;
                     bool m_refererAuthPolicyHasBeenSet;
 
                     /**
-                     * [Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/14047?from_cn_redirect=1) policy
+                     * <p><a href="https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1">Key hotlink protection</a> rule.</p>
                      */
                     UrlSignatureAuthPolicy m_urlSignatureAuthPolicy;
                     bool m_urlSignatureAuthPolicyHasBeenSet;
 
                     /**
-                     * The QUIC configuration.
+                     * <p>QUIC configuration.</p>
                      */
                     DomainQUICConfig m_qUICConfig;
                     bool m_qUICConfigHasBeenSet;
+
+                    /**
+                     * <p>IP access restriction rule.</p>
+                     */
+                    IPFilterPolicy m_iPFilterPolicy;
+                    bool m_iPFilterPolicyHasBeenSet;
 
                 };
             }

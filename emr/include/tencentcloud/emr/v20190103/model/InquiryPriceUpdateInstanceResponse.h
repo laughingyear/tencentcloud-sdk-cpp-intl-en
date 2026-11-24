@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PriceDetail.h>
+#include <tencentcloud/emr/v20190103/model/PriceResult.h>
 
 
 namespace TencentCloud
@@ -45,10 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return OriginalCost Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Original price (CNY).
+                     * @return OriginalCost Original price (CNY).
                      * 
                      */
                     double GetOriginalCost() const;
@@ -61,10 +60,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return DiscountCost Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Discounted price (CNY).
+                     * @return DiscountCost Discounted price (CNY).
                      * 
                      */
                     double GetDiscountCost() const;
@@ -77,12 +74,12 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取Time unit of scaling. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeUnit Time unit of scaling. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Time unit for the configuration change. Valid values:
+<li>s: indicates second.</li>
+<li>m: indicates month.</li>
+                     * @return TimeUnit Time unit for the configuration change. Valid values:
+<li>s: indicates second.</li>
+<li>m: indicates month.</li>
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -95,10 +92,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取Duration of scaling.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeSpan Duration of scaling.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return TimeSpan 
                      * 
                      */
                     int64_t GetTimeSpan() const;
@@ -111,10 +106,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取Pricing details
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return PriceDetail Pricing details
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Price details.
+                     * @return PriceDetail Price details.
                      * 
                      */
                     std::vector<PriceDetail> GetPriceDetail() const;
@@ -126,43 +119,59 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool PriceDetailHasBeenSet() const;
 
+                    /**
+                     * 获取Price of the new configuration.
+                     * @return NewConfigPrice Price of the new configuration.
+                     * 
+                     */
+                    PriceResult GetNewConfigPrice() const;
+
+                    /**
+                     * 判断参数 NewConfigPrice 是否已赋值
+                     * @return NewConfigPrice 是否已赋值
+                     * 
+                     */
+                    bool NewConfigPriceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Original price (CNY).
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Discounted price (CNY).
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * Time unit of scaling. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Time unit for the configuration change. Valid values:
+<li>s: indicates second.</li>
+<li>m: indicates month.</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * Duration of scaling.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * Pricing details
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Price details.
                      */
                     std::vector<PriceDetail> m_priceDetail;
                     bool m_priceDetailHasBeenSet;
+
+                    /**
+                     * Price of the new configuration.
+                     */
+                    PriceResult m_newConfigPrice;
+                    bool m_newConfigPriceHasBeenSet;
 
                 };
             }

@@ -40,6 +40,56 @@ AdvisorClient::AdvisorClient(const Credential &credential, const string &region,
 }
 
 
+AdvisorClient::CreateAdvisorAuthorizationOutcome AdvisorClient::CreateAdvisorAuthorization(const CreateAdvisorAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAdvisorAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAdvisorAuthorizationResponse rsp = CreateAdvisorAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAdvisorAuthorizationOutcome(rsp);
+        else
+            return CreateAdvisorAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAdvisorAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void AdvisorClient::CreateAdvisorAuthorizationAsync(const CreateAdvisorAuthorizationRequest& request, const CreateAdvisorAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAdvisorAuthorizationRequest&;
+    using Resp = CreateAdvisorAuthorizationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAdvisorAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdvisorClient::CreateAdvisorAuthorizationOutcomeCallable AdvisorClient::CreateAdvisorAuthorizationCallable(const CreateAdvisorAuthorizationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAdvisorAuthorizationOutcome>>();
+    CreateAdvisorAuthorizationAsync(
+    request,
+    [prom](
+        const AdvisorClient*,
+        const CreateAdvisorAuthorizationRequest&,
+        CreateAdvisorAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdvisorClient::DescribeStrategiesOutcome AdvisorClient::DescribeStrategies(const DescribeStrategiesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStrategies");
@@ -62,25 +112,32 @@ AdvisorClient::DescribeStrategiesOutcome AdvisorClient::DescribeStrategies(const
 
 void AdvisorClient::DescribeStrategiesAsync(const DescribeStrategiesRequest& request, const DescribeStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStrategies(request), context);
-    };
+    using Req = const DescribeStrategiesRequest&;
+    using Resp = DescribeStrategiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStrategies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AdvisorClient::DescribeStrategiesOutcomeCallable AdvisorClient::DescribeStrategiesCallable(const DescribeStrategiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStrategiesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStrategies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStrategiesOutcome>>();
+    DescribeStrategiesAsync(
+    request,
+    [prom](
+        const AdvisorClient*,
+        const DescribeStrategiesRequest&,
+        DescribeStrategiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AdvisorClient::DescribeTaskStrategyRisksOutcome AdvisorClient::DescribeTaskStrategyRisks(const DescribeTaskStrategyRisksRequest &request)
@@ -105,24 +162,31 @@ AdvisorClient::DescribeTaskStrategyRisksOutcome AdvisorClient::DescribeTaskStrat
 
 void AdvisorClient::DescribeTaskStrategyRisksAsync(const DescribeTaskStrategyRisksRequest& request, const DescribeTaskStrategyRisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskStrategyRisks(request), context);
-    };
+    using Req = const DescribeTaskStrategyRisksRequest&;
+    using Resp = DescribeTaskStrategyRisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskStrategyRisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AdvisorClient::DescribeTaskStrategyRisksOutcomeCallable AdvisorClient::DescribeTaskStrategyRisksCallable(const DescribeTaskStrategyRisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskStrategyRisksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskStrategyRisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskStrategyRisksOutcome>>();
+    DescribeTaskStrategyRisksAsync(
+    request,
+    [prom](
+        const AdvisorClient*,
+        const DescribeTaskStrategyRisksRequest&,
+        DescribeTaskStrategyRisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

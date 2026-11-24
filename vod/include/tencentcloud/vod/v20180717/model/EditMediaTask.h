@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video editing task information
+                * Edit video task information.
                 */
                 class EditMediaTask : public AbstractModel
                 {
@@ -72,26 +72,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @return Status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @param _status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -104,31 +100,27 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. 0: success; other values: failure.
-<li>40000: invalid input parameter. Please check it;</li>
-<li>60000: invalid source file (e.g., video data is corrupted). Please check whether the source file is normal;</li>
-<li>70000: internal service error. Please try again.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Error code. 0: success; other values: failure.
-<li>40000: invalid input parameter. Please check it;</li>
-<li>60000: invalid source file (e.g., video data is corrupted). Please check whether the source file is normal;</li>
-<li>70000: internal service error. Please try again.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Error code. 0 indicates success. Other values indicate failure:
+<li>40000: invalid parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @return ErrCode Error code. 0 indicates success. Other values indicate failure:
+<li>40000: invalid parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code. 0: success; other values: failure.
-<li>40000: invalid input parameter. Please check it;</li>
-<li>60000: invalid source file (e.g., video data is corrupted). Please check whether the source file is normal;</li>
-<li>70000: internal service error. Please try again.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Error code. 0: success; other values: failure.
-<li>40000: invalid input parameter. Please check it;</li>
-<li>60000: invalid source file (e.g., video data is corrupted). Please check whether the source file is normal;</li>
-<li>70000: internal service error. Please try again.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Error code. 0 indicates success. Other values indicate failure:
+<li>40000: invalid parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @param _errCode Error code. 0 indicates success. Other values indicate failure:
+<li>40000: invalid parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -141,15 +133,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @return ErrCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @param _errCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -163,18 +155,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -187,15 +175,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Progress of a video editing task. Value range: [0, 100]
-                     * @return Progress Progress of a video editing task. Value range: [0, 100]
+                     * 获取Video editing task progress, in the range of [0,100].
+                     * @return Progress Video editing task progress, in the range of [0,100].
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置Progress of a video editing task. Value range: [0, 100]
-                     * @param _progress Progress of a video editing task. Value range: [0, 100]
+                     * 设置Video editing task progress, in the range of [0,100].
+                     * @param _progress Video editing task progress, in the range of [0,100].
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -208,19 +196,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取Input of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Input Input of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Input for a video editing task.
+                     * @return Input Input for a video editing task.
                      * 
                      */
                     EditMediaTaskInput GetInput() const;
 
                     /**
-                     * 设置Input of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _input Input of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Input for a video editing task.
+                     * @param _input Input for a video editing task.
                      * 
                      */
                     void SetInput(const EditMediaTaskInput& _input);
@@ -233,19 +217,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Output Output of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Output of the video editing task.
+                     * @return Output Output of the video editing task.
                      * 
                      */
                     EditMediaTaskOutput GetOutput() const;
 
                     /**
-                     * 设置Output of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _output Output of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Output of the video editing task.
+                     * @param _output Output of the video editing task.
                      * 
                      */
                     void SetOutput(const EditMediaTaskOutput& _output);
@@ -258,15 +238,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The metadata of the output video.
-                     * @return MetaData The metadata of the output video.
+                     * 获取Metadata of the output video.
+                     * @return MetaData Metadata of the output video.
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置The metadata of the output video.
-                     * @param _metaData The metadata of the output video.
+                     * 设置Metadata of the output video.
+                     * @param _metaData Metadata of the output video.
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -279,15 +259,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
-                     * @return ProcedureTaskId The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * 获取Task ID of the task type Procedure. If a task flow template (ProcedureName) is specified when initiating a video editing (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1) task, the task is initiated when the task flow template specifies one or more of MediaProcessTask, AiAnalysisTask, and AiRecognitionTask.
+                     * @return ProcedureTaskId Task ID of the task type Procedure. If a task flow template (ProcedureName) is specified when initiating a video editing (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1) task, the task is initiated when the task flow template specifies one or more of MediaProcessTask, AiAnalysisTask, and AiRecognitionTask.
                      * 
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
-                     * 设置The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
-                     * @param _procedureTaskId The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * 设置Task ID of the task type Procedure. If a task flow template (ProcedureName) is specified when initiating a video editing (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1) task, the task is initiated when the task flow template specifies one or more of MediaProcessTask, AiAnalysisTask, and AiRecognitionTask.
+                     * @param _procedureTaskId Task ID of the task type Procedure. If a task flow template (ProcedureName) is specified when initiating a video editing (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1) task, the task is initiated when the task flow template specifies one or more of MediaProcessTask, AiAnalysisTask, and AiRecognitionTask.
                      * 
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
@@ -300,15 +280,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProcedureTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
-                     * @return ReviewAudioVideoTaskId The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * 获取Task ID of the `ReviewAudioVideo` task type. If a task flow template (`ProcedureName`) is specified when initiating a video editing task (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1), the task is initiated when the task flow template specifies `ReviewAudioVideoTask`.
+                     * @return ReviewAudioVideoTaskId Task ID of the `ReviewAudioVideo` task type. If a task flow template (`ProcedureName`) is specified when initiating a video editing task (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1), the task is initiated when the task flow template specifies `ReviewAudioVideoTask`.
                      * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
 
                     /**
-                     * 设置The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
-                     * @param _reviewAudioVideoTaskId The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * 设置Task ID of the `ReviewAudioVideo` task type. If a task flow template (`ProcedureName`) is specified when initiating a video editing task (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1), the task is initiated when the task flow template specifies `ReviewAudioVideoTask`.
+                     * @param _reviewAudioVideoTaskId Task ID of the `ReviewAudioVideo` task type. If a task flow template (`ProcedureName`) is specified when initiating a video editing task (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1), the task is initiated when the task flow template specifies `ReviewAudioVideoTask`.
                      * 
                      */
                     void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
@@ -321,19 +301,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ReviewAudioVideoTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -346,19 +322,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -380,84 +352,77 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. 0: success; other values: failure.
-<li>40000: invalid input parameter. Please check it;</li>
-<li>60000: invalid source file (e.g., video data is corrupted). Please check whether the source file is normal;</li>
-<li>70000: internal service error. Please try again.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Error code. 0 indicates success. Other values indicate failure:
+<li>40000: invalid parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data corruption). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
                      * Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Progress of a video editing task. Value range: [0, 100]
+                     * Video editing task progress, in the range of [0,100].
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * Input of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Input for a video editing task.
                      */
                     EditMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output of video editing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Output of the video editing task.
                      */
                     EditMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The metadata of the output video.
+                     * Metadata of the output video.
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * Task ID of the task type Procedure. If a task flow template (ProcedureName) is specified when initiating a video editing (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1) task, the task is initiated when the task flow template specifies one or more of MediaProcessTask, AiAnalysisTask, and AiRecognitionTask.
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
 
                     /**
-                     * The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [EditMedia](https://intl.cloud.tencent.com/document/api/266/34783?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * Task ID of the `ReviewAudioVideo` task type. If a task flow template (`ProcedureName`) is specified when initiating a video editing task (https://www.tencentcloud.com/document/api/266/34783?from_cn_redirect=1), the task is initiated when the task flow template specifies `ReviewAudioVideoTask`.
                      */
                     std::string m_reviewAudioVideoTaskId;
                     bool m_reviewAudioVideoTaskIdHasBeenSet;
 
                     /**
-                     * The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

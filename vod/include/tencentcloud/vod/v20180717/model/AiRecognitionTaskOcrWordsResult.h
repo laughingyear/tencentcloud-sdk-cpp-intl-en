@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Text keyword recognition result.
+                * Keyword recognition result of the text.
                 */
                 class AiRecognitionTaskOcrWordsResult : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @return Status Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @param _status Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @return ErrCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @param _errCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @return ErrCode Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 获取Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @return ErrCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @param _errCode Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 设置Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @param _errCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Input information of text keyword recognition task.
-                     * @return Input Input information of text keyword recognition task.
+                     * 获取Text keyword recognition task input.
+                     * @return Input Text keyword recognition task input.
                      * 
                      */
                     AiRecognitionTaskOcrWordsResultInput GetInput() const;
 
                     /**
-                     * 设置Input information of text keyword recognition task.
-                     * @param _input Input information of text keyword recognition task.
+                     * 设置Text keyword recognition task input.
+                     * @param _input Text keyword recognition task input.
                      * 
                      */
                     void SetInput(const AiRecognitionTaskOcrWordsResultInput& _input);
@@ -154,19 +154,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output information of text keyword recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Output Output information of text keyword recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Output message of the text keyword recognition task.
+                     * @return Output Output message of the text keyword recognition task.
                      * 
                      */
                     AiRecognitionTaskOcrWordsResultOutput GetOutput() const;
 
                     /**
-                     * 设置Output information of text keyword recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _output Output information of text keyword recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Output message of the text keyword recognition task.
+                     * @param _output Output message of the text keyword recognition task.
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskOcrWordsResultOutput& _output);
@@ -179,15 +175,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The progress of a text keyword recognition task. Value range: 0-100.
-                     * @return Progress The progress of a text keyword recognition task. Value range: 0-100.
+                     * 获取Progress of the text keyword recognition task. Value range: [0-100].
+                     * @return Progress Progress of the text keyword recognition task. Value range: [0-100].
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置The progress of a text keyword recognition task. Value range: 0-100.
-                     * @param _progress The progress of a text keyword recognition task. Value range: 0-100.
+                     * 设置Progress of the text keyword recognition task. Value range: [0-100].
+                     * @param _progress Progress of the text keyword recognition task. Value range: [0-100].
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -200,15 +196,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取The time when the text keyword recognition task started, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return BeginProcessTime The time when the text keyword recognition task started, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取Start execution time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return BeginProcessTime Start execution time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
-                     * 设置The time when the text keyword recognition task started, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _beginProcessTime The time when the text keyword recognition task started, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置Start execution time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _beginProcessTime Start execution time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -221,15 +217,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取The time when the text keyword recognition task is completed, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return FinishTime The time when the text keyword recognition task is completed, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取Completion time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return FinishTime Completion time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置The time when the text keyword recognition task is completed, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _finishTime The time when the text keyword recognition task is completed, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置Completion time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _finishTime Completion time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -244,19 +240,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
@@ -268,32 +264,31 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Input information of text keyword recognition task.
+                     * Text keyword recognition task input.
                      */
                     AiRecognitionTaskOcrWordsResultInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output information of text keyword recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Output message of the text keyword recognition task.
                      */
                     AiRecognitionTaskOcrWordsResultOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The progress of a text keyword recognition task. Value range: 0-100.
+                     * Progress of the text keyword recognition task. Value range: [0-100].
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * The time when the text keyword recognition task started, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * Start execution time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * The time when the text keyword recognition task is completed, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * Completion time of the text keyword recognition task in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

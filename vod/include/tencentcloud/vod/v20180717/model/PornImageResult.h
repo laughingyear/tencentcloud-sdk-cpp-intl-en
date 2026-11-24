@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The moderation result for pornographic content in an image.
+                * Task result type of image moderation involving offensive content.
                 */
                 class PornImageResult : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The confidence score for the moderation result. Value range: 0-100.
-                     * @return Confidence The confidence score for the moderation result. Value range: 0-100.
+                     * 获取Authentication involves scoring offensive content, with a score from 0 to 100.
+                     * @return Confidence Authentication involves scoring offensive content, with a score from 0 to 100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置The confidence score for the moderation result. Value range: 0-100.
-                     * @param _confidence The confidence score for the moderation result. Value range: 0-100.
+                     * 设置Authentication involves scoring offensive content, with a score from 0 to 100.
+                     * @param _confidence Authentication involves scoring offensive content, with a score from 0 to 100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取The suggestion for handling the detected pornographic content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion The suggestion for handling the detected pornographic content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 获取Result suggestions for identifying offensive content. Value range:
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
+                     * @return Suggestion Result suggestions for identifying offensive content. Value range:
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置The suggestion for handling the detected pornographic content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion The suggestion for handling the detected pornographic content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 设置Result suggestions for identifying offensive content. Value range:
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
+                     * @param _suggestion Result suggestions for identifying offensive content. Value range:
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -101,31 +101,31 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取The label for the detected pornographic content. Valid values:
-<li>porn</li>
-<li>sexy</li>
-<li>vulgar</li>
-<li>intimacy</li>
-                     * @return Label The label for the detected pornographic content. Valid values:
-<li>porn</li>
-<li>sexy</li>
-<li>vulgar</li>
-<li>intimacy</li>
+                     * 获取Authentication result tag for offensive content. Value range:
+<li>porn: pornography;</li>
+<li>sexy: sexiness;</li>
+<li>vulgar: Vulgar;</li>
+<li>intimacy: intimate behavior.</li>
+                     * @return Label Authentication result tag for offensive content. Value range:
+<li>porn: pornography;</li>
+<li>sexy: sexiness;</li>
+<li>vulgar: Vulgar;</li>
+<li>intimacy: intimate behavior.</li>
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置The label for the detected pornographic content. Valid values:
-<li>porn</li>
-<li>sexy</li>
-<li>vulgar</li>
-<li>intimacy</li>
-                     * @param _label The label for the detected pornographic content. Valid values:
-<li>porn</li>
-<li>sexy</li>
-<li>vulgar</li>
-<li>intimacy</li>
+                     * 设置Authentication result tag for offensive content. Value range:
+<li>porn: pornography;</li>
+<li>sexy: sexiness;</li>
+<li>vulgar: Vulgar;</li>
+<li>intimacy: intimate behavior.</li>
+                     * @param _label Authentication result tag for offensive content. Value range:
+<li>porn: pornography;</li>
+<li>sexy: sexiness;</li>
+<li>vulgar: Vulgar;</li>
+<li>intimacy: intimate behavior.</li>
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -140,26 +140,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The confidence score for the moderation result. Value range: 0-100.
+                     * Authentication involves scoring offensive content, with a score from 0 to 100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * The suggestion for handling the detected pornographic content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * Result suggestions for identifying offensive content. Value range:
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * The label for the detected pornographic content. Valid values:
-<li>porn</li>
-<li>sexy</li>
-<li>vulgar</li>
-<li>intimacy</li>
+                     * Authentication result tag for offensive content. Value range:
+<li>porn: pornography;</li>
+<li>sexy: sexiness;</li>
+<li>vulgar: Vulgar;</li>
+<li>intimacy: intimate behavior.</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

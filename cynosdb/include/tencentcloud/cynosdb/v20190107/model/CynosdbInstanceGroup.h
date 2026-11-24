@@ -1,0 +1,627 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CYNOSDB_V20190107_MODEL_CYNOSDBINSTANCEGROUP_H_
+#define TENCENTCLOUD_CYNOSDB_V20190107_MODEL_CYNOSDBINSTANCEGROUP_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CynosdbInstance.h>
+#include <tencentcloud/cynosdb/v20190107/model/OldAddrInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+
+
+namespace TencentCloud
+{
+    namespace Cynosdb
+    {
+        namespace V20190107
+        {
+            namespace Model
+            {
+                /**
+                * Instance group information
+                */
+                class CynosdbInstanceGroup : public AbstractModel
+                {
+                public:
+                    CynosdbInstanceGroup();
+                    ~CynosdbInstanceGroup() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取User AppID
+                     * @return AppId User AppID
+                     * 
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置User AppID
+                     * @param _appId User AppID
+                     * 
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取Cluster ID
+                     * @return ClusterId Cluster ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Cluster ID
+                     * @param _clusterId Cluster ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取Creation time.
+                     * @return CreatedTime Creation time.
+                     * 
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置Creation time.
+                     * @param _createdTime Creation time.
+                     * 
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     * 
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Deletion time.
+                     * @return DeletedTime Deletion time.
+                     * 
+                     */
+                    std::string GetDeletedTime() const;
+
+                    /**
+                     * 设置Deletion time.
+                     * @param _deletedTime Deletion time.
+                     * 
+                     */
+                    void SetDeletedTime(const std::string& _deletedTime);
+
+                    /**
+                     * 判断参数 DeletedTime 是否已赋值
+                     * @return DeletedTime 是否已赋值
+                     * 
+                     */
+                    bool DeletedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Instance group ID
+                     * @return InstanceGroupId Instance group ID
+                     * 
+                     */
+                    std::string GetInstanceGroupId() const;
+
+                    /**
+                     * 设置Instance group ID
+                     * @param _instanceGroupId Instance group ID
+                     * 
+                     */
+                    void SetInstanceGroupId(const std::string& _instanceGroupId);
+
+                    /**
+                     * 判断参数 InstanceGroupId 是否已赋值
+                     * @return InstanceGroupId 是否已赋值
+                     * 
+                     */
+                    bool InstanceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取Status.
+                     * @return Status Status.
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置Status.
+                     * @param _status Status.
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取Instance group (network) type. ha-ha: HA group; ro: read-only group; proxy: proxy; singleRo: exclusive read-only instance.
+                     * @return Type Instance group (network) type. ha-ha: HA group; ro: read-only group; proxy: proxy; singleRo: exclusive read-only instance.
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置Instance group (network) type. ha-ha: HA group; ro: read-only group; proxy: proxy; singleRo: exclusive read-only instance.
+                     * @param _type Instance group (network) type. ha-ha: HA group; ro: read-only group; proxy: proxy; singleRo: exclusive read-only instance.
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取Update time.
+                     * @return UpdatedTime Update time.
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置Update time.
+                     * @param _updatedTime Update time.
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Private IP address
+                     * @return Vip Private IP address
+                     * 
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置Private IP address
+                     * @param _vip Private IP address
+                     * 
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     * 
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取Private network port.
+                     * @return Vport Private network port.
+                     * 
+                     */
+                    int64_t GetVport() const;
+
+                    /**
+                     * 设置Private network port.
+                     * @param _vport Private network port.
+                     * 
+                     */
+                    void SetVport(const int64_t& _vport);
+
+                    /**
+                     * 判断参数 Vport 是否已赋值
+                     * @return Vport 是否已赋值
+                     * 
+                     */
+                    bool VportHasBeenSet() const;
+
+                    /**
+                     * 获取Public network domain name.
+                     * @return WanDomain Public network domain name.
+                     * 
+                     */
+                    std::string GetWanDomain() const;
+
+                    /**
+                     * 设置Public network domain name.
+                     * @param _wanDomain Public network domain name.
+                     * 
+                     */
+                    void SetWanDomain(const std::string& _wanDomain);
+
+                    /**
+                     * 判断参数 WanDomain 是否已赋值
+                     * @return WanDomain 是否已赋值
+                     * 
+                     */
+                    bool WanDomainHasBeenSet() const;
+
+                    /**
+                     * 获取Public IP address
+                     * @return WanIP Public IP address
+                     * 
+                     */
+                    std::string GetWanIP() const;
+
+                    /**
+                     * 设置Public IP address
+                     * @param _wanIP Public IP address
+                     * 
+                     */
+                    void SetWanIP(const std::string& _wanIP);
+
+                    /**
+                     * 判断参数 WanIP 是否已赋值
+                     * @return WanIP 是否已赋值
+                     * 
+                     */
+                    bool WanIPHasBeenSet() const;
+
+                    /**
+                     * 获取External port
+                     * @return WanPort External port
+                     * 
+                     */
+                    int64_t GetWanPort() const;
+
+                    /**
+                     * 设置External port
+                     * @param _wanPort External port
+                     * 
+                     */
+                    void SetWanPort(const int64_t& _wanPort);
+
+                    /**
+                     * 判断参数 WanPort 是否已赋值
+                     * @return WanPort 是否已赋值
+                     * 
+                     */
+                    bool WanPortHasBeenSet() const;
+
+                    /**
+                     * 获取Public network status.
+                     * @return WanStatus Public network status.
+                     * 
+                     */
+                    std::string GetWanStatus() const;
+
+                    /**
+                     * 设置Public network status.
+                     * @param _wanStatus Public network status.
+                     * 
+                     */
+                    void SetWanStatus(const std::string& _wanStatus);
+
+                    /**
+                     * 判断参数 WanStatus 是否已赋值
+                     * @return WanStatus 是否已赋值
+                     * 
+                     */
+                    bool WanStatusHasBeenSet() const;
+
+                    /**
+                     * 获取Instance group information including instances
+                     * @return InstanceSet Instance group information including instances
+                     * 
+                     */
+                    std::vector<CynosdbInstance> GetInstanceSet() const;
+
+                    /**
+                     * 设置Instance group information including instances
+                     * @param _instanceSet Instance group information including instances
+                     * 
+                     */
+                    void SetInstanceSet(const std::vector<CynosdbInstance>& _instanceSet);
+
+                    /**
+                     * 判断参数 InstanceSet 是否已赋值
+                     * @return InstanceSet 是否已赋值
+                     * 
+                     */
+                    bool InstanceSetHasBeenSet() const;
+
+                    /**
+                     * 获取VPC ID
+                     * @return UniqVpcId VPC ID
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置VPC ID
+                     * @param _uniqVpcId VPC ID
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取Subnet ID.
+                     * @return UniqSubnetId Subnet ID.
+                     * 
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置Subnet ID.
+                     * @param _uniqSubnetId Subnet ID.
+                     * 
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     * 
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取Recycling IP information
+                     * @return OldAddrInfo Recycling IP information
+                     * 
+                     */
+                    OldAddrInfo GetOldAddrInfo() const;
+
+                    /**
+                     * 设置Recycling IP information
+                     * @param _oldAddrInfo Recycling IP information
+                     * 
+                     */
+                    void SetOldAddrInfo(const OldAddrInfo& _oldAddrInfo);
+
+                    /**
+                     * 判断参数 OldAddrInfo 是否已赋值
+                     * @return OldAddrInfo 是否已赋值
+                     * 
+                     */
+                    bool OldAddrInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Ongoing task
+                     * @return ProcessingTasks Ongoing task
+                     * 
+                     */
+                    std::vector<std::string> GetProcessingTasks() const;
+
+                    /**
+                     * 设置Ongoing task
+                     * @param _processingTasks Ongoing task
+                     * 
+                     */
+                    void SetProcessingTasks(const std::vector<std::string>& _processingTasks);
+
+                    /**
+                     * 判断参数 ProcessingTasks 是否已赋值
+                     * @return ProcessingTasks 是否已赋值
+                     * 
+                     */
+                    bool ProcessingTasksHasBeenSet() const;
+
+                    /**
+                     * 获取Task list
+                     * @return Tasks Task list
+                     * 
+                     */
+                    std::vector<ObjectTask> GetTasks() const;
+
+                    /**
+                     * 设置Task list
+                     * @param _tasks Task list
+                     * 
+                     */
+                    void SetTasks(const std::vector<ObjectTask>& _tasks);
+
+                    /**
+                     * 判断参数 Tasks 是否已赋值
+                     * @return Tasks 是否已赋值
+                     * 
+                     */
+                    bool TasksHasBeenSet() const;
+
+                    /**
+                     * 获取id of the biz_net_service table
+                     * @return NetServiceId id of the biz_net_service table
+                     * 
+                     */
+                    int64_t GetNetServiceId() const;
+
+                    /**
+                     * 设置id of the biz_net_service table
+                     * @param _netServiceId id of the biz_net_service table
+                     * 
+                     */
+                    void SetNetServiceId(const int64_t& _netServiceId);
+
+                    /**
+                     * 判断参数 NetServiceId 是否已赋值
+                     * @return NetServiceId 是否已赋值
+                     * 
+                     */
+                    bool NetServiceIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * User AppID
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * Cluster ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * Creation time.
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * Deletion time.
+                     */
+                    std::string m_deletedTime;
+                    bool m_deletedTimeHasBeenSet;
+
+                    /**
+                     * Instance group ID
+                     */
+                    std::string m_instanceGroupId;
+                    bool m_instanceGroupIdHasBeenSet;
+
+                    /**
+                     * Status.
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * Instance group (network) type. ha-ha: HA group; ro: read-only group; proxy: proxy; singleRo: exclusive read-only instance.
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * Update time.
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * Private IP address
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
+
+                    /**
+                     * Private network port.
+                     */
+                    int64_t m_vport;
+                    bool m_vportHasBeenSet;
+
+                    /**
+                     * Public network domain name.
+                     */
+                    std::string m_wanDomain;
+                    bool m_wanDomainHasBeenSet;
+
+                    /**
+                     * Public IP address
+                     */
+                    std::string m_wanIP;
+                    bool m_wanIPHasBeenSet;
+
+                    /**
+                     * External port
+                     */
+                    int64_t m_wanPort;
+                    bool m_wanPortHasBeenSet;
+
+                    /**
+                     * Public network status.
+                     */
+                    std::string m_wanStatus;
+                    bool m_wanStatusHasBeenSet;
+
+                    /**
+                     * Instance group information including instances
+                     */
+                    std::vector<CynosdbInstance> m_instanceSet;
+                    bool m_instanceSetHasBeenSet;
+
+                    /**
+                     * VPC ID
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * Subnet ID.
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * Recycling IP information
+                     */
+                    OldAddrInfo m_oldAddrInfo;
+                    bool m_oldAddrInfoHasBeenSet;
+
+                    /**
+                     * Ongoing task
+                     */
+                    std::vector<std::string> m_processingTasks;
+                    bool m_processingTasksHasBeenSet;
+
+                    /**
+                     * Task list
+                     */
+                    std::vector<ObjectTask> m_tasks;
+                    bool m_tasksHasBeenSet;
+
+                    /**
+                     * id of the biz_net_service table
+                     */
+                    int64_t m_netServiceId;
+                    bool m_netServiceIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CYNOSDB_V20190107_MODEL_CYNOSDBINSTANCEGROUP_H_

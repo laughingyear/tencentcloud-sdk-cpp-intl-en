@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Intelligent splitting video clip.
                 */
                 class SegmentRecognitionItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return Confidence 
+                     * 获取Confidence degree.
+                     * @return Confidence Confidence degree.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置
-                     * @param _confidence 
+                     * 设置Confidence degree.
+                     * @param _confidence Confidence degree.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return StartTimeOffset 
+                     * 获取Start time offset of the segment.
+                     * @return StartTimeOffset Start time offset of the segment.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置
-                     * @param _startTimeOffset 
+                     * 设置Start time offset of the segment.
+                     * @param _startTimeOffset Start time offset of the segment.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return EndTimeOffset 
+                     * 获取Segment end time offset.
+                     * @return EndTimeOffset Segment end time offset.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置
-                     * @param _endTimeOffset 
+                     * 设置Segment end time offset.
+                     * @param _endTimeOffset Segment end time offset.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SegmentUrl 
+                     * 获取Segment URL.
+                     * @return SegmentUrl Segment URL.
                      * 
                      */
                     std::string GetSegmentUrl() const;
 
                     /**
-                     * 设置
-                     * @param _segmentUrl 
+                     * 设置Segment URL.
+                     * @param _segmentUrl Segment URL.
                      * 
                      */
                     void SetSegmentUrl(const std::string& _segmentUrl);
@@ -131,19 +131,15 @@ namespace TencentCloud
                     bool SegmentUrlHasBeenSet() const;
 
                     /**
-                     * 获取Segment cover.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return CovImgUrl Segment cover.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Split clip cover.
+                     * @return CovImgUrl Split clip cover.
                      * 
                      */
                     std::string GetCovImgUrl() const;
 
                     /**
-                     * 设置Segment cover.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _covImgUrl Segment cover.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Split clip cover.
+                     * @param _covImgUrl Split clip cover.
                      * 
                      */
                     void SetCovImgUrl(const std::string& _covImgUrl);
@@ -157,18 +153,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Segment title.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Title Segment title.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置Segment title.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _title Segment title.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -182,18 +174,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Summary Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _summary Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -228,18 +216,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取The start time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return BeginTime The start time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置The start time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _beginTime The start time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -253,18 +237,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取The end time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return EndTime The end time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置The end time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _endTime The end time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -277,15 +257,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取Specifies the character ID.
-                     * @return PersonId Specifies the character ID.
+                     * 获取Specify the person ID.
+                     * @return PersonId Specify the person ID.
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置Specifies the character ID.
-                     * @param _personId Specifies the character ID.
+                     * 设置Specify the person ID.
+                     * @param _personId Specify the person ID.
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -300,46 +280,43 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * 
+                     * Confidence degree.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 
+                     * Start time offset of the segment.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 
+                     * Segment end time offset.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 
+                     * Segment URL.
                      */
                     std::string m_segmentUrl;
                     bool m_segmentUrlHasBeenSet;
 
                     /**
-                     * Segment cover.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Split clip cover.
                      */
                     std::string m_covImgUrl;
                     bool m_covImgUrlHasBeenSet;
 
                     /**
                      * Segment title.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * Segment summary.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
@@ -352,20 +329,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * The start time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * The end time of a live streaming segment, in the ISO date format.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * Specifies the character ID.
+                     * Specify the person ID.
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;

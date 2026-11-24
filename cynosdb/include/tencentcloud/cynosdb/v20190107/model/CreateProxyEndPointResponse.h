@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Async flow ID
-                     * @return FlowId Async flow ID
+                     * 获取<p>Async process ID.</p>
+                     * @return FlowId <p>Async process ID.</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取Async task ID
-                     * @return TaskId Async task ID
+                     * 获取<p>Asynchronous Task ID.</p>
+                     * @return TaskId <p>Asynchronous Task ID.</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy group ID
-                     * @return ProxyGroupId Database proxy group ID
+                     * 获取<p>Database Proxy Group ID.</p>
+                     * @return ProxyGroupId <p>Database Proxy Group ID.</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Async flow ID
+                     * <p>Async process ID.</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * Async task ID
+                     * <p>Asynchronous Task ID.</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Database proxy group ID
+                     * <p>Database Proxy Group ID.</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;

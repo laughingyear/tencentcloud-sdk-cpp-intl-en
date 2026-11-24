@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status, including PROCESSING, SUCCESS, and FAIL.
-                     * @return Status Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status, including PROCESSING, SUCCESS, and FAIL.
-                     * @param _status Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
-                     * @return ErrCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
-                     * @param _errCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -133,19 +133,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Recognition task input.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Input Recognition task input.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Input of the recognition task.
+                     * @return Input Input of the recognition task.
                      * 
                      */
                     SmartSubtitlesTaskInput GetInput() const;
 
                     /**
-                     * 设置Recognition task input.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _input Recognition task input.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Input of the recognition task.
+                     * @param _input Input of the recognition task.
                      * 
                      */
                     void SetInput(const SmartSubtitlesTaskInput& _input);
@@ -158,19 +154,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Recognition task output.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Output Recognition task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Output of the identification task.
+                     * @return Output Output of the identification task.
                      * 
                      */
                     std::vector<SmartSubtitlesResult> GetOutput() const;
 
                     /**
-                     * 设置Recognition task output.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _output Recognition task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Output of the identification task.
+                     * @param _output Output of the identification task.
                      * 
                      */
                     void SetOutput(const std::vector<SmartSubtitlesResult>& _output);
@@ -183,19 +175,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取Task execution start time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return BeginProcessTime Task execution start time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Task execution start time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @return BeginProcessTime Task execution start time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
-                     * 设置Task execution start time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _beginProcessTime Task execution start time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Task execution start time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @param _beginProcessTime Task execution start time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -208,19 +196,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取Task execution completion time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return FinishTime Task execution completion time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Task execution completion time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @return FinishTime Task execution completion time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置Task execution completion time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _finishTime Task execution completion time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Task execution completion time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @param _finishTime Task execution completion time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -235,13 +219,13 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * Task status, including PROCESSING, SUCCESS, and FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://intl.cloud.tencent.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
@@ -259,29 +243,25 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Recognition task input.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Input of the recognition task.
                      */
                     SmartSubtitlesTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Recognition task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Output of the identification task.
                      */
                     std::vector<SmartSubtitlesResult> m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * Task execution start time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Task execution start time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * Task execution completion time in [ISO datetime format](https://intl.cloud.tencent.com/document/product/862/37710?from_cn_redirect=1#52).
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Task execution completion time in [ISO date and time format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

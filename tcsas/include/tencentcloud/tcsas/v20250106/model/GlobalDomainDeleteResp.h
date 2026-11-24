@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Response of deleting a global domain name
+                * Response for deleting a global domain.
                 */
                 class GlobalDomainDeleteResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Response result
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Result Response result
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Operation result.
+                     * @return Result Operation result.
                      * 
                      */
                     bool GetResult() const;
 
                     /**
-                     * 设置Response result
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _result Response result
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Operation result.
+                     * @param _result Operation result.
                      * 
                      */
                     void SetResult(const bool& _result);
@@ -74,8 +70,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Response result
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Operation result.
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

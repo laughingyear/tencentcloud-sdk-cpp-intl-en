@@ -46,10 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return OriginalCost Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Original price (CNY).
+                     * @return OriginalCost Original price (CNY).
                      * 
                      */
                     double GetOriginalCost() const;
@@ -62,10 +60,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return DiscountCost Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Discounted price (CNY).
+                     * @return DiscountCost Discounted price (CNY).
                      * 
                      */
                     double GetDiscountCost() const;
@@ -78,10 +74,10 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取Unit of time for instance renewal.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeUnit Unit of time for instance renewal.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Time unit for instance renewal. Valid values:
+<li>m: indicates month.</li>
+                     * @return TimeUnit Time unit for instance renewal. Valid values:
+<li>m: indicates month.</li>
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -94,10 +90,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取How long the instance will be renewed for.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeSpan How long the instance will be renewed for.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取
+                     * @return TimeSpan 
                      * 
                      */
                     int64_t GetTimeSpan() const;
@@ -110,8 +104,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return PriceDetail 
+                     * 获取Price details.
+                     * @return PriceDetail Price details.
                      * 
                      */
                     std::vector<PriceDetail> GetPriceDetail() const;
@@ -124,8 +118,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool PriceDetailHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return NodeRenewPriceDetails 
+                     * 获取Node renewal inquiry details list.
+                     * @return NodeRenewPriceDetails Node renewal inquiry details list.
                      * 
                      */
                     std::vector<NodeRenewPriceDetail> GetNodeRenewPriceDetails() const;
@@ -140,41 +134,38 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Original price (CNY).
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Discounted price (CNY).
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * Unit of time for instance renewal.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Time unit for instance renewal. Valid values:
+<li>m: indicates month.</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * How long the instance will be renewed for.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 
+                     * Price details.
                      */
                     std::vector<PriceDetail> m_priceDetail;
                     bool m_priceDetailHasBeenSet;
 
                     /**
-                     * 
+                     * Node renewal inquiry details list.
                      */
                     std::vector<NodeRenewPriceDetail> m_nodeRenewPriceDetails;
                     bool m_nodeRenewPriceDetailsHasBeenSet;

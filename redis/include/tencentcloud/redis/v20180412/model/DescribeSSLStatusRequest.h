@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy it from the instance list.</p>
+                     * @return InstanceId <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy it from the instance list.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy it from the instance list.</p>
+                     * @param _instanceId <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy it from the instance list.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Certificate download format type. Defaults to nginx if not passed. Only applicable to custom certificates (CertSource=1)</p><p>Enumeration values:</p><ul><li>nginx: nginx available</li><li>apache: apache available</li><li>tomcat: tomcat available</li><li>iis: iis available</li></ul>
+                     * @return ServiceType <p>Certificate download format type. Defaults to nginx if not passed. Only applicable to custom certificates (CertSource=1)</p><p>Enumeration values:</p><ul><li>nginx: nginx available</li><li>apache: apache available</li><li>tomcat: tomcat available</li><li>iis: iis available</li></ul>
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置<p>Certificate download format type. Defaults to nginx if not passed. Only applicable to custom certificates (CertSource=1)</p><p>Enumeration values:</p><ul><li>nginx: nginx available</li><li>apache: apache available</li><li>tomcat: tomcat available</li><li>iis: iis available</li></ul>
+                     * @param _serviceType <p>Certificate download format type. Defaults to nginx if not passed. Only applicable to custom certificates (CertSource=1)</p><p>Enumeration values:</p><ul><li>nginx: nginx available</li><li>apache: apache available</li><li>tomcat: tomcat available</li><li>iis: iis available</li></ul>
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID
+                     * <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy it from the instance list.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>Certificate download format type. Defaults to nginx if not passed. Only applicable to custom certificates (CertSource=1)</p><p>Enumeration values:</p><ul><li>nginx: nginx available</li><li>apache: apache available</li><li>tomcat: tomcat available</li><li>iis: iis available</li></ul>
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
 
                 };
             }

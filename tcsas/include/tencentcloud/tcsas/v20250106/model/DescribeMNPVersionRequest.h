@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID of the task to create a mini program version
-                     * @return BusinessId ID of the task to create a mini program version
+                     * 获取<p>Task ID returned by the CreateMNPVersion API.</p>
+                     * @return BusinessId <p>Task ID returned by the CreateMNPVersion API.</p>
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
-                     * 设置ID of the task to create a mini program version
-                     * @param _businessId ID of the task to create a mini program version
+                     * 设置<p>Task ID returned by the CreateMNPVersion API.</p>
+                     * @param _businessId <p>Task ID returned by the CreateMNPVersion API.</p>
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BusinessIdHasBeenSet() const;
 
                     /**
-                     * 获取Platform ID
-                     * @return PlatformId Platform ID
+                     * 获取<p>Platform ID.</p>
+                     * @return PlatformId <p>Platform ID.</p>
                      * 
                      */
                     std::string GetPlatformId() const;
 
                     /**
-                     * 设置Platform ID
-                     * @param _platformId Platform ID
+                     * 设置<p>Platform ID.</p>
+                     * @param _platformId <p>Platform ID.</p>
                      * 
                      */
                     void SetPlatformId(const std::string& _platformId);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool PlatformIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CI/CD key ID.</p>
+                     * @return PipelineId <p>CI/CD key ID.</p>
+                     * 
+                     */
+                    std::string GetPipelineId() const;
+
+                    /**
+                     * 设置<p>CI/CD key ID.</p>
+                     * @param _pipelineId <p>CI/CD key ID.</p>
+                     * 
+                     */
+                    void SetPipelineId(const std::string& _pipelineId);
+
+                    /**
+                     * 判断参数 PipelineId 是否已赋值
+                     * @return PipelineId 是否已赋值
+                     * 
+                     */
+                    bool PipelineIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID of the task to create a mini program version
+                     * <p>Task ID returned by the CreateMNPVersion API.</p>
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
-                     * Platform ID
+                     * <p>Platform ID.</p>
                      */
                     std::string m_platformId;
                     bool m_platformIdHasBeenSet;
+
+                    /**
+                     * <p>CI/CD key ID.</p>
+                     */
+                    std::string m_pipelineId;
+                    bool m_pipelineIdHasBeenSet;
 
                 };
             }

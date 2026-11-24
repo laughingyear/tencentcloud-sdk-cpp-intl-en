@@ -35,7 +35,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of full speech recognition task.
+                * Control parameters for a speech full-text recognition task.
+<font color=red>Note: This parameter is no longer maintained. It is recommended to use the AsrTranslateConfigure parameter to initiate speech translation recognition (when DstLanguage is not filled in or is an empty string, no translation is performed, and the billing item is the same as full text speech recognition).</font>
                 */
                 class AsrFullTextConfigureInfo : public AbstractModel
                 {
@@ -47,23 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of full speech recognition task. Valid values:
-<li>ON: enables intelligent full speech recognition task;</li>
-<li>OFF: disables intelligent full speech recognition task.</li>
-                     * @return Switch Switch of full speech recognition task. Valid values:
-<li>ON: enables intelligent full speech recognition task;</li>
-<li>OFF: disables intelligent full speech recognition task.</li>
+                     * 获取<p>Voice full-text recognition task switch. Available values:</p><li>ON: enable intelligent voice full-text recognition task;</li><li>OFF: disable intelligent voice full-text recognition task.</li>
+                     * @return Switch <p>Voice full-text recognition task switch. Available values:</p><li>ON: enable intelligent voice full-text recognition task;</li><li>OFF: disable intelligent voice full-text recognition task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of full speech recognition task. Valid values:
-<li>ON: enables intelligent full speech recognition task;</li>
-<li>OFF: disables intelligent full speech recognition task.</li>
-                     * @param _switch Switch of full speech recognition task. Valid values:
-<li>ON: enables intelligent full speech recognition task;</li>
-<li>OFF: disables intelligent full speech recognition task.</li>
+                     * 设置<p>Voice full-text recognition task switch. Available values:</p><li>ON: enable intelligent voice full-text recognition task;</li><li>OFF: disable intelligent voice full-text recognition task.</li>
+                     * @param _switch <p>Voice full-text recognition task switch. Available values:</p><li>ON: enable intelligent voice full-text recognition task;</li><li>OFF: disable intelligent voice full-text recognition task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,23 +69,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The formats of the subtitle files generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-                     * @return SubtitleFormats The formats of the subtitle files generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
+                     * 获取<p>List of generated subtitle file formats. Leave empty or pass an empty array to indicate no subtitle file generation. Available values:</p><li>vtt: generate WebVTT subtitle file;</li><li>srt: generate SRT subtitle file.</li><font color="red">Note:</font> VOD media asset information only supports adding vtt subtitles. Therefore, when and only when SubtitleFormats includes vtt, VOD will add the generated subtitles to media assets.
+                     * @return SubtitleFormats <p>List of generated subtitle file formats. Leave empty or pass an empty array to indicate no subtitle file generation. Available values:</p><li>vtt: generate WebVTT subtitle file;</li><li>srt: generate SRT subtitle file.</li><font color="red">Note:</font> VOD media asset information only supports adding vtt subtitles. Therefore, when and only when SubtitleFormats includes vtt, VOD will add the generated subtitles to media assets.
                      * 
                      */
                     std::vector<std::string> GetSubtitleFormats() const;
 
                     /**
-                     * 设置The formats of the subtitle files generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-                     * @param _subtitleFormats The formats of the subtitle files generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
+                     * 设置<p>List of generated subtitle file formats. Leave empty or pass an empty array to indicate no subtitle file generation. Available values:</p><li>vtt: generate WebVTT subtitle file;</li><li>srt: generate SRT subtitle file.</li><font color="red">Note:</font> VOD media asset information only supports adding vtt subtitles. Therefore, when and only when SubtitleFormats includes vtt, VOD will add the generated subtitles to media assets.
+                     * @param _subtitleFormats <p>List of generated subtitle file formats. Leave empty or pass an empty array to indicate no subtitle file generation. Available values:</p><li>vtt: generate WebVTT subtitle file;</li><li>srt: generate SRT subtitle file.</li><font color="red">Note:</font> VOD media asset information only supports adding vtt subtitles. Therefore, when and only when SubtitleFormats includes vtt, VOD will add the generated subtitles to media assets.
                      * 
                      */
                     void SetSubtitleFormats(const std::vector<std::string>& _subtitleFormats);
@@ -105,48 +90,36 @@ namespace TencentCloud
                     bool SubtitleFormatsHasBeenSet() const;
 
                     /**
-                     * 获取The format of the subtitle file generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-<font color='red'>Note: This parameter has been deprecated. Please use `SubtitleFormats` instead.</font>
-                     * @return SubtitleFormat The format of the subtitle file generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-<font color='red'>Note: This parameter has been deprecated. Please use `SubtitleFormats` instead.</font>
-                     * 
+                     * 获取<p>Format of the generated subtitle file. Leave it empty or as an empty string to skip subtitle file generation. Available values:</p><li>vtt: generate a WebVTT subtitle file;</li><li>srt: generate an SRT subtitle file.</li><font color="red">Note: This field is deprecated. We recommend using SubtitleFormats.</font>
+                     * @return SubtitleFormat <p>Format of the generated subtitle file. Leave it empty or as an empty string to skip subtitle file generation. Available values:</p><li>vtt: generate a WebVTT subtitle file;</li><li>srt: generate an SRT subtitle file.</li><font color="red">Note: This field is deprecated. We recommend using SubtitleFormats.</font>
+                     * @deprecated
                      */
                     std::string GetSubtitleFormat() const;
 
                     /**
-                     * 设置The format of the subtitle file generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-<font color='red'>Note: This parameter has been deprecated. Please use `SubtitleFormats` instead.</font>
-                     * @param _subtitleFormat The format of the subtitle file generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-<font color='red'>Note: This parameter has been deprecated. Please use `SubtitleFormats` instead.</font>
-                     * 
+                     * 设置<p>Format of the generated subtitle file. Leave it empty or as an empty string to skip subtitle file generation. Available values:</p><li>vtt: generate a WebVTT subtitle file;</li><li>srt: generate an SRT subtitle file.</li><font color="red">Note: This field is deprecated. We recommend using SubtitleFormats.</font>
+                     * @param _subtitleFormat <p>Format of the generated subtitle file. Leave it empty or as an empty string to skip subtitle file generation. Available values:</p><li>vtt: generate a WebVTT subtitle file;</li><li>srt: generate an SRT subtitle file.</li><font color="red">Note: This field is deprecated. We recommend using SubtitleFormats.</font>
+                     * @deprecated
                      */
                     void SetSubtitleFormat(const std::string& _subtitleFormat);
 
                     /**
                      * 判断参数 SubtitleFormat 是否已赋值
                      * @return SubtitleFormat 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubtitleFormatHasBeenSet() const;
 
                     /**
-                     * 获取Media source language value range: <li>zh: Mandarin </li> <li>en: English</li> <li>ja: Japanese </li> <li>zh-ca: Cantonese</li><font color=red>Note: </font> If it fills in an empty string or leaves this parameter blank, it will be automatically recognized (it is recommended to fill in the language corresponding to the media to improve the recognition accuracy).
-                     * @return SrcLanguage Media source language value range: <li>zh: Mandarin </li> <li>en: English</li> <li>ja: Japanese </li> <li>zh-ca: Cantonese</li><font color=red>Note: </font> If it fills in an empty string or leaves this parameter blank, it will be automatically recognized (it is recommended to fill in the language corresponding to the media to improve the recognition accuracy).
+                     * 获取<p>Media source language. Value range:</p><li>zh: mandarin</li><li>en: English</li><li>ja: Japanese</li><li>zh-ca: Cantonese</li><font color="red">Note:</font> Fill in an empty string or leave the parameter blank for automatic recognition (effectiveness difficult to guarantee. It is recommended to fill in the language corresponding to the original media to improve recognition accuracy).</p>
+                     * @return SrcLanguage <p>Media source language. Value range:</p><li>zh: mandarin</li><li>en: English</li><li>ja: Japanese</li><li>zh-ca: Cantonese</li><font color="red">Note:</font> Fill in an empty string or leave the parameter blank for automatic recognition (effectiveness difficult to guarantee. It is recommended to fill in the language corresponding to the original media to improve recognition accuracy).</p>
                      * 
                      */
                     std::string GetSrcLanguage() const;
 
                     /**
-                     * 设置Media source language value range: <li>zh: Mandarin </li> <li>en: English</li> <li>ja: Japanese </li> <li>zh-ca: Cantonese</li><font color=red>Note: </font> If it fills in an empty string or leaves this parameter blank, it will be automatically recognized (it is recommended to fill in the language corresponding to the media to improve the recognition accuracy).
-                     * @param _srcLanguage Media source language value range: <li>zh: Mandarin </li> <li>en: English</li> <li>ja: Japanese </li> <li>zh-ca: Cantonese</li><font color=red>Note: </font> If it fills in an empty string or leaves this parameter blank, it will be automatically recognized (it is recommended to fill in the language corresponding to the media to improve the recognition accuracy).
+                     * 设置<p>Media source language. Value range:</p><li>zh: mandarin</li><li>en: English</li><li>ja: Japanese</li><li>zh-ca: Cantonese</li><font color="red">Note:</font> Fill in an empty string or leave the parameter blank for automatic recognition (effectiveness difficult to guarantee. It is recommended to fill in the language corresponding to the original media to improve recognition accuracy).</p>
+                     * @param _srcLanguage <p>Media source language. Value range:</p><li>zh: mandarin</li><li>en: English</li><li>ja: Japanese</li><li>zh-ca: Cantonese</li><font color="red">Note:</font> Fill in an empty string or leave the parameter blank for automatic recognition (effectiveness difficult to guarantee. It is recommended to fill in the language corresponding to the original media to improve recognition accuracy).</p>
                      * 
                      */
                     void SetSrcLanguage(const std::string& _srcLanguage);
@@ -159,23 +132,15 @@ namespace TencentCloud
                     bool SrcLanguageHasBeenSet() const;
 
                     /**
-                     * 获取Specify subtitle name, length limit: 64 characters. This value will be displayed by the player. If not provided, VOD will automatically generate it.
-<font color=red>Note:</font> This field is valid only when SubtitleFormats includes vtt.
-
-                     * @return SubtitleName Specify subtitle name, length limit: 64 characters. This value will be displayed by the player. If not provided, VOD will automatically generate it.
-<font color=red>Note:</font> This field is valid only when SubtitleFormats includes vtt.
-
+                     * 获取<p>Specify subtitle name, length limited to 64 characters. This value will be used for player display. If left blank, VOD will auto generate it.<br><font color="red">Note:</font> This field is valid only when SubtitleFormats includes vtt.</p>
+                     * @return SubtitleName <p>Specify subtitle name, length limited to 64 characters. This value will be used for player display. If left blank, VOD will auto generate it.<br><font color="red">Note:</font> This field is valid only when SubtitleFormats includes vtt.</p>
                      * 
                      */
                     std::string GetSubtitleName() const;
 
                     /**
-                     * 设置Specify subtitle name, length limit: 64 characters. This value will be displayed by the player. If not provided, VOD will automatically generate it.
-<font color=red>Note:</font> This field is valid only when SubtitleFormats includes vtt.
-
-                     * @param _subtitleName Specify subtitle name, length limit: 64 characters. This value will be displayed by the player. If not provided, VOD will automatically generate it.
-<font color=red>Note:</font> This field is valid only when SubtitleFormats includes vtt.
-
+                     * 设置<p>Specify subtitle name, length limited to 64 characters. This value will be used for player display. If left blank, VOD will auto generate it.<br><font color="red">Note:</font> This field is valid only when SubtitleFormats includes vtt.</p>
+                     * @param _subtitleName <p>Specify subtitle name, length limited to 64 characters. This value will be used for player display. If left blank, VOD will auto generate it.<br><font color="red">Note:</font> This field is valid only when SubtitleFormats includes vtt.</p>
                      * 
                      */
                     void SetSubtitleName(const std::string& _subtitleName);
@@ -190,40 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Switch of full speech recognition task. Valid values:
-<li>ON: enables intelligent full speech recognition task;</li>
-<li>OFF: disables intelligent full speech recognition task.</li>
+                     * <p>Voice full-text recognition task switch. Available values:</p><li>ON: enable intelligent voice full-text recognition task;</li><li>OFF: disable intelligent voice full-text recognition task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The formats of the subtitle files generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
+                     * <p>List of generated subtitle file formats. Leave empty or pass an empty array to indicate no subtitle file generation. Available values:</p><li>vtt: generate WebVTT subtitle file;</li><li>srt: generate SRT subtitle file.</li><font color="red">Note:</font> VOD media asset information only supports adding vtt subtitles. Therefore, when and only when SubtitleFormats includes vtt, VOD will add the generated subtitles to media assets.
                      */
                     std::vector<std::string> m_subtitleFormats;
                     bool m_subtitleFormatsHasBeenSet;
 
                     /**
-                     * The format of the subtitle file generated. If this parameter is not passed or an empty string is passed in, no subtitles files will be generated. Valid values:
-<li>vtt</li>
-<li>srt</li>
-<font color='red'>Note: This parameter has been deprecated. Please use `SubtitleFormats` instead.</font>
+                     * <p>Format of the generated subtitle file. Leave it empty or as an empty string to skip subtitle file generation. Available values:</p><li>vtt: generate a WebVTT subtitle file;</li><li>srt: generate an SRT subtitle file.</li><font color="red">Note: This field is deprecated. We recommend using SubtitleFormats.</font>
                      */
                     std::string m_subtitleFormat;
                     bool m_subtitleFormatHasBeenSet;
 
                     /**
-                     * Media source language value range: <li>zh: Mandarin </li> <li>en: English</li> <li>ja: Japanese </li> <li>zh-ca: Cantonese</li><font color=red>Note: </font> If it fills in an empty string or leaves this parameter blank, it will be automatically recognized (it is recommended to fill in the language corresponding to the media to improve the recognition accuracy).
+                     * <p>Media source language. Value range:</p><li>zh: mandarin</li><li>en: English</li><li>ja: Japanese</li><li>zh-ca: Cantonese</li><font color="red">Note:</font> Fill in an empty string or leave the parameter blank for automatic recognition (effectiveness difficult to guarantee. It is recommended to fill in the language corresponding to the original media to improve recognition accuracy).</p>
                      */
                     std::string m_srcLanguage;
                     bool m_srcLanguageHasBeenSet;
 
                     /**
-                     * Specify subtitle name, length limit: 64 characters. This value will be displayed by the player. If not provided, VOD will automatically generate it.
-<font color=red>Note:</font> This field is valid only when SubtitleFormats includes vtt.
-
+                     * <p>Specify subtitle name, length limited to 64 characters. This value will be used for player display. If left blank, VOD will auto generate it.<br><font color="red">Note:</font> This field is valid only when SubtitleFormats includes vtt.</p>
                      */
                     std::string m_subtitleName;
                     bool m_subtitleNameHasBeenSet;

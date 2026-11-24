@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID of the site.
-                     * @return ZoneId ID of the site.
+                     * 获取Zone ID.
+
+If you wish to quickly submit Targets urls under different sites, you can fill in * as the value. but the premise is that the account calling this API must have the permission to all site resources under the root account.
+                     * @return ZoneId Zone ID.
+
+If you wish to quickly submit Targets urls under different sites, you can fill in * as the value. but the premise is that the account calling this API must have the permission to all site resources under the root account.
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置ID of the site.
-                     * @param _zoneId ID of the site.
+                     * 设置Zone ID.
+
+If you wish to quickly submit Targets urls under different sites, you can fill in * as the value. but the premise is that the account calling this API must have the permission to all site resources under the root account.
+                     * @param _zoneId Zone ID.
+
+If you wish to quickly submit Targets urls under different sites, you can fill in * as the value. but the premise is that the account calling this API must have the permission to all site resources under the root account.
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,23 +73,23 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取List of resources to be preheated. Each element format is similar to the following:
-http://www.example.com/example.txt. The parameter value is currently required.
-Note: The number of tasks that can be submitted is limited by the quota of a billing package. For details, see [Billing Overview] (https://intl.cloud.tencent.com/document/product/1552/77380?from_cn_redirect=1).
-                     * @return Targets List of resources to be preheated. Each element format is similar to the following:
-http://www.example.com/example.txt. The parameter value is currently required.
-Note: The number of tasks that can be submitted is limited by the quota of a billing package. For details, see [Billing Overview] (https://intl.cloud.tencent.com/document/product/1552/77380?from_cn_redirect=1).
+                     * 获取List of resources to be preheated. required. each element format is as follows:.
+http://www.example.com/example.txt.
+Note: the number of submitted tasks is limited by the quota of a billing package. check the [EO billing package](https://www.tencentcloud.com/document/product/1552/77380?from_cn_redirect=1).
+                     * @return Targets List of resources to be preheated. required. each element format is as follows:.
+http://www.example.com/example.txt.
+Note: the number of submitted tasks is limited by the quota of a billing package. check the [EO billing package](https://www.tencentcloud.com/document/product/1552/77380?from_cn_redirect=1).
                      * 
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置List of resources to be preheated. Each element format is similar to the following:
-http://www.example.com/example.txt. The parameter value is currently required.
-Note: The number of tasks that can be submitted is limited by the quota of a billing package. For details, see [Billing Overview] (https://intl.cloud.tencent.com/document/product/1552/77380?from_cn_redirect=1).
-                     * @param _targets List of resources to be preheated. Each element format is similar to the following:
-http://www.example.com/example.txt. The parameter value is currently required.
-Note: The number of tasks that can be submitted is limited by the quota of a billing package. For details, see [Billing Overview] (https://intl.cloud.tencent.com/document/product/1552/77380?from_cn_redirect=1).
+                     * 设置List of resources to be preheated. required. each element format is as follows:.
+http://www.example.com/example.txt.
+Note: the number of submitted tasks is limited by the quota of a billing package. check the [EO billing package](https://www.tencentcloud.com/document/product/1552/77380?from_cn_redirect=1).
+                     * @param _targets List of resources to be preheated. required. each element format is as follows:.
+http://www.example.com/example.txt.
+Note: the number of submitted tasks is limited by the quota of a billing package. check the [EO billing package](https://www.tencentcloud.com/document/product/1552/77380?from_cn_redirect=1).
                      * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
@@ -92,6 +100,55 @@ Note: The number of tasks that can be submitted is limited by the quota of a bil
                      * 
                      */
                     bool TargetsHasBeenSet() const;
+
+                    /**
+                     * 获取Preheat mode. valid values:.
+<Li>Default: default mode, which preheats to the middle layer.</li>.
+<Li>Edge: specifies edge preheating mode, which preheats to both edge and middle layer.</li> if left empty, the default value is default.
+Notes:.
+Preheating to the edge generates edge layer traffic, which is included in billing traffic.
+2. specifies the default allocation of edge preheating as a separate preheating amount of 1000 per day, which does not consume the standard preheating amount.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * @return Mode Preheat mode. valid values:.
+<Li>Default: default mode, which preheats to the middle layer.</li>.
+<Li>Edge: specifies edge preheating mode, which preheats to both edge and middle layer.</li> if left empty, the default value is default.
+Notes:.
+Preheating to the edge generates edge layer traffic, which is included in billing traffic.
+2. specifies the default allocation of edge preheating as a separate preheating amount of 1000 per day, which does not consume the standard preheating amount.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置Preheat mode. valid values:.
+<Li>Default: default mode, which preheats to the middle layer.</li>.
+<Li>Edge: specifies edge preheating mode, which preheats to both edge and middle layer.</li> if left empty, the default value is default.
+Notes:.
+Preheating to the edge generates edge layer traffic, which is included in billing traffic.
+2. specifies the default allocation of edge preheating as a separate preheating amount of 1000 per day, which does not consume the standard preheating amount.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * @param _mode Preheat mode. valid values:.
+<Li>Default: default mode, which preheats to the middle layer.</li>.
+<Li>Edge: specifies edge preheating mode, which preheats to both edge and middle layer.</li> if left empty, the default value is default.
+Notes:.
+Preheating to the edge generates edge layer traffic, which is included in billing traffic.
+2. specifies the default allocation of edge preheating as a separate preheating amount of 1000 per day, which does not consume the standard preheating amount.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
 
                     /**
                      * 获取Whether to encode a URL according to RFC3986. Enable this field when the URL contains non-ASCII characters.
@@ -115,15 +172,15 @@ Note: The number of tasks that can be submitted is limited by the quota of a bil
                     bool EncodeUrlHasBeenSet() const;
 
                     /**
-                     * 获取HTTP header information
-                     * @return Headers HTTP header information
+                     * 获取Specifies whether to carry HTTP header information for preheating. leave it empty otherwise.
+                     * @return Headers Specifies whether to carry HTTP header information for preheating. leave it empty otherwise.
                      * 
                      */
                     std::vector<Header> GetHeaders() const;
 
                     /**
-                     * 设置HTTP header information
-                     * @param _headers HTTP header information
+                     * 设置Specifies whether to carry HTTP header information for preheating. leave it empty otherwise.
+                     * @param _headers Specifies whether to carry HTTP header information for preheating. leave it empty otherwise.
                      * 
                      */
                     void SetHeaders(const std::vector<Header>& _headers);
@@ -135,21 +192,93 @@ Note: The number of tasks that can be submitted is limited by the quota of a bil
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取Media fragment preheating control. valid values:.
+<Li>On: enables shard preheating, preheats the description file, and performs recursive resolution of the description file shards for preheating.</li>.
+<Li>Off: only preheats the submitted description file.</li>default value: off if left empty.
+Notes:.
+Supported description file is M3U8; corresponding shard is TS.
+Specifies the description file must support normal requests and describe sharding paths as per industry standards.
+Specifies the recursive resolution depth is no more than 3.
+Parsed shards normally accumulate daily pre-warming amount. when usage exceeds the limit, silent processing is triggered and preheating is no longer executed.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * @return PrefetchMediaSegments Media fragment preheating control. valid values:.
+<Li>On: enables shard preheating, preheats the description file, and performs recursive resolution of the description file shards for preheating.</li>.
+<Li>Off: only preheats the submitted description file.</li>default value: off if left empty.
+Notes:.
+Supported description file is M3U8; corresponding shard is TS.
+Specifies the description file must support normal requests and describe sharding paths as per industry standards.
+Specifies the recursive resolution depth is no more than 3.
+Parsed shards normally accumulate daily pre-warming amount. when usage exceeds the limit, silent processing is triggered and preheating is no longer executed.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * 
+                     */
+                    std::string GetPrefetchMediaSegments() const;
+
+                    /**
+                     * 设置Media fragment preheating control. valid values:.
+<Li>On: enables shard preheating, preheats the description file, and performs recursive resolution of the description file shards for preheating.</li>.
+<Li>Off: only preheats the submitted description file.</li>default value: off if left empty.
+Notes:.
+Supported description file is M3U8; corresponding shard is TS.
+Specifies the description file must support normal requests and describe sharding paths as per industry standards.
+Specifies the recursive resolution depth is no more than 3.
+Parsed shards normally accumulate daily pre-warming amount. when usage exceeds the limit, silent processing is triggered and preheating is no longer executed.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * @param _prefetchMediaSegments Media fragment preheating control. valid values:.
+<Li>On: enables shard preheating, preheats the description file, and performs recursive resolution of the description file shards for preheating.</li>.
+<Li>Off: only preheats the submitted description file.</li>default value: off if left empty.
+Notes:.
+Supported description file is M3U8; corresponding shard is TS.
+Specifies the description file must support normal requests and describe sharding paths as per industry standards.
+Specifies the recursive resolution depth is no more than 3.
+Parsed shards normally accumulate daily pre-warming amount. when usage exceeds the limit, silent processing is triggered and preheating is no longer executed.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     * 
+                     */
+                    void SetPrefetchMediaSegments(const std::string& _prefetchMediaSegments);
+
+                    /**
+                     * 判断参数 PrefetchMediaSegments 是否已赋值
+                     * @return PrefetchMediaSegments 是否已赋值
+                     * 
+                     */
+                    bool PrefetchMediaSegmentsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID of the site.
+                     * Zone ID.
+
+If you wish to quickly submit Targets urls under different sites, you can fill in * as the value. but the premise is that the account calling this API must have the permission to all site resources under the root account.
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * List of resources to be preheated. Each element format is similar to the following:
-http://www.example.com/example.txt. The parameter value is currently required.
-Note: The number of tasks that can be submitted is limited by the quota of a billing package. For details, see [Billing Overview] (https://intl.cloud.tencent.com/document/product/1552/77380?from_cn_redirect=1).
+                     * List of resources to be preheated. required. each element format is as follows:.
+http://www.example.com/example.txt.
+Note: the number of submitted tasks is limited by the quota of a billing package. check the [EO billing package](https://www.tencentcloud.com/document/product/1552/77380?from_cn_redirect=1).
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * Preheat mode. valid values:.
+<Li>Default: default mode, which preheats to the middle layer.</li>.
+<Li>Edge: specifies edge preheating mode, which preheats to both edge and middle layer.</li> if left empty, the default value is default.
+Notes:.
+Preheating to the edge generates edge layer traffic, which is included in billing traffic.
+2. specifies the default allocation of edge preheating as a separate preheating amount of 1000 per day, which does not consume the standard preheating amount.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                     /**
                      * Whether to encode a URL according to RFC3986. Enable this field when the URL contains non-ASCII characters.
@@ -158,10 +287,25 @@ Note: The number of tasks that can be submitted is limited by the quota of a bil
                     bool m_encodeUrlHasBeenSet;
 
                     /**
-                     * HTTP header information
+                     * Specifies whether to carry HTTP header information for preheating. leave it empty otherwise.
                      */
                     std::vector<Header> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * Media fragment preheating control. valid values:.
+<Li>On: enables shard preheating, preheats the description file, and performs recursive resolution of the description file shards for preheating.</li>.
+<Li>Off: only preheats the submitted description file.</li>default value: off if left empty.
+Notes:.
+Supported description file is M3U8; corresponding shard is TS.
+Specifies the description file must support normal requests and describe sharding paths as per industry standards.
+Specifies the recursive resolution depth is no more than 3.
+Parsed shards normally accumulate daily pre-warming amount. when usage exceeds the limit, silent processing is triggered and preheating is no longer executed.
+Description:.
+This parameter is the allowlist feature. if needed, contact tencent cloud engineers.
+                     */
+                    std::string m_prefetchMediaSegments;
+                    bool m_prefetchMediaSegmentsHasBeenSet;
 
                 };
             }

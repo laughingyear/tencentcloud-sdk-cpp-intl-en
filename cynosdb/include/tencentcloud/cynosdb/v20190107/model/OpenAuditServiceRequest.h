@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取Instance ID.
+                     * @return InstanceId Instance ID.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置Instance ID.
+                     * @param _instanceId Instance ID.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Log retention period
-                     * @return LogExpireDay Log retention period
+                     * 获取Log retention period.
+                     * @return LogExpireDay Log retention period.
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置Log retention period
-                     * @param _logExpireDay Log retention period
+                     * 设置Log retention period.
+                     * @param _logExpireDay Log retention period.
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取Frequent log retention period
-                     * @return HighLogExpireDay Frequent log retention period
+                     * 获取High frequency log retention period.
+                     * @return HighLogExpireDay High frequency log retention period.
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
-                     * 设置Frequent log retention period
-                     * @param _highLogExpireDay Frequent log retention period
+                     * 设置High frequency log retention period.
+                     * @param _highLogExpireDay High frequency log retention period.
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取Audit rule. If both this parameter and `RuleTemplateIds` are left empty, full audit will be applied.
-                     * @return AuditRuleFilters Audit rule. If both this parameter and `RuleTemplateIds` are left empty, full audit will be applied.
+                     * 获取Audit rule (deprecated).
+                     * @return AuditRuleFilters Audit rule (deprecated).
                      * @deprecated
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
-                     * 设置Audit rule. If both this parameter and `RuleTemplateIds` are left empty, full audit will be applied.
-                     * @param _auditRuleFilters Audit rule. If both this parameter and `RuleTemplateIds` are left empty, full audit will be applied.
+                     * 设置Audit rule (deprecated).
+                     * @param _auditRuleFilters Audit rule (deprecated).
                      * @deprecated
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取Rule template ID. If both this parameter and `AuditRuleFilters` are left empty, full audit will be applied.
-                     * @return RuleTemplateIds Rule template ID. If both this parameter and `AuditRuleFilters` are left empty, full audit will be applied.
+                     * 获取Rule template ID. If both this parameter and AuditRuleFilters are left empty, full audit is enabled.
+                     * @return RuleTemplateIds Rule template ID. If both this parameter and AuditRuleFilters are left empty, full audit is enabled.
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置Rule template ID. If both this parameter and `AuditRuleFilters` are left empty, full audit will be applied.
-                     * @param _ruleTemplateIds Rule template ID. If both this parameter and `AuditRuleFilters` are left empty, full audit will be applied.
+                     * 设置Rule template ID. If both this parameter and AuditRuleFilters are left empty, full audit is enabled.
+                     * @param _ruleTemplateIds Rule template ID. If both this parameter and AuditRuleFilters are left empty, full audit is enabled.
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -148,37 +148,64 @@ namespace TencentCloud
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取Audit type. true: full audit; default false: rule audit.
+                     * @return AuditAll Audit type. true: full audit; default false: rule audit.
+                     * 
+                     */
+                    bool GetAuditAll() const;
+
+                    /**
+                     * 设置Audit type. true: full audit; default false: rule audit.
+                     * @param _auditAll Audit type. true: full audit; default false: rule audit.
+                     * 
+                     */
+                    void SetAuditAll(const bool& _auditAll);
+
+                    /**
+                     * 判断参数 AuditAll 是否已赋值
+                     * @return AuditAll 是否已赋值
+                     * 
+                     */
+                    bool AuditAllHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID
+                     * Instance ID.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Log retention period
+                     * Log retention period.
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * Frequent log retention period
+                     * High frequency log retention period.
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
-                     * Audit rule. If both this parameter and `RuleTemplateIds` are left empty, full audit will be applied.
+                     * Audit rule (deprecated).
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
-                     * Rule template ID. If both this parameter and `AuditRuleFilters` are left empty, full audit will be applied.
+                     * Rule template ID. If both this parameter and AuditRuleFilters are left empty, full audit is enabled.
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
+
+                    /**
+                     * Audit type. true: full audit; default false: rule audit.
+                     */
+                    bool m_auditAll;
+                    bool m_auditAllHasBeenSet;
 
                 };
             }

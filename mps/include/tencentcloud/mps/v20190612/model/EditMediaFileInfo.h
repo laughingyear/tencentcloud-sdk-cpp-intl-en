@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * VOD video file editing information
+                * Edit video-on-demand file information.
                 */
                 class EditMediaFileInfo : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取The start offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
-                     * @return StartTimeOffset The start offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * 获取[Edit] task takes effect. Start time offset for video editing, in seconds.
+                     * @return StartTimeOffset [Edit] task takes effect. Start time offset for video editing, in seconds.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置The start offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
-                     * @param _startTimeOffset The start offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * 设置[Edit] task takes effect. Start time offset for video editing, in seconds.
+                     * @param _startTimeOffset [Edit] task takes effect. Start time offset for video editing, in seconds.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取The end offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
-                     * @return EndTimeOffset The end offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * 获取[Edit] task takes effect. End time offset of video editing. Measurement unit: second.
+                     * @return EndTimeOffset [Edit] task takes effect. End time offset of video editing. Measurement unit: second.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置The end offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
-                     * @param _endTimeOffset The end offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * 设置[Edit] task takes effect. End time offset of video editing. Measurement unit: second.
+                     * @param _endTimeOffset [Edit] task takes effect. End time offset of video editing. Measurement unit: second.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -111,27 +111,23 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取The ID of the material associated with an element. This parameter is required for video compositing tasks.
+                     * 获取[Compose] task required, used for media in track elements to associate source material ID.
 
-Note: The ID can be up to 32 characters long and can contain letters, digits, and special characters -_
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Id The ID of the material associated with an element. This parameter is required for video compositing tasks.
+Note: It can include letters (case insensitive), digits, -, and _, up to 32 characters.
+                     * @return Id [Compose] task required, used for media in track elements to associate source material ID.
 
-Note: The ID can be up to 32 characters long and can contain letters, digits, and special characters -_
-Note: This field may return null, indicating that no valid values can be obtained.
+Note: It can include letters (case insensitive), digits, -, and _, up to 32 characters.
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置The ID of the material associated with an element. This parameter is required for video compositing tasks.
+                     * 设置[Compose] task required, used for media in track elements to associate source material ID.
 
-Note: The ID can be up to 32 characters long and can contain letters, digits, and special characters -_
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _id The ID of the material associated with an element. This parameter is required for video compositing tasks.
+Note: It can include letters (case insensitive), digits, -, and _, up to 32 characters.
+                     * @param _id [Compose] task required, used for media in track elements to associate source material ID.
 
-Note: The ID can be up to 32 characters long and can contain letters, digits, and special characters -_
-Note: This field may return null, indicating that no valid values can be obtained.
+Note: It can include letters (case insensitive), digits, -, and _, up to 32 characters.
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -152,22 +148,21 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * The start offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * [Edit] task takes effect. Start time offset for video editing, in seconds.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * The end offset (seconds) for video clipping. This parameter is valid for video clipping tasks.
+                     * [Edit] task takes effect. End time offset of video editing. Measurement unit: second.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * The ID of the material associated with an element. This parameter is required for video compositing tasks.
+                     * [Compose] task required, used for media in track elements to associate source material ID.
 
-Note: The ID can be up to 32 characters long and can contain letters, digits, and special characters -_
-Note: This field may return null, indicating that no valid values can be obtained.
+Note: It can include letters (case insensitive), digits, -, and _, up to 32 characters.
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

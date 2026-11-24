@@ -55,7 +55,11 @@ CynosdbInstanceDetail::CynosdbInstanceDetail() :
     m_renewFlagHasBeenSet(false),
     m_minCpuHasBeenSet(false),
     m_maxCpuHasBeenSet(false),
-    m_dbModeHasBeenSet(false)
+    m_dbModeHasBeenSet(false),
+    m_masterZoneHasBeenSet(false),
+    m_realZoneHasBeenSet(false),
+    m_slaveZonesHasBeenSet(false),
+    m_storageVersionHasBeenSet(false)
 {
 }
 
@@ -414,6 +418,49 @@ CoreInternalOutcome CynosdbInstanceDetail::Deserialize(const rapidjson::Value &v
         m_dbModeHasBeenSet = true;
     }
 
+    if (value.HasMember("MasterZone") && !value["MasterZone"].IsNull())
+    {
+        if (!value["MasterZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.MasterZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterZone = string(value["MasterZone"].GetString());
+        m_masterZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealZone") && !value["RealZone"].IsNull())
+    {
+        if (!value["RealZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.RealZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realZone = string(value["RealZone"].GetString());
+        m_realZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
+    {
+        if (!value["SlaveZones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.SlaveZones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_slaveZones.push_back((*itr).GetString());
+        }
+        m_slaveZonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageVersion") && !value["StorageVersion"].IsNull())
+    {
+        if (!value["StorageVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.StorageVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageVersion = string(value["StorageVersion"].GetString());
+        m_storageVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -699,6 +746,43 @@ void CynosdbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DbMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_storageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1262,5 +1346,69 @@ void CynosdbInstanceDetail::SetDbMode(const string& _dbMode)
 bool CynosdbInstanceDetail::DbModeHasBeenSet() const
 {
     return m_dbModeHasBeenSet;
+}
+
+string CynosdbInstanceDetail::GetMasterZone() const
+{
+    return m_masterZone;
+}
+
+void CynosdbInstanceDetail::SetMasterZone(const string& _masterZone)
+{
+    m_masterZone = _masterZone;
+    m_masterZoneHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::MasterZoneHasBeenSet() const
+{
+    return m_masterZoneHasBeenSet;
+}
+
+string CynosdbInstanceDetail::GetRealZone() const
+{
+    return m_realZone;
+}
+
+void CynosdbInstanceDetail::SetRealZone(const string& _realZone)
+{
+    m_realZone = _realZone;
+    m_realZoneHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::RealZoneHasBeenSet() const
+{
+    return m_realZoneHasBeenSet;
+}
+
+vector<string> CynosdbInstanceDetail::GetSlaveZones() const
+{
+    return m_slaveZones;
+}
+
+void CynosdbInstanceDetail::SetSlaveZones(const vector<string>& _slaveZones)
+{
+    m_slaveZones = _slaveZones;
+    m_slaveZonesHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::SlaveZonesHasBeenSet() const
+{
+    return m_slaveZonesHasBeenSet;
+}
+
+string CynosdbInstanceDetail::GetStorageVersion() const
+{
+    return m_storageVersion;
+}
+
+void CynosdbInstanceDetail::SetStorageVersion(const string& _storageVersion)
+{
+    m_storageVersion = _storageVersion;
+    m_storageVersionHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::StorageVersionHasBeenSet() const
+{
+    return m_storageVersionHasBeenSet;
 }
 

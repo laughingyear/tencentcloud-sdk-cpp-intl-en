@@ -68,15 +68,39 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取Consumption status
-                     * @return ConsumeStatus Consumption status
+                     * 获取Consumption status.
+CONSUMED.
+CONSUMED BUT FILTERED.
+NOT_CONSUME: specifies unconsumed.
+ENTER_RETRY: specifies whether to enter the retry queue.
+ENTER_DLQ: specifies whether the message enters the dead letter queue.
+Consumption status UNKNOWN.
+                     * @return ConsumeStatus Consumption status.
+CONSUMED.
+CONSUMED BUT FILTERED.
+NOT_CONSUME: specifies unconsumed.
+ENTER_RETRY: specifies whether to enter the retry queue.
+ENTER_DLQ: specifies whether the message enters the dead letter queue.
+Consumption status UNKNOWN.
                      * 
                      */
                     std::string GetConsumeStatus() const;
 
                     /**
-                     * 设置Consumption status
-                     * @param _consumeStatus Consumption status
+                     * 设置Consumption status.
+CONSUMED.
+CONSUMED BUT FILTERED.
+NOT_CONSUME: specifies unconsumed.
+ENTER_RETRY: specifies whether to enter the retry queue.
+ENTER_DLQ: specifies whether the message enters the dead letter queue.
+Consumption status UNKNOWN.
+                     * @param _consumeStatus Consumption status.
+CONSUMED.
+CONSUMED BUT FILTERED.
+NOT_CONSUME: specifies unconsumed.
+ENTER_RETRY: specifies whether to enter the retry queue.
+ENTER_DLQ: specifies whether the message enters the dead letter queue.
+Consumption status UNKNOWN.
                      * 
                      */
                     void SetConsumeStatus(const std::string& _consumeStatus);
@@ -111,18 +135,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Exception information
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * @return ExceptionDesc Exception information
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetExceptionDesc() const;
 
                     /**
                      * 设置Exception information
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _exceptionDesc Exception information
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetExceptionDesc(const std::string& _exceptionDesc);
@@ -134,6 +158,39 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                      */
                     bool ExceptionDescHasBeenSet() const;
 
+                    /**
+                     * 获取Consumption status source. The enumeration values are as follows:
+
+-DIFF_OFFSET: Calculate by server offset
+-TRACE_REPORT: Judge by the reported path.
+                     * @return ConsumeStatusSource Consumption status source. The enumeration values are as follows:
+
+-DIFF_OFFSET: Calculate by server offset
+-TRACE_REPORT: Judge by the reported path.
+                     * 
+                     */
+                    std::string GetConsumeStatusSource() const;
+
+                    /**
+                     * 设置Consumption status source. The enumeration values are as follows:
+
+-DIFF_OFFSET: Calculate by server offset
+-TRACE_REPORT: Judge by the reported path.
+                     * @param _consumeStatusSource Consumption status source. The enumeration values are as follows:
+
+-DIFF_OFFSET: Calculate by server offset
+-TRACE_REPORT: Judge by the reported path.
+                     * 
+                     */
+                    void SetConsumeStatusSource(const std::string& _consumeStatusSource);
+
+                    /**
+                     * 判断参数 ConsumeStatusSource 是否已赋值
+                     * @return ConsumeStatusSource 是否已赋值
+                     * 
+                     */
+                    bool ConsumeStatusSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,7 +200,13 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                     bool m_groupHasBeenSet;
 
                     /**
-                     * Consumption status
+                     * Consumption status.
+CONSUMED.
+CONSUMED BUT FILTERED.
+NOT_CONSUME: specifies unconsumed.
+ENTER_RETRY: specifies whether to enter the retry queue.
+ENTER_DLQ: specifies whether the message enters the dead letter queue.
+Consumption status UNKNOWN.
                      */
                     std::string m_consumeStatus;
                     bool m_consumeStatusHasBeenSet;
@@ -156,10 +219,19 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
 
                     /**
                      * Exception information
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_exceptionDesc;
                     bool m_exceptionDescHasBeenSet;
+
+                    /**
+                     * Consumption status source. The enumeration values are as follows:
+
+-DIFF_OFFSET: Calculate by server offset
+-TRACE_REPORT: Judge by the reported path.
+                     */
+                    std::string m_consumeStatusSource;
+                    bool m_consumeStatusSourceHasBeenSet;
 
                 };
             }

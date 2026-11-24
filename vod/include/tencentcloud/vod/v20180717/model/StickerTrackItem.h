@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of sticker on sticker track.
+                * Texture information on the texture track.
                 */
                 class StickerTrackItem : public AbstractModel
                 {
@@ -48,27 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Source of media material for sticker segment, which can be:
-<li>ID of VOD media files</li>
-<li>Download URL of other media files</li>
-Note: when a download URL of other media files is used as the material source and access control (such as hotlink protection) is enabled, the URL needs to carry access control parameters (such as hotlink protection signature).
-                     * @return SourceMedia Source of media material for sticker segment, which can be:
-<li>ID of VOD media files</li>
-<li>Download URL of other media files</li>
-Note: when a download URL of other media files is used as the material source and access control (such as hotlink protection) is enabled, the URL needs to carry access control parameters (such as hotlink protection signature).
+                     * 获取Media material source of the texture segment, which can be:
+<li>Media file ID for VOD;</li>
+<li>Download URL of other media files.</li>
+Note: When using the download URL of another media file as the material source, and access control (such as anti-hotlinking) is enabled, the URL needs to carry access control parameters (such as a hotlink protection signature).
+                     * @return SourceMedia Media material source of the texture segment, which can be:
+<li>Media file ID for VOD;</li>
+<li>Download URL of other media files.</li>
+Note: When using the download URL of another media file as the material source, and access control (such as anti-hotlinking) is enabled, the URL needs to carry access control parameters (such as a hotlink protection signature).
                      * 
                      */
                     std::string GetSourceMedia() const;
 
                     /**
-                     * 设置Source of media material for sticker segment, which can be:
-<li>ID of VOD media files</li>
-<li>Download URL of other media files</li>
-Note: when a download URL of other media files is used as the material source and access control (such as hotlink protection) is enabled, the URL needs to carry access control parameters (such as hotlink protection signature).
-                     * @param _sourceMedia Source of media material for sticker segment, which can be:
-<li>ID of VOD media files</li>
-<li>Download URL of other media files</li>
-Note: when a download URL of other media files is used as the material source and access control (such as hotlink protection) is enabled, the URL needs to carry access control parameters (such as hotlink protection signature).
+                     * 设置Media material source of the texture segment, which can be:
+<li>Media file ID for VOD;</li>
+<li>Download URL of other media files.</li>
+Note: When using the download URL of another media file as the material source, and access control (such as anti-hotlinking) is enabled, the URL needs to carry access control parameters (such as a hotlink protection signature).
+                     * @param _sourceMedia Media material source of the texture segment, which can be:
+<li>Media file ID for VOD;</li>
+<li>Download URL of other media files.</li>
+Note: When using the download URL of another media file as the material source, and access control (such as anti-hotlinking) is enabled, the URL needs to carry access control parameters (such as a hotlink protection signature).
                      * 
                      */
                     void SetSourceMedia(const std::string& _sourceMedia);
@@ -81,15 +81,15 @@ Note: when a download URL of other media files is used as the material source an
                     bool SourceMediaHasBeenSet() const;
 
                     /**
-                     * 获取Sticker duration in seconds.
-                     * @return Duration Sticker duration in seconds.
+                     * 获取Duration of the sticker, in seconds.
+                     * @return Duration Duration of the sticker, in seconds.
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置Sticker duration in seconds.
-                     * @param _duration Sticker duration in seconds.
+                     * 设置Duration of the sticker, in seconds.
+                     * @param _duration Duration of the sticker, in seconds.
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -102,15 +102,15 @@ Note: when a download URL of other media files is used as the material source an
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取Start time of sticker on track in seconds.
-                     * @return StartTime Start time of sticker on track in seconds.
+                     * 获取Start time of the sticker on the track, in seconds.
+                     * @return StartTime Start time of the sticker on the track, in seconds.
                      * 
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置Start time of sticker on track in seconds.
-                     * @param _startTime Start time of sticker on track in seconds.
+                     * 设置Start time of the sticker on the track, in seconds.
+                     * @param _startTime Start time of the sticker on the track, in seconds.
                      * 
                      */
                     void SetStartTime(const double& _startTime);
@@ -124,22 +124,22 @@ Note: when a download URL of other media files is used as the material source an
 
                     /**
                      * 获取Origin position. Valid values:
-<li> Center: the origin of coordinates is the center position, such as the center of canvas.</li>
-Default value: Center.
+<li>Center: The coordinate origin is the central position, such as the center of canvas.</li>
+Default: Center.
                      * @return CoordinateOrigin Origin position. Valid values:
-<li> Center: the origin of coordinates is the center position, such as the center of canvas.</li>
-Default value: Center.
+<li>Center: The coordinate origin is the central position, such as the center of canvas.</li>
+Default: Center.
                      * 
                      */
                     std::string GetCoordinateOrigin() const;
 
                     /**
                      * 设置Origin position. Valid values:
-<li> Center: the origin of coordinates is the center position, such as the center of canvas.</li>
-Default value: Center.
+<li>Center: The coordinate origin is the central position, such as the center of canvas.</li>
+Default: Center.
                      * @param _coordinateOrigin Origin position. Valid values:
-<li> Center: the origin of coordinates is the center position, such as the center of canvas.</li>
-Default value: Center.
+<li>Center: The coordinate origin is the central position, such as the center of canvas.</li>
+Default: Center.
                      * 
                      */
                     void SetCoordinateOrigin(const std::string& _coordinateOrigin);
@@ -152,23 +152,23 @@ Default value: Center.
                     bool CoordinateOriginHasBeenSet() const;
 
                     /**
-                     * 获取The horizontal position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `XPos` of the sticker will be at the position of the specified percentage of the canvas width; for example, `10%` means that `XPos` is 10% of the canvas width.</li><li>If the string ends in px, the `XPos` of the sticker will be in px; for example, `100px` means that `XPos` is 100 px.</li>
-Default value: 0 px.
-                     * @return XPos The horizontal position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `XPos` of the sticker will be at the position of the specified percentage of the canvas width; for example, `10%` means that `XPos` is 10% of the canvas width.</li><li>If the string ends in px, the `XPos` of the sticker will be in px; for example, `100px` means that `XPos` is 100 px.</li>
-Default value: 0 px.
+                     * 获取Horizontal position of the texture origin relative to the canvas origin, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the texture XPos is at a specified percentage of the canvas width. For example, 10% means the XPos is at 10% of the canvas width.</li><li>If a string ends with px, it indicates that the texture XPos is in pixels. For example, 100px means the XPos is 100 pixels.</li>
+Default value: 0px.
+                     * @return XPos Horizontal position of the texture origin relative to the canvas origin, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the texture XPos is at a specified percentage of the canvas width. For example, 10% means the XPos is at 10% of the canvas width.</li><li>If a string ends with px, it indicates that the texture XPos is in pixels. For example, 100px means the XPos is 100 pixels.</li>
+Default value: 0px.
                      * 
                      */
                     std::string GetXPos() const;
 
                     /**
-                     * 设置The horizontal position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `XPos` of the sticker will be at the position of the specified percentage of the canvas width; for example, `10%` means that `XPos` is 10% of the canvas width.</li><li>If the string ends in px, the `XPos` of the sticker will be in px; for example, `100px` means that `XPos` is 100 px.</li>
-Default value: 0 px.
-                     * @param _xPos The horizontal position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `XPos` of the sticker will be at the position of the specified percentage of the canvas width; for example, `10%` means that `XPos` is 10% of the canvas width.</li><li>If the string ends in px, the `XPos` of the sticker will be in px; for example, `100px` means that `XPos` is 100 px.</li>
-Default value: 0 px.
+                     * 设置Horizontal position of the texture origin relative to the canvas origin, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the texture XPos is at a specified percentage of the canvas width. For example, 10% means the XPos is at 10% of the canvas width.</li><li>If a string ends with px, it indicates that the texture XPos is in pixels. For example, 100px means the XPos is 100 pixels.</li>
+Default value: 0px.
+                     * @param _xPos Horizontal position of the texture origin relative to the canvas origin, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the texture XPos is at a specified percentage of the canvas width. For example, 10% means the XPos is at 10% of the canvas width.</li><li>If a string ends with px, it indicates that the texture XPos is in pixels. For example, 100px means the XPos is 100 pixels.</li>
+Default value: 0px.
                      * 
                      */
                     void SetXPos(const std::string& _xPos);
@@ -181,27 +181,27 @@ Default value: 0 px.
                     bool XPosHasBeenSet() const;
 
                     /**
-                     * 获取The vertical position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `YPos` of the sticker will be at the position of the specified percentage of the canvas height; for example, `10%` means that `YPos` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `YPos` of the sticker will be in px; for example, `100px` means that `YPos` is 100 px.</li>
-Default value: 0 px.
-                     * @return YPos The vertical position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `YPos` of the sticker will be at the position of the specified percentage of the canvas height; for example, `10%` means that `YPos` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `YPos` of the sticker will be in px; for example, `100px` means that `YPos` is 100 px.</li>
-Default value: 0 px.
+                     * 获取Vertical position of the texture origin from the canvas origin. Supports two formats: % and px.
+<li>When a string ends with %, it means the texture YPos is at the specified percentage of the canvas height. For example, 10% means the YPos is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture YPos unit is pixel. For example, 100px means YPos is 100 pixels.</li>
+Default value: 0px.
+                     * @return YPos Vertical position of the texture origin from the canvas origin. Supports two formats: % and px.
+<li>When a string ends with %, it means the texture YPos is at the specified percentage of the canvas height. For example, 10% means the YPos is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture YPos unit is pixel. For example, 100px means YPos is 100 pixels.</li>
+Default value: 0px.
                      * 
                      */
                     std::string GetYPos() const;
 
                     /**
-                     * 设置The vertical position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `YPos` of the sticker will be at the position of the specified percentage of the canvas height; for example, `10%` means that `YPos` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `YPos` of the sticker will be in px; for example, `100px` means that `YPos` is 100 px.</li>
-Default value: 0 px.
-                     * @param _yPos The vertical position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `YPos` of the sticker will be at the position of the specified percentage of the canvas height; for example, `10%` means that `YPos` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `YPos` of the sticker will be in px; for example, `100px` means that `YPos` is 100 px.</li>
-Default value: 0 px.
+                     * 设置Vertical position of the texture origin from the canvas origin. Supports two formats: % and px.
+<li>When a string ends with %, it means the texture YPos is at the specified percentage of the canvas height. For example, 10% means the YPos is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture YPos unit is pixel. For example, 100px means YPos is 100 pixels.</li>
+Default value: 0px.
+                     * @param _yPos Vertical position of the texture origin from the canvas origin. Supports two formats: % and px.
+<li>When a string ends with %, it means the texture YPos is at the specified percentage of the canvas height. For example, 10% means the YPos is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture YPos unit is pixel. For example, 100px means YPos is 100 pixels.</li>
+Default value: 0px.
                      * 
                      */
                     void SetYPos(const std::string& _yPos);
@@ -214,35 +214,35 @@ Default value: 0 px.
                     bool YPosHasBeenSet() const;
 
                     /**
-                     * 获取Sticker width. % and px formats are supported:
-<li>If the string ends in %, the `Width` of the sticker will be the specified percentage of the canvas width; for example, `10%` means that `Width` is 10% of the canvas width.</li>
-<li>If the string ends in px, the `Width` of the sticker will be in px; for example, `100px` means that `Width` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty (0), but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
-                     * @return Width Sticker width. % and px formats are supported:
-<li>If the string ends in %, the `Width` of the sticker will be the specified percentage of the canvas width; for example, `10%` means that `Width` is 10% of the canvas width.</li>
-<li>If the string ends in px, the `Width` of the sticker will be in px; for example, `100px` means that `Width` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty (0), but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * 获取Width of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Width` of a sticker is a percentage of the canvas width. For example, `10%` means that `Width` is 10% of the canvas width.</li>
+<li>If a string ends with px, it means the texture Width unit is pixel. For example, 100px means the Width is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is 0 but Height is not, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
+                     * @return Width Width of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Width` of a sticker is a percentage of the canvas width. For example, `10%` means that `Width` is 10% of the canvas width.</li>
+<li>If a string ends with px, it means the texture Width unit is pixel. For example, 100px means the Width is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is 0 but Height is not, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      * 
                      */
                     std::string GetWidth() const;
 
                     /**
-                     * 设置Sticker width. % and px formats are supported:
-<li>If the string ends in %, the `Width` of the sticker will be the specified percentage of the canvas width; for example, `10%` means that `Width` is 10% of the canvas width.</li>
-<li>If the string ends in px, the `Width` of the sticker will be in px; for example, `100px` means that `Width` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty (0), but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
-                     * @param _width Sticker width. % and px formats are supported:
-<li>If the string ends in %, the `Width` of the sticker will be the specified percentage of the canvas width; for example, `10%` means that `Width` is 10% of the canvas width.</li>
-<li>If the string ends in px, the `Width` of the sticker will be in px; for example, `100px` means that `Width` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty (0), but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * 设置Width of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Width` of a sticker is a percentage of the canvas width. For example, `10%` means that `Width` is 10% of the canvas width.</li>
+<li>If a string ends with px, it means the texture Width unit is pixel. For example, 100px means the Width is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is 0 but Height is not, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
+                     * @param _width Width of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Width` of a sticker is a percentage of the canvas width. For example, `10%` means that `Width` is 10% of the canvas width.</li>
+<li>If a string ends with px, it means the texture Width unit is pixel. For example, 100px means the Width is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is 0 but Height is not, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      * 
                      */
                     void SetWidth(const std::string& _width);
@@ -255,35 +255,35 @@ Default value: 0 px.
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Sticker height. % and px formats are supported:
-<li>If the string ends in %, the `Height` of the sticker will be the specified percentage of the canvas height; for example, `10%` means that `Height` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `Height` of the sticker will be in px; for example, `100px` means that `Height` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty, but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
-                     * @return Height Sticker height. % and px formats are supported:
-<li>If the string ends in %, the `Height` of the sticker will be the specified percentage of the canvas height; for example, `10%` means that `Height` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `Height` of the sticker will be in px; for example, `100px` means that `Height` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty, but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * 获取Height of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Height` of a sticker is a percentage of the canvas height. For example, `10%` means that `Height` is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture Height unit is pixel. For example, 100px means the Height is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is empty but Height is not empty, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
+                     * @return Height Height of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Height` of a sticker is a percentage of the canvas height. For example, `10%` means that `Height` is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture Height unit is pixel. For example, 100px means the Height is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is empty but Height is not empty, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      * 
                      */
                     std::string GetHeight() const;
 
                     /**
-                     * 设置Sticker height. % and px formats are supported:
-<li>If the string ends in %, the `Height` of the sticker will be the specified percentage of the canvas height; for example, `10%` means that `Height` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `Height` of the sticker will be in px; for example, `100px` means that `Height` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty, but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
-                     * @param _height Sticker height. % and px formats are supported:
-<li>If the string ends in %, the `Height` of the sticker will be the specified percentage of the canvas height; for example, `10%` means that `Height` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `Height` of the sticker will be in px; for example, `100px` means that `Height` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty, but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * 设置Height of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Height` of a sticker is a percentage of the canvas height. For example, `10%` means that `Height` is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture Height unit is pixel. For example, 100px means the Height is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is empty but Height is not empty, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
+                     * @param _height Height of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Height` of a sticker is a percentage of the canvas height. For example, `10%` means that `Height` is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture Height unit is pixel. For example, 100px means the Height is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is empty but Height is not empty, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      * 
                      */
                     void SetHeight(const std::string& _height);
@@ -296,19 +296,15 @@ Default value: 0 px.
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Operation on sticker such as image rotation.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ImageOperations Operation on sticker such as image rotation.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Operation performed on the texture, such as image rotation.
+                     * @return ImageOperations Operation performed on the texture, such as image rotation.
                      * 
                      */
                     std::vector<ImageTransform> GetImageOperations() const;
 
                     /**
-                     * 设置Operation on sticker such as image rotation.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _imageOperations Operation on sticker such as image rotation.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Operation performed on the texture, such as image rotation.
+                     * @param _imageOperations Operation performed on the texture, such as image rotation.
                      * 
                      */
                     void SetImageOperations(const std::vector<ImageTransform>& _imageOperations);
@@ -323,76 +319,75 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Source of media material for sticker segment, which can be:
-<li>ID of VOD media files</li>
-<li>Download URL of other media files</li>
-Note: when a download URL of other media files is used as the material source and access control (such as hotlink protection) is enabled, the URL needs to carry access control parameters (such as hotlink protection signature).
+                     * Media material source of the texture segment, which can be:
+<li>Media file ID for VOD;</li>
+<li>Download URL of other media files.</li>
+Note: When using the download URL of another media file as the material source, and access control (such as anti-hotlinking) is enabled, the URL needs to carry access control parameters (such as a hotlink protection signature).
                      */
                     std::string m_sourceMedia;
                     bool m_sourceMediaHasBeenSet;
 
                     /**
-                     * Sticker duration in seconds.
+                     * Duration of the sticker, in seconds.
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * Start time of sticker on track in seconds.
+                     * Start time of the sticker on the track, in seconds.
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * Origin position. Valid values:
-<li> Center: the origin of coordinates is the center position, such as the center of canvas.</li>
-Default value: Center.
+<li>Center: The coordinate origin is the central position, such as the center of canvas.</li>
+Default: Center.
                      */
                     std::string m_coordinateOrigin;
                     bool m_coordinateOriginHasBeenSet;
 
                     /**
-                     * The horizontal position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `XPos` of the sticker will be at the position of the specified percentage of the canvas width; for example, `10%` means that `XPos` is 10% of the canvas width.</li><li>If the string ends in px, the `XPos` of the sticker will be in px; for example, `100px` means that `XPos` is 100 px.</li>
-Default value: 0 px.
+                     * Horizontal position of the texture origin relative to the canvas origin, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the texture XPos is at a specified percentage of the canvas width. For example, 10% means the XPos is at 10% of the canvas width.</li><li>If a string ends with px, it indicates that the texture XPos is in pixels. For example, 100px means the XPos is 100 pixels.</li>
+Default value: 0px.
                      */
                     std::string m_xPos;
                     bool m_xPosHasBeenSet;
 
                     /**
-                     * The vertical position of the origin of the sticker relative to the origin of the canvas. % and px formats are supported:
-<li>If the string ends in %, the `YPos` of the sticker will be at the position of the specified percentage of the canvas height; for example, `10%` means that `YPos` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `YPos` of the sticker will be in px; for example, `100px` means that `YPos` is 100 px.</li>
-Default value: 0 px.
+                     * Vertical position of the texture origin from the canvas origin. Supports two formats: % and px.
+<li>When a string ends with %, it means the texture YPos is at the specified percentage of the canvas height. For example, 10% means the YPos is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture YPos unit is pixel. For example, 100px means YPos is 100 pixels.</li>
+Default value: 0px.
                      */
                     std::string m_yPos;
                     bool m_yPosHasBeenSet;
 
                     /**
-                     * Sticker width. % and px formats are supported:
-<li>If the string ends in %, the `Width` of the sticker will be the specified percentage of the canvas width; for example, `10%` means that `Width` is 10% of the canvas width.</li>
-<li>If the string ends in px, the `Width` of the sticker will be in px; for example, `100px` means that `Width` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty (0), but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * Width of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Width` of a sticker is a percentage of the canvas width. For example, `10%` means that `Width` is 10% of the canvas width.</li>
+<li>If a string ends with px, it means the texture Width unit is pixel. For example, 100px means the Width is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is 0 but Height is not, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      */
                     std::string m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Sticker height. % and px formats are supported:
-<li>If the string ends in %, the `Height` of the sticker will be the specified percentage of the canvas height; for example, `10%` means that `Height` is 10% of the canvas height.</li>
-<li>If the string ends in px, the `Height` of the sticker will be in px; for example, `100px` means that `Height` is 100 px.</li>
-<li>If both `Width` and `Height` are empty, then they will be the `Width` and `Height` of the sticker material, respectively.</li>
-<li>If `Width` is empty, but `Height` is not empty, `Width` will be proportionally scaled.</li>
-<li>If `Width` is not empty, but `Height` is empty, `Height` will be proportionally scaled.</li>
+                     * Height of a sticker, supporting two formats: % and px.
+<li>If a string ends with %, it indicates that the `Height` of a sticker is a percentage of the canvas height. For example, `10%` means that `Height` is 10% of the canvas height.</li>
+<li>If a string ends with px, it means the texture Height unit is pixel. For example, 100px means the Height is 100 pixels.</li>
+<li>If both Width and Height are empty, the width and height of the texture material itself will be used.</li>
+<li>If Width is empty but Height is not empty, the width will be proportionally scaled.</li>
+<li>If Width is not empty but Height is empty, the height will be proportionally scaled.</li>
                      */
                     std::string m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Operation on sticker such as image rotation.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Operation performed on the texture, such as image rotation.
                      */
                     std::vector<ImageTransform> m_imageOperations;
                     bool m_imageOperationsHasBeenSet;

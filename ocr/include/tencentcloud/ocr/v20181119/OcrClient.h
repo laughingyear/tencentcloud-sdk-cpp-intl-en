@@ -23,28 +23,36 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ApplyCardVerificationExternalRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ApplyCardVerificationExternalResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ApplyOcrTokenRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ApplyOcrTokenResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralBasicOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/GetCardVerificationExternalResultRequest.h>
+#include <tencentcloud/ocr/v20181119/model/GetCardVerificationExternalResultResponse.h>
+#include <tencentcloud/ocr/v20181119/model/GetOcrVerificationResultRequest.h>
+#include <tencentcloud/ocr/v20181119/model/GetOcrVerificationResultResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDPassportOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MainlandPermitOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/PODAuditAIRequest.h>
+#include <tencentcloud/ocr/v20181119/model/PODAuditAIResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeBrazilCommonOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeBrazilCommonOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilDriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilDriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilIDCardOCRRequest.h>
@@ -53,14 +61,12 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilRNEOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilRNMOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeBrazilRNMOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeDetectCardCoordsRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeDetectCardCoordsResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardVerificationRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardVerificationResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanIDCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMacaoIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMacaoIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMainlandIDCardOCRRequest.h>
@@ -79,20 +85,14 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeSingaporeIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeSingaporeIDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiPinkCardRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiPinkCardResponse.h>
-#include <tencentcloud/ocr/v20181119/model/SealOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRV2Request.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRV2Response.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralProRequest.h>
-#include <tencentcloud/ocr/v20181119/model/SmartStructuralProResponse.h>
-#include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyPdfOcrRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyPdfOcrResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRResponse.h>
 
@@ -109,27 +109,33 @@ namespace TencentCloud
                 OcrClient(const Credential &credential, const std::string &region);
                 OcrClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::BankCardOCRResponse> BankCardOCROutcome;
-                typedef std::future<BankCardOCROutcome> BankCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::BankCardOCRRequest&, BankCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCardOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyCardVerificationExternalResponse> ApplyCardVerificationExternalOutcome;
+                typedef std::future<ApplyCardVerificationExternalOutcome> ApplyCardVerificationExternalOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ApplyCardVerificationExternalRequest&, ApplyCardVerificationExternalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCardVerificationExternalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyOcrTokenResponse> ApplyOcrTokenOutcome;
+                typedef std::future<ApplyOcrTokenOutcome> ApplyOcrTokenOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ApplyOcrTokenRequest&, ApplyOcrTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOcrTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractDocMultiResponse> ExtractDocMultiOutcome;
+                typedef std::future<ExtractDocMultiOutcome> ExtractDocMultiOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ExtractDocMultiRequest&, ExtractDocMultiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocMultiAsyncHandler;
                 typedef Outcome<Core::Error, Model::GeneralAccurateOCRResponse> GeneralAccurateOCROutcome;
                 typedef std::future<GeneralAccurateOCROutcome> GeneralAccurateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GeneralAccurateOCRRequest&, GeneralAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneralAccurateOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::GeneralBasicOCRResponse> GeneralBasicOCROutcome;
                 typedef std::future<GeneralBasicOCROutcome> GeneralBasicOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GeneralBasicOCRRequest&, GeneralBasicOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneralBasicOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCardVerificationExternalResultResponse> GetCardVerificationExternalResultOutcome;
+                typedef std::future<GetCardVerificationExternalResultOutcome> GetCardVerificationExternalResultOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::GetCardVerificationExternalResultRequest&, GetCardVerificationExternalResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCardVerificationExternalResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetOcrVerificationResultResponse> GetOcrVerificationResultOutcome;
+                typedef std::future<GetOcrVerificationResultOutcome> GetOcrVerificationResultOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::GetOcrVerificationResultRequest&, GetOcrVerificationResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOcrVerificationResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::HKIDCardOCRResponse> HKIDCardOCROutcome;
                 typedef std::future<HKIDCardOCROutcome> HKIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HKIDCardOCRRequest&, HKIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HKIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::HmtResidentPermitOCRResponse> HmtResidentPermitOCROutcome;
                 typedef std::future<HmtResidentPermitOCROutcome> HmtResidentPermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HmtResidentPermitOCRRequest&, HmtResidentPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HmtResidentPermitOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::IDCardOCRResponse> IDCardOCROutcome;
-                typedef std::future<IDCardOCROutcome> IDCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::IDCardOCRRequest&, IDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> IDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::LicensePlateOCRResponse> LicensePlateOCROutcome;
-                typedef std::future<LicensePlateOCROutcome> LicensePlateOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::LicensePlateOCRRequest&, LicensePlateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> LicensePlateOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::MLIDCardOCRResponse> MLIDCardOCROutcome;
                 typedef std::future<MLIDCardOCROutcome> MLIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MLIDCardOCRRequest&, MLIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MLIDCardOCRAsyncHandler;
@@ -139,9 +145,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MainlandPermitOCRResponse> MainlandPermitOCROutcome;
                 typedef std::future<MainlandPermitOCROutcome> MainlandPermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MainlandPermitOCRRequest&, MainlandPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MainlandPermitOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::PODAuditAIResponse> PODAuditAIOutcome;
+                typedef std::future<PODAuditAIOutcome> PODAuditAIOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::PODAuditAIRequest&, PODAuditAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PODAuditAIAsyncHandler;
                 typedef Outcome<Core::Error, Model::PermitOCRResponse> PermitOCROutcome;
                 typedef std::future<PermitOCROutcome> PermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::PermitOCRRequest&, PermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PermitOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeBrazilCommonOCRResponse> RecognizeBrazilCommonOCROutcome;
+                typedef std::future<RecognizeBrazilCommonOCROutcome> RecognizeBrazilCommonOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeBrazilCommonOCRRequest&, RecognizeBrazilCommonOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeBrazilCommonOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeBrazilDriverLicenseOCRResponse> RecognizeBrazilDriverLicenseOCROutcome;
                 typedef std::future<RecognizeBrazilDriverLicenseOCROutcome> RecognizeBrazilDriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeBrazilDriverLicenseOCRRequest&, RecognizeBrazilDriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeBrazilDriverLicenseOCRAsyncHandler;
@@ -154,18 +166,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeBrazilRNMOCRResponse> RecognizeBrazilRNMOCROutcome;
                 typedef std::future<RecognizeBrazilRNMOCROutcome> RecognizeBrazilRNMOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeBrazilRNMOCRRequest&, RecognizeBrazilRNMOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeBrazilRNMOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
-                typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeDetectCardCoordsResponse> RecognizeDetectCardCoordsOutcome;
+                typedef std::future<RecognizeDetectCardCoordsOutcome> RecognizeDetectCardCoordsOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeDetectCardCoordsRequest&, RecognizeDetectCardCoordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeDetectCardCoordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeGeneralCardVerificationResponse> RecognizeGeneralCardVerificationOutcome;
+                typedef std::future<RecognizeGeneralCardVerificationOutcome> RecognizeGeneralCardVerificationOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralCardVerificationRequest&, RecognizeGeneralCardVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralCardVerificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeIndonesiaIDCardOCRResponse> RecognizeIndonesiaIDCardOCROutcome;
                 typedef std::future<RecognizeIndonesiaIDCardOCROutcome> RecognizeIndonesiaIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeIndonesiaIDCardOCRRequest&, RecognizeIndonesiaIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIndonesiaIDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeKoreanDrivingLicenseOCRResponse> RecognizeKoreanDrivingLicenseOCROutcome;
-                typedef std::future<RecognizeKoreanDrivingLicenseOCROutcome> RecognizeKoreanDrivingLicenseOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeKoreanDrivingLicenseOCRRequest&, RecognizeKoreanDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeKoreanDrivingLicenseOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeKoreanIDCardOCRResponse> RecognizeKoreanIDCardOCROutcome;
-                typedef std::future<RecognizeKoreanIDCardOCROutcome> RecognizeKoreanIDCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeKoreanIDCardOCRRequest&, RecognizeKoreanIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeKoreanIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeMacaoIDCardOCRResponse> RecognizeMacaoIDCardOCROutcome;
                 typedef std::future<RecognizeMacaoIDCardOCROutcome> RecognizeMacaoIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeMacaoIDCardOCRRequest&, RecognizeMacaoIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMacaoIDCardOCRAsyncHandler;
@@ -193,27 +202,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeSingaporeIDCardOCRResponse> RecognizeSingaporeIDCardOCROutcome;
                 typedef std::future<RecognizeSingaporeIDCardOCROutcome> RecognizeSingaporeIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeSingaporeIDCardOCRRequest&, RecognizeSingaporeIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeSingaporeIDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeTableAccurateOCRResponse> RecognizeTableAccurateOCROutcome;
-                typedef std::future<RecognizeTableAccurateOCROutcome> RecognizeTableAccurateOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeTableAccurateOCRRequest&, RecognizeTableAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableAccurateOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
                 typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeThaiPinkCardResponse> RecognizeThaiPinkCardOutcome;
                 typedef std::future<RecognizeThaiPinkCardOutcome> RecognizeThaiPinkCardOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiPinkCardRequest&, RecognizeThaiPinkCardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiPinkCardAsyncHandler;
-                typedef Outcome<Core::Error, Model::SealOCRResponse> SealOCROutcome;
-                typedef std::future<SealOCROutcome> SealOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::SealOCRRequest&, SealOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SealOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::SmartStructuralOCRV2Response> SmartStructuralOCRV2Outcome;
                 typedef std::future<SmartStructuralOCRV2Outcome> SmartStructuralOCRV2OutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRV2Request&, SmartStructuralOCRV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRV2AsyncHandler;
-                typedef Outcome<Core::Error, Model::SmartStructuralProResponse> SmartStructuralProOutcome;
-                typedef std::future<SmartStructuralProOutcome> SmartStructuralProOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::SmartStructuralProRequest&, SmartStructuralProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralProAsyncHandler;
-                typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
-                typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyPdfOcrResponse> VerifyPdfOcrOutcome;
+                typedef std::future<VerifyPdfOcrOutcome> VerifyPdfOcrOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyPdfOcrRequest&, VerifyPdfOcrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPdfOcrAsyncHandler;
                 typedef Outcome<Core::Error, Model::VinOCRResponse> VinOCROutcome;
                 typedef std::future<VinOCROutcome> VinOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VinOCRRequest&, VinOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VinOCRAsyncHandler;
@@ -221,15 +221,34 @@ namespace TencentCloud
 
 
                 /**
-                 *This API is used to detect and recognize key fields such as the card number, bank information, and expiration date on mainstream bank cards in Mainland China.
-
-This API is not fully available for the time being. For more information, please contact your [Tencent Cloud sales rep](https://intl.cloud.tencent.com/contact-sales).
-                 * @param req BankCardOCRRequest
-                 * @return BankCardOCROutcome
+                 *This API provides general OCR recognition for [overseas identity documents.](https://www.tencentcloud.com/document/product/1061/82424)
+                 * @param req ApplyCardVerificationExternalRequest
+                 * @return ApplyCardVerificationExternalOutcome
                  */
-                BankCardOCROutcome BankCardOCR(const Model::BankCardOCRRequest &request);
-                void BankCardOCRAsync(const Model::BankCardOCRRequest& request, const BankCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BankCardOCROutcomeCallable BankCardOCRCallable(const Model::BankCardOCRRequest& request);
+                ApplyCardVerificationExternalOutcome ApplyCardVerificationExternal(const Model::ApplyCardVerificationExternalRequest &request);
+                void ApplyCardVerificationExternalAsync(const Model::ApplyCardVerificationExternalRequest& request, const ApplyCardVerificationExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyCardVerificationExternalOutcomeCallable ApplyCardVerificationExternalCallable(const Model::ApplyCardVerificationExternalRequest& request);
+
+                /**
+                 *This API retrieves a token before each call to the OCR SDK verification service. Save the token to initiate the verification process and retrieve the verification result after the process completes.
+                 * @param req ApplyOcrTokenRequest
+                 * @return ApplyOcrTokenOutcome
+                 */
+                ApplyOcrTokenOutcome ApplyOcrToken(const Model::ApplyOcrTokenRequest &request);
+                void ApplyOcrTokenAsync(const Model::ApplyOcrTokenRequest& request, const ApplyOcrTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyOcrTokenOutcomeCallable ApplyOcrTokenCallable(const Model::ApplyOcrTokenRequest& request);
+
+                /**
+                 *This API supports identifying and extracting field information in structured scenarios such as complex scenarios and multiple formats. Key scenarios include: finance, health care, transportation, travel, insurance. Click [experience now](https://ocrdemo.cloud.tencent.com/).
+This API is used to set the alias SmartStructuralPro.
+
+The default API request rate limit is 5 requests per second.
+                 * @param req ExtractDocMultiRequest
+                 * @return ExtractDocMultiOutcome
+                 */
+                ExtractDocMultiOutcome ExtractDocMulti(const Model::ExtractDocMultiRequest &request);
+                void ExtractDocMultiAsync(const Model::ExtractDocMultiRequest& request, const ExtractDocMultiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractDocMultiOutcomeCallable ExtractDocMultiCallable(const Model::ExtractDocMultiRequest& request);
 
                 /**
                  *This API is used to detect and recognize characters in an image. It can recognize Chinese, English, Chinese-English, digits, and special symbols and return the text box positions and characters.
@@ -238,7 +257,7 @@ It is suitable for scenarios with a lot of characters in complex layouts and req
 
 Strengths: compared with general print recognition, it provides higher-precision character recognition services. Its accuracy and recall rate are higher in difficult scenarios such as a large number of characters, long strings of digits, small characters, blurry characters, and tilted text.
 
-This API is not fully available for the time being. For more information, please contact your [Tencent Cloud sales rep](https://intl.cloud.tencent.com/contact-sales).
+A maximum of 10 requests can be initiated per second for this API.
                  * @param req GeneralAccurateOCRRequest
                  * @return GeneralAccurateOCROutcome
                  */
@@ -247,7 +266,7 @@ This API is not fully available for the time being. For more information, please
                 GeneralAccurateOCROutcomeCallable GeneralAccurateOCRCallable(const Model::GeneralAccurateOCRRequest& request);
 
                 /**
-                 *This API is used to detect and recognize characters in an image in the following 20 languages: Chinese, English, Japanese, Korean, Spanish, French, German, Portuguese, Vietnamese, Malay, Russian, Italian, Dutch, Swedish, Finnish, Danish, Norwegian, Hungarian, Thai, and Arabic. Mixed characters in English and each supported language can be recognized together.
+                 *This API is used to detect and recognize characters in an image in the following 21 languages: Chinese, English, Japanese, Korean, Spanish, French, German, Portuguese, Vietnamese, Malay, Russian, Italian, Dutch, Swedish, Finnish, Danish, Norwegian, Hungarian, Thai, Hindi and Arabic. Mixed characters in English and each supported language can be recognized together.
 
 It can recognize printed text in paper documents, online images, ads, signboards, menus, video titles, profile photos, etc.
 
@@ -262,9 +281,25 @@ This API is not fully available for the time being. For more information, please
                 GeneralBasicOCROutcomeCallable GeneralBasicOCRCallable(const Model::GeneralBasicOCRRequest& request);
 
                 /**
-                 *This API is used to recognize key fields on the photo side of a Hong Kong (China) identity card, including name in Chinese, name in English, telecode for name, date of birth, gender, document symbol, date of the first issue, date of the last receipt, identity card number, and permanent residency attribute. 
+                 *This API is used to obtain document recognition results.
+                 * @param req GetCardVerificationExternalResultRequest
+                 * @return GetCardVerificationExternalResultOutcome
+                 */
+                GetCardVerificationExternalResultOutcome GetCardVerificationExternalResult(const Model::GetCardVerificationExternalResultRequest &request);
+                void GetCardVerificationExternalResultAsync(const Model::GetCardVerificationExternalResultRequest& request, const GetCardVerificationExternalResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCardVerificationExternalResultOutcomeCallable GetCardVerificationExternalResultCallable(const Model::GetCardVerificationExternalResultRequest& request);
 
-This API is not fully available for the time being. For more information, please contact your [Tencent Cloud sales rep](https://intl.cloud.tencent.com/contact-sales).
+                /**
+                 *This API retrieves the SDK verification result.
+                 * @param req GetOcrVerificationResultRequest
+                 * @return GetOcrVerificationResultOutcome
+                 */
+                GetOcrVerificationResultOutcome GetOcrVerificationResult(const Model::GetOcrVerificationResultRequest &request);
+                void GetOcrVerificationResultAsync(const Model::GetOcrVerificationResultRequest& request, const GetOcrVerificationResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetOcrVerificationResultOutcomeCallable GetOcrVerificationResultCallable(const Model::GetOcrVerificationResultRequest& request);
+
+                /**
+                 *This API is used to recognize key fields on the photo side of a Hong Kong (China) identity card, including name in Chinese, name in English, telecode for name, date of birth, gender, document symbol, date of the first issue, date of the last receipt, identity card number, and permanent residency attribute.
                  * @param req HKIDCardOCRRequest
                  * @return HKIDCardOCROutcome
                  */
@@ -273,82 +308,15 @@ This API is not fully available for the time being. For more information, please
                 HKIDCardOCROutcomeCallable HKIDCardOCRCallable(const Model::HKIDCardOCRRequest& request);
 
                 /**
-                 *This API is used to recognize key fields on the front and back sides of a residence permit for Hong Kong, Macao, or Taiwan residents, including name, gender, date of birth, address, ID number, issuing authority, validity period, number of issues, and permit number. It can be used for residence permit OCR in scenarios such as bank account opening and user registration.
+                 *This API recognizes the Residence Permit for Hong Kong, Macao, and Taiwan, China Residents. Its OCR feature supports content detection and recognition of all fields on both sides, including name, sex, date of birth, address, identity card number, issuing authority, validity period, number of issuances, and travel permit number (a key field). It can be applied to information recognition scenarios for Residence Permit for Hong Kong, Macao, and Taiwan, China Residents, such as bank account opening and user registration. 
 
-A maximum of 20 requests can be initiated per second for this API.
+Default API request rate limit: 20 requests/second.
                  * @param req HmtResidentPermitOCRRequest
                  * @return HmtResidentPermitOCROutcome
                  */
                 HmtResidentPermitOCROutcome HmtResidentPermitOCR(const Model::HmtResidentPermitOCRRequest &request);
                 void HmtResidentPermitOCRAsync(const Model::HmtResidentPermitOCRRequest& request, const HmtResidentPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 HmtResidentPermitOCROutcomeCallable HmtResidentPermitOCRCallable(const Model::HmtResidentPermitOCRRequest& request);
-
-                /**
-                 *This API is used to recognize all fields on the front and back sides of a second-generation resident identity card for the Chinese mainland: name, gender, ethnicity, date of birth, domicile, identification number, issuing authority, and validity period, with a recognition accuracy of over 99%.
-
-In addition, this API supports multiple value-added capabilities to meet the needs of different scenarios. It can crop ID card photos and profile photos, and provide warnings for nine cases, as detailed below.
-
-<table style="width:650px">
-      <thead>
-        <tr>
-       <th width="150">Capability</th>
-          <th width="500">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2">Cropping</td>
-          <td>Crops the ID card photo (by removing extra edges outside the ID card and automatically correcting the shooting angle).</td>
-        </tr>
-        <tr>
-          <td>Crops the profile photo (by automatically cutting out the face area in the ID card).</td>
-        </tr>
-        <tr>
-          <td rowspan="9">Warning</td>
-          <td>Warns about invalid ID card validity periods.</td>
-        </tr>
-        <tr>
-          <td>Warns about  incomplete ID card borders.</td>
-        </tr>
-        <tr>
-          <td>Warns about photocopied images.</td>
-        </tr>
-        <tr>
-          <td>Warns about spoofed images.</td>
-        </tr>
-          <tr>
-          <td>Warns about border and frame occlusions.</td>
-        </tr>
-         <tr>
-          <td>Warns about temporary ID cards.</td>
-        </tr>
-          <tr>
-          <td>Warns about photoshopped images.</td>
-        </tr>
-          <tr>
-          <td>Warns about blurry ID card images (blurriness can be determined based on the image quality score).</td>
-        </tr>
-      </tbody>
-    </table>
-
-A maximum of 20 requests can be initiated per second for this API.
-                 * @param req IDCardOCRRequest
-                 * @return IDCardOCROutcome
-                 */
-                IDCardOCROutcome IDCardOCR(const Model::IDCardOCRRequest &request);
-                void IDCardOCRAsync(const Model::IDCardOCRRequest& request, const IDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                IDCardOCROutcomeCallable IDCardOCRCallable(const Model::IDCardOCRRequest& request);
-
-                /**
-                 *This API is used to recognize a license plate attached to a motor vehicle in the Chinese mainland and return the regional code, license plate number, and license plate color.
-
-A maximum of 10 requests can be initiated per second for this API.
-                 * @param req LicensePlateOCRRequest
-                 * @return LicensePlateOCROutcome
-                 */
-                LicensePlateOCROutcome LicensePlateOCR(const Model::LicensePlateOCRRequest &request);
-                void LicensePlateOCRAsync(const Model::LicensePlateOCRRequest& request, const LicensePlateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                LicensePlateOCROutcomeCallable LicensePlateOCRCallable(const Model::LicensePlateOCRRequest& request);
 
                 /**
                  *This API is used to recognize a Malaysian identity card, including identity card number, name, gender, and address. It is also used to crop identity photos and give alarms for photographed or photocopied certificates.
@@ -383,6 +351,15 @@ A maximum of 20 requests can be initiated per second for this API.
                 MainlandPermitOCROutcomeCallable MainlandPermitOCRCallable(const Model::MainlandPermitOCRRequest& request);
 
                 /**
+                 *The POD intelligent review deeply integrates multimodal large model image understanding technology, targeting the logistics last-mile delivery scenario to provide high-precision POD compliance audit service. The system auto-recognizes ticket imperfections and risks of non-compliance, helping businesses achieve standardized control in the delivery process and effectively avoid customer complaints and disputes caused by non-compliant credentials.
+                 * @param req PODAuditAIRequest
+                 * @return PODAuditAIOutcome
+                 */
+                PODAuditAIOutcome PODAuditAI(const Model::PODAuditAIRequest &request);
+                void PODAuditAIAsync(const Model::PODAuditAIRequest& request, const PODAuditAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PODAuditAIOutcomeCallable PODAuditAICallable(const Model::PODAuditAIRequest& request);
+
+                /**
                  *This API is used to recognize the fields on an exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan, including place of issuance, issuing authority, validity period, gender, date of birth, name in English, name in Chinese, and document number.
 
 A maximum of 10 requests can be initiated per second for this API.
@@ -394,6 +371,17 @@ A maximum of 10 requests can be initiated per second for this API.
                 PermitOCROutcomeCallable PermitOCRCallable(const Model::PermitOCRRequest& request);
 
                 /**
+                 *This API is used to identify Brazil common documents.
+
+This API is used to set the default request rate limit to 5 requests/second.
+                 * @param req RecognizeBrazilCommonOCRRequest
+                 * @return RecognizeBrazilCommonOCROutcome
+                 */
+                RecognizeBrazilCommonOCROutcome RecognizeBrazilCommonOCR(const Model::RecognizeBrazilCommonOCRRequest &request);
+                void RecognizeBrazilCommonOCRAsync(const Model::RecognizeBrazilCommonOCRRequest& request, const RecognizeBrazilCommonOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeBrazilCommonOCROutcomeCallable RecognizeBrazilCommonOCRCallable(const Model::RecognizeBrazilCommonOCRRequest& request);
+
+                /**
                  *This interface supports identification of the front and back of Brazilian driver's license. The identification fields include name, driver's license category, number, validity period, etc.
                  * @param req RecognizeBrazilDriverLicenseOCRRequest
                  * @return RecognizeBrazilDriverLicenseOCROutcome
@@ -403,7 +391,7 @@ A maximum of 10 requests can be initiated per second for this API.
                 RecognizeBrazilDriverLicenseOCROutcomeCallable RecognizeBrazilDriverLicenseOCRCallable(const Model::RecognizeBrazilDriverLicenseOCRRequest& request);
 
                 /**
-                 *This interface supports identification of the front and back of Brazilian ID license. The identification fields include name, driver's license category, number, validity period, etc.
+                 *This interface supports recognition of both the front and back sides of Brazilian ID cards. Default API request rate limit: 5 requests per second.
                  * @param req RecognizeBrazilIDCardOCRRequest
                  * @return RecognizeBrazilIDCardOCROutcome
                  */
@@ -430,144 +418,28 @@ A maximum of 10 requests can be initiated per second for this API.
                 RecognizeBrazilRNMOCROutcomeCallable RecognizeBrazilRNMOCRCallable(const Model::RecognizeBrazilRNMOCRRequest& request);
 
                 /**
-                 *This API is used to recognize various types of invoices or tickets in an image or PDF file. You can also specify a type. 14 types of standard expense reimbursement invoices are supported, including value-added tax (VAT) invoice (special, general, roll, blockchain, and toll), fully digitalized electronic invoice (special and general), non-tax revenue invoice (general receipt and general payment voucher), quota invoice, general machine-printed invoice, car sales invoice (motor vehicle sales invoice and used car invoice), train ticket, taxi receipt, itinerary/receipt of e-ticket for air transportation, bus ticket, ship ticket, toll receipt, and medical invoice (inpatient and outpatient). This API can also be used for intelligent recognition of other types of invoices. To try now, click [here](https://intl.cloud.tencent.com/product/ocr?from_cn_redirect=1).
-
-A maximum of 5 requests can be initiated per second for this API.
-
-
-The invoice/ticket subtype (SubType), subtype description (TypeDescription), and parent type (Type) can be returned, as described below:
-<table style="width:715px">
-      <thead>
-        <tr>
-          <th style="width:200px">SubType</th>
-          <th style="width:200px">TypeDescription</th>
-          <th >Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> VatSpecialInvoice</td>
-          <td> Special VAT invoice </td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatCommonInvoice</td>
-          <td> General VAT invoice </td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicCommonInvoice </td>
-          <td> Electronic general VAT invoice </td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicSpecialInvoice </td>
-          <td> Electronic special VAT invoice </td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicInvoiceBlockchain</td>
-          <td> Blockchain electronic invoice </td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicInvoiceToll</td>
-          <td> Electronic general VAT invoice (toll)</td>
-          <td> 3 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicSpecialInvoiceFull</td>
-          <td> Electronic invoice (special)</td>
-          <td> 16 </td>
-        </tr>
-        <tr>
-          <td> VatElectronicInvoiceFull</td>
-          <td> Electronic invoice (general) </td>
-          <td> 16 </td>
-        </tr>
-        <tr>
-          <td> MotorVehicleSaleInvoice </td>
-          <td> Motor vehicle sales invoice </td>
-          <td> 12 </td>
-        </tr>
-        <tr>
-          <td> UsedCarPurchaseInvoice </td>
-          <td> Used car invoice </td>
-          <td> 12 </td>
-        </tr>
-        <tr>
-          <td> VatInvoiceRoll </td>
-          <td> General VAT invoice (roll) </td>
-          <td> 11 </td>
-        </tr>
-        <tr>
-          <td> TaxiTicket </td>
-          <td> Taxi receipt </td>
-          <td> 0 </td>
-        </tr>
-        <tr>
-          <td> QuotaInvoice </td>
-          <td> Quota invoice </td>
-          <td> 1 </td>
-        </tr>
-        <tr>
-          <td> TrainTicket </td>
-          <td> Train ticket </td>
-          <td> 2 </td>
-        </tr>
-        <tr>
-          <td> AirTransport </td>
-          <td> Itinerary/Receipt of e-ticket for air transportation </td>
-          <td> 5 </td>
-        </tr>
-        <tr>
-          <td> MachinePrintedInvoice </td>
-          <td> General machine-printed invoice </td>
-          <td> 8 </td>
-        </tr>
-        <tr>
-          <td> BusInvoice </td>
-          <td> Bus ticket </td>
-          <td> 9 </td>
-        </tr>
-        <tr>
-          <td> ShippingInvoice </td>
-          <td> Ship ticket </td>
-          <td> 10 </td>
-        </tr>
-        <tr>
-          <td> NonTaxIncomeGeneralBill </td>
-          <td> General receipt for non-tax revenue </td>
-          <td> 15 </td>
-        </tr>
-        <tr>
-          <td> NonTaxIncomeElectronicBill </td>
-          <td> General payment voucher for non-tax revenue (electronic) </td>
-          <td> 15 </td>
-        </tr>
-        <tr>
-          <td> TollInvoice </td>
-          <td> Toll receipt </td>
-          <td> 13 </td>
-        </tr>
-        <tr>
-          <td> OtherInvoice </td>
-          <td> Other </td>
-          <td> -1 </td>
-        </tr>
-      </tbody>
-    </table>
-                 * @param req RecognizeGeneralInvoiceRequest
-                 * @return RecognizeGeneralInvoiceOutcome
+                 *This API is used to recognize the coordinates of four corners of cards.
+                 * @param req RecognizeDetectCardCoordsRequest
+                 * @return RecognizeDetectCardCoordsOutcome
                  */
-                RecognizeGeneralInvoiceOutcome RecognizeGeneralInvoice(const Model::RecognizeGeneralInvoiceRequest &request);
-                void RecognizeGeneralInvoiceAsync(const Model::RecognizeGeneralInvoiceRequest& request, const RecognizeGeneralInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
+                RecognizeDetectCardCoordsOutcome RecognizeDetectCardCoords(const Model::RecognizeDetectCardCoordsRequest &request);
+                void RecognizeDetectCardCoordsAsync(const Model::RecognizeDetectCardCoordsRequest& request, const RecognizeDetectCardCoordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeDetectCardCoordsOutcomeCallable RecognizeDetectCardCoordsCallable(const Model::RecognizeDetectCardCoordsRequest& request);
 
                 /**
-                 *This API is used to recognize an Indonesian identity card.
+                 *This API performs unified verification on images of various card types worldwide. It supports automatic card type classification, field recognition, quality check, tampering (PS) detection, copy detection, recapture detection, format validation, and information consistency check. Candidate card types and check items can be flexibly combined.
+The following 20 document types are currently supported: Mainland China ID Card, Passport, Thai ID Card, Malaysian ID Card, Indonesian ID Card, Singapore ID Card, Philippine Driver's License, Philippine SSS ID, Philippine PRC ID, Philippine Postal ID Card, Philippine UMID, Philippine Voter ID, Philippine TIN Card, Philippine National ID, Philippine Health Card, Taiwan (China) ID Card, Vietnamese ID Card, Myanmar Driver's License, Brazilian ID Card, and Brazilian Driver's License.
+                 * @param req RecognizeGeneralCardVerificationRequest
+                 * @return RecognizeGeneralCardVerificationOutcome
+                 */
+                RecognizeGeneralCardVerificationOutcome RecognizeGeneralCardVerification(const Model::RecognizeGeneralCardVerificationRequest &request);
+                void RecognizeGeneralCardVerificationAsync(const Model::RecognizeGeneralCardVerificationRequest& request, const RecognizeGeneralCardVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeGeneralCardVerificationOutcomeCallable RecognizeGeneralCardVerificationCallable(const Model::RecognizeGeneralCardVerificationRequest& request);
 
-The API request rate is limited to 20 requests/sec by default.
+                /**
+                 *Indonesian identity card recognition
+
+Default API request rate limit: 5 requests/second.
                  * @param req RecognizeIndonesiaIDCardOCRRequest
                  * @return RecognizeIndonesiaIDCardOCROutcome
                  */
@@ -576,27 +448,7 @@ The API request rate is limited to 20 requests/sec by default.
                 RecognizeIndonesiaIDCardOCROutcomeCallable RecognizeIndonesiaIDCardOCRCallable(const Model::RecognizeIndonesiaIDCardOCRRequest& request);
 
                 /**
-                 *This API is used to recognize a South Korean driver's license.
-                 * @param req RecognizeKoreanDrivingLicenseOCRRequest
-                 * @return RecognizeKoreanDrivingLicenseOCROutcome
-                 */
-                RecognizeKoreanDrivingLicenseOCROutcome RecognizeKoreanDrivingLicenseOCR(const Model::RecognizeKoreanDrivingLicenseOCRRequest &request);
-                void RecognizeKoreanDrivingLicenseOCRAsync(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request, const RecognizeKoreanDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeKoreanDrivingLicenseOCROutcomeCallable RecognizeKoreanDrivingLicenseOCRCallable(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request);
-
-                /**
-                 *This API is used to recognize a South Korean ID card.
-                 * @param req RecognizeKoreanIDCardOCRRequest
-                 * @return RecognizeKoreanIDCardOCROutcome
-                 */
-                RecognizeKoreanIDCardOCROutcome RecognizeKoreanIDCardOCR(const Model::RecognizeKoreanIDCardOCRRequest &request);
-                void RecognizeKoreanIDCardOCRAsync(const Model::RecognizeKoreanIDCardOCRRequest& request, const RecognizeKoreanIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeKoreanIDCardOCROutcomeCallable RecognizeKoreanIDCardOCRCallable(const Model::RecognizeKoreanIDCardOCRRequest& request);
-
-                /**
-                 *This API is used to recognize key fields on the photo side of a Macao (China) identity card, including name in Chinese, name in English, telecode for name, date of birth, gender, document symbol, date of the first issue, date of the last receipt, identity card number, and permanent residency attribute. 
-
-This API is not fully available for the time being. For more information, please contact your [Tencent Cloud sales rep](https://intl.cloud.tencent.com/contact-sales).
+                 *This API is used to recognize key fields on the photo side of a Macao (China) identity card, including name in Chinese, name in English, telecode for name, date of birth, gender, document symbol, date of the first issue, date of the last receipt, identity card number, and permanent residency attribute.
                  * @param req RecognizeMacaoIDCardOCRRequest
                  * @return RecognizeMacaoIDCardOCROutcome
                  */
@@ -605,8 +457,9 @@ This API is not fully available for the time being. For more information, please
                 RecognizeMacaoIDCardOCROutcomeCallable RecognizeMacaoIDCardOCRCallable(const Model::RecognizeMacaoIDCardOCRRequest& request);
 
                 /**
-                 *This interface supports the identification of all fields on the front and back of the second-generation ID card for mainland Chinese residents.Including name, gender, ethnicity, date of birth, address, citizen ID number, issuing authority, and validity period, the identification accuracy reaches more than 99%.In addition, this interface also supports a variety of value-added capabilities to meet the needs of different scenarios. Such as the cropping function of ID card photos and portrait photos, and also has 5 alarm functions.
-As shown in the table below. <table style="width:650px"> <thead> <tr> <th width="150">Value-added ability</th> <th width="500">Ability items</th> </tr> </thead> <tbody> <tr> <td rowspan="9">Alarm function</td> </tr> <tr> <td>ID card copy warning</td> </tr> <tr> <td>ID card copy warning</td> </tr> <tr> <td>Alarm for occlusion in the ID card frame</td> </tr> <tr> <td>ID card reflective warning</td> </tr> <tr> <td>Blurry picture warning</td> </tr> </tbody> </table> Default interface request frequency limit: 20 times/second
+                 *This interface recognizes all fields on both sides of the Mainland China Resident Identity Card (second-generation), including name, gender, ethnicity, date of birth, address, ID number, issuing authority, and validity period, with an accuracy of over 99%.
+
+In addition, the interface provides additional features for various scenarios, such as ID card and portrait photo cropping, along with five alarm detections (see table below).<table style="width:650px"> <thead> <tr> <th width="150">Value-added ability</th> <th width="500">Ability items</th> </tr> </thead> <tbody> <tr> <td rowspan="9">Alarm function</td> </tr> <tr> <td>ID card photocopy warning</td> </tr> <tr> <td>ID card on-screen display warning</td> </tr> <tr> <td>Alarm for occlusion in the ID card frame</td> </tr> <tr> <td>ID card reflective warning</td> </tr> <tr> <td>Blurry picture warning</td> </tr> </tbody> </table> Default rate limit: 20 requests/second.
                  * @param req RecognizeMainlandIDCardOCRRequest
                  * @return RecognizeMainlandIDCardOCROutcome
                  */
@@ -681,18 +534,9 @@ As shown in the table below. <table style="width:650px"> <thead> <tr> <th width=
                 RecognizeSingaporeIDCardOCROutcomeCallable RecognizeSingaporeIDCardOCRCallable(const Model::RecognizeSingaporeIDCardOCRRequest& request);
 
                 /**
-                 *This API is used to recognize regular tables, borderless tables, or multi-tables in images or PDF files containing Chinese and English texts. It returns the text content of each cell, supports recognition of rotated table images, and can save the recognition results into an Excel document. It delivers higher recognition accuracy than that of table OCR v2 and applies to more scenarios. The recognition accuracy in difficult table scenarios, such as irregular tables and nested tables (borderless tables contained in bordered tables), is better than that of table OCR v2. To try it, click [here](https://intl.cloud.tencent.com/product/smart?from_cn_redirect=1-ocr).
+                 *Domain name for API request: ocr.intl.tencentcloudapi.com.
 
-A maximum of 2 requests can be initiated per second for this API.
-                 * @param req RecognizeTableAccurateOCRRequest
-                 * @return RecognizeTableAccurateOCROutcome
-                 */
-                RecognizeTableAccurateOCROutcome RecognizeTableAccurateOCR(const Model::RecognizeTableAccurateOCRRequest &request);
-                void RecognizeTableAccurateOCRAsync(const Model::RecognizeTableAccurateOCRRequest& request, const RecognizeTableAccurateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeTableAccurateOCROutcomeCallable RecognizeTableAccurateOCRCallable(const Model::RecognizeTableAccurateOCRRequest& request);
-
-                /**
-                 *This API is used to recognize the fields on a Thai identity card, including name in Thai, name in English, address, date of birth, identification number, date of issue, and date of expiry.
+This API is used to recognize the fields on a Thai identity card, including name in Thai, name in English, address, date of birth, identification number, date of issue, and date of expiry.
 
 A maximum of 10 requests can be initiated per second for this API.
                  * @param req RecognizeThaiIDCardOCRRequest
@@ -704,7 +548,7 @@ A maximum of 10 requests can be initiated per second for this API.
 
                 /**
                  *This API is used to recognize the fields on a Thai identity card, including name in Thai, name in English, address, date of birth, identification number, date of issue, and date of expiry.
-Currently, this API is not generally available. For more information, please [contact your sales rep](https://intl.cloud.tencent.com/about/connect?from_cn_redirect=1).
+Currently, this API is not generally available. For more information, please [contact your sales rep](https://intl.cloud.tencent.com/zh/contact-us).
 
 A maximum of 5 requests can be initiated per second for this API.
                  * @param req RecognizeThaiPinkCardRequest
@@ -713,17 +557,6 @@ A maximum of 5 requests can be initiated per second for this API.
                 RecognizeThaiPinkCardOutcome RecognizeThaiPinkCard(const Model::RecognizeThaiPinkCardRequest &request);
                 void RecognizeThaiPinkCardAsync(const Model::RecognizeThaiPinkCardRequest& request, const RecognizeThaiPinkCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeThaiPinkCardOutcomeCallable RecognizeThaiPinkCardCallable(const Model::RecognizeThaiPinkCardRequest& request);
-
-                /**
-                 *This API is used to recognize various types of seals, including invoice seals and finance seals. It is suitable for scenarios such as official document and invoice/ticket OCR.
-
-A maximum of 5 requests can be initiated per second for this API.
-                 * @param req SealOCRRequest
-                 * @return SealOCROutcome
-                 */
-                SealOCROutcome SealOCR(const Model::SealOCRRequest &request);
-                void SealOCRAsync(const Model::SealOCRRequest& request, const SealOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SealOCROutcomeCallable SealOCRCallable(const Model::SealOCRRequest& request);
 
                 /**
                  *This API is used to recognize fields from cards, documents, bills, forms, contracts, and other structured information. It is flexible and efficient to use, without any configuration required. This API is suitable for recognizing structured information.
@@ -737,26 +570,13 @@ A maximum of 10 requests can be initiated per second for this API.
                 SmartStructuralOCRV2OutcomeCallable SmartStructuralOCRV2Callable(const Model::SmartStructuralOCRV2Request& request);
 
                 /**
-                 *This API is used to recognize fields from cards, documents, bills, forms, contracts, and other structured information. It is flexible and efficient to use, without any configuration required. This API is suitable for recognizing structured information.
-
-A maximum of 10 requests can be initiated per second for this API.
-                 * @param req SmartStructuralProRequest
-                 * @return SmartStructuralProOutcome
+                 *This API is used to recognize entry and exit record PDFs and verify electronic signatures, returning structured entry and exit records and signature verification conclusions.
+                 * @param req VerifyPdfOcrRequest
+                 * @return VerifyPdfOcrOutcome
                  */
-                SmartStructuralProOutcome SmartStructuralPro(const Model::SmartStructuralProRequest &request);
-                void SmartStructuralProAsync(const Model::SmartStructuralProRequest& request, const SmartStructuralProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SmartStructuralProOutcomeCallable SmartStructuralProCallable(const Model::SmartStructuralProRequest& request);
-
-                /**
-                 *This API is used to detect and recognize Chinese and English forms in images. It can return the text content of each cell and save the recognition result as Excel.
-
-This API is not fully available for the time being. For more information, please contact your [Tencent Cloud sales rep](https://intl.cloud.tencent.com/contact-sales).
-                 * @param req TableOCRRequest
-                 * @return TableOCROutcome
-                 */
-                TableOCROutcome TableOCR(const Model::TableOCRRequest &request);
-                void TableOCRAsync(const Model::TableOCRRequest& request, const TableOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                TableOCROutcomeCallable TableOCRCallable(const Model::TableOCRRequest& request);
+                VerifyPdfOcrOutcome VerifyPdfOcr(const Model::VerifyPdfOcrRequest &request);
+                void VerifyPdfOcrAsync(const Model::VerifyPdfOcrRequest& request, const VerifyPdfOcrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyPdfOcrOutcomeCallable VerifyPdfOcrCallable(const Model::VerifyPdfOcrRequest& request);
 
                 /**
                  *This API is used to recognize the vehicle identification number (VIN) in an image.

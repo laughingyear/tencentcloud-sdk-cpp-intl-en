@@ -44,31 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Site access type. If this parameter is not input, the default value `partial` is used. Valid values of this parameter are as follows:
-<li>partial: CNAME access;</li>
-<li>full: NS access;</li>
-<li>noDomainAccess: access with no domain name.</li>
-<li>dnsPodAccess: DNSPod hosted access. To use this access mode, your domain name should have been hosted on DNSPod.</li>
-                     * @return Type Site access type. If this parameter is not input, the default value `partial` is used. Valid values of this parameter are as follows:
-<li>partial: CNAME access;</li>
-<li>full: NS access;</li>
-<li>noDomainAccess: access with no domain name.</li>
-<li>dnsPodAccess: DNSPod hosted access. To use this access mode, your domain name should have been hosted on DNSPod.</li>
+                     * 获取Site access type. if this parameter is not input, the default value `partial` is used. valid values of this parameter are as follows:.
+<li>partial: CNAME access;</li>.
+<li>full: NS access;</li>.
+<li>noDomainAccess: access with no domain name.</li>.
+<li>dnsPodAccess: DNSPod hosted access. to use this access mode, your domain name should have been hosted on DNSPod.</li>.
+<li>ai: edge reasoning integration.</li>.
+                     * @return Type Site access type. if this parameter is not input, the default value `partial` is used. valid values of this parameter are as follows:.
+<li>partial: CNAME access;</li>.
+<li>full: NS access;</li>.
+<li>noDomainAccess: access with no domain name.</li>.
+<li>dnsPodAccess: DNSPod hosted access. to use this access mode, your domain name should have been hosted on DNSPod.</li>.
+<li>ai: edge reasoning integration.</li>.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Site access type. If this parameter is not input, the default value `partial` is used. Valid values of this parameter are as follows:
-<li>partial: CNAME access;</li>
-<li>full: NS access;</li>
-<li>noDomainAccess: access with no domain name.</li>
-<li>dnsPodAccess: DNSPod hosted access. To use this access mode, your domain name should have been hosted on DNSPod.</li>
-                     * @param _type Site access type. If this parameter is not input, the default value `partial` is used. Valid values of this parameter are as follows:
-<li>partial: CNAME access;</li>
-<li>full: NS access;</li>
-<li>noDomainAccess: access with no domain name.</li>
-<li>dnsPodAccess: DNSPod hosted access. To use this access mode, your domain name should have been hosted on DNSPod.</li>
+                     * 设置Site access type. if this parameter is not input, the default value `partial` is used. valid values of this parameter are as follows:.
+<li>partial: CNAME access;</li>.
+<li>full: NS access;</li>.
+<li>noDomainAccess: access with no domain name.</li>.
+<li>dnsPodAccess: DNSPod hosted access. to use this access mode, your domain name should have been hosted on DNSPod.</li>.
+<li>ai: edge reasoning integration.</li>.
+                     * @param _type Site access type. if this parameter is not input, the default value `partial` is used. valid values of this parameter are as follows:.
+<li>partial: CNAME access;</li>.
+<li>full: NS access;</li>.
+<li>noDomainAccess: access with no domain name.</li>.
+<li>dnsPodAccess: DNSPod hosted access. to use this access mode, your domain name should have been hosted on DNSPod.</li>.
+<li>ai: edge reasoning integration.</li>.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -135,15 +139,27 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取ID of the plan to which you want to bind the site. If you don't have an EdgeOne plan, purchase one in the EdgeOne console.
-                     * @return PlanId ID of the plan to which you want to bind the site. If you don't have an EdgeOne plan, purchase one in the EdgeOne console.
+                     * 获取Target package ID to bind. when a package already exists under your account, you can fill in this parameter to directly bind the site to the package. if there are currently no bindable packages, you can purchase a package via [CreatePlan](https://intl.cloud.tencent.com/document/product/1552/105771?from_cn_redirect=1).
+Note: if this parameter is not specified, a site in "init" status will be created. the site is inactive and will not be displayed in the console. you can bind a package and activate the site through [BindZoneToPlan](https://intl.cloud.tencent.com/document/product/1552/83042?from_cn_redirect=1). after activation, the site can provide service properly.
+
+
+                     * @return PlanId Target package ID to bind. when a package already exists under your account, you can fill in this parameter to directly bind the site to the package. if there are currently no bindable packages, you can purchase a package via [CreatePlan](https://intl.cloud.tencent.com/document/product/1552/105771?from_cn_redirect=1).
+Note: if this parameter is not specified, a site in "init" status will be created. the site is inactive and will not be displayed in the console. you can bind a package and activate the site through [BindZoneToPlan](https://intl.cloud.tencent.com/document/product/1552/83042?from_cn_redirect=1). after activation, the site can provide service properly.
+
+
                      * 
                      */
                     std::string GetPlanId() const;
 
                     /**
-                     * 设置ID of the plan to which you want to bind the site. If you don't have an EdgeOne plan, purchase one in the EdgeOne console.
-                     * @param _planId ID of the plan to which you want to bind the site. If you don't have an EdgeOne plan, purchase one in the EdgeOne console.
+                     * 设置Target package ID to bind. when a package already exists under your account, you can fill in this parameter to directly bind the site to the package. if there are currently no bindable packages, you can purchase a package via [CreatePlan](https://intl.cloud.tencent.com/document/product/1552/105771?from_cn_redirect=1).
+Note: if this parameter is not specified, a site in "init" status will be created. the site is inactive and will not be displayed in the console. you can bind a package and activate the site through [BindZoneToPlan](https://intl.cloud.tencent.com/document/product/1552/83042?from_cn_redirect=1). after activation, the site can provide service properly.
+
+
+                     * @param _planId Target package ID to bind. when a package already exists under your account, you can fill in this parameter to directly bind the site to the package. if there are currently no bindable packages, you can purchase a package via [CreatePlan](https://intl.cloud.tencent.com/document/product/1552/105771?from_cn_redirect=1).
+Note: if this parameter is not specified, a site in "init" status will be created. the site is inactive and will not be displayed in the console. you can bind a package and activate the site through [BindZoneToPlan](https://intl.cloud.tencent.com/document/product/1552/83042?from_cn_redirect=1). after activation, the site can provide service properly.
+
+
                      * 
                      */
                     void SetPlanId(const std::string& _planId);
@@ -156,15 +172,15 @@ namespace TencentCloud
                     bool PlanIdHasBeenSet() const;
 
                     /**
-                     * 获取The site alias. It allows up to 20 characters, including [0-9], [a-z], [A-Z] and [-_]. For details, see [Glossary](https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). If you don't want to use it, just leave it blank.
-                     * @return AliasZoneName The site alias. It allows up to 20 characters, including [0-9], [a-z], [A-Z] and [-_]. For details, see [Glossary](https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). If you don't want to use it, just leave it blank.
+                     * 获取Identical site identifier. limits input to numbers, english letters, ".", "-", and "_", with a character limit of 200 characters. for details, see identical site identifier (https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). leave this field blank if this usage scenario does not apply.
+                     * @return AliasZoneName Identical site identifier. limits input to numbers, english letters, ".", "-", and "_", with a character limit of 200 characters. for details, see identical site identifier (https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). leave this field blank if this usage scenario does not apply.
                      * 
                      */
                     std::string GetAliasZoneName() const;
 
                     /**
-                     * 设置The site alias. It allows up to 20 characters, including [0-9], [a-z], [A-Z] and [-_]. For details, see [Glossary](https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). If you don't want to use it, just leave it blank.
-                     * @param _aliasZoneName The site alias. It allows up to 20 characters, including [0-9], [a-z], [A-Z] and [-_]. For details, see [Glossary](https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). If you don't want to use it, just leave it blank.
+                     * 设置Identical site identifier. limits input to numbers, english letters, ".", "-", and "_", with a character limit of 200 characters. for details, see identical site identifier (https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). leave this field blank if this usage scenario does not apply.
+                     * @param _aliasZoneName Identical site identifier. limits input to numbers, english letters, ".", "-", and "_", with a character limit of 200 characters. for details, see identical site identifier (https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). leave this field blank if this usage scenario does not apply.
                      * 
                      */
                     void SetAliasZoneName(const std::string& _aliasZoneName);
@@ -250,11 +266,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Site access type. If this parameter is not input, the default value `partial` is used. Valid values of this parameter are as follows:
-<li>partial: CNAME access;</li>
-<li>full: NS access;</li>
-<li>noDomainAccess: access with no domain name.</li>
-<li>dnsPodAccess: DNSPod hosted access. To use this access mode, your domain name should have been hosted on DNSPod.</li>
+                     * Site access type. if this parameter is not input, the default value `partial` is used. valid values of this parameter are as follows:.
+<li>partial: CNAME access;</li>.
+<li>full: NS access;</li>.
+<li>noDomainAccess: access with no domain name.</li>.
+<li>dnsPodAccess: DNSPod hosted access. to use this access mode, your domain name should have been hosted on DNSPod.</li>.
+<li>ai: edge reasoning integration.</li>.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -275,13 +292,16 @@ namespace TencentCloud
                     bool m_areaHasBeenSet;
 
                     /**
-                     * ID of the plan to which you want to bind the site. If you don't have an EdgeOne plan, purchase one in the EdgeOne console.
+                     * Target package ID to bind. when a package already exists under your account, you can fill in this parameter to directly bind the site to the package. if there are currently no bindable packages, you can purchase a package via [CreatePlan](https://intl.cloud.tencent.com/document/product/1552/105771?from_cn_redirect=1).
+Note: if this parameter is not specified, a site in "init" status will be created. the site is inactive and will not be displayed in the console. you can bind a package and activate the site through [BindZoneToPlan](https://intl.cloud.tencent.com/document/product/1552/83042?from_cn_redirect=1). after activation, the site can provide service properly.
+
+
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
 
                     /**
-                     * The site alias. It allows up to 20 characters, including [0-9], [a-z], [A-Z] and [-_]. For details, see [Glossary](https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). If you don't want to use it, just leave it blank.
+                     * Identical site identifier. limits input to numbers, english letters, ".", "-", and "_", with a character limit of 200 characters. for details, see identical site identifier (https://intl.cloud.tencent.com/document/product/1552/70202?from_cn_redirect=1). leave this field blank if this usage scenario does not apply.
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;

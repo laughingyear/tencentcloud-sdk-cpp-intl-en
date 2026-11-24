@@ -71,7 +71,17 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_renewFlagHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_slaveZoneAttrHasBeenSet(false),
-    m_cynosVersionTagHasBeenSet(false)
+    m_cynosVersionTagHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_gdnRoleHasBeenSet(false),
+    m_usedArchiveStorageHasBeenSet(false),
+    m_archiveStatusHasBeenSet(false),
+    m_archiveProgressHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_isOpenTDEHasBeenSet(false),
+    m_realZoneHasBeenSet(false),
+    m_storageOverUseHasBeenSet(false),
+    m_storageAutoExpandHasBeenSet(false)
 {
 }
 
@@ -660,6 +670,106 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_cynosVersionTagHasBeenSet = true;
     }
 
+    if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
+    {
+        if (!value["GdnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.GdnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnId = string(value["GdnId"].GetString());
+        m_gdnIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GdnRole") && !value["GdnRole"].IsNull())
+    {
+        if (!value["GdnRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.GdnRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnRole = string(value["GdnRole"].GetString());
+        m_gdnRoleHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedArchiveStorage") && !value["UsedArchiveStorage"].IsNull())
+    {
+        if (!value["UsedArchiveStorage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.UsedArchiveStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedArchiveStorage = value["UsedArchiveStorage"].GetInt64();
+        m_usedArchiveStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchiveStatus") && !value["ArchiveStatus"].IsNull())
+    {
+        if (!value["ArchiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ArchiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStatus = string(value["ArchiveStatus"].GetString());
+        m_archiveStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchiveProgress") && !value["ArchiveProgress"].IsNull())
+    {
+        if (!value["ArchiveProgress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ArchiveProgress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveProgress = value["ArchiveProgress"].GetInt64();
+        m_archiveProgressHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterLevel") && !value["ClusterLevel"].IsNull())
+    {
+        if (!value["ClusterLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ClusterLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterLevel = string(value["ClusterLevel"].GetString());
+        m_clusterLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOpenTDE") && !value["IsOpenTDE"].IsNull())
+    {
+        if (!value["IsOpenTDE"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.IsOpenTDE` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpenTDE = value["IsOpenTDE"].GetBool();
+        m_isOpenTDEHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealZone") && !value["RealZone"].IsNull())
+    {
+        if (!value["RealZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.RealZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realZone = string(value["RealZone"].GetString());
+        m_realZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageOverUse") && !value["StorageOverUse"].IsNull())
+    {
+        if (!value["StorageOverUse"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageOverUse` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageOverUse = string(value["StorageOverUse"].GetString());
+        m_storageOverUseHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageAutoExpand") && !value["StorageAutoExpand"].IsNull())
+    {
+        if (!value["StorageAutoExpand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageAutoExpand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageAutoExpand = string(value["StorageAutoExpand"].GetString());
+        m_storageAutoExpandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1121,6 +1231,86 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CynosVersionTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cynosVersionTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gdnRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usedArchiveStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedArchiveStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedArchiveStorage, allocator);
+    }
+
+    if (m_archiveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveProgress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archiveProgress, allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenTDEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenTDE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOpenTDE, allocator);
+    }
+
+    if (m_realZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageOverUseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOverUse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageOverUse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageAutoExpandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageAutoExpand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageAutoExpand.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1940,5 +2130,165 @@ void CynosdbClusterDetail::SetCynosVersionTag(const string& _cynosVersionTag)
 bool CynosdbClusterDetail::CynosVersionTagHasBeenSet() const
 {
     return m_cynosVersionTagHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CynosdbClusterDetail::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetGdnRole() const
+{
+    return m_gdnRole;
+}
+
+void CynosdbClusterDetail::SetGdnRole(const string& _gdnRole)
+{
+    m_gdnRole = _gdnRole;
+    m_gdnRoleHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::GdnRoleHasBeenSet() const
+{
+    return m_gdnRoleHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetUsedArchiveStorage() const
+{
+    return m_usedArchiveStorage;
+}
+
+void CynosdbClusterDetail::SetUsedArchiveStorage(const int64_t& _usedArchiveStorage)
+{
+    m_usedArchiveStorage = _usedArchiveStorage;
+    m_usedArchiveStorageHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::UsedArchiveStorageHasBeenSet() const
+{
+    return m_usedArchiveStorageHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetArchiveStatus() const
+{
+    return m_archiveStatus;
+}
+
+void CynosdbClusterDetail::SetArchiveStatus(const string& _archiveStatus)
+{
+    m_archiveStatus = _archiveStatus;
+    m_archiveStatusHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ArchiveStatusHasBeenSet() const
+{
+    return m_archiveStatusHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetArchiveProgress() const
+{
+    return m_archiveProgress;
+}
+
+void CynosdbClusterDetail::SetArchiveProgress(const int64_t& _archiveProgress)
+{
+    m_archiveProgress = _archiveProgress;
+    m_archiveProgressHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ArchiveProgressHasBeenSet() const
+{
+    return m_archiveProgressHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void CynosdbClusterDetail::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+bool CynosdbClusterDetail::GetIsOpenTDE() const
+{
+    return m_isOpenTDE;
+}
+
+void CynosdbClusterDetail::SetIsOpenTDE(const bool& _isOpenTDE)
+{
+    m_isOpenTDE = _isOpenTDE;
+    m_isOpenTDEHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::IsOpenTDEHasBeenSet() const
+{
+    return m_isOpenTDEHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetRealZone() const
+{
+    return m_realZone;
+}
+
+void CynosdbClusterDetail::SetRealZone(const string& _realZone)
+{
+    m_realZone = _realZone;
+    m_realZoneHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::RealZoneHasBeenSet() const
+{
+    return m_realZoneHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetStorageOverUse() const
+{
+    return m_storageOverUse;
+}
+
+void CynosdbClusterDetail::SetStorageOverUse(const string& _storageOverUse)
+{
+    m_storageOverUse = _storageOverUse;
+    m_storageOverUseHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageOverUseHasBeenSet() const
+{
+    return m_storageOverUseHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetStorageAutoExpand() const
+{
+    return m_storageAutoExpand;
+}
+
+void CynosdbClusterDetail::SetStorageAutoExpand(const string& _storageAutoExpand)
+{
+    m_storageAutoExpand = _storageAutoExpand;
+    m_storageAutoExpandHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageAutoExpandHasBeenSet() const
+{
+    return m_storageAutoExpandHasBeenSet;
 }
 

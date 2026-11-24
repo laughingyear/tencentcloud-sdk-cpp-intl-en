@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The result of a bitrate reduction task.
+                * Bitrate reduction task result
                 */
                 class ReduceMediaBitrateMediaProcessTaskResult : public AbstractModel
                 {
@@ -49,23 +49,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task type. Valid values:
-<li>Transcode</li>
-<li>AdaptiveDynamicStreaming</li>
-                     * @return Type The task type. Valid values:
-<li>Transcode</li>
-<li>AdaptiveDynamicStreaming</li>
+                     * 获取Task type. Valid values:
+<li>Transcode: transcode</li>
+<li>AdaptiveDynamicStreaming: adaptive bitrate streaming</li>
+                     * @return Type Task type. Valid values:
+<li>Transcode: transcode</li>
+<li>AdaptiveDynamicStreaming: adaptive bitrate streaming</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The task type. Valid values:
-<li>Transcode</li>
-<li>AdaptiveDynamicStreaming</li>
-                     * @param _type The task type. Valid values:
-<li>Transcode</li>
-<li>AdaptiveDynamicStreaming</li>
+                     * 设置Task type. Valid values:
+<li>Transcode: transcode</li>
+<li>AdaptiveDynamicStreaming: adaptive bitrate streaming</li>
+                     * @param _type Task type. Valid values:
+<li>Transcode: transcode</li>
+<li>AdaptiveDynamicStreaming: adaptive bitrate streaming</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -78,19 +78,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The result of a transcoding task. This parameter is valid if `Type` is `Transcode`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TranscodeTask The result of a transcoding task. This parameter is valid if `Type` is `Transcode`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video transcoding task in the bitrate reduction task. Valid when the task type is `Transcode`.
+                     * @return TranscodeTask Query result of the video transcoding task in the bitrate reduction task. Valid when the task type is `Transcode`.
                      * 
                      */
                     ReduceMediaBitrateTranscodeResult GetTranscodeTask() const;
 
                     /**
-                     * 设置The result of a transcoding task. This parameter is valid if `Type` is `Transcode`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _transcodeTask The result of a transcoding task. This parameter is valid if `Type` is `Transcode`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video transcoding task in the bitrate reduction task. Valid when the task type is `Transcode`.
+                     * @param _transcodeTask Query result of the video transcoding task in the bitrate reduction task. Valid when the task type is `Transcode`.
                      * 
                      */
                     void SetTranscodeTask(const ReduceMediaBitrateTranscodeResult& _transcodeTask);
@@ -103,19 +99,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TranscodeTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of an adaptive bitrate task. This parameter is valid if `Type` is `AdaptiveDynamicStreaming`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AdaptiveDynamicStreamingTask The result of an adaptive bitrate task. This parameter is valid if `Type` is `AdaptiveDynamicStreaming`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video to adaptive streaming task in a bitrate reduction task. Valid when the task type is `AdaptiveDynamicStreaming`.
+                     * @return AdaptiveDynamicStreamingTask Query result of the video to adaptive streaming task in a bitrate reduction task. Valid when the task type is `AdaptiveDynamicStreaming`.
                      * 
                      */
                     ReduceMediaBitrateAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
-                     * 设置The result of an adaptive bitrate task. This parameter is valid if `Type` is `AdaptiveDynamicStreaming`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _adaptiveDynamicStreamingTask The result of an adaptive bitrate task. This parameter is valid if `Type` is `AdaptiveDynamicStreaming`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video to adaptive streaming task in a bitrate reduction task. Valid when the task type is `AdaptiveDynamicStreaming`.
+                     * @param _adaptiveDynamicStreamingTask Query result of the video to adaptive streaming task in a bitrate reduction task. Valid when the task type is `AdaptiveDynamicStreaming`.
                      * 
                      */
                     void SetAdaptiveDynamicStreamingTask(const ReduceMediaBitrateAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
@@ -130,23 +122,21 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The task type. Valid values:
-<li>Transcode</li>
-<li>AdaptiveDynamicStreaming</li>
+                     * Task type. Valid values:
+<li>Transcode: transcode</li>
+<li>AdaptiveDynamicStreaming: adaptive bitrate streaming</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The result of a transcoding task. This parameter is valid if `Type` is `Transcode`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video transcoding task in the bitrate reduction task. Valid when the task type is `Transcode`.
                      */
                     ReduceMediaBitrateTranscodeResult m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
-                     * The result of an adaptive bitrate task. This parameter is valid if `Type` is `AdaptiveDynamicStreaming`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video to adaptive streaming task in a bitrate reduction task. Valid when the task type is `AdaptiveDynamicStreaming`.
                      */
                     ReduceMediaBitrateAdaptiveDynamicStreamingResult m_adaptiveDynamicStreamingTask;
                     bool m_adaptiveDynamicStreamingTaskHasBeenSet;

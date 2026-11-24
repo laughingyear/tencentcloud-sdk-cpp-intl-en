@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information, name, and customer ID of the source video to be processed
+                * Source video information to be processed, including video name and custom video ID.
                 */
                 class MediaInputInfo : public AbstractModel
                 {
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Custom video ID.
-                     * @return Id Custom video ID.
+                     * 获取Video custom ID.
+                     * @return Id Video custom ID.
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Custom video ID.
-                     * @param _id Custom video ID.
+                     * 设置Video custom ID.
+                     * @param _id Video custom ID.
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Custom video ID.
+                     * Video custom ID.
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

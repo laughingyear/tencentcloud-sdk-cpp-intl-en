@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/TagFilter.h>
 
 
 namespace TencentCloud
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Namespace.
-                     * @return NamespaceId Namespace.
+                     * 获取Namespace of the topic. For 4.x common clusters, the Cluster Namespace is fixed as: tdmq_default
+                     * @return NamespaceId Namespace of the topic. For 4.x common clusters, the Cluster Namespace is fixed as: tdmq_default
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置Namespace.
-                     * @param _namespaceId Namespace.
+                     * 设置Namespace of the topic. For 4.x common clusters, the Cluster Namespace is fixed as: tdmq_default
+                     * @param _namespaceId Namespace of the topic. For 4.x common clusters, the Cluster Namespace is fixed as: tdmq_default
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -168,6 +169,48 @@ namespace TencentCloud
                      */
                     bool FilterNameHasBeenSet() const;
 
+                    /**
+                     * 获取Filters by subscription consumer group name.
+                     * @return FilterGroup Filters by subscription consumer group name.
+                     * 
+                     */
+                    std::string GetFilterGroup() const;
+
+                    /**
+                     * 设置Filters by subscription consumer group name.
+                     * @param _filterGroup Filters by subscription consumer group name.
+                     * 
+                     */
+                    void SetFilterGroup(const std::string& _filterGroup);
+
+                    /**
+                     * 判断参数 FilterGroup 是否已赋值
+                     * @return FilterGroup 是否已赋值
+                     * 
+                     */
+                    bool FilterGroupHasBeenSet() const;
+
+                    /**
+                     * 获取Tag filter
+                     * @return TagFilters Tag filter
+                     * 
+                     */
+                    std::vector<TagFilter> GetTagFilters() const;
+
+                    /**
+                     * 设置Tag filter
+                     * @param _tagFilters Tag filter
+                     * 
+                     */
+                    void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     * 
+                     */
+                    bool TagFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,7 +232,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Namespace.
+                     * Namespace of the topic. For 4.x common clusters, the Cluster Namespace is fixed as: tdmq_default
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -205,6 +248,18 @@ namespace TencentCloud
                      */
                     std::string m_filterName;
                     bool m_filterNameHasBeenSet;
+
+                    /**
+                     * Filters by subscription consumer group name.
+                     */
+                    std::string m_filterGroup;
+                    bool m_filterGroupHasBeenSet;
+
+                    /**
+                     * Tag filter
+                     */
+                    std::vector<TagFilter> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                 };
             }

@@ -57,8 +57,20 @@
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerBillSummaryResponse.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerInfoRequest.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerInfoResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnCostExplorerFilterRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnCostExplorerFilterResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnCostExplorerSummaryRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnCostExplorerSummaryResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnVoucherListRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnVoucherListResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnVoucherUsageDetailsRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerOwnVoucherUsageDetailsResponse.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerUinRequest.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerUinResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerVoucherListRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerVoucherListResponse.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerVoucherUsageDetailsRequest.h>
+#include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeCustomerVoucherUsageDetailsResponse.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeRebateDownloadUrlRequest.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/DescribeRebateDownloadUrlResponse.h>
 #include <tencentcloud/intlpartnersmgt/v20220928/model/ForceQNRequest.h>
@@ -168,9 +180,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCustomerInfoResponse> DescribeCustomerInfoOutcome;
                 typedef std::future<DescribeCustomerInfoOutcome> DescribeCustomerInfoOutcomeCallable;
                 typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerInfoRequest&, DescribeCustomerInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerOwnCostExplorerFilterResponse> DescribeCustomerOwnCostExplorerFilterOutcome;
+                typedef std::future<DescribeCustomerOwnCostExplorerFilterOutcome> DescribeCustomerOwnCostExplorerFilterOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerOwnCostExplorerFilterRequest&, DescribeCustomerOwnCostExplorerFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerOwnCostExplorerFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerOwnCostExplorerSummaryResponse> DescribeCustomerOwnCostExplorerSummaryOutcome;
+                typedef std::future<DescribeCustomerOwnCostExplorerSummaryOutcome> DescribeCustomerOwnCostExplorerSummaryOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerOwnCostExplorerSummaryRequest&, DescribeCustomerOwnCostExplorerSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerOwnCostExplorerSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerOwnVoucherListResponse> DescribeCustomerOwnVoucherListOutcome;
+                typedef std::future<DescribeCustomerOwnVoucherListOutcome> DescribeCustomerOwnVoucherListOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerOwnVoucherListRequest&, DescribeCustomerOwnVoucherListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerOwnVoucherListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerOwnVoucherUsageDetailsResponse> DescribeCustomerOwnVoucherUsageDetailsOutcome;
+                typedef std::future<DescribeCustomerOwnVoucherUsageDetailsOutcome> DescribeCustomerOwnVoucherUsageDetailsOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerOwnVoucherUsageDetailsRequest&, DescribeCustomerOwnVoucherUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerOwnVoucherUsageDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomerUinResponse> DescribeCustomerUinOutcome;
                 typedef std::future<DescribeCustomerUinOutcome> DescribeCustomerUinOutcomeCallable;
                 typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerUinRequest&, DescribeCustomerUinOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerUinAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerVoucherListResponse> DescribeCustomerVoucherListOutcome;
+                typedef std::future<DescribeCustomerVoucherListOutcome> DescribeCustomerVoucherListOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerVoucherListRequest&, DescribeCustomerVoucherListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerVoucherListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomerVoucherUsageDetailsResponse> DescribeCustomerVoucherUsageDetailsOutcome;
+                typedef std::future<DescribeCustomerVoucherUsageDetailsOutcome> DescribeCustomerVoucherUsageDetailsOutcomeCallable;
+                typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeCustomerVoucherUsageDetailsRequest&, DescribeCustomerVoucherUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerVoucherUsageDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebateDownloadUrlResponse> DescribeRebateDownloadUrlOutcome;
                 typedef std::future<DescribeRebateDownloadUrlOutcome> DescribeRebateDownloadUrlOutcomeCallable;
                 typedef std::function<void(const IntlpartnersmgtClient*, const Model::DescribeRebateDownloadUrlRequest&, DescribeRebateDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateDownloadUrlAsyncHandler;
@@ -376,8 +406,8 @@ Callable roles: Distributor, Second-level reseller, Reseller
                 DescribeBillSummaryByRegionOutcomeCallable DescribeBillSummaryByRegionCallable(const Model::DescribeBillSummaryByRegionRequest& request);
 
                 /**
-                 *This API is used to query the customer bill details by resellers.
-Callable roles: Distributor, Second-level reseller, Reseller.
+                 *Description: Query customer bill details.
+Resellers, first-level resellers, and second-level resellers can call this API.
                  * @param req DescribeCustomerBillDetailRequest
                  * @return DescribeCustomerBillDetailOutcome
                  */
@@ -407,8 +437,7 @@ Invocation Role: first-level reseller, second-level reseller, reseller.
                 DescribeCustomerBillDownloadUrlOutcomeCallable DescribeCustomerBillDownloadUrlCallable(const Model::DescribeCustomerBillDownloadUrlRequest& request);
 
                 /**
-                 *This API is used to query the total amount of customer bills.
-Callable roles: Distributor, Second-level reseller, Reseller
+                 *Query the aggregate value of a sub-client bill
                  * @param req DescribeCustomerBillSummaryRequest
                  * @return DescribeCustomerBillSummaryOutcome
                  */
@@ -427,6 +456,44 @@ Invocation roles: reseller, first-level distributor.
                 DescribeCustomerInfoOutcomeCallable DescribeCustomerInfoCallable(const Model::DescribeCustomerInfoRequest& request);
 
                 /**
+                 *Cost analysis API advanced filtering
+                 * @param req DescribeCustomerOwnCostExplorerFilterRequest
+                 * @return DescribeCustomerOwnCostExplorerFilterOutcome
+                 */
+                DescribeCustomerOwnCostExplorerFilterOutcome DescribeCustomerOwnCostExplorerFilter(const Model::DescribeCustomerOwnCostExplorerFilterRequest &request);
+                void DescribeCustomerOwnCostExplorerFilterAsync(const Model::DescribeCustomerOwnCostExplorerFilterRequest& request, const DescribeCustomerOwnCostExplorerFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerOwnCostExplorerFilterOutcomeCallable DescribeCustomerOwnCostExplorerFilterCallable(const Model::DescribeCustomerOwnCostExplorerFilterRequest& request);
+
+                /**
+                 *Cost analysis API
+                 * @param req DescribeCustomerOwnCostExplorerSummaryRequest
+                 * @return DescribeCustomerOwnCostExplorerSummaryOutcome
+                 */
+                DescribeCustomerOwnCostExplorerSummaryOutcome DescribeCustomerOwnCostExplorerSummary(const Model::DescribeCustomerOwnCostExplorerSummaryRequest &request);
+                void DescribeCustomerOwnCostExplorerSummaryAsync(const Model::DescribeCustomerOwnCostExplorerSummaryRequest& request, const DescribeCustomerOwnCostExplorerSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerOwnCostExplorerSummaryOutcomeCallable DescribeCustomerOwnCostExplorerSummaryCallable(const Model::DescribeCustomerOwnCostExplorerSummaryRequest& request);
+
+                /**
+                 *This API is used to query the voucher list by Customer. 
+Callable roles: Customer.
+                 * @param req DescribeCustomerOwnVoucherListRequest
+                 * @return DescribeCustomerOwnVoucherListOutcome
+                 */
+                DescribeCustomerOwnVoucherListOutcome DescribeCustomerOwnVoucherList(const Model::DescribeCustomerOwnVoucherListRequest &request);
+                void DescribeCustomerOwnVoucherListAsync(const Model::DescribeCustomerOwnVoucherListRequest& request, const DescribeCustomerOwnVoucherListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerOwnVoucherListOutcomeCallable DescribeCustomerOwnVoucherListCallable(const Model::DescribeCustomerOwnVoucherListRequest& request);
+
+                /**
+                 *Description: The current API is used to query usage details of customer's own voucher by the customer self.
+Call role: End customer.
+                 * @param req DescribeCustomerOwnVoucherUsageDetailsRequest
+                 * @return DescribeCustomerOwnVoucherUsageDetailsOutcome
+                 */
+                DescribeCustomerOwnVoucherUsageDetailsOutcome DescribeCustomerOwnVoucherUsageDetails(const Model::DescribeCustomerOwnVoucherUsageDetailsRequest &request);
+                void DescribeCustomerOwnVoucherUsageDetailsAsync(const Model::DescribeCustomerOwnVoucherUsageDetailsRequest& request, const DescribeCustomerOwnVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerOwnVoucherUsageDetailsOutcomeCallable DescribeCustomerOwnVoucherUsageDetailsCallable(const Model::DescribeCustomerOwnVoucherUsageDetailsRequest& request);
+
+                /**
                  *This API is used to query the list of customer UINs.
                  * @param req DescribeCustomerUinRequest
                  * @return DescribeCustomerUinOutcome
@@ -434,6 +501,26 @@ Invocation roles: reseller, first-level distributor.
                 DescribeCustomerUinOutcome DescribeCustomerUin(const Model::DescribeCustomerUinRequest &request);
                 void DescribeCustomerUinAsync(const Model::DescribeCustomerUinRequest& request, const DescribeCustomerUinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCustomerUinOutcomeCallable DescribeCustomerUinCallable(const Model::DescribeCustomerUinRequest& request);
+
+                /**
+                 *This API is used to query the customer voucher list by Reseller, Second-level Reseller or Distributor.
+Callable roles: Reseller, Second-level Reseller or Distributor.
+                 * @param req DescribeCustomerVoucherListRequest
+                 * @return DescribeCustomerVoucherListOutcome
+                 */
+                DescribeCustomerVoucherListOutcome DescribeCustomerVoucherList(const Model::DescribeCustomerVoucherListRequest &request);
+                void DescribeCustomerVoucherListAsync(const Model::DescribeCustomerVoucherListRequest& request, const DescribeCustomerVoucherListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerVoucherListOutcomeCallable DescribeCustomerVoucherListCallable(const Model::DescribeCustomerVoucherListRequest& request);
+
+                /**
+                 *Description: The current API is used to query the usage details of reseller's customer vouchers by Reseller, Second-level Reseller or Distributor.
+Reseller, Second-level Reseller or Distributor can call this API.
+                 * @param req DescribeCustomerVoucherUsageDetailsRequest
+                 * @return DescribeCustomerVoucherUsageDetailsOutcome
+                 */
+                DescribeCustomerVoucherUsageDetailsOutcome DescribeCustomerVoucherUsageDetails(const Model::DescribeCustomerVoucherUsageDetailsRequest &request);
+                void DescribeCustomerVoucherUsageDetailsAsync(const Model::DescribeCustomerVoucherUsageDetailsRequest& request, const DescribeCustomerVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomerVoucherUsageDetailsOutcomeCallable DescribeCustomerVoucherUsageDetailsCallable(const Model::DescribeCustomerVoucherUsageDetailsRequest& request);
 
                 /**
                  *This API is used to download the commission bill file by resellers/agents. The file URL is returned.
@@ -550,7 +637,7 @@ Callable roles: Distributor, Second-level reseller, Reseller
                 QueryDirectCustomersCreditOutcomeCallable QueryDirectCustomersCreditCallable(const Model::QueryDirectCustomersCreditRequest& request);
 
                 /**
-                 *Query usage information of invitation link. Once created, the data will only be retained for 60 days, and the system will automatically delete the invitation link after 60 days.
+                 *Query usage information of invitation link. Invitation link is valid for 30 days.And once created, the data will only be retained for 60 days, and the system will automatically delete the invitation link after 60 days.
 Invokable role types: Distributor, Second-level reseller, Reseller.
                  * @param req QueryInvitationInfoRequest
                  * @return QueryInvitationInfoOutcome

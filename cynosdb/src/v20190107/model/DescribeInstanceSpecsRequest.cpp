@@ -24,7 +24,10 @@ using namespace std;
 
 DescribeInstanceSpecsRequest::DescribeInstanceSpecsRequest() :
     m_dbTypeHasBeenSet(false),
-    m_includeZoneStocksHasBeenSet(false)
+    m_includeZoneStocksHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,30 @@ string DescribeInstanceSpecsRequest::ToJsonString() const
         string key = "IncludeZoneStocks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeZoneStocks, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +116,54 @@ void DescribeInstanceSpecsRequest::SetIncludeZoneStocks(const bool& _includeZone
 bool DescribeInstanceSpecsRequest::IncludeZoneStocksHasBeenSet() const
 {
     return m_includeZoneStocksHasBeenSet;
+}
+
+string DescribeInstanceSpecsRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void DescribeInstanceSpecsRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
+}
+
+string DescribeInstanceSpecsRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void DescribeInstanceSpecsRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+string DescribeInstanceSpecsRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void DescribeInstanceSpecsRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 

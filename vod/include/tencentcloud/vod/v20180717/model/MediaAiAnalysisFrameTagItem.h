@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent frame-specific tagging
+                * Intelligent frame-specific tagging result information.
                 */
                 class MediaAiAnalysisFrameTagItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Frame-specific tag name.
-                     * @return Tag Frame-specific tag name.
+                     * 获取By frame tag name.
+                     * @return Tag By frame tag name.
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置Frame-specific tag name.
-                     * @param _tag Frame-specific tag name.
+                     * 设置By frame tag name.
+                     * @param _tag By frame tag name.
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -68,19 +68,19 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取Category list of frame-specific tag names. `CategorySet.N` indicates the N+1-level category.
-For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`CategorySet.0` is "scene", and `CategorySet.1` is "architecture"), then the frame-specific tag is "tower", the first-level category is "scene", and the second-level category is "architecture".
-                     * @return CategorySet Category list of frame-specific tag names. `CategorySet.N` indicates the N+1-level category.
-For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`CategorySet.0` is "scene", and `CategorySet.1` is "architecture"), then the frame-specific tag is "tower", the first-level category is "scene", and the second-level category is "architecture".
+                     * 获取Classification list by frame tag name. CategorySet.N indicates the (N+1)-th level category.
+For example, if Tag is "tower", CategorySet contains two elements: CategorySet.0 is "scenario" and CategorySet.1 is "building", indicating the frame tag is "tower", with "scenario" as the level-1 category and "building" as the level-2 category.
+                     * @return CategorySet Classification list by frame tag name. CategorySet.N indicates the (N+1)-th level category.
+For example, if Tag is "tower", CategorySet contains two elements: CategorySet.0 is "scenario" and CategorySet.1 is "building", indicating the frame tag is "tower", with "scenario" as the level-1 category and "building" as the level-2 category.
                      * 
                      */
                     std::vector<std::string> GetCategorySet() const;
 
                     /**
-                     * 设置Category list of frame-specific tag names. `CategorySet.N` indicates the N+1-level category.
-For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`CategorySet.0` is "scene", and `CategorySet.1` is "architecture"), then the frame-specific tag is "tower", the first-level category is "scene", and the second-level category is "architecture".
-                     * @param _categorySet Category list of frame-specific tag names. `CategorySet.N` indicates the N+1-level category.
-For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`CategorySet.0` is "scene", and `CategorySet.1` is "architecture"), then the frame-specific tag is "tower", the first-level category is "scene", and the second-level category is "architecture".
+                     * 设置Classification list by frame tag name. CategorySet.N indicates the (N+1)-th level category.
+For example, if Tag is "tower", CategorySet contains two elements: CategorySet.0 is "scenario" and CategorySet.1 is "building", indicating the frame tag is "tower", with "scenario" as the level-1 category and "building" as the level-2 category.
+                     * @param _categorySet Classification list by frame tag name. CategorySet.N indicates the (N+1)-th level category.
+For example, if Tag is "tower", CategorySet contains two elements: CategorySet.0 is "scenario" and CategorySet.1 is "building", indicating the frame tag is "tower", with "scenario" as the level-1 category and "building" as the level-2 category.
                      * 
                      */
                     void SetCategorySet(const std::vector<std::string>& _categorySet);
@@ -93,15 +93,15 @@ For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`
                     bool CategorySetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of intelligently generated frame-specific tag between 0 and 100.
-                     * @return Confidence Confidence of intelligently generated frame-specific tag between 0 and 100.
+                     * 获取Confidence of the frame tagging, with a value range from 0 to 100.
+                     * @return Confidence Confidence of the frame tagging, with a value range from 0 to 100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of intelligently generated frame-specific tag between 0 and 100.
-                     * @param _confidence Confidence of intelligently generated frame-specific tag between 0 and 100.
+                     * 设置Confidence of the frame tagging, with a value range from 0 to 100.
+                     * @param _confidence Confidence of the frame tagging, with a value range from 0 to 100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -116,20 +116,20 @@ For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`
                 private:
 
                     /**
-                     * Frame-specific tag name.
+                     * By frame tag name.
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * Category list of frame-specific tag names. `CategorySet.N` indicates the N+1-level category.
-For example, if the `Tag` is "tower", and `CategorySet` contains two elements (`CategorySet.0` is "scene", and `CategorySet.1` is "architecture"), then the frame-specific tag is "tower", the first-level category is "scene", and the second-level category is "architecture".
+                     * Classification list by frame tag name. CategorySet.N indicates the (N+1)-th level category.
+For example, if Tag is "tower", CategorySet contains two elements: CategorySet.0 is "scenario" and CategorySet.1 is "building", indicating the frame tag is "tower", with "scenario" as the level-1 category and "building" as the level-2 category.
                      */
                     std::vector<std::string> m_categorySet;
                     bool m_categorySetHasBeenSet;
 
                     /**
-                     * Confidence of intelligently generated frame-specific tag between 0 and 100.
+                     * Confidence of the frame tagging, with a value range from 0 to 100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;

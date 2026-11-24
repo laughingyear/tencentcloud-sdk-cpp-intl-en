@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster ID
-                     * @return ClusterId Cluster ID
+                     * 获取<p>Cluster ID, for example, cynosdbmysql-asd123</p>
+                     * @return ClusterId <p>Cluster ID, for example, cynosdbmysql-asd123</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Cluster ID
-                     * @param _clusterId Cluster ID
+                     * 设置<p>Cluster ID, for example, cynosdbmysql-asd123</p>
+                     * @param _clusterId <p>Cluster ID, for example, cynosdbmysql-asd123</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy group ID
-                     * @return ProxyGroupId Database proxy group ID
+                     * 获取<p>Database Proxy Group ID, for example, cynosdbmysql-proxy-qwe123</p>
+                     * @return ProxyGroupId <p>Database Proxy Group ID, for example, cynosdbmysql-proxy-qwe123</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置Database proxy group ID
-                     * @param _proxyGroupId Database proxy group ID
+                     * 设置<p>Database Proxy Group ID, for example, cynosdbmysql-proxy-qwe123</p>
+                     * @param _proxyGroupId <p>Database Proxy Group ID, for example, cynosdbmysql-proxy-qwe123</p>
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取Consistency type. Valid values: `eventual` (eventual consistency), `session` (session consistency), `global` (global consistency).
-                     * @return ConsistencyType Consistency type. Valid values: `eventual` (eventual consistency), `session` (session consistency), `global` (global consistency).
+                     * 获取<p>Consistency type; "eventual"-final consistency, "session"-session consistency, "global"-global consistency</p>
+                     * @return ConsistencyType <p>Consistency type; "eventual"-final consistency, "session"-session consistency, "global"-global consistency</p>
                      * 
                      */
                     std::string GetConsistencyType() const;
 
                     /**
-                     * 设置Consistency type. Valid values: `eventual` (eventual consistency), `session` (session consistency), `global` (global consistency).
-                     * @param _consistencyType Consistency type. Valid values: `eventual` (eventual consistency), `session` (session consistency), `global` (global consistency).
+                     * 设置<p>Consistency type; "eventual"-final consistency, "session"-session consistency, "global"-global consistency</p>
+                     * @param _consistencyType <p>Consistency type; "eventual"-final consistency, "session"-session consistency, "global"-global consistency</p>
                      * 
                      */
                     void SetConsistencyType(const std::string& _consistencyType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ConsistencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取Consistency timeout period
-                     * @return ConsistencyTimeOut Consistency timeout period
+                     * 获取<p>Consistency timeout. Value range: 0–1000000 (ms). If set to 0, requests will wait indefinitely when a read-only instance has a delay that causes the consistency policy to fail.</p>
+                     * @return ConsistencyTimeOut <p>Consistency timeout. Value range: 0–1000000 (ms). If set to 0, requests will wait indefinitely when a read-only instance has a delay that causes the consistency policy to fail.</p>
                      * 
                      */
                     std::string GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置Consistency timeout period
-                     * @param _consistencyTimeOut Consistency timeout period
+                     * 设置<p>Consistency timeout. Value range: 0–1000000 (ms). If set to 0, requests will wait indefinitely when a read-only instance has a delay that causes the consistency policy to fail.</p>
+                     * @param _consistencyTimeOut <p>Consistency timeout. Value range: 0–1000000 (ms). If set to 0, requests will wait indefinitely when a read-only instance has a delay that causes the consistency policy to fail.</p>
                      * 
                      */
                     void SetConsistencyTimeOut(const std::string& _consistencyTimeOut);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ConsistencyTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取Assignment mode of read/write weights. Valid values: `system` (auto-assigned), `custom`
-                     * @return WeightMode Assignment mode of read/write weights. Valid values: `system` (auto-assigned), `custom`
+                     * 获取<p>Read-write weight allocation mode; system auto-assignment: "system", custom: "custom"</p>
+                     * @return WeightMode <p>Read-write weight allocation mode; system auto-assignment: "system", custom: "custom"</p>
                      * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置Assignment mode of read/write weights. Valid values: `system` (auto-assigned), `custom`
-                     * @param _weightMode Assignment mode of read/write weights. Valid values: `system` (auto-assigned), `custom`
+                     * 设置<p>Read-write weight allocation mode; system auto-assignment: "system", custom: "custom"</p>
+                     * @param _weightMode <p>Read-write weight allocation mode; system auto-assignment: "system", custom: "custom"</p>
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取Read-Only weight of an instance
-                     * @return InstanceWeights Read-Only weight of an instance
+                     * 获取<p>Instance Read-Only Weight.</p>
+                     * @return InstanceWeights <p>Instance Read-Only Weight.</p>
                      * 
                      */
                     std::vector<ProxyInstanceWeight> GetInstanceWeights() const;
 
                     /**
-                     * 设置Read-Only weight of an instance
-                     * @param _instanceWeights Read-Only weight of an instance
+                     * 设置<p>Instance Read-Only Weight.</p>
+                     * @param _instanceWeights <p>Instance Read-Only Weight.</p>
                      * 
                      */
                     void SetInstanceWeights(const std::vector<ProxyInstanceWeight>& _instanceWeights);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool InstanceWeightsHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable failover. If it is enabled, the connection address will route requests to the source instance in case of proxy failure. Valid values: `true`, `false`.
-                     * @return FailOver Whether to enable failover. If it is enabled, the connection address will route requests to the source instance in case of proxy failure. Valid values: `true`, `false`.
+                     * 获取<p>Whether failover is enabled. After a fault occurs on the proxy, the connection address will be routed to the primary instance. Value: "yes", "no"</p>
+                     * @return FailOver <p>Whether failover is enabled. After a fault occurs on the proxy, the connection address will be routed to the primary instance. Value: "yes", "no"</p>
                      * 
                      */
                     std::string GetFailOver() const;
 
                     /**
-                     * 设置Whether to enable failover. If it is enabled, the connection address will route requests to the source instance in case of proxy failure. Valid values: `true`, `false`.
-                     * @param _failOver Whether to enable failover. If it is enabled, the connection address will route requests to the source instance in case of proxy failure. Valid values: `true`, `false`.
+                     * 设置<p>Whether failover is enabled. After a fault occurs on the proxy, the connection address will be routed to the primary instance. Value: "yes", "no"</p>
+                     * @param _failOver <p>Whether failover is enabled. After a fault occurs on the proxy, the connection address will be routed to the primary instance. Value: "yes", "no"</p>
                      * 
                      */
                     void SetFailOver(const std::string& _failOver);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool FailOverHasBeenSet() const;
 
                     /**
-                     * 获取Whether to automatically add read-only instances. Valid values: `true`, `false`
-                     * @return AutoAddRo Whether to automatically add read-only instances. Valid values: `true`, `false`
+                     * 获取<p>Whether to automatically add read-only instance. Parameter Value: "yes", "no"</p>
+                     * @return AutoAddRo <p>Whether to automatically add read-only instance. Parameter Value: "yes", "no"</p>
                      * 
                      */
                     std::string GetAutoAddRo() const;
 
                     /**
-                     * 设置Whether to automatically add read-only instances. Valid values: `true`, `false`
-                     * @param _autoAddRo Whether to automatically add read-only instances. Valid values: `true`, `false`
+                     * 设置<p>Whether to automatically add read-only instance. Parameter Value: "yes", "no"</p>
+                     * @param _autoAddRo <p>Whether to automatically add read-only instance. Parameter Value: "yes", "no"</p>
                      * 
                      */
                     void SetAutoAddRo(const std::string& _autoAddRo);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable read/write separation
-                     * @return OpenRw Whether to enable read/write separation
+                     * 获取<p>Whether to enable read-write separation.<br>This parameter is deprecated. Set the read-write attribute through RwType.</p>
+                     * @return OpenRw <p>Whether to enable read-write separation.<br>This parameter is deprecated. Set the read-write attribute through RwType.</p>
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
-                     * 设置Whether to enable read/write separation
-                     * @param _openRw Whether to enable read/write separation
+                     * 设置<p>Whether to enable read-write separation.<br>This parameter is deprecated. Set the read-write attribute through RwType.</p>
+                     * @param _openRw <p>Whether to enable read-write separation.<br>This parameter is deprecated. Set the read-write attribute through RwType.</p>
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -233,19 +233,15 @@ namespace TencentCloud
                     bool OpenRwHasBeenSet() const;
 
                     /**
-                     * 获取Read/Write type. Valid values:
-`READWRITE`, `READONLY`.
-                     * @return RwType Read/Write type. Valid values:
-`READWRITE`, `READONLY`.
+                     * 获取<p>Read-write type:<br>READWRITE,READONLY</p>
+                     * @return RwType <p>Read-write type:<br>READWRITE,READONLY</p>
                      * 
                      */
                     std::string GetRwType() const;
 
                     /**
-                     * 设置Read/Write type. Valid values:
-`READWRITE`, `READONLY`.
-                     * @param _rwType Read/Write type. Valid values:
-`READWRITE`, `READONLY`.
+                     * 设置<p>Read-write type:<br>READWRITE,READONLY</p>
+                     * @param _rwType <p>Read-write type:<br>READWRITE,READONLY</p>
                      * 
                      */
                     void SetRwType(const std::string& _rwType);
@@ -258,15 +254,15 @@ namespace TencentCloud
                     bool RwTypeHasBeenSet() const;
 
                     /**
-                     * 获取Transaction split
-                     * @return TransSplit Transaction split
+                     * 获取<p>Transaction split.<br>Split reads and writes in a transaction to different instances for execution.</p>
+                     * @return TransSplit <p>Transaction split.<br>Split reads and writes in a transaction to different instances for execution.</p>
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置Transaction split
-                     * @param _transSplit Transaction split
+                     * 设置<p>Transaction split.<br>Split reads and writes in a transaction to different instances for execution.</p>
+                     * @param _transSplit <p>Transaction split.<br>Split reads and writes in a transaction to different instances for execution.</p>
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -279,19 +275,15 @@ namespace TencentCloud
                     bool TransSplitHasBeenSet() const;
 
                     /**
-                     * 获取Connection mode. Valid values:
-`nearby`, `balance`.
-                     * @return AccessMode Connection mode. Valid values:
-`nearby`, `balance`.
+                     * 获取<p>Connection mode: <br>nearby, balance</p>
+                     * @return AccessMode <p>Connection mode: <br>nearby, balance</p>
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置Connection mode. Valid values:
-`nearby`, `balance`.
-                     * @param _accessMode Connection mode. Valid values:
-`nearby`, `balance`.
+                     * 设置<p>Connection mode: <br>nearby, balance</p>
+                     * @param _accessMode <p>Connection mode: <br>nearby, balance</p>
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -304,19 +296,15 @@ namespace TencentCloud
                     bool AccessModeHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable the connection pool. Valid values: 
-`yes`, `no`.
-                     * @return OpenConnectionPool Whether to enable the connection pool. Valid values: 
-`yes`, `no`.
+                     * 获取<p>Whether to enable connection pool: <br>yes,no</p>
+                     * @return OpenConnectionPool <p>Whether to enable connection pool: <br>yes,no</p>
                      * 
                      */
                     std::string GetOpenConnectionPool() const;
 
                     /**
-                     * 设置Whether to enable the connection pool. Valid values: 
-`yes`, `no`.
-                     * @param _openConnectionPool Whether to enable the connection pool. Valid values: 
-`yes`, `no`.
+                     * 设置<p>Whether to enable connection pool: <br>yes,no</p>
+                     * @param _openConnectionPool <p>Whether to enable connection pool: <br>yes,no</p>
                      * 
                      */
                     void SetOpenConnectionPool(const std::string& _openConnectionPool);
@@ -329,19 +317,15 @@ namespace TencentCloud
                     bool OpenConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取Connection pool type. Valid values:
-`ConnectionPoolType`, `SessionConnectionPool`.
-                     * @return ConnectionPoolType Connection pool type. Valid values:
-`ConnectionPoolType`, `SessionConnectionPool`.
+                     * 获取<p>Connection pool type: <br>SessionConnectionPool</p>
+                     * @return ConnectionPoolType <p>Connection pool type: <br>SessionConnectionPool</p>
                      * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
-                     * 设置Connection pool type. Valid values:
-`ConnectionPoolType`, `SessionConnectionPool`.
-                     * @param _connectionPoolType Connection pool type. Valid values:
-`ConnectionPoolType`, `SessionConnectionPool`.
+                     * 设置<p>Connection pool type: <br>SessionConnectionPool</p>
+                     * @param _connectionPoolType <p>Connection pool type: <br>SessionConnectionPool</p>
                      * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
@@ -354,15 +338,15 @@ namespace TencentCloud
                     bool ConnectionPoolTypeHasBeenSet() const;
 
                     /**
-                     * 获取Connection persistence timeout
-                     * @return ConnectionPoolTimeOut Connection persistence timeout
+                     * 获取<p>Connection pool time.<br>Optional range: 0–300 (seconds)</p>
+                     * @return ConnectionPoolTimeOut <p>Connection pool time.<br>Optional range: 0–300 (seconds)</p>
                      * 
                      */
                     int64_t GetConnectionPoolTimeOut() const;
 
                     /**
-                     * 设置Connection persistence timeout
-                     * @param _connectionPoolTimeOut Connection persistence timeout
+                     * 设置<p>Connection pool time.<br>Optional range: 0–300 (seconds)</p>
+                     * @param _connectionPoolTimeOut <p>Connection pool time.<br>Optional range: 0–300 (seconds)</p>
                      * 
                      */
                     void SetConnectionPoolTimeOut(const int64_t& _connectionPoolTimeOut);
@@ -374,101 +358,205 @@ namespace TencentCloud
                      */
                     bool ConnectionPoolTimeOutHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether to treat the libra node as an ordinary RO node</p>
+                     * @return ApNodeAsRoNode <p>Whether to treat the libra node as an ordinary RO node</p>
+                     * 
+                     */
+                    bool GetApNodeAsRoNode() const;
+
+                    /**
+                     * 设置<p>Whether to treat the libra node as an ordinary RO node</p>
+                     * @param _apNodeAsRoNode <p>Whether to treat the libra node as an ordinary RO node</p>
+                     * 
+                     */
+                    void SetApNodeAsRoNode(const bool& _apNodeAsRoNode);
+
+                    /**
+                     * 判断参数 ApNodeAsRoNode 是否已赋值
+                     * @return ApNodeAsRoNode 是否已赋值
+                     * 
+                     */
+                    bool ApNodeAsRoNodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to forward to other nodes when a libra node fault occurs</p>
+                     * @return ApQueryToOtherNode <p>Whether to forward to other nodes when a libra node fault occurs</p>
+                     * 
+                     */
+                    bool GetApQueryToOtherNode() const;
+
+                    /**
+                     * 设置<p>Whether to forward to other nodes when a libra node fault occurs</p>
+                     * @param _apQueryToOtherNode <p>Whether to forward to other nodes when a libra node fault occurs</p>
+                     * 
+                     */
+                    void SetApQueryToOtherNode(const bool& _apQueryToOtherNode);
+
+                    /**
+                     * 判断参数 ApQueryToOtherNode 是否已赋值
+                     * @return ApQueryToOtherNode 是否已赋值
+                     * 
+                     */
+                    bool ApQueryToOtherNodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Load balancing mode</p><p>Enumeration values:</p><ul><li>static: Static load</li><li>dynamic: Dynamic load</li></ul>
+                     * @return LoadBalanceMode <p>Load balancing mode</p><p>Enumeration values:</p><ul><li>static: Static load</li><li>dynamic: Dynamic load</li></ul>
+                     * 
+                     */
+                    std::string GetLoadBalanceMode() const;
+
+                    /**
+                     * 设置<p>Load balancing mode</p><p>Enumeration values:</p><ul><li>static: Static load</li><li>dynamic: Dynamic load</li></ul>
+                     * @param _loadBalanceMode <p>Load balancing mode</p><p>Enumeration values:</p><ul><li>static: Static load</li><li>dynamic: Dynamic load</li></ul>
+                     * 
+                     */
+                    void SetLoadBalanceMode(const std::string& _loadBalanceMode);
+
+                    /**
+                     * 判断参数 LoadBalanceMode 是否已赋值
+                     * @return LoadBalanceMode 是否已赋值
+                     * 
+                     */
+                    bool LoadBalanceModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to enable full transactional split. In a transaction, split the reads before and after the write to different instances for execution.</p>
+                     * @return TransAllSplit <p>Whether to enable full transactional split. In a transaction, split the reads before and after the write to different instances for execution.</p>
+                     * 
+                     */
+                    bool GetTransAllSplit() const;
+
+                    /**
+                     * 设置<p>Whether to enable full transactional split. In a transaction, split the reads before and after the write to different instances for execution.</p>
+                     * @param _transAllSplit <p>Whether to enable full transactional split. In a transaction, split the reads before and after the write to different instances for execution.</p>
+                     * 
+                     */
+                    void SetTransAllSplit(const bool& _transAllSplit);
+
+                    /**
+                     * 判断参数 TransAllSplit 是否已赋值
+                     * @return TransAllSplit 是否已赋值
+                     * 
+                     */
+                    bool TransAllSplitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cluster ID
+                     * <p>Cluster ID, for example, cynosdbmysql-asd123</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Database proxy group ID
+                     * <p>Database Proxy Group ID, for example, cynosdbmysql-proxy-qwe123</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * Consistency type. Valid values: `eventual` (eventual consistency), `session` (session consistency), `global` (global consistency).
+                     * <p>Consistency type; "eventual"-final consistency, "session"-session consistency, "global"-global consistency</p>
                      */
                     std::string m_consistencyType;
                     bool m_consistencyTypeHasBeenSet;
 
                     /**
-                     * Consistency timeout period
+                     * <p>Consistency timeout. Value range: 0–1000000 (ms). If set to 0, requests will wait indefinitely when a read-only instance has a delay that causes the consistency policy to fail.</p>
                      */
                     std::string m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;
 
                     /**
-                     * Assignment mode of read/write weights. Valid values: `system` (auto-assigned), `custom`
+                     * <p>Read-write weight allocation mode; system auto-assignment: "system", custom: "custom"</p>
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * Read-Only weight of an instance
+                     * <p>Instance Read-Only Weight.</p>
                      */
                     std::vector<ProxyInstanceWeight> m_instanceWeights;
                     bool m_instanceWeightsHasBeenSet;
 
                     /**
-                     * Whether to enable failover. If it is enabled, the connection address will route requests to the source instance in case of proxy failure. Valid values: `true`, `false`.
+                     * <p>Whether failover is enabled. After a fault occurs on the proxy, the connection address will be routed to the primary instance. Value: "yes", "no"</p>
                      */
                     std::string m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
-                     * Whether to automatically add read-only instances. Valid values: `true`, `false`
+                     * <p>Whether to automatically add read-only instance. Parameter Value: "yes", "no"</p>
                      */
                     std::string m_autoAddRo;
                     bool m_autoAddRoHasBeenSet;
 
                     /**
-                     * Whether to enable read/write separation
+                     * <p>Whether to enable read-write separation.<br>This parameter is deprecated. Set the read-write attribute through RwType.</p>
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;
 
                     /**
-                     * Read/Write type. Valid values:
-`READWRITE`, `READONLY`.
+                     * <p>Read-write type:<br>READWRITE,READONLY</p>
                      */
                     std::string m_rwType;
                     bool m_rwTypeHasBeenSet;
 
                     /**
-                     * Transaction split
+                     * <p>Transaction split.<br>Split reads and writes in a transaction to different instances for execution.</p>
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
 
                     /**
-                     * Connection mode. Valid values:
-`nearby`, `balance`.
+                     * <p>Connection mode: <br>nearby, balance</p>
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
 
                     /**
-                     * Whether to enable the connection pool. Valid values: 
-`yes`, `no`.
+                     * <p>Whether to enable connection pool: <br>yes,no</p>
                      */
                     std::string m_openConnectionPool;
                     bool m_openConnectionPoolHasBeenSet;
 
                     /**
-                     * Connection pool type. Valid values:
-`ConnectionPoolType`, `SessionConnectionPool`.
+                     * <p>Connection pool type: <br>SessionConnectionPool</p>
                      */
                     std::string m_connectionPoolType;
                     bool m_connectionPoolTypeHasBeenSet;
 
                     /**
-                     * Connection persistence timeout
+                     * <p>Connection pool time.<br>Optional range: 0–300 (seconds)</p>
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;
+
+                    /**
+                     * <p>Whether to treat the libra node as an ordinary RO node</p>
+                     */
+                    bool m_apNodeAsRoNode;
+                    bool m_apNodeAsRoNodeHasBeenSet;
+
+                    /**
+                     * <p>Whether to forward to other nodes when a libra node fault occurs</p>
+                     */
+                    bool m_apQueryToOtherNode;
+                    bool m_apQueryToOtherNodeHasBeenSet;
+
+                    /**
+                     * <p>Load balancing mode</p><p>Enumeration values:</p><ul><li>static: Static load</li><li>dynamic: Dynamic load</li></ul>
+                     */
+                    std::string m_loadBalanceMode;
+                    bool m_loadBalanceModeHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable full transactional split. In a transaction, split the reads before and after the write to different instances for execution.</p>
+                     */
+                    bool m_transAllSplit;
+                    bool m_transAllSplitHasBeenSet;
 
                 };
             }

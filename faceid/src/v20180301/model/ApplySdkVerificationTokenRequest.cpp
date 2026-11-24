@@ -30,8 +30,23 @@ ApplySdkVerificationTokenRequest::ApplySdkVerificationTokenRequest() :
     m_needVerifyIdCardHasBeenSet(false),
     m_disableChangeOcrResultHasBeenSet(false),
     m_disableCheckOcrWarningsHasBeenSet(false),
+    m_selectedWarningCodesHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_actionListHasBeenSet(false)
+    m_sdkVersionHasBeenSet(false),
+    m_actionListHasBeenSet(false),
+    m_allowExpiredDocumentHasBeenSet(false),
+    m_skipResultPageHasBeenSet(false),
+    m_cardOcrDisplayFieldsHasBeenSet(false),
+    m_retryLimitHasBeenSet(false),
+    m_enableForgeryDetectionImagesHasBeenSet(false),
+    m_metaDataHasBeenSet(false),
+    m_skipLaunchPageHasBeenSet(false),
+    m_skipOcrConfirmPageHasBeenSet(false),
+    m_hideProgressBarHasBeenSet(false),
+    m_allowUploadPhotoHasBeenSet(false),
+    m_enableBotBgDetectionHasBeenSet(false),
+    m_ocrAutoDetectTimeoutHasBeenSet(false),
+    m_ocrModeTypeHasBeenSet(false)
 {
 }
 
@@ -98,6 +113,19 @@ string ApplySdkVerificationTokenRequest::ToJsonString() const
         d.AddMember(iKey, m_disableCheckOcrWarnings, allocator);
     }
 
+    if (m_selectedWarningCodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectedWarningCodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_selectedWarningCodes.begin(); itr != m_selectedWarningCodes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_extraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -106,12 +134,129 @@ string ApplySdkVerificationTokenRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sdkVersion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_actionListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_actionList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowExpiredDocumentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowExpiredDocument";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowExpiredDocument, allocator);
+    }
+
+    if (m_skipResultPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipResultPage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipResultPage, allocator);
+    }
+
+    if (m_cardOcrDisplayFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardOcrDisplayFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cardOcrDisplayFields.begin(); itr != m_cardOcrDisplayFields.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_retryLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retryLimit, allocator);
+    }
+
+    if (m_enableForgeryDetectionImagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableForgeryDetectionImages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableForgeryDetectionImages, allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skipLaunchPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipLaunchPage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipLaunchPage, allocator);
+    }
+
+    if (m_skipOcrConfirmPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipOcrConfirmPage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipOcrConfirmPage, allocator);
+    }
+
+    if (m_hideProgressBarHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideProgressBar";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hideProgressBar, allocator);
+    }
+
+    if (m_allowUploadPhotoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowUploadPhoto";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowUploadPhoto, allocator);
+    }
+
+    if (m_enableBotBgDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBotBgDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBotBgDetection, allocator);
+    }
+
+    if (m_ocrAutoDetectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrAutoDetectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ocrAutoDetectTimeout, allocator);
+    }
+
+    if (m_ocrModeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrModeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ocrModeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -234,6 +379,22 @@ bool ApplySdkVerificationTokenRequest::DisableCheckOcrWarningsHasBeenSet() const
     return m_disableCheckOcrWarningsHasBeenSet;
 }
 
+vector<int64_t> ApplySdkVerificationTokenRequest::GetSelectedWarningCodes() const
+{
+    return m_selectedWarningCodes;
+}
+
+void ApplySdkVerificationTokenRequest::SetSelectedWarningCodes(const vector<int64_t>& _selectedWarningCodes)
+{
+    m_selectedWarningCodes = _selectedWarningCodes;
+    m_selectedWarningCodesHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::SelectedWarningCodesHasBeenSet() const
+{
+    return m_selectedWarningCodesHasBeenSet;
+}
+
 string ApplySdkVerificationTokenRequest::GetExtra() const
 {
     return m_extra;
@@ -250,6 +411,22 @@ bool ApplySdkVerificationTokenRequest::ExtraHasBeenSet() const
     return m_extraHasBeenSet;
 }
 
+string ApplySdkVerificationTokenRequest::GetSdkVersion() const
+{
+    return m_sdkVersion;
+}
+
+void ApplySdkVerificationTokenRequest::SetSdkVersion(const string& _sdkVersion)
+{
+    m_sdkVersion = _sdkVersion;
+    m_sdkVersionHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::SdkVersionHasBeenSet() const
+{
+    return m_sdkVersionHasBeenSet;
+}
+
 string ApplySdkVerificationTokenRequest::GetActionList() const
 {
     return m_actionList;
@@ -264,6 +441,214 @@ void ApplySdkVerificationTokenRequest::SetActionList(const string& _actionList)
 bool ApplySdkVerificationTokenRequest::ActionListHasBeenSet() const
 {
     return m_actionListHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetAllowExpiredDocument() const
+{
+    return m_allowExpiredDocument;
+}
+
+void ApplySdkVerificationTokenRequest::SetAllowExpiredDocument(const bool& _allowExpiredDocument)
+{
+    m_allowExpiredDocument = _allowExpiredDocument;
+    m_allowExpiredDocumentHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::AllowExpiredDocumentHasBeenSet() const
+{
+    return m_allowExpiredDocumentHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetSkipResultPage() const
+{
+    return m_skipResultPage;
+}
+
+void ApplySdkVerificationTokenRequest::SetSkipResultPage(const bool& _skipResultPage)
+{
+    m_skipResultPage = _skipResultPage;
+    m_skipResultPageHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::SkipResultPageHasBeenSet() const
+{
+    return m_skipResultPageHasBeenSet;
+}
+
+vector<string> ApplySdkVerificationTokenRequest::GetCardOcrDisplayFields() const
+{
+    return m_cardOcrDisplayFields;
+}
+
+void ApplySdkVerificationTokenRequest::SetCardOcrDisplayFields(const vector<string>& _cardOcrDisplayFields)
+{
+    m_cardOcrDisplayFields = _cardOcrDisplayFields;
+    m_cardOcrDisplayFieldsHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::CardOcrDisplayFieldsHasBeenSet() const
+{
+    return m_cardOcrDisplayFieldsHasBeenSet;
+}
+
+int64_t ApplySdkVerificationTokenRequest::GetRetryLimit() const
+{
+    return m_retryLimit;
+}
+
+void ApplySdkVerificationTokenRequest::SetRetryLimit(const int64_t& _retryLimit)
+{
+    m_retryLimit = _retryLimit;
+    m_retryLimitHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::RetryLimitHasBeenSet() const
+{
+    return m_retryLimitHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetEnableForgeryDetectionImages() const
+{
+    return m_enableForgeryDetectionImages;
+}
+
+void ApplySdkVerificationTokenRequest::SetEnableForgeryDetectionImages(const bool& _enableForgeryDetectionImages)
+{
+    m_enableForgeryDetectionImages = _enableForgeryDetectionImages;
+    m_enableForgeryDetectionImagesHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::EnableForgeryDetectionImagesHasBeenSet() const
+{
+    return m_enableForgeryDetectionImagesHasBeenSet;
+}
+
+string ApplySdkVerificationTokenRequest::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void ApplySdkVerificationTokenRequest::SetMetaData(const string& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetSkipLaunchPage() const
+{
+    return m_skipLaunchPage;
+}
+
+void ApplySdkVerificationTokenRequest::SetSkipLaunchPage(const bool& _skipLaunchPage)
+{
+    m_skipLaunchPage = _skipLaunchPage;
+    m_skipLaunchPageHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::SkipLaunchPageHasBeenSet() const
+{
+    return m_skipLaunchPageHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetSkipOcrConfirmPage() const
+{
+    return m_skipOcrConfirmPage;
+}
+
+void ApplySdkVerificationTokenRequest::SetSkipOcrConfirmPage(const bool& _skipOcrConfirmPage)
+{
+    m_skipOcrConfirmPage = _skipOcrConfirmPage;
+    m_skipOcrConfirmPageHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::SkipOcrConfirmPageHasBeenSet() const
+{
+    return m_skipOcrConfirmPageHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetHideProgressBar() const
+{
+    return m_hideProgressBar;
+}
+
+void ApplySdkVerificationTokenRequest::SetHideProgressBar(const bool& _hideProgressBar)
+{
+    m_hideProgressBar = _hideProgressBar;
+    m_hideProgressBarHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::HideProgressBarHasBeenSet() const
+{
+    return m_hideProgressBarHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetAllowUploadPhoto() const
+{
+    return m_allowUploadPhoto;
+}
+
+void ApplySdkVerificationTokenRequest::SetAllowUploadPhoto(const bool& _allowUploadPhoto)
+{
+    m_allowUploadPhoto = _allowUploadPhoto;
+    m_allowUploadPhotoHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::AllowUploadPhotoHasBeenSet() const
+{
+    return m_allowUploadPhotoHasBeenSet;
+}
+
+bool ApplySdkVerificationTokenRequest::GetEnableBotBgDetection() const
+{
+    return m_enableBotBgDetection;
+}
+
+void ApplySdkVerificationTokenRequest::SetEnableBotBgDetection(const bool& _enableBotBgDetection)
+{
+    m_enableBotBgDetection = _enableBotBgDetection;
+    m_enableBotBgDetectionHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::EnableBotBgDetectionHasBeenSet() const
+{
+    return m_enableBotBgDetectionHasBeenSet;
+}
+
+int64_t ApplySdkVerificationTokenRequest::GetOcrAutoDetectTimeout() const
+{
+    return m_ocrAutoDetectTimeout;
+}
+
+void ApplySdkVerificationTokenRequest::SetOcrAutoDetectTimeout(const int64_t& _ocrAutoDetectTimeout)
+{
+    m_ocrAutoDetectTimeout = _ocrAutoDetectTimeout;
+    m_ocrAutoDetectTimeoutHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::OcrAutoDetectTimeoutHasBeenSet() const
+{
+    return m_ocrAutoDetectTimeoutHasBeenSet;
+}
+
+string ApplySdkVerificationTokenRequest::GetOcrModeType() const
+{
+    return m_ocrModeType;
+}
+
+void ApplySdkVerificationTokenRequest::SetOcrModeType(const string& _ocrModeType)
+{
+    m_ocrModeType = _ocrModeType;
+    m_ocrModeTypeHasBeenSet = true;
+}
+
+bool ApplySdkVerificationTokenRequest::OcrModeTypeHasBeenSet() const
+{
+    return m_ocrModeTypeHasBeenSet;
 }
 
 

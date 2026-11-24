@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取List of events.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return EventSet List of events.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<EventContent> GetEventSet() const;
@@ -64,7 +62,6 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * List of events.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<EventContent> m_eventSet;
                     bool m_eventSetHasBeenSet;

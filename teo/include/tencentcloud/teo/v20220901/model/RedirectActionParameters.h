@@ -35,7 +35,12 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Additional parameter for SecurityAction `Redirect`.
+                * Additional parameter for safe execution when the action is set to redirect.
+
+This parameter is used to specify the extra handling action taken by the system when a security rule is hit and a redirection action is executed.
+Different handling actions are configured with different fixed parameter combinations. The system will determine the effective handling action type according to the configured parameter combination.
+Only one handling action can be configured and made effective during the same redirection. Parameter composites corresponding to multiple handling actions cannot appear at the same time. Otherwise, it is deemed as an invalid configuration.
+RedirectActionParameters supports the following extra handling actions: <li>Redirect: redirect client requests to the specified destination URL. Corresponding parameter: URL.</li>
                 */
                 class RedirectActionParameters : public AbstractModel
                 {

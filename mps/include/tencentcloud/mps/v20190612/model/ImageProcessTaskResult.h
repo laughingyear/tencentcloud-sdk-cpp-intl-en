@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Status Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _status Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -73,19 +69,36 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrMsg Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errMsg Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
                      * 获取Error message.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Message Error message.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _message Error message.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -99,18 +112,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Transcoding task output.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Output Transcoding task output.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     ImageProcessTaskOutput GetOutput() const;
 
                     /**
                      * 设置Transcoding task output.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _output Transcoding task output.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetOutput(const ImageProcessTaskOutput& _output);
@@ -124,18 +133,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Transcoding progress, with a value range of [0-100].
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Progress Transcoding progress, with a value range of [0-100].
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置Transcoding progress, with a value range of [0-100].
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _progress Transcoding progress, with a value range of [0-100].
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -150,29 +155,31 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * Task status, including PROCESSING, SUCCESS, and FAIL.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
+                     * Error code. An empty string indicates that the task is successful, and other values indicate that the task has failed. For specific values, see [Error Codes] (https://www.tencentcloud.com/document/product/862/50369?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
                      * Error message.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * Transcoding task output.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     ImageProcessTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * Transcoding progress, with a value range of [0-100].
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;

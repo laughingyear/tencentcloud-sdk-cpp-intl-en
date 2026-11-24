@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video transcoding playback information (v2017)
+                * Playback information of video transcoding (2017)
                 */
                 class TranscodePlayInfo2017 : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Transcoding specification ID. For more information, please see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33478?from_cn_redirect=1#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
-                     * @return Definition Transcoding specification ID. For more information, please see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33478?from_cn_redirect=1#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
+                     * 获取Transcoding specification ID. See [transcoding parameter template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1).
+                     * @return Definition Transcoding specification ID. See [transcoding parameter template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1).
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Transcoding specification ID. For more information, please see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33478?from_cn_redirect=1#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
-                     * @param _definition Transcoding specification ID. For more information, please see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33478?from_cn_redirect=1#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
+                     * 设置Transcoding specification ID. See [transcoding parameter template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1).
+                     * @param _definition Transcoding specification ID. See [transcoding parameter template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1).
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Sum of the average bitrate of a video stream and that of an audio stream in bps.
-                     * @return Bitrate Sum of the average bitrate of a video stream and that of an audio stream in bps.
+                     * 获取Sum of the mean video stream bitrate and mean audio stream bitrate. Unit: bps.
+                     * @return Bitrate Sum of the mean video stream bitrate and mean audio stream bitrate. Unit: bps.
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置Sum of the average bitrate of a video stream and that of an audio stream in bps.
-                     * @param _bitrate Sum of the average bitrate of a video stream and that of an audio stream in bps.
+                     * 设置Sum of the mean video stream bitrate and mean audio stream bitrate. Unit: bps.
+                     * @param _bitrate Sum of the mean video stream bitrate and mean audio stream bitrate. Unit: bps.
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the height of a video stream in px.
-                     * @return Height Maximum value of the height of a video stream in px.
+                     * 获取Maximum height of the video stream. Measurement unit: px.
+                     * @return Height Maximum height of the video stream. Measurement unit: px.
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置Maximum value of the height of a video stream in px.
-                     * @param _height Maximum value of the height of a video stream in px.
+                     * 设置Maximum height of the video stream. Measurement unit: px.
+                     * @param _height Maximum height of the video stream. Measurement unit: px.
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the width of a video stream in px.
-                     * @return Width Maximum value of the width of a video stream in px.
+                     * 获取Maximum video stream width in px.
+                     * @return Width Maximum video stream width in px.
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置Maximum value of the width of a video stream in px.
-                     * @param _width Maximum value of the width of a video stream in px.
+                     * 设置Maximum video stream width in px.
+                     * @param _width Maximum video stream width in px.
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -160,25 +160,25 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Transcoding specification ID. For more information, please see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33478?from_cn_redirect=1#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
+                     * Transcoding specification ID. See [transcoding parameter template](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1).
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Sum of the average bitrate of a video stream and that of an audio stream in bps.
+                     * Sum of the mean video stream bitrate and mean audio stream bitrate. Unit: bps.
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * Maximum value of the height of a video stream in px.
+                     * Maximum height of the video stream. Measurement unit: px.
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Maximum value of the width of a video stream in px.
+                     * Maximum video stream width in px.
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Face enhancement configuration.
+                * Face enhancement control
                 */
                 class FaceEnhanceInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable face enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable face enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Face enhancement control switch. Available values:
+<li>ON: enable face enhancement;</li>
+<li>OFF: disables face enhancement.</li>
+                     * @return Switch Face enhancement control switch. Available values:
+<li>ON: enable face enhancement;</li>
+<li>OFF: disables face enhancement.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable face enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable face enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Face enhancement control switch. Available values:
+<li>ON: enable face enhancement;</li>
+<li>OFF: disables face enhancement.</li>
+                     * @param _switch Face enhancement control switch. Available values:
+<li>ON: enable face enhancement;</li>
+<li>OFF: disables face enhancement.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,19 +76,19 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The face enhancement strength. This parameter is valid only if `Switch` is `ON`. Value range: 0.0 – 1.0.
-Default value: `0.0`.
-                     * @return Intensity The face enhancement strength. This parameter is valid only if `Switch` is `ON`. Value range: 0.0 – 1.0.
-Default value: `0.0`.
+                     * 获取Face enhancement strength. Valid only when the face enhancement control switch is ON. Value range: 0.0-1.0.
+Default value: 0.0.
+                     * @return Intensity Face enhancement strength. Valid only when the face enhancement control switch is ON. Value range: 0.0-1.0.
+Default value: 0.0.
                      * 
                      */
                     double GetIntensity() const;
 
                     /**
-                     * 设置The face enhancement strength. This parameter is valid only if `Switch` is `ON`. Value range: 0.0 – 1.0.
-Default value: `0.0`.
-                     * @param _intensity The face enhancement strength. This parameter is valid only if `Switch` is `ON`. Value range: 0.0 – 1.0.
-Default value: `0.0`.
+                     * 设置Face enhancement strength. Valid only when the face enhancement control switch is ON. Value range: 0.0-1.0.
+Default value: 0.0.
+                     * @param _intensity Face enhancement strength. Valid only when the face enhancement control switch is ON. Value range: 0.0-1.0.
+Default value: 0.0.
                      * 
                      */
                     void SetIntensity(const double& _intensity);
@@ -103,16 +103,16 @@ Default value: `0.0`.
                 private:
 
                     /**
-                     * Whether to enable face enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Face enhancement control switch. Available values:
+<li>ON: enable face enhancement;</li>
+<li>OFF: disables face enhancement.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The face enhancement strength. This parameter is valid only if `Switch` is `ON`. Value range: 0.0 – 1.0.
-Default value: `0.0`.
+                     * Face enhancement strength. Valid only when the face enhancement control switch is ON. Value range: 0.0-1.0.
+Default value: 0.0.
                      */
                     double m_intensity;
                     bool m_intensityHasBeenSet;

@@ -78,7 +78,9 @@ CynosdbInstance::CynosdbInstance() :
     m_deviceTypeHasBeenSet(false),
     m_instanceStorageTypeHasBeenSet(false),
     m_cynosVersionTagHasBeenSet(false),
-    m_nodeListHasBeenSet(false)
+    m_nodeListHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_realZoneHasBeenSet(false)
 {
 }
 
@@ -720,6 +722,26 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_nodeListHasBeenSet = true;
     }
 
+    if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
+    {
+        if (!value["GdnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.GdnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnId = string(value["GdnId"].GetString());
+        m_gdnIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealZone") && !value["RealZone"].IsNull())
+    {
+        if (!value["RealZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.RealZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realZone = string(value["RealZone"].GetString());
+        m_realZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1228,6 +1250,22 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2159,5 +2197,37 @@ void CynosdbInstance::SetNodeList(const vector<string>& _nodeList)
 bool CynosdbInstance::NodeListHasBeenSet() const
 {
     return m_nodeListHasBeenSet;
+}
+
+string CynosdbInstance::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CynosdbInstance::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CynosdbInstance::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+string CynosdbInstance::GetRealZone() const
+{
+    return m_realZone;
+}
+
+void CynosdbInstance::SetRealZone(const string& _realZone)
+{
+    m_realZone = _realZone;
+    m_realZoneHasBeenSet = true;
+}
+
+bool CynosdbInstance::RealZoneHasBeenSet() const
+{
+    return m_realZoneHasBeenSet;
 }
 

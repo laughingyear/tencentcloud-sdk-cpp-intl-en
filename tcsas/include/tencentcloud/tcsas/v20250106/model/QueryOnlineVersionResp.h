@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Mini program online version ID
+                * Response for querying mini program released version IDs.
                 */
                 class QueryOnlineVersionResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPId Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Mini program appid.
+                     * @return MNPId Mini program appid.
                      * 
                      */
                     std::string GetMNPId() const;
 
                     /**
-                     * 设置Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPId Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Mini program appid.
+                     * @param _mNPId Mini program appid.
                      * 
                      */
                     void SetMNPId(const std::string& _mNPId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPIdHasBeenSet() const;
 
                     /**
-                     * 获取Version
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPVersion Version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Version number.
+                     * @return MNPVersion Version number.
                      * 
                      */
                     std::string GetMNPVersion() const;
 
                     /**
-                     * 设置Version
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPVersion Version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Version number.
+                     * @param _mNPVersion Version number.
                      * 
                      */
                     void SetMNPVersion(const std::string& _mNPVersion);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPVersionHasBeenSet() const;
 
                     /**
-                     * 获取Version ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPVersionId Version ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Version ID.
+                     * @return MNPVersionId Version ID.
                      * 
                      */
                     int64_t GetMNPVersionId() const;
 
                     /**
-                     * 设置Version ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPVersionId Version ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Version ID.
+                     * @param _mNPVersionId Version ID.
                      * 
                      */
                     void SetMNPVersionId(const int64_t& _mNPVersionId);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取Version note
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MNPVersionNote Version note
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Version note.
+                     * @return MNPVersionNote Version note.
                      * 
                      */
                     std::string GetMNPVersionNote() const;
 
                     /**
-                     * 设置Version note
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _mNPVersionNote Version note
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Version note.
+                     * @param _mNPVersionNote Version note.
                      * 
                      */
                     void SetMNPVersionNote(const std::string& _mNPVersionNote);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MNPVersionNoteHasBeenSet() const;
 
                     /**
-                     * 获取Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Last modified time.
+                     * @return UpdateTime Last modified time.
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Last modified time.
+                     * @param _updateTime Last modified time.
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -174,36 +154,31 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Mini program ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Mini program appid.
                      */
                     std::string m_mNPId;
                     bool m_mNPIdHasBeenSet;
 
                     /**
-                     * Version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Version number.
                      */
                     std::string m_mNPVersion;
                     bool m_mNPVersionHasBeenSet;
 
                     /**
-                     * Version ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Version ID.
                      */
                     int64_t m_mNPVersionId;
                     bool m_mNPVersionIdHasBeenSet;
 
                     /**
-                     * Version note
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Version note.
                      */
                     std::string m_mNPVersionNote;
                     bool m_mNPVersionNoteHasBeenSet;
 
                     /**
-                     * Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Last modified time.
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

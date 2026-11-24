@@ -25,7 +25,9 @@ ServiceSettings::ServiceSettings() :
     m_scalingModeHasBeenSet(false),
     m_replaceLoadBalancerUnhealthyHasBeenSet(false),
     m_replaceModeHasBeenSet(false),
-    m_autoUpdateInstanceTagsHasBeenSet(false)
+    m_autoUpdateInstanceTagsHasBeenSet(false),
+    m_desiredCapacitySyncWithMaxMinSizeHasBeenSet(false),
+    m_priorityScaleInUnhealthyHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
         m_autoUpdateInstanceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredCapacitySyncWithMaxMinSize") && !value["DesiredCapacitySyncWithMaxMinSize"].IsNull())
+    {
+        if (!value["DesiredCapacitySyncWithMaxMinSize"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.DesiredCapacitySyncWithMaxMinSize` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredCapacitySyncWithMaxMinSize = value["DesiredCapacitySyncWithMaxMinSize"].GetBool();
+        m_desiredCapacitySyncWithMaxMinSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PriorityScaleInUnhealthy") && !value["PriorityScaleInUnhealthy"].IsNull())
+    {
+        if (!value["PriorityScaleInUnhealthy"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.PriorityScaleInUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_priorityScaleInUnhealthy = value["PriorityScaleInUnhealthy"].GetBool();
+        m_priorityScaleInUnhealthyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void ServiceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AutoUpdateInstanceTags";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoUpdateInstanceTags, allocator);
+    }
+
+    if (m_desiredCapacitySyncWithMaxMinSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesiredCapacitySyncWithMaxMinSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredCapacitySyncWithMaxMinSize, allocator);
+    }
+
+    if (m_priorityScaleInUnhealthyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriorityScaleInUnhealthy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_priorityScaleInUnhealthy, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void ServiceSettings::SetAutoUpdateInstanceTags(const bool& _autoUpdateInstanceT
 bool ServiceSettings::AutoUpdateInstanceTagsHasBeenSet() const
 {
     return m_autoUpdateInstanceTagsHasBeenSet;
+}
+
+bool ServiceSettings::GetDesiredCapacitySyncWithMaxMinSize() const
+{
+    return m_desiredCapacitySyncWithMaxMinSize;
+}
+
+void ServiceSettings::SetDesiredCapacitySyncWithMaxMinSize(const bool& _desiredCapacitySyncWithMaxMinSize)
+{
+    m_desiredCapacitySyncWithMaxMinSize = _desiredCapacitySyncWithMaxMinSize;
+    m_desiredCapacitySyncWithMaxMinSizeHasBeenSet = true;
+}
+
+bool ServiceSettings::DesiredCapacitySyncWithMaxMinSizeHasBeenSet() const
+{
+    return m_desiredCapacitySyncWithMaxMinSizeHasBeenSet;
+}
+
+bool ServiceSettings::GetPriorityScaleInUnhealthy() const
+{
+    return m_priorityScaleInUnhealthy;
+}
+
+void ServiceSettings::SetPriorityScaleInUnhealthy(const bool& _priorityScaleInUnhealthy)
+{
+    m_priorityScaleInUnhealthy = _priorityScaleInUnhealthy;
+    m_priorityScaleInUnhealthyHasBeenSet = true;
+}
+
+bool ServiceSettings::PriorityScaleInUnhealthyHasBeenSet() const
+{
+    return m_priorityScaleInUnhealthyHasBeenSet;
 }
 

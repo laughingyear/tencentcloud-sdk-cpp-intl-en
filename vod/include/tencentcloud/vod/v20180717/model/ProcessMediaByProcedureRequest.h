@@ -43,36 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Media file ID.
-                     * @return FileId Media file ID.
-                     * 
-                     */
-                    std::string GetFileId() const;
-
-                    /**
-                     * 设置Media file ID.
-                     * @param _fileId Media file ID.
-                     * 
-                     */
-                    void SetFileId(const std::string& _fileId);
-
-                    /**
-                     * 判断参数 FileId 是否已赋值
-                     * @return FileId 是否已赋值
-                     * 
-                     */
-                    bool FileIdHasBeenSet() const;
-
-                    /**
-                     * 获取[Task flow template](https://intl.cloud.tencent.com/document/product/266/11700?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF) name.
-                     * @return ProcedureName [Task flow template](https://intl.cloud.tencent.com/document/product/266/11700?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF) name.
+                     * 获取<p>Name of the <a href="https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81">task flow</a>.</p>
+                     * @return ProcedureName <p>Name of the <a href="https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81">task flow</a>.</p>
                      * 
                      */
                     std::string GetProcedureName() const;
 
                     /**
-                     * 设置[Task flow template](https://intl.cloud.tencent.com/document/product/266/11700?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF) name.
-                     * @param _procedureName [Task flow template](https://intl.cloud.tencent.com/document/product/266/11700?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF) name.
+                     * 设置<p>Name of the <a href="https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81">task flow</a>.</p>
+                     * @param _procedureName <p>Name of the <a href="https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81">task flow</a>.</p>
                      * 
                      */
                     void SetProcedureName(const std::string& _procedureName);
@@ -85,15 +64,57 @@ namespace TencentCloud
                     bool ProcedureNameHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p>Media file ID.<br>You must provide either FileId or MediaStoragePath.</p>
+                     * @return FileId <p>Media file ID.<br>You must provide either FileId or MediaStoragePath.</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>Media file ID.<br>You must provide either FileId or MediaStoragePath.</p>
+                     * @param _fileId <p>Media file ID.<br>You must provide either FileId or MediaStoragePath.</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Storage path of the media.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can initiate tasks through MediaStoragePath.<br>Either FileId or MediaStoragePath must be provided.</p>
+                     * @return MediaStoragePath <p>Storage path of the media.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can initiate tasks through MediaStoragePath.<br>Either FileId or MediaStoragePath must be provided.</p>
+                     * 
+                     */
+                    std::string GetMediaStoragePath() const;
+
+                    /**
+                     * 设置<p>Storage path of the media.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can initiate tasks through MediaStoragePath.<br>Either FileId or MediaStoragePath must be provided.</p>
+                     * @param _mediaStoragePath <p>Storage path of the media.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can initiate tasks through MediaStoragePath.<br>Either FileId or MediaStoragePath must be provided.</p>
+                     * 
+                     */
+                    void SetMediaStoragePath(const std::string& _mediaStoragePath);
+
+                    /**
+                     * 判断参数 MediaStoragePath 是否已赋值
+                     * @return MediaStoragePath 是否已赋值
+                     * 
+                     */
+                    bool MediaStoragePathHasBeenSet() const;
+
+                    /**
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -106,15 +127,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Task flow priority. The higher the value, the higher the priority. Value range: -10-10. If this parameter is left empty, 0 will be used.
-                     * @return TasksPriority Task flow priority. The higher the value, the higher the priority. Value range: -10-10. If this parameter is left empty, 0 will be used.
+                     * 获取<p>Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * @return TasksPriority <p>Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置Task flow priority. The higher the value, the higher the priority. Value range: -10-10. If this parameter is left empty, 0 will be used.
-                     * @param _tasksPriority Task flow priority. The higher the value, the higher the priority. Value range: -10-10. If this parameter is left empty, 0 will be used.
+                     * 设置<p>Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
+                     * @param _tasksPriority <p>Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -127,15 +148,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取Notification mode for task flow status change. Valid values: Finish, Change, None. If this parameter is left empty, `Finish` will be used.
-                     * @return TasksNotifyMode Notification mode for task flow status change. Valid values: Finish, Change, None. If this parameter is left empty, `Finish` will be used.
+                     * 获取<p>Task flow status change notification mode. Valid values are Finish, Change, and None. If this is not specified, the default value is Finish.</p>
+                     * @return TasksNotifyMode <p>Task flow status change notification mode. Valid values are Finish, Change, and None. If this is not specified, the default value is Finish.</p>
                      * 
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
-                     * 设置Notification mode for task flow status change. Valid values: Finish, Change, None. If this parameter is left empty, `Finish` will be used.
-                     * @param _tasksNotifyMode Notification mode for task flow status change. Valid values: Finish, Change, None. If this parameter is left empty, `Finish` will be used.
+                     * 设置<p>Task flow status change notification mode. Valid values are Finish, Change, and None. If this is not specified, the default value is Finish.</p>
+                     * @param _tasksNotifyMode <p>Task flow status change notification mode. Valid values are Finish, Change, and None. If this is not specified, the default value is Finish.</p>
                      * 
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
@@ -148,15 +169,15 @@ namespace TencentCloud
                     bool TasksNotifyModeHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 获取<p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @return SessionContext <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * 设置<p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
+                     * @param _sessionContext <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取Identification code used for deduplication. If there is a request with the same identification code within 7 days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
-                     * @return SessionId Identification code used for deduplication. If there is a request with the same identification code within 7 days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * 获取<p>Identifier for deduplication. If a request with the same identifier has been sent within the past 7 days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @return SessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past 7 days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置Identification code used for deduplication. If there is a request with the same identification code within 7 days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
-                     * @param _sessionId Identification code used for deduplication. If there is a request with the same identification code within 7 days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * 设置<p>Identifier for deduplication. If a request with the same identifier has been sent within the past 7 days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
+                     * @param _sessionId <p>Identifier for deduplication. If a request with the same identifier has been sent within the past 7 days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -190,15 +211,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取Reserved field for special purposes.
-                     * @return ExtInfo Reserved field for special purposes.
+                     * 获取<p>Reserved field, used for special purposes.</p>
+                     * @return ExtInfo <p>Reserved field, used for special purposes.</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置Reserved field for special purposes.
-                     * @param _extInfo Reserved field for special purposes.
+                     * 设置<p>Reserved field, used for special purposes.</p>
+                     * @param _extInfo <p>Reserved field, used for special purposes.</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -213,49 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Media file ID.
-                     */
-                    std::string m_fileId;
-                    bool m_fileIdHasBeenSet;
-
-                    /**
-                     * [Task flow template](https://intl.cloud.tencent.com/document/product/266/11700?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF) name.
+                     * <p>Name of the <a href="https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81">task flow</a>.</p>
                      */
                     std::string m_procedureName;
                     bool m_procedureNameHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p>Media file ID.<br>You must provide either FileId or MediaStoragePath.</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
+
+                    /**
+                     * <p>Storage path of the media.<br>Only sub-apps in <a href="https://www.tencentcloud.com/document/product/266/126825?from_cn_redirect=1">FileID + Path mode</a> can initiate tasks through MediaStoragePath.<br>Either FileId or MediaStoragePath must be provided.</p>
+                     */
+                    std::string m_mediaStoragePath;
+                    bool m_mediaStoragePathHasBeenSet;
+
+                    /**
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services from December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Task flow priority. The higher the value, the higher the priority. Value range: -10-10. If this parameter is left empty, 0 will be used.
+                     * <p>Priority of the task flow. The higher the value, the higher the priority. The value range is from -10 to 10. If this is not specified, the default value is 0.</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * Notification mode for task flow status change. Valid values: Finish, Change, None. If this parameter is left empty, `Finish` will be used.
+                     * <p>Task flow status change notification mode. Valid values are Finish, Change, and None. If this is not specified, the default value is Finish.</p>
                      */
                     std::string m_tasksNotifyMode;
                     bool m_tasksNotifyModeHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
+                     * <p>Source context. This is used to pass user request information. The task status change callback returns the value of this field. The maximum length is 1000 characters.</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * Identification code used for deduplication. If there is a request with the same identification code within 7 days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * <p>Identifier for deduplication. If a request with the same identifier has been sent within the past 7 days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * Reserved field for special purposes.
+                     * <p>Reserved field, used for special purposes.</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TESHD parameter configuration.
+                * Parameter configuration for top speed Codec.
                 */
                 class TEHDConfig : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
-                     * @return Type TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * 获取Top speed codec type. Available values: <li>TEHD-100 means top speed codec-100;</li> <li>OFF means disabling top speed codec.</li>If not specified, OFF is used.
+                     * @return Type Top speed codec type. Available values: <li>TEHD-100 means top speed codec-100;</li> <li>OFF means disabling top speed codec.</li>If not specified, OFF is used.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
-                     * @param _type TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * 设置Top speed codec type. Available values: <li>TEHD-100 means top speed codec-100;</li> <li>OFF means disabling top speed codec.</li>If not specified, OFF is used.
+                     * @param _type Top speed codec type. Available values: <li>TEHD-100 means top speed codec-100;</li> <li>OFF means disabling top speed codec.</li>If not specified, OFF is used.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,19 +68,19 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Maximum bitrate, which is valid when `Type` is `TESHD`.
-If this parameter is left blank or 0 is entered, there will be no upper limit for bitrate.
-                     * @return MaxVideoBitrate Maximum bitrate, which is valid when `Type` is `TESHD`.
-If this parameter is left blank or 0 is entered, there will be no upper limit for bitrate.
+                     * 获取Maximum video bitrate. Valid when Type is specified as top speed Codec.
+If not specified or set to 0, VOD automatically sets the bitrate cap.
+                     * @return MaxVideoBitrate Maximum video bitrate. Valid when Type is specified as top speed Codec.
+If not specified or set to 0, VOD automatically sets the bitrate cap.
                      * 
                      */
                     uint64_t GetMaxVideoBitrate() const;
 
                     /**
-                     * 设置Maximum bitrate, which is valid when `Type` is `TESHD`.
-If this parameter is left blank or 0 is entered, there will be no upper limit for bitrate.
-                     * @param _maxVideoBitrate Maximum bitrate, which is valid when `Type` is `TESHD`.
-If this parameter is left blank or 0 is entered, there will be no upper limit for bitrate.
+                     * 设置Maximum video bitrate. Valid when Type is specified as top speed Codec.
+If not specified or set to 0, VOD automatically sets the bitrate cap.
+                     * @param _maxVideoBitrate Maximum video bitrate. Valid when Type is specified as top speed Codec.
+If not specified or set to 0, VOD automatically sets the bitrate cap.
                      * 
                      */
                     void SetMaxVideoBitrate(const uint64_t& _maxVideoBitrate);
@@ -95,14 +95,14 @@ If this parameter is left blank or 0 is entered, there will be no upper limit fo
                 private:
 
                     /**
-                     * TESHD transcoding type. Valid values: <li>TEHD-100</li> <li>OFF (default)</li>
+                     * Top speed codec type. Available values: <li>TEHD-100 means top speed codec-100;</li> <li>OFF means disabling top speed codec.</li>If not specified, OFF is used.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Maximum bitrate, which is valid when `Type` is `TESHD`.
-If this parameter is left blank or 0 is entered, there will be no upper limit for bitrate.
+                     * Maximum video bitrate. Valid when Type is specified as top speed Codec.
+If not specified or set to 0, VOD automatically sets the bitrate cap.
                      */
                     uint64_t m_maxVideoBitrate;
                     bool m_maxVideoBitrateHasBeenSet;

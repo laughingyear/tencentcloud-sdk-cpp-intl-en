@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video stripping task configuration information.
+                * Video splitting task configuration information.
                 */
                 class SplitMediaTaskConfig : public AbstractModel
                 {
@@ -48,27 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The offset time of the start of video stripping, unit: seconds. 
-<li>Leave it blank or fill in 0, which means that the transcoded video starts from the starting position of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that after transcoding The video starts from the n-th second position of the original video;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video starts from the position n seconds before the end of the original video. </li>
-                     * @return StartTimeOffset The offset time of the start of video stripping, unit: seconds. 
-<li>Leave it blank or fill in 0, which means that the transcoded video starts from the starting position of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that after transcoding The video starts from the n-th second position of the original video;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video starts from the position n seconds before the end of the original video. </li>
+                     * 获取Start offset time of video splitting, in seconds.
+<li>Leave this parameter empty or set it to 0, indicating that the transcoded video starts from the start position of the original video;</li>
+<li>When the value is greater than 0 (assuming n), the transcoded video starts from the nth second of the original video;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video starts n seconds before the end of the original video.</li>
+                     * @return StartTimeOffset Start offset time of video splitting, in seconds.
+<li>Leave this parameter empty or set it to 0, indicating that the transcoded video starts from the start position of the original video;</li>
+<li>When the value is greater than 0 (assuming n), the transcoded video starts from the nth second of the original video;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video starts n seconds before the end of the original video.</li>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置The offset time of the start of video stripping, unit: seconds. 
-<li>Leave it blank or fill in 0, which means that the transcoded video starts from the starting position of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that after transcoding The video starts from the n-th second position of the original video;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video starts from the position n seconds before the end of the original video. </li>
-                     * @param _startTimeOffset The offset time of the start of video stripping, unit: seconds. 
-<li>Leave it blank or fill in 0, which means that the transcoded video starts from the starting position of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that after transcoding The video starts from the n-th second position of the original video;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video starts from the position n seconds before the end of the original video. </li>
+                     * 设置Start offset time of video splitting, in seconds.
+<li>Leave this parameter empty or set it to 0, indicating that the transcoded video starts from the start position of the original video;</li>
+<li>When the value is greater than 0 (assuming n), the transcoded video starts from the nth second of the original video;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video starts n seconds before the end of the original video.</li>
+                     * @param _startTimeOffset Start offset time of video splitting, in seconds.
+<li>Leave this parameter empty or set it to 0, indicating that the transcoded video starts from the start position of the original video;</li>
+<li>When the value is greater than 0 (assuming n), the transcoded video starts from the nth second of the original video;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video starts n seconds before the end of the original video.</li>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -81,27 +81,27 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Offset time at the end of video stripping, unit: seconds. 
-<li>Leave it blank or fill it in with 0, which means that the transcoded video will continue until the end of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that the transcoded video will continue until the end of the original video. The video continues until the nth second of the original video and terminates;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video continues until n seconds before the end of the original video. </li>
-                     * @return EndTimeOffset Offset time at the end of video stripping, unit: seconds. 
-<li>Leave it blank or fill it in with 0, which means that the transcoded video will continue until the end of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that the transcoded video will continue until the end of the original video. The video continues until the nth second of the original video and terminates;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video continues until n seconds before the end of the original video. </li>
+                     * 获取End time offset of video splitting, in seconds.
+<li>If not set or set to 0, the transcoded video will last until the end of the original video.</li>
+<li>When the value is greater than 0 (assuming n), it means the transcoded video lasts until the nth second of the original video and then ends;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video lasts until n seconds before the end of the original video.</li>
+                     * @return EndTimeOffset End time offset of video splitting, in seconds.
+<li>If not set or set to 0, the transcoded video will last until the end of the original video.</li>
+<li>When the value is greater than 0 (assuming n), it means the transcoded video lasts until the nth second of the original video and then ends;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video lasts until n seconds before the end of the original video.</li>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置Offset time at the end of video stripping, unit: seconds. 
-<li>Leave it blank or fill it in with 0, which means that the transcoded video will continue until the end of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that the transcoded video will continue until the end of the original video. The video continues until the nth second of the original video and terminates;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video continues until n seconds before the end of the original video. </li>
-                     * @param _endTimeOffset Offset time at the end of video stripping, unit: seconds. 
-<li>Leave it blank or fill it in with 0, which means that the transcoded video will continue until the end of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that the transcoded video will continue until the end of the original video. The video continues until the nth second of the original video and terminates;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video continues until n seconds before the end of the original video. </li>
+                     * 设置End time offset of video splitting, in seconds.
+<li>If not set or set to 0, the transcoded video will last until the end of the original video.</li>
+<li>When the value is greater than 0 (assuming n), it means the transcoded video lasts until the nth second of the original video and then ends;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video lasts until n seconds before the end of the original video.</li>
+                     * @param _endTimeOffset End time offset of video splitting, in seconds.
+<li>If not set or set to 0, the transcoded video will last until the end of the original video.</li>
+<li>When the value is greater than 0 (assuming n), it means the transcoded video lasts until the nth second of the original video and then ends;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video lasts until n seconds before the end of the original video.</li>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Task flow template name, if you want Fill in when executing the task flow on the generated new video.
-                     * @return ProcedureName Task flow template name, if you want Fill in when executing the task flow on the generated new video.
+                     * 获取[Task flow](https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81) name. Fill in when you want to automatically execute a task flow on the generated new video.
+                     * @return ProcedureName [Task flow](https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81) name. Fill in when you want to automatically execute a task flow on the generated new video.
                      * 
                      */
                     std::string GetProcedureName() const;
 
                     /**
-                     * 设置Task flow template name, if you want Fill in when executing the task flow on the generated new video.
-                     * @param _procedureName Task flow template name, if you want Fill in when executing the task flow on the generated new video.
+                     * 设置[Task flow](https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81) name. Fill in when you want to automatically execute a task flow on the generated new video.
+                     * @param _procedureName [Task flow](https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81) name. Fill in when you want to automatically execute a task flow on the generated new video.
                      * 
                      */
                     void SetProcedureName(const std::string& _procedureName);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool ProcedureNameHasBeenSet() const;
 
                     /**
-                     * 获取The video is split into strips to output information.
-                     * @return OutputConfig The video is split into strips to output information.
+                     * 获取Video splitting output information.
+                     * @return OutputConfig Video splitting output information.
                      * 
                      */
                     SplitMediaOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置The video is split into strips to output information.
-                     * @param _outputConfig The video is split into strips to output information.
+                     * 设置Video splitting output information.
+                     * @param _outputConfig Video splitting output information.
                      * 
                      */
                     void SetOutputConfig(const SplitMediaOutputConfig& _outputConfig);
@@ -158,31 +158,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The offset time of the start of video stripping, unit: seconds. 
-<li>Leave it blank or fill in 0, which means that the transcoded video starts from the starting position of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that after transcoding The video starts from the n-th second position of the original video;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video starts from the position n seconds before the end of the original video. </li>
+                     * Start offset time of video splitting, in seconds.
+<li>Leave this parameter empty or set it to 0, indicating that the transcoded video starts from the start position of the original video;</li>
+<li>When the value is greater than 0 (assuming n), the transcoded video starts from the nth second of the original video;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video starts n seconds before the end of the original video.</li>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * Offset time at the end of video stripping, unit: seconds. 
-<li>Leave it blank or fill it in with 0, which means that the transcoded video will continue until the end of the original video;</li>
-<li>When the value is greater than 0 (assumed to be n), it means that the transcoded video will continue until the end of the original video. The video continues until the nth second of the original video and terminates;</li>
-<li>When the value is less than 0 (assumed to be -n), it means that the transcoded video continues until n seconds before the end of the original video. </li>
+                     * End time offset of video splitting, in seconds.
+<li>If not set or set to 0, the transcoded video will last until the end of the original video.</li>
+<li>When the value is greater than 0 (assuming n), it means the transcoded video lasts until the nth second of the original video and then ends;</li>
+<li>When the value is less than 0 (assuming -n), it means the transcoded video lasts until n seconds before the end of the original video.</li>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * Task flow template name, if you want Fill in when executing the task flow on the generated new video.
+                     * [Task flow](https://www.tencentcloud.com/document/product/266/33475?from_cn_redirect=1#.E4.BB.BB.E5.8A.A1.E6.B5.81) name. Fill in when you want to automatically execute a task flow on the generated new video.
                      */
                     std::string m_procedureName;
                     bool m_procedureNameHasBeenSet;
 
                     /**
-                     * The video is split into strips to output information.
+                     * Video splitting output information.
                      */
                     SplitMediaOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;

@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
+                     * @return InstanceId <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
+                     * @param _instanceId <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Maximum retention period in minutes for instance log, which can be up to 30 days. 0 indicates not to enable the log retention period policy
-                     * @return MsgRetentionTime Maximum retention period in minutes for instance log, which can be up to 30 days. 0 indicates not to enable the log retention period policy
+                     * 获取<p>Maximum retention time of instance log, in minutes, with a maximum of 90 days and a minimum of 1 min</p>
+                     * @return MsgRetentionTime <p>Maximum retention time of instance log, in minutes, with a maximum of 90 days and a minimum of 1 min</p>
                      * 
                      */
                     int64_t GetMsgRetentionTime() const;
 
                     /**
-                     * 设置Maximum retention period in minutes for instance log, which can be up to 30 days. 0 indicates not to enable the log retention period policy
-                     * @param _msgRetentionTime Maximum retention period in minutes for instance log, which can be up to 30 days. 0 indicates not to enable the log retention period policy
+                     * 设置<p>Maximum retention time of instance log, in minutes, with a maximum of 90 days and a minimum of 1 min</p>
+                     * @param _msgRetentionTime <p>Maximum retention time of instance log, in minutes, with a maximum of 90 days and a minimum of 1 min</p>
                      * 
                      */
                     void SetMsgRetentionTime(const int64_t& _msgRetentionTime);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool MsgRetentionTimeHasBeenSet() const;
 
                     /**
-                     * 获取Instance name string of up to 64 characters, which must begin with a letter and can contain letters, digits, and dashes (`-`)
-                     * @return InstanceName Instance name string of up to 64 characters, which must begin with a letter and can contain letters, digits, and dashes (`-`)
+                     * 获取<p>ckafka cluster instance Name</p>
+                     * @return InstanceName <p>ckafka cluster instance Name</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Instance name string of up to 64 characters, which must begin with a letter and can contain letters, digits, and dashes (`-`)
-                     * @param _instanceName Instance name string of up to 64 characters, which must begin with a letter and can contain letters, digits, and dashes (`-`)
+                     * 设置<p>ckafka cluster instance Name</p>
+                     * @param _instanceName <p>ckafka cluster instance Name</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取Instance configuration
-                     * @return Config Instance configuration
+                     * 获取<p>Instance configuration</p>
+                     * @return Config <p>Instance configuration</p>
                      * 
                      */
                     ModifyInstanceAttributesConfig GetConfig() const;
 
                     /**
-                     * 设置Instance configuration
-                     * @param _config Instance configuration
+                     * 设置<p>Instance configuration</p>
+                     * @param _config <p>Instance configuration</p>
                      * 
                      */
                     void SetConfig(const ModifyInstanceAttributesConfig& _config);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取Dynamic message retention policy configuration
-                     * @return DynamicRetentionConfig Dynamic message retention policy configuration
+                     * 获取<p>Dynamic message retention policy configuration</p>
+                     * @return DynamicRetentionConfig <p>Dynamic message retention policy configuration</p>
                      * 
                      */
                     DynamicRetentionTime GetDynamicRetentionConfig() const;
 
                     /**
-                     * 设置Dynamic message retention policy configuration
-                     * @param _dynamicRetentionConfig Dynamic message retention policy configuration
+                     * 设置<p>Dynamic message retention policy configuration</p>
+                     * @param _dynamicRetentionConfig <p>Dynamic message retention policy configuration</p>
                      * 
                      */
                     void SetDynamicRetentionConfig(const DynamicRetentionTime& _dynamicRetentionConfig);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DynamicRetentionConfigHasBeenSet() const;
 
                     /**
-                     * 获取Modification of the rebalancing time after upgrade
-                     * @return RebalanceTime Modification of the rebalancing time after upgrade
+                     * 获取<p>Used to modify the scheduled task execution time for edition upgrade or upgrade version, Unix timestamp, accurate to the second</p>
+                     * @return RebalanceTime <p>Used to modify the scheduled task execution time for edition upgrade or upgrade version, Unix timestamp, accurate to the second</p>
                      * 
                      */
                     int64_t GetRebalanceTime() const;
 
                     /**
-                     * 设置Modification of the rebalancing time after upgrade
-                     * @param _rebalanceTime Modification of the rebalancing time after upgrade
+                     * 设置<p>Used to modify the scheduled task execution time for edition upgrade or upgrade version, Unix timestamp, accurate to the second</p>
+                     * @param _rebalanceTime <p>Used to modify the scheduled task execution time for edition upgrade or upgrade version, Unix timestamp, accurate to the second</p>
                      * 
                      */
                     void SetRebalanceTime(const int64_t& _rebalanceTime);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool RebalanceTimeHasBeenSet() const;
 
                     /**
-                     * 获取Public network bandwidth
-                     * @return PublicNetwork Public network bandwidth
+                     * 获取<p>Public network bandwidth: minimum 3Mbps, maximum 999Mbps. Only the Pro Edition supports filling in.</p>
+                     * @return PublicNetwork <p>Public network bandwidth: minimum 3Mbps, maximum 999Mbps. Only the Pro Edition supports filling in.</p>
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置Public network bandwidth
-                     * @param _publicNetwork Public network bandwidth
+                     * 设置<p>Public network bandwidth: minimum 3Mbps, maximum 999Mbps. Only the Pro Edition supports filling in.</p>
+                     * @param _publicNetwork <p>Public network bandwidth: minimum 3Mbps, maximum 999Mbps. Only the Pro Edition supports filling in.</p>
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -193,36 +193,36 @@ namespace TencentCloud
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取Dynamic disk expansion policy configuration.
-                     * @return DynamicDiskConfig Dynamic disk expansion policy configuration.
-                     * 
+                     * 获取<p>Configure dynamic disk expansion policy</p>
+                     * @return DynamicDiskConfig <p>Configure dynamic disk expansion policy</p>
+                     * @deprecated
                      */
                     DynamicDiskConfig GetDynamicDiskConfig() const;
 
                     /**
-                     * 设置Dynamic disk expansion policy configuration.
-                     * @param _dynamicDiskConfig Dynamic disk expansion policy configuration.
-                     * 
+                     * 设置<p>Configure dynamic disk expansion policy</p>
+                     * @param _dynamicDiskConfig <p>Configure dynamic disk expansion policy</p>
+                     * @deprecated
                      */
                     void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
 
                     /**
                      * 判断参数 DynamicDiskConfig 是否已赋值
                      * @return DynamicDiskConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DynamicDiskConfigHasBeenSet() const;
 
                     /**
-                     * 获取The size of a single message in bytes at the instance level.
-                     * @return MaxMessageByte The size of a single message in bytes at the instance level.
+                     * 获取<p>Single message size at the instance level (unit: byte) Maximum 12582912 (excluding) Minimum 1024 (excluding)</p>
+                     * @return MaxMessageByte <p>Single message size at the instance level (unit: byte) Maximum 12582912 (excluding) Minimum 1024 (excluding)</p>
                      * 
                      */
                     uint64_t GetMaxMessageByte() const;
 
                     /**
-                     * 设置The size of a single message in bytes at the instance level.
-                     * @param _maxMessageByte The size of a single message in bytes at the instance level.
+                     * 设置<p>Single message size at the instance level (unit: byte) Maximum 12582912 (excluding) Minimum 1024 (excluding)</p>
+                     * @param _maxMessageByte <p>Single message size at the instance level (unit: byte) Maximum 12582912 (excluding) Minimum 1024 (excluding)</p>
                      * 
                      */
                     void SetMaxMessageByte(const uint64_t& _maxMessageByte);
@@ -234,61 +234,196 @@ namespace TencentCloud
                      */
                     bool MaxMessageByteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether to allow unsynchronized replicas to be elected as leader: 1 Enable 0 Disable</p>
+                     * @return UncleanLeaderElectionEnable <p>Whether to allow unsynchronized replicas to be elected as leader: 1 Enable 0 Disable</p>
+                     * 
+                     */
+                    int64_t GetUncleanLeaderElectionEnable() const;
+
+                    /**
+                     * 设置<p>Whether to allow unsynchronized replicas to be elected as leader: 1 Enable 0 Disable</p>
+                     * @param _uncleanLeaderElectionEnable <p>Whether to allow unsynchronized replicas to be elected as leader: 1 Enable 0 Disable</p>
+                     * 
+                     */
+                    void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
+
+                    /**
+                     * 判断参数 UncleanLeaderElectionEnable 是否已赋值
+                     * @return UncleanLeaderElectionEnable 是否已赋值
+                     * 
+                     */
+                    bool UncleanLeaderElectionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Instance deletion protection switch: 1: enabled 0: disabled</p>
+                     * @return DeleteProtectionEnable <p>Instance deletion protection switch: 1: enabled 0: disabled</p>
+                     * 
+                     */
+                    int64_t GetDeleteProtectionEnable() const;
+
+                    /**
+                     * 设置<p>Instance deletion protection switch: 1: enabled 0: disabled</p>
+                     * @param _deleteProtectionEnable <p>Instance deletion protection switch: 1: enabled 0: disabled</p>
+                     * 
+                     */
+                    void SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable);
+
+                    /**
+                     * 判断参数 DeleteProtectionEnable 是否已赋值
+                     * @return DeleteProtectionEnable 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Message retention size at the instance level</p>Measurement unit: byte<br>Default value: -1<br><p>Message retention size at the instance level</p>
+                     * @return RetentionBytes <p>Message retention size at the instance level</p>Measurement unit: byte<br>Default value: -1<br><p>Message retention size at the instance level</p>
+                     * 
+                     */
+                    int64_t GetRetentionBytes() const;
+
+                    /**
+                     * 设置<p>Message retention size at the instance level</p>Measurement unit: byte<br>Default value: -1<br><p>Message retention size at the instance level</p>
+                     * @param _retentionBytes <p>Message retention size at the instance level</p>Measurement unit: byte<br>Default value: -1<br><p>Message retention size at the instance level</p>
+                     * 
+                     */
+                    void SetRetentionBytes(const int64_t& _retentionBytes);
+
+                    /**
+                     * 判断参数 RetentionBytes 是否已赋值
+                     * @return RetentionBytes 是否已赋值
+                     * 
+                     */
+                    bool RetentionBytesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ban Status for high-risk admin interface; true to ban high-risk adminApi; no support for turning on after closing, only supported in Pro Edition; default false, no action taken for high-risk admin interface</p>
+                     * @return AdminSecurity <p>Ban Status for high-risk admin interface; true to ban high-risk adminApi; no support for turning on after closing, only supported in Pro Edition; default false, no action taken for high-risk admin interface</p>
+                     * 
+                     */
+                    bool GetAdminSecurity() const;
+
+                    /**
+                     * 设置<p>Ban Status for high-risk admin interface; true to ban high-risk adminApi; no support for turning on after closing, only supported in Pro Edition; default false, no action taken for high-risk admin interface</p>
+                     * @param _adminSecurity <p>Ban Status for high-risk admin interface; true to ban high-risk adminApi; no support for turning on after closing, only supported in Pro Edition; default false, no action taken for high-risk admin interface</p>
+                     * 
+                     */
+                    void SetAdminSecurity(const bool& _adminSecurity);
+
+                    /**
+                     * 判断参数 AdminSecurity 是否已赋值
+                     * @return AdminSecurity 是否已赋值
+                     * 
+                     */
+                    bool AdminSecurityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>The maximum idle time of a transaction ID. Uncommitted transactions that time out will be marked with expiration.</p>Value ranges from 3600000 to 604800000.<br>Unit: ms
+                     * @return TransactionalIdExpirationMs <p>The maximum idle time of a transaction ID. Uncommitted transactions that time out will be marked with expiration.</p>Value ranges from 3600000 to 604800000.<br>Unit: ms
+                     * 
+                     */
+                    int64_t GetTransactionalIdExpirationMs() const;
+
+                    /**
+                     * 设置<p>The maximum idle time of a transaction ID. Uncommitted transactions that time out will be marked with expiration.</p>Value ranges from 3600000 to 604800000.<br>Unit: ms
+                     * @param _transactionalIdExpirationMs <p>The maximum idle time of a transaction ID. Uncommitted transactions that time out will be marked with expiration.</p>Value ranges from 3600000 to 604800000.<br>Unit: ms
+                     * 
+                     */
+                    void SetTransactionalIdExpirationMs(const int64_t& _transactionalIdExpirationMs);
+
+                    /**
+                     * 判断参数 TransactionalIdExpirationMs 是否已赋值
+                     * @return TransactionalIdExpirationMs 是否已赋值
+                     * 
+                     */
+                    bool TransactionalIdExpirationMsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID
+                     * <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Maximum retention period in minutes for instance log, which can be up to 30 days. 0 indicates not to enable the log retention period policy
+                     * <p>Maximum retention time of instance log, in minutes, with a maximum of 90 days and a minimum of 1 min</p>
                      */
                     int64_t m_msgRetentionTime;
                     bool m_msgRetentionTimeHasBeenSet;
 
                     /**
-                     * Instance name string of up to 64 characters, which must begin with a letter and can contain letters, digits, and dashes (`-`)
+                     * <p>ckafka cluster instance Name</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * Instance configuration
+                     * <p>Instance configuration</p>
                      */
                     ModifyInstanceAttributesConfig m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * Dynamic message retention policy configuration
+                     * <p>Dynamic message retention policy configuration</p>
                      */
                     DynamicRetentionTime m_dynamicRetentionConfig;
                     bool m_dynamicRetentionConfigHasBeenSet;
 
                     /**
-                     * Modification of the rebalancing time after upgrade
+                     * <p>Used to modify the scheduled task execution time for edition upgrade or upgrade version, Unix timestamp, accurate to the second</p>
                      */
                     int64_t m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
 
                     /**
-                     * Public network bandwidth
+                     * <p>Public network bandwidth: minimum 3Mbps, maximum 999Mbps. Only the Pro Edition supports filling in.</p>
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * Dynamic disk expansion policy configuration.
+                     * <p>Configure dynamic disk expansion policy</p>
                      */
                     DynamicDiskConfig m_dynamicDiskConfig;
                     bool m_dynamicDiskConfigHasBeenSet;
 
                     /**
-                     * The size of a single message in bytes at the instance level.
+                     * <p>Single message size at the instance level (unit: byte) Maximum 12582912 (excluding) Minimum 1024 (excluding)</p>
                      */
                     uint64_t m_maxMessageByte;
                     bool m_maxMessageByteHasBeenSet;
+
+                    /**
+                     * <p>Whether to allow unsynchronized replicas to be elected as leader: 1 Enable 0 Disable</p>
+                     */
+                    int64_t m_uncleanLeaderElectionEnable;
+                    bool m_uncleanLeaderElectionEnableHasBeenSet;
+
+                    /**
+                     * <p>Instance deletion protection switch: 1: enabled 0: disabled</p>
+                     */
+                    int64_t m_deleteProtectionEnable;
+                    bool m_deleteProtectionEnableHasBeenSet;
+
+                    /**
+                     * <p>Message retention size at the instance level</p>Measurement unit: byte<br>Default value: -1<br><p>Message retention size at the instance level</p>
+                     */
+                    int64_t m_retentionBytes;
+                    bool m_retentionBytesHasBeenSet;
+
+                    /**
+                     * <p>Ban Status for high-risk admin interface; true to ban high-risk adminApi; no support for turning on after closing, only supported in Pro Edition; default false, no action taken for high-risk admin interface</p>
+                     */
+                    bool m_adminSecurity;
+                    bool m_adminSecurityHasBeenSet;
+
+                    /**
+                     * <p>The maximum idle time of a transaction ID. Uncommitted transactions that time out will be marked with expiration.</p>Value ranges from 3600000 to 604800000.<br>Unit: ms
+                     */
+                    int64_t m_transactionalIdExpirationMs;
+                    bool m_transactionalIdExpirationMsHasBeenSet;
 
                 };
             }

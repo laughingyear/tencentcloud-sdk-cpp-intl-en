@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/HealthChecker.h>
 #include <tencentcloud/teo/v20220901/model/OriginGroupHealthStatus.h>
+#include <tencentcloud/teo/v20220901/model/OriginGroupReference.h>
 
 
 namespace TencentCloud
@@ -249,15 +250,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取List of Layer-4 proxy instances bound to a LoadBalancer.
-                     * @return L4UsedList List of Layer-4 proxy instances bound to a LoadBalancer.
+                     * 获取Specifies the list of l4 proxy instances bound to the load balancing instance.
+                     * @return L4UsedList Specifies the list of l4 proxy instances bound to the load balancing instance.
                      * 
                      */
                     std::vector<std::string> GetL4UsedList() const;
 
                     /**
-                     * 设置List of Layer-4 proxy instances bound to a LoadBalancer.
-                     * @param _l4UsedList List of Layer-4 proxy instances bound to a LoadBalancer.
+                     * 设置Specifies the list of l4 proxy instances bound to the load balancing instance.
+                     * @param _l4UsedList Specifies the list of l4 proxy instances bound to the load balancing instance.
                      * 
                      */
                     void SetL4UsedList(const std::vector<std::string>& _l4UsedList);
@@ -289,6 +290,27 @@ namespace TencentCloud
                      * 
                      */
                     bool L7UsedListHasBeenSet() const;
+
+                    /**
+                     * 获取Specifies the list of instances referenced by cloud load balancer.
+                     * @return References Specifies the list of instances referenced by cloud load balancer.
+                     * 
+                     */
+                    std::vector<OriginGroupReference> GetReferences() const;
+
+                    /**
+                     * 设置Specifies the list of instances referenced by cloud load balancer.
+                     * @param _references Specifies the list of instances referenced by cloud load balancer.
+                     * 
+                     */
+                    void SetReferences(const std::vector<OriginGroupReference>& _references);
+
+                    /**
+                     * 判断参数 References 是否已赋值
+                     * @return References 是否已赋值
+                     * 
+                     */
+                    bool ReferencesHasBeenSet() const;
 
                 private:
 
@@ -349,7 +371,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * List of Layer-4 proxy instances bound to a LoadBalancer.
+                     * Specifies the list of l4 proxy instances bound to the load balancing instance.
                      */
                     std::vector<std::string> m_l4UsedList;
                     bool m_l4UsedListHasBeenSet;
@@ -359,6 +381,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_l7UsedList;
                     bool m_l7UsedListHasBeenSet;
+
+                    /**
+                     * Specifies the list of instances referenced by cloud load balancer.
+                     */
+                    std::vector<OriginGroupReference> m_references;
+                    bool m_referencesHasBeenSet;
 
                 };
             }

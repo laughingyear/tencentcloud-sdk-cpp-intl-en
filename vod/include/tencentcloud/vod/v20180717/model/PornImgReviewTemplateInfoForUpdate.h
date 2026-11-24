@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for recognition of pornographic content in images
+                * Image recognition involves task control parameters for offensive information.
                 */
                 class PornImgReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable recognition of pornographic content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @return Switch Whether to enable recognition of pornographic content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取<p>Task switch for image recognition involving offensive content. Available values:</p><li>ON: Turn on the task for image recognition involving offensive content;</li><li>OFF: Turn off the task for image recognition involving offensive content.</li>
+                     * @return Switch <p>Task switch for image recognition involving offensive content. Available values:</p><li>ON: Turn on the task for image recognition involving offensive content;</li><li>OFF: Turn off the task for image recognition involving offensive content.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable recognition of pornographic content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
-                     * @param _switch Whether to enable recognition of pornographic content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置<p>Task switch for image recognition involving offensive content. Available values:</p><li>ON: Turn on the task for image recognition involving offensive content;</li><li>OFF: Turn off the task for image recognition involving offensive content.</li>
+                     * @param _switch <p>Task switch for image recognition involving offensive content. Available values:</p><li>ON: Turn on the task for image recognition involving offensive content;</li><li>OFF: Turn off the task for image recognition involving offensive content.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,31 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Filter labels for recognition of pornographic content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>porn</li>
-<li>vulgar</li>
-<li>intimacy</li>
-<li>sexy</li>
-                     * @return LabelSet Filter labels for recognition of pornographic content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>porn</li>
-<li>vulgar</li>
-<li>intimacy</li>
-<li>sexy</li>
+                     * 获取<p>Filter tags for offensive content involved in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>porn: Pornography;</li><li>vulgar: Vulgarity;</li><li>intimacy: Intimate behavior;</li><li>sexy: Sexiness.</li>
+                     * @return LabelSet <p>Filter tags for offensive content involved in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>porn: Pornography;</li><li>vulgar: Vulgarity;</li><li>intimacy: Intimate behavior;</li><li>sexy: Sexiness.</li>
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置Filter labels for recognition of pornographic content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>porn</li>
-<li>vulgar</li>
-<li>intimacy</li>
-<li>sexy</li>
-                     * @param _labelSet Filter labels for recognition of pornographic content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>porn</li>
-<li>vulgar</li>
-<li>intimacy</li>
-<li>sexy</li>
+                     * 设置<p>Filter tags for offensive content involved in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>porn: Pornography;</li><li>vulgar: Vulgarity;</li><li>intimacy: Intimate behavior;</li><li>sexy: Sexiness.</li>
+                     * @param _labelSet <p>Filter tags for offensive content involved in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>porn: Pornography;</li><li>vulgar: Vulgarity;</li><li>intimacy: Intimate behavior;</li><li>sexy: Sexiness.</li>
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -113,15 +89,15 @@ namespace TencentCloud
                     bool LabelSetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
-                     * @return BlockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * 获取<p>Threshold score for determining suspected violations. When the review score reaches this threshold or above, it is considered a suspected violation. Value range: 0–100.</p>
+                     * @return BlockConfidence <p>Threshold score for determining suspected violations. When the review score reaches this threshold or above, it is considered a suspected violation. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
-                     * @param _blockConfidence Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * 设置<p>Threshold score for determining suspected violations. When the review score reaches this threshold or above, it is considered a suspected violation. Value range: 0–100.</p>
+                     * @param _blockConfidence <p>Threshold score for determining suspected violations. When the review score reaches this threshold or above, it is considered a suspected violation. Value range: 0–100.</p>
                      * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
@@ -134,15 +110,15 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
-                     * @return ReviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * 获取<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. Value range: 0–100.</p>
+                     * @return ReviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. Value range: 0–100.</p>
                      * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
-                     * @param _reviewConfidence Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * 设置<p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. Value range: 0–100.</p>
+                     * @param _reviewConfidence <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. Value range: 0–100.</p>
                      * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
@@ -157,31 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable recognition of pornographic content in images. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * <p>Task switch for image recognition involving offensive content. Available values:</p><li>ON: Turn on the task for image recognition involving offensive content;</li><li>OFF: Turn off the task for image recognition involving offensive content.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Filter labels for recognition of pornographic content in images. Results containing the specified labels are returned. If no labels are specified, all results are returned. Valid values:
-<li>porn</li>
-<li>vulgar</li>
-<li>intimacy</li>
-<li>sexy</li>
+                     * <p>Filter tags for offensive content involved in image recognition. The auditing results including the selected tags are returned. If the filter tag is empty, all auditing results will be returned. Valid values:</p><li>porn: Pornography;</li><li>vulgar: Vulgarity;</li><li>intimacy: Intimate behavior;</li><li>sexy: Sexiness.</li>
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**
-                     * Confidence score threshold for determining that something should be blocked. If this threshold is reached, VOD will suggest that the content be blocked. Value range: 0-100
+                     * <p>Threshold score for determining suspected violations. When the review score reaches this threshold or above, it is considered a suspected violation. Value range: 0–100.</p>
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * Confidence score threshold for human review. If this threshold is reached, human review is needed. Value range: 0-100
+                     * <p>Threshold score for determining whether manual review is required for violations. When the review score reaches or exceeds this threshold, manual review is considered necessary. Value range: 0–100.</p>
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

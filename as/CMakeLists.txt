@@ -34,6 +34,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/RelatedInstance.h
   include/tencentcloud/as/v20180419/model/Advice.h
+  include/tencentcloud/as/v20180419/model/EnterStandbyRequest.h
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsResponse.h
@@ -48,7 +49,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h
   include/tencentcloud/as/v20180419/model/AttachLoadBalancersResponse.h
   include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h
-  include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/ForwardLoadBalancerIdentification.h
   include/tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h
   include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesResponse.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h
@@ -93,11 +94,13 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyScalingPolicyRequest.h
   include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/as/v20180419/model/RefreshBatch.h
+  include/tencentcloud/as/v20180419/model/EnterStandbyResponse.h
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/InstanceTag.h
   include/tencentcloud/as/v20180419/model/ModifyLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/LifecycleCommand.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesResponse.h
+  include/tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
   include/tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationRequest.h
@@ -126,6 +129,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/ScheduledAction.h
   include/tencentcloud/as/v20180419/model/ModifyLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h
   include/tencentcloud/as/v20180419/model/ScaleOutInstancesResponse.h
   include/tencentcloud/as/v20180419/model/RefreshSettings.h
@@ -159,14 +163,14 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ForwardLoadBalancer.h
   include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesRequest.h
   include/tencentcloud/as/v20180419/model/InstanceNameIndexSettings.h
-  include/tencentcloud/as/v20180419/model/ForwardLoadBalancerIdentification.h
+  include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/AutoScalingAdvice.h
   include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/AttachInstancesRequest.h
   include/tencentcloud/as/v20180419/model/StopInstanceRefreshResponse.h
   include/tencentcloud/as/v20180419/model/AttachLoadBalancersRequest.h
-  include/tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h
-  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/NetworkInterface.h
+  include/tencentcloud/as/v20180419/model/HostNameIndexSettings.h
   include/tencentcloud/as/v20180419/model/ResumeInstanceRefreshResponse.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h
   include/tencentcloud/as/v20180419/model/Activity.h
@@ -202,6 +206,7 @@ set(as_src
   src/v20180419/model/CreateLaunchConfigurationResponse.cpp
   src/v20180419/model/RelatedInstance.cpp
   src/v20180419/model/Advice.cpp
+  src/v20180419/model/EnterStandbyRequest.cpp
   src/v20180419/model/CreateLifecycleHookResponse.cpp
   src/v20180419/model/ClearLaunchConfigurationAttributesResponse.cpp
   src/v20180419/model/DescribeAutoScalingGroupsResponse.cpp
@@ -216,7 +221,7 @@ set(as_src
   src/v20180419/model/ModifyScheduledActionResponse.cpp
   src/v20180419/model/AttachLoadBalancersResponse.cpp
   src/v20180419/model/ExecuteScalingPolicyResponse.cpp
-  src/v20180419/model/DeleteAutoScalingGroupRequest.cpp
+  src/v20180419/model/ForwardLoadBalancerIdentification.cpp
   src/v20180419/model/SetInstancesProtectionResponse.cpp
   src/v20180419/model/StartAutoScalingInstancesResponse.cpp
   src/v20180419/model/CompleteLifecycleActionRequest.cpp
@@ -261,11 +266,13 @@ set(as_src
   src/v20180419/model/ModifyScalingPolicyRequest.cpp
   src/v20180419/model/InstanceMarketOptionsRequest.cpp
   src/v20180419/model/RefreshBatch.cpp
+  src/v20180419/model/EnterStandbyResponse.cpp
   src/v20180419/model/UpgradeLifecycleHookResponse.cpp
   src/v20180419/model/InstanceTag.cpp
   src/v20180419/model/ModifyLifecycleHookResponse.cpp
   src/v20180419/model/LifecycleCommand.cpp
   src/v20180419/model/DescribeAutoScalingAdvicesResponse.cpp
+  src/v20180419/model/SpotMixedAllocationPolicy.cpp
   src/v20180419/model/CreateAutoScalingGroupRequest.cpp
   src/v20180419/model/DeleteScheduledActionResponse.cpp
   src/v20180419/model/UpgradeLaunchConfigurationRequest.cpp
@@ -294,6 +301,7 @@ set(as_src
   src/v20180419/model/CreateLifecycleHookRequest.cpp
   src/v20180419/model/ScheduledAction.cpp
   src/v20180419/model/ModifyLifecycleHookRequest.cpp
+  src/v20180419/model/UpgradeLifecycleHookRequest.cpp
   src/v20180419/model/CompleteLifecycleActionResponse.cpp
   src/v20180419/model/ScaleOutInstancesResponse.cpp
   src/v20180419/model/RefreshSettings.cpp
@@ -327,14 +335,14 @@ set(as_src
   src/v20180419/model/ForwardLoadBalancer.cpp
   src/v20180419/model/ClearLaunchConfigurationAttributesRequest.cpp
   src/v20180419/model/InstanceNameIndexSettings.cpp
-  src/v20180419/model/ForwardLoadBalancerIdentification.cpp
+  src/v20180419/model/DeleteAutoScalingGroupRequest.cpp
   src/v20180419/model/AutoScalingAdvice.cpp
   src/v20180419/model/StartAutoScalingInstancesRequest.cpp
   src/v20180419/model/AttachInstancesRequest.cpp
   src/v20180419/model/StopInstanceRefreshResponse.cpp
   src/v20180419/model/AttachLoadBalancersRequest.cpp
-  src/v20180419/model/SpotMixedAllocationPolicy.cpp
-  src/v20180419/model/UpgradeLifecycleHookRequest.cpp
+  src/v20180419/model/NetworkInterface.cpp
+  src/v20180419/model/HostNameIndexSettings.cpp
   src/v20180419/model/ResumeInstanceRefreshResponse.cpp
   src/v20180419/model/DescribeScalingPoliciesResponse.cpp
   src/v20180419/model/Activity.cpp

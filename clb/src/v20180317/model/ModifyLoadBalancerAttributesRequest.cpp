@@ -28,9 +28,11 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_targetRegionInfoHasBeenSet(false),
     m_internetChargeInfoHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
+    m_switchFlagHasBeenSet(false),
     m_snatProHasBeenSet(false),
     m_deleteProtectHasBeenSet(false),
-    m_modifyClassicDomainHasBeenSet(false)
+    m_modifyClassicDomainHasBeenSet(false),
+    m_associateEndpointHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
     }
 
+    if (m_switchFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchFlag, allocator);
+    }
+
     if (m_snatProHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -105,6 +115,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "ModifyClassicDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifyClassicDomain, allocator);
+    }
+
+    if (m_associateEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +213,22 @@ bool ModifyLoadBalancerAttributesRequest::LoadBalancerPassToTargetHasBeenSet() c
     return m_loadBalancerPassToTargetHasBeenSet;
 }
 
+uint64_t ModifyLoadBalancerAttributesRequest::GetSwitchFlag() const
+{
+    return m_switchFlag;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetSwitchFlag(const uint64_t& _switchFlag)
+{
+    m_switchFlag = _switchFlag;
+    m_switchFlagHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::SwitchFlagHasBeenSet() const
+{
+    return m_switchFlagHasBeenSet;
+}
+
 bool ModifyLoadBalancerAttributesRequest::GetSnatPro() const
 {
     return m_snatPro;
@@ -241,6 +275,22 @@ void ModifyLoadBalancerAttributesRequest::SetModifyClassicDomain(const bool& _mo
 bool ModifyLoadBalancerAttributesRequest::ModifyClassicDomainHasBeenSet() const
 {
     return m_modifyClassicDomainHasBeenSet;
+}
+
+string ModifyLoadBalancerAttributesRequest::GetAssociateEndpoint() const
+{
+    return m_associateEndpoint;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetAssociateEndpoint(const string& _associateEndpoint)
+{
+    m_associateEndpoint = _associateEndpoint;
+    m_associateEndpointHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::AssociateEndpointHasBeenSet() const
+{
+    return m_associateEndpointHasBeenSet;
 }
 
 

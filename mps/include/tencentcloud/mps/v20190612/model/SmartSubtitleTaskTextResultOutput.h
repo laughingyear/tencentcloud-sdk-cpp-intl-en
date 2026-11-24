@@ -1,0 +1,168 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_SMARTSUBTITLETASKTEXTRESULTOUTPUT_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_SMARTSUBTITLETASKTEXTRESULTOUTPUT_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskFullTextSegmentItem.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleResult.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+
+
+namespace TencentCloud
+{
+    namespace Mps
+    {
+        namespace V20190612
+        {
+            namespace Model
+            {
+                /**
+                * Smart subtitle recognition result.
+                */
+                class SmartSubtitleTaskTextResultOutput : public AbstractModel
+                {
+                public:
+                    SmartSubtitleTaskTextResultOutput();
+                    ~SmartSubtitleTaskTextResultOutput() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>List of segments for smart subtitle recognition.</p>
+                     * @return SegmentSet <p>List of segments for smart subtitle recognition.</p>
+                     * 
+                     */
+                    std::vector<SmartSubtitleTaskFullTextSegmentItem> GetSegmentSet() const;
+
+                    /**
+                     * 设置<p>List of segments for smart subtitle recognition.</p>
+                     * @param _segmentSet <p>List of segments for smart subtitle recognition.</p>
+                     * 
+                     */
+                    void SetSegmentSet(const std::vector<SmartSubtitleTaskFullTextSegmentItem>& _segmentSet);
+
+                    /**
+                     * 判断参数 SegmentSet 是否已赋值
+                     * @return SegmentSet 是否已赋值
+                     * 
+                     */
+                    bool SegmentSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Subtitle recognition result</p>
+                     * @return RecognizeSubtitleResult <p>Subtitle recognition result</p>
+                     * 
+                     */
+                    std::vector<SubtitleResult> GetRecognizeSubtitleResult() const;
+
+                    /**
+                     * 设置<p>Subtitle recognition result</p>
+                     * @param _recognizeSubtitleResult <p>Subtitle recognition result</p>
+                     * 
+                     */
+                    void SetRecognizeSubtitleResult(const std::vector<SubtitleResult>& _recognizeSubtitleResult);
+
+                    /**
+                     * 判断参数 RecognizeSubtitleResult 是否已赋值
+                     * @return RecognizeSubtitleResult 是否已赋值
+                     * 
+                     */
+                    bool RecognizeSubtitleResultHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Translated subtitles</p>
+                     * @return TransSubtitleResult <p>Translated subtitles</p>
+                     * 
+                     */
+                    std::vector<SubtitleResult> GetTransSubtitleResult() const;
+
+                    /**
+                     * 设置<p>Translated subtitles</p>
+                     * @param _transSubtitleResult <p>Translated subtitles</p>
+                     * 
+                     */
+                    void SetTransSubtitleResult(const std::vector<SubtitleResult>& _transSubtitleResult);
+
+                    /**
+                     * 判断参数 TransSubtitleResult 是否已赋值
+                     * @return TransSubtitleResult 是否已赋值
+                     * 
+                     */
+                    bool TransSubtitleResultHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Storage location of the subtitle file</p>
+                     * @return OutputStorage <p>Storage location of the subtitle file</p>
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置<p>Storage location of the subtitle file</p>
+                     * @param _outputStorage <p>Storage location of the subtitle file</p>
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>List of segments for smart subtitle recognition.</p>
+                     */
+                    std::vector<SmartSubtitleTaskFullTextSegmentItem> m_segmentSet;
+                    bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * <p>Subtitle recognition result</p>
+                     */
+                    std::vector<SubtitleResult> m_recognizeSubtitleResult;
+                    bool m_recognizeSubtitleResultHasBeenSet;
+
+                    /**
+                     * <p>Translated subtitles</p>
+                     */
+                    std::vector<SubtitleResult> m_transSubtitleResult;
+                    bool m_transSubtitleResultHasBeenSet;
+
+                    /**
+                     * <p>Storage location of the subtitle file</p>
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_SMARTSUBTITLETASKTEXTRESULTOUTPUT_H_

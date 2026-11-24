@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/SnapshotBackupConfig.h>
+#include <tencentcloud/cynosdb/v20190107/model/SparseBackupConfig.h>
 
 
 namespace TencentCloud
@@ -44,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster ID
-                     * @return ClusterId Cluster ID
+                     * 获取<p>Cluster ID.</p>
+                     * @return ClusterId <p>Cluster ID.</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Cluster ID
-                     * @param _clusterId Cluster ID
+                     * 设置<p>Cluster ID.</p>
+                     * @param _clusterId <p>Cluster ID.</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +67,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Full backup start time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively
-                     * @return BackupTimeBeg Full backup start time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively
+                     * 获取<p>Indicates the full backup start time, [0-24*3600], for example, 0:00, 1:00, 2:00 are 0, 3600, 7200 respectively</p>
+                     * @return BackupTimeBeg <p>Indicates the full backup start time, [0-24*3600], for example, 0:00, 1:00, 2:00 are 0, 3600, 7200 respectively</p>
                      * 
                      */
                     uint64_t GetBackupTimeBeg() const;
 
                     /**
-                     * 设置Full backup start time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively
-                     * @param _backupTimeBeg Full backup start time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively
+                     * 设置<p>Indicates the full backup start time, [0-24*3600], for example, 0:00, 1:00, 2:00 are 0, 3600, 7200 respectively</p>
+                     * @param _backupTimeBeg <p>Indicates the full backup start time, [0-24*3600], for example, 0:00, 1:00, 2:00 are 0, 3600, 7200 respectively</p>
                      * 
                      */
                     void SetBackupTimeBeg(const uint64_t& _backupTimeBeg);
@@ -86,15 +88,15 @@ namespace TencentCloud
                     bool BackupTimeBegHasBeenSet() const;
 
                     /**
-                     * 获取Full backup end time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively.
-                     * @return BackupTimeEnd Full backup end time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively.
+                     * 获取<p>Refers to the full backup end time, [0-24*3600], for example, 0:00, 1:00, 2:00 correspond to 0, 3600, 7200 respectively</p>
+                     * @return BackupTimeEnd <p>Refers to the full backup end time, [0-24*3600], for example, 0:00, 1:00, 2:00 correspond to 0, 3600, 7200 respectively</p>
                      * 
                      */
                     uint64_t GetBackupTimeEnd() const;
 
                     /**
-                     * 设置Full backup end time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively.
-                     * @param _backupTimeEnd Full backup end time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively.
+                     * 设置<p>Refers to the full backup end time, [0-24*3600], for example, 0:00, 1:00, 2:00 correspond to 0, 3600, 7200 respectively</p>
+                     * @param _backupTimeEnd <p>Refers to the full backup end time, [0-24*3600], for example, 0:00, 1:00, 2:00 correspond to 0, 3600, 7200 respectively</p>
                      * 
                      */
                     void SetBackupTimeEnd(const uint64_t& _backupTimeEnd);
@@ -107,15 +109,15 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取Backup retention period in seconds. Backups will be cleared after this period elapses. 7 days is represented by 3600*24*7 = 604800. Maximum value: 158112000.
-                     * @return ReserveDuration Backup retention period in seconds. Backups will be cleared after this period elapses. 7 days is represented by 3600*24*7 = 604800. Maximum value: 158112000.
+                     * 获取<p>Indicates the backup retention period, in seconds. Data older than this period will be cleaned up. Seven days is represented as 3600<em>24</em>7=604800, with a maximum of 158112000.</p>
+                     * @return ReserveDuration <p>Indicates the backup retention period, in seconds. Data older than this period will be cleaned up. Seven days is represented as 3600<em>24</em>7=604800, with a maximum of 158112000.</p>
                      * 
                      */
                     uint64_t GetReserveDuration() const;
 
                     /**
-                     * 设置Backup retention period in seconds. Backups will be cleared after this period elapses. 7 days is represented by 3600*24*7 = 604800. Maximum value: 158112000.
-                     * @param _reserveDuration Backup retention period in seconds. Backups will be cleared after this period elapses. 7 days is represented by 3600*24*7 = 604800. Maximum value: 158112000.
+                     * 设置<p>Indicates the backup retention period, in seconds. Data older than this period will be cleaned up. Seven days is represented as 3600<em>24</em>7=604800, with a maximum of 158112000.</p>
+                     * @param _reserveDuration <p>Indicates the backup retention period, in seconds. Data older than this period will be cleaned up. Seven days is represented as 3600<em>24</em>7=604800, with a maximum of 158112000.</p>
                      * 
                      */
                     void SetReserveDuration(const uint64_t& _reserveDuration);
@@ -128,15 +130,15 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取Backup frequency. It is an array of 7 elements corresponding to Monday through Sunday. full: full backup; increment: incremental backup. This parameter cannot be modified currently and doesn't need to be entered.
-                     * @return BackupFreq Backup frequency. It is an array of 7 elements corresponding to Monday through Sunday. full: full backup; increment: incremental backup. This parameter cannot be modified currently and doesn't need to be entered.
+                     * 获取<p>Currently this parameter cannot be modified and is not required. Backup frequency, an array of length 7, corresponding to Monday to Sunday backup methods, full-full backup, increment-incremental backup</p>
+                     * @return BackupFreq <p>Currently this parameter cannot be modified and is not required. Backup frequency, an array of length 7, corresponding to Monday to Sunday backup methods, full-full backup, increment-incremental backup</p>
                      * 
                      */
                     std::vector<std::string> GetBackupFreq() const;
 
                     /**
-                     * 设置Backup frequency. It is an array of 7 elements corresponding to Monday through Sunday. full: full backup; increment: incremental backup. This parameter cannot be modified currently and doesn't need to be entered.
-                     * @param _backupFreq Backup frequency. It is an array of 7 elements corresponding to Monday through Sunday. full: full backup; increment: incremental backup. This parameter cannot be modified currently and doesn't need to be entered.
+                     * 设置<p>Currently this parameter cannot be modified and is not required. Backup frequency, an array of length 7, corresponding to Monday to Sunday backup methods, full-full backup, increment-incremental backup</p>
+                     * @param _backupFreq <p>Currently this parameter cannot be modified and is not required. Backup frequency, an array of length 7, corresponding to Monday to Sunday backup methods, full-full backup, increment-incremental backup</p>
                      * 
                      */
                     void SetBackupFreq(const std::vector<std::string>& _backupFreq);
@@ -149,15 +151,15 @@ namespace TencentCloud
                     bool BackupFreqHasBeenSet() const;
 
                     /**
-                     * 获取Currently, this parameter does not support modification and is not required.
-                     * @return BackupType Currently, this parameter does not support modification and is not required.
+                     * 获取<p>Currently this parameter does not support modification and is not required.</p>
+                     * @return BackupType <p>Currently this parameter does not support modification and is not required.</p>
                      * 
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置Currently, this parameter does not support modification and is not required.
-                     * @param _backupType Currently, this parameter does not support modification and is not required.
+                     * 设置<p>Currently this parameter does not support modification and is not required.</p>
+                     * @param _backupType <p>Currently this parameter does not support modification and is not required.</p>
                      * 
                      */
                     void SetBackupType(const std::string& _backupType);
@@ -170,15 +172,15 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return LogicBackupConfig 
+                     * 获取<p>Logical backup configuration</p>
+                     * @return LogicBackupConfig <p>Logical backup configuration</p>
                      * 
                      */
                     LogicBackupConfigInfo GetLogicBackupConfig() const;
 
                     /**
-                     * 设置
-                     * @param _logicBackupConfig 
+                     * 设置<p>Logical backup configuration</p>
+                     * @param _logicBackupConfig <p>Logical backup configuration</p>
                      * 
                      */
                     void SetLogicBackupConfig(const LogicBackupConfigInfo& _logicBackupConfig);
@@ -191,15 +193,15 @@ namespace TencentCloud
                     bool LogicBackupConfigHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return DeleteAutoLogicBackup 
+                     * 获取<p>Delete or not automatic logical backup</p>
+                     * @return DeleteAutoLogicBackup <p>Delete or not automatic logical backup</p>
                      * 
                      */
                     bool GetDeleteAutoLogicBackup() const;
 
                     /**
-                     * 设置
-                     * @param _deleteAutoLogicBackup 
+                     * 设置<p>Delete or not automatic logical backup</p>
+                     * @param _deleteAutoLogicBackup <p>Delete or not automatic logical backup</p>
                      * 
                      */
                     void SetDeleteAutoLogicBackup(const bool& _deleteAutoLogicBackup);
@@ -211,55 +213,109 @@ namespace TencentCloud
                      */
                     bool DeleteAutoLogicBackupHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Level-2 snapshot backup parameter</p>
+                     * @return SnapshotSecondaryBackupConfig <p>Level-2 snapshot backup parameter</p>
+                     * 
+                     */
+                    SnapshotBackupConfig GetSnapshotSecondaryBackupConfig() const;
+
+                    /**
+                     * 设置<p>Level-2 snapshot backup parameter</p>
+                     * @param _snapshotSecondaryBackupConfig <p>Level-2 snapshot backup parameter</p>
+                     * 
+                     */
+                    void SetSnapshotSecondaryBackupConfig(const SnapshotBackupConfig& _snapshotSecondaryBackupConfig);
+
+                    /**
+                     * 判断参数 SnapshotSecondaryBackupConfig 是否已赋值
+                     * @return SnapshotSecondaryBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool SnapshotSecondaryBackupConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Sparse backup configuration</p>
+                     * @return SparseBackupConfig <p>Sparse backup configuration</p>
+                     * 
+                     */
+                    SparseBackupConfig GetSparseBackupConfig() const;
+
+                    /**
+                     * 设置<p>Sparse backup configuration</p>
+                     * @param _sparseBackupConfig <p>Sparse backup configuration</p>
+                     * 
+                     */
+                    void SetSparseBackupConfig(const SparseBackupConfig& _sparseBackupConfig);
+
+                    /**
+                     * 判断参数 SparseBackupConfig 是否已赋值
+                     * @return SparseBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool SparseBackupConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cluster ID
+                     * <p>Cluster ID.</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Full backup start time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively
+                     * <p>Indicates the full backup start time, [0-24*3600], for example, 0:00, 1:00, 2:00 are 0, 3600, 7200 respectively</p>
                      */
                     uint64_t m_backupTimeBeg;
                     bool m_backupTimeBegHasBeenSet;
 
                     /**
-                     * Full backup end time. Value range: [0-24*3600]. For example, 0:00 AM, 1:00 AM, and 2:00 AM are represented by 0, 3600, and 7200, respectively.
+                     * <p>Refers to the full backup end time, [0-24*3600], for example, 0:00, 1:00, 2:00 correspond to 0, 3600, 7200 respectively</p>
                      */
                     uint64_t m_backupTimeEnd;
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
-                     * Backup retention period in seconds. Backups will be cleared after this period elapses. 7 days is represented by 3600*24*7 = 604800. Maximum value: 158112000.
+                     * <p>Indicates the backup retention period, in seconds. Data older than this period will be cleaned up. Seven days is represented as 3600<em>24</em>7=604800, with a maximum of 158112000.</p>
                      */
                     uint64_t m_reserveDuration;
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * Backup frequency. It is an array of 7 elements corresponding to Monday through Sunday. full: full backup; increment: incremental backup. This parameter cannot be modified currently and doesn't need to be entered.
+                     * <p>Currently this parameter cannot be modified and is not required. Backup frequency, an array of length 7, corresponding to Monday to Sunday backup methods, full-full backup, increment-incremental backup</p>
                      */
                     std::vector<std::string> m_backupFreq;
                     bool m_backupFreqHasBeenSet;
 
                     /**
-                     * Currently, this parameter does not support modification and is not required.
+                     * <p>Currently this parameter does not support modification and is not required.</p>
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 
+                     * <p>Logical backup configuration</p>
                      */
                     LogicBackupConfigInfo m_logicBackupConfig;
                     bool m_logicBackupConfigHasBeenSet;
 
                     /**
-                     * 
+                     * <p>Delete or not automatic logical backup</p>
                      */
                     bool m_deleteAutoLogicBackup;
                     bool m_deleteAutoLogicBackupHasBeenSet;
+
+                    /**
+                     * <p>Level-2 snapshot backup parameter</p>
+                     */
+                    SnapshotBackupConfig m_snapshotSecondaryBackupConfig;
+                    bool m_snapshotSecondaryBackupConfigHasBeenSet;
+
+                    /**
+                     * <p>Sparse backup configuration</p>
+                     */
+                    SparseBackupConfig m_sparseBackupConfig;
+                    bool m_sparseBackupConfigHasBeenSet;
 
                 };
             }

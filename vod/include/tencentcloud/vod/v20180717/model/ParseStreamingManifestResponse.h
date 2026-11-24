@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Segment file list.
-                     * @return MediaSegmentSet Segment file list.
+                     * 获取<p>Shard file list.</p>
+                     * @return MediaSegmentSet <p>Shard file list.</p>
                      * 
                      */
                     std::vector<std::string> GetMediaSegmentSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Segment file list.
+                     * <p>Shard file list.</p>
                      */
                     std::vector<std::string> m_mediaSegmentSet;
                     bool m_mediaSegmentSetHasBeenSet;

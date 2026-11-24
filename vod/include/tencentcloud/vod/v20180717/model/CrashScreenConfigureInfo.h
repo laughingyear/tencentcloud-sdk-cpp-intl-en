@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for video screen blur detection.
+                * Control parameters for video screen glitch detection.
                 */
                 class CrashScreenConfigureInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video screen distortion detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
-                     * @return Switch Video screen distortion detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * 获取Video image distortion detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
+                     * @return Switch Video image distortion detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Video screen distortion detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
-                     * @param _switch Video screen distortion detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * 设置Video image distortion detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
+                     * @param _switch Video image distortion detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Video screen distortion detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * Video image distortion detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ASR-detected prohibited information in speech
+                * Asr text involving prohibited information
                 */
                 class AiReviewProhibitedAsrTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Score of ASR-detected prohibited information in speech between 0 and 100.
-                     * @return Confidence Score of ASR-detected prohibited information in speech between 0 and 100.
+                     * 获取Asr text violation score. Value range: 0-100.
+                     * @return Confidence Asr text violation score. Value range: 0-100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Score of ASR-detected prohibited information in speech between 0 and 100.
-                     * @param _confidence Score of ASR-detected prohibited information in speech between 0 and 100.
+                     * 设置Asr text violation score. Value range: 0-100.
+                     * @param _confidence Asr text violation score. Value range: 0-100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,11 +69,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Suggestion for ASR-detected prohibited information in speech. Valid values:
+                     * 获取Asr text violation result suggestion. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
-                     * @return Suggestion Suggestion for ASR-detected prohibited information in speech. Valid values:
+                     * @return Suggestion Asr text violation result suggestion. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -82,11 +82,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Suggestion for ASR-detected prohibited information in speech. Valid values:
+                     * 设置Asr text violation result suggestion. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
-                     * @param _suggestion Suggestion for ASR-detected prohibited information in speech. Valid values:
+                     * @param _suggestion Asr text violation result suggestion. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -102,19 +102,19 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取List of video segments that contain ASR-detected prohibited information
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @return SegmentSet List of video segments that contain ASR-detected prohibited information
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 获取List of video segments whose Asr text is suspected of prohibition violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @return SegmentSet List of video segments whose Asr text is suspected of prohibition violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of video segments that contain ASR-detected prohibited information
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @param _segmentSet List of video segments that contain ASR-detected prohibited information
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 设置List of video segments whose Asr text is suspected of prohibition violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @param _segmentSet List of video segments whose Asr text is suspected of prohibition violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewAsrTextSegmentItem>& _segmentSet);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for video segments that contain ASR-detected prohibited information. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @return SegmentSetFileUrl URL to the file for video segments that contain ASR-detected prohibited information. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 获取URL of the video segment list file where the Asr text is suspected of prohibition violations. The content of the file is in JSON, and the data structure is consistent with the SegmentSet fields. (The file is not retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
+                     * @return SegmentSetFileUrl URL of the video segment list file where the Asr text is suspected of prohibition violations. The content of the file is in JSON, and the data structure is consistent with the SegmentSet fields. (The file is not retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for video segments that contain ASR-detected prohibited information. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @param _segmentSetFileUrl URL to the file for video segments that contain ASR-detected prohibited information. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 设置URL of the video segment list file where the Asr text is suspected of prohibition violations. The content of the file is in JSON, and the data structure is consistent with the SegmentSet fields. (The file is not retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
+                     * @param _segmentSetFileUrl URL of the video segment list file where the Asr text is suspected of prohibition violations. The content of the file is in JSON, and the data structure is consistent with the SegmentSet fields. (The file is not retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for video segments that contain ASR-detected prohibited information, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return SegmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain ASR-detected prohibited information, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the file URL for the video segment list where the Asr text is suspected of prohibition violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return SegmentSetFileUrlExpireTime Expiration time of the file URL for the video segment list where the Asr text is suspected of prohibition violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for video segments that contain ASR-detected prohibited information, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _segmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain ASR-detected prohibited information, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the file URL for the video segment list where the Asr text is suspected of prohibition violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _segmentSetFileUrlExpireTime Expiration time of the file URL for the video segment list where the Asr text is suspected of prohibition violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Score of ASR-detected prohibited information in speech between 0 and 100.
+                     * Asr text violation score. Value range: 0-100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Suggestion for ASR-detected prohibited information in speech. Valid values:
+                     * Asr text violation result suggestion. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -186,20 +186,20 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * List of video segments that contain ASR-detected prohibited information
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * List of video segments whose Asr text is suspected of prohibition violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * URL to the file for video segments that contain ASR-detected prohibited information. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * URL of the video segment list file where the Asr text is suspected of prohibition violations. The content of the file is in JSON, and the data structure is consistent with the SegmentSet fields. (The file is not retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      */
                     std::string m_segmentSetFileUrl;
                     bool m_segmentSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for video segments that contain ASR-detected prohibited information, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the file URL for the video segment list where the Asr text is suspected of prohibition violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;

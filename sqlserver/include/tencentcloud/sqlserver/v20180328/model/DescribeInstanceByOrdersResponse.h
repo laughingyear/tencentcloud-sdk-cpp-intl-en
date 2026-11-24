@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return DealInstance 
+                     * 获取Resource ID set.
+                     * @return DealInstance Resource ID set.
                      * 
                      */
                     std::vector<DealInstance> GetDealInstance() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * Resource ID set.
                      */
                     std::vector<DealInstance> m_dealInstance;
                     bool m_dealInstanceHasBeenSet;

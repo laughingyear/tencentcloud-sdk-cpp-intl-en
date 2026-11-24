@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Canvas information. When a video is composed, if the source material (video or image) cannot fill the output video window, the background will be drawn with the set canvas.
+                * Canvas information. In video production, if the source material (video or image) cannot fill the output video window, the set canvas is used to draw the background.
                 */
                 class Canvas : public AbstractModel
                 {
@@ -80,19 +80,19 @@ Default value: Black.
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取Canvas width, that is, the width of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video width is the same as the first video clip of the first video track.
-                     * @return Width Canvas width, that is, the width of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video width is the same as the first video clip of the first video track.
+                     * 获取Canvas width, i.e., the output video width. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video width is the same as that of the first video clip on the first video track.
+                     * @return Width Canvas width, i.e., the output video width. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video width is the same as that of the first video clip on the first video track.
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置Canvas width, that is, the width of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video width is the same as the first video clip of the first video track.
-                     * @param _width Canvas width, that is, the width of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video width is the same as the first video clip of the first video track.
+                     * 设置Canvas width, i.e., the output video width. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video width is the same as that of the first video clip on the first video track.
+                     * @param _width Canvas width, i.e., the output video width. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video width is the same as that of the first video clip on the first video track.
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -105,19 +105,19 @@ Default value: 0, which means the video width is the same as the first video cli
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Canvas height, that is, the height (or long side) of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video height is consistent with the first video clip of the first video track.
-                     * @return Height Canvas height, that is, the height (or long side) of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video height is consistent with the first video clip of the first video track.
+                     * 获取Canvas height, i.e. the height (or long side) of the output video. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video height is the same as that of the first video clip on the first video track.
+                     * @return Height Canvas height, i.e. the height (or long side) of the output video. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video height is the same as that of the first video clip on the first video track.
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置Canvas height, that is, the height (or long side) of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video height is consistent with the first video clip of the first video track.
-                     * @param _height Canvas height, that is, the height (or long side) of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video height is consistent with the first video clip of the first video track.
+                     * 设置Canvas height, i.e. the height (or long side) of the output video. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video height is the same as that of the first video clip on the first video track.
+                     * @param _height Canvas height, i.e. the height (or long side) of the output video. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video height is the same as that of the first video clip on the first video track.
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -141,15 +141,15 @@ Default value: Black.
                     bool m_colorHasBeenSet;
 
                     /**
-                     * Canvas width, that is, the width of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video width is the same as the first video clip of the first video track.
+                     * Canvas width, i.e., the output video width. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video width is the same as that of the first video clip on the first video track.
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Canvas height, that is, the height (or long side) of the output video, value range: 0~3840, unit: px. 
-Default value: 0, which means the video height is consistent with the first video clip of the first video track.
+                     * Canvas height, i.e. the height (or long side) of the output video. Value range: 0–3840. Unit: px.
+Default value: 0, which means the video height is the same as that of the first video clip on the first video track.
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

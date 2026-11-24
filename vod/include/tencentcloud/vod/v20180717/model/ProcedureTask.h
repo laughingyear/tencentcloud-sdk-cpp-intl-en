@@ -40,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video processing task information
+                * Audio/Video processing task information
                 */
                 class ProcedureTask : public AbstractModel
                 {
@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video processing task ID.
-                     * @return TaskId Video processing task ID.
+                     * 获取Media processing task ID.
+                     * @return TaskId Media processing task ID.
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置Video processing task ID.
-                     * @param _taskId Video processing task ID.
+                     * 设置Media processing task ID.
+                     * @param _taskId Media processing task ID.
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -74,22 +74,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @return Status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @param _status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -102,77 +102,65 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Disused. Please use `ErrCode` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Disused. Please use `ErrCode` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 获取Deprecated. Please use the ErrCode of each specific task.
+                     * @return ErrCode Deprecated. Please use the ErrCode of each specific task.
+                     * @deprecated
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Disused. Please use `ErrCode` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Disused. Please use `ErrCode` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 设置Deprecated. Please use the ErrCode of each specific task.
+                     * @param _errCode Deprecated. Please use the ErrCode of each specific task.
+                     * @deprecated
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取Disused. Please use `Message` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Message Disused. Please use `Message` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 获取Deprecated. Please use the Message of each specific task.
+                     * @return Message Deprecated. Please use the Message of each specific task.
+                     * @deprecated
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置Disused. Please use `Message` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _message Disused. Please use `Message` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 设置Deprecated. Please use the Message of each specific task.
+                     * @param _message Deprecated. Please use the Message of each specific task.
+                     * @deprecated
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Media file ID.
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `FileId` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Id` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileId Media file ID.
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `FileId` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Id` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Media file ID
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents the FileId of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Id of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
+                     * @return FileId Media file ID
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents the FileId of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Id of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置Media file ID.
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `FileId` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Id` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileId Media file ID.
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `FileId` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Id` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Media file ID
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents the FileId of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Id of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
+                     * @param _fileId Media file ID
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents the FileId of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Id of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -185,27 +173,23 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Media filename
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.Name` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Name` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileName Media filename
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.Name` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Name` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Media file name
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.Name of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Name of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
+                     * @return FileName Media file name
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.Name of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Name of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置Media filename
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.Name` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Name` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileName Media filename
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.Name` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Name` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Media file name
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.Name of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Name of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
+                     * @param _fileName Media file name
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.Name of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Name of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -219,22 +203,22 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Media file address
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.MediaUrl` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Url` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.MediaUrl of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Url of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * @return FileUrl Media file address
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.MediaUrl` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Url` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.MediaUrl of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Url of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置Media file address
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.MediaUrl` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Url` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.MediaUrl of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Url of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * @param _fileUrl Media file address
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.MediaUrl` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Url` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.MediaUrl of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Url of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -247,15 +231,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Source video metadata.
-                     * @return MetaData Source video metadata.
+                     * 获取Metadata of the original audio/video.
+                     * @return MetaData Metadata of the original audio/video.
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置Source video metadata.
-                     * @param _metaData Source video metadata.
+                     * 设置Metadata of the original audio/video.
+                     * @param _metaData Metadata of the original audio/video.
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -268,19 +252,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of video processing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return MediaProcessResultSet Execution status and result of video processing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Execution status and results of the audio/video processing task.
+                     * @return MediaProcessResultSet Execution status and results of the audio/video processing task.
                      * 
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
-                     * 设置Execution status and result of video processing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _mediaProcessResultSet Execution status and result of video processing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Execution status and results of the audio/video processing task.
+                     * @param _mediaProcessResultSet Execution status and results of the audio/video processing task.
                      * 
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
@@ -293,15 +273,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Status and result of an intelligent recognition task
-                     * @return AiContentReviewResultSet Status and result of an intelligent recognition task
+                     * 获取Execution status and results of a video moderation task.
+                     * @return AiContentReviewResultSet Execution status and results of a video moderation task.
                      * 
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
-                     * 设置Status and result of an intelligent recognition task
-                     * @param _aiContentReviewResultSet Status and result of an intelligent recognition task
+                     * 设置Execution status and results of a video moderation task.
+                     * @param _aiContentReviewResultSet Execution status and results of a video moderation task.
                      * 
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
@@ -314,19 +294,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AiContentReviewResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of video content analysis task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AiAnalysisResultSet Execution status and result of video content analysis task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Execution status and results of an audio/video content analysis task.
+                     * @return AiAnalysisResultSet Execution status and results of an audio/video content analysis task.
                      * 
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
-                     * 设置Execution status and result of video content analysis task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _aiAnalysisResultSet Execution status and result of video content analysis task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Execution status and results of an audio/video content analysis task.
+                     * @param _aiAnalysisResultSet Execution status and results of an audio/video content analysis task.
                      * 
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
@@ -339,19 +315,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AiAnalysisResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of video content recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AiRecognitionResultSet Execution status and result of video content recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Execution status and results of an audio/video content recognition task.
+                     * @return AiRecognitionResultSet Execution status and results of an audio/video content recognition task.
                      * 
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
-                     * 设置Execution status and result of video content recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _aiRecognitionResultSet Execution status and result of video content recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Execution status and results of an audio/video content recognition task.
+                     * @param _aiRecognitionResultSet Execution status and results of an audio/video content recognition task.
                      * 
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
@@ -364,19 +336,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AiRecognitionResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Task flow priority. Value range: [-10, 10].
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TasksPriority Task flow priority. Value range: [-10, 10].
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Priority of the task flow, with a value range of [-10, 10].
+                     * @return TasksPriority Priority of the task flow, with a value range of [-10, 10].
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置Task flow priority. Value range: [-10, 10].
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tasksPriority Task flow priority. Value range: [-10, 10].
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Priority of the task flow, with a value range of [-10, 10].
+                     * @param _tasksPriority Priority of the task flow, with a value range of [-10, 10].
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -389,31 +357,27 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取Notification mode for change in task flow status.
-<li>Finish: an event notification will be initiated only after the task flow is completely executed;</li>
-<li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes; </li>
-<li>None: no callback for the task flow will be accepted.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TasksNotifyMode Notification mode for change in task flow status.
-<li>Finish: an event notification will be initiated only after the task flow is completely executed;</li>
-<li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes; </li>
-<li>None: no callback for the task flow will be accepted.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Task flow status change notification mode.
+<li>Finish: Initiate an event notification only when all task flows are completed;</li>
+<li>Change: As long as the state of each subtask in the task flow changes, an event notification will be sent;</li>
+<li>None: non-acceptance of the task flow callback.</li>
+                     * @return TasksNotifyMode Task flow status change notification mode.
+<li>Finish: Initiate an event notification only when all task flows are completed;</li>
+<li>Change: As long as the state of each subtask in the task flow changes, an event notification will be sent;</li>
+<li>None: non-acceptance of the task flow callback.</li>
                      * 
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
-                     * 设置Notification mode for change in task flow status.
-<li>Finish: an event notification will be initiated only after the task flow is completely executed;</li>
-<li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes; </li>
-<li>None: no callback for the task flow will be accepted.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tasksNotifyMode Notification mode for change in task flow status.
-<li>Finish: an event notification will be initiated only after the task flow is completely executed;</li>
-<li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes; </li>
-<li>None: no callback for the task flow will be accepted.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Task flow status change notification mode.
+<li>Finish: Initiate an event notification only when all task flows are completed;</li>
+<li>Change: As long as the state of each subtask in the task flow changes, an event notification will be sent;</li>
+<li>None: non-acceptance of the task flow callback.</li>
+                     * @param _tasksNotifyMode Task flow status change notification mode.
+<li>Finish: Initiate an event notification only when all task flows are completed;</li>
+<li>Change: As long as the state of each subtask in the task flow changes, an event notification will be sent;</li>
+<li>None: non-acceptance of the task flow callback.</li>
                      * 
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
@@ -426,19 +390,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TasksNotifyModeHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -451,19 +411,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sessionId The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -476,19 +432,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The operator. Valid values:
-<li>`SYSTEM`: The task is triggered by the system.</li>
-                     * @return Operator The operator. Valid values:
-<li>`SYSTEM`: The task is triggered by the system.</li>
+                     * 获取Operator. Value range:
+<li>System: indicates a system trigger.</li>
+                     * @return Operator Operator. Value range:
+<li>System: indicates a system trigger.</li>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置The operator. Valid values:
-<li>`SYSTEM`: The task is triggered by the system.</li>
-                     * @param _operator The operator. Valid values:
-<li>`SYSTEM`: The task is triggered by the system.</li>
+                     * 设置Operator. Value range:
+<li>System: indicates a system trigger.</li>
+                     * @param _operator Operator. Value range:
+<li>System: indicates a system trigger.</li>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -501,19 +457,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取The operation type. Valid values:
-<li>`TSC`: TSC-based smart bitrate reduction</li>
-                     * @return OperationType The operation type. Valid values:
-<li>`TSC`: TSC-based smart bitrate reduction</li>
+                     * 获取Operation type. Valid values:
+<li>TSC: indicates usage of top speed Codec for smart bitrate reduction.</li>
+                     * @return OperationType Operation type. Valid values:
+<li>TSC: indicates usage of top speed Codec for smart bitrate reduction.</li>
                      * 
                      */
                     std::string GetOperationType() const;
 
                     /**
-                     * 设置The operation type. Valid values:
-<li>`TSC`: TSC-based smart bitrate reduction</li>
-                     * @param _operationType The operation type. Valid values:
-<li>`TSC`: TSC-based smart bitrate reduction</li>
+                     * 设置Operation type. Valid values:
+<li>TSC: indicates usage of top speed Codec for smart bitrate reduction.</li>
+                     * @param _operationType Operation type. Valid values:
+<li>TSC: indicates usage of top speed Codec for smart bitrate reduction.</li>
                      * 
                      */
                     void SetOperationType(const std::string& _operationType);
@@ -528,133 +484,122 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Video processing task ID.
+                     * Media processing task ID.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Disused. Please use `ErrCode` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Deprecated. Please use the ErrCode of each specific task.
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * Disused. Please use `Message` of each specific task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Deprecated. Please use the Message of each specific task.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Media file ID.
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `FileId` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Id` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Media file ID
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents the FileId of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Id of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Media filename
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.Name` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Name` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Media file name
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.Name of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Name of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * Media file address
-<li>If the task flow is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the `BasicInfo.MediaUrl` in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo);</li>
-<li>If the task flow is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the `Url` in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo).</li>
+<li>If the process is initiated by [ProcessMedia](https://www.tencentcloud.com/document/product/266/33427?from_cn_redirect=1), this field represents BasicInfo.MediaUrl of [MediaInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInfo);</li>
+<li>If the process is initiated by [ProcessMediaByUrl](https://www.tencentcloud.com/document/product/266/33426?from_cn_redirect=1), this field represents the Url of [MediaInputInfo](https://www.tencentcloud.com/document/product/266/31773?from_cn_redirect=1#MediaInputInfo).</li>
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * Source video metadata.
+                     * Metadata of the original audio/video.
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * Execution status and result of video processing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Execution status and results of the audio/video processing task.
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
-                     * Status and result of an intelligent recognition task
+                     * Execution status and results of a video moderation task.
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;
 
                     /**
-                     * Execution status and result of video content analysis task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Execution status and results of an audio/video content analysis task.
                      */
                     std::vector<AiAnalysisResult> m_aiAnalysisResultSet;
                     bool m_aiAnalysisResultSetHasBeenSet;
 
                     /**
-                     * Execution status and result of video content recognition task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Execution status and results of an audio/video content recognition task.
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;
 
                     /**
-                     * Task flow priority. Value range: [-10, 10].
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Priority of the task flow, with a value range of [-10, 10].
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * Notification mode for change in task flow status.
-<li>Finish: an event notification will be initiated only after the task flow is completely executed;</li>
-<li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes; </li>
-<li>None: no callback for the task flow will be accepted.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Task flow status change notification mode.
+<li>Finish: Initiate an event notification only when all task flows are completed;</li>
+<li>Change: As long as the state of each subtask in the task flow changes, an event notification will be sent;</li>
+<li>None: non-acceptance of the task flow callback.</li>
                      */
                     std::string m_tasksNotifyMode;
                     bool m_tasksNotifyModeHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1,000 characters.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * The ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or a blank string is entered, no deduplication will be performed.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The operator. Valid values:
-<li>`SYSTEM`: The task is triggered by the system.</li>
+                     * Operator. Value range:
+<li>System: indicates a system trigger.</li>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * The operation type. Valid values:
-<li>`TSC`: TSC-based smart bitrate reduction</li>
+                     * Operation type. Valid values:
+<li>TSC: indicates usage of top speed Codec for smart bitrate reduction.</li>
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;

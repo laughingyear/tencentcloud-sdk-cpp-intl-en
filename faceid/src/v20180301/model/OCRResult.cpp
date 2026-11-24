@@ -28,7 +28,11 @@ OCRResult::OCRResult() :
     m_requestIdHasBeenSet(false),
     m_cardCutImageBase64HasBeenSet(false),
     m_cardBackCutImageBase64HasBeenSet(false),
-    m_warnCardInfosHasBeenSet(false)
+    m_warnCardInfosHasBeenSet(false),
+    m_originalCardInfoHasBeenSet(false),
+    m_headImageBase64HasBeenSet(false),
+    m_cardBackImageBase64HasBeenSet(false),
+    m_cardResultStatusHasBeenSet(false)
 {
 }
 
@@ -134,6 +138,46 @@ CoreInternalOutcome OCRResult::Deserialize(const rapidjson::Value &value)
         m_warnCardInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalCardInfo") && !value["OriginalCardInfo"].IsNull())
+    {
+        if (!value["OriginalCardInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRResult.OriginalCardInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalCardInfo = string(value["OriginalCardInfo"].GetString());
+        m_originalCardInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadImageBase64") && !value["HeadImageBase64"].IsNull())
+    {
+        if (!value["HeadImageBase64"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRResult.HeadImageBase64` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_headImageBase64 = string(value["HeadImageBase64"].GetString());
+        m_headImageBase64HasBeenSet = true;
+    }
+
+    if (value.HasMember("CardBackImageBase64") && !value["CardBackImageBase64"].IsNull())
+    {
+        if (!value["CardBackImageBase64"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRResult.CardBackImageBase64` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardBackImageBase64 = string(value["CardBackImageBase64"].GetString());
+        m_cardBackImageBase64HasBeenSet = true;
+    }
+
+    if (value.HasMember("CardResultStatus") && !value["CardResultStatus"].IsNull())
+    {
+        if (!value["CardResultStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRResult.CardResultStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardResultStatus = string(value["CardResultStatus"].GetString());
+        m_cardResultStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +254,38 @@ void OCRResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_originalCardInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalCardInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalCardInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headImageBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headImageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardBackImageBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardBackImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cardBackImageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardResultStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardResultStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cardResultStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -341,5 +417,69 @@ void OCRResult::SetWarnCardInfos(const vector<int64_t>& _warnCardInfos)
 bool OCRResult::WarnCardInfosHasBeenSet() const
 {
     return m_warnCardInfosHasBeenSet;
+}
+
+string OCRResult::GetOriginalCardInfo() const
+{
+    return m_originalCardInfo;
+}
+
+void OCRResult::SetOriginalCardInfo(const string& _originalCardInfo)
+{
+    m_originalCardInfo = _originalCardInfo;
+    m_originalCardInfoHasBeenSet = true;
+}
+
+bool OCRResult::OriginalCardInfoHasBeenSet() const
+{
+    return m_originalCardInfoHasBeenSet;
+}
+
+string OCRResult::GetHeadImageBase64() const
+{
+    return m_headImageBase64;
+}
+
+void OCRResult::SetHeadImageBase64(const string& _headImageBase64)
+{
+    m_headImageBase64 = _headImageBase64;
+    m_headImageBase64HasBeenSet = true;
+}
+
+bool OCRResult::HeadImageBase64HasBeenSet() const
+{
+    return m_headImageBase64HasBeenSet;
+}
+
+string OCRResult::GetCardBackImageBase64() const
+{
+    return m_cardBackImageBase64;
+}
+
+void OCRResult::SetCardBackImageBase64(const string& _cardBackImageBase64)
+{
+    m_cardBackImageBase64 = _cardBackImageBase64;
+    m_cardBackImageBase64HasBeenSet = true;
+}
+
+bool OCRResult::CardBackImageBase64HasBeenSet() const
+{
+    return m_cardBackImageBase64HasBeenSet;
+}
+
+string OCRResult::GetCardResultStatus() const
+{
+    return m_cardResultStatus;
+}
+
+void OCRResult::SetCardResultStatus(const string& _cardResultStatus)
+{
+    m_cardResultStatus = _cardResultStatus;
+    m_cardResultStatusHasBeenSet = true;
+}
+
+bool OCRResult::CardResultStatusHasBeenSet() const
+{
+    return m_cardResultStatusHasBeenSet;
 }
 

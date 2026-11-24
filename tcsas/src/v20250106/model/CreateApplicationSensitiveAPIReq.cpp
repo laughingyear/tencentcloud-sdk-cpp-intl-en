@@ -23,7 +23,8 @@ using namespace std;
 CreateApplicationSensitiveAPIReq::CreateApplicationSensitiveAPIReq() :
     m_aPINameHasBeenSet(false),
     m_aPIDescHasBeenSet(false),
-    m_aPITypeHasBeenSet(false)
+    m_aPITypeHasBeenSet(false),
+    m_useScopeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CreateApplicationSensitiveAPIReq::Deserialize(const rapidjso
         m_aPITypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UseScope") && !value["UseScope"].IsNull())
+    {
+        if (!value["UseScope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateApplicationSensitiveAPIReq.UseScope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useScope = value["UseScope"].GetUint64();
+        m_useScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CreateApplicationSensitiveAPIReq::ToJsonObject(rapidjson::Value &value, rap
         string key = "APIType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aPIType, allocator);
+    }
+
+    if (m_useScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useScope, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CreateApplicationSensitiveAPIReq::SetAPIType(const int64_t& _aPIType)
 bool CreateApplicationSensitiveAPIReq::APITypeHasBeenSet() const
 {
     return m_aPITypeHasBeenSet;
+}
+
+uint64_t CreateApplicationSensitiveAPIReq::GetUseScope() const
+{
+    return m_useScope;
+}
+
+void CreateApplicationSensitiveAPIReq::SetUseScope(const uint64_t& _useScope)
+{
+    m_useScope = _useScope;
+    m_useScopeHasBeenSet = true;
+}
+
+bool CreateApplicationSensitiveAPIReq::UseScopeHasBeenSet() const
+{
+    return m_useScopeHasBeenSet;
 }
 

@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Topic list
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Result Topic list
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Topic list</p>
+                     * @return Result <p>Topic list</p>
                      * 
                      */
                     DescribeDatahubTopicsResp GetResult() const;
@@ -63,8 +61,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Topic list
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Topic list</p>
                      */
                     DescribeDatahubTopicsResp m_result;
                     bool m_resultHasBeenSet;

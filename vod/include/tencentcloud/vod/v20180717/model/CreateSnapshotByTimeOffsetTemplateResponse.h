@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of a time point screencapturing template.
-                     * @return Definition Unique ID of a time point screencapturing template.
+                     * 获取<p>Time point screenshot template unique identifier.</p>
+                     * @return Definition <p>Time point screenshot template unique identifier.</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Unique ID of a time point screencapturing template.
+                     * <p>Time point screenshot template unique identifier.</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

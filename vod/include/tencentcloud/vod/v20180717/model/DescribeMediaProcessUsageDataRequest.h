@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Start date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
-                     * @return StartTime Start date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * 获取Start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
+                     * @return StartTime Start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置Start date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
-                     * @param _startTime Start date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * 设置Start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
+                     * @param _startTime Start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取End date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). The end date must be on or after the start date.
-                     * @return EndTime End date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). The end date must be on or after the start date.
+                     * 获取End date, which should be greater than or equal to the start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
+                     * @return EndTime End date, which should be greater than or equal to the start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置End date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). The end date must be on or after the start date.
-                     * @param _endTime End date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). The end date must be on or after the start date.
+                     * 设置End date, which should be greater than or equal to the start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
+                     * @param _endTime End date, which should be greater than or equal to the start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be set to the app ID.</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be set to the app ID.</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be set to the app ID.</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be set to the app ID.</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -106,87 +106,163 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Query the video processing task type. Currently supported task types include:
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing : Video editing</li>
-<li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li> li>
-<li> ContentRecognition: Content recognition</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
-<li> AddTraceWatermark: Add watermark </li>
-<li> RebuildMedia: Rebirth of audio and video quality</li>
-<li> QualityInspect: Media quality inspection</li>
-<li> VideoHighlight: Smart video collection</li>
-< li> VideoTag: Video smart tag</li>
-<li> VideoClassification: Video smart classification</li>
-<li> VideoCover: Video smart cover</li>
-<li> VideoSegment: Video smart split </li>
-<li>Transcode: transcoding, including normal transcoding, high-speed HD and video editing (not recommended)</li>
-                     * @return Type Query the video processing task type. Currently supported task types include:
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing : Video editing</li>
-<li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li> li>
-<li> ContentRecognition: Content recognition</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
-<li> AddTraceWatermark: Add watermark </li>
-<li> RebuildMedia: Rebirth of audio and video quality</li>
-<li> QualityInspect: Media quality inspection</li>
-<li> VideoHighlight: Smart video collection</li>
-< li> VideoTag: Video smart tag</li>
-<li> VideoClassification: Video smart classification</li>
-<li> VideoCover: Video smart cover</li>
-<li> VideoSegment: Video smart split </li>
-<li>Transcode: transcoding, including normal transcoding, high-speed HD and video editing (not recommended)</li>
+                     * 获取Query video processing task type. Currently supported task types include:
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: remove watermark</li>
+<li> ExtractTraceWatermark: extract watermark</li>
+<li> AddTraceWatermark: Add watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li> VideoHighlight: video intelligent highlights</li>
+<li> VideoTag: video intelligent tag</li>
+<li> VideoClassification: video intelligent classification</li>
+<li> VideoCover: video intelligent cover.</li>
+<li> VideoSegment: video intelligent splitting.</li>
+<li> VideoProduce: video production</li>
+<li> MediaCast: media forwarding.</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommend)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+<li>MediaEnhancement: audio and video enhancement</li>
+<li>ImageCompression: image compression</li>
+<li>ImageEnhancement: image enhancement.</li>
+<li>ImageSuperResolution: image super resolution.</li>
+<li>ImageAdvanceCompression: image advanced compression.</li>
+<li>ImageUnderstanding: image understanding.</li>
+<li>AddTraceWatermark: Add traceability watermark</li>
+<li>AddBlindWatermark: Add blind watermark</li>
+<li>AddNagraWatermark: Add NAGRA digital watermark</li>
+<li>ExtractTraceWatermark: extract traceability watermark.</li>
+<li>ExtractBlindWatermark: extract a blind watermark.</li>
+<li>ExtractNagraWatermark: Extract NAGRA digital watermark</li>
+
+                     * @return Type Query video processing task type. Currently supported task types include:
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: remove watermark</li>
+<li> ExtractTraceWatermark: extract watermark</li>
+<li> AddTraceWatermark: Add watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li> VideoHighlight: video intelligent highlights</li>
+<li> VideoTag: video intelligent tag</li>
+<li> VideoClassification: video intelligent classification</li>
+<li> VideoCover: video intelligent cover.</li>
+<li> VideoSegment: video intelligent splitting.</li>
+<li> VideoProduce: video production</li>
+<li> MediaCast: media forwarding.</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommend)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+<li>MediaEnhancement: audio and video enhancement</li>
+<li>ImageCompression: image compression</li>
+<li>ImageEnhancement: image enhancement.</li>
+<li>ImageSuperResolution: image super resolution.</li>
+<li>ImageAdvanceCompression: image advanced compression.</li>
+<li>ImageUnderstanding: image understanding.</li>
+<li>AddTraceWatermark: Add traceability watermark</li>
+<li>AddBlindWatermark: Add blind watermark</li>
+<li>AddNagraWatermark: Add NAGRA digital watermark</li>
+<li>ExtractTraceWatermark: extract traceability watermark.</li>
+<li>ExtractBlindWatermark: extract a blind watermark.</li>
+<li>ExtractNagraWatermark: Extract NAGRA digital watermark</li>
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Query the video processing task type. Currently supported task types include:
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing : Video editing</li>
-<li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li> li>
-<li> ContentRecognition: Content recognition</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
-<li> AddTraceWatermark: Add watermark </li>
-<li> RebuildMedia: Rebirth of audio and video quality</li>
-<li> QualityInspect: Media quality inspection</li>
-<li> VideoHighlight: Smart video collection</li>
-< li> VideoTag: Video smart tag</li>
-<li> VideoClassification: Video smart classification</li>
-<li> VideoCover: Video smart cover</li>
-<li> VideoSegment: Video smart split </li>
-<li>Transcode: transcoding, including normal transcoding, high-speed HD and video editing (not recommended)</li>
-                     * @param _type Query the video processing task type. Currently supported task types include:
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing : Video editing</li>
-<li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li> li>
-<li> ContentRecognition: Content recognition</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
-<li> AddTraceWatermark: Add watermark </li>
-<li> RebuildMedia: Rebirth of audio and video quality</li>
-<li> QualityInspect: Media quality inspection</li>
-<li> VideoHighlight: Smart video collection</li>
-< li> VideoTag: Video smart tag</li>
-<li> VideoClassification: Video smart classification</li>
-<li> VideoCover: Video smart cover</li>
-<li> VideoSegment: Video smart split </li>
-<li>Transcode: transcoding, including normal transcoding, high-speed HD and video editing (not recommended)</li>
+                     * 设置Query video processing task type. Currently supported task types include:
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: remove watermark</li>
+<li> ExtractTraceWatermark: extract watermark</li>
+<li> AddTraceWatermark: Add watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li> VideoHighlight: video intelligent highlights</li>
+<li> VideoTag: video intelligent tag</li>
+<li> VideoClassification: video intelligent classification</li>
+<li> VideoCover: video intelligent cover.</li>
+<li> VideoSegment: video intelligent splitting.</li>
+<li> VideoProduce: video production</li>
+<li> MediaCast: media forwarding.</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommend)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+<li>MediaEnhancement: audio and video enhancement</li>
+<li>ImageCompression: image compression</li>
+<li>ImageEnhancement: image enhancement.</li>
+<li>ImageSuperResolution: image super resolution.</li>
+<li>ImageAdvanceCompression: image advanced compression.</li>
+<li>ImageUnderstanding: image understanding.</li>
+<li>AddTraceWatermark: Add traceability watermark</li>
+<li>AddBlindWatermark: Add blind watermark</li>
+<li>AddNagraWatermark: Add NAGRA digital watermark</li>
+<li>ExtractTraceWatermark: extract traceability watermark.</li>
+<li>ExtractBlindWatermark: extract a blind watermark.</li>
+<li>ExtractNagraWatermark: Extract NAGRA digital watermark</li>
+
+                     * @param _type Query video processing task type. Currently supported task types include:
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: remove watermark</li>
+<li> ExtractTraceWatermark: extract watermark</li>
+<li> AddTraceWatermark: Add watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li> VideoHighlight: video intelligent highlights</li>
+<li> VideoTag: video intelligent tag</li>
+<li> VideoClassification: video intelligent classification</li>
+<li> VideoCover: video intelligent cover.</li>
+<li> VideoSegment: video intelligent splitting.</li>
+<li> VideoProduce: video production</li>
+<li> MediaCast: media forwarding.</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommend)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+<li>MediaEnhancement: audio and video enhancement</li>
+<li>ImageCompression: image compression</li>
+<li>ImageEnhancement: image enhancement.</li>
+<li>ImageSuperResolution: image super resolution.</li>
+<li>ImageAdvanceCompression: image advanced compression.</li>
+<li>ImageUnderstanding: image understanding.</li>
+<li>AddTraceWatermark: Add traceability watermark</li>
+<li>AddBlindWatermark: Add blind watermark</li>
+<li>AddNagraWatermark: Add NAGRA digital watermark</li>
+<li>ExtractTraceWatermark: extract traceability watermark.</li>
+<li>ExtractBlindWatermark: extract a blind watermark.</li>
+<li>ExtractNagraWatermark: Extract NAGRA digital watermark</li>
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -201,43 +277,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Start date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * Start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * End date in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). The end date must be on or after the start date.
+                     * End date, which should be greater than or equal to the start date. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#52).
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD services after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be set to the app ID.</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Query the video processing task type. Currently supported task types include:
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing : Video editing</li>
-<li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li> li>
-<li> ContentRecognition: Content recognition</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
-<li> AddTraceWatermark: Add watermark </li>
-<li> RebuildMedia: Rebirth of audio and video quality</li>
-<li> QualityInspect: Media quality inspection</li>
-<li> VideoHighlight: Smart video collection</li>
-< li> VideoTag: Video smart tag</li>
-<li> VideoClassification: Video smart classification</li>
-<li> VideoCover: Video smart cover</li>
-<li> VideoSegment: Video smart split </li>
-<li>Transcode: transcoding, including normal transcoding, high-speed HD and video editing (not recommended)</li>
+                     * Query video processing task type. Currently supported task types include:
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: remove watermark</li>
+<li> ExtractTraceWatermark: extract watermark</li>
+<li> AddTraceWatermark: Add watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li> VideoHighlight: video intelligent highlights</li>
+<li> VideoTag: video intelligent tag</li>
+<li> VideoClassification: video intelligent classification</li>
+<li> VideoCover: video intelligent cover.</li>
+<li> VideoSegment: video intelligent splitting.</li>
+<li> VideoProduce: video production</li>
+<li> MediaCast: media forwarding.</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommend)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+<li>MediaEnhancement: audio and video enhancement</li>
+<li>ImageCompression: image compression</li>
+<li>ImageEnhancement: image enhancement.</li>
+<li>ImageSuperResolution: image super resolution.</li>
+<li>ImageAdvanceCompression: image advanced compression.</li>
+<li>ImageUnderstanding: image understanding.</li>
+<li>AddTraceWatermark: Add traceability watermark</li>
+<li>AddBlindWatermark: Add blind watermark</li>
+<li>AddNagraWatermark: Add NAGRA digital watermark</li>
+<li>ExtractTraceWatermark: extract traceability watermark.</li>
+<li>ExtractBlindWatermark: extract a blind watermark.</li>
+<li>ExtractNagraWatermark: Extract NAGRA digital watermark</li>
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

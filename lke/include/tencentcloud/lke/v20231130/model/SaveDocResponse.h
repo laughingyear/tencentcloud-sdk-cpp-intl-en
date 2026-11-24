@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ErrorLinkTextHasBeenSet() const;
 
+                    /**
+                     * 获取Duplication type. 0 means no duplication; for other values, refer to the CheckType field of the input parameter DuplicateFileHandle  structure.
+                     * @return DuplicateFileCheckType Duplication type. 0 means no duplication; for other values, refer to the CheckType field of the input parameter DuplicateFileHandle  structure.
+                     * 
+                     */
+                    uint64_t GetDuplicateFileCheckType() const;
+
+                    /**
+                     * 判断参数 DuplicateFileCheckType 是否已赋值
+                     * @return DuplicateFileCheckType 是否已赋值
+                     * 
+                     */
+                    bool DuplicateFileCheckTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_errorLinkText;
                     bool m_errorLinkTextHasBeenSet;
+
+                    /**
+                     * Duplication type. 0 means no duplication; for other values, refer to the CheckType field of the input parameter DuplicateFileHandle  structure.
+                     */
+                    uint64_t m_duplicateFileCheckType;
+                    bool m_duplicateFileCheckTypeHasBeenSet;
 
                 };
             }

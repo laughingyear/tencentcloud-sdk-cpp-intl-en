@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/teo/v20220901/model/ApplyFreeCertificateRequest.h>
+#include <tencentcloud/teo/v20220901/model/ApplyFreeCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindSharedCNAMERequest.h>
@@ -31,6 +33,10 @@
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/CheckFreeCertificateVerificationRequest.h>
+#include <tencentcloud/teo/v20220901/model/CheckFreeCertificateVerificationResponse.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateRequest.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainRequest.h>
@@ -47,14 +53,26 @@
 #include <tencentcloud/teo/v20220901/model/CreateConfigGroupVersionResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateContentIdentifierRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateContentIdentifierResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateCustomGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateDnsRecordRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateDnsRecordResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateEdgeKVNamespaceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateEdgeKVNamespaceResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceAPITokenRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceAPITokenResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h>
@@ -63,6 +81,14 @@
 #include <tencentcloud/teo/v20220901/model/CreateL7AccRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateLoadBalancerResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateLogAnalysisDownloadTaskRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateLogAnalysisDownloadTaskResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewayRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewayResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewayLineRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewayLineResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewaySecretKeyRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateMultiPathGatewaySecretKeyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreatePlanRequest.h>
@@ -77,10 +103,20 @@
 #include <tencentcloud/teo/v20220901/model/CreateRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSharedCNAMERequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSharedCNAMEResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateWebSecurityTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateWebSecurityTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteAccelerationDomainsRequest.h>
@@ -95,12 +131,22 @@
 #include <tencentcloud/teo/v20220901/model/DeleteContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteCustomGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteEdgeKVNamespaceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteEdgeKVNamespaceResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteInferenceAPITokenRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteInferenceAPITokenResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesRequest.h>
@@ -109,16 +155,30 @@
 #include <tencentcloud/teo/v20220901/model/DeleteL7AccRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteMultiPathGatewayRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteMultiPathGatewayResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteMultiPathGatewayLineRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteMultiPathGatewayLineResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMERequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteSharedCNAMEResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteWebSecurityTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteWebSecurityTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeployConfigGroupVersionRequest.h>
@@ -129,6 +189,10 @@
 #include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h>
@@ -143,20 +207,34 @@
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupReferencesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupReferencesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDDoSProtectionRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDDoSProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDeployHistoryRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDeployHistoryResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeEdgeKVNamespacesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeEdgeKVNamespacesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionComponentBindingsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionComponentBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionReplicasRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionReplicasResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRuntimeEnvironmentRequest.h>
@@ -165,10 +243,26 @@
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeIPGroupReferencesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeIPGroupReferencesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIPRegionRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIPRegionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceAPITokensRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceAPITokensResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceHardwareSpecificationsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceHardwareSpecificationsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentLogsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentLogsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentRecordsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentRecordsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceMonitorDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceMonitorDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServicesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceServicesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeJustInTimeTranscodeTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesRequest.h>
@@ -179,6 +273,22 @@
 #include <tencentcloud/teo/v20220901/model/DescribeL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDetailRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDetailResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDownloadTasksRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDownloadTasksResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayLineRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayLineResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayOriginACLRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayOriginACLResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRegionsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRegionsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaySecretKeyResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaysRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaysResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginACLRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
@@ -189,6 +299,10 @@
 #include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribePlansRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribePlansResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h>
@@ -199,26 +313,50 @@
 #include <tencentcloud/teo/v20220901/model/DescribeRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupContentRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupContentResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMEResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingFunctionAnalysisDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingFunctionAnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTopFunctionAnalysisDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTopFunctionAnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplateResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZonesRequest.h>
@@ -231,6 +369,14 @@
 #include <tencentcloud/teo/v20220901/model/DownloadL4LogsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL7LogsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DownloadL7LogsResponse.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVDeleteRequest.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVDeleteResponse.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVGetRequest.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVGetResponse.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVListRequest.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVListResponse.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVPutRequest.h>
+#include <tencentcloud/teo/v20220901/model/EdgeKVPutResponse.h>
 #include <tencentcloud/teo/v20220901/model/EnableOriginACLRequest.h>
 #include <tencentcloud/teo/v20220901/model/EnableOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ExportZoneConfigRequest.h>
@@ -263,18 +409,30 @@
 #include <tencentcloud/teo/v20220901/model/ModifyContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyCustomGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyEdgeKVNamespaceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyEdgeKVNamespaceResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionComponentBindingsRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionComponentBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyHostsCertificateRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyInferenceServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyInferenceServiceResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesRequest.h>
@@ -291,26 +449,56 @@
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewaySecretKeyRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewaySecretKeyResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginACLRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyPrefetchOriginLimitRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyPrefetchOriginLimitResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIResourceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIResourceResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityAPIServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityClientAttesterRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityClientAttesterResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityJSInjectionRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySharedCNAMEResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneWorkModeRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneWorkModeResponse.h>
+#include <tencentcloud/teo/v20220901/model/OperateInferenceServiceRequest.h>
+#include <tencentcloud/teo/v20220901/model/OperateInferenceServiceResponse.h>
+#include <tencentcloud/teo/v20220901/model/RefreshMultiPathGatewaySecretKeyRequest.h>
+#include <tencentcloud/teo/v20220901/model/RefreshMultiPathGatewaySecretKeyResponse.h>
 #include <tencentcloud/teo/v20220901/model/RenewPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/RenewPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/UpgradePlanRequest.h>
@@ -331,6 +519,9 @@ namespace TencentCloud
                 TeoClient(const Credential &credential, const std::string &region);
                 TeoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyFreeCertificateResponse> ApplyFreeCertificateOutcome;
+                typedef std::future<ApplyFreeCertificateOutcome> ApplyFreeCertificateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ApplyFreeCertificateRequest&, ApplyFreeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFreeCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindSecurityTemplateToEntityResponse> BindSecurityTemplateToEntityOutcome;
                 typedef std::future<BindSecurityTemplateToEntityOutcome> BindSecurityTemplateToEntityOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindSecurityTemplateToEntityRequest&, BindSecurityTemplateToEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSecurityTemplateToEntityAsyncHandler;
@@ -343,6 +534,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCnameStatusResponse> CheckCnameStatusOutcome;
                 typedef std::future<CheckCnameStatusOutcome> CheckCnameStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCnameStatusRequest&, CheckCnameStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCnameStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckFreeCertificateVerificationResponse> CheckFreeCertificateVerificationOutcome;
+                typedef std::future<CheckFreeCertificateVerificationOutcome> CheckFreeCertificateVerificationOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CheckFreeCertificateVerificationRequest&, CheckFreeCertificateVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFreeCertificateVerificationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConfirmMultiPathGatewayOriginACLResponse> ConfirmMultiPathGatewayOriginACLOutcome;
+                typedef std::future<ConfirmMultiPathGatewayOriginACLOutcome> ConfirmMultiPathGatewayOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ConfirmMultiPathGatewayOriginACLRequest&, ConfirmMultiPathGatewayOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmMultiPathGatewayOriginACLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConfirmOriginACLUpdateResponse> ConfirmOriginACLUpdateOutcome;
                 typedef std::future<ConfirmOriginACLUpdateOutcome> ConfirmOriginACLUpdateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ConfirmOriginACLUpdateRequest&, ConfirmOriginACLUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmOriginACLUpdateAsyncHandler;
@@ -367,18 +564,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateContentIdentifierResponse> CreateContentIdentifierOutcome;
                 typedef std::future<CreateContentIdentifierOutcome> CreateContentIdentifierOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateContentIdentifierRequest&, CreateContentIdentifierOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentIdentifierAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomGroupResponse> CreateCustomGroupOutcome;
+                typedef std::future<CreateCustomGroupOutcome> CreateCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateCustomGroupRequest&, CreateCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomizeErrorPageResponse> CreateCustomizeErrorPageOutcome;
                 typedef std::future<CreateCustomizeErrorPageOutcome> CreateCustomizeErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateCustomizeErrorPageRequest&, CreateCustomizeErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizeErrorPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDnsRecordResponse> CreateDnsRecordOutcome;
                 typedef std::future<CreateDnsRecordOutcome> CreateDnsRecordOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateDnsRecordRequest&, CreateDnsRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDnsRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEdgeKVNamespaceResponse> CreateEdgeKVNamespaceOutcome;
+                typedef std::future<CreateEdgeKVNamespaceOutcome> CreateEdgeKVNamespaceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateEdgeKVNamespaceRequest&, CreateEdgeKVNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeKVNamespaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFunctionReplicaResponse> CreateFunctionReplicaOutcome;
+                typedef std::future<CreateFunctionReplicaOutcome> CreateFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateFunctionReplicaRequest&, CreateFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFunctionRuleResponse> CreateFunctionRuleOutcome;
                 typedef std::future<CreateFunctionRuleOutcome> CreateFunctionRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRuleRequest&, CreateFunctionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferenceAPITokenResponse> CreateInferenceAPITokenOutcome;
+                typedef std::future<CreateInferenceAPITokenOutcome> CreateInferenceAPITokenOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateInferenceAPITokenRequest&, CreateInferenceAPITokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceAPITokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferenceServiceResponse> CreateInferenceServiceOutcome;
+                typedef std::future<CreateInferenceServiceOutcome> CreateInferenceServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateInferenceServiceRequest&, CreateInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
+                typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateL4ProxyResponse> CreateL4ProxyOutcome;
                 typedef std::future<CreateL4ProxyOutcome> CreateL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateL4ProxyRequest&, CreateL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4ProxyAsyncHandler;
@@ -391,6 +606,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLoadBalancerResponse> CreateLoadBalancerOutcome;
                 typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateLoadBalancerRequest&, CreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLogAnalysisDownloadTaskResponse> CreateLogAnalysisDownloadTaskOutcome;
+                typedef std::future<CreateLogAnalysisDownloadTaskOutcome> CreateLogAnalysisDownloadTaskOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateLogAnalysisDownloadTaskRequest&, CreateLogAnalysisDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogAnalysisDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMultiPathGatewayResponse> CreateMultiPathGatewayOutcome;
+                typedef std::future<CreateMultiPathGatewayOutcome> CreateMultiPathGatewayOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateMultiPathGatewayRequest&, CreateMultiPathGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiPathGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMultiPathGatewayLineResponse> CreateMultiPathGatewayLineOutcome;
+                typedef std::future<CreateMultiPathGatewayLineOutcome> CreateMultiPathGatewayLineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateMultiPathGatewayLineRequest&, CreateMultiPathGatewayLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiPathGatewayLineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMultiPathGatewaySecretKeyResponse> CreateMultiPathGatewaySecretKeyOutcome;
+                typedef std::future<CreateMultiPathGatewaySecretKeyOutcome> CreateMultiPathGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateMultiPathGatewaySecretKeyRequest&, CreateMultiPathGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiPathGatewaySecretKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOriginGroupResponse> CreateOriginGroupOutcome;
                 typedef std::future<CreateOriginGroupOutcome> CreateOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateOriginGroupRequest&, CreateOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOriginGroupAsyncHandler;
@@ -412,12 +639,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityAPIResourceResponse> CreateSecurityAPIResourceOutcome;
+                typedef std::future<CreateSecurityAPIResourceOutcome> CreateSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityAPIResourceRequest&, CreateSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityAPIServiceResponse> CreateSecurityAPIServiceOutcome;
+                typedef std::future<CreateSecurityAPIServiceOutcome> CreateSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityAPIServiceRequest&, CreateSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityClientAttesterResponse> CreateSecurityClientAttesterOutcome;
+                typedef std::future<CreateSecurityClientAttesterOutcome> CreateSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityClientAttesterRequest&, CreateSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityIPGroupResponse> CreateSecurityIPGroupOutcome;
                 typedef std::future<CreateSecurityIPGroupOutcome> CreateSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSecurityIPGroupRequest&, CreateSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityJSInjectionRuleResponse> CreateSecurityJSInjectionRuleOutcome;
+                typedef std::future<CreateSecurityJSInjectionRuleOutcome> CreateSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityJSInjectionRuleRequest&, CreateSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSharedCNAMEResponse> CreateSharedCNAMEOutcome;
                 typedef std::future<CreateSharedCNAMEOutcome> CreateSharedCNAMEOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSharedCNAMERequest&, CreateSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSharedCNAMEAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWebSecurityTemplateResponse> CreateWebSecurityTemplateOutcome;
+                typedef std::future<CreateWebSecurityTemplateOutcome> CreateWebSecurityTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateWebSecurityTemplateRequest&, CreateWebSecurityTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebSecurityTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateZoneResponse> CreateZoneOutcome;
                 typedef std::future<CreateZoneOutcome> CreateZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateZoneRequest&, CreateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateZoneAsyncHandler;
@@ -439,15 +681,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCustomErrorPageResponse> DeleteCustomErrorPageOutcome;
                 typedef std::future<DeleteCustomErrorPageOutcome> DeleteCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteCustomErrorPageRequest&, DeleteCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomGroupResponse> DeleteCustomGroupOutcome;
+                typedef std::future<DeleteCustomGroupOutcome> DeleteCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteCustomGroupRequest&, DeleteCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDnsRecordsResponse> DeleteDnsRecordsOutcome;
                 typedef std::future<DeleteDnsRecordsOutcome> DeleteDnsRecordsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteDnsRecordsRequest&, DeleteDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDnsRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEdgeKVNamespaceResponse> DeleteEdgeKVNamespaceOutcome;
+                typedef std::future<DeleteEdgeKVNamespaceOutcome> DeleteEdgeKVNamespaceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteEdgeKVNamespaceRequest&, DeleteEdgeKVNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeKVNamespaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFunctionReplicaResponse> DeleteFunctionReplicaOutcome;
+                typedef std::future<DeleteFunctionReplicaOutcome> DeleteFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteFunctionReplicaRequest&, DeleteFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFunctionRulesResponse> DeleteFunctionRulesOutcome;
                 typedef std::future<DeleteFunctionRulesOutcome> DeleteFunctionRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRulesRequest&, DeleteFunctionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInferenceAPITokenResponse> DeleteInferenceAPITokenOutcome;
+                typedef std::future<DeleteInferenceAPITokenOutcome> DeleteInferenceAPITokenOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteInferenceAPITokenRequest&, DeleteInferenceAPITokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInferenceAPITokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplatesResponse> DeleteJustInTimeTranscodeTemplatesOutcome;
+                typedef std::future<DeleteJustInTimeTranscodeTemplatesOutcome> DeleteJustInTimeTranscodeTemplatesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteJustInTimeTranscodeTemplatesRequest&, DeleteJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteL4ProxyResponse> DeleteL4ProxyOutcome;
                 typedef std::future<DeleteL4ProxyOutcome> DeleteL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteL4ProxyRequest&, DeleteL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL4ProxyAsyncHandler;
@@ -460,6 +717,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLoadBalancerResponse> DeleteLoadBalancerOutcome;
                 typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteLoadBalancerRequest&, DeleteLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMultiPathGatewayResponse> DeleteMultiPathGatewayOutcome;
+                typedef std::future<DeleteMultiPathGatewayOutcome> DeleteMultiPathGatewayOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteMultiPathGatewayRequest&, DeleteMultiPathGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMultiPathGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMultiPathGatewayLineResponse> DeleteMultiPathGatewayLineOutcome;
+                typedef std::future<DeleteMultiPathGatewayLineOutcome> DeleteMultiPathGatewayLineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteMultiPathGatewayLineRequest&, DeleteMultiPathGatewayLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMultiPathGatewayLineAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOriginGroupResponse> DeleteOriginGroupOutcome;
                 typedef std::future<DeleteOriginGroupOutcome> DeleteOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteOriginGroupRequest&, DeleteOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOriginGroupAsyncHandler;
@@ -469,12 +732,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRulesResponse> DeleteRulesOutcome;
                 typedef std::future<DeleteRulesOutcome> DeleteRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteRulesRequest&, DeleteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityAPIResourceResponse> DeleteSecurityAPIResourceOutcome;
+                typedef std::future<DeleteSecurityAPIResourceOutcome> DeleteSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityAPIResourceRequest&, DeleteSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityAPIServiceResponse> DeleteSecurityAPIServiceOutcome;
+                typedef std::future<DeleteSecurityAPIServiceOutcome> DeleteSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityAPIServiceRequest&, DeleteSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityClientAttesterResponse> DeleteSecurityClientAttesterOutcome;
+                typedef std::future<DeleteSecurityClientAttesterOutcome> DeleteSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityClientAttesterRequest&, DeleteSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityIPGroupResponse> DeleteSecurityIPGroupOutcome;
                 typedef std::future<DeleteSecurityIPGroupOutcome> DeleteSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteSecurityIPGroupRequest&, DeleteSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityJSInjectionRuleResponse> DeleteSecurityJSInjectionRuleOutcome;
+                typedef std::future<DeleteSecurityJSInjectionRuleOutcome> DeleteSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityJSInjectionRuleRequest&, DeleteSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSharedCNAMEResponse> DeleteSharedCNAMEOutcome;
                 typedef std::future<DeleteSharedCNAMEOutcome> DeleteSharedCNAMEOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteSharedCNAMERequest&, DeleteSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSharedCNAMEAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWebSecurityTemplateResponse> DeleteWebSecurityTemplateOutcome;
+                typedef std::future<DeleteWebSecurityTemplateOutcome> DeleteWebSecurityTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteWebSecurityTemplateRequest&, DeleteWebSecurityTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebSecurityTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteZoneResponse> DeleteZoneOutcome;
                 typedef std::future<DeleteZoneOutcome> DeleteZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteZoneRequest&, DeleteZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZoneAsyncHandler;
@@ -490,6 +768,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationProxiesResponse> DescribeApplicationProxiesOutcome;
                 typedef std::future<DescribeApplicationProxiesOutcome> DescribeApplicationProxiesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeApplicationProxiesRequest&, DescribeApplicationProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationProxiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailableCustomActionsForRuleEngineResponse> DescribeAvailableCustomActionsForRuleEngineOutcome;
+                typedef std::future<DescribeAvailableCustomActionsForRuleEngineOutcome> DescribeAvailableCustomActionsForRuleEngineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAvailableCustomActionsForRuleEngineRequest&, DescribeAvailableCustomActionsForRuleEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableCustomActionsForRuleEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailableOriginACLFamilyResponse> DescribeAvailableOriginACLFamilyOutcome;
+                typedef std::future<DescribeAvailableOriginACLFamilyOutcome> DescribeAvailableOriginACLFamilyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAvailableOriginACLFamilyRequest&, DescribeAvailableOriginACLFamilyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableOriginACLFamilyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
                 typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
@@ -511,6 +795,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCustomErrorPagesResponse> DescribeCustomErrorPagesOutcome;
                 typedef std::future<DescribeCustomErrorPagesOutcome> DescribeCustomErrorPagesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeCustomErrorPagesRequest&, DescribeCustomErrorPagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomErrorPagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupResponse> DescribeCustomGroupOutcome;
+                typedef std::future<DescribeCustomGroupOutcome> DescribeCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupRequest&, DescribeCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupReferencesResponse> DescribeCustomGroupReferencesOutcome;
+                typedef std::future<DescribeCustomGroupReferencesOutcome> DescribeCustomGroupReferencesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupReferencesRequest&, DescribeCustomGroupReferencesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupReferencesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupsResponse> DescribeCustomGroupsOutcome;
+                typedef std::future<DescribeCustomGroupsOutcome> DescribeCustomGroupsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupsRequest&, DescribeCustomGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDDoSAttackDataResponse> DescribeDDoSAttackDataOutcome;
                 typedef std::future<DescribeDDoSAttackDataOutcome> DescribeDDoSAttackDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDDoSAttackDataRequest&, DescribeDDoSAttackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackDataAsyncHandler;
@@ -520,6 +813,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDDoSAttackTopDataResponse> DescribeDDoSAttackTopDataOutcome;
                 typedef std::future<DescribeDDoSAttackTopDataOutcome> DescribeDDoSAttackTopDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDDoSAttackTopDataRequest&, DescribeDDoSAttackTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackTopDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDDoSProtectionResponse> DescribeDDoSProtectionOutcome;
+                typedef std::future<DescribeDDoSProtectionOutcome> DescribeDDoSProtectionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeDDoSProtectionRequest&, DescribeDDoSProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefaultCertificatesResponse> DescribeDefaultCertificatesOutcome;
                 typedef std::future<DescribeDefaultCertificatesOutcome> DescribeDefaultCertificatesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDefaultCertificatesRequest&, DescribeDefaultCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultCertificatesAsyncHandler;
@@ -529,9 +825,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDnsRecordsResponse> DescribeDnsRecordsOutcome;
                 typedef std::future<DescribeDnsRecordsOutcome> DescribeDnsRecordsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDnsRecordsRequest&, DescribeDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeKVNamespacesResponse> DescribeEdgeKVNamespacesOutcome;
+                typedef std::future<DescribeEdgeKVNamespacesOutcome> DescribeEdgeKVNamespacesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeEdgeKVNamespacesRequest&, DescribeEdgeKVNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeKVNamespacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFunctionComponentBindingsResponse> DescribeFunctionComponentBindingsOutcome;
+                typedef std::future<DescribeFunctionComponentBindingsOutcome> DescribeFunctionComponentBindingsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeFunctionComponentBindingsRequest&, DescribeFunctionComponentBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionComponentBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFunctionReplicasResponse> DescribeFunctionReplicasOutcome;
+                typedef std::future<DescribeFunctionReplicasOutcome> DescribeFunctionReplicasOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeFunctionReplicasRequest&, DescribeFunctionReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionReplicasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFunctionRulesResponse> DescribeFunctionRulesOutcome;
                 typedef std::future<DescribeFunctionRulesOutcome> DescribeFunctionRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeFunctionRulesRequest&, DescribeFunctionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionRulesAsyncHandler;
@@ -544,12 +849,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHostsSettingResponse> DescribeHostsSettingOutcome;
                 typedef std::future<DescribeHostsSettingOutcome> DescribeHostsSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeHostsSettingRequest&, DescribeHostsSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostsSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPGroupReferencesResponse> DescribeIPGroupReferencesOutcome;
+                typedef std::future<DescribeIPGroupReferencesOutcome> DescribeIPGroupReferencesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeIPGroupReferencesRequest&, DescribeIPGroupReferencesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPGroupReferencesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIPRegionResponse> DescribeIPRegionOutcome;
                 typedef std::future<DescribeIPRegionOutcome> DescribeIPRegionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeIPRegionRequest&, DescribeIPRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPRegionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIdentificationsResponse> DescribeIdentificationsOutcome;
                 typedef std::future<DescribeIdentificationsOutcome> DescribeIdentificationsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeIdentificationsRequest&, DescribeIdentificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdentificationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceAPITokensResponse> DescribeInferenceAPITokensOutcome;
+                typedef std::future<DescribeInferenceAPITokensOutcome> DescribeInferenceAPITokensOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceAPITokensRequest&, DescribeInferenceAPITokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceAPITokensAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceHardwareSpecificationsResponse> DescribeInferenceHardwareSpecificationsOutcome;
+                typedef std::future<DescribeInferenceHardwareSpecificationsOutcome> DescribeInferenceHardwareSpecificationsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceHardwareSpecificationsRequest&, DescribeInferenceHardwareSpecificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceHardwareSpecificationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceServiceDeploymentLogsResponse> DescribeInferenceServiceDeploymentLogsOutcome;
+                typedef std::future<DescribeInferenceServiceDeploymentLogsOutcome> DescribeInferenceServiceDeploymentLogsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceServiceDeploymentLogsRequest&, DescribeInferenceServiceDeploymentLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceServiceDeploymentLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceServiceDeploymentRecordsResponse> DescribeInferenceServiceDeploymentRecordsOutcome;
+                typedef std::future<DescribeInferenceServiceDeploymentRecordsOutcome> DescribeInferenceServiceDeploymentRecordsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceServiceDeploymentRecordsRequest&, DescribeInferenceServiceDeploymentRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceServiceDeploymentRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceServiceMonitorDataResponse> DescribeInferenceServiceMonitorDataOutcome;
+                typedef std::future<DescribeInferenceServiceMonitorDataOutcome> DescribeInferenceServiceMonitorDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceServiceMonitorDataRequest&, DescribeInferenceServiceMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceServiceMonitorDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceServicesResponse> DescribeInferenceServicesOutcome;
+                typedef std::future<DescribeInferenceServicesOutcome> DescribeInferenceServicesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceServicesRequest&, DescribeInferenceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJustInTimeTranscodeTemplatesResponse> DescribeJustInTimeTranscodeTemplatesOutcome;
+                typedef std::future<DescribeJustInTimeTranscodeTemplatesOutcome> DescribeJustInTimeTranscodeTemplatesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeJustInTimeTranscodeTemplatesRequest&, DescribeJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJustInTimeTranscodeTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeL4ProxyResponse> DescribeL4ProxyOutcome;
                 typedef std::future<DescribeL4ProxyOutcome> DescribeL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeL4ProxyRequest&, DescribeL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL4ProxyAsyncHandler;
@@ -565,6 +894,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancerListResponse> DescribeLoadBalancerListOutcome;
                 typedef std::future<DescribeLoadBalancerListOutcome> DescribeLoadBalancerListOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeLoadBalancerListRequest&, DescribeLoadBalancerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogAnalysisDetailResponse> DescribeLogAnalysisDetailOutcome;
+                typedef std::future<DescribeLogAnalysisDetailOutcome> DescribeLogAnalysisDetailOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeLogAnalysisDetailRequest&, DescribeLogAnalysisDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogAnalysisDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogAnalysisDownloadTasksResponse> DescribeLogAnalysisDownloadTasksOutcome;
+                typedef std::future<DescribeLogAnalysisDownloadTasksOutcome> DescribeLogAnalysisDownloadTasksOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeLogAnalysisDownloadTasksRequest&, DescribeLogAnalysisDownloadTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogAnalysisDownloadTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayResponse> DescribeMultiPathGatewayOutcome;
+                typedef std::future<DescribeMultiPathGatewayOutcome> DescribeMultiPathGatewayOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayRequest&, DescribeMultiPathGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayLineResponse> DescribeMultiPathGatewayLineOutcome;
+                typedef std::future<DescribeMultiPathGatewayLineOutcome> DescribeMultiPathGatewayLineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayLineRequest&, DescribeMultiPathGatewayLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayLineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayOriginACLResponse> DescribeMultiPathGatewayOriginACLOutcome;
+                typedef std::future<DescribeMultiPathGatewayOriginACLOutcome> DescribeMultiPathGatewayOriginACLOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayOriginACLRequest&, DescribeMultiPathGatewayOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayOriginACLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayRegionsResponse> DescribeMultiPathGatewayRegionsOutcome;
+                typedef std::future<DescribeMultiPathGatewayRegionsOutcome> DescribeMultiPathGatewayRegionsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayRegionsRequest&, DescribeMultiPathGatewayRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewaySecretKeyResponse> DescribeMultiPathGatewaySecretKeyOutcome;
+                typedef std::future<DescribeMultiPathGatewaySecretKeyOutcome> DescribeMultiPathGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewaySecretKeyRequest&, DescribeMultiPathGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultiPathGatewaysResponse> DescribeMultiPathGatewaysOutcome;
+                typedef std::future<DescribeMultiPathGatewaysOutcome> DescribeMultiPathGatewaysOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewaysRequest&, DescribeMultiPathGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewaysAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOriginACLResponse> DescribeOriginACLOutcome;
                 typedef std::future<DescribeOriginACLOutcome> DescribeOriginACLOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginACLRequest&, DescribeOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginACLAsyncHandler;
@@ -580,6 +933,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewL7DataResponse> DescribeOverviewL7DataOutcome;
                 typedef std::future<DescribeOverviewL7DataOutcome> DescribeOverviewL7DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOverviewL7DataRequest&, DescribeOverviewL7DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewL7DataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlansResponse> DescribePlansOutcome;
+                typedef std::future<DescribePlansOutcome> DescribePlansOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribePlansRequest&, DescribePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlansAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrefetchOriginLimitResponse> DescribePrefetchOriginLimitOutcome;
+                typedef std::future<DescribePrefetchOriginLimitOutcome> DescribePrefetchOriginLimitOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribePrefetchOriginLimitRequest&, DescribePrefetchOriginLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchOriginLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrefetchTasksResponse> DescribePrefetchTasksOutcome;
                 typedef std::future<DescribePrefetchTasksOutcome> DescribePrefetchTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePrefetchTasksRequest&, DescribePrefetchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchTasksAsyncHandler;
@@ -595,18 +954,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRulesSettingResponse> DescribeRulesSettingOutcome;
                 typedef std::future<DescribeRulesSettingOutcome> DescribeRulesSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeRulesSettingRequest&, DescribeRulesSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityAPIResourceResponse> DescribeSecurityAPIResourceOutcome;
+                typedef std::future<DescribeSecurityAPIResourceOutcome> DescribeSecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityAPIResourceRequest&, DescribeSecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityAPIServiceResponse> DescribeSecurityAPIServiceOutcome;
+                typedef std::future<DescribeSecurityAPIServiceOutcome> DescribeSecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityAPIServiceRequest&, DescribeSecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityClientAttesterResponse> DescribeSecurityClientAttesterOutcome;
+                typedef std::future<DescribeSecurityClientAttesterOutcome> DescribeSecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityClientAttesterRequest&, DescribeSecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupResponse> DescribeSecurityIPGroupOutcome;
                 typedef std::future<DescribeSecurityIPGroupOutcome> DescribeSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupRequest&, DescribeSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupContentResponse> DescribeSecurityIPGroupContentOutcome;
+                typedef std::future<DescribeSecurityIPGroupContentOutcome> DescribeSecurityIPGroupContentOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupContentRequest&, DescribeSecurityIPGroupContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupInfoResponse> DescribeSecurityIPGroupInfoOutcome;
                 typedef std::future<DescribeSecurityIPGroupInfoOutcome> DescribeSecurityIPGroupInfoOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupInfoRequest&, DescribeSecurityIPGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityJSInjectionRuleResponse> DescribeSecurityJSInjectionRuleOutcome;
+                typedef std::future<DescribeSecurityJSInjectionRuleOutcome> DescribeSecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityJSInjectionRuleRequest&, DescribeSecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityPolicyResponse> DescribeSecurityPolicyOutcome;
                 typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPolicyRequest&, DescribeSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityTemplateBindingsResponse> DescribeSecurityTemplateBindingsOutcome;
                 typedef std::future<DescribeSecurityTemplateBindingsOutcome> DescribeSecurityTemplateBindingsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityTemplateBindingsRequest&, DescribeSecurityTemplateBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityTemplateBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedCNAMEResponse> DescribeSharedCNAMEOutcome;
+                typedef std::future<DescribeSharedCNAMEOutcome> DescribeSharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSharedCNAMERequest&, DescribeSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedCNAMEAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimingFunctionAnalysisDataResponse> DescribeTimingFunctionAnalysisDataOutcome;
+                typedef std::future<DescribeTimingFunctionAnalysisDataOutcome> DescribeTimingFunctionAnalysisDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTimingFunctionAnalysisDataRequest&, DescribeTimingFunctionAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingFunctionAnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -616,15 +996,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTimingL7CacheDataResponse> DescribeTimingL7CacheDataOutcome;
                 typedef std::future<DescribeTimingL7CacheDataOutcome> DescribeTimingL7CacheDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7CacheDataRequest&, DescribeTimingL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7CacheDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimingL7OriginPullDataResponse> DescribeTimingL7OriginPullDataOutcome;
+                typedef std::future<DescribeTimingL7OriginPullDataOutcome> DescribeTimingL7OriginPullDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7OriginPullDataRequest&, DescribeTimingL7OriginPullDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7OriginPullDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopFunctionAnalysisDataResponse> DescribeTopFunctionAnalysisDataOutcome;
+                typedef std::future<DescribeTopFunctionAnalysisDataOutcome> DescribeTopFunctionAnalysisDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTopFunctionAnalysisDataRequest&, DescribeTopFunctionAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopFunctionAnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7AnalysisDataResponse> DescribeTopL7AnalysisDataOutcome;
                 typedef std::future<DescribeTopL7AnalysisDataOutcome> DescribeTopL7AnalysisDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7AnalysisDataRequest&, DescribeTopL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7AnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7CacheDataResponse> DescribeTopL7CacheDataOutcome;
                 typedef std::future<DescribeTopL7CacheDataOutcome> DescribeTopL7CacheDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7CacheDataRequest&, DescribeTopL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7CacheDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWebSecurityTemplateResponse> DescribeWebSecurityTemplateOutcome;
+                typedef std::future<DescribeWebSecurityTemplateOutcome> DescribeWebSecurityTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeWebSecurityTemplateRequest&, DescribeWebSecurityTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebSecurityTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWebSecurityTemplatesResponse> DescribeWebSecurityTemplatesOutcome;
+                typedef std::future<DescribeWebSecurityTemplatesOutcome> DescribeWebSecurityTemplatesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeWebSecurityTemplatesRequest&, DescribeWebSecurityTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebSecurityTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneConfigImportResultResponse> DescribeZoneConfigImportResultOutcome;
                 typedef std::future<DescribeZoneConfigImportResultOutcome> DescribeZoneConfigImportResultOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneConfigImportResultRequest&, DescribeZoneConfigImportResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneConfigImportResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZoneCustomVariablesResponse> DescribeZoneCustomVariablesOutcome;
+                typedef std::future<DescribeZoneCustomVariablesOutcome> DescribeZoneCustomVariablesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeZoneCustomVariablesRequest&, DescribeZoneCustomVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneCustomVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneSettingResponse> DescribeZoneSettingOutcome;
                 typedef std::future<DescribeZoneSettingOutcome> DescribeZoneSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneSettingRequest&, DescribeZoneSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneSettingAsyncHandler;
@@ -643,6 +1038,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadL7LogsResponse> DownloadL7LogsOutcome;
                 typedef std::future<DownloadL7LogsOutcome> DownloadL7LogsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DownloadL7LogsRequest&, DownloadL7LogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadL7LogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::EdgeKVDeleteResponse> EdgeKVDeleteOutcome;
+                typedef std::future<EdgeKVDeleteOutcome> EdgeKVDeleteOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::EdgeKVDeleteRequest&, EdgeKVDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EdgeKVDeleteAsyncHandler;
+                typedef Outcome<Core::Error, Model::EdgeKVGetResponse> EdgeKVGetOutcome;
+                typedef std::future<EdgeKVGetOutcome> EdgeKVGetOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::EdgeKVGetRequest&, EdgeKVGetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EdgeKVGetAsyncHandler;
+                typedef Outcome<Core::Error, Model::EdgeKVListResponse> EdgeKVListOutcome;
+                typedef std::future<EdgeKVListOutcome> EdgeKVListOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::EdgeKVListRequest&, EdgeKVListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EdgeKVListAsyncHandler;
+                typedef Outcome<Core::Error, Model::EdgeKVPutResponse> EdgeKVPutOutcome;
+                typedef std::future<EdgeKVPutOutcome> EdgeKVPutOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::EdgeKVPutRequest&, EdgeKVPutOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EdgeKVPutAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableOriginACLResponse> EnableOriginACLOutcome;
                 typedef std::future<EnableOriginACLOutcome> EnableOriginACLOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::EnableOriginACLRequest&, EnableOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableOriginACLAsyncHandler;
@@ -691,15 +1098,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomErrorPageResponse> ModifyCustomErrorPageOutcome;
                 typedef std::future<ModifyCustomErrorPageOutcome> ModifyCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyCustomErrorPageRequest&, ModifyCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomGroupResponse> ModifyCustomGroupOutcome;
+                typedef std::future<ModifyCustomGroupOutcome> ModifyCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyCustomGroupRequest&, ModifyCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDDoSProtectionResponse> ModifyDDoSProtectionOutcome;
+                typedef std::future<ModifyDDoSProtectionOutcome> ModifyDDoSProtectionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyDDoSProtectionRequest&, ModifyDDoSProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDnsRecordsResponse> ModifyDnsRecordsOutcome;
                 typedef std::future<ModifyDnsRecordsOutcome> ModifyDnsRecordsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyDnsRecordsRequest&, ModifyDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDnsRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDnsRecordsStatusResponse> ModifyDnsRecordsStatusOutcome;
                 typedef std::future<ModifyDnsRecordsStatusOutcome> ModifyDnsRecordsStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyDnsRecordsStatusRequest&, ModifyDnsRecordsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDnsRecordsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdgeKVNamespaceResponse> ModifyEdgeKVNamespaceOutcome;
+                typedef std::future<ModifyEdgeKVNamespaceOutcome> ModifyEdgeKVNamespaceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyEdgeKVNamespaceRequest&, ModifyEdgeKVNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeKVNamespaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFunctionResponse> ModifyFunctionOutcome;
                 typedef std::future<ModifyFunctionOutcome> ModifyFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyFunctionRequest&, ModifyFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFunctionComponentBindingsResponse> ModifyFunctionComponentBindingsOutcome;
+                typedef std::future<ModifyFunctionComponentBindingsOutcome> ModifyFunctionComponentBindingsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyFunctionComponentBindingsRequest&, ModifyFunctionComponentBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionComponentBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFunctionReplicaResponse> ModifyFunctionReplicaOutcome;
+                typedef std::future<ModifyFunctionReplicaOutcome> ModifyFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyFunctionReplicaRequest&, ModifyFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFunctionRuleResponse> ModifyFunctionRuleOutcome;
                 typedef std::future<ModifyFunctionRuleOutcome> ModifyFunctionRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyFunctionRuleRequest&, ModifyFunctionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionRuleAsyncHandler;
@@ -709,6 +1131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyHostsCertificateResponse> ModifyHostsCertificateOutcome;
                 typedef std::future<ModifyHostsCertificateOutcome> ModifyHostsCertificateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyHostsCertificateRequest&, ModifyHostsCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostsCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInferenceServiceResponse> ModifyInferenceServiceOutcome;
+                typedef std::future<ModifyInferenceServiceOutcome> ModifyInferenceServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyInferenceServiceRequest&, ModifyInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInferenceServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyL4ProxyResponse> ModifyL4ProxyOutcome;
                 typedef std::future<ModifyL4ProxyOutcome> ModifyL4ProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyL4ProxyRequest&, ModifyL4ProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL4ProxyAsyncHandler;
@@ -733,6 +1158,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerResponse> ModifyLoadBalancerOutcome;
                 typedef std::future<ModifyLoadBalancerOutcome> ModifyLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancerRequest&, ModifyLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMultiPathGatewayResponse> ModifyMultiPathGatewayOutcome;
+                typedef std::future<ModifyMultiPathGatewayOutcome> ModifyMultiPathGatewayOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewayRequest&, ModifyMultiPathGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMultiPathGatewayLineResponse> ModifyMultiPathGatewayLineOutcome;
+                typedef std::future<ModifyMultiPathGatewayLineOutcome> ModifyMultiPathGatewayLineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewayLineRequest&, ModifyMultiPathGatewayLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewayLineAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMultiPathGatewaySecretKeyResponse> ModifyMultiPathGatewaySecretKeyOutcome;
+                typedef std::future<ModifyMultiPathGatewaySecretKeyOutcome> ModifyMultiPathGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewaySecretKeyRequest&, ModifyMultiPathGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMultiPathGatewayStatusResponse> ModifyMultiPathGatewayStatusOutcome;
+                typedef std::future<ModifyMultiPathGatewayStatusOutcome> ModifyMultiPathGatewayStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyMultiPathGatewayStatusRequest&, ModifyMultiPathGatewayStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiPathGatewayStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOriginACLResponse> ModifyOriginACLOutcome;
                 typedef std::future<ModifyOriginACLOutcome> ModifyOriginACLOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyOriginACLRequest&, ModifyOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginACLAsyncHandler;
@@ -742,27 +1179,60 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPlanResponse> ModifyPlanOutcome;
                 typedef std::future<ModifyPlanOutcome> ModifyPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyPlanRequest&, ModifyPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrefetchOriginLimitResponse> ModifyPrefetchOriginLimitOutcome;
+                typedef std::future<ModifyPrefetchOriginLimitOutcome> ModifyPrefetchOriginLimitOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyPrefetchOriginLimitRequest&, ModifyPrefetchOriginLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrefetchOriginLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRealtimeLogDeliveryTaskResponse> ModifyRealtimeLogDeliveryTaskOutcome;
                 typedef std::future<ModifyRealtimeLogDeliveryTaskOutcome> ModifyRealtimeLogDeliveryTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRealtimeLogDeliveryTaskRequest&, ModifyRealtimeLogDeliveryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRealtimeLogDeliveryTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityAPIResourceResponse> ModifySecurityAPIResourceOutcome;
+                typedef std::future<ModifySecurityAPIResourceOutcome> ModifySecurityAPIResourceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityAPIResourceRequest&, ModifySecurityAPIResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityAPIResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityAPIServiceResponse> ModifySecurityAPIServiceOutcome;
+                typedef std::future<ModifySecurityAPIServiceOutcome> ModifySecurityAPIServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityAPIServiceRequest&, ModifySecurityAPIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityAPIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityClientAttesterResponse> ModifySecurityClientAttesterOutcome;
+                typedef std::future<ModifySecurityClientAttesterOutcome> ModifySecurityClientAttesterOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityClientAttesterRequest&, ModifySecurityClientAttesterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityClientAttesterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityIPGroupResponse> ModifySecurityIPGroupOutcome;
                 typedef std::future<ModifySecurityIPGroupOutcome> ModifySecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityIPGroupRequest&, ModifySecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIPGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityJSInjectionRuleResponse> ModifySecurityJSInjectionRuleOutcome;
+                typedef std::future<ModifySecurityJSInjectionRuleOutcome> ModifySecurityJSInjectionRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityJSInjectionRuleRequest&, ModifySecurityJSInjectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityJSInjectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySharedCNAMEResponse> ModifySharedCNAMEOutcome;
+                typedef std::future<ModifySharedCNAMEOutcome> ModifySharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySharedCNAMERequest&, ModifySharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySharedCNAMEAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWebSecurityTemplateResponse> ModifyWebSecurityTemplateOutcome;
+                typedef std::future<ModifyWebSecurityTemplateOutcome> ModifyWebSecurityTemplateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyWebSecurityTemplateRequest&, ModifyWebSecurityTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebSecurityTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyZoneResponse> ModifyZoneOutcome;
                 typedef std::future<ModifyZoneOutcome> ModifyZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneRequest&, ModifyZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyZoneCustomVariablesResponse> ModifyZoneCustomVariablesOutcome;
+                typedef std::future<ModifyZoneCustomVariablesOutcome> ModifyZoneCustomVariablesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyZoneCustomVariablesRequest&, ModifyZoneCustomVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneCustomVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyZoneSettingResponse> ModifyZoneSettingOutcome;
                 typedef std::future<ModifyZoneSettingOutcome> ModifyZoneSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneSettingRequest&, ModifyZoneSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyZoneStatusResponse> ModifyZoneStatusOutcome;
                 typedef std::future<ModifyZoneStatusOutcome> ModifyZoneStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneStatusRequest&, ModifyZoneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyZoneWorkModeResponse> ModifyZoneWorkModeOutcome;
+                typedef std::future<ModifyZoneWorkModeOutcome> ModifyZoneWorkModeOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyZoneWorkModeRequest&, ModifyZoneWorkModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneWorkModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateInferenceServiceResponse> OperateInferenceServiceOutcome;
+                typedef std::future<OperateInferenceServiceOutcome> OperateInferenceServiceOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::OperateInferenceServiceRequest&, OperateInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateInferenceServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefreshMultiPathGatewaySecretKeyResponse> RefreshMultiPathGatewaySecretKeyOutcome;
+                typedef std::future<RefreshMultiPathGatewaySecretKeyOutcome> RefreshMultiPathGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::RefreshMultiPathGatewaySecretKeyRequest&, RefreshMultiPathGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshMultiPathGatewaySecretKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewPlanResponse> RenewPlanOutcome;
                 typedef std::future<RenewPlanOutcome> RenewPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::RenewPlanRequest&, RenewPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewPlanAsyncHandler;
@@ -776,7 +1246,26 @@ namespace TencentCloud
 
 
                 /**
-                 *This API is used to bind/unbind a domain name to/from a specific policy template. 
+                 *This API is used to apply for a free certificate. If you need to proceed with DNS delegated verification or file verification, you can call this API to initiate the certificate application and obtain the corresponding verification content based on the application method. The order for API calls is as follows:.
+Step 1: Call ApplyFreeCertificate, specify the verification method for free certificate application, and obtain the verification content.
+Step 2: Configure the corresponding domain as verification content.
+Step 3: Call CheckFreeCertificateVerification to verify. After verification passes, the free certificate application is completed.
+Step 4: Call ModifyHostsCertificate to issue a domain certificate configured to use the EdgeOne free certificate.
+
+The application method introduction in the document: [Free Certificate Application Description](https://www.tencentcloud.com/document/product/1552/90437?from_cn_redirect=1). 
+description:
+- Only CNAME access mode can call this API to specify the free certificate application method. NS/DNSPod hosting access modes use automatic validation to apply for free certificates with no need to call this API.
+- If you need to switch the free certificate authentication method, you can call this API again by changing the VerificationMethod field to update it.
+- A domain name can only apply for one free certificate. After calling this API, the backend will trigger the free certificate application task. You need to complete the domain name verification info configuration within 2 days, then finish certificate authentication.
+                 * @param req ApplyFreeCertificateRequest
+                 * @return ApplyFreeCertificateOutcome
+                 */
+                ApplyFreeCertificateOutcome ApplyFreeCertificate(const Model::ApplyFreeCertificateRequest &request);
+                void ApplyFreeCertificateAsync(const Model::ApplyFreeCertificateRequest& request, const ApplyFreeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFreeCertificateOutcomeCallable ApplyFreeCertificateCallable(const Model::ApplyFreeCertificateRequest& request);
+
+                /**
+                 *This API is used to bind/unbind a domain name to/from a specific policy template.
                  * @param req BindSecurityTemplateToEntityRequest
                  * @return BindSecurityTemplateToEntityOutcome
                  */
@@ -803,13 +1292,33 @@ namespace TencentCloud
                 BindZoneToPlanOutcomeCallable BindZoneToPlanCallable(const Model::BindZoneToPlanRequest& request);
 
                 /**
-                 *This API is used to query the CNAME status of a domain name.
+                 *When the site access type is CNAME, all domain names under the site must configure CNAME records as specified by the CNAME domain assigned by EdgeOne.
+You can obtain the designated CNAME domain name assigned by EdgeOne for the integration domain through this API, and validate the configuration status of the CNAME for the integration domain through this API.
                  * @param req CheckCnameStatusRequest
                  * @return CheckCnameStatusOutcome
                  */
                 CheckCnameStatusOutcome CheckCnameStatus(const Model::CheckCnameStatusRequest &request);
                 void CheckCnameStatusAsync(const Model::CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCnameStatusOutcomeCallable CheckCnameStatusCallable(const Model::CheckCnameStatusRequest& request);
+
+                /**
+                 *This API is used to verify a free certificate and obtain the application result. If verified, you can query the free certificate information for the corresponding domain name application through this API. If failed to apply, this API will return the corresponding verification failure message.
+This API is used to check the free certificate application result after triggering the [ApplyFreeCertificate](https://www.tencentcloud.com/document/product/1552/124807?from_cn_redirect=1) . Once the application is successful, you need to configure through the [ModifyHostsCertificate](https://www.tencentcloud.com/document/product/1552/80764?from_cn_redirect=1) to deploy the free certificate to the acceleration domain.
+                 * @param req CheckFreeCertificateVerificationRequest
+                 * @return CheckFreeCertificateVerificationOutcome
+                 */
+                CheckFreeCertificateVerificationOutcome CheckFreeCertificateVerification(const Model::CheckFreeCertificateVerificationRequest &request);
+                void CheckFreeCertificateVerificationAsync(const Model::CheckFreeCertificateVerificationRequest& request, const CheckFreeCertificateVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckFreeCertificateVerificationOutcomeCallable CheckFreeCertificateVerificationCallable(const Model::CheckFreeCertificateVerificationRequest& request);
+
+                /**
+                 *This API is used to confirm the latest origin IP range is updated to the origin server firewall when the multi-channel security acceleration gateway's origin IP range changes.
+                 * @param req ConfirmMultiPathGatewayOriginACLRequest
+                 * @return ConfirmMultiPathGatewayOriginACLOutcome
+                 */
+                ConfirmMultiPathGatewayOriginACLOutcome ConfirmMultiPathGatewayOriginACL(const Model::ConfirmMultiPathGatewayOriginACLRequest &request);
+                void ConfirmMultiPathGatewayOriginACLAsync(const Model::ConfirmMultiPathGatewayOriginACLRequest& request, const ConfirmMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConfirmMultiPathGatewayOriginACLOutcomeCallable ConfirmMultiPathGatewayOriginACLCallable(const Model::ConfirmMultiPathGatewayOriginACLRequest& request);
 
                 /**
                  *This API is used to confirm that the latest origin ACLs have been updated to the origin server firewall when the origin ACLs change. After confirming the update to the latest version, related change notifications will stop pushing.
@@ -833,6 +1342,7 @@ For sites connected via the CNAME, if you have not verified the ownership of the
 
                 /**
                  *This API is used to create an alias domain name.
+The feature is only supported by the enterprise plan and is currently in closed beta testing. If you need to use it, please [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req CreateAliasDomainRequest
                  * @return CreateAliasDomainOutcome
                  */
@@ -868,7 +1378,7 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreateCLSIndexOutcomeCallable CreateCLSIndexCallable(const Model::CreateCLSIndexRequest& request);
 
                 /**
-                 *This API is used to create a new version for the specified configuration group in version management mode. The version management feature is currently undergoing beta testing and is accessible only to users on the whitelist.
+                 *In version management mode, this API is used to create a new version of the specified configuration group.
                  * @param req CreateConfigGroupVersionRequest
                  * @return CreateConfigGroupVersionOutcome
                  */
@@ -884,6 +1394,15 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreateContentIdentifierOutcome CreateContentIdentifier(const Model::CreateContentIdentifierRequest &request);
                 void CreateContentIdentifierAsync(const Model::CreateContentIdentifierRequest& request, const CreateContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContentIdentifierOutcomeCallable CreateContentIdentifierCallable(const Model::CreateContentIdentifierRequest& request);
+
+                /**
+                 *This API is used to create a custom group. A custom group is used to centrally manage a set of reusable matching entries. For example, you can save multiple JA3/JA4 TLS fingerprints as a TLS fingerprint group and directly reference the group in security rules, avoiding the need to maintain the same fingerprint list in multiple rules.
+                 * @param req CreateCustomGroupRequest
+                 * @return CreateCustomGroupOutcome
+                 */
+                CreateCustomGroupOutcome CreateCustomGroup(const Model::CreateCustomGroupRequest &request);
+                void CreateCustomGroupAsync(const Model::CreateCustomGroupRequest& request, const CreateCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomGroupOutcomeCallable CreateCustomGroupCallable(const Model::CreateCustomGroupRequest& request);
 
                 /**
                  *This API is used to create a custom response page.
@@ -904,6 +1423,15 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreateDnsRecordOutcomeCallable CreateDnsRecordCallable(const Model::CreateDnsRecordRequest& request);
 
                 /**
+                 *This API is used to create a KV namespace in the specified site.
+                 * @param req CreateEdgeKVNamespaceRequest
+                 * @return CreateEdgeKVNamespaceOutcome
+                 */
+                CreateEdgeKVNamespaceOutcome CreateEdgeKVNamespace(const Model::CreateEdgeKVNamespaceRequest &request);
+                void CreateEdgeKVNamespaceAsync(const Model::CreateEdgeKVNamespaceRequest& request, const CreateEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdgeKVNamespaceOutcomeCallable CreateEdgeKVNamespaceCallable(const Model::CreateEdgeKVNamespaceRequest& request);
+
+                /**
                  *This API is used to create and deploy an edge function to EdgeOne edge nodes.
                  * @param req CreateFunctionRequest
                  * @return CreateFunctionOutcome
@@ -913,13 +1441,51 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request);
 
                 /**
-                 *This API is used to create a trigger rule for an edge function.
+                 *This API is used to create copies of specified edge functions. After creating copies, when client requests match configured trigger rules or the default domain name, you can access specific function copies by adding EO-Function-Replica-Name:[copy name] to the request header. Each function supports creating two copies by default.
+                 * @param req CreateFunctionReplicaRequest
+                 * @return CreateFunctionReplicaOutcome
+                 */
+                CreateFunctionReplicaOutcome CreateFunctionReplica(const Model::CreateFunctionReplicaRequest &request);
+                void CreateFunctionReplicaAsync(const Model::CreateFunctionReplicaRequest& request, const CreateFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFunctionReplicaOutcomeCallable CreateFunctionReplicaCallable(const Model::CreateFunctionReplicaRequest& request);
+
+                /**
+                 *This API is used to create trigger rules for edge functions. It supports determining whether to execute the function via customized filter conditions. When execution is required, it provides multiple ways to select the target function, including directly specifying, selecting based on client region, and selecting based on weight.
                  * @param req CreateFunctionRuleRequest
                  * @return CreateFunctionRuleOutcome
                  */
                 CreateFunctionRuleOutcome CreateFunctionRule(const Model::CreateFunctionRuleRequest &request);
                 void CreateFunctionRuleAsync(const Model::CreateFunctionRuleRequest& request, const CreateFunctionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFunctionRuleOutcomeCallable CreateFunctionRuleCallable(const Model::CreateFunctionRuleRequest& request);
+
+                /**
+                 *Create an inference API Token for authenticating access to the inference service. The Token content is returned only once when creating. Each site can create up to 100 tokens.
+                 * @param req CreateInferenceAPITokenRequest
+                 * @return CreateInferenceAPITokenOutcome
+                 */
+                CreateInferenceAPITokenOutcome CreateInferenceAPIToken(const Model::CreateInferenceAPITokenRequest &request);
+                void CreateInferenceAPITokenAsync(const Model::CreateInferenceAPITokenRequest& request, const CreateInferenceAPITokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferenceAPITokenOutcomeCallable CreateInferenceAPITokenCallable(const Model::CreateInferenceAPITokenRequest& request);
+
+                /**
+                 *This API is used to create an inference service. It allows setting the service name, listening port, container image configuration, and resource configuration. Once created successfully, an inference access address is provided.
+                 * @param req CreateInferenceServiceRequest
+                 * @return CreateInferenceServiceOutcome
+                 */
+                CreateInferenceServiceOutcome CreateInferenceService(const Model::CreateInferenceServiceRequest &request);
+                void CreateInferenceServiceAsync(const Model::CreateInferenceServiceRequest& request, const CreateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferenceServiceOutcomeCallable CreateInferenceServiceCallable(const Model::CreateInferenceServiceRequest& request);
+
+                /**
+                 *JIT transcoding already provides preset transcoding templates to meet most needs. If there are personalized transcoding requirements, you can create custom transcoding templates through this API, with up to 100 custom transcoding templates allowed.
+This API is used to ensure the consistency of JIT transcoding effect, avoid video output exceptions caused by EO cache or M3U8 sharding template changes during the process, and templates cannot be modified after creation.
+This API is used to learn about the detailed capacity of JIT transcoding. EdgeOne video instant processing function introduction (https://www.tencentcloud.com/document/product/1552/111927?from_cn_redirect=1).
+                 * @param req CreateJustInTimeTranscodeTemplateRequest
+                 * @return CreateJustInTimeTranscodeTemplateOutcome
+                 */
+                CreateJustInTimeTranscodeTemplateOutcome CreateJustInTimeTranscodeTemplate(const Model::CreateJustInTimeTranscodeTemplateRequest &request);
+                void CreateJustInTimeTranscodeTemplateAsync(const Model::CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
 
                 /**
                  *This API is used to create Layer 4 proxy instances.
@@ -949,13 +1515,53 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreateL7AccRulesOutcomeCallable CreateL7AccRulesCallable(const Model::CreateL7AccRulesRequest& request);
 
                 /**
-                 *This API is used to create a LoadBalancer. For details, see [Quickly Create Load Balancers](https://intl.cloud.tencent.com/document/product/1552/104223?from_cn_redirect=1). The load balancing feature is in beta test. If you need to use it, [contact us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+                 *This API is used to create a LoadBalancer. For details, see [Quickly Create Load Balancers](https://intl.cloud.tencent.com/document/product/1552/104223?from_cn_redirect=1). The load balancing feature is in beta test. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req CreateLoadBalancerRequest
                  * @return CreateLoadBalancerOutcome
                  */
                 CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest &request);
                 void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request);
+
+                /**
+                 *This API is used to create a log analysis download task. After creation, you can query the download task via the DescribeLogAnalysisDownloadTasks API.
+Note:
+1. Supports up to 50 million log entries per download.
+2. Log files are reserved for 3 days.
+3. When multiple tasks exist at the same time, they are processed sequentially based on task creation time.
+                 * @param req CreateLogAnalysisDownloadTaskRequest
+                 * @return CreateLogAnalysisDownloadTaskOutcome
+                 */
+                CreateLogAnalysisDownloadTaskOutcome CreateLogAnalysisDownloadTask(const Model::CreateLogAnalysisDownloadTaskRequest &request);
+                void CreateLogAnalysisDownloadTaskAsync(const Model::CreateLogAnalysisDownloadTaskRequest& request, const CreateLogAnalysisDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLogAnalysisDownloadTaskOutcomeCallable CreateLogAnalysisDownloadTaskCallable(const Model::CreateLogAnalysisDownloadTaskRequest& request);
+
+                /**
+                 *Create a multi-channel security acceleration gateway via this API, including Cloud Gateway (gateway created and managed by Tencent Cloud) and private gateway (gateway deployed by users). Query the status using DescribeMultiPathGateway, and creation is successful if the status is online.
+                 * @param req CreateMultiPathGatewayRequest
+                 * @return CreateMultiPathGatewayOutcome
+                 */
+                CreateMultiPathGatewayOutcome CreateMultiPathGateway(const Model::CreateMultiPathGatewayRequest &request);
+                void CreateMultiPathGatewayAsync(const Model::CreateMultiPathGatewayRequest& request, const CreateMultiPathGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMultiPathGatewayOutcomeCallable CreateMultiPathGatewayCallable(const Model::CreateMultiPathGatewayRequest& request);
+
+                /**
+                 *This API is used to create lines integrated with the multi-channel security acceleration gateway, including EdgeOne Layer-4 proxy and custom lines.
+                 * @param req CreateMultiPathGatewayLineRequest
+                 * @return CreateMultiPathGatewayLineOutcome
+                 */
+                CreateMultiPathGatewayLineOutcome CreateMultiPathGatewayLine(const Model::CreateMultiPathGatewayLineRequest &request);
+                void CreateMultiPathGatewayLineAsync(const Model::CreateMultiPathGatewayLineRequest& request, const CreateMultiPathGatewayLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMultiPathGatewayLineOutcomeCallable CreateMultiPathGatewayLineCallable(const Model::CreateMultiPathGatewayLineRequest& request);
+
+                /**
+                 *This API creates an access key for the multi-channel security acceleration gateway. Customers use the access key to sign requests for accessing the gateway. Each site can have only one key, which is applicable to all gateways under that site. Query the key via the DescribeMultiPathGatewaySecretKey API.
+                 * @param req CreateMultiPathGatewaySecretKeyRequest
+                 * @return CreateMultiPathGatewaySecretKeyOutcome
+                 */
+                CreateMultiPathGatewaySecretKeyOutcome CreateMultiPathGatewaySecretKey(const Model::CreateMultiPathGatewaySecretKeyRequest &request);
+                void CreateMultiPathGatewaySecretKeyAsync(const Model::CreateMultiPathGatewaySecretKeyRequest& request, const CreateMultiPathGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMultiPathGatewaySecretKeyOutcomeCallable CreateMultiPathGatewaySecretKeyCallable(const Model::CreateMultiPathGatewaySecretKeyRequest& request);
 
                 /**
                  *This API is used to create an origin group for easy management. The created origin server group can be used for **adding acceleration domain names** and **layer-4 proxy configuration**.
@@ -1006,8 +1612,24 @@ For sites connected via the CNAME, if you have not verified the ownership of the
                 CreatePurgeTaskOutcomeCallable CreatePurgeTaskCallable(const Model::CreatePurgeTaskRequest& request);
 
                 /**
-                 *This API is used to create a real-time log delivery task. The following limits apply:
-An entity (a Layer 7 domain name or a Layer 4 proxy instance) under the combination of the same data delivery type (LogType) and data delivery area (Area) can be added to only one real-time log delivery task. It is recommended to first query the real-time log delivery task list by entity through the [DescribeRealtimeLogDeliveryTasks](https://intl.cloud.tencent.com/document/product/1552/104110?from_cn_redirect=1) API to check whether the entity has been added to another real-time log delivery task.
+                 *This API is used to create a real-time log delivery task.
+
+**Restrictions**
+
+An entity (a Layer 7 domain name, a Layer 4 proxy instance, or an Edge Function instance) under the same combination of `LogType` and `Area` can only have one task created for each `TaskType`. The mutual exclusion rules for different `LogType` values are as follows:
+
+| LogType | Conflicting TaskType |
+|---|---|
+| Layer 4 proxy logs, Edge Function execution logs | Choose one of `custom_endpoint`, `s3`, and `aws_s3` |
+
+When `TaskType` is `log_analysis`:
+
+<ul>
+<li>Only `LogType` = `l7-access-logs` or `web-attack` is supported.</li>
+<li>Under the same combination of `ZoneId` and `Area`, only one task can be created for each `LogType`.</li>
+</ul>
+
+**Recommendation**: Before creating a task, call the [DescribeRealtimeLogDeliveryTasks](https://www.tencentcloud.com/document/product/1145/59503) API to query existing tasks and avoid duplicate additions.
                  * @param req CreateRealtimeLogDeliveryTaskRequest
                  * @return CreateRealtimeLogDeliveryTaskOutcome
                  */
@@ -1016,13 +1638,40 @@ An entity (a Layer 7 domain name or a Layer 4 proxy instance) under the combinat
                 CreateRealtimeLogDeliveryTaskOutcomeCallable CreateRealtimeLogDeliveryTaskCallable(const Model::CreateRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *This API is an older version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [CreateL7AccRules](https://intl.cloud.tencent.com/document/product/1552/115822?from_cn_redirect=1).
+                 *This interface is the old version of the rule engine creation interface. EdgeOne has fully upgraded the rule engine related interfaces on January 21, 2025. For details on the new version of the seven-layer acceleration rule creation interface, please refer to [CreateL7AccRules](https://intl.cloud.tencent.com/document/product/1552/115822?from_cn_redirect=1).<p style="color: red;">Note: Starting from January 21, 2025, the old version of the interface will stop updating and iteration. Subsequent new features will only be provided in the new version of the interface, and the original capabilities supported by the old version of the interface will not be affected. To avoid data field conflicts when using the old version of the interface, it is recommended that you migrate to the new version of the rule engine interface as soon as possible. </p>
                  * @param req CreateRuleRequest
                  * @return CreateRuleOutcome
                  */
                 CreateRuleOutcome CreateRule(const Model::CreateRuleRequest &request);
                 void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
+
+                /**
+                 *This API is used to create an API resource.
+                 * @param req CreateSecurityAPIResourceRequest
+                 * @return CreateSecurityAPIResourceOutcome
+                 */
+                CreateSecurityAPIResourceOutcome CreateSecurityAPIResource(const Model::CreateSecurityAPIResourceRequest &request);
+                void CreateSecurityAPIResourceAsync(const Model::CreateSecurityAPIResourceRequest& request, const CreateSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityAPIResourceOutcomeCallable CreateSecurityAPIResourceCallable(const Model::CreateSecurityAPIResourceRequest& request);
+
+                /**
+                 *This API is used to create an API service.
+                 * @param req CreateSecurityAPIServiceRequest
+                 * @return CreateSecurityAPIServiceOutcome
+                 */
+                CreateSecurityAPIServiceOutcome CreateSecurityAPIService(const Model::CreateSecurityAPIServiceRequest &request);
+                void CreateSecurityAPIServiceAsync(const Model::CreateSecurityAPIServiceRequest& request, const CreateSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityAPIServiceOutcomeCallable CreateSecurityAPIServiceCallable(const Model::CreateSecurityAPIServiceRequest& request);
+
+                /**
+                 *This API is used to create client authentication options.
+                 * @param req CreateSecurityClientAttesterRequest
+                 * @return CreateSecurityClientAttesterOutcome
+                 */
+                CreateSecurityClientAttesterOutcome CreateSecurityClientAttester(const Model::CreateSecurityClientAttesterRequest &request);
+                void CreateSecurityClientAttesterAsync(const Model::CreateSecurityClientAttesterRequest& request, const CreateSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityClientAttesterOutcomeCallable CreateSecurityClientAttesterCallable(const Model::CreateSecurityClientAttesterRequest& request);
 
                 /**
                  *This API is used to create a security IP group.
@@ -1034,6 +1683,15 @@ An entity (a Layer 7 domain name or a Layer 4 proxy instance) under the combinat
                 CreateSecurityIPGroupOutcomeCallable CreateSecurityIPGroupCallable(const Model::CreateSecurityIPGroupRequest& request);
 
                 /**
+                 *This API is used to create a JavaScript injection rule.
+                 * @param req CreateSecurityJSInjectionRuleRequest
+                 * @return CreateSecurityJSInjectionRuleOutcome
+                 */
+                CreateSecurityJSInjectionRuleOutcome CreateSecurityJSInjectionRule(const Model::CreateSecurityJSInjectionRuleRequest &request);
+                void CreateSecurityJSInjectionRuleAsync(const Model::CreateSecurityJSInjectionRuleRequest& request, const CreateSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityJSInjectionRuleOutcomeCallable CreateSecurityJSInjectionRuleCallable(const Model::CreateSecurityJSInjectionRuleRequest& request);
+
+                /**
                  *This API is used to create a shared CNAME. It is now only available to beta users.
                  * @param req CreateSharedCNAMERequest
                  * @return CreateSharedCNAMEOutcome
@@ -1041,6 +1699,15 @@ An entity (a Layer 7 domain name or a Layer 4 proxy instance) under the combinat
                 CreateSharedCNAMEOutcome CreateSharedCNAME(const Model::CreateSharedCNAMERequest &request);
                 void CreateSharedCNAMEAsync(const Model::CreateSharedCNAMERequest& request, const CreateSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSharedCNAMEOutcomeCallable CreateSharedCNAMECallable(const Model::CreateSharedCNAMERequest& request);
+
+                /**
+                 *This API is used to create a security policy configuration template.
+                 * @param req CreateWebSecurityTemplateRequest
+                 * @return CreateWebSecurityTemplateOutcome
+                 */
+                CreateWebSecurityTemplateOutcome CreateWebSecurityTemplate(const Model::CreateWebSecurityTemplateRequest &request);
+                void CreateWebSecurityTemplateAsync(const Model::CreateWebSecurityTemplateRequest& request, const CreateWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWebSecurityTemplateOutcomeCallable CreateWebSecurityTemplateCallable(const Model::CreateWebSecurityTemplateRequest& request);
 
                 /**
                  *This API is used to create a site. After you create the site, you can connect it to EdgeOne via the CNAME or NS (see [Quick Start](https://intl.cloud.tencent.com/document/product/1552/87601?from_cn_redirect=1)), or connect it without a domain name (see [Quick Access to L4 Proxy Service](https://intl.cloud.tencent.com/document/product/1552/96051?from_cn_redirect=1)).
@@ -1064,6 +1731,7 @@ If there are already EdgeOne plans under the current account, it is recommended 
 
                 /**
                  *This API is used to delete an alias domain name.
+The feature is only supported by the enterprise plan and is currently in closed beta testing. If you need to use it, [Contact Us](https://www.tencentcloud.com/contact-us).
                  * @param req DeleteAliasDomainRequest
                  * @return DeleteAliasDomainOutcome
                  */
@@ -1108,6 +1776,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteCustomErrorPageOutcomeCallable DeleteCustomErrorPageCallable(const Model::DeleteCustomErrorPageRequest& request);
 
                 /**
+                 *This API is used to delete a specified custom group. If the group is referenced by a rule, deletion is not allowed. Remove the reference first.
+                 * @param req DeleteCustomGroupRequest
+                 * @return DeleteCustomGroupOutcome
+                 */
+                DeleteCustomGroupOutcome DeleteCustomGroup(const Model::DeleteCustomGroupRequest &request);
+                void DeleteCustomGroupAsync(const Model::DeleteCustomGroupRequest& request, const DeleteCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomGroupOutcomeCallable DeleteCustomGroupCallable(const Model::DeleteCustomGroupRequest& request);
+
+                /**
                  *You can use this API to batch delete DNS records.
                  * @param req DeleteDnsRecordsRequest
                  * @return DeleteDnsRecordsOutcome
@@ -1115,6 +1792,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteDnsRecordsOutcome DeleteDnsRecords(const Model::DeleteDnsRecordsRequest &request);
                 void DeleteDnsRecordsAsync(const Model::DeleteDnsRecordsRequest& request, const DeleteDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDnsRecordsOutcomeCallable DeleteDnsRecordsCallable(const Model::DeleteDnsRecordsRequest& request);
+
+                /**
+                 *This API is used to delete specified KV namespace. Once deleted, all keys in namespace will be cleared and cannot be recovered. If the namespace is being referred by edge function, you need to unbind relationship before it can only be deleted.
+                 * @param req DeleteEdgeKVNamespaceRequest
+                 * @return DeleteEdgeKVNamespaceOutcome
+                 */
+                DeleteEdgeKVNamespaceOutcome DeleteEdgeKVNamespace(const Model::DeleteEdgeKVNamespaceRequest &request);
+                void DeleteEdgeKVNamespaceAsync(const Model::DeleteEdgeKVNamespaceRequest& request, const DeleteEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEdgeKVNamespaceOutcomeCallable DeleteEdgeKVNamespaceCallable(const Model::DeleteEdgeKVNamespaceRequest& request);
 
                 /**
                  *This API is used to delete an edge function. Once deleted, the function cannot be recovered, and associated trigger rules are also deleted.
@@ -1126,6 +1812,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
 
                 /**
+                 *This API is used to delete specified edge function replicas.
+                 * @param req DeleteFunctionReplicaRequest
+                 * @return DeleteFunctionReplicaOutcome
+                 */
+                DeleteFunctionReplicaOutcome DeleteFunctionReplica(const Model::DeleteFunctionReplicaRequest &request);
+                void DeleteFunctionReplicaAsync(const Model::DeleteFunctionReplicaRequest& request, const DeleteFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFunctionReplicaOutcomeCallable DeleteFunctionReplicaCallable(const Model::DeleteFunctionReplicaRequest& request);
+
+                /**
                  *This API is used to delete a trigger rule for an edge function.
                  * @param req DeleteFunctionRulesRequest
                  * @return DeleteFunctionRulesOutcome
@@ -1133,6 +1828,24 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteFunctionRulesOutcome DeleteFunctionRules(const Model::DeleteFunctionRulesRequest &request);
                 void DeleteFunctionRulesAsync(const Model::DeleteFunctionRulesRequest& request, const DeleteFunctionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFunctionRulesOutcomeCallable DeleteFunctionRulesCallable(const Model::DeleteFunctionRulesRequest& request);
+
+                /**
+                 *This API is used to delete an inference API Token. Once deleted, the Token will expire immediately, and requests for accessing the inference service using it will no longer be accessible.
+                 * @param req DeleteInferenceAPITokenRequest
+                 * @return DeleteInferenceAPITokenOutcome
+                 */
+                DeleteInferenceAPITokenOutcome DeleteInferenceAPIToken(const Model::DeleteInferenceAPITokenRequest &request);
+                void DeleteInferenceAPITokenAsync(const Model::DeleteInferenceAPITokenRequest& request, const DeleteInferenceAPITokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInferenceAPITokenOutcomeCallable DeleteInferenceAPITokenCallable(const Model::DeleteInferenceAPITokenRequest& request);
+
+                /**
+                 *This API is used to delete the appropriate just in time transcoding template based on the unique template identifier under the site ID.
+                 * @param req DeleteJustInTimeTranscodeTemplatesRequest
+                 * @return DeleteJustInTimeTranscodeTemplatesOutcome
+                 */
+                DeleteJustInTimeTranscodeTemplatesOutcome DeleteJustInTimeTranscodeTemplates(const Model::DeleteJustInTimeTranscodeTemplatesRequest &request);
+                void DeleteJustInTimeTranscodeTemplatesAsync(const Model::DeleteJustInTimeTranscodeTemplatesRequest& request, const DeleteJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteJustInTimeTranscodeTemplatesOutcomeCallable DeleteJustInTimeTranscodeTemplatesCallable(const Model::DeleteJustInTimeTranscodeTemplatesRequest& request);
 
                 /**
                  *This API is used to delete a Layer 4 proxy instance.
@@ -1162,13 +1875,31 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteL7AccRulesOutcomeCallable DeleteL7AccRulesCallable(const Model::DeleteL7AccRulesRequest& request);
 
                 /**
-                 *This API is used to delete a LoadBalancer. If the LoadBalancer is referenced by other services (for example, Layer-4 proxy), the LoadBalancer cannot be deleted until the reference relationship is removed. The load balancing feature is in beta test. If you need to use it, [contact us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+                 *This API is used to delete a LoadBalancer. If the LoadBalancer is referenced by other services (for example, Layer-4 proxy), the LoadBalancer cannot be deleted until the reference relationship is removed. The load balancing feature is in beta test. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req DeleteLoadBalancerRequest
                  * @return DeleteLoadBalancerOutcome
                  */
                 DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest &request);
                 void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request);
+
+                /**
+                 *This API is used to delete a multi-channel security acceleration gateway, including private gateways and Cloud Gateways.
+                 * @param req DeleteMultiPathGatewayRequest
+                 * @return DeleteMultiPathGatewayOutcome
+                 */
+                DeleteMultiPathGatewayOutcome DeleteMultiPathGateway(const Model::DeleteMultiPathGatewayRequest &request);
+                void DeleteMultiPathGatewayAsync(const Model::DeleteMultiPathGatewayRequest& request, const DeleteMultiPathGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMultiPathGatewayOutcomeCallable DeleteMultiPathGatewayCallable(const Model::DeleteMultiPathGatewayRequest& request);
+
+                /**
+                 *This API is used to delete lines integrated with the multi-channel security acceleration gateway. Only custom lines support deletion.
+                 * @param req DeleteMultiPathGatewayLineRequest
+                 * @return DeleteMultiPathGatewayLineOutcome
+                 */
+                DeleteMultiPathGatewayLineOutcome DeleteMultiPathGatewayLine(const Model::DeleteMultiPathGatewayLineRequest &request);
+                void DeleteMultiPathGatewayLineAsync(const Model::DeleteMultiPathGatewayLineRequest& request, const DeleteMultiPathGatewayLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMultiPathGatewayLineOutcomeCallable DeleteMultiPathGatewayLineCallable(const Model::DeleteMultiPathGatewayLineRequest& request);
 
                 /**
                  *This API is used to delete an origin group. Note that an origin group can not be deleted if it is referenced by services (e.g. L4 Proxy, domain name service, load balancing, rule engines). 
@@ -1189,13 +1920,40 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteRealtimeLogDeliveryTaskOutcomeCallable DeleteRealtimeLogDeliveryTaskCallable(const Model::DeleteRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *This API is an older version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [DeleteL7AccRules](https://intl.cloud.tencent.com/document/product/1552/115821?from_cn_redirect=1).
+                 *This interface is the old version of the rule engine deletion interface. EdgeOne has fully upgraded the rule engine related interfaces on January 21, 2025. For details on the new version of the seven-layer acceleration rule deletion interface, please refer to [DeleteL7AccRules](https://intl.cloud.tencent.com/document/product/1552/115821?from_cn_redirect=1).<0>Note: Starting from January 21, 2025, the earlier version API will no longer be updated. Subsequent new features will only be provided in the latest version interface. The original capabilities supported by the earlier version API will not be affected. To avoid field conflicts when using the earlier version API, it is recommended that you migrate to the new version rule engine API as soon as possible.</0>.
                  * @param req DeleteRulesRequest
                  * @return DeleteRulesOutcome
                  */
                 DeleteRulesOutcome DeleteRules(const Model::DeleteRulesRequest &request);
                 void DeleteRulesAsync(const Model::DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRulesOutcomeCallable DeleteRulesCallable(const Model::DeleteRulesRequest& request);
+
+                /**
+                 *This API is used to delete API resources.
+                 * @param req DeleteSecurityAPIResourceRequest
+                 * @return DeleteSecurityAPIResourceOutcome
+                 */
+                DeleteSecurityAPIResourceOutcome DeleteSecurityAPIResource(const Model::DeleteSecurityAPIResourceRequest &request);
+                void DeleteSecurityAPIResourceAsync(const Model::DeleteSecurityAPIResourceRequest& request, const DeleteSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityAPIResourceOutcomeCallable DeleteSecurityAPIResourceCallable(const Model::DeleteSecurityAPIResourceRequest& request);
+
+                /**
+                 *This API is used to delete the API service.
+                 * @param req DeleteSecurityAPIServiceRequest
+                 * @return DeleteSecurityAPIServiceOutcome
+                 */
+                DeleteSecurityAPIServiceOutcome DeleteSecurityAPIService(const Model::DeleteSecurityAPIServiceRequest &request);
+                void DeleteSecurityAPIServiceAsync(const Model::DeleteSecurityAPIServiceRequest& request, const DeleteSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityAPIServiceOutcomeCallable DeleteSecurityAPIServiceCallable(const Model::DeleteSecurityAPIServiceRequest& request);
+
+                /**
+                 *This API is used to delete client authentication options.
+                 * @param req DeleteSecurityClientAttesterRequest
+                 * @return DeleteSecurityClientAttesterOutcome
+                 */
+                DeleteSecurityClientAttesterOutcome DeleteSecurityClientAttester(const Model::DeleteSecurityClientAttesterRequest &request);
+                void DeleteSecurityClientAttesterAsync(const Model::DeleteSecurityClientAttesterRequest& request, const DeleteSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityClientAttesterOutcomeCallable DeleteSecurityClientAttesterCallable(const Model::DeleteSecurityClientAttesterRequest& request);
 
                 /**
                  *This API is used to delete a specified security IP group. Note that the security IP group cannot be deleted if it is referenced in a rule.
@@ -1207,6 +1965,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteSecurityIPGroupOutcomeCallable DeleteSecurityIPGroupCallable(const Model::DeleteSecurityIPGroupRequest& request);
 
                 /**
+                 *This API is used to delete JavaScript injection rules.
+                 * @param req DeleteSecurityJSInjectionRuleRequest
+                 * @return DeleteSecurityJSInjectionRuleOutcome
+                 */
+                DeleteSecurityJSInjectionRuleOutcome DeleteSecurityJSInjectionRule(const Model::DeleteSecurityJSInjectionRuleRequest &request);
+                void DeleteSecurityJSInjectionRuleAsync(const Model::DeleteSecurityJSInjectionRuleRequest& request, const DeleteSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityJSInjectionRuleOutcomeCallable DeleteSecurityJSInjectionRuleCallable(const Model::DeleteSecurityJSInjectionRuleRequest& request);
+
+                /**
                  *This API is used to delete a shared CNAME. It is now only available to beta users.
                  * @param req DeleteSharedCNAMERequest
                  * @return DeleteSharedCNAMEOutcome
@@ -1214,6 +1981,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DeleteSharedCNAMEOutcome DeleteSharedCNAME(const Model::DeleteSharedCNAMERequest &request);
                 void DeleteSharedCNAMEAsync(const Model::DeleteSharedCNAMERequest& request, const DeleteSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSharedCNAMEOutcomeCallable DeleteSharedCNAMECallable(const Model::DeleteSharedCNAMERequest& request);
+
+                /**
+                 *This API is used to delete a security policy configuration template.
+                 * @param req DeleteWebSecurityTemplateRequest
+                 * @return DeleteWebSecurityTemplateOutcome
+                 */
+                DeleteWebSecurityTemplateOutcome DeleteWebSecurityTemplate(const Model::DeleteWebSecurityTemplateRequest &request);
+                void DeleteWebSecurityTemplateAsync(const Model::DeleteWebSecurityTemplateRequest& request, const DeleteWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWebSecurityTemplateOutcomeCallable DeleteWebSecurityTemplateCallable(const Model::DeleteWebSecurityTemplateRequest& request);
 
                 /**
                  *This API is used to delete a site.
@@ -1243,7 +2019,8 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeAccelerationDomainsOutcomeCallable DescribeAccelerationDomainsCallable(const Model::DescribeAccelerationDomainsRequest& request);
 
                 /**
-                 *This API is used to query the information of alias domain names.
+                 *This API is used to query the alias domain name information list.
+The feature is only supported in the enterprise plan and is currently in closed beta testing. If you need to use it, [Contact Us](https://www.tencentcloud.com/contact-us).
                  * @param req DescribeAliasDomainsRequest
                  * @return DescribeAliasDomainsOutcome
                  */
@@ -1259,6 +2036,40 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeApplicationProxiesOutcome DescribeApplicationProxies(const Model::DescribeApplicationProxiesRequest &request);
                 void DescribeApplicationProxiesAsync(const Model::DescribeApplicationProxiesRequest& request, const DescribeApplicationProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationProxiesOutcomeCallable DescribeApplicationProxiesCallable(const Model::DescribeApplicationProxiesRequest& request);
+
+                /**
+                 *This API is used to query the list of available custom configurations for rule engine operations on a site.
+                 * @param req DescribeAvailableCustomActionsForRuleEngineRequest
+                 * @return DescribeAvailableCustomActionsForRuleEngineOutcome
+                 */
+                DescribeAvailableCustomActionsForRuleEngineOutcome DescribeAvailableCustomActionsForRuleEngine(const Model::DescribeAvailableCustomActionsForRuleEngineRequest &request);
+                void DescribeAvailableCustomActionsForRuleEngineAsync(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request, const DescribeAvailableCustomActionsForRuleEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableCustomActionsForRuleEngineOutcomeCallable DescribeAvailableCustomActionsForRuleEngineCallable(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request);
+
+                /**
+                 *This API is used to query detailed information about the origin protection IP range control domain, including the version number and specific IP range information.
+The main difference between standard control domain and streamlined control domain is the number of IP ranges provided. The latter has fewer IP ranges, but has some usage restrictions. For specific restrictions, consult the product. The format description is as follows:
+Standard control domain:
+<li>gaz: standard global control domain;</li>
+<li>mlc: Standard China control domain;</li>
+<li>emc: standard overseas (worldwide excluding China) control domain;</li>
+Streamline the control domain.
+<li>plat-gaz: simplified global control domain;</li>
+<li>plat-mlc: Simplified China control domain;</li>
+<li>plat-emc: Simplified overseas (global excluding China) control domain;</li>
+<li>plat-specific-gaz: custom edition global availability zone control domain;</li>
+<li>plat-specific-mlc: custom edition for controlling the Chinese mainland availability zone control domain;</li>
+<li>plat-specific-emc: custom edition control domain for availability zones worldwide (excluding Chinese mainland);</li>
+Abbreviation description:
+<li>gaz:Global AZ Availability Zone;</li>
+<li>mlc:mainlandChina;</li>
+<li>emc:Exclude mainlandChina.</li>
+                 * @param req DescribeAvailableOriginACLFamilyRequest
+                 * @return DescribeAvailableOriginACLFamilyOutcome
+                 */
+                DescribeAvailableOriginACLFamilyOutcome DescribeAvailableOriginACLFamily(const Model::DescribeAvailableOriginACLFamilyRequest &request);
+                void DescribeAvailableOriginACLFamilyAsync(const Model::DescribeAvailableOriginACLFamilyRequest& request, const DescribeAvailableOriginACLFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableOriginACLFamilyOutcomeCallable DescribeAvailableOriginACLFamilyCallable(const Model::DescribeAvailableOriginACLFamilyRequest& request);
 
                 /**
                  *This API is used to query plan options available for purchase.
@@ -1324,6 +2135,33 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeCustomErrorPagesOutcomeCallable DescribeCustomErrorPagesCallable(const Model::DescribeCustomErrorPagesRequest& request);
 
                 /**
+                 *This API is used to query the detailed information of a custom group, including all entries in the group (returned with pagination via Limit/Offset). The DescribeCustomGroups list API returns up to the first 500 entries for each group. To obtain all entries, use this API. The GroupId can be obtained from the response of CreateCustomGroup or by querying DescribeCustomGroups.
+                 * @param req DescribeCustomGroupRequest
+                 * @return DescribeCustomGroupOutcome
+                 */
+                DescribeCustomGroupOutcome DescribeCustomGroup(const Model::DescribeCustomGroupRequest &request);
+                void DescribeCustomGroupAsync(const Model::DescribeCustomGroupRequest& request, const DescribeCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupOutcomeCallable DescribeCustomGroupCallable(const Model::DescribeCustomGroupRequest& request);
+
+                /**
+                 *This API is used to obtain the security policy configuration that uses a custom group.
+                 * @param req DescribeCustomGroupReferencesRequest
+                 * @return DescribeCustomGroupReferencesOutcome
+                 */
+                DescribeCustomGroupReferencesOutcome DescribeCustomGroupReferences(const Model::DescribeCustomGroupReferencesRequest &request);
+                void DescribeCustomGroupReferencesAsync(const Model::DescribeCustomGroupReferencesRequest& request, const DescribeCustomGroupReferencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupReferencesOutcomeCallable DescribeCustomGroupReferencesCallable(const Model::DescribeCustomGroupReferencesRequest& request);
+
+                /**
+                 *This API is used to query the list of custom groups under a specified site. This API returns only the first 500 entries of each custom group. To query all entries in a group, use the DescribeSecurityCustomGroup API.
+                 * @param req DescribeCustomGroupsRequest
+                 * @return DescribeCustomGroupsOutcome
+                 */
+                DescribeCustomGroupsOutcome DescribeCustomGroups(const Model::DescribeCustomGroupsRequest &request);
+                void DescribeCustomGroupsAsync(const Model::DescribeCustomGroupsRequest& request, const DescribeCustomGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupsOutcomeCallable DescribeCustomGroupsCallable(const Model::DescribeCustomGroupsRequest& request);
+
+                /**
                  *This API is used to query the time-series data of DDoS attacks.
                  * @param req DescribeDDoSAttackDataRequest
                  * @return DescribeDDoSAttackDataOutcome
@@ -1349,6 +2187,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeDDoSAttackTopDataOutcome DescribeDDoSAttackTopData(const Model::DescribeDDoSAttackTopDataRequest &request);
                 void DescribeDDoSAttackTopDataAsync(const Model::DescribeDDoSAttackTopDataRequest& request, const DescribeDDoSAttackTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDDoSAttackTopDataOutcomeCallable DescribeDDoSAttackTopDataCallable(const Model::DescribeDDoSAttackTopDataRequest& request);
+
+                /**
+                 *This API is used to search for site exclusive Anti-DDoS information.
+                 * @param req DescribeDDoSProtectionRequest
+                 * @return DescribeDDoSProtectionOutcome
+                 */
+                DescribeDDoSProtectionOutcome DescribeDDoSProtection(const Model::DescribeDDoSProtectionRequest &request);
+                void DescribeDDoSProtectionAsync(const Model::DescribeDDoSProtectionRequest& request, const DescribeDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSProtectionOutcomeCallable DescribeDDoSProtectionCallable(const Model::DescribeDDoSProtectionRequest& request);
 
                 /**
                  *This API is used to query a list of default certificates.
@@ -1378,6 +2225,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeDnsRecordsOutcomeCallable DescribeDnsRecordsCallable(const Model::DescribeDnsRecordsRequest& request);
 
                 /**
+                 *This API is used to query the KV namespace list of a specified site, supporting pagination, sorting and conditional filtering. It returns the basic info, capacity utilization and reference relationship of namespaces. If data not found, return an empty array.
+                 * @param req DescribeEdgeKVNamespacesRequest
+                 * @return DescribeEdgeKVNamespacesOutcome
+                 */
+                DescribeEdgeKVNamespacesOutcome DescribeEdgeKVNamespaces(const Model::DescribeEdgeKVNamespacesRequest &request);
+                void DescribeEdgeKVNamespacesAsync(const Model::DescribeEdgeKVNamespacesRequest& request, const DescribeEdgeKVNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeKVNamespacesOutcomeCallable DescribeEdgeKVNamespacesCallable(const Model::DescribeEdgeKVNamespacesRequest& request);
+
+                /**
                  *This API is used to query environment information in version management mode. The response includes the environment ID, type, and current effective version. The version management feature is currently undergoing beta testing and is accessible only to users on the whitelist.
                  * @param req DescribeEnvironmentsRequest
                  * @return DescribeEnvironmentsOutcome
@@ -1385,6 +2241,24 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
                 void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *This API is used to query the component binding list of a specified edge function. It supports pagination and conditional filtering, and returns detailed information such as bound component types, variable names, and configuration parameters. Currently supported bound component types include KV namespace (kv_namespace).
+                 * @param req DescribeFunctionComponentBindingsRequest
+                 * @return DescribeFunctionComponentBindingsOutcome
+                 */
+                DescribeFunctionComponentBindingsOutcome DescribeFunctionComponentBindings(const Model::DescribeFunctionComponentBindingsRequest &request);
+                void DescribeFunctionComponentBindingsAsync(const Model::DescribeFunctionComponentBindingsRequest& request, const DescribeFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFunctionComponentBindingsOutcomeCallable DescribeFunctionComponentBindingsCallable(const Model::DescribeFunctionComponentBindingsRequest& request);
+
+                /**
+                 *This API is used to query the replica list of edge functions.
+                 * @param req DescribeFunctionReplicasRequest
+                 * @return DescribeFunctionReplicasOutcome
+                 */
+                DescribeFunctionReplicasOutcome DescribeFunctionReplicas(const Model::DescribeFunctionReplicasRequest &request);
+                void DescribeFunctionReplicasAsync(const Model::DescribeFunctionReplicasRequest& request, const DescribeFunctionReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFunctionReplicasOutcomeCallable DescribeFunctionReplicasCallable(const Model::DescribeFunctionReplicasRequest& request);
 
                 /**
                  *This API is used to query the list of trigger rules for an edge function. It supports filtering by rule ID, function ID, rule description, and so on.
@@ -1423,6 +2297,15 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeHostsSettingOutcomeCallable DescribeHostsSettingCallable(const Model::DescribeHostsSettingRequest& request);
 
                 /**
+                 *This API is used to query policy configurations that reference a specified IP group.
+                 * @param req DescribeIPGroupReferencesRequest
+                 * @return DescribeIPGroupReferencesOutcome
+                 */
+                DescribeIPGroupReferencesOutcome DescribeIPGroupReferences(const Model::DescribeIPGroupReferencesRequest &request);
+                void DescribeIPGroupReferencesAsync(const Model::DescribeIPGroupReferencesRequest& request, const DescribeIPGroupReferencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPGroupReferencesOutcomeCallable DescribeIPGroupReferencesCallable(const Model::DescribeIPGroupReferencesRequest& request);
+
+                /**
                  *This API is used to check if the IP is an EdgeOne IP.
                  * @param req DescribeIPRegionRequest
                  * @return DescribeIPRegionOutcome
@@ -1439,6 +2322,69 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeIdentificationsOutcome DescribeIdentifications(const Model::DescribeIdentificationsRequest &request);
                 void DescribeIdentificationsAsync(const Model::DescribeIdentificationsRequest& request, const DescribeIdentificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIdentificationsOutcomeCallable DescribeIdentificationsCallable(const Model::DescribeIdentificationsRequest& request);
+
+                /**
+                 *This API is used to query the list of reasoning API Tokens, return the ID, name, content, and creation time of the Tokens, and support paging query.
+                 * @param req DescribeInferenceAPITokensRequest
+                 * @return DescribeInferenceAPITokensOutcome
+                 */
+                DescribeInferenceAPITokensOutcome DescribeInferenceAPITokens(const Model::DescribeInferenceAPITokensRequest &request);
+                void DescribeInferenceAPITokensAsync(const Model::DescribeInferenceAPITokensRequest& request, const DescribeInferenceAPITokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceAPITokensOutcomeCallable DescribeInferenceAPITokensCallable(const Model::DescribeInferenceAPITokensRequest& request);
+
+                /**
+                 *This API is used to query the reasoning hardware specification list, returning configurations such as CPU, memory, GPU, and memory for each specification. You can select the required specification during service creation.
+                 * @param req DescribeInferenceHardwareSpecificationsRequest
+                 * @return DescribeInferenceHardwareSpecificationsOutcome
+                 */
+                DescribeInferenceHardwareSpecificationsOutcome DescribeInferenceHardwareSpecifications(const Model::DescribeInferenceHardwareSpecificationsRequest &request);
+                void DescribeInferenceHardwareSpecificationsAsync(const Model::DescribeInferenceHardwareSpecificationsRequest& request, const DescribeInferenceHardwareSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceHardwareSpecificationsOutcomeCallable DescribeInferenceHardwareSpecificationsCallable(const Model::DescribeInferenceHardwareSpecificationsRequest& request);
+
+                /**
+                 *This API is used to query the logs of a designated deployment of an inference service, return log content and generation time, and support time-based range search, pagination, and sorting.
+                 * @param req DescribeInferenceServiceDeploymentLogsRequest
+                 * @return DescribeInferenceServiceDeploymentLogsOutcome
+                 */
+                DescribeInferenceServiceDeploymentLogsOutcome DescribeInferenceServiceDeploymentLogs(const Model::DescribeInferenceServiceDeploymentLogsRequest &request);
+                void DescribeInferenceServiceDeploymentLogsAsync(const Model::DescribeInferenceServiceDeploymentLogsRequest& request, const DescribeInferenceServiceDeploymentLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceServiceDeploymentLogsOutcomeCallable DescribeInferenceServiceDeploymentLogsCallable(const Model::DescribeInferenceServiceDeploymentLogsRequest& request);
+
+                /**
+                 *This API is used to query the deployment history list of inference services, returning the operation type, status, duration, configuration snapshot, and whether it is the currently effective configuration for each deployment, with support for pagination and sorting.
+                 * @param req DescribeInferenceServiceDeploymentRecordsRequest
+                 * @return DescribeInferenceServiceDeploymentRecordsOutcome
+                 */
+                DescribeInferenceServiceDeploymentRecordsOutcome DescribeInferenceServiceDeploymentRecords(const Model::DescribeInferenceServiceDeploymentRecordsRequest &request);
+                void DescribeInferenceServiceDeploymentRecordsAsync(const Model::DescribeInferenceServiceDeploymentRecordsRequest& request, const DescribeInferenceServiceDeploymentRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceServiceDeploymentRecordsOutcomeCallable DescribeInferenceServiceDeploymentRecordsCallable(const Model::DescribeInferenceServiceDeploymentRecordsRequest& request);
+
+                /**
+                 *This API is used to query service monitoring data for reasoning, supporting indicators such as CPU, memory, GPU, video memory utilization, and instance count. You can specify the time range and aggregation granularity, and query data for up to the most recent 30 days.
+                 * @param req DescribeInferenceServiceMonitorDataRequest
+                 * @return DescribeInferenceServiceMonitorDataOutcome
+                 */
+                DescribeInferenceServiceMonitorDataOutcome DescribeInferenceServiceMonitorData(const Model::DescribeInferenceServiceMonitorDataRequest &request);
+                void DescribeInferenceServiceMonitorDataAsync(const Model::DescribeInferenceServiceMonitorDataRequest& request, const DescribeInferenceServiceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceServiceMonitorDataOutcomeCallable DescribeInferenceServiceMonitorDataCallable(const Model::DescribeInferenceServiceMonitorDataRequest& request);
+
+                /**
+                 *This API is used to query the service list for reasoning, supporting filtering by service name, service ID, and status. It returns information such as service configuration, running state, number of instances, and reasoning access address.
+                 * @param req DescribeInferenceServicesRequest
+                 * @return DescribeInferenceServicesOutcome
+                 */
+                DescribeInferenceServicesOutcome DescribeInferenceServices(const Model::DescribeInferenceServicesRequest &request);
+                void DescribeInferenceServicesAsync(const Model::DescribeInferenceServicesRequest& request, const DescribeInferenceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceServicesOutcomeCallable DescribeInferenceServicesCallable(const Model::DescribeInferenceServicesRequest& request);
+
+                /**
+                 *This API is used to search the transcoding template detail list according to the name, template type, or unique identifier of the just-in-time transcoding template. The returned results include all eligible custom templates and preset templates.
+                 * @param req DescribeJustInTimeTranscodeTemplatesRequest
+                 * @return DescribeJustInTimeTranscodeTemplatesOutcome
+                 */
+                DescribeJustInTimeTranscodeTemplatesOutcome DescribeJustInTimeTranscodeTemplates(const Model::DescribeJustInTimeTranscodeTemplatesRequest &request);
+                void DescribeJustInTimeTranscodeTemplatesAsync(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJustInTimeTranscodeTemplatesOutcomeCallable DescribeJustInTimeTranscodeTemplatesCallable(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request);
 
                 /**
                  *This API is used to query a Layer 4 proxy instance list.
@@ -1477,13 +2423,85 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeL7AccSettingOutcomeCallable DescribeL7AccSettingCallable(const Model::DescribeL7AccSettingRequest& request);
 
                 /**
-                 *This API is used to query the LoadBalancer list. The load balancing feature is in beta test. If you need to use it, [contact us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+                 *This API is used to query the LoadBalancer list. The load balancing feature is in beta test. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req DescribeLoadBalancerListRequest
                  * @return DescribeLoadBalancerListOutcome
                  */
                 DescribeLoadBalancerListOutcome DescribeLoadBalancerList(const Model::DescribeLoadBalancerListRequest &request);
                 void DescribeLoadBalancerListAsync(const Model::DescribeLoadBalancerListRequest& request, const DescribeLoadBalancerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLoadBalancerListOutcomeCallable DescribeLoadBalancerListCallable(const Model::DescribeLoadBalancerListRequest& request);
+
+                /**
+                 *This API is used to query the log analysis details. The data comes from the log data of the real-time log push task with the destination "log_analysis" under the site.
+                 * @param req DescribeLogAnalysisDetailRequest
+                 * @return DescribeLogAnalysisDetailOutcome
+                 */
+                DescribeLogAnalysisDetailOutcome DescribeLogAnalysisDetail(const Model::DescribeLogAnalysisDetailRequest &request);
+                void DescribeLogAnalysisDetailAsync(const Model::DescribeLogAnalysisDetailRequest& request, const DescribeLogAnalysisDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogAnalysisDetailOutcomeCallable DescribeLogAnalysisDetailCallable(const Model::DescribeLogAnalysisDetailRequest& request);
+
+                /**
+                 *This API is used to query the log download task list for log analysis. Note: Only download task records from the last three days are retained.
+                 * @param req DescribeLogAnalysisDownloadTasksRequest
+                 * @return DescribeLogAnalysisDownloadTasksOutcome
+                 */
+                DescribeLogAnalysisDownloadTasksOutcome DescribeLogAnalysisDownloadTasks(const Model::DescribeLogAnalysisDownloadTasksRequest &request);
+                void DescribeLogAnalysisDownloadTasksAsync(const Model::DescribeLogAnalysisDownloadTasksRequest& request, const DescribeLogAnalysisDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogAnalysisDownloadTasksOutcomeCallable DescribeLogAnalysisDownloadTasksCallable(const Model::DescribeLogAnalysisDownloadTasksRequest& request);
+
+                /**
+                 *This API is used to query multi-channel security acceleration gateway details such as name, Gateway ID, IP, port and type.
+                 * @param req DescribeMultiPathGatewayRequest
+                 * @return DescribeMultiPathGatewayOutcome
+                 */
+                DescribeMultiPathGatewayOutcome DescribeMultiPathGateway(const Model::DescribeMultiPathGatewayRequest &request);
+                void DescribeMultiPathGatewayAsync(const Model::DescribeMultiPathGatewayRequest& request, const DescribeMultiPathGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewayOutcomeCallable DescribeMultiPathGatewayCallable(const Model::DescribeMultiPathGatewayRequest& request);
+
+                /**
+                 *Use this API to query the lines integrated with the multi-channel security acceleration gateway, including direct connection lines, EdgeOne Layer-4 proxy lines, and custom lines.
+                 * @param req DescribeMultiPathGatewayLineRequest
+                 * @return DescribeMultiPathGatewayLineOutcome
+                 */
+                DescribeMultiPathGatewayLineOutcome DescribeMultiPathGatewayLine(const Model::DescribeMultiPathGatewayLineRequest &request);
+                void DescribeMultiPathGatewayLineAsync(const Model::DescribeMultiPathGatewayLineRequest& request, const DescribeMultiPathGatewayLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewayLineOutcomeCallable DescribeMultiPathGatewayLineCallable(const Model::DescribeMultiPathGatewayLineRequest& request);
+
+                /**
+                 *This API is used to query the binding relationship between a multi-channel security acceleration gateway instance and the origin server IP range, as well as the IP range details. If the MultiPathGatewayNextOriginACL field has a return value, the latest origin server IP range must be synchronized to the origin server firewall configuration.
+                 * @param req DescribeMultiPathGatewayOriginACLRequest
+                 * @return DescribeMultiPathGatewayOriginACLOutcome
+                 */
+                DescribeMultiPathGatewayOriginACLOutcome DescribeMultiPathGatewayOriginACL(const Model::DescribeMultiPathGatewayOriginACLRequest &request);
+                void DescribeMultiPathGatewayOriginACLAsync(const Model::DescribeMultiPathGatewayOriginACLRequest& request, const DescribeMultiPathGatewayOriginACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewayOriginACLOutcomeCallable DescribeMultiPathGatewayOriginACLCallable(const Model::DescribeMultiPathGatewayOriginACLRequest& request);
+
+                /**
+                 *This API is used to query the list of available regions for user-created multi-channel security acceleration gateways (Cloud Gateway).
+                 * @param req DescribeMultiPathGatewayRegionsRequest
+                 * @return DescribeMultiPathGatewayRegionsOutcome
+                 */
+                DescribeMultiPathGatewayRegionsOutcome DescribeMultiPathGatewayRegions(const Model::DescribeMultiPathGatewayRegionsRequest &request);
+                void DescribeMultiPathGatewayRegionsAsync(const Model::DescribeMultiPathGatewayRegionsRequest& request, const DescribeMultiPathGatewayRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewayRegionsOutcomeCallable DescribeMultiPathGatewayRegionsCallable(const Model::DescribeMultiPathGatewayRegionsRequest& request);
+
+                /**
+                 *This API is used to query the key for integrating a multi-channel security acceleration gateway. Customers sign with the integration key to access the multi-channel security acceleration gateway.
+                 * @param req DescribeMultiPathGatewaySecretKeyRequest
+                 * @return DescribeMultiPathGatewaySecretKeyOutcome
+                 */
+                DescribeMultiPathGatewaySecretKeyOutcome DescribeMultiPathGatewaySecretKey(const Model::DescribeMultiPathGatewaySecretKeyRequest &request);
+                void DescribeMultiPathGatewaySecretKeyAsync(const Model::DescribeMultiPathGatewaySecretKeyRequest& request, const DescribeMultiPathGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewaySecretKeyOutcomeCallable DescribeMultiPathGatewaySecretKeyCallable(const Model::DescribeMultiPathGatewaySecretKeyRequest& request);
+
+                /**
+                 *Query the multi-channel security acceleration gateway list created by the user through this interface. Supports pagination.
+                 * @param req DescribeMultiPathGatewaysRequest
+                 * @return DescribeMultiPathGatewaysOutcome
+                 */
+                DescribeMultiPathGatewaysOutcome DescribeMultiPathGateways(const Model::DescribeMultiPathGatewaysRequest &request);
+                void DescribeMultiPathGatewaysAsync(const Model::DescribeMultiPathGatewaysRequest& request, const DescribeMultiPathGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultiPathGatewaysOutcomeCallable DescribeMultiPathGatewaysCallable(const Model::DescribeMultiPathGatewaysRequest& request);
 
                 /**
                  *This API is used to query the binding relationship between L7 acceleration domains/L4 proxy instances and origin ACLs under a site, as well as IP range details. If you want to periodically obtain the latest version of origin IP ranges through an automation script, you can poll this API at a low-frequency (recommended every three days). If the NextOriginACL field has a return value, synchronize the latest origin IP ranges to the origin server firewall configuration.
@@ -1504,7 +2522,7 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeOriginGroupOutcomeCallable DescribeOriginGroupCallable(const Model::DescribeOriginGroupRequest& request);
 
                 /**
-                 *This API is used to query the health status of origin server groups under a LoadBalancer. The load balancing feature is in beta test. If you need to use it, [contact us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+                 *This API is used to query the health status of origin server groups under a LoadBalancer. The load balancing feature is in beta test. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req DescribeOriginGroupHealthStatusRequest
                  * @return DescribeOriginGroupHealthStatusOutcome
                  */
@@ -1513,7 +2531,9 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeOriginGroupHealthStatusOutcomeCallable DescribeOriginGroupHealthStatusCallable(const Model::DescribeOriginGroupHealthStatusRequest& request);
 
                 /**
-                 *This API is used to query the origin protection configuration.
+                 *This API is used to query origin protection on an earlier version. EdgeOne comprehensively upgraded relevant APIs for origin protection on June 27, 2025. For details on the new version, see [DescribeOriginACL](https://intl.cloud.tencent.com/document/product/1552/120408?from_cn_redirect=1).
+
+Note: Starting from June 27, 2025, the legacy version APIs will stop updating. New features will only be provided in the latest version APIs. To avoid data field conflicts when using legacy version APIs, it is recommended to migrate to the new version origin protection APIs as soon as possible.
                  * @param req DescribeOriginProtectionRequest
                  * @return DescribeOriginProtectionOutcome
                  */
@@ -1529,6 +2549,24 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeOverviewL7DataOutcome DescribeOverviewL7Data(const Model::DescribeOverviewL7DataRequest &request);
                 void DescribeOverviewL7DataAsync(const Model::DescribeOverviewL7DataRequest& request, const DescribeOverviewL7DataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOverviewL7DataOutcomeCallable DescribeOverviewL7DataCallable(const Model::DescribeOverviewL7DataRequest& request);
+
+                /**
+                 *This API is used to query package information list with pagination support.
+                 * @param req DescribePlansRequest
+                 * @return DescribePlansOutcome
+                 */
+                DescribePlansOutcome DescribePlans(const Model::DescribePlansRequest &request);
+                void DescribePlansAsync(const Model::DescribePlansRequest& request, const DescribePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlansOutcomeCallable DescribePlansCallable(const Model::DescribePlansRequest& request);
+
+                /**
+                 *This API is used to query the origin speed limit. This feature is in closed beta testing.
+                 * @param req DescribePrefetchOriginLimitRequest
+                 * @return DescribePrefetchOriginLimitOutcome
+                 */
+                DescribePrefetchOriginLimitOutcome DescribePrefetchOriginLimit(const Model::DescribePrefetchOriginLimitRequest &request);
+                void DescribePrefetchOriginLimitAsync(const Model::DescribePrefetchOriginLimitRequest& request, const DescribePrefetchOriginLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrefetchOriginLimitOutcomeCallable DescribePrefetchOriginLimitCallable(const Model::DescribePrefetchOriginLimitRequest& request);
 
                 /**
                  *DescribePrefetchTasks is used to query the submission history and execution progress of preheating tasks. This interface can be used to query the tasks submitted by the CreatePrefetchTasks interface.
@@ -1558,7 +2596,8 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeRealtimeLogDeliveryTasksOutcomeCallable DescribeRealtimeLogDeliveryTasksCallable(const Model::DescribeRealtimeLogDeliveryTasksRequest& request);
 
                 /**
-                 *This API is an older version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [DescribeL7AccRules](https://intl.cloud.tencent.com/document/product/1552/115820?from_cn_redirect=1).
+                 *This API is on an earlier version to query engine rules. EdgeOne has comprehensively upgraded relevant APIs of the rule engine on January 21, 2025. For details about the new version API to query layer-7 acceleration rules, see DescribeL7AccRules(https://intl.cloud.tencent.com/document/product/1552/115820?from_cn_redirect=1).
+<p style="color: red;">Note: Starting from January 21, 2025, the old version of the interface will stop updating and iteration. Subsequent new features will only be provided in the new version of the interface, and the original capabilities supported by the old version of the interface will not be affected. To avoid data field conflicts when using the old version of the interface, it is recommended that you migrate to the new version of the rule engine interface as soon as possible. </p>
                  * @param req DescribeRulesRequest
                  * @return DescribeRulesOutcome
                  */
@@ -1576,13 +2615,49 @@ If there are already EdgeOne plans under the current account, it is recommended 
                 DescribeRulesSettingOutcomeCallable DescribeRulesSettingCallable(const Model::DescribeRulesSettingRequest& request);
 
                 /**
-                 *This API is used to query the configuration information of a security IP group, including the ID, name, and content of the security IP group.
+                 *This API is used to query API resources under a site.
+                 * @param req DescribeSecurityAPIResourceRequest
+                 * @return DescribeSecurityAPIResourceOutcome
+                 */
+                DescribeSecurityAPIResourceOutcome DescribeSecurityAPIResource(const Model::DescribeSecurityAPIResourceRequest &request);
+                void DescribeSecurityAPIResourceAsync(const Model::DescribeSecurityAPIResourceRequest& request, const DescribeSecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAPIResourceOutcomeCallable DescribeSecurityAPIResourceCallable(const Model::DescribeSecurityAPIResourceRequest& request);
+
+                /**
+                 *This API is used to query API services under a site.
+                 * @param req DescribeSecurityAPIServiceRequest
+                 * @return DescribeSecurityAPIServiceOutcome
+                 */
+                DescribeSecurityAPIServiceOutcome DescribeSecurityAPIService(const Model::DescribeSecurityAPIServiceRequest &request);
+                void DescribeSecurityAPIServiceAsync(const Model::DescribeSecurityAPIServiceRequest& request, const DescribeSecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityAPIServiceOutcomeCallable DescribeSecurityAPIServiceCallable(const Model::DescribeSecurityAPIServiceRequest& request);
+
+                /**
+                 *This API is used to query client authentication option configuration.
+                 * @param req DescribeSecurityClientAttesterRequest
+                 * @return DescribeSecurityClientAttesterOutcome
+                 */
+                DescribeSecurityClientAttesterOutcome DescribeSecurityClientAttester(const Model::DescribeSecurityClientAttesterRequest &request);
+                void DescribeSecurityClientAttesterAsync(const Model::DescribeSecurityClientAttesterRequest& request, const DescribeSecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityClientAttesterOutcomeCallable DescribeSecurityClientAttesterCallable(const Model::DescribeSecurityClientAttesterRequest& request);
+
+                /**
+                 *This API is used to query the configuration information of a security IP group, including the ID, name and content of the security IP group. The query result of this API only returns up to 2000 IPs or CIDR blocks for each IP group. If there is a very large IP group exceeding 2000 IPs or CIDR blocks, call DescribeSecurityIPGroupContent to perform a paging query.
                  * @param req DescribeSecurityIPGroupRequest
                  * @return DescribeSecurityIPGroupOutcome
                  */
                 DescribeSecurityIPGroupOutcome DescribeSecurityIPGroup(const Model::DescribeSecurityIPGroupRequest &request);
                 void DescribeSecurityIPGroupAsync(const Model::DescribeSecurityIPGroupRequest& request, const DescribeSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityIPGroupOutcomeCallable DescribeSecurityIPGroupCallable(const Model::DescribeSecurityIPGroupRequest& request);
+
+                /**
+                 *This API is used to perform a paging query for the IP address list in a designated IP group. When the number of IP addresses in the group exceeds 2000, you can use this API to perform a paging query to obtain the complete IP address list.
+                 * @param req DescribeSecurityIPGroupContentRequest
+                 * @return DescribeSecurityIPGroupContentOutcome
+                 */
+                DescribeSecurityIPGroupContentOutcome DescribeSecurityIPGroupContent(const Model::DescribeSecurityIPGroupContentRequest &request);
+                void DescribeSecurityIPGroupContentAsync(const Model::DescribeSecurityIPGroupContentRequest& request, const DescribeSecurityIPGroupContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityIPGroupContentOutcomeCallable DescribeSecurityIPGroupContentCallable(const Model::DescribeSecurityIPGroupContentRequest& request);
 
                 /**
                  *The API is deprecated and will be discontinued on June 30, 2024. Please use the API [DescribeSecurityIPGroup
@@ -1595,6 +2670,15 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeSecurityIPGroupInfoOutcome DescribeSecurityIPGroupInfo(const Model::DescribeSecurityIPGroupInfoRequest &request);
                 void DescribeSecurityIPGroupInfoAsync(const Model::DescribeSecurityIPGroupInfoRequest& request, const DescribeSecurityIPGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityIPGroupInfoOutcomeCallable DescribeSecurityIPGroupInfoCallable(const Model::DescribeSecurityIPGroupInfoRequest& request);
+
+                /**
+                 *This API is used to query JavaScript injection rules.
+                 * @param req DescribeSecurityJSInjectionRuleRequest
+                 * @return DescribeSecurityJSInjectionRuleOutcome
+                 */
+                DescribeSecurityJSInjectionRuleOutcome DescribeSecurityJSInjectionRule(const Model::DescribeSecurityJSInjectionRuleRequest &request);
+                void DescribeSecurityJSInjectionRuleAsync(const Model::DescribeSecurityJSInjectionRuleRequest& request, const DescribeSecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityJSInjectionRuleOutcomeCallable DescribeSecurityJSInjectionRuleCallable(const Model::DescribeSecurityJSInjectionRuleRequest& request);
 
                 /**
                  *This API is used to query the web and security protection configurations.
@@ -1615,7 +2699,25 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeSecurityTemplateBindingsOutcomeCallable DescribeSecurityTemplateBindingsCallable(const Model::DescribeSecurityTemplateBindingsRequest& request);
 
                 /**
-                 *This API is used to query the list of L4 traffic data recorded over time.
+                 *Query the shared CNAME list, support fuzzy search, paginate, and sort.
+                 * @param req DescribeSharedCNAMERequest
+                 * @return DescribeSharedCNAMEOutcome
+                 */
+                DescribeSharedCNAMEOutcome DescribeSharedCNAME(const Model::DescribeSharedCNAMERequest &request);
+                void DescribeSharedCNAMEAsync(const Model::DescribeSharedCNAMERequest& request, const DescribeSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedCNAMEOutcomeCallable DescribeSharedCNAMECallable(const Model::DescribeSharedCNAMERequest& request);
+
+                /**
+                 *This API is used to query the time series data of edge function analysis. Note that the data queried by this API has a delay of about 10 minutes. It is recommended to pull data from at least 10 minutes before the current time.
+                 * @param req DescribeTimingFunctionAnalysisDataRequest
+                 * @return DescribeTimingFunctionAnalysisDataOutcome
+                 */
+                DescribeTimingFunctionAnalysisDataOutcome DescribeTimingFunctionAnalysisData(const Model::DescribeTimingFunctionAnalysisDataRequest &request);
+                void DescribeTimingFunctionAnalysisDataAsync(const Model::DescribeTimingFunctionAnalysisDataRequest& request, const DescribeTimingFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimingFunctionAnalysisDataOutcomeCallable DescribeTimingFunctionAnalysisDataCallable(const Model::DescribeTimingFunctionAnalysisDataRequest& request);
+
+                /**
+                 *<p>This API is used to query time series monitoring data for L4 proxy instences.</p>
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
                  */
@@ -1624,7 +2726,10 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeTimingL4DataOutcomeCallable DescribeTimingL4DataCallable(const Model::DescribeTimingL4DataRequest& request);
 
                 /**
-                 *This API is used to query the time series data of the L7 domain name. Note that there is a delay of about 10 minutes for this API. It is recommended to pull data from 10 minutes before the current time.
+                 *This API is used to query time-series data for Layer 7 domain services.
+Notes:
+1. Data queried by this API has a latency of approximately 10 minutes. It is recommended to pull data from at least 10 minutes prior to the current time.
+2. By default, this API returns post-protection traffic request data. Users can customize queries for mitigated data by using `Filters.mitigatedByWebSecurity`.
                  * @param req DescribeTimingL7AnalysisDataRequest
                  * @return DescribeTimingL7AnalysisDataOutcome
                  */
@@ -1642,7 +2747,29 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeTimingL7CacheDataOutcomeCallable DescribeTimingL7CacheDataCallable(const Model::DescribeTimingL7CacheDataRequest& request);
 
                 /**
-                 *This API is used to query the top N data of the L7 domain name by a specified dimension. Note that there is a delay of about 10 minutes for this API. It is recommended to pull data from 10 minutes before the current time.
+                 *This API is used to query time series data of the layer-7 domain name business.
+You can choose to perform grouping queries by specifying the query dimension <code>DimensionName</code>, returning multiple groups of time series data. For detailed directions and usage limits, see [How to Implement Group Query in a Single Call Using API](https://www.tencentcloud.com/document/product/1552/127501?from_cn_redirect=1).
+                 * @param req DescribeTimingL7OriginPullDataRequest
+                 * @return DescribeTimingL7OriginPullDataOutcome
+                 */
+                DescribeTimingL7OriginPullDataOutcome DescribeTimingL7OriginPullData(const Model::DescribeTimingL7OriginPullDataRequest &request);
+                void DescribeTimingL7OriginPullDataAsync(const Model::DescribeTimingL7OriginPullDataRequest& request, const DescribeTimingL7OriginPullDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimingL7OriginPullDataOutcomeCallable DescribeTimingL7OriginPullDataCallable(const Model::DescribeTimingL7OriginPullDataRequest& request);
+
+                /**
+                 *This API is used to query the topN data of Edge Functions by a specified dimension. Note that the data returned by this API has a delay of about 10 minutes. We recommend that you query the data generated at least 10 minutes before the current time.
+                 * @param req DescribeTopFunctionAnalysisDataRequest
+                 * @return DescribeTopFunctionAnalysisDataOutcome
+                 */
+                DescribeTopFunctionAnalysisDataOutcome DescribeTopFunctionAnalysisData(const Model::DescribeTopFunctionAnalysisDataRequest &request);
+                void DescribeTopFunctionAnalysisDataAsync(const Model::DescribeTopFunctionAnalysisDataRequest& request, const DescribeTopFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopFunctionAnalysisDataOutcomeCallable DescribeTopFunctionAnalysisDataCallable(const Model::DescribeTopFunctionAnalysisDataRequest& request);
+
+                /**
+                 *This API is used to query the top N data of the L7 domain name business by specified dimension.
+Create and bind policy Query instance Reset instance access password.
+This API is used to query data with a delay of about 10 minutes. It is recommended to pull data from at least 10 minutes before the current time.
+This API is used to return post-protection traffic request data by default. Users can query defended data in `Filters.mitigatedByWebSecurity`.
                  * @param req DescribeTopL7AnalysisDataRequest
                  * @return DescribeTopL7AnalysisDataOutcome
                  */
@@ -1660,6 +2787,24 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeTopL7CacheDataOutcomeCallable DescribeTopL7CacheDataCallable(const Model::DescribeTopL7CacheDataRequest& request);
 
                 /**
+                 *This API is used to query security policy configuration template details.
+                 * @param req DescribeWebSecurityTemplateRequest
+                 * @return DescribeWebSecurityTemplateOutcome
+                 */
+                DescribeWebSecurityTemplateOutcome DescribeWebSecurityTemplate(const Model::DescribeWebSecurityTemplateRequest &request);
+                void DescribeWebSecurityTemplateAsync(const Model::DescribeWebSecurityTemplateRequest& request, const DescribeWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebSecurityTemplateOutcomeCallable DescribeWebSecurityTemplateCallable(const Model::DescribeWebSecurityTemplateRequest& request);
+
+                /**
+                 *This API is used to query the security policy configuration template list.
+                 * @param req DescribeWebSecurityTemplatesRequest
+                 * @return DescribeWebSecurityTemplatesOutcome
+                 */
+                DescribeWebSecurityTemplatesOutcome DescribeWebSecurityTemplates(const Model::DescribeWebSecurityTemplatesRequest &request);
+                void DescribeWebSecurityTemplatesAsync(const Model::DescribeWebSecurityTemplatesRequest& request, const DescribeWebSecurityTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebSecurityTemplatesOutcomeCallable DescribeWebSecurityTemplatesCallable(const Model::DescribeWebSecurityTemplatesRequest& request);
+
+                /**
                  *This API is used to query the results of site configuration import via API (ImportZoneConfig). This feature only supports the sites in the plans of the Standard Edition and the Enterprise Edition.
                  * @param req DescribeZoneConfigImportResultRequest
                  * @return DescribeZoneConfigImportResultOutcome
@@ -1667,6 +2812,17 @@ This API is used to query the configuration information of an IP group, includin
                 DescribeZoneConfigImportResultOutcome DescribeZoneConfigImportResult(const Model::DescribeZoneConfigImportResultRequest &request);
                 void DescribeZoneConfigImportResultAsync(const Model::DescribeZoneConfigImportResultRequest& request, const DescribeZoneConfigImportResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZoneConfigImportResultOutcomeCallable DescribeZoneConfigImportResultCallable(const Model::DescribeZoneConfigImportResultRequest& request);
+
+                /**
+                 *This API is used to query site-level custom variable configurations, including variable definitions and variable operations. If not configured, both variable definitions and variable operations return empty lists.
+
+If needed, call the DescribeL7AccRules API to query rule-level custom variables.
+                 * @param req DescribeZoneCustomVariablesRequest
+                 * @return DescribeZoneCustomVariablesOutcome
+                 */
+                DescribeZoneCustomVariablesOutcome DescribeZoneCustomVariables(const Model::DescribeZoneCustomVariablesRequest &request);
+                void DescribeZoneCustomVariablesAsync(const Model::DescribeZoneCustomVariablesRequest& request, const DescribeZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZoneCustomVariablesOutcomeCallable DescribeZoneCustomVariablesCallable(const Model::DescribeZoneCustomVariablesRequest& request);
 
                 /**
                  *This API is an old version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [DescribeL7AccSetting](https://intl.cloud.tencent.com/document/product/1552/115819?from_cn_redirect=1).
@@ -1692,7 +2848,7 @@ This API is used to query the configuration information of an IP group, includin
     1. The plan has expired (except for the Enterprise Edition Plan);
     2. All sites under the plan have been either shut down or deleted.
 
-> The site status can be queried through the [Query Site List](https://intl.cloud.tencent.com/document/product/1552/80713?from_cn_redirect=1) interface.
+> The site status can be queried through the [Query Site List](https://www.tencentcloud.com/zh/document/product/1145/50481) interface.
 A site can be deactivated by switching the site to a closed status through the [Switch Site Status](https://intl.cloud.tencent.com/document/product/1552/80707?from_cn_redirect=1) interface.
 A site can be deleted by using the [Delete Site](https://intl.cloud.tencent.com/document/product/1552/80717?from_cn_redirect=1) interface.
                  * @param req DestroyPlanRequest
@@ -1730,13 +2886,47 @@ A site can be deleted by using the [Delete Site](https://intl.cloud.tencent.com/
                 DownloadL7LogsOutcomeCallable DownloadL7LogsCallable(const Model::DownloadL7LogsRequest& request);
 
                 /**
-                 *This API is used to enable 'Origin Protection' for Layer 4 or Layer 7 instances. The number of enabled instances has an upper limit: 200 for Layer 7 domains and 100 for Layer 4 proxy instances. The total number of instances cannot exceed 200, otherwise an error reminder will be triggered. You can first enable the maximum allowed number and use the ModifyOriginACL API to set the excess quantity.
+                 *This API is used to delete one or more key-value pair data in the specified namespace, with batch deletion supported. Data cannot be recovered after deletion.
+                 * @param req EdgeKVDeleteRequest
+                 * @return EdgeKVDeleteOutcome
+                 */
+                EdgeKVDeleteOutcome EdgeKVDelete(const Model::EdgeKVDeleteRequest &request);
+                void EdgeKVDeleteAsync(const Model::EdgeKVDeleteRequest& request, const EdgeKVDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EdgeKVDeleteOutcomeCallable EdgeKVDeleteCallable(const Model::EdgeKVDeleteRequest& request);
 
-This API is used to enable 'Origin Protection' for the site for the first time. Once enabled, EdgeOne will use specific origin IP ranges for L7 acceleration domains and L4 proxy instances. The maximum number of L7 acceleration domain that can be submitted in a single request is 200, and the maximum number of L4 proxy instance is 100. Mixed submissions of L7 acceleration domains and L4 proxy instances are supported, with a total maximum of 200 instances. If you need to enable more than 200 instances, you can first enable the maximum number by specifying the instances, and then enable the remaining instances through the API ModifyOriginACL. Any subsequent addition of  L7 acceleration domains or L4 proxy instances should be configured through the API ModifyOriginACL.
+                /**
+                 *This API is used to batch read key values from a specified namespace, supporting a single query of up to 20 keys.
+                 * @param req EdgeKVGetRequest
+                 * @return EdgeKVGetOutcome
+                 */
+                EdgeKVGetOutcome EdgeKVGet(const Model::EdgeKVGetRequest &request);
+                void EdgeKVGetAsync(const Model::EdgeKVGetRequest& request, const EdgeKVGetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EdgeKVGetOutcomeCallable EdgeKVGetCallable(const Model::EdgeKVGetRequest& request);
+
+                /**
+                 *This API is used to list all keys in the specified namespace with prefix filtering support. It implements cursor traversal through Cursor and returns the next cursor to proceed with querying. Suitable for traversal of all keys in the namespace.
+                 * @param req EdgeKVListRequest
+                 * @return EdgeKVListOutcome
+                 */
+                EdgeKVListOutcome EdgeKVList(const Model::EdgeKVListRequest &request);
+                void EdgeKVListAsync(const Model::EdgeKVListRequest& request, const EdgeKVListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EdgeKVListOutcomeCallable EdgeKVListCallable(const Model::EdgeKVListRequest& request);
+
+                /**
+                 *This API is used to write key-value pair data to a specified namespace and supports setting expiration time. If the key already exists, it overwrites the original value. If Not Exist, it creates a new key-value pair.
+                 * @param req EdgeKVPutRequest
+                 * @return EdgeKVPutOutcome
+                 */
+                EdgeKVPutOutcome EdgeKVPut(const Model::EdgeKVPutRequest &request);
+                void EdgeKVPutAsync(const Model::EdgeKVPutRequest& request, const EdgeKVPutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EdgeKVPutOutcomeCallable EdgeKVPutCallable(const Model::EdgeKVPutRequest& request);
+
+                /**
+                 *This API is used to enable origin protection for a site for the first time. Enabled, EdgeOne will use specific origin-pull IP ranges for L7 acceleration domains/L4 proxy instances. The maximum quantity of L7 acceleration domains supported in a single submission is 200, and the maximum quantity of L4 proxy instances is 100. It supports composite submission of L7 acceleration domains/L4 proxy instances, with a maximum total number of instances of 200. To enable exceeding 200 resources, you can first enable the maximum allowed number via specified resources, and enable the remaining resources via the ModifyOriginACL API. Subsequent addition of L7 acceleration domains/L4 proxy instances should be configured via the ModifyOriginACL API. When enabling simultaneously, allowlisted accounts support selecting other origin-pull IP range versions, such as simplified edition, to achieve origin-pull effect with fewer IP ranges.
 
 Note:
-- Calling this API is considered as agreeing to [Origin Protection Enablement Conditions of Use](https://www.tencentcloud.com/document/product/1145/70561?!longPreview).
-- The origin IP ranges may change periodically. EdgeOne will notify you of changes to the origin IP ranges 14 days, 7 days, 3 days, and 1 day in advance through one or more methods such as internal messages, SMS, and email. To ensure you receive notifications about changes to the origin IP ranges, please make sure that you have selected the relevant product service notifications for the Edge Security Acceleration Platform (EO) in [Tencent Cloud Message Center](https://console.tencentcloud.com/message/subscription) and have configured the correct message recipients. For configuration details, please refer to Message [Subscription Management](https://www.tencentcloud.com/document/product/1233/60778).
+- Calling this API is deemed as agreement to [the special agreement for origin protection enablement](https://www.tencentcloud.com/document/product/1552/120141?from_cn_redirect=1);
+- The origin IP range may change irregularly. EdgeOne will trigger notifications via Message Center, SMS, or email 14 days, 7 days, 3 days, and 1 day before the change. To ensure you receive the origin IP range change notification, please ensure you have selected the edge security acceleration platform EO product services relevant message notification and configured the correct message recipients in the [Tencent Cloud Message Center Console](https://console.cloud.tencent.com/message). For the setting method, refer to [Message Subscription Management](https://www.tencentcloud.com/document/product/567/43476?from_cn_redirect=1).
                  * @param req EnableOriginACLRequest
                  * @return EnableOriginACLOutcome
                  */
@@ -1745,7 +2935,7 @@ Note:
                 EnableOriginACLOutcomeCallable EnableOriginACLCallable(const Model::EnableOriginACLRequest& request);
 
                 /**
-                 *This API is used to export site configuration . The exported configuration is used for import via the API (ImportZoneConfig). This feature only supports the sites in the plans of the Standard Edition and the Enterprise Edition.
+                 *This API is used to export site configuration based on desired configuration items. The exported configuration is used for import via the site configuration import API.
                  * @param req ExportZoneConfigRequest
                  * @return ExportZoneConfigOutcome
                  */
@@ -1773,7 +2963,7 @@ After the environment variables are set, they can be used in the function code. 
                 IdentifyZoneOutcomeCallable IdentifyZoneCallable(const Model::IdentifyZoneRequest& request);
 
                 /**
-                 *This API is used to quickly import site configuration files. After the import is initiated, the API will return the corresponding task ID (TaskId). Users need to use the site configuration import result query API (DescribeZoneConfigImportResult) to obtain the results of this import task. This feature only supports the sites in the plans of the Standard Edition and the Enterprise Edition.
+                 *This API is used to quickly import site configuration files. After the import is initiated, the API will return the corresponding task ID. Users need to use the site configuration import result query API to obtain the execution result of this import task.
                  * @param req ImportZoneConfigRequest
                  * @return ImportZoneConfigOutcome
                  */
@@ -1811,6 +3001,7 @@ After the environment variables are set, they can be used in the function code. 
 
                 /**
                  *This API is used to modify an alias domain name.
+The feature is only supported in the enterprise plan and is currently in closed beta testing. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req ModifyAliasDomainRequest
                  * @return ModifyAliasDomainOutcome
                  */
@@ -1820,6 +3011,7 @@ After the environment variables are set, they can be used in the function code. 
 
                 /**
                  *This API is used to modify the status of an alias domain name.
+The feature is only supported in the enterprise plan and is currently in closed beta testing. If you need to use it, [Contact Us](https://www.tencentcloud.com/contact-us).
                  * @param req ModifyAliasDomainStatusRequest
                  * @return ModifyAliasDomainStatusOutcome
                  */
@@ -1884,6 +3076,24 @@ After the environment variables are set, they can be used in the function code. 
                 ModifyCustomErrorPageOutcomeCallable ModifyCustomErrorPageCallable(const Model::ModifyCustomErrorPageRequest& request);
 
                 /**
+                 *This API is used to modify the content of a custom group. GroupType cannot be modified after creation. When modifying entries in the group, you can specify replacement, append, or removal operations through GroupItemOperation.
+                 * @param req ModifyCustomGroupRequest
+                 * @return ModifyCustomGroupOutcome
+                 */
+                ModifyCustomGroupOutcome ModifyCustomGroup(const Model::ModifyCustomGroupRequest &request);
+                void ModifyCustomGroupAsync(const Model::ModifyCustomGroupRequest& request, const ModifyCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomGroupOutcomeCallable ModifyCustomGroupCallable(const Model::ModifyCustomGroupRequest& request);
+
+                /**
+                 *This API is used to modify site exclusive Anti-DDoS protection.
+                 * @param req ModifyDDoSProtectionRequest
+                 * @return ModifyDDoSProtectionOutcome
+                 */
+                ModifyDDoSProtectionOutcome ModifyDDoSProtection(const Model::ModifyDDoSProtectionRequest &request);
+                void ModifyDDoSProtectionAsync(const Model::ModifyDDoSProtectionRequest& request, const ModifyDDoSProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDDoSProtectionOutcomeCallable ModifyDDoSProtectionCallable(const Model::ModifyDDoSProtectionRequest& request);
+
+                /**
                  *This API is used to bulk modify DNS records.
                  * @param req ModifyDnsRecordsRequest
                  * @return ModifyDnsRecordsOutcome
@@ -1902,6 +3112,15 @@ After the environment variables are set, they can be used in the function code. 
                 ModifyDnsRecordsStatusOutcomeCallable ModifyDnsRecordsStatusCallable(const Model::ModifyDnsRecordsStatusRequest& request);
 
                 /**
+                 *This API is used to modify the attribute information of a specified KV namespace. Currently supported is namespace description modification.
+                 * @param req ModifyEdgeKVNamespaceRequest
+                 * @return ModifyEdgeKVNamespaceOutcome
+                 */
+                ModifyEdgeKVNamespaceOutcome ModifyEdgeKVNamespace(const Model::ModifyEdgeKVNamespaceRequest &request);
+                void ModifyEdgeKVNamespaceAsync(const Model::ModifyEdgeKVNamespaceRequest& request, const ModifyEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdgeKVNamespaceOutcomeCallable ModifyEdgeKVNamespaceCallable(const Model::ModifyEdgeKVNamespaceRequest& request);
+
+                /**
                  *This API is used to modify an edge function. It supports modifying the function content and description. The function will take effect immediately after modification and redeployment.
                  * @param req ModifyFunctionRequest
                  * @return ModifyFunctionOutcome
@@ -1911,7 +3130,25 @@ After the environment variables are set, they can be used in the function code. 
                 ModifyFunctionOutcomeCallable ModifyFunctionCallable(const Model::ModifyFunctionRequest& request);
 
                 /**
-                 *This API is used to modify a trigger rule for an edge function. It supports modifying rule conditions, execution functions, and description.
+                 *This API is used to modify the binding relationship between edge functions and components, supporting four operation modes: bind, bind-override, unbind, and rebind. By specifying the operation type and component list, you can manage the component binding of functions.
+                 * @param req ModifyFunctionComponentBindingsRequest
+                 * @return ModifyFunctionComponentBindingsOutcome
+                 */
+                ModifyFunctionComponentBindingsOutcome ModifyFunctionComponentBindings(const Model::ModifyFunctionComponentBindingsRequest &request);
+                void ModifyFunctionComponentBindingsAsync(const Model::ModifyFunctionComponentBindingsRequest& request, const ModifyFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFunctionComponentBindingsOutcomeCallable ModifyFunctionComponentBindingsCallable(const Model::ModifyFunctionComponentBindingsRequest& request);
+
+                /**
+                 *This API is used to modify the content and description of a specified edge function replica.
+                 * @param req ModifyFunctionReplicaRequest
+                 * @return ModifyFunctionReplicaOutcome
+                 */
+                ModifyFunctionReplicaOutcome ModifyFunctionReplica(const Model::ModifyFunctionReplicaRequest &request);
+                void ModifyFunctionReplicaAsync(const Model::ModifyFunctionReplicaRequest& request, const ModifyFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFunctionReplicaOutcomeCallable ModifyFunctionReplicaCallable(const Model::ModifyFunctionReplicaRequest& request);
+
+                /**
+                 *This API is used to modify a trigger rule for an edge function. It supports modifying rule conditions, execution functions, and description. You can first use the DescribeFunctionRules API to get the RuleId of the rule that needs to be modified, then input the modified rule content. The original rule content will be overwritten.
                  * @param req ModifyFunctionRuleRequest
                  * @return ModifyFunctionRuleOutcome
                  */
@@ -1931,13 +3168,21 @@ After the environment variables are set, they can be used in the function code. 
                 /**
                  *This API is used to configure the certificate of a site. You can use your own certificate or [apply for a free certificate](https://intl.cloud.tencent.com/document/product/1552/90437?from_cn_redirect=1).
 To use an external certificate, upload the certificate to [SSL Certificates Console](https://console.cloud.tencent.com/certoview) first, and then input the certificate ID in this API. For details, see [Deploying Own Certificates to EdgeOne Domains](https://intl.cloud.tencent.com/document/product/1552/88874?from_cn_redirect=1).
- 
                  * @param req ModifyHostsCertificateRequest
                  * @return ModifyHostsCertificateOutcome
                  */
                 ModifyHostsCertificateOutcome ModifyHostsCertificate(const Model::ModifyHostsCertificateRequest &request);
                 void ModifyHostsCertificateAsync(const Model::ModifyHostsCertificateRequest& request, const ModifyHostsCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyHostsCertificateOutcomeCallable ModifyHostsCertificateCallable(const Model::ModifyHostsCertificateRequest& request);
+
+                /**
+                 *This API is used to modify the inference service, supporting updates to the listening port, request path, container image, resource configuration, and description. Only the passed parameters are modified, while others remain unchanged.
+                 * @param req ModifyInferenceServiceRequest
+                 * @return ModifyInferenceServiceOutcome
+                 */
+                ModifyInferenceServiceOutcome ModifyInferenceService(const Model::ModifyInferenceServiceRequest &request);
+                void ModifyInferenceServiceAsync(const Model::ModifyInferenceServiceRequest& request, const ModifyInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInferenceServiceOutcomeCallable ModifyInferenceServiceCallable(const Model::ModifyInferenceServiceRequest& request);
 
                 /**
                  *This API is used to modify the configuration of a Layer 4 proxy instance.
@@ -2003,7 +3248,7 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyL7AccSettingOutcomeCallable ModifyL7AccSettingCallable(const Model::ModifyL7AccSettingRequest& request);
 
                 /**
-                 *This API is used to modify LoadBalancer configuration. The load balancing feature is in beta test. If you need to use it, [contact us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+                 *This API is used to modify LoadBalancer configuration. The load balancing feature is in beta test. If you need to use it, [contact us](https://www.tencentcloud.com/contact-us).
                  * @param req ModifyLoadBalancerRequest
                  * @return ModifyLoadBalancerOutcome
                  */
@@ -2012,7 +3257,43 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyLoadBalancerOutcomeCallable ModifyLoadBalancerCallable(const Model::ModifyLoadBalancerRequest& request);
 
                 /**
-                 *This API is used to enable or disable specific origin ACLs for L7 acceleration domain names or L4 proxy instances. A single submission supports up to 200 L7 acceleration domain names or 100 L4 proxy instances. Hybrid submissions of L7 acceleration domain names and L4 proxy instances are supported, with a maximum total number of instances of 200. If changes are needed for exceeding 200 instances, submit them in batches via this API.
+                 *This API is used to modify multi-channel security acceleration gateway information, such as name, gateway ID, IP and port.
+                 * @param req ModifyMultiPathGatewayRequest
+                 * @return ModifyMultiPathGatewayOutcome
+                 */
+                ModifyMultiPathGatewayOutcome ModifyMultiPathGateway(const Model::ModifyMultiPathGatewayRequest &request);
+                void ModifyMultiPathGatewayAsync(const Model::ModifyMultiPathGatewayRequest& request, const ModifyMultiPathGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiPathGatewayOutcomeCallable ModifyMultiPathGatewayCallable(const Model::ModifyMultiPathGatewayRequest& request);
+
+                /**
+                 *This API is used to modify the access lines of the multi-channel security acceleration gateway, including EdgeOne Layer-4 proxy lines and custom lines.
+                 * @param req ModifyMultiPathGatewayLineRequest
+                 * @return ModifyMultiPathGatewayLineOutcome
+                 */
+                ModifyMultiPathGatewayLineOutcome ModifyMultiPathGatewayLine(const Model::ModifyMultiPathGatewayLineRequest &request);
+                void ModifyMultiPathGatewayLineAsync(const Model::ModifyMultiPathGatewayLineRequest& request, const ModifyMultiPathGatewayLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiPathGatewayLineOutcomeCallable ModifyMultiPathGatewayLineCallable(const Model::ModifyMultiPathGatewayLineRequest& request);
+
+                /**
+                 *This API is used to modify the access key for the multi-channel security acceleration gateway.The access key is used by customers to sign requests for gateway access. The original key becomes invalid after modification.
+                 * @param req ModifyMultiPathGatewaySecretKeyRequest
+                 * @return ModifyMultiPathGatewaySecretKeyOutcome
+                 */
+                ModifyMultiPathGatewaySecretKeyOutcome ModifyMultiPathGatewaySecretKey(const Model::ModifyMultiPathGatewaySecretKeyRequest &request);
+                void ModifyMultiPathGatewaySecretKeyAsync(const Model::ModifyMultiPathGatewaySecretKeyRequest& request, const ModifyMultiPathGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiPathGatewaySecretKeyOutcomeCallable ModifyMultiPathGatewaySecretKeyCallable(const Model::ModifyMultiPathGatewaySecretKeyRequest& request);
+
+                /**
+                 *This API is used to update the status of a multi-channel security gateway.
+                 * @param req ModifyMultiPathGatewayStatusRequest
+                 * @return ModifyMultiPathGatewayStatusOutcome
+                 */
+                ModifyMultiPathGatewayStatusOutcome ModifyMultiPathGatewayStatus(const Model::ModifyMultiPathGatewayStatusRequest &request);
+                void ModifyMultiPathGatewayStatusAsync(const Model::ModifyMultiPathGatewayStatusRequest& request, const ModifyMultiPathGatewayStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMultiPathGatewayStatusOutcomeCallable ModifyMultiPathGatewayStatusCallable(const Model::ModifyMultiPathGatewayStatusRequest& request);
+
+                /**
+                 *This API is used to enable or disable specific origin IP ranges for L7 acceleration domains or L4 proxy instances. The maximum quantity for single submission is 200 L7 acceleration domains or 100 L4 proxy instances, with mixed submissions supported up to a total of 200 instances. If changes are needed for submissions exceeding 200 instances, please submit in batches via this interface. Meanwhile, allowlisted customers can switch to other available origin protection IP range versions such as the simplified edition, which can reduce origin IP ranges.
                  * @param req ModifyOriginACLRequest
                  * @return ModifyOriginACLOutcome
                  */
@@ -2039,7 +3320,23 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyPlanOutcomeCallable ModifyPlanCallable(const Model::ModifyPlanRequest& request);
 
                 /**
-                 *This API is used to modify the real-time log delivery task configuration. This API has the following restrictions:<li>Does not support modifying the destination type of the real-time log delivery task (TaskType);</li><li>Does not support modifying the data delivery type (LogType);</li><li>Does not support modifying the data delivery area (Area);</li><li>Does not support modifying the detailed destination configuration, such as log set and log topic, when the destination of the original real-time log delivery task is Tencent Cloud CLS.</li>
+                 *This API is used to configure the origin speed limit. This feature is in beta test.
+This API is used to create, modify and delete preheating origin speed limit restrictions. Each account supports up to 100 restrictions.
+                 * @param req ModifyPrefetchOriginLimitRequest
+                 * @return ModifyPrefetchOriginLimitOutcome
+                 */
+                ModifyPrefetchOriginLimitOutcome ModifyPrefetchOriginLimit(const Model::ModifyPrefetchOriginLimitRequest &request);
+                void ModifyPrefetchOriginLimitAsync(const Model::ModifyPrefetchOriginLimitRequest& request, const ModifyPrefetchOriginLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrefetchOriginLimitOutcomeCallable ModifyPrefetchOriginLimitCallable(const Model::ModifyPrefetchOriginLimitRequest& request);
+
+                /**
+                 *This API is used to modify the configuration of a real-time log delivery task. It has the following limits:
+<ul>
+<li>The destination type (`TaskType`) of a real-time log delivery task cannot be modified;</li>
+<li>The data delivery type (`LogType`) cannot be modified;</li>
+<li>The data delivery region (`Area`) cannot be modified;</li>
+<li>When the destination of the original real-time log delivery task is Tencent Cloud CLS, the destination details such as the log set and log topic cannot be modified.</li>
+</ul>
                  * @param req ModifyRealtimeLogDeliveryTaskRequest
                  * @return ModifyRealtimeLogDeliveryTaskOutcome
                  */
@@ -2048,13 +3345,41 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyRealtimeLogDeliveryTaskOutcomeCallable ModifyRealtimeLogDeliveryTaskCallable(const Model::ModifyRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *This API is an older version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [ModifyL7AccRule](https://intl.cloud.tencent.com/document/product/1552/115818?from_cn_redirect=1).
+                 *This API is on an earlier version. EdgeOne has comprehensively upgraded the relevant APIs of the rule engine on January 21, 2025. For details about the new version of the API for modifying layer-7 acceleration rules, see ModifyL7AccRule(https://intl.cloud.tencent.com/document/product/1552/115818?from_cn_redirect=1).
+<p style="color: red;">Note: Starting from January 21, 2025, the old version of the interface will stop updating and iteration. Subsequent new features will only be provided in the new version of the interface, and the original capabilities supported by the old version of the interface will not be affected. To avoid data field conflicts when using the old version of the interface, it is recommended that you migrate to the new version of the rule engine interface as soon as possible. </p>
                  * @param req ModifyRuleRequest
                  * @return ModifyRuleOutcome
                  */
                 ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest &request);
                 void ModifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
+
+                /**
+                 *This API is used to modify an API resource.
+                 * @param req ModifySecurityAPIResourceRequest
+                 * @return ModifySecurityAPIResourceOutcome
+                 */
+                ModifySecurityAPIResourceOutcome ModifySecurityAPIResource(const Model::ModifySecurityAPIResourceRequest &request);
+                void ModifySecurityAPIResourceAsync(const Model::ModifySecurityAPIResourceRequest& request, const ModifySecurityAPIResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityAPIResourceOutcomeCallable ModifySecurityAPIResourceCallable(const Model::ModifySecurityAPIResourceRequest& request);
+
+                /**
+                 *This API is used to modify an API service.
+                 * @param req ModifySecurityAPIServiceRequest
+                 * @return ModifySecurityAPIServiceOutcome
+                 */
+                ModifySecurityAPIServiceOutcome ModifySecurityAPIService(const Model::ModifySecurityAPIServiceRequest &request);
+                void ModifySecurityAPIServiceAsync(const Model::ModifySecurityAPIServiceRequest& request, const ModifySecurityAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityAPIServiceOutcomeCallable ModifySecurityAPIServiceCallable(const Model::ModifySecurityAPIServiceRequest& request);
+
+                /**
+                 *This API is used to modify client authentication options.
+                 * @param req ModifySecurityClientAttesterRequest
+                 * @return ModifySecurityClientAttesterOutcome
+                 */
+                ModifySecurityClientAttesterOutcome ModifySecurityClientAttester(const Model::ModifySecurityClientAttesterRequest &request);
+                void ModifySecurityClientAttesterAsync(const Model::ModifySecurityClientAttesterRequest& request, const ModifySecurityClientAttesterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityClientAttesterOutcomeCallable ModifySecurityClientAttesterCallable(const Model::ModifySecurityClientAttesterRequest& request);
 
                 /**
                  *This API is used to modify a security IP group.
@@ -2066,6 +3391,15 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifySecurityIPGroupOutcomeCallable ModifySecurityIPGroupCallable(const Model::ModifySecurityIPGroupRequest& request);
 
                 /**
+                 *This API is used to modify JavaScript injection rules.
+                 * @param req ModifySecurityJSInjectionRuleRequest
+                 * @return ModifySecurityJSInjectionRuleOutcome
+                 */
+                ModifySecurityJSInjectionRuleOutcome ModifySecurityJSInjectionRule(const Model::ModifySecurityJSInjectionRuleRequest &request);
+                void ModifySecurityJSInjectionRuleAsync(const Model::ModifySecurityJSInjectionRuleRequest& request, const ModifySecurityJSInjectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityJSInjectionRuleOutcomeCallable ModifySecurityJSInjectionRuleCallable(const Model::ModifySecurityJSInjectionRuleRequest& request);
+
+                /**
                  *This API is used to modify the web and bot security configurations.
                  * @param req ModifySecurityPolicyRequest
                  * @return ModifySecurityPolicyOutcome
@@ -2075,6 +3409,24 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
 
                 /**
+                 *This API is used to modify a shared CNAME. Currently only support modifying the description of a shared CNAME and setting the associated IP SSL domain name of a shared CNAME with IP SSL type. The shared CNAME itself cannot be modified after creation. This feature is in beta test.
+                 * @param req ModifySharedCNAMERequest
+                 * @return ModifySharedCNAMEOutcome
+                 */
+                ModifySharedCNAMEOutcome ModifySharedCNAME(const Model::ModifySharedCNAMERequest &request);
+                void ModifySharedCNAMEAsync(const Model::ModifySharedCNAMERequest& request, const ModifySharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySharedCNAMEOutcomeCallable ModifySharedCNAMECallable(const Model::ModifySharedCNAMERequest& request);
+
+                /**
+                 *This API is used to modify the security policy configuration template.
+                 * @param req ModifyWebSecurityTemplateRequest
+                 * @return ModifyWebSecurityTemplateOutcome
+                 */
+                ModifyWebSecurityTemplateOutcome ModifyWebSecurityTemplate(const Model::ModifyWebSecurityTemplateRequest &request);
+                void ModifyWebSecurityTemplateAsync(const Model::ModifyWebSecurityTemplateRequest& request, const ModifyWebSecurityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWebSecurityTemplateOutcomeCallable ModifyWebSecurityTemplateCallable(const Model::ModifyWebSecurityTemplateRequest& request);
+
+                /**
                  *This API is used to modify a site.
                  * @param req ModifyZoneRequest
                  * @return ModifyZoneOutcome
@@ -2082,6 +3434,17 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyZoneOutcome ModifyZone(const Model::ModifyZoneRequest &request);
                 void ModifyZoneAsync(const Model::ModifyZoneRequest& request, const ModifyZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyZoneOutcomeCallable ModifyZoneCallable(const Model::ModifyZoneRequest& request);
+
+                /**
+                 *This API is used to manage site-level custom variables, supporting the creation, modification, and deletion of variable definitions and variable operations. The submitted list will override the corresponding existing configuration. To clear the configuration, pass in an empty list. Configuration items not passed in remain unchanged. The default values for variable definitions and variable operations are both empty.
+
+For operations related to rule-level custom variables, call the CreateL7AccRules or ModifyL7AccRule API.
+                 * @param req ModifyZoneCustomVariablesRequest
+                 * @return ModifyZoneCustomVariablesOutcome
+                 */
+                ModifyZoneCustomVariablesOutcome ModifyZoneCustomVariables(const Model::ModifyZoneCustomVariablesRequest &request);
+                void ModifyZoneCustomVariablesAsync(const Model::ModifyZoneCustomVariablesRequest& request, const ModifyZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyZoneCustomVariablesOutcomeCallable ModifyZoneCustomVariablesCallable(const Model::ModifyZoneCustomVariablesRequest& request);
 
                 /**
                  *This API is an older version. EdgeOne has fully upgraded the APIs related to the rule engine. For details, please refer to [ModifyL7AccSetting](https://intl.cloud.tencent.com/document/product/1552/115817?from_cn_redirect=1).
@@ -2102,6 +3465,33 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                 ModifyZoneStatusOutcomeCallable ModifyZoneStatusCallable(const Model::ModifyZoneStatusRequest& request);
 
                 /**
+                 *This API is used to modify the working mode of configuration modules under a site. Configuration modules can enable version management mode or immediate effect mode by configuration group dimension. For details, refer to [version management](https://www.tencentcloud.com/document/product/1145/67719).
+                 * @param req ModifyZoneWorkModeRequest
+                 * @return ModifyZoneWorkModeOutcome
+                 */
+                ModifyZoneWorkModeOutcome ModifyZoneWorkMode(const Model::ModifyZoneWorkModeRequest &request);
+                void ModifyZoneWorkModeAsync(const Model::ModifyZoneWorkModeRequest& request, const ModifyZoneWorkModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyZoneWorkModeOutcomeCallable ModifyZoneWorkModeCallable(const Model::ModifyZoneWorkModeRequest& request);
+
+                /**
+                 *This API is used to operate an inference service, support stopping, starting up, and deleting the inference service. Once deleted, resources cannot be recovered.
+                 * @param req OperateInferenceServiceRequest
+                 * @return OperateInferenceServiceOutcome
+                 */
+                OperateInferenceServiceOutcome OperateInferenceService(const Model::OperateInferenceServiceRequest &request);
+                void OperateInferenceServiceAsync(const Model::OperateInferenceServiceRequest& request, const OperateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateInferenceServiceOutcomeCallable OperateInferenceServiceCallable(const Model::OperateInferenceServiceRequest& request);
+
+                /**
+                 *This API is used to refresh keys for multi-channel security acceleration gateways. Customers access multi-channel security acceleration gateways based on integration key signatures. Each site has only one access key, which applies to all gateways under that site. After refreshing the key, the original key becomes invalid.
+                 * @param req RefreshMultiPathGatewaySecretKeyRequest
+                 * @return RefreshMultiPathGatewaySecretKeyOutcome
+                 */
+                RefreshMultiPathGatewaySecretKeyOutcome RefreshMultiPathGatewaySecretKey(const Model::RefreshMultiPathGatewaySecretKeyRequest &request);
+                void RefreshMultiPathGatewaySecretKeyAsync(const Model::RefreshMultiPathGatewaySecretKeyRequest& request, const RefreshMultiPathGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefreshMultiPathGatewaySecretKeyOutcomeCallable RefreshMultiPathGatewaySecretKeyCallable(const Model::RefreshMultiPathGatewaySecretKeyRequest& request);
+
+                /**
                  *When your plan needs to be extended, you can use this interface to renew it. Plan renewal is only supported for the Personal, Basic, and Standard Editions.
 > For cost details, refer to [Plan Fees](https://intl.cloud.tencent.com/document/product/1552/94158?from_cn_redirect=1).
                  * @param req RenewPlanRequest
@@ -2115,7 +3505,7 @@ To use an external certificate, upload the certificate to [SSL Certificates Cons
                  *When you need features available only in higher-tier plans, you can upgrade your plan through this interface. Upgrades are only supported for Personal and Basic Edition Plans.
 > For differences between EdgeOne billing plans, refer to [Comparison of EdgeOne Plans](https://intl.cloud.tencent.com/document/product/1552/94165?from_cn_redirect=1).
 For EdgeOne plan upgrade rules and pricing details, refer to [EdgeOne Plan Upgrade Guide](https://intl.cloud.tencent.com/document/product/1552/95291?from_cn_redirect=1).
-If your plan needs to upgrade to the Enterprise Edition, [Contact Us](https://intl.cloud.tencent.com/online?from_cn_redirect=1-service).
+If your plan needs to upgrade to the Enterprise Edition, [Contact Us](https://www.tencentcloud.com/contact-us).
                  * @param req UpgradePlanRequest
                  * @return UpgradePlanOutcome
                  */

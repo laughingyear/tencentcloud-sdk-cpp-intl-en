@@ -29,7 +29,10 @@ DescribeTeamListInfoResp::DescribeTeamListInfoResp() :
     m_memberCountHasBeenSet(false),
     m_registerLinkHasBeenSet(false),
     m_teamRoleTypeListHasBeenSet(false),
-    m_relatedTeamIdHasBeenSet(false)
+    m_relatedTeamIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_adminUsersHasBeenSet(false)
 {
 }
 
@@ -131,6 +134,46 @@ CoreInternalOutcome DescribeTeamListInfoResp::Deserialize(const rapidjson::Value
         m_relatedTeamIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamListInfoResp.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamListInfoResp.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminUsers") && !value["AdminUsers"].IsNull())
+    {
+        if (!value["AdminUsers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeTeamListInfoResp.AdminUsers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdminUsers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TeamAdminUserInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_adminUsers.push_back(item);
+        }
+        m_adminUsersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +256,37 @@ void DescribeTeamListInfoResp::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "RelatedTeamId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_relatedTeamId, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_adminUsersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminUsers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_adminUsers.begin(); itr != m_adminUsers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -360,5 +434,53 @@ void DescribeTeamListInfoResp::SetRelatedTeamId(const int64_t& _relatedTeamId)
 bool DescribeTeamListInfoResp::RelatedTeamIdHasBeenSet() const
 {
     return m_relatedTeamIdHasBeenSet;
+}
+
+int64_t DescribeTeamListInfoResp::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void DescribeTeamListInfoResp::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool DescribeTeamListInfoResp::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+int64_t DescribeTeamListInfoResp::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeTeamListInfoResp::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeTeamListInfoResp::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<TeamAdminUserInfo> DescribeTeamListInfoResp::GetAdminUsers() const
+{
+    return m_adminUsers;
+}
+
+void DescribeTeamListInfoResp::SetAdminUsers(const vector<TeamAdminUserInfo>& _adminUsers)
+{
+    m_adminUsers = _adminUsers;
+    m_adminUsersHasBeenSet = true;
+}
+
+bool DescribeTeamListInfoResp::AdminUsersHasBeenSet() const
+{
+    return m_adminUsersHasBeenSet;
 }
 

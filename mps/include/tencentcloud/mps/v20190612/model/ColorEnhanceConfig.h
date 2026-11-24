@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Color enhancement configuration.
+                * Color enhancement configuration
                 */
                 class ColorEnhanceConfig : public AbstractModel
                 {
@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @return Switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @return Switch Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @param _switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @param _switch Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
@@ -80,35 +80,31 @@ Default value: ON.
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The strength. Valid values:
+                     * 获取Type. Valid values:
 <li>weak</li>
 <li>normal</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Type The strength. Valid values:
+                     * @return Type Type. Valid values:
 <li>weak</li>
 <li>normal</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The strength. Valid values:
+                     * 设置Type. Valid values:
 <li>weak</li>
 <li>normal</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _type The strength. Valid values:
+                     * @param _type Type. Valid values:
 <li>weak</li>
 <li>normal</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,21 +119,20 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The strength. Valid values:
+                     * Type. Valid values:
 <li>weak</li>
 <li>normal</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

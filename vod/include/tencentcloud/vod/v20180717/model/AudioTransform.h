@@ -49,18 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Audio operation type. Valid values:
-<li>Volume: volume adjustment.</li>
+<li>Volume: audio volume adjustment.</li>
                      * @return Type Audio operation type. Valid values:
-<li>Volume: volume adjustment.</li>
+<li>Volume: audio volume adjustment.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Audio operation type. Valid values:
-<li>Volume: volume adjustment.</li>
+<li>Volume: audio volume adjustment.</li>
                      * @param _type Audio operation type. Valid values:
-<li>Volume: volume adjustment.</li>
+<li>Volume: audio volume adjustment.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,19 +73,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Volume adjustment parameter, which is valid if `Type` is `Volume`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return VolumeParam Volume adjustment parameter, which is valid if `Type` is `Volume`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Audio volume adjustment parameter. Valid when Type is Volume.
+                     * @return VolumeParam Audio volume adjustment parameter. Valid when Type is Volume.
                      * 
                      */
                     AudioVolumeParam GetVolumeParam() const;
 
                     /**
-                     * 设置Volume adjustment parameter, which is valid if `Type` is `Volume`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _volumeParam Volume adjustment parameter, which is valid if `Type` is `Volume`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Audio volume adjustment parameter. Valid when Type is Volume.
+                     * @param _volumeParam Audio volume adjustment parameter. Valid when Type is Volume.
                      * 
                      */
                     void SetVolumeParam(const AudioVolumeParam& _volumeParam);
@@ -101,14 +97,13 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Audio operation type. Valid values:
-<li>Volume: volume adjustment.</li>
+<li>Volume: audio volume adjustment.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Volume adjustment parameter, which is valid if `Type` is `Volume`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Audio volume adjustment parameter. Valid when Type is Volume.
                      */
                     AudioVolumeParam m_volumeParam;
                     bool m_volumeParamHasBeenSet;

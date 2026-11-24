@@ -24,7 +24,12 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 InquiryPriceUpgradeInstanceResponse::InquiryPriceUpgradeInstanceResponse() :
-    m_priceHasBeenSet(false)
+    m_priceHasBeenSet(false),
+    m_highPrecisionPriceHasBeenSet(false),
+    m_originalPriceHasBeenSet(false),
+    m_highPrecisionOriginalPriceHasBeenSet(false),
+    m_currencyHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -72,6 +77,56 @@ CoreInternalOutcome InquiryPriceUpgradeInstanceResponse::Deserialize(const strin
         m_priceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HighPrecisionPrice") && !rsp["HighPrecisionPrice"].IsNull())
+    {
+        if (!rsp["HighPrecisionPrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighPrecisionPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_highPrecisionPrice = rsp["HighPrecisionPrice"].GetDouble();
+        m_highPrecisionPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OriginalPrice") && !rsp["OriginalPrice"].IsNull())
+    {
+        if (!rsp["OriginalPrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPrice = rsp["OriginalPrice"].GetDouble();
+        m_originalPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HighPrecisionOriginalPrice") && !rsp["HighPrecisionOriginalPrice"].IsNull())
+    {
+        if (!rsp["HighPrecisionOriginalPrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighPrecisionOriginalPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_highPrecisionOriginalPrice = rsp["HighPrecisionOriginalPrice"].GetDouble();
+        m_highPrecisionOriginalPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Currency") && !rsp["Currency"].IsNull())
+    {
+        if (!rsp["Currency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Currency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currency = string(rsp["Currency"].GetString());
+        m_currencyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AmountUnit") && !rsp["AmountUnit"].IsNull())
+    {
+        if (!rsp["AmountUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AmountUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_amountUnit = string(rsp["AmountUnit"].GetString());
+        m_amountUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +143,46 @@ string InquiryPriceUpgradeInstanceResponse::ToJsonString() const
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
+    }
+
+    if (m_highPrecisionPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighPrecisionPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highPrecisionPrice, allocator);
+    }
+
+    if (m_originalPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalPrice, allocator);
+    }
+
+    if (m_highPrecisionOriginalPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighPrecisionOriginalPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highPrecisionOriginalPrice, allocator);
+    }
+
+    if (m_currencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Currency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +205,56 @@ double InquiryPriceUpgradeInstanceResponse::GetPrice() const
 bool InquiryPriceUpgradeInstanceResponse::PriceHasBeenSet() const
 {
     return m_priceHasBeenSet;
+}
+
+double InquiryPriceUpgradeInstanceResponse::GetHighPrecisionPrice() const
+{
+    return m_highPrecisionPrice;
+}
+
+bool InquiryPriceUpgradeInstanceResponse::HighPrecisionPriceHasBeenSet() const
+{
+    return m_highPrecisionPriceHasBeenSet;
+}
+
+double InquiryPriceUpgradeInstanceResponse::GetOriginalPrice() const
+{
+    return m_originalPrice;
+}
+
+bool InquiryPriceUpgradeInstanceResponse::OriginalPriceHasBeenSet() const
+{
+    return m_originalPriceHasBeenSet;
+}
+
+double InquiryPriceUpgradeInstanceResponse::GetHighPrecisionOriginalPrice() const
+{
+    return m_highPrecisionOriginalPrice;
+}
+
+bool InquiryPriceUpgradeInstanceResponse::HighPrecisionOriginalPriceHasBeenSet() const
+{
+    return m_highPrecisionOriginalPriceHasBeenSet;
+}
+
+string InquiryPriceUpgradeInstanceResponse::GetCurrency() const
+{
+    return m_currency;
+}
+
+bool InquiryPriceUpgradeInstanceResponse::CurrencyHasBeenSet() const
+{
+    return m_currencyHasBeenSet;
+}
+
+string InquiryPriceUpgradeInstanceResponse::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+bool InquiryPriceUpgradeInstanceResponse::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

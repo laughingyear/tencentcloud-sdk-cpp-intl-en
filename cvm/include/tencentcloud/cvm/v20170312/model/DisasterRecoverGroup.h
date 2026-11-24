@@ -215,6 +215,27 @@ Note: This field may return null, indicating that no valid value is found.
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取placement group affinity
+                     * @return Affinity placement group affinity
+                     * 
+                     */
+                    int64_t GetAffinity() const;
+
+                    /**
+                     * 设置placement group affinity
+                     * @param _affinity placement group affinity
+                     * 
+                     */
+                    void SetAffinity(const int64_t& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     * 
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
                      * 获取List of tags associated with the placement group.
                      * @return Tags List of tags associated with the placement group.
                      * 
@@ -283,6 +304,12 @@ Note: This field may return null, indicating that no valid value is found.
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * placement group affinity
+                     */
+                    int64_t m_affinity;
+                    bool m_affinityHasBeenSet;
 
                     /**
                      * List of tags associated with the placement group.

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Response of creating a mini program version
+                * Response for creating a mini program version.
                 */
                 class CreateMNPVersionResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID of the task to create a mini program version
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TaskId ID of the task to create a mini program version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Mini program version compilation task ID.
+                     * @return TaskId Mini program version compilation task ID.
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置ID of the task to create a mini program version
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _taskId ID of the task to create a mini program version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Mini program version compilation task ID.
+                     * @param _taskId Mini program version compilation task ID.
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -74,8 +70,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * ID of the task to create a mini program version
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Mini program version compilation task ID.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

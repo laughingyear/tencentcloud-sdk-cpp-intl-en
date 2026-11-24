@@ -62,25 +62,132 @@ TrtcClient::ControlAIConversationOutcome TrtcClient::ControlAIConversation(const
 
 void TrtcClient::ControlAIConversationAsync(const ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ControlAIConversation(request), context);
-    };
+    using Req = const ControlAIConversationRequest&;
+    using Resp = ControlAIConversationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ControlAIConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversationCallable(const ControlAIConversationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ControlAIConversationOutcome()>>(
-        [this, request]()
-        {
-            return this->ControlAIConversation(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ControlAIConversationOutcome>>();
+    ControlAIConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ControlAIConversationRequest&,
+        ControlAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::ControlVoiceConversationOutcome TrtcClient::ControlVoiceConversation(const ControlVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlVoiceConversationResponse rsp = ControlVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlVoiceConversationOutcome(rsp);
+        else
+            return ControlVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ControlVoiceConversationAsync(const ControlVoiceConversationRequest& request, const ControlVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ControlVoiceConversationRequest&;
+    using Resp = ControlVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ControlVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ControlVoiceConversationOutcomeCallable TrtcClient::ControlVoiceConversationCallable(const ControlVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ControlVoiceConversationOutcome>>();
+    ControlVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ControlVoiceConversationRequest&,
+        ControlVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::CreateCloudModerationOutcome TrtcClient::CreateCloudModeration(const CreateCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudModerationResponse rsp = CreateCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudModerationOutcome(rsp);
+        else
+            return CreateCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudModerationAsync(const CreateCloudModerationRequest& request, const CreateCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudModerationRequest&;
+    using Resp = CreateCloudModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateCloudModerationOutcomeCallable TrtcClient::CreateCloudModerationCallable(const CreateCloudModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudModerationOutcome>>();
+    CreateCloudModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateCloudModerationRequest&,
+        CreateCloudModerationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
@@ -105,25 +212,232 @@ TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const C
 
 void TrtcClient::CreateCloudRecordingAsync(const CreateCloudRecordingRequest& request, const CreateCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudRecording(request), context);
-    };
+    using Req = const CreateCloudRecordingRequest&;
+    using Resp = CreateCloudRecordingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudRecording", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::CreateCloudRecordingOutcomeCallable TrtcClient::CreateCloudRecordingCallable(const CreateCloudRecordingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudRecording(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateCloudRecordingOutcome>>();
+    CreateCloudRecordingAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateCloudRecordingRequest&,
+        CreateCloudRecordingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::CreateCloudSliceTaskOutcome TrtcClient::CreateCloudSliceTask(const CreateCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudSliceTaskResponse rsp = CreateCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudSliceTaskOutcome(rsp);
+        else
+            return CreateCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudSliceTaskAsync(const CreateCloudSliceTaskRequest& request, const CreateCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudSliceTaskRequest&;
+    using Resp = CreateCloudSliceTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudSliceTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateCloudSliceTaskOutcomeCallable TrtcClient::CreateCloudSliceTaskCallable(const CreateCloudSliceTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudSliceTaskOutcome>>();
+    CreateCloudSliceTaskAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateCloudSliceTaskRequest&,
+        CreateCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::CreateCloudTranscriptionOutcome TrtcClient::CreateCloudTranscription(const CreateCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudTranscriptionResponse rsp = CreateCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudTranscriptionOutcome(rsp);
+        else
+            return CreateCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudTranscriptionAsync(const CreateCloudTranscriptionRequest& request, const CreateCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudTranscriptionRequest&;
+    using Resp = CreateCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateCloudTranscriptionOutcomeCallable TrtcClient::CreateCloudTranscriptionCallable(const CreateCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudTranscriptionOutcome>>();
+    CreateCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateCloudTranscriptionRequest&,
+        CreateCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::CreateVoiceConversationOutcome TrtcClient::CreateVoiceConversation(const CreateVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVoiceConversationResponse rsp = CreateVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVoiceConversationOutcome(rsp);
+        else
+            return CreateVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateVoiceConversationAsync(const CreateVoiceConversationRequest& request, const CreateVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVoiceConversationRequest&;
+    using Resp = CreateVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateVoiceConversationOutcomeCallable TrtcClient::CreateVoiceConversationCallable(const CreateVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVoiceConversationOutcome>>();
+    CreateVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateVoiceConversationRequest&,
+        CreateVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteCloudModerationOutcome TrtcClient::DeleteCloudModeration(const DeleteCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudModerationResponse rsp = DeleteCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudModerationOutcome(rsp);
+        else
+            return DeleteCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudModerationAsync(const DeleteCloudModerationRequest& request, const DeleteCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudModerationRequest&;
+    using Resp = DeleteCloudModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteCloudModerationOutcomeCallable TrtcClient::DeleteCloudModerationCallable(const DeleteCloudModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudModerationOutcome>>();
+    DeleteCloudModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteCloudModerationRequest&,
+        DeleteCloudModerationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DeleteCloudRecordingOutcome TrtcClient::DeleteCloudRecording(const DeleteCloudRecordingRequest &request)
@@ -148,25 +462,182 @@ TrtcClient::DeleteCloudRecordingOutcome TrtcClient::DeleteCloudRecording(const D
 
 void TrtcClient::DeleteCloudRecordingAsync(const DeleteCloudRecordingRequest& request, const DeleteCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCloudRecording(request), context);
-    };
+    using Req = const DeleteCloudRecordingRequest&;
+    using Resp = DeleteCloudRecordingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudRecording", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DeleteCloudRecordingOutcomeCallable TrtcClient::DeleteCloudRecordingCallable(const DeleteCloudRecordingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCloudRecording(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteCloudRecordingOutcome>>();
+    DeleteCloudRecordingAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteCloudRecordingRequest&,
+        DeleteCloudRecordingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::DeleteCloudSliceTaskOutcome TrtcClient::DeleteCloudSliceTask(const DeleteCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudSliceTaskResponse rsp = DeleteCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudSliceTaskOutcome(rsp);
+        else
+            return DeleteCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudSliceTaskAsync(const DeleteCloudSliceTaskRequest& request, const DeleteCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudSliceTaskRequest&;
+    using Resp = DeleteCloudSliceTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudSliceTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteCloudSliceTaskOutcomeCallable TrtcClient::DeleteCloudSliceTaskCallable(const DeleteCloudSliceTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudSliceTaskOutcome>>();
+    DeleteCloudSliceTaskAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteCloudSliceTaskRequest&,
+        DeleteCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteCloudTranscriptionOutcome TrtcClient::DeleteCloudTranscription(const DeleteCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudTranscriptionResponse rsp = DeleteCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudTranscriptionOutcome(rsp);
+        else
+            return DeleteCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudTranscriptionAsync(const DeleteCloudTranscriptionRequest& request, const DeleteCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudTranscriptionRequest&;
+    using Resp = DeleteCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteCloudTranscriptionOutcomeCallable TrtcClient::DeleteCloudTranscriptionCallable(const DeleteCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudTranscriptionOutcome>>();
+    DeleteCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteCloudTranscriptionRequest&,
+        DeleteCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteVoiceConversationOutcome TrtcClient::DeleteVoiceConversation(const DeleteVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoiceConversationResponse rsp = DeleteVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoiceConversationOutcome(rsp);
+        else
+            return DeleteVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteVoiceConversationAsync(const DeleteVoiceConversationRequest& request, const DeleteVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVoiceConversationRequest&;
+    using Resp = DeleteVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteVoiceConversationOutcomeCallable TrtcClient::DeleteVoiceConversationCallable(const DeleteVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVoiceConversationOutcome>>();
+    DeleteVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteVoiceConversationRequest&,
+        DeleteVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeAIConversationOutcome TrtcClient::DescribeAIConversation(const DescribeAIConversationRequest &request)
@@ -191,25 +662,32 @@ TrtcClient::DescribeAIConversationOutcome TrtcClient::DescribeAIConversation(con
 
 void TrtcClient::DescribeAIConversationAsync(const DescribeAIConversationRequest& request, const DescribeAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIConversation(request), context);
-    };
+    using Req = const DescribeAIConversationRequest&;
+    using Resp = DescribeAIConversationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeAIConversationOutcomeCallable TrtcClient::DescribeAIConversationCallable(const DescribeAIConversationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIConversationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIConversation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIConversationOutcome>>();
+    DescribeAIConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeAIConversationRequest&,
+        DescribeAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeAITranscriptionOutcome TrtcClient::DescribeAITranscription(const DescribeAITranscriptionRequest &request)
@@ -234,25 +712,32 @@ TrtcClient::DescribeAITranscriptionOutcome TrtcClient::DescribeAITranscription(c
 
 void TrtcClient::DescribeAITranscriptionAsync(const DescribeAITranscriptionRequest& request, const DescribeAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAITranscription(request), context);
-    };
+    using Req = const DescribeAITranscriptionRequest&;
+    using Resp = DescribeAITranscriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAITranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeAITranscriptionOutcomeCallable TrtcClient::DescribeAITranscriptionCallable(const DescribeAITranscriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAITranscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAITranscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAITranscriptionOutcome>>();
+    DescribeAITranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeAITranscriptionRequest&,
+        DescribeAITranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeCallDetailInfoOutcome TrtcClient::DescribeCallDetailInfo(const DescribeCallDetailInfoRequest &request)
@@ -277,25 +762,82 @@ TrtcClient::DescribeCallDetailInfoOutcome TrtcClient::DescribeCallDetailInfo(con
 
 void TrtcClient::DescribeCallDetailInfoAsync(const DescribeCallDetailInfoRequest& request, const DescribeCallDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCallDetailInfo(request), context);
-    };
+    using Req = const DescribeCallDetailInfoRequest&;
+    using Resp = DescribeCallDetailInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCallDetailInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeCallDetailInfoOutcomeCallable TrtcClient::DescribeCallDetailInfoCallable(const DescribeCallDetailInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCallDetailInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCallDetailInfo(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeCallDetailInfoOutcome>>();
+    DescribeCallDetailInfoAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCallDetailInfoRequest&,
+        DescribeCallDetailInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::DescribeCloudModerationOutcome TrtcClient::DescribeCloudModeration(const DescribeCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudModerationResponse rsp = DescribeCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudModerationOutcome(rsp);
+        else
+            return DescribeCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudModerationAsync(const DescribeCloudModerationRequest& request, const DescribeCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudModerationRequest&;
+    using Resp = DescribeCloudModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeCloudModerationOutcomeCallable TrtcClient::DescribeCloudModerationCallable(const DescribeCloudModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudModerationOutcome>>();
+    DescribeCloudModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCloudModerationRequest&,
+        DescribeCloudModerationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeCloudRecordingOutcome TrtcClient::DescribeCloudRecording(const DescribeCloudRecordingRequest &request)
@@ -320,25 +862,132 @@ TrtcClient::DescribeCloudRecordingOutcome TrtcClient::DescribeCloudRecording(con
 
 void TrtcClient::DescribeCloudRecordingAsync(const DescribeCloudRecordingRequest& request, const DescribeCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudRecording(request), context);
-    };
+    using Req = const DescribeCloudRecordingRequest&;
+    using Resp = DescribeCloudRecordingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudRecording", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeCloudRecordingOutcomeCallable TrtcClient::DescribeCloudRecordingCallable(const DescribeCloudRecordingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudRecording(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeCloudRecordingOutcome>>();
+    DescribeCloudRecordingAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCloudRecordingRequest&,
+        DescribeCloudRecordingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::DescribeCloudSliceTaskOutcome TrtcClient::DescribeCloudSliceTask(const DescribeCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudSliceTaskResponse rsp = DescribeCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudSliceTaskOutcome(rsp);
+        else
+            return DescribeCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudSliceTaskAsync(const DescribeCloudSliceTaskRequest& request, const DescribeCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudSliceTaskRequest&;
+    using Resp = DescribeCloudSliceTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudSliceTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeCloudSliceTaskOutcomeCallable TrtcClient::DescribeCloudSliceTaskCallable(const DescribeCloudSliceTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudSliceTaskOutcome>>();
+    DescribeCloudSliceTaskAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCloudSliceTaskRequest&,
+        DescribeCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeCloudTranscriptionOutcome TrtcClient::DescribeCloudTranscription(const DescribeCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudTranscriptionResponse rsp = DescribeCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudTranscriptionOutcome(rsp);
+        else
+            return DescribeCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudTranscriptionAsync(const DescribeCloudTranscriptionRequest& request, const DescribeCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudTranscriptionRequest&;
+    using Resp = DescribeCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeCloudTranscriptionOutcomeCallable TrtcClient::DescribeCloudTranscriptionCallable(const DescribeCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudTranscriptionOutcome>>();
+    DescribeCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCloudTranscriptionRequest&,
+        DescribeCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeMixTranscodingUsageOutcome TrtcClient::DescribeMixTranscodingUsage(const DescribeMixTranscodingUsageRequest &request)
@@ -363,25 +1012,32 @@ TrtcClient::DescribeMixTranscodingUsageOutcome TrtcClient::DescribeMixTranscodin
 
 void TrtcClient::DescribeMixTranscodingUsageAsync(const DescribeMixTranscodingUsageRequest& request, const DescribeMixTranscodingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMixTranscodingUsage(request), context);
-    };
+    using Req = const DescribeMixTranscodingUsageRequest&;
+    using Resp = DescribeMixTranscodingUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMixTranscodingUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeMixTranscodingUsageOutcomeCallable TrtcClient::DescribeMixTranscodingUsageCallable(const DescribeMixTranscodingUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMixTranscodingUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMixTranscodingUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMixTranscodingUsageOutcome>>();
+    DescribeMixTranscodingUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeMixTranscodingUsageRequest&,
+        DescribeMixTranscodingUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeRecordingUsageOutcome TrtcClient::DescribeRecordingUsage(const DescribeRecordingUsageRequest &request)
@@ -406,25 +1062,32 @@ TrtcClient::DescribeRecordingUsageOutcome TrtcClient::DescribeRecordingUsage(con
 
 void TrtcClient::DescribeRecordingUsageAsync(const DescribeRecordingUsageRequest& request, const DescribeRecordingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordingUsage(request), context);
-    };
+    using Req = const DescribeRecordingUsageRequest&;
+    using Resp = DescribeRecordingUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordingUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeRecordingUsageOutcomeCallable TrtcClient::DescribeRecordingUsageCallable(const DescribeRecordingUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordingUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordingUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordingUsageOutcome>>();
+    DescribeRecordingUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeRecordingUsageRequest&,
+        DescribeRecordingUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeRelayUsageOutcome TrtcClient::DescribeRelayUsage(const DescribeRelayUsageRequest &request)
@@ -449,25 +1112,32 @@ TrtcClient::DescribeRelayUsageOutcome TrtcClient::DescribeRelayUsage(const Descr
 
 void TrtcClient::DescribeRelayUsageAsync(const DescribeRelayUsageRequest& request, const DescribeRelayUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRelayUsage(request), context);
-    };
+    using Req = const DescribeRelayUsageRequest&;
+    using Resp = DescribeRelayUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRelayUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeRelayUsageOutcomeCallable TrtcClient::DescribeRelayUsageCallable(const DescribeRelayUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRelayUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRelayUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRelayUsageOutcome>>();
+    DescribeRelayUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeRelayUsageRequest&,
+        DescribeRelayUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeRoomInfoOutcome TrtcClient::DescribeRoomInfo(const DescribeRoomInfoRequest &request)
@@ -492,25 +1162,32 @@ TrtcClient::DescribeRoomInfoOutcome TrtcClient::DescribeRoomInfo(const DescribeR
 
 void TrtcClient::DescribeRoomInfoAsync(const DescribeRoomInfoRequest& request, const DescribeRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRoomInfo(request), context);
-    };
+    using Req = const DescribeRoomInfoRequest&;
+    using Resp = DescribeRoomInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoomInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeRoomInfoOutcomeCallable TrtcClient::DescribeRoomInfoCallable(const DescribeRoomInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRoomInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRoomInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRoomInfoOutcome>>();
+    DescribeRoomInfoAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeRoomInfoRequest&,
+        DescribeRoomInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeScaleInfoOutcome TrtcClient::DescribeScaleInfo(const DescribeScaleInfoRequest &request)
@@ -535,25 +1212,32 @@ TrtcClient::DescribeScaleInfoOutcome TrtcClient::DescribeScaleInfo(const Describ
 
 void TrtcClient::DescribeScaleInfoAsync(const DescribeScaleInfoRequest& request, const DescribeScaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScaleInfo(request), context);
-    };
+    using Req = const DescribeScaleInfoRequest&;
+    using Resp = DescribeScaleInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScaleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeScaleInfoOutcomeCallable TrtcClient::DescribeScaleInfoCallable(const DescribeScaleInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScaleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScaleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScaleInfoOutcome>>();
+    DescribeScaleInfoAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeScaleInfoRequest&,
+        DescribeScaleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeStreamIngestOutcome TrtcClient::DescribeStreamIngest(const DescribeStreamIngestRequest &request)
@@ -578,25 +1262,32 @@ TrtcClient::DescribeStreamIngestOutcome TrtcClient::DescribeStreamIngest(const D
 
 void TrtcClient::DescribeStreamIngestAsync(const DescribeStreamIngestRequest& request, const DescribeStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamIngest(request), context);
-    };
+    using Req = const DescribeStreamIngestRequest&;
+    using Resp = DescribeStreamIngestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamIngest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeStreamIngestOutcomeCallable TrtcClient::DescribeStreamIngestCallable(const DescribeStreamIngestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamIngestOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamIngest(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamIngestOutcome>>();
+    DescribeStreamIngestAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeStreamIngestRequest&,
+        DescribeStreamIngestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTRTCMarketQualityDataOutcome TrtcClient::DescribeTRTCMarketQualityData(const DescribeTRTCMarketQualityDataRequest &request)
@@ -621,25 +1312,32 @@ TrtcClient::DescribeTRTCMarketQualityDataOutcome TrtcClient::DescribeTRTCMarketQ
 
 void TrtcClient::DescribeTRTCMarketQualityDataAsync(const DescribeTRTCMarketQualityDataRequest& request, const DescribeTRTCMarketQualityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTRTCMarketQualityData(request), context);
-    };
+    using Req = const DescribeTRTCMarketQualityDataRequest&;
+    using Resp = DescribeTRTCMarketQualityDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCMarketQualityData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTRTCMarketQualityDataOutcomeCallable TrtcClient::DescribeTRTCMarketQualityDataCallable(const DescribeTRTCMarketQualityDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTRTCMarketQualityDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTRTCMarketQualityData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTRTCMarketQualityDataOutcome>>();
+    DescribeTRTCMarketQualityDataAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCMarketQualityDataRequest&,
+        DescribeTRTCMarketQualityDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTRTCMarketScaleDataOutcome TrtcClient::DescribeTRTCMarketScaleData(const DescribeTRTCMarketScaleDataRequest &request)
@@ -664,25 +1362,32 @@ TrtcClient::DescribeTRTCMarketScaleDataOutcome TrtcClient::DescribeTRTCMarketSca
 
 void TrtcClient::DescribeTRTCMarketScaleDataAsync(const DescribeTRTCMarketScaleDataRequest& request, const DescribeTRTCMarketScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTRTCMarketScaleData(request), context);
-    };
+    using Req = const DescribeTRTCMarketScaleDataRequest&;
+    using Resp = DescribeTRTCMarketScaleDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCMarketScaleData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTRTCMarketScaleDataOutcomeCallable TrtcClient::DescribeTRTCMarketScaleDataCallable(const DescribeTRTCMarketScaleDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTRTCMarketScaleDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTRTCMarketScaleData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTRTCMarketScaleDataOutcome>>();
+    DescribeTRTCMarketScaleDataAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCMarketScaleDataRequest&,
+        DescribeTRTCMarketScaleDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTRTCRealTimeQualityDataOutcome TrtcClient::DescribeTRTCRealTimeQualityData(const DescribeTRTCRealTimeQualityDataRequest &request)
@@ -707,25 +1412,32 @@ TrtcClient::DescribeTRTCRealTimeQualityDataOutcome TrtcClient::DescribeTRTCRealT
 
 void TrtcClient::DescribeTRTCRealTimeQualityDataAsync(const DescribeTRTCRealTimeQualityDataRequest& request, const DescribeTRTCRealTimeQualityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTRTCRealTimeQualityData(request), context);
-    };
+    using Req = const DescribeTRTCRealTimeQualityDataRequest&;
+    using Resp = DescribeTRTCRealTimeQualityDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCRealTimeQualityData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTRTCRealTimeQualityDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeQualityDataCallable(const DescribeTRTCRealTimeQualityDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTRTCRealTimeQualityDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTRTCRealTimeQualityData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTRTCRealTimeQualityDataOutcome>>();
+    DescribeTRTCRealTimeQualityDataAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCRealTimeQualityDataRequest&,
+        DescribeTRTCRealTimeQualityDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTRTCRealTimeScaleDataOutcome TrtcClient::DescribeTRTCRealTimeScaleData(const DescribeTRTCRealTimeScaleDataRequest &request)
@@ -750,25 +1462,32 @@ TrtcClient::DescribeTRTCRealTimeScaleDataOutcome TrtcClient::DescribeTRTCRealTim
 
 void TrtcClient::DescribeTRTCRealTimeScaleDataAsync(const DescribeTRTCRealTimeScaleDataRequest& request, const DescribeTRTCRealTimeScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTRTCRealTimeScaleData(request), context);
-    };
+    using Req = const DescribeTRTCRealTimeScaleDataRequest&;
+    using Resp = DescribeTRTCRealTimeScaleDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCRealTimeScaleData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTRTCRealTimeScaleDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeScaleDataCallable(const DescribeTRTCRealTimeScaleDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTRTCRealTimeScaleDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTRTCRealTimeScaleData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTRTCRealTimeScaleDataOutcome>>();
+    DescribeTRTCRealTimeScaleDataAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCRealTimeScaleDataRequest&,
+        DescribeTRTCRealTimeScaleDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTrtcRoomUsageOutcome TrtcClient::DescribeTrtcRoomUsage(const DescribeTrtcRoomUsageRequest &request)
@@ -793,25 +1512,32 @@ TrtcClient::DescribeTrtcRoomUsageOutcome TrtcClient::DescribeTrtcRoomUsage(const
 
 void TrtcClient::DescribeTrtcRoomUsageAsync(const DescribeTrtcRoomUsageRequest& request, const DescribeTrtcRoomUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrtcRoomUsage(request), context);
-    };
+    using Req = const DescribeTrtcRoomUsageRequest&;
+    using Resp = DescribeTrtcRoomUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrtcRoomUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTrtcRoomUsageOutcomeCallable TrtcClient::DescribeTrtcRoomUsageCallable(const DescribeTrtcRoomUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrtcRoomUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrtcRoomUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrtcRoomUsageOutcome>>();
+    DescribeTrtcRoomUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTrtcRoomUsageRequest&,
+        DescribeTrtcRoomUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeTrtcUsageOutcome TrtcClient::DescribeTrtcUsage(const DescribeTrtcUsageRequest &request)
@@ -836,25 +1562,32 @@ TrtcClient::DescribeTrtcUsageOutcome TrtcClient::DescribeTrtcUsage(const Describ
 
 void TrtcClient::DescribeTrtcUsageAsync(const DescribeTrtcUsageRequest& request, const DescribeTrtcUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrtcUsage(request), context);
-    };
+    using Req = const DescribeTrtcUsageRequest&;
+    using Resp = DescribeTrtcUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrtcUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeTrtcUsageOutcomeCallable TrtcClient::DescribeTrtcUsageCallable(const DescribeTrtcUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrtcUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrtcUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrtcUsageOutcome>>();
+    DescribeTrtcUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTrtcUsageRequest&,
+        DescribeTrtcUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeUnusualEventOutcome TrtcClient::DescribeUnusualEvent(const DescribeUnusualEventRequest &request)
@@ -879,25 +1612,32 @@ TrtcClient::DescribeUnusualEventOutcome TrtcClient::DescribeUnusualEvent(const D
 
 void TrtcClient::DescribeUnusualEventAsync(const DescribeUnusualEventRequest& request, const DescribeUnusualEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUnusualEvent(request), context);
-    };
+    using Req = const DescribeUnusualEventRequest&;
+    using Resp = DescribeUnusualEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUnusualEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeUnusualEventOutcomeCallable TrtcClient::DescribeUnusualEventCallable(const DescribeUnusualEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUnusualEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUnusualEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUnusualEventOutcome>>();
+    DescribeUnusualEventAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeUnusualEventRequest&,
+        DescribeUnusualEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeUserEventOutcome TrtcClient::DescribeUserEvent(const DescribeUserEventRequest &request)
@@ -922,25 +1662,32 @@ TrtcClient::DescribeUserEventOutcome TrtcClient::DescribeUserEvent(const Describ
 
 void TrtcClient::DescribeUserEventAsync(const DescribeUserEventRequest& request, const DescribeUserEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserEvent(request), context);
-    };
+    using Req = const DescribeUserEventRequest&;
+    using Resp = DescribeUserEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeUserEventOutcomeCallable TrtcClient::DescribeUserEventCallable(const DescribeUserEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserEventOutcome>>();
+    DescribeUserEventAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeUserEventRequest&,
+        DescribeUserEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DescribeUserInfoOutcome TrtcClient::DescribeUserInfo(const DescribeUserInfoRequest &request)
@@ -965,25 +1712,132 @@ TrtcClient::DescribeUserInfoOutcome TrtcClient::DescribeUserInfo(const DescribeU
 
 void TrtcClient::DescribeUserInfoAsync(const DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserInfo(request), context);
-    };
+    using Req = const DescribeUserInfoRequest&;
+    using Resp = DescribeUserInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable(const DescribeUserInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserInfo(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeUserInfoOutcome>>();
+    DescribeUserInfoAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeUserInfoRequest&,
+        DescribeUserInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::DescribeVoiceConversationOutcome TrtcClient::DescribeVoiceConversation(const DescribeVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoiceConversationResponse rsp = DescribeVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoiceConversationOutcome(rsp);
+        else
+            return DescribeVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeVoiceConversationAsync(const DescribeVoiceConversationRequest& request, const DescribeVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVoiceConversationRequest&;
+    using Resp = DescribeVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeVoiceConversationOutcomeCallable TrtcClient::DescribeVoiceConversationCallable(const DescribeVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVoiceConversationOutcome>>();
+    DescribeVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeVoiceConversationRequest&,
+        DescribeVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeWebRecordOutcome TrtcClient::DescribeWebRecord(const DescribeWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebRecordResponse rsp = DescribeWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebRecordOutcome(rsp);
+        else
+            return DescribeWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeWebRecordAsync(const DescribeWebRecordRequest& request, const DescribeWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWebRecordRequest&;
+    using Resp = DescribeWebRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeWebRecordOutcomeCallable TrtcClient::DescribeWebRecordCallable(const DescribeWebRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWebRecordOutcome>>();
+    DescribeWebRecordAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeWebRecordRequest&,
+        DescribeWebRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DismissRoomOutcome TrtcClient::DismissRoom(const DismissRoomRequest &request)
@@ -1008,25 +1862,32 @@ TrtcClient::DismissRoomOutcome TrtcClient::DismissRoom(const DismissRoomRequest 
 
 void TrtcClient::DismissRoomAsync(const DismissRoomRequest& request, const DismissRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DismissRoom(request), context);
-    };
+    using Req = const DismissRoomRequest&;
+    using Resp = DismissRoomResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DismissRoom", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DismissRoomOutcomeCallable TrtcClient::DismissRoomCallable(const DismissRoomRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DismissRoomOutcome()>>(
-        [this, request]()
-        {
-            return this->DismissRoom(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DismissRoomOutcome>>();
+    DismissRoomAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DismissRoomRequest&,
+        DismissRoomOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::DismissRoomByStrRoomIdOutcome TrtcClient::DismissRoomByStrRoomId(const DismissRoomByStrRoomIdRequest &request)
@@ -1051,25 +1912,82 @@ TrtcClient::DismissRoomByStrRoomIdOutcome TrtcClient::DismissRoomByStrRoomId(con
 
 void TrtcClient::DismissRoomByStrRoomIdAsync(const DismissRoomByStrRoomIdRequest& request, const DismissRoomByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DismissRoomByStrRoomId(request), context);
-    };
+    using Req = const DismissRoomByStrRoomIdRequest&;
+    using Resp = DismissRoomByStrRoomIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DismissRoomByStrRoomId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRoomIdCallable(const DismissRoomByStrRoomIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DismissRoomByStrRoomIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DismissRoomByStrRoomId(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DismissRoomByStrRoomIdOutcome>>();
+    DismissRoomByStrRoomIdAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DismissRoomByStrRoomIdRequest&,
+        DismissRoomByStrRoomIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::ModifyCloudModerationOutcome TrtcClient::ModifyCloudModeration(const ModifyCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudModerationResponse rsp = ModifyCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudModerationOutcome(rsp);
+        else
+            return ModifyCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyCloudModerationAsync(const ModifyCloudModerationRequest& request, const ModifyCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudModerationRequest&;
+    using Resp = ModifyCloudModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ModifyCloudModerationOutcomeCallable TrtcClient::ModifyCloudModerationCallable(const ModifyCloudModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudModerationOutcome>>();
+    ModifyCloudModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyCloudModerationRequest&,
+        ModifyCloudModerationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::ModifyCloudRecordingOutcome TrtcClient::ModifyCloudRecording(const ModifyCloudRecordingRequest &request)
@@ -1094,25 +2012,182 @@ TrtcClient::ModifyCloudRecordingOutcome TrtcClient::ModifyCloudRecording(const M
 
 void TrtcClient::ModifyCloudRecordingAsync(const ModifyCloudRecordingRequest& request, const ModifyCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloudRecording(request), context);
-    };
+    using Req = const ModifyCloudRecordingRequest&;
+    using Resp = ModifyCloudRecordingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudRecording", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::ModifyCloudRecordingOutcomeCallable TrtcClient::ModifyCloudRecordingCallable(const ModifyCloudRecordingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloudRecording(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyCloudRecordingOutcome>>();
+    ModifyCloudRecordingAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyCloudRecordingRequest&,
+        ModifyCloudRecordingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::ModifyCloudSliceTaskOutcome TrtcClient::ModifyCloudSliceTask(const ModifyCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudSliceTaskResponse rsp = ModifyCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudSliceTaskOutcome(rsp);
+        else
+            return ModifyCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyCloudSliceTaskAsync(const ModifyCloudSliceTaskRequest& request, const ModifyCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudSliceTaskRequest&;
+    using Resp = ModifyCloudSliceTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudSliceTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ModifyCloudSliceTaskOutcomeCallable TrtcClient::ModifyCloudSliceTaskCallable(const ModifyCloudSliceTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudSliceTaskOutcome>>();
+    ModifyCloudSliceTaskAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyCloudSliceTaskRequest&,
+        ModifyCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::ModifyVoiceConversationOutcome TrtcClient::ModifyVoiceConversation(const ModifyVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVoiceConversationResponse rsp = ModifyVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVoiceConversationOutcome(rsp);
+        else
+            return ModifyVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyVoiceConversationAsync(const ModifyVoiceConversationRequest& request, const ModifyVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyVoiceConversationRequest&;
+    using Resp = ModifyVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ModifyVoiceConversationOutcomeCallable TrtcClient::ModifyVoiceConversationCallable(const ModifyVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyVoiceConversationOutcome>>();
+    ModifyVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyVoiceConversationRequest&,
+        ModifyVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::QueryAIMessageListOutcome TrtcClient::QueryAIMessageList(const QueryAIMessageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAIMessageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAIMessageListResponse rsp = QueryAIMessageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAIMessageListOutcome(rsp);
+        else
+            return QueryAIMessageListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAIMessageListOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::QueryAIMessageListAsync(const QueryAIMessageListRequest& request, const QueryAIMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryAIMessageListRequest&;
+    using Resp = QueryAIMessageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryAIMessageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::QueryAIMessageListOutcomeCallable TrtcClient::QueryAIMessageListCallable(const QueryAIMessageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryAIMessageListOutcome>>();
+    QueryAIMessageListAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const QueryAIMessageListRequest&,
+        QueryAIMessageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::RemoveUserOutcome TrtcClient::RemoveUser(const RemoveUserRequest &request)
@@ -1137,25 +2212,32 @@ TrtcClient::RemoveUserOutcome TrtcClient::RemoveUser(const RemoveUserRequest &re
 
 void TrtcClient::RemoveUserAsync(const RemoveUserRequest& request, const RemoveUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveUser(request), context);
-    };
+    using Req = const RemoveUserRequest&;
+    using Resp = RemoveUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::RemoveUserOutcomeCallable TrtcClient::RemoveUserCallable(const RemoveUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveUserOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveUserOutcome>>();
+    RemoveUserAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const RemoveUserRequest&,
+        RemoveUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::RemoveUserByStrRoomIdOutcome TrtcClient::RemoveUserByStrRoomId(const RemoveUserByStrRoomIdRequest &request)
@@ -1180,25 +2262,32 @@ TrtcClient::RemoveUserByStrRoomIdOutcome TrtcClient::RemoveUserByStrRoomId(const
 
 void TrtcClient::RemoveUserByStrRoomIdAsync(const RemoveUserByStrRoomIdRequest& request, const RemoveUserByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveUserByStrRoomId(request), context);
-    };
+    using Req = const RemoveUserByStrRoomIdRequest&;
+    using Resp = RemoveUserByStrRoomIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveUserByStrRoomId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::RemoveUserByStrRoomIdOutcomeCallable TrtcClient::RemoveUserByStrRoomIdCallable(const RemoveUserByStrRoomIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveUserByStrRoomIdOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveUserByStrRoomId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveUserByStrRoomIdOutcome>>();
+    RemoveUserByStrRoomIdAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const RemoveUserByStrRoomIdRequest&,
+        RemoveUserByStrRoomIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::SetUserBlockedOutcome TrtcClient::SetUserBlocked(const SetUserBlockedRequest &request)
@@ -1223,25 +2312,32 @@ TrtcClient::SetUserBlockedOutcome TrtcClient::SetUserBlocked(const SetUserBlocke
 
 void TrtcClient::SetUserBlockedAsync(const SetUserBlockedRequest& request, const SetUserBlockedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetUserBlocked(request), context);
-    };
+    using Req = const SetUserBlockedRequest&;
+    using Resp = SetUserBlockedResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetUserBlocked", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::SetUserBlockedOutcomeCallable TrtcClient::SetUserBlockedCallable(const SetUserBlockedRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetUserBlockedOutcome()>>(
-        [this, request]()
-        {
-            return this->SetUserBlocked(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetUserBlockedOutcome>>();
+    SetUserBlockedAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const SetUserBlockedRequest&,
+        SetUserBlockedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::SetUserBlockedByStrRoomIdOutcome TrtcClient::SetUserBlockedByStrRoomId(const SetUserBlockedByStrRoomIdRequest &request)
@@ -1266,25 +2362,32 @@ TrtcClient::SetUserBlockedByStrRoomIdOutcome TrtcClient::SetUserBlockedByStrRoom
 
 void TrtcClient::SetUserBlockedByStrRoomIdAsync(const SetUserBlockedByStrRoomIdRequest& request, const SetUserBlockedByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetUserBlockedByStrRoomId(request), context);
-    };
+    using Req = const SetUserBlockedByStrRoomIdRequest&;
+    using Resp = SetUserBlockedByStrRoomIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetUserBlockedByStrRoomId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::SetUserBlockedByStrRoomIdOutcomeCallable TrtcClient::SetUserBlockedByStrRoomIdCallable(const SetUserBlockedByStrRoomIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetUserBlockedByStrRoomIdOutcome()>>(
-        [this, request]()
-        {
-            return this->SetUserBlockedByStrRoomId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetUserBlockedByStrRoomIdOutcome>>();
+    SetUserBlockedByStrRoomIdAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const SetUserBlockedByStrRoomIdRequest&,
+        SetUserBlockedByStrRoomIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StartAIConversationOutcome TrtcClient::StartAIConversation(const StartAIConversationRequest &request)
@@ -1309,25 +2412,32 @@ TrtcClient::StartAIConversationOutcome TrtcClient::StartAIConversation(const Sta
 
 void TrtcClient::StartAIConversationAsync(const StartAIConversationRequest& request, const StartAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartAIConversation(request), context);
-    };
+    using Req = const StartAIConversationRequest&;
+    using Resp = StartAIConversationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartAIConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StartAIConversationOutcomeCallable TrtcClient::StartAIConversationCallable(const StartAIConversationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartAIConversationOutcome()>>(
-        [this, request]()
-        {
-            return this->StartAIConversation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartAIConversationOutcome>>();
+    StartAIConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StartAIConversationRequest&,
+        StartAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StartAITranscriptionOutcome TrtcClient::StartAITranscription(const StartAITranscriptionRequest &request)
@@ -1352,25 +2462,32 @@ TrtcClient::StartAITranscriptionOutcome TrtcClient::StartAITranscription(const S
 
 void TrtcClient::StartAITranscriptionAsync(const StartAITranscriptionRequest& request, const StartAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartAITranscription(request), context);
-    };
+    using Req = const StartAITranscriptionRequest&;
+    using Resp = StartAITranscriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartAITranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StartAITranscriptionOutcomeCallable TrtcClient::StartAITranscriptionCallable(const StartAITranscriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartAITranscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->StartAITranscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartAITranscriptionOutcome>>();
+    StartAITranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StartAITranscriptionRequest&,
+        StartAITranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StartPublishCdnStreamOutcome TrtcClient::StartPublishCdnStream(const StartPublishCdnStreamRequest &request)
@@ -1395,25 +2512,32 @@ TrtcClient::StartPublishCdnStreamOutcome TrtcClient::StartPublishCdnStream(const
 
 void TrtcClient::StartPublishCdnStreamAsync(const StartPublishCdnStreamRequest& request, const StartPublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartPublishCdnStream(request), context);
-    };
+    using Req = const StartPublishCdnStreamRequest&;
+    using Resp = StartPublishCdnStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartPublishCdnStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StartPublishCdnStreamOutcomeCallable TrtcClient::StartPublishCdnStreamCallable(const StartPublishCdnStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartPublishCdnStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StartPublishCdnStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartPublishCdnStreamOutcome>>();
+    StartPublishCdnStreamAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StartPublishCdnStreamRequest&,
+        StartPublishCdnStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StartStreamIngestOutcome TrtcClient::StartStreamIngest(const StartStreamIngestRequest &request)
@@ -1438,25 +2562,82 @@ TrtcClient::StartStreamIngestOutcome TrtcClient::StartStreamIngest(const StartSt
 
 void TrtcClient::StartStreamIngestAsync(const StartStreamIngestRequest& request, const StartStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartStreamIngest(request), context);
-    };
+    using Req = const StartStreamIngestRequest&;
+    using Resp = StartStreamIngestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartStreamIngest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StartStreamIngestOutcomeCallable TrtcClient::StartStreamIngestCallable(const StartStreamIngestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartStreamIngestOutcome()>>(
-        [this, request]()
-        {
-            return this->StartStreamIngest(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<StartStreamIngestOutcome>>();
+    StartStreamIngestAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StartStreamIngestRequest&,
+        StartStreamIngestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::StartWebRecordOutcome TrtcClient::StartWebRecord(const StartWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartWebRecordResponse rsp = StartWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartWebRecordOutcome(rsp);
+        else
+            return StartWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StartWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartWebRecordAsync(const StartWebRecordRequest& request, const StartWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartWebRecordRequest&;
+    using Resp = StartWebRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartWebRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::StartWebRecordOutcomeCallable TrtcClient::StartWebRecordCallable(const StartWebRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartWebRecordOutcome>>();
+    StartWebRecordAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StartWebRecordRequest&,
+        StartWebRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StopAIConversationOutcome TrtcClient::StopAIConversation(const StopAIConversationRequest &request)
@@ -1481,25 +2662,32 @@ TrtcClient::StopAIConversationOutcome TrtcClient::StopAIConversation(const StopA
 
 void TrtcClient::StopAIConversationAsync(const StopAIConversationRequest& request, const StopAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopAIConversation(request), context);
-    };
+    using Req = const StopAIConversationRequest&;
+    using Resp = StopAIConversationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopAIConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StopAIConversationOutcomeCallable TrtcClient::StopAIConversationCallable(const StopAIConversationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopAIConversationOutcome()>>(
-        [this, request]()
-        {
-            return this->StopAIConversation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopAIConversationOutcome>>();
+    StopAIConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StopAIConversationRequest&,
+        StopAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StopAITranscriptionOutcome TrtcClient::StopAITranscription(const StopAITranscriptionRequest &request)
@@ -1524,25 +2712,32 @@ TrtcClient::StopAITranscriptionOutcome TrtcClient::StopAITranscription(const Sto
 
 void TrtcClient::StopAITranscriptionAsync(const StopAITranscriptionRequest& request, const StopAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopAITranscription(request), context);
-    };
+    using Req = const StopAITranscriptionRequest&;
+    using Resp = StopAITranscriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopAITranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StopAITranscriptionOutcomeCallable TrtcClient::StopAITranscriptionCallable(const StopAITranscriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopAITranscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->StopAITranscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopAITranscriptionOutcome>>();
+    StopAITranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StopAITranscriptionRequest&,
+        StopAITranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StopPublishCdnStreamOutcome TrtcClient::StopPublishCdnStream(const StopPublishCdnStreamRequest &request)
@@ -1567,25 +2762,32 @@ TrtcClient::StopPublishCdnStreamOutcome TrtcClient::StopPublishCdnStream(const S
 
 void TrtcClient::StopPublishCdnStreamAsync(const StopPublishCdnStreamRequest& request, const StopPublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopPublishCdnStream(request), context);
-    };
+    using Req = const StopPublishCdnStreamRequest&;
+    using Resp = StopPublishCdnStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopPublishCdnStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StopPublishCdnStreamOutcomeCallable TrtcClient::StopPublishCdnStreamCallable(const StopPublishCdnStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopPublishCdnStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StopPublishCdnStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopPublishCdnStreamOutcome>>();
+    StopPublishCdnStreamAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StopPublishCdnStreamRequest&,
+        StopPublishCdnStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::StopStreamIngestOutcome TrtcClient::StopStreamIngest(const StopStreamIngestRequest &request)
@@ -1610,25 +2812,182 @@ TrtcClient::StopStreamIngestOutcome TrtcClient::StopStreamIngest(const StopStrea
 
 void TrtcClient::StopStreamIngestAsync(const StopStreamIngestRequest& request, const StopStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopStreamIngest(request), context);
-    };
+    using Req = const StopStreamIngestRequest&;
+    using Resp = StopStreamIngestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopStreamIngest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::StopStreamIngestOutcomeCallable TrtcClient::StopStreamIngestCallable(const StopStreamIngestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopStreamIngestOutcome()>>(
-        [this, request]()
-        {
-            return this->StopStreamIngest(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<StopStreamIngestOutcome>>();
+    StopStreamIngestAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StopStreamIngestRequest&,
+        StopStreamIngestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::StopWebRecordOutcome TrtcClient::StopWebRecord(const StopWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWebRecordResponse rsp = StopWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWebRecordOutcome(rsp);
+        else
+            return StopWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopWebRecordAsync(const StopWebRecordRequest& request, const StopWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopWebRecordRequest&;
+    using Resp = StopWebRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopWebRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const StopWebRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopWebRecordOutcome>>();
+    StopWebRecordAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const StopWebRecordRequest&,
+        StopWebRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::TextToSpeechOutcome TrtcClient::TextToSpeech(const TextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechResponse rsp = TextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechOutcome(rsp);
+        else
+            return TextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechAsync(const TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechRequest&;
+    using Resp = TextToSpeechResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeech", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::TextToSpeechOutcomeCallable TrtcClient::TextToSpeechCallable(const TextToSpeechRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechOutcome>>();
+    TextToSpeechAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const TextToSpeechRequest&,
+        TextToSpeechOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::TextToSpeechSSEOutcome TrtcClient::TextToSpeechSSE(const TextToSpeechSSERequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechSSE");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechSSEResponse rsp = TextToSpeechSSEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechSSEOutcome(rsp);
+        else
+            return TextToSpeechSSEOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechSSEOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechSSEAsync(const TextToSpeechSSERequest& request, const TextToSpeechSSEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechSSERequest&;
+    using Resp = TextToSpeechSSEResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeechSSE", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::TextToSpeechSSEOutcomeCallable TrtcClient::TextToSpeechSSECallable(const TextToSpeechSSERequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechSSEOutcome>>();
+    TextToSpeechSSEAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const TextToSpeechSSERequest&,
+        TextToSpeechSSEOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
@@ -1653,25 +3012,32 @@ TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const U
 
 void TrtcClient::UpdateAIConversationAsync(const UpdateAIConversationRequest& request, const UpdateAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAIConversation(request), context);
-    };
+    using Req = const UpdateAIConversationRequest&;
+    using Resp = UpdateAIConversationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAIConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::UpdateAIConversationOutcomeCallable TrtcClient::UpdateAIConversationCallable(const UpdateAIConversationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAIConversationOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAIConversation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAIConversationOutcome>>();
+    UpdateAIConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const UpdateAIConversationRequest&,
+        UpdateAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::UpdatePublishCdnStreamOutcome TrtcClient::UpdatePublishCdnStream(const UpdatePublishCdnStreamRequest &request)
@@ -1696,25 +3062,32 @@ TrtcClient::UpdatePublishCdnStreamOutcome TrtcClient::UpdatePublishCdnStream(con
 
 void TrtcClient::UpdatePublishCdnStreamAsync(const UpdatePublishCdnStreamRequest& request, const UpdatePublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdatePublishCdnStream(request), context);
-    };
+    using Req = const UpdatePublishCdnStreamRequest&;
+    using Resp = UpdatePublishCdnStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdatePublishCdnStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::UpdatePublishCdnStreamOutcomeCallable TrtcClient::UpdatePublishCdnStreamCallable(const UpdatePublishCdnStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdatePublishCdnStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdatePublishCdnStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdatePublishCdnStreamOutcome>>();
+    UpdatePublishCdnStreamAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const UpdatePublishCdnStreamRequest&,
+        UpdatePublishCdnStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrtcClient::UpdateStreamIngestOutcome TrtcClient::UpdateStreamIngest(const UpdateStreamIngestRequest &request)
@@ -1739,24 +3112,81 @@ TrtcClient::UpdateStreamIngestOutcome TrtcClient::UpdateStreamIngest(const Updat
 
 void TrtcClient::UpdateStreamIngestAsync(const UpdateStreamIngestRequest& request, const UpdateStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateStreamIngest(request), context);
-    };
+    using Req = const UpdateStreamIngestRequest&;
+    using Resp = UpdateStreamIngestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateStreamIngest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrtcClient::UpdateStreamIngestOutcomeCallable TrtcClient::UpdateStreamIngestCallable(const UpdateStreamIngestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateStreamIngestOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateStreamIngest(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<UpdateStreamIngestOutcome>>();
+    UpdateStreamIngestAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const UpdateStreamIngestRequest&,
+        UpdateStreamIngestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TrtcClient::VoiceCloneOutcome TrtcClient::VoiceClone(const VoiceCloneRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoiceClone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoiceCloneResponse rsp = VoiceCloneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoiceCloneOutcome(rsp);
+        else
+            return VoiceCloneOutcome(o.GetError());
+    }
+    else
+    {
+        return VoiceCloneOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::VoiceCloneAsync(const VoiceCloneRequest& request, const VoiceCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VoiceCloneRequest&;
+    using Resp = VoiceCloneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VoiceClone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::VoiceCloneOutcomeCallable TrtcClient::VoiceCloneCallable(const VoiceCloneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VoiceCloneOutcome>>();
+    VoiceCloneAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const VoiceCloneRequest&,
+        VoiceCloneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

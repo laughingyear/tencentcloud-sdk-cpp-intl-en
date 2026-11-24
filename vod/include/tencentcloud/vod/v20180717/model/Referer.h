@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Referer blacklist/whitelist configuration. This is disabled by default.
+                * Referer blocklist/allowlist configuration, disabled by default
                 */
                 class Referer : public AbstractModel
                 {
@@ -48,15 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取referer Blacklist and whitelist configuration switch, value: <li>on: on; </li> <li>off: off. </li>
-                     * @return Switch referer Blacklist and whitelist configuration switch, value: <li>on: on; </li> <li>off: off. </li>
+                     * 获取Referrer blocklist configuration switch. Value:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @return Switch Referrer blocklist configuration switch. Value:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置referer Blacklist and whitelist configuration switch, value: <li>on: on; </li> <li>off: off. </li>
-                     * @param _switch referer Blacklist and whitelist configuration switch, value: <li>on: on; </li> <li>off: off. </li>
+                     * 设置Referrer blocklist configuration switch. Value:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @param _switch Referrer blocklist configuration switch. Value:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -69,15 +77,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Referer blacklist/whitelist configuration rule
-                     * @return RefererRules Referer blacklist/whitelist configuration rule
+                     * 获取referer blocklist/allowlist rule configuration
+                     * @return RefererRules referer blocklist/allowlist rule configuration
                      * 
                      */
                     std::vector<RefererRule> GetRefererRules() const;
 
                     /**
-                     * 设置Referer blacklist/whitelist configuration rule
-                     * @param _refererRules Referer blacklist/whitelist configuration rule
+                     * 设置referer blocklist/allowlist rule configuration
+                     * @param _refererRules referer blocklist/allowlist rule configuration
                      * 
                      */
                     void SetRefererRules(const std::vector<RefererRule>& _refererRules);
@@ -92,13 +100,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * referer Blacklist and whitelist configuration switch, value: <li>on: on; </li> <li>off: off. </li>
+                     * Referrer blocklist configuration switch. Value:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Referer blacklist/whitelist configuration rule
+                     * referer blocklist/allowlist rule configuration
                      */
                     std::vector<RefererRule> m_refererRules;
                     bool m_refererRulesHasBeenSet;

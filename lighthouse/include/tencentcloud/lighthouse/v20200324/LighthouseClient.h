@@ -31,6 +31,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachDisksRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/AttachDisksResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CancelShareBlueprintAcrossAccountsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateDisksRequest.h>
@@ -79,8 +81,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h>
-#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.h>
-#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeImagesToShareResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
@@ -141,12 +143,12 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyImageSharePermissionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleResponse.h>
-#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h>
-#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeRequest.h>
@@ -163,10 +165,16 @@
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResizeDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResizeDisksResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/SyncBlueprintRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/SyncBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h>
@@ -197,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
                 typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelShareBlueprintAcrossAccountsResponse> CancelShareBlueprintAcrossAccountsOutcome;
+                typedef std::future<CancelShareBlueprintAcrossAccountsOutcome> CancelShareBlueprintAcrossAccountsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CancelShareBlueprintAcrossAccountsRequest&, CancelShareBlueprintAcrossAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelShareBlueprintAcrossAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
@@ -269,9 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGeneralResourceQuotasResponse> DescribeGeneralResourceQuotasOutcome;
                 typedef std::future<DescribeGeneralResourceQuotasOutcome> DescribeGeneralResourceQuotasOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeGeneralResourceQuotasRequest&, DescribeGeneralResourceQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralResourceQuotasAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInstanceLoginKeyPairAttributeResponse> DescribeInstanceLoginKeyPairAttributeOutcome;
-                typedef std::future<DescribeInstanceLoginKeyPairAttributeOutcome> DescribeInstanceLoginKeyPairAttributeOutcomeCallable;
-                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstanceLoginKeyPairAttributeRequest&, DescribeInstanceLoginKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLoginKeyPairAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImagesToShareResponse> DescribeImagesToShareOutcome;
+                typedef std::future<DescribeImagesToShareOutcome> DescribeImagesToShareOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeImagesToShareRequest&, DescribeImagesToShareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesToShareAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceVncUrlResponse> DescribeInstanceVncUrlOutcome;
                 typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstanceVncUrlRequest&, DescribeInstanceVncUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
@@ -362,15 +373,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFirewallRulesResponse> ModifyFirewallRulesOutcome;
                 typedef std::future<ModifyFirewallRulesOutcome> ModifyFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRulesRequest&, ModifyFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageSharePermissionResponse> ModifyImageSharePermissionOutcome;
+                typedef std::future<ModifyImageSharePermissionOutcome> ModifyImageSharePermissionOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyImageSharePermissionRequest&, ModifyImageSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSharePermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesBundleResponse> ModifyInstancesBundleOutcome;
                 typedef std::future<ModifyInstancesBundleOutcome> ModifyInstancesBundleOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesBundleRequest&, ModifyInstancesBundleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesBundleAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyInstancesLoginKeyPairAttributeResponse> ModifyInstancesLoginKeyPairAttributeOutcome;
-                typedef std::future<ModifyInstancesLoginKeyPairAttributeOutcome> ModifyInstancesLoginKeyPairAttributeOutcomeCallable;
-                typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesLoginKeyPairAttributeRequest&, ModifyInstancesLoginKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesLoginKeyPairAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesRenewFlagResponse> ModifyInstancesRenewFlagOutcome;
                 typedef std::future<ModifyInstancesRenewFlagOutcome> ModifyInstancesRenewFlagOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesRenewFlagRequest&, ModifyInstancesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesRenewFlagAsyncHandler;
@@ -395,12 +406,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeDisksResponse> ResizeDisksOutcome;
+                typedef std::future<ResizeDisksOutcome> ResizeDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ResizeDisksRequest&, ResizeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ShareBlueprintAcrossAccountsResponse> ShareBlueprintAcrossAccountsOutcome;
+                typedef std::future<ShareBlueprintAcrossAccountsOutcome> ShareBlueprintAcrossAccountsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ShareBlueprintAcrossAccountsRequest&, ShareBlueprintAcrossAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShareBlueprintAcrossAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartInstancesResponse> StartInstancesOutcome;
                 typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncBlueprintResponse> SyncBlueprintOutcome;
+                typedef std::future<SyncBlueprintOutcome> SyncBlueprintOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::SyncBlueprintRequest&, SyncBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncBlueprintAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateDisksResponse> TerminateDisksOutcome;
                 typedef std::future<TerminateDisksOutcome> TerminateDisksOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::TerminateDisksRequest&, TerminateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDisksAsyncHandler;
@@ -454,6 +474,16 @@ namespace TencentCloud
                 AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
                 void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
+
+                /**
+                 *This API is used to cancel image sharing across accounts.
+An image to be canceled sharing must be a custom image that is originally shared from another account to your account.
+                 * @param req CancelShareBlueprintAcrossAccountsRequest
+                 * @return CancelShareBlueprintAcrossAccountsOutcome
+                 */
+                CancelShareBlueprintAcrossAccountsOutcome CancelShareBlueprintAcrossAccounts(const Model::CancelShareBlueprintAcrossAccountsRequest &request);
+                void CancelShareBlueprintAcrossAccountsAsync(const Model::CancelShareBlueprintAcrossAccountsRequest& request, const CancelShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelShareBlueprintAcrossAccountsOutcomeCallable CancelShareBlueprintAcrossAccountsCallable(const Model::CancelShareBlueprintAcrossAccountsRequest& request);
 
                 /**
                  *This API is used to create an image.
@@ -692,13 +722,13 @@ The snapshot must be in `NORMAL` status. To query the status of a snapshot, you 
                 DescribeGeneralResourceQuotasOutcomeCallable DescribeGeneralResourceQuotasCallable(const Model::DescribeGeneralResourceQuotasRequest& request);
 
                 /**
-                 *This API is used to query the attributes of the default login key of an instance.
-                 * @param req DescribeInstanceLoginKeyPairAttributeRequest
-                 * @return DescribeInstanceLoginKeyPairAttributeOutcome
+                 *This API is used to query the list of Cloud Virtual Machine (CVM) custom images and share the images to Tencent Cloud Lighthouse (Lighthouse).
+                 * @param req DescribeImagesToShareRequest
+                 * @return DescribeImagesToShareOutcome
                  */
-                DescribeInstanceLoginKeyPairAttributeOutcome DescribeInstanceLoginKeyPairAttribute(const Model::DescribeInstanceLoginKeyPairAttributeRequest &request);
-                void DescribeInstanceLoginKeyPairAttributeAsync(const Model::DescribeInstanceLoginKeyPairAttributeRequest& request, const DescribeInstanceLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInstanceLoginKeyPairAttributeOutcomeCallable DescribeInstanceLoginKeyPairAttributeCallable(const Model::DescribeInstanceLoginKeyPairAttributeRequest& request);
+                DescribeImagesToShareOutcome DescribeImagesToShare(const Model::DescribeImagesToShareRequest &request);
+                void DescribeImagesToShareAsync(const Model::DescribeImagesToShareRequest& request, const DescribeImagesToShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImagesToShareOutcomeCallable DescribeImagesToShareCallable(const Model::DescribeImagesToShareRequest& request);
 
                 /**
                  *This API is used to query the URL for VNC login.
@@ -723,12 +753,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeInstanceVncUrlOutcomeCallable DescribeInstanceVncUrlCallable(const Model::DescribeInstanceVncUrlRequest& request);
 
                 /**
-                 *This API is used to query the details of one or multiple instances.
+                 *This API is used to query the detailed information of one or more instances.
 
-* You can query the details of an instance according to its ID, name, or private IP.
-* For more information on filters, please see [Filters](https://intl.cloud.tencent.com/document/product/1207/47576?from_cn_redirect=1#Filter).
-* If no parameter is defined, the status of a certain number of instances under the current account will be returned. The number is specified by `Limit` and is 20 by default.
-* The latest operation (LatestOperation) and the latest operation status (LatestOperationState) of the instance can be queried.
+* You can query the detailed information of instances by instance ID, instance name, or private IP of the instance.
+* For detailed filter information, see [Filters](https://www.tencentcloud.com/document/product/1207/47576?from_cn_redirect=1#Filter).
+* If the parameter is empty, a certain number of instances (the number specified by `Limit`, 20 by default) under the current user will be returned.
+* You can query the latest operation (LatestOperation) and the latest operation state (LatestOperationState) of an instance.
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */
@@ -1024,6 +1054,22 @@ In the `FirewallRules` parameter:
                 ModifyFirewallRulesOutcomeCallable ModifyFirewallRulesCallable(const Model::ModifyFirewallRulesRequest& request);
 
                 /**
+                 *This API is used to share and cancel sharing of CVM custom images to the Lighthouse service.
+Sharing CVM images to Lighthouse requires the following conditions to be met:
+1. Images that have been shared cannot be shared again.
+2. Images imported from external sources are not supported for sharing.
+3. Full-instance images are not supported for sharing.
+4. Images need to support CloudInit to be eligible for sharing.
+5. The Platform and OsName of the images must meet the sharing conditions before the images are eligible for sharing.
+6. Only images in the NORMAL status are supported for sharing.
+                 * @param req ModifyImageSharePermissionRequest
+                 * @return ModifyImageSharePermissionOutcome
+                 */
+                ModifyImageSharePermissionOutcome ModifyImageSharePermission(const Model::ModifyImageSharePermissionRequest &request);
+                void ModifyImageSharePermissionAsync(const Model::ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageSharePermissionOutcomeCallable ModifyImageSharePermissionCallable(const Model::ModifyImageSharePermissionRequest& request);
+
+                /**
                  *This API is used to modify an instance attribute. 
 * The instance name is used only for users’ convenience. 
 * Batch operations are supported. The maximum number of instances in each request is 100.
@@ -1035,10 +1081,10 @@ In the `FirewallRules` parameter:
                 ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
 
                 /**
-                 *This API is used change one or more Lighthouse instance bundles. 
-* Only `RUNNING` and `STOPPED` instances can be changed. 
-* Batch operations are supported. The maximum number of instances in each request is 30. 
-* This API is async. After the request is sent successfully, a `RequestId` will be returned. At this time, the operation is not completed immediately. The result of the instance operation can be queried by calling the `DescribeInstances` API. If the latest operation status (LatestOperationState) of the instance is `SUCCESS`, the operation is successful.
+                 *This API is used to change the bundle of one or more Lighthouse instances.
+* Only instances in the RUNNING or STOPPED state can be operated through this API.
+* Batch operations are supported. The maximum number of instances in each request is 15.
+* This API is an async API. After a request is sent successfully, a RequestId is returned, but the operation is not completed immediately. You can call the <a href="https://www.tencentcloud.com/document/product/1207/47573?from_cn_redirect=1" target="_blank">DescribeInstances</a> API to query the instance operation result. If the latest operation state (LatestOperationState) of the instance is "SUCCESS", the operation is successful.
                  * @param req ModifyInstancesBundleRequest
                  * @return ModifyInstancesBundleOutcome
                  */
@@ -1047,18 +1093,7 @@ In the `FirewallRules` parameter:
                 ModifyInstancesBundleOutcomeCallable ModifyInstancesBundleCallable(const Model::ModifyInstancesBundleRequest& request);
 
                 /**
-                 *This API is used to set the attributes of the default login key pair of an instance.
-
-
-                 * @param req ModifyInstancesLoginKeyPairAttributeRequest
-                 * @return ModifyInstancesLoginKeyPairAttributeOutcome
-                 */
-                ModifyInstancesLoginKeyPairAttributeOutcome ModifyInstancesLoginKeyPairAttribute(const Model::ModifyInstancesLoginKeyPairAttributeRequest &request);
-                void ModifyInstancesLoginKeyPairAttributeAsync(const Model::ModifyInstancesLoginKeyPairAttributeRequest& request, const ModifyInstancesLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyInstancesLoginKeyPairAttributeOutcomeCallable ModifyInstancesLoginKeyPairAttributeCallable(const Model::ModifyInstancesLoginKeyPairAttributeRequest& request);
-
-                /**
-                 *This API is used to change the auto-renewal setting of monthly-subscribed instances. 
+                 *This API is used to change the auto-renewal setting of yearly/monthly-subscribed instances. 
 
 * Instances with auto-renewal enabled are automatically renewed on a monthly basis upon the expiration. 
 * Batch operations are supported. Up to 100 instances per request is allowed.
@@ -1156,6 +1191,26 @@ Note: Just like powering off a physical PC, a forced shutdown may cause data los
                 ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
 
                 /**
+                 *This API is used to scale out a cloud disk. The operation currently only supports cloud disks of the data disk type that are in the ATTACHED or UNATTACHED status.
+                 * @param req ResizeDisksRequest
+                 * @return ResizeDisksOutcome
+                 */
+                ResizeDisksOutcome ResizeDisks(const Model::ResizeDisksRequest &request);
+                void ResizeDisksAsync(const Model::ResizeDisksRequest& request, const ResizeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeDisksOutcomeCallable ResizeDisksCallable(const Model::ResizeDisksRequest& request);
+
+                /**
+                 *This API is used to share an image across accounts.
+This API is used to share custom images only, and the status of the shared image must be NORMAL.
+The account receiving the shared image must be a root account.
+                 * @param req ShareBlueprintAcrossAccountsRequest
+                 * @return ShareBlueprintAcrossAccountsOutcome
+                 */
+                ShareBlueprintAcrossAccountsOutcome ShareBlueprintAcrossAccounts(const Model::ShareBlueprintAcrossAccountsRequest &request);
+                void ShareBlueprintAcrossAccountsAsync(const Model::ShareBlueprintAcrossAccountsRequest& request, const ShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ShareBlueprintAcrossAccountsOutcomeCallable ShareBlueprintAcrossAccountsCallable(const Model::ShareBlueprintAcrossAccountsRequest& request);
+
+                /**
                  *This API is used to start one or more instances.
 
 * You can only perform this operation on instances whose status is `STOPPED`.
@@ -1181,6 +1236,21 @@ Note: Just like powering off a physical PC, a forced shutdown may cause data los
                 StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
                 void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
+
+                /**
+                 *This API is used to synchronize a custom image to other regions.
+
+* Synchronization to multiple regions is supported. Up to 10 regions are supported.
+* Synchronization to the source region is not supported.
+* Only images in the NORMAL status are supported for synchronization.
+* Synchronization between Chinese mainland regions and regions outside the Chinese mainland is not supported.
+ * You can use the [DescribeBlueprints](https://www.tencentcloud.com/document/api/1207/47689?from_cn_redirect=1) API to query the image status. When the status is NORMAL, it indicates that the source region synchronization ends.
+                 * @param req SyncBlueprintRequest
+                 * @return SyncBlueprintOutcome
+                 */
+                SyncBlueprintOutcome SyncBlueprint(const Model::SyncBlueprintRequest &request);
+                void SyncBlueprintAsync(const Model::SyncBlueprintRequest& request, const SyncBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncBlueprintOutcomeCallable SyncBlueprintCallable(const Model::SyncBlueprintRequest& request);
 
                 /**
                  *This API is used to terminate one or more cloud disk.

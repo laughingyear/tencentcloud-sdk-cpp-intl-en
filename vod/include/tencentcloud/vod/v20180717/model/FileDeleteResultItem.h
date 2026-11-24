@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The result of file deletion.
+                * File deletion result information
                 */
                 class FileDeleteResultItem : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The ID of the file deleted.
-                     * @return FileId The ID of the file deleted.
+                     * 获取File ID deleted.
+                     * @return FileId File ID deleted.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置The ID of the file deleted.
-                     * @param _fileId The ID of the file deleted.
+                     * 设置File ID deleted.
+                     * @param _fileId File ID deleted.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取The type of the file deleted.
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @return DeleteParts The type of the file deleted.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 获取Part of the files deleted this time.
+                     * @return DeleteParts Part of the files deleted this time.
                      * 
                      */
                     std::vector<MediaDeleteItem> GetDeleteParts() const;
 
                     /**
-                     * 设置The type of the file deleted.
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @param _deleteParts The type of the file deleted.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 设置Part of the files deleted this time.
+                     * @param _deleteParts Part of the files deleted this time.
                      * 
                      */
                     void SetDeleteParts(const std::vector<MediaDeleteItem>& _deleteParts);
@@ -96,14 +92,13 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                 private:
 
                     /**
-                     * The ID of the file deleted.
+                     * File ID deleted.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * The type of the file deleted.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * Part of the files deleted this time.
                      */
                     std::vector<MediaDeleteItem> m_deleteParts;
                     bool m_deletePartsHasBeenSet;

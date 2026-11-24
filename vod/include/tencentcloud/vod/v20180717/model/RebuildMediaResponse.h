@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task ID of the Enhance Media. You can use this ID to query the status of the EnhanceMedia task.
-                     * @return TaskId The task ID of the Enhance Media. You can use this ID to query the status of the EnhanceMedia task.
+                     * 获取Task ID for Audio and Video Quality Regeneration, which can be used to query the status of the audio and video quality regeneration task.
+                     * @return TaskId Task ID for Audio and Video Quality Regeneration, which can be used to query the status of the audio and video quality regeneration task.
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The task ID of the Enhance Media. You can use this ID to query the status of the EnhanceMedia task.
+                     * Task ID for Audio and Video Quality Regeneration, which can be used to query the status of the audio and video quality regeneration task.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

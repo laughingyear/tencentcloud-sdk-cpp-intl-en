@@ -385,8 +385,8 @@ namespace TencentCloud
                     bool ExclusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Billing mode. Valid values: `prepaid` (monthly subscription), `postpaid` (pay-as-you-go).
-                     * @return PayMode Billing mode. Valid values: `prepaid` (monthly subscription), `postpaid` (pay-as-you-go).
+                     * 获取Billing mode. Valid values: `prepaid` (yearly/monthly subscription), `postpaid` (pay-as-you-go).
+                     * @return PayMode Billing mode. Valid values: `prepaid` (yearly/monthly subscription), `postpaid` (pay-as-you-go).
                      * 
                      */
                     std::string GetPayMode() const;
@@ -884,6 +884,90 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool IsPhysicalReplicationSupportedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether strong-sync DCN is supported</p>
+                     * @return IsDcnStrongSyncSupported <p>Whether strong-sync DCN is supported</p>
+                     * 
+                     */
+                    int64_t GetIsDcnStrongSyncSupported() const;
+
+                    /**
+                     * 判断参数 IsDcnStrongSyncSupported 是否已赋值
+                     * @return IsDcnStrongSyncSupported 是否已赋值
+                     * 
+                     */
+                    bool IsDcnStrongSyncSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether DCN switching is supported</p>
+                     * @return IsDcnSwitchSupported <p>Whether DCN switching is supported</p>
+                     * 
+                     */
+                    int64_t GetIsDcnSwitchSupported() const;
+
+                    /**
+                     * 判断参数 IsDcnSwitchSupported 是否已赋值
+                     * @return IsDcnSwitchSupported 是否已赋值
+                     * 
+                     */
+                    bool IsDcnSwitchSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Proxy version</p>
+                     * @return ProxyVersion <p>Proxy version</p>
+                     * 
+                     */
+                    std::string GetProxyVersion() const;
+
+                    /**
+                     * 判断参数 ProxyVersion 是否已赋值
+                     * @return ProxyVersion 是否已赋值
+                     * 
+                     */
+                    bool ProxyVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CPU type. Examples: Intel/AMD for Intel, Hygon for Hygon.</p>
+                     * @return CpuType <p>CPU type. Examples: Intel/AMD for Intel, Hygon for Hygon.</p>
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Deletion protection flag. 1: Deletion protection enabled, 0: Deletion protection disabled.</p>
+                     * @return ProtectedProperty <p>Deletion protection flag. 1: Deletion protection enabled, 0: Deletion protection disabled.</p>
+                     * 
+                     */
+                    int64_t GetProtectedProperty() const;
+
+                    /**
+                     * 判断参数 ProtectedProperty 是否已赋值
+                     * @return ProtectedProperty 是否已赋值
+                     * 
+                     */
+                    bool ProtectedPropertyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Flow ID, which identifies the ongoing asynchronous task of the instance.</p>
+                     * @return FlowId <p>Flow ID, which identifies the ongoing asynchronous task of the instance.</p>
+                     * 
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1031,7 +1115,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_exclusterIdHasBeenSet;
 
                     /**
-                     * Billing mode. Valid values: `prepaid` (monthly subscription), `postpaid` (pay-as-you-go).
+                     * Billing mode. Valid values: `prepaid` (yearly/monthly subscription), `postpaid` (pay-as-you-go).
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
@@ -1246,6 +1330,42 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool m_isPhysicalReplicationSupported;
                     bool m_isPhysicalReplicationSupportedHasBeenSet;
+
+                    /**
+                     * <p>Whether strong-sync DCN is supported</p>
+                     */
+                    int64_t m_isDcnStrongSyncSupported;
+                    bool m_isDcnStrongSyncSupportedHasBeenSet;
+
+                    /**
+                     * <p>Whether DCN switching is supported</p>
+                     */
+                    int64_t m_isDcnSwitchSupported;
+                    bool m_isDcnSwitchSupportedHasBeenSet;
+
+                    /**
+                     * <p>Proxy version</p>
+                     */
+                    std::string m_proxyVersion;
+                    bool m_proxyVersionHasBeenSet;
+
+                    /**
+                     * <p>CPU type. Examples: Intel/AMD for Intel, Hygon for Hygon.</p>
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
+
+                    /**
+                     * <p>Deletion protection flag. 1: Deletion protection enabled, 0: Deletion protection disabled.</p>
+                     */
+                    int64_t m_protectedProperty;
+                    bool m_protectedPropertyHasBeenSet;
+
+                    /**
+                     * <p>Flow ID, which identifies the ongoing asynchronous task of the instance.</p>
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

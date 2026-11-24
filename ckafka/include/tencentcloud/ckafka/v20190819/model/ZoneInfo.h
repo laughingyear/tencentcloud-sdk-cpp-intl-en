@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Zone ID
-                     * @return ZoneId Zone ID
+                     * 获取<p>Availability zone</p>
+                     * @return ZoneId <p>Availability zone</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置Zone ID
-                     * @param _zoneId Zone ID
+                     * 设置<p>Availability zone</p>
+                     * @param _zoneId <p>Availability zone</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Whether it is an internal application.
-                     * @return IsInternalApp Whether it is an internal application.
+                     * 获取<p>Whether the APP is internal</p><p>Enumeration value:</p><ul><li>0: Public</li><li>1: Internal</li></ul><p>Default value: 0</p>
+                     * @return IsInternalApp <p>Whether the APP is internal</p><p>Enumeration value:</p><ul><li>0: Public</li><li>1: Internal</li></ul><p>Default value: 0</p>
                      * 
                      */
                     int64_t GetIsInternalApp() const;
 
                     /**
-                     * 设置Whether it is an internal application.
-                     * @param _isInternalApp Whether it is an internal application.
+                     * 设置<p>Whether the APP is internal</p><p>Enumeration value:</p><ul><li>0: Public</li><li>1: Internal</li></ul><p>Default value: 0</p>
+                     * @param _isInternalApp <p>Whether the APP is internal</p><p>Enumeration value:</p><ul><li>0: Public</li><li>1: Internal</li></ul><p>Default value: 0</p>
                      * 
                      */
                     void SetIsInternalApp(const int64_t& _isInternalApp);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool IsInternalAppHasBeenSet() const;
 
                     /**
-                     * 获取Application ID
-                     * @return AppId Application ID
+                     * 获取<p>AppID</p>
+                     * @return AppId <p>AppID</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置Application ID
-                     * @param _appId Application ID
+                     * 设置<p>AppID</p>
+                     * @param _appId <p>AppID</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取Flag
-                     * @return Flag Flag
+                     * 获取<p>Flag indicating whether the availability zone is sold out. true indicates sold out, false indicates not sold out.</p>
+                     * @return Flag <p>Flag indicating whether the availability zone is sold out. true indicates sold out, false indicates not sold out.</p>
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置Flag
-                     * @param _flag Flag
+                     * 设置<p>Flag indicating whether the availability zone is sold out. true indicates sold out, false indicates not sold out.</p>
+                     * @param _flag <p>Flag indicating whether the availability zone is sold out. true indicates sold out, false indicates not sold out.</p>
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取Zone name
-                     * @return ZoneName Zone name
+                     * 获取<p>Availability zone name</p>
+                     * @return ZoneName <p>Availability zone name</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置Zone name
-                     * @param _zoneName Zone name
+                     * 设置<p>Availability zone name</p>
+                     * @param _zoneName <p>Availability zone name</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取Zone status
-                     * @return ZoneStatus Zone status
+                     * 获取<p>Availability zone status</p><p>Enumeration value:</p><ul><li>3: Enable</li><li>4: Disable</li></ul><p>AZ status is subject to SoldOut</p>
+                     * @return ZoneStatus <p>Availability zone status</p><p>Enumeration value:</p><ul><li>3: Enable</li><li>4: Disable</li></ul><p>AZ status is subject to SoldOut</p>
                      * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
-                     * 设置Zone status
-                     * @param _zoneStatus Zone status
+                     * 设置<p>Availability zone status</p><p>Enumeration value:</p><ul><li>3: Enable</li><li>4: Disable</li></ul><p>AZ status is subject to SoldOut</p>
+                     * @param _zoneStatus <p>Availability zone status</p><p>Enumeration value:</p><ul><li>3: Enable</li><li>4: Disable</li></ul><p>AZ status is subject to SoldOut</p>
                      * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
@@ -174,36 +174,36 @@ namespace TencentCloud
                     bool ZoneStatusHasBeenSet() const;
 
                     /**
-                     * 获取Extra flag
-                     * @return Exflag Extra flag
-                     * 
+                     * 获取<p>Additional flag</p>
+                     * @return Exflag <p>Additional flag</p>
+                     * @deprecated
                      */
                     std::string GetExflag() const;
 
                     /**
-                     * 设置Extra flag
-                     * @param _exflag Extra flag
-                     * 
+                     * 设置<p>Additional flag</p>
+                     * @param _exflag <p>Additional flag</p>
+                     * @deprecated
                      */
                     void SetExflag(const std::string& _exflag);
 
                     /**
                      * 判断参数 Exflag 是否已赋值
                      * @return Exflag 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ExflagHasBeenSet() const;
 
                     /**
-                     * 获取JSON object. The key is the model. The value `true` means “sold out”, and `false` means “not sold out”.
-                     * @return SoldOut JSON object. The key is the model. The value `true` means “sold out”, and `false` means “not sold out”.
+                     * 获取<p>true indicates sold out, false indicates not sold out.</p>
+                     * @return SoldOut <p>true indicates sold out, false indicates not sold out.</p>
                      * 
                      */
                     std::string GetSoldOut() const;
 
                     /**
-                     * 设置JSON object. The key is the model. The value `true` means “sold out”, and `false` means “not sold out”.
-                     * @param _soldOut JSON object. The key is the model. The value `true` means “sold out”, and `false` means “not sold out”.
+                     * 设置<p>true indicates sold out, false indicates not sold out.</p>
+                     * @param _soldOut <p>true indicates sold out, false indicates not sold out.</p>
                      * 
                      */
                     void SetSoldOut(const std::string& _soldOut);
@@ -216,19 +216,15 @@ namespace TencentCloud
                     bool SoldOutHasBeenSet() const;
 
                     /**
-                     * 获取Information on whether Standard Edition has been sold out.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return SalesInfo Information on whether Standard Edition has been sold out.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Standard version sell-out information</p>
+                     * @return SalesInfo <p>Standard version sell-out information</p>
                      * 
                      */
                     std::vector<SaleInfo> GetSalesInfo() const;
 
                     /**
-                     * 设置Information on whether Standard Edition has been sold out.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _salesInfo Information on whether Standard Edition has been sold out.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Standard version sell-out information</p>
+                     * @param _salesInfo <p>Standard version sell-out information</p>
                      * 
                      */
                     void SetSalesInfo(const std::vector<SaleInfo>& _salesInfo);
@@ -240,62 +236,88 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                      */
                     bool SalesInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Additional flag</p>
+                     * @return ExtraFlag <p>Additional flag</p>
+                     * 
+                     */
+                    std::string GetExtraFlag() const;
+
+                    /**
+                     * 设置<p>Additional flag</p>
+                     * @param _extraFlag <p>Additional flag</p>
+                     * 
+                     */
+                    void SetExtraFlag(const std::string& _extraFlag);
+
+                    /**
+                     * 判断参数 ExtraFlag 是否已赋值
+                     * @return ExtraFlag 是否已赋值
+                     * 
+                     */
+                    bool ExtraFlagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Zone ID
+                     * <p>Availability zone</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Whether it is an internal application.
+                     * <p>Whether the APP is internal</p><p>Enumeration value:</p><ul><li>0: Public</li><li>1: Internal</li></ul><p>Default value: 0</p>
                      */
                     int64_t m_isInternalApp;
                     bool m_isInternalAppHasBeenSet;
 
                     /**
-                     * Application ID
+                     * <p>AppID</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * Flag
+                     * <p>Flag indicating whether the availability zone is sold out. true indicates sold out, false indicates not sold out.</p>
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
-                     * Zone name
+                     * <p>Availability zone name</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * Zone status
+                     * <p>Availability zone status</p><p>Enumeration value:</p><ul><li>3: Enable</li><li>4: Disable</li></ul><p>AZ status is subject to SoldOut</p>
                      */
                     int64_t m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;
 
                     /**
-                     * Extra flag
+                     * <p>Additional flag</p>
                      */
                     std::string m_exflag;
                     bool m_exflagHasBeenSet;
 
                     /**
-                     * JSON object. The key is the model. The value `true` means “sold out”, and `false` means “not sold out”.
+                     * <p>true indicates sold out, false indicates not sold out.</p>
                      */
                     std::string m_soldOut;
                     bool m_soldOutHasBeenSet;
 
                     /**
-                     * Information on whether Standard Edition has been sold out.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Standard version sell-out information</p>
                      */
                     std::vector<SaleInfo> m_salesInfo;
                     bool m_salesInfoHasBeenSet;
+
+                    /**
+                     * <p>Additional flag</p>
+                     */
+                    std::string m_extraFlag;
+                    bool m_extraFlagHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Image noise removal configuration.
+                * Video noise reduction control parameters
                 */
                 class VideoDenoiseInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable image noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable image noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Video noise reduction control switch. Available values:
+<li>ON: enable video noise reduction;</li>
+<li>OFF: disable video noise reduction.</li>
+                     * @return Switch Video noise reduction control switch. Available values:
+<li>ON: enable video noise reduction;</li>
+<li>OFF: disable video noise reduction.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable image noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable image noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Video noise reduction control switch. Available values:
+<li>ON: enable video noise reduction;</li>
+<li>OFF: disable video noise reduction.</li>
+                     * @param _switch Video noise reduction control switch. Available values:
+<li>ON: enable video noise reduction;</li>
+<li>OFF: disable video noise reduction.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,27 +76,27 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The image noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @return Type The image noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 获取Video noise reduction type. Valid only when the video noise reduction control switch is ON. Available values:
+<li>weak: light video noise reduction;</li>
+<li>strong: strong video noise reduction.</li>
+Default value: weak.
+                     * @return Type Video noise reduction type. Valid only when the video noise reduction control switch is ON. Available values:
+<li>weak: light video noise reduction;</li>
+<li>strong: strong video noise reduction.</li>
+Default value: weak.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The image noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @param _type The image noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 设置Video noise reduction type. Valid only when the video noise reduction control switch is ON. Available values:
+<li>weak: light video noise reduction;</li>
+<li>strong: strong video noise reduction.</li>
+Default value: weak.
+                     * @param _type Video noise reduction type. Valid only when the video noise reduction control switch is ON. Available values:
+<li>weak: light video noise reduction;</li>
+<li>strong: strong video noise reduction.</li>
+Default value: weak.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -111,18 +111,18 @@ Default value: `weak`.
                 private:
 
                     /**
-                     * Whether to enable image noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Video noise reduction control switch. Available values:
+<li>ON: enable video noise reduction;</li>
+<li>OFF: disable video noise reduction.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The image noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * Video noise reduction type. Valid only when the video noise reduction control switch is ON. Available values:
+<li>weak: light video noise reduction;</li>
+<li>strong: strong video noise reduction.</li>
+Default value: weak.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for video screen black border, white border, black screen, and white screen detection.
+                * Control parameters for video picture black edge, white edge, black screen, and white screen detection.
                 */
                 class BlackWhiteEdgeConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video screen black border, white border, black screen, white screen detection switch, optional values: 
-<li>ON: turn on; </li>
-<li>OFF: turn off. </li>
-                     * @return Switch Video screen black border, white border, black screen, white screen detection switch, optional values: 
-<li>ON: turn on; </li>
-<li>OFF: turn off. </li>
+                     * 获取Video picture black edge, white edge, black screen, and white screen detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
+                     * @return Switch Video picture black edge, white edge, black screen, and white screen detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Video screen black border, white border, black screen, white screen detection switch, optional values: 
-<li>ON: turn on; </li>
-<li>OFF: turn off. </li>
-                     * @param _switch Video screen black border, white border, black screen, white screen detection switch, optional values: 
-<li>ON: turn on; </li>
-<li>OFF: turn off. </li>
+                     * 设置Video picture black edge, white edge, black screen, and white screen detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
+                     * @param _switch Video picture black edge, white edge, black screen, and white screen detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Video screen black border, white border, black screen, white screen detection switch, optional values: 
-<li>ON: turn on; </li>
-<li>OFF: turn off. </li>
+                     * Video picture black edge, white edge, black screen, and white screen detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

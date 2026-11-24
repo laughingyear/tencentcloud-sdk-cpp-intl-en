@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Team member information
+                * Team member information.
                 */
                 class DescribeTeamMemberInfoResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取User ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserId User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取User ID.
+                     * @return UserId User ID.
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置User ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userId User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置User ID.
+                     * @param _userId User ID.
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取User account
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserAccount User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取User account.
+                     * @return UserAccount User account.
                      * 
                      */
                     std::string GetUserAccount() const;
 
                     /**
-                     * 设置User account
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userAccount User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置User account.
+                     * @param _userAccount User account.
                      * 
                      */
                     void SetUserAccount(const std::string& _userAccount);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserAccountHasBeenSet() const;
 
                     /**
-                     * 获取User name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserName User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取User name.
+                     * @return UserName User name.
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置User name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userName User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置User name.
+                     * @param _userName User name.
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team ID.
+                     * @return TeamId Team ID.
                      * 
                      */
                     std::string GetTeamId() const;
 
                     /**
-                     * 设置Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamId Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team ID.
+                     * @param _teamId Team ID.
                      * 
                      */
                     void SetTeamId(const std::string& _teamId);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team name.
+                     * @return TeamName Team name.
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team name.
+                     * @param _teamName Team name.
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamNameHasBeenSet() const;
 
                     /**
-                     * 获取Team role name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamRoleName Team role name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team role name.
+                     * @return TeamRoleName Team role name.
                      * 
                      */
                     std::string GetTeamRoleName() const;
 
                     /**
-                     * 设置Team role name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamRoleName Team role name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team role name.
+                     * @param _teamRoleName Team role name.
                      * 
                      */
                     void SetTeamRoleName(const std::string& _teamRoleName);
@@ -197,19 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取Team role ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamRoleId Team role ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Team role ID.
+                     * @return TeamRoleId Team role ID.
                      * 
                      */
                     int64_t GetTeamRoleId() const;
 
                     /**
-                     * 设置Team role ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamRoleId Team role ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Team role ID.
+                     * @param _teamRoleId Team role ID.
                      * 
                      */
                     void SetTeamRoleId(const int64_t& _teamRoleId);
@@ -222,19 +194,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TeamRoleIdHasBeenSet() const;
 
                     /**
-                     * 获取Editable or not
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CanEdit Editable or not
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Whether it can be edited.
+                     * @return CanEdit Whether it can be edited.
                      * 
                      */
                     bool GetCanEdit() const;
 
                     /**
-                     * 设置Editable or not
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _canEdit Editable or not
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Whether it can be edited.
+                     * @param _canEdit Whether it can be edited.
                      * 
                      */
                     void SetCanEdit(const bool& _canEdit);
@@ -249,57 +217,49 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * User ID.
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * User account.
                      */
                     std::string m_userAccount;
                     bool m_userAccountHasBeenSet;
 
                     /**
-                     * User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * User name.
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * Team ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team ID.
                      */
                     std::string m_teamId;
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team name.
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;
 
                     /**
-                     * Team role name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team role name.
                      */
                     std::string m_teamRoleName;
                     bool m_teamRoleNameHasBeenSet;
 
                     /**
-                     * Team role ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Team role ID.
                      */
                     int64_t m_teamRoleId;
                     bool m_teamRoleIdHasBeenSet;
 
                     /**
-                     * Editable or not
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Whether it can be edited.
                      */
                     bool m_canEdit;
                     bool m_canEditHasBeenSet;

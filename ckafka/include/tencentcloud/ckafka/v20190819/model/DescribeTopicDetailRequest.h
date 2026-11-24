@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
+                     * @return InstanceId <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
+                     * @param _instanceId <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取(Filter) filter by `topicName`. Fuzzy search is supported
-                     * @return SearchWord (Filter) filter by `topicName`. Fuzzy search is supported
+                     * 获取<p>(Filtering Conditions) Filter by topicName. Fuzzy query is supported.</p>
+                     * @return SearchWord <p>(Filtering Conditions) Filter by topicName. Fuzzy query is supported.</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置(Filter) filter by `topicName`. Fuzzy search is supported
-                     * @param _searchWord (Filter) filter by `topicName`. Fuzzy search is supported
+                     * 设置<p>(Filtering Conditions) Filter by topicName. Fuzzy query is supported.</p>
+                     * @param _searchWord <p>(Filtering Conditions) Filter by topicName. Fuzzy query is supported.</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取Offset. If this parameter is left empty, 0 will be used by default
-                     * @return Offset Offset. If this parameter is left empty, 0 will be used by default
+                     * 获取<p>Offset, which is 0 by default</p>
+                     * @return Offset <p>Offset, which is 0 by default</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置Offset. If this parameter is left empty, 0 will be used by default
-                     * @param _offset Offset. If this parameter is left empty, 0 will be used by default
+                     * 设置<p>Offset, which is 0 by default</p>
+                     * @param _offset <p>Offset, which is 0 by default</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Number of results to be returned. If this parameter is left empty, 10 will be used by default. The maximum value is 20. This value must be greater than 0
-                     * @return Limit Number of results to be returned. If this parameter is left empty, 10 will be used by default. The maximum value is 20. This value must be greater than 0
+                     * 获取<p>Number of returned results. Default value: 20. Value must be above 0.</p>
+                     * @return Limit <p>Number of returned results. Default value: 20. Value must be above 0.</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置Number of results to be returned. If this parameter is left empty, 10 will be used by default. The maximum value is 20. This value must be greater than 0
-                     * @param _limit Number of results to be returned. If this parameter is left empty, 10 will be used by default. The maximum value is 20. This value must be greater than 0
+                     * 设置<p>Number of returned results. Default value: 20. Value must be above 0.</p>
+                     * @param _limit <p>Number of returned results. Default value: 20. Value must be above 0.</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Name of the preset ACL rule.
-                     * @return AclRuleName Name of the preset ACL rule.
+                     * 获取<p>Acl preset policy name</p>
+                     * @return AclRuleName <p>Acl preset policy name</p>
                      * 
                      */
                     std::string GetAclRuleName() const;
 
                     /**
-                     * 设置Name of the preset ACL rule.
-                     * @param _aclRuleName Name of the preset ACL rule.
+                     * 设置<p>Acl preset policy name</p>
+                     * @param _aclRuleName <p>Acl preset policy name</p>
                      * 
                      */
                     void SetAclRuleName(const std::string& _aclRuleName);
@@ -147,37 +148,118 @@ namespace TencentCloud
                      */
                     bool AclRuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Sort by specific attributes (Currently supports PartitionNum/CreateTime). Default value is CreateTime.</p><p>If empty, default to reverse sort by CreateTime.</p>
+                     * @return OrderBy <p>Sort by specific attributes (Currently supports PartitionNum/CreateTime). Default value is CreateTime.</p><p>If empty, default to reverse sort by CreateTime.</p>
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置<p>Sort by specific attributes (Currently supports PartitionNum/CreateTime). Default value is CreateTime.</p><p>If empty, default to reverse sort by CreateTime.</p>
+                     * @param _orderBy <p>Sort by specific attributes (Currently supports PartitionNum/CreateTime). Default value is CreateTime.</p><p>If empty, default to reverse sort by CreateTime.</p>
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0-sequential, 1-reverse, default value is 0.</p>
+                     * @return OrderType <p>0-sequential, 1-reverse, default value is 0.</p>
+                     * 
+                     */
+                    int64_t GetOrderType() const;
+
+                    /**
+                     * 设置<p>0-sequential, 1-reverse, default value is 0.</p>
+                     * @param _orderType <p>0-sequential, 1-reverse, default value is 0.</p>
+                     * 
+                     */
+                    void SetOrderType(const int64_t& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     * 
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Currently supports filtering by ReplicaNum (number of replicas)</p>
+                     * @return Filters <p>Currently supports filtering by ReplicaNum (number of replicas)</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>Currently supports filtering by ReplicaNum (number of replicas)</p>
+                     * @param _filters <p>Currently supports filtering by ReplicaNum (number of replicas)</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID
+                     * <p>ckafka cluster instance Id, which can be obtained through the <a href="https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1">DescribeInstances</a> API</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * (Filter) filter by `topicName`. Fuzzy search is supported
+                     * <p>(Filtering Conditions) Filter by topicName. Fuzzy query is supported.</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * Offset. If this parameter is left empty, 0 will be used by default
+                     * <p>Offset, which is 0 by default</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Number of results to be returned. If this parameter is left empty, 10 will be used by default. The maximum value is 20. This value must be greater than 0
+                     * <p>Number of returned results. Default value: 20. Value must be above 0.</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Name of the preset ACL rule.
+                     * <p>Acl preset policy name</p>
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
+
+                    /**
+                     * <p>Sort by specific attributes (Currently supports PartitionNum/CreateTime). Default value is CreateTime.</p><p>If empty, default to reverse sort by CreateTime.</p>
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * <p>0-sequential, 1-reverse, default value is 0.</p>
+                     */
+                    int64_t m_orderType;
+                    bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * <p>Currently supports filtering by ReplicaNum (number of replicas)</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

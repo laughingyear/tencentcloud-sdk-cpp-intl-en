@@ -1,0 +1,192 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_SUBTITLERESULT_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_SUBTITLERESULT_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Mps
+    {
+        namespace V20190612
+        {
+            namespace Model
+            {
+                /**
+                * Smart subtitle task result.
+                */
+                class SubtitleResult : public AbstractModel
+                {
+                public:
+                    SubtitleResult();
+                    ~SubtitleResult() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>Language of the subtitle file</p>
+                     * @return Language <p>Language of the subtitle file</p>
+                     * 
+                     */
+                    std::string GetLanguage() const;
+
+                    /**
+                     * 设置<p>Language of the subtitle file</p>
+                     * @param _language <p>Language of the subtitle file</p>
+                     * 
+                     */
+                    void SetLanguage(const std::string& _language);
+
+                    /**
+                     * 判断参数 Language 是否已赋值
+                     * @return Language 是否已赋值
+                     * 
+                     */
+                    bool LanguageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether the processing is successful.</p>
+                     * @return Status <p>Whether the processing is successful.</p>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>Whether the processing is successful.</p>
+                     * @param _status <p>Whether the processing is successful.</p>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Subtitle file path</p>
+                     * @return Path <p>Subtitle file path</p>
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置<p>Subtitle file path</p>
+                     * @param _path <p>Subtitle file path</p>
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Subtitle suppression video path.</p>
+                     * @return SubtitleEmbedPath <p>Subtitle suppression video path.</p>
+                     * 
+                     */
+                    std::string GetSubtitleEmbedPath() const;
+
+                    /**
+                     * 设置<p>Subtitle suppression video path.</p>
+                     * @param _subtitleEmbedPath <p>Subtitle suppression video path.</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedPath(const std::string& _subtitleEmbedPath);
+
+                    /**
+                     * 判断参数 SubtitleEmbedPath 是否已赋值
+                     * @return SubtitleEmbedPath 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>FileId of the subtitle file.</p>
+                     * @return SubtitleFileId <p>FileId of the subtitle file.</p>
+                     * 
+                     */
+                    std::string GetSubtitleFileId() const;
+
+                    /**
+                     * 设置<p>FileId of the subtitle file.</p>
+                     * @param _subtitleFileId <p>FileId of the subtitle file.</p>
+                     * 
+                     */
+                    void SetSubtitleFileId(const std::string& _subtitleFileId);
+
+                    /**
+                     * 判断参数 SubtitleFileId 是否已赋值
+                     * @return SubtitleFileId 是否已赋值
+                     * 
+                     */
+                    bool SubtitleFileIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>Language of the subtitle file</p>
+                     */
+                    std::string m_language;
+                    bool m_languageHasBeenSet;
+
+                    /**
+                     * <p>Whether the processing is successful.</p>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>Subtitle file path</p>
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
+
+                    /**
+                     * <p>Subtitle suppression video path.</p>
+                     */
+                    std::string m_subtitleEmbedPath;
+                    bool m_subtitleEmbedPathHasBeenSet;
+
+                    /**
+                     * <p>FileId of the subtitle file.</p>
+                     */
+                    std::string m_subtitleFileId;
+                    bool m_subtitleFileIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_SUBTITLERESULT_H_

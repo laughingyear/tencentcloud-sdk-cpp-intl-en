@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool AlamatHasBeenSet() const;
 
                     /**
-                     * 获取The street.
-                     * @return RTRW The street.
+                     * 获取The neighborhood/community unit (RT/RW).
+                     * @return RTRW The neighborhood/community unit (RT/RW).
                      * 
                      */
                     std::string GetRTRW() const;
@@ -254,8 +254,8 @@ namespace TencentCloud
                     bool IssuedDateHasBeenSet() const;
 
                     /**
-                     * 获取The photo.
-                     * @return Photo The photo.
+                     * 获取The portraitImage.
+                     * @return Photo The portraitImage.
                      * 
                      */
                     std::string GetPhoto() const;
@@ -268,8 +268,8 @@ namespace TencentCloud
                     bool PhotoHasBeenSet() const;
 
                     /**
-                     * 获取The province, which is supported when the value of `Scene` is `V2`.
-                     * @return Provinsi The province, which is supported when the value of `Scene` is `V2`.
+                     * 获取The province.
+                     * @return Provinsi The province.
                      * 
                      */
                     std::string GetProvinsi() const;
@@ -282,8 +282,8 @@ namespace TencentCloud
                     bool ProvinsiHasBeenSet() const;
 
                     /**
-                     * 获取The city, which is supported when the value of `Scene` is `V2`.
-                     * @return Kota The city, which is supported when the value of `Scene` is `V2`.
+                     * 获取The city.
+                     * @return Kota The city.
                      * 
                      */
                     std::string GetKota() const;
@@ -298,20 +298,26 @@ namespace TencentCloud
                     /**
                      * 获取Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for incomplete or covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry image
+-8101 Alarm for document information format verification
+-8102 Alarm for document information consistency verification
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      * @return WarnCardInfos Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for incomplete or covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry image
+-8101 Alarm for document information format verification
+-8102 Alarm for document information consistency verification
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
@@ -362,7 +368,7 @@ namespace TencentCloud
                     bool m_alamatHasBeenSet;
 
                     /**
-                     * The street.
+                     * The neighborhood/community unit (RT/RW).
                      */
                     std::string m_rTRW;
                     bool m_rTRWHasBeenSet;
@@ -416,19 +422,19 @@ namespace TencentCloud
                     bool m_issuedDateHasBeenSet;
 
                     /**
-                     * The photo.
+                     * The portraitImage.
                      */
                     std::string m_photo;
                     bool m_photoHasBeenSet;
 
                     /**
-                     * The province, which is supported when the value of `Scene` is `V2`.
+                     * The province.
                      */
                     std::string m_provinsi;
                     bool m_provinsiHasBeenSet;
 
                     /**
-                     * The city, which is supported when the value of `Scene` is `V2`.
+                     * The city.
                      */
                     std::string m_kota;
                     bool m_kotaHasBeenSet;
@@ -436,12 +442,15 @@ namespace TencentCloud
                     /**
                      * Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for incomplete or covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry image
+-8101 Alarm for document information format verification
+-8102 Alarm for document information consistency verification
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;

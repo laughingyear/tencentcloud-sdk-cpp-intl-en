@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The translation result.
+                * Translation result.
                 */
                 class AiRecognitionTaskTransTextResultOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The translated segments.
-                     * @return SegmentSet The translated segments.
+                     * 获取<p>List of segments for translation.</p>
+                     * @return SegmentSet <p>List of segments for translation.</p>
                      * 
                      */
                     std::vector<AiRecognitionTaskTransTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置The translated segments.
-                     * @param _segmentSet The translated segments.
+                     * 设置<p>List of segments for translation.</p>
+                     * @param _segmentSet <p>List of segments for translation.</p>
                      * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskTransTextSegmentItem>& _segmentSet);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle URL.
-                     * @return SubtitlePath The subtitle URL.
+                     * 获取<p>Subtitle file URL.</p>
+                     * @return SubtitlePath <p>Subtitle file URL.</p>
                      * 
                      */
                     std::string GetSubtitlePath() const;
 
                     /**
-                     * 设置The subtitle URL.
-                     * @param _subtitlePath The subtitle URL.
+                     * 设置<p>Subtitle file URL.</p>
+                     * @param _subtitlePath <p>Subtitle file URL.</p>
                      * 
                      */
                     void SetSubtitlePath(const std::string& _subtitlePath);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The translated segments.
+                     * <p>List of segments for translation.</p>
                      */
                     std::vector<AiRecognitionTaskTransTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * The subtitle URL.
+                     * <p>Subtitle file URL.</p>
                      */
                     std::string m_subtitlePath;
                     bool m_subtitlePathHasBeenSet;

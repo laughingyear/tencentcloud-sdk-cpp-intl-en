@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Smart frame interpolation configuration.
+                * Intelligent frame interpolation control parameters
                 */
                 class VideoFrameInterpolationInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable smart frame interpolation. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable smart frame interpolation. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Intelligent frame interpolation control switch. Valid values:
+<li>ON: enable intelligent frame interpolation</li>
+<li>OFF: Disable intelligent frame interpolation.</li>
+                     * @return Switch Intelligent frame interpolation control switch. Valid values:
+<li>ON: enable intelligent frame interpolation</li>
+<li>OFF: Disable intelligent frame interpolation.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable smart frame interpolation. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable smart frame interpolation. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Intelligent frame interpolation control switch. Valid values:
+<li>ON: enable intelligent frame interpolation</li>
+<li>OFF: Disable intelligent frame interpolation.</li>
+                     * @param _switch Intelligent frame interpolation control switch. Valid values:
+<li>ON: enable intelligent frame interpolation</li>
+<li>OFF: Disable intelligent frame interpolation.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The frame rate. Value range: (0, 100]. This parameter is valid only if `Switch` is `ON`. By default, the original frame rate will be used.
-                     * @return Fps The frame rate. Value range: (0, 100]. This parameter is valid only if `Switch` is `ON`. By default, the original frame rate will be used.
+                     * 获取Intelligent frame interpolation frame rate. Value range: (0, 100]. Valid only when the intelligent frame interpolation control switch is ON. Default: match the source file frame rate.
+                     * @return Fps Intelligent frame interpolation frame rate. Value range: (0, 100]. Valid only when the intelligent frame interpolation control switch is ON. Default: match the source file frame rate.
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置The frame rate. Value range: (0, 100]. This parameter is valid only if `Switch` is `ON`. By default, the original frame rate will be used.
-                     * @param _fps The frame rate. Value range: (0, 100]. This parameter is valid only if `Switch` is `ON`. By default, the original frame rate will be used.
+                     * 设置Intelligent frame interpolation frame rate. Value range: (0, 100]. Valid only when the intelligent frame interpolation control switch is ON. Default: match the source file frame rate.
+                     * @param _fps Intelligent frame interpolation frame rate. Value range: (0, 100]. Valid only when the intelligent frame interpolation control switch is ON. Default: match the source file frame rate.
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -99,15 +99,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable smart frame interpolation. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Intelligent frame interpolation control switch. Valid values:
+<li>ON: enable intelligent frame interpolation</li>
+<li>OFF: Disable intelligent frame interpolation.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The frame rate. Value range: (0, 100]. This parameter is valid only if `Switch` is `ON`. By default, the original frame rate will be used.
+                     * Intelligent frame interpolation frame rate. Value range: (0, 100]. Valid only when the intelligent frame interpolation control switch is ON. Default: match the source file frame rate.
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;

@@ -35,6 +35,7 @@
 #include <tencentcloud/cvm/v20170312/model/Metadata.h>
 #include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
+#include <tencentcloud/cvm/v20170312/model/NetworkInterfaces.h>
 
 
 namespace TencentCloud
@@ -57,15 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance [billing type](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1). <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: Dedicated CVM (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
-                     * @return InstanceChargeType Instance [billing type](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1). <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: Dedicated CVM (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
+                     * 获取Instance [billing type](https://www.tencentcloud.com/document/product/213/2180). <br><li>`PREPAID`: Monthly Subscription, used for at least one month <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: [Dedicated CVM](https://www.tencentcloud.com/document/product/416/5068?lang=en&pg=) (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
+                     * @return InstanceChargeType Instance [billing type](https://www.tencentcloud.com/document/product/213/2180). <br><li>`PREPAID`: Monthly Subscription, used for at least one month <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: [Dedicated CVM](https://www.tencentcloud.com/document/product/416/5068?lang=en&pg=) (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置Instance [billing type](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1). <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: Dedicated CVM (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
-                     * @param _instanceChargeType Instance [billing type](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1). <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: Dedicated CVM (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
+                     * 设置Instance [billing type](https://www.tencentcloud.com/document/product/213/2180). <br><li>`PREPAID`: Monthly Subscription, used for at least one month <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: [Dedicated CVM](https://www.tencentcloud.com/document/product/416/5068?lang=en&pg=) (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
+                     * @param _instanceChargeType Instance [billing type](https://www.tencentcloud.com/document/product/213/2180). <br><li>`PREPAID`: Monthly Subscription, used for at least one month <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: [Dedicated CVM](https://www.tencentcloud.com/document/product/416/5068?lang=en&pg=) (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -125,18 +126,18 @@ namespace TencentCloud
 
                     /**
                      * 获取The instance model. 
-<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
+<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call DescribeInstanceTypeConfigs or refer to [Instance Types](https://www.tencentcloud.com/document/product/213/11518). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
                      * @return InstanceType The instance model. 
-<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
+<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call DescribeInstanceTypeConfigs or refer to [Instance Types](https://www.tencentcloud.com/document/product/213/11518). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置The instance model. 
-<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
+<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call DescribeInstanceTypeConfigs or refer to [Instance Types](https://www.tencentcloud.com/document/product/213/11518). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
                      * @param _instanceType The instance model. 
-<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
+<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call DescribeInstanceTypeConfigs or refer to [Instance Types](https://www.tencentcloud.com/document/product/213/11518). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -149,18 +150,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取The [image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
+                     * 获取The [image](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
-                     * @return ImageId The [image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
+                     * @return ImageId The [image](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置The [image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
+                     * 设置The [image](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
-                     * @param _imageId The [image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
+                     * @param _imageId The [image](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      * 
                      */
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
-                     * @return InstanceCount The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
+                     * 获取The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664).
+                     * @return InstanceCount The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664).
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
-                     * @param _instanceCount The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
+                     * 设置The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664).
+                     * @param _instanceCount The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664).
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -279,15 +280,64 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
-                     * @return InstanceName Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * 获取Specifies the minimum number of instances to create. value range: positive integer not greater than InstanceCount.
+Specifies the minimum purchasable quantity, guarantees to create at least MinCount instances, and creates InstanceCount instances as much as possible.
+Insufficient inventory to meet the minimum purchasable quantity will trigger an error info indicating insufficient stock.
+Only applicable to accounts, regions, and billing modes (annual/monthly subscription, pay-as-you-go, spot instance, exclusive sales) with partial support.
+                     * @return MinCount Specifies the minimum number of instances to create. value range: positive integer not greater than InstanceCount.
+Specifies the minimum purchasable quantity, guarantees to create at least MinCount instances, and creates InstanceCount instances as much as possible.
+Insufficient inventory to meet the minimum purchasable quantity will trigger an error info indicating insufficient stock.
+Only applicable to accounts, regions, and billing modes (annual/monthly subscription, pay-as-you-go, spot instance, exclusive sales) with partial support.
+                     * 
+                     */
+                    int64_t GetMinCount() const;
+
+                    /**
+                     * 设置Specifies the minimum number of instances to create. value range: positive integer not greater than InstanceCount.
+Specifies the minimum purchasable quantity, guarantees to create at least MinCount instances, and creates InstanceCount instances as much as possible.
+Insufficient inventory to meet the minimum purchasable quantity will trigger an error info indicating insufficient stock.
+Only applicable to accounts, regions, and billing modes (annual/monthly subscription, pay-as-you-go, spot instance, exclusive sales) with partial support.
+                     * @param _minCount Specifies the minimum number of instances to create. value range: positive integer not greater than InstanceCount.
+Specifies the minimum purchasable quantity, guarantees to create at least MinCount instances, and creates InstanceCount instances as much as possible.
+Insufficient inventory to meet the minimum purchasable quantity will trigger an error info indicating insufficient stock.
+Only applicable to accounts, regions, and billing modes (annual/monthly subscription, pay-as-you-go, spot instance, exclusive sales) with partial support.
+                     * 
+                     */
+                    void SetMinCount(const int64_t& _minCount);
+
+                    /**
+                     * 判断参数 MinCount 是否已赋值
+                     * @return MinCount 是否已赋值
+                     * 
+                     */
+                    bool MinCountHasBeenSet() const;
+
+                    /**
+                     * 获取Instance display name.<br><li>If no instance display name is specified, it will display 'unnamed' by default.</li><li>Supports up to 128 characters (including pattern strings).</li><li>When purchasing multiple instances:.
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the display name is server_3; when purchasing 2 instances, the display names are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit (optional), value range [0,8], default value 0 means no fixed digit (equivalent to {R:x}). Automatically pads with zeros when digits are insufficient, for example: input server_{R:3,F:3}, when purchasing 2 instances, the instance display name is server_003, server_004. If digit count exceeds y (such as {R:99,F:2}), the actual number is used, for example: app_{R:99,F:2}, when purchasing 2 instances, the instance display name is app_99, app_100.
+- Pattern strings must strictly follow the format {R:x,F:y} or {R:x}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No pattern string specified: The display name is appended with suffix 1, 2...n, where n indicates the number of instances purchased. For example server_. When purchasing 2 instances, generates server_1 and server_2.
+                     * @return InstanceName Instance display name.<br><li>If no instance display name is specified, it will display 'unnamed' by default.</li><li>Supports up to 128 characters (including pattern strings).</li><li>When purchasing multiple instances:.
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the display name is server_3; when purchasing 2 instances, the display names are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit (optional), value range [0,8], default value 0 means no fixed digit (equivalent to {R:x}). Automatically pads with zeros when digits are insufficient, for example: input server_{R:3,F:3}, when purchasing 2 instances, the instance display name is server_003, server_004. If digit count exceeds y (such as {R:99,F:2}), the actual number is used, for example: app_{R:99,F:2}, when purchasing 2 instances, the instance display name is app_99, app_100.
+- Pattern strings must strictly follow the format {R:x,F:y} or {R:x}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No pattern string specified: The display name is appended with suffix 1, 2...n, where n indicates the number of instances purchased. For example server_. When purchasing 2 instances, generates server_1 and server_2.
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
-                     * @param _instanceName Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * 设置Instance display name.<br><li>If no instance display name is specified, it will display 'unnamed' by default.</li><li>Supports up to 128 characters (including pattern strings).</li><li>When purchasing multiple instances:.
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the display name is server_3; when purchasing 2 instances, the display names are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit (optional), value range [0,8], default value 0 means no fixed digit (equivalent to {R:x}). Automatically pads with zeros when digits are insufficient, for example: input server_{R:3,F:3}, when purchasing 2 instances, the instance display name is server_003, server_004. If digit count exceeds y (such as {R:99,F:2}), the actual number is used, for example: app_{R:99,F:2}, when purchasing 2 instances, the instance display name is app_99, app_100.
+- Pattern strings must strictly follow the format {R:x,F:y} or {R:x}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No pattern string specified: The display name is appended with suffix 1, 2...n, where n indicates the number of instances purchased. For example server_. When purchasing 2 instances, generates server_1 and server_2.
+                     * @param _instanceName Instance display name.<br><li>If no instance display name is specified, it will display 'unnamed' by default.</li><li>Supports up to 128 characters (including pattern strings).</li><li>When purchasing multiple instances:.
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the display name is server_3; when purchasing 2 instances, the display names are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit (optional), value range [0,8], default value 0 means no fixed digit (equivalent to {R:x}). Automatically pads with zeros when digits are insufficient, for example: input server_{R:3,F:3}, when purchasing 2 instances, the instance display name is server_003, server_004. If digit count exceeds y (such as {R:99,F:2}), the actual number is used, for example: app_{R:99,F:2}, when purchasing 2 instances, the instance display name is app_99, app_100.
+- Pattern strings must strictly follow the format {R:x,F:y} or {R:x}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No pattern string specified: The display name is appended with suffix 1, 2...n, where n indicates the number of instances purchased. For example server_. When purchasing 2 instances, generates server_1 and server_2.
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -321,15 +371,15 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will be associated with default security groups.
-                     * @return SecurityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will be associated with default security groups.
+                     * 获取Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808?from_search=1). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
+                     * @return SecurityGroupIds Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808?from_search=1). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will be associated with default security groups.
-                     * @param _securityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will be associated with default security groups.
+                     * 设置Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808?from_search=1). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
+                     * @param _securityGroupIds Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808?from_search=1). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -384,15 +434,39 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取Hostname of an instance.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server{R:3}`. If you purchase only one instance, the hostname will be `server3`; if you purchase two, they will be `server3` and `server4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><br><li>If you purchase multiple instances without specifying a pattern string, the hostnames will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server`, the hostnames will be `server1` and `server2`.</li>
-                     * @return HostName Hostname of an instance.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server{R:3}`. If you purchase only one instance, the hostname will be `server3`; if you purchase two, they will be `server3` and `server4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><br><li>If you purchase multiple instances without specifying a pattern string, the hostnames will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server`, the hostnames will be `server1` and `server2`.</li>
+                     * 获取Instance HostName.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>When purchasing multiple instances:
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the hostname is server_3; when purchasing 2 instances, the hostnames are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit width (optional), valid range [0,8]. Default value 0 means no fixed width (equivalent to {R:x}). Insufficient digits are automatically padded with zeros. For example: Input server{R:3,F:3}. When purchasing 2 instances, the hostnames are server_003 and server_004. If the number of digits exceeds y (e.g., {R:99,F:2}), the actual digit count is used. For example: app{R:99,F:2}. When purchasing 2 instances, the hostnames are app_99 and app_100.
+- Specify a pattern string {IP}: Automatically replace with the private IP address of the instance. For example: input node-{IP}, the instance hostname is node-10.0.12.8. Supports mixed use with serial number pattern strings, such as: input web-{IP}-{R:1}, when purchasing 2 instances, the instance hostnames are web-10.0.12.8-1 and web-10.0.12.9-2 respectively.
+- Pattern strings must strictly follow the format {R:x,F:y}, {R:x}, or {IP}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No specified pattern string: add suffix 1, 2...n to instance hostname, where n means the number of purchased instances, such as server_1, server_2 when purchasing 2 instances.
+</li>
+                     * @return HostName Instance HostName.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>When purchasing multiple instances:
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the hostname is server_3; when purchasing 2 instances, the hostnames are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit width (optional), valid range [0,8]. Default value 0 means no fixed width (equivalent to {R:x}). Insufficient digits are automatically padded with zeros. For example: Input server{R:3,F:3}. When purchasing 2 instances, the hostnames are server_003 and server_004. If the number of digits exceeds y (e.g., {R:99,F:2}), the actual digit count is used. For example: app{R:99,F:2}. When purchasing 2 instances, the hostnames are app_99 and app_100.
+- Specify a pattern string {IP}: Automatically replace with the private IP address of the instance. For example: input node-{IP}, the instance hostname is node-10.0.12.8. Supports mixed use with serial number pattern strings, such as: input web-{IP}-{R:1}, when purchasing 2 instances, the instance hostnames are web-10.0.12.8-1 and web-10.0.12.9-2 respectively.
+- Pattern strings must strictly follow the format {R:x,F:y}, {R:x}, or {IP}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No specified pattern string: add suffix 1, 2...n to instance hostname, where n means the number of purchased instances, such as server_1, server_2 when purchasing 2 instances.
+</li>
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置Hostname of an instance.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server{R:3}`. If you purchase only one instance, the hostname will be `server3`; if you purchase two, they will be `server3` and `server4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><br><li>If you purchase multiple instances without specifying a pattern string, the hostnames will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server`, the hostnames will be `server1` and `server2`.</li>
-                     * @param _hostName Hostname of an instance.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server{R:3}`. If you purchase only one instance, the hostname will be `server3`; if you purchase two, they will be `server3` and `server4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><br><li>If you purchase multiple instances without specifying a pattern string, the hostnames will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server`, the hostnames will be `server1` and `server2`.</li>
+                     * 设置Instance HostName.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>When purchasing multiple instances:
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the hostname is server_3; when purchasing 2 instances, the hostnames are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit width (optional), valid range [0,8]. Default value 0 means no fixed width (equivalent to {R:x}). Insufficient digits are automatically padded with zeros. For example: Input server{R:3,F:3}. When purchasing 2 instances, the hostnames are server_003 and server_004. If the number of digits exceeds y (e.g., {R:99,F:2}), the actual digit count is used. For example: app{R:99,F:2}. When purchasing 2 instances, the hostnames are app_99 and app_100.
+- Specify a pattern string {IP}: Automatically replace with the private IP address of the instance. For example: input node-{IP}, the instance hostname is node-10.0.12.8. Supports mixed use with serial number pattern strings, such as: input web-{IP}-{R:1}, when purchasing 2 instances, the instance hostnames are web-10.0.12.8-1 and web-10.0.12.9-2 respectively.
+- Pattern strings must strictly follow the format {R:x,F:y}, {R:x}, or {IP}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No specified pattern string: add suffix 1, 2...n to instance hostname, where n means the number of purchased instances, such as server_1, server_2 when purchasing 2 instances.
+</li>
+                     * @param _hostName Instance HostName.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>When purchasing multiple instances:
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the hostname is server_3; when purchasing 2 instances, the hostnames are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit width (optional), valid range [0,8]. Default value 0 means no fixed width (equivalent to {R:x}). Insufficient digits are automatically padded with zeros. For example: Input server{R:3,F:3}. When purchasing 2 instances, the hostnames are server_003 and server_004. If the number of digits exceeds y (e.g., {R:99,F:2}), the actual digit count is used. For example: app{R:99,F:2}. When purchasing 2 instances, the hostnames are app_99 and app_100.
+- Specify a pattern string {IP}: Automatically replace with the private IP address of the instance. For example: input node-{IP}, the instance hostname is node-10.0.12.8. Supports mixed use with serial number pattern strings, such as: input web-{IP}-{R:1}, when purchasing 2 instances, the instance hostnames are web-10.0.12.8-1 and web-10.0.12.9-2 respectively.
+- Pattern strings must strictly follow the format {R:x,F:y}, {R:x}, or {IP}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No specified pattern string: add suffix 1, 2...n to instance hostname, where n means the number of purchased instances, such as server_1, server_2 when purchasing 2 instances.
+</li>
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -510,15 +584,19 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Metadata 
+                     * 获取Custom metadata. specifies the support for creating custom metadata key-value pairs when creating a CVM.
+**Note: this field is in beta test.**.
+                     * @return Metadata Custom metadata. specifies the support for creating custom metadata key-value pairs when creating a CVM.
+**Note: this field is in beta test.**.
                      * 
                      */
                     Metadata GetMetadata() const;
 
                     /**
-                     * 设置
-                     * @param _metadata 
+                     * 设置Custom metadata. specifies the support for creating custom metadata key-value pairs when creating a CVM.
+**Note: this field is in beta test.**.
+                     * @param _metadata Custom metadata. specifies the support for creating custom metadata key-value pairs when creating a CVM.
+**Note: this field is in beta test.**.
                      * 
                      */
                     void SetMetadata(const Metadata& _metadata);
@@ -589,15 +667,15 @@ If the dry run succeeds, the RequestId will be returned.
                     bool CpuTopologyHasBeenSet() const;
 
                     /**
-                     * 获取CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://intl.cloud.tencent.com/document/product/598/36223?from_cn_redirect=1) API.
-                     * @return CamRoleName CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://intl.cloud.tencent.com/document/product/598/36223?from_cn_redirect=1) API.
+                     * 获取CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://www.tencentcloud.com/document/product/598/33559) API.
+                     * @return CamRoleName CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://www.tencentcloud.com/document/product/598/33559) API.
                      * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
-                     * 设置CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://intl.cloud.tencent.com/document/product/598/36223?from_cn_redirect=1) API.
-                     * @param _camRoleName CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://intl.cloud.tencent.com/document/product/598/36223?from_cn_redirect=1) API.
+                     * 设置CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://www.tencentcloud.com/document/product/598/33559) API.
+                     * @param _camRoleName CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://www.tencentcloud.com/document/product/598/33559) API.
                      * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
@@ -694,6 +772,27 @@ If the dry run succeeds, the RequestId will be returned.
                     bool ChcIdsHasBeenSet() const;
 
                     /**
+                     * 获取Partition number of the partition placement group. Valid values depend on the number of partitions in the selected placement group. If the selected placement group is a partition placement group and this parameter is not specified, a partition is randomly assigned. This feature is in beta test.
+                     * @return PartitionNumber Partition number of the partition placement group. Valid values depend on the number of partitions in the selected placement group. If the selected placement group is a partition placement group and this parameter is not specified, a partition is randomly assigned. This feature is in beta test.
+                     * 
+                     */
+                    int64_t GetPartitionNumber() const;
+
+                    /**
+                     * 设置Partition number of the partition placement group. Valid values depend on the number of partitions in the selected placement group. If the selected placement group is a partition placement group and this parameter is not specified, a partition is randomly assigned. This feature is in beta test.
+                     * @param _partitionNumber Partition number of the partition placement group. Valid values depend on the number of partitions in the selected placement group. If the selected placement group is a partition placement group and this parameter is not specified, a partition is randomly assigned. This feature is in beta test.
+                     * 
+                     */
+                    void SetPartitionNumber(const int64_t& _partitionNumber);
+
+                    /**
+                     * 判断参数 PartitionNumber 是否已赋值
+                     * @return PartitionNumber 是否已赋值
+                     * 
+                     */
+                    bool PartitionNumberHasBeenSet() const;
+
+                    /**
                      * 获取Instance termination protection flag, indicating whether an instance is allowed to be deleted through an API. Valid values:<br><li>true: Instance protection is enabled, and the instance is not allowed to be deleted through the API.</li><br><li>false: Instance protection is disabled, and the instance is allowed to be deleted through the API.</li><br><br>Default value: false.
                      * @return DisableApiTermination Instance termination protection flag, indicating whether an instance is allowed to be deleted through an API. Valid values:<br><li>true: Instance protection is enabled, and the instance is not allowed to be deleted through the API.</li><br><li>false: Instance protection is disabled, and the instance is allowed to be deleted through the API.</li><br><br>Default value: false.
                      * 
@@ -715,15 +814,15 @@ If the dry run succeeds, the RequestId will be returned.
                     bool DisableApiTerminationHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return EnableJumboFrame 
+                     * 获取Whether the instance enables jumbo frames. valid values:<br><li/> true: means the instance enables jumbo frames. only models supporting jumbo frames can be set to true.<br><li/> false: means the instance disables jumbo frames. only models supporting jumbo frames can be set to false.<br> instance specifications supporting jumbo frames: [instance specifications](https://www.tencentcloud.com/document/product/213/11518?lang=en&pg=).
+                     * @return EnableJumboFrame Whether the instance enables jumbo frames. valid values:<br><li/> true: means the instance enables jumbo frames. only models supporting jumbo frames can be set to true.<br><li/> false: means the instance disables jumbo frames. only models supporting jumbo frames can be set to false.<br> instance specifications supporting jumbo frames: [instance specifications](https://www.tencentcloud.com/document/product/213/11518?lang=en&pg=).
                      * 
                      */
                     bool GetEnableJumboFrame() const;
 
                     /**
-                     * 设置
-                     * @param _enableJumboFrame 
+                     * 设置Whether the instance enables jumbo frames. valid values:<br><li/> true: means the instance enables jumbo frames. only models supporting jumbo frames can be set to true.<br><li/> false: means the instance disables jumbo frames. only models supporting jumbo frames can be set to false.<br> instance specifications supporting jumbo frames: [instance specifications](https://www.tencentcloud.com/document/product/213/11518?lang=en&pg=).
+                     * @param _enableJumboFrame Whether the instance enables jumbo frames. valid values:<br><li/> true: means the instance enables jumbo frames. only models supporting jumbo frames can be set to true.<br><li/> false: means the instance disables jumbo frames. only models supporting jumbo frames can be set to false.<br> instance specifications supporting jumbo frames: [instance specifications](https://www.tencentcloud.com/document/product/213/11518?lang=en&pg=).
                      * 
                      */
                     void SetEnableJumboFrame(const bool& _enableJumboFrame);
@@ -735,10 +834,31 @@ If the dry run succeeds, the RequestId will be returned.
                      */
                     bool EnableJumboFrameHasBeenSet() const;
 
+                    /**
+                     * 获取Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @return NetworkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    std::vector<NetworkInterfaces> GetNetworkInterfaces() const;
+
+                    /**
+                     * 设置Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * @param _networkInterfaces Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     * 
+                     */
+                    void SetNetworkInterfaces(const std::vector<NetworkInterfaces>& _networkInterfaces);
+
+                    /**
+                     * 判断参数 NetworkInterfaces 是否已赋值
+                     * @return NetworkInterfaces 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfacesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance [billing type](https://intl.cloud.tencent.com/document/product/213/2180?from_cn_redirect=1). <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: Dedicated CVM (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
+                     * Instance [billing type](https://www.tencentcloud.com/document/product/213/2180). <br><li>`PREPAID`: Monthly Subscription, used for at least one month <br><li>`POSTPAID_BY_HOUR`: Hourly-based pay-as-you-go <br><li>`CDHPAID`: [Dedicated CVM](https://www.tencentcloud.com/document/product/416/5068?lang=en&pg=) (associated with a dedicated host. Resource usage of the dedicated host is free of charge.) <br><li>`SPOTPAID`: [Spot instance](https://intl.cloud.tencent.com/document/product/213/17817)<br>Default value: `POSTPAID_BY_HOUR`.
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -758,13 +878,13 @@ If the dry run succeeds, the RequestId will be returned.
 
                     /**
                      * The instance model. 
-<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call [DescribeInstanceTypeConfigs](https://intl.cloud.tencent.com/document/api/213/15749?from_cn_redirect=1) or refer to [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518?from_cn_redirect=1). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
+<br><li>To view specific values for `POSTPAID_BY_HOUR` instances, you can call DescribeInstanceTypeConfigs or refer to [Instance Types](https://www.tencentcloud.com/document/product/213/11518). <br><li>For `CDHPAID` instances, the value of this parameter is in the format of `CDH_XCXG` based on the number of CPU cores and memory capacity. For example, if you want to create a CDH instance with a single-core CPU and 1 GB memory, specify this parameter as `CDH_1C1G`.
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * The [image](https://intl.cloud.tencent.com/document/product/213/4940?from_cn_redirect=1) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715?from_cn_redirect=1), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
+                     * The [image](https://www.tencentcloud.com/document/product/213/4940) ID in the format of `img-xxx`. There are three types of images:<br/><li>Public images</li><li>Custom images</li><li>Shared images</li><br/>To check the image ID:<br/><li>For public images, custom images, and shared images, go to the [CVM console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE). </li><li>Call [DescribeImages](https://www.tencentcloud.com/document/api/213/33272), pass in `InstanceType` to retrieve the list of images supported by the current model, and then find the `ImageId` in the response.</li>
  <b>Note: `ImageId` is required when `LaunchTemplate` is not specified. If both the parameters are passed in, `ImageId` prevails.</b>
                      */
                     std::string m_imageId;
@@ -795,13 +915,26 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
+                     * The number of instances to be purchased. Value range for pay-as-you-go instances: [1, 100]. Default value: `1`. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on the quota, see [Quota for CVM Instances](https://www.tencentcloud.com/document/product/213/2664).
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * Instance name.<br><li>If this parameter is not specified, "Unnamed" will be displayed by default.</li><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server_{R:3}`. If you purchase only one instance, the instance will be named `server_3`; if you purchase two, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><li>If you purchase multiple instances without specifying a pattern string, the instance names will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server_`, the instance names will be `server_1` and `server_2`.</li><li>This parameter can contain up to 60 characters (including pattern strings).</li>
+                     * Specifies the minimum number of instances to create. value range: positive integer not greater than InstanceCount.
+Specifies the minimum purchasable quantity, guarantees to create at least MinCount instances, and creates InstanceCount instances as much as possible.
+Insufficient inventory to meet the minimum purchasable quantity will trigger an error info indicating insufficient stock.
+Only applicable to accounts, regions, and billing modes (annual/monthly subscription, pay-as-you-go, spot instance, exclusive sales) with partial support.
+                     */
+                    int64_t m_minCount;
+                    bool m_minCountHasBeenSet;
+
+                    /**
+                     * Instance display name.<br><li>If no instance display name is specified, it will display 'unnamed' by default.</li><li>Supports up to 128 characters (including pattern strings).</li><li>When purchasing multiple instances:.
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the display name is server_3; when purchasing 2 instances, the display names are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit (optional), value range [0,8], default value 0 means no fixed digit (equivalent to {R:x}). Automatically pads with zeros when digits are insufficient, for example: input server_{R:3,F:3}, when purchasing 2 instances, the instance display name is server_003, server_004. If digit count exceeds y (such as {R:99,F:2}), the actual number is used, for example: app_{R:99,F:2}, when purchasing 2 instances, the instance display name is app_99, app_100.
+- Pattern strings must strictly follow the format {R:x,F:y} or {R:x}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No pattern string specified: The display name is appended with suffix 1, 2...n, where n indicates the number of instances purchased. For example server_. When purchasing 2 instances, generates server_1 and server_2.
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -813,7 +946,7 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will be associated with default security groups.
+                     * Security group to which an instance belongs. obtain this parameter by calling the `SecurityGroupId` field in the return value of [DescribeSecurityGroups](https://www.tencentcloud.com/document/product/215/15808?from_search=1). if not specified, bind the default security group under the designated project. if the default security group does not exist, automatically create it.
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -831,7 +964,13 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * Hostname of an instance.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>If you purchase multiple instances and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string `server{R:3}`. If you purchase only one instance, the hostname will be `server3`; if you purchase two, they will be `server3` and `server4`. You can specify multiple pattern strings in the format of `{R:x}`.</li><br><li>If you purchase multiple instances without specifying a pattern string, the hostnames will be suffixed with `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase two instances with the name `server`, the hostnames will be `server1` and `server2`.</li>
+                     * Instance HostName.<br><li>Period (.) and hyphen (-) should not be used as the first or last character of the hostname, and should not be used consecutively.</li><br><li>Windows instances: The hostname should contain 2 to 15 characters, including letters (case insensitive), digits, and hyphens (-), does not support periods (.), and should not be all digits.</li><br><li>Instances of other types (such as Linux instances): The hostname should contain 2 to 60 characters, including multiple periods (.), with each segment between periods considered as one section. Each section can contain letters (case insensitive), digits, and hyphens (-).</li><br><li>When purchasing multiple instances:
+- Specify a pattern string {R:x}: Generates a numeric sequence [x, x+n-1], where n represents the number of purchased instances. For example: Input server_{R:3}. When purchasing 1 instance, the hostname is server_3; when purchasing 2 instances, the hostnames are server_3 and server_4.
+- Specify a pattern string {R:x,F:y}: y indicates fixed digit width (optional), valid range [0,8]. Default value 0 means no fixed width (equivalent to {R:x}). Insufficient digits are automatically padded with zeros. For example: Input server{R:3,F:3}. When purchasing 2 instances, the hostnames are server_003 and server_004. If the number of digits exceeds y (e.g., {R:99,F:2}), the actual digit count is used. For example: app{R:99,F:2}. When purchasing 2 instances, the hostnames are app_99 and app_100.
+- Specify a pattern string {IP}: Automatically replace with the private IP address of the instance. For example: input node-{IP}, the instance hostname is node-10.0.12.8. Supports mixed use with serial number pattern strings, such as: input web-{IP}-{R:1}, when purchasing 2 instances, the instance hostnames are web-10.0.12.8-1 and web-10.0.12.9-2 respectively.
+- Pattern strings must strictly follow the format {R:x,F:y}, {R:x}, or {IP}. Invalid formats (such as {}) are treated as plain text. Multiple pattern strings are supported.
+- No specified pattern string: add suffix 1, 2...n to instance hostname, where n means the number of purchased instances, such as server_1, server_2 when purchasing 2 instances.
+</li>
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
@@ -867,7 +1006,8 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 
+                     * Custom metadata. specifies the support for creating custom metadata key-value pairs when creating a CVM.
+**Note: this field is in beta test.**.
                      */
                     Metadata m_metadata;
                     bool m_metadataHasBeenSet;
@@ -889,7 +1029,7 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_cpuTopologyHasBeenSet;
 
                     /**
-                     * CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://intl.cloud.tencent.com/document/product/598/36223?from_cn_redirect=1) API.
+                     * CAM role name, which can be obtained from the `roleName` field in the response of the [`DescribeRoleList`](https://www.tencentcloud.com/document/product/598/33559) API.
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;
@@ -919,16 +1059,28 @@ If the dry run succeeds, the RequestId will be returned.
                     bool m_chcIdsHasBeenSet;
 
                     /**
+                     * Partition number of the partition placement group. Valid values depend on the number of partitions in the selected placement group. If the selected placement group is a partition placement group and this parameter is not specified, a partition is randomly assigned. This feature is in beta test.
+                     */
+                    int64_t m_partitionNumber;
+                    bool m_partitionNumberHasBeenSet;
+
+                    /**
                      * Instance termination protection flag, indicating whether an instance is allowed to be deleted through an API. Valid values:<br><li>true: Instance protection is enabled, and the instance is not allowed to be deleted through the API.</li><br><li>false: Instance protection is disabled, and the instance is allowed to be deleted through the API.</li><br><br>Default value: false.
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
 
                     /**
-                     * 
+                     * Whether the instance enables jumbo frames. valid values:<br><li/> true: means the instance enables jumbo frames. only models supporting jumbo frames can be set to true.<br><li/> false: means the instance disables jumbo frames. only models supporting jumbo frames can be set to false.<br> instance specifications supporting jumbo frames: [instance specifications](https://www.tencentcloud.com/document/product/213/11518?lang=en&pg=).
                      */
                     bool m_enableJumboFrame;
                     bool m_enableJumboFrameHasBeenSet;
+
+                    /**
+                     * Network interface configuration for instance creation, including VPCs, subnets, and IP address allocation for primary and secondary network interfaces. This feature is in beta test in selected regions. To use this feature, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+                     */
+                    std::vector<NetworkInterfaces> m_networkInterfaces;
+                    bool m_networkInterfacesHasBeenSet;
 
                 };
             }

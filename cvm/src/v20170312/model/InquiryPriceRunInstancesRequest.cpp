@@ -41,9 +41,11 @@ InquiryPriceRunInstancesRequest::InquiryPriceRunInstancesRequest() :
     m_hostNameHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,15 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         m_instanceMarketOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_hpcClusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -249,6 +260,21 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_launchTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -547,6 +573,22 @@ bool InquiryPriceRunInstancesRequest::InstanceMarketOptionsHasBeenSet() const
     return m_instanceMarketOptionsHasBeenSet;
 }
 
+Metadata InquiryPriceRunInstancesRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void InquiryPriceRunInstancesRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
 string InquiryPriceRunInstancesRequest::GetHpcClusterId() const
 {
     return m_hpcClusterId;
@@ -593,6 +635,22 @@ void InquiryPriceRunInstancesRequest::SetLaunchTemplate(const LaunchTemplate& _l
 bool InquiryPriceRunInstancesRequest::LaunchTemplateHasBeenSet() const
 {
     return m_launchTemplateHasBeenSet;
+}
+
+vector<NetworkInterfaces> InquiryPriceRunInstancesRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void InquiryPriceRunInstancesRequest::SetNetworkInterfaces(const vector<NetworkInterfaces>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

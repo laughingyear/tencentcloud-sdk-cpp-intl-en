@@ -73,22 +73,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+<li>When SampleType is Percent, specify the percentage of the sampling interval.</li>
+<li>The time when the sampling interval is specified if SampleType is Time, in seconds.</li>
                      * @return SampleInterval Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+<li>When SampleType is Percent, specify the percentage of the sampling interval.</li>
+<li>The time when the sampling interval is specified if SampleType is Time, in seconds.</li>
                      * 
                      */
                     uint64_t GetSampleInterval() const;
 
                     /**
                      * 设置Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+<li>When SampleType is Percent, specify the percentage of the sampling interval.</li>
+<li>The time when the sampling interval is specified if SampleType is Time, in seconds.</li>
                      * @param _sampleInterval Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+<li>When SampleType is Percent, specify the percentage of the sampling interval.</li>
+<li>The time when the sampling interval is specified if SampleType is Time, in seconds.</li>
                      * 
                      */
                     void SetSampleInterval(const uint64_t& _sampleInterval);
@@ -101,19 +101,19 @@ namespace TencentCloud
                     bool SampleIntervalHasBeenSet() const;
 
                     /**
-                     * 获取The number of rows of small images in the sprite image. 
-Note: The number of rows of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
-                     * @return RowCount The number of rows of small images in the sprite image. 
-Note: The number of rows of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * 获取Number of rows of small images in the sprite image.
+Note: The number of subimage rows impacts the final height of the large image. The maximum height of the large image is 15,000 pixels, where the height of the large image is the product of the number of subimage rows and the subimage height.
+                     * @return RowCount Number of rows of small images in the sprite image.
+Note: The number of subimage rows impacts the final height of the large image. The maximum height of the large image is 15,000 pixels, where the height of the large image is the product of the number of subimage rows and the subimage height.
                      * 
                      */
                     uint64_t GetRowCount() const;
 
                     /**
-                     * 设置The number of rows of small images in the sprite image. 
-Note: The number of rows of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
-                     * @param _rowCount The number of rows of small images in the sprite image. 
-Note: The number of rows of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * 设置Number of rows of small images in the sprite image.
+Note: The number of subimage rows impacts the final height of the large image. The maximum height of the large image is 15,000 pixels, where the height of the large image is the product of the number of subimage rows and the subimage height.
+                     * @param _rowCount Number of rows of small images in the sprite image.
+Note: The number of subimage rows impacts the final height of the large image. The maximum height of the large image is 15,000 pixels, where the height of the large image is the product of the number of subimage rows and the subimage height.
                      * 
                      */
                     void SetRowCount(const uint64_t& _rowCount);
@@ -126,19 +126,19 @@ Note: The number of rows of the small image will affect the height of the final 
                     bool RowCountHasBeenSet() const;
 
                     /**
-                     * 获取The number of columns of small images in the sprite image. 
-Note: The number of columns of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
-                     * @return ColumnCount The number of columns of small images in the sprite image. 
-Note: The number of columns of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * 获取Number of columns of small images in the sprite image.
+Note: The number of columns of small images impacts the final width of the large image. The maximum width of the large image is 15,000 pixels, where the width of the large image is the product of the number of columns and the width of the small images.
+                     * @return ColumnCount Number of columns of small images in the sprite image.
+Note: The number of columns of small images impacts the final width of the large image. The maximum width of the large image is 15,000 pixels, where the width of the large image is the product of the number of columns and the width of the small images.
                      * 
                      */
                     uint64_t GetColumnCount() const;
 
                     /**
-                     * 设置The number of columns of small images in the sprite image. 
-Note: The number of columns of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
-                     * @param _columnCount The number of columns of small images in the sprite image. 
-Note: The number of columns of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * 设置Number of columns of small images in the sprite image.
+Note: The number of columns of small images impacts the final width of the large image. The maximum width of the large image is 15,000 pixels, where the width of the large image is the product of the number of columns and the width of the small images.
+                     * @param _columnCount Number of columns of small images in the sprite image.
+Note: The number of columns of small images impacts the final width of the large image. The maximum width of the large image is 15,000 pixels, where the width of the large image is the product of the number of columns and the width of the small images.
                      * 
                      */
                     void SetColumnCount(const uint64_t& _columnCount);
@@ -151,15 +151,15 @@ Note: The number of columns of the small image will affect the width of the fina
                     bool ColumnCountHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -172,15 +172,15 @@ Note: The number of columns of the small image will affect the width of the fina
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Name of an image sprite generating template. Length limit: 64 characters.
-                     * @return Name Name of an image sprite generating template. Length limit: 64 characters.
+                     * 获取Sprite image template name, with a length limit of 64 characters.
+                     * @return Name Sprite image template name, with a length limit of 64 characters.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Name of an image sprite generating template. Length limit: 64 characters.
-                     * @param _name Name of an image sprite generating template. Length limit: 64 characters.
+                     * 设置Sprite image template name, with a length limit of 64 characters.
+                     * @param _name Sprite image template name, with a length limit of 64 characters.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -193,15 +193,15 @@ Note: The number of columns of the small image will affect the width of the fina
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Template description. Length limit: 256 characters.
-                     * @return Comment Template description. Length limit: 256 characters.
+                     * 获取Template description, with a length limit of 256 characters.
+                     * @return Comment Template description, with a length limit of 256 characters.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description. Length limit: 256 characters.
-                     * @param _comment Template description. Length limit: 256 characters.
+                     * 设置Template description, with a length limit of 256 characters.
+                     * @param _comment Template description, with a length limit of 256 characters.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -214,27 +214,15 @@ Note: The number of columns of the small image will affect the width of the fina
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-Default value: black.
-                     * @return FillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-Default value: black.
+                     * 获取Filling method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling methods: <li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li><li>black: Keep black bars, maintain the video aspect ratio, and fill the remaining edges with black.</li>Default value: black.
+                     * @return FillType Filling method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling methods: <li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li><li>black: Keep black bars, maintain the video aspect ratio, and fill the remaining edges with black.</li>Default value: black.
                      * 
                      */
                     std::string GetFillType() const;
 
                     /**
-                     * 设置Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-Default value: black.
-                     * @param _fillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-Default value: black.
+                     * 设置Filling method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling methods: <li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li><li>black: Keep black bars, maintain the video aspect ratio, and fill the remaining edges with black.</li>Default value: black.
+                     * @param _fillType Filling method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling methods: <li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li><li>black: Keep black bars, maintain the video aspect ratio, and fill the remaining edges with black.</li>Default value: black.
                      * 
                      */
                     void SetFillType(const std::string& _fillType);
@@ -247,39 +235,15 @@ Default value: black.
                     bool FillTypeHasBeenSet() const;
 
                     /**
-                     * 获取The maximum value of the width (or long side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The width of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
-                     * @return Width The maximum value of the width (or long side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The width of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * 获取Maximum value of the width (or long side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, Same Resolution Source is used;</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled;</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled;</li><li>When both Width and Height are not 0, the resolution specified by user is used.</li>Default value: 0. Note: The width of small images impacts the width of the final large image. The maximum width of the large image is 15000 pixels, where the width of the large image is the product of the columns and the width of small images.
+                     * @return Width Maximum value of the width (or long side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, Same Resolution Source is used;</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled;</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled;</li><li>When both Width and Height are not 0, the resolution specified by user is used.</li>Default value: 0. Note: The width of small images impacts the width of the final large image. The maximum width of the large image is 15000 pixels, where the width of the large image is the product of the columns and the width of small images.
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置The maximum value of the width (or long side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The width of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
-                     * @param _width The maximum value of the width (or long side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The width of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * 设置Maximum value of the width (or long side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, Same Resolution Source is used;</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled;</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled;</li><li>When both Width and Height are not 0, the resolution specified by user is used.</li>Default value: 0. Note: The width of small images impacts the width of the final large image. The maximum width of the large image is 15000 pixels, where the width of the large image is the product of the columns and the width of small images.
+                     * @param _width Maximum value of the width (or long side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, Same Resolution Source is used;</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled;</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled;</li><li>When both Width and Height are not 0, the resolution specified by user is used.</li>Default value: 0. Note: The width of small images impacts the width of the final large image. The maximum width of the large image is 15000 pixels, where the width of the large image is the product of the columns and the width of small images.
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -292,39 +256,15 @@ Note: The width of the small image will affect the width of the final large imag
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取The maximum value of the height (or short side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The height of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
-                     * @return Height The maximum value of the height (or short side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The height of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * 获取Maximum value of the height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, the resolution is the same as the source.</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled.</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled.</li><li>When both Width and Height are not 0, the resolution is specified by the user.</li>Default value: 0. Note: The height of small images impacts the height of the final large image. The maximum height of the large image is 15000 pixels, where the height of the large image is the product of the subimage rows and the height of small images.
+                     * @return Height Maximum value of the height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, the resolution is the same as the source.</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled.</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled.</li><li>When both Width and Height are not 0, the resolution is specified by the user.</li>Default value: 0. Note: The height of small images impacts the height of the final large image. The maximum height of the large image is 15000 pixels, where the height of the large image is the product of the subimage rows and the height of small images.
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置The maximum value of the height (or short side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The height of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
-                     * @param _height The maximum value of the height (or short side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The height of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * 设置Maximum value of the height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, the resolution is the same as the source.</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled.</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled.</li><li>When both Width and Height are not 0, the resolution is specified by the user.</li>Default value: 0. Note: The height of small images impacts the height of the final large image. The maximum height of the large image is 15000 pixels, where the height of the large image is the product of the subimage rows and the height of small images.
+                     * @param _height Maximum value of the height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, the resolution is the same as the source.</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled.</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled.</li><li>When both Width and Height are not 0, the resolution is specified by the user.</li>Default value: 0. Note: The height of small images impacts the height of the final large image. The maximum height of the large image is 15000 pixels, where the height of the large image is the product of the subimage rows and the height of small images.
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -337,26 +277,26 @@ Note: The height of the small image will affect the height of the final large im
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 获取Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height represents the height of the video.</li>
 Default value: open.
-                     * @return ResolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @return ResolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height represents the height of the video.</li>
 Default value: open.
                      * 
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
-                     * 设置Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 设置Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height represents the height of the video.</li>
 Default value: open.
-                     * @param _resolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @param _resolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height represents the height of the video.</li>
 Default value: open.
                      * 
                      */
@@ -370,31 +310,31 @@ Default value: open.
                     bool ResolutionAdaptiveHasBeenSet() const;
 
                     /**
-                     * 获取The image format. Valid values:
-<li> jpg</li>
-<li> png</li>
-<li> webp</li>
-Default: jpg
-                     * @return Format The image format. Valid values:
-<li> jpg</li>
-<li> png</li>
-<li> webp</li>
-Default: jpg
+                     * 获取Image format. Value:
+<li> jpg: jpg format;</li>
+<li> png: PNG format;</li>
+<li> webp: webp format.</li>
+Default value: jpg.
+                     * @return Format Image format. Value:
+<li> jpg: jpg format;</li>
+<li> png: PNG format;</li>
+<li> webp: webp format.</li>
+Default value: jpg.
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置The image format. Valid values:
-<li> jpg</li>
-<li> png</li>
-<li> webp</li>
-Default: jpg
-                     * @param _format The image format. Valid values:
-<li> jpg</li>
-<li> png</li>
-<li> webp</li>
-Default: jpg
+                     * 设置Image format. Value:
+<li> jpg: jpg format;</li>
+<li> png: PNG format;</li>
+<li> webp: webp format.</li>
+Default value: jpg.
+                     * @param _format Image format. Value:
+<li> jpg: jpg format;</li>
+<li> png: PNG format;</li>
+<li> webp: webp format.</li>
+Default value: jpg.
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -418,92 +358,77 @@ Default: jpg
 
                     /**
                      * Sampling interval.
-<li>If `SampleType` is `Percent`, sampling will be performed at an interval of the specified percentage.</li>
-<li>If `SampleType` is `Time`, sampling will be performed at the specified time interval in seconds.</li>
+<li>When SampleType is Percent, specify the percentage of the sampling interval.</li>
+<li>The time when the sampling interval is specified if SampleType is Time, in seconds.</li>
                      */
                     uint64_t m_sampleInterval;
                     bool m_sampleIntervalHasBeenSet;
 
                     /**
-                     * The number of rows of small images in the sprite image. 
-Note: The number of rows of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * Number of rows of small images in the sprite image.
+Note: The number of subimage rows impacts the final height of the large image. The maximum height of the large image is 15,000 pixels, where the height of the large image is the product of the number of subimage rows and the subimage height.
                      */
                     uint64_t m_rowCount;
                     bool m_rowCountHasBeenSet;
 
                     /**
-                     * The number of columns of small images in the sprite image. 
-Note: The number of columns of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * Number of columns of small images in the sprite image.
+Note: The number of columns of small images impacts the final width of the large image. The maximum width of the large image is 15,000 pixels, where the width of the large image is the product of the number of columns and the width of the small images.
                      */
                     uint64_t m_columnCount;
                     bool m_columnCountHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Name of an image sprite generating template. Length limit: 64 characters.
+                     * Sprite image template name, with a length limit of 64 characters.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Template description. Length limit: 256 characters.
+                     * Template description, with a length limit of 256 characters.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
-Default value: black.
+                     * Filling method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the processing method for transcoding is "filling". Optional filling methods: <li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li><li>black: Keep black bars, maintain the video aspect ratio, and fill the remaining edges with black.</li>Default value: black.
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;
 
                     /**
-                     * The maximum value of the width (or long side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The width of the small image will affect the width of the final large image. The maximum width of the large image is 15,000 pixels. The width of the large image is the product of the number of columns of the small image and the width of the small image.
+                     * Maximum value of the width (or long side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, Same Resolution Source is used;</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled;</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled;</li><li>When both Width and Height are not 0, the resolution specified by user is used.</li>Default value: 0. Note: The width of small images impacts the width of the final large image. The maximum width of the large image is 15000 pixels, where the width of the large image is the product of the columns and the width of small images.
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * The maximum value of the height (or short side) of the small image in the sprite image, value range: 0 and [128, 4096], unit: px. 
-<li>When Width and Height are both 0, the resolution is from the same source;</li>
-<li>When Width is 0 and Height is non-0, Width is scaled proportionally;</li>
-< li>When Width is non-0 and Height is 0, the Height is scaled proportionally; </li>
-<li>When both Width and Height are non-0, the resolution is specified by the user. </li>
-Default value: 0. 
-Note: The height of the small image will affect the height of the final large image. The maximum height of the large image is 15,000 pixels. The height of the large image is the product of the number of rows of the small image and the height of the small image.
+                     * Maximum value of the height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.<li>When both Width and Height are 0, the resolution is the same as the source.</li><li>When Width is 0 and Height is not 0, Width is proportionally scaled.</li><li>When Width is not 0 and Height is 0, Height is proportionally scaled.</li><li>When both Width and Height are not 0, the resolution is specified by the user.</li>Default value: 0. Note: The height of small images impacts the height of the final large image. The maximum height of the large image is 15000 pixels, where the height of the large image is the product of the subimage rows and the height of small images.
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height indicates the short side of the video;</li>
+<li>close: closed. At this point, Width represents the width of the video, and Height represents the height of the video.</li>
 Default value: open.
                      */
                     std::string m_resolutionAdaptive;
                     bool m_resolutionAdaptiveHasBeenSet;
 
                     /**
-                     * The image format. Valid values:
-<li> jpg</li>
-<li> png</li>
-<li> webp</li>
-Default: jpg
+                     * Image format. Value:
+<li> jpg: jpg format;</li>
+<li> png: PNG format;</li>
+<li> webp: webp format.</li>
+Default value: jpg.
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MaxNamespacesHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of topic partitions
-                     * @return MaxTopics Maximum number of topic partitions
+                     * 获取Maximum number of topics that can be created
+                     * @return MaxTopics Maximum number of topics that can be created
                      * 
                      */
                     uint64_t GetMaxTopics() const;
 
                     /**
-                     * 设置Maximum number of topic partitions
-                     * @param _maxTopics Maximum number of topic partitions
+                     * 设置Maximum number of topics that can be created
+                     * @param _maxTopics Maximum number of topics that can be created
                      * 
                      */
                     void SetMaxTopics(const uint64_t& _maxTopics);
@@ -176,6 +176,140 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool ScalableTpsHasBeenSet() const;
 
+                    /**
+                     * 获取32 or 128.
+Maximum number of partitions for topics in the current cluster.
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return MaxPartitions 32 or 128.
+Maximum number of partitions for topics in the current cluster.
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    uint64_t GetMaxPartitions() const;
+
+                    /**
+                     * 设置32 or 128.
+Maximum number of partitions for topics in the current cluster.
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _maxPartitions 32 or 128.
+Maximum number of partitions for topics in the current cluster.
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    void SetMaxPartitions(const uint64_t& _maxPartitions);
+
+                    /**
+                     * 判断参数 MaxPartitions 是否已赋值
+                     * @return MaxPartitions 是否已赋值
+                     * 
+                     */
+                    bool MaxPartitionsHasBeenSet() const;
+
+                    /**
+                     * 获取Maximum delayed message count. 0 means no limit.	
+                     * @return MaxDelayedMessages Maximum delayed message count. 0 means no limit.	
+                     * 
+                     */
+                    int64_t GetMaxDelayedMessages() const;
+
+                    /**
+                     * 设置Maximum delayed message count. 0 means no limit.	
+                     * @param _maxDelayedMessages Maximum delayed message count. 0 means no limit.	
+                     * 
+                     */
+                    void SetMaxDelayedMessages(const int64_t& _maxDelayedMessages);
+
+                    /**
+                     * 判断参数 MaxDelayedMessages 是否已赋值
+                     * @return MaxDelayedMessages 是否已赋值
+                     * 
+                     */
+                    bool MaxDelayedMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取Maximum number of topic partitions that can be created
+                     * @return MaxTopicsPartitioned Maximum number of topic partitions that can be created
+                     * 
+                     */
+                    int64_t GetMaxTopicsPartitioned() const;
+
+                    /**
+                     * 设置Maximum number of topic partitions that can be created
+                     * @param _maxTopicsPartitioned Maximum number of topic partitions that can be created
+                     * 
+                     */
+                    void SetMaxTopicsPartitioned(const int64_t& _maxTopicsPartitioned);
+
+                    /**
+                     * 判断参数 MaxTopicsPartitioned 是否已赋值
+                     * @return MaxTopicsPartitioned 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicsPartitionedHasBeenSet() const;
+
+                    /**
+                     * 获取Maximum number of connections per broker
+                     * @return BrokerMaxConnections Maximum number of connections per broker
+                     * 
+                     */
+                    int64_t GetBrokerMaxConnections() const;
+
+                    /**
+                     * 设置Maximum number of connections per broker
+                     * @param _brokerMaxConnections Maximum number of connections per broker
+                     * 
+                     */
+                    void SetBrokerMaxConnections(const int64_t& _brokerMaxConnections);
+
+                    /**
+                     * 判断参数 BrokerMaxConnections 是否已赋值
+                     * @return BrokerMaxConnections 是否已赋值
+                     * 
+                     */
+                    bool BrokerMaxConnectionsHasBeenSet() const;
+
+                    /**
+                     * 获取Maximum number of connections per IP
+                     * @return BrokerMaxConnectionsPerIp Maximum number of connections per IP
+                     * 
+                     */
+                    int64_t GetBrokerMaxConnectionsPerIp() const;
+
+                    /**
+                     * 设置Maximum number of connections per IP
+                     * @param _brokerMaxConnectionsPerIp Maximum number of connections per IP
+                     * 
+                     */
+                    void SetBrokerMaxConnectionsPerIp(const int64_t& _brokerMaxConnectionsPerIp);
+
+                    /**
+                     * 判断参数 BrokerMaxConnectionsPerIp 是否已赋值
+                     * @return BrokerMaxConnectionsPerIp 是否已赋值
+                     * 
+                     */
+                    bool BrokerMaxConnectionsPerIpHasBeenSet() const;
+
+                    /**
+                     * 获取Elastic storage cluster maximum storage specification; fixed storage is 0.
+                     * @return MaximumElasticStorage Elastic storage cluster maximum storage specification; fixed storage is 0.
+                     * 
+                     */
+                    int64_t GetMaximumElasticStorage() const;
+
+                    /**
+                     * 设置Elastic storage cluster maximum storage specification; fixed storage is 0.
+                     * @param _maximumElasticStorage Elastic storage cluster maximum storage specification; fixed storage is 0.
+                     * 
+                     */
+                    void SetMaximumElasticStorage(const int64_t& _maximumElasticStorage);
+
+                    /**
+                     * 判断参数 MaximumElasticStorage 是否已赋值
+                     * @return MaximumElasticStorage 是否已赋值
+                     * 
+                     */
+                    bool MaximumElasticStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,7 +337,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_maxNamespacesHasBeenSet;
 
                     /**
-                     * Maximum number of topic partitions
+                     * Maximum number of topics that can be created
                      */
                     uint64_t m_maxTopics;
                     bool m_maxTopicsHasBeenSet;
@@ -214,6 +348,44 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
+
+                    /**
+                     * 32 or 128.
+Maximum number of partitions for topics in the current cluster.
+Note: This field may return null, indicating that no valid values can be obtained.
+                     */
+                    uint64_t m_maxPartitions;
+                    bool m_maxPartitionsHasBeenSet;
+
+                    /**
+                     * Maximum delayed message count. 0 means no limit.	
+                     */
+                    int64_t m_maxDelayedMessages;
+                    bool m_maxDelayedMessagesHasBeenSet;
+
+                    /**
+                     * Maximum number of topic partitions that can be created
+                     */
+                    int64_t m_maxTopicsPartitioned;
+                    bool m_maxTopicsPartitionedHasBeenSet;
+
+                    /**
+                     * Maximum number of connections per broker
+                     */
+                    int64_t m_brokerMaxConnections;
+                    bool m_brokerMaxConnectionsHasBeenSet;
+
+                    /**
+                     * Maximum number of connections per IP
+                     */
+                    int64_t m_brokerMaxConnectionsPerIp;
+                    bool m_brokerMaxConnectionsPerIpHasBeenSet;
+
+                    /**
+                     * Elastic storage cluster maximum storage specification; fixed storage is 0.
+                     */
+                    int64_t m_maximumElasticStorage;
+                    bool m_maximumElasticStorageHasBeenSet;
 
                 };
             }

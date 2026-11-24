@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SourceLocation Id.
-                     * @return Id SourceLocation Id.
+                     * 获取Source Id.
+                     * @return Id Source Id.
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置SourceLocation Id.
-                     * @param _id SourceLocation Id.
+                     * 设置Source Id.
+                     * @param _id Source Id.
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SourceLocation Id.
+                     * Source Id.
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

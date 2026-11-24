@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>ckafka cluster instance Id.</p>.
+                     * @return InstanceId <p>ckafka cluster instance Id.</p>.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>ckafka cluster instance Id.</p>.
+                     * @param _instanceId <p>ckafka cluster instance Id.</p>.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Instance name
-                     * @return InstanceName Instance name
+                     * 获取<P>Specifies the name of the ckafka cluster instance.</p>.
+                     * @return InstanceName <P>Specifies the name of the ckafka cluster instance.</p>.
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Instance name
-                     * @param _instanceName Instance name
+                     * 设置<P>Specifies the name of the ckafka cluster instance.</p>.
+                     * @param _instanceName <P>Specifies the name of the ckafka cluster instance.</p>.
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取Instance VIP information
-                     * @return Vip Instance VIP information
+                     * 获取<P>Specifies the vip information for accessing the instance.</p>.
+                     * @return Vip <P>Specifies the vip information for accessing the instance.</p>.
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置Instance VIP information
-                     * @param _vip Instance VIP information
+                     * 设置<P>Specifies the vip information for accessing the instance.</p>.
+                     * @param _vip <P>Specifies the vip information for accessing the instance.</p>.
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取Instance port information
-                     * @return Vport Instance port information
+                     * 获取<P>Specifies the port information to access the instance.</p>.
+                     * @return Vport <P>Specifies the port information to access the instance.</p>.
                      * 
                      */
                     std::string GetVport() const;
 
                     /**
-                     * 设置Instance port information
-                     * @param _vport Instance port information
+                     * 设置<P>Specifies the port information to access the instance.</p>.
+                     * @param _vport <P>Specifies the port information to access the instance.</p>.
                      * 
                      */
                     void SetVport(const std::string& _vport);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取Virtual IP list
-                     * @return VipList Virtual IP list
+                     * 获取<p>Specifies the virtual IP list.</p>.
+                     * @return VipList <p>Specifies the virtual IP list.</p>.
                      * 
                      */
                     std::vector<VipEntity> GetVipList() const;
 
                     /**
-                     * 设置Virtual IP list
-                     * @param _vipList Virtual IP list
+                     * 设置<p>Specifies the virtual IP list.</p>.
+                     * @param _vipList <p>Specifies the virtual IP list.</p>.
                      * 
                      */
                     void SetVipList(const std::vector<VipEntity>& _vipList);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool VipListHasBeenSet() const;
 
                     /**
-                     * 获取Instance status. 0: creating, 1: running, 2: deleting, 5: isolated, -1: creation failed
-                     * @return Status Instance status. 0: creating, 1: running, 2: deleting, 5: isolated, -1: creation failed
+                     * 获取<p>Instance status. 0: Creating, 1: Running, 2: Deleting, 3: Deleted, 5: Isolated, 7: Upgrading, -1: Creation failed</p>
+                     * @return Status <p>Instance status. 0: Creating, 1: Running, 2: Deleting, 3: Deleted, 5: Isolated, 7: Upgrading, -1: Creation failed</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Instance status. 0: creating, 1: running, 2: deleting, 5: isolated, -1: creation failed
-                     * @param _status Instance status. 0: creating, 1: running, 2: deleting, 5: isolated, -1: creation failed
+                     * 设置<p>Instance status. 0: Creating, 1: Running, 2: Deleting, 3: Deleted, 5: Isolated, 7: Upgrading, -1: Creation failed</p>
+                     * @param _status <p>Instance status. 0: Creating, 1: Running, 2: Deleting, 3: Deleted, 5: Isolated, 7: Upgrading, -1: Creation failed</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Instance bandwidth in Mbps
-                     * @return Bandwidth Instance bandwidth in Mbps
+                     * 获取<p>Specifies the instance bandwidth in Mbps.</p>.
+                     * @return Bandwidth <p>Specifies the instance bandwidth in Mbps.</p>.
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置Instance bandwidth in Mbps
-                     * @param _bandwidth Instance bandwidth in Mbps
+                     * 设置<p>Specifies the instance bandwidth in Mbps.</p>.
+                     * @param _bandwidth <p>Specifies the instance bandwidth in Mbps.</p>.
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取Instance storage capacity in GB
-                     * @return DiskSize Instance storage capacity in GB
+                     * 获取<p>Specifies the disk size of the ckafka cluster instance, in gb.</p>.
+                     * @return DiskSize <p>Specifies the disk size of the ckafka cluster instance, in gb.</p>.
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置Instance storage capacity in GB
-                     * @param _diskSize Instance storage capacity in GB
+                     * 设置<p>Specifies the disk size of the ckafka cluster instance, in gb.</p>.
+                     * @param _diskSize <p>Specifies the disk size of the ckafka cluster instance, in gb.</p>.
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取AZ ID
-                     * @return ZoneId AZ ID
+                     * 获取<p>Specifies the available zone ID.</p>.
+                     * @return ZoneId <p>Specifies the available zone ID.</p>.
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置AZ ID
-                     * @param _zoneId AZ ID
+                     * 设置<p>Specifies the available zone ID.</p>.
+                     * @param _zoneId <p>Specifies the available zone ID.</p>.
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取vpcId. If this parameter is empty, it means the basic network
-                     * @return VpcId vpcId. If this parameter is empty, it means the basic network
+                     * 获取<p>vpcId. if empty, indicates a basic network.</p>.
+                     * @return VpcId <p>vpcId. if empty, indicates a basic network.</p>.
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpcId. If this parameter is empty, it means the basic network
-                     * @param _vpcId vpcId. If this parameter is empty, it means the basic network
+                     * 设置<p>vpcId. if empty, indicates a basic network.</p>.
+                     * @param _vpcId <p>vpcId. if empty, indicates a basic network.</p>.
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取Subnet ID
-                     * @return SubnetId Subnet ID
+                     * 获取<P>Subnet id.</p>.
+                     * @return SubnetId <P>Subnet id.</p>.
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置Subnet ID
-                     * @param _subnetId Subnet ID
+                     * 设置<P>Subnet id.</p>.
+                     * @param _subnetId <P>Subnet id.</p>.
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Whether to renew the instance automatically, which is an int-type enumerated value. 1: yes, 2: no
-                     * @return RenewFlag Whether to renew the instance automatically, which is an int-type enumerated value. 1: yes, 2: no
+                     * 获取<P>Specifies whether to renew the instance. int enumeration value: 1 means auto-renew, 2 means explicitly no auto-renew.</p>.
+                     * @return RenewFlag <P>Specifies whether to renew the instance. int enumeration value: 1 means auto-renew, 2 means explicitly no auto-renew.</p>.
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置Whether to renew the instance automatically, which is an int-type enumerated value. 1: yes, 2: no
-                     * @param _renewFlag Whether to renew the instance automatically, which is an int-type enumerated value. 1: yes, 2: no
+                     * 设置<P>Specifies whether to renew the instance. int enumeration value: 1 means auto-renew, 2 means explicitly no auto-renew.</p>.
+                     * @param _renewFlag <P>Specifies whether to renew the instance. int enumeration value: 1 means auto-renew, 2 means explicitly no auto-renew.</p>.
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取Instance status. An int-type value will be returned. `0`: Healthy, `1`: Alarmed, `2`: Exceptional
-                     * @return Healthy Instance status. An int-type value will be returned. `0`: Healthy, `1`: Alarmed, `2`: Exceptional
+                     * 获取<p>Specifies the instance status. valid values: 1 (healthy), 2 (alarm), 3 (instance status exception).</p>.
+                     * @return Healthy <p>Specifies the instance status. valid values: 1 (healthy), 2 (alarm), 3 (instance status exception).</p>.
                      * 
                      */
                     int64_t GetHealthy() const;
 
                     /**
-                     * 设置Instance status. An int-type value will be returned. `0`: Healthy, `1`: Alarmed, `2`: Exceptional
-                     * @param _healthy Instance status. An int-type value will be returned. `0`: Healthy, `1`: Alarmed, `2`: Exceptional
+                     * 设置<p>Specifies the instance status. valid values: 1 (healthy), 2 (alarm), 3 (instance status exception).</p>.
+                     * @param _healthy <p>Specifies the instance status. valid values: 1 (healthy), 2 (alarm), 3 (instance status exception).</p>.
                      * 
                      */
                     void SetHealthy(const int64_t& _healthy);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool HealthyHasBeenSet() const;
 
                     /**
-                     * 获取Instance status information
-                     * @return HealthyMessage Instance status information
+                     * 获取<P>Specifies the instance status information.</p>.
+                     * @return HealthyMessage <P>Specifies the instance status information.</p>.
                      * 
                      */
                     std::string GetHealthyMessage() const;
 
                     /**
-                     * 设置Instance status information
-                     * @param _healthyMessage Instance status information
+                     * 设置<P>Specifies the instance status information.</p>.
+                     * @param _healthyMessage <P>Specifies the instance status information.</p>.
                      * 
                      */
                     void SetHealthyMessage(const std::string& _healthyMessage);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool HealthyMessageHasBeenSet() const;
 
                     /**
-                     * 获取Instance creation time
-                     * @return CreateTime Instance creation time
+                     * 获取<P>Specifies the instance creation time.</p>.
+                     * @return CreateTime <P>Specifies the instance creation time.</p>.
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置Instance creation time
-                     * @param _createTime Instance creation time
+                     * 设置<P>Specifies the instance creation time.</p>.
+                     * @param _createTime <P>Specifies the instance creation time.</p>.
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Instance expiration time
-                     * @return ExpireTime Instance expiration time
+                     * 获取<P>Specifies the instance expiration time.</p>.
+                     * @return ExpireTime <P>Specifies the instance expiration time.</p>.
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置Instance expiration time
-                     * @param _expireTime Instance expiration time
+                     * 设置<P>Specifies the instance expiration time.</p>.
+                     * @param _expireTime <P>Specifies the instance expiration time.</p>.
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取Whether it is an internal customer. 1: yes
-                     * @return IsInternal Whether it is an internal customer. 1: yes
+                     * 获取<P>Specifies whether it is an internal customer. a value of 1 indicates an internal customer.</p>.
+                     * @return IsInternal <P>Specifies whether it is an internal customer. a value of 1 indicates an internal customer.</p>.
                      * 
                      */
                     int64_t GetIsInternal() const;
 
                     /**
-                     * 设置Whether it is an internal customer. 1: yes
-                     * @param _isInternal Whether it is an internal customer. 1: yes
+                     * 设置<P>Specifies whether it is an internal customer. a value of 1 indicates an internal customer.</p>.
+                     * @param _isInternal <P>Specifies whether it is an internal customer. a value of 1 indicates an internal customer.</p>.
                      * 
                      */
                     void SetIsInternal(const int64_t& _isInternal);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool IsInternalHasBeenSet() const;
 
                     /**
-                     * 获取Number of topics
-                     * @return TopicNum Number of topics
+                     * 获取<p>Specifies the number of topics.</p>.
+                     * @return TopicNum <p>Specifies the number of topics.</p>.
                      * 
                      */
                     int64_t GetTopicNum() const;
 
                     /**
-                     * 设置Number of topics
-                     * @param _topicNum Number of topics
+                     * 设置<p>Specifies the number of topics.</p>.
+                     * @param _topicNum <p>Specifies the number of topics.</p>.
                      * 
                      */
                     void SetTopicNum(const int64_t& _topicNum);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool TopicNumHasBeenSet() const;
 
                     /**
-                     * 获取Tag
-                     * @return Tags Tag
+                     * 获取<P>Specifies the identifier tag.</p>.
+                     * @return Tags <P>Specifies the identifier tag.</p>.
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置Tag
-                     * @param _tags Tag
+                     * 设置<P>Specifies the identifier tag.</p>.
+                     * @param _tags <P>Specifies the identifier tag.</p>.
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -448,19 +448,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取Kafka version information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Version Kafka version information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>kafka version information.</p>.
+                     * @return Version <p>kafka version information.</p>.
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置Kafka version information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _version Kafka version information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>kafka version information.</p>.
+                     * @param _version <p>kafka version information.</p>.
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -473,19 +469,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取Cross-AZ
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ZoneIds Cross-AZ
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the cross-availability zone.</p>.
+                     * @return ZoneIds <P>Specifies the cross-availability zone.</p>.
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置Cross-AZ
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _zoneIds Cross-AZ
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the cross-availability zone.</p>.
+                     * @param _zoneIds <P>Specifies the cross-availability zone.</p>.
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -498,19 +490,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取CKafka sale type
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Cvm CKafka sale type
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the ckafka sales type.</p>.
+                     * @return Cvm <P>Specifies the ckafka sales type.</p>.
                      * 
                      */
                     int64_t GetCvm() const;
 
                     /**
-                     * 设置CKafka sale type
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _cvm CKafka sale type
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the ckafka sales type.</p>.
+                     * @param _cvm <P>Specifies the ckafka sales type.</p>.
                      * 
                      */
                     void SetCvm(const int64_t& _cvm);
@@ -523,19 +511,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取CKafka instance type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @return InstanceType CKafka instance type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the ckafka cluster instance type.</p>.
+                     * @return InstanceType <P>Specifies the ckafka cluster instance type.</p>.
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置CKafka instance type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @param _instanceType CKafka instance type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the ckafka cluster instance type.</p>.
+                     * @param _instanceType <P>Specifies the ckafka cluster instance type.</p>.
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -548,19 +532,15 @@ Note: `null` may be returned for this field, indicating that no valid values can
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取Disk type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @return DiskType Disk type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the disk type of the ckafka cluster instance.</p>.
+                     * @return DiskType <P>Specifies the disk type of the ckafka cluster instance.</p>.
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置Disk type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @param _diskType Disk type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the disk type of the ckafka cluster instance.</p>.
+                     * @param _diskType <P>Specifies the disk type of the ckafka cluster instance.</p>.
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -573,19 +553,15 @@ Note: `null` may be returned for this field, indicating that no valid values can
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of topics for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @return MaxTopicNumber Maximum number of topics for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 获取<p>Maximum number of topics for current specifications.</p>.
+                     * @return MaxTopicNumber <p>Maximum number of topics for current specifications.</p>.
                      * 
                      */
                     int64_t GetMaxTopicNumber() const;
 
                     /**
-                     * 设置Maximum number of topics for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @param _maxTopicNumber Maximum number of topics for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 设置<p>Maximum number of topics for current specifications.</p>.
+                     * @param _maxTopicNumber <p>Maximum number of topics for current specifications.</p>.
                      * 
                      */
                     void SetMaxTopicNumber(const int64_t& _maxTopicNumber);
@@ -598,19 +574,15 @@ Note: `null` may be returned for this field, indicating that no valid values can
                     bool MaxTopicNumberHasBeenSet() const;
 
                     /**
-                     * 获取Maximum number of partitions for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @return MaxPartitionNumber Maximum number of partitions for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 获取<p>Specifies the maximum number of partitions for current specifications.</p>.
+                     * @return MaxPartitionNumber <p>Specifies the maximum number of partitions for current specifications.</p>.
                      * 
                      */
                     int64_t GetMaxPartitionNumber() const;
 
                     /**
-                     * 设置Maximum number of partitions for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @param _maxPartitionNumber Maximum number of partitions for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 设置<p>Specifies the maximum number of partitions for current specifications.</p>.
+                     * @param _maxPartitionNumber <p>Specifies the maximum number of partitions for current specifications.</p>.
                      * 
                      */
                     void SetMaxPartitionNumber(const int64_t& _maxPartitionNumber);
@@ -623,19 +595,15 @@ Note: `null` may be returned for this field, indicating that no valid values can
                     bool MaxPartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取Time of scheduled upgrade
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @return RebalanceTime Time of scheduled upgrade
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the planned configuration upgrade time.</p>.
+                     * @return RebalanceTime <P>Specifies the planned configuration upgrade time.</p>.
                      * 
                      */
                     std::string GetRebalanceTime() const;
 
                     /**
-                     * 设置Time of scheduled upgrade
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
-                     * @param _rebalanceTime Time of scheduled upgrade
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the planned configuration upgrade time.</p>.
+                     * @param _rebalanceTime <P>Specifies the planned configuration upgrade time.</p>.
                      * 
                      */
                     void SetRebalanceTime(const std::string& _rebalanceTime);
@@ -648,19 +616,15 @@ Note: `null` may be returned for this field, indicating that no valid values can
                     bool RebalanceTimeHasBeenSet() const;
 
                     /**
-                     * 获取Number of partitions in the current instance.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return PartitionNumber Number of partitions in the current instance.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<P>Current number of partitions of the instance.</p>.
+                     * @return PartitionNumber <P>Current number of partitions of the instance.</p>.
                      * 
                      */
                     uint64_t GetPartitionNumber() const;
 
                     /**
-                     * 设置Number of partitions in the current instance.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _partitionNumber Number of partitions in the current instance.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<P>Current number of partitions of the instance.</p>.
+                     * @param _partitionNumber <P>Current number of partitions of the instance.</p>.
                      * 
                      */
                     void SetPartitionNumber(const uint64_t& _partitionNumber);
@@ -673,19 +637,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool PartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取Public network bandwidth type.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return PublicNetworkChargeType Public network bandwidth type.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the public network bandwidth type of the ckafka cluster instance.</p>.
+                     * @return PublicNetworkChargeType <P>Specifies the public network bandwidth type of the ckafka cluster instance.</p>.
                      * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
-                     * 设置Public network bandwidth type.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _publicNetworkChargeType Public network bandwidth type.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the public network bandwidth type of the ckafka cluster instance.</p>.
+                     * @param _publicNetworkChargeType <P>Specifies the public network bandwidth type of the ckafka cluster instance.</p>.
                      * 
                      */
                     void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
@@ -698,19 +658,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取Public network bandwidth.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return PublicNetwork Public network bandwidth.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Specifies the public network bandwidth. value range: 3Mbps to 999Mbps. only supported in pro edition.</p>.
+                     * @return PublicNetwork <p>Specifies the public network bandwidth. value range: 3Mbps to 999Mbps. only supported in pro edition.</p>.
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置Public network bandwidth.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _publicNetwork Public network bandwidth.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Specifies the public network bandwidth. value range: 3Mbps to 999Mbps. only supported in pro edition.</p>.
+                     * @param _publicNetwork <p>Specifies the public network bandwidth. value range: 3Mbps to 999Mbps. only supported in pro edition.</p>.
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -723,19 +679,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取Instance type.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ClusterType Instance type.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the underlying cluster type of the ckafka cluster instance.</p>.
+                     * @return ClusterType <P>Specifies the underlying cluster type of the ckafka cluster instance.</p>.
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置Instance type.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _clusterType Instance type.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the underlying cluster type of the ckafka cluster instance.</p>.
+                     * @param _clusterType <P>Specifies the underlying cluster type of the ckafka cluster instance.</p>.
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -748,19 +700,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取Instance feature list.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Features Instance feature list.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<P>Specifies the instance feature list.</p>.
+                     * @return Features <P>Specifies the instance feature list.</p>.
                      * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
-                     * 设置Instance feature list.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _features Instance feature list.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<P>Specifies the instance feature list.</p>.
+                     * @param _features <P>Specifies the instance feature list.</p>.
                      * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
@@ -772,212 +720,226 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool FeaturesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Message retention size at the instance level</p><p>Measurement unit: byte</p><p>Default value: -1</p><p>Message retention size at the instance level</p>
+                     * @return RetentionBytes <p>Message retention size at the instance level</p><p>Measurement unit: byte</p><p>Default value: -1</p><p>Message retention size at the instance level</p>
+                     * 
+                     */
+                    int64_t GetRetentionBytes() const;
+
+                    /**
+                     * 设置<p>Message retention size at the instance level</p><p>Measurement unit: byte</p><p>Default value: -1</p><p>Message retention size at the instance level</p>
+                     * @param _retentionBytes <p>Message retention size at the instance level</p><p>Measurement unit: byte</p><p>Default value: -1</p><p>Message retention size at the instance level</p>
+                     * 
+                     */
+                    void SetRetentionBytes(const int64_t& _retentionBytes);
+
+                    /**
+                     * 判断参数 RetentionBytes 是否已赋值
+                     * @return RetentionBytes 是否已赋值
+                     * 
+                     */
+                    bool RetentionBytesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID
+                     * <p>ckafka cluster instance Id.</p>.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Instance name
+                     * <P>Specifies the name of the ckafka cluster instance.</p>.
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * Instance VIP information
+                     * <P>Specifies the vip information for accessing the instance.</p>.
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * Instance port information
+                     * <P>Specifies the port information to access the instance.</p>.
                      */
                     std::string m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * Virtual IP list
+                     * <p>Specifies the virtual IP list.</p>.
                      */
                     std::vector<VipEntity> m_vipList;
                     bool m_vipListHasBeenSet;
 
                     /**
-                     * Instance status. 0: creating, 1: running, 2: deleting, 5: isolated, -1: creation failed
+                     * <p>Instance status. 0: Creating, 1: Running, 2: Deleting, 3: Deleted, 5: Isolated, 7: Upgrading, -1: Creation failed</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Instance bandwidth in Mbps
+                     * <p>Specifies the instance bandwidth in Mbps.</p>.
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * Instance storage capacity in GB
+                     * <p>Specifies the disk size of the ckafka cluster instance, in gb.</p>.
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * AZ ID
+                     * <p>Specifies the available zone ID.</p>.
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * vpcId. If this parameter is empty, it means the basic network
+                     * <p>vpcId. if empty, indicates a basic network.</p>.
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * Subnet ID
+                     * <P>Subnet id.</p>.
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * Whether to renew the instance automatically, which is an int-type enumerated value. 1: yes, 2: no
+                     * <P>Specifies whether to renew the instance. int enumeration value: 1 means auto-renew, 2 means explicitly no auto-renew.</p>.
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * Instance status. An int-type value will be returned. `0`: Healthy, `1`: Alarmed, `2`: Exceptional
+                     * <p>Specifies the instance status. valid values: 1 (healthy), 2 (alarm), 3 (instance status exception).</p>.
                      */
                     int64_t m_healthy;
                     bool m_healthyHasBeenSet;
 
                     /**
-                     * Instance status information
+                     * <P>Specifies the instance status information.</p>.
                      */
                     std::string m_healthyMessage;
                     bool m_healthyMessageHasBeenSet;
 
                     /**
-                     * Instance creation time
+                     * <P>Specifies the instance creation time.</p>.
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Instance expiration time
+                     * <P>Specifies the instance expiration time.</p>.
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * Whether it is an internal customer. 1: yes
+                     * <P>Specifies whether it is an internal customer. a value of 1 indicates an internal customer.</p>.
                      */
                     int64_t m_isInternal;
                     bool m_isInternalHasBeenSet;
 
                     /**
-                     * Number of topics
+                     * <p>Specifies the number of topics.</p>.
                      */
                     int64_t m_topicNum;
                     bool m_topicNumHasBeenSet;
 
                     /**
-                     * Tag
+                     * <P>Specifies the identifier tag.</p>.
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * Kafka version information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>kafka version information.</p>.
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * Cross-AZ
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <P>Specifies the cross-availability zone.</p>.
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * CKafka sale type
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <P>Specifies the ckafka sales type.</p>.
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * CKafka instance type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * <P>Specifies the ckafka cluster instance type.</p>.
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * Disk type
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * <P>Specifies the disk type of the ckafka cluster instance.</p>.
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * Maximum number of topics for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * <p>Maximum number of topics for current specifications.</p>.
                      */
                     int64_t m_maxTopicNumber;
                     bool m_maxTopicNumberHasBeenSet;
 
                     /**
-                     * Maximum number of partitions for the current instance
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * <p>Specifies the maximum number of partitions for current specifications.</p>.
                      */
                     int64_t m_maxPartitionNumber;
                     bool m_maxPartitionNumberHasBeenSet;
 
                     /**
-                     * Time of scheduled upgrade
-Note: `null` may be returned for this field, indicating that no valid values can be obtained.
+                     * <P>Specifies the planned configuration upgrade time.</p>.
                      */
                     std::string m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
 
                     /**
-                     * Number of partitions in the current instance.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <P>Current number of partitions of the instance.</p>.
                      */
                     uint64_t m_partitionNumber;
                     bool m_partitionNumberHasBeenSet;
 
                     /**
-                     * Public network bandwidth type.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <P>Specifies the public network bandwidth type of the ckafka cluster instance.</p>.
                      */
                     std::string m_publicNetworkChargeType;
                     bool m_publicNetworkChargeTypeHasBeenSet;
 
                     /**
-                     * Public network bandwidth.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Specifies the public network bandwidth. value range: 3Mbps to 999Mbps. only supported in pro edition.</p>.
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * Instance type.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <P>Specifies the underlying cluster type of the ckafka cluster instance.</p>.
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * Instance feature list.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <P>Specifies the instance feature list.</p>.
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
+
+                    /**
+                     * <p>Message retention size at the instance level</p><p>Measurement unit: byte</p><p>Default value: -1</p><p>Message retention size at the instance level</p>
+                     */
+                    int64_t m_retentionBytes;
+                    bool m_retentionBytesHasBeenSet;
 
                 };
             }

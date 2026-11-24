@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output for media quality enhance task
+                * Output of the audio and video quality regeneration task
                 */
                 class QualityEnhanceTaskOutput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取File types such as mp4, flv, etc.
-                     * @return FileType File types such as mp4, flv, etc.
+                     * 获取File type, for example, mp4 or flv.
+                     * @return FileType File type, for example, mp4 or flv.
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置File types such as mp4, flv, etc.
-                     * @param _fileType File types such as mp4, flv, etc.
+                     * 设置File type, for example, mp4 or flv.
+                     * @param _fileType File type, for example, mp4 or flv.
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Output file name, up to 64 characters. By default, the generated file name is specified by the system.
-                     * @return MediaName Output file name, up to 64 characters. By default, the generated file name is specified by the system.
+                     * 获取Output filename, up to 64 characters. By default, the system generates the filename.
+                     * @return MediaName Output filename, up to 64 characters. By default, the system generates the filename.
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置Output file name, up to 64 characters. By default, the generated file name is specified by the system.
-                     * @param _mediaName Output file name, up to 64 characters. By default, the generated file name is specified by the system.
+                     * 设置Output filename, up to 64 characters. By default, the system generates the filename.
+                     * @param _mediaName Output filename, up to 64 characters. By default, the system generates the filename.
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -131,19 +131,19 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取Classification ID is used to classify media. You can create a classification through the [Create Classification](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) interface to obtain the classification ID. 
-<li>Default value: 0, indicating other categories. </li>
-                     * @return ClassId Classification ID is used to classify media. You can create a classification through the [Create Classification](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) interface to obtain the classification ID. 
-<li>Default value: 0, indicating other categories. </li>
+                     * 获取Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
+                     * @return ClassId Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置Classification ID is used to classify media. You can create a classification through the [Create Classification](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) interface to obtain the classification ID. 
-<li>Default value: 0, indicating other categories. </li>
-                     * @param _classId Classification ID is used to classify media. You can create a classification through the [Create Classification](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) interface to obtain the classification ID. 
-<li>Default value: 0, indicating other categories. </li>
+                     * 设置Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
+                     * @param _classId Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取The expiration time of the output file. The file will be deleted after this time. The default is permanent and not expired. The format is expressed in accordance with the ISO 8601 standard. For details, see [ISO Date Format Description](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return ExpireTime The expiration time of the output file. The file will be deleted after this time. The default is permanent and not expired. The format is expressed in accordance with the ISO 8601 standard. For details, see [ISO Date Format Description](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is according to the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return ExpireTime Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is according to the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置The expiration time of the output file. The file will be deleted after this time. The default is permanent and not expired. The format is expressed in accordance with the ISO 8601 standard. For details, see [ISO Date Format Description](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _expireTime The expiration time of the output file. The file will be deleted after this time. The default is permanent and not expired. The format is expressed in accordance with the ISO 8601 standard. For details, see [ISO Date Format Description](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is according to the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _expireTime Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is according to the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -179,7 +179,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * File types such as mp4, flv, etc.
+                     * File type, for example, mp4 or flv.
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
@@ -197,20 +197,20 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Output file name, up to 64 characters. By default, the generated file name is specified by the system.
+                     * Output filename, up to 64 characters. By default, the system generates the filename.
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * Classification ID is used to classify media. You can create a classification through the [Create Classification](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) interface to obtain the classification ID. 
-<li>Default value: 0, indicating other categories. </li>
+                     * Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * The expiration time of the output file. The file will be deleted after this time. The default is permanent and not expired. The format is expressed in accordance with the ISO 8601 standard. For details, see [ISO Date Format Description](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is according to the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

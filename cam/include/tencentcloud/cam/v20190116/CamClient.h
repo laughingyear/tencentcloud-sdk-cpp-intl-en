@@ -99,12 +99,16 @@
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DisableUserSSORequest.h>
 #include <tencentcloud/cam/v20190116/model/DisableUserSSOResponse.h>
+#include <tencentcloud/cam/v20190116/model/GenerateOIDCAccessTokenRequest.h>
+#include <tencentcloud/cam/v20190116/model/GenerateOIDCAccessTokenResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetAccountSummaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetPasswordRulesRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetPasswordRulesResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyVersionRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/cam/v20190116/model/GetUserAppIdResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListAccountsRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListAccountsResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesRequest.h>
@@ -171,6 +177,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePasswordRulesRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePasswordRulesResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h>
@@ -313,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableUserSSOResponse> DisableUserSSOOutcome;
                 typedef std::future<DisableUserSSOOutcome> DisableUserSSOOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DisableUserSSORequest&, DisableUserSSOOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableUserSSOAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateOIDCAccessTokenResponse> GenerateOIDCAccessTokenOutcome;
+                typedef std::future<GenerateOIDCAccessTokenOutcome> GenerateOIDCAccessTokenOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GenerateOIDCAccessTokenRequest&, GenerateOIDCAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateOIDCAccessTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAccountSummaryResponse> GetAccountSummaryOutcome;
                 typedef std::future<GetAccountSummaryOutcome> GetAccountSummaryOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetAccountSummaryRequest&, GetAccountSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountSummaryAsyncHandler;
@@ -322,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetGroupResponse> GetGroupOutcome;
                 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetGroupRequest&, GetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPasswordRulesResponse> GetPasswordRulesOutcome;
+                typedef std::future<GetPasswordRulesOutcome> GetPasswordRulesOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetPasswordRulesRequest&, GetPasswordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPasswordRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPolicyResponse> GetPolicyOutcome;
                 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetPolicyRequest&, GetPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPolicyAsyncHandler;
@@ -349,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAccessKeysResponse> ListAccessKeysOutcome;
                 typedef std::future<ListAccessKeysOutcome> ListAccessKeysOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAccessKeysRequest&, ListAccessKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccessKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAccountsResponse> ListAccountsOutcome;
+                typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListAccountsRequest&, ListAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesOutcome;
                 typedef std::future<ListAttachedGroupPoliciesOutcome> ListAttachedGroupPoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAttachedGroupPoliciesRequest&, ListAttachedGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttachedGroupPoliciesAsyncHandler;
@@ -421,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateOIDCConfigResponse> UpdateOIDCConfigOutcome;
                 typedef std::future<UpdateOIDCConfigOutcome> UpdateOIDCConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateOIDCConfigRequest&, UpdateOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOIDCConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePasswordRulesResponse> UpdatePasswordRulesOutcome;
+                typedef std::future<UpdatePasswordRulesOutcome> UpdatePasswordRulesOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdatePasswordRulesRequest&, UpdatePasswordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePasswordRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
                 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
@@ -789,6 +809,15 @@ Calling this API is a high-risk operation because the key cannot be recovered on
                 DisableUserSSOOutcomeCallable DisableUserSSOCallable(const Model::DisableUserSSORequest& request);
 
                 /**
+                 *Generate an OIDC access token. This feature is in grayscale stage. Contact Tencent Cloud if needed.
+                 * @param req GenerateOIDCAccessTokenRequest
+                 * @return GenerateOIDCAccessTokenOutcome
+                 */
+                GenerateOIDCAccessTokenOutcome GenerateOIDCAccessToken(const Model::GenerateOIDCAccessTokenRequest &request);
+                void GenerateOIDCAccessTokenAsync(const Model::GenerateOIDCAccessTokenRequest& request, const GenerateOIDCAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateOIDCAccessTokenOutcomeCallable GenerateOIDCAccessTokenCallable(const Model::GenerateOIDCAccessTokenRequest& request);
+
+                /**
                  *This API is used to query account summary. 
                  * @param req GetAccountSummaryRequest
                  * @return GetAccountSummaryOutcome
@@ -814,6 +843,15 @@ Calling this API is a high-risk operation because the key cannot be recovered on
                 GetGroupOutcome GetGroup(const Model::GetGroupRequest &request);
                 void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request);
+
+                /**
+                 *Obtaining CAM Console Password Rules
+                 * @param req GetPasswordRulesRequest
+                 * @return GetPasswordRulesOutcome
+                 */
+                GetPasswordRulesOutcome GetPasswordRules(const Model::GetPasswordRulesRequest &request);
+                void GetPasswordRulesAsync(const Model::GetPasswordRulesRequest& request, const GetPasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPasswordRulesOutcomeCallable GetPasswordRulesCallable(const Model::GetPasswordRulesRequest& request);
 
                 /**
                  *This API (GetPolicy) is used to query and view policy details.
@@ -895,6 +933,15 @@ Calling this API is a high-risk operation because the key cannot be recovered on
                 ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest &request);
                 void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAccessKeysOutcomeCallable ListAccessKeysCallable(const Model::ListAccessKeysRequest& request);
+
+                /**
+                 *Query all account lists.
+                 * @param req ListAccountsRequest
+                 * @return ListAccountsOutcome
+                 */
+                ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest &request);
+                void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAccountsOutcomeCallable ListAccountsCallable(const Model::ListAccountsRequest& request);
 
                 /**
                  *This API (ListAttachedGroupPolicies) is used to query the list of policies associated with a user group.
@@ -1111,6 +1158,15 @@ Calling this API is a high-risk operation because the key cannot be recovered on
                 UpdateOIDCConfigOutcome UpdateOIDCConfig(const Model::UpdateOIDCConfigRequest &request);
                 void UpdateOIDCConfigAsync(const Model::UpdateOIDCConfigRequest& request, const UpdateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateOIDCConfigOutcomeCallable UpdateOIDCConfigCallable(const Model::UpdateOIDCConfigRequest& request);
+
+                /**
+                 *Updating CAM Console Password Rules
+                 * @param req UpdatePasswordRulesRequest
+                 * @return UpdatePasswordRulesOutcome
+                 */
+                UpdatePasswordRulesOutcome UpdatePasswordRules(const Model::UpdatePasswordRulesRequest &request);
+                void UpdatePasswordRulesAsync(const Model::UpdatePasswordRulesRequest& request, const UpdatePasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePasswordRulesOutcomeCallable UpdatePasswordRulesCallable(const Model::UpdatePasswordRulesRequest& request);
 
                 /**
                  *This API is used to update a policy.

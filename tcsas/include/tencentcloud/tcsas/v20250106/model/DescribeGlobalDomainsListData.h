@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of global domain names
+                * Global domain list information.
                 */
                 class DescribeGlobalDomainsListData : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Domain ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DomainId Domain ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Domain ID.
+                     * @return DomainId Domain ID.
                      * 
                      */
                     int64_t GetDomainId() const;
 
                     /**
-                     * 设置Domain ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _domainId Domain ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Domain ID.
+                     * @param _domainId Domain ID.
                      * 
                      */
                     void SetDomainId(const int64_t& _domainId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取Domain name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DomainUrl Domain name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Domain name.
+                     * @return DomainUrl Domain name.
                      * 
                      */
                     std::string GetDomainUrl() const;
 
                     /**
-                     * 设置Domain name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _domainUrl Domain name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Domain name.
+                     * @param _domainUrl Domain name.
                      * 
                      */
                     void SetDomainUrl(const std::string& _domainUrl);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DomainUrlHasBeenSet() const;
 
                     /**
-                     * 获取Type. 1: Allowed; 2: Blocked
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DomainType Type. 1: Allowed; 2: Blocked
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Domain type. Valid value: 1: Allowed; 2: Blocked.
+                     * @return DomainType Domain type. Valid value: 1: Allowed; 2: Blocked.
                      * 
                      */
                     int64_t GetDomainType() const;
 
                     /**
-                     * 设置Type. 1: Allowed; 2: Blocked
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _domainType Type. 1: Allowed; 2: Blocked
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Domain type. Valid value: 1: Allowed; 2: Blocked.
+                     * @param _domainType Domain type. Valid value: 1: Allowed; 2: Blocked.
                      * 
                      */
                     void SetDomainType(const int64_t& _domainType);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DomainTypeHasBeenSet() const;
 
                     /**
-                     * 获取Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Creator.
+                     * @return CreateUser Creator.
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置Creator
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createUser Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Creator.
+                     * @param _createUser Creator.
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Creation time.
+                     * @return CreateTime Creation time.
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Creation time.
+                     * @param _createTime Creation time.
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Last modifier.
+                     * @return UpdateUser Last modifier.
                      * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
-                     * 设置Updater
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateUser Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Last modifier.
+                     * @param _updateUser Last modifier.
                      * 
                      */
                     void SetUpdateUser(const std::string& _updateUser);
@@ -197,19 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UpdateUserHasBeenSet() const;
 
                     /**
-                     * 获取Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UpdateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Last modified time.
+                     * @return UpdateTime Last modified time.
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Update time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _updateTime Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Last modified time.
+                     * @param _updateTime Last modified time.
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -224,50 +196,43 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Domain ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Domain ID.
                      */
                     int64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * Domain name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Domain name.
                      */
                     std::string m_domainUrl;
                     bool m_domainUrlHasBeenSet;
 
                     /**
-                     * Type. 1: Allowed; 2: Blocked
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Domain type. Valid value: 1: Allowed; 2: Blocked.
                      */
                     int64_t m_domainType;
                     bool m_domainTypeHasBeenSet;
 
                     /**
-                     * Creator
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Creator.
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Creation time.
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Updater
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Last modifier.
                      */
                     std::string m_updateUser;
                     bool m_updateUserHasBeenSet;
 
                     /**
-                     * Update time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Last modified time.
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

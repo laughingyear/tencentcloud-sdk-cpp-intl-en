@@ -30,7 +30,11 @@ ProxyGroupRwInfo::ProxyGroupRwInfo() :
     m_openRwHasBeenSet(false),
     m_rwTypeHasBeenSet(false),
     m_transSplitHasBeenSet(false),
-    m_accessModeHasBeenSet(false)
+    m_accessModeHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false),
+    m_loadBalanceModeHasBeenSet(false),
+    m_transAllSplitHasBeenSet(false)
 {
 }
 
@@ -149,6 +153,46 @@ CoreInternalOutcome ProxyGroupRwInfo::Deserialize(const rapidjson::Value &value)
         m_accessModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApNodeAsRoNode") && !value["ApNodeAsRoNode"].IsNull())
+    {
+        if (!value["ApNodeAsRoNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.ApNodeAsRoNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_apNodeAsRoNode = value["ApNodeAsRoNode"].GetBool();
+        m_apNodeAsRoNodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApQueryToOtherNode") && !value["ApQueryToOtherNode"].IsNull())
+    {
+        if (!value["ApQueryToOtherNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.ApQueryToOtherNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_apQueryToOtherNode = value["ApQueryToOtherNode"].GetBool();
+        m_apQueryToOtherNodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalanceMode") && !value["LoadBalanceMode"].IsNull())
+    {
+        if (!value["LoadBalanceMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.LoadBalanceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalanceMode = string(value["LoadBalanceMode"].GetString());
+        m_loadBalanceModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransAllSplit") && !value["TransAllSplit"].IsNull())
+    {
+        if (!value["TransAllSplit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.TransAllSplit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_transAllSplit = value["TransAllSplit"].GetBool();
+        m_transAllSplitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +285,38 @@ void ProxyGroupRwInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apNodeAsRoNode, allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apQueryToOtherNode, allocator);
+    }
+
+    if (m_loadBalanceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transAllSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransAllSplit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transAllSplit, allocator);
     }
 
 }
@@ -404,5 +480,69 @@ void ProxyGroupRwInfo::SetAccessMode(const string& _accessMode)
 bool ProxyGroupRwInfo::AccessModeHasBeenSet() const
 {
     return m_accessModeHasBeenSet;
+}
+
+bool ProxyGroupRwInfo::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void ProxyGroupRwInfo::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+bool ProxyGroupRwInfo::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void ProxyGroupRwInfo::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
+}
+
+string ProxyGroupRwInfo::GetLoadBalanceMode() const
+{
+    return m_loadBalanceMode;
+}
+
+void ProxyGroupRwInfo::SetLoadBalanceMode(const string& _loadBalanceMode)
+{
+    m_loadBalanceMode = _loadBalanceMode;
+    m_loadBalanceModeHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::LoadBalanceModeHasBeenSet() const
+{
+    return m_loadBalanceModeHasBeenSet;
+}
+
+bool ProxyGroupRwInfo::GetTransAllSplit() const
+{
+    return m_transAllSplit;
+}
+
+void ProxyGroupRwInfo::SetTransAllSplit(const bool& _transAllSplit)
+{
+    m_transAllSplit = _transAllSplit;
+    m_transAllSplitHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::TransAllSplitHasBeenSet() const
+{
+    return m_transAllSplitHasBeenSet;
 }
 

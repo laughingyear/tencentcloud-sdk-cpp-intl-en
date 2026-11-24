@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Passport ID
-                     * @return ID Passport ID
+                     * 获取Parsed passport ID extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return ID Parsed passport ID extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetID() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取Name
-                     * @return Name Name
+                     * 获取Parsed full name extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return Name Parsed full name extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Date of birth
-                     * @return DateOfBirth Date of birth
+                     * 获取Parsed date of birth extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return DateOfBirth Parsed date of birth extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetDateOfBirth() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
-                     * 获取Gender (F: female, M: male)
-                     * @return Sex Gender (F: female, M: male)
+                     * 获取Parsed gender extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return Sex Parsed gender extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetSex() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取Expiration date
-                     * @return DateOfExpiration Expiration date
+                     * 获取Parsed expiry date extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return DateOfExpiration Parsed expiry date extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetDateOfExpiration() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool DateOfExpirationHasBeenSet() const;
 
                     /**
-                     * 获取Issuing country
-                     * @return IssuingCountry Issuing country
+                     * 获取Parsed issuing country extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return IssuingCountry Parsed issuing country extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetIssuingCountry() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool IssuingCountryHasBeenSet() const;
 
                     /**
-                     * 获取Country/region code
-                     * @return Nationality Country/region code
+                     * 获取Parsed country-region code extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return Nationality Parsed country-region code extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetNationality() const;
@@ -143,28 +143,22 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取Alarm codes
--9102 Alarm for photocopy on a paper document (including black & white and color ones)
--9103 Alarm for photocopy on an electronic device
--9106 Alarm for covered card
-                     * @return Warn Alarm codes
--9102 Alarm for photocopy on a paper document (including black & white and color ones)
--9103 Alarm for photocopy on an electronic device
--9106 Alarm for covered card
-                     * 
+                     * 获取This field is deprecated and will always return an empty array. Usage is not recommended.
+                     * @return Warn This field is deprecated and will always return an empty array. Usage is not recommended.
+                     * @deprecated
                      */
                     std::vector<int64_t> GetWarn() const;
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WarnHasBeenSet() const;
 
                     /**
-                     * 获取Identity photo
-                     * @return Image Identity photo
+                     * 获取Base64-encoded identity photo
+                     * @return Image Base64-encoded identity photo
                      * 
                      */
                     std::string GetImage() const;
@@ -177,38 +171,22 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取Extended field:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
-                     * @return AdvancedInfo Extended field:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
-                     * 
+                     * 获取This field is deprecated and will always return "1". Usage is not recommended.
+                     * @return AdvancedInfo This field is deprecated and will always return "1". Usage is not recommended.
+                     * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取The first row of the machine-readable zone (MRZ) at the bottom
-                     * @return CodeSet The first row of the machine-readable zone (MRZ) at the bottom
+                     * 获取Parsed MRZ line 1 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return CodeSet Parsed MRZ line 1 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetCodeSet() const;
@@ -221,8 +199,8 @@ namespace TencentCloud
                     bool CodeSetHasBeenSet() const;
 
                     /**
-                     * 获取The second row of the MRZ at the bottom
-                     * @return CodeCrc The second row of the MRZ at the bottom
+                     * 获取Parsed MRZ line 2 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return CodeCrc Parsed MRZ line 2 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetCodeCrc() const;
@@ -235,10 +213,8 @@ namespace TencentCloud
                     bool CodeCrcHasBeenSet() const;
 
                     /**
-                     * 获取The surname.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Surname The surname.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Parsed surname extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return Surname Parsed surname extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetSurname() const;
@@ -251,10 +227,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SurnameHasBeenSet() const;
 
                     /**
-                     * 获取The given name.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return GivenName The given name.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Parsed given name extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return GivenName Parsed given name extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetGivenName() const;
@@ -267,8 +241,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool GivenNameHasBeenSet() const;
 
                     /**
-                     * 获取Type (in Machine Readable Zone)
-                     * @return Type Type (in Machine Readable Zone)
+                     * 获取Parsed document type extracted from the MRZ (Machine-Readable Zone) of passport
+                     * @return Type Parsed document type extracted from the MRZ (Machine-Readable Zone) of passport
                      * 
                      */
                     std::string GetType() const;
@@ -281,8 +255,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Document content in Information Zone
-                     * @return PassportRecognizeInfos Document content in Information Zone
+                     * 获取Document content in the visual zone
+                     * @return PassportRecognizeInfos Document content in the visual zone
                      * 
                      */
                     PassportRecognizeInfos GetPassportRecognizeInfos() const;
@@ -297,22 +271,22 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     /**
                      * 获取Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for PS certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate 
+-9109 This capability is not enabled. Please contact customer support to activate the alert service.
                      * @return WarnCardInfos Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for PS certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate 
+-9109 This capability is not enabled. Please contact customer support to activate the alert service.
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
@@ -324,113 +298,128 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool WarnCardInfosHasBeenSet() const;
 
+                    /**
+                     * 获取The number of cards detected in the input image.(Currently supported only in ap-bangkok region)
+                     * @return CardCount The number of cards detected in the input image.(Currently supported only in ap-bangkok region)
+                     * 
+                     */
+                    int64_t GetCardCount() const;
+
+                    /**
+                     * 判断参数 CardCount 是否已赋值
+                     * @return CardCount 是否已赋值
+                     * 
+                     */
+                    bool CardCountHasBeenSet() const;
+
+                    /**
+                     * 获取Whether the passport information is complete.
+                     * @return IsComplete Whether the passport information is complete.
+                     * 
+                     */
+                    bool GetIsComplete() const;
+
+                    /**
+                     * 判断参数 IsComplete 是否已赋值
+                     * @return IsComplete 是否已赋值
+                     * 
+                     */
+                    bool IsCompleteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Passport ID
+                     * Parsed passport ID extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * Name
+                     * Parsed full name extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Date of birth
+                     * Parsed date of birth extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_dateOfBirth;
                     bool m_dateOfBirthHasBeenSet;
 
                     /**
-                     * Gender (F: female, M: male)
+                     * Parsed gender extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * Expiration date
+                     * Parsed expiry date extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_dateOfExpiration;
                     bool m_dateOfExpirationHasBeenSet;
 
                     /**
-                     * Issuing country
+                     * Parsed issuing country extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_issuingCountry;
                     bool m_issuingCountryHasBeenSet;
 
                     /**
-                     * Country/region code
+                     * Parsed country-region code extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * Alarm codes
--9102 Alarm for photocopy on a paper document (including black & white and color ones)
--9103 Alarm for photocopy on an electronic device
--9106 Alarm for covered card
+                     * This field is deprecated and will always return an empty array. Usage is not recommended.
                      */
                     std::vector<int64_t> m_warn;
                     bool m_warnHasBeenSet;
 
                     /**
-                     * Identity photo
+                     * Base64-encoded identity photo
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * Extended field:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
+                     * This field is deprecated and will always return "1". Usage is not recommended.
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * The first row of the machine-readable zone (MRZ) at the bottom
+                     * Parsed MRZ line 1 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_codeSet;
                     bool m_codeSetHasBeenSet;
 
                     /**
-                     * The second row of the MRZ at the bottom
+                     * Parsed MRZ line 2 raw sequence extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_codeCrc;
                     bool m_codeCrcHasBeenSet;
 
                     /**
-                     * The surname.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Parsed surname extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_surname;
                     bool m_surnameHasBeenSet;
 
                     /**
-                     * The given name.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Parsed given name extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_givenName;
                     bool m_givenNameHasBeenSet;
 
                     /**
-                     * Type (in Machine Readable Zone)
+                     * Parsed document type extracted from the MRZ (Machine-Readable Zone) of passport
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Document content in Information Zone
+                     * Document content in the visual zone
                      */
                     PassportRecognizeInfos m_passportRecognizeInfos;
                     bool m_passportRecognizeInfosHasBeenSet;
@@ -438,16 +427,28 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     /**
                      * Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for PS certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate 
+-9109 This capability is not enabled. Please contact customer support to activate the alert service.
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * The number of cards detected in the input image.(Currently supported only in ap-bangkok region)
+                     */
+                    int64_t m_cardCount;
+                    bool m_cardCountHasBeenSet;
+
+                    /**
+                     * Whether the passport information is complete.
+                     */
+                    bool m_isComplete;
+                    bool m_isCompleteHasBeenSet;
 
                 };
             }

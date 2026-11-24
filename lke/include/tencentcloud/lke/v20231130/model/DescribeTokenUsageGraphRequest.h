@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UinAccountHasBeenSet() const;
 
                     /**
-                     * 获取Sub-business types of Tencent Cloud Agent Development Platform/TCADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
-                     * @return SubBizType Sub-business types of Tencent Cloud Agent Development Platform/TCADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * 获取Sub-business types of Tencent Cloud Agent Development Platform/ADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * @return SubBizType Sub-business types of Tencent Cloud Agent Development Platform/ADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      * 
                      */
                     std::string GetSubBizType() const;
 
                     /**
-                     * 设置Sub-business types of Tencent Cloud Agent Development Platform/TCADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
-                     * @param _subBizType Sub-business types of Tencent Cloud Agent Development Platform/TCADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * 设置Sub-business types of Tencent Cloud Agent Development Platform/ADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * @param _subBizType Sub-business types of Tencent Cloud Agent Development Platform/ADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      * 
                      */
                     void SetSubBizType(const std::string& _subBizType);
@@ -108,42 +108,42 @@ namespace TencentCloud
                     /**
                      * 获取Start timestamp, in seconds.
                      * @return StartTime Start timestamp, in seconds.
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置Start timestamp, in seconds.
                      * @param _startTime Start timestamp, in seconds.
-                     * 
+                     * @deprecated
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取End timestamp, in seconds.
                      * @return EndTime End timestamp, in seconds.
-                     * 
+                     * @deprecated
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置End timestamp, in seconds.
                      * @param _endTime End timestamp, in seconds.
-                     * 
+                     * @deprecated
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool AppBizIdsHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return AppType 
+                     * 
+                     */
+                    std::string GetAppType() const;
+
+                    /**
+                     * 设置
+                     * @param _appType 
+                     * 
+                     */
+                    void SetAppType(const std::string& _appType);
+
+                    /**
+                     * 判断参数 AppType 是否已赋值
+                     * @return AppType 是否已赋值
+                     * 
+                     */
+                    bool AppTypeHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return SubScenes 
+                     * 
+                     */
+                    std::vector<std::string> GetSubScenes() const;
+
+                    /**
+                     * 设置
+                     * @param _subScenes 
+                     * 
+                     */
+                    void SetSubScenes(const std::vector<std::string>& _subScenes);
+
+                    /**
+                     * 判断参数 SubScenes 是否已赋值
+                     * @return SubScenes 是否已赋值
+                     * 
+                     */
+                    bool SubScenesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,7 +219,7 @@ namespace TencentCloud
                     bool m_uinAccountHasBeenSet;
 
                     /**
-                     * Sub-business types of Tencent Cloud Agent Development Platform/TCADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
+                     * Sub-business types of Tencent Cloud Agent Development Platform/ADP: fileparse (document parsing), Embedding, Rewrite (multi-round rewriting), Concurrency, KnowledgeSummary (knowledge summary), KnowledgeQA (knowledge Q&A), KnowledgeCapacity (knowledge base capacity), SearchEngine (search engine).
                      */
                     std::string m_subBizType;
                     bool m_subBizTypeHasBeenSet;
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_appBizIds;
                     bool m_appBizIdsHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_appType;
+                    bool m_appTypeHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::vector<std::string> m_subScenes;
+                    bool m_subScenesHasBeenSet;
 
                 };
             }

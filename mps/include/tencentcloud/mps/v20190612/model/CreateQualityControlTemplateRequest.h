@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/QualityControlItemConfig.h>
+#include <tencentcloud/mps/v20190612/model/QualityControlStrategy.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,52 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取Recording file format. Valid values:
+<li>PNG: PNG image.</li>
+                     * @return RecordFormat Recording file format. Valid values:
+<li>PNG: PNG image.</li>
+                     * 
+                     */
+                    std::string GetRecordFormat() const;
+
+                    /**
+                     * 设置Recording file format. Valid values:
+<li>PNG: PNG image.</li>
+                     * @param _recordFormat Recording file format. Valid values:
+<li>PNG: PNG image.</li>
+                     * 
+                     */
+                    void SetRecordFormat(const std::string& _recordFormat);
+
+                    /**
+                     * 判断参数 RecordFormat 是否已赋值
+                     * @return RecordFormat 是否已赋值
+                     * 
+                     */
+                    bool RecordFormatHasBeenSet() const;
+
+                    /**
+                     * 获取Spot check policy for media quality inspection.
+                     * @return Strategy Spot check policy for media quality inspection.
+                     * 
+                     */
+                    QualityControlStrategy GetStrategy() const;
+
+                    /**
+                     * 设置Spot check policy for media quality inspection.
+                     * @param _strategy Spot check policy for media quality inspection.
+                     * 
+                     */
+                    void SetStrategy(const QualityControlStrategy& _strategy);
+
+                    /**
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
+                     * 
+                     */
+                    bool StrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +172,19 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * Recording file format. Valid values:
+<li>PNG: PNG image.</li>
+                     */
+                    std::string m_recordFormat;
+                    bool m_recordFormatHasBeenSet;
+
+                    /**
+                     * Spot check policy for media quality inspection.
+                     */
+                    QualityControlStrategy m_strategy;
+                    bool m_strategyHasBeenSet;
 
                 };
             }

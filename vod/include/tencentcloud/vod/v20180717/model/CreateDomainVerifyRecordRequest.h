@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Need to access the VOD acceleration domain name.
-                     * @return Domain Need to access the VOD acceleration domain name.
+                     * 获取Domain name for on-demand acceleration.
+                     * @return Domain Domain name for on-demand acceleration.
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置Need to access the VOD acceleration domain name.
-                     * @param _domain Need to access the VOD acceleration domain name.
+                     * 设置Domain name for on-demand acceleration.
+                     * @param _domain Domain name for on-demand acceleration.
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2024, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2024, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>ID of the on-demand [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate on-demand services after December 25, 2024, this field must be set to the app ID when accessing resources in on-demand applications, whether in the default application or a newly created application.</b>	
+                     * @return SubAppId <b>ID of the on-demand [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate on-demand services after December 25, 2024, this field must be set to the app ID when accessing resources in on-demand applications, whether in the default application or a newly created application.</b>	
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2024, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2024, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>ID of the on-demand [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate on-demand services after December 25, 2024, this field must be set to the app ID when accessing resources in on-demand applications, whether in the default application or a newly created application.</b>	
+                     * @param _subAppId <b>ID of the on-demand [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate on-demand services after December 25, 2024, this field must be set to the app ID when accessing resources in on-demand applications, whether in the default application or a newly created application.</b>	
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Need to access the VOD acceleration domain name.
+                     * Domain name for on-demand acceleration.
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2024, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>ID of the on-demand [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1). For customers who activate on-demand services after December 25, 2024, this field must be set to the app ID when accessing resources in on-demand applications, whether in the default application or a newly created application.</b>	
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

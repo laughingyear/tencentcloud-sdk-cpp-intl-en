@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Audio encoding format, only `AAC` and `PASSTHROUGH` are available, with `AAC` as the default.
-                     * @return Acodec Audio encoding format, only `AAC` and `PASSTHROUGH` are available, with `AAC` as the default.
+                     * 获取Audio encoding format, can only be `AAC` or `PASSTHROUGH`. Default is AAC.
+                     * @return Acodec Audio encoding format, can only be `AAC` or `PASSTHROUGH`. Default is AAC.
                      * 
                      */
                     std::string GetAcodec() const;
 
                     /**
-                     * 设置Audio encoding format, only `AAC` and `PASSTHROUGH` are available, with `AAC` as the default.
-                     * @param _acodec Audio encoding format, only `AAC` and `PASSTHROUGH` are available, with `AAC` as the default.
+                     * 设置Audio encoding format, can only be `AAC` or `PASSTHROUGH`. Default is AAC.
+                     * @param _acodec Audio encoding format, can only be `AAC` or `PASSTHROUGH`. Default is AAC.
                      * 
                      */
                     void SetAcodec(const std::string& _acodec);
@@ -137,15 +137,15 @@ Valid values: 6000, 7000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000,
                     bool AudioBitrateHasBeenSet() const;
 
                     /**
-                     * 获取Audio language code, whose length is always 3 characters.
-                     * @return LanguageCode Audio language code, whose length is always 3 characters.
+                     * 获取Audio language Code, length 2-20.
+                     * @return LanguageCode Audio language Code, length 2-20.
                      * 
                      */
                     std::string GetLanguageCode() const;
 
                     /**
-                     * 设置Audio language code, whose length is always 3 characters.
-                     * @param _languageCode Audio language code, whose length is always 3 characters.
+                     * 设置Audio language Code, length 2-20.
+                     * @param _languageCode Audio language Code, length 2-20.
                      * 
                      */
                     void SetLanguageCode(const std::string& _languageCode);
@@ -220,6 +220,27 @@ Valid values: 6000, 7000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000,
                      */
                     bool AudioCodecDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取Audio language description, maximum length 100
+                     * @return LanguageDescription Audio language description, maximum length 100
+                     * 
+                     */
+                    std::string GetLanguageDescription() const;
+
+                    /**
+                     * 设置Audio language description, maximum length 100
+                     * @param _languageDescription Audio language description, maximum length 100
+                     * 
+                     */
+                    void SetLanguageDescription(const std::string& _languageDescription);
+
+                    /**
+                     * 判断参数 LanguageDescription 是否已赋值
+                     * @return LanguageDescription 是否已赋值
+                     * 
+                     */
+                    bool LanguageDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,7 +256,7 @@ Valid values: 6000, 7000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000,
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Audio encoding format, only `AAC` and `PASSTHROUGH` are available, with `AAC` as the default.
+                     * Audio encoding format, can only be `AAC` or `PASSTHROUGH`. Default is AAC.
                      */
                     std::string m_acodec;
                     bool m_acodecHasBeenSet;
@@ -248,7 +269,7 @@ Valid values: 6000, 7000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000,
                     bool m_audioBitrateHasBeenSet;
 
                     /**
-                     * Audio language code, whose length is always 3 characters.
+                     * Audio language Code, length 2-20.
                      */
                     std::string m_languageCode;
                     bool m_languageCodeHasBeenSet;
@@ -270,6 +291,12 @@ Valid values: 6000, 7000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000,
                      */
                     AudioCodecDetail m_audioCodecDetails;
                     bool m_audioCodecDetailsHasBeenSet;
+
+                    /**
+                     * Audio language description, maximum length 100
+                     */
+                    std::string m_languageDescription;
+                    bool m_languageDescriptionHasBeenSet;
 
                 };
             }

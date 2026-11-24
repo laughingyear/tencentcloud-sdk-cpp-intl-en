@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取Platform ID.
+                     * @return PlatformId Platform ID.
+                     * 
+                     */
+                    std::string GetPlatformId() const;
+
+                    /**
+                     * 设置Platform ID.
+                     * @param _platformId Platform ID.
+                     * 
+                     */
+                    void SetPlatformId(const std::string& _platformId);
+
+                    /**
+                     * 判断参数 PlatformId 是否已赋值
+                     * @return PlatformId 是否已赋值
+                     * 
+                     */
+                    bool PlatformIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * Platform ID.
+                     */
+                    std::string m_platformId;
+                    bool m_platformIdHasBeenSet;
 
                 };
             }

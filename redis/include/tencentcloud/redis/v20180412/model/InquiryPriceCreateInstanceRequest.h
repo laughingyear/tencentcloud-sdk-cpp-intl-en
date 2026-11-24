@@ -43,51 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance type.
-- 2: Redis 2.8 Memory Edition (standard architecture).
-- 6: Redis 4.0 Memory Edition (standard architecture).
-- 7: Redis 4.0 Memory Edition (cluster architecture).
-- 8: Redis 5.0 Memory Edition (standard architecture).
-- 9: Redis 5.0 Memory Edition (cluster architecture).
-- 15: Redis 6.2 Memory Edition (standard architecture).
-- 16: Redis 6.2 Memory Edition (cluster architecture).
-- 17: Redis 7.0 Memory Edition (standard architecture).
-- 18: Redis 7.0 Memory Edition (cluster architecture).
-                     * @return TypeId Instance type.
-- 2: Redis 2.8 Memory Edition (standard architecture).
-- 6: Redis 4.0 Memory Edition (standard architecture).
-- 7: Redis 4.0 Memory Edition (cluster architecture).
-- 8: Redis 5.0 Memory Edition (standard architecture).
-- 9: Redis 5.0 Memory Edition (cluster architecture).
-- 15: Redis 6.2 Memory Edition (standard architecture).
-- 16: Redis 6.2 Memory Edition (cluster architecture).
-- 17: Redis 7.0 Memory Edition (standard architecture).
-- 18: Redis 7.0 Memory Edition (cluster architecture).
+                     * 获取<p>Instance type. - 2: Redis 2.8 memory edition (standard architecture). - 6: Redis 4.0 memory edition (standard architecture). - 7: Redis 4.0 memory edition (cluster architecture). - 8: Redis 5.0 memory edition (standard architecture). - 9: Redis 5.0 memory edition (cluster architecture). - 15: Redis 6.2 memory edition (standard architecture). - 16: Redis 6.2 memory edition (cluster architecture). - 17: Redis 7.0 memory edition (standard architecture). - 18: Redis 7.0 memory edition (cluster architecture). - 200: Memcached 1.6 memory edition (cluster architecture).</p>
+                     * @return TypeId <p>Instance type. - 2: Redis 2.8 memory edition (standard architecture). - 6: Redis 4.0 memory edition (standard architecture). - 7: Redis 4.0 memory edition (cluster architecture). - 8: Redis 5.0 memory edition (standard architecture). - 9: Redis 5.0 memory edition (cluster architecture). - 15: Redis 6.2 memory edition (standard architecture). - 16: Redis 6.2 memory edition (cluster architecture). - 17: Redis 7.0 memory edition (standard architecture). - 18: Redis 7.0 memory edition (cluster architecture). - 200: Memcached 1.6 memory edition (cluster architecture).</p>
                      * 
                      */
                     uint64_t GetTypeId() const;
 
                     /**
-                     * 设置Instance type.
-- 2: Redis 2.8 Memory Edition (standard architecture).
-- 6: Redis 4.0 Memory Edition (standard architecture).
-- 7: Redis 4.0 Memory Edition (cluster architecture).
-- 8: Redis 5.0 Memory Edition (standard architecture).
-- 9: Redis 5.0 Memory Edition (cluster architecture).
-- 15: Redis 6.2 Memory Edition (standard architecture).
-- 16: Redis 6.2 Memory Edition (cluster architecture).
-- 17: Redis 7.0 Memory Edition (standard architecture).
-- 18: Redis 7.0 Memory Edition (cluster architecture).
-                     * @param _typeId Instance type.
-- 2: Redis 2.8 Memory Edition (standard architecture).
-- 6: Redis 4.0 Memory Edition (standard architecture).
-- 7: Redis 4.0 Memory Edition (cluster architecture).
-- 8: Redis 5.0 Memory Edition (standard architecture).
-- 9: Redis 5.0 Memory Edition (cluster architecture).
-- 15: Redis 6.2 Memory Edition (standard architecture).
-- 16: Redis 6.2 Memory Edition (cluster architecture).
-- 17: Redis 7.0 Memory Edition (standard architecture).
-- 18: Redis 7.0 Memory Edition (cluster architecture).
+                     * 设置<p>Instance type. - 2: Redis 2.8 memory edition (standard architecture). - 6: Redis 4.0 memory edition (standard architecture). - 7: Redis 4.0 memory edition (cluster architecture). - 8: Redis 5.0 memory edition (standard architecture). - 9: Redis 5.0 memory edition (cluster architecture). - 15: Redis 6.2 memory edition (standard architecture). - 16: Redis 6.2 memory edition (cluster architecture). - 17: Redis 7.0 memory edition (standard architecture). - 18: Redis 7.0 memory edition (cluster architecture). - 200: Memcached 1.6 memory edition (cluster architecture).</p>
+                     * @param _typeId <p>Instance type. - 2: Redis 2.8 memory edition (standard architecture). - 6: Redis 4.0 memory edition (standard architecture). - 7: Redis 4.0 memory edition (cluster architecture). - 8: Redis 5.0 memory edition (standard architecture). - 9: Redis 5.0 memory edition (cluster architecture). - 15: Redis 6.2 memory edition (standard architecture). - 16: Redis 6.2 memory edition (cluster architecture). - 17: Redis 7.0 memory edition (standard architecture). - 18: Redis 7.0 memory edition (cluster architecture). - 200: Memcached 1.6 memory edition (cluster architecture).</p>
                      * 
                      */
                     void SetTypeId(const uint64_t& _typeId);
@@ -100,19 +64,15 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取Memory capacity in MB, which must be a multiple of 1,024. It is subject to the purchasable specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-If `TypeId` indicates the standard architecture, `MemSize` indicates the total memory capacity of an instance; if `TypeId` indicates the cluster architecture, `MemSize` indicates the memory capacity per shard.
-                     * @return MemSize Memory capacity in MB, which must be a multiple of 1,024. It is subject to the purchasable specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-If `TypeId` indicates the standard architecture, `MemSize` indicates the total memory capacity of an instance; if `TypeId` indicates the cluster architecture, `MemSize` indicates the memory capacity per shard.
+                     * 获取<p>Memory capacity, measured in MB. The value must be a multiple of 1024. The specific specifications are subject to those returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">Query Product Sales Specifications</a>. When TypeId is standard architecture, MemSize is the total memory capacity of the instance; when TypeId is cluster architecture, MemSize is the memory capacity of a single shard.</p>
+                     * @return MemSize <p>Memory capacity, measured in MB. The value must be a multiple of 1024. The specific specifications are subject to those returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">Query Product Sales Specifications</a>. When TypeId is standard architecture, MemSize is the total memory capacity of the instance; when TypeId is cluster architecture, MemSize is the memory capacity of a single shard.</p>
                      * 
                      */
                     uint64_t GetMemSize() const;
 
                     /**
-                     * 设置Memory capacity in MB, which must be a multiple of 1,024. It is subject to the purchasable specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-If `TypeId` indicates the standard architecture, `MemSize` indicates the total memory capacity of an instance; if `TypeId` indicates the cluster architecture, `MemSize` indicates the memory capacity per shard.
-                     * @param _memSize Memory capacity in MB, which must be a multiple of 1,024. It is subject to the purchasable specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-If `TypeId` indicates the standard architecture, `MemSize` indicates the total memory capacity of an instance; if `TypeId` indicates the cluster architecture, `MemSize` indicates the memory capacity per shard.
+                     * 设置<p>Memory capacity, measured in MB. The value must be a multiple of 1024. The specific specifications are subject to those returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">Query Product Sales Specifications</a>. When TypeId is standard architecture, MemSize is the total memory capacity of the instance; when TypeId is cluster architecture, MemSize is the memory capacity of a single shard.</p>
+                     * @param _memSize <p>Memory capacity, measured in MB. The value must be a multiple of 1024. The specific specifications are subject to those returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">Query Product Sales Specifications</a>. When TypeId is standard architecture, MemSize is the total memory capacity of the instance; when TypeId is cluster architecture, MemSize is the memory capacity of a single shard.</p>
                      * 
                      */
                     void SetMemSize(const uint64_t& _memSize);
@@ -125,15 +85,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取Number of instances. The actual quantity purchasable at a time is subject to the specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-                     * @return GoodsNum Number of instances. The actual quantity purchasable at a time is subject to the specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
+                     * 获取<p>Instance count. The number of instances to purchase at a time is subject to the specifications returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">query product sales specifications</a>.</p>
+                     * @return GoodsNum <p>Instance count. The number of instances to purchase at a time is subject to the specifications returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">query product sales specifications</a>.</p>
                      * 
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
-                     * 设置Number of instances. The actual quantity purchasable at a time is subject to the specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-                     * @param _goodsNum Number of instances. The actual quantity purchasable at a time is subject to the specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
+                     * 设置<p>Instance count. The number of instances to purchase at a time is subject to the specifications returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">query product sales specifications</a>.</p>
+                     * @param _goodsNum <p>Instance count. The number of instances to purchase at a time is subject to the specifications returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">query product sales specifications</a>.</p>
                      * 
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
@@ -146,15 +106,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取Length of purchase in months, which is required when creating a monthly-subscribed instance. Value range: [1,2,3,4,5,6,7,8,9,10,11,12,24,36]. For pay-as-you-go instances, set the parameter to `1`.
-                     * @return Period Length of purchase in months, which is required when creating a monthly-subscribed instance. Value range: [1,2,3,4,5,6,7,8,9,10,11,12,24,36]. For pay-as-you-go instances, set the parameter to `1`.
+                     * 获取<p>Purchase period needs to be filled in when creating an annual and monthly subscription instance. For pay-as-you-go instances, just fill in 1. Unit: month. Value ranges from 1 to 36 [1,2,3,4,5,6,7,8,9,10,11,12,24,36].</p>
+                     * @return Period <p>Purchase period needs to be filled in when creating an annual and monthly subscription instance. For pay-as-you-go instances, just fill in 1. Unit: month. Value ranges from 1 to 36 [1,2,3,4,5,6,7,8,9,10,11,12,24,36].</p>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置Length of purchase in months, which is required when creating a monthly-subscribed instance. Value range: [1,2,3,4,5,6,7,8,9,10,11,12,24,36]. For pay-as-you-go instances, set the parameter to `1`.
-                     * @param _period Length of purchase in months, which is required when creating a monthly-subscribed instance. Value range: [1,2,3,4,5,6,7,8,9,10,11,12,24,36]. For pay-as-you-go instances, set the parameter to `1`.
+                     * 设置<p>Purchase period needs to be filled in when creating an annual and monthly subscription instance. For pay-as-you-go instances, just fill in 1. Unit: month. Value ranges from 1 to 36 [1,2,3,4,5,6,7,8,9,10,11,12,24,36].</p>
+                     * @param _period <p>Purchase period needs to be filled in when creating an annual and monthly subscription instance. For pay-as-you-go instances, just fill in 1. Unit: month. Value ranges from 1 to 36 [1,2,3,4,5,6,7,8,9,10,11,12,24,36].</p>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -167,23 +127,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取Billing mode.
-- 0: pay-as-you-go.
-- 1: monthly subscription.
-                     * @return BillingMode Billing mode.
-- 0: pay-as-you-go.
-- 1: monthly subscription.
+                     * 获取<p>Payment method. - 0: Pay-As-You-Go. - 1: Monthly Subscription.</p>
+                     * @return BillingMode <p>Payment method. - 0: Pay-As-You-Go. - 1: Monthly Subscription.</p>
                      * 
                      */
                     int64_t GetBillingMode() const;
 
                     /**
-                     * 设置Billing mode.
-- 0: pay-as-you-go.
-- 1: monthly subscription.
-                     * @param _billingMode Billing mode.
-- 0: pay-as-you-go.
-- 1: monthly subscription.
+                     * 设置<p>Payment method. - 0: Pay-As-You-Go. - 1: Monthly Subscription.</p>
+                     * @param _billingMode <p>Payment method. - 0: Pay-As-You-Go. - 1: Monthly Subscription.</p>
                      * 
                      */
                     void SetBillingMode(const int64_t& _billingMode);
@@ -196,15 +148,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取ID of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
-                     * @return ZoneId ID of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * 获取<p>ID of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
+                     * @return ZoneId <p>ID of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置ID of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
-                     * @param _zoneId ID of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * 设置<p>ID of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
+                     * @param _zoneId <p>ID of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -217,15 +169,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Number of instance shards. For the standard architecture of 2.8, the number of shards does not need to be configured. For the standard architecture of other versions, the number of shards should be set to 1. For the cluster architecture, the number of shards to be purchased needs to be specified.
-                     * @return RedisShardNum Number of instance shards. For the standard architecture of 2.8, the number of shards does not need to be configured. For the standard architecture of other versions, the number of shards should be set to 1. For the cluster architecture, the number of shards to be purchased needs to be specified.
+                     * 获取<p>Number of instance shards. - The shard number should be set to 1 for the standard architecture. - The number of shards can be set to 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, or 128 for the cluster architecture.</p>
+                     * @return RedisShardNum <p>Number of instance shards. - The shard number should be set to 1 for the standard architecture. - The number of shards can be set to 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, or 128 for the cluster architecture.</p>
                      * 
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置Number of instance shards. For the standard architecture of 2.8, the number of shards does not need to be configured. For the standard architecture of other versions, the number of shards should be set to 1. For the cluster architecture, the number of shards to be purchased needs to be specified.
-                     * @param _redisShardNum Number of instance shards. For the standard architecture of 2.8, the number of shards does not need to be configured. For the standard architecture of other versions, the number of shards should be set to 1. For the cluster architecture, the number of shards to be purchased needs to be specified.
+                     * 设置<p>Number of instance shards. - The shard number should be set to 1 for the standard architecture. - The number of shards can be set to 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, or 128 for the cluster architecture.</p>
+                     * @param _redisShardNum <p>Number of instance shards. - The shard number should be set to 1 for the standard architecture. - The number of shards can be set to 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, or 128 for the cluster architecture.</p>
                      * 
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
@@ -238,15 +190,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取Number of instance replicas. For the standard architecture of 2.8, the number of replicas does not need to be configured.
-                     * @return RedisReplicasNum Number of instance replicas. For the standard architecture of 2.8, the number of replicas does not need to be configured.
+                     * 获取<p>Number of instance replicas. Valid values: 1, 2, 3, 4, and 5.</p>
+                     * @return RedisReplicasNum <p>Number of instance replicas. Valid values: 1, 2, 3, 4, and 5.</p>
                      * 
                      */
                     int64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置Number of instance replicas. For the standard architecture of 2.8, the number of replicas does not need to be configured.
-                     * @param _redisReplicasNum Number of instance replicas. For the standard architecture of 2.8, the number of replicas does not need to be configured.
+                     * 设置<p>Number of instance replicas. Valid values: 1, 2, 3, 4, and 5.</p>
+                     * @param _redisReplicasNum <p>Number of instance replicas. Valid values: 1, 2, 3, 4, and 5.</p>
                      * 
                      */
                     void SetRedisReplicasNum(const int64_t& _redisReplicasNum);
@@ -259,23 +211,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取Whether replica read-only is supported. For the standard architecture of Redis 2.8 and CKV, this parameter does not need to be configured.
-- true: Replica read-only is not required.
-- false: Replica read-only is required.
-                     * @return ReplicasReadonly Whether replica read-only is supported. For the standard architecture of Redis 2.8 and CKV, this parameter does not need to be configured.
-- true: Replica read-only is not required.
-- false: Replica read-only is required.
+                     * 获取<p>Whether replica read-only is supported. For Redis 2.8 standard architecture and CKV standard architecture, this parameter is not required. - true: replica read-only not required. - false: read-only replica supported.</p>
+                     * @return ReplicasReadonly <p>Whether replica read-only is supported. For Redis 2.8 standard architecture and CKV standard architecture, this parameter is not required. - true: replica read-only not required. - false: read-only replica supported.</p>
                      * 
                      */
                     bool GetReplicasReadonly() const;
 
                     /**
-                     * 设置Whether replica read-only is supported. For the standard architecture of Redis 2.8 and CKV, this parameter does not need to be configured.
-- true: Replica read-only is not required.
-- false: Replica read-only is required.
-                     * @param _replicasReadonly Whether replica read-only is supported. For the standard architecture of Redis 2.8 and CKV, this parameter does not need to be configured.
-- true: Replica read-only is not required.
-- false: Replica read-only is required.
+                     * 设置<p>Whether replica read-only is supported. For Redis 2.8 standard architecture and CKV standard architecture, this parameter is not required. - true: replica read-only not required. - false: read-only replica supported.</p>
+                     * @param _replicasReadonly <p>Whether replica read-only is supported. For Redis 2.8 standard architecture and CKV standard architecture, this parameter is not required. - true: replica read-only not required. - false: read-only replica supported.</p>
                      * 
                      */
                     void SetReplicasReadonly(const bool& _replicasReadonly);
@@ -288,15 +232,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool ReplicasReadonlyHasBeenSet() const;
 
                     /**
-                     * 获取Name of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
-                     * @return ZoneName Name of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * 获取<p>Name of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
+                     * @return ZoneName <p>Name of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置Name of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
-                     * @param _zoneName Name of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * 设置<p>Name of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
+                     * @param _zoneName <p>Name of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -309,27 +253,15 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取Deployment mode.
-- local: local disk. This is the default value.
-- cloud: cloud disk.
-- cdc: CDC.
-                     * @return ProductVersion Deployment mode.
-- local: local disk. This is the default value.
-- cloud: cloud disk.
-- cdc: CDC.
+                     * 获取<p>Deployment method. - local: local disk, defaults to local. - cloud: cloud disk. - cdc: dedicated cluster edition.</p>
+                     * @return ProductVersion <p>Deployment method. - local: local disk, defaults to local. - cloud: cloud disk. - cdc: dedicated cluster edition.</p>
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置Deployment mode.
-- local: local disk. This is the default value.
-- cloud: cloud disk.
-- cdc: CDC.
-                     * @param _productVersion Deployment mode.
-- local: local disk. This is the default value.
-- cloud: cloud disk.
-- cdc: CDC.
+                     * 设置<p>Deployment method. - local: local disk, defaults to local. - cloud: cloud disk. - cdc: dedicated cluster edition.</p>
+                     * @param _productVersion <p>Deployment method. - local: local disk, defaults to local. - cloud: cloud disk. - cdc: dedicated cluster edition.</p>
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -344,84 +276,67 @@ If `TypeId` indicates the standard architecture, `MemSize` indicates the total m
                 private:
 
                     /**
-                     * Instance type.
-- 2: Redis 2.8 Memory Edition (standard architecture).
-- 6: Redis 4.0 Memory Edition (standard architecture).
-- 7: Redis 4.0 Memory Edition (cluster architecture).
-- 8: Redis 5.0 Memory Edition (standard architecture).
-- 9: Redis 5.0 Memory Edition (cluster architecture).
-- 15: Redis 6.2 Memory Edition (standard architecture).
-- 16: Redis 6.2 Memory Edition (cluster architecture).
-- 17: Redis 7.0 Memory Edition (standard architecture).
-- 18: Redis 7.0 Memory Edition (cluster architecture).
+                     * <p>Instance type. - 2: Redis 2.8 memory edition (standard architecture). - 6: Redis 4.0 memory edition (standard architecture). - 7: Redis 4.0 memory edition (cluster architecture). - 8: Redis 5.0 memory edition (standard architecture). - 9: Redis 5.0 memory edition (cluster architecture). - 15: Redis 6.2 memory edition (standard architecture). - 16: Redis 6.2 memory edition (cluster architecture). - 17: Redis 7.0 memory edition (standard architecture). - 18: Redis 7.0 memory edition (cluster architecture). - 200: Memcached 1.6 memory edition (cluster architecture).</p>
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * Memory capacity in MB, which must be a multiple of 1,024. It is subject to the purchasable specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
-If `TypeId` indicates the standard architecture, `MemSize` indicates the total memory capacity of an instance; if `TypeId` indicates the cluster architecture, `MemSize` indicates the memory capacity per shard.
+                     * <p>Memory capacity, measured in MB. The value must be a multiple of 1024. The specific specifications are subject to those returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">Query Product Sales Specifications</a>. When TypeId is standard architecture, MemSize is the total memory capacity of the instance; when TypeId is cluster architecture, MemSize is the memory capacity of a single shard.</p>
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * Number of instances. The actual quantity purchasable at a time is subject to the specifications returned by the [DescribeProductInfo API](https://intl.cloud.tencent.com/document/api/239/30600?from_cn_redirect=1).
+                     * <p>Instance count. The number of instances to purchase at a time is subject to the specifications returned by <a href="https://www.tencentcloud.com/document/api/239/30600?from_cn_redirect=1">query product sales specifications</a>.</p>
                      */
                     uint64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * Length of purchase in months, which is required when creating a monthly-subscribed instance. Value range: [1,2,3,4,5,6,7,8,9,10,11,12,24,36]. For pay-as-you-go instances, set the parameter to `1`.
+                     * <p>Purchase period needs to be filled in when creating an annual and monthly subscription instance. For pay-as-you-go instances, just fill in 1. Unit: month. Value ranges from 1 to 36 [1,2,3,4,5,6,7,8,9,10,11,12,24,36].</p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * Billing mode.
-- 0: pay-as-you-go.
-- 1: monthly subscription.
+                     * <p>Payment method. - 0: Pay-As-You-Go. - 1: Monthly Subscription.</p>
                      */
                     int64_t m_billingMode;
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * ID of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * <p>ID of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Number of instance shards. For the standard architecture of 2.8, the number of shards does not need to be configured. For the standard architecture of other versions, the number of shards should be set to 1. For the cluster architecture, the number of shards to be purchased needs to be specified.
+                     * <p>Number of instance shards. - The shard number should be set to 1 for the standard architecture. - The number of shards can be set to 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, or 128 for the cluster architecture.</p>
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * Number of instance replicas. For the standard architecture of 2.8, the number of replicas does not need to be configured.
+                     * <p>Number of instance replicas. Valid values: 1, 2, 3, 4, and 5.</p>
                      */
                     int64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * Whether replica read-only is supported. For the standard architecture of Redis 2.8 and CKV, this parameter does not need to be configured.
-- true: Replica read-only is not required.
-- false: Replica read-only is required.
+                     * <p>Whether replica read-only is supported. For Redis 2.8 standard architecture and CKV standard architecture, this parameter is not required. - true: replica read-only not required. - false: read-only replica supported.</p>
                      */
                     bool m_replicasReadonly;
                     bool m_replicasReadonlyHasBeenSet;
 
                     /**
-                     * Name of the AZ where the instance resides. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/239/4106?from_cn_redirect=1).
+                     * <p>Name of the AZ to which the instance belongs. See <a href="https://www.tencentcloud.com/document/product/239/4106?from_cn_redirect=1">Regions and AZs</a>. <strong>Description</strong>: Please specify at least one of <strong>ZoneId</strong> and <strong>ZoneName</strong>.</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * Deployment mode.
-- local: local disk. This is the default value.
-- cloud: cloud disk.
-- cdc: CDC.
+                     * <p>Deployment method. - local: local disk, defaults to local. - cloud: cloud disk. - cdc: dedicated cluster edition.</p>
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;

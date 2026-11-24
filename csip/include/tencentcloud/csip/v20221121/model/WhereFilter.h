@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Filter conditions.
+                * Filter criteria
                 */
                 class WhereFilter : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Filter item
-                     * @return Name Filter item
+                     * 获取Filtered Items
+                     * @return Name Filtered Items
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Filter item
-                     * @param _name Filter item
+                     * 设置Filtered Items
+                     * @param _name Filtered Items
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Filter value
-                     * @return Values Filter value
+                     * 获取Filtered Value
+                     * @return Values Filtered Value
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置Filter value
-                     * @param _values Filter value
+                     * 设置Filtered Value
+                     * @param _values Filtered Value
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -89,26 +89,26 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取 
-`1`: =; `2`: >; `3`: <; `4`: ≥; `5`: ≤; `6`: ≠;
-`7`: Exact match; `9`: Fuzzy match; `13`: Non-fuzzy match; `14`: AND
+                     * 获取Central platform definition:
+1 equal 2 greater than 3 less than 4 greater than or equal to 5 less than or equal to 6 not equal to 9 fuzzy matching 13 exact matching 14 bitwise AND
+Enter 7 for exact match and 9 for fuzzy matching. 
 
-                     * @return OperatorType  
-`1`: =; `2`: >; `3`: <; `4`: ≥; `5`: ≤; `6`: ≠;
-`7`: Exact match; `9`: Fuzzy match; `13`: Non-fuzzy match; `14`: AND
+                     * @return OperatorType Central platform definition:
+1 equal 2 greater than 3 less than 4 greater than or equal to 5 less than or equal to 6 not equal to 9 fuzzy matching 13 exact matching 14 bitwise AND
+Enter 7 for exact match and 9 for fuzzy matching. 
 
                      * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
-                     * 设置 
-`1`: =; `2`: >; `3`: <; `4`: ≥; `5`: ≤; `6`: ≠;
-`7`: Exact match; `9`: Fuzzy match; `13`: Non-fuzzy match; `14`: AND
+                     * 设置Central platform definition:
+1 equal 2 greater than 3 less than 4 greater than or equal to 5 less than or equal to 6 not equal to 9 fuzzy matching 13 exact matching 14 bitwise AND
+Enter 7 for exact match and 9 for fuzzy matching. 
 
-                     * @param _operatorType  
-`1`: =; `2`: >; `3`: <; `4`: ≥; `5`: ≤; `6`: ≠;
-`7`: Exact match; `9`: Fuzzy match; `13`: Non-fuzzy match; `14`: AND
+                     * @param _operatorType Central platform definition:
+1 equal 2 greater than 3 less than 4 greater than or equal to 5 less than or equal to 6 not equal to 9 fuzzy matching 13 exact matching 14 bitwise AND
+Enter 7 for exact match and 9 for fuzzy matching. 
 
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Filter item
+                     * Filtered Items
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Filter value
+                     * Filtered Value
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     *  
-`1`: =; `2`: >; `3`: <; `4`: ≥; `5`: ≤; `6`: ≠;
-`7`: Exact match; `9`: Fuzzy match; `13`: Non-fuzzy match; `14`: AND
+                     * Central platform definition:
+1 equal 2 greater than 3 less than 4 greater than or equal to 5 less than or equal to 6 not equal to 9 fuzzy matching 13 exact matching 14 bitwise AND
+Enter 7 for exact match and 9 for fuzzy matching. 
 
                      */
                     int64_t m_operatorType;

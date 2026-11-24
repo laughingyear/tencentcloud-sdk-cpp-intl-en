@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Image sprite information of VOD file
+                * Sprite image information of VOD files
                 */
                 class MediaImageSpriteInfo : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Information set of image sprites with specified specifications. Each element represents a set of image sprites with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ImageSpriteSet Information set of image sprites with specified specifications. Each element represents a set of image sprites with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Collection of sprite image information for a specific spec. Each element represents a set of sprite images with the same spec.
+                     * @return ImageSpriteSet Collection of sprite image information for a specific spec. Each element represents a set of sprite images with the same spec.
                      * 
                      */
                     std::vector<MediaImageSpriteItem> GetImageSpriteSet() const;
 
                     /**
-                     * 设置Information set of image sprites with specified specifications. Each element represents a set of image sprites with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _imageSpriteSet Information set of image sprites with specified specifications. Each element represents a set of image sprites with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Collection of sprite image information for a specific spec. Each element represents a set of sprite images with the same spec.
+                     * @param _imageSpriteSet Collection of sprite image information for a specific spec. Each element represents a set of sprite images with the same spec.
                      * 
                      */
                     void SetImageSpriteSet(const std::vector<MediaImageSpriteItem>& _imageSpriteSet);
@@ -75,8 +71,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Information set of image sprites with specified specifications. Each element represents a set of image sprites with the same specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Collection of sprite image information for a specific spec. Each element represents a set of sprite images with the same spec.
                      */
                     std::vector<MediaImageSpriteItem> m_imageSpriteSet;
                     bool m_imageSpriteSetHasBeenSet;

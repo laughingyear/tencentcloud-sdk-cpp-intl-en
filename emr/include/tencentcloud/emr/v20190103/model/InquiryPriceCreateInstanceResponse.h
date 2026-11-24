@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return OriginalCost Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Original price (CNY).</p>
+                     * @return OriginalCost <p>Original price (CNY).</p>
                      * 
                      */
                     double GetOriginalCost() const;
@@ -61,10 +59,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return DiscountCost Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Discounted price (CNY).</p>
+                     * @return DiscountCost <p>Discounted price (CNY).</p>
                      * 
                      */
                     double GetDiscountCost() const;
@@ -77,12 +73,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取Time unit of instance purchase duration. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeUnit Time unit of instance purchase duration. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Time unit for purchasing instances. Valid values:</p><li>s: second</li><li>m: Month</li>
+                     * @return TimeUnit <p>Time unit for purchasing instances. Valid values:</p><li>s: second</li><li>m: Month</li>
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -95,10 +87,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取Purchase duration of instance.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TimeSpan Purchase duration of instance.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Instance purchase duration.</p>
+                     * @return TimeSpan <p>Instance purchase duration.</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
@@ -111,10 +101,8 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取The price list.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return PriceList The price list.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Price list.</p>
+                     * @return PriceList <p>Price list.</p>
                      * 
                      */
                     std::vector<ZoneDetailPriceResult> GetPriceList() const;
@@ -129,37 +117,31 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Original price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Original price (CNY).</p>
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * Discounted price.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Discounted price (CNY).</p>
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * Time unit of instance purchase duration. Valid values:
-<li>s: seconds.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Time unit for purchasing instances. Valid values:</p><li>s: second</li><li>m: Month</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * Purchase duration of instance.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Instance purchase duration.</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * The price list.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Price list.</p>
                      */
                     std::vector<ZoneDetailPriceResult> m_priceList;
                     bool m_priceListHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Key hotlink protection information for generating the signature
+                * Signature-based Key anti-leech information
                 */
                 class UrlSignatureAuthPolicy : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable or disable [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986). Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
-                     * @return Status Whether to enable or disable [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986). Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * 获取[Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enablement.</li>
+<li>Disabled: disabled.</li>
+                     * @return Status [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enablement.</li>
+<li>Disabled: disabled.</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Whether to enable or disable [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986). Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
-                     * @param _status Whether to enable or disable [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986). Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * 设置[Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enablement.</li>
+<li>Disabled: disabled.</li>
+                     * @param _status [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enablement.</li>
+<li>Disabled: disabled.</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -76,19 +76,19 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取The key for generating the signature of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
-`EncryptedKey` can contain 8-40 bytes, and cannot contain non-printable characters.
-                     * @return EncryptedKey The key for generating the signature of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
-`EncryptedKey` can contain 8-40 bytes, and cannot contain non-printable characters.
+                     * 获取Key used for generating signature in [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1).
+The length of the EncryptedKey string is 8–40 bytes. It cannot contain invisible characters.
+                     * @return EncryptedKey Key used for generating signature in [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1).
+The length of the EncryptedKey string is 8–40 bytes. It cannot contain invisible characters.
                      * 
                      */
                     std::string GetEncryptedKey() const;
 
                     /**
-                     * 设置The key for generating the signature of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
-`EncryptedKey` can contain 8-40 bytes, and cannot contain non-printable characters.
-                     * @param _encryptedKey The key for generating the signature of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
-`EncryptedKey` can contain 8-40 bytes, and cannot contain non-printable characters.
+                     * 设置Key used for generating signature in [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1).
+The length of the EncryptedKey string is 8–40 bytes. It cannot contain invisible characters.
+                     * @param _encryptedKey Key used for generating signature in [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1).
+The length of the EncryptedKey string is 8–40 bytes. It cannot contain invisible characters.
                      * 
                      */
                     void SetEncryptedKey(const std::string& _encryptedKey);
@@ -103,16 +103,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Whether to enable or disable [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986). Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enablement.</li>
+<li>Disabled: disabled.</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * The key for generating the signature of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
-`EncryptedKey` can contain 8-40 bytes, and cannot contain non-printable characters.
+                     * Key used for generating signature in [Key hotlink protection](https://www.tencentcloud.com/document/product/266/14047?from_cn_redirect=1).
+The length of the EncryptedKey string is 8–40 bytes. It cannot contain invisible characters.
                      */
                     std::string m_encryptedKey;
                     bool m_encryptedKeyHasBeenSet;

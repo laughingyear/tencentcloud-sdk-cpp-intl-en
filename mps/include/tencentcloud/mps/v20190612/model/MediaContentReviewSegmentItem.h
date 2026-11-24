@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information about the detected pornographic/sensitive segments.
+                * Suspected pornographic/sensitive segment in content review
                 */
                 class MediaContentReviewSegmentItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Start time offset of a suspected segment in seconds.
-                     * @return StartTimeOffset Start time offset of a suspected segment in seconds.
+                     * 获取Start time offset of a suspected segment, in seconds.
+                     * @return StartTimeOffset Start time offset of a suspected segment, in seconds.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Start time offset of a suspected segment in seconds.
-                     * @param _startTimeOffset Start time offset of a suspected segment in seconds.
+                     * 设置Start time offset of a suspected segment, in seconds.
+                     * @param _startTimeOffset Start time offset of a suspected segment, in seconds.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取End time offset of a suspected segment in seconds.
-                     * @return EndTimeOffset End time offset of a suspected segment in seconds.
+                     * 获取End time offset of a suspected segment, in seconds.
+                     * @return EndTimeOffset End time offset of a suspected segment, in seconds.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置End time offset of a suspected segment in seconds.
-                     * @param _endTimeOffset End time offset of a suspected segment in seconds.
+                     * 设置End time offset of a suspected segment, in seconds.
+                     * @param _endTimeOffset End time offset of a suspected segment, in seconds.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Score of a suspected porn segment.
-                     * @return Confidence Score of a suspected porn segment.
+                     * 获取Porn score of the suspected segment.
+                     * @return Confidence Porn score of the suspected segment.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Score of a suspected porn segment.
-                     * @param _confidence Score of a suspected porn segment.
+                     * 设置Porn score of the suspected segment.
+                     * @param _confidence Porn score of the suspected segment.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Tag of porn information detection result of a suspected segment.
-                     * @return Label Tag of porn information detection result of a suspected segment.
+                     * 获取Tag of the pornographic result for the suspected segment.
+                     * @return Label Tag of the pornographic result for the suspected segment.
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置Tag of porn information detection result of a suspected segment.
-                     * @param _label Tag of porn information detection result of a suspected segment.
+                     * 设置Tag of the pornographic result for the suspected segment.
+                     * @param _label Tag of the pornographic result for the suspected segment.
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -131,11 +131,11 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取Suggestion for porn information detection of a suspected segment. Valid values:
+                     * 获取Porn detection result suggestion for the suspected segment. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
-                     * @return Suggestion Suggestion for porn information detection of a suspected segment. Valid values:
+                     * @return Suggestion Porn detection result suggestion for the suspected segment. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -144,11 +144,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Suggestion for porn information detection of a suspected segment. Valid values:
+                     * 设置Porn detection result suggestion for the suspected segment. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
-                     * @param _suggestion Suggestion for porn information detection of a suspected segment. Valid values:
+                     * @param _suggestion Porn detection result suggestion for the suspected segment. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -164,19 +164,19 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取URL of a suspected image (which will not be permanently stored
- and will be deleted after `PicUrlExpireTime`).
-                     * @return Url URL of a suspected image (which will not be permanently stored
- and will be deleted after `PicUrlExpireTime`).
+                     * 获取Suspected image URL (images are not retained permanently and will reach
+Images will be deleted after the PicUrlExpireTime time point).
+                     * @return Url Suspected image URL (images are not retained permanently and will reach
+Images will be deleted after the PicUrlExpireTime time point).
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置URL of a suspected image (which will not be permanently stored
- and will be deleted after `PicUrlExpireTime`).
-                     * @param _url URL of a suspected image (which will not be permanently stored
- and will be deleted after `PicUrlExpireTime`).
+                     * 设置Suspected image URL (images are not retained permanently and will reach
+Images will be deleted after the PicUrlExpireTime time point).
+                     * @param _url Suspected image URL (images are not retained permanently and will reach
+Images will be deleted after the PicUrlExpireTime time point).
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of a suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
-                     * @return PicUrlExpireTime Expiration time of a suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * 获取Expiration time of the suspected image URL, in [ISO date format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @return PicUrlExpireTime Expiration time of the suspected image URL, in [ISO date format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     std::string GetPicUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of a suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
-                     * @param _picUrlExpireTime Expiration time of a suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * 设置Expiration time of the suspected image URL, in [ISO date format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
+                     * @param _picUrlExpireTime Expiration time of the suspected image URL, in [ISO date format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      * 
                      */
                     void SetPicUrlExpireTime(const std::string& _picUrlExpireTime);
@@ -212,31 +212,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Start time offset of a suspected segment in seconds.
+                     * Start time offset of a suspected segment, in seconds.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * End time offset of a suspected segment in seconds.
+                     * End time offset of a suspected segment, in seconds.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * Score of a suspected porn segment.
+                     * Porn score of the suspected segment.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Tag of porn information detection result of a suspected segment.
+                     * Tag of the pornographic result for the suspected segment.
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * Suggestion for porn information detection of a suspected segment. Valid values:
+                     * Porn detection result suggestion for the suspected segment. Value range:
 <li>pass.</li>
 <li>review.</li>
 <li>block.</li>
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * URL of a suspected image (which will not be permanently stored
- and will be deleted after `PicUrlExpireTime`).
+                     * Suspected image URL (images are not retained permanently and will reach
+Images will be deleted after the PicUrlExpireTime time point).
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Expiration time of a suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F).
+                     * Expiration time of the suspected image URL, in [ISO date format](https://www.tencentcloud.com/document/product/862/37710?from_cn_redirect=1#52).
                      */
                     std::string m_picUrlExpireTime;
                     bool m_picUrlExpireTimeHasBeenSet;

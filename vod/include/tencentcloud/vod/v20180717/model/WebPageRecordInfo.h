@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Panoramic recording information
+                * Panoramic recording information.
                 */
                 class WebPageRecordInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Panoramic recording Url.
-                     * @return RecordUrl Panoramic recording Url.
+                     * 获取Panoramic recording URL.
+                     * @return RecordUrl Panoramic recording URL.
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
-                     * 设置Panoramic recording Url.
-                     * @param _recordUrl Panoramic recording Url.
+                     * 设置Panoramic recording URL.
+                     * @param _recordUrl Panoramic recording URL.
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Panoramic recording Url.
+                     * Panoramic recording URL.
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;

@@ -157,6 +157,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodePoolsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeECMInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeECMInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeAvailableExtraArgsRequest.h>
@@ -217,12 +219,16 @@
 #include <tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/DisableControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DisableControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeRequest.h>
 #include <tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
@@ -265,6 +271,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/RotateClusterTokenRequest.h>
+#include <tencentcloud/tke/v20180525/model/RotateClusterTokenResponse.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentRequest.h>
@@ -494,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeControlPlaneLogsResponse> DescribeControlPlaneLogsOutcome;
+                typedef std::future<DescribeControlPlaneLogsOutcome> DescribeControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeControlPlaneLogsRequest&, DescribeControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeECMInstancesResponse> DescribeECMInstancesOutcome;
                 typedef std::future<DescribeECMInstancesOutcome> DescribeECMInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeECMInstancesRequest&, DescribeECMInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeECMInstancesAsyncHandler;
@@ -584,6 +595,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableClusterDeletionProtectionResponse> DisableClusterDeletionProtectionOutcome;
                 typedef std::future<DisableClusterDeletionProtectionOutcome> DisableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableClusterDeletionProtectionRequest&, DisableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableControlPlaneLogsResponse> DisableControlPlaneLogsOutcome;
+                typedef std::future<DisableControlPlaneLogsOutcome> DisableControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DisableControlPlaneLogsRequest&, DisableControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableEncryptionProtectionResponse> DisableEncryptionProtectionOutcome;
                 typedef std::future<DisableEncryptionProtectionOutcome> DisableEncryptionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableEncryptionProtectionRequest&, DisableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableEncryptionProtectionAsyncHandler;
@@ -593,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableClusterDeletionProtectionResponse> EnableClusterDeletionProtectionOutcome;
                 typedef std::future<EnableClusterDeletionProtectionOutcome> EnableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableClusterDeletionProtectionRequest&, EnableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableControlPlaneLogsResponse> EnableControlPlaneLogsOutcome;
+                typedef std::future<EnableControlPlaneLogsOutcome> EnableControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableControlPlaneLogsRequest&, EnableControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableEncryptionProtectionResponse> EnableEncryptionProtectionOutcome;
                 typedef std::future<EnableEncryptionProtectionOutcome> EnableEncryptionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableEncryptionProtectionRequest&, EnableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEncryptionProtectionAsyncHandler;
@@ -656,6 +673,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveNodeFromNodePoolResponse> RemoveNodeFromNodePoolOutcome;
                 typedef std::future<RemoveNodeFromNodePoolOutcome> RemoveNodeFromNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RemoveNodeFromNodePoolRequest&, RemoveNodeFromNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNodeFromNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::RotateClusterTokenResponse> RotateClusterTokenOutcome;
+                typedef std::future<RotateClusterTokenOutcome> RotateClusterTokenOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::RotateClusterTokenRequest&, RotateClusterTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RotateClusterTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNodePoolNodeProtectionResponse> SetNodePoolNodeProtectionOutcome;
                 typedef std::future<SetNodePoolNodeProtectionOutcome> SetNodePoolNodeProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SetNodePoolNodeProtectionRequest&, SetNodePoolNodeProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNodePoolNodeProtectionAsyncHandler;
@@ -1284,6 +1304,15 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
+                 *This API is used to query plug-in log collection settings.
+                 * @param req DescribeControlPlaneLogsRequest
+                 * @return DescribeControlPlaneLogsOutcome
+                 */
+                DescribeControlPlaneLogsOutcome DescribeControlPlaneLogs(const Model::DescribeControlPlaneLogsRequest &request);
+                void DescribeControlPlaneLogsAsync(const Model::DescribeControlPlaneLogsRequest& request, const DescribeControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeControlPlaneLogsOutcomeCallable DescribeControlPlaneLogsCallable(const Model::DescribeControlPlaneLogsRequest& request);
+
+                /**
                  *This API is used to obtain the ECM instance information.
                  * @param req DescribeECMInstancesRequest
                  * @return DescribeECMInstancesOutcome
@@ -1554,6 +1583,15 @@ namespace TencentCloud
                 DisableClusterDeletionProtectionOutcomeCallable DisableClusterDeletionProtectionCallable(const Model::DisableClusterDeletionProtectionRequest& request);
 
                 /**
+                 *This API is used to delete the log collection configuration of a plugin.
+                 * @param req DisableControlPlaneLogsRequest
+                 * @return DisableControlPlaneLogsOutcome
+                 */
+                DisableControlPlaneLogsOutcome DisableControlPlaneLogs(const Model::DisableControlPlaneLogsRequest &request);
+                void DisableControlPlaneLogsAsync(const Model::DisableControlPlaneLogsRequest& request, const DisableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableControlPlaneLogsOutcomeCallable DisableControlPlaneLogsCallable(const Model::DisableControlPlaneLogsRequest& request);
+
+                /**
                  *This API is used to disable encryption protection.
                  * @param req DisableEncryptionProtectionRequest
                  * @return DisableEncryptionProtectionOutcome
@@ -1579,6 +1617,15 @@ namespace TencentCloud
                 EnableClusterDeletionProtectionOutcome EnableClusterDeletionProtection(const Model::EnableClusterDeletionProtectionRequest &request);
                 void EnableClusterDeletionProtectionAsync(const Model::EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClusterDeletionProtectionOutcomeCallable EnableClusterDeletionProtectionCallable(const Model::EnableClusterDeletionProtectionRequest& request);
+
+                /**
+                 *This API is used to create log collection settings for plugins.
+                 * @param req EnableControlPlaneLogsRequest
+                 * @return EnableControlPlaneLogsOutcome
+                 */
+                EnableControlPlaneLogsOutcome EnableControlPlaneLogs(const Model::EnableControlPlaneLogsRequest &request);
+                void EnableControlPlaneLogsAsync(const Model::EnableControlPlaneLogsRequest& request, const EnableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableControlPlaneLogsOutcomeCallable EnableControlPlaneLogsCallable(const Model::EnableControlPlaneLogsRequest& request);
 
                 /**
                  *This API is used to enable Encrypted Data Protection, which requires enabling KMS capability and completing KMS authorization.
@@ -1768,6 +1815,15 @@ namespace TencentCloud
                 RemoveNodeFromNodePoolOutcome RemoveNodeFromNodePool(const Model::RemoveNodeFromNodePoolRequest &request);
                 void RemoveNodeFromNodePoolAsync(const Model::RemoveNodeFromNodePoolRequest& request, const RemoveNodeFromNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveNodeFromNodePoolOutcomeCallable RemoveNodeFromNodePoolCallable(const Model::RemoveNodeFromNodePoolRequest& request);
+
+                /**
+                 *This API is used to rotate a cluster token.
+                 * @param req RotateClusterTokenRequest
+                 * @return RotateClusterTokenOutcome
+                 */
+                RotateClusterTokenOutcome RotateClusterToken(const Model::RotateClusterTokenRequest &request);
+                void RotateClusterTokenAsync(const Model::RotateClusterTokenRequest& request, const RotateClusterTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RotateClusterTokenOutcomeCallable RotateClusterTokenCallable(const Model::RotateClusterTokenRequest& request);
 
                 /**
                  *This API is used to enable removal protection for the nodes automatically created by the scaling group in a node pool.

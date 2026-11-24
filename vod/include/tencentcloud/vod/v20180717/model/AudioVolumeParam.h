@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to mute. Valid values: 0, 1.
-<li>0: not muted.</li>
-<li>1: muted.</li>
+                     * 获取Whether to mute. Value range: 0 or 1.
+<li>0 means unmuted.</li>
+<li>1 means mute.</li>
 Default value: 0.
-                     * @return Mute Whether to mute. Valid values: 0, 1.
-<li>0: not muted.</li>
-<li>1: muted.</li>
+                     * @return Mute Whether to mute. Value range: 0 or 1.
+<li>0 means unmuted.</li>
+<li>1 means mute.</li>
 Default value: 0.
                      * 
                      */
                     int64_t GetMute() const;
 
                     /**
-                     * 设置Whether to mute. Valid values: 0, 1.
-<li>0: not muted.</li>
-<li>1: muted.</li>
+                     * 设置Whether to mute. Value range: 0 or 1.
+<li>0 means unmuted.</li>
+<li>1 means mute.</li>
 Default value: 0.
-                     * @param _mute Whether to mute. Valid values: 0, 1.
-<li>0: not muted.</li>
-<li>1: muted.</li>
+                     * @param _mute Whether to mute. Value range: 0 or 1.
+<li>0 means unmuted.</li>
+<li>1 means mute.</li>
 Default value: 0.
                      * 
                      */
@@ -81,14 +81,14 @@ Default value: 0.
 
                     /**
                      * 获取Audio gain. Value range: 0-10.
-<li>If the value is greater than 1, the volume will be increased.</li>
-<li>If the value is smaller than 1, the volume will be decreased.</li>
-<li>0 and 1: no change.</li>
+<li>A value greater than 1 means volume increase.</li>
+<li>Less than 1 means low volume.</li>
+<li>0 and 1: means do not change.</li>
 Default value: 0.
                      * @return Gain Audio gain. Value range: 0-10.
-<li>If the value is greater than 1, the volume will be increased.</li>
-<li>If the value is smaller than 1, the volume will be decreased.</li>
-<li>0 and 1: no change.</li>
+<li>A value greater than 1 means volume increase.</li>
+<li>Less than 1 means low volume.</li>
+<li>0 and 1: means do not change.</li>
 Default value: 0.
                      * 
                      */
@@ -96,14 +96,14 @@ Default value: 0.
 
                     /**
                      * 设置Audio gain. Value range: 0-10.
-<li>If the value is greater than 1, the volume will be increased.</li>
-<li>If the value is smaller than 1, the volume will be decreased.</li>
-<li>0 and 1: no change.</li>
+<li>A value greater than 1 means volume increase.</li>
+<li>Less than 1 means low volume.</li>
+<li>0 and 1: means do not change.</li>
 Default value: 0.
                      * @param _gain Audio gain. Value range: 0-10.
-<li>If the value is greater than 1, the volume will be increased.</li>
-<li>If the value is smaller than 1, the volume will be decreased.</li>
-<li>0 and 1: no change.</li>
+<li>A value greater than 1 means volume increase.</li>
+<li>Less than 1 means low volume.</li>
+<li>0 and 1: means do not change.</li>
 Default value: 0.
                      * 
                      */
@@ -119,9 +119,9 @@ Default value: 0.
                 private:
 
                     /**
-                     * Whether to mute. Valid values: 0, 1.
-<li>0: not muted.</li>
-<li>1: muted.</li>
+                     * Whether to mute. Value range: 0 or 1.
+<li>0 means unmuted.</li>
+<li>1 means mute.</li>
 Default value: 0.
                      */
                     int64_t m_mute;
@@ -129,9 +129,9 @@ Default value: 0.
 
                     /**
                      * Audio gain. Value range: 0-10.
-<li>If the value is greater than 1, the volume will be increased.</li>
-<li>If the value is smaller than 1, the volume will be decreased.</li>
-<li>0 and 1: no change.</li>
+<li>A value greater than 1 means volume increase.</li>
+<li>Less than 1 means low volume.</li>
+<li>0 and 1: means do not change.</li>
 Default value: 0.
                      */
                     double m_gain;

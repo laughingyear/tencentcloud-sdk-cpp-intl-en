@@ -212,6 +212,27 @@ namespace TencentCloud
                      */
                     bool DeviceHasBeenSet() const;
 
+                    /**
+                     * 获取This field indicates the input image auditing type, with values including: IMAGE (Content Security) and IMAGE_AIGC (AI-generated content recognition). The default value is IMAGE.
+                     * @return Type This field indicates the input image auditing type, with values including: IMAGE (Content Security) and IMAGE_AIGC (AI-generated content recognition). The default value is IMAGE.
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置This field indicates the input image auditing type, with values including: IMAGE (Content Security) and IMAGE_AIGC (AI-generated content recognition). The default value is IMAGE.
+                     * @param _type This field indicates the input image auditing type, with values including: IMAGE (Content Security) and IMAGE_AIGC (AI-generated content recognition). The default value is IMAGE.
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
+
+                    /**
+                     * This field indicates the input image auditing type, with values including: IMAGE (Content Security) and IMAGE_AIGC (AI-generated content recognition). The default value is IMAGE.
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

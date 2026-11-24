@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The Base64-encoded identity photo.
-                     * @return HeadPortrait The Base64-encoded identity photo.
+                     * 获取Base64 encoded result of portrait photo.
+                     * @return HeadPortrait Base64 encoded result of portrait photo.
                      * 
                      */
                     TextDetectionResult GetHeadPortrait() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool HeadPortraitHasBeenSet() const;
 
                     /**
-                     * 获取The common reference number (CRN).
-                     * @return LicenseNumber The common reference number (CRN).
+                     * 获取The license number (SSSID number).
+                     * @return LicenseNumber The license number (SSSID number).
                      * 
                      */
                     TextDetectionResult GetLicenseNumber() const;
@@ -100,16 +100,58 @@ namespace TencentCloud
                      */
                     bool BirthdayHasBeenSet() const;
 
+                    /**
+                     * 获取First name (given name) of the cardholder.
+                     * @return GivenName First name (given name) of the cardholder.
+                     * 
+                     */
+                    TextDetectionResult GetGivenName() const;
+
+                    /**
+                     * 判断参数 GivenName 是否已赋值
+                     * @return GivenName 是否已赋值
+                     * 
+                     */
+                    bool GivenNameHasBeenSet() const;
+
+                    /**
+                     * 获取Family name (surname) of the cardholder.
+                     * @return Surname Family name (surname) of the cardholder.
+                     * 
+                     */
+                    TextDetectionResult GetSurname() const;
+
+                    /**
+                     * 判断参数 Surname 是否已赋值
+                     * @return Surname 是否已赋值
+                     * 
+                     */
+                    bool SurnameHasBeenSet() const;
+
+                    /**
+                     * 获取Middle name of the cardholder.
+                     * @return MiddleName Middle name of the cardholder.
+                     * 
+                     */
+                    TextDetectionResult GetMiddleName() const;
+
+                    /**
+                     * 判断参数 MiddleName 是否已赋值
+                     * @return MiddleName 是否已赋值
+                     * 
+                     */
+                    bool MiddleNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The Base64-encoded identity photo.
+                     * Base64 encoded result of portrait photo.
                      */
                     TextDetectionResult m_headPortrait;
                     bool m_headPortraitHasBeenSet;
 
                     /**
-                     * The common reference number (CRN).
+                     * The license number (SSSID number).
                      */
                     TextDetectionResult m_licenseNumber;
                     bool m_licenseNumberHasBeenSet;
@@ -125,6 +167,24 @@ namespace TencentCloud
                      */
                     TextDetectionResult m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * First name (given name) of the cardholder.
+                     */
+                    TextDetectionResult m_givenName;
+                    bool m_givenNameHasBeenSet;
+
+                    /**
+                     * Family name (surname) of the cardholder.
+                     */
+                    TextDetectionResult m_surname;
+                    bool m_surnameHasBeenSet;
+
+                    /**
+                     * Middle name of the cardholder.
+                     */
+                    TextDetectionResult m_middleName;
+                    bool m_middleNameHasBeenSet;
 
                 };
             }

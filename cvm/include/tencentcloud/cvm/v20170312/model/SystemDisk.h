@@ -47,7 +47,7 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://intl.cloud.tencent.com/document/product/213/4952?from_cn_redirect=1). value range:<br>
+                     * 获取Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://www.tencentcloud.com/document/product/362/31636). value range:<br>
 <li>LOCAL_BASIC: Local SATA disk</li>
 <li>LOCAL_SSD: Local NVMe SSD</li>
 <li>CLOUD_BASIC: Cloud SATA disk</li>
@@ -57,7 +57,7 @@ namespace TencentCloud
 <li>CLOUD_HSSD: Enhanced SSD</li>
 <li>CLOUD_TSSD: Tremendous SSD</li>
 Default value: Current disk types with inventory available.
-                     * @return DiskType Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://intl.cloud.tencent.com/document/product/213/4952?from_cn_redirect=1). value range:<br>
+                     * @return DiskType Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://www.tencentcloud.com/document/product/362/31636). value range:<br>
 <li>LOCAL_BASIC: Local SATA disk</li>
 <li>LOCAL_SSD: Local NVMe SSD</li>
 <li>CLOUD_BASIC: Cloud SATA disk</li>
@@ -72,7 +72,7 @@ Default value: Current disk types with inventory available.
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://intl.cloud.tencent.com/document/product/213/4952?from_cn_redirect=1). value range:<br>
+                     * 设置Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://www.tencentcloud.com/document/product/362/31636). value range:<br>
 <li>LOCAL_BASIC: Local SATA disk</li>
 <li>LOCAL_SSD: Local NVMe SSD</li>
 <li>CLOUD_BASIC: Cloud SATA disk</li>
@@ -82,7 +82,7 @@ Default value: Current disk types with inventory available.
 <li>CLOUD_HSSD: Enhanced SSD</li>
 <li>CLOUD_TSSD: Tremendous SSD</li>
 Default value: Current disk types with inventory available.
-                     * @param _diskType Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://intl.cloud.tencent.com/document/product/213/4952?from_cn_redirect=1). value range:<br>
+                     * @param _diskType Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://www.tencentcloud.com/document/product/362/31636). value range:<br>
 <li>LOCAL_BASIC: Local SATA disk</li>
 <li>LOCAL_SSD: Local NVMe SSD</li>
 <li>CLOUD_BASIC: Cloud SATA disk</li>
@@ -104,19 +104,19 @@ Default value: Current disk types with inventory available.
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取Specifies the system disk ID.
-This parameter currently only serves as a response parameter for query apis such as `DescribeInstances`, and cannot be used as an input parameter for write apis such as `RunInstances`.
-                     * @return DiskId Specifies the system disk ID.
-This parameter currently only serves as a response parameter for query apis such as `DescribeInstances`, and cannot be used as an input parameter for write apis such as `RunInstances`.
+                     * 获取System disk ID.
+Currently, this parameter is only used for response parameters in query apis such as [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) and is not applicable to request parameters in write apis such as [RunInstances](https://www.tencentcloud.com/document/api/213/33237).
+                     * @return DiskId System disk ID.
+Currently, this parameter is only used for response parameters in query apis such as [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) and is not applicable to request parameters in write apis such as [RunInstances](https://www.tencentcloud.com/document/api/213/33237).
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置Specifies the system disk ID.
-This parameter currently only serves as a response parameter for query apis such as `DescribeInstances`, and cannot be used as an input parameter for write apis such as `RunInstances`.
-                     * @param _diskId Specifies the system disk ID.
-This parameter currently only serves as a response parameter for query apis such as `DescribeInstances`, and cannot be used as an input parameter for write apis such as `RunInstances`.
+                     * 设置System disk ID.
+Currently, this parameter is only used for response parameters in query apis such as [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) and is not applicable to request parameters in write apis such as [RunInstances](https://www.tencentcloud.com/document/api/213/33237).
+                     * @param _diskId System disk ID.
+Currently, this parameter is only used for response parameters in query apis such as [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) and is not applicable to request parameters in write apis such as [RunInstances](https://www.tencentcloud.com/document/api/213/33237).
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -150,15 +150,19 @@ This parameter currently only serves as a response parameter for query apis such
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取Specifies the exclusive cluster ID it belongs to.
-                     * @return CdcId Specifies the exclusive cluster ID it belongs to.
+                     * 获取Specifies the dedicated cluster ID belonging to.
+Note: This field may return null, indicating that no valid value is found.
+                     * @return CdcId Specifies the dedicated cluster ID belonging to.
+Note: This field may return null, indicating that no valid value is found.
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置Specifies the exclusive cluster ID it belongs to.
-                     * @param _cdcId Specifies the exclusive cluster ID it belongs to.
+                     * 设置Specifies the dedicated cluster ID belonging to.
+Note: This field may return null, indicating that no valid value is found.
+                     * @param _cdcId Specifies the dedicated cluster ID belonging to.
+Note: This field may return null, indicating that no valid value is found.
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -194,7 +198,7 @@ This parameter currently only serves as a response parameter for query apis such
                 private:
 
                     /**
-                     * Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://intl.cloud.tencent.com/document/product/213/4952?from_cn_redirect=1). value range:<br>
+                     * Specifies the system disk type. for the restrictions on the system disk type, refer to [storage overview](https://www.tencentcloud.com/document/product/362/31636). value range:<br>
 <li>LOCAL_BASIC: Local SATA disk</li>
 <li>LOCAL_SSD: Local NVMe SSD</li>
 <li>CLOUD_BASIC: Cloud SATA disk</li>
@@ -209,8 +213,8 @@ Default value: Current disk types with inventory available.
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * Specifies the system disk ID.
-This parameter currently only serves as a response parameter for query apis such as `DescribeInstances`, and cannot be used as an input parameter for write apis such as `RunInstances`.
+                     * System disk ID.
+Currently, this parameter is only used for response parameters in query apis such as [DescribeInstances](https://www.tencentcloud.com/document/api/213/33258) and is not applicable to request parameters in write apis such as [RunInstances](https://www.tencentcloud.com/document/api/213/33237).
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
@@ -222,7 +226,8 @@ This parameter currently only serves as a response parameter for query apis such
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * Specifies the exclusive cluster ID it belongs to.
+                     * Specifies the dedicated cluster ID belonging to.
+Note: This field may return null, indicating that no valid value is found.
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

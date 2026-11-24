@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Namespace name.
-                     * @return NamespaceId Namespace name.
+                     * 获取namespace. The 4.x common Cluster Namespace is fixed as: tdmq_default
+                     * @return NamespaceId namespace. The 4.x common Cluster Namespace is fixed as: tdmq_default
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置Namespace name.
-                     * @param _namespaceId Namespace name.
+                     * 设置namespace. The 4.x common Cluster Namespace is fixed as: tdmq_default
+                     * @param _namespaceId namespace. The 4.x common Cluster Namespace is fixed as: tdmq_default
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -106,27 +106,6 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取Topic name.
-                     * @return Topic Topic name.
-                     * 
-                     */
-                    std::string GetTopic() const;
-
-                    /**
-                     * 设置Topic name.
-                     * @param _topic Topic name.
-                     * 
-                     */
-                    void SetTopic(const std::string& _topic);
-
-                    /**
-                     * 判断参数 Topic 是否已赋值
-                     * @return Topic 是否已赋值
-                     * 
-                     */
-                    bool TopicHasBeenSet() const;
-
-                    /**
                      * 获取Reset method. 0: Start from the latest offset; 1: Start from specified time point.
                      * @return Type Reset method. 0: Start from the latest offset; 1: Start from specified time point.
                      * 
@@ -148,15 +127,36 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The specified timestamp that has been reset, in milliseconds. This parameter only takes effect when the value of `Type` is `1`.
-                     * @return ResetTimestamp The specified timestamp that has been reset, in milliseconds. This parameter only takes effect when the value of `Type` is `1`.
+                     * 获取Topic name.
+                     * @return Topic Topic name.
+                     * 
+                     */
+                    std::string GetTopic() const;
+
+                    /**
+                     * 设置Topic name.
+                     * @param _topic Topic name.
+                     * 
+                     */
+                    void SetTopic(const std::string& _topic);
+
+                    /**
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
+                     * 
+                     */
+                    bool TopicHasBeenSet() const;
+
+                    /**
+                     * 获取Reset the specified timestamp. This parameter is valid only when Type is 1, in milliseconds.
+                     * @return ResetTimestamp Reset the specified timestamp. This parameter is valid only when Type is 1, in milliseconds.
                      * 
                      */
                     uint64_t GetResetTimestamp() const;
 
                     /**
-                     * 设置The specified timestamp that has been reset, in milliseconds. This parameter only takes effect when the value of `Type` is `1`.
-                     * @param _resetTimestamp The specified timestamp that has been reset, in milliseconds. This parameter only takes effect when the value of `Type` is `1`.
+                     * 设置Reset the specified timestamp. This parameter is valid only when Type is 1, in milliseconds.
+                     * @param _resetTimestamp Reset the specified timestamp. This parameter is valid only when Type is 1, in milliseconds.
                      * 
                      */
                     void SetResetTimestamp(const uint64_t& _resetTimestamp);
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ResetTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取Whether the reset flag is retry topic.
+                     * @return RetryFlag Whether the reset flag is retry topic.
+                     * 
+                     */
+                    bool GetRetryFlag() const;
+
+                    /**
+                     * 设置Whether the reset flag is retry topic.
+                     * @param _retryFlag Whether the reset flag is retry topic.
+                     * 
+                     */
+                    void SetRetryFlag(const bool& _retryFlag);
+
+                    /**
+                     * 判断参数 RetryFlag 是否已赋值
+                     * @return RetryFlag 是否已赋值
+                     * 
+                     */
+                    bool RetryFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,7 +198,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Namespace name.
+                     * namespace. The 4.x common Cluster Namespace is fixed as: tdmq_default
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -189,22 +210,28 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * Topic name.
-                     */
-                    std::string m_topic;
-                    bool m_topicHasBeenSet;
-
-                    /**
                      * Reset method. 0: Start from the latest offset; 1: Start from specified time point.
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The specified timestamp that has been reset, in milliseconds. This parameter only takes effect when the value of `Type` is `1`.
+                     * Topic name.
+                     */
+                    std::string m_topic;
+                    bool m_topicHasBeenSet;
+
+                    /**
+                     * Reset the specified timestamp. This parameter is valid only when Type is 1, in milliseconds.
                      */
                     uint64_t m_resetTimestamp;
                     bool m_resetTimestampHasBeenSet;
+
+                    /**
+                     * Whether the reset flag is retry topic.
+                     */
+                    bool m_retryFlag;
+                    bool m_retryFlagHasBeenSet;
 
                 };
             }

@@ -33,7 +33,9 @@ HmtResidentPermitOCRResponse::HmtResidentPermitOCRResponse() :
     m_validDateHasBeenSet(false),
     m_authorityHasBeenSet(false),
     m_visaNumHasBeenSet(false),
-    m_passNoHasBeenSet(false)
+    m_passNoHasBeenSet(false),
+    m_portraitImageInfoHasBeenSet(false),
+    m_warnCardInfosHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,36 @@ CoreInternalOutcome HmtResidentPermitOCRResponse::Deserialize(const string &payl
         m_passNoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PortraitImageInfo") && !rsp["PortraitImageInfo"].IsNull())
+    {
+        if (!rsp["PortraitImageInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortraitImageInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_portraitImageInfo.Deserialize(rsp["PortraitImageInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_portraitImageInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
+    {
+        if (!rsp["WarnCardInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WarnCardInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WarnCardInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnCardInfos.push_back((*itr).GetInt64());
+        }
+        m_warnCardInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +291,28 @@ string HmtResidentPermitOCRResponse::ToJsonString() const
         string key = "PassNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_passNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portraitImageInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortraitImageInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_portraitImageInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_warnCardInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnCardInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnCardInfos.begin(); itr != m_warnCardInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +425,26 @@ string HmtResidentPermitOCRResponse::GetPassNo() const
 bool HmtResidentPermitOCRResponse::PassNoHasBeenSet() const
 {
     return m_passNoHasBeenSet;
+}
+
+PortraitImageInfo HmtResidentPermitOCRResponse::GetPortraitImageInfo() const
+{
+    return m_portraitImageInfo;
+}
+
+bool HmtResidentPermitOCRResponse::PortraitImageInfoHasBeenSet() const
+{
+    return m_portraitImageInfoHasBeenSet;
+}
+
+vector<int64_t> HmtResidentPermitOCRResponse::GetWarnCardInfos() const
+{
+    return m_warnCardInfos;
+}
+
+bool HmtResidentPermitOCRResponse::WarnCardInfosHasBeenSet() const
+{
+    return m_warnCardInfosHasBeenSet;
 }
 
 

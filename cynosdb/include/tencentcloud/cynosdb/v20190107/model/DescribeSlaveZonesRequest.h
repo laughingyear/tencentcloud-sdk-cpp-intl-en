@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取Cloud frame cluster ID.
-                     * @return OssClusterId Cloud frame cluster ID.
+                     * 获取Cloud cluster ID
+                     * @return OssClusterId Cloud cluster ID
                      * 
                      */
                     int64_t GetOssClusterId() const;
 
                     /**
-                     * 设置Cloud frame cluster ID.
-                     * @param _ossClusterId Cloud frame cluster ID.
+                     * 设置Cloud cluster ID
+                     * @param _ossClusterId Cloud cluster ID
                      * 
                      */
                     void SetOssClusterId(const int64_t& _ossClusterId);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool OssClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取Storage architecture type. Enumeration values: 1.0/2.0. Default value: 1.0
+                     * @return StorageVersion Storage architecture type. Enumeration values: 1.0/2.0. Default value: 1.0
+                     * 
+                     */
+                    std::string GetStorageVersion() const;
+
+                    /**
+                     * 设置Storage architecture type. Enumeration values: 1.0/2.0. Default value: 1.0
+                     * @param _storageVersion Storage architecture type. Enumeration values: 1.0/2.0. Default value: 1.0
+                     * 
+                     */
+                    void SetStorageVersion(const std::string& _storageVersion);
+
+                    /**
+                     * 判断参数 StorageVersion 是否已赋值
+                     * @return StorageVersion 是否已赋值
+                     * 
+                     */
+                    bool StorageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * Cloud frame cluster ID.
+                     * Cloud cluster ID
                      */
                     int64_t m_ossClusterId;
                     bool m_ossClusterIdHasBeenSet;
+
+                    /**
+                     * Storage architecture type. Enumeration values: 1.0/2.0. Default value: 1.0
+                     */
+                    std::string m_storageVersion;
+                    bool m_storageVersionHasBeenSet;
 
                 };
             }

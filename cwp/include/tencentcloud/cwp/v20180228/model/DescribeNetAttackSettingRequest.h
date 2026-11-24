@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Product type. 0:CWP; 1:CSC</p>
+                     * @return ProductType <p>Product type. 0:CWP; 1:CSC</p>
+                     * 
+                     */
+                    uint64_t GetProductType() const;
+
+                    /**
+                     * 设置<p>Product type. 0:CWP; 1:CSC</p>
+                     * @param _productType <p>Product type. 0:CWP; 1:CSC</p>
+                     * 
+                     */
+                    void SetProductType(const uint64_t& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Product type. 0:CWP; 1:CSC</p>
+                     */
+                    uint64_t m_productType;
+                    bool m_productTypeHasBeenSet;
 
                 };
             }

@@ -80,7 +80,7 @@ namespace TencentCloud
 <li><strong>tag-value</strong></li>
 <p style="padding-left: 30px;">Filter by the <strong>tag value</strong>.</p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
 <li><strong>tag:tag-key</strong></li>
-<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace “tag-key” with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
+<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace "tag-key" with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
                      * @return Filters Filters. Each request can have up to 10 `Filters`, and 5 `Filters.Values` for each filter. `ImageIds` and `Filters` cannot be specified at the same time. See details:
 
 <li><strong>image-id</strong></li>
@@ -96,7 +96,7 @@ namespace TencentCloud
 <li><strong>tag-value</strong></li>
 <p style="padding-left: 30px;">Filter by the <strong>tag value</strong>.</p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
 <li><strong>tag:tag-key</strong></li>
-<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace “tag-key” with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
+<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace "tag-key" with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -117,7 +117,7 @@ namespace TencentCloud
 <li><strong>tag-value</strong></li>
 <p style="padding-left: 30px;">Filter by the <strong>tag value</strong>.</p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
 <li><strong>tag:tag-key</strong></li>
-<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace “tag-key” with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
+<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace "tag-key" with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
                      * @param _filters Filters. Each request can have up to 10 `Filters`, and 5 `Filters.Values` for each filter. `ImageIds` and `Filters` cannot be specified at the same time. See details:
 
 <li><strong>image-id</strong></li>
@@ -133,7 +133,7 @@ namespace TencentCloud
 <li><strong>tag-value</strong></li>
 <p style="padding-left: 30px;">Filter by the <strong>tag value</strong>.</p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
 <li><strong>tag:tag-key</strong></li>
-<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace “tag-key” with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
+<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace "tag-key" with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -146,15 +146,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-                     * @return Offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * 获取Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
+                     * @return Offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-                     * @param _offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * 设置Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
+                     * @param _offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -167,15 +167,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-                     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * 获取Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
+                     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-                     * @param _limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * 设置Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
+                     * @param _limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Instance type, e.g. `S1.SMALL1`
-                     * @return InstanceType Instance type, e.g. `S1.SMALL1`
+                     * 获取Instance type, e.g. `SA5.MEDIUM2`
+                     * @return InstanceType Instance type, e.g. `SA5.MEDIUM2`
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置Instance type, e.g. `S1.SMALL1`
-                     * @param _instanceType Instance type, e.g. `S1.SMALL1`
+                     * 设置Instance type, e.g. `SA5.MEDIUM2`
+                     * @param _instanceType Instance type, e.g. `SA5.MEDIUM2`
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -232,25 +232,25 @@ namespace TencentCloud
 <li><strong>tag-value</strong></li>
 <p style="padding-left: 30px;">Filter by the <strong>tag value</strong>.</p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
 <li><strong>tag:tag-key</strong></li>
-<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace “tag-key” with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
+<p style="padding-left: 30px;">Filter by the <strong>tag key-value pair</strong>. Replace "tag-key" with the actual value. </p><p style="padding-left: 30px;">Type: String</p><p style="padding-left: 30px;">Optional</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * Offset; default value: 0. For more information on `Offset`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://intl.cloud.tencent.com/document/api/213/568?from_cn_redirect=1#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+                     * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](https://www.tencentcloud.com/document/product/213/15689).
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Instance type, e.g. `S1.SMALL1`
+                     * Instance type, e.g. `SA5.MEDIUM2`
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

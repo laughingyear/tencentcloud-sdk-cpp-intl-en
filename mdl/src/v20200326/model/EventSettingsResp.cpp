@@ -23,6 +23,7 @@ using namespace std;
 EventSettingsResp::EventSettingsResp() :
     m_eventTypeHasBeenSet(false),
     m_inputAttachmentHasBeenSet(false),
+    m_pipelineIdHasBeenSet(false),
     m_outputGroupNameHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_destinationsHasBeenSet(false),
@@ -31,7 +32,9 @@ EventSettingsResp::EventSettingsResp() :
     m_spliceDurationHasBeenSet(false),
     m_timedMetadataSettingHasBeenSet(false),
     m_staticImageActivateSettingHasBeenSet(false),
-    m_staticImageDeactivateSettingHasBeenSet(false)
+    m_staticImageDeactivateSettingHasBeenSet(false),
+    m_motionGraphicsActivateSettingHasBeenSet(false),
+    m_adBreakSettingHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,16 @@ CoreInternalOutcome EventSettingsResp::Deserialize(const rapidjson::Value &value
         }
         m_inputAttachment = string(value["InputAttachment"].GetString());
         m_inputAttachmentHasBeenSet = true;
+    }
+
+    if (value.HasMember("PipelineId") && !value["PipelineId"].IsNull())
+    {
+        if (!value["PipelineId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventSettingsResp.PipelineId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pipelineId = value["PipelineId"].GetInt64();
+        m_pipelineIdHasBeenSet = true;
     }
 
     if (value.HasMember("OutputGroupName") && !value["OutputGroupName"].IsNull())
@@ -191,6 +204,40 @@ CoreInternalOutcome EventSettingsResp::Deserialize(const rapidjson::Value &value
         m_staticImageDeactivateSettingHasBeenSet = true;
     }
 
+    if (value.HasMember("MotionGraphicsActivateSetting") && !value["MotionGraphicsActivateSetting"].IsNull())
+    {
+        if (!value["MotionGraphicsActivateSetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventSettingsResp.MotionGraphicsActivateSetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_motionGraphicsActivateSetting.Deserialize(value["MotionGraphicsActivateSetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_motionGraphicsActivateSettingHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdBreakSetting") && !value["AdBreakSetting"].IsNull())
+    {
+        if (!value["AdBreakSetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventSettingsResp.AdBreakSetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_adBreakSetting.Deserialize(value["AdBreakSetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_adBreakSettingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -212,6 +259,14 @@ void EventSettingsResp::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InputAttachment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inputAttachment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pipelineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PipelineId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pipelineId, allocator);
     }
 
     if (m_outputGroupNameHasBeenSet)
@@ -303,6 +358,24 @@ void EventSettingsResp::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         m_staticImageDeactivateSetting.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_motionGraphicsActivateSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MotionGraphicsActivateSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_motionGraphicsActivateSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_adBreakSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdBreakSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_adBreakSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -336,6 +409,22 @@ void EventSettingsResp::SetInputAttachment(const string& _inputAttachment)
 bool EventSettingsResp::InputAttachmentHasBeenSet() const
 {
     return m_inputAttachmentHasBeenSet;
+}
+
+int64_t EventSettingsResp::GetPipelineId() const
+{
+    return m_pipelineId;
+}
+
+void EventSettingsResp::SetPipelineId(const int64_t& _pipelineId)
+{
+    m_pipelineId = _pipelineId;
+    m_pipelineIdHasBeenSet = true;
+}
+
+bool EventSettingsResp::PipelineIdHasBeenSet() const
+{
+    return m_pipelineIdHasBeenSet;
 }
 
 string EventSettingsResp::GetOutputGroupName() const
@@ -480,5 +569,37 @@ void EventSettingsResp::SetStaticImageDeactivateSetting(const StaticImageDeactiv
 bool EventSettingsResp::StaticImageDeactivateSettingHasBeenSet() const
 {
     return m_staticImageDeactivateSettingHasBeenSet;
+}
+
+MotionGraphicsActivateSetting EventSettingsResp::GetMotionGraphicsActivateSetting() const
+{
+    return m_motionGraphicsActivateSetting;
+}
+
+void EventSettingsResp::SetMotionGraphicsActivateSetting(const MotionGraphicsActivateSetting& _motionGraphicsActivateSetting)
+{
+    m_motionGraphicsActivateSetting = _motionGraphicsActivateSetting;
+    m_motionGraphicsActivateSettingHasBeenSet = true;
+}
+
+bool EventSettingsResp::MotionGraphicsActivateSettingHasBeenSet() const
+{
+    return m_motionGraphicsActivateSettingHasBeenSet;
+}
+
+AdBreakSetting EventSettingsResp::GetAdBreakSetting() const
+{
+    return m_adBreakSetting;
+}
+
+void EventSettingsResp::SetAdBreakSetting(const AdBreakSetting& _adBreakSetting)
+{
+    m_adBreakSetting = _adBreakSetting;
+    m_adBreakSettingHasBeenSet = true;
+}
+
+bool EventSettingsResp::AdBreakSettingHasBeenSet() const
+{
+    return m_adBreakSettingHasBeenSet;
 }
 

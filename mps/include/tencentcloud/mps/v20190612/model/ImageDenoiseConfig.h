@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Capability configuration enabling status. Valid values:
-<li>ON: enabled.</li>
-<li>OFF: disabled.</li>
+                     * 获取Capability configuration switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @return Switch Capability configuration enabling status. Valid values:
-<li>ON: enabled.</li>
-<li>OFF: disabled.</li>
+                     * @return Switch Capability configuration switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Capability configuration enabling status. Valid values:
-<li>ON: enabled.</li>
-<li>OFF: disabled.</li>
+                     * 设置Capability configuration switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
-                     * @param _switch Capability configuration enabling status. Valid values:
-<li>ON: enabled.</li>
-<li>OFF: disabled.</li>
+                     * @param _switch Capability configuration switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      * 
                      */
@@ -80,31 +80,27 @@ Default value: ON.
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Type, with valid values including:
+                     * 获取Type. Valid values:
 <li>weak</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Type Type, with valid values including:
+                     * @return Type Type. Valid values:
 <li>weak</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Type, with valid values including:
+                     * 设置Type. Valid values:
 <li>weak</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _type Type, with valid values including:
+                     * @param _type Type. Valid values:
 <li>weak</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -119,20 +115,19 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * Capability configuration enabling status. Valid values:
-<li>ON: enabled.</li>
-<li>OFF: disabled.</li>
+                     * Capability configuration switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
 Default value: ON.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Type, with valid values including:
+                     * Type. Valid values:
 <li>weak</li>
 <li>strong</li>
 Default value: weak.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

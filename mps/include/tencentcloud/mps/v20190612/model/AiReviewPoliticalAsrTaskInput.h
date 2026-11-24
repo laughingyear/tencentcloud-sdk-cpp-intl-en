@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The input parameters for ASR-based detection of politically sensitive information.
+                * Input parameter type of the sensitive Asr text task in content review
                 */
                 class AiReviewPoliticalAsrTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The template ID.
-                     * @return Definition The template ID.
+                     * 获取Template ID.
+                     * @return Definition Template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置The template ID.
-                     * @param _definition The template ID.
+                     * 设置Template ID.
+                     * @param _definition Template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The template ID.
+                     * Template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

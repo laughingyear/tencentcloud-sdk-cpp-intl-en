@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Encryption key returned
+                * Response for obtaining the encryption key.
                 */
                 class PresetResp : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RSA encryption public key
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Key RSA encryption public key
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取RSA public key.
+                     * @return Key RSA public key.
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置RSA encryption public key
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _key RSA encryption public key
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置RSA public key.
+                     * @param _key RSA public key.
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -74,8 +70,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * RSA encryption public key
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * RSA public key.
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

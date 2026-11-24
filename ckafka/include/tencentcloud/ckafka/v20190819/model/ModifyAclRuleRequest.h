@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>ckafka cluster instance Id</p><p>For reference: <a href="https://www.tencentcloud.com/document/api/597/40835?from_cn_redirect=1">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka cluster instance Id</p><p>For reference: <a href="https://www.tencentcloud.com/document/api/597/40835?from_cn_redirect=1">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>ckafka cluster instance Id</p><p>For reference: <a href="https://www.tencentcloud.com/document/api/597/40835?from_cn_redirect=1">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka cluster instance Id</p><p>For reference: <a href="https://www.tencentcloud.com/document/api/597/40835?from_cn_redirect=1">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ACL policy name
-                     * @return RuleName ACL policy name
+                     * 获取<p>ACL rule name</p>
+                     * @return RuleName <p>ACL rule name</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置ACL policy name
-                     * @param _ruleName ACL policy name
+                     * 设置<p>ACL rule name</p>
+                     * @param _ruleName <p>ACL rule name</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取Whether to be applied to new topics
-                     * @return IsApplied Whether to be applied to new topics
+                     * 获取<p>Input when modifying the preset rule, whether to apply to newly-added topics</p><p>Enumeration value:</p><ul><li>0: Not allowed to apply to newly-added topics</li><li>1: Allowed to apply to newly-added topics</li></ul><p>Default value: 0</p>
+                     * @return IsApplied <p>Input when modifying the preset rule, whether to apply to newly-added topics</p><p>Enumeration value:</p><ul><li>0: Not allowed to apply to newly-added topics</li><li>1: Allowed to apply to newly-added topics</li></ul><p>Default value: 0</p>
                      * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
-                     * 设置Whether to be applied to new topics
-                     * @param _isApplied Whether to be applied to new topics
+                     * 设置<p>Input when modifying the preset rule, whether to apply to newly-added topics</p><p>Enumeration value:</p><ul><li>0: Not allowed to apply to newly-added topics</li><li>1: Allowed to apply to newly-added topics</li></ul><p>Default value: 0</p>
+                     * @param _isApplied <p>Input when modifying the preset rule, whether to apply to newly-added topics</p><p>Enumeration value:</p><ul><li>0: Not allowed to apply to newly-added topics</li><li>1: Allowed to apply to newly-added topics</li></ul><p>Default value: 0</p>
                      * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Instance ID
+                     * <p>ckafka cluster instance Id</p><p>For reference: <a href="https://www.tencentcloud.com/document/api/597/40835?from_cn_redirect=1">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ACL policy name
+                     * <p>ACL rule name</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * Whether to be applied to new topics
+                     * <p>Input when modifying the preset rule, whether to apply to newly-added topics</p><p>Enumeration value:</p><ul><li>0: Not allowed to apply to newly-added topics</li><li>1: Allowed to apply to newly-added topics</li></ul><p>Default value: 0</p>
                      */
                     int64_t m_isApplied;
                     bool m_isAppliedHasBeenSet;

@@ -62,7 +62,14 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_uniqSubnetIdHasBeenSet(false),
     m_topologyInfoListHasBeenSet(false),
     m_isMultiZoneClusterHasBeenSet(false),
-    m_isCvmReplaceHasBeenSet(false)
+    m_isCvmReplaceHasBeenSet(false),
+    m_clusterTitleHasBeenSet(false),
+    m_configDetailHasBeenSet(false),
+    m_bindFileSystemNumHasBeenSet(false),
+    m_clusterRelationInfoListHasBeenSet(false),
+    m_redisIdHasBeenSet(false),
+    m_isIOHungSelfRecoveryHasBeenSet(false),
+    m_metaDBGroupInfoHasBeenSet(false)
 {
 }
 
@@ -528,6 +535,103 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_isCvmReplaceHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterTitle") && !value["ClusterTitle"].IsNull())
+    {
+        if (!value["ClusterTitle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ClusterTitle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterTitle = string(value["ClusterTitle"].GetString());
+        m_clusterTitleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigDetail") && !value["ConfigDetail"].IsNull())
+    {
+        if (!value["ConfigDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ConfigDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configDetail.Deserialize(value["ConfigDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("BindFileSystemNum") && !value["BindFileSystemNum"].IsNull())
+    {
+        if (!value["BindFileSystemNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.BindFileSystemNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindFileSystemNum = value["BindFileSystemNum"].GetInt64();
+        m_bindFileSystemNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterRelationInfoList") && !value["ClusterRelationInfoList"].IsNull())
+    {
+        if (!value["ClusterRelationInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ClusterRelationInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterRelationInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterRelationMeta item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterRelationInfoList.push_back(item);
+        }
+        m_clusterRelationInfoListHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedisId") && !value["RedisId"].IsNull())
+    {
+        if (!value["RedisId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.RedisId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redisId = string(value["RedisId"].GetString());
+        m_redisIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIOHungSelfRecovery") && !value["IsIOHungSelfRecovery"].IsNull())
+    {
+        if (!value["IsIOHungSelfRecovery"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.IsIOHungSelfRecovery` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIOHungSelfRecovery = value["IsIOHungSelfRecovery"].GetBool();
+        m_isIOHungSelfRecoveryHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaDBGroupInfo") && !value["MetaDBGroupInfo"].IsNull())
+    {
+        if (!value["MetaDBGroupInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.MetaDBGroupInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetaDBGroupInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomMetaDBInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metaDBGroupInfo.push_back(item);
+        }
+        m_metaDBGroupInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -891,6 +995,77 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsCvmReplace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCvmReplace, allocator);
+    }
+
+    if (m_clusterTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bindFileSystemNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindFileSystemNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bindFileSystemNum, allocator);
+    }
+
+    if (m_clusterRelationInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterRelationInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterRelationInfoList.begin(); itr != m_clusterRelationInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_redisIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedisId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redisId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isIOHungSelfRecoveryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIOHungSelfRecovery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIOHungSelfRecovery, allocator);
+    }
+
+    if (m_metaDBGroupInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaDBGroupInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaDBGroupInfo.begin(); itr != m_metaDBGroupInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1566,5 +1741,117 @@ void ClusterInstancesInfo::SetIsCvmReplace(const bool& _isCvmReplace)
 bool ClusterInstancesInfo::IsCvmReplaceHasBeenSet() const
 {
     return m_isCvmReplaceHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetClusterTitle() const
+{
+    return m_clusterTitle;
+}
+
+void ClusterInstancesInfo::SetClusterTitle(const string& _clusterTitle)
+{
+    m_clusterTitle = _clusterTitle;
+    m_clusterTitleHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ClusterTitleHasBeenSet() const
+{
+    return m_clusterTitleHasBeenSet;
+}
+
+EmrProductConfigDetail ClusterInstancesInfo::GetConfigDetail() const
+{
+    return m_configDetail;
+}
+
+void ClusterInstancesInfo::SetConfigDetail(const EmrProductConfigDetail& _configDetail)
+{
+    m_configDetail = _configDetail;
+    m_configDetailHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ConfigDetailHasBeenSet() const
+{
+    return m_configDetailHasBeenSet;
+}
+
+int64_t ClusterInstancesInfo::GetBindFileSystemNum() const
+{
+    return m_bindFileSystemNum;
+}
+
+void ClusterInstancesInfo::SetBindFileSystemNum(const int64_t& _bindFileSystemNum)
+{
+    m_bindFileSystemNum = _bindFileSystemNum;
+    m_bindFileSystemNumHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::BindFileSystemNumHasBeenSet() const
+{
+    return m_bindFileSystemNumHasBeenSet;
+}
+
+vector<ClusterRelationMeta> ClusterInstancesInfo::GetClusterRelationInfoList() const
+{
+    return m_clusterRelationInfoList;
+}
+
+void ClusterInstancesInfo::SetClusterRelationInfoList(const vector<ClusterRelationMeta>& _clusterRelationInfoList)
+{
+    m_clusterRelationInfoList = _clusterRelationInfoList;
+    m_clusterRelationInfoListHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ClusterRelationInfoListHasBeenSet() const
+{
+    return m_clusterRelationInfoListHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetRedisId() const
+{
+    return m_redisId;
+}
+
+void ClusterInstancesInfo::SetRedisId(const string& _redisId)
+{
+    m_redisId = _redisId;
+    m_redisIdHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::RedisIdHasBeenSet() const
+{
+    return m_redisIdHasBeenSet;
+}
+
+bool ClusterInstancesInfo::GetIsIOHungSelfRecovery() const
+{
+    return m_isIOHungSelfRecovery;
+}
+
+void ClusterInstancesInfo::SetIsIOHungSelfRecovery(const bool& _isIOHungSelfRecovery)
+{
+    m_isIOHungSelfRecovery = _isIOHungSelfRecovery;
+    m_isIOHungSelfRecoveryHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::IsIOHungSelfRecoveryHasBeenSet() const
+{
+    return m_isIOHungSelfRecoveryHasBeenSet;
+}
+
+vector<CustomMetaDBInfo> ClusterInstancesInfo::GetMetaDBGroupInfo() const
+{
+    return m_metaDBGroupInfo;
+}
+
+void ClusterInstancesInfo::SetMetaDBGroupInfo(const vector<CustomMetaDBInfo>& _metaDBGroupInfo)
+{
+    m_metaDBGroupInfo = _metaDBGroupInfo;
+    m_metaDBGroupInfoHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::MetaDBGroupInfoHasBeenSet() const
+{
+    return m_metaDBGroupInfoHasBeenSet;
 }
 

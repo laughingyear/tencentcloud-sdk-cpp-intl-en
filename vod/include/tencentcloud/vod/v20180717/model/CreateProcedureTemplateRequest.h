@@ -26,6 +26,7 @@
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/ProcedureReviewAudioVideoTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeTaskInput.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task flow name (up to 20 characters).
-                     * @return Name Task flow name (up to 20 characters).
+                     * 获取<p>Task flow name (supports Chinese, up to 20 characters).</p>
+                     * @return Name <p>Task flow name (supports Chinese, up to 20 characters).</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Task flow name (up to 20 characters).
-                     * @param _name Task flow name (up to 20 characters).
+                     * 设置<p>Task flow name (supports Chinese, up to 20 characters).</p>
+                     * @param _name <p>Task flow name (supports Chinese, up to 20 characters).</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Template description. Length limit: 256 characters.
-                     * @return Comment Template description. Length limit: 256 characters.
+                     * 获取<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @return Comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description. Length limit: 256 characters.
-                     * @param _comment Template description. Length limit: 256 characters.
+                     * 设置<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @param _comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Parameter of video processing task.
-                     * @return MediaProcessTask Parameter of video processing task.
+                     * 获取<p>Video processing type task parameters.</p>
+                     * @return MediaProcessTask <p>Video processing type task parameters.</p>
                      * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
-                     * 设置Parameter of video processing task.
-                     * @param _mediaProcessTask Parameter of video processing task.
+                     * 设置<p>Video processing type task parameters.</p>
+                     * @param _mediaProcessTask <p>Video processing type task parameters.</p>
                      * 
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
@@ -132,19 +133,15 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取The information of the intelligent moderation task\*.
-<font color=red>\*: This parameter is used by our old moderation templates and is not recommended. Please use `ReviewAudioVideoTask` instead.</font> 
-                     * @return AiContentReviewTask The information of the intelligent moderation task\*.
-<font color=red>\*: This parameter is used by our old moderation templates and is not recommended. Please use `ReviewAudioVideoTask` instead.</font> 
+                     * 获取<p>AI content review type task parameter *. <font color="red">*This parameter is used to initiate legacy review and is not recommended. It is recommended to use the ReviewAudioVideoTask parameter to initiate review.</font></p>
+                     * @return AiContentReviewTask <p>AI content review type task parameter *. <font color="red">*This parameter is used to initiate legacy review and is not recommended. It is recommended to use the ReviewAudioVideoTask parameter to initiate review.</font></p>
                      * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置The information of the intelligent moderation task\*.
-<font color=red>\*: This parameter is used by our old moderation templates and is not recommended. Please use `ReviewAudioVideoTask` instead.</font> 
-                     * @param _aiContentReviewTask The information of the intelligent moderation task\*.
-<font color=red>\*: This parameter is used by our old moderation templates and is not recommended. Please use `ReviewAudioVideoTask` instead.</font> 
+                     * 设置<p>AI content review type task parameter *. <font color="red">*This parameter is used to initiate legacy review and is not recommended. It is recommended to use the ReviewAudioVideoTask parameter to initiate review.</font></p>
+                     * @param _aiContentReviewTask <p>AI content review type task parameter *. <font color="red">*This parameter is used to initiate legacy review and is not recommended. It is recommended to use the ReviewAudioVideoTask parameter to initiate review.</font></p>
                      * 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
@@ -157,15 +154,15 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取Parameter of AI-based content analysis task.
-                     * @return AiAnalysisTask Parameter of AI-based content analysis task.
+                     * 获取<p>Parameters for the AI content analysis task.</p>
+                     * @return AiAnalysisTask <p>Parameters for the AI content analysis task.</p>
                      * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
-                     * 设置Parameter of AI-based content analysis task.
-                     * @param _aiAnalysisTask Parameter of AI-based content analysis task.
+                     * 设置<p>Parameters for the AI content analysis task.</p>
+                     * @param _aiAnalysisTask <p>Parameters for the AI content analysis task.</p>
                      * 
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
@@ -178,36 +175,57 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取Type parameter of AI-based content recognition task.
-                     * @return AiRecognitionTask Type parameter of AI-based content recognition task.
+                     * 获取<p>Parameters for the AI content recognition task.</p>
+                     * @return AiRecognitionTaskSet <p>Parameters for the AI content recognition task.</p>
                      * 
+                     */
+                    std::vector<AiRecognitionTaskInput> GetAiRecognitionTaskSet() const;
+
+                    /**
+                     * 设置<p>Parameters for the AI content recognition task.</p>
+                     * @param _aiRecognitionTaskSet <p>Parameters for the AI content recognition task.</p>
+                     * 
+                     */
+                    void SetAiRecognitionTaskSet(const std::vector<AiRecognitionTaskInput>& _aiRecognitionTaskSet);
+
+                    /**
+                     * 判断参数 AiRecognitionTaskSet 是否已赋值
+                     * @return AiRecognitionTaskSet 是否已赋值
+                     * 
+                     */
+                    bool AiRecognitionTaskSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>This parameter is not recommended. Use AiRecognitionTaskSet instead.</p>
+                     * @return AiRecognitionTask <p>This parameter is not recommended. Use AiRecognitionTaskSet instead.</p>
+                     * @deprecated
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置Type parameter of AI-based content recognition task.
-                     * @param _aiRecognitionTask Type parameter of AI-based content recognition task.
-                     * 
+                     * 设置<p>This parameter is not recommended. Use AiRecognitionTaskSet instead.</p>
+                     * @param _aiRecognitionTask <p>This parameter is not recommended. Use AiRecognitionTaskSet instead.</p>
+                     * @deprecated
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
                      * 判断参数 AiRecognitionTask 是否已赋值
                      * @return AiRecognitionTask 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取The information of the moderation task.
-                     * @return ReviewAudioVideoTask The information of the moderation task.
+                     * 获取<p>Parameters for the audio and video moderation task.</p>
+                     * @return ReviewAudioVideoTask <p>Parameters for the audio and video moderation task.</p>
                      * 
                      */
                     ProcedureReviewAudioVideoTaskInput GetReviewAudioVideoTask() const;
 
                     /**
-                     * 设置The information of the moderation task.
-                     * @param _reviewAudioVideoTask The information of the moderation task.
+                     * 设置<p>Parameters for the audio and video moderation task.</p>
+                     * @param _reviewAudioVideoTask <p>Parameters for the audio and video moderation task.</p>
                      * 
                      */
                     void SetReviewAudioVideoTask(const ProcedureReviewAudioVideoTaskInput& _reviewAudioVideoTask);
@@ -219,56 +237,88 @@ namespace TencentCloud
                      */
                     bool ReviewAudioVideoTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Parameters for importing the Intelligent Media Assets knowledge base task.</p>
+                     * @return ImportMediaKnowledgeTaskSet <p>Parameters for importing the Intelligent Media Assets knowledge base task.</p>
+                     * 
+                     */
+                    std::vector<ImportMediaKnowledgeTaskInput> GetImportMediaKnowledgeTaskSet() const;
+
+                    /**
+                     * 设置<p>Parameters for importing the Intelligent Media Assets knowledge base task.</p>
+                     * @param _importMediaKnowledgeTaskSet <p>Parameters for importing the Intelligent Media Assets knowledge base task.</p>
+                     * 
+                     */
+                    void SetImportMediaKnowledgeTaskSet(const std::vector<ImportMediaKnowledgeTaskInput>& _importMediaKnowledgeTaskSet);
+
+                    /**
+                     * 判断参数 ImportMediaKnowledgeTaskSet 是否已赋值
+                     * @return ImportMediaKnowledgeTaskSet 是否已赋值
+                     * 
+                     */
+                    bool ImportMediaKnowledgeTaskSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Task flow name (up to 20 characters).
+                     * <p>Task flow name (supports Chinese, up to 20 characters).</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications, whether in the default application or a newly created application.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Template description. Length limit: 256 characters.
+                     * <p>Transcoding template description. Length limit: 256 characters.</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Parameter of video processing task.
+                     * <p>Video processing type task parameters.</p>
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * The information of the intelligent moderation task\*.
-<font color=red>\*: This parameter is used by our old moderation templates and is not recommended. Please use `ReviewAudioVideoTask` instead.</font> 
+                     * <p>AI content review type task parameter *. <font color="red">*This parameter is used to initiate legacy review and is not recommended. It is recommended to use the ReviewAudioVideoTask parameter to initiate review.</font></p>
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
-                     * Parameter of AI-based content analysis task.
+                     * <p>Parameters for the AI content analysis task.</p>
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
-                     * Type parameter of AI-based content recognition task.
+                     * <p>Parameters for the AI content recognition task.</p>
+                     */
+                    std::vector<AiRecognitionTaskInput> m_aiRecognitionTaskSet;
+                    bool m_aiRecognitionTaskSetHasBeenSet;
+
+                    /**
+                     * <p>This parameter is not recommended. Use AiRecognitionTaskSet instead.</p>
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
-                     * The information of the moderation task.
+                     * <p>Parameters for the audio and video moderation task.</p>
                      */
                     ProcedureReviewAudioVideoTaskInput m_reviewAudioVideoTask;
                     bool m_reviewAudioVideoTaskHasBeenSet;
+
+                    /**
+                     * <p>Parameters for importing the Intelligent Media Assets knowledge base task.</p>
+                     */
+                    std::vector<ImportMediaKnowledgeTaskInput> m_importMediaKnowledgeTaskSet;
+                    bool m_importMediaKnowledgeTaskSetHasBeenSet;
 
                 };
             }

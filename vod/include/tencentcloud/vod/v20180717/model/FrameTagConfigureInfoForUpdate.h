@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of intelligent frame-specific tagging task
+                * Intelligent frame tagging task control parameter
                 */
                 class FrameTagConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of intelligent frame-specific tagging task. Valid values:
-<li>ON: enables intelligent frame-specific tagging task;</li>
-<li>OFF: disables intelligent frame-specific tagging task.</li>
-                     * @return Switch Switch of intelligent frame-specific tagging task. Valid values:
-<li>ON: enables intelligent frame-specific tagging task;</li>
-<li>OFF: disables intelligent frame-specific tagging task.</li>
+                     * 获取Switch for the intelligent frame-specific tagging task. Available values:
+<li>ON: enable intelligent frame-specific tagging task;</li>
+<li>OFF: Disable the intelligent frame-specific tagging task.</li>
+                     * @return Switch Switch for the intelligent frame-specific tagging task. Available values:
+<li>ON: enable intelligent frame-specific tagging task;</li>
+<li>OFF: Disable the intelligent frame-specific tagging task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of intelligent frame-specific tagging task. Valid values:
-<li>ON: enables intelligent frame-specific tagging task;</li>
-<li>OFF: disables intelligent frame-specific tagging task.</li>
-                     * @param _switch Switch of intelligent frame-specific tagging task. Valid values:
-<li>ON: enables intelligent frame-specific tagging task;</li>
-<li>OFF: disables intelligent frame-specific tagging task.</li>
+                     * 设置Switch for the intelligent frame-specific tagging task. Available values:
+<li>ON: enable intelligent frame-specific tagging task;</li>
+<li>OFF: Disable the intelligent frame-specific tagging task.</li>
+                     * @param _switch Switch for the intelligent frame-specific tagging task. Available values:
+<li>ON: enable intelligent frame-specific tagging task;</li>
+<li>OFF: Disable the intelligent frame-specific tagging task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Frame capturing interval in seconds. Minimum value: 0.5 seconds.
-                     * @return ScreenshotInterval Frame capturing interval in seconds. Minimum value: 0.5 seconds.
+                     * 获取Frame interception interval in seconds. Minimum value: 0.5 seconds.
+                     * @return ScreenshotInterval Frame interception interval in seconds. Minimum value: 0.5 seconds.
                      * 
                      */
                     double GetScreenshotInterval() const;
 
                     /**
-                     * 设置Frame capturing interval in seconds. Minimum value: 0.5 seconds.
-                     * @param _screenshotInterval Frame capturing interval in seconds. Minimum value: 0.5 seconds.
+                     * 设置Frame interception interval in seconds. Minimum value: 0.5 seconds.
+                     * @param _screenshotInterval Frame interception interval in seconds. Minimum value: 0.5 seconds.
                      * 
                      */
                     void SetScreenshotInterval(const double& _screenshotInterval);
@@ -99,15 +99,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Switch of intelligent frame-specific tagging task. Valid values:
-<li>ON: enables intelligent frame-specific tagging task;</li>
-<li>OFF: disables intelligent frame-specific tagging task.</li>
+                     * Switch for the intelligent frame-specific tagging task. Available values:
+<li>ON: enable intelligent frame-specific tagging task;</li>
+<li>OFF: Disable the intelligent frame-specific tagging task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Frame capturing interval in seconds. Minimum value: 0.5 seconds.
+                     * Frame interception interval in seconds. Minimum value: 0.5 seconds.
                      */
                     double m_screenshotInterval;
                     bool m_screenshotIntervalHasBeenSet;

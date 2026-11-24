@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Number of database proxy groups
-                     * @return TotalCount Number of database proxy groups
+                     * 获取<p>Number of Database Proxy Groups</p>
+                     * @return TotalCount <p>Number of Database Proxy Groups</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取List of database proxy groups.
-                     * @return ProxyGroupInfos List of database proxy groups.
+                     * 获取<p>Database Proxy Group list</p>
+                     * @return ProxyGroupInfos <p>Database Proxy Group list</p>
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyGroupInfos() const;
@@ -74,10 +74,8 @@ namespace TencentCloud
                     bool ProxyGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy node
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ProxyNodeInfos Database proxy node
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Database proxy node</p>
+                     * @return ProxyNodeInfos <p>Database proxy node</p>
                      * 
                      */
                     std::vector<ProxyNodeInfo> GetProxyNodeInfos() const;
@@ -89,26 +87,45 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool ProxyNodeInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>sql automatic forwarding</p>
+                     * @return ColumnStoreProxyForward <p>sql automatic forwarding</p>
+                     * 
+                     */
+                    std::string GetColumnStoreProxyForward() const;
+
+                    /**
+                     * 判断参数 ColumnStoreProxyForward 是否已赋值
+                     * @return ColumnStoreProxyForward 是否已赋值
+                     * 
+                     */
+                    bool ColumnStoreProxyForwardHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Number of database proxy groups
+                     * <p>Number of Database Proxy Groups</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * List of database proxy groups.
+                     * <p>Database Proxy Group list</p>
                      */
                     std::vector<ProxyGroupInfo> m_proxyGroupInfos;
                     bool m_proxyGroupInfosHasBeenSet;
 
                     /**
-                     * Database proxy node
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Database proxy node</p>
                      */
                     std::vector<ProxyNodeInfo> m_proxyNodeInfos;
                     bool m_proxyNodeInfosHasBeenSet;
+
+                    /**
+                     * <p>sql automatic forwarding</p>
+                     */
+                    std::string m_columnStoreProxyForward;
+                    bool m_columnStoreProxyForwardHasBeenSet;
 
                 };
             }

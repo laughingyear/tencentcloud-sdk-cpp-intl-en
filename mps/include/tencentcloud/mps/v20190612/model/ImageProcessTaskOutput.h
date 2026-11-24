@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Path of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Path Path of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Path of the output file.</p>
+                     * @return Path <p>Path of the output file.</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置Path of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _path Path of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Path of the output file.</p>
+                     * @param _path <p>Path of the output file.</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -73,19 +69,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取Storage location of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return OutputStorage Storage location of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Storage location of the output file.</p>
+                     * @return OutputStorage <p>Storage location of the output file.</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置Storage location of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _outputStorage Storage location of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Storage location of the output file.</p>
+                     * @param _outputStorage <p>Storage location of the output file.</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -97,21 +89,73 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Processing result of the image-to-text task.</p>
+                     * @return Content <p>Processing result of the image-to-text task.</p>
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置<p>Processing result of the image-to-text task.</p>
+                     * @param _content <p>Processing result of the image-to-text task.</p>
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>VOD Standard Edition FileId</p>
+                     * @return FileId <p>VOD Standard Edition FileId</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>VOD Standard Edition FileId</p>
+                     * @param _fileId <p>VOD Standard Edition FileId</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Path of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Path of the output file.</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * Storage location of the output file.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Storage location of the output file.</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * <p>Processing result of the image-to-text task.</p>
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>VOD Standard Edition FileId</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

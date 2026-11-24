@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent tagging
+                * Intelligent tag result information.
                 */
                 class AiAnalysisTaskTagOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of intelligently generated video tags.
-                     * @return TagSet List of intelligently generated video tags.
+                     * 获取Intelligent video tag list.
+                     * @return TagSet Intelligent video tag list.
                      * 
                      */
                     std::vector<MediaAiAnalysisTagItem> GetTagSet() const;
 
                     /**
-                     * 设置List of intelligently generated video tags.
-                     * @param _tagSet List of intelligently generated video tags.
+                     * 设置Intelligent video tag list.
+                     * @param _tagSet Intelligent video tag list.
                      * 
                      */
                     void SetTagSet(const std::vector<MediaAiAnalysisTagItem>& _tagSet);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of intelligently generated video tags.
+                     * Intelligent video tag list.
                      */
                     std::vector<MediaAiAnalysisTagItem> m_tagSet;
                     bool m_tagSetHasBeenSet;

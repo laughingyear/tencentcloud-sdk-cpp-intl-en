@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for audio (silence, bass, pop) detection.
+                * Control parameters for audio (mute, bass, pop) detection.
                 */
                 class VoiceConfigureInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Audio (mute, bass, pop) detection switch, optional values: 
-<li>ON: on; </li>
-<li>OFF: off. </li>
-                     * @return Switch Audio (mute, bass, pop) detection switch, optional values: 
-<li>ON: on; </li>
-<li>OFF: off. </li>
+                     * 获取Audio (mute, bass, pop) detection switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+                     * @return Switch Audio (mute, bass, pop) detection switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Audio (mute, bass, pop) detection switch, optional values: 
-<li>ON: on; </li>
-<li>OFF: off. </li>
-                     * @param _switch Audio (mute, bass, pop) detection switch, optional values: 
-<li>ON: on; </li>
-<li>OFF: off. </li>
+                     * 设置Audio (mute, bass, pop) detection switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
+                     * @param _switch Audio (mute, bass, pop) detection switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Audio (mute, bass, pop) detection switch, optional values: 
-<li>ON: on; </li>
-<li>OFF: off. </li>
+                     * Audio (mute, bass, pop) detection switch. Available values:
+<li>ON: enabled</li>
+<li>OFF: disabled</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

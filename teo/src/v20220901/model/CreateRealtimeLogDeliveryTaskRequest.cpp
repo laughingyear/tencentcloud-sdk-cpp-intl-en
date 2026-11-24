@@ -24,19 +24,21 @@ using namespace std;
 
 CreateRealtimeLogDeliveryTaskRequest::CreateRealtimeLogDeliveryTaskRequest() :
     m_zoneIdHasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_entityListHasBeenSet(false),
-    m_logTypeHasBeenSet(false),
-    m_areaHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false),
+    m_customExpressionFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
     m_sampleHasBeenSet(false),
     m_logFormatHasBeenSet(false),
     m_cLSHasBeenSet(false),
     m_customEndpointHasBeenSet(false),
-    m_s3HasBeenSet(false)
+    m_s3HasBeenSet(false),
+    m_aWSS3HasBeenSet(false)
 {
 }
 
@@ -53,6 +55,22 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskNameHasBeenSet)
@@ -84,22 +102,6 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         }
     }
 
-    if (m_logTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_areaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Area";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_fieldsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -122,6 +124,21 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_customFields.begin(); itr != m_customFields.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customExpressionFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomExpressionFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customExpressionFields.begin(); itr != m_customExpressionFields.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -187,6 +204,15 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         m_s3.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_aWSS3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AWSS3";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aWSS3.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -209,6 +235,38 @@ void CreateRealtimeLogDeliveryTaskRequest::SetZoneId(const string& _zoneId)
 bool CreateRealtimeLogDeliveryTaskRequest::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+string CreateRealtimeLogDeliveryTaskRequest::GetArea() const
+{
+    return m_area;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+string CreateRealtimeLogDeliveryTaskRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
 }
 
 string CreateRealtimeLogDeliveryTaskRequest::GetTaskName() const
@@ -259,38 +317,6 @@ bool CreateRealtimeLogDeliveryTaskRequest::EntityListHasBeenSet() const
     return m_entityListHasBeenSet;
 }
 
-string CreateRealtimeLogDeliveryTaskRequest::GetLogType() const
-{
-    return m_logType;
-}
-
-void CreateRealtimeLogDeliveryTaskRequest::SetLogType(const string& _logType)
-{
-    m_logType = _logType;
-    m_logTypeHasBeenSet = true;
-}
-
-bool CreateRealtimeLogDeliveryTaskRequest::LogTypeHasBeenSet() const
-{
-    return m_logTypeHasBeenSet;
-}
-
-string CreateRealtimeLogDeliveryTaskRequest::GetArea() const
-{
-    return m_area;
-}
-
-void CreateRealtimeLogDeliveryTaskRequest::SetArea(const string& _area)
-{
-    m_area = _area;
-    m_areaHasBeenSet = true;
-}
-
-bool CreateRealtimeLogDeliveryTaskRequest::AreaHasBeenSet() const
-{
-    return m_areaHasBeenSet;
-}
-
 vector<string> CreateRealtimeLogDeliveryTaskRequest::GetFields() const
 {
     return m_fields;
@@ -321,6 +347,22 @@ void CreateRealtimeLogDeliveryTaskRequest::SetCustomFields(const vector<CustomFi
 bool CreateRealtimeLogDeliveryTaskRequest::CustomFieldsHasBeenSet() const
 {
     return m_customFieldsHasBeenSet;
+}
+
+vector<CustomExpressionField> CreateRealtimeLogDeliveryTaskRequest::GetCustomExpressionFields() const
+{
+    return m_customExpressionFields;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetCustomExpressionFields(const vector<CustomExpressionField>& _customExpressionFields)
+{
+    m_customExpressionFields = _customExpressionFields;
+    m_customExpressionFieldsHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::CustomExpressionFieldsHasBeenSet() const
+{
+    return m_customExpressionFieldsHasBeenSet;
 }
 
 vector<DeliveryCondition> CreateRealtimeLogDeliveryTaskRequest::GetDeliveryConditions() const
@@ -417,6 +459,22 @@ void CreateRealtimeLogDeliveryTaskRequest::SetS3(const S3& _s3)
 bool CreateRealtimeLogDeliveryTaskRequest::S3HasBeenSet() const
 {
     return m_s3HasBeenSet;
+}
+
+AWSS3 CreateRealtimeLogDeliveryTaskRequest::GetAWSS3() const
+{
+    return m_aWSS3;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetAWSS3(const AWSS3& _aWSS3)
+{
+    m_aWSS3 = _aWSS3;
+    m_aWSS3HasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::AWSS3HasBeenSet() const
+{
+    return m_aWSS3HasBeenSet;
 }
 
 

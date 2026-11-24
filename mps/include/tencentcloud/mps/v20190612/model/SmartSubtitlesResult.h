@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextResult.h>
+#include <tencentcloud/mps/v20190612/model/PureSubtitleTransResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskFullTextResult.h>
 
 
 namespace TencentCloud
@@ -50,22 +52,30 @@ namespace TencentCloud
 
                     /**
                      * 获取Task type. Valid values:
-<Li>AsrFullTextRecognition: full speech recognition</li>
-<Li>TransTextRecognition: speech translation</li>
+- AsrFullTextRecognition: full speech recognition.
+- TransTextRecognition: speech translation.
+- PureSubtitleTrans: pure subtitle translation.
+- OcrFullTextRecognition: text-based subtitle extraction.
                      * @return Type Task type. Valid values:
-<Li>AsrFullTextRecognition: full speech recognition</li>
-<Li>TransTextRecognition: speech translation</li>
+- AsrFullTextRecognition: full speech recognition.
+- TransTextRecognition: speech translation.
+- PureSubtitleTrans: pure subtitle translation.
+- OcrFullTextRecognition: text-based subtitle extraction.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Task type. Valid values:
-<Li>AsrFullTextRecognition: full speech recognition</li>
-<Li>TransTextRecognition: speech translation</li>
+- AsrFullTextRecognition: full speech recognition.
+- TransTextRecognition: speech translation.
+- PureSubtitleTrans: pure subtitle translation.
+- OcrFullTextRecognition: text-based subtitle extraction.
                      * @param _type Task type. Valid values:
-<Li>AsrFullTextRecognition: full speech recognition</li>
-<Li>TransTextRecognition: speech translation</li>
+- AsrFullTextRecognition: full speech recognition.
+- TransTextRecognition: speech translation.
+- PureSubtitleTrans: pure subtitle translation.
+- OcrFullTextRecognition: text-based subtitle extraction.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -79,22 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Full speech recognition result. When Type is
- set to AsrFullTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when AsrFullTextRecognition is set.
                      * @return AsrFullTextTask Full speech recognition result. When Type is
- set to AsrFullTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when AsrFullTextRecognition is set.
                      * 
                      */
                     SmartSubtitleTaskAsrFullTextResult GetAsrFullTextTask() const;
 
                     /**
                      * 设置Full speech recognition result. When Type is
- set to AsrFullTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when AsrFullTextRecognition is set.
                      * @param _asrFullTextTask Full speech recognition result. When Type is
- set to AsrFullTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when AsrFullTextRecognition is set.
                      * 
                      */
                     void SetAsrFullTextTask(const SmartSubtitleTaskAsrFullTextResult& _asrFullTextTask);
@@ -109,12 +115,10 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * 获取Translation result. When Type is
 
- set to TransTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when set to TransTextRecognition.
                      * @return TransTextTask Translation result. When Type is
 
- set to TransTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when set to TransTextRecognition.
                      * 
                      */
                     SmartSubtitleTaskTransTextResult GetTransTextTask() const;
@@ -122,12 +126,10 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * 设置Translation result. When Type is
 
- set to TransTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when set to TransTextRecognition.
                      * @param _transTextTask Translation result. When Type is
 
- set to TransTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when set to TransTextRecognition.
                      * 
                      */
                     void SetTransTextTask(const SmartSubtitleTaskTransTextResult& _transTextTask);
@@ -139,20 +141,67 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool TransTextTaskHasBeenSet() const;
 
+                    /**
+                     * 获取The translation result of the pure subtitle file is returned when the translation type is PureSubtitleTrans.
+                     * @return PureSubtitleTransTask The translation result of the pure subtitle file is returned when the translation type is PureSubtitleTrans.
+                     * 
+                     */
+                    PureSubtitleTransResult GetPureSubtitleTransTask() const;
+
+                    /**
+                     * 设置The translation result of the pure subtitle file is returned when the translation type is PureSubtitleTrans.
+                     * @param _pureSubtitleTransTask The translation result of the pure subtitle file is returned when the translation type is PureSubtitleTrans.
+                     * 
+                     */
+                    void SetPureSubtitleTransTask(const PureSubtitleTransResult& _pureSubtitleTransTask);
+
+                    /**
+                     * 判断参数 PureSubtitleTransTask 是否已赋值
+                     * @return PureSubtitleTransTask 是否已赋值
+                     * 
+                     */
+                    bool PureSubtitleTransTaskHasBeenSet() const;
+
+                    /**
+                     * 获取Text-based subtitle extraction result. This field is valid when the value of Type is
+Valid when OcrFullTextRecognition is set.
+                     * @return OcrFullTextTask Text-based subtitle extraction result. This field is valid when the value of Type is
+Valid when OcrFullTextRecognition is set.
+                     * 
+                     */
+                    SmartSubtitleTaskFullTextResult GetOcrFullTextTask() const;
+
+                    /**
+                     * 设置Text-based subtitle extraction result. This field is valid when the value of Type is
+Valid when OcrFullTextRecognition is set.
+                     * @param _ocrFullTextTask Text-based subtitle extraction result. This field is valid when the value of Type is
+Valid when OcrFullTextRecognition is set.
+                     * 
+                     */
+                    void SetOcrFullTextTask(const SmartSubtitleTaskFullTextResult& _ocrFullTextTask);
+
+                    /**
+                     * 判断参数 OcrFullTextTask 是否已赋值
+                     * @return OcrFullTextTask 是否已赋值
+                     * 
+                     */
+                    bool OcrFullTextTaskHasBeenSet() const;
+
                 private:
 
                     /**
                      * Task type. Valid values:
-<Li>AsrFullTextRecognition: full speech recognition</li>
-<Li>TransTextRecognition: speech translation</li>
+- AsrFullTextRecognition: full speech recognition.
+- TransTextRecognition: speech translation.
+- PureSubtitleTrans: pure subtitle translation.
+- OcrFullTextRecognition: text-based subtitle extraction.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * Full speech recognition result. When Type is
- set to AsrFullTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when AsrFullTextRecognition is set.
                      */
                     SmartSubtitleTaskAsrFullTextResult m_asrFullTextTask;
                     bool m_asrFullTextTaskHasBeenSet;
@@ -160,11 +209,23 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * Translation result. When Type is
 
- set to TransTextRecognition, this parameter takes effect.
-Note: This field may return null, indicating that no valid value can be obtained.
+Valid when set to TransTextRecognition.
                      */
                     SmartSubtitleTaskTransTextResult m_transTextTask;
                     bool m_transTextTaskHasBeenSet;
+
+                    /**
+                     * The translation result of the pure subtitle file is returned when the translation type is PureSubtitleTrans.
+                     */
+                    PureSubtitleTransResult m_pureSubtitleTransTask;
+                    bool m_pureSubtitleTransTaskHasBeenSet;
+
+                    /**
+                     * Text-based subtitle extraction result. This field is valid when the value of Type is
+Valid when OcrFullTextRecognition is set.
+                     */
+                    SmartSubtitleTaskFullTextResult m_ocrFullTextTask;
+                    bool m_ocrFullTextTaskHasBeenSet;
 
                 };
             }

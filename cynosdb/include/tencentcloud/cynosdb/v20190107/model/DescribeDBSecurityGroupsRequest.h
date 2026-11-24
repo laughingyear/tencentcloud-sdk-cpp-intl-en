@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specifies that the instance ID must be provided by selecting either InstanceId or InstanceGroupId.
-                     * @return InstanceId Specifies that the instance ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * 获取Instance ID (you must import either InstanceId or InstanceGroupId)
+                     * @return InstanceId Instance ID (you must import either InstanceId or InstanceGroupId)
                      * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Specifies that the instance ID must be provided by selecting either InstanceId or InstanceGroupId.
-                     * @param _instanceId Specifies that the instance ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * 设置Instance ID (you must import either InstanceId or InstanceGroupId)
+                     * @param _instanceId Instance ID (you must import either InstanceId or InstanceGroupId)
                      * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Specifies that the instance group ID must be provided by selecting either InstanceId or InstanceGroupId.
-                     * @return InstanceGroupId Specifies that the instance group ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * 获取Instance group ID, which can be obtained through the [DescribeClusterInstanceGroups](https://www.tencentcloud.com/document/product/1003/103934?from_cn_redirect=1) API.
+                     * @return InstanceGroupId Instance group ID, which can be obtained through the [DescribeClusterInstanceGroups](https://www.tencentcloud.com/document/product/1003/103934?from_cn_redirect=1) API.
                      * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
-                     * 设置Specifies that the instance group ID must be provided by selecting either InstanceId or InstanceGroupId.
-                     * @param _instanceGroupId Specifies that the instance group ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * 设置Instance group ID, which can be obtained through the [DescribeClusterInstanceGroups](https://www.tencentcloud.com/document/product/1003/103934?from_cn_redirect=1) API.
+                     * @param _instanceGroupId Instance group ID, which can be obtained through the [DescribeClusterInstanceGroups](https://www.tencentcloud.com/document/product/1003/103934?from_cn_redirect=1) API.
                      * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Specifies that the instance ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * Instance ID (you must import either InstanceId or InstanceGroupId)
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Specifies that the instance group ID must be provided by selecting either InstanceId or InstanceGroupId.
+                     * Instance group ID, which can be obtained through the [DescribeClusterInstanceGroups](https://www.tencentcloud.com/document/product/1003/103934?from_cn_redirect=1) API.
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;

@@ -43,23 +43,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取How to receive event notifications. 
-<li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948);</li>
-<li>PULL: [Reliable notification based on message queue ](https://www.tencentcloud.com/document/product/266/33948). </li>
-                     * @return Mode How to receive event notifications. 
-<li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948);</li>
-<li>PULL: [Reliable notification based on message queue ](https://www.tencentcloud.com/document/product/266/33948). </li>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be filled with the application ID.</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be filled with the application ID.</b></p>
+                     * 
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be filled with the application ID.</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be filled with the application ID.</b></p>
+                     * 
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     * 
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Method of receiving event notifications.</p><li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1);</li><li>PULL: [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).</li>
+                     * @return Mode <p>Method of receiving event notifications.</p><li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1);</li><li>PULL: [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).</li>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置How to receive event notifications. 
-<li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948);</li>
-<li>PULL: [Reliable notification based on message queue ](https://www.tencentcloud.com/document/product/266/33948). </li>
-                     * @param _mode How to receive event notifications. 
-<li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948);</li>
-<li>PULL: [Reliable notification based on message queue ](https://www.tencentcloud.com/document/product/266/33948). </li>
+                     * 设置<p>Method of receiving event notifications.</p><li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1);</li><li>PULL: [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).</li>
+                     * @param _mode <p>Method of receiving event notifications.</p><li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1);</li><li>PULL: [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).</li>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -72,19 +85,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取The address used to receive 3.0 format callbacks when using the [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) reception method. 
-Note: If the NotificationUrl parameter is provided and the value is an empty string, the 3.0 format callback address will be cleared.
-                     * @return NotificationUrl The address used to receive 3.0 format callbacks when using the [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) reception method. 
-Note: If the NotificationUrl parameter is provided and the value is an empty string, the 3.0 format callback address will be cleared.
+                     * 获取<p>Address for receiving 3.0 format callbacks when using <a href="https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1">HTTP callback notification</a> as the receiving channel.<br>Note: If the NotificationUrl parameter is included and its value is an empty string, the 3.0 format callback address will be cleared.</p>
+                     * @return NotificationUrl <p>Address for receiving 3.0 format callbacks when using <a href="https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1">HTTP callback notification</a> as the receiving channel.<br>Note: If the NotificationUrl parameter is included and its value is an empty string, the 3.0 format callback address will be cleared.</p>
                      * 
                      */
                     std::string GetNotificationUrl() const;
 
                     /**
-                     * 设置The address used to receive 3.0 format callbacks when using the [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) reception method. 
-Note: If the NotificationUrl parameter is provided and the value is an empty string, the 3.0 format callback address will be cleared.
-                     * @param _notificationUrl The address used to receive 3.0 format callbacks when using the [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) reception method. 
-Note: If the NotificationUrl parameter is provided and the value is an empty string, the 3.0 format callback address will be cleared.
+                     * 设置<p>Address for receiving 3.0 format callbacks when using <a href="https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1">HTTP callback notification</a> as the receiving channel.<br>Note: If the NotificationUrl parameter is included and its value is an empty string, the 3.0 format callback address will be cleared.</p>
+                     * @param _notificationUrl <p>Address for receiving 3.0 format callbacks when using <a href="https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1">HTTP callback notification</a> as the receiving channel.<br>Note: If the NotificationUrl parameter is included and its value is an empty string, the 3.0 format callback address will be cleared.</p>
                      * 
                      */
                     void SetNotificationUrl(const std::string& _notificationUrl);
@@ -97,15 +106,15 @@ Note: If the NotificationUrl parameter is provided and the value is an empty str
                     bool NotificationUrlHasBeenSet() const;
 
                     /**
-                     * 获取Whether to receive the [Video Upload Completed](https://www.tencentcloud.com/document/product/266/33950) event notification. The default "OFF" is to ignore the event notification, and "ON" is to receive the event notification. 
-                     * @return UploadMediaCompleteEventSwitch Whether to receive the [Video Upload Completed](https://www.tencentcloud.com/document/product/266/33950) event notification. The default "OFF" is to ignore the event notification, and "ON" is to receive the event notification. 
+                     * 获取<p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">video upload completed</a> event notifications. Default "OFF" means the event notification is ignored, and "ON" means event notifications are received.</p>
+                     * @return UploadMediaCompleteEventSwitch <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">video upload completed</a> event notifications. Default "OFF" means the event notification is ignored, and "ON" means event notifications are received.</p>
                      * 
                      */
                     std::string GetUploadMediaCompleteEventSwitch() const;
 
                     /**
-                     * 设置Whether to receive the [Video Upload Completed](https://www.tencentcloud.com/document/product/266/33950) event notification. The default "OFF" is to ignore the event notification, and "ON" is to receive the event notification. 
-                     * @param _uploadMediaCompleteEventSwitch Whether to receive the [Video Upload Completed](https://www.tencentcloud.com/document/product/266/33950) event notification. The default "OFF" is to ignore the event notification, and "ON" is to receive the event notification. 
+                     * 设置<p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">video upload completed</a> event notifications. Default "OFF" means the event notification is ignored, and "ON" means event notifications are received.</p>
+                     * @param _uploadMediaCompleteEventSwitch <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">video upload completed</a> event notifications. Default "OFF" means the event notification is ignored, and "ON" means event notifications are received.</p>
                      * 
                      */
                     void SetUploadMediaCompleteEventSwitch(const std::string& _uploadMediaCompleteEventSwitch);
@@ -118,15 +127,15 @@ Note: If the NotificationUrl parameter is provided and the value is an empty str
                     bool UploadMediaCompleteEventSwitchHasBeenSet() const;
 
                     /**
-                     * 获取Whether to receive [Video deletion completed](https://www.tencentcloud.com/document/product/266/33952) event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification .
-                     * @return DeleteMediaCompleteEventSwitch Whether to receive [Video deletion completed](https://www.tencentcloud.com/document/product/266/33952) event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification .
+                     * 获取<p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/13434?from_cn_redirect=1">video deletion completed</a> event notifications. Default "OFF" ignores the event notification, and "ON" receives event notifications.</p>
+                     * @return DeleteMediaCompleteEventSwitch <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/13434?from_cn_redirect=1">video deletion completed</a> event notifications. Default "OFF" ignores the event notification, and "ON" receives event notifications.</p>
                      * 
                      */
                     std::string GetDeleteMediaCompleteEventSwitch() const;
 
                     /**
-                     * 设置Whether to receive [Video deletion completed](https://www.tencentcloud.com/document/product/266/33952) event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification .
-                     * @param _deleteMediaCompleteEventSwitch Whether to receive [Video deletion completed](https://www.tencentcloud.com/document/product/266/33952) event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification .
+                     * 设置<p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/13434?from_cn_redirect=1">video deletion completed</a> event notifications. Default "OFF" ignores the event notification, and "ON" receives event notifications.</p>
+                     * @param _deleteMediaCompleteEventSwitch <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/13434?from_cn_redirect=1">video deletion completed</a> event notifications. Default "OFF" ignores the event notification, and "ON" receives event notifications.</p>
                      * 
                      */
                     void SetDeleteMediaCompleteEventSwitch(const std::string& _deleteMediaCompleteEventSwitch);
@@ -139,15 +148,15 @@ Note: If the NotificationUrl parameter is provided and the value is an empty str
                     bool DeleteMediaCompleteEventSwitchHasBeenSet() const;
 
                     /**
-                     * 获取Whether to receive the Persistence completed event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification.
-                     * @return PersistenceCompleteEventSwitch Whether to receive the Persistence completed event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification.
+                     * 获取<p>Whether to receive event notifications for clip solidification completion. Default "OFF" means the event notification is ignored, and "ON" means it is received.</p>
+                     * @return PersistenceCompleteEventSwitch <p>Whether to receive event notifications for clip solidification completion. Default "OFF" means the event notification is ignored, and "ON" means it is received.</p>
                      * 
                      */
                     std::string GetPersistenceCompleteEventSwitch() const;
 
                     /**
-                     * 设置Whether to receive the Persistence completed event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification.
-                     * @param _persistenceCompleteEventSwitch Whether to receive the Persistence completed event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification.
+                     * 设置<p>Whether to receive event notifications for clip solidification completion. Default "OFF" means the event notification is ignored, and "ON" means it is received.</p>
+                     * @param _persistenceCompleteEventSwitch <p>Whether to receive event notifications for clip solidification completion. Default "OFF" means the event notification is ignored, and "ON" means it is received.</p>
                      * 
                      */
                     void SetPersistenceCompleteEventSwitch(const std::string& _persistenceCompleteEventSwitch);
@@ -160,66 +169,69 @@ Note: If the NotificationUrl parameter is provided and the value is an empty str
                     bool PersistenceCompleteEventSwitchHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p>Callback key, consisting of upper- and lower-case letters and numbers, up to 32 characters. After configuration, the <code>Sign</code> and <code>T</code> fields will be sent in callbacks for authentication.</p><ul><li><code>Sign</code>: string type. Event notification security signature Sign = MD5 (SignKey + T). Description: Tencent Cloud concatenates the encrypted SignKey and T, calculates the Sign value through MD5, and places it in the notification message. Upon receiving the notification message, your backend server can verify whether Sign is correct based on the same algorithm, and furthermore confirm whether the message indeed comes from Tencent Cloud Backend.</li><li><code>T</code>: int64 type. Expiration time, UNIX timestamp of event notification signature expiration. The default expiration time for message notifications from Tencent is 10 minutes. If the time specified by the T value in a message notification has expired, the notification can be deemed invalid, thereby preventing network replay attacks. T is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (midnight UTC/GMT).</li></ul>
+                     * @return SignKey <p>Callback key, consisting of upper- and lower-case letters and numbers, up to 32 characters. After configuration, the <code>Sign</code> and <code>T</code> fields will be sent in callbacks for authentication.</p><ul><li><code>Sign</code>: string type. Event notification security signature Sign = MD5 (SignKey + T). Description: Tencent Cloud concatenates the encrypted SignKey and T, calculates the Sign value through MD5, and places it in the notification message. Upon receiving the notification message, your backend server can verify whether Sign is correct based on the same algorithm, and furthermore confirm whether the message indeed comes from Tencent Cloud Backend.</li><li><code>T</code>: int64 type. Expiration time, UNIX timestamp of event notification signature expiration. The default expiration time for message notifications from Tencent is 10 minutes. If the time specified by the T value in a message notification has expired, the notification can be deemed invalid, thereby preventing network replay attacks. T is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (midnight UTC/GMT).</li></ul>
                      * 
                      */
-                    uint64_t GetSubAppId() const;
+                    std::string GetSignKey() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p>Callback key, consisting of upper- and lower-case letters and numbers, up to 32 characters. After configuration, the <code>Sign</code> and <code>T</code> fields will be sent in callbacks for authentication.</p><ul><li><code>Sign</code>: string type. Event notification security signature Sign = MD5 (SignKey + T). Description: Tencent Cloud concatenates the encrypted SignKey and T, calculates the Sign value through MD5, and places it in the notification message. Upon receiving the notification message, your backend server can verify whether Sign is correct based on the same algorithm, and furthermore confirm whether the message indeed comes from Tencent Cloud Backend.</li><li><code>T</code>: int64 type. Expiration time, UNIX timestamp of event notification signature expiration. The default expiration time for message notifications from Tencent is 10 minutes. If the time specified by the T value in a message notification has expired, the notification can be deemed invalid, thereby preventing network replay attacks. T is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (midnight UTC/GMT).</li></ul>
+                     * @param _signKey <p>Callback key, consisting of upper- and lower-case letters and numbers, up to 32 characters. After configuration, the <code>Sign</code> and <code>T</code> fields will be sent in callbacks for authentication.</p><ul><li><code>Sign</code>: string type. Event notification security signature Sign = MD5 (SignKey + T). Description: Tencent Cloud concatenates the encrypted SignKey and T, calculates the Sign value through MD5, and places it in the notification message. Upon receiving the notification message, your backend server can verify whether Sign is correct based on the same algorithm, and furthermore confirm whether the message indeed comes from Tencent Cloud Backend.</li><li><code>T</code>: int64 type. Expiration time, UNIX timestamp of event notification signature expiration. The default expiration time for message notifications from Tencent is 10 minutes. If the time specified by the T value in a message notification has expired, the notification can be deemed invalid, thereby preventing network replay attacks. T is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (midnight UTC/GMT).</li></ul>
                      * 
                      */
-                    void SetSubAppId(const uint64_t& _subAppId);
+                    void SetSignKey(const std::string& _signKey);
 
                     /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
+                     * 判断参数 SignKey 是否已赋值
+                     * @return SignKey 是否已赋值
                      * 
                      */
-                    bool SubAppIdHasBeenSet() const;
+                    bool SignKeyHasBeenSet() const;
 
                 private:
 
                     /**
-                     * How to receive event notifications. 
-<li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948);</li>
-<li>PULL: [Reliable notification based on message queue ](https://www.tencentcloud.com/document/product/266/33948). </li>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate VOD services on or after December 25, 2023, when accessing resources in VOD applications (whether the default application or a newly created application), this field must be filled with the application ID.</b></p>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * <p>Method of receiving event notifications.</p><li>PUSH: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1);</li><li>PULL: [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).</li>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * The address used to receive 3.0 format callbacks when using the [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) reception method. 
-Note: If the NotificationUrl parameter is provided and the value is an empty string, the 3.0 format callback address will be cleared.
+                     * <p>Address for receiving 3.0 format callbacks when using <a href="https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1">HTTP callback notification</a> as the receiving channel.<br>Note: If the NotificationUrl parameter is included and its value is an empty string, the 3.0 format callback address will be cleared.</p>
                      */
                     std::string m_notificationUrl;
                     bool m_notificationUrlHasBeenSet;
 
                     /**
-                     * Whether to receive the [Video Upload Completed](https://www.tencentcloud.com/document/product/266/33950) event notification. The default "OFF" is to ignore the event notification, and "ON" is to receive the event notification. 
+                     * <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/7830?from_cn_redirect=1">video upload completed</a> event notifications. Default "OFF" means the event notification is ignored, and "ON" means event notifications are received.</p>
                      */
                     std::string m_uploadMediaCompleteEventSwitch;
                     bool m_uploadMediaCompleteEventSwitchHasBeenSet;
 
                     /**
-                     * Whether to receive [Video deletion completed](https://www.tencentcloud.com/document/product/266/33952) event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification .
+                     * <p>Whether to receive <a href="https://www.tencentcloud.com/document/product/266/13434?from_cn_redirect=1">video deletion completed</a> event notifications. Default "OFF" ignores the event notification, and "ON" receives event notifications.</p>
                      */
                     std::string m_deleteMediaCompleteEventSwitch;
                     bool m_deleteMediaCompleteEventSwitchHasBeenSet;
 
                     /**
-                     * Whether to receive the Persistence completed event notification, the default "OFF" means to ignore the event notification, "ON" means to receive the event notification.
+                     * <p>Whether to receive event notifications for clip solidification completion. Default "OFF" means the event notification is ignored, and "ON" means it is received.</p>
                      */
                     std::string m_persistenceCompleteEventSwitch;
                     bool m_persistenceCompleteEventSwitchHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://www.tencentcloud.com/document/product/266/33987) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p>Callback key, consisting of upper- and lower-case letters and numbers, up to 32 characters. After configuration, the <code>Sign</code> and <code>T</code> fields will be sent in callbacks for authentication.</p><ul><li><code>Sign</code>: string type. Event notification security signature Sign = MD5 (SignKey + T). Description: Tencent Cloud concatenates the encrypted SignKey and T, calculates the Sign value through MD5, and places it in the notification message. Upon receiving the notification message, your backend server can verify whether Sign is correct based on the same algorithm, and furthermore confirm whether the message indeed comes from Tencent Cloud Backend.</li><li><code>T</code>: int64 type. Expiration time, UNIX timestamp of event notification signature expiration. The default expiration time for message notifications from Tencent is 10 minutes. If the time specified by the T value in a message notification has expired, the notification can be deemed invalid, thereby preventing network replay attacks. T is in decimal UNIX timestamp format, i.e., the seconds elapsed since January 1, 1970 (midnight UTC/GMT).</li></ul>
                      */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
+                    std::string m_signKey;
+                    bool m_signKeyHasBeenSet;
 
                 };
             }

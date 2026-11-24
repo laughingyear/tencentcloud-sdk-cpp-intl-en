@@ -53,34 +53,34 @@ namespace TencentCloud
 
                     /**
                      * 获取Task type. Valid values:
-<li>Classification: intelligent categorization</li>
-<li>Cover: intelligent cover generating</li>
-<li>Tag: intelligent tagging</li>
-<li>FrameTag: intelligent frame tagging</li>
-<li>Highlight: intelligent highlight generating</li>
+<li>Classification: intelligent classification.</li>
+<li>Cover: intelligent cover</li>
+<li>Tag: intelligent tag</li>
+<li>FrameTag: intelligent frame-by-frame tagging.</li>
+<li>Highlight: intelligent highlights</li>
                      * @return Type Task type. Valid values:
-<li>Classification: intelligent categorization</li>
-<li>Cover: intelligent cover generating</li>
-<li>Tag: intelligent tagging</li>
-<li>FrameTag: intelligent frame tagging</li>
-<li>Highlight: intelligent highlight generating</li>
+<li>Classification: intelligent classification.</li>
+<li>Cover: intelligent cover</li>
+<li>Tag: intelligent tag</li>
+<li>FrameTag: intelligent frame-by-frame tagging.</li>
+<li>Highlight: intelligent highlights</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Task type. Valid values:
-<li>Classification: intelligent categorization</li>
-<li>Cover: intelligent cover generating</li>
-<li>Tag: intelligent tagging</li>
-<li>FrameTag: intelligent frame tagging</li>
-<li>Highlight: intelligent highlight generating</li>
+<li>Classification: intelligent classification.</li>
+<li>Cover: intelligent cover</li>
+<li>Tag: intelligent tag</li>
+<li>FrameTag: intelligent frame-by-frame tagging.</li>
+<li>Highlight: intelligent highlights</li>
                      * @param _type Task type. Valid values:
-<li>Classification: intelligent categorization</li>
-<li>Cover: intelligent cover generating</li>
-<li>Tag: intelligent tagging</li>
-<li>FrameTag: intelligent frame tagging</li>
-<li>Highlight: intelligent highlight generating</li>
+<li>Classification: intelligent classification.</li>
+<li>Cover: intelligent cover</li>
+<li>Tag: intelligent tag</li>
+<li>FrameTag: intelligent frame-by-frame tagging.</li>
+<li>Highlight: intelligent highlights</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -93,19 +93,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Query result of intelligent categorization task in video content analysis, which is valid if task type is `Classification`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ClassificationTask Query result of intelligent categorization task in video content analysis, which is valid if task type is `Classification`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video content analysis intelligent categorization task. Valid when the task type is `Classification`.
+                     * @return ClassificationTask Query result of the video content analysis intelligent categorization task. Valid when the task type is `Classification`.
                      * 
                      */
                     AiAnalysisTaskClassificationResult GetClassificationTask() const;
 
                     /**
-                     * 设置Query result of intelligent categorization task in video content analysis, which is valid if task type is `Classification`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _classificationTask Query result of intelligent categorization task in video content analysis, which is valid if task type is `Classification`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video content analysis intelligent categorization task. Valid when the task type is `Classification`.
+                     * @param _classificationTask Query result of the video content analysis intelligent categorization task. Valid when the task type is `Classification`.
                      * 
                      */
                     void SetClassificationTask(const AiAnalysisTaskClassificationResult& _classificationTask);
@@ -118,19 +114,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ClassificationTaskHasBeenSet() const;
 
                     /**
-                     * 获取Query result of intelligent cover generating task in video content analysis, which is valid if task type is `Cover`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return CoverTask Query result of intelligent cover generating task in video content analysis, which is valid if task type is `Cover`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video content analysis Intelligent Cover Task. Valid when the task type is `Cover`.
+                     * @return CoverTask Query result of the video content analysis Intelligent Cover Task. Valid when the task type is `Cover`.
                      * 
                      */
                     AiAnalysisTaskCoverResult GetCoverTask() const;
 
                     /**
-                     * 设置Query result of intelligent cover generating task in video content analysis, which is valid if task type is `Cover`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _coverTask Query result of intelligent cover generating task in video content analysis, which is valid if task type is `Cover`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video content analysis Intelligent Cover Task. Valid when the task type is `Cover`.
+                     * @param _coverTask Query result of the video content analysis Intelligent Cover Task. Valid when the task type is `Cover`.
                      * 
                      */
                     void SetCoverTask(const AiAnalysisTaskCoverResult& _coverTask);
@@ -143,19 +135,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CoverTaskHasBeenSet() const;
 
                     /**
-                     * 获取Query result of intelligent tagging task in video content analysis, which is valid if task type is `Tag`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TagTask Query result of intelligent tagging task in video content analysis, which is valid if task type is `Tag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video content analysis intelligent tag task. Valid when the task type is `Tag`.
+                     * @return TagTask Query result of the video content analysis intelligent tag task. Valid when the task type is `Tag`.
                      * 
                      */
                     AiAnalysisTaskTagResult GetTagTask() const;
 
                     /**
-                     * 设置Query result of intelligent tagging task in video content analysis, which is valid if task type is `Tag`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tagTask Query result of intelligent tagging task in video content analysis, which is valid if task type is `Tag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video content analysis intelligent tag task. Valid when the task type is `Tag`.
+                     * @param _tagTask Query result of the video content analysis intelligent tag task. Valid when the task type is `Tag`.
                      * 
                      */
                     void SetTagTask(const AiAnalysisTaskTagResult& _tagTask);
@@ -168,19 +156,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TagTaskHasBeenSet() const;
 
                     /**
-                     * 获取Query result of intelligent frame-specific tagging task in video content analysis, which is valid if task type is `FrameTag`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FrameTagTask Query result of intelligent frame-specific tagging task in video content analysis, which is valid if task type is `FrameTag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the intelligent frame-specific tagging task for video content analysis. Valid when TaskType is `FrameTag`.
+                     * @return FrameTagTask Query result of the intelligent frame-specific tagging task for video content analysis. Valid when TaskType is `FrameTag`.
                      * 
                      */
                     AiAnalysisTaskFrameTagResult GetFrameTagTask() const;
 
                     /**
-                     * 设置Query result of intelligent frame-specific tagging task in video content analysis, which is valid if task type is `FrameTag`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _frameTagTask Query result of intelligent frame-specific tagging task in video content analysis, which is valid if task type is `FrameTag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the intelligent frame-specific tagging task for video content analysis. Valid when TaskType is `FrameTag`.
+                     * @param _frameTagTask Query result of the intelligent frame-specific tagging task for video content analysis. Valid when TaskType is `FrameTag`.
                      * 
                      */
                     void SetFrameTagTask(const AiAnalysisTaskFrameTagResult& _frameTagTask);
@@ -193,19 +177,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FrameTagTaskHasBeenSet() const;
 
                     /**
-                     * 获取Query result of an intelligent highlight generating task in video content analysis, which is valid when task type is `Highlight`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return HighlightTask Query result of an intelligent highlight generating task in video content analysis, which is valid when task type is `Highlight`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Query result of the video content analysis intelligent highlight task. Valid when the task type is `Highlight`.
+                     * @return HighlightTask Query result of the video content analysis intelligent highlight task. Valid when the task type is `Highlight`.
                      * 
                      */
                     AiAnalysisTaskHighlightResult GetHighlightTask() const;
 
                     /**
-                     * 设置Query result of an intelligent highlight generating task in video content analysis, which is valid when task type is `Highlight`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _highlightTask Query result of an intelligent highlight generating task in video content analysis, which is valid when task type is `Highlight`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Query result of the video content analysis intelligent highlight task. Valid when the task type is `Highlight`.
+                     * @param _highlightTask Query result of the video content analysis intelligent highlight task. Valid when the task type is `Highlight`.
                      * 
                      */
                     void SetHighlightTask(const AiAnalysisTaskHighlightResult& _highlightTask);
@@ -221,46 +201,41 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Task type. Valid values:
-<li>Classification: intelligent categorization</li>
-<li>Cover: intelligent cover generating</li>
-<li>Tag: intelligent tagging</li>
-<li>FrameTag: intelligent frame tagging</li>
-<li>Highlight: intelligent highlight generating</li>
+<li>Classification: intelligent classification.</li>
+<li>Cover: intelligent cover</li>
+<li>Tag: intelligent tag</li>
+<li>FrameTag: intelligent frame-by-frame tagging.</li>
+<li>Highlight: intelligent highlights</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Query result of intelligent categorization task in video content analysis, which is valid if task type is `Classification`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video content analysis intelligent categorization task. Valid when the task type is `Classification`.
                      */
                     AiAnalysisTaskClassificationResult m_classificationTask;
                     bool m_classificationTaskHasBeenSet;
 
                     /**
-                     * Query result of intelligent cover generating task in video content analysis, which is valid if task type is `Cover`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video content analysis Intelligent Cover Task. Valid when the task type is `Cover`.
                      */
                     AiAnalysisTaskCoverResult m_coverTask;
                     bool m_coverTaskHasBeenSet;
 
                     /**
-                     * Query result of intelligent tagging task in video content analysis, which is valid if task type is `Tag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video content analysis intelligent tag task. Valid when the task type is `Tag`.
                      */
                     AiAnalysisTaskTagResult m_tagTask;
                     bool m_tagTaskHasBeenSet;
 
                     /**
-                     * Query result of intelligent frame-specific tagging task in video content analysis, which is valid if task type is `FrameTag`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Query result of the intelligent frame-specific tagging task for video content analysis. Valid when TaskType is `FrameTag`.
                      */
                     AiAnalysisTaskFrameTagResult m_frameTagTask;
                     bool m_frameTagTaskHasBeenSet;
 
                     /**
-                     * Query result of an intelligent highlight generating task in video content analysis, which is valid when task type is `Highlight`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Query result of the video content analysis intelligent highlight task. Valid when the task type is `Highlight`.
                      */
                     AiAnalysisTaskHighlightResult m_highlightTask;
                     bool m_highlightTaskHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * List of frame-specific tag segments
+                * Segments by frame tag
                 */
                 class MediaAiAnalysisFrameTagSegmentItem : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Start time offset of frame-specific tag.
-                     * @return StartTimeOffset Start time offset of frame-specific tag.
+                     * 获取<p>Time offset of frame tagging start.</p><p>Unit: seconds</p>
+                     * @return StartTimeOffset <p>Time offset of frame tagging start.</p><p>Unit: seconds</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Start time offset of frame-specific tag.
-                     * @param _startTimeOffset Start time offset of frame-specific tag.
+                     * 设置<p>Time offset of frame tagging start.</p><p>Unit: seconds</p>
+                     * @param _startTimeOffset <p>Time offset of frame tagging start.</p><p>Unit: seconds</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取End time offset of frame-specific tag.
-                     * @return EndTimeOffset End time offset of frame-specific tag.
+                     * 获取<p>Offset time when frame tagging ends.</p><p>Unit: seconds</p>
+                     * @return EndTimeOffset <p>Offset time when frame tagging ends.</p><p>Unit: seconds</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置End time offset of frame-specific tag.
-                     * @param _endTimeOffset End time offset of frame-specific tag.
+                     * 设置<p>Offset time when frame tagging ends.</p><p>Unit: seconds</p>
+                     * @param _endTimeOffset <p>Offset time when frame tagging ends.</p><p>Unit: seconds</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取List of tags in time period.
-                     * @return TagSet List of tags in time period.
+                     * 获取<p>Tag list in the time segment.</p>
+                     * @return TagSet <p>Tag list in the time segment.</p>
                      * 
                      */
                     std::vector<MediaAiAnalysisFrameTagItem> GetTagSet() const;
 
                     /**
-                     * 设置List of tags in time period.
-                     * @param _tagSet List of tags in time period.
+                     * 设置<p>Tag list in the time segment.</p>
+                     * @param _tagSet <p>Tag list in the time segment.</p>
                      * 
                      */
                     void SetTagSet(const std::vector<MediaAiAnalysisFrameTagItem>& _tagSet);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Start time offset of frame-specific tag.
+                     * <p>Time offset of frame tagging start.</p><p>Unit: seconds</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * End time offset of frame-specific tag.
+                     * <p>Offset time when frame tagging ends.</p><p>Unit: seconds</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * List of tags in time period.
+                     * <p>Tag list in the time segment.</p>
                      */
                     std::vector<MediaAiAnalysisFrameTagItem> m_tagSet;
                     bool m_tagSetHasBeenSet;

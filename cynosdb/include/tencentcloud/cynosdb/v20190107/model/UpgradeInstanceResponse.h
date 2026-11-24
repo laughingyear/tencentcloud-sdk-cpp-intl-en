@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Frozen transaction ID.
-                     * @return TranId Frozen transaction ID.
+                     * 获取Frozen transaction ID
+                     * @return TranId Frozen transaction ID
                      * 
                      */
                     std::string GetTranId() const;
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Frozen transaction ID.
+                     * Frozen transaction ID
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;

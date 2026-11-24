@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameters for intelligent recognition of pornographic content
+                * Task input parameter type for offensive content in audio/video moderation
                 */
                 class AiReviewPornTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID of the template for recognition of pornographic content
-                     * @return Definition ID of the template for recognition of pornographic content
+                     * 获取Template ID for authenticating content that involves offensive information.
+                     * @return Definition Template ID for authenticating content that involves offensive information.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置ID of the template for recognition of pornographic content
-                     * @param _definition ID of the template for recognition of pornographic content
+                     * 设置Template ID for authenticating content that involves offensive information.
+                     * @param _definition Template ID for authenticating content that involves offensive information.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ID of the template for recognition of pornographic content
+                     * Template ID for authenticating content that involves offensive information.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

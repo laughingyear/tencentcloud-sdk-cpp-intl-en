@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output of video opening and ending credits recognition.
+                * Video start and end recognition output.
                 */
                 class AiRecognitionTaskHeadTailResultOutput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Confidence of recognized opening credits. Value range: 0-100.
-                     * @return HeadConfidence Confidence of recognized opening credits. Value range: 0-100.
+                     * 获取Confidence of opening scene recognition. Value range: 0-100.
+                     * @return HeadConfidence Confidence of opening scene recognition. Value range: 0-100.
                      * 
                      */
                     double GetHeadConfidence() const;
 
                     /**
-                     * 设置Confidence of recognized opening credits. Value range: 0-100.
-                     * @param _headConfidence Confidence of recognized opening credits. Value range: 0-100.
+                     * 设置Confidence of opening scene recognition. Value range: 0-100.
+                     * @param _headConfidence Confidence of opening scene recognition. Value range: 0-100.
                      * 
                      */
                     void SetHeadConfidence(const double& _headConfidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HeadConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取End time point of video opening credits in seconds.
-                     * @return HeadTimeOffset End time point of video opening credits in seconds.
+                     * 获取End time point of the video intro, in seconds.
+                     * @return HeadTimeOffset End time point of the video intro, in seconds.
                      * 
                      */
                     double GetHeadTimeOffset() const;
 
                     /**
-                     * 设置End time point of video opening credits in seconds.
-                     * @param _headTimeOffset End time point of video opening credits in seconds.
+                     * 设置End time point of the video intro, in seconds.
+                     * @param _headTimeOffset End time point of the video intro, in seconds.
                      * 
                      */
                     void SetHeadTimeOffset(const double& _headTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HeadTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of recognized closing credits. Value range: 0-100.
-                     * @return TailConfidence Confidence of recognized closing credits. Value range: 0-100.
+                     * 获取Recognition confidence of the ending scene. Value range: 0-100.
+                     * @return TailConfidence Recognition confidence of the ending scene. Value range: 0-100.
                      * 
                      */
                     double GetTailConfidence() const;
 
                     /**
-                     * 设置Confidence of recognized closing credits. Value range: 0-100.
-                     * @param _tailConfidence Confidence of recognized closing credits. Value range: 0-100.
+                     * 设置Recognition confidence of the ending scene. Value range: 0-100.
+                     * @param _tailConfidence Recognition confidence of the ending scene. Value range: 0-100.
                      * 
                      */
                     void SetTailConfidence(const double& _tailConfidence);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TailConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Start time point of video closing credits in seconds.
-                     * @return TailTimeOffset Start time point of video closing credits in seconds.
+                     * 获取Start time point of the video ending scene. Unit: seconds.
+                     * @return TailTimeOffset Start time point of the video ending scene. Unit: seconds.
                      * 
                      */
                     double GetTailTimeOffset() const;
 
                     /**
-                     * 设置Start time point of video closing credits in seconds.
-                     * @param _tailTimeOffset Start time point of video closing credits in seconds.
+                     * 设置Start time point of the video ending scene. Unit: seconds.
+                     * @param _tailTimeOffset Start time point of the video ending scene. Unit: seconds.
                      * 
                      */
                     void SetTailTimeOffset(const double& _tailTimeOffset);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Confidence of recognized opening credits. Value range: 0-100.
+                     * Confidence of opening scene recognition. Value range: 0-100.
                      */
                     double m_headConfidence;
                     bool m_headConfidenceHasBeenSet;
 
                     /**
-                     * End time point of video opening credits in seconds.
+                     * End time point of the video intro, in seconds.
                      */
                     double m_headTimeOffset;
                     bool m_headTimeOffsetHasBeenSet;
 
                     /**
-                     * Confidence of recognized closing credits. Value range: 0-100.
+                     * Recognition confidence of the ending scene. Value range: 0-100.
                      */
                     double m_tailConfidence;
                     bool m_tailConfidenceHasBeenSet;
 
                     /**
-                     * Start time point of video closing credits in seconds.
+                     * Start time point of the video ending scene. Unit: seconds.
                      */
                     double m_tailTimeOffset;
                     bool m_tailTimeOffsetHasBeenSet;

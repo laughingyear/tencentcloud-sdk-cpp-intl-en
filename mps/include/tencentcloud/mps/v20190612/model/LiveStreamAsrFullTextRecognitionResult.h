@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ASR-based full live stream recognition
+                * Live stream recognition Asr full text recognition
                 */
                 class LiveStreamAsrFullTextRecognitionResult : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取Start PTS time of recognized segment in seconds.
-                     * @return StartPtsTime Start PTS time of recognized segment in seconds.
+                     * 获取Start PTS time of a recognized segment, in seconds.
+                     * @return StartPtsTime Start PTS time of a recognized segment, in seconds.
                      * 
                      */
                     double GetStartPtsTime() const;
 
                     /**
-                     * 设置Start PTS time of recognized segment in seconds.
-                     * @param _startPtsTime Start PTS time of recognized segment in seconds.
+                     * 设置Start PTS time of a recognized segment, in seconds.
+                     * @param _startPtsTime Start PTS time of a recognized segment, in seconds.
                      * 
                      */
                     void SetStartPtsTime(const double& _startPtsTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartPtsTimeHasBeenSet() const;
 
                     /**
-                     * 获取End PTS time of recognized segment in seconds.
-                     * @return EndPtsTime End PTS time of recognized segment in seconds.
+                     * 获取End PTS time of a recognized segment, in seconds.
+                     * @return EndPtsTime End PTS time of a recognized segment, in seconds.
                      * 
                      */
                     double GetEndPtsTime() const;
 
                     /**
-                     * 设置End PTS time of recognized segment in seconds.
-                     * @param _endPtsTime End PTS time of recognized segment in seconds.
+                     * 设置End PTS time of a recognized segment, in seconds.
+                     * @param _endPtsTime End PTS time of a recognized segment, in seconds.
                      * 
                      */
                     void SetEndPtsTime(const double& _endPtsTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of recognized segment. Value range: 0–100.
-                     * @return Confidence Confidence of recognized segment. Value range: 0–100.
+                     * 获取Confidence of a recognized segment. Value range: 0-100.
+                     * @return Confidence Confidence of a recognized segment. Value range: 0-100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of recognized segment. Value range: 0–100.
-                     * @param _confidence Confidence of recognized segment. Value range: 0–100.
+                     * 设置Confidence of a recognized segment. Value range: 0-100.
+                     * @param _confidence Confidence of a recognized segment. Value range: 0-100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -130,6 +130,90 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取Recognition start UTC time.
+                     * @return StartTime Recognition start UTC time.
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置Recognition start UTC time.
+                     * @param _startTime Recognition start UTC time.
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取UTC time when recognition is completed.
+                     * @return EndTime UTC time when recognition is completed.
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置UTC time when recognition is completed.
+                     * @param _endTime UTC time when recognition is completed.
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Steady-state tag.
+                     * @return SteadyState Steady-state tag.
+                     * 
+                     */
+                    bool GetSteadyState() const;
+
+                    /**
+                     * 设置Steady-state tag.
+                     * @param _steadyState Steady-state tag.
+                     * 
+                     */
+                    void SetSteadyState(const bool& _steadyState);
+
+                    /**
+                     * 判断参数 SteadyState 是否已赋值
+                     * @return SteadyState 是否已赋值
+                     * 
+                     */
+                    bool SteadyStateHasBeenSet() const;
+
+                    /**
+                     * 获取UserId of the websocket and trtc recognition result
+                     * @return UserId UserId of the websocket and trtc recognition result
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置UserId of the websocket and trtc recognition result
+                     * @param _userId UserId of the websocket and trtc recognition result
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,22 +223,46 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * Start PTS time of recognized segment in seconds.
+                     * Start PTS time of a recognized segment, in seconds.
                      */
                     double m_startPtsTime;
                     bool m_startPtsTimeHasBeenSet;
 
                     /**
-                     * End PTS time of recognized segment in seconds.
+                     * End PTS time of a recognized segment, in seconds.
                      */
                     double m_endPtsTime;
                     bool m_endPtsTimeHasBeenSet;
 
                     /**
-                     * Confidence of recognized segment. Value range: 0–100.
+                     * Confidence of a recognized segment. Value range: 0-100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * Recognition start UTC time.
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * UTC time when recognition is completed.
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * Steady-state tag.
+                     */
+                    bool m_steadyState;
+                    bool m_steadyStateHasBeenSet;
+
+                    /**
+                     * UserId of the websocket and trtc recognition result
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

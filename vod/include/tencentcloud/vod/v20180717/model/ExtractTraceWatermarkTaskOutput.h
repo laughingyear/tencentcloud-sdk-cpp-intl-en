@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The output of digital watermark extraction.
+                * Extract traceability watermark output information
                 */
                 class ExtractTraceWatermarkTaskOutput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The distributor’s user ID, which is a six-digit hex number. This parameter is relevant when [digital watermarks](https://intl.cloud.tencent.com/document/product/266/75789?from_cn_redirect=1) are used.
-                     * @return Uv The distributor’s user ID, which is a six-digit hex number. This parameter is relevant when [digital watermarks](https://intl.cloud.tencent.com/document/product/266/75789?from_cn_redirect=1) are used.
+                     * 获取Player's ID, represented in hexadecimal, 6 digits in total.
+                     * @return Uv Player's ID, represented in hexadecimal, 6 digits in total.
                      * 
                      */
                     std::string GetUv() const;
 
                     /**
-                     * 设置The distributor’s user ID, which is a six-digit hex number. This parameter is relevant when [digital watermarks](https://intl.cloud.tencent.com/document/product/266/75789?from_cn_redirect=1) are used.
-                     * @param _uv The distributor’s user ID, which is a six-digit hex number. This parameter is relevant when [digital watermarks](https://intl.cloud.tencent.com/document/product/266/75789?from_cn_redirect=1) are used.
+                     * 设置Player's ID, represented in hexadecimal, 6 digits in total.
+                     * @param _uv Player's ID, represented in hexadecimal, 6 digits in total.
                      * 
                      */
                     void SetUv(const std::string& _uv);
@@ -68,36 +68,36 @@ namespace TencentCloud
                     bool UvHasBeenSet() const;
 
                     /**
-                     * 获取This parameter has been deprecated.
-                     * @return Uid This parameter has been deprecated.
-                     * 
+                     * 获取Deprecated.
+                     * @return Uid Deprecated.
+                     * @deprecated
                      */
                     std::string GetUid() const;
 
                     /**
-                     * 设置This parameter has been deprecated.
-                     * @param _uid This parameter has been deprecated.
-                     * 
+                     * 设置Deprecated.
+                     * @param _uid Deprecated.
+                     * @deprecated
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UidHasBeenSet() const;
 
                 private:
 
                     /**
-                     * The distributor’s user ID, which is a six-digit hex number. This parameter is relevant when [digital watermarks](https://intl.cloud.tencent.com/document/product/266/75789?from_cn_redirect=1) are used.
+                     * Player's ID, represented in hexadecimal, 6 digits in total.
                      */
                     std::string m_uv;
                     bool m_uvHasBeenSet;
 
                     /**
-                     * This parameter has been deprecated.
+                     * Deprecated.
                      */
                     std::string m_uid;
                     bool m_uidHasBeenSet;

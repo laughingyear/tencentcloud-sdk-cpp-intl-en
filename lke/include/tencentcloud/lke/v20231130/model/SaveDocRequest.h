@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabelRefer.h>
+#include <tencentcloud/lke/v20231130/model/DuplicateFileHandle.h>
+#include <tencentcloud/lke/v20231130/model/UpdatePeriodInfo.h>
 
 
 namespace TencentCloud
@@ -363,15 +365,15 @@ When the value is 1, the weburl field cannot be empty; otherwise, it will not ta
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/TCADP page.
-                     * @return Opt Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/TCADP page.
+                     * 获取Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/ADP page.
+                     * @return Opt Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/ADP page.
                      * 
                      */
                     uint64_t GetOpt() const;
 
                     /**
-                     * 设置Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/TCADP page.
-                     * @param _opt Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/TCADP page.
+                     * 设置Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/ADP page.
+                     * @param _opt Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/ADP page.
                      * 
                      */
                     void SetOpt(const uint64_t& _opt);
@@ -403,6 +405,427 @@ When the value is 1, the weburl field cannot be empty; otherwise, it will not ta
                      * 
                      */
                     bool CateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取Downloadable or not. This parameter is only valid when `IsRefer` is **true** and `ReferUrlType` is 0.
+                     * @return IsDownload Downloadable or not. This parameter is only valid when `IsRefer` is **true** and `ReferUrlType` is 0.
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 设置Downloadable or not. This parameter is only valid when `IsRefer` is **true** and `ReferUrlType` is 0.
+                     * @param _isDownload Downloadable or not. This parameter is only valid when `IsRefer` is **true** and `ReferUrlType` is 0.
+                     * 
+                     */
+                    void SetIsDownload(const bool& _isDownload);
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
+                    /**
+                     * 获取Duplicate document processing method; match the first eligible method in sequence for processing.
+                     * @return DuplicateFileHandles Duplicate document processing method; match the first eligible method in sequence for processing.
+                     * 
+                     */
+                    std::vector<DuplicateFileHandle> GetDuplicateFileHandles() const;
+
+                    /**
+                     * 设置Duplicate document processing method; match the first eligible method in sequence for processing.
+                     * @param _duplicateFileHandles Duplicate document processing method; match the first eligible method in sequence for processing.
+                     * 
+                     */
+                    void SetDuplicateFileHandles(const std::vector<DuplicateFileHandle>& _duplicateFileHandles);
+
+                    /**
+                     * 判断参数 DuplicateFileHandles 是否已赋值
+                     * @return DuplicateFileHandles 是否已赋值
+                     * 
+                     */
+                    bool DuplicateFileHandlesHasBeenSet() const;
+
+                    /**
+                     * 获取# Custom Splitting Rules
+The request parameter is a **JSON Object**. Refer to the API sample value for the specific format. It contains the following core fields:
+
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `xlsx_splitter` | Object | **Excel (xlsx) file splitting policy configuration**, valid only when processing Excel files |
+| `common_splitter` | Object | **General file splitting policy configuration** (for TXT, PDF and other files), supports splitting by page or by tag |
+| `table_style` | String | Output format of table content, e.g., HTML or Markdown |
+
+---
+
+## `xlsx_splitter` (Excel Splitting Policy)
+Used to configure the **splitting method for table files**.
+**Type: Object**
+```json
+"xlsx_splitter": {
+  "header_interval": [1, 2],
+  "content_start": 10,
+  "split_row": 2
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `header_interval` | Array\<Number\> | Row range of the table header, formatted as `[start row, end row]`. **Row numbers start from 1**. For example, `[1, 2]` means rows 1 to 2 are table headers. |
+| `content_start` | Number | **Start row number of table content (starting from 1)** |
+| `split_row` | Number | **Number of rows per split** |
+
+---
+
+## `common_splitter` (General File Splitting Policy)
+Used to configure the splitting method for **non-Excel files (TXT, PDF, DOCX, etc.)**. Two strategies are supported: **page-based splitting** or **identifier-based splitting**.
+**Type: Object**
+```json
+"common_splitter": {
+  "splitter": "page",
+  "page_splitter": {
+    "chunk_length": 1000,
+    "chunk_overlap_length": 100
+  }
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `splitter` | String | Splitting strategy type. Optional values: `"page"` (split by page), `"tag"` (split by identifier). |
+| `page_splitter` | Object | Configuration for **page-based splitting** |
+| `page_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `page_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+| `tag_splitter` | Object | Configuration for **custom splitting** |
+| `tag_splitter.tag` | Array\<String\> | **Splitting identifiers** |
+| `tag_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `tag_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+
+### Supplementary Notes
+- Valid values for the `splitter` field:
+  - `"page"`: Only page-based splitting is used; only configure fields under `page_splitter`.
+  - `"tag"`: Only identifier-based splitting (semicolon, line break, etc.) is used; only configure fields under `tag_splitter`.
+
+---
+
+## `table_style` (Table Output Style)
+Specifies the final return format of **table content extracted from Excel / CSV**, for front-end display and subsequent processing.
+**Type: String**
+```json
+"table_style": "md"
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `table_style` | String | Specifies the output format of table content. Available values:<br> `"html"`: Return as HTML table, suitable for web page display.<br> `"md"`: Return as Markdown table syntax, suitable for documents and Markdown rendering environments. |
+                     * @return SplitRule # Custom Splitting Rules
+The request parameter is a **JSON Object**. Refer to the API sample value for the specific format. It contains the following core fields:
+
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `xlsx_splitter` | Object | **Excel (xlsx) file splitting policy configuration**, valid only when processing Excel files |
+| `common_splitter` | Object | **General file splitting policy configuration** (for TXT, PDF and other files), supports splitting by page or by tag |
+| `table_style` | String | Output format of table content, e.g., HTML or Markdown |
+
+---
+
+## `xlsx_splitter` (Excel Splitting Policy)
+Used to configure the **splitting method for table files**.
+**Type: Object**
+```json
+"xlsx_splitter": {
+  "header_interval": [1, 2],
+  "content_start": 10,
+  "split_row": 2
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `header_interval` | Array\<Number\> | Row range of the table header, formatted as `[start row, end row]`. **Row numbers start from 1**. For example, `[1, 2]` means rows 1 to 2 are table headers. |
+| `content_start` | Number | **Start row number of table content (starting from 1)** |
+| `split_row` | Number | **Number of rows per split** |
+
+---
+
+## `common_splitter` (General File Splitting Policy)
+Used to configure the splitting method for **non-Excel files (TXT, PDF, DOCX, etc.)**. Two strategies are supported: **page-based splitting** or **identifier-based splitting**.
+**Type: Object**
+```json
+"common_splitter": {
+  "splitter": "page",
+  "page_splitter": {
+    "chunk_length": 1000,
+    "chunk_overlap_length": 100
+  }
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `splitter` | String | Splitting strategy type. Optional values: `"page"` (split by page), `"tag"` (split by identifier). |
+| `page_splitter` | Object | Configuration for **page-based splitting** |
+| `page_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `page_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+| `tag_splitter` | Object | Configuration for **custom splitting** |
+| `tag_splitter.tag` | Array\<String\> | **Splitting identifiers** |
+| `tag_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `tag_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+
+### Supplementary Notes
+- Valid values for the `splitter` field:
+  - `"page"`: Only page-based splitting is used; only configure fields under `page_splitter`.
+  - `"tag"`: Only identifier-based splitting (semicolon, line break, etc.) is used; only configure fields under `tag_splitter`.
+
+---
+
+## `table_style` (Table Output Style)
+Specifies the final return format of **table content extracted from Excel / CSV**, for front-end display and subsequent processing.
+**Type: String**
+```json
+"table_style": "md"
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `table_style` | String | Specifies the output format of table content. Available values:<br> `"html"`: Return as HTML table, suitable for web page display.<br> `"md"`: Return as Markdown table syntax, suitable for documents and Markdown rendering environments. |
+                     * 
+                     */
+                    std::string GetSplitRule() const;
+
+                    /**
+                     * 设置# Custom Splitting Rules
+The request parameter is a **JSON Object**. Refer to the API sample value for the specific format. It contains the following core fields:
+
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `xlsx_splitter` | Object | **Excel (xlsx) file splitting policy configuration**, valid only when processing Excel files |
+| `common_splitter` | Object | **General file splitting policy configuration** (for TXT, PDF and other files), supports splitting by page or by tag |
+| `table_style` | String | Output format of table content, e.g., HTML or Markdown |
+
+---
+
+## `xlsx_splitter` (Excel Splitting Policy)
+Used to configure the **splitting method for table files**.
+**Type: Object**
+```json
+"xlsx_splitter": {
+  "header_interval": [1, 2],
+  "content_start": 10,
+  "split_row": 2
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `header_interval` | Array\<Number\> | Row range of the table header, formatted as `[start row, end row]`. **Row numbers start from 1**. For example, `[1, 2]` means rows 1 to 2 are table headers. |
+| `content_start` | Number | **Start row number of table content (starting from 1)** |
+| `split_row` | Number | **Number of rows per split** |
+
+---
+
+## `common_splitter` (General File Splitting Policy)
+Used to configure the splitting method for **non-Excel files (TXT, PDF, DOCX, etc.)**. Two strategies are supported: **page-based splitting** or **identifier-based splitting**.
+**Type: Object**
+```json
+"common_splitter": {
+  "splitter": "page",
+  "page_splitter": {
+    "chunk_length": 1000,
+    "chunk_overlap_length": 100
+  }
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `splitter` | String | Splitting strategy type. Optional values: `"page"` (split by page), `"tag"` (split by identifier). |
+| `page_splitter` | Object | Configuration for **page-based splitting** |
+| `page_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `page_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+| `tag_splitter` | Object | Configuration for **custom splitting** |
+| `tag_splitter.tag` | Array\<String\> | **Splitting identifiers** |
+| `tag_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `tag_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+
+### Supplementary Notes
+- Valid values for the `splitter` field:
+  - `"page"`: Only page-based splitting is used; only configure fields under `page_splitter`.
+  - `"tag"`: Only identifier-based splitting (semicolon, line break, etc.) is used; only configure fields under `tag_splitter`.
+
+---
+
+## `table_style` (Table Output Style)
+Specifies the final return format of **table content extracted from Excel / CSV**, for front-end display and subsequent processing.
+**Type: String**
+```json
+"table_style": "md"
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `table_style` | String | Specifies the output format of table content. Available values:<br> `"html"`: Return as HTML table, suitable for web page display.<br> `"md"`: Return as Markdown table syntax, suitable for documents and Markdown rendering environments. |
+                     * @param _splitRule # Custom Splitting Rules
+The request parameter is a **JSON Object**. Refer to the API sample value for the specific format. It contains the following core fields:
+
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `xlsx_splitter` | Object | **Excel (xlsx) file splitting policy configuration**, valid only when processing Excel files |
+| `common_splitter` | Object | **General file splitting policy configuration** (for TXT, PDF and other files), supports splitting by page or by tag |
+| `table_style` | String | Output format of table content, e.g., HTML or Markdown |
+
+---
+
+## `xlsx_splitter` (Excel Splitting Policy)
+Used to configure the **splitting method for table files**.
+**Type: Object**
+```json
+"xlsx_splitter": {
+  "header_interval": [1, 2],
+  "content_start": 10,
+  "split_row": 2
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `header_interval` | Array\<Number\> | Row range of the table header, formatted as `[start row, end row]`. **Row numbers start from 1**. For example, `[1, 2]` means rows 1 to 2 are table headers. |
+| `content_start` | Number | **Start row number of table content (starting from 1)** |
+| `split_row` | Number | **Number of rows per split** |
+
+---
+
+## `common_splitter` (General File Splitting Policy)
+Used to configure the splitting method for **non-Excel files (TXT, PDF, DOCX, etc.)**. Two strategies are supported: **page-based splitting** or **identifier-based splitting**.
+**Type: Object**
+```json
+"common_splitter": {
+  "splitter": "page",
+  "page_splitter": {
+    "chunk_length": 1000,
+    "chunk_overlap_length": 100
+  }
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `splitter` | String | Splitting strategy type. Optional values: `"page"` (split by page), `"tag"` (split by identifier). |
+| `page_splitter` | Object | Configuration for **page-based splitting** |
+| `page_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `page_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+| `tag_splitter` | Object | Configuration for **custom splitting** |
+| `tag_splitter.tag` | Array\<String\> | **Splitting identifiers** |
+| `tag_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `tag_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+
+### Supplementary Notes
+- Valid values for the `splitter` field:
+  - `"page"`: Only page-based splitting is used; only configure fields under `page_splitter`.
+  - `"tag"`: Only identifier-based splitting (semicolon, line break, etc.) is used; only configure fields under `tag_splitter`.
+
+---
+
+## `table_style` (Table Output Style)
+Specifies the final return format of **table content extracted from Excel / CSV**, for front-end display and subsequent processing.
+**Type: String**
+```json
+"table_style": "md"
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `table_style` | String | Specifies the output format of table content. Available values:<br> `"html"`: Return as HTML table, suitable for web page display.<br> `"md"`: Return as Markdown table syntax, suitable for documents and Markdown rendering environments. |
+                     * 
+                     */
+                    void SetSplitRule(const std::string& _splitRule);
+
+                    /**
+                     * 判断参数 SplitRule 是否已赋值
+                     * @return SplitRule 是否已赋值
+                     * 
+                     */
+                    bool SplitRuleHasBeenSet() const;
+
+                    /**
+                     * 获取Document update frequency. Default value 0 means no update.
+                     * @return UpdatePeriodInfo Document update frequency. Default value 0 means no update.
+                     * 
+                     */
+                    UpdatePeriodInfo GetUpdatePeriodInfo() const;
+
+                    /**
+                     * 设置Document update frequency. Default value 0 means no update.
+                     * @param _updatePeriodInfo Document update frequency. Default value 0 means no update.
+                     * 
+                     */
+                    void SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo);
+
+                    /**
+                     * 判断参数 UpdatePeriodInfo 是否已赋值
+                     * @return UpdatePeriodInfo 是否已赋值
+                     * 
+                     */
+                    bool UpdatePeriodInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Document Effective Scope:
+1 - Not effective;
+2 - Effective only in development scope;
+3 - Effective only in release scope;
+4 - Effective in both development and release scopes.
+
+Default value: The default knowledge base within the application is 2, and the shared knowledge base is 4.
+                     * @return EnableScope Document Effective Scope:
+1 - Not effective;
+2 - Effective only in development scope;
+3 - Effective only in release scope;
+4 - Effective in both development and release scopes.
+
+Default value: The default knowledge base within the application is 2, and the shared knowledge base is 4.
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置Document Effective Scope:
+1 - Not effective;
+2 - Effective only in development scope;
+3 - Effective only in release scope;
+4 - Effective in both development and release scopes.
+
+Default value: The default knowledge base within the application is 2, and the shared knowledge base is 4.
+                     * @param _enableScope Document Effective Scope:
+1 - Not effective;
+2 - Effective only in development scope;
+3 - Effective only in release scope;
+4 - Effective in both development and release scopes.
+
+Default value: The default knowledge base within the application is 2, and the shared knowledge base is 4.
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
 
                 private:
 
@@ -498,7 +921,7 @@ When the value is 1, the weburl field cannot be empty; otherwise, it will not ta
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/TCADP page.
+                     * Document operation type: 1: batch import (import Q&A pairs in batches); 2: document import (normally import a single document). The default value is 1.<br>Please note that when opt = 1, please download the Excel template from the Tencent Cloud Agent Development Platform/ADP page.
                      */
                     uint64_t m_opt;
                     bool m_optHasBeenSet;
@@ -508,6 +931,115 @@ When the value is 1, the weburl field cannot be empty; otherwise, it will not ta
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * Downloadable or not. This parameter is only valid when `IsRefer` is **true** and `ReferUrlType` is 0.
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * Duplicate document processing method; match the first eligible method in sequence for processing.
+                     */
+                    std::vector<DuplicateFileHandle> m_duplicateFileHandles;
+                    bool m_duplicateFileHandlesHasBeenSet;
+
+                    /**
+                     * # Custom Splitting Rules
+The request parameter is a **JSON Object**. Refer to the API sample value for the specific format. It contains the following core fields:
+
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `xlsx_splitter` | Object | **Excel (xlsx) file splitting policy configuration**, valid only when processing Excel files |
+| `common_splitter` | Object | **General file splitting policy configuration** (for TXT, PDF and other files), supports splitting by page or by tag |
+| `table_style` | String | Output format of table content, e.g., HTML or Markdown |
+
+---
+
+## `xlsx_splitter` (Excel Splitting Policy)
+Used to configure the **splitting method for table files**.
+**Type: Object**
+```json
+"xlsx_splitter": {
+  "header_interval": [1, 2],
+  "content_start": 10,
+  "split_row": 2
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `header_interval` | Array\<Number\> | Row range of the table header, formatted as `[start row, end row]`. **Row numbers start from 1**. For example, `[1, 2]` means rows 1 to 2 are table headers. |
+| `content_start` | Number | **Start row number of table content (starting from 1)** |
+| `split_row` | Number | **Number of rows per split** |
+
+---
+
+## `common_splitter` (General File Splitting Policy)
+Used to configure the splitting method for **non-Excel files (TXT, PDF, DOCX, etc.)**. Two strategies are supported: **page-based splitting** or **identifier-based splitting**.
+**Type: Object**
+```json
+"common_splitter": {
+  "splitter": "page",
+  "page_splitter": {
+    "chunk_length": 1000,
+    "chunk_overlap_length": 100
+  }
+}
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `splitter` | String | Splitting strategy type. Optional values: `"page"` (split by page), `"tag"` (split by identifier). |
+| `page_splitter` | Object | Configuration for **page-based splitting** |
+| `page_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `page_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+| `tag_splitter` | Object | Configuration for **custom splitting** |
+| `tag_splitter.tag` | Array\<String\> | **Splitting identifiers** |
+| `tag_splitter.chunk_length` | Number | **Maximum chunk length** |
+| `tag_splitter.chunk_overlap_length` | Number | **Chunk overlap length** |
+
+### Supplementary Notes
+- Valid values for the `splitter` field:
+  - `"page"`: Only page-based splitting is used; only configure fields under `page_splitter`.
+  - `"tag"`: Only identifier-based splitting (semicolon, line break, etc.) is used; only configure fields under `tag_splitter`.
+
+---
+
+## `table_style` (Table Output Style)
+Specifies the final return format of **table content extracted from Excel / CSV**, for front-end display and subsequent processing.
+**Type: String**
+```json
+"table_style": "md"
+```
+
+### Field Description
+| Field Name | Type | Description |
+|------------|------|-------------|
+| `table_style` | String | Specifies the output format of table content. Available values:<br> `"html"`: Return as HTML table, suitable for web page display.<br> `"md"`: Return as Markdown table syntax, suitable for documents and Markdown rendering environments. |
+                     */
+                    std::string m_splitRule;
+                    bool m_splitRuleHasBeenSet;
+
+                    /**
+                     * Document update frequency. Default value 0 means no update.
+                     */
+                    UpdatePeriodInfo m_updatePeriodInfo;
+                    bool m_updatePeriodInfoHasBeenSet;
+
+                    /**
+                     * Document Effective Scope:
+1 - Not effective;
+2 - Effective only in development scope;
+3 - Effective only in release scope;
+4 - Effective in both development and release scopes.
+
+Default value: The default knowledge base within the application is 2, and the shared knowledge base is 4.
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

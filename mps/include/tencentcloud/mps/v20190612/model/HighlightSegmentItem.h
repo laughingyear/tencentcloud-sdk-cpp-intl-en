@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of a highlight segment.
+                * List of intelligent highlight segments.
                 */
                 class HighlightSegmentItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The confidence score.
-                     * @return Confidence The confidence score.
+                     * 获取Confidence degree.
+                     * @return Confidence Confidence degree.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置The confidence score.
-                     * @param _confidence The confidence score.
+                     * 设置Confidence degree.
+                     * @param _confidence Confidence degree.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取The start time offset of the segment.
-                     * @return StartTimeOffset The start time offset of the segment.
+                     * 获取Segment start time offset.
+                     * @return StartTimeOffset Segment start time offset.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置The start time offset of the segment.
-                     * @param _startTimeOffset The start time offset of the segment.
+                     * 设置Segment start time offset.
+                     * @param _startTimeOffset Segment start time offset.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取The end time offset of the segment.
-                     * @return EndTimeOffset The end time offset of the segment.
+                     * 获取End time offset of a recording clip.
+                     * @return EndTimeOffset End time offset of a recording clip.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置The end time offset of the segment.
-                     * @param _endTimeOffset The end time offset of the segment.
+                     * 设置End time offset of a recording clip.
+                     * @param _endTimeOffset End time offset of a recording clip.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Segment tag.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return SegmentTags Segment tag.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<std::string> GetSegmentTags() const;
 
                     /**
                      * 设置Segment tag.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _segmentTags Segment tag.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSegmentTags(const std::vector<std::string>& _segmentTags);
@@ -135,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SegmentTagsHasBeenSet() const;
 
                     /**
-                     * 获取The live streaming segment corresponds to the live start time point, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return BeginTime The live streaming segment corresponds to the live start time point, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取The start time of a live streaming segment, in the ISO date format.	
+                     * @return BeginTime The start time of a live streaming segment, in the ISO date format.	
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置The live streaming segment corresponds to the live start time point, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _beginTime The live streaming segment corresponds to the live start time point, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置The start time of a live streaming segment, in the ISO date format.	
+                     * @param _beginTime The start time of a live streaming segment, in the ISO date format.	
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -160,19 +152,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取The live streaming segment corresponds to the live streaming end time, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return EndTime The live streaming segment corresponds to the live streaming end time, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取The end time of a live streaming segment, in the ISO date format.	
+                     * @return EndTime The end time of a live streaming segment, in the ISO date format.	
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置The live streaming segment corresponds to the live streaming end time, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _endTime The live streaming segment corresponds to the live streaming end time, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置The end time of a live streaming segment, in the ISO date format.	
+                     * @param _endTime The end time of a live streaming segment, in the ISO date format.	
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -184,46 +172,97 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取Highlight title.
+                     * @return Title Highlight title.
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置Highlight title.
+                     * @param _title Highlight title.
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取Highlight overview.
+                     * @return Summary Highlight overview.
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置Highlight overview.
+                     * @param _summary Highlight overview.
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The confidence score.
+                     * Confidence degree.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * The start time offset of the segment.
+                     * Segment start time offset.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * The end time offset of the segment.
+                     * End time offset of a recording clip.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
                      * Segment tag.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<std::string> m_segmentTags;
                     bool m_segmentTagsHasBeenSet;
 
                     /**
-                     * The live streaming segment corresponds to the live start time point, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * The start time of a live streaming segment, in the ISO date format.	
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * The live streaming segment corresponds to the live streaming end time, in the ISO date format.	
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * The end time of a live streaming segment, in the ISO date format.	
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * Highlight title.
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * Highlight overview.
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
 
                 };
             }

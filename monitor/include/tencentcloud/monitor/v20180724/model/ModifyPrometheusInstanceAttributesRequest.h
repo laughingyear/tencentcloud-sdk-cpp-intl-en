@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/PrometheusRuleKV.h>
 
 
 namespace TencentCloud
@@ -43,36 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance name
-                     * @return InstanceName Instance name
-                     * 
-                     */
-                    std::string GetInstanceName() const;
-
-                    /**
-                     * 设置Instance name
-                     * @param _instanceName Instance name
-                     * 
-                     */
-                    void SetInstanceName(const std::string& _instanceName);
-
-                    /**
-                     * 判断参数 InstanceName 是否已赋值
-                     * @return InstanceName 是否已赋值
-                     * 
-                     */
-                    bool InstanceNameHasBeenSet() const;
-
-                    /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取<p>Instance ID</p>
+                     * @return InstanceId <p>Instance ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置<p>Instance ID</p>
+                     * @param _instanceId <p>Instance ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +65,36 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Storage period. Valid values: 15, 30, 45. This parameter is not applicable to monthly subscribed instances.
-                     * @return DataRetentionTime Storage period. Valid values: 15, 30, 45. This parameter is not applicable to monthly subscribed instances.
+                     * 获取<p>Instance name.</p>
+                     * @return InstanceName <p>Instance name.</p>
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置<p>Instance name.</p>
+                     * @param _instanceName <p>Instance name.</p>
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Data retention period (in days). The limit value is one of 15, 30, 45, 90, 180, 365, 730</p>
+                     * @return DataRetentionTime <p>Data retention period (in days). The limit value is one of 15, 30, 45, 90, 180, 365, 730</p>
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
-                     * 设置Storage period. Valid values: 15, 30, 45. This parameter is not applicable to monthly subscribed instances.
-                     * @param _dataRetentionTime Storage period. Valid values: 15, 30, 45. This parameter is not applicable to monthly subscribed instances.
+                     * 设置<p>Data retention period (in days). The limit value is one of 15, 30, 45, 90, 180, 365, 730</p>
+                     * @param _dataRetentionTime <p>Data retention period (in days). The limit value is one of 15, 30, 45, 90, 180, 365, 730</p>
                      * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
@@ -105,25 +106,52 @@ namespace TencentCloud
                      */
                     bool DataRetentionTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Flag for special attributes of a prom instance</p><p>Archive storage duration (days):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * @return InstanceAttributes <p>Flag for special attributes of a prom instance</p><p>Archive storage duration (days):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * 
+                     */
+                    std::vector<PrometheusRuleKV> GetInstanceAttributes() const;
+
+                    /**
+                     * 设置<p>Flag for special attributes of a prom instance</p><p>Archive storage duration (days):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * @param _instanceAttributes <p>Flag for special attributes of a prom instance</p><p>Archive storage duration (days):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * 
+                     */
+                    void SetInstanceAttributes(const std::vector<PrometheusRuleKV>& _instanceAttributes);
+
+                    /**
+                     * 判断参数 InstanceAttributes 是否已赋值
+                     * @return InstanceAttributes 是否已赋值
+                     * 
+                     */
+                    bool InstanceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance name
-                     */
-                    std::string m_instanceName;
-                    bool m_instanceNameHasBeenSet;
-
-                    /**
-                     * Instance ID
+                     * <p>Instance ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Storage period. Valid values: 15, 30, 45. This parameter is not applicable to monthly subscribed instances.
+                     * <p>Instance name.</p>
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>Data retention period (in days). The limit value is one of 15, 30, 45, 90, 180, 365, 730</p>
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;
+
+                    /**
+                     * <p>Flag for special attributes of a prom instance</p><p>Archive storage duration (days):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     */
+                    std::vector<PrometheusRuleKV> m_instanceAttributes;
+                    bool m_instanceAttributesHasBeenSet;
 
                 };
             }

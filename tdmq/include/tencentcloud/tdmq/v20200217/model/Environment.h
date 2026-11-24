@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/RetentionPolicy.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -246,18 +247,18 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Whether to enable "Auto-Create Subscription"
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * @return AutoSubscriptionCreation Whether to enable "Auto-Create Subscription"
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     bool GetAutoSubscriptionCreation() const;
 
                     /**
                      * 设置Whether to enable "Auto-Create Subscription"
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _autoSubscriptionCreation Whether to enable "Auto-Create Subscription"
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAutoSubscriptionCreation(const bool& _autoSubscriptionCreation);
@@ -268,6 +269,69 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                      * 
                      */
                     bool AutoSubscriptionCreationHasBeenSet() const;
+
+                    /**
+                     * 获取Offline subscription automatic expiration cleanup time
+                     * @return SubscriptionExpirationTime Offline subscription automatic expiration cleanup time
+                     * 
+                     */
+                    uint64_t GetSubscriptionExpirationTime() const;
+
+                    /**
+                     * 设置Offline subscription automatic expiration cleanup time
+                     * @param _subscriptionExpirationTime Offline subscription automatic expiration cleanup time
+                     * 
+                     */
+                    void SetSubscriptionExpirationTime(const uint64_t& _subscriptionExpirationTime);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTime 是否已赋值
+                     * @return SubscriptionExpirationTime 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取Offline subscription automatic expiration cleanup time switch
+                     * @return SubscriptionExpirationTimeEnable Offline subscription automatic expiration cleanup time switch
+                     * 
+                     */
+                    bool GetSubscriptionExpirationTimeEnable() const;
+
+                    /**
+                     * 设置Offline subscription automatic expiration cleanup time switch
+                     * @param _subscriptionExpirationTimeEnable Offline subscription automatic expiration cleanup time switch
+                     * 
+                     */
+                    void SetSubscriptionExpirationTimeEnable(const bool& _subscriptionExpirationTimeEnable);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTimeEnable 是否已赋值
+                     * @return SubscriptionExpirationTimeEnable 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeEnableHasBeenSet() const;
+
+                    /**
+                     * 获取Namespace tag
+                     * @return Tags Namespace tag
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置Namespace tag
+                     * @param _tags Namespace tag
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -329,10 +393,28 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Whether to enable "Auto-Create Subscription"
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     bool m_autoSubscriptionCreation;
                     bool m_autoSubscriptionCreationHasBeenSet;
+
+                    /**
+                     * Offline subscription automatic expiration cleanup time
+                     */
+                    uint64_t m_subscriptionExpirationTime;
+                    bool m_subscriptionExpirationTimeHasBeenSet;
+
+                    /**
+                     * Offline subscription automatic expiration cleanup time switch
+                     */
+                    bool m_subscriptionExpirationTimeEnable;
+                    bool m_subscriptionExpirationTimeEnableHasBeenSet;
+
+                    /**
+                     * Namespace tag
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

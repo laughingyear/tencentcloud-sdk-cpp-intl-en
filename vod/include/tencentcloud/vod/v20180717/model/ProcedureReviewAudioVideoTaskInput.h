@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The moderation task details of a task flow template.
+                * Input parameter type for audio/video moderation in a task flow template.
                 */
                 class ProcedureReviewAudioVideoTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The moderation template ID.
-                     * @return Definition The moderation template ID.
+                     * 获取Moderation template.
+                     * @return Definition Moderation template.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置The moderation template ID.
-                     * @param _definition The moderation template ID.
+                     * 设置Moderation template.
+                     * @param _definition Moderation template.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
-                     * @return ReviewContents The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * 获取Content for review. Available values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media is used for review by default.
+                     * @return ReviewContents Content for review. Available values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media is used for review by default.
                      * 
                      */
                     std::vector<std::string> GetReviewContents() const;
 
                     /**
-                     * 设置The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
-                     * @param _reviewContents The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * 设置Content for review. Available values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media is used for review by default.
+                     * @param _reviewContents Content for review. Available values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media is used for review by default.
                      * 
                      */
                     void SetReviewContents(const std::vector<std::string>& _reviewContents);
@@ -103,16 +103,16 @@ If this parameter is not specified or an empty array is passed in, `Media` will 
                 private:
 
                     /**
-                     * The moderation template ID.
+                     * Moderation template.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The type of moderated content. Valid values:
-<li>`Media`: The original audio/video.</li>
-<li>`Cover`: Thumbnails.</li>
-If this parameter is not specified or an empty array is passed in, `Media` will be used.
+                     * Content for review. Available values:
+<li>Media: original audio/video;</li>
+<li>Cover: cover.</li>
+If this parameter is not specified or is set to an empty array, Media is used for review by default.
                      */
                     std::vector<std::string> m_reviewContents;
                     bool m_reviewContentsHasBeenSet;

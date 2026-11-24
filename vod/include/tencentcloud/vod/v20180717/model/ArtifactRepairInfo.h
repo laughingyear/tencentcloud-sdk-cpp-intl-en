@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Artifact removal (smoothing) configuration.
+                * Artifact (burr) removal control information.
                 */
                 class ArtifactRepairInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable artifact removal. Valid values:
-<li>`ON`</li>
-<li>`OFF</li>
-                     * @return Switch Whether to enable artifact removal. Valid values:
-<li>`ON`</li>
-<li>`OFF</li>
+                     * 获取Artifact (burr) removal control switch. Available values:
+<li>ON: enable artifact (burr) removal;</li>
+<li>OFF: disables artifact (burr) removal.</li>
+                     * @return Switch Artifact (burr) removal control switch. Available values:
+<li>ON: enable artifact (burr) removal;</li>
+<li>OFF: disables artifact (burr) removal.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable artifact removal. Valid values:
-<li>`ON`</li>
-<li>`OFF</li>
-                     * @param _switch Whether to enable artifact removal. Valid values:
-<li>`ON`</li>
-<li>`OFF</li>
+                     * 设置Artifact (burr) removal control switch. Available values:
+<li>ON: enable artifact (burr) removal;</li>
+<li>OFF: disables artifact (burr) removal.</li>
+                     * @param _switch Artifact (burr) removal control switch. Available values:
+<li>ON: enable artifact (burr) removal;</li>
+<li>OFF: disables artifact (burr) removal.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,27 +76,27 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The artifact removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @return Type The artifact removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 获取Artifact (burr) removal type. It is valid only when the artifact (burr) removal control switch is ON. Available values:
+<li>weak: slightly remove artifacts (burrs);</li>
+<li>strong: Strong artifact removal (burr).</li>
+Default value: weak.
+                     * @return Type Artifact (burr) removal type. It is valid only when the artifact (burr) removal control switch is ON. Available values:
+<li>weak: slightly remove artifacts (burrs);</li>
+<li>strong: Strong artifact removal (burr).</li>
+Default value: weak.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The artifact removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @param _type The artifact removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 设置Artifact (burr) removal type. It is valid only when the artifact (burr) removal control switch is ON. Available values:
+<li>weak: slightly remove artifacts (burrs);</li>
+<li>strong: Strong artifact removal (burr).</li>
+Default value: weak.
+                     * @param _type Artifact (burr) removal type. It is valid only when the artifact (burr) removal control switch is ON. Available values:
+<li>weak: slightly remove artifacts (burrs);</li>
+<li>strong: Strong artifact removal (burr).</li>
+Default value: weak.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -111,18 +111,18 @@ Default value: `weak`.
                 private:
 
                     /**
-                     * Whether to enable artifact removal. Valid values:
-<li>`ON`</li>
-<li>`OFF</li>
+                     * Artifact (burr) removal control switch. Available values:
+<li>ON: enable artifact (burr) removal;</li>
+<li>OFF: disables artifact (burr) removal.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The artifact removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * Artifact (burr) removal type. It is valid only when the artifact (burr) removal control switch is ON. Available values:
+<li>weak: slightly remove artifacts (burrs);</li>
+<li>strong: Strong artifact removal (burr).</li>
+Default value: weak.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

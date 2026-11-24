@@ -31,6 +31,8 @@
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddLLMSdkAccessResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateOwaspWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateOwaspWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiInfoLeakRuleRequest.h>
@@ -53,6 +57,16 @@
 #include <tencentcloud/waf/v20180125/model/DeleteHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Request.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Response.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMContentRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMContentRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMSdkAccessResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h>
@@ -103,10 +117,32 @@
 #include <tencentcloud/waf/v20180125/model/DescribeInstancesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentRuleListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentRuleListResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMHourBillDetailRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMHourBillDetailResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMSdkAccessResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafDLPRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafDLPRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafToolCallRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafToolCallRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeObjectsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspWhiteRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeOwaspWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePeakPointsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h>
@@ -117,6 +153,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeSkillSecScanResultRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeSkillSecScanResultResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTlsVersionRequest.h>
@@ -133,6 +171,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeVipInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ExportLLMKeywordLibRequest.h>
+#include <tencentcloud/waf/v20180125/model/ExportLLMKeywordLibResponse.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h>
@@ -189,10 +229,36 @@
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMSdkAccessResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafToolCallRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafToolCallRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h>
@@ -211,6 +277,8 @@
 #include <tencentcloud/waf/v20180125/model/SearchAttackLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h>
+#include <tencentcloud/waf/v20180125/model/UploadSkillSecScanRequest.h>
+#include <tencentcloud/waf/v20180125/model/UploadSkillSecScanResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertSessionRequest.h>
@@ -241,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddCustomWhiteRuleResponse> AddCustomWhiteRuleOutcome;
                 typedef std::future<AddCustomWhiteRuleOutcome> AddCustomWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddCustomWhiteRuleRequest&, AddCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddLLMSdkAccessResponse> AddLLMSdkAccessOutcome;
+                typedef std::future<AddLLMSdkAccessOutcome> AddLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddLLMSdkAccessRequest&, AddLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLLMSdkAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddSpartaProtectionResponse> AddSpartaProtectionOutcome;
                 typedef std::future<AddSpartaProtectionOutcome> AddSpartaProtectionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionRequest&, AddSpartaProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionAsyncHandler;
@@ -253,6 +324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIpAccessControlResponse> CreateIpAccessControlOutcome;
                 typedef std::future<CreateIpAccessControlOutcome> CreateIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateIpAccessControlRequest&, CreateIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOwaspWhiteRuleResponse> CreateOwaspWhiteRuleOutcome;
+                typedef std::future<CreateOwaspWhiteRuleOutcome> CreateOwaspWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateOwaspWhiteRuleRequest&, CreateOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOwaspWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAntiFakeUrlResponse> DeleteAntiFakeUrlOutcome;
                 typedef std::future<DeleteAntiFakeUrlOutcome> DeleteAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAntiFakeUrlRequest&, DeleteAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAntiFakeUrlAsyncHandler;
@@ -274,6 +348,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIpAccessControlV2Response> DeleteIpAccessControlV2Outcome;
                 typedef std::future<DeleteIpAccessControlV2Outcome> DeleteIpAccessControlV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteIpAccessControlV2Request&, DeleteIpAccessControlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpAccessControlV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMContentRuleResponse> DeleteLLMContentRuleOutcome;
+                typedef std::future<DeleteLLMContentRuleOutcome> DeleteLLMContentRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMContentRuleRequest&, DeleteLLMContentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMContentRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMKeywordLibraryResponse> DeleteLLMKeywordLibraryOutcome;
+                typedef std::future<DeleteLLMKeywordLibraryOutcome> DeleteLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMKeywordLibraryRequest&, DeleteLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMSdkAccessResponse> DeleteLLMSdkAccessOutcome;
+                typedef std::future<DeleteLLMSdkAccessOutcome> DeleteLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMSdkAccessRequest&, DeleteLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMSdkAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOwaspRuleStatusResponse> DeleteOwaspRuleStatusOutcome;
+                typedef std::future<DeleteOwaspRuleStatusOutcome> DeleteOwaspRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteOwaspRuleStatusRequest&, DeleteOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOwaspWhiteRuleResponse> DeleteOwaspWhiteRuleOutcome;
+                typedef std::future<DeleteOwaspWhiteRuleOutcome> DeleteOwaspWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteOwaspWhiteRuleRequest&, DeleteOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSessionResponse> DeleteSessionOutcome;
                 typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteSessionRequest&, DeleteSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSessionAsyncHandler;
@@ -349,12 +438,45 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpAccessControlResponse> DescribeIpAccessControlOutcome;
                 typedef std::future<DescribeIpAccessControlOutcome> DescribeIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpAccessControlRequest&, DescribeIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMContentRuleListResponse> DescribeLLMContentRuleListOutcome;
+                typedef std::future<DescribeLLMContentRuleListOutcome> DescribeLLMContentRuleListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMContentRuleListRequest&, DescribeLLMContentRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMContentSecCheckResponse> DescribeLLMContentSecCheckOutcome;
+                typedef std::future<DescribeLLMContentSecCheckOutcome> DescribeLLMContentSecCheckOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMContentSecCheckRequest&, DescribeLLMContentSecCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentSecCheckAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMHourBillDetailResponse> DescribeLLMHourBillDetailOutcome;
+                typedef std::future<DescribeLLMHourBillDetailOutcome> DescribeLLMHourBillDetailOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMHourBillDetailRequest&, DescribeLLMHourBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMHourBillDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMKeywordLibraryResponse> DescribeLLMKeywordLibraryOutcome;
+                typedef std::future<DescribeLLMKeywordLibraryOutcome> DescribeLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMKeywordLibraryRequest&, DescribeLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMSdkAccessResponse> DescribeLLMSdkAccessOutcome;
+                typedef std::future<DescribeLLMSdkAccessOutcome> DescribeLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMSdkAccessRequest&, DescribeLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMSdkAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafDLPRulesResponse> DescribeLLMWafDLPRulesOutcome;
+                typedef std::future<DescribeLLMWafDLPRulesOutcome> DescribeLLMWafDLPRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafDLPRulesRequest&, DescribeLLMWafDLPRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafDLPRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafProtectRulesResponse> DescribeLLMWafProtectRulesOutcome;
+                typedef std::future<DescribeLLMWafProtectRulesOutcome> DescribeLLMWafProtectRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafProtectRulesRequest&, DescribeLLMWafProtectRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafProtectRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafToolCallRulesResponse> DescribeLLMWafToolCallRulesOutcome;
+                typedef std::future<DescribeLLMWafToolCallRulesOutcome> DescribeLLMWafToolCallRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafToolCallRulesRequest&, DescribeLLMWafToolCallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafToolCallRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModuleStatusResponse> DescribeModuleStatusOutcome;
                 typedef std::future<DescribeModuleStatusOutcome> DescribeModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeModuleStatusRequest&, DescribeModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeObjectsResponse> DescribeObjectsOutcome;
                 typedef std::future<DescribeObjectsOutcome> DescribeObjectsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeObjectsRequest&, DescribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOwaspRuleTypesResponse> DescribeOwaspRuleTypesOutcome;
+                typedef std::future<DescribeOwaspRuleTypesOutcome> DescribeOwaspRuleTypesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeOwaspRuleTypesRequest&, DescribeOwaspRuleTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspRuleTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOwaspRulesResponse> DescribeOwaspRulesOutcome;
+                typedef std::future<DescribeOwaspRulesOutcome> DescribeOwaspRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeOwaspRulesRequest&, DescribeOwaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOwaspWhiteRulesResponse> DescribeOwaspWhiteRulesOutcome;
+                typedef std::future<DescribeOwaspWhiteRulesOutcome> DescribeOwaspWhiteRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeOwaspWhiteRulesRequest&, DescribeOwaspWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOwaspWhiteRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePeakPointsResponse> DescribePeakPointsOutcome;
                 typedef std::future<DescribePeakPointsOutcome> DescribePeakPointsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePeakPointsRequest&, DescribePeakPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakPointsAsyncHandler;
@@ -370,6 +492,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSessionResponse> DescribeSessionOutcome;
                 typedef std::future<DescribeSessionOutcome> DescribeSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeSessionRequest&, DescribeSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillSecScanResultResponse> DescribeSkillSecScanResultOutcome;
+                typedef std::future<DescribeSkillSecScanResultOutcome> DescribeSkillSecScanResultOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeSkillSecScanResultRequest&, DescribeSkillSecScanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillSecScanResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSpartaProtectionInfoResponse> DescribeSpartaProtectionInfoOutcome;
                 typedef std::future<DescribeSpartaProtectionInfoOutcome> DescribeSpartaProtectionInfoOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeSpartaProtectionInfoRequest&, DescribeSpartaProtectionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpartaProtectionInfoAsyncHandler;
@@ -394,6 +519,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebshellStatusResponse> DescribeWebshellStatusOutcome;
                 typedef std::future<DescribeWebshellStatusOutcome> DescribeWebshellStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWebshellStatusRequest&, DescribeWebshellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebshellStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportLLMKeywordLibResponse> ExportLLMKeywordLibOutcome;
+                typedef std::future<ExportLLMKeywordLibOutcome> ExportLLMKeywordLibOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ExportLLMKeywordLibRequest&, ExportLLMKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportLLMKeywordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
                 typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
@@ -478,12 +606,51 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIpAccessControlResponse> ModifyIpAccessControlOutcome;
                 typedef std::future<ModifyIpAccessControlOutcome> ModifyIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyIpAccessControlRequest&, ModifyIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMContentRuleResponse> ModifyLLMContentRuleOutcome;
+                typedef std::future<ModifyLLMContentRuleOutcome> ModifyLLMContentRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMContentRuleRequest&, ModifyLLMContentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMContentRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMContentRuleStatusResponse> ModifyLLMContentRuleStatusOutcome;
+                typedef std::future<ModifyLLMContentRuleStatusOutcome> ModifyLLMContentRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMContentRuleStatusRequest&, ModifyLLMContentRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMContentRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMKeywordLibraryResponse> ModifyLLMKeywordLibraryOutcome;
+                typedef std::future<ModifyLLMKeywordLibraryOutcome> ModifyLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMKeywordLibraryRequest&, ModifyLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMSdkAccessResponse> ModifyLLMSdkAccessOutcome;
+                typedef std::future<ModifyLLMSdkAccessOutcome> ModifyLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMSdkAccessRequest&, ModifyLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMSdkAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMStatusResponse> ModifyLLMStatusOutcome;
+                typedef std::future<ModifyLLMStatusOutcome> ModifyLLMStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMStatusRequest&, ModifyLLMStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafDLPRuleResponse> ModifyLLMWafDLPRuleOutcome;
+                typedef std::future<ModifyLLMWafDLPRuleOutcome> ModifyLLMWafDLPRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafDLPRuleRequest&, ModifyLLMWafDLPRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafDLPRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafProtectRuleResponse> ModifyLLMWafProtectRuleOutcome;
+                typedef std::future<ModifyLLMWafProtectRuleOutcome> ModifyLLMWafProtectRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafProtectRuleRequest&, ModifyLLMWafProtectRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafProtectRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafToolCallRuleResponse> ModifyLLMWafToolCallRuleOutcome;
+                typedef std::future<ModifyLLMWafToolCallRuleOutcome> ModifyLLMWafToolCallRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafToolCallRuleRequest&, ModifyLLMWafToolCallRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafToolCallRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModuleStatusResponse> ModifyModuleStatusOutcome;
                 typedef std::future<ModifyModuleStatusOutcome> ModifyModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyModuleStatusRequest&, ModifyModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyObjectResponse> ModifyObjectOutcome;
                 typedef std::future<ModifyObjectOutcome> ModifyObjectOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyObjectRequest&, ModifyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleStatusResponse> ModifyOwaspRuleStatusOutcome;
+                typedef std::future<ModifyOwaspRuleStatusOutcome> ModifyOwaspRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleStatusRequest&, ModifyOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeActionResponse> ModifyOwaspRuleTypeActionOutcome;
+                typedef std::future<ModifyOwaspRuleTypeActionOutcome> ModifyOwaspRuleTypeActionOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeActionRequest&, ModifyOwaspRuleTypeActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeActionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeLevelResponse> ModifyOwaspRuleTypeLevelOutcome;
+                typedef std::future<ModifyOwaspRuleTypeLevelOutcome> ModifyOwaspRuleTypeLevelOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeLevelRequest&, ModifyOwaspRuleTypeLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeLevelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspRuleTypeStatusResponse> ModifyOwaspRuleTypeStatusOutcome;
+                typedef std::future<ModifyOwaspRuleTypeStatusOutcome> ModifyOwaspRuleTypeStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleTypeStatusRequest&, ModifyOwaspRuleTypeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleTypeStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspWhiteRuleResponse> ModifyOwaspWhiteRuleOutcome;
+                typedef std::future<ModifyOwaspWhiteRuleOutcome> ModifyOwaspWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspWhiteRuleRequest&, ModifyOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProtectionStatusResponse> ModifyProtectionStatusOutcome;
                 typedef std::future<ModifyProtectionStatusOutcome> ModifyProtectionStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyProtectionStatusRequest&, ModifyProtectionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionStatusAsyncHandler;
@@ -511,6 +678,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchElasticModeResponse> SwitchElasticModeOutcome;
                 typedef std::future<SwitchElasticModeOutcome> SwitchElasticModeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SwitchElasticModeRequest&, SwitchElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchElasticModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadSkillSecScanResponse> UploadSkillSecScanOutcome;
+                typedef std::future<UploadSkillSecScanOutcome> UploadSkillSecScanOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::UploadSkillSecScanRequest&, UploadSkillSecScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadSkillSecScanAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCRuleResponse> UpsertCCRuleOutcome;
                 typedef std::future<UpsertCCRuleOutcome> UpsertCCRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCRuleRequest&, UpsertCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCRuleAsyncHandler;
@@ -557,6 +727,15 @@ namespace TencentCloud
                 AddCustomWhiteRuleOutcomeCallable AddCustomWhiteRuleCallable(const Model::AddCustomWhiteRuleRequest& request);
 
                 /**
+                 *This API is used to add an access configuration in llmwaf-sdk.
+                 * @param req AddLLMSdkAccessRequest
+                 * @return AddLLMSdkAccessOutcome
+                 */
+                AddLLMSdkAccessOutcome AddLLMSdkAccess(const Model::AddLLMSdkAccessRequest &request);
+                void AddLLMSdkAccessAsync(const Model::AddLLMSdkAccessRequest& request, const AddLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddLLMSdkAccessOutcomeCallable AddLLMSdkAccessCallable(const Model::AddLLMSdkAccessRequest& request);
+
+                /**
                  *Add SaaS WAF protection domain
                  * @param req AddSpartaProtectionRequest
                  * @return AddSpartaProtectionOutcome
@@ -591,6 +770,15 @@ namespace TencentCloud
                 CreateIpAccessControlOutcome CreateIpAccessControl(const Model::CreateIpAccessControlRequest &request);
                 void CreateIpAccessControlAsync(const Model::CreateIpAccessControlRequest& request, const CreateIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIpAccessControlOutcomeCallable CreateIpAccessControlCallable(const Model::CreateIpAccessControlRequest& request);
+
+                /**
+                 *This API is used to add a rule engine allowlist.
+                 * @param req CreateOwaspWhiteRuleRequest
+                 * @return CreateOwaspWhiteRuleOutcome
+                 */
+                CreateOwaspWhiteRuleOutcome CreateOwaspWhiteRule(const Model::CreateOwaspWhiteRuleRequest &request);
+                void CreateOwaspWhiteRuleAsync(const Model::CreateOwaspWhiteRuleRequest& request, const CreateOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOwaspWhiteRuleOutcomeCallable CreateOwaspWhiteRuleCallable(const Model::CreateOwaspWhiteRuleRequest& request);
 
                 /**
                  *Delete tamper-proof URL
@@ -654,6 +842,51 @@ namespace TencentCloud
                 DeleteIpAccessControlV2Outcome DeleteIpAccessControlV2(const Model::DeleteIpAccessControlV2Request &request);
                 void DeleteIpAccessControlV2Async(const Model::DeleteIpAccessControlV2Request& request, const DeleteIpAccessControlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIpAccessControlV2OutcomeCallable DeleteIpAccessControlV2Callable(const Model::DeleteIpAccessControlV2Request& request);
+
+                /**
+                 *This API is used to delete an LLM content protection rule.
+                 * @param req DeleteLLMContentRuleRequest
+                 * @return DeleteLLMContentRuleOutcome
+                 */
+                DeleteLLMContentRuleOutcome DeleteLLMContentRule(const Model::DeleteLLMContentRuleRequest &request);
+                void DeleteLLMContentRuleAsync(const Model::DeleteLLMContentRuleRequest& request, const DeleteLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMContentRuleOutcomeCallable DeleteLLMContentRuleCallable(const Model::DeleteLLMContentRuleRequest& request);
+
+                /**
+                 *This API is used to delete a thesaurus list.
+                 * @param req DeleteLLMKeywordLibraryRequest
+                 * @return DeleteLLMKeywordLibraryOutcome
+                 */
+                DeleteLLMKeywordLibraryOutcome DeleteLLMKeywordLibrary(const Model::DeleteLLMKeywordLibraryRequest &request);
+                void DeleteLLMKeywordLibraryAsync(const Model::DeleteLLMKeywordLibraryRequest& request, const DeleteLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMKeywordLibraryOutcomeCallable DeleteLLMKeywordLibraryCallable(const Model::DeleteLLMKeywordLibraryRequest& request);
+
+                /**
+                 *This API is used to delete the access configuration in llmwaf-sdk.
+                 * @param req DeleteLLMSdkAccessRequest
+                 * @return DeleteLLMSdkAccessOutcome
+                 */
+                DeleteLLMSdkAccessOutcome DeleteLLMSdkAccess(const Model::DeleteLLMSdkAccessRequest &request);
+                void DeleteLLMSdkAccessAsync(const Model::DeleteLLMSdkAccessRequest& request, const DeleteLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMSdkAccessOutcomeCallable DeleteLLMSdkAccessCallable(const Model::DeleteLLMSdkAccessRequest& request);
+
+                /**
+                 *This API is used to unlock the Door God rule status.
+                 * @param req DeleteOwaspRuleStatusRequest
+                 * @return DeleteOwaspRuleStatusOutcome
+                 */
+                DeleteOwaspRuleStatusOutcome DeleteOwaspRuleStatus(const Model::DeleteOwaspRuleStatusRequest &request);
+                void DeleteOwaspRuleStatusAsync(const Model::DeleteOwaspRuleStatusRequest& request, const DeleteOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOwaspRuleStatusOutcomeCallable DeleteOwaspRuleStatusCallable(const Model::DeleteOwaspRuleStatusRequest& request);
+
+                /**
+                 *This API is used to delete a user rule engine allowlist.
+                 * @param req DeleteOwaspWhiteRuleRequest
+                 * @return DeleteOwaspWhiteRuleOutcome
+                 */
+                DeleteOwaspWhiteRuleOutcome DeleteOwaspWhiteRule(const Model::DeleteOwaspWhiteRuleRequest &request);
+                void DeleteOwaspWhiteRuleAsync(const Model::DeleteOwaspWhiteRuleRequest& request, const DeleteOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOwaspWhiteRuleOutcomeCallable DeleteOwaspWhiteRuleCallable(const Model::DeleteOwaspWhiteRuleRequest& request);
 
                 /**
                  *Delete CC attack session settings
@@ -881,6 +1114,78 @@ namespace TencentCloud
                 DescribeIpAccessControlOutcomeCallable DescribeIpAccessControlCallable(const Model::DescribeIpAccessControlRequest& request);
 
                 /**
+                 *This API is used to obtain the LLM content protection rules.
+                 * @param req DescribeLLMContentRuleListRequest
+                 * @return DescribeLLMContentRuleListOutcome
+                 */
+                DescribeLLMContentRuleListOutcome DescribeLLMContentRuleList(const Model::DescribeLLMContentRuleListRequest &request);
+                void DescribeLLMContentRuleListAsync(const Model::DescribeLLMContentRuleListRequest& request, const DescribeLLMContentRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMContentRuleListOutcomeCallable DescribeLLMContentRuleListCallable(const Model::DescribeLLMContentRuleListRequest& request);
+
+                /**
+                 *This API is used to review the request and response content of large models.
+                 * @param req DescribeLLMContentSecCheckRequest
+                 * @return DescribeLLMContentSecCheckOutcome
+                 */
+                DescribeLLMContentSecCheckOutcome DescribeLLMContentSecCheck(const Model::DescribeLLMContentSecCheckRequest &request);
+                void DescribeLLMContentSecCheckAsync(const Model::DescribeLLMContentSecCheckRequest& request, const DescribeLLMContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMContentSecCheckOutcomeCallable DescribeLLMContentSecCheckCallable(const Model::DescribeLLMContentSecCheckRequest& request);
+
+                /**
+                 *This API is used to query the hourly bill details of a single instance for a single day, including the estimated total bill amount, itemized costs, hourly trends, and hourly details.
+                 * @param req DescribeLLMHourBillDetailRequest
+                 * @return DescribeLLMHourBillDetailOutcome
+                 */
+                DescribeLLMHourBillDetailOutcome DescribeLLMHourBillDetail(const Model::DescribeLLMHourBillDetailRequest &request);
+                void DescribeLLMHourBillDetailAsync(const Model::DescribeLLMHourBillDetailRequest& request, const DescribeLLMHourBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMHourBillDetailOutcomeCallable DescribeLLMHourBillDetailCallable(const Model::DescribeLLMHourBillDetailRequest& request);
+
+                /**
+                 *This API is used to query the keyword list.
+                 * @param req DescribeLLMKeywordLibraryRequest
+                 * @return DescribeLLMKeywordLibraryOutcome
+                 */
+                DescribeLLMKeywordLibraryOutcome DescribeLLMKeywordLibrary(const Model::DescribeLLMKeywordLibraryRequest &request);
+                void DescribeLLMKeywordLibraryAsync(const Model::DescribeLLMKeywordLibraryRequest& request, const DescribeLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMKeywordLibraryOutcomeCallable DescribeLLMKeywordLibraryCallable(const Model::DescribeLLMKeywordLibraryRequest& request);
+
+                /**
+                 *This API is used to query sdk access configurations.
+                 * @param req DescribeLLMSdkAccessRequest
+                 * @return DescribeLLMSdkAccessOutcome
+                 */
+                DescribeLLMSdkAccessOutcome DescribeLLMSdkAccess(const Model::DescribeLLMSdkAccessRequest &request);
+                void DescribeLLMSdkAccessAsync(const Model::DescribeLLMSdkAccessRequest& request, const DescribeLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMSdkAccessOutcomeCallable DescribeLLMSdkAccessCallable(const Model::DescribeLLMSdkAccessRequest& request);
+
+                /**
+                 *This API is used to query DLP rules.
+                 * @param req DescribeLLMWafDLPRulesRequest
+                 * @return DescribeLLMWafDLPRulesOutcome
+                 */
+                DescribeLLMWafDLPRulesOutcome DescribeLLMWafDLPRules(const Model::DescribeLLMWafDLPRulesRequest &request);
+                void DescribeLLMWafDLPRulesAsync(const Model::DescribeLLMWafDLPRulesRequest& request, const DescribeLLMWafDLPRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafDLPRulesOutcomeCallable DescribeLLMWafDLPRulesCallable(const Model::DescribeLLMWafDLPRulesRequest& request);
+
+                /**
+                 *This API is used to query LLM rule requests.
+                 * @param req DescribeLLMWafProtectRulesRequest
+                 * @return DescribeLLMWafProtectRulesOutcome
+                 */
+                DescribeLLMWafProtectRulesOutcome DescribeLLMWafProtectRules(const Model::DescribeLLMWafProtectRulesRequest &request);
+                void DescribeLLMWafProtectRulesAsync(const Model::DescribeLLMWafProtectRulesRequest& request, const DescribeLLMWafProtectRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafProtectRulesOutcomeCallable DescribeLLMWafProtectRulesCallable(const Model::DescribeLLMWafProtectRulesRequest& request);
+
+                /**
+                 *This API is used to query Tool Call rules.
+                 * @param req DescribeLLMWafToolCallRulesRequest
+                 * @return DescribeLLMWafToolCallRulesOutcome
+                 */
+                DescribeLLMWafToolCallRulesOutcome DescribeLLMWafToolCallRules(const Model::DescribeLLMWafToolCallRulesRequest &request);
+                void DescribeLLMWafToolCallRulesAsync(const Model::DescribeLLMWafToolCallRulesRequest& request, const DescribeLLMWafToolCallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafToolCallRulesOutcomeCallable DescribeLLMWafToolCallRulesCallable(const Model::DescribeLLMWafToolCallRulesRequest& request);
+
+                /**
                  *Query the switch status of each WAF basic security module, check if each module is enabled
                  * @param req DescribeModuleStatusRequest
                  * @return DescribeModuleStatusOutcome
@@ -897,6 +1202,33 @@ namespace TencentCloud
                 DescribeObjectsOutcome DescribeObjects(const Model::DescribeObjectsRequest &request);
                 void DescribeObjectsAsync(const Model::DescribeObjectsRequest& request, const DescribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeObjectsOutcomeCallable DescribeObjectsCallable(const Model::DescribeObjectsRequest& request);
+
+                /**
+                 *This API is used to query the rule types of the rule engine.
+                 * @param req DescribeOwaspRuleTypesRequest
+                 * @return DescribeOwaspRuleTypesOutcome
+                 */
+                DescribeOwaspRuleTypesOutcome DescribeOwaspRuleTypes(const Model::DescribeOwaspRuleTypesRequest &request);
+                void DescribeOwaspRuleTypesAsync(const Model::DescribeOwaspRuleTypesRequest& request, const DescribeOwaspRuleTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOwaspRuleTypesOutcomeCallable DescribeOwaspRuleTypesCallable(const Model::DescribeOwaspRuleTypesRequest& request);
+
+                /**
+                 *This API is used to query the rule list of the rule engine.
+                 * @param req DescribeOwaspRulesRequest
+                 * @return DescribeOwaspRulesOutcome
+                 */
+                DescribeOwaspRulesOutcome DescribeOwaspRules(const Model::DescribeOwaspRulesRequest &request);
+                void DescribeOwaspRulesAsync(const Model::DescribeOwaspRulesRequest& request, const DescribeOwaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOwaspRulesOutcomeCallable DescribeOwaspRulesCallable(const Model::DescribeOwaspRulesRequest& request);
+
+                /**
+                 *This API is used to retrieve the allowlist for the rule engine.
+                 * @param req DescribeOwaspWhiteRulesRequest
+                 * @return DescribeOwaspWhiteRulesOutcome
+                 */
+                DescribeOwaspWhiteRulesOutcome DescribeOwaspWhiteRules(const Model::DescribeOwaspWhiteRulesRequest &request);
+                void DescribeOwaspWhiteRulesAsync(const Model::DescribeOwaspWhiteRulesRequest& request, const DescribeOwaspWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOwaspWhiteRulesOutcomeCallable DescribeOwaspWhiteRulesCallable(const Model::DescribeOwaspWhiteRulesRequest& request);
 
                 /**
                  *Query business and attack summary trends
@@ -942,6 +1274,15 @@ namespace TencentCloud
                 DescribeSessionOutcome DescribeSession(const Model::DescribeSessionRequest &request);
                 void DescribeSessionAsync(const Model::DescribeSessionRequest& request, const DescribeSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSessionOutcomeCallable DescribeSessionCallable(const Model::DescribeSessionRequest& request);
+
+                /**
+                 *This API is used to query Skill security detection results by file Hash.
+                 * @param req DescribeSkillSecScanResultRequest
+                 * @return DescribeSkillSecScanResultOutcome
+                 */
+                DescribeSkillSecScanResultOutcome DescribeSkillSecScanResult(const Model::DescribeSkillSecScanResultRequest &request);
+                void DescribeSkillSecScanResultAsync(const Model::DescribeSkillSecScanResultRequest& request, const DescribeSkillSecScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillSecScanResultOutcomeCallable DescribeSkillSecScanResultCallable(const Model::DescribeSkillSecScanResultRequest& request);
 
                 /**
                  *WAF Sparta - Obtain protection domain information
@@ -1014,6 +1355,15 @@ namespace TencentCloud
                 DescribeWebshellStatusOutcome DescribeWebshellStatus(const Model::DescribeWebshellStatusRequest &request);
                 void DescribeWebshellStatusAsync(const Model::DescribeWebshellStatusRequest& request, const DescribeWebshellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWebshellStatusOutcomeCallable DescribeWebshellStatusCallable(const Model::DescribeWebshellStatusRequest& request);
+
+                /**
+                 *This API is used to export lexicon files.
+                 * @param req ExportLLMKeywordLibRequest
+                 * @return ExportLLMKeywordLibOutcome
+                 */
+                ExportLLMKeywordLibOutcome ExportLLMKeywordLib(const Model::ExportLLMKeywordLibRequest &request);
+                void ExportLLMKeywordLibAsync(const Model::ExportLLMKeywordLibRequest& request, const ExportLLMKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportLLMKeywordLibOutcomeCallable ExportLLMKeywordLibCallable(const Model::ExportLLMKeywordLibRequest& request);
 
                 /**
                  *Refresh a tamper-proof URL
@@ -1269,6 +1619,78 @@ Batch operation is supported.
                 ModifyIpAccessControlOutcomeCallable ModifyIpAccessControlCallable(const Model::ModifyIpAccessControlRequest& request);
 
                 /**
+                 *This API is used to update the LLM content security rule.
+                 * @param req ModifyLLMContentRuleRequest
+                 * @return ModifyLLMContentRuleOutcome
+                 */
+                ModifyLLMContentRuleOutcome ModifyLLMContentRule(const Model::ModifyLLMContentRuleRequest &request);
+                void ModifyLLMContentRuleAsync(const Model::ModifyLLMContentRuleRequest& request, const ModifyLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMContentRuleOutcomeCallable ModifyLLMContentRuleCallable(const Model::ModifyLLMContentRuleRequest& request);
+
+                /**
+                 *This API is used to enable or disable the switch of protection rules for LLM content.
+                 * @param req ModifyLLMContentRuleStatusRequest
+                 * @return ModifyLLMContentRuleStatusOutcome
+                 */
+                ModifyLLMContentRuleStatusOutcome ModifyLLMContentRuleStatus(const Model::ModifyLLMContentRuleStatusRequest &request);
+                void ModifyLLMContentRuleStatusAsync(const Model::ModifyLLMContentRuleStatusRequest& request, const ModifyLLMContentRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMContentRuleStatusOutcomeCallable ModifyLLMContentRuleStatusCallable(const Model::ModifyLLMContentRuleStatusRequest& request);
+
+                /**
+                 *This API is used to modify a custom lexicon.
+                 * @param req ModifyLLMKeywordLibraryRequest
+                 * @return ModifyLLMKeywordLibraryOutcome
+                 */
+                ModifyLLMKeywordLibraryOutcome ModifyLLMKeywordLibrary(const Model::ModifyLLMKeywordLibraryRequest &request);
+                void ModifyLLMKeywordLibraryAsync(const Model::ModifyLLMKeywordLibraryRequest& request, const ModifyLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMKeywordLibraryOutcomeCallable ModifyLLMKeywordLibraryCallable(const Model::ModifyLLMKeywordLibraryRequest& request);
+
+                /**
+                 *This API is used to configure boundary access for llmwaf-sdk.
+                 * @param req ModifyLLMSdkAccessRequest
+                 * @return ModifyLLMSdkAccessOutcome
+                 */
+                ModifyLLMSdkAccessOutcome ModifyLLMSdkAccess(const Model::ModifyLLMSdkAccessRequest &request);
+                void ModifyLLMSdkAccessAsync(const Model::ModifyLLMSdkAccessRequest& request, const ModifyLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMSdkAccessOutcomeCallable ModifyLLMSdkAccessCallable(const Model::ModifyLLMSdkAccessRequest& request);
+
+                /**
+                 *This API is used to modify the module switch status of large model protection, supporting independent on/off operations for the master switch and each submodule. Before enabling, ensure that the instance has purchased the large model protection capability. If not purchased, the enable operation returns the AuthFailure.ErrCodeNoPurchased error.
+                 * @param req ModifyLLMStatusRequest
+                 * @return ModifyLLMStatusOutcome
+                 */
+                ModifyLLMStatusOutcome ModifyLLMStatus(const Model::ModifyLLMStatusRequest &request);
+                void ModifyLLMStatusAsync(const Model::ModifyLLMStatusRequest& request, const ModifyLLMStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMStatusOutcomeCallable ModifyLLMStatusCallable(const Model::ModifyLLMStatusRequest& request);
+
+                /**
+                 *This API is used to modify llmwaf DLP rules.
+                 * @param req ModifyLLMWafDLPRuleRequest
+                 * @return ModifyLLMWafDLPRuleOutcome
+                 */
+                ModifyLLMWafDLPRuleOutcome ModifyLLMWafDLPRule(const Model::ModifyLLMWafDLPRuleRequest &request);
+                void ModifyLLMWafDLPRuleAsync(const Model::ModifyLLMWafDLPRuleRequest& request, const ModifyLLMWafDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafDLPRuleOutcomeCallable ModifyLLMWafDLPRuleCallable(const Model::ModifyLLMWafDLPRuleRequest& request);
+
+                /**
+                 *This API is used to modify LLM rules.
+                 * @param req ModifyLLMWafProtectRuleRequest
+                 * @return ModifyLLMWafProtectRuleOutcome
+                 */
+                ModifyLLMWafProtectRuleOutcome ModifyLLMWafProtectRule(const Model::ModifyLLMWafProtectRuleRequest &request);
+                void ModifyLLMWafProtectRuleAsync(const Model::ModifyLLMWafProtectRuleRequest& request, const ModifyLLMWafProtectRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafProtectRuleOutcomeCallable ModifyLLMWafProtectRuleCallable(const Model::ModifyLLMWafProtectRuleRequest& request);
+
+                /**
+                 *This API is used to modify Tool Call rules.
+                 * @param req ModifyLLMWafToolCallRuleRequest
+                 * @return ModifyLLMWafToolCallRuleOutcome
+                 */
+                ModifyLLMWafToolCallRuleOutcome ModifyLLMWafToolCallRule(const Model::ModifyLLMWafToolCallRuleRequest &request);
+                void ModifyLLMWafToolCallRuleAsync(const Model::ModifyLLMWafToolCallRuleRequest& request, const ModifyLLMWafToolCallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafToolCallRuleOutcomeCallable ModifyLLMWafToolCallRuleCallable(const Model::ModifyLLMWafToolCallRuleRequest& request);
+
+                /**
                  *Set the switch for the basic security module under a certain domain
                  * @param req ModifyModuleStatusRequest
                  * @return ModifyModuleStatusOutcome
@@ -1285,6 +1707,51 @@ Batch operation is supported.
                 ModifyObjectOutcome ModifyObject(const Model::ModifyObjectRequest &request);
                 void ModifyObjectAsync(const Model::ModifyObjectRequest& request, const ModifyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
+
+                /**
+                 *This API is used to refresh the rule switch.
+                 * @param req ModifyOwaspRuleStatusRequest
+                 * @return ModifyOwaspRuleStatusOutcome
+                 */
+                ModifyOwaspRuleStatusOutcome ModifyOwaspRuleStatus(const Model::ModifyOwaspRuleStatusRequest &request);
+                void ModifyOwaspRuleStatusAsync(const Model::ModifyOwaspRuleStatusRequest& request, const ModifyOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleStatusOutcomeCallable ModifyOwaspRuleStatusCallable(const Model::ModifyOwaspRuleStatusRequest& request);
+
+                /**
+                 *This API is used to update the protection mode of the rule type.
+                 * @param req ModifyOwaspRuleTypeActionRequest
+                 * @return ModifyOwaspRuleTypeActionOutcome
+                 */
+                ModifyOwaspRuleTypeActionOutcome ModifyOwaspRuleTypeAction(const Model::ModifyOwaspRuleTypeActionRequest &request);
+                void ModifyOwaspRuleTypeActionAsync(const Model::ModifyOwaspRuleTypeActionRequest& request, const ModifyOwaspRuleTypeActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeActionOutcomeCallable ModifyOwaspRuleTypeActionCallable(const Model::ModifyOwaspRuleTypeActionRequest& request);
+
+                /**
+                 *This API is used to update the protection level of a rule type.
+                 * @param req ModifyOwaspRuleTypeLevelRequest
+                 * @return ModifyOwaspRuleTypeLevelOutcome
+                 */
+                ModifyOwaspRuleTypeLevelOutcome ModifyOwaspRuleTypeLevel(const Model::ModifyOwaspRuleTypeLevelRequest &request);
+                void ModifyOwaspRuleTypeLevelAsync(const Model::ModifyOwaspRuleTypeLevelRequest& request, const ModifyOwaspRuleTypeLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeLevelOutcomeCallable ModifyOwaspRuleTypeLevelCallable(const Model::ModifyOwaspRuleTypeLevelRequest& request);
+
+                /**
+                 *This API is used to update the rule type switch.
+                 * @param req ModifyOwaspRuleTypeStatusRequest
+                 * @return ModifyOwaspRuleTypeStatusOutcome
+                 */
+                ModifyOwaspRuleTypeStatusOutcome ModifyOwaspRuleTypeStatus(const Model::ModifyOwaspRuleTypeStatusRequest &request);
+                void ModifyOwaspRuleTypeStatusAsync(const Model::ModifyOwaspRuleTypeStatusRequest& request, const ModifyOwaspRuleTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspRuleTypeStatusOutcomeCallable ModifyOwaspRuleTypeStatusCallable(const Model::ModifyOwaspRuleTypeStatusRequest& request);
+
+                /**
+                 *This API is used to edit the allowlist for the rule engine.
+                 * @param req ModifyOwaspWhiteRuleRequest
+                 * @return ModifyOwaspWhiteRuleOutcome
+                 */
+                ModifyOwaspWhiteRuleOutcome ModifyOwaspWhiteRule(const Model::ModifyOwaspWhiteRuleRequest &request);
+                void ModifyOwaspWhiteRuleAsync(const Model::ModifyOwaspWhiteRuleRequest& request, const ModifyOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspWhiteRuleOutcomeCallable ModifyOwaspWhiteRuleCallable(const Model::ModifyOwaspWhiteRuleRequest& request);
 
                 /**
                  *This API is used to obtain the enabling status of the basic security protection module of WAF.
@@ -1366,6 +1833,15 @@ Batch operation is supported.
                 SwitchElasticModeOutcome SwitchElasticMode(const Model::SwitchElasticModeRequest &request);
                 void SwitchElasticModeAsync(const Model::SwitchElasticModeRequest& request, const SwitchElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchElasticModeOutcomeCallable SwitchElasticModeCallable(const Model::SwitchElasticModeRequest& request);
+
+                /**
+                 *This API is used to upload a Skill ZIP file and trigger asynchronous security detection.
+                 * @param req UploadSkillSecScanRequest
+                 * @return UploadSkillSecScanOutcome
+                 */
+                UploadSkillSecScanOutcome UploadSkillSecScan(const Model::UploadSkillSecScanRequest &request);
+                void UploadSkillSecScanAsync(const Model::UploadSkillSecScanRequest& request, const UploadSkillSecScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadSkillSecScanOutcomeCallable UploadSkillSecScanCallable(const Model::UploadSkillSecScanRequest& request);
 
                 /**
                  *WAF CC V2 upsert API

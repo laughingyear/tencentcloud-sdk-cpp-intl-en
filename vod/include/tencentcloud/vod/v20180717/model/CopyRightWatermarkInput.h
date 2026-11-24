@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Copyright information, maximum length is 200 characters.
-                     * @return Text Copyright information, maximum length is 200 characters.
+                     * 获取Copyright information. Maximum length: 200 characters.
+                     * @return Text Copyright information. Maximum length: 200 characters.
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置Copyright information, maximum length is 200 characters.
-                     * @param _text Copyright information, maximum length is 200 characters.
+                     * 设置Copyright information. Maximum length: 200 characters.
+                     * @param _text Copyright information. Maximum length: 200 characters.
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Copyright information, maximum length is 200 characters.
+                     * Copyright information. Maximum length: 200 characters.
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;

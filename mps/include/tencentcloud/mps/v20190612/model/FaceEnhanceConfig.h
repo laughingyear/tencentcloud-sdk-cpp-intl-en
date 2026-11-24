@@ -47,26 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 获取Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
 Default value: ON.
-                     * @return Switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @return Switch Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
 Default value: ON.
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * 设置Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
 Default value: ON.
-                     * @param _switch Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * @param _switch Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
 Default value: ON.
                      * 
                      */
@@ -80,23 +80,19 @@ Default value: ON.
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The strength. Value range: 0.0-1.0
-Default value: 0.0.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Intensity The strength. Value range: 0.0-1.0
-Default value: 0.0.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Strength. Value range: 0.0 to 1.0.
+Default: 0.0.
+                     * @return Intensity Strength. Value range: 0.0 to 1.0.
+Default: 0.0.
                      * 
                      */
                     double GetIntensity() const;
 
                     /**
-                     * 设置The strength. Value range: 0.0-1.0
-Default value: 0.0.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _intensity The strength. Value range: 0.0-1.0
-Default value: 0.0.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Strength. Value range: 0.0 to 1.0.
+Default: 0.0.
+                     * @param _intensity Strength. Value range: 0.0 to 1.0.
+Default: 0.0.
                      * 
                      */
                     void SetIntensity(const double& _intensity);
@@ -111,18 +107,17 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Whether to enable the feature. Valid values:
-<li>ON</li>
-<li>OFF</li>
+                     * Capability configuration switch. Valid values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
 Default value: ON.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The strength. Value range: 0.0-1.0
-Default value: 0.0.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Strength. Value range: 0.0 to 1.0.
+Default: 0.0.
                      */
                     double m_intensity;
                     bool m_intensityHasBeenSet;

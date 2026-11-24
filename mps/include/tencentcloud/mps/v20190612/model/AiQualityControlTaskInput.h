@@ -53,14 +53,12 @@ You can directly use a preset template or customize a template in the console. T
 - 20: Only enable quality inspection items corresponding to format diagnosis.
 - 30: Only enable quality inspection items corresponding to no-reference scoring.
 - 40: Only enable quality inspection items corresponding to screen quality.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Definition Media quality inspection template ID.
 You can directly use a preset template or customize a template in the console. The preset templates are as follows:
 - 10: Enable all quality inspection items.
 - 20: Only enable quality inspection items corresponding to format diagnosis.
 - 30: Only enable quality inspection items corresponding to no-reference scoring.
 - 40: Only enable quality inspection items corresponding to screen quality.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     uint64_t GetDefinition() const;
@@ -72,14 +70,12 @@ You can directly use a preset template or customize a template in the console. T
 - 20: Only enable quality inspection items corresponding to format diagnosis.
 - 30: Only enable quality inspection items corresponding to no-reference scoring.
 - 40: Only enable quality inspection items corresponding to screen quality.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _definition Media quality inspection template ID.
 You can directly use a preset template or customize a template in the console. The preset templates are as follows:
 - 10: Enable all quality inspection items.
 - 20: Only enable quality inspection items corresponding to format diagnosis.
 - 30: Only enable quality inspection items corresponding to no-reference scoring.
 - 40: Only enable quality inspection items corresponding to screen quality.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -92,19 +88,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取The channel extension parameter, which is a serialized JSON string.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ChannelExtPara The channel extension parameter, which is a serialized JSON string.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Channel expansion parameter, json serialized string.
+                     * @return ChannelExtPara Channel expansion parameter, json serialized string.
                      * 
                      */
                     std::string GetChannelExtPara() const;
 
                     /**
-                     * 设置The channel extension parameter, which is a serialized JSON string.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _channelExtPara The channel extension parameter, which is a serialized JSON string.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Channel expansion parameter, json serialized string.
+                     * @param _channelExtPara Channel expansion parameter, json serialized string.
                      * 
                      */
                     void SetChannelExtPara(const std::string& _channelExtPara);
@@ -125,14 +117,12 @@ You can directly use a preset template or customize a template in the console. T
 - 20: Only enable quality inspection items corresponding to format diagnosis.
 - 30: Only enable quality inspection items corresponding to no-reference scoring.
 - 40: Only enable quality inspection items corresponding to screen quality.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * The channel extension parameter, which is a serialized JSON string.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Channel expansion parameter, json serialized string.
                      */
                     std::string m_channelExtPara;
                     bool m_channelExtParaHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Low-light enhancement configuration.
+                * Low-light enhancement control
                 */
                 class LowLightEnhanceInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable low-light enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable low-light enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Low-light enhancement control switch. Available values:
+<li>ON: turn on low-light enhancement;</li>
+<li>OFF: low-light enhancement disabled.</li>
+                     * @return Switch Low-light enhancement control switch. Available values:
+<li>ON: turn on low-light enhancement;</li>
+<li>OFF: low-light enhancement disabled.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable low-light enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable low-light enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Low-light enhancement control switch. Available values:
+<li>ON: turn on low-light enhancement;</li>
+<li>OFF: low-light enhancement disabled.</li>
+                     * @param _switch Low-light enhancement control switch. Available values:
+<li>ON: turn on low-light enhancement;</li>
+<li>OFF: low-light enhancement disabled.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,23 +76,23 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The low-light enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`normal`</li>
-Default value: `normal`.
-                     * @return Type The low-light enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`normal`</li>
-Default value: `normal`.
+                     * 获取Low-light enhancement type. It is valid only when the low-light enhancement control switch is ON. Available values:
+<li>normal: Normal low-light enhancement;</li>
+Default value: normal.
+                     * @return Type Low-light enhancement type. It is valid only when the low-light enhancement control switch is ON. Available values:
+<li>normal: Normal low-light enhancement;</li>
+Default value: normal.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The low-light enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`normal`</li>
-Default value: `normal`.
-                     * @param _type The low-light enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`normal`</li>
-Default value: `normal`.
+                     * 设置Low-light enhancement type. It is valid only when the low-light enhancement control switch is ON. Available values:
+<li>normal: Normal low-light enhancement;</li>
+Default value: normal.
+                     * @param _type Low-light enhancement type. It is valid only when the low-light enhancement control switch is ON. Available values:
+<li>normal: Normal low-light enhancement;</li>
+Default value: normal.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -107,17 +107,17 @@ Default value: `normal`.
                 private:
 
                     /**
-                     * Whether to enable low-light enhancement. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Low-light enhancement control switch. Available values:
+<li>ON: turn on low-light enhancement;</li>
+<li>OFF: low-light enhancement disabled.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The low-light enhancement type. This parameter is valid only if `Switch` is `ON`.
-<li>`normal`</li>
-Default value: `normal`.
+                     * Low-light enhancement type. It is valid only when the low-light enhancement control switch is ON. Available values:
+<li>normal: Normal low-light enhancement;</li>
+Default value: normal.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

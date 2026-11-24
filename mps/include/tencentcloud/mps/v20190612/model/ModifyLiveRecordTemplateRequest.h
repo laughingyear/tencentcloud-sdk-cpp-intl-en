@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Specifies the recording template unique identifier.
-                     * @return Definition Specifies the recording template unique identifier.
+                     * 获取Unique identifier of the recording template.
+                     * @return Definition Unique identifier of the recording template.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Specifies the recording template unique identifier.
-                     * @param _definition Specifies the recording template unique identifier.
+                     * 设置Unique identifier of the recording template.
+                     * @param _definition Unique identifier of the recording template.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool MP4ConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Recording template name. Length limit: 64 characters.
-                     * @return Name Recording template name. Length limit: 64 characters.
+                     * 获取Recording template name. The length cannot exceed 64 characters.
+                     * @return Name Recording template name. The length cannot exceed 64 characters.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Recording template name. Length limit: 64 characters.
-                     * @param _name Recording template name. Length limit: 64 characters.
+                     * 设置Recording template name. The length cannot exceed 64 characters.
+                     * @param _name Recording template name. The length cannot exceed 64 characters.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -149,10 +149,31 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取Recording type. Valid values: video: audio and video recording; audio: audio recording; auto: automatic detection.
+                     * @return RecordType Recording type. Valid values: video: audio and video recording; audio: audio recording; auto: automatic detection.
+                     * 
+                     */
+                    std::string GetRecordType() const;
+
+                    /**
+                     * 设置Recording type. Valid values: video: audio and video recording; audio: audio recording; auto: automatic detection.
+                     * @param _recordType Recording type. Valid values: video: audio and video recording; audio: audio recording; auto: automatic detection.
+                     * 
+                     */
+                    void SetRecordType(const std::string& _recordType);
+
+                    /**
+                     * 判断参数 RecordType 是否已赋值
+                     * @return RecordType 是否已赋值
+                     * 
+                     */
+                    bool RecordTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Specifies the recording template unique identifier.
+                     * Unique identifier of the recording template.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -170,7 +191,7 @@ namespace TencentCloud
                     bool m_mP4ConfigureHasBeenSet;
 
                     /**
-                     * Recording template name. Length limit: 64 characters.
+                     * Recording template name. The length cannot exceed 64 characters.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -180,6 +201,12 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * Recording type. Valid values: video: audio and video recording; audio: audio recording; auto: automatic detection.
+                     */
+                    std::string m_recordType;
+                    bool m_recordTypeHasBeenSet;
 
                 };
             }

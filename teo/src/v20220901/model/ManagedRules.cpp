@@ -24,8 +24,10 @@ ManagedRules::ManagedRules() :
     m_enabledHasBeenSet(false),
     m_detectionOnlyHasBeenSet(false),
     m_semanticAnalysisHasBeenSet(false),
+    m_semanticAnalysisRulesHasBeenSet(false),
     m_autoUpdateHasBeenSet(false),
-    m_managedRuleGroupsHasBeenSet(false)
+    m_managedRuleGroupsHasBeenSet(false),
+    m_frequentScanningProtectionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,23 @@ CoreInternalOutcome ManagedRules::Deserialize(const rapidjson::Value &value)
         }
         m_semanticAnalysis = string(value["SemanticAnalysis"].GetString());
         m_semanticAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("SemanticAnalysisRules") && !value["SemanticAnalysisRules"].IsNull())
+    {
+        if (!value["SemanticAnalysisRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManagedRules.SemanticAnalysisRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_semanticAnalysisRules.Deserialize(value["SemanticAnalysisRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_semanticAnalysisRulesHasBeenSet = true;
     }
 
     if (value.HasMember("AutoUpdate") && !value["AutoUpdate"].IsNull())
@@ -101,6 +120,23 @@ CoreInternalOutcome ManagedRules::Deserialize(const rapidjson::Value &value)
         m_managedRuleGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("FrequentScanningProtection") && !value["FrequentScanningProtection"].IsNull())
+    {
+        if (!value["FrequentScanningProtection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManagedRules.FrequentScanningProtection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_frequentScanningProtection.Deserialize(value["FrequentScanningProtection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_frequentScanningProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -132,6 +168,15 @@ void ManagedRules::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_semanticAnalysis.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_semanticAnalysisRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemanticAnalysisRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_semanticAnalysisRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_autoUpdateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -154,6 +199,15 @@ void ManagedRules::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_frequentScanningProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrequentScanningProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_frequentScanningProtection.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -207,6 +261,22 @@ bool ManagedRules::SemanticAnalysisHasBeenSet() const
     return m_semanticAnalysisHasBeenSet;
 }
 
+SemanticAnalysisRules ManagedRules::GetSemanticAnalysisRules() const
+{
+    return m_semanticAnalysisRules;
+}
+
+void ManagedRules::SetSemanticAnalysisRules(const SemanticAnalysisRules& _semanticAnalysisRules)
+{
+    m_semanticAnalysisRules = _semanticAnalysisRules;
+    m_semanticAnalysisRulesHasBeenSet = true;
+}
+
+bool ManagedRules::SemanticAnalysisRulesHasBeenSet() const
+{
+    return m_semanticAnalysisRulesHasBeenSet;
+}
+
 ManagedRuleAutoUpdate ManagedRules::GetAutoUpdate() const
 {
     return m_autoUpdate;
@@ -237,5 +307,21 @@ void ManagedRules::SetManagedRuleGroups(const vector<ManagedRuleGroup>& _managed
 bool ManagedRules::ManagedRuleGroupsHasBeenSet() const
 {
     return m_managedRuleGroupsHasBeenSet;
+}
+
+FrequentScanningProtection ManagedRules::GetFrequentScanningProtection() const
+{
+    return m_frequentScanningProtection;
+}
+
+void ManagedRules::SetFrequentScanningProtection(const FrequentScanningProtection& _frequentScanningProtection)
+{
+    m_frequentScanningProtection = _frequentScanningProtection;
+    m_frequentScanningProtectionHasBeenSet = true;
+}
+
+bool ManagedRules::FrequentScanningProtectionHasBeenSet() const
+{
+    return m_frequentScanningProtectionHasBeenSet;
 }
 

@@ -62,25 +62,32 @@ VodClient::ApplyUploadOutcome VodClient::ApplyUpload(const ApplyUploadRequest &r
 
 void VodClient::ApplyUploadAsync(const ApplyUploadRequest& request, const ApplyUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyUpload(request), context);
-    };
+    using Req = const ApplyUploadRequest&;
+    using Resp = ApplyUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ApplyUploadOutcomeCallable VodClient::ApplyUploadCallable(const ApplyUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyUploadOutcome>>();
+    ApplyUploadAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ApplyUploadRequest&,
+        ApplyUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::AttachMediaSubtitlesOutcome VodClient::AttachMediaSubtitles(const AttachMediaSubtitlesRequest &request)
@@ -105,25 +112,32 @@ VodClient::AttachMediaSubtitlesOutcome VodClient::AttachMediaSubtitles(const Att
 
 void VodClient::AttachMediaSubtitlesAsync(const AttachMediaSubtitlesRequest& request, const AttachMediaSubtitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachMediaSubtitles(request), context);
-    };
+    using Req = const AttachMediaSubtitlesRequest&;
+    using Resp = AttachMediaSubtitlesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachMediaSubtitles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::AttachMediaSubtitlesOutcomeCallable VodClient::AttachMediaSubtitlesCallable(const AttachMediaSubtitlesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachMediaSubtitlesOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachMediaSubtitles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachMediaSubtitlesOutcome>>();
+    AttachMediaSubtitlesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const AttachMediaSubtitlesRequest&,
+        AttachMediaSubtitlesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CloneCDNDomainOutcome VodClient::CloneCDNDomain(const CloneCDNDomainRequest &request)
@@ -148,25 +162,132 @@ VodClient::CloneCDNDomainOutcome VodClient::CloneCDNDomain(const CloneCDNDomainR
 
 void VodClient::CloneCDNDomainAsync(const CloneCDNDomainRequest& request, const CloneCDNDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloneCDNDomain(request), context);
-    };
+    using Req = const CloneCDNDomainRequest&;
+    using Resp = CloneCDNDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloneCDNDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CloneCDNDomainOutcomeCallable VodClient::CloneCDNDomainCallable(const CloneCDNDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloneCDNDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CloneCDNDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CloneCDNDomainOutcome>>();
+    CloneCDNDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CloneCDNDomainRequest&,
+        CloneCDNDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CloneVoiceAsyncOutcome VodClient::CloneVoiceAsync(const CloneVoiceAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneVoiceAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneVoiceAsyncResponse rsp = CloneVoiceAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneVoiceAsyncOutcome(rsp);
+        else
+            return CloneVoiceAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneVoiceAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CloneVoiceAsyncAsync(const CloneVoiceAsyncRequest& request, const CloneVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloneVoiceAsyncRequest&;
+    using Resp = CloneVoiceAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloneVoiceAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CloneVoiceAsyncOutcomeCallable VodClient::CloneVoiceAsyncCallable(const CloneVoiceAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloneVoiceAsyncOutcome>>();
+    CloneVoiceAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CloneVoiceAsyncRequest&,
+        CloneVoiceAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CloneVoiceSyncOutcome VodClient::CloneVoiceSync(const CloneVoiceSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneVoiceSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneVoiceSyncResponse rsp = CloneVoiceSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneVoiceSyncOutcome(rsp);
+        else
+            return CloneVoiceSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneVoiceSyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CloneVoiceSyncAsync(const CloneVoiceSyncRequest& request, const CloneVoiceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloneVoiceSyncRequest&;
+    using Resp = CloneVoiceSyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloneVoiceSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CloneVoiceSyncOutcomeCallable VodClient::CloneVoiceSyncCallable(const CloneVoiceSyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloneVoiceSyncOutcome>>();
+    CloneVoiceSyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CloneVoiceSyncRequest&,
+        CloneVoiceSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CommitUploadOutcome VodClient::CommitUpload(const CommitUploadRequest &request)
@@ -191,25 +312,32 @@ VodClient::CommitUploadOutcome VodClient::CommitUpload(const CommitUploadRequest
 
 void VodClient::CommitUploadAsync(const CommitUploadRequest& request, const CommitUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CommitUpload(request), context);
-    };
+    using Req = const CommitUploadRequest&;
+    using Resp = CommitUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CommitUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CommitUploadOutcomeCallable VodClient::CommitUploadCallable(const CommitUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CommitUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->CommitUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CommitUploadOutcome>>();
+    CommitUploadAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CommitUploadRequest&,
+        CommitUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ComposeMediaOutcome VodClient::ComposeMedia(const ComposeMediaRequest &request)
@@ -234,25 +362,32 @@ VodClient::ComposeMediaOutcome VodClient::ComposeMedia(const ComposeMediaRequest
 
 void VodClient::ComposeMediaAsync(const ComposeMediaRequest& request, const ComposeMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ComposeMedia(request), context);
-    };
+    using Req = const ComposeMediaRequest&;
+    using Resp = ComposeMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ComposeMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ComposeMediaOutcomeCallable VodClient::ComposeMediaCallable(const ComposeMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ComposeMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->ComposeMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ComposeMediaOutcome>>();
+    ComposeMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ComposeMediaRequest&,
+        ComposeMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ConfirmEventsOutcome VodClient::ConfirmEvents(const ConfirmEventsRequest &request)
@@ -277,25 +412,32 @@ VodClient::ConfirmEventsOutcome VodClient::ConfirmEvents(const ConfirmEventsRequ
 
 void VodClient::ConfirmEventsAsync(const ConfirmEventsRequest& request, const ConfirmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfirmEvents(request), context);
-    };
+    using Req = const ConfirmEventsRequest&;
+    using Resp = ConfirmEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfirmEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ConfirmEventsOutcomeCallable VodClient::ConfirmEventsCallable(const ConfirmEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfirmEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfirmEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfirmEventsOutcome>>();
+    ConfirmEventsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ConfirmEventsRequest&,
+        ConfirmEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateAIAnalysisTemplateOutcome VodClient::CreateAIAnalysisTemplate(const CreateAIAnalysisTemplateRequest &request)
@@ -320,25 +462,32 @@ VodClient::CreateAIAnalysisTemplateOutcome VodClient::CreateAIAnalysisTemplate(c
 
 void VodClient::CreateAIAnalysisTemplateAsync(const CreateAIAnalysisTemplateRequest& request, const CreateAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAIAnalysisTemplate(request), context);
-    };
+    using Req = const CreateAIAnalysisTemplateRequest&;
+    using Resp = CreateAIAnalysisTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAIAnalysisTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateAIAnalysisTemplateOutcomeCallable VodClient::CreateAIAnalysisTemplateCallable(const CreateAIAnalysisTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAIAnalysisTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAIAnalysisTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAIAnalysisTemplateOutcome>>();
+    CreateAIAnalysisTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAIAnalysisTemplateRequest&,
+        CreateAIAnalysisTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateAIRecognitionTemplateOutcome VodClient::CreateAIRecognitionTemplate(const CreateAIRecognitionTemplateRequest &request)
@@ -363,25 +512,32 @@ VodClient::CreateAIRecognitionTemplateOutcome VodClient::CreateAIRecognitionTemp
 
 void VodClient::CreateAIRecognitionTemplateAsync(const CreateAIRecognitionTemplateRequest& request, const CreateAIRecognitionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAIRecognitionTemplate(request), context);
-    };
+    using Req = const CreateAIRecognitionTemplateRequest&;
+    using Resp = CreateAIRecognitionTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAIRecognitionTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateAIRecognitionTemplateOutcomeCallable VodClient::CreateAIRecognitionTemplateCallable(const CreateAIRecognitionTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAIRecognitionTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAIRecognitionTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAIRecognitionTemplateOutcome>>();
+    CreateAIRecognitionTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAIRecognitionTemplateRequest&,
+        CreateAIRecognitionTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateAdaptiveDynamicStreamingTemplateOutcome VodClient::CreateAdaptiveDynamicStreamingTemplate(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
@@ -406,25 +562,632 @@ VodClient::CreateAdaptiveDynamicStreamingTemplateOutcome VodClient::CreateAdapti
 
 void VodClient::CreateAdaptiveDynamicStreamingTemplateAsync(const CreateAdaptiveDynamicStreamingTemplateRequest& request, const CreateAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAdaptiveDynamicStreamingTemplate(request), context);
-    };
+    using Req = const CreateAdaptiveDynamicStreamingTemplateRequest&;
+    using Resp = CreateAdaptiveDynamicStreamingTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAdaptiveDynamicStreamingTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::CreateAdaptiveDynamicStreamingTemplateCallable(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAdaptiveDynamicStreamingTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAdaptiveDynamicStreamingTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateAdaptiveDynamicStreamingTemplateOutcome>>();
+    CreateAdaptiveDynamicStreamingTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAdaptiveDynamicStreamingTemplateRequest&,
+        CreateAdaptiveDynamicStreamingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateAigcAdvancedCustomElementOutcome VodClient::CreateAigcAdvancedCustomElement(const CreateAigcAdvancedCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAdvancedCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAdvancedCustomElementResponse rsp = CreateAigcAdvancedCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAdvancedCustomElementOutcome(rsp);
+        else
+            return CreateAigcAdvancedCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAdvancedCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAdvancedCustomElementAsync(const CreateAigcAdvancedCustomElementRequest& request, const CreateAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAdvancedCustomElementRequest&;
+    using Resp = CreateAigcAdvancedCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAdvancedCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAdvancedCustomElementOutcomeCallable VodClient::CreateAigcAdvancedCustomElementCallable(const CreateAigcAdvancedCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAdvancedCustomElementOutcome>>();
+    CreateAigcAdvancedCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAdvancedCustomElementRequest&,
+        CreateAigcAdvancedCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcApiTokenOutcome VodClient::CreateAigcApiToken(const CreateAigcApiTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcApiToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcApiTokenResponse rsp = CreateAigcApiTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcApiTokenOutcome(rsp);
+        else
+            return CreateAigcApiTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcApiTokenOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcApiTokenAsync(const CreateAigcApiTokenRequest& request, const CreateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcApiTokenRequest&;
+    using Resp = CreateAigcApiTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcApiToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcApiTokenOutcomeCallable VodClient::CreateAigcApiTokenCallable(const CreateAigcApiTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcApiTokenOutcome>>();
+    CreateAigcApiTokenAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcApiTokenRequest&,
+        CreateAigcApiTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcAudioCloneOutcome VodClient::CreateAigcAudioClone(const CreateAigcAudioCloneRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAudioClone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAudioCloneResponse rsp = CreateAigcAudioCloneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAudioCloneOutcome(rsp);
+        else
+            return CreateAigcAudioCloneOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAudioCloneOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAudioCloneAsync(const CreateAigcAudioCloneRequest& request, const CreateAigcAudioCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAudioCloneRequest&;
+    using Resp = CreateAigcAudioCloneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAudioClone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAudioCloneOutcomeCallable VodClient::CreateAigcAudioCloneCallable(const CreateAigcAudioCloneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAudioCloneOutcome>>();
+    CreateAigcAudioCloneAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAudioCloneRequest&,
+        CreateAigcAudioCloneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcAudioTaskOutcome VodClient::CreateAigcAudioTask(const CreateAigcAudioTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAudioTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAudioTaskResponse rsp = CreateAigcAudioTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAudioTaskOutcome(rsp);
+        else
+            return CreateAigcAudioTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAudioTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAudioTaskAsync(const CreateAigcAudioTaskRequest& request, const CreateAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAudioTaskRequest&;
+    using Resp = CreateAigcAudioTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAudioTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAudioTaskOutcomeCallable VodClient::CreateAigcAudioTaskCallable(const CreateAigcAudioTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAudioTaskOutcome>>();
+    CreateAigcAudioTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAudioTaskRequest&,
+        CreateAigcAudioTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcCustomElementOutcome VodClient::CreateAigcCustomElement(const CreateAigcCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcCustomElementResponse rsp = CreateAigcCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcCustomElementOutcome(rsp);
+        else
+            return CreateAigcCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcCustomElementAsync(const CreateAigcCustomElementRequest& request, const CreateAigcCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcCustomElementRequest&;
+    using Resp = CreateAigcCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcCustomElementOutcomeCallable VodClient::CreateAigcCustomElementCallable(const CreateAigcCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcCustomElementOutcome>>();
+    CreateAigcCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcCustomElementRequest&,
+        CreateAigcCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcCustomVoiceOutcome VodClient::CreateAigcCustomVoice(const CreateAigcCustomVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcCustomVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcCustomVoiceResponse rsp = CreateAigcCustomVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcCustomVoiceOutcome(rsp);
+        else
+            return CreateAigcCustomVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcCustomVoiceOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcCustomVoiceAsync(const CreateAigcCustomVoiceRequest& request, const CreateAigcCustomVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcCustomVoiceRequest&;
+    using Resp = CreateAigcCustomVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcCustomVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcCustomVoiceOutcomeCallable VodClient::CreateAigcCustomVoiceCallable(const CreateAigcCustomVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcCustomVoiceOutcome>>();
+    CreateAigcCustomVoiceAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcCustomVoiceRequest&,
+        CreateAigcCustomVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcHunyuan3DTaskOutcome VodClient::CreateAigcHunyuan3DTask(const CreateAigcHunyuan3DTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcHunyuan3DTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcHunyuan3DTaskResponse rsp = CreateAigcHunyuan3DTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcHunyuan3DTaskOutcome(rsp);
+        else
+            return CreateAigcHunyuan3DTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcHunyuan3DTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcHunyuan3DTaskAsync(const CreateAigcHunyuan3DTaskRequest& request, const CreateAigcHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcHunyuan3DTaskRequest&;
+    using Resp = CreateAigcHunyuan3DTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcHunyuan3DTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcHunyuan3DTaskOutcomeCallable VodClient::CreateAigcHunyuan3DTaskCallable(const CreateAigcHunyuan3DTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcHunyuan3DTaskOutcome>>();
+    CreateAigcHunyuan3DTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcHunyuan3DTaskRequest&,
+        CreateAigcHunyuan3DTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcImageTaskOutcome VodClient::CreateAigcImageTask(const CreateAigcImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcImageTaskResponse rsp = CreateAigcImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcImageTaskOutcome(rsp);
+        else
+            return CreateAigcImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcImageTaskAsync(const CreateAigcImageTaskRequest& request, const CreateAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcImageTaskRequest&;
+    using Resp = CreateAigcImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcImageTaskOutcomeCallable VodClient::CreateAigcImageTaskCallable(const CreateAigcImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcImageTaskOutcome>>();
+    CreateAigcImageTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcImageTaskRequest&,
+        CreateAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcQuotaOutcome VodClient::CreateAigcQuota(const CreateAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcQuotaResponse rsp = CreateAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcQuotaOutcome(rsp);
+        else
+            return CreateAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcQuotaAsync(const CreateAigcQuotaRequest& request, const CreateAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcQuotaRequest&;
+    using Resp = CreateAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcQuotaOutcomeCallable VodClient::CreateAigcQuotaCallable(const CreateAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcQuotaOutcome>>();
+    CreateAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcQuotaRequest&,
+        CreateAigcQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcSubjectOutcome VodClient::CreateAigcSubject(const CreateAigcSubjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcSubject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcSubjectResponse rsp = CreateAigcSubjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcSubjectOutcome(rsp);
+        else
+            return CreateAigcSubjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcSubjectOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcSubjectAsync(const CreateAigcSubjectRequest& request, const CreateAigcSubjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcSubjectRequest&;
+    using Resp = CreateAigcSubjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcSubject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcSubjectOutcomeCallable VodClient::CreateAigcSubjectCallable(const CreateAigcSubjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcSubjectOutcome>>();
+    CreateAigcSubjectAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcSubjectRequest&,
+        CreateAigcSubjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcVideoRedrawTaskOutcome VodClient::CreateAigcVideoRedrawTask(const CreateAigcVideoRedrawTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcVideoRedrawTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcVideoRedrawTaskResponse rsp = CreateAigcVideoRedrawTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcVideoRedrawTaskOutcome(rsp);
+        else
+            return CreateAigcVideoRedrawTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcVideoRedrawTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcVideoRedrawTaskAsync(const CreateAigcVideoRedrawTaskRequest& request, const CreateAigcVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcVideoRedrawTaskRequest&;
+    using Resp = CreateAigcVideoRedrawTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcVideoRedrawTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcVideoRedrawTaskOutcomeCallable VodClient::CreateAigcVideoRedrawTaskCallable(const CreateAigcVideoRedrawTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcVideoRedrawTaskOutcome>>();
+    CreateAigcVideoRedrawTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcVideoRedrawTaskRequest&,
+        CreateAigcVideoRedrawTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcVideoTaskOutcome VodClient::CreateAigcVideoTask(const CreateAigcVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcVideoTaskResponse rsp = CreateAigcVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcVideoTaskOutcome(rsp);
+        else
+            return CreateAigcVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcVideoTaskAsync(const CreateAigcVideoTaskRequest& request, const CreateAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcVideoTaskRequest&;
+    using Resp = CreateAigcVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcVideoTaskOutcomeCallable VodClient::CreateAigcVideoTaskCallable(const CreateAigcVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcVideoTaskOutcome>>();
+    CreateAigcVideoTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcVideoTaskRequest&,
+        CreateAigcVideoTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateAnimatedGraphicsTemplateOutcome VodClient::CreateAnimatedGraphicsTemplate(const CreateAnimatedGraphicsTemplateRequest &request)
@@ -449,25 +1212,82 @@ VodClient::CreateAnimatedGraphicsTemplateOutcome VodClient::CreateAnimatedGraphi
 
 void VodClient::CreateAnimatedGraphicsTemplateAsync(const CreateAnimatedGraphicsTemplateRequest& request, const CreateAnimatedGraphicsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAnimatedGraphicsTemplate(request), context);
-    };
+    using Req = const CreateAnimatedGraphicsTemplateRequest&;
+    using Resp = CreateAnimatedGraphicsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAnimatedGraphicsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateAnimatedGraphicsTemplateOutcomeCallable VodClient::CreateAnimatedGraphicsTemplateCallable(const CreateAnimatedGraphicsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAnimatedGraphicsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAnimatedGraphicsTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateAnimatedGraphicsTemplateOutcome>>();
+    CreateAnimatedGraphicsTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAnimatedGraphicsTemplateRequest&,
+        CreateAnimatedGraphicsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateBlindWatermarkTemplateOutcome VodClient::CreateBlindWatermarkTemplate(const CreateBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlindWatermarkTemplateResponse rsp = CreateBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlindWatermarkTemplateOutcome(rsp);
+        else
+            return CreateBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateBlindWatermarkTemplateAsync(const CreateBlindWatermarkTemplateRequest& request, const CreateBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBlindWatermarkTemplateRequest&;
+    using Resp = CreateBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateBlindWatermarkTemplateOutcomeCallable VodClient::CreateBlindWatermarkTemplateCallable(const CreateBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBlindWatermarkTemplateOutcome>>();
+    CreateBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateBlindWatermarkTemplateRequest&,
+        CreateBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateCDNDomainOutcome VodClient::CreateCDNDomain(const CreateCDNDomainRequest &request)
@@ -492,25 +1312,132 @@ VodClient::CreateCDNDomainOutcome VodClient::CreateCDNDomain(const CreateCDNDoma
 
 void VodClient::CreateCDNDomainAsync(const CreateCDNDomainRequest& request, const CreateCDNDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCDNDomain(request), context);
-    };
+    using Req = const CreateCDNDomainRequest&;
+    using Resp = CreateCDNDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCDNDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateCDNDomainOutcomeCallable VodClient::CreateCDNDomainCallable(const CreateCDNDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCDNDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCDNDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateCDNDomainOutcome>>();
+    CreateCDNDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateCDNDomainRequest&,
+        CreateCDNDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateCLSLogsetOutcome VodClient::CreateCLSLogset(const CreateCLSLogsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSLogset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSLogsetResponse rsp = CreateCLSLogsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSLogsetOutcome(rsp);
+        else
+            return CreateCLSLogsetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSLogsetOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateCLSLogsetAsync(const CreateCLSLogsetRequest& request, const CreateCLSLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCLSLogsetRequest&;
+    using Resp = CreateCLSLogsetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCLSLogset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateCLSLogsetOutcomeCallable VodClient::CreateCLSLogsetCallable(const CreateCLSLogsetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCLSLogsetOutcome>>();
+    CreateCLSLogsetAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateCLSLogsetRequest&,
+        CreateCLSLogsetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateCLSTopicOutcome VodClient::CreateCLSTopic(const CreateCLSTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSTopicResponse rsp = CreateCLSTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSTopicOutcome(rsp);
+        else
+            return CreateCLSTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSTopicOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateCLSTopicAsync(const CreateCLSTopicRequest& request, const CreateCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCLSTopicRequest&;
+    using Resp = CreateCLSTopicResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCLSTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateCLSTopicOutcomeCallable VodClient::CreateCLSTopicCallable(const CreateCLSTopicRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCLSTopicOutcome>>();
+    CreateCLSTopicAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateCLSTopicRequest&,
+        CreateCLSTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateClassOutcome VodClient::CreateClass(const CreateClassRequest &request)
@@ -535,25 +1462,32 @@ VodClient::CreateClassOutcome VodClient::CreateClass(const CreateClassRequest &r
 
 void VodClient::CreateClassAsync(const CreateClassRequest& request, const CreateClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClass(request), context);
-    };
+    using Req = const CreateClassRequest&;
+    using Resp = CreateClassResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateClassOutcomeCallable VodClient::CreateClassCallable(const CreateClassRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClassOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClass(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClassOutcome>>();
+    CreateClassAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateClassRequest&,
+        CreateClassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateComplexAdaptiveDynamicStreamingTaskOutcome VodClient::CreateComplexAdaptiveDynamicStreamingTask(const CreateComplexAdaptiveDynamicStreamingTaskRequest &request)
@@ -578,25 +1512,32 @@ VodClient::CreateComplexAdaptiveDynamicStreamingTaskOutcome VodClient::CreateCom
 
 void VodClient::CreateComplexAdaptiveDynamicStreamingTaskAsync(const CreateComplexAdaptiveDynamicStreamingTaskRequest& request, const CreateComplexAdaptiveDynamicStreamingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateComplexAdaptiveDynamicStreamingTask(request), context);
-    };
+    using Req = const CreateComplexAdaptiveDynamicStreamingTaskRequest&;
+    using Resp = CreateComplexAdaptiveDynamicStreamingTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateComplexAdaptiveDynamicStreamingTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateComplexAdaptiveDynamicStreamingTaskOutcomeCallable VodClient::CreateComplexAdaptiveDynamicStreamingTaskCallable(const CreateComplexAdaptiveDynamicStreamingTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateComplexAdaptiveDynamicStreamingTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateComplexAdaptiveDynamicStreamingTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateComplexAdaptiveDynamicStreamingTaskOutcome>>();
+    CreateComplexAdaptiveDynamicStreamingTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateComplexAdaptiveDynamicStreamingTaskRequest&,
+        CreateComplexAdaptiveDynamicStreamingTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateContentReviewTemplateOutcome VodClient::CreateContentReviewTemplate(const CreateContentReviewTemplateRequest &request)
@@ -621,25 +1562,32 @@ VodClient::CreateContentReviewTemplateOutcome VodClient::CreateContentReviewTemp
 
 void VodClient::CreateContentReviewTemplateAsync(const CreateContentReviewTemplateRequest& request, const CreateContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateContentReviewTemplate(request), context);
-    };
+    using Req = const CreateContentReviewTemplateRequest&;
+    using Resp = CreateContentReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateContentReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateContentReviewTemplateOutcomeCallable VodClient::CreateContentReviewTemplateCallable(const CreateContentReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateContentReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateContentReviewTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateContentReviewTemplateOutcome>>();
+    CreateContentReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateContentReviewTemplateRequest&,
+        CreateContentReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateDomainVerifyRecordOutcome VodClient::CreateDomainVerifyRecord(const CreateDomainVerifyRecordRequest &request)
@@ -664,25 +1612,32 @@ VodClient::CreateDomainVerifyRecordOutcome VodClient::CreateDomainVerifyRecord(c
 
 void VodClient::CreateDomainVerifyRecordAsync(const CreateDomainVerifyRecordRequest& request, const CreateDomainVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainVerifyRecord(request), context);
-    };
+    using Req = const CreateDomainVerifyRecordRequest&;
+    using Resp = CreateDomainVerifyRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainVerifyRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateDomainVerifyRecordOutcomeCallable VodClient::CreateDomainVerifyRecordCallable(const CreateDomainVerifyRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainVerifyRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainVerifyRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainVerifyRecordOutcome>>();
+    CreateDomainVerifyRecordAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateDomainVerifyRecordRequest&,
+        CreateDomainVerifyRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateEnhanceMediaTemplateOutcome VodClient::CreateEnhanceMediaTemplate(const CreateEnhanceMediaTemplateRequest &request)
@@ -707,25 +1662,32 @@ VodClient::CreateEnhanceMediaTemplateOutcome VodClient::CreateEnhanceMediaTempla
 
 void VodClient::CreateEnhanceMediaTemplateAsync(const CreateEnhanceMediaTemplateRequest& request, const CreateEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEnhanceMediaTemplate(request), context);
-    };
+    using Req = const CreateEnhanceMediaTemplateRequest&;
+    using Resp = CreateEnhanceMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEnhanceMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateEnhanceMediaTemplateOutcomeCallable VodClient::CreateEnhanceMediaTemplateCallable(const CreateEnhanceMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEnhanceMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEnhanceMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEnhanceMediaTemplateOutcome>>();
+    CreateEnhanceMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateEnhanceMediaTemplateRequest&,
+        CreateEnhanceMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateHeadTailTemplateOutcome VodClient::CreateHeadTailTemplate(const CreateHeadTailTemplateRequest &request)
@@ -750,25 +1712,32 @@ VodClient::CreateHeadTailTemplateOutcome VodClient::CreateHeadTailTemplate(const
 
 void VodClient::CreateHeadTailTemplateAsync(const CreateHeadTailTemplateRequest& request, const CreateHeadTailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHeadTailTemplate(request), context);
-    };
+    using Req = const CreateHeadTailTemplateRequest&;
+    using Resp = CreateHeadTailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHeadTailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateHeadTailTemplateOutcomeCallable VodClient::CreateHeadTailTemplateCallable(const CreateHeadTailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHeadTailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHeadTailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHeadTailTemplateOutcome>>();
+    CreateHeadTailTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateHeadTailTemplateRequest&,
+        CreateHeadTailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateImageProcessingTemplateOutcome VodClient::CreateImageProcessingTemplate(const CreateImageProcessingTemplateRequest &request)
@@ -793,25 +1762,32 @@ VodClient::CreateImageProcessingTemplateOutcome VodClient::CreateImageProcessing
 
 void VodClient::CreateImageProcessingTemplateAsync(const CreateImageProcessingTemplateRequest& request, const CreateImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImageProcessingTemplate(request), context);
-    };
+    using Req = const CreateImageProcessingTemplateRequest&;
+    using Resp = CreateImageProcessingTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImageProcessingTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateImageProcessingTemplateOutcomeCallable VodClient::CreateImageProcessingTemplateCallable(const CreateImageProcessingTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageProcessingTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImageProcessingTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageProcessingTemplateOutcome>>();
+    CreateImageProcessingTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateImageProcessingTemplateRequest&,
+        CreateImageProcessingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateImageSpriteTemplateOutcome VodClient::CreateImageSpriteTemplate(const CreateImageSpriteTemplateRequest &request)
@@ -836,25 +1812,32 @@ VodClient::CreateImageSpriteTemplateOutcome VodClient::CreateImageSpriteTemplate
 
 void VodClient::CreateImageSpriteTemplateAsync(const CreateImageSpriteTemplateRequest& request, const CreateImageSpriteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImageSpriteTemplate(request), context);
-    };
+    using Req = const CreateImageSpriteTemplateRequest&;
+    using Resp = CreateImageSpriteTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImageSpriteTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateImageSpriteTemplateOutcomeCallable VodClient::CreateImageSpriteTemplateCallable(const CreateImageSpriteTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageSpriteTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImageSpriteTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageSpriteTemplateOutcome>>();
+    CreateImageSpriteTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateImageSpriteTemplateRequest&,
+        CreateImageSpriteTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateJustInTimeTranscodeTemplateOutcome VodClient::CreateJustInTimeTranscodeTemplate(const CreateJustInTimeTranscodeTemplateRequest &request)
@@ -879,25 +1862,182 @@ VodClient::CreateJustInTimeTranscodeTemplateOutcome VodClient::CreateJustInTimeT
 
 void VodClient::CreateJustInTimeTranscodeTemplateAsync(const CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateJustInTimeTranscodeTemplate(request), context);
-    };
+    using Req = const CreateJustInTimeTranscodeTemplateRequest&;
+    using Resp = CreateJustInTimeTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateJustInTimeTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJustInTimeTranscodeTemplateCallable(const CreateJustInTimeTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateJustInTimeTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateJustInTimeTranscodeTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateJustInTimeTranscodeTemplateOutcome>>();
+    CreateJustInTimeTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateJustInTimeTranscodeTemplateRequest&,
+        CreateJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateKnowledgeBaseOutcome VodClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKnowledgeBaseResponse rsp = CreateKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKnowledgeBaseOutcome(rsp);
+        else
+            return CreateKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKnowledgeBaseRequest&;
+    using Resp = CreateKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateKnowledgeBaseOutcomeCallable VodClient::CreateKnowledgeBaseCallable(const CreateKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKnowledgeBaseOutcome>>();
+    CreateKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateKnowledgeBaseRequest&,
+        CreateKnowledgeBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateLLMComprehendTemplateOutcome VodClient::CreateLLMComprehendTemplate(const CreateLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLLMComprehendTemplateResponse rsp = CreateLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLLMComprehendTemplateOutcome(rsp);
+        else
+            return CreateLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateLLMComprehendTemplateAsync(const CreateLLMComprehendTemplateRequest& request, const CreateLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLLMComprehendTemplateRequest&;
+    using Resp = CreateLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateLLMComprehendTemplateOutcomeCallable VodClient::CreateLLMComprehendTemplateCallable(const CreateLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLLMComprehendTemplateOutcome>>();
+    CreateLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateLLMComprehendTemplateRequest&,
+        CreateLLMComprehendTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateMPSTemplateOutcome VodClient::CreateMPSTemplate(const CreateMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMPSTemplateResponse rsp = CreateMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMPSTemplateOutcome(rsp);
+        else
+            return CreateMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateMPSTemplateAsync(const CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMPSTemplateRequest&;
+    using Resp = CreateMPSTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMPSTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateMPSTemplateOutcomeCallable VodClient::CreateMPSTemplateCallable(const CreateMPSTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMPSTemplateOutcome>>();
+    CreateMPSTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateMPSTemplateRequest&,
+        CreateMPSTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreatePersonSampleOutcome VodClient::CreatePersonSample(const CreatePersonSampleRequest &request)
@@ -922,25 +2062,32 @@ VodClient::CreatePersonSampleOutcome VodClient::CreatePersonSample(const CreateP
 
 void VodClient::CreatePersonSampleAsync(const CreatePersonSampleRequest& request, const CreatePersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePersonSample(request), context);
-    };
+    using Req = const CreatePersonSampleRequest&;
+    using Resp = CreatePersonSampleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePersonSample", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreatePersonSampleOutcomeCallable VodClient::CreatePersonSampleCallable(const CreatePersonSampleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePersonSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePersonSample(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePersonSampleOutcome>>();
+    CreatePersonSampleAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreatePersonSampleRequest&,
+        CreatePersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateProcedureTemplateOutcome VodClient::CreateProcedureTemplate(const CreateProcedureTemplateRequest &request)
@@ -965,25 +2112,82 @@ VodClient::CreateProcedureTemplateOutcome VodClient::CreateProcedureTemplate(con
 
 void VodClient::CreateProcedureTemplateAsync(const CreateProcedureTemplateRequest& request, const CreateProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProcedureTemplate(request), context);
-    };
+    using Req = const CreateProcedureTemplateRequest&;
+    using Resp = CreateProcedureTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProcedureTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateProcedureTemplateOutcomeCallable VodClient::CreateProcedureTemplateCallable(const CreateProcedureTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProcedureTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProcedureTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateProcedureTemplateOutcome>>();
+    CreateProcedureTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateProcedureTemplateRequest&,
+        CreateProcedureTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateProcessImageAsyncTemplateOutcome VodClient::CreateProcessImageAsyncTemplate(const CreateProcessImageAsyncTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProcessImageAsyncTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProcessImageAsyncTemplateResponse rsp = CreateProcessImageAsyncTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProcessImageAsyncTemplateOutcome(rsp);
+        else
+            return CreateProcessImageAsyncTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProcessImageAsyncTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateProcessImageAsyncTemplateAsync(const CreateProcessImageAsyncTemplateRequest& request, const CreateProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateProcessImageAsyncTemplateRequest&;
+    using Resp = CreateProcessImageAsyncTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateProcessImageAsyncTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateProcessImageAsyncTemplateOutcomeCallable VodClient::CreateProcessImageAsyncTemplateCallable(const CreateProcessImageAsyncTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateProcessImageAsyncTemplateOutcome>>();
+    CreateProcessImageAsyncTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateProcessImageAsyncTemplateRequest&,
+        CreateProcessImageAsyncTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateQualityInspectTemplateOutcome VodClient::CreateQualityInspectTemplate(const CreateQualityInspectTemplateRequest &request)
@@ -1008,25 +2212,32 @@ VodClient::CreateQualityInspectTemplateOutcome VodClient::CreateQualityInspectTe
 
 void VodClient::CreateQualityInspectTemplateAsync(const CreateQualityInspectTemplateRequest& request, const CreateQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateQualityInspectTemplate(request), context);
-    };
+    using Req = const CreateQualityInspectTemplateRequest&;
+    using Resp = CreateQualityInspectTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateQualityInspectTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateQualityInspectTemplateOutcomeCallable VodClient::CreateQualityInspectTemplateCallable(const CreateQualityInspectTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateQualityInspectTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateQualityInspectTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateQualityInspectTemplateOutcome>>();
+    CreateQualityInspectTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateQualityInspectTemplateRequest&,
+        CreateQualityInspectTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateRebuildMediaTemplateOutcome VodClient::CreateRebuildMediaTemplate(const CreateRebuildMediaTemplateRequest &request)
@@ -1051,25 +2262,32 @@ VodClient::CreateRebuildMediaTemplateOutcome VodClient::CreateRebuildMediaTempla
 
 void VodClient::CreateRebuildMediaTemplateAsync(const CreateRebuildMediaTemplateRequest& request, const CreateRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRebuildMediaTemplate(request), context);
-    };
+    using Req = const CreateRebuildMediaTemplateRequest&;
+    using Resp = CreateRebuildMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRebuildMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateRebuildMediaTemplateOutcomeCallable VodClient::CreateRebuildMediaTemplateCallable(const CreateRebuildMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRebuildMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRebuildMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRebuildMediaTemplateOutcome>>();
+    CreateRebuildMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateRebuildMediaTemplateRequest&,
+        CreateRebuildMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateReviewTemplateOutcome VodClient::CreateReviewTemplate(const CreateReviewTemplateRequest &request)
@@ -1094,25 +2312,32 @@ VodClient::CreateReviewTemplateOutcome VodClient::CreateReviewTemplate(const Cre
 
 void VodClient::CreateReviewTemplateAsync(const CreateReviewTemplateRequest& request, const CreateReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReviewTemplate(request), context);
-    };
+    using Req = const CreateReviewTemplateRequest&;
+    using Resp = CreateReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateReviewTemplateOutcomeCallable VodClient::CreateReviewTemplateCallable(const CreateReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReviewTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReviewTemplateOutcome>>();
+    CreateReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateReviewTemplateRequest&,
+        CreateReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateRoundPlayOutcome VodClient::CreateRoundPlay(const CreateRoundPlayRequest &request)
@@ -1137,25 +2362,32 @@ VodClient::CreateRoundPlayOutcome VodClient::CreateRoundPlay(const CreateRoundPl
 
 void VodClient::CreateRoundPlayAsync(const CreateRoundPlayRequest& request, const CreateRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRoundPlay(request), context);
-    };
+    using Req = const CreateRoundPlayRequest&;
+    using Resp = CreateRoundPlayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRoundPlay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateRoundPlayOutcomeCallable VodClient::CreateRoundPlayCallable(const CreateRoundPlayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRoundPlayOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRoundPlay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRoundPlayOutcome>>();
+    CreateRoundPlayAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateRoundPlayRequest&,
+        CreateRoundPlayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateSampleSnapshotTemplateOutcome VodClient::CreateSampleSnapshotTemplate(const CreateSampleSnapshotTemplateRequest &request)
@@ -1180,25 +2412,132 @@ VodClient::CreateSampleSnapshotTemplateOutcome VodClient::CreateSampleSnapshotTe
 
 void VodClient::CreateSampleSnapshotTemplateAsync(const CreateSampleSnapshotTemplateRequest& request, const CreateSampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSampleSnapshotTemplate(request), context);
-    };
+    using Req = const CreateSampleSnapshotTemplateRequest&;
+    using Resp = CreateSampleSnapshotTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSampleSnapshotTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateSampleSnapshotTemplateOutcomeCallable VodClient::CreateSampleSnapshotTemplateCallable(const CreateSampleSnapshotTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSampleSnapshotTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSampleSnapshotTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateSampleSnapshotTemplateOutcome>>();
+    CreateSampleSnapshotTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSampleSnapshotTemplateRequest&,
+        CreateSampleSnapshotTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::CreateSceneAigcImageTaskOutcome VodClient::CreateSceneAigcImageTask(const CreateSceneAigcImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSceneAigcImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSceneAigcImageTaskResponse rsp = CreateSceneAigcImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSceneAigcImageTaskOutcome(rsp);
+        else
+            return CreateSceneAigcImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSceneAigcImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSceneAigcImageTaskAsync(const CreateSceneAigcImageTaskRequest& request, const CreateSceneAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSceneAigcImageTaskRequest&;
+    using Resp = CreateSceneAigcImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSceneAigcImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateSceneAigcImageTaskOutcomeCallable VodClient::CreateSceneAigcImageTaskCallable(const CreateSceneAigcImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSceneAigcImageTaskOutcome>>();
+    CreateSceneAigcImageTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSceneAigcImageTaskRequest&,
+        CreateSceneAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateSceneAigcVideoTaskOutcome VodClient::CreateSceneAigcVideoTask(const CreateSceneAigcVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSceneAigcVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSceneAigcVideoTaskResponse rsp = CreateSceneAigcVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSceneAigcVideoTaskOutcome(rsp);
+        else
+            return CreateSceneAigcVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSceneAigcVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSceneAigcVideoTaskAsync(const CreateSceneAigcVideoTaskRequest& request, const CreateSceneAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSceneAigcVideoTaskRequest&;
+    using Resp = CreateSceneAigcVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSceneAigcVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateSceneAigcVideoTaskOutcomeCallable VodClient::CreateSceneAigcVideoTaskCallable(const CreateSceneAigcVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSceneAigcVideoTaskOutcome>>();
+    CreateSceneAigcVideoTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSceneAigcVideoTaskRequest&,
+        CreateSceneAigcVideoTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateSnapshotByTimeOffsetTemplateOutcome VodClient::CreateSnapshotByTimeOffsetTemplate(const CreateSnapshotByTimeOffsetTemplateRequest &request)
@@ -1223,25 +2562,32 @@ VodClient::CreateSnapshotByTimeOffsetTemplateOutcome VodClient::CreateSnapshotBy
 
 void VodClient::CreateSnapshotByTimeOffsetTemplateAsync(const CreateSnapshotByTimeOffsetTemplateRequest& request, const CreateSnapshotByTimeOffsetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSnapshotByTimeOffsetTemplate(request), context);
-    };
+    using Req = const CreateSnapshotByTimeOffsetTemplateRequest&;
+    using Resp = CreateSnapshotByTimeOffsetTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSnapshotByTimeOffsetTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::CreateSnapshotByTimeOffsetTemplateCallable(const CreateSnapshotByTimeOffsetTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSnapshotByTimeOffsetTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSnapshotByTimeOffsetTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSnapshotByTimeOffsetTemplateOutcome>>();
+    CreateSnapshotByTimeOffsetTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSnapshotByTimeOffsetTemplateRequest&,
+        CreateSnapshotByTimeOffsetTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateStorageRegionOutcome VodClient::CreateStorageRegion(const CreateStorageRegionRequest &request)
@@ -1266,25 +2612,32 @@ VodClient::CreateStorageRegionOutcome VodClient::CreateStorageRegion(const Creat
 
 void VodClient::CreateStorageRegionAsync(const CreateStorageRegionRequest& request, const CreateStorageRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStorageRegion(request), context);
-    };
+    using Req = const CreateStorageRegionRequest&;
+    using Resp = CreateStorageRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStorageRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateStorageRegionOutcomeCallable VodClient::CreateStorageRegionCallable(const CreateStorageRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStorageRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStorageRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStorageRegionOutcome>>();
+    CreateStorageRegionAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateStorageRegionRequest&,
+        CreateStorageRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateSubAppIdOutcome VodClient::CreateSubAppId(const CreateSubAppIdRequest &request)
@@ -1309,25 +2662,32 @@ VodClient::CreateSubAppIdOutcome VodClient::CreateSubAppId(const CreateSubAppIdR
 
 void VodClient::CreateSubAppIdAsync(const CreateSubAppIdRequest& request, const CreateSubAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubAppId(request), context);
-    };
+    using Req = const CreateSubAppIdRequest&;
+    using Resp = CreateSubAppIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubAppId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateSubAppIdOutcomeCallable VodClient::CreateSubAppIdCallable(const CreateSubAppIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubAppIdOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubAppId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubAppIdOutcome>>();
+    CreateSubAppIdAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSubAppIdRequest&,
+        CreateSubAppIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateSuperPlayerConfigOutcome VodClient::CreateSuperPlayerConfig(const CreateSuperPlayerConfigRequest &request)
@@ -1352,25 +2712,32 @@ VodClient::CreateSuperPlayerConfigOutcome VodClient::CreateSuperPlayerConfig(con
 
 void VodClient::CreateSuperPlayerConfigAsync(const CreateSuperPlayerConfigRequest& request, const CreateSuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSuperPlayerConfig(request), context);
-    };
+    using Req = const CreateSuperPlayerConfigRequest&;
+    using Resp = CreateSuperPlayerConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSuperPlayerConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateSuperPlayerConfigOutcomeCallable VodClient::CreateSuperPlayerConfigCallable(const CreateSuperPlayerConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSuperPlayerConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSuperPlayerConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSuperPlayerConfigOutcome>>();
+    CreateSuperPlayerConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSuperPlayerConfigRequest&,
+        CreateSuperPlayerConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateTranscodeTemplateOutcome VodClient::CreateTranscodeTemplate(const CreateTranscodeTemplateRequest &request)
@@ -1395,25 +2762,32 @@ VodClient::CreateTranscodeTemplateOutcome VodClient::CreateTranscodeTemplate(con
 
 void VodClient::CreateTranscodeTemplateAsync(const CreateTranscodeTemplateRequest& request, const CreateTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTranscodeTemplate(request), context);
-    };
+    using Req = const CreateTranscodeTemplateRequest&;
+    using Resp = CreateTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateTranscodeTemplateOutcomeCallable VodClient::CreateTranscodeTemplateCallable(const CreateTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTranscodeTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTranscodeTemplateOutcome>>();
+    CreateTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateTranscodeTemplateRequest&,
+        CreateTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateVodDomainOutcome VodClient::CreateVodDomain(const CreateVodDomainRequest &request)
@@ -1438,25 +2812,32 @@ VodClient::CreateVodDomainOutcome VodClient::CreateVodDomain(const CreateVodDoma
 
 void VodClient::CreateVodDomainAsync(const CreateVodDomainRequest& request, const CreateVodDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVodDomain(request), context);
-    };
+    using Req = const CreateVodDomainRequest&;
+    using Resp = CreateVodDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVodDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateVodDomainOutcomeCallable VodClient::CreateVodDomainCallable(const CreateVodDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVodDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVodDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVodDomainOutcome>>();
+    CreateVodDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateVodDomainRequest&,
+        CreateVodDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateWatermarkTemplateOutcome VodClient::CreateWatermarkTemplate(const CreateWatermarkTemplateRequest &request)
@@ -1481,25 +2862,32 @@ VodClient::CreateWatermarkTemplateOutcome VodClient::CreateWatermarkTemplate(con
 
 void VodClient::CreateWatermarkTemplateAsync(const CreateWatermarkTemplateRequest& request, const CreateWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWatermarkTemplate(request), context);
-    };
+    using Req = const CreateWatermarkTemplateRequest&;
+    using Resp = CreateWatermarkTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateWatermarkTemplateOutcomeCallable VodClient::CreateWatermarkTemplateCallable(const CreateWatermarkTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWatermarkTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWatermarkTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWatermarkTemplateOutcome>>();
+    CreateWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateWatermarkTemplateRequest&,
+        CreateWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateWordSamplesOutcome VodClient::CreateWordSamples(const CreateWordSamplesRequest &request)
@@ -1524,25 +2912,32 @@ VodClient::CreateWordSamplesOutcome VodClient::CreateWordSamples(const CreateWor
 
 void VodClient::CreateWordSamplesAsync(const CreateWordSamplesRequest& request, const CreateWordSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWordSamples(request), context);
-    };
+    using Req = const CreateWordSamplesRequest&;
+    using Resp = CreateWordSamplesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWordSamples", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateWordSamplesOutcomeCallable VodClient::CreateWordSamplesCallable(const CreateWordSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWordSamplesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWordSamples(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWordSamplesOutcome>>();
+    CreateWordSamplesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateWordSamplesRequest&,
+        CreateWordSamplesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteAIAnalysisTemplateOutcome VodClient::DeleteAIAnalysisTemplate(const DeleteAIAnalysisTemplateRequest &request)
@@ -1567,25 +2962,32 @@ VodClient::DeleteAIAnalysisTemplateOutcome VodClient::DeleteAIAnalysisTemplate(c
 
 void VodClient::DeleteAIAnalysisTemplateAsync(const DeleteAIAnalysisTemplateRequest& request, const DeleteAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAIAnalysisTemplate(request), context);
-    };
+    using Req = const DeleteAIAnalysisTemplateRequest&;
+    using Resp = DeleteAIAnalysisTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIAnalysisTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteAIAnalysisTemplateOutcomeCallable VodClient::DeleteAIAnalysisTemplateCallable(const DeleteAIAnalysisTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAIAnalysisTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAIAnalysisTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAIAnalysisTemplateOutcome>>();
+    DeleteAIAnalysisTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAIAnalysisTemplateRequest&,
+        DeleteAIAnalysisTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteAIRecognitionTemplateOutcome VodClient::DeleteAIRecognitionTemplate(const DeleteAIRecognitionTemplateRequest &request)
@@ -1610,25 +3012,32 @@ VodClient::DeleteAIRecognitionTemplateOutcome VodClient::DeleteAIRecognitionTemp
 
 void VodClient::DeleteAIRecognitionTemplateAsync(const DeleteAIRecognitionTemplateRequest& request, const DeleteAIRecognitionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAIRecognitionTemplate(request), context);
-    };
+    using Req = const DeleteAIRecognitionTemplateRequest&;
+    using Resp = DeleteAIRecognitionTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIRecognitionTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteAIRecognitionTemplateOutcomeCallable VodClient::DeleteAIRecognitionTemplateCallable(const DeleteAIRecognitionTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAIRecognitionTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAIRecognitionTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAIRecognitionTemplateOutcome>>();
+    DeleteAIRecognitionTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAIRecognitionTemplateRequest&,
+        DeleteAIRecognitionTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcome VodClient::DeleteAdaptiveDynamicStreamingTemplate(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
@@ -1653,25 +3062,182 @@ VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcome VodClient::DeleteAdapti
 
 void VodClient::DeleteAdaptiveDynamicStreamingTemplateAsync(const DeleteAdaptiveDynamicStreamingTemplateRequest& request, const DeleteAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAdaptiveDynamicStreamingTemplate(request), context);
-    };
+    using Req = const DeleteAdaptiveDynamicStreamingTemplateRequest&;
+    using Resp = DeleteAdaptiveDynamicStreamingTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAdaptiveDynamicStreamingTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::DeleteAdaptiveDynamicStreamingTemplateCallable(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAdaptiveDynamicStreamingTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAdaptiveDynamicStreamingTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteAdaptiveDynamicStreamingTemplateOutcome>>();
+    DeleteAdaptiveDynamicStreamingTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAdaptiveDynamicStreamingTemplateRequest&,
+        DeleteAdaptiveDynamicStreamingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteAigcAdvancedCustomElementOutcome VodClient::DeleteAigcAdvancedCustomElement(const DeleteAigcAdvancedCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcAdvancedCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcAdvancedCustomElementResponse rsp = DeleteAigcAdvancedCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcAdvancedCustomElementOutcome(rsp);
+        else
+            return DeleteAigcAdvancedCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcAdvancedCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAigcAdvancedCustomElementAsync(const DeleteAigcAdvancedCustomElementRequest& request, const DeleteAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcAdvancedCustomElementRequest&;
+    using Resp = DeleteAigcAdvancedCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcAdvancedCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteAigcAdvancedCustomElementOutcomeCallable VodClient::DeleteAigcAdvancedCustomElementCallable(const DeleteAigcAdvancedCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcAdvancedCustomElementOutcome>>();
+    DeleteAigcAdvancedCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAigcAdvancedCustomElementRequest&,
+        DeleteAigcAdvancedCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteAigcApiTokenOutcome VodClient::DeleteAigcApiToken(const DeleteAigcApiTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcApiToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcApiTokenResponse rsp = DeleteAigcApiTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcApiTokenOutcome(rsp);
+        else
+            return DeleteAigcApiTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcApiTokenOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAigcApiTokenAsync(const DeleteAigcApiTokenRequest& request, const DeleteAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcApiTokenRequest&;
+    using Resp = DeleteAigcApiTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcApiToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteAigcApiTokenOutcomeCallable VodClient::DeleteAigcApiTokenCallable(const DeleteAigcApiTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcApiTokenOutcome>>();
+    DeleteAigcApiTokenAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAigcApiTokenRequest&,
+        DeleteAigcApiTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteAigcQuotaOutcome VodClient::DeleteAigcQuota(const DeleteAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcQuotaResponse rsp = DeleteAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcQuotaOutcome(rsp);
+        else
+            return DeleteAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAigcQuotaAsync(const DeleteAigcQuotaRequest& request, const DeleteAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcQuotaRequest&;
+    using Resp = DeleteAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteAigcQuotaOutcomeCallable VodClient::DeleteAigcQuotaCallable(const DeleteAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcQuotaOutcome>>();
+    DeleteAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAigcQuotaRequest&,
+        DeleteAigcQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteAnimatedGraphicsTemplateOutcome VodClient::DeleteAnimatedGraphicsTemplate(const DeleteAnimatedGraphicsTemplateRequest &request)
@@ -1696,25 +3262,82 @@ VodClient::DeleteAnimatedGraphicsTemplateOutcome VodClient::DeleteAnimatedGraphi
 
 void VodClient::DeleteAnimatedGraphicsTemplateAsync(const DeleteAnimatedGraphicsTemplateRequest& request, const DeleteAnimatedGraphicsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAnimatedGraphicsTemplate(request), context);
-    };
+    using Req = const DeleteAnimatedGraphicsTemplateRequest&;
+    using Resp = DeleteAnimatedGraphicsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAnimatedGraphicsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteAnimatedGraphicsTemplateOutcomeCallable VodClient::DeleteAnimatedGraphicsTemplateCallable(const DeleteAnimatedGraphicsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAnimatedGraphicsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAnimatedGraphicsTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteAnimatedGraphicsTemplateOutcome>>();
+    DeleteAnimatedGraphicsTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAnimatedGraphicsTemplateRequest&,
+        DeleteAnimatedGraphicsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteBlindWatermarkTemplateOutcome VodClient::DeleteBlindWatermarkTemplate(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlindWatermarkTemplateResponse rsp = DeleteBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlindWatermarkTemplateOutcome(rsp);
+        else
+            return DeleteBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteBlindWatermarkTemplateAsync(const DeleteBlindWatermarkTemplateRequest& request, const DeleteBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBlindWatermarkTemplateRequest&;
+    using Resp = DeleteBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteBlindWatermarkTemplateOutcomeCallable VodClient::DeleteBlindWatermarkTemplateCallable(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBlindWatermarkTemplateOutcome>>();
+    DeleteBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteBlindWatermarkTemplateRequest&,
+        DeleteBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteCDNDomainOutcome VodClient::DeleteCDNDomain(const DeleteCDNDomainRequest &request)
@@ -1739,25 +3362,82 @@ VodClient::DeleteCDNDomainOutcome VodClient::DeleteCDNDomain(const DeleteCDNDoma
 
 void VodClient::DeleteCDNDomainAsync(const DeleteCDNDomainRequest& request, const DeleteCDNDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCDNDomain(request), context);
-    };
+    using Req = const DeleteCDNDomainRequest&;
+    using Resp = DeleteCDNDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCDNDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteCDNDomainOutcomeCallable VodClient::DeleteCDNDomainCallable(const DeleteCDNDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCDNDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCDNDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteCDNDomainOutcome>>();
+    DeleteCDNDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteCDNDomainRequest&,
+        DeleteCDNDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteCLSTopicOutcome VodClient::DeleteCLSTopic(const DeleteCLSTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCLSTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCLSTopicResponse rsp = DeleteCLSTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCLSTopicOutcome(rsp);
+        else
+            return DeleteCLSTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCLSTopicOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteCLSTopicAsync(const DeleteCLSTopicRequest& request, const DeleteCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCLSTopicRequest&;
+    using Resp = DeleteCLSTopicResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCLSTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteCLSTopicOutcomeCallable VodClient::DeleteCLSTopicCallable(const DeleteCLSTopicRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCLSTopicOutcome>>();
+    DeleteCLSTopicAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteCLSTopicRequest&,
+        DeleteCLSTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteClassOutcome VodClient::DeleteClass(const DeleteClassRequest &request)
@@ -1782,25 +3462,32 @@ VodClient::DeleteClassOutcome VodClient::DeleteClass(const DeleteClassRequest &r
 
 void VodClient::DeleteClassAsync(const DeleteClassRequest& request, const DeleteClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClass(request), context);
-    };
+    using Req = const DeleteClassRequest&;
+    using Resp = DeleteClassResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteClassOutcomeCallable VodClient::DeleteClassCallable(const DeleteClassRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClassOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClass(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClassOutcome>>();
+    DeleteClassAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteClassRequest&,
+        DeleteClassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteContentReviewTemplateOutcome VodClient::DeleteContentReviewTemplate(const DeleteContentReviewTemplateRequest &request)
@@ -1825,25 +3512,32 @@ VodClient::DeleteContentReviewTemplateOutcome VodClient::DeleteContentReviewTemp
 
 void VodClient::DeleteContentReviewTemplateAsync(const DeleteContentReviewTemplateRequest& request, const DeleteContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteContentReviewTemplate(request), context);
-    };
+    using Req = const DeleteContentReviewTemplateRequest&;
+    using Resp = DeleteContentReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteContentReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteContentReviewTemplateOutcomeCallable VodClient::DeleteContentReviewTemplateCallable(const DeleteContentReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteContentReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteContentReviewTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteContentReviewTemplateOutcome>>();
+    DeleteContentReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteContentReviewTemplateRequest&,
+        DeleteContentReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteEnhanceMediaTemplateOutcome VodClient::DeleteEnhanceMediaTemplate(const DeleteEnhanceMediaTemplateRequest &request)
@@ -1868,25 +3562,32 @@ VodClient::DeleteEnhanceMediaTemplateOutcome VodClient::DeleteEnhanceMediaTempla
 
 void VodClient::DeleteEnhanceMediaTemplateAsync(const DeleteEnhanceMediaTemplateRequest& request, const DeleteEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEnhanceMediaTemplate(request), context);
-    };
+    using Req = const DeleteEnhanceMediaTemplateRequest&;
+    using Resp = DeleteEnhanceMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEnhanceMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteEnhanceMediaTemplateOutcomeCallable VodClient::DeleteEnhanceMediaTemplateCallable(const DeleteEnhanceMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEnhanceMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEnhanceMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEnhanceMediaTemplateOutcome>>();
+    DeleteEnhanceMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteEnhanceMediaTemplateRequest&,
+        DeleteEnhanceMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteHeadTailTemplateOutcome VodClient::DeleteHeadTailTemplate(const DeleteHeadTailTemplateRequest &request)
@@ -1911,25 +3612,32 @@ VodClient::DeleteHeadTailTemplateOutcome VodClient::DeleteHeadTailTemplate(const
 
 void VodClient::DeleteHeadTailTemplateAsync(const DeleteHeadTailTemplateRequest& request, const DeleteHeadTailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteHeadTailTemplate(request), context);
-    };
+    using Req = const DeleteHeadTailTemplateRequest&;
+    using Resp = DeleteHeadTailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteHeadTailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteHeadTailTemplateOutcomeCallable VodClient::DeleteHeadTailTemplateCallable(const DeleteHeadTailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteHeadTailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteHeadTailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteHeadTailTemplateOutcome>>();
+    DeleteHeadTailTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteHeadTailTemplateRequest&,
+        DeleteHeadTailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteImageProcessingTemplateOutcome VodClient::DeleteImageProcessingTemplate(const DeleteImageProcessingTemplateRequest &request)
@@ -1954,25 +3662,32 @@ VodClient::DeleteImageProcessingTemplateOutcome VodClient::DeleteImageProcessing
 
 void VodClient::DeleteImageProcessingTemplateAsync(const DeleteImageProcessingTemplateRequest& request, const DeleteImageProcessingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImageProcessingTemplate(request), context);
-    };
+    using Req = const DeleteImageProcessingTemplateRequest&;
+    using Resp = DeleteImageProcessingTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageProcessingTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteImageProcessingTemplateOutcomeCallable VodClient::DeleteImageProcessingTemplateCallable(const DeleteImageProcessingTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImageProcessingTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImageProcessingTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImageProcessingTemplateOutcome>>();
+    DeleteImageProcessingTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteImageProcessingTemplateRequest&,
+        DeleteImageProcessingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteImageSpriteTemplateOutcome VodClient::DeleteImageSpriteTemplate(const DeleteImageSpriteTemplateRequest &request)
@@ -1997,25 +3712,32 @@ VodClient::DeleteImageSpriteTemplateOutcome VodClient::DeleteImageSpriteTemplate
 
 void VodClient::DeleteImageSpriteTemplateAsync(const DeleteImageSpriteTemplateRequest& request, const DeleteImageSpriteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImageSpriteTemplate(request), context);
-    };
+    using Req = const DeleteImageSpriteTemplateRequest&;
+    using Resp = DeleteImageSpriteTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageSpriteTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteImageSpriteTemplateOutcomeCallable VodClient::DeleteImageSpriteTemplateCallable(const DeleteImageSpriteTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImageSpriteTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImageSpriteTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImageSpriteTemplateOutcome>>();
+    DeleteImageSpriteTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteImageSpriteTemplateRequest&,
+        DeleteImageSpriteTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteJustInTimeTranscodeTemplateOutcome VodClient::DeleteJustInTimeTranscodeTemplate(const DeleteJustInTimeTranscodeTemplateRequest &request)
@@ -2040,25 +3762,182 @@ VodClient::DeleteJustInTimeTranscodeTemplateOutcome VodClient::DeleteJustInTimeT
 
 void VodClient::DeleteJustInTimeTranscodeTemplateAsync(const DeleteJustInTimeTranscodeTemplateRequest& request, const DeleteJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteJustInTimeTranscodeTemplate(request), context);
-    };
+    using Req = const DeleteJustInTimeTranscodeTemplateRequest&;
+    using Resp = DeleteJustInTimeTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteJustInTimeTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJustInTimeTranscodeTemplateCallable(const DeleteJustInTimeTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteJustInTimeTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteJustInTimeTranscodeTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteJustInTimeTranscodeTemplateOutcome>>();
+    DeleteJustInTimeTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteJustInTimeTranscodeTemplateRequest&,
+        DeleteJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteKnowledgeBaseOutcome VodClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteKnowledgeBaseResponse rsp = DeleteKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteKnowledgeBaseOutcome(rsp);
+        else
+            return DeleteKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteKnowledgeBaseRequest&;
+    using Resp = DeleteKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteKnowledgeBaseOutcomeCallable VodClient::DeleteKnowledgeBaseCallable(const DeleteKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteKnowledgeBaseOutcome>>();
+    DeleteKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteKnowledgeBaseRequest&,
+        DeleteKnowledgeBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteLLMComprehendTemplateOutcome VodClient::DeleteLLMComprehendTemplate(const DeleteLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLLMComprehendTemplateResponse rsp = DeleteLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLLMComprehendTemplateOutcome(rsp);
+        else
+            return DeleteLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteLLMComprehendTemplateAsync(const DeleteLLMComprehendTemplateRequest& request, const DeleteLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLLMComprehendTemplateRequest&;
+    using Resp = DeleteLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteLLMComprehendTemplateOutcomeCallable VodClient::DeleteLLMComprehendTemplateCallable(const DeleteLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLLMComprehendTemplateOutcome>>();
+    DeleteLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteLLMComprehendTemplateRequest&,
+        DeleteLLMComprehendTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteMPSTemplateOutcome VodClient::DeleteMPSTemplate(const DeleteMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMPSTemplateResponse rsp = DeleteMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMPSTemplateOutcome(rsp);
+        else
+            return DeleteMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteMPSTemplateAsync(const DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMPSTemplateRequest&;
+    using Resp = DeleteMPSTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMPSTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteMPSTemplateOutcomeCallable VodClient::DeleteMPSTemplateCallable(const DeleteMPSTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMPSTemplateOutcome>>();
+    DeleteMPSTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteMPSTemplateRequest&,
+        DeleteMPSTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteMediaOutcome VodClient::DeleteMedia(const DeleteMediaRequest &request)
@@ -2083,25 +3962,32 @@ VodClient::DeleteMediaOutcome VodClient::DeleteMedia(const DeleteMediaRequest &r
 
 void VodClient::DeleteMediaAsync(const DeleteMediaRequest& request, const DeleteMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMedia(request), context);
-    };
+    using Req = const DeleteMediaRequest&;
+    using Resp = DeleteMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteMediaOutcomeCallable VodClient::DeleteMediaCallable(const DeleteMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMediaOutcome>>();
+    DeleteMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteMediaRequest&,
+        DeleteMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeletePersonSampleOutcome VodClient::DeletePersonSample(const DeletePersonSampleRequest &request)
@@ -2126,25 +4012,32 @@ VodClient::DeletePersonSampleOutcome VodClient::DeletePersonSample(const DeleteP
 
 void VodClient::DeletePersonSampleAsync(const DeletePersonSampleRequest& request, const DeletePersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePersonSample(request), context);
-    };
+    using Req = const DeletePersonSampleRequest&;
+    using Resp = DeletePersonSampleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePersonSample", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeletePersonSampleOutcomeCallable VodClient::DeletePersonSampleCallable(const DeletePersonSampleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePersonSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePersonSample(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePersonSampleOutcome>>();
+    DeletePersonSampleAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeletePersonSampleRequest&,
+        DeletePersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteProcedureTemplateOutcome VodClient::DeleteProcedureTemplate(const DeleteProcedureTemplateRequest &request)
@@ -2169,25 +4062,82 @@ VodClient::DeleteProcedureTemplateOutcome VodClient::DeleteProcedureTemplate(con
 
 void VodClient::DeleteProcedureTemplateAsync(const DeleteProcedureTemplateRequest& request, const DeleteProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProcedureTemplate(request), context);
-    };
+    using Req = const DeleteProcedureTemplateRequest&;
+    using Resp = DeleteProcedureTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProcedureTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteProcedureTemplateOutcomeCallable VodClient::DeleteProcedureTemplateCallable(const DeleteProcedureTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProcedureTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProcedureTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteProcedureTemplateOutcome>>();
+    DeleteProcedureTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteProcedureTemplateRequest&,
+        DeleteProcedureTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteProcessImageAsyncTemplateOutcome VodClient::DeleteProcessImageAsyncTemplate(const DeleteProcessImageAsyncTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProcessImageAsyncTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProcessImageAsyncTemplateResponse rsp = DeleteProcessImageAsyncTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProcessImageAsyncTemplateOutcome(rsp);
+        else
+            return DeleteProcessImageAsyncTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProcessImageAsyncTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteProcessImageAsyncTemplateAsync(const DeleteProcessImageAsyncTemplateRequest& request, const DeleteProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProcessImageAsyncTemplateRequest&;
+    using Resp = DeleteProcessImageAsyncTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProcessImageAsyncTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteProcessImageAsyncTemplateOutcomeCallable VodClient::DeleteProcessImageAsyncTemplateCallable(const DeleteProcessImageAsyncTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProcessImageAsyncTemplateOutcome>>();
+    DeleteProcessImageAsyncTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteProcessImageAsyncTemplateRequest&,
+        DeleteProcessImageAsyncTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteQualityInspectTemplateOutcome VodClient::DeleteQualityInspectTemplate(const DeleteQualityInspectTemplateRequest &request)
@@ -2212,25 +4162,32 @@ VodClient::DeleteQualityInspectTemplateOutcome VodClient::DeleteQualityInspectTe
 
 void VodClient::DeleteQualityInspectTemplateAsync(const DeleteQualityInspectTemplateRequest& request, const DeleteQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteQualityInspectTemplate(request), context);
-    };
+    using Req = const DeleteQualityInspectTemplateRequest&;
+    using Resp = DeleteQualityInspectTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteQualityInspectTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteQualityInspectTemplateOutcomeCallable VodClient::DeleteQualityInspectTemplateCallable(const DeleteQualityInspectTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteQualityInspectTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteQualityInspectTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteQualityInspectTemplateOutcome>>();
+    DeleteQualityInspectTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteQualityInspectTemplateRequest&,
+        DeleteQualityInspectTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteRebuildMediaTemplateOutcome VodClient::DeleteRebuildMediaTemplate(const DeleteRebuildMediaTemplateRequest &request)
@@ -2255,25 +4212,32 @@ VodClient::DeleteRebuildMediaTemplateOutcome VodClient::DeleteRebuildMediaTempla
 
 void VodClient::DeleteRebuildMediaTemplateAsync(const DeleteRebuildMediaTemplateRequest& request, const DeleteRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRebuildMediaTemplate(request), context);
-    };
+    using Req = const DeleteRebuildMediaTemplateRequest&;
+    using Resp = DeleteRebuildMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRebuildMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteRebuildMediaTemplateOutcomeCallable VodClient::DeleteRebuildMediaTemplateCallable(const DeleteRebuildMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRebuildMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRebuildMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRebuildMediaTemplateOutcome>>();
+    DeleteRebuildMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteRebuildMediaTemplateRequest&,
+        DeleteRebuildMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteReviewTemplateOutcome VodClient::DeleteReviewTemplate(const DeleteReviewTemplateRequest &request)
@@ -2298,25 +4262,32 @@ VodClient::DeleteReviewTemplateOutcome VodClient::DeleteReviewTemplate(const Del
 
 void VodClient::DeleteReviewTemplateAsync(const DeleteReviewTemplateRequest& request, const DeleteReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReviewTemplate(request), context);
-    };
+    using Req = const DeleteReviewTemplateRequest&;
+    using Resp = DeleteReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteReviewTemplateOutcomeCallable VodClient::DeleteReviewTemplateCallable(const DeleteReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReviewTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReviewTemplateOutcome>>();
+    DeleteReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteReviewTemplateRequest&,
+        DeleteReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteRoundPlayOutcome VodClient::DeleteRoundPlay(const DeleteRoundPlayRequest &request)
@@ -2341,25 +4312,32 @@ VodClient::DeleteRoundPlayOutcome VodClient::DeleteRoundPlay(const DeleteRoundPl
 
 void VodClient::DeleteRoundPlayAsync(const DeleteRoundPlayRequest& request, const DeleteRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRoundPlay(request), context);
-    };
+    using Req = const DeleteRoundPlayRequest&;
+    using Resp = DeleteRoundPlayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRoundPlay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteRoundPlayOutcomeCallable VodClient::DeleteRoundPlayCallable(const DeleteRoundPlayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRoundPlayOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRoundPlay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRoundPlayOutcome>>();
+    DeleteRoundPlayAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteRoundPlayRequest&,
+        DeleteRoundPlayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteSampleSnapshotTemplateOutcome VodClient::DeleteSampleSnapshotTemplate(const DeleteSampleSnapshotTemplateRequest &request)
@@ -2384,25 +4362,32 @@ VodClient::DeleteSampleSnapshotTemplateOutcome VodClient::DeleteSampleSnapshotTe
 
 void VodClient::DeleteSampleSnapshotTemplateAsync(const DeleteSampleSnapshotTemplateRequest& request, const DeleteSampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSampleSnapshotTemplate(request), context);
-    };
+    using Req = const DeleteSampleSnapshotTemplateRequest&;
+    using Resp = DeleteSampleSnapshotTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSampleSnapshotTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteSampleSnapshotTemplateOutcomeCallable VodClient::DeleteSampleSnapshotTemplateCallable(const DeleteSampleSnapshotTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSampleSnapshotTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSampleSnapshotTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSampleSnapshotTemplateOutcome>>();
+    DeleteSampleSnapshotTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteSampleSnapshotTemplateRequest&,
+        DeleteSampleSnapshotTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteSnapshotByTimeOffsetTemplateOutcome VodClient::DeleteSnapshotByTimeOffsetTemplate(const DeleteSnapshotByTimeOffsetTemplateRequest &request)
@@ -2427,25 +4412,32 @@ VodClient::DeleteSnapshotByTimeOffsetTemplateOutcome VodClient::DeleteSnapshotBy
 
 void VodClient::DeleteSnapshotByTimeOffsetTemplateAsync(const DeleteSnapshotByTimeOffsetTemplateRequest& request, const DeleteSnapshotByTimeOffsetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSnapshotByTimeOffsetTemplate(request), context);
-    };
+    using Req = const DeleteSnapshotByTimeOffsetTemplateRequest&;
+    using Resp = DeleteSnapshotByTimeOffsetTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSnapshotByTimeOffsetTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::DeleteSnapshotByTimeOffsetTemplateCallable(const DeleteSnapshotByTimeOffsetTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSnapshotByTimeOffsetTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSnapshotByTimeOffsetTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSnapshotByTimeOffsetTemplateOutcome>>();
+    DeleteSnapshotByTimeOffsetTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteSnapshotByTimeOffsetTemplateRequest&,
+        DeleteSnapshotByTimeOffsetTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteSuperPlayerConfigOutcome VodClient::DeleteSuperPlayerConfig(const DeleteSuperPlayerConfigRequest &request)
@@ -2470,25 +4462,32 @@ VodClient::DeleteSuperPlayerConfigOutcome VodClient::DeleteSuperPlayerConfig(con
 
 void VodClient::DeleteSuperPlayerConfigAsync(const DeleteSuperPlayerConfigRequest& request, const DeleteSuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSuperPlayerConfig(request), context);
-    };
+    using Req = const DeleteSuperPlayerConfigRequest&;
+    using Resp = DeleteSuperPlayerConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSuperPlayerConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteSuperPlayerConfigOutcomeCallable VodClient::DeleteSuperPlayerConfigCallable(const DeleteSuperPlayerConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSuperPlayerConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSuperPlayerConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSuperPlayerConfigOutcome>>();
+    DeleteSuperPlayerConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteSuperPlayerConfigRequest&,
+        DeleteSuperPlayerConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteTranscodeTemplateOutcome VodClient::DeleteTranscodeTemplate(const DeleteTranscodeTemplateRequest &request)
@@ -2513,25 +4512,32 @@ VodClient::DeleteTranscodeTemplateOutcome VodClient::DeleteTranscodeTemplate(con
 
 void VodClient::DeleteTranscodeTemplateAsync(const DeleteTranscodeTemplateRequest& request, const DeleteTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTranscodeTemplate(request), context);
-    };
+    using Req = const DeleteTranscodeTemplateRequest&;
+    using Resp = DeleteTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteTranscodeTemplateOutcomeCallable VodClient::DeleteTranscodeTemplateCallable(const DeleteTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTranscodeTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTranscodeTemplateOutcome>>();
+    DeleteTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteTranscodeTemplateRequest&,
+        DeleteTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteVodDomainOutcome VodClient::DeleteVodDomain(const DeleteVodDomainRequest &request)
@@ -2556,25 +4562,82 @@ VodClient::DeleteVodDomainOutcome VodClient::DeleteVodDomain(const DeleteVodDoma
 
 void VodClient::DeleteVodDomainAsync(const DeleteVodDomainRequest& request, const DeleteVodDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteVodDomain(request), context);
-    };
+    using Req = const DeleteVodDomainRequest&;
+    using Resp = DeleteVodDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteVodDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteVodDomainOutcomeCallable VodClient::DeleteVodDomainCallable(const DeleteVodDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteVodDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteVodDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteVodDomainOutcome>>();
+    DeleteVodDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteVodDomainRequest&,
+        DeleteVodDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DeleteVoiceOutcome VodClient::DeleteVoice(const DeleteVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoiceResponse rsp = DeleteVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoiceOutcome(rsp);
+        else
+            return DeleteVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoiceOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteVoiceAsync(const DeleteVoiceRequest& request, const DeleteVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVoiceRequest&;
+    using Resp = DeleteVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteVoiceOutcomeCallable VodClient::DeleteVoiceCallable(const DeleteVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVoiceOutcome>>();
+    DeleteVoiceAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteVoiceRequest&,
+        DeleteVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteWatermarkTemplateOutcome VodClient::DeleteWatermarkTemplate(const DeleteWatermarkTemplateRequest &request)
@@ -2599,25 +4662,32 @@ VodClient::DeleteWatermarkTemplateOutcome VodClient::DeleteWatermarkTemplate(con
 
 void VodClient::DeleteWatermarkTemplateAsync(const DeleteWatermarkTemplateRequest& request, const DeleteWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWatermarkTemplate(request), context);
-    };
+    using Req = const DeleteWatermarkTemplateRequest&;
+    using Resp = DeleteWatermarkTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteWatermarkTemplateOutcomeCallable VodClient::DeleteWatermarkTemplateCallable(const DeleteWatermarkTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWatermarkTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWatermarkTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWatermarkTemplateOutcome>>();
+    DeleteWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteWatermarkTemplateRequest&,
+        DeleteWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteWordSamplesOutcome VodClient::DeleteWordSamples(const DeleteWordSamplesRequest &request)
@@ -2642,25 +4712,32 @@ VodClient::DeleteWordSamplesOutcome VodClient::DeleteWordSamples(const DeleteWor
 
 void VodClient::DeleteWordSamplesAsync(const DeleteWordSamplesRequest& request, const DeleteWordSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWordSamples(request), context);
-    };
+    using Req = const DeleteWordSamplesRequest&;
+    using Resp = DeleteWordSamplesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWordSamples", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteWordSamplesOutcomeCallable VodClient::DeleteWordSamplesCallable(const DeleteWordSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWordSamplesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWordSamples(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWordSamplesOutcome>>();
+    DeleteWordSamplesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteWordSamplesRequest&,
+        DeleteWordSamplesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeAIAnalysisTemplatesOutcome VodClient::DescribeAIAnalysisTemplates(const DescribeAIAnalysisTemplatesRequest &request)
@@ -2685,25 +4762,32 @@ VodClient::DescribeAIAnalysisTemplatesOutcome VodClient::DescribeAIAnalysisTempl
 
 void VodClient::DescribeAIAnalysisTemplatesAsync(const DescribeAIAnalysisTemplatesRequest& request, const DescribeAIAnalysisTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIAnalysisTemplates(request), context);
-    };
+    using Req = const DescribeAIAnalysisTemplatesRequest&;
+    using Resp = DescribeAIAnalysisTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIAnalysisTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeAIAnalysisTemplatesOutcomeCallable VodClient::DescribeAIAnalysisTemplatesCallable(const DescribeAIAnalysisTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIAnalysisTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIAnalysisTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIAnalysisTemplatesOutcome>>();
+    DescribeAIAnalysisTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAIAnalysisTemplatesRequest&,
+        DescribeAIAnalysisTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeAIRecognitionTemplatesOutcome VodClient::DescribeAIRecognitionTemplates(const DescribeAIRecognitionTemplatesRequest &request)
@@ -2728,25 +4812,32 @@ VodClient::DescribeAIRecognitionTemplatesOutcome VodClient::DescribeAIRecognitio
 
 void VodClient::DescribeAIRecognitionTemplatesAsync(const DescribeAIRecognitionTemplatesRequest& request, const DescribeAIRecognitionTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIRecognitionTemplates(request), context);
-    };
+    using Req = const DescribeAIRecognitionTemplatesRequest&;
+    using Resp = DescribeAIRecognitionTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIRecognitionTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeAIRecognitionTemplatesOutcomeCallable VodClient::DescribeAIRecognitionTemplatesCallable(const DescribeAIRecognitionTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIRecognitionTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIRecognitionTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIRecognitionTemplatesOutcome>>();
+    DescribeAIRecognitionTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAIRecognitionTemplatesRequest&,
+        DescribeAIRecognitionTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeAdaptiveDynamicStreamingTemplatesOutcome VodClient::DescribeAdaptiveDynamicStreamingTemplates(const DescribeAdaptiveDynamicStreamingTemplatesRequest &request)
@@ -2771,25 +4862,382 @@ VodClient::DescribeAdaptiveDynamicStreamingTemplatesOutcome VodClient::DescribeA
 
 void VodClient::DescribeAdaptiveDynamicStreamingTemplatesAsync(const DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAdaptiveDynamicStreamingTemplates(request), context);
-    };
+    using Req = const DescribeAdaptiveDynamicStreamingTemplatesRequest&;
+    using Resp = DescribeAdaptiveDynamicStreamingTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAdaptiveDynamicStreamingTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable VodClient::DescribeAdaptiveDynamicStreamingTemplatesCallable(const DescribeAdaptiveDynamicStreamingTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAdaptiveDynamicStreamingTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAdaptiveDynamicStreamingTemplates(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeAdaptiveDynamicStreamingTemplatesOutcome>>();
+    DescribeAdaptiveDynamicStreamingTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAdaptiveDynamicStreamingTemplatesRequest&,
+        DescribeAdaptiveDynamicStreamingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeAigcAdvancedCustomElementsOutcome VodClient::DescribeAigcAdvancedCustomElements(const DescribeAigcAdvancedCustomElementsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcAdvancedCustomElements");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcAdvancedCustomElementsResponse rsp = DescribeAigcAdvancedCustomElementsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcAdvancedCustomElementsOutcome(rsp);
+        else
+            return DescribeAigcAdvancedCustomElementsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcAdvancedCustomElementsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcAdvancedCustomElementsAsync(const DescribeAigcAdvancedCustomElementsRequest& request, const DescribeAigcAdvancedCustomElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcAdvancedCustomElementsRequest&;
+    using Resp = DescribeAigcAdvancedCustomElementsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcAdvancedCustomElements", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcAdvancedCustomElementsOutcomeCallable VodClient::DescribeAigcAdvancedCustomElementsCallable(const DescribeAigcAdvancedCustomElementsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcAdvancedCustomElementsOutcome>>();
+    DescribeAigcAdvancedCustomElementsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcAdvancedCustomElementsRequest&,
+        DescribeAigcAdvancedCustomElementsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcApiTokensOutcome VodClient::DescribeAigcApiTokens(const DescribeAigcApiTokensRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcApiTokens");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcApiTokensResponse rsp = DescribeAigcApiTokensResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcApiTokensOutcome(rsp);
+        else
+            return DescribeAigcApiTokensOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcApiTokensOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcApiTokensAsync(const DescribeAigcApiTokensRequest& request, const DescribeAigcApiTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcApiTokensRequest&;
+    using Resp = DescribeAigcApiTokensResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcApiTokens", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcApiTokensOutcomeCallable VodClient::DescribeAigcApiTokensCallable(const DescribeAigcApiTokensRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcApiTokensOutcome>>();
+    DescribeAigcApiTokensAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcApiTokensRequest&,
+        DescribeAigcApiTokensOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcFaceInfoOutcome VodClient::DescribeAigcFaceInfo(const DescribeAigcFaceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcFaceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcFaceInfoResponse rsp = DescribeAigcFaceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcFaceInfoOutcome(rsp);
+        else
+            return DescribeAigcFaceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcFaceInfoOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcFaceInfoAsync(const DescribeAigcFaceInfoRequest& request, const DescribeAigcFaceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcFaceInfoRequest&;
+    using Resp = DescribeAigcFaceInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcFaceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcFaceInfoOutcomeCallable VodClient::DescribeAigcFaceInfoCallable(const DescribeAigcFaceInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcFaceInfoOutcome>>();
+    DescribeAigcFaceInfoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcFaceInfoRequest&,
+        DescribeAigcFaceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcFaceInfoAsyncOutcome VodClient::DescribeAigcFaceInfoAsync(const DescribeAigcFaceInfoAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcFaceInfoAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcFaceInfoAsyncResponse rsp = DescribeAigcFaceInfoAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcFaceInfoAsyncOutcome(rsp);
+        else
+            return DescribeAigcFaceInfoAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcFaceInfoAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcFaceInfoAsyncAsync(const DescribeAigcFaceInfoAsyncRequest& request, const DescribeAigcFaceInfoAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcFaceInfoAsyncRequest&;
+    using Resp = DescribeAigcFaceInfoAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcFaceInfoAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcFaceInfoAsyncOutcomeCallable VodClient::DescribeAigcFaceInfoAsyncCallable(const DescribeAigcFaceInfoAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcFaceInfoAsyncOutcome>>();
+    DescribeAigcFaceInfoAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcFaceInfoAsyncRequest&,
+        DescribeAigcFaceInfoAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcQuotasOutcome VodClient::DescribeAigcQuotas(const DescribeAigcQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcQuotasResponse rsp = DescribeAigcQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcQuotasOutcome(rsp);
+        else
+            return DescribeAigcQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcQuotasOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcQuotasAsync(const DescribeAigcQuotasRequest& request, const DescribeAigcQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcQuotasRequest&;
+    using Resp = DescribeAigcQuotasResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcQuotasOutcomeCallable VodClient::DescribeAigcQuotasCallable(const DescribeAigcQuotasRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcQuotasOutcome>>();
+    DescribeAigcQuotasAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcQuotasRequest&,
+        DescribeAigcQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcUsageDataOutcome VodClient::DescribeAigcUsageData(const DescribeAigcUsageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcUsageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcUsageDataResponse rsp = DescribeAigcUsageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcUsageDataOutcome(rsp);
+        else
+            return DescribeAigcUsageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcUsageDataOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcUsageDataAsync(const DescribeAigcUsageDataRequest& request, const DescribeAigcUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcUsageDataRequest&;
+    using Resp = DescribeAigcUsageDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcUsageDataOutcomeCallable VodClient::DescribeAigcUsageDataCallable(const DescribeAigcUsageDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcUsageDataOutcome>>();
+    DescribeAigcUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcUsageDataRequest&,
+        DescribeAigcUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcWhitelistOutcome VodClient::DescribeAigcWhitelist(const DescribeAigcWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcWhitelistResponse rsp = DescribeAigcWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcWhitelistOutcome(rsp);
+        else
+            return DescribeAigcWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcWhitelistAsync(const DescribeAigcWhitelistRequest& request, const DescribeAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcWhitelistRequest&;
+    using Resp = DescribeAigcWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcWhitelistOutcomeCallable VodClient::DescribeAigcWhitelistCallable(const DescribeAigcWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcWhitelistOutcome>>();
+    DescribeAigcWhitelistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcWhitelistRequest&,
+        DescribeAigcWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeAllClassOutcome VodClient::DescribeAllClass(const DescribeAllClassRequest &request)
@@ -2814,25 +5262,32 @@ VodClient::DescribeAllClassOutcome VodClient::DescribeAllClass(const DescribeAll
 
 void VodClient::DescribeAllClassAsync(const DescribeAllClassRequest& request, const DescribeAllClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllClass(request), context);
-    };
+    using Req = const DescribeAllClassRequest&;
+    using Resp = DescribeAllClassResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllClass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeAllClassOutcomeCallable VodClient::DescribeAllClassCallable(const DescribeAllClassRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllClassOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllClass(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllClassOutcome>>();
+    DescribeAllClassAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAllClassRequest&,
+        DescribeAllClassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeAnimatedGraphicsTemplatesOutcome VodClient::DescribeAnimatedGraphicsTemplates(const DescribeAnimatedGraphicsTemplatesRequest &request)
@@ -2857,25 +5312,82 @@ VodClient::DescribeAnimatedGraphicsTemplatesOutcome VodClient::DescribeAnimatedG
 
 void VodClient::DescribeAnimatedGraphicsTemplatesAsync(const DescribeAnimatedGraphicsTemplatesRequest& request, const DescribeAnimatedGraphicsTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAnimatedGraphicsTemplates(request), context);
-    };
+    using Req = const DescribeAnimatedGraphicsTemplatesRequest&;
+    using Resp = DescribeAnimatedGraphicsTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAnimatedGraphicsTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable VodClient::DescribeAnimatedGraphicsTemplatesCallable(const DescribeAnimatedGraphicsTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAnimatedGraphicsTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAnimatedGraphicsTemplates(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeAnimatedGraphicsTemplatesOutcome>>();
+    DescribeAnimatedGraphicsTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAnimatedGraphicsTemplatesRequest&,
+        DescribeAnimatedGraphicsTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeBlindWatermarkTemplatesOutcome VodClient::DescribeBlindWatermarkTemplates(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlindWatermarkTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlindWatermarkTemplatesResponse rsp = DescribeBlindWatermarkTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlindWatermarkTemplatesOutcome(rsp);
+        else
+            return DescribeBlindWatermarkTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlindWatermarkTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeBlindWatermarkTemplatesAsync(const DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlindWatermarkTemplatesRequest&;
+    using Resp = DescribeBlindWatermarkTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlindWatermarkTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeBlindWatermarkTemplatesOutcomeCallable VodClient::DescribeBlindWatermarkTemplatesCallable(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlindWatermarkTemplatesOutcome>>();
+    DescribeBlindWatermarkTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeBlindWatermarkTemplatesRequest&,
+        DescribeBlindWatermarkTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeCDNDomainsOutcome VodClient::DescribeCDNDomains(const DescribeCDNDomainsRequest &request)
@@ -2900,25 +5412,32 @@ VodClient::DescribeCDNDomainsOutcome VodClient::DescribeCDNDomains(const Describ
 
 void VodClient::DescribeCDNDomainsAsync(const DescribeCDNDomainsRequest& request, const DescribeCDNDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCDNDomains(request), context);
-    };
+    using Req = const DescribeCDNDomainsRequest&;
+    using Resp = DescribeCDNDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCDNDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeCDNDomainsOutcomeCallable VodClient::DescribeCDNDomainsCallable(const DescribeCDNDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCDNDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCDNDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCDNDomainsOutcome>>();
+    DescribeCDNDomainsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCDNDomainsRequest&,
+        DescribeCDNDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeCDNStatDetailsOutcome VodClient::DescribeCDNStatDetails(const DescribeCDNStatDetailsRequest &request)
@@ -2943,25 +5462,32 @@ VodClient::DescribeCDNStatDetailsOutcome VodClient::DescribeCDNStatDetails(const
 
 void VodClient::DescribeCDNStatDetailsAsync(const DescribeCDNStatDetailsRequest& request, const DescribeCDNStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCDNStatDetails(request), context);
-    };
+    using Req = const DescribeCDNStatDetailsRequest&;
+    using Resp = DescribeCDNStatDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCDNStatDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeCDNStatDetailsOutcomeCallable VodClient::DescribeCDNStatDetailsCallable(const DescribeCDNStatDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCDNStatDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCDNStatDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCDNStatDetailsOutcome>>();
+    DescribeCDNStatDetailsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCDNStatDetailsRequest&,
+        DescribeCDNStatDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeCDNUsageDataOutcome VodClient::DescribeCDNUsageData(const DescribeCDNUsageDataRequest &request)
@@ -2986,25 +5512,182 @@ VodClient::DescribeCDNUsageDataOutcome VodClient::DescribeCDNUsageData(const Des
 
 void VodClient::DescribeCDNUsageDataAsync(const DescribeCDNUsageDataRequest& request, const DescribeCDNUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCDNUsageData(request), context);
-    };
+    using Req = const DescribeCDNUsageDataRequest&;
+    using Resp = DescribeCDNUsageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCDNUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeCDNUsageDataOutcomeCallable VodClient::DescribeCDNUsageDataCallable(const DescribeCDNUsageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCDNUsageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCDNUsageData(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeCDNUsageDataOutcome>>();
+    DescribeCDNUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCDNUsageDataRequest&,
+        DescribeCDNUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeCLSLogsetsOutcome VodClient::DescribeCLSLogsets(const DescribeCLSLogsetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSLogsets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSLogsetsResponse rsp = DescribeCLSLogsetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSLogsetsOutcome(rsp);
+        else
+            return DescribeCLSLogsetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSLogsetsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSLogsetsAsync(const DescribeCLSLogsetsRequest& request, const DescribeCLSLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSLogsetsRequest&;
+    using Resp = DescribeCLSLogsetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSLogsets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeCLSLogsetsOutcomeCallable VodClient::DescribeCLSLogsetsCallable(const DescribeCLSLogsetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSLogsetsOutcome>>();
+    DescribeCLSLogsetsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCLSLogsetsRequest&,
+        DescribeCLSLogsetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeCLSPushTargetsOutcome VodClient::DescribeCLSPushTargets(const DescribeCLSPushTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSPushTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSPushTargetsResponse rsp = DescribeCLSPushTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSPushTargetsOutcome(rsp);
+        else
+            return DescribeCLSPushTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSPushTargetsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSPushTargetsAsync(const DescribeCLSPushTargetsRequest& request, const DescribeCLSPushTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSPushTargetsRequest&;
+    using Resp = DescribeCLSPushTargetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSPushTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeCLSPushTargetsOutcomeCallable VodClient::DescribeCLSPushTargetsCallable(const DescribeCLSPushTargetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSPushTargetsOutcome>>();
+    DescribeCLSPushTargetsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCLSPushTargetsRequest&,
+        DescribeCLSPushTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeCLSTopicsOutcome VodClient::DescribeCLSTopics(const DescribeCLSTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSTopicsResponse rsp = DescribeCLSTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSTopicsOutcome(rsp);
+        else
+            return DescribeCLSTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSTopicsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSTopicsAsync(const DescribeCLSTopicsRequest& request, const DescribeCLSTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSTopicsRequest&;
+    using Resp = DescribeCLSTopicsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSTopics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeCLSTopicsOutcomeCallable VodClient::DescribeCLSTopicsCallable(const DescribeCLSTopicsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSTopicsOutcome>>();
+    DescribeCLSTopicsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCLSTopicsRequest&,
+        DescribeCLSTopicsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeCdnLogsOutcome VodClient::DescribeCdnLogs(const DescribeCdnLogsRequest &request)
@@ -3029,25 +5712,32 @@ VodClient::DescribeCdnLogsOutcome VodClient::DescribeCdnLogs(const DescribeCdnLo
 
 void VodClient::DescribeCdnLogsAsync(const DescribeCdnLogsRequest& request, const DescribeCdnLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCdnLogs(request), context);
-    };
+    using Req = const DescribeCdnLogsRequest&;
+    using Resp = DescribeCdnLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCdnLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeCdnLogsOutcomeCallable VodClient::DescribeCdnLogsCallable(const DescribeCdnLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCdnLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCdnLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCdnLogsOutcome>>();
+    DescribeCdnLogsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCdnLogsRequest&,
+        DescribeCdnLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeClientUploadAccelerationUsageDataOutcome VodClient::DescribeClientUploadAccelerationUsageData(const DescribeClientUploadAccelerationUsageDataRequest &request)
@@ -3072,25 +5762,32 @@ VodClient::DescribeClientUploadAccelerationUsageDataOutcome VodClient::DescribeC
 
 void VodClient::DescribeClientUploadAccelerationUsageDataAsync(const DescribeClientUploadAccelerationUsageDataRequest& request, const DescribeClientUploadAccelerationUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientUploadAccelerationUsageData(request), context);
-    };
+    using Req = const DescribeClientUploadAccelerationUsageDataRequest&;
+    using Resp = DescribeClientUploadAccelerationUsageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientUploadAccelerationUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeClientUploadAccelerationUsageDataOutcomeCallable VodClient::DescribeClientUploadAccelerationUsageDataCallable(const DescribeClientUploadAccelerationUsageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientUploadAccelerationUsageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientUploadAccelerationUsageData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientUploadAccelerationUsageDataOutcome>>();
+    DescribeClientUploadAccelerationUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeClientUploadAccelerationUsageDataRequest&,
+        DescribeClientUploadAccelerationUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeContentReviewTemplatesOutcome VodClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
@@ -3115,25 +5812,32 @@ VodClient::DescribeContentReviewTemplatesOutcome VodClient::DescribeContentRevie
 
 void VodClient::DescribeContentReviewTemplatesAsync(const DescribeContentReviewTemplatesRequest& request, const DescribeContentReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeContentReviewTemplates(request), context);
-    };
+    using Req = const DescribeContentReviewTemplatesRequest&;
+    using Resp = DescribeContentReviewTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeContentReviewTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeContentReviewTemplatesOutcomeCallable VodClient::DescribeContentReviewTemplatesCallable(const DescribeContentReviewTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeContentReviewTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeContentReviewTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeContentReviewTemplatesOutcome>>();
+    DescribeContentReviewTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeContentReviewTemplatesRequest&,
+        DescribeContentReviewTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeCurrentPlaylistOutcome VodClient::DescribeCurrentPlaylist(const DescribeCurrentPlaylistRequest &request)
@@ -3158,25 +5862,132 @@ VodClient::DescribeCurrentPlaylistOutcome VodClient::DescribeCurrentPlaylist(con
 
 void VodClient::DescribeCurrentPlaylistAsync(const DescribeCurrentPlaylistRequest& request, const DescribeCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCurrentPlaylist(request), context);
-    };
+    using Req = const DescribeCurrentPlaylistRequest&;
+    using Resp = DescribeCurrentPlaylistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCurrentPlaylist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeCurrentPlaylistOutcomeCallable VodClient::DescribeCurrentPlaylistCallable(const DescribeCurrentPlaylistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCurrentPlaylistOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCurrentPlaylist(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeCurrentPlaylistOutcome>>();
+    DescribeCurrentPlaylistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeCurrentPlaylistRequest&,
+        DescribeCurrentPlaylistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeDailyMediaPlayStatOutcome VodClient::DescribeDailyMediaPlayStat(const DescribeDailyMediaPlayStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDailyMediaPlayStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDailyMediaPlayStatResponse rsp = DescribeDailyMediaPlayStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDailyMediaPlayStatOutcome(rsp);
+        else
+            return DescribeDailyMediaPlayStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDailyMediaPlayStatOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDailyMediaPlayStatAsync(const DescribeDailyMediaPlayStatRequest& request, const DescribeDailyMediaPlayStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDailyMediaPlayStatRequest&;
+    using Resp = DescribeDailyMediaPlayStatResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDailyMediaPlayStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeDailyMediaPlayStatOutcomeCallable VodClient::DescribeDailyMediaPlayStatCallable(const DescribeDailyMediaPlayStatRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDailyMediaPlayStatOutcome>>();
+    DescribeDailyMediaPlayStatAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeDailyMediaPlayStatRequest&,
+        DescribeDailyMediaPlayStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeDailyMostPlayedStatOutcome VodClient::DescribeDailyMostPlayedStat(const DescribeDailyMostPlayedStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDailyMostPlayedStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDailyMostPlayedStatResponse rsp = DescribeDailyMostPlayedStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDailyMostPlayedStatOutcome(rsp);
+        else
+            return DescribeDailyMostPlayedStatOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDailyMostPlayedStatOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDailyMostPlayedStatAsync(const DescribeDailyMostPlayedStatRequest& request, const DescribeDailyMostPlayedStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDailyMostPlayedStatRequest&;
+    using Resp = DescribeDailyMostPlayedStatResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDailyMostPlayedStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeDailyMostPlayedStatOutcomeCallable VodClient::DescribeDailyMostPlayedStatCallable(const DescribeDailyMostPlayedStatRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDailyMostPlayedStatOutcome>>();
+    DescribeDailyMostPlayedStatAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeDailyMostPlayedStatRequest&,
+        DescribeDailyMostPlayedStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeDailyPlayStatFileListOutcome VodClient::DescribeDailyPlayStatFileList(const DescribeDailyPlayStatFileListRequest &request)
@@ -3201,25 +6012,82 @@ VodClient::DescribeDailyPlayStatFileListOutcome VodClient::DescribeDailyPlayStat
 
 void VodClient::DescribeDailyPlayStatFileListAsync(const DescribeDailyPlayStatFileListRequest& request, const DescribeDailyPlayStatFileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDailyPlayStatFileList(request), context);
-    };
+    using Req = const DescribeDailyPlayStatFileListRequest&;
+    using Resp = DescribeDailyPlayStatFileListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDailyPlayStatFileList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeDailyPlayStatFileListOutcomeCallable VodClient::DescribeDailyPlayStatFileListCallable(const DescribeDailyPlayStatFileListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDailyPlayStatFileListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDailyPlayStatFileList(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeDailyPlayStatFileListOutcome>>();
+    DescribeDailyPlayStatFileListAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeDailyPlayStatFileListRequest&,
+        DescribeDailyPlayStatFileListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeDefaultDistributionConfigOutcome VodClient::DescribeDefaultDistributionConfig(const DescribeDefaultDistributionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDefaultDistributionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDefaultDistributionConfigResponse rsp = DescribeDefaultDistributionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDefaultDistributionConfigOutcome(rsp);
+        else
+            return DescribeDefaultDistributionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDefaultDistributionConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDefaultDistributionConfigAsync(const DescribeDefaultDistributionConfigRequest& request, const DescribeDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDefaultDistributionConfigRequest&;
+    using Resp = DescribeDefaultDistributionConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDefaultDistributionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeDefaultDistributionConfigOutcomeCallable VodClient::DescribeDefaultDistributionConfigCallable(const DescribeDefaultDistributionConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDefaultDistributionConfigOutcome>>();
+    DescribeDefaultDistributionConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeDefaultDistributionConfigRequest&,
+        DescribeDefaultDistributionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeDrmKeyProviderInfoOutcome VodClient::DescribeDrmKeyProviderInfo(const DescribeDrmKeyProviderInfoRequest &request)
@@ -3244,25 +6112,32 @@ VodClient::DescribeDrmKeyProviderInfoOutcome VodClient::DescribeDrmKeyProviderIn
 
 void VodClient::DescribeDrmKeyProviderInfoAsync(const DescribeDrmKeyProviderInfoRequest& request, const DescribeDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDrmKeyProviderInfo(request), context);
-    };
+    using Req = const DescribeDrmKeyProviderInfoRequest&;
+    using Resp = DescribeDrmKeyProviderInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDrmKeyProviderInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeDrmKeyProviderInfoOutcomeCallable VodClient::DescribeDrmKeyProviderInfoCallable(const DescribeDrmKeyProviderInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDrmKeyProviderInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDrmKeyProviderInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDrmKeyProviderInfoOutcome>>();
+    DescribeDrmKeyProviderInfoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeDrmKeyProviderInfoRequest&,
+        DescribeDrmKeyProviderInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeEnhanceMediaTemplatesOutcome VodClient::DescribeEnhanceMediaTemplates(const DescribeEnhanceMediaTemplatesRequest &request)
@@ -3287,25 +6162,32 @@ VodClient::DescribeEnhanceMediaTemplatesOutcome VodClient::DescribeEnhanceMediaT
 
 void VodClient::DescribeEnhanceMediaTemplatesAsync(const DescribeEnhanceMediaTemplatesRequest& request, const DescribeEnhanceMediaTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnhanceMediaTemplates(request), context);
-    };
+    using Req = const DescribeEnhanceMediaTemplatesRequest&;
+    using Resp = DescribeEnhanceMediaTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnhanceMediaTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeEnhanceMediaTemplatesOutcomeCallable VodClient::DescribeEnhanceMediaTemplatesCallable(const DescribeEnhanceMediaTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnhanceMediaTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnhanceMediaTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnhanceMediaTemplatesOutcome>>();
+    DescribeEnhanceMediaTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeEnhanceMediaTemplatesRequest&,
+        DescribeEnhanceMediaTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeEventConfigOutcome VodClient::DescribeEventConfig(const DescribeEventConfigRequest &request)
@@ -3330,25 +6212,32 @@ VodClient::DescribeEventConfigOutcome VodClient::DescribeEventConfig(const Descr
 
 void VodClient::DescribeEventConfigAsync(const DescribeEventConfigRequest& request, const DescribeEventConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEventConfig(request), context);
-    };
+    using Req = const DescribeEventConfigRequest&;
+    using Resp = DescribeEventConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeEventConfigOutcomeCallable VodClient::DescribeEventConfigCallable(const DescribeEventConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEventConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEventConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEventConfigOutcome>>();
+    DescribeEventConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeEventConfigRequest&,
+        DescribeEventConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeFileAttributesOutcome VodClient::DescribeFileAttributes(const DescribeFileAttributesRequest &request)
@@ -3373,25 +6262,32 @@ VodClient::DescribeFileAttributesOutcome VodClient::DescribeFileAttributes(const
 
 void VodClient::DescribeFileAttributesAsync(const DescribeFileAttributesRequest& request, const DescribeFileAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileAttributes(request), context);
-    };
+    using Req = const DescribeFileAttributesRequest&;
+    using Resp = DescribeFileAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeFileAttributesOutcomeCallable VodClient::DescribeFileAttributesCallable(const DescribeFileAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileAttributesOutcome>>();
+    DescribeFileAttributesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeFileAttributesRequest&,
+        DescribeFileAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeHeadTailTemplatesOutcome VodClient::DescribeHeadTailTemplates(const DescribeHeadTailTemplatesRequest &request)
@@ -3416,25 +6312,32 @@ VodClient::DescribeHeadTailTemplatesOutcome VodClient::DescribeHeadTailTemplates
 
 void VodClient::DescribeHeadTailTemplatesAsync(const DescribeHeadTailTemplatesRequest& request, const DescribeHeadTailTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHeadTailTemplates(request), context);
-    };
+    using Req = const DescribeHeadTailTemplatesRequest&;
+    using Resp = DescribeHeadTailTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHeadTailTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeHeadTailTemplatesOutcomeCallable VodClient::DescribeHeadTailTemplatesCallable(const DescribeHeadTailTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHeadTailTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHeadTailTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHeadTailTemplatesOutcome>>();
+    DescribeHeadTailTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeHeadTailTemplatesRequest&,
+        DescribeHeadTailTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeImageProcessingTemplatesOutcome VodClient::DescribeImageProcessingTemplates(const DescribeImageProcessingTemplatesRequest &request)
@@ -3459,25 +6362,32 @@ VodClient::DescribeImageProcessingTemplatesOutcome VodClient::DescribeImageProce
 
 void VodClient::DescribeImageProcessingTemplatesAsync(const DescribeImageProcessingTemplatesRequest& request, const DescribeImageProcessingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageProcessingTemplates(request), context);
-    };
+    using Req = const DescribeImageProcessingTemplatesRequest&;
+    using Resp = DescribeImageProcessingTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageProcessingTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeImageProcessingTemplatesOutcomeCallable VodClient::DescribeImageProcessingTemplatesCallable(const DescribeImageProcessingTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageProcessingTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageProcessingTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageProcessingTemplatesOutcome>>();
+    DescribeImageProcessingTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeImageProcessingTemplatesRequest&,
+        DescribeImageProcessingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeImageReviewUsageDataOutcome VodClient::DescribeImageReviewUsageData(const DescribeImageReviewUsageDataRequest &request)
@@ -3502,25 +6412,32 @@ VodClient::DescribeImageReviewUsageDataOutcome VodClient::DescribeImageReviewUsa
 
 void VodClient::DescribeImageReviewUsageDataAsync(const DescribeImageReviewUsageDataRequest& request, const DescribeImageReviewUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageReviewUsageData(request), context);
-    };
+    using Req = const DescribeImageReviewUsageDataRequest&;
+    using Resp = DescribeImageReviewUsageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageReviewUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeImageReviewUsageDataOutcomeCallable VodClient::DescribeImageReviewUsageDataCallable(const DescribeImageReviewUsageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageReviewUsageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageReviewUsageData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageReviewUsageDataOutcome>>();
+    DescribeImageReviewUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeImageReviewUsageDataRequest&,
+        DescribeImageReviewUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeImageSpriteTemplatesOutcome VodClient::DescribeImageSpriteTemplates(const DescribeImageSpriteTemplatesRequest &request)
@@ -3545,25 +6462,32 @@ VodClient::DescribeImageSpriteTemplatesOutcome VodClient::DescribeImageSpriteTem
 
 void VodClient::DescribeImageSpriteTemplatesAsync(const DescribeImageSpriteTemplatesRequest& request, const DescribeImageSpriteTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageSpriteTemplates(request), context);
-    };
+    using Req = const DescribeImageSpriteTemplatesRequest&;
+    using Resp = DescribeImageSpriteTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageSpriteTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeImageSpriteTemplatesOutcomeCallable VodClient::DescribeImageSpriteTemplatesCallable(const DescribeImageSpriteTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageSpriteTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageSpriteTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageSpriteTemplatesOutcome>>();
+    DescribeImageSpriteTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeImageSpriteTemplatesRequest&,
+        DescribeImageSpriteTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeJustInTimeTranscodeTemplatesOutcome VodClient::DescribeJustInTimeTranscodeTemplates(const DescribeJustInTimeTranscodeTemplatesRequest &request)
@@ -3588,25 +6512,132 @@ VodClient::DescribeJustInTimeTranscodeTemplatesOutcome VodClient::DescribeJustIn
 
 void VodClient::DescribeJustInTimeTranscodeTemplatesAsync(const DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJustInTimeTranscodeTemplates(request), context);
-    };
+    using Req = const DescribeJustInTimeTranscodeTemplatesRequest&;
+    using Resp = DescribeJustInTimeTranscodeTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJustInTimeTranscodeTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeJustInTimeTranscodeTemplatesOutcomeCallable VodClient::DescribeJustInTimeTranscodeTemplatesCallable(const DescribeJustInTimeTranscodeTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJustInTimeTranscodeTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJustInTimeTranscodeTemplates(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeJustInTimeTranscodeTemplatesOutcome>>();
+    DescribeJustInTimeTranscodeTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeJustInTimeTranscodeTemplatesRequest&,
+        DescribeJustInTimeTranscodeTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeKnowledgeBasesOutcome VodClient::DescribeKnowledgeBases(const DescribeKnowledgeBasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKnowledgeBases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKnowledgeBasesResponse rsp = DescribeKnowledgeBasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKnowledgeBasesOutcome(rsp);
+        else
+            return DescribeKnowledgeBasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKnowledgeBasesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeKnowledgeBasesAsync(const DescribeKnowledgeBasesRequest& request, const DescribeKnowledgeBasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKnowledgeBasesRequest&;
+    using Resp = DescribeKnowledgeBasesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKnowledgeBases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeKnowledgeBasesOutcomeCallable VodClient::DescribeKnowledgeBasesCallable(const DescribeKnowledgeBasesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKnowledgeBasesOutcome>>();
+    DescribeKnowledgeBasesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeKnowledgeBasesRequest&,
+        DescribeKnowledgeBasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeLLMComprehendTemplatesOutcome VodClient::DescribeLLMComprehendTemplates(const DescribeLLMComprehendTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMComprehendTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMComprehendTemplatesResponse rsp = DescribeLLMComprehendTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMComprehendTemplatesOutcome(rsp);
+        else
+            return DescribeLLMComprehendTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMComprehendTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeLLMComprehendTemplatesAsync(const DescribeLLMComprehendTemplatesRequest& request, const DescribeLLMComprehendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMComprehendTemplatesRequest&;
+    using Resp = DescribeLLMComprehendTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMComprehendTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeLLMComprehendTemplatesOutcomeCallable VodClient::DescribeLLMComprehendTemplatesCallable(const DescribeLLMComprehendTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMComprehendTemplatesOutcome>>();
+    DescribeLLMComprehendTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeLLMComprehendTemplatesRequest&,
+        DescribeLLMComprehendTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeLicenseUsageDataOutcome VodClient::DescribeLicenseUsageData(const DescribeLicenseUsageDataRequest &request)
@@ -3631,25 +6662,82 @@ VodClient::DescribeLicenseUsageDataOutcome VodClient::DescribeLicenseUsageData(c
 
 void VodClient::DescribeLicenseUsageDataAsync(const DescribeLicenseUsageDataRequest& request, const DescribeLicenseUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseUsageData(request), context);
-    };
+    using Req = const DescribeLicenseUsageDataRequest&;
+    using Resp = DescribeLicenseUsageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeLicenseUsageDataOutcomeCallable VodClient::DescribeLicenseUsageDataCallable(const DescribeLicenseUsageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseUsageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseUsageData(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeLicenseUsageDataOutcome>>();
+    DescribeLicenseUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeLicenseUsageDataRequest&,
+        DescribeLicenseUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeMPSTemplatesOutcome VodClient::DescribeMPSTemplates(const DescribeMPSTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMPSTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMPSTemplatesResponse rsp = DescribeMPSTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMPSTemplatesOutcome(rsp);
+        else
+            return DescribeMPSTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMPSTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeMPSTemplatesAsync(const DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMPSTemplatesRequest&;
+    using Resp = DescribeMPSTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMPSTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeMPSTemplatesOutcomeCallable VodClient::DescribeMPSTemplatesCallable(const DescribeMPSTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMPSTemplatesOutcome>>();
+    DescribeMPSTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeMPSTemplatesRequest&,
+        DescribeMPSTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeMediaInfosOutcome VodClient::DescribeMediaInfos(const DescribeMediaInfosRequest &request)
@@ -3674,25 +6762,32 @@ VodClient::DescribeMediaInfosOutcome VodClient::DescribeMediaInfos(const Describ
 
 void VodClient::DescribeMediaInfosAsync(const DescribeMediaInfosRequest& request, const DescribeMediaInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMediaInfos(request), context);
-    };
+    using Req = const DescribeMediaInfosRequest&;
+    using Resp = DescribeMediaInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMediaInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeMediaInfosOutcomeCallable VodClient::DescribeMediaInfosCallable(const DescribeMediaInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMediaInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMediaInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMediaInfosOutcome>>();
+    DescribeMediaInfosAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeMediaInfosRequest&,
+        DescribeMediaInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeMediaPlayStatDetailsOutcome VodClient::DescribeMediaPlayStatDetails(const DescribeMediaPlayStatDetailsRequest &request)
@@ -3717,25 +6812,32 @@ VodClient::DescribeMediaPlayStatDetailsOutcome VodClient::DescribeMediaPlayStatD
 
 void VodClient::DescribeMediaPlayStatDetailsAsync(const DescribeMediaPlayStatDetailsRequest& request, const DescribeMediaPlayStatDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMediaPlayStatDetails(request), context);
-    };
+    using Req = const DescribeMediaPlayStatDetailsRequest&;
+    using Resp = DescribeMediaPlayStatDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMediaPlayStatDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeMediaPlayStatDetailsOutcomeCallable VodClient::DescribeMediaPlayStatDetailsCallable(const DescribeMediaPlayStatDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMediaPlayStatDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMediaPlayStatDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMediaPlayStatDetailsOutcome>>();
+    DescribeMediaPlayStatDetailsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeMediaPlayStatDetailsRequest&,
+        DescribeMediaPlayStatDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeMediaProcessUsageDataOutcome VodClient::DescribeMediaProcessUsageData(const DescribeMediaProcessUsageDataRequest &request)
@@ -3760,25 +6862,32 @@ VodClient::DescribeMediaProcessUsageDataOutcome VodClient::DescribeMediaProcessU
 
 void VodClient::DescribeMediaProcessUsageDataAsync(const DescribeMediaProcessUsageDataRequest& request, const DescribeMediaProcessUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMediaProcessUsageData(request), context);
-    };
+    using Req = const DescribeMediaProcessUsageDataRequest&;
+    using Resp = DescribeMediaProcessUsageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMediaProcessUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeMediaProcessUsageDataOutcomeCallable VodClient::DescribeMediaProcessUsageDataCallable(const DescribeMediaProcessUsageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMediaProcessUsageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMediaProcessUsageData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMediaProcessUsageDataOutcome>>();
+    DescribeMediaProcessUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeMediaProcessUsageDataRequest&,
+        DescribeMediaProcessUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribePersonSamplesOutcome VodClient::DescribePersonSamples(const DescribePersonSamplesRequest &request)
@@ -3803,25 +6912,32 @@ VodClient::DescribePersonSamplesOutcome VodClient::DescribePersonSamples(const D
 
 void VodClient::DescribePersonSamplesAsync(const DescribePersonSamplesRequest& request, const DescribePersonSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePersonSamples(request), context);
-    };
+    using Req = const DescribePersonSamplesRequest&;
+    using Resp = DescribePersonSamplesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePersonSamples", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribePersonSamplesOutcomeCallable VodClient::DescribePersonSamplesCallable(const DescribePersonSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePersonSamplesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePersonSamples(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePersonSamplesOutcome>>();
+    DescribePersonSamplesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribePersonSamplesRequest&,
+        DescribePersonSamplesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeProcedureTemplatesOutcome VodClient::DescribeProcedureTemplates(const DescribeProcedureTemplatesRequest &request)
@@ -3846,25 +6962,82 @@ VodClient::DescribeProcedureTemplatesOutcome VodClient::DescribeProcedureTemplat
 
 void VodClient::DescribeProcedureTemplatesAsync(const DescribeProcedureTemplatesRequest& request, const DescribeProcedureTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcedureTemplates(request), context);
-    };
+    using Req = const DescribeProcedureTemplatesRequest&;
+    using Resp = DescribeProcedureTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcedureTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeProcedureTemplatesOutcomeCallable VodClient::DescribeProcedureTemplatesCallable(const DescribeProcedureTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcedureTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcedureTemplates(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeProcedureTemplatesOutcome>>();
+    DescribeProcedureTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeProcedureTemplatesRequest&,
+        DescribeProcedureTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeProcessImageAsyncTemplatesOutcome VodClient::DescribeProcessImageAsyncTemplates(const DescribeProcessImageAsyncTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProcessImageAsyncTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProcessImageAsyncTemplatesResponse rsp = DescribeProcessImageAsyncTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProcessImageAsyncTemplatesOutcome(rsp);
+        else
+            return DescribeProcessImageAsyncTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProcessImageAsyncTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeProcessImageAsyncTemplatesAsync(const DescribeProcessImageAsyncTemplatesRequest& request, const DescribeProcessImageAsyncTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProcessImageAsyncTemplatesRequest&;
+    using Resp = DescribeProcessImageAsyncTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessImageAsyncTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeProcessImageAsyncTemplatesOutcomeCallable VodClient::DescribeProcessImageAsyncTemplatesCallable(const DescribeProcessImageAsyncTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProcessImageAsyncTemplatesOutcome>>();
+    DescribeProcessImageAsyncTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeProcessImageAsyncTemplatesRequest&,
+        DescribeProcessImageAsyncTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeQualityInspectTemplatesOutcome VodClient::DescribeQualityInspectTemplates(const DescribeQualityInspectTemplatesRequest &request)
@@ -3889,25 +7062,32 @@ VodClient::DescribeQualityInspectTemplatesOutcome VodClient::DescribeQualityInsp
 
 void VodClient::DescribeQualityInspectTemplatesAsync(const DescribeQualityInspectTemplatesRequest& request, const DescribeQualityInspectTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQualityInspectTemplates(request), context);
-    };
+    using Req = const DescribeQualityInspectTemplatesRequest&;
+    using Resp = DescribeQualityInspectTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQualityInspectTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeQualityInspectTemplatesOutcomeCallable VodClient::DescribeQualityInspectTemplatesCallable(const DescribeQualityInspectTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQualityInspectTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQualityInspectTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQualityInspectTemplatesOutcome>>();
+    DescribeQualityInspectTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeQualityInspectTemplatesRequest&,
+        DescribeQualityInspectTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeRebuildMediaTemplatesOutcome VodClient::DescribeRebuildMediaTemplates(const DescribeRebuildMediaTemplatesRequest &request)
@@ -3932,25 +7112,32 @@ VodClient::DescribeRebuildMediaTemplatesOutcome VodClient::DescribeRebuildMediaT
 
 void VodClient::DescribeRebuildMediaTemplatesAsync(const DescribeRebuildMediaTemplatesRequest& request, const DescribeRebuildMediaTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRebuildMediaTemplates(request), context);
-    };
+    using Req = const DescribeRebuildMediaTemplatesRequest&;
+    using Resp = DescribeRebuildMediaTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRebuildMediaTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeRebuildMediaTemplatesOutcomeCallable VodClient::DescribeRebuildMediaTemplatesCallable(const DescribeRebuildMediaTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRebuildMediaTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRebuildMediaTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRebuildMediaTemplatesOutcome>>();
+    DescribeRebuildMediaTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeRebuildMediaTemplatesRequest&,
+        DescribeRebuildMediaTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeReviewDetailsOutcome VodClient::DescribeReviewDetails(const DescribeReviewDetailsRequest &request)
@@ -3975,25 +7162,32 @@ VodClient::DescribeReviewDetailsOutcome VodClient::DescribeReviewDetails(const D
 
 void VodClient::DescribeReviewDetailsAsync(const DescribeReviewDetailsRequest& request, const DescribeReviewDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReviewDetails(request), context);
-    };
+    using Req = const DescribeReviewDetailsRequest&;
+    using Resp = DescribeReviewDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReviewDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeReviewDetailsOutcomeCallable VodClient::DescribeReviewDetailsCallable(const DescribeReviewDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReviewDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReviewDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReviewDetailsOutcome>>();
+    DescribeReviewDetailsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeReviewDetailsRequest&,
+        DescribeReviewDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeReviewTemplatesOutcome VodClient::DescribeReviewTemplates(const DescribeReviewTemplatesRequest &request)
@@ -4018,25 +7212,32 @@ VodClient::DescribeReviewTemplatesOutcome VodClient::DescribeReviewTemplates(con
 
 void VodClient::DescribeReviewTemplatesAsync(const DescribeReviewTemplatesRequest& request, const DescribeReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReviewTemplates(request), context);
-    };
+    using Req = const DescribeReviewTemplatesRequest&;
+    using Resp = DescribeReviewTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReviewTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeReviewTemplatesOutcomeCallable VodClient::DescribeReviewTemplatesCallable(const DescribeReviewTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReviewTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReviewTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReviewTemplatesOutcome>>();
+    DescribeReviewTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeReviewTemplatesRequest&,
+        DescribeReviewTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeRoundPlaysOutcome VodClient::DescribeRoundPlays(const DescribeRoundPlaysRequest &request)
@@ -4061,25 +7262,32 @@ VodClient::DescribeRoundPlaysOutcome VodClient::DescribeRoundPlays(const Describ
 
 void VodClient::DescribeRoundPlaysAsync(const DescribeRoundPlaysRequest& request, const DescribeRoundPlaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRoundPlays(request), context);
-    };
+    using Req = const DescribeRoundPlaysRequest&;
+    using Resp = DescribeRoundPlaysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoundPlays", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeRoundPlaysOutcomeCallable VodClient::DescribeRoundPlaysCallable(const DescribeRoundPlaysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRoundPlaysOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRoundPlays(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRoundPlaysOutcome>>();
+    DescribeRoundPlaysAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeRoundPlaysRequest&,
+        DescribeRoundPlaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeSampleSnapshotTemplatesOutcome VodClient::DescribeSampleSnapshotTemplates(const DescribeSampleSnapshotTemplatesRequest &request)
@@ -4104,25 +7312,32 @@ VodClient::DescribeSampleSnapshotTemplatesOutcome VodClient::DescribeSampleSnaps
 
 void VodClient::DescribeSampleSnapshotTemplatesAsync(const DescribeSampleSnapshotTemplatesRequest& request, const DescribeSampleSnapshotTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleSnapshotTemplates(request), context);
-    };
+    using Req = const DescribeSampleSnapshotTemplatesRequest&;
+    using Resp = DescribeSampleSnapshotTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleSnapshotTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeSampleSnapshotTemplatesOutcomeCallable VodClient::DescribeSampleSnapshotTemplatesCallable(const DescribeSampleSnapshotTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleSnapshotTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleSnapshotTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleSnapshotTemplatesOutcome>>();
+    DescribeSampleSnapshotTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeSampleSnapshotTemplatesRequest&,
+        DescribeSampleSnapshotTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeSnapshotByTimeOffsetTemplatesOutcome VodClient::DescribeSnapshotByTimeOffsetTemplates(const DescribeSnapshotByTimeOffsetTemplatesRequest &request)
@@ -4147,25 +7362,32 @@ VodClient::DescribeSnapshotByTimeOffsetTemplatesOutcome VodClient::DescribeSnaps
 
 void VodClient::DescribeSnapshotByTimeOffsetTemplatesAsync(const DescribeSnapshotByTimeOffsetTemplatesRequest& request, const DescribeSnapshotByTimeOffsetTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotByTimeOffsetTemplates(request), context);
-    };
+    using Req = const DescribeSnapshotByTimeOffsetTemplatesRequest&;
+    using Resp = DescribeSnapshotByTimeOffsetTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotByTimeOffsetTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable VodClient::DescribeSnapshotByTimeOffsetTemplatesCallable(const DescribeSnapshotByTimeOffsetTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotByTimeOffsetTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotByTimeOffsetTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotByTimeOffsetTemplatesOutcome>>();
+    DescribeSnapshotByTimeOffsetTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeSnapshotByTimeOffsetTemplatesRequest&,
+        DescribeSnapshotByTimeOffsetTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeStorageDataOutcome VodClient::DescribeStorageData(const DescribeStorageDataRequest &request)
@@ -4190,25 +7412,32 @@ VodClient::DescribeStorageDataOutcome VodClient::DescribeStorageData(const Descr
 
 void VodClient::DescribeStorageDataAsync(const DescribeStorageDataRequest& request, const DescribeStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStorageData(request), context);
-    };
+    using Req = const DescribeStorageDataRequest&;
+    using Resp = DescribeStorageDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStorageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeStorageDataOutcomeCallable VodClient::DescribeStorageDataCallable(const DescribeStorageDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStorageDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStorageData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStorageDataOutcome>>();
+    DescribeStorageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeStorageDataRequest&,
+        DescribeStorageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeStorageDetailsOutcome VodClient::DescribeStorageDetails(const DescribeStorageDetailsRequest &request)
@@ -4233,25 +7462,32 @@ VodClient::DescribeStorageDetailsOutcome VodClient::DescribeStorageDetails(const
 
 void VodClient::DescribeStorageDetailsAsync(const DescribeStorageDetailsRequest& request, const DescribeStorageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStorageDetails(request), context);
-    };
+    using Req = const DescribeStorageDetailsRequest&;
+    using Resp = DescribeStorageDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStorageDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeStorageDetailsOutcomeCallable VodClient::DescribeStorageDetailsCallable(const DescribeStorageDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStorageDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStorageDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStorageDetailsOutcome>>();
+    DescribeStorageDetailsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeStorageDetailsRequest&,
+        DescribeStorageDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeStorageRegionsOutcome VodClient::DescribeStorageRegions(const DescribeStorageRegionsRequest &request)
@@ -4276,25 +7512,32 @@ VodClient::DescribeStorageRegionsOutcome VodClient::DescribeStorageRegions(const
 
 void VodClient::DescribeStorageRegionsAsync(const DescribeStorageRegionsRequest& request, const DescribeStorageRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStorageRegions(request), context);
-    };
+    using Req = const DescribeStorageRegionsRequest&;
+    using Resp = DescribeStorageRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStorageRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeStorageRegionsOutcomeCallable VodClient::DescribeStorageRegionsCallable(const DescribeStorageRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStorageRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStorageRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStorageRegionsOutcome>>();
+    DescribeStorageRegionsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeStorageRegionsRequest&,
+        DescribeStorageRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeSubAppIdsOutcome VodClient::DescribeSubAppIds(const DescribeSubAppIdsRequest &request)
@@ -4319,25 +7562,32 @@ VodClient::DescribeSubAppIdsOutcome VodClient::DescribeSubAppIds(const DescribeS
 
 void VodClient::DescribeSubAppIdsAsync(const DescribeSubAppIdsRequest& request, const DescribeSubAppIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubAppIds(request), context);
-    };
+    using Req = const DescribeSubAppIdsRequest&;
+    using Resp = DescribeSubAppIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubAppIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeSubAppIdsOutcomeCallable VodClient::DescribeSubAppIdsCallable(const DescribeSubAppIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubAppIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubAppIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubAppIdsOutcome>>();
+    DescribeSubAppIdsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeSubAppIdsRequest&,
+        DescribeSubAppIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeSuperPlayerConfigsOutcome VodClient::DescribeSuperPlayerConfigs(const DescribeSuperPlayerConfigsRequest &request)
@@ -4362,25 +7612,32 @@ VodClient::DescribeSuperPlayerConfigsOutcome VodClient::DescribeSuperPlayerConfi
 
 void VodClient::DescribeSuperPlayerConfigsAsync(const DescribeSuperPlayerConfigsRequest& request, const DescribeSuperPlayerConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSuperPlayerConfigs(request), context);
-    };
+    using Req = const DescribeSuperPlayerConfigsRequest&;
+    using Resp = DescribeSuperPlayerConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSuperPlayerConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeSuperPlayerConfigsOutcomeCallable VodClient::DescribeSuperPlayerConfigsCallable(const DescribeSuperPlayerConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSuperPlayerConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSuperPlayerConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSuperPlayerConfigsOutcome>>();
+    DescribeSuperPlayerConfigsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeSuperPlayerConfigsRequest&,
+        DescribeSuperPlayerConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeTaskDetailOutcome VodClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
@@ -4405,25 +7662,32 @@ VodClient::DescribeTaskDetailOutcome VodClient::DescribeTaskDetail(const Describ
 
 void VodClient::DescribeTaskDetailAsync(const DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskDetail(request), context);
-    };
+    using Req = const DescribeTaskDetailRequest&;
+    using Resp = DescribeTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeTaskDetailOutcomeCallable VodClient::DescribeTaskDetailCallable(const DescribeTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskDetailOutcome>>();
+    DescribeTaskDetailAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeTaskDetailRequest&,
+        DescribeTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeTasksOutcome VodClient::DescribeTasks(const DescribeTasksRequest &request)
@@ -4448,25 +7712,32 @@ VodClient::DescribeTasksOutcome VodClient::DescribeTasks(const DescribeTasksRequ
 
 void VodClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTasks(request), context);
-    };
+    using Req = const DescribeTasksRequest&;
+    using Resp = DescribeTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeTasksOutcomeCallable VodClient::DescribeTasksCallable(const DescribeTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTasksOutcome>>();
+    DescribeTasksAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeTasksRequest&,
+        DescribeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeTranscodeTemplatesOutcome VodClient::DescribeTranscodeTemplates(const DescribeTranscodeTemplatesRequest &request)
@@ -4491,25 +7762,32 @@ VodClient::DescribeTranscodeTemplatesOutcome VodClient::DescribeTranscodeTemplat
 
 void VodClient::DescribeTranscodeTemplatesAsync(const DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTranscodeTemplates(request), context);
-    };
+    using Req = const DescribeTranscodeTemplatesRequest&;
+    using Resp = DescribeTranscodeTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTranscodeTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeTranscodeTemplatesOutcomeCallable VodClient::DescribeTranscodeTemplatesCallable(const DescribeTranscodeTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTranscodeTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTranscodeTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTranscodeTemplatesOutcome>>();
+    DescribeTranscodeTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeTranscodeTemplatesRequest&,
+        DescribeTranscodeTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeVodDomainsOutcome VodClient::DescribeVodDomains(const DescribeVodDomainsRequest &request)
@@ -4534,25 +7812,82 @@ VodClient::DescribeVodDomainsOutcome VodClient::DescribeVodDomains(const Describ
 
 void VodClient::DescribeVodDomainsAsync(const DescribeVodDomainsRequest& request, const DescribeVodDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVodDomains(request), context);
-    };
+    using Req = const DescribeVodDomainsRequest&;
+    using Resp = DescribeVodDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVodDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeVodDomainsOutcomeCallable VodClient::DescribeVodDomainsCallable(const DescribeVodDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVodDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVodDomains(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeVodDomainsOutcome>>();
+    DescribeVodDomainsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeVodDomainsRequest&,
+        DescribeVodDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DescribeVoicesOutcome VodClient::DescribeVoices(const DescribeVoicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoicesResponse rsp = DescribeVoicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoicesOutcome(rsp);
+        else
+            return DescribeVoicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoicesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeVoicesAsync(const DescribeVoicesRequest& request, const DescribeVoicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVoicesRequest&;
+    using Resp = DescribeVoicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeVoicesOutcomeCallable VodClient::DescribeVoicesCallable(const DescribeVoicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVoicesOutcome>>();
+    DescribeVoicesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeVoicesRequest&,
+        DescribeVoicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeWatermarkTemplatesOutcome VodClient::DescribeWatermarkTemplates(const DescribeWatermarkTemplatesRequest &request)
@@ -4577,25 +7912,32 @@ VodClient::DescribeWatermarkTemplatesOutcome VodClient::DescribeWatermarkTemplat
 
 void VodClient::DescribeWatermarkTemplatesAsync(const DescribeWatermarkTemplatesRequest& request, const DescribeWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWatermarkTemplates(request), context);
-    };
+    using Req = const DescribeWatermarkTemplatesRequest&;
+    using Resp = DescribeWatermarkTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWatermarkTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeWatermarkTemplatesOutcomeCallable VodClient::DescribeWatermarkTemplatesCallable(const DescribeWatermarkTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWatermarkTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWatermarkTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWatermarkTemplatesOutcome>>();
+    DescribeWatermarkTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeWatermarkTemplatesRequest&,
+        DescribeWatermarkTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeWordSamplesOutcome VodClient::DescribeWordSamples(const DescribeWordSamplesRequest &request)
@@ -4620,25 +7962,82 @@ VodClient::DescribeWordSamplesOutcome VodClient::DescribeWordSamples(const Descr
 
 void VodClient::DescribeWordSamplesAsync(const DescribeWordSamplesRequest& request, const DescribeWordSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWordSamples(request), context);
-    };
+    using Req = const DescribeWordSamplesRequest&;
+    using Resp = DescribeWordSamplesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWordSamples", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeWordSamplesOutcomeCallable VodClient::DescribeWordSamplesCallable(const DescribeWordSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWordSamplesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWordSamples(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeWordSamplesOutcome>>();
+    DescribeWordSamplesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeWordSamplesRequest&,
+        DescribeWordSamplesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::DesignVoiceAsyncOutcome VodClient::DesignVoiceAsync(const DesignVoiceAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DesignVoiceAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DesignVoiceAsyncResponse rsp = DesignVoiceAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DesignVoiceAsyncOutcome(rsp);
+        else
+            return DesignVoiceAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DesignVoiceAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DesignVoiceAsyncAsync(const DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DesignVoiceAsyncRequest&;
+    using Resp = DesignVoiceAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DesignVoiceAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DesignVoiceAsyncOutcomeCallable VodClient::DesignVoiceAsyncCallable(const DesignVoiceAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DesignVoiceAsyncOutcome>>();
+    DesignVoiceAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DesignVoiceAsyncRequest&,
+        DesignVoiceAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::EditMediaOutcome VodClient::EditMedia(const EditMediaRequest &request)
@@ -4663,25 +8062,32 @@ VodClient::EditMediaOutcome VodClient::EditMedia(const EditMediaRequest &request
 
 void VodClient::EditMediaAsync(const EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditMedia(request), context);
-    };
+    using Req = const EditMediaRequest&;
+    using Resp = EditMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::EditMediaOutcomeCallable VodClient::EditMediaCallable(const EditMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->EditMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditMediaOutcome>>();
+    EditMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const EditMediaRequest&,
+        EditMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::EnhanceMediaByTemplateOutcome VodClient::EnhanceMediaByTemplate(const EnhanceMediaByTemplateRequest &request)
@@ -4706,25 +8112,32 @@ VodClient::EnhanceMediaByTemplateOutcome VodClient::EnhanceMediaByTemplate(const
 
 void VodClient::EnhanceMediaByTemplateAsync(const EnhanceMediaByTemplateRequest& request, const EnhanceMediaByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnhanceMediaByTemplate(request), context);
-    };
+    using Req = const EnhanceMediaByTemplateRequest&;
+    using Resp = EnhanceMediaByTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnhanceMediaByTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::EnhanceMediaByTemplateOutcomeCallable VodClient::EnhanceMediaByTemplateCallable(const EnhanceMediaByTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnhanceMediaByTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->EnhanceMediaByTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnhanceMediaByTemplateOutcome>>();
+    EnhanceMediaByTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const EnhanceMediaByTemplateRequest&,
+        EnhanceMediaByTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::EnhanceMediaQualityOutcome VodClient::EnhanceMediaQuality(const EnhanceMediaQualityRequest &request)
@@ -4749,25 +8162,32 @@ VodClient::EnhanceMediaQualityOutcome VodClient::EnhanceMediaQuality(const Enhan
 
 void VodClient::EnhanceMediaQualityAsync(const EnhanceMediaQualityRequest& request, const EnhanceMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnhanceMediaQuality(request), context);
-    };
+    using Req = const EnhanceMediaQualityRequest&;
+    using Resp = EnhanceMediaQualityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnhanceMediaQuality", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::EnhanceMediaQualityOutcomeCallable VodClient::EnhanceMediaQualityCallable(const EnhanceMediaQualityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnhanceMediaQualityOutcome()>>(
-        [this, request]()
-        {
-            return this->EnhanceMediaQuality(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnhanceMediaQualityOutcome>>();
+    EnhanceMediaQualityAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const EnhanceMediaQualityRequest&,
+        EnhanceMediaQualityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ExecuteFunctionOutcome VodClient::ExecuteFunction(const ExecuteFunctionRequest &request)
@@ -4792,25 +8212,82 @@ VodClient::ExecuteFunctionOutcome VodClient::ExecuteFunction(const ExecuteFuncti
 
 void VodClient::ExecuteFunctionAsync(const ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExecuteFunction(request), context);
-    };
+    using Req = const ExecuteFunctionRequest&;
+    using Resp = ExecuteFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExecuteFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(const ExecuteFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExecuteFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->ExecuteFunction(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ExecuteFunctionOutcome>>();
+    ExecuteFunctionAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ExecuteFunctionRequest&,
+        ExecuteFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ExtractBlindWatermarkOutcome VodClient::ExtractBlindWatermark(const ExtractBlindWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractBlindWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractBlindWatermarkResponse rsp = ExtractBlindWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractBlindWatermarkOutcome(rsp);
+        else
+            return ExtractBlindWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractBlindWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ExtractBlindWatermarkAsync(const ExtractBlindWatermarkRequest& request, const ExtractBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExtractBlindWatermarkRequest&;
+    using Resp = ExtractBlindWatermarkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExtractBlindWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ExtractBlindWatermarkOutcomeCallable VodClient::ExtractBlindWatermarkCallable(const ExtractBlindWatermarkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExtractBlindWatermarkOutcome>>();
+    ExtractBlindWatermarkAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ExtractBlindWatermarkRequest&,
+        ExtractBlindWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ExtractCopyRightWatermarkOutcome VodClient::ExtractCopyRightWatermark(const ExtractCopyRightWatermarkRequest &request)
@@ -4835,25 +8312,32 @@ VodClient::ExtractCopyRightWatermarkOutcome VodClient::ExtractCopyRightWatermark
 
 void VodClient::ExtractCopyRightWatermarkAsync(const ExtractCopyRightWatermarkRequest& request, const ExtractCopyRightWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExtractCopyRightWatermark(request), context);
-    };
+    using Req = const ExtractCopyRightWatermarkRequest&;
+    using Resp = ExtractCopyRightWatermarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExtractCopyRightWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ExtractCopyRightWatermarkOutcomeCallable VodClient::ExtractCopyRightWatermarkCallable(const ExtractCopyRightWatermarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExtractCopyRightWatermarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ExtractCopyRightWatermark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExtractCopyRightWatermarkOutcome>>();
+    ExtractCopyRightWatermarkAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ExtractCopyRightWatermarkRequest&,
+        ExtractCopyRightWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ExtractTraceWatermarkOutcome VodClient::ExtractTraceWatermark(const ExtractTraceWatermarkRequest &request)
@@ -4878,25 +8362,32 @@ VodClient::ExtractTraceWatermarkOutcome VodClient::ExtractTraceWatermark(const E
 
 void VodClient::ExtractTraceWatermarkAsync(const ExtractTraceWatermarkRequest& request, const ExtractTraceWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExtractTraceWatermark(request), context);
-    };
+    using Req = const ExtractTraceWatermarkRequest&;
+    using Resp = ExtractTraceWatermarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExtractTraceWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ExtractTraceWatermarkOutcomeCallable VodClient::ExtractTraceWatermarkCallable(const ExtractTraceWatermarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExtractTraceWatermarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ExtractTraceWatermark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExtractTraceWatermarkOutcome>>();
+    ExtractTraceWatermarkAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ExtractTraceWatermarkRequest&,
+        ExtractTraceWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::FastEditMediaOutcome VodClient::FastEditMedia(const FastEditMediaRequest &request)
@@ -4921,25 +8412,32 @@ VodClient::FastEditMediaOutcome VodClient::FastEditMedia(const FastEditMediaRequ
 
 void VodClient::FastEditMediaAsync(const FastEditMediaRequest& request, const FastEditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FastEditMedia(request), context);
-    };
+    using Req = const FastEditMediaRequest&;
+    using Resp = FastEditMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FastEditMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::FastEditMediaOutcomeCallable VodClient::FastEditMediaCallable(const FastEditMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FastEditMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->FastEditMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FastEditMediaOutcome>>();
+    FastEditMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const FastEditMediaRequest&,
+        FastEditMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ForbidMediaDistributionOutcome VodClient::ForbidMediaDistribution(const ForbidMediaDistributionRequest &request)
@@ -4964,25 +8462,32 @@ VodClient::ForbidMediaDistributionOutcome VodClient::ForbidMediaDistribution(con
 
 void VodClient::ForbidMediaDistributionAsync(const ForbidMediaDistributionRequest& request, const ForbidMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ForbidMediaDistribution(request), context);
-    };
+    using Req = const ForbidMediaDistributionRequest&;
+    using Resp = ForbidMediaDistributionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ForbidMediaDistribution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ForbidMediaDistributionOutcomeCallable VodClient::ForbidMediaDistributionCallable(const ForbidMediaDistributionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ForbidMediaDistributionOutcome()>>(
-        [this, request]()
-        {
-            return this->ForbidMediaDistribution(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ForbidMediaDistributionOutcome>>();
+    ForbidMediaDistributionAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ForbidMediaDistributionRequest&,
+        ForbidMediaDistributionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::HandleCurrentPlaylistOutcome VodClient::HandleCurrentPlaylist(const HandleCurrentPlaylistRequest &request)
@@ -5007,25 +8512,82 @@ VodClient::HandleCurrentPlaylistOutcome VodClient::HandleCurrentPlaylist(const H
 
 void VodClient::HandleCurrentPlaylistAsync(const HandleCurrentPlaylistRequest& request, const HandleCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->HandleCurrentPlaylist(request), context);
-    };
+    using Req = const HandleCurrentPlaylistRequest&;
+    using Resp = HandleCurrentPlaylistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "HandleCurrentPlaylist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::HandleCurrentPlaylistOutcomeCallable VodClient::HandleCurrentPlaylistCallable(const HandleCurrentPlaylistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<HandleCurrentPlaylistOutcome()>>(
-        [this, request]()
-        {
-            return this->HandleCurrentPlaylist(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<HandleCurrentPlaylistOutcome>>();
+    HandleCurrentPlaylistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const HandleCurrentPlaylistRequest&,
+        HandleCurrentPlaylistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ImportMediaKnowledgeOutcome VodClient::ImportMediaKnowledge(const ImportMediaKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportMediaKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportMediaKnowledgeResponse rsp = ImportMediaKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportMediaKnowledgeOutcome(rsp);
+        else
+            return ImportMediaKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportMediaKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ImportMediaKnowledgeAsync(const ImportMediaKnowledgeRequest& request, const ImportMediaKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportMediaKnowledgeRequest&;
+    using Resp = ImportMediaKnowledgeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportMediaKnowledge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ImportMediaKnowledgeOutcomeCallable VodClient::ImportMediaKnowledgeCallable(const ImportMediaKnowledgeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportMediaKnowledgeOutcome>>();
+    ImportMediaKnowledgeAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ImportMediaKnowledgeRequest&,
+        ImportMediaKnowledgeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::InspectMediaQualityOutcome VodClient::InspectMediaQuality(const InspectMediaQualityRequest &request)
@@ -5050,25 +8612,82 @@ VodClient::InspectMediaQualityOutcome VodClient::InspectMediaQuality(const Inspe
 
 void VodClient::InspectMediaQualityAsync(const InspectMediaQualityRequest& request, const InspectMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InspectMediaQuality(request), context);
-    };
+    using Req = const InspectMediaQualityRequest&;
+    using Resp = InspectMediaQualityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InspectMediaQuality", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::InspectMediaQualityOutcomeCallable VodClient::InspectMediaQualityCallable(const InspectMediaQualityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InspectMediaQualityOutcome()>>(
-        [this, request]()
-        {
-            return this->InspectMediaQuality(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<InspectMediaQualityOutcome>>();
+    InspectMediaQualityAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const InspectMediaQualityRequest&,
+        InspectMediaQualityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ListFilesOutcome VodClient::ListFiles(const ListFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListFilesResponse rsp = ListFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListFilesOutcome(rsp);
+        else
+            return ListFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListFilesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ListFilesAsync(const ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListFilesRequest&;
+    using Resp = ListFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ListFilesOutcomeCallable VodClient::ListFilesCallable(const ListFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListFilesOutcome>>();
+    ListFilesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ListFilesRequest&,
+        ListFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::LiveRealTimeClipOutcome VodClient::LiveRealTimeClip(const LiveRealTimeClipRequest &request)
@@ -5093,25 +8712,32 @@ VodClient::LiveRealTimeClipOutcome VodClient::LiveRealTimeClip(const LiveRealTim
 
 void VodClient::LiveRealTimeClipAsync(const LiveRealTimeClipRequest& request, const LiveRealTimeClipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->LiveRealTimeClip(request), context);
-    };
+    using Req = const LiveRealTimeClipRequest&;
+    using Resp = LiveRealTimeClipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "LiveRealTimeClip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::LiveRealTimeClipOutcomeCallable VodClient::LiveRealTimeClipCallable(const LiveRealTimeClipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<LiveRealTimeClipOutcome()>>(
-        [this, request]()
-        {
-            return this->LiveRealTimeClip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<LiveRealTimeClipOutcome>>();
+    LiveRealTimeClipAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const LiveRealTimeClipRequest&,
+        LiveRealTimeClipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ManageTaskOutcome VodClient::ManageTask(const ManageTaskRequest &request)
@@ -5136,25 +8762,32 @@ VodClient::ManageTaskOutcome VodClient::ManageTask(const ManageTaskRequest &requ
 
 void VodClient::ManageTaskAsync(const ManageTaskRequest& request, const ManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ManageTask(request), context);
-    };
+    using Req = const ManageTaskRequest&;
+    using Resp = ManageTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ManageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ManageTaskOutcomeCallable VodClient::ManageTaskCallable(const ManageTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ManageTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ManageTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ManageTaskOutcome>>();
+    ManageTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ManageTaskRequest&,
+        ManageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyAIAnalysisTemplateOutcome VodClient::ModifyAIAnalysisTemplate(const ModifyAIAnalysisTemplateRequest &request)
@@ -5179,25 +8812,32 @@ VodClient::ModifyAIAnalysisTemplateOutcome VodClient::ModifyAIAnalysisTemplate(c
 
 void VodClient::ModifyAIAnalysisTemplateAsync(const ModifyAIAnalysisTemplateRequest& request, const ModifyAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAIAnalysisTemplate(request), context);
-    };
+    using Req = const ModifyAIAnalysisTemplateRequest&;
+    using Resp = ModifyAIAnalysisTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIAnalysisTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyAIAnalysisTemplateOutcomeCallable VodClient::ModifyAIAnalysisTemplateCallable(const ModifyAIAnalysisTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAIAnalysisTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAIAnalysisTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAIAnalysisTemplateOutcome>>();
+    ModifyAIAnalysisTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAIAnalysisTemplateRequest&,
+        ModifyAIAnalysisTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyAIRecognitionTemplateOutcome VodClient::ModifyAIRecognitionTemplate(const ModifyAIRecognitionTemplateRequest &request)
@@ -5222,25 +8862,32 @@ VodClient::ModifyAIRecognitionTemplateOutcome VodClient::ModifyAIRecognitionTemp
 
 void VodClient::ModifyAIRecognitionTemplateAsync(const ModifyAIRecognitionTemplateRequest& request, const ModifyAIRecognitionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAIRecognitionTemplate(request), context);
-    };
+    using Req = const ModifyAIRecognitionTemplateRequest&;
+    using Resp = ModifyAIRecognitionTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIRecognitionTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyAIRecognitionTemplateOutcomeCallable VodClient::ModifyAIRecognitionTemplateCallable(const ModifyAIRecognitionTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAIRecognitionTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAIRecognitionTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAIRecognitionTemplateOutcome>>();
+    ModifyAIRecognitionTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAIRecognitionTemplateRequest&,
+        ModifyAIRecognitionTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcome VodClient::ModifyAdaptiveDynamicStreamingTemplate(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
@@ -5265,25 +8912,82 @@ VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcome VodClient::ModifyAdapti
 
 void VodClient::ModifyAdaptiveDynamicStreamingTemplateAsync(const ModifyAdaptiveDynamicStreamingTemplateRequest& request, const ModifyAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAdaptiveDynamicStreamingTemplate(request), context);
-    };
+    using Req = const ModifyAdaptiveDynamicStreamingTemplateRequest&;
+    using Resp = ModifyAdaptiveDynamicStreamingTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAdaptiveDynamicStreamingTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::ModifyAdaptiveDynamicStreamingTemplateCallable(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAdaptiveDynamicStreamingTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAdaptiveDynamicStreamingTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyAdaptiveDynamicStreamingTemplateOutcome>>();
+    ModifyAdaptiveDynamicStreamingTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAdaptiveDynamicStreamingTemplateRequest&,
+        ModifyAdaptiveDynamicStreamingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ModifyAigcQuotaOutcome VodClient::ModifyAigcQuota(const ModifyAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAigcQuotaResponse rsp = ModifyAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAigcQuotaOutcome(rsp);
+        else
+            return ModifyAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyAigcQuotaAsync(const ModifyAigcQuotaRequest& request, const ModifyAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAigcQuotaRequest&;
+    using Resp = ModifyAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyAigcQuotaOutcomeCallable VodClient::ModifyAigcQuotaCallable(const ModifyAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAigcQuotaOutcome>>();
+    ModifyAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAigcQuotaRequest&,
+        ModifyAigcQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyAnimatedGraphicsTemplateOutcome VodClient::ModifyAnimatedGraphicsTemplate(const ModifyAnimatedGraphicsTemplateRequest &request)
@@ -5308,25 +9012,82 @@ VodClient::ModifyAnimatedGraphicsTemplateOutcome VodClient::ModifyAnimatedGraphi
 
 void VodClient::ModifyAnimatedGraphicsTemplateAsync(const ModifyAnimatedGraphicsTemplateRequest& request, const ModifyAnimatedGraphicsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAnimatedGraphicsTemplate(request), context);
-    };
+    using Req = const ModifyAnimatedGraphicsTemplateRequest&;
+    using Resp = ModifyAnimatedGraphicsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAnimatedGraphicsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyAnimatedGraphicsTemplateOutcomeCallable VodClient::ModifyAnimatedGraphicsTemplateCallable(const ModifyAnimatedGraphicsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAnimatedGraphicsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAnimatedGraphicsTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyAnimatedGraphicsTemplateOutcome>>();
+    ModifyAnimatedGraphicsTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAnimatedGraphicsTemplateRequest&,
+        ModifyAnimatedGraphicsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ModifyBlindWatermarkTemplateOutcome VodClient::ModifyBlindWatermarkTemplate(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlindWatermarkTemplateResponse rsp = ModifyBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlindWatermarkTemplateOutcome(rsp);
+        else
+            return ModifyBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyBlindWatermarkTemplateAsync(const ModifyBlindWatermarkTemplateRequest& request, const ModifyBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBlindWatermarkTemplateRequest&;
+    using Resp = ModifyBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyBlindWatermarkTemplateOutcomeCallable VodClient::ModifyBlindWatermarkTemplateCallable(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBlindWatermarkTemplateOutcome>>();
+    ModifyBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyBlindWatermarkTemplateRequest&,
+        ModifyBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyCDNDomainConfigOutcome VodClient::ModifyCDNDomainConfig(const ModifyCDNDomainConfigRequest &request)
@@ -5351,25 +9112,32 @@ VodClient::ModifyCDNDomainConfigOutcome VodClient::ModifyCDNDomainConfig(const M
 
 void VodClient::ModifyCDNDomainConfigAsync(const ModifyCDNDomainConfigRequest& request, const ModifyCDNDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCDNDomainConfig(request), context);
-    };
+    using Req = const ModifyCDNDomainConfigRequest&;
+    using Resp = ModifyCDNDomainConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCDNDomainConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyCDNDomainConfigOutcomeCallable VodClient::ModifyCDNDomainConfigCallable(const ModifyCDNDomainConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCDNDomainConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCDNDomainConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCDNDomainConfigOutcome>>();
+    ModifyCDNDomainConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyCDNDomainConfigRequest&,
+        ModifyCDNDomainConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyClassOutcome VodClient::ModifyClass(const ModifyClassRequest &request)
@@ -5394,25 +9162,32 @@ VodClient::ModifyClassOutcome VodClient::ModifyClass(const ModifyClassRequest &r
 
 void VodClient::ModifyClassAsync(const ModifyClassRequest& request, const ModifyClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClass(request), context);
-    };
+    using Req = const ModifyClassRequest&;
+    using Resp = ModifyClassResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyClassOutcomeCallable VodClient::ModifyClassCallable(const ModifyClassRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClassOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClass(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClassOutcome>>();
+    ModifyClassAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyClassRequest&,
+        ModifyClassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyContentReviewTemplateOutcome VodClient::ModifyContentReviewTemplate(const ModifyContentReviewTemplateRequest &request)
@@ -5437,25 +9212,82 @@ VodClient::ModifyContentReviewTemplateOutcome VodClient::ModifyContentReviewTemp
 
 void VodClient::ModifyContentReviewTemplateAsync(const ModifyContentReviewTemplateRequest& request, const ModifyContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyContentReviewTemplate(request), context);
-    };
+    using Req = const ModifyContentReviewTemplateRequest&;
+    using Resp = ModifyContentReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyContentReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyContentReviewTemplateOutcomeCallable VodClient::ModifyContentReviewTemplateCallable(const ModifyContentReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyContentReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyContentReviewTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyContentReviewTemplateOutcome>>();
+    ModifyContentReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyContentReviewTemplateRequest&,
+        ModifyContentReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ModifyDefaultDistributionConfigOutcome VodClient::ModifyDefaultDistributionConfig(const ModifyDefaultDistributionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDefaultDistributionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDefaultDistributionConfigResponse rsp = ModifyDefaultDistributionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDefaultDistributionConfigOutcome(rsp);
+        else
+            return ModifyDefaultDistributionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDefaultDistributionConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyDefaultDistributionConfigAsync(const ModifyDefaultDistributionConfigRequest& request, const ModifyDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDefaultDistributionConfigRequest&;
+    using Resp = ModifyDefaultDistributionConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDefaultDistributionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyDefaultDistributionConfigOutcomeCallable VodClient::ModifyDefaultDistributionConfigCallable(const ModifyDefaultDistributionConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDefaultDistributionConfigOutcome>>();
+    ModifyDefaultDistributionConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyDefaultDistributionConfigRequest&,
+        ModifyDefaultDistributionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyDefaultStorageRegionOutcome VodClient::ModifyDefaultStorageRegion(const ModifyDefaultStorageRegionRequest &request)
@@ -5480,25 +9312,32 @@ VodClient::ModifyDefaultStorageRegionOutcome VodClient::ModifyDefaultStorageRegi
 
 void VodClient::ModifyDefaultStorageRegionAsync(const ModifyDefaultStorageRegionRequest& request, const ModifyDefaultStorageRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDefaultStorageRegion(request), context);
-    };
+    using Req = const ModifyDefaultStorageRegionRequest&;
+    using Resp = ModifyDefaultStorageRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDefaultStorageRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyDefaultStorageRegionOutcomeCallable VodClient::ModifyDefaultStorageRegionCallable(const ModifyDefaultStorageRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDefaultStorageRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDefaultStorageRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDefaultStorageRegionOutcome>>();
+    ModifyDefaultStorageRegionAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyDefaultStorageRegionRequest&,
+        ModifyDefaultStorageRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyEnhanceMediaTemplateOutcome VodClient::ModifyEnhanceMediaTemplate(const ModifyEnhanceMediaTemplateRequest &request)
@@ -5523,25 +9362,32 @@ VodClient::ModifyEnhanceMediaTemplateOutcome VodClient::ModifyEnhanceMediaTempla
 
 void VodClient::ModifyEnhanceMediaTemplateAsync(const ModifyEnhanceMediaTemplateRequest& request, const ModifyEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEnhanceMediaTemplate(request), context);
-    };
+    using Req = const ModifyEnhanceMediaTemplateRequest&;
+    using Resp = ModifyEnhanceMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEnhanceMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyEnhanceMediaTemplateOutcomeCallable VodClient::ModifyEnhanceMediaTemplateCallable(const ModifyEnhanceMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEnhanceMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEnhanceMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEnhanceMediaTemplateOutcome>>();
+    ModifyEnhanceMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyEnhanceMediaTemplateRequest&,
+        ModifyEnhanceMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyEventConfigOutcome VodClient::ModifyEventConfig(const ModifyEventConfigRequest &request)
@@ -5566,25 +9412,32 @@ VodClient::ModifyEventConfigOutcome VodClient::ModifyEventConfig(const ModifyEve
 
 void VodClient::ModifyEventConfigAsync(const ModifyEventConfigRequest& request, const ModifyEventConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEventConfig(request), context);
-    };
+    using Req = const ModifyEventConfigRequest&;
+    using Resp = ModifyEventConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEventConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyEventConfigOutcomeCallable VodClient::ModifyEventConfigCallable(const ModifyEventConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEventConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEventConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEventConfigOutcome>>();
+    ModifyEventConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyEventConfigRequest&,
+        ModifyEventConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyHeadTailTemplateOutcome VodClient::ModifyHeadTailTemplate(const ModifyHeadTailTemplateRequest &request)
@@ -5609,25 +9462,32 @@ VodClient::ModifyHeadTailTemplateOutcome VodClient::ModifyHeadTailTemplate(const
 
 void VodClient::ModifyHeadTailTemplateAsync(const ModifyHeadTailTemplateRequest& request, const ModifyHeadTailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHeadTailTemplate(request), context);
-    };
+    using Req = const ModifyHeadTailTemplateRequest&;
+    using Resp = ModifyHeadTailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHeadTailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyHeadTailTemplateOutcomeCallable VodClient::ModifyHeadTailTemplateCallable(const ModifyHeadTailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHeadTailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHeadTailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHeadTailTemplateOutcome>>();
+    ModifyHeadTailTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyHeadTailTemplateRequest&,
+        ModifyHeadTailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyImageSpriteTemplateOutcome VodClient::ModifyImageSpriteTemplate(const ModifyImageSpriteTemplateRequest &request)
@@ -5652,25 +9512,32 @@ VodClient::ModifyImageSpriteTemplateOutcome VodClient::ModifyImageSpriteTemplate
 
 void VodClient::ModifyImageSpriteTemplateAsync(const ModifyImageSpriteTemplateRequest& request, const ModifyImageSpriteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyImageSpriteTemplate(request), context);
-    };
+    using Req = const ModifyImageSpriteTemplateRequest&;
+    using Resp = ModifyImageSpriteTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageSpriteTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyImageSpriteTemplateOutcomeCallable VodClient::ModifyImageSpriteTemplateCallable(const ModifyImageSpriteTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyImageSpriteTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyImageSpriteTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyImageSpriteTemplateOutcome>>();
+    ModifyImageSpriteTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyImageSpriteTemplateRequest&,
+        ModifyImageSpriteTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyJustInTimeTranscodeTemplateOutcome VodClient::ModifyJustInTimeTranscodeTemplate(const ModifyJustInTimeTranscodeTemplateRequest &request)
@@ -5695,25 +9562,182 @@ VodClient::ModifyJustInTimeTranscodeTemplateOutcome VodClient::ModifyJustInTimeT
 
 void VodClient::ModifyJustInTimeTranscodeTemplateAsync(const ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyJustInTimeTranscodeTemplate(request), context);
-    };
+    using Req = const ModifyJustInTimeTranscodeTemplateRequest&;
+    using Resp = ModifyJustInTimeTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyJustInTimeTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJustInTimeTranscodeTemplateCallable(const ModifyJustInTimeTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyJustInTimeTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyJustInTimeTranscodeTemplate(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyJustInTimeTranscodeTemplateOutcome>>();
+    ModifyJustInTimeTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyJustInTimeTranscodeTemplateRequest&,
+        ModifyJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ModifyKnowledgeBaseOutcome VodClient::ModifyKnowledgeBase(const ModifyKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKnowledgeBaseResponse rsp = ModifyKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKnowledgeBaseOutcome(rsp);
+        else
+            return ModifyKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyKnowledgeBaseAsync(const ModifyKnowledgeBaseRequest& request, const ModifyKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKnowledgeBaseRequest&;
+    using Resp = ModifyKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyKnowledgeBaseOutcomeCallable VodClient::ModifyKnowledgeBaseCallable(const ModifyKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKnowledgeBaseOutcome>>();
+    ModifyKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyKnowledgeBaseRequest&,
+        ModifyKnowledgeBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyLLMComprehendTemplateOutcome VodClient::ModifyLLMComprehendTemplate(const ModifyLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMComprehendTemplateResponse rsp = ModifyLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMComprehendTemplateOutcome(rsp);
+        else
+            return ModifyLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyLLMComprehendTemplateAsync(const ModifyLLMComprehendTemplateRequest& request, const ModifyLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMComprehendTemplateRequest&;
+    using Resp = ModifyLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyLLMComprehendTemplateOutcomeCallable VodClient::ModifyLLMComprehendTemplateCallable(const ModifyLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMComprehendTemplateOutcome>>();
+    ModifyLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyLLMComprehendTemplateRequest&,
+        ModifyLLMComprehendTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyMPSTemplateOutcome VodClient::ModifyMPSTemplate(const ModifyMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMPSTemplateResponse rsp = ModifyMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMPSTemplateOutcome(rsp);
+        else
+            return ModifyMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyMPSTemplateAsync(const ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMPSTemplateRequest&;
+    using Resp = ModifyMPSTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMPSTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyMPSTemplateOutcomeCallable VodClient::ModifyMPSTemplateCallable(const ModifyMPSTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMPSTemplateOutcome>>();
+    ModifyMPSTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyMPSTemplateRequest&,
+        ModifyMPSTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyMediaInfoOutcome VodClient::ModifyMediaInfo(const ModifyMediaInfoRequest &request)
@@ -5738,25 +9762,32 @@ VodClient::ModifyMediaInfoOutcome VodClient::ModifyMediaInfo(const ModifyMediaIn
 
 void VodClient::ModifyMediaInfoAsync(const ModifyMediaInfoRequest& request, const ModifyMediaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMediaInfo(request), context);
-    };
+    using Req = const ModifyMediaInfoRequest&;
+    using Resp = ModifyMediaInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMediaInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyMediaInfoOutcomeCallable VodClient::ModifyMediaInfoCallable(const ModifyMediaInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMediaInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMediaInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMediaInfoOutcome>>();
+    ModifyMediaInfoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyMediaInfoRequest&,
+        ModifyMediaInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyMediaStorageClassOutcome VodClient::ModifyMediaStorageClass(const ModifyMediaStorageClassRequest &request)
@@ -5781,25 +9812,32 @@ VodClient::ModifyMediaStorageClassOutcome VodClient::ModifyMediaStorageClass(con
 
 void VodClient::ModifyMediaStorageClassAsync(const ModifyMediaStorageClassRequest& request, const ModifyMediaStorageClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMediaStorageClass(request), context);
-    };
+    using Req = const ModifyMediaStorageClassRequest&;
+    using Resp = ModifyMediaStorageClassResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMediaStorageClass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyMediaStorageClassOutcomeCallable VodClient::ModifyMediaStorageClassCallable(const ModifyMediaStorageClassRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMediaStorageClassOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMediaStorageClass(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMediaStorageClassOutcome>>();
+    ModifyMediaStorageClassAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyMediaStorageClassRequest&,
+        ModifyMediaStorageClassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyPersonSampleOutcome VodClient::ModifyPersonSample(const ModifyPersonSampleRequest &request)
@@ -5824,25 +9862,82 @@ VodClient::ModifyPersonSampleOutcome VodClient::ModifyPersonSample(const ModifyP
 
 void VodClient::ModifyPersonSampleAsync(const ModifyPersonSampleRequest& request, const ModifyPersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPersonSample(request), context);
-    };
+    using Req = const ModifyPersonSampleRequest&;
+    using Resp = ModifyPersonSampleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPersonSample", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyPersonSampleOutcomeCallable VodClient::ModifyPersonSampleCallable(const ModifyPersonSampleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPersonSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPersonSample(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyPersonSampleOutcome>>();
+    ModifyPersonSampleAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyPersonSampleRequest&,
+        ModifyPersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ModifyProcessImageAsyncTemplateOutcome VodClient::ModifyProcessImageAsyncTemplate(const ModifyProcessImageAsyncTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProcessImageAsyncTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProcessImageAsyncTemplateResponse rsp = ModifyProcessImageAsyncTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProcessImageAsyncTemplateOutcome(rsp);
+        else
+            return ModifyProcessImageAsyncTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProcessImageAsyncTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyProcessImageAsyncTemplateAsync(const ModifyProcessImageAsyncTemplateRequest& request, const ModifyProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyProcessImageAsyncTemplateRequest&;
+    using Resp = ModifyProcessImageAsyncTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyProcessImageAsyncTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyProcessImageAsyncTemplateOutcomeCallable VodClient::ModifyProcessImageAsyncTemplateCallable(const ModifyProcessImageAsyncTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyProcessImageAsyncTemplateOutcome>>();
+    ModifyProcessImageAsyncTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyProcessImageAsyncTemplateRequest&,
+        ModifyProcessImageAsyncTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyQualityInspectTemplateOutcome VodClient::ModifyQualityInspectTemplate(const ModifyQualityInspectTemplateRequest &request)
@@ -5867,25 +9962,32 @@ VodClient::ModifyQualityInspectTemplateOutcome VodClient::ModifyQualityInspectTe
 
 void VodClient::ModifyQualityInspectTemplateAsync(const ModifyQualityInspectTemplateRequest& request, const ModifyQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyQualityInspectTemplate(request), context);
-    };
+    using Req = const ModifyQualityInspectTemplateRequest&;
+    using Resp = ModifyQualityInspectTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyQualityInspectTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyQualityInspectTemplateOutcomeCallable VodClient::ModifyQualityInspectTemplateCallable(const ModifyQualityInspectTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyQualityInspectTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyQualityInspectTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyQualityInspectTemplateOutcome>>();
+    ModifyQualityInspectTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyQualityInspectTemplateRequest&,
+        ModifyQualityInspectTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyRebuildMediaTemplateOutcome VodClient::ModifyRebuildMediaTemplate(const ModifyRebuildMediaTemplateRequest &request)
@@ -5910,25 +10012,32 @@ VodClient::ModifyRebuildMediaTemplateOutcome VodClient::ModifyRebuildMediaTempla
 
 void VodClient::ModifyRebuildMediaTemplateAsync(const ModifyRebuildMediaTemplateRequest& request, const ModifyRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRebuildMediaTemplate(request), context);
-    };
+    using Req = const ModifyRebuildMediaTemplateRequest&;
+    using Resp = ModifyRebuildMediaTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRebuildMediaTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyRebuildMediaTemplateOutcomeCallable VodClient::ModifyRebuildMediaTemplateCallable(const ModifyRebuildMediaTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRebuildMediaTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRebuildMediaTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRebuildMediaTemplateOutcome>>();
+    ModifyRebuildMediaTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyRebuildMediaTemplateRequest&,
+        ModifyRebuildMediaTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyReviewTemplateOutcome VodClient::ModifyReviewTemplate(const ModifyReviewTemplateRequest &request)
@@ -5953,25 +10062,32 @@ VodClient::ModifyReviewTemplateOutcome VodClient::ModifyReviewTemplate(const Mod
 
 void VodClient::ModifyReviewTemplateAsync(const ModifyReviewTemplateRequest& request, const ModifyReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyReviewTemplate(request), context);
-    };
+    using Req = const ModifyReviewTemplateRequest&;
+    using Resp = ModifyReviewTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyReviewTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyReviewTemplateOutcomeCallable VodClient::ModifyReviewTemplateCallable(const ModifyReviewTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyReviewTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyReviewTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyReviewTemplateOutcome>>();
+    ModifyReviewTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyReviewTemplateRequest&,
+        ModifyReviewTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyRoundPlayOutcome VodClient::ModifyRoundPlay(const ModifyRoundPlayRequest &request)
@@ -5996,25 +10112,32 @@ VodClient::ModifyRoundPlayOutcome VodClient::ModifyRoundPlay(const ModifyRoundPl
 
 void VodClient::ModifyRoundPlayAsync(const ModifyRoundPlayRequest& request, const ModifyRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRoundPlay(request), context);
-    };
+    using Req = const ModifyRoundPlayRequest&;
+    using Resp = ModifyRoundPlayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRoundPlay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyRoundPlayOutcomeCallable VodClient::ModifyRoundPlayCallable(const ModifyRoundPlayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRoundPlayOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRoundPlay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRoundPlayOutcome>>();
+    ModifyRoundPlayAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyRoundPlayRequest&,
+        ModifyRoundPlayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifySampleSnapshotTemplateOutcome VodClient::ModifySampleSnapshotTemplate(const ModifySampleSnapshotTemplateRequest &request)
@@ -6039,25 +10162,32 @@ VodClient::ModifySampleSnapshotTemplateOutcome VodClient::ModifySampleSnapshotTe
 
 void VodClient::ModifySampleSnapshotTemplateAsync(const ModifySampleSnapshotTemplateRequest& request, const ModifySampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySampleSnapshotTemplate(request), context);
-    };
+    using Req = const ModifySampleSnapshotTemplateRequest&;
+    using Resp = ModifySampleSnapshotTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySampleSnapshotTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifySampleSnapshotTemplateOutcomeCallable VodClient::ModifySampleSnapshotTemplateCallable(const ModifySampleSnapshotTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySampleSnapshotTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySampleSnapshotTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySampleSnapshotTemplateOutcome>>();
+    ModifySampleSnapshotTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifySampleSnapshotTemplateRequest&,
+        ModifySampleSnapshotTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifySnapshotByTimeOffsetTemplateOutcome VodClient::ModifySnapshotByTimeOffsetTemplate(const ModifySnapshotByTimeOffsetTemplateRequest &request)
@@ -6082,25 +10212,32 @@ VodClient::ModifySnapshotByTimeOffsetTemplateOutcome VodClient::ModifySnapshotBy
 
 void VodClient::ModifySnapshotByTimeOffsetTemplateAsync(const ModifySnapshotByTimeOffsetTemplateRequest& request, const ModifySnapshotByTimeOffsetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySnapshotByTimeOffsetTemplate(request), context);
-    };
+    using Req = const ModifySnapshotByTimeOffsetTemplateRequest&;
+    using Resp = ModifySnapshotByTimeOffsetTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySnapshotByTimeOffsetTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifySnapshotByTimeOffsetTemplateOutcomeCallable VodClient::ModifySnapshotByTimeOffsetTemplateCallable(const ModifySnapshotByTimeOffsetTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySnapshotByTimeOffsetTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySnapshotByTimeOffsetTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySnapshotByTimeOffsetTemplateOutcome>>();
+    ModifySnapshotByTimeOffsetTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifySnapshotByTimeOffsetTemplateRequest&,
+        ModifySnapshotByTimeOffsetTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifySubAppIdInfoOutcome VodClient::ModifySubAppIdInfo(const ModifySubAppIdInfoRequest &request)
@@ -6125,25 +10262,32 @@ VodClient::ModifySubAppIdInfoOutcome VodClient::ModifySubAppIdInfo(const ModifyS
 
 void VodClient::ModifySubAppIdInfoAsync(const ModifySubAppIdInfoRequest& request, const ModifySubAppIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubAppIdInfo(request), context);
-    };
+    using Req = const ModifySubAppIdInfoRequest&;
+    using Resp = ModifySubAppIdInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubAppIdInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifySubAppIdInfoOutcomeCallable VodClient::ModifySubAppIdInfoCallable(const ModifySubAppIdInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubAppIdInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubAppIdInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubAppIdInfoOutcome>>();
+    ModifySubAppIdInfoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifySubAppIdInfoRequest&,
+        ModifySubAppIdInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifySubAppIdStatusOutcome VodClient::ModifySubAppIdStatus(const ModifySubAppIdStatusRequest &request)
@@ -6168,25 +10312,32 @@ VodClient::ModifySubAppIdStatusOutcome VodClient::ModifySubAppIdStatus(const Mod
 
 void VodClient::ModifySubAppIdStatusAsync(const ModifySubAppIdStatusRequest& request, const ModifySubAppIdStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubAppIdStatus(request), context);
-    };
+    using Req = const ModifySubAppIdStatusRequest&;
+    using Resp = ModifySubAppIdStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubAppIdStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifySubAppIdStatusOutcomeCallable VodClient::ModifySubAppIdStatusCallable(const ModifySubAppIdStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubAppIdStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubAppIdStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubAppIdStatusOutcome>>();
+    ModifySubAppIdStatusAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifySubAppIdStatusRequest&,
+        ModifySubAppIdStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifySuperPlayerConfigOutcome VodClient::ModifySuperPlayerConfig(const ModifySuperPlayerConfigRequest &request)
@@ -6211,25 +10362,32 @@ VodClient::ModifySuperPlayerConfigOutcome VodClient::ModifySuperPlayerConfig(con
 
 void VodClient::ModifySuperPlayerConfigAsync(const ModifySuperPlayerConfigRequest& request, const ModifySuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySuperPlayerConfig(request), context);
-    };
+    using Req = const ModifySuperPlayerConfigRequest&;
+    using Resp = ModifySuperPlayerConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySuperPlayerConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifySuperPlayerConfigOutcomeCallable VodClient::ModifySuperPlayerConfigCallable(const ModifySuperPlayerConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySuperPlayerConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySuperPlayerConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySuperPlayerConfigOutcome>>();
+    ModifySuperPlayerConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifySuperPlayerConfigRequest&,
+        ModifySuperPlayerConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyTranscodeTemplateOutcome VodClient::ModifyTranscodeTemplate(const ModifyTranscodeTemplateRequest &request)
@@ -6254,25 +10412,32 @@ VodClient::ModifyTranscodeTemplateOutcome VodClient::ModifyTranscodeTemplate(con
 
 void VodClient::ModifyTranscodeTemplateAsync(const ModifyTranscodeTemplateRequest& request, const ModifyTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTranscodeTemplate(request), context);
-    };
+    using Req = const ModifyTranscodeTemplateRequest&;
+    using Resp = ModifyTranscodeTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTranscodeTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyTranscodeTemplateOutcomeCallable VodClient::ModifyTranscodeTemplateCallable(const ModifyTranscodeTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTranscodeTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTranscodeTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTranscodeTemplateOutcome>>();
+    ModifyTranscodeTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyTranscodeTemplateRequest&,
+        ModifyTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyVodDomainAccelerateConfigOutcome VodClient::ModifyVodDomainAccelerateConfig(const ModifyVodDomainAccelerateConfigRequest &request)
@@ -6297,25 +10462,32 @@ VodClient::ModifyVodDomainAccelerateConfigOutcome VodClient::ModifyVodDomainAcce
 
 void VodClient::ModifyVodDomainAccelerateConfigAsync(const ModifyVodDomainAccelerateConfigRequest& request, const ModifyVodDomainAccelerateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVodDomainAccelerateConfig(request), context);
-    };
+    using Req = const ModifyVodDomainAccelerateConfigRequest&;
+    using Resp = ModifyVodDomainAccelerateConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVodDomainAccelerateConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyVodDomainAccelerateConfigOutcomeCallable VodClient::ModifyVodDomainAccelerateConfigCallable(const ModifyVodDomainAccelerateConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVodDomainAccelerateConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVodDomainAccelerateConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVodDomainAccelerateConfigOutcome>>();
+    ModifyVodDomainAccelerateConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyVodDomainAccelerateConfigRequest&,
+        ModifyVodDomainAccelerateConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyVodDomainConfigOutcome VodClient::ModifyVodDomainConfig(const ModifyVodDomainConfigRequest &request)
@@ -6340,25 +10512,32 @@ VodClient::ModifyVodDomainConfigOutcome VodClient::ModifyVodDomainConfig(const M
 
 void VodClient::ModifyVodDomainConfigAsync(const ModifyVodDomainConfigRequest& request, const ModifyVodDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVodDomainConfig(request), context);
-    };
+    using Req = const ModifyVodDomainConfigRequest&;
+    using Resp = ModifyVodDomainConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVodDomainConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyVodDomainConfigOutcomeCallable VodClient::ModifyVodDomainConfigCallable(const ModifyVodDomainConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVodDomainConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVodDomainConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVodDomainConfigOutcome>>();
+    ModifyVodDomainConfigAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyVodDomainConfigRequest&,
+        ModifyVodDomainConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyWatermarkTemplateOutcome VodClient::ModifyWatermarkTemplate(const ModifyWatermarkTemplateRequest &request)
@@ -6383,25 +10562,32 @@ VodClient::ModifyWatermarkTemplateOutcome VodClient::ModifyWatermarkTemplate(con
 
 void VodClient::ModifyWatermarkTemplateAsync(const ModifyWatermarkTemplateRequest& request, const ModifyWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWatermarkTemplate(request), context);
-    };
+    using Req = const ModifyWatermarkTemplateRequest&;
+    using Resp = ModifyWatermarkTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyWatermarkTemplateOutcomeCallable VodClient::ModifyWatermarkTemplateCallable(const ModifyWatermarkTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWatermarkTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWatermarkTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWatermarkTemplateOutcome>>();
+    ModifyWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyWatermarkTemplateRequest&,
+        ModifyWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyWordSampleOutcome VodClient::ModifyWordSample(const ModifyWordSampleRequest &request)
@@ -6426,25 +10612,32 @@ VodClient::ModifyWordSampleOutcome VodClient::ModifyWordSample(const ModifyWordS
 
 void VodClient::ModifyWordSampleAsync(const ModifyWordSampleRequest& request, const ModifyWordSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWordSample(request), context);
-    };
+    using Req = const ModifyWordSampleRequest&;
+    using Resp = ModifyWordSampleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWordSample", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyWordSampleOutcomeCallable VodClient::ModifyWordSampleCallable(const ModifyWordSampleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWordSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWordSample(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWordSampleOutcome>>();
+    ModifyWordSampleAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyWordSampleRequest&,
+        ModifyWordSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ParseStreamingManifestOutcome VodClient::ParseStreamingManifest(const ParseStreamingManifestRequest &request)
@@ -6469,25 +10662,82 @@ VodClient::ParseStreamingManifestOutcome VodClient::ParseStreamingManifest(const
 
 void VodClient::ParseStreamingManifestAsync(const ParseStreamingManifestRequest& request, const ParseStreamingManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ParseStreamingManifest(request), context);
-    };
+    using Req = const ParseStreamingManifestRequest&;
+    using Resp = ParseStreamingManifestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ParseStreamingManifest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ParseStreamingManifestOutcomeCallable VodClient::ParseStreamingManifestCallable(const ParseStreamingManifestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ParseStreamingManifestOutcome()>>(
-        [this, request]()
-        {
-            return this->ParseStreamingManifest(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ParseStreamingManifestOutcome>>();
+    ParseStreamingManifestAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ParseStreamingManifestRequest&,
+        ParseStreamingManifestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ProcessImageAsyncOutcome VodClient::ProcessImageAsync(const ProcessImageAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessImageAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessImageAsyncResponse rsp = ProcessImageAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessImageAsyncOutcome(rsp);
+        else
+            return ProcessImageAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessImageAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ProcessImageAsyncAsync(const ProcessImageAsyncRequest& request, const ProcessImageAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ProcessImageAsyncRequest&;
+    using Resp = ProcessImageAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ProcessImageAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ProcessImageAsyncOutcomeCallable VodClient::ProcessImageAsyncCallable(const ProcessImageAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ProcessImageAsyncOutcome>>();
+    ProcessImageAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ProcessImageAsyncRequest&,
+        ProcessImageAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ProcessMediaOutcome VodClient::ProcessMedia(const ProcessMediaRequest &request)
@@ -6512,25 +10762,82 @@ VodClient::ProcessMediaOutcome VodClient::ProcessMedia(const ProcessMediaRequest
 
 void VodClient::ProcessMediaAsync(const ProcessMediaRequest& request, const ProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProcessMedia(request), context);
-    };
+    using Req = const ProcessMediaRequest&;
+    using Resp = ProcessMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProcessMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ProcessMediaOutcomeCallable VodClient::ProcessMediaCallable(const ProcessMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProcessMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->ProcessMedia(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ProcessMediaOutcome>>();
+    ProcessMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ProcessMediaRequest&,
+        ProcessMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::ProcessMediaByMPSOutcome VodClient::ProcessMediaByMPS(const ProcessMediaByMPSRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessMediaByMPS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessMediaByMPSResponse rsp = ProcessMediaByMPSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessMediaByMPSOutcome(rsp);
+        else
+            return ProcessMediaByMPSOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessMediaByMPSOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ProcessMediaByMPSAsync(const ProcessMediaByMPSRequest& request, const ProcessMediaByMPSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ProcessMediaByMPSRequest&;
+    using Resp = ProcessMediaByMPSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ProcessMediaByMPS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ProcessMediaByMPSOutcomeCallable VodClient::ProcessMediaByMPSCallable(const ProcessMediaByMPSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ProcessMediaByMPSOutcome>>();
+    ProcessMediaByMPSAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ProcessMediaByMPSRequest&,
+        ProcessMediaByMPSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ProcessMediaByProcedureOutcome VodClient::ProcessMediaByProcedure(const ProcessMediaByProcedureRequest &request)
@@ -6555,25 +10862,32 @@ VodClient::ProcessMediaByProcedureOutcome VodClient::ProcessMediaByProcedure(con
 
 void VodClient::ProcessMediaByProcedureAsync(const ProcessMediaByProcedureRequest& request, const ProcessMediaByProcedureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProcessMediaByProcedure(request), context);
-    };
+    using Req = const ProcessMediaByProcedureRequest&;
+    using Resp = ProcessMediaByProcedureResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProcessMediaByProcedure", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ProcessMediaByProcedureOutcomeCallable VodClient::ProcessMediaByProcedureCallable(const ProcessMediaByProcedureRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProcessMediaByProcedureOutcome()>>(
-        [this, request]()
-        {
-            return this->ProcessMediaByProcedure(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ProcessMediaByProcedureOutcome>>();
+    ProcessMediaByProcedureAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ProcessMediaByProcedureRequest&,
+        ProcessMediaByProcedureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ProcessMediaByUrlOutcome VodClient::ProcessMediaByUrl(const ProcessMediaByUrlRequest &request)
@@ -6598,25 +10912,32 @@ VodClient::ProcessMediaByUrlOutcome VodClient::ProcessMediaByUrl(const ProcessMe
 
 void VodClient::ProcessMediaByUrlAsync(const ProcessMediaByUrlRequest& request, const ProcessMediaByUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProcessMediaByUrl(request), context);
-    };
+    using Req = const ProcessMediaByUrlRequest&;
+    using Resp = ProcessMediaByUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProcessMediaByUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ProcessMediaByUrlOutcomeCallable VodClient::ProcessMediaByUrlCallable(const ProcessMediaByUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProcessMediaByUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->ProcessMediaByUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ProcessMediaByUrlOutcome>>();
+    ProcessMediaByUrlAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ProcessMediaByUrlRequest&,
+        ProcessMediaByUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::PullEventsOutcome VodClient::PullEvents(const PullEventsRequest &request)
@@ -6641,25 +10962,32 @@ VodClient::PullEventsOutcome VodClient::PullEvents(const PullEventsRequest &requ
 
 void VodClient::PullEventsAsync(const PullEventsRequest& request, const PullEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullEvents(request), context);
-    };
+    using Req = const PullEventsRequest&;
+    using Resp = PullEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::PullEventsOutcomeCallable VodClient::PullEventsCallable(const PullEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->PullEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullEventsOutcome>>();
+    PullEventsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const PullEventsRequest&,
+        PullEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::PullUploadOutcome VodClient::PullUpload(const PullUploadRequest &request)
@@ -6684,25 +11012,32 @@ VodClient::PullUploadOutcome VodClient::PullUpload(const PullUploadRequest &requ
 
 void VodClient::PullUploadAsync(const PullUploadRequest& request, const PullUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullUpload(request), context);
-    };
+    using Req = const PullUploadRequest&;
+    using Resp = PullUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::PullUploadOutcomeCallable VodClient::PullUploadCallable(const PullUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->PullUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullUploadOutcome>>();
+    PullUploadAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const PullUploadRequest&,
+        PullUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::PushUrlCacheOutcome VodClient::PushUrlCache(const PushUrlCacheRequest &request)
@@ -6727,25 +11062,32 @@ VodClient::PushUrlCacheOutcome VodClient::PushUrlCache(const PushUrlCacheRequest
 
 void VodClient::PushUrlCacheAsync(const PushUrlCacheRequest& request, const PushUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PushUrlCache(request), context);
-    };
+    using Req = const PushUrlCacheRequest&;
+    using Resp = PushUrlCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PushUrlCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::PushUrlCacheOutcomeCallable VodClient::PushUrlCacheCallable(const PushUrlCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PushUrlCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->PushUrlCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PushUrlCacheOutcome>>();
+    PushUrlCacheAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const PushUrlCacheRequest&,
+        PushUrlCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::RebuildMediaOutcome VodClient::RebuildMedia(const RebuildMediaRequest &request)
@@ -6770,25 +11112,32 @@ VodClient::RebuildMediaOutcome VodClient::RebuildMedia(const RebuildMediaRequest
 
 void VodClient::RebuildMediaAsync(const RebuildMediaRequest& request, const RebuildMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebuildMedia(request), context);
-    };
+    using Req = const RebuildMediaRequest&;
+    using Resp = RebuildMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebuildMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::RebuildMediaOutcomeCallable VodClient::RebuildMediaCallable(const RebuildMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebuildMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->RebuildMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebuildMediaOutcome>>();
+    RebuildMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const RebuildMediaRequest&,
+        RebuildMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::RebuildMediaByTemplateOutcome VodClient::RebuildMediaByTemplate(const RebuildMediaByTemplateRequest &request)
@@ -6813,25 +11162,32 @@ VodClient::RebuildMediaByTemplateOutcome VodClient::RebuildMediaByTemplate(const
 
 void VodClient::RebuildMediaByTemplateAsync(const RebuildMediaByTemplateRequest& request, const RebuildMediaByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebuildMediaByTemplate(request), context);
-    };
+    using Req = const RebuildMediaByTemplateRequest&;
+    using Resp = RebuildMediaByTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebuildMediaByTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::RebuildMediaByTemplateOutcomeCallable VodClient::RebuildMediaByTemplateCallable(const RebuildMediaByTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebuildMediaByTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->RebuildMediaByTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebuildMediaByTemplateOutcome>>();
+    RebuildMediaByTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const RebuildMediaByTemplateRequest&,
+        RebuildMediaByTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::RefreshUrlCacheOutcome VodClient::RefreshUrlCache(const RefreshUrlCacheRequest &request)
@@ -6856,25 +11212,32 @@ VodClient::RefreshUrlCacheOutcome VodClient::RefreshUrlCache(const RefreshUrlCac
 
 void VodClient::RefreshUrlCacheAsync(const RefreshUrlCacheRequest& request, const RefreshUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefreshUrlCache(request), context);
-    };
+    using Req = const RefreshUrlCacheRequest&;
+    using Resp = RefreshUrlCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefreshUrlCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::RefreshUrlCacheOutcomeCallable VodClient::RefreshUrlCacheCallable(const RefreshUrlCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefreshUrlCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->RefreshUrlCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefreshUrlCacheOutcome>>();
+    RefreshUrlCacheAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const RefreshUrlCacheRequest&,
+        RefreshUrlCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::RemoveWatermarkOutcome VodClient::RemoveWatermark(const RemoveWatermarkRequest &request)
@@ -6899,25 +11262,32 @@ VodClient::RemoveWatermarkOutcome VodClient::RemoveWatermark(const RemoveWaterma
 
 void VodClient::RemoveWatermarkAsync(const RemoveWatermarkRequest& request, const RemoveWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveWatermark(request), context);
-    };
+    using Req = const RemoveWatermarkRequest&;
+    using Resp = RemoveWatermarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::RemoveWatermarkOutcomeCallable VodClient::RemoveWatermarkCallable(const RemoveWatermarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveWatermarkOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveWatermark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveWatermarkOutcome>>();
+    RemoveWatermarkAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const RemoveWatermarkRequest&,
+        RemoveWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ResetProcedureTemplateOutcome VodClient::ResetProcedureTemplate(const ResetProcedureTemplateRequest &request)
@@ -6942,25 +11312,32 @@ VodClient::ResetProcedureTemplateOutcome VodClient::ResetProcedureTemplate(const
 
 void VodClient::ResetProcedureTemplateAsync(const ResetProcedureTemplateRequest& request, const ResetProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetProcedureTemplate(request), context);
-    };
+    using Req = const ResetProcedureTemplateRequest&;
+    using Resp = ResetProcedureTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetProcedureTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ResetProcedureTemplateOutcomeCallable VodClient::ResetProcedureTemplateCallable(const ResetProcedureTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetProcedureTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetProcedureTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetProcedureTemplateOutcome>>();
+    ResetProcedureTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ResetProcedureTemplateRequest&,
+        ResetProcedureTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::RestoreMediaOutcome VodClient::RestoreMedia(const RestoreMediaRequest &request)
@@ -6985,25 +11362,32 @@ VodClient::RestoreMediaOutcome VodClient::RestoreMedia(const RestoreMediaRequest
 
 void VodClient::RestoreMediaAsync(const RestoreMediaRequest& request, const RestoreMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestoreMedia(request), context);
-    };
+    using Req = const RestoreMediaRequest&;
+    using Resp = RestoreMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestoreMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::RestoreMediaOutcomeCallable VodClient::RestoreMediaCallable(const RestoreMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestoreMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->RestoreMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestoreMediaOutcome>>();
+    RestoreMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const RestoreMediaRequest&,
+        RestoreMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ReviewAudioVideoOutcome VodClient::ReviewAudioVideo(const ReviewAudioVideoRequest &request)
@@ -7028,25 +11412,32 @@ VodClient::ReviewAudioVideoOutcome VodClient::ReviewAudioVideo(const ReviewAudio
 
 void VodClient::ReviewAudioVideoAsync(const ReviewAudioVideoRequest& request, const ReviewAudioVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReviewAudioVideo(request), context);
-    };
+    using Req = const ReviewAudioVideoRequest&;
+    using Resp = ReviewAudioVideoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReviewAudioVideo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ReviewAudioVideoOutcomeCallable VodClient::ReviewAudioVideoCallable(const ReviewAudioVideoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReviewAudioVideoOutcome()>>(
-        [this, request]()
-        {
-            return this->ReviewAudioVideo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReviewAudioVideoOutcome>>();
+    ReviewAudioVideoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ReviewAudioVideoRequest&,
+        ReviewAudioVideoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ReviewImageOutcome VodClient::ReviewImage(const ReviewImageRequest &request)
@@ -7071,25 +11462,32 @@ VodClient::ReviewImageOutcome VodClient::ReviewImage(const ReviewImageRequest &r
 
 void VodClient::ReviewImageAsync(const ReviewImageRequest& request, const ReviewImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReviewImage(request), context);
-    };
+    using Req = const ReviewImageRequest&;
+    using Resp = ReviewImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReviewImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ReviewImageOutcomeCallable VodClient::ReviewImageCallable(const ReviewImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReviewImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ReviewImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReviewImageOutcome>>();
+    ReviewImageAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ReviewImageRequest&,
+        ReviewImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::SearchMediaOutcome VodClient::SearchMedia(const SearchMediaRequest &request)
@@ -7114,25 +11512,182 @@ VodClient::SearchMediaOutcome VodClient::SearchMedia(const SearchMediaRequest &r
 
 void VodClient::SearchMediaAsync(const SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchMedia(request), context);
-    };
+    using Req = const SearchMediaRequest&;
+    using Resp = SearchMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::SearchMediaOutcomeCallable VodClient::SearchMediaCallable(const SearchMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchMedia(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<SearchMediaOutcome>>();
+    SearchMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SearchMediaRequest&,
+        SearchMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::SearchMediaBySemanticsOutcome VodClient::SearchMediaBySemantics(const SearchMediaBySemanticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchMediaBySemantics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchMediaBySemanticsResponse rsp = SearchMediaBySemanticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchMediaBySemanticsOutcome(rsp);
+        else
+            return SearchMediaBySemanticsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchMediaBySemanticsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SearchMediaBySemanticsAsync(const SearchMediaBySemanticsRequest& request, const SearchMediaBySemanticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SearchMediaBySemanticsRequest&;
+    using Resp = SearchMediaBySemanticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SearchMediaBySemantics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::SearchMediaBySemanticsOutcomeCallable VodClient::SearchMediaBySemanticsCallable(const SearchMediaBySemanticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SearchMediaBySemanticsOutcome>>();
+    SearchMediaBySemanticsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SearchMediaBySemanticsRequest&,
+        SearchMediaBySemanticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::SetAigcWhitelistOutcome VodClient::SetAigcWhitelist(const SetAigcWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAigcWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAigcWhitelistResponse rsp = SetAigcWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAigcWhitelistOutcome(rsp);
+        else
+            return SetAigcWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAigcWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetAigcWhitelistAsync(const SetAigcWhitelistRequest& request, const SetAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetAigcWhitelistRequest&;
+    using Resp = SetAigcWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetAigcWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::SetAigcWhitelistOutcomeCallable VodClient::SetAigcWhitelistCallable(const SetAigcWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetAigcWhitelistOutcome>>();
+    SetAigcWhitelistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SetAigcWhitelistRequest&,
+        SetAigcWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::SetCLSPushTargetOutcome VodClient::SetCLSPushTarget(const SetCLSPushTargetRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetCLSPushTarget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetCLSPushTargetResponse rsp = SetCLSPushTargetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetCLSPushTargetOutcome(rsp);
+        else
+            return SetCLSPushTargetOutcome(o.GetError());
+    }
+    else
+    {
+        return SetCLSPushTargetOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetCLSPushTargetAsync(const SetCLSPushTargetRequest& request, const SetCLSPushTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetCLSPushTargetRequest&;
+    using Resp = SetCLSPushTargetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetCLSPushTarget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::SetCLSPushTargetOutcomeCallable VodClient::SetCLSPushTargetCallable(const SetCLSPushTargetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetCLSPushTargetOutcome>>();
+    SetCLSPushTargetAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SetCLSPushTargetRequest&,
+        SetCLSPushTargetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::SetDrmKeyProviderInfoOutcome VodClient::SetDrmKeyProviderInfo(const SetDrmKeyProviderInfoRequest &request)
@@ -7157,25 +11712,32 @@ VodClient::SetDrmKeyProviderInfoOutcome VodClient::SetDrmKeyProviderInfo(const S
 
 void VodClient::SetDrmKeyProviderInfoAsync(const SetDrmKeyProviderInfoRequest& request, const SetDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetDrmKeyProviderInfo(request), context);
-    };
+    using Req = const SetDrmKeyProviderInfoRequest&;
+    using Resp = SetDrmKeyProviderInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetDrmKeyProviderInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::SetDrmKeyProviderInfoOutcomeCallable VodClient::SetDrmKeyProviderInfoCallable(const SetDrmKeyProviderInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetDrmKeyProviderInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->SetDrmKeyProviderInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetDrmKeyProviderInfoOutcome>>();
+    SetDrmKeyProviderInfoAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SetDrmKeyProviderInfoRequest&,
+        SetDrmKeyProviderInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::SetVodDomainCertificateOutcome VodClient::SetVodDomainCertificate(const SetVodDomainCertificateRequest &request)
@@ -7200,25 +11762,32 @@ VodClient::SetVodDomainCertificateOutcome VodClient::SetVodDomainCertificate(con
 
 void VodClient::SetVodDomainCertificateAsync(const SetVodDomainCertificateRequest& request, const SetVodDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetVodDomainCertificate(request), context);
-    };
+    using Req = const SetVodDomainCertificateRequest&;
+    using Resp = SetVodDomainCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetVodDomainCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::SetVodDomainCertificateOutcomeCallable VodClient::SetVodDomainCertificateCallable(const SetVodDomainCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetVodDomainCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->SetVodDomainCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetVodDomainCertificateOutcome>>();
+    SetVodDomainCertificateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SetVodDomainCertificateRequest&,
+        SetVodDomainCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::SimpleHlsClipOutcome VodClient::SimpleHlsClip(const SimpleHlsClipRequest &request)
@@ -7243,25 +11812,32 @@ VodClient::SimpleHlsClipOutcome VodClient::SimpleHlsClip(const SimpleHlsClipRequ
 
 void VodClient::SimpleHlsClipAsync(const SimpleHlsClipRequest& request, const SimpleHlsClipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SimpleHlsClip(request), context);
-    };
+    using Req = const SimpleHlsClipRequest&;
+    using Resp = SimpleHlsClipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SimpleHlsClip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::SimpleHlsClipOutcomeCallable VodClient::SimpleHlsClipCallable(const SimpleHlsClipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SimpleHlsClipOutcome()>>(
-        [this, request]()
-        {
-            return this->SimpleHlsClip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SimpleHlsClipOutcome>>();
+    SimpleHlsClipAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SimpleHlsClipRequest&,
+        SimpleHlsClipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::SplitMediaOutcome VodClient::SplitMedia(const SplitMediaRequest &request)
@@ -7286,25 +11862,32 @@ VodClient::SplitMediaOutcome VodClient::SplitMedia(const SplitMediaRequest &requ
 
 void VodClient::SplitMediaAsync(const SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SplitMedia(request), context);
-    };
+    using Req = const SplitMediaRequest&;
+    using Resp = SplitMediaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SplitMedia", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::SplitMediaOutcomeCallable VodClient::SplitMediaCallable(const SplitMediaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SplitMediaOutcome()>>(
-        [this, request]()
-        {
-            return this->SplitMedia(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SplitMediaOutcome>>();
+    SplitMediaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SplitMediaRequest&,
+        SplitMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::StartCDNDomainOutcome VodClient::StartCDNDomain(const StartCDNDomainRequest &request)
@@ -7329,25 +11912,232 @@ VodClient::StartCDNDomainOutcome VodClient::StartCDNDomain(const StartCDNDomainR
 
 void VodClient::StartCDNDomainAsync(const StartCDNDomainRequest& request, const StartCDNDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartCDNDomain(request), context);
-    };
+    using Req = const StartCDNDomainRequest&;
+    using Resp = StartCDNDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartCDNDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::StartCDNDomainOutcomeCallable VodClient::StartCDNDomainCallable(const StartCDNDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartCDNDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->StartCDNDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<StartCDNDomainOutcome>>();
+    StartCDNDomainAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const StartCDNDomainRequest&,
+        StartCDNDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+VodClient::TextToSpeechAsyncOutcome VodClient::TextToSpeechAsync(const TextToSpeechAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechAsyncResponse rsp = TextToSpeechAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechAsyncOutcome(rsp);
+        else
+            return TextToSpeechAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::TextToSpeechAsyncAsync(const TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechAsyncRequest&;
+    using Resp = TextToSpeechAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeechAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::TextToSpeechAsyncOutcomeCallable VodClient::TextToSpeechAsyncCallable(const TextToSpeechAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechAsyncOutcome>>();
+    TextToSpeechAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const TextToSpeechAsyncRequest&,
+        TextToSpeechAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::TextToSpeechSyncOutcome VodClient::TextToSpeechSync(const TextToSpeechSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechSyncResponse rsp = TextToSpeechSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechSyncOutcome(rsp);
+        else
+            return TextToSpeechSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechSyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::TextToSpeechSyncAsync(const TextToSpeechSyncRequest& request, const TextToSpeechSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechSyncRequest&;
+    using Resp = TextToSpeechSyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeechSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::TextToSpeechSyncOutcomeCallable VodClient::TextToSpeechSyncCallable(const TextToSpeechSyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechSyncOutcome>>();
+    TextToSpeechSyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const TextToSpeechSyncRequest&,
+        TextToSpeechSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::UpdateAigcApiTokenOutcome VodClient::UpdateAigcApiToken(const UpdateAigcApiTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAigcApiToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAigcApiTokenResponse rsp = UpdateAigcApiTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAigcApiTokenOutcome(rsp);
+        else
+            return UpdateAigcApiTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAigcApiTokenOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::UpdateAigcApiTokenAsync(const UpdateAigcApiTokenRequest& request, const UpdateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAigcApiTokenRequest&;
+    using Resp = UpdateAigcApiTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAigcApiToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::UpdateAigcApiTokenOutcomeCallable VodClient::UpdateAigcApiTokenCallable(const UpdateAigcApiTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAigcApiTokenOutcome>>();
+    UpdateAigcApiTokenAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const UpdateAigcApiTokenRequest&,
+        UpdateAigcApiTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::UpdateVoiceOutcome VodClient::UpdateVoice(const UpdateVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVoiceResponse rsp = UpdateVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVoiceOutcome(rsp);
+        else
+            return UpdateVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVoiceOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::UpdateVoiceAsync(const UpdateVoiceRequest& request, const UpdateVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateVoiceRequest&;
+    using Resp = UpdateVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::UpdateVoiceOutcomeCallable VodClient::UpdateVoiceCallable(const UpdateVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateVoiceOutcome>>();
+    UpdateVoiceAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const UpdateVoiceRequest&,
+        UpdateVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::VerifyDomainRecordOutcome VodClient::VerifyDomainRecord(const VerifyDomainRecordRequest &request)
@@ -7372,24 +12162,31 @@ VodClient::VerifyDomainRecordOutcome VodClient::VerifyDomainRecord(const VerifyD
 
 void VodClient::VerifyDomainRecordAsync(const VerifyDomainRecordRequest& request, const VerifyDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyDomainRecord(request), context);
-    };
+    using Req = const VerifyDomainRecordRequest&;
+    using Resp = VerifyDomainRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifyDomainRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::VerifyDomainRecordOutcomeCallable VodClient::VerifyDomainRecordCallable(const VerifyDomainRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifyDomainRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyDomainRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifyDomainRecordOutcome>>();
+    VerifyDomainRecordAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const VerifyDomainRecordRequest&,
+        VerifyDomainRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Noise removal configuration.
+                * Audio noise reduction control information
                 */
                 class AudioDenoiseInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Whether to enable noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @return Switch Whether to enable noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 获取Audio noise reduction control switch. Available values:
+<li>ON: turn on audio noise reduction;</li>
+<li>OFF: disable audio noise reduction.</li>
+                     * @return Switch Audio noise reduction control switch. Available values:
+<li>ON: turn on audio noise reduction;</li>
+<li>OFF: disable audio noise reduction.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Whether to enable noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
-                     * @param _switch Whether to enable noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * 设置Audio noise reduction control switch. Available values:
+<li>ON: turn on audio noise reduction;</li>
+<li>OFF: disable audio noise reduction.</li>
+                     * @param _switch Audio noise reduction control switch. Available values:
+<li>ON: turn on audio noise reduction;</li>
+<li>OFF: disable audio noise reduction.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,31 +76,23 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取The noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @return Type The noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 获取Audio noise reduction type. It is valid only when the audio noise reduction control switch is ON. Available values:
+<li>normal: Normal audio noise reduction;</li>
+Default value: normal.
+                     * @return Type Audio noise reduction type. It is valid only when the audio noise reduction control switch is ON. Available values:
+<li>normal: Normal audio noise reduction;</li>
+Default value: normal.
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
-                     * @param _type The noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * 设置Audio noise reduction type. It is valid only when the audio noise reduction control switch is ON. Available values:
+<li>normal: Normal audio noise reduction;</li>
+Default value: normal.
+                     * @param _type Audio noise reduction type. It is valid only when the audio noise reduction control switch is ON. Available values:
+<li>normal: Normal audio noise reduction;</li>
+Default value: normal.
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,19 +107,17 @@ Default value: `weak`.
                 private:
 
                     /**
-                     * Whether to enable noise removal. Valid values:
-<li>`ON`</li>
-<li>`OFF`</li>
+                     * Audio noise reduction control switch. Available values:
+<li>ON: turn on audio noise reduction;</li>
+<li>OFF: disable audio noise reduction.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * The noise removal type. This parameter is valid only if `Switch` is `ON`. Valid values:
-<li>`weak`</li>
-<li>`normal`</li>
-<li>`strong`</li>
-Default value: `weak`.
+                     * Audio noise reduction type. It is valid only when the audio noise reduction control switch is ON. Available values:
+<li>normal: Normal audio noise reduction;</li>
+Default value: normal.
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

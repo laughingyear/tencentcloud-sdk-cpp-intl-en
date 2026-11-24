@@ -29,10 +29,12 @@ CreateAdaptiveDynamicStreamingTemplateRequest::CreateAdaptiveDynamicStreamingTem
     m_nameHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
     m_drmKeyProviderHasBeenSet(false),
+    m_drmEncryptTypeHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_segmentTypeHasBeenSet(false)
+    m_segmentTypeHasBeenSet(false),
+    m_segmentDurationHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_drmEncryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmEncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_drmEncryptType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_disableHigherVideoBitrateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -128,6 +138,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segmentDuration, allocator);
     }
 
 
@@ -234,6 +252,22 @@ bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmKeyProviderHasBeenSet() c
     return m_drmKeyProviderHasBeenSet;
 }
 
+string CreateAdaptiveDynamicStreamingTemplateRequest::GetDrmEncryptType() const
+{
+    return m_drmEncryptType;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetDrmEncryptType(const string& _drmEncryptType)
+{
+    m_drmEncryptType = _drmEncryptType;
+    m_drmEncryptTypeHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmEncryptTypeHasBeenSet() const
+{
+    return m_drmEncryptTypeHasBeenSet;
+}
+
 uint64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetDisableHigherVideoBitrate() const
 {
     return m_disableHigherVideoBitrate;
@@ -296,6 +330,22 @@ void CreateAdaptiveDynamicStreamingTemplateRequest::SetSegmentType(const string&
 bool CreateAdaptiveDynamicStreamingTemplateRequest::SegmentTypeHasBeenSet() const
 {
     return m_segmentTypeHasBeenSet;
+}
+
+int64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetSegmentDuration() const
+{
+    return m_segmentDuration;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetSegmentDuration(const int64_t& _segmentDuration)
+{
+    m_segmentDuration = _segmentDuration;
+    m_segmentDurationHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::SegmentDurationHasBeenSet() const
+{
+    return m_segmentDurationHasBeenSet;
 }
 
 

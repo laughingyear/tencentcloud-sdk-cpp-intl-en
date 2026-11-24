@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Role management list
+                * Response for querying the role list data.
                 */
                 class DescribeRoleListResp : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TotalCount Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Total number of entries.
+                     * @return TotalCount Total number of entries.
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _totalCount Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Total number of entries.
+                     * @param _totalCount Total number of entries.
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -73,19 +69,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取List data
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DataList List data
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取List data.
+                     * @return DataList List data.
                      * 
                      */
                     std::vector<DescribeRoleListData> GetDataList() const;
 
                     /**
-                     * 设置List data
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _dataList List data
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置List data.
+                     * @param _dataList List data.
                      * 
                      */
                     void SetDataList(const std::vector<DescribeRoleListData>& _dataList);
@@ -100,15 +92,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Total number of entries
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Total number of entries.
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * List data
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * List data.
                      */
                     std::vector<DescribeRoleListData> m_dataList;
                     bool m_dataListHasBeenSet;

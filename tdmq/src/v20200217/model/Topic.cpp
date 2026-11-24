@@ -42,7 +42,15 @@ Topic::Topic() :
     m_updateTimeHasBeenSet(false),
     m_producerLimitHasBeenSet(false),
     m_consumerLimitHasBeenSet(false),
-    m_pulsarTopicTypeHasBeenSet(false)
+    m_pulsarTopicTypeHasBeenSet(false),
+    m_msgTTLHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tenantHasBeenSet(false),
+    m_isolateConsumerEnableHasBeenSet(false),
+    m_ackTimeOutHasBeenSet(false),
+    m_pulsarTopicMessageTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_delayMessagePolicyHasBeenSet(false)
 {
 }
 
@@ -281,6 +289,96 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_pulsarTopicTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MsgTTL") && !value["MsgTTL"].IsNull())
+    {
+        if (!value["MsgTTL"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.MsgTTL` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgTTL = value["MsgTTL"].GetUint64();
+        m_msgTTLHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tenant") && !value["Tenant"].IsNull())
+    {
+        if (!value["Tenant"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.Tenant` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenant = string(value["Tenant"].GetString());
+        m_tenantHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateConsumerEnable") && !value["IsolateConsumerEnable"].IsNull())
+    {
+        if (!value["IsolateConsumerEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.IsolateConsumerEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateConsumerEnable = value["IsolateConsumerEnable"].GetBool();
+        m_isolateConsumerEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AckTimeOut") && !value["AckTimeOut"].IsNull())
+    {
+        if (!value["AckTimeOut"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.AckTimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ackTimeOut = value["AckTimeOut"].GetInt64();
+        m_ackTimeOutHasBeenSet = true;
+    }
+
+    if (value.HasMember("PulsarTopicMessageType") && !value["PulsarTopicMessageType"].IsNull())
+    {
+        if (!value["PulsarTopicMessageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.PulsarTopicMessageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pulsarTopicMessageType = value["PulsarTopicMessageType"].GetInt64();
+        m_pulsarTopicMessageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Topic.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DelayMessagePolicy") && !value["DelayMessagePolicy"].IsNull())
+    {
+        if (!value["DelayMessagePolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.DelayMessagePolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayMessagePolicy = string(value["DelayMessagePolicy"].GetString());
+        m_delayMessagePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +567,77 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "PulsarTopicType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pulsarTopicType, allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tenant";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateConsumerEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateConsumerEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateConsumerEnable, allocator);
+    }
+
+    if (m_ackTimeOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AckTimeOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ackTimeOut, allocator);
+    }
+
+    if (m_pulsarTopicMessageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PulsarTopicMessageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pulsarTopicMessageType, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_delayMessagePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayMessagePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_delayMessagePolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -824,5 +993,133 @@ void Topic::SetPulsarTopicType(const int64_t& _pulsarTopicType)
 bool Topic::PulsarTopicTypeHasBeenSet() const
 {
     return m_pulsarTopicTypeHasBeenSet;
+}
+
+uint64_t Topic::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void Topic::SetMsgTTL(const uint64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool Topic::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
+}
+
+string Topic::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void Topic::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool Topic::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string Topic::GetTenant() const
+{
+    return m_tenant;
+}
+
+void Topic::SetTenant(const string& _tenant)
+{
+    m_tenant = _tenant;
+    m_tenantHasBeenSet = true;
+}
+
+bool Topic::TenantHasBeenSet() const
+{
+    return m_tenantHasBeenSet;
+}
+
+bool Topic::GetIsolateConsumerEnable() const
+{
+    return m_isolateConsumerEnable;
+}
+
+void Topic::SetIsolateConsumerEnable(const bool& _isolateConsumerEnable)
+{
+    m_isolateConsumerEnable = _isolateConsumerEnable;
+    m_isolateConsumerEnableHasBeenSet = true;
+}
+
+bool Topic::IsolateConsumerEnableHasBeenSet() const
+{
+    return m_isolateConsumerEnableHasBeenSet;
+}
+
+int64_t Topic::GetAckTimeOut() const
+{
+    return m_ackTimeOut;
+}
+
+void Topic::SetAckTimeOut(const int64_t& _ackTimeOut)
+{
+    m_ackTimeOut = _ackTimeOut;
+    m_ackTimeOutHasBeenSet = true;
+}
+
+bool Topic::AckTimeOutHasBeenSet() const
+{
+    return m_ackTimeOutHasBeenSet;
+}
+
+int64_t Topic::GetPulsarTopicMessageType() const
+{
+    return m_pulsarTopicMessageType;
+}
+
+void Topic::SetPulsarTopicMessageType(const int64_t& _pulsarTopicMessageType)
+{
+    m_pulsarTopicMessageType = _pulsarTopicMessageType;
+    m_pulsarTopicMessageTypeHasBeenSet = true;
+}
+
+bool Topic::PulsarTopicMessageTypeHasBeenSet() const
+{
+    return m_pulsarTopicMessageTypeHasBeenSet;
+}
+
+vector<Tag> Topic::GetTags() const
+{
+    return m_tags;
+}
+
+void Topic::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Topic::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string Topic::GetDelayMessagePolicy() const
+{
+    return m_delayMessagePolicy;
+}
+
+void Topic::SetDelayMessagePolicy(const string& _delayMessagePolicy)
+{
+    m_delayMessagePolicy = _delayMessagePolicy;
+    m_delayMessagePolicyHasBeenSet = true;
+}
+
+bool Topic::DelayMessagePolicyHasBeenSet() const
+{
+    return m_delayMessagePolicyHasBeenSet;
 }
 

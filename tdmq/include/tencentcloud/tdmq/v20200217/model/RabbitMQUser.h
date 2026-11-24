@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster instance ID
-                     * @return InstanceId Cluster instance ID
+                     * 获取<p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
+                     * @return InstanceId <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Cluster instance ID
-                     * @param _instanceId Cluster instance ID
+                     * 设置<p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
+                     * @param _instanceId <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Username, which is used for login.
-                     * @return User Username, which is used for login.
+                     * 获取<p>Username, used when logging in</p>
+                     * @return User <p>Username, used when logging in</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置Username, which is used for login.
-                     * @param _user Username, which is used for login.
+                     * 设置<p>Username, used when logging in</p>
+                     * @param _user <p>Username, used when logging in</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取Password, which is used for login.
-                     * @return Password Password, which is used for login.
+                     * 获取<p>Password, used when logging in</p>
+                     * @return Password <p>Password, used when logging in</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置Password, which is used for login.
-                     * @param _password Password, which is used for login.
+                     * 设置<p>Password, used when logging in</p>
+                     * @param _password <p>Password, used when logging in</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取User description
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
-                     * @return Description User description
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>user description</p>
+                     * @return Description <p>user description</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置User description
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
-                     * @param _description User description
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>user description</p>
+                     * @param _description <p>user description</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -135,19 +131,15 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取User tag, which defines a user's permission scope for accessing RabbitMQ Managementu200d.
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
-                     * @return Tags User tag, which defines a user's permission scope for accessing RabbitMQ Managementu200d.
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User tag, used to determine the access permission of the user to RabbitMQ Management</p>
+                     * @return Tags <p>User tag, used to determine the access permission of the user to RabbitMQ Management</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置User tag, which defines a user's permission scope for accessing RabbitMQ Managementu200d.
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
-                     * @param _tags User tag, which defines a user's permission scope for accessing RabbitMQ Managementu200d.
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User tag, used to determine the access permission of the user to RabbitMQ Management</p>
+                     * @param _tags <p>User tag, used to determine the access permission of the user to RabbitMQ Management</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -160,15 +152,15 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取User creation time
-                     * @return CreateTime User creation time
+                     * 获取<p>User creation time</p>
+                     * @return CreateTime <p>User creation time</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置User creation time
-                     * @param _createTime User creation time
+                     * 设置<p>User creation time</p>
+                     * @param _createTime <p>User creation time</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -181,15 +173,15 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Last user modification time
-                     * @return ModifyTime Last user modification time
+                     * 获取<p>User last modification time</p>
+                     * @return ModifyTime <p>User last modification time</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置Last user modification time
-                     * @param _modifyTime Last user modification time
+                     * 设置<p>User last modification time</p>
+                     * @param _modifyTime <p>User last modification time</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -202,15 +194,15 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取User type. Valid values: `System` (Created by system), `User` (Created by user).
-                     * @return Type User type. Valid values: `System` (Created by system), `User` (Created by user).
+                     * 获取<p>Type of user, System: system creation, User: user creation</p>
+                     * @return Type <p>Type of user, System: system creation, User: user creation</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置User type. Valid values: `System` (Created by system), `User` (Created by user).
-                     * @param _type User type. Valid values: `System` (Created by system), `User` (Created by user).
+                     * 设置<p>Type of user, System: system creation, User: user creation</p>
+                     * @param _type <p>Type of user, System: system creation, User: user creation</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -222,57 +214,232 @@ Note: u200dThis field may return null, indicating that no valid values can be ob
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Maximum available connections per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return MaxConnections <p>Maximum available connections per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    int64_t GetMaxConnections() const;
+
+                    /**
+                     * 设置<p>Maximum available connections per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _maxConnections <p>Maximum available connections per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    void SetMaxConnections(const int64_t& _maxConnections);
+
+                    /**
+                     * 判断参数 MaxConnections 是否已赋值
+                     * @return MaxConnections 是否已赋值
+                     * 
+                     */
+                    bool MaxConnectionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Maximum available channels per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return MaxChannels <p>Maximum available channels per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    int64_t GetMaxChannels() const;
+
+                    /**
+                     * 设置<p>Maximum available channels per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _maxChannels <p>Maximum available channels per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    void SetMaxChannels(const int64_t& _maxChannels);
+
+                    /**
+                     * 判断参数 MaxChannels 是否已赋值
+                     * @return MaxChannels 是否已赋值
+                     * 
+                     */
+                    bool MaxChannelsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Creation time timestamp</p>
+                     * @return CreateTs <p>Creation time timestamp</p>
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置<p>Creation time timestamp</p>
+                     * @param _createTs <p>Creation time timestamp</p>
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Modification time timestamp</p>
+                     * @return ModifyTs <p>Modification time timestamp</p>
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置<p>Modification time timestamp</p>
+                     * @param _modifyTs <p>Modification time timestamp</p>
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether cam authentication is enabled</p><p>Default value: false</p>
+                     * @return CamAuthEnabled <p>Whether cam authentication is enabled</p><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetCamAuthEnabled() const;
+
+                    /**
+                     * 设置<p>Whether cam authentication is enabled</p><p>Default value: false</p>
+                     * @param _camAuthEnabled <p>Whether cam authentication is enabled</p><p>Default value: false</p>
+                     * 
+                     */
+                    void SetCamAuthEnabled(const bool& _camAuthEnabled);
+
+                    /**
+                     * 判断参数 CamAuthEnabled 是否已赋值
+                     * @return CamAuthEnabled 是否已赋值
+                     * 
+                     */
+                    bool CamAuthEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cam credential name</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @return CamCredentialName <p>cam credential name</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    std::string GetCamCredentialName() const;
+
+                    /**
+                     * 设置<p>cam credential name</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * @param _camCredentialName <p>cam credential name</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     * 
+                     */
+                    void SetCamCredentialName(const std::string& _camCredentialName);
+
+                    /**
+                     * 判断参数 CamCredentialName 是否已赋值
+                     * @return CamCredentialName 是否已赋值
+                     * 
+                     */
+                    bool CamCredentialNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cluster instance ID
+                     * <p>Instance ID, such as amqp-xxxxxxxx. Effective InstanceId can be obtained by logging in to the <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ Console</a> for querying.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Username, which is used for login.
+                     * <p>Username, used when logging in</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * Password, which is used for login.
+                     * <p>Password, used when logging in</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * User description
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * <p>user description</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * User tag, which defines a user's permission scope for accessing RabbitMQ Managementu200d.
-Note: u200dThis field may return null, indicating that no valid values can be obtained.
+                     * <p>User tag, used to determine the access permission of the user to RabbitMQ Management</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * User creation time
+                     * <p>User creation time</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Last user modification time
+                     * <p>User last modification time</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * User type. Valid values: `System` (Created by system), `User` (Created by user).
+                     * <p>Type of user, System: system creation, User: user creation</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>Maximum available connections per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     */
+                    int64_t m_maxConnections;
+                    bool m_maxConnectionsHasBeenSet;
+
+                    /**
+                     * <p>Maximum available channels per user</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     */
+                    int64_t m_maxChannels;
+                    bool m_maxChannelsHasBeenSet;
+
+                    /**
+                     * <p>Creation time timestamp</p>
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * <p>Modification time timestamp</p>
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
+
+                    /**
+                     * <p>Whether cam authentication is enabled</p><p>Default value: false</p>
+                     */
+                    bool m_camAuthEnabled;
+                    bool m_camAuthEnabledHasBeenSet;
+
+                    /**
+                     * <p>cam credential name</p>
+Note: This field may return null, indicating that no valid values can be obtained.
+                     */
+                    std::string m_camCredentialName;
+                    bool m_camCredentialNameHasBeenSet;
 
                 };
             }

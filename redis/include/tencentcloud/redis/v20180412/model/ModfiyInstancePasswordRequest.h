@@ -85,27 +85,27 @@ namespace TencentCloud
                     bool OldPasswordHasBeenSet() const;
 
                     /**
-                     * 获取New instance password, which has the following requirements:
-- It must contain 8-30 characters, preferably 12 or more.
-- It cannot start with a slash (/)
-- It must contain two of the following three types: lowercase letters, uppercase letters, and symbols (()~!@#$%^&*-+=_|{}[]:;<>,.?/)
-                     * @return Password New instance password, which has the following requirements:
-- It must contain 8-30 characters, preferably 12 or more.
-- It cannot start with a slash (/)
-- It must contain two of the following three types: lowercase letters, uppercase letters, and symbols (()~!@#$%^&*-+=_|{}[]:;<>,.?/)
+                     * 获取New instance password. The password complexity requirements are as follows:
+ - It should contain 8 to 64 characters. 12 or more characters are recommended.
+ - It cannot start with a forward slash (/).
+ - It should contain at least two of the following types: lowercase letters (a–z), uppercase letters (A–Z), digits (0–9), and special characters (such as ()~!@#$%^&*-+=_|{}[]:;<>,.?/).
+                     * @return Password New instance password. The password complexity requirements are as follows:
+ - It should contain 8 to 64 characters. 12 or more characters are recommended.
+ - It cannot start with a forward slash (/).
+ - It should contain at least two of the following types: lowercase letters (a–z), uppercase letters (A–Z), digits (0–9), and special characters (such as ()~!@#$%^&*-+=_|{}[]:;<>,.?/).
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置New instance password, which has the following requirements:
-- It must contain 8-30 characters, preferably 12 or more.
-- It cannot start with a slash (/)
-- It must contain two of the following three types: lowercase letters, uppercase letters, and symbols (()~!@#$%^&*-+=_|{}[]:;<>,.?/)
-                     * @param _password New instance password, which has the following requirements:
-- It must contain 8-30 characters, preferably 12 or more.
-- It cannot start with a slash (/)
-- It must contain two of the following three types: lowercase letters, uppercase letters, and symbols (()~!@#$%^&*-+=_|{}[]:;<>,.?/)
+                     * 设置New instance password. The password complexity requirements are as follows:
+ - It should contain 8 to 64 characters. 12 or more characters are recommended.
+ - It cannot start with a forward slash (/).
+ - It should contain at least two of the following types: lowercase letters (a–z), uppercase letters (A–Z), digits (0–9), and special characters (such as ()~!@#$%^&*-+=_|{}[]:;<>,.?/).
+                     * @param _password New instance password. The password complexity requirements are as follows:
+ - It should contain 8 to 64 characters. 12 or more characters are recommended.
+ - It cannot start with a forward slash (/).
+ - It should contain at least two of the following types: lowercase letters (a–z), uppercase letters (A–Z), digits (0–9), and special characters (such as ()~!@#$%^&*-+=_|{}[]:;<>,.?/).
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -116,6 +116,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取Whether to encrypt the password.
+                     * @return EncryptPassword Whether to encrypt the password.
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置Whether to encrypt the password.
+                     * @param _encryptPassword Whether to encrypt the password.
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
 
                 private:
 
@@ -132,13 +153,19 @@ namespace TencentCloud
                     bool m_oldPasswordHasBeenSet;
 
                     /**
-                     * New instance password, which has the following requirements:
-- It must contain 8-30 characters, preferably 12 or more.
-- It cannot start with a slash (/)
-- It must contain two of the following three types: lowercase letters, uppercase letters, and symbols (()~!@#$%^&*-+=_|{}[]:;<>,.?/)
+                     * New instance password. The password complexity requirements are as follows:
+ - It should contain 8 to 64 characters. 12 or more characters are recommended.
+ - It cannot start with a forward slash (/).
+ - It should contain at least two of the following types: lowercase letters (a–z), uppercase letters (A–Z), digits (0–9), and special characters (such as ()~!@#$%^&*-+=_|{}[]:;<>,.?/).
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * Whether to encrypt the password.
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

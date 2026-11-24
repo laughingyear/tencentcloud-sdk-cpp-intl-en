@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID. Log in to the [Redis console](https://console.tencentcloud.com/redis/instance) and copy it in the instance list.
-                     * @return InstanceId Instance ID. Log in to the [Redis console](https://console.tencentcloud.com/redis/instance) and copy it in the instance list.
+                     * 获取<p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy the instance ID from the instance list.</p>
+                     * @return InstanceId <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy the instance ID from the instance list.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID. Log in to the [Redis console](https://console.tencentcloud.com/redis/instance) and copy it in the instance list.
-                     * @param _instanceId Instance ID. Log in to the [Redis console](https://console.tencentcloud.com/redis/instance) and copy it in the instance list.
+                     * 设置<p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy the instance ID from the instance list.</p>
+                     * @param _instanceId <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy the instance ID from the instance list.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Sub-account name. If you want to change it to the root account, fill in root.
-                     * @return AccountName Sub-account name. If you want to change it to the root account, fill in root.
+                     * 获取<p>Specify the account that needs modification.</p><ul><li>root: refers to the automatically generated account when a Redis Database Instance is created. Users cannot modify its read-write permissions, but can only modify its request routing strategy.</li><li>Custom account: an account manually created by users once an instance is created successfully. Users can modify its read and write permissions and request routing strategy at any time.</li></ul>
+                     * @return AccountName <p>Specify the account that needs modification.</p><ul><li>root: refers to the automatically generated account when a Redis Database Instance is created. Users cannot modify its read-write permissions, but can only modify its request routing strategy.</li><li>Custom account: an account manually created by users once an instance is created successfully. Users can modify its read and write permissions and request routing strategy at any time.</li></ul>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置Sub-account name. If you want to change it to the root account, fill in root.
-                     * @param _accountName Sub-account name. If you want to change it to the root account, fill in root.
+                     * 设置<p>Specify the account that needs modification.</p><ul><li>root: refers to the automatically generated account when a Redis Database Instance is created. Users cannot modify its read-write permissions, but can only modify its request routing strategy.</li><li>Custom account: an account manually created by users once an instance is created successfully. Users can modify its read and write permissions and request routing strategy at any time.</li></ul>
+                     * @param _accountName <p>Specify the account that needs modification.</p><ul><li>root: refers to the automatically generated account when a Redis Database Instance is created. Users cannot modify its read-write permissions, but can only modify its request routing strategy.</li><li>Custom account: an account manually created by users once an instance is created successfully. Users can modify its read and write permissions and request routing strategy at any time.</li></ul>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取Sub-account password.
-                     * @return AccountPassword Sub-account password.
+                     * 获取<p>Specifies the access password for the account to be modified.</p>
+                     * @return AccountPassword <p>Specifies the access password for the account to be modified.</p>
                      * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置Sub-account password.
-                     * @param _accountPassword Sub-account password.
+                     * 设置<p>Specifies the access password for the account to be modified.</p>
+                     * @param _accountPassword <p>Specifies the access password for the account to be modified.</p>
                      * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
-                     * 获取Sub-account description information
-                     * @return Remark Sub-account description information
+                     * 获取<p>Account description.</p>
+                     * @return Remark <p>Account description.</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置Sub-account description information
-                     * @param _remark Sub-account description information
+                     * 设置<p>Account description.</p>
+                     * @param _remark <p>Account description.</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -127,23 +127,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取Account read/write routing policy.
-- master: primary node.
-- replication: secondary node.
-                     * @return ReadonlyPolicy Account read/write routing policy.
-- master: primary node.
-- replication: secondary node.
+                     * 获取<p>Specify the policy for request routing of read-write requests for the modified account.</p><ul><li>master: means read-write requests are routed to the primary node.</li><li>replication: means read-write requests are routed to the secondary node.</li></ul>
+                     * @return ReadonlyPolicy <p>Specify the policy for request routing of read-write requests for the modified account.</p><ul><li>master: means read-write requests are routed to the primary node.</li><li>replication: means read-write requests are routed to the secondary node.</li></ul>
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
-                     * 设置Account read/write routing policy.
-- master: primary node.
-- replication: secondary node.
-                     * @param _readonlyPolicy Account read/write routing policy.
-- master: primary node.
-- replication: secondary node.
+                     * 设置<p>Specify the policy for request routing of read-write requests for the modified account.</p><ul><li>master: means read-write requests are routed to the primary node.</li><li>replication: means read-write requests are routed to the secondary node.</li></ul>
+                     * @param _readonlyPolicy <p>Specify the policy for request routing of read-write requests for the modified account.</p><ul><li>master: means read-write requests are routed to the primary node.</li><li>replication: means read-write requests are routed to the secondary node.</li></ul>
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -156,27 +148,15 @@ namespace TencentCloud
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取Sub-account read/write policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-                     * @return Privilege Sub-account read/write policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
+                     * 获取<p>Specify the read/write permission of the account to be modified.</p><ul><li>r: Read-only.</li><li>w: Write-only.</li><li>rw: Read-write.</li></ul>
+                     * @return Privilege <p>Specify the read/write permission of the account to be modified.</p><ul><li>r: Read-only.</li><li>w: Write-only.</li><li>rw: Read-write.</li></ul>
                      * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置Sub-account read/write policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
-                     * @param _privilege Sub-account read/write policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
+                     * 设置<p>Specify the read/write permission of the account to be modified.</p><ul><li>r: Read-only.</li><li>w: Write-only.</li><li>rw: Read-write.</li></ul>
+                     * @param _privilege <p>Specify the read/write permission of the account to be modified.</p><ul><li>r: Read-only.</li><li>w: Write-only.</li><li>rw: Read-write.</li></ul>
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -189,23 +169,15 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取Whether to switch the root account to a password-free account. This applies only to the root account. Sub-accounts do not support password-free access.
-- true: Switch the root account to a password-free account.
-- false: Do not switch it.
-                     * @return NoAuth Whether to switch the root account to a password-free account. This applies only to the root account. Sub-accounts do not support password-free access.
-- true: Switch the root account to a password-free account.
-- false: Do not switch it.
+                     * 获取<p>Specifies whether to set the default account (root) to a password-free account. Custom accounts do not support password-free access.</p><ul><li>true: The default account (root) is set to a password-free account.</li><li>false: The default account (root) is not set to a password-free account.</li></ul>
+                     * @return NoAuth <p>Specifies whether to set the default account (root) to a password-free account. Custom accounts do not support password-free access.</p><ul><li>true: The default account (root) is set to a password-free account.</li><li>false: The default account (root) is not set to a password-free account.</li></ul>
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置Whether to switch the root account to a password-free account. This applies only to the root account. Sub-accounts do not support password-free access.
-- true: Switch the root account to a password-free account.
-- false: Do not switch it.
-                     * @param _noAuth Whether to switch the root account to a password-free account. This applies only to the root account. Sub-accounts do not support password-free access.
-- true: Switch the root account to a password-free account.
-- false: Do not switch it.
+                     * 设置<p>Specifies whether to set the default account (root) to a password-free account. Custom accounts do not support password-free access.</p><ul><li>true: The default account (root) is set to a password-free account.</li><li>false: The default account (root) is not set to a password-free account.</li></ul>
+                     * @param _noAuth <p>Specifies whether to set the default account (root) to a password-free account. Custom accounts do not support password-free access.</p><ul><li>true: The default account (root) is set to a password-free account.</li><li>false: The default account (root) is not set to a password-free account.</li></ul>
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -217,56 +189,130 @@ namespace TencentCloud
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether to enable password encryption for transmission.</p><ul><li>true: Encrypted.</li><li>false: Not encrypted (default value).</li></ul>
+                     * @return EncryptPassword <p>Whether to enable password encryption for transmission.</p><ul><li>true: Encrypted.</li><li>false: Not encrypted (default value).</li></ul>
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置<p>Whether to enable password encryption for transmission.</p><ul><li>true: Encrypted.</li><li>false: Not encrypted (default value).</li></ul>
+                     * @param _encryptPassword <p>Whether to enable password encryption for transmission.</p><ul><li>true: Encrypted.</li><li>false: Not encrypted (default value).</li></ul>
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Disabled command configuration at the account level.</p><ul><li>Default value: [] (empty array, meaning no commands are disabled)</li><li>Input parameter limitation: Only the following specified database commands can be configured (multiple selections are supported)<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd.</li></ul><p>Default value: ""</p>
+                     * @return DisableCommands <p>Disabled command configuration at the account level.</p><ul><li>Default value: [] (empty array, meaning no commands are disabled)</li><li>Input parameter limitation: Only the following specified database commands can be configured (multiple selections are supported)<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd.</li></ul><p>Default value: ""</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDisableCommands() const;
+
+                    /**
+                     * 设置<p>Disabled command configuration at the account level.</p><ul><li>Default value: [] (empty array, meaning no commands are disabled)</li><li>Input parameter limitation: Only the following specified database commands can be configured (multiple selections are supported)<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd.</li></ul><p>Default value: ""</p>
+                     * @param _disableCommands <p>Disabled command configuration at the account level.</p><ul><li>Default value: [] (empty array, meaning no commands are disabled)</li><li>Input parameter limitation: Only the following specified database commands can be configured (multiple selections are supported)<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd.</li></ul><p>Default value: ""</p>
+                     * 
+                     */
+                    void SetDisableCommands(const std::vector<std::string>& _disableCommands);
+
+                    /**
+                     * 判断参数 DisableCommands 是否已赋值
+                     * @return DisableCommands 是否已赋值
+                     * 
+                     */
+                    bool DisableCommandsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to modify the command disablement configuration at the account level. Pass in only when the command list needs to be updated.</p><ul><li>true: Modify (an overwrite update will be performed based on the new command list passed in).</li><li>false: Do not modify (default value).</li></ul>
+                     * @return ModifyDisableCommands <p>Whether to modify the command disablement configuration at the account level. Pass in only when the command list needs to be updated.</p><ul><li>true: Modify (an overwrite update will be performed based on the new command list passed in).</li><li>false: Do not modify (default value).</li></ul>
+                     * 
+                     */
+                    bool GetModifyDisableCommands() const;
+
+                    /**
+                     * 设置<p>Whether to modify the command disablement configuration at the account level. Pass in only when the command list needs to be updated.</p><ul><li>true: Modify (an overwrite update will be performed based on the new command list passed in).</li><li>false: Do not modify (default value).</li></ul>
+                     * @param _modifyDisableCommands <p>Whether to modify the command disablement configuration at the account level. Pass in only when the command list needs to be updated.</p><ul><li>true: Modify (an overwrite update will be performed based on the new command list passed in).</li><li>false: Do not modify (default value).</li></ul>
+                     * 
+                     */
+                    void SetModifyDisableCommands(const bool& _modifyDisableCommands);
+
+                    /**
+                     * 判断参数 ModifyDisableCommands 是否已赋值
+                     * @return ModifyDisableCommands 是否已赋值
+                     * 
+                     */
+                    bool ModifyDisableCommandsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID. Log in to the [Redis console](https://console.tencentcloud.com/redis/instance) and copy it in the instance list.
+                     * <p>Instance ID. Log in to the <a href="https://console.cloud.tencent.com/redis/instance/list">Redis console</a> and copy the instance ID from the instance list.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Sub-account name. If you want to change it to the root account, fill in root.
+                     * <p>Specify the account that needs modification.</p><ul><li>root: refers to the automatically generated account when a Redis Database Instance is created. Users cannot modify its read-write permissions, but can only modify its request routing strategy.</li><li>Custom account: an account manually created by users once an instance is created successfully. Users can modify its read and write permissions and request routing strategy at any time.</li></ul>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * Sub-account password.
+                     * <p>Specifies the access password for the account to be modified.</p>
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;
 
                     /**
-                     * Sub-account description information
+                     * <p>Account description.</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * Account read/write routing policy.
-- master: primary node.
-- replication: secondary node.
+                     * <p>Specify the policy for request routing of read-write requests for the modified account.</p><ul><li>master: means read-write requests are routed to the primary node.</li><li>replication: means read-write requests are routed to the secondary node.</li></ul>
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * Sub-account read/write policy.
-- r: read-only.
-- w: write-only.
-- rw: read/write.
+                     * <p>Specify the read/write permission of the account to be modified.</p><ul><li>r: Read-only.</li><li>w: Write-only.</li><li>rw: Read-write.</li></ul>
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * Whether to switch the root account to a password-free account. This applies only to the root account. Sub-accounts do not support password-free access.
-- true: Switch the root account to a password-free account.
-- false: Do not switch it.
+                     * <p>Specifies whether to set the default account (root) to a password-free account. Custom accounts do not support password-free access.</p><ul><li>true: The default account (root) is set to a password-free account.</li><li>false: The default account (root) is not set to a password-free account.</li></ul>
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable password encryption for transmission.</p><ul><li>true: Encrypted.</li><li>false: Not encrypted (default value).</li></ul>
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
+
+                    /**
+                     * <p>Disabled command configuration at the account level.</p><ul><li>Default value: [] (empty array, meaning no commands are disabled)</li><li>Input parameter limitation: Only the following specified database commands can be configured (multiple selections are supported)<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd.</li></ul><p>Default value: ""</p>
+                     */
+                    std::vector<std::string> m_disableCommands;
+                    bool m_disableCommandsHasBeenSet;
+
+                    /**
+                     * <p>Whether to modify the command disablement configuration at the account level. Pass in only when the command list needs to be updated.</p><ul><li>true: Modify (an overwrite update will be performed based on the new command list passed in).</li><li>false: Do not modify (default value).</li></ul>
+                     */
+                    bool m_modifyDisableCommands;
+                    bool m_modifyDisableCommandsHasBeenSet;
 
                 };
             }

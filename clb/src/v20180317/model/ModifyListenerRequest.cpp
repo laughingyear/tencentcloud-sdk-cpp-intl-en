@@ -39,7 +39,14 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
-    m_snatEnableHasBeenSet(false)
+    m_proxyProtocolHasBeenSet(false),
+    m_snatEnableHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false),
+    m_rescheduleTargetZeroWeightHasBeenSet(false),
+    m_rescheduleUnhealthyHasBeenSet(false),
+    m_rescheduleExpandTargetHasBeenSet(false),
+    m_rescheduleStartTimeHasBeenSet(false),
+    m_rescheduleIntervalHasBeenSet(false)
 {
 }
 
@@ -181,12 +188,68 @@ string ModifyListenerRequest::ToJsonString() const
         d.AddMember(iKey, m_idleConnectTimeout, allocator);
     }
 
+    if (m_proxyProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyProtocol, allocator);
+    }
+
     if (m_snatEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnatEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snatEnable, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rescheduleTargetZeroWeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleTargetZeroWeight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleTargetZeroWeight, allocator);
+    }
+
+    if (m_rescheduleUnhealthyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnhealthy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleUnhealthy, allocator);
+    }
+
+    if (m_rescheduleExpandTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleExpandTarget";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleExpandTarget, allocator);
+    }
+
+    if (m_rescheduleStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleStartTime, allocator);
+    }
+
+    if (m_rescheduleIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleInterval, allocator);
     }
 
 
@@ -453,6 +516,22 @@ bool ModifyListenerRequest::IdleConnectTimeoutHasBeenSet() const
     return m_idleConnectTimeoutHasBeenSet;
 }
 
+bool ModifyListenerRequest::GetProxyProtocol() const
+{
+    return m_proxyProtocol;
+}
+
+void ModifyListenerRequest::SetProxyProtocol(const bool& _proxyProtocol)
+{
+    m_proxyProtocol = _proxyProtocol;
+    m_proxyProtocolHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::ProxyProtocolHasBeenSet() const
+{
+    return m_proxyProtocolHasBeenSet;
+}
+
 bool ModifyListenerRequest::GetSnatEnable() const
 {
     return m_snatEnable;
@@ -467,6 +546,102 @@ void ModifyListenerRequest::SetSnatEnable(const bool& _snatEnable)
 bool ModifyListenerRequest::SnatEnableHasBeenSet() const
 {
     return m_snatEnableHasBeenSet;
+}
+
+string ModifyListenerRequest::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void ModifyListenerRequest::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetRescheduleTargetZeroWeight() const
+{
+    return m_rescheduleTargetZeroWeight;
+}
+
+void ModifyListenerRequest::SetRescheduleTargetZeroWeight(const bool& _rescheduleTargetZeroWeight)
+{
+    m_rescheduleTargetZeroWeight = _rescheduleTargetZeroWeight;
+    m_rescheduleTargetZeroWeightHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::RescheduleTargetZeroWeightHasBeenSet() const
+{
+    return m_rescheduleTargetZeroWeightHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetRescheduleUnhealthy() const
+{
+    return m_rescheduleUnhealthy;
+}
+
+void ModifyListenerRequest::SetRescheduleUnhealthy(const bool& _rescheduleUnhealthy)
+{
+    m_rescheduleUnhealthy = _rescheduleUnhealthy;
+    m_rescheduleUnhealthyHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::RescheduleUnhealthyHasBeenSet() const
+{
+    return m_rescheduleUnhealthyHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetRescheduleExpandTarget() const
+{
+    return m_rescheduleExpandTarget;
+}
+
+void ModifyListenerRequest::SetRescheduleExpandTarget(const bool& _rescheduleExpandTarget)
+{
+    m_rescheduleExpandTarget = _rescheduleExpandTarget;
+    m_rescheduleExpandTargetHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::RescheduleExpandTargetHasBeenSet() const
+{
+    return m_rescheduleExpandTargetHasBeenSet;
+}
+
+int64_t ModifyListenerRequest::GetRescheduleStartTime() const
+{
+    return m_rescheduleStartTime;
+}
+
+void ModifyListenerRequest::SetRescheduleStartTime(const int64_t& _rescheduleStartTime)
+{
+    m_rescheduleStartTime = _rescheduleStartTime;
+    m_rescheduleStartTimeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::RescheduleStartTimeHasBeenSet() const
+{
+    return m_rescheduleStartTimeHasBeenSet;
+}
+
+int64_t ModifyListenerRequest::GetRescheduleInterval() const
+{
+    return m_rescheduleInterval;
+}
+
+void ModifyListenerRequest::SetRescheduleInterval(const int64_t& _rescheduleInterval)
+{
+    m_rescheduleInterval = _rescheduleInterval;
+    m_rescheduleIntervalHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::RescheduleIntervalHasBeenSet() const
+{
+    return m_rescheduleIntervalHasBeenSet;
 }
 
 

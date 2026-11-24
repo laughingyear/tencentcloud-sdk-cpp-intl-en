@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Network billing type. Valid values: <li>BANDWIDTH_PREPAID: prepaid by bandwidth;</li> <li>TRAFFIC_POSTPAID_BY_HOUR: postpaid by traffic per hour;</li> <li>BANDWIDTH_POSTPAID_BY_HOUR: postpaid by bandwidth per hour;</li> <li>BANDWIDTH_PACKAGE: bandwidth package users.</li> Default value: TRAFFIC_POSTPAID_BY_HOUR.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return InternetChargeType Network billing type. Valid values: <li>BANDWIDTH_PREPAID: prepaid by bandwidth;</li> <li>TRAFFIC_POSTPAID_BY_HOUR: postpaid by traffic per hour;</li> <li>BANDWIDTH_POSTPAID_BY_HOUR: postpaid by bandwidth per hour;</li> <li>BANDWIDTH_PACKAGE: bandwidth package users.</li> Default value: TRAFFIC_POSTPAID_BY_HOUR.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置Network billing type. Valid values: <li>BANDWIDTH_PREPAID: prepaid by bandwidth;</li> <li>TRAFFIC_POSTPAID_BY_HOUR: postpaid by traffic per hour;</li> <li>BANDWIDTH_POSTPAID_BY_HOUR: postpaid by bandwidth per hour;</li> <li>BANDWIDTH_PACKAGE: bandwidth package users.</li> Default value: TRAFFIC_POSTPAID_BY_HOUR.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _internetChargeType Network billing type. Valid values: <li>BANDWIDTH_PREPAID: prepaid by bandwidth;</li> <li>TRAFFIC_POSTPAID_BY_HOUR: postpaid by traffic per hour;</li> <li>BANDWIDTH_POSTPAID_BY_HOUR: postpaid by bandwidth per hour;</li> <li>BANDWIDTH_PACKAGE: bandwidth package users.</li> Default value: TRAFFIC_POSTPAID_BY_HOUR.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取The maximum outbound bandwidth in Mbps of the public network. The default value is 0 Mbps. The upper limit of bandwidth varies by model. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/509?from_cn_redirect=1).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return InternetMaxBandwidthOut The maximum outbound bandwidth in Mbps of the public network. The default value is 0 Mbps. The upper limit of bandwidth varies by model. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/509?from_cn_redirect=1).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Public network outbound bandwidth cap. Unit: Mbps. Default value: 0 Mbps. Bandwidth cap range varies by model. For specific limitations, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/509?from_cn_redirect=1).
+                     * @return InternetMaxBandwidthOut Public network outbound bandwidth cap. Unit: Mbps. Default value: 0 Mbps. Bandwidth cap range varies by model. For specific limitations, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/509?from_cn_redirect=1).
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置The maximum outbound bandwidth in Mbps of the public network. The default value is 0 Mbps. The upper limit of bandwidth varies by model. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/509?from_cn_redirect=1).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _internetMaxBandwidthOut The maximum outbound bandwidth in Mbps of the public network. The default value is 0 Mbps. The upper limit of bandwidth varies by model. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/509?from_cn_redirect=1).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Public network outbound bandwidth cap. Unit: Mbps. Default value: 0 Mbps. Bandwidth cap range varies by model. For specific limitations, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/509?from_cn_redirect=1).
+                     * @param _internetMaxBandwidthOut Public network outbound bandwidth cap. Unit: Mbps. Default value: 0 Mbps. Bandwidth cap range varies by model. For specific limitations, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/509?from_cn_redirect=1).
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li> <li>FALSE: Do not allocate a public IP address.</li> When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature based on your needs. By default, this feature is enabled. When the public network bandwidth is 0, public IP address assignment is not allowed.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return PublicIpAssigned Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li> <li>FALSE: Do not allocate a public IP address.</li> When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature based on your needs. By default, this feature is enabled. When the public network bandwidth is 0, public IP address assignment is not allowed.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li><li>FALSE: Do not allocate a public IP address.</li>When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature. By default, a public IP address is assigned. When the public network bandwidth is 0, assigning a public IP address is not allowed.
+                     * @return PublicIpAssigned Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li><li>FALSE: Do not allocate a public IP address.</li>When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature. By default, a public IP address is assigned. When the public network bandwidth is 0, assigning a public IP address is not allowed.
                      * 
                      */
                     bool GetPublicIpAssigned() const;
 
                     /**
-                     * 设置Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li> <li>FALSE: Do not allocate a public IP address.</li> When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature based on your needs. By default, this feature is enabled. When the public network bandwidth is 0, public IP address assignment is not allowed.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _publicIpAssigned Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li> <li>FALSE: Do not allocate a public IP address.</li> When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature based on your needs. By default, this feature is enabled. When the public network bandwidth is 0, public IP address assignment is not allowed.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li><li>FALSE: Do not allocate a public IP address.</li>When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature. By default, a public IP address is assigned. When the public network bandwidth is 0, assigning a public IP address is not allowed.
+                     * @param _publicIpAssigned Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li><li>FALSE: Do not allocate a public IP address.</li>When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature. By default, a public IP address is assigned. When the public network bandwidth is 0, assigning a public IP address is not allowed.
                      * 
                      */
                     void SetPublicIpAssigned(const bool& _publicIpAssigned);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool PublicIpAssignedHasBeenSet() const;
 
                     /**
-                     * 获取Bandwidth package ID. You can obtain the ID from the `BandwidthPackageId` field in the response of the [DescribeBandwidthPackages](https://intl.cloud.tencent.com/document/api/215/19209?from_cn_redirect=1) API.
-Note: this field may return null, indicating that no valid value was found.
-                     * @return BandwidthPackageId Bandwidth package ID. You can obtain the ID from the `BandwidthPackageId` field in the response of the [DescribeBandwidthPackages](https://intl.cloud.tencent.com/document/api/215/19209?from_cn_redirect=1) API.
-Note: this field may return null, indicating that no valid value was found.
+                     * 获取Bandwidth package ID, which can be obtained from the `BandwidthPackageId` in the return value from the [DescribeBandwidthPackages](https://www.tencentcloud.com/document/api/215/19209?from_cn_redirect=1) API.
+                     * @return BandwidthPackageId Bandwidth package ID, which can be obtained from the `BandwidthPackageId` in the return value from the [DescribeBandwidthPackages](https://www.tencentcloud.com/document/api/215/19209?from_cn_redirect=1) API.
                      * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置Bandwidth package ID. You can obtain the ID from the `BandwidthPackageId` field in the response of the [DescribeBandwidthPackages](https://intl.cloud.tencent.com/document/api/215/19209?from_cn_redirect=1) API.
-Note: this field may return null, indicating that no valid value was found.
-                     * @param _bandwidthPackageId Bandwidth package ID. You can obtain the ID from the `BandwidthPackageId` field in the response of the [DescribeBandwidthPackages](https://intl.cloud.tencent.com/document/api/215/19209?from_cn_redirect=1) API.
-Note: this field may return null, indicating that no valid value was found.
+                     * 设置Bandwidth package ID, which can be obtained from the `BandwidthPackageId` in the return value from the [DescribeBandwidthPackages](https://www.tencentcloud.com/document/api/215/19209?from_cn_redirect=1) API.
+                     * @param _bandwidthPackageId Bandwidth package ID, which can be obtained from the `BandwidthPackageId` in the return value from the [DescribeBandwidthPackages](https://www.tencentcloud.com/document/api/215/19209?from_cn_redirect=1) API.
                      * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
@@ -146,35 +130,249 @@ Note: this field may return null, indicating that no valid value was found.
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取Line type. for details on various types of lines and supported regions, refer to [EIP IP address type](https://www.tencentcloud.com/zh/document/product/213/5733). default value: BGP.
+
+<Li>BGP: general bgp line.</li>.
+For a user who has enabled the static single-line IP allowlist, valid values include:.
+
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom.</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
+
+                     * @return InternetServiceProvider Line type. for details on various types of lines and supported regions, refer to [EIP IP address type](https://www.tencentcloud.com/zh/document/product/213/5733). default value: BGP.
+
+<Li>BGP: general bgp line.</li>.
+For a user who has enabled the static single-line IP allowlist, valid values include:.
+
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom.</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
+
+                     * 
+                     */
+                    std::string GetInternetServiceProvider() const;
+
+                    /**
+                     * 设置Line type. for details on various types of lines and supported regions, refer to [EIP IP address type](https://www.tencentcloud.com/zh/document/product/213/5733). default value: BGP.
+
+<Li>BGP: general bgp line.</li>.
+For a user who has enabled the static single-line IP allowlist, valid values include:.
+
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom.</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
+
+                     * @param _internetServiceProvider Line type. for details on various types of lines and supported regions, refer to [EIP IP address type](https://www.tencentcloud.com/zh/document/product/213/5733). default value: BGP.
+
+<Li>BGP: general bgp line.</li>.
+For a user who has enabled the static single-line IP allowlist, valid values include:.
+
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom.</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
+
+                     * 
+                     */
+                    void SetInternetServiceProvider(const std::string& _internetServiceProvider);
+
+                    /**
+                     * 判断参数 InternetServiceProvider 是否已赋值
+                     * @return InternetServiceProvider 是否已赋值
+                     * 
+                     */
+                    bool InternetServiceProviderHasBeenSet() const;
+
+                    /**
+                     * 获取Specifies the public IP type.
+
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: highqualityip. only Singapore and hong kong (china) support highqualityip.</li>.
+<Li>AntiDDoSEIP: anti-ddos eip. only partially supported regions can use anti-ddos eip. details visible in [elastic ip product overview](https://www.tencentcloud.com/zh/document/product/213/5733).</li>. 
+If needed to assign an elastic IPv4 address to a resource, specify the elastic IPv4 address type. if only use WanIP, do not set this field.
+
+High quality IP the anti-ddos feature is only in beta test in some regions. if needed, [submit a ticket for consultation](https://console.cloud.tencent.com/workorder/category).
+                     * @return IPv4AddressType Specifies the public IP type.
+
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: highqualityip. only Singapore and hong kong (china) support highqualityip.</li>.
+<Li>AntiDDoSEIP: anti-ddos eip. only partially supported regions can use anti-ddos eip. details visible in [elastic ip product overview](https://www.tencentcloud.com/zh/document/product/213/5733).</li>. 
+If needed to assign an elastic IPv4 address to a resource, specify the elastic IPv4 address type. if only use WanIP, do not set this field.
+
+High quality IP the anti-ddos feature is only in beta test in some regions. if needed, [submit a ticket for consultation](https://console.cloud.tencent.com/workorder/category).
+                     * 
+                     */
+                    std::string GetIPv4AddressType() const;
+
+                    /**
+                     * 设置Specifies the public IP type.
+
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: highqualityip. only Singapore and hong kong (china) support highqualityip.</li>.
+<Li>AntiDDoSEIP: anti-ddos eip. only partially supported regions can use anti-ddos eip. details visible in [elastic ip product overview](https://www.tencentcloud.com/zh/document/product/213/5733).</li>. 
+If needed to assign an elastic IPv4 address to a resource, specify the elastic IPv4 address type. if only use WanIP, do not set this field.
+
+High quality IP the anti-ddos feature is only in beta test in some regions. if needed, [submit a ticket for consultation](https://console.cloud.tencent.com/workorder/category).
+                     * @param _iPv4AddressType Specifies the public IP type.
+
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: highqualityip. only Singapore and hong kong (china) support highqualityip.</li>.
+<Li>AntiDDoSEIP: anti-ddos eip. only partially supported regions can use anti-ddos eip. details visible in [elastic ip product overview](https://www.tencentcloud.com/zh/document/product/213/5733).</li>. 
+If needed to assign an elastic IPv4 address to a resource, specify the elastic IPv4 address type. if only use WanIP, do not set this field.
+
+High quality IP the anti-ddos feature is only in beta test in some regions. if needed, [submit a ticket for consultation](https://console.cloud.tencent.com/workorder/category).
+                     * 
+                     */
+                    void SetIPv4AddressType(const std::string& _iPv4AddressType);
+
+                    /**
+                     * 判断参数 IPv4AddressType 是否已赋值
+                     * @return IPv4AddressType 是否已赋值
+                     * 
+                     */
+                    bool IPv4AddressTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * @return AntiDDoSPackageId Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * 
+                     */
+                    std::string GetAntiDDoSPackageId() const;
+
+                    /**
+                     * 设置Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * @param _antiDDoSPackageId Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     * 
+                     */
+                    void SetAntiDDoSPackageId(const std::string& _antiDDoSPackageId);
+
+                    /**
+                     * 判断参数 AntiDDoSPackageId 是否已赋值
+                     * @return AntiDDoSPackageId 是否已赋值
+                     * 
+                     */
+                    bool AntiDDoSPackageIdHasBeenSet() const;
+
+                    /**
+                     * 获取Whether to delete the bound EIP(HighQualityEIP and AntiDDoSEIP) when the instance is destroyed.
+
+Range of values:
+
+<li>TRUE: retain the EIP</li> <li>FALSE: not retain the EIP</li>Note that when the IPv4AddressType field specifies the EIP type, the default behavior is not to retain the EIP. 
+WanIP is unaffected by this field and will always be deleted with the instance. 
+Changing this field configuration will take effect immediately for resources already bound to a scaling group.
+                     * @return IsKeepEIP Whether to delete the bound EIP(HighQualityEIP and AntiDDoSEIP) when the instance is destroyed.
+
+Range of values:
+
+<li>TRUE: retain the EIP</li> <li>FALSE: not retain the EIP</li>Note that when the IPv4AddressType field specifies the EIP type, the default behavior is not to retain the EIP. 
+WanIP is unaffected by this field and will always be deleted with the instance. 
+Changing this field configuration will take effect immediately for resources already bound to a scaling group.
+                     * 
+                     */
+                    bool GetIsKeepEIP() const;
+
+                    /**
+                     * 设置Whether to delete the bound EIP(HighQualityEIP and AntiDDoSEIP) when the instance is destroyed.
+
+Range of values:
+
+<li>TRUE: retain the EIP</li> <li>FALSE: not retain the EIP</li>Note that when the IPv4AddressType field specifies the EIP type, the default behavior is not to retain the EIP. 
+WanIP is unaffected by this field and will always be deleted with the instance. 
+Changing this field configuration will take effect immediately for resources already bound to a scaling group.
+                     * @param _isKeepEIP Whether to delete the bound EIP(HighQualityEIP and AntiDDoSEIP) when the instance is destroyed.
+
+Range of values:
+
+<li>TRUE: retain the EIP</li> <li>FALSE: not retain the EIP</li>Note that when the IPv4AddressType field specifies the EIP type, the default behavior is not to retain the EIP. 
+WanIP is unaffected by this field and will always be deleted with the instance. 
+Changing this field configuration will take effect immediately for resources already bound to a scaling group.
+                     * 
+                     */
+                    void SetIsKeepEIP(const bool& _isKeepEIP);
+
+                    /**
+                     * 判断参数 IsKeepEIP 是否已赋值
+                     * @return IsKeepEIP 是否已赋值
+                     * 
+                     */
+                    bool IsKeepEIPHasBeenSet() const;
+
                 private:
 
                     /**
                      * Network billing type. Valid values: <li>BANDWIDTH_PREPAID: prepaid by bandwidth;</li> <li>TRAFFIC_POSTPAID_BY_HOUR: postpaid by traffic per hour;</li> <li>BANDWIDTH_POSTPAID_BY_HOUR: postpaid by bandwidth per hour;</li> <li>BANDWIDTH_PACKAGE: bandwidth package users.</li> Default value: TRAFFIC_POSTPAID_BY_HOUR.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * The maximum outbound bandwidth in Mbps of the public network. The default value is 0 Mbps. The upper limit of bandwidth varies by model. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/509?from_cn_redirect=1).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Public network outbound bandwidth cap. Unit: Mbps. Default value: 0 Mbps. Bandwidth cap range varies by model. For specific limitations, see [Purchase Network Bandwidth](https://www.tencentcloud.com/document/product/213/509?from_cn_redirect=1).
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li> <li>FALSE: Do not allocate a public IP address.</li> When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature based on your needs. By default, this feature is enabled. When the public network bandwidth is 0, public IP address assignment is not allowed.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Whether to assign a public IP address. Valid values: <li>TRUE: Allocate a public IP address.</li><li>FALSE: Do not allocate a public IP address.</li>When the public network bandwidth is greater than 0 Mbps, you can choose whether to enable this feature. By default, a public IP address is assigned. When the public network bandwidth is 0, assigning a public IP address is not allowed.
                      */
                     bool m_publicIpAssigned;
                     bool m_publicIpAssignedHasBeenSet;
 
                     /**
-                     * Bandwidth package ID. You can obtain the ID from the `BandwidthPackageId` field in the response of the [DescribeBandwidthPackages](https://intl.cloud.tencent.com/document/api/215/19209?from_cn_redirect=1) API.
-Note: this field may return null, indicating that no valid value was found.
+                     * Bandwidth package ID, which can be obtained from the `BandwidthPackageId` in the return value from the [DescribeBandwidthPackages](https://www.tencentcloud.com/document/api/215/19209?from_cn_redirect=1) API.
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
+
+                    /**
+                     * Line type. for details on various types of lines and supported regions, refer to [EIP IP address type](https://www.tencentcloud.com/zh/document/product/213/5733). default value: BGP.
+
+<Li>BGP: general bgp line.</li>.
+For a user who has enabled the static single-line IP allowlist, valid values include:.
+
+<Li>CMCC: china mobile.</li>.
+<Li>CTCC: china telecom.</li>.
+<Li>CUCC: china unicom</li>.
+Note: The static single-line IP is only supported in some regions.
+
+                     */
+                    std::string m_internetServiceProvider;
+                    bool m_internetServiceProviderHasBeenSet;
+
+                    /**
+                     * Specifies the public IP type.
+
+<Li>WanIP: specifies the public ip address.</li>.
+<Li>HighQualityEIP: highqualityip. only Singapore and hong kong (china) support highqualityip.</li>.
+<Li>AntiDDoSEIP: anti-ddos eip. only partially supported regions can use anti-ddos eip. details visible in [elastic ip product overview](https://www.tencentcloud.com/zh/document/product/213/5733).</li>. 
+If needed to assign an elastic IPv4 address to a resource, specify the elastic IPv4 address type. if only use WanIP, do not set this field.
+
+High quality IP the anti-ddos feature is only in beta test in some regions. if needed, [submit a ticket for consultation](https://console.cloud.tencent.com/workorder/category).
+                     */
+                    std::string m_iPv4AddressType;
+                    bool m_iPv4AddressTypeHasBeenSet;
+
+                    /**
+                     * Anti-DDoS service package ID. This is required when you want to request an Anti-DDoS IP.
+                     */
+                    std::string m_antiDDoSPackageId;
+                    bool m_antiDDoSPackageIdHasBeenSet;
+
+                    /**
+                     * Whether to delete the bound EIP(HighQualityEIP and AntiDDoSEIP) when the instance is destroyed.
+
+Range of values:
+
+<li>TRUE: retain the EIP</li> <li>FALSE: not retain the EIP</li>Note that when the IPv4AddressType field specifies the EIP type, the default behavior is not to retain the EIP. 
+WanIP is unaffected by this field and will always be deleted with the instance. 
+Changing this field configuration will take effect immediately for resources already bound to a scaling group.
+                     */
+                    bool m_isKeepEIP;
+                    bool m_isKeepEIPHasBeenSet;
 
                 };
             }

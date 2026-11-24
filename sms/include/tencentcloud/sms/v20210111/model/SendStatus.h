@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * SMS delivery status
+                * SMS send status
                 */
                 class SendStatus : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SerialNoHasBeenSet() const;
 
                     /**
-                     * 获取Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number).
-                     * @return PhoneNumber Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number).
+                     * 获取Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +60198890000, which has a + sign followed by 60 (country/region code) and then by 198890000 (mobile number).
+                     * @return PhoneNumber Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +60198890000, which has a + sign followed by 60 (country/region code) and then by 198890000 (mobile number).
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number).
-                     * @param _phoneNumber Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number).
+                     * 设置Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +60198890000, which has a + sign followed by 60 (country/region code) and then by 198890000 (mobile number).
+                     * @param _phoneNumber Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +60198890000, which has a + sign followed by 60 (country/region code) and then by 198890000 (mobile number).
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取SMS request error code. For specific meanings, see [Error Codes](https://intl.cloud.tencent.com/zh/document/product/382/40536#6.-error-code). `Ok` will be returned for successful delivery.
-                     * @return Code SMS request error code. For specific meanings, see [Error Codes](https://intl.cloud.tencent.com/zh/document/product/382/40536#6.-error-code). `Ok` will be returned for successful delivery.
+                     * 获取SMS request error code. For specific meanings, see [Error Codes](https://www.tencentcloud.com/zh/document/product/382/40536#6.-Error-Code). `Ok` will be returned for successful delivery.
+                     * @return Code SMS request error code. For specific meanings, see [Error Codes](https://www.tencentcloud.com/zh/document/product/382/40536#6.-Error-Code). `Ok` will be returned for successful delivery.
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置SMS request error code. For specific meanings, see [Error Codes](https://intl.cloud.tencent.com/zh/document/product/382/40536#6.-error-code). `Ok` will be returned for successful delivery.
-                     * @param _code SMS request error code. For specific meanings, see [Error Codes](https://intl.cloud.tencent.com/zh/document/product/382/40536#6.-error-code). `Ok` will be returned for successful delivery.
+                     * 设置SMS request error code. For specific meanings, see [Error Codes](https://www.tencentcloud.com/zh/document/product/382/40536#6.-Error-Code). `Ok` will be returned for successful delivery.
+                     * @param _code SMS request error code. For specific meanings, see [Error Codes](https://www.tencentcloud.com/zh/document/product/382/40536#6.-Error-Code). `Ok` will be returned for successful delivery.
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Country/Region code, such as CN and US. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://intl.cloud.tencent.com/document/product/382/18051?from_cn_redirect=1).
-                     * @return IsoCode Country/Region code, such as CN and US. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://intl.cloud.tencent.com/document/product/382/18051?from_cn_redirect=1).
+                     * 获取Country/Region code, such as US and MY. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://www.tencentcloud.com/zh/document/product/382/8414).
+                     * @return IsoCode Country/Region code, such as US and MY. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://www.tencentcloud.com/zh/document/product/382/8414).
                      * 
                      */
                     std::string GetIsoCode() const;
 
                     /**
-                     * 设置Country/Region code, such as CN and US. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://intl.cloud.tencent.com/document/product/382/18051?from_cn_redirect=1).
-                     * @param _isoCode Country/Region code, such as CN and US. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://intl.cloud.tencent.com/document/product/382/18051?from_cn_redirect=1).
+                     * 设置Country/Region code, such as US and MY. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://www.tencentcloud.com/zh/document/product/382/8414).
+                     * @param _isoCode Country/Region code, such as US and MY. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://www.tencentcloud.com/zh/document/product/382/8414).
                      * 
                      */
                     void SetIsoCode(const std::string& _isoCode);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_serialNoHasBeenSet;
 
                     /**
-                     * Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number).
+                     * Mobile number in the E.164 standard (+[country/region code][mobile number]), such as +60198890000, which has a + sign followed by 60 (country/region code) and then by 198890000 (mobile number).
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * SMS request error code. For specific meanings, see [Error Codes](https://intl.cloud.tencent.com/zh/document/product/382/40536#6.-error-code). `Ok` will be returned for successful delivery.
+                     * SMS request error code. For specific meanings, see [Error Codes](https://www.tencentcloud.com/zh/document/product/382/40536#6.-Error-Code). `Ok` will be returned for successful delivery.
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Country/Region code, such as CN and US. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://intl.cloud.tencent.com/document/product/382/18051?from_cn_redirect=1).
+                     * Country/Region code, such as US and MY. For unrecognized country/region codes, `DEF` is returned by default. For the specific list of supported values, please see [Global SMS Price Overview](https://www.tencentcloud.com/zh/document/product/382/8414).
                      */
                     std::string m_isoCode;
                     bool m_isoCodeHasBeenSet;

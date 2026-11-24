@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The output audio parameters of an audio/video remastering task.
+                * Audio content of the remastering output.
                 */
                 class RebuildMediaTargetAudioStream : public AbstractModel
                 {
@@ -47,71 +47,71 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The audio codec.
-If `Container` is `mp3`, the valid value is:
-<li>`libmp3lame`</li>
-If `Container` is `ogg` or `flac`, the valid value is:
-<li>`flac`</li>
-If `Container` is `m4a`, the valid values are:
-<li>`libfdk_aac`</li>
-<li>`libmp3lame`</li>
-<li>`ac3`</li>
-If `Container` is `mp4` or `flv`, the valid values are:
-<li>`libfdk_aac` (Recommended for MP4)</li>
-<li>`libmp3lame` (Recommended for FLV)</li>
-<li>`mp2`</li>
-If `Container` is `hls`, the valid value is:
-<li>`libfdk_aac`</li>
-                     * @return Codec The audio codec.
-If `Container` is `mp3`, the valid value is:
-<li>`libmp3lame`</li>
-If `Container` is `ogg` or `flac`, the valid value is:
-<li>`flac`</li>
-If `Container` is `m4a`, the valid values are:
-<li>`libfdk_aac`</li>
-<li>`libmp3lame`</li>
-<li>`ac3`</li>
-If `Container` is `mp4` or `flv`, the valid values are:
-<li>`libfdk_aac` (Recommended for MP4)</li>
-<li>`libmp3lame` (Recommended for FLV)</li>
-<li>`mp2`</li>
-If `Container` is `hls`, the valid value is:
-<li>`libfdk_aac`</li>
+                     * 获取Audio stream encoding format.
+When the outer parameter Container is mp3, optional values:
+<li>libmp3lame.</li>
+When the outer parameter Container is ogg or flac, optional values:
+<li>flac.</li>
+When the outer parameter Container is m4a, valid values are:
+<li>libfdk_aac;</li>
+<li>libmp3lame;</li>
+<li>ac3.</li>
+When the outer parameter Container is mp4 or flv, valid values are:
+<li>libfdk_aac: more suitable for mp4;</li>
+<li>libmp3lame: more suitable for flv;</li>
+<li>mp2.</li>
+When the outer parameter Container is hls, valid values are:
+<li>libfdk_aac.</li>
+                     * @return Codec Audio stream encoding format.
+When the outer parameter Container is mp3, optional values:
+<li>libmp3lame.</li>
+When the outer parameter Container is ogg or flac, optional values:
+<li>flac.</li>
+When the outer parameter Container is m4a, valid values are:
+<li>libfdk_aac;</li>
+<li>libmp3lame;</li>
+<li>ac3.</li>
+When the outer parameter Container is mp4 or flv, valid values are:
+<li>libfdk_aac: more suitable for mp4;</li>
+<li>libmp3lame: more suitable for flv;</li>
+<li>mp2.</li>
+When the outer parameter Container is hls, valid values are:
+<li>libfdk_aac.</li>
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置The audio codec.
-If `Container` is `mp3`, the valid value is:
-<li>`libmp3lame`</li>
-If `Container` is `ogg` or `flac`, the valid value is:
-<li>`flac`</li>
-If `Container` is `m4a`, the valid values are:
-<li>`libfdk_aac`</li>
-<li>`libmp3lame`</li>
-<li>`ac3`</li>
-If `Container` is `mp4` or `flv`, the valid values are:
-<li>`libfdk_aac` (Recommended for MP4)</li>
-<li>`libmp3lame` (Recommended for FLV)</li>
-<li>`mp2`</li>
-If `Container` is `hls`, the valid value is:
-<li>`libfdk_aac`</li>
-                     * @param _codec The audio codec.
-If `Container` is `mp3`, the valid value is:
-<li>`libmp3lame`</li>
-If `Container` is `ogg` or `flac`, the valid value is:
-<li>`flac`</li>
-If `Container` is `m4a`, the valid values are:
-<li>`libfdk_aac`</li>
-<li>`libmp3lame`</li>
-<li>`ac3`</li>
-If `Container` is `mp4` or `flv`, the valid values are:
-<li>`libfdk_aac` (Recommended for MP4)</li>
-<li>`libmp3lame` (Recommended for FLV)</li>
-<li>`mp2`</li>
-If `Container` is `hls`, the valid value is:
-<li>`libfdk_aac`</li>
+                     * 设置Audio stream encoding format.
+When the outer parameter Container is mp3, optional values:
+<li>libmp3lame.</li>
+When the outer parameter Container is ogg or flac, optional values:
+<li>flac.</li>
+When the outer parameter Container is m4a, valid values are:
+<li>libfdk_aac;</li>
+<li>libmp3lame;</li>
+<li>ac3.</li>
+When the outer parameter Container is mp4 or flv, valid values are:
+<li>libfdk_aac: more suitable for mp4;</li>
+<li>libmp3lame: more suitable for flv;</li>
+<li>mp2.</li>
+When the outer parameter Container is hls, valid values are:
+<li>libfdk_aac.</li>
+                     * @param _codec Audio stream encoding format.
+When the outer parameter Container is mp3, optional values:
+<li>libmp3lame.</li>
+When the outer parameter Container is ogg or flac, optional values:
+<li>flac.</li>
+When the outer parameter Container is m4a, valid values are:
+<li>libfdk_aac;</li>
+<li>libmp3lame;</li>
+<li>ac3.</li>
+When the outer parameter Container is mp4 or flv, valid values are:
+<li>libfdk_aac: more suitable for mp4;</li>
+<li>libmp3lame: more suitable for flv;</li>
+<li>mp2.</li>
+When the outer parameter Container is hls, valid values are:
+<li>libfdk_aac.</li>
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -124,19 +124,19 @@ If `Container` is `hls`, the valid value is:
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取The audio bitrate, in Kbps. Value range: 0 and 26-256.
-If the value is `0`, the original audio bitrate will be used.
-                     * @return Bitrate The audio bitrate, in Kbps. Value range: 0 and 26-256.
-If the value is `0`, the original audio bitrate will be used.
+                     * 获取Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, VOD sets the bitrate automatically.
+                     * @return Bitrate Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, VOD sets the bitrate automatically.
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置The audio bitrate, in Kbps. Value range: 0 and 26-256.
-If the value is `0`, the original audio bitrate will be used.
-                     * @param _bitrate The audio bitrate, in Kbps. Value range: 0 and 26-256.
-If the value is `0`, the original audio bitrate will be used.
+                     * 设置Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, VOD sets the bitrate automatically.
+                     * @param _bitrate Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, VOD sets the bitrate automatically.
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -149,16 +149,16 @@ If the value is `0`, the original audio bitrate will be used.
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取The audio sample rate. Valid values:
-<li>`32000`</li>
-<li>`44100`</li>
-<li>`48000`</li>
+                     * 获取Sampling rate of the audio stream. Available values:
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
 
 Unit: Hz.
-                     * @return SampleRate The audio sample rate. Valid values:
-<li>`32000`</li>
-<li>`44100`</li>
-<li>`48000`</li>
+                     * @return SampleRate Sampling rate of the audio stream. Available values:
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
 
 Unit: Hz.
                      * 
@@ -166,16 +166,16 @@ Unit: Hz.
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置The audio sample rate. Valid values:
-<li>`32000`</li>
-<li>`44100`</li>
-<li>`48000`</li>
+                     * 设置Sampling rate of the audio stream. Available values:
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
 
 Unit: Hz.
-                     * @param _sampleRate The audio sample rate. Valid values:
-<li>`32000`</li>
-<li>`44100`</li>
-<li>`48000`</li>
+                     * @param _sampleRate Sampling rate of the audio stream. Available values:
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
 
 Unit: Hz.
                      * 
@@ -190,39 +190,39 @@ Unit: Hz.
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取The audio channels. Valid values:
-<li>`1`: Mono-channel</li>
-<li>`2`: Dual-channel</li>
-<li>`6`: Stereo</li>
+                     * 获取Audio channel mode. Valid values:
+<li>1: single channel.</li>
+<li>2: Dual-channel</li>
+<li>6: Stereo.</li>
 
-You cannot set this parameter to `6` if the container format is an audio format (FLAC, OGG, MP3, M4A).
-Default value: `2`.
-                     * @return AudioChannel The audio channels. Valid values:
-<li>`1`: Mono-channel</li>
-<li>`2`: Dual-channel</li>
-<li>`6`: Stereo</li>
+When the media encapsulation format is audio (flac, ogg, mp3, and m4a), the number of channels cannot be set to stereo.
+Default value: 2.
+                     * @return AudioChannel Audio channel mode. Valid values:
+<li>1: single channel.</li>
+<li>2: Dual-channel</li>
+<li>6: Stereo.</li>
 
-You cannot set this parameter to `6` if the container format is an audio format (FLAC, OGG, MP3, M4A).
-Default value: `2`.
+When the media encapsulation format is audio (flac, ogg, mp3, and m4a), the number of channels cannot be set to stereo.
+Default value: 2.
                      * 
                      */
                     int64_t GetAudioChannel() const;
 
                     /**
-                     * 设置The audio channels. Valid values:
-<li>`1`: Mono-channel</li>
-<li>`2`: Dual-channel</li>
-<li>`6`: Stereo</li>
+                     * 设置Audio channel mode. Valid values:
+<li>1: single channel.</li>
+<li>2: Dual-channel</li>
+<li>6: Stereo.</li>
 
-You cannot set this parameter to `6` if the container format is an audio format (FLAC, OGG, MP3, M4A).
-Default value: `2`.
-                     * @param _audioChannel The audio channels. Valid values:
-<li>`1`: Mono-channel</li>
-<li>`2`: Dual-channel</li>
-<li>`6`: Stereo</li>
+When the media encapsulation format is audio (flac, ogg, mp3, and m4a), the number of channels cannot be set to stereo.
+Default value: 2.
+                     * @param _audioChannel Audio channel mode. Valid values:
+<li>1: single channel.</li>
+<li>2: Dual-channel</li>
+<li>6: Stereo.</li>
 
-You cannot set this parameter to `6` if the container format is an audio format (FLAC, OGG, MP3, M4A).
-Default value: `2`.
+When the media encapsulation format is audio (flac, ogg, mp3, and m4a), the number of channels cannot be set to stereo.
+Default value: 2.
                      * 
                      */
                     void SetAudioChannel(const int64_t& _audioChannel);
@@ -237,37 +237,37 @@ Default value: `2`.
                 private:
 
                     /**
-                     * The audio codec.
-If `Container` is `mp3`, the valid value is:
-<li>`libmp3lame`</li>
-If `Container` is `ogg` or `flac`, the valid value is:
-<li>`flac`</li>
-If `Container` is `m4a`, the valid values are:
-<li>`libfdk_aac`</li>
-<li>`libmp3lame`</li>
-<li>`ac3`</li>
-If `Container` is `mp4` or `flv`, the valid values are:
-<li>`libfdk_aac` (Recommended for MP4)</li>
-<li>`libmp3lame` (Recommended for FLV)</li>
-<li>`mp2`</li>
-If `Container` is `hls`, the valid value is:
-<li>`libfdk_aac`</li>
+                     * Audio stream encoding format.
+When the outer parameter Container is mp3, optional values:
+<li>libmp3lame.</li>
+When the outer parameter Container is ogg or flac, optional values:
+<li>flac.</li>
+When the outer parameter Container is m4a, valid values are:
+<li>libfdk_aac;</li>
+<li>libmp3lame;</li>
+<li>ac3.</li>
+When the outer parameter Container is mp4 or flv, valid values are:
+<li>libfdk_aac: more suitable for mp4;</li>
+<li>libmp3lame: more suitable for flv;</li>
+<li>mp2.</li>
+When the outer parameter Container is hls, valid values are:
+<li>libfdk_aac.</li>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * The audio bitrate, in Kbps. Value range: 0 and 26-256.
-If the value is `0`, the original audio bitrate will be used.
+                     * Bitrate of the audio stream. Value range: 0 and [26, 256]. Unit: kbps.
+When the value is 0, VOD sets the bitrate automatically.
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * The audio sample rate. Valid values:
-<li>`32000`</li>
-<li>`44100`</li>
-<li>`48000`</li>
+                     * Sampling rate of the audio stream. Available values:
+<li>32000</li>
+<li>44100</li>
+<li>48000</li>
 
 Unit: Hz.
                      */
@@ -275,13 +275,13 @@ Unit: Hz.
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * The audio channels. Valid values:
-<li>`1`: Mono-channel</li>
-<li>`2`: Dual-channel</li>
-<li>`6`: Stereo</li>
+                     * Audio channel mode. Valid values:
+<li>1: single channel.</li>
+<li>2: Dual-channel</li>
+<li>6: Stereo.</li>
 
-You cannot set this parameter to `6` if the container format is an audio format (FLAC, OGG, MP3, M4A).
-Default value: `2`.
+When the media encapsulation format is audio (flac, ogg, mp3, and m4a), the number of channels cannot be set to stereo.
+Default value: 2.
                      */
                     int64_t m_audioChannel;
                     bool m_audioChannelHasBeenSet;

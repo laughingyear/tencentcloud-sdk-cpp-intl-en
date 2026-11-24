@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID
-                     * @return InstanceId Instance ID
+                     * 获取The ckafka cluster instance Id, which can be obtained through the [DescribeInstances](https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1) api.
+                     * @return InstanceId The ckafka cluster instance Id, which can be obtained through the [DescribeInstances](https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1) api.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID
-                     * @param _instanceId Instance ID
+                     * 设置The ckafka cluster instance Id, which can be obtained through the [DescribeInstances](https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1) api.
+                     * @param _instanceId The ckafka cluster instance Id, which can be obtained through the [DescribeInstances](https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1) api.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Quantity limit
-                     * @return Limit Quantity limit
+                     * 获取Number limit. default value is 50. maximum value is 50.
+                     * @return Limit Number limit. default value is 50. maximum value is 50.
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置Quantity limit
-                     * @param _limit Quantity limit
+                     * 设置Number limit. default value is 50. maximum value is 50.
+                     * @param _limit Number limit. default value is 50. maximum value is 50.
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -150,28 +150,28 @@ namespace TencentCloud
                     /**
                      * 获取Keyword match
                      * @return SearchWord Keyword match
-                     * 
+                     * @deprecated
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置Keyword match
                      * @param _searchWord Keyword match
-                     * 
+                     * @deprecated
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SearchWordHasBeenSet() const;
 
                 private:
 
                     /**
-                     * Instance ID
+                     * The ckafka cluster instance Id, which can be obtained through the [DescribeInstances](https://www.tencentcloud.com/document/product/597/40835?from_cn_redirect=1) api.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Quantity limit
+                     * Number limit. default value is 50. maximum value is 50.
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

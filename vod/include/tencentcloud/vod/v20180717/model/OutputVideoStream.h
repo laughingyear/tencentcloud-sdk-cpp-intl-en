@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of output video stream
+                * Output video stream information.
                 */
                 class OutputVideoStream : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video stream encoder. Valid values:
-<li>libx264: H.264</li>
+                     * 获取Encoding format for video streams. Optional values:
+<li>libx264: H.264 encoding.</li>
 Default value: libx264.
-                     * @return Codec Video stream encoder. Valid values:
-<li>libx264: H.264</li>
+                     * @return Codec Encoding format for video streams. Optional values:
+<li>libx264: H.264 encoding.</li>
 Default value: libx264.
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置Video stream encoder. Valid values:
-<li>libx264: H.264</li>
+                     * 设置Encoding format for video streams. Optional values:
+<li>libx264: H.264 encoding.</li>
 Default value: libx264.
-                     * @param _codec Video stream encoder. Valid values:
-<li>libx264: H.264</li>
+                     * @param _codec Encoding format for video streams. Optional values:
+<li>libx264: H.264 encoding.</li>
 Default value: libx264.
                      * 
                      */
@@ -76,19 +76,19 @@ Default value: libx264.
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取Video frame rate in Hz. Value range: [0, 60].
-Default value: 0, which means that the value is the same as the video frame rate of the first video segment in the first video track.
-                     * @return Fps Video frame rate in Hz. Value range: [0, 60].
-Default value: 0, which means that the value is the same as the video frame rate of the first video segment in the first video track.
+                     * 获取Video frame rate. Value range: [0, 60]. Unit: Hz.
+Default value: 0, which means the frame rate is the same as that of the first video clip in the first video track.
+                     * @return Fps Video frame rate. Value range: [0, 60]. Unit: Hz.
+Default value: 0, which means the frame rate is the same as that of the first video clip in the first video track.
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置Video frame rate in Hz. Value range: [0, 60].
-Default value: 0, which means that the value is the same as the video frame rate of the first video segment in the first video track.
-                     * @param _fps Video frame rate in Hz. Value range: [0, 60].
-Default value: 0, which means that the value is the same as the video frame rate of the first video segment in the first video track.
+                     * 设置Video frame rate. Value range: [0, 60]. Unit: Hz.
+Default value: 0, which means the frame rate is the same as that of the first video clip in the first video track.
+                     * @param _fps Video frame rate. Value range: [0, 60]. Unit: Hz.
+Default value: 0, which means the frame rate is the same as that of the first video clip in the first video track.
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -103,16 +103,16 @@ Default value: 0, which means that the value is the same as the video frame rate
                 private:
 
                     /**
-                     * Video stream encoder. Valid values:
-<li>libx264: H.264</li>
+                     * Encoding format for video streams. Optional values:
+<li>libx264: H.264 encoding.</li>
 Default value: libx264.
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * Video frame rate in Hz. Value range: [0, 60].
-Default value: 0, which means that the value is the same as the video frame rate of the first video segment in the first video track.
+                     * Video frame rate. Value range: [0, 60]. Unit: Hz.
+Default value: 0, which means the frame rate is the same as that of the first video clip in the first video track.
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;

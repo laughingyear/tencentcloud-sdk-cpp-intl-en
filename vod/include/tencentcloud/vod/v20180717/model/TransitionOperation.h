@@ -47,97 +47,97 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Transition type, the values u200bu200bare:
+                     * 获取Transition type. Valid values:
 <ul>
-<li>Image transition operation, used for transition processing between two video clip images:
+<li>Image transition operation, used for transition processing between two video clip images:</li>
 <ul>
-<li>ImageFadeInFadeOut: image fade in and fade out. </li>
-<li>BowTieHorizontal: horizontal bow tie. </li>
-<li>BowTieVertical: vertical bow tie. </li>
-<li>ButterflyWaveScrawler: Shake. </li>
+<li>ImageFadeInFadeOut: image fade-in and fade-out. </li>
+<li>BowTieHorizontal: horizontal bow. </li>
+<li>BowTieVertical: vertical bow. </li>
+<li>ButterflyWaveScrawler: shake. </li>
 <li>Cannabisleaf: maple leaf. </li>
-<li>Circle: Arc retraction. </li>
-<li>CircleCrop: Circles gather together. </li>
-<li>Circleopen: ellipse gathering. </li>
-<li>Crosswarp: Horizontal warping. </li>
-<li>Cube: Cube. </li>
-<li>DoomScreenTransition: Curtain. </li>
+<li>Circle: retract and release in an arc. </li>
+<li>CircleCrop: Ring gather. </li>
+<li>Circleopen: ellipse gather. </li>
+<li>Crosswarp: horizontal warping. </li>
+<li>Cube: cube. </li>
+<li>DoomScreenTransition: curtain. </li>
 <li>Doorway: Porch. </li>
-<li>Dreamy: Wave. </li>
-<li>DreamyZoom: Horizontal zoom. </li>
-<li>FilmBurn: Fire Burning Cloud. </li>
-<li>GlitchMemories: Glitch. </li>
+<li>Dreamy: wave. </li>
+<li>DreamyZoom: horizontal gathering. </li>
+<li>FilmBurn: Burning clouds. </li>
+<li>GlitchMemories: Jitter. </li>
 <li>Heart: heart shape. </li>
 <li>InvertedPageCurl: Page turning. </li>
-<li>Luma: Corrosion. </li>
-<li>Mosaic: Nine-square grid. </li>
-<li>Pinwheel: Windmill. </li>
-<li>PolarFunction: elliptical diffusion. </li>
+<li>Luma: Corrode. </li>
+<li>Mosaic: nine-grid. </li>
+<li>Pinwheel: windmill. </li>
+<li>PolarFunction: elliptic diffusion. </li>
 <li>PolkaDotsCurtain: Arc diffusion. </li>
-<li>Radial: radar scanning </li>
-<li>RotateScaleFade: up and down. </li>
-<li>Squeeze: gather up and down. </li>
-<li>Swap: zoom in and switch. </li>
+<li>Radial: radar scanning</li>
+<li>RotateScaleFade: up-down retraction. </li>
+<li>Squeeze: vertical gathering. </li>
+<li>Swap: enlarge and switch.</li>
 <li>Swirl: spiral. </li>
-<li>UndulatingBurnOutSwirl: Water spreading. </li>
-<li>Windowblinds: blinds. </li>
-<li>WipeDown: Wrap downward. </li>
-<li>WipeLeft: Wrap to the left. </li>
-<li>WipeRight: Wrap to the right. </li>
-<li>WipeUp: Wrap up. </li>
-<li>ZoomInCircles: Water ripples. </li>
+<li>UndulatingBurnOutSwirl: Water flow spread. </li>
+<li>Windowblinds: window blind. </li>
+<li>WipeDown: collapse downward. </li>
+<li>WipeLeft: Collapse to the left. </li>
+<li>WipeRight: collapse rightward. </li>
+<li>WipeUp: collapse upward. </li>
+<li>ZoomInCircles: water ripple. </li>
 </ul>
 </li>
 <li>Audio transition operation, used for transition processing between two audio clips:
 <ul>
-<li>AudioFadeInFadeOut : The sound fades in and out. </li>
+<li>AudioFadeInFadeOut: sound fade-in and fade-out.</li>
 </ul>
 </li>
 </ul>
-                     * @return Type Transition type, the values u200bu200bare:
+                     * @return Type Transition type. Valid values:
 <ul>
-<li>Image transition operation, used for transition processing between two video clip images:
+<li>Image transition operation, used for transition processing between two video clip images:</li>
 <ul>
-<li>ImageFadeInFadeOut: image fade in and fade out. </li>
-<li>BowTieHorizontal: horizontal bow tie. </li>
-<li>BowTieVertical: vertical bow tie. </li>
-<li>ButterflyWaveScrawler: Shake. </li>
+<li>ImageFadeInFadeOut: image fade-in and fade-out. </li>
+<li>BowTieHorizontal: horizontal bow. </li>
+<li>BowTieVertical: vertical bow. </li>
+<li>ButterflyWaveScrawler: shake. </li>
 <li>Cannabisleaf: maple leaf. </li>
-<li>Circle: Arc retraction. </li>
-<li>CircleCrop: Circles gather together. </li>
-<li>Circleopen: ellipse gathering. </li>
-<li>Crosswarp: Horizontal warping. </li>
-<li>Cube: Cube. </li>
-<li>DoomScreenTransition: Curtain. </li>
+<li>Circle: retract and release in an arc. </li>
+<li>CircleCrop: Ring gather. </li>
+<li>Circleopen: ellipse gather. </li>
+<li>Crosswarp: horizontal warping. </li>
+<li>Cube: cube. </li>
+<li>DoomScreenTransition: curtain. </li>
 <li>Doorway: Porch. </li>
-<li>Dreamy: Wave. </li>
-<li>DreamyZoom: Horizontal zoom. </li>
-<li>FilmBurn: Fire Burning Cloud. </li>
-<li>GlitchMemories: Glitch. </li>
+<li>Dreamy: wave. </li>
+<li>DreamyZoom: horizontal gathering. </li>
+<li>FilmBurn: Burning clouds. </li>
+<li>GlitchMemories: Jitter. </li>
 <li>Heart: heart shape. </li>
 <li>InvertedPageCurl: Page turning. </li>
-<li>Luma: Corrosion. </li>
-<li>Mosaic: Nine-square grid. </li>
-<li>Pinwheel: Windmill. </li>
-<li>PolarFunction: elliptical diffusion. </li>
+<li>Luma: Corrode. </li>
+<li>Mosaic: nine-grid. </li>
+<li>Pinwheel: windmill. </li>
+<li>PolarFunction: elliptic diffusion. </li>
 <li>PolkaDotsCurtain: Arc diffusion. </li>
-<li>Radial: radar scanning </li>
-<li>RotateScaleFade: up and down. </li>
-<li>Squeeze: gather up and down. </li>
-<li>Swap: zoom in and switch. </li>
+<li>Radial: radar scanning</li>
+<li>RotateScaleFade: up-down retraction. </li>
+<li>Squeeze: vertical gathering. </li>
+<li>Swap: enlarge and switch.</li>
 <li>Swirl: spiral. </li>
-<li>UndulatingBurnOutSwirl: Water spreading. </li>
-<li>Windowblinds: blinds. </li>
-<li>WipeDown: Wrap downward. </li>
-<li>WipeLeft: Wrap to the left. </li>
-<li>WipeRight: Wrap to the right. </li>
-<li>WipeUp: Wrap up. </li>
-<li>ZoomInCircles: Water ripples. </li>
+<li>UndulatingBurnOutSwirl: Water flow spread. </li>
+<li>Windowblinds: window blind. </li>
+<li>WipeDown: collapse downward. </li>
+<li>WipeLeft: Collapse to the left. </li>
+<li>WipeRight: collapse rightward. </li>
+<li>WipeUp: collapse upward. </li>
+<li>ZoomInCircles: water ripple. </li>
 </ul>
 </li>
 <li>Audio transition operation, used for transition processing between two audio clips:
 <ul>
-<li>AudioFadeInFadeOut : The sound fades in and out. </li>
+<li>AudioFadeInFadeOut: sound fade-in and fade-out.</li>
 </ul>
 </li>
 </ul>
@@ -146,97 +146,97 @@ namespace TencentCloud
                     std::string GetType() const;
 
                     /**
-                     * 设置Transition type, the values u200bu200bare:
+                     * 设置Transition type. Valid values:
 <ul>
-<li>Image transition operation, used for transition processing between two video clip images:
+<li>Image transition operation, used for transition processing between two video clip images:</li>
 <ul>
-<li>ImageFadeInFadeOut: image fade in and fade out. </li>
-<li>BowTieHorizontal: horizontal bow tie. </li>
-<li>BowTieVertical: vertical bow tie. </li>
-<li>ButterflyWaveScrawler: Shake. </li>
+<li>ImageFadeInFadeOut: image fade-in and fade-out. </li>
+<li>BowTieHorizontal: horizontal bow. </li>
+<li>BowTieVertical: vertical bow. </li>
+<li>ButterflyWaveScrawler: shake. </li>
 <li>Cannabisleaf: maple leaf. </li>
-<li>Circle: Arc retraction. </li>
-<li>CircleCrop: Circles gather together. </li>
-<li>Circleopen: ellipse gathering. </li>
-<li>Crosswarp: Horizontal warping. </li>
-<li>Cube: Cube. </li>
-<li>DoomScreenTransition: Curtain. </li>
+<li>Circle: retract and release in an arc. </li>
+<li>CircleCrop: Ring gather. </li>
+<li>Circleopen: ellipse gather. </li>
+<li>Crosswarp: horizontal warping. </li>
+<li>Cube: cube. </li>
+<li>DoomScreenTransition: curtain. </li>
 <li>Doorway: Porch. </li>
-<li>Dreamy: Wave. </li>
-<li>DreamyZoom: Horizontal zoom. </li>
-<li>FilmBurn: Fire Burning Cloud. </li>
-<li>GlitchMemories: Glitch. </li>
+<li>Dreamy: wave. </li>
+<li>DreamyZoom: horizontal gathering. </li>
+<li>FilmBurn: Burning clouds. </li>
+<li>GlitchMemories: Jitter. </li>
 <li>Heart: heart shape. </li>
 <li>InvertedPageCurl: Page turning. </li>
-<li>Luma: Corrosion. </li>
-<li>Mosaic: Nine-square grid. </li>
-<li>Pinwheel: Windmill. </li>
-<li>PolarFunction: elliptical diffusion. </li>
+<li>Luma: Corrode. </li>
+<li>Mosaic: nine-grid. </li>
+<li>Pinwheel: windmill. </li>
+<li>PolarFunction: elliptic diffusion. </li>
 <li>PolkaDotsCurtain: Arc diffusion. </li>
-<li>Radial: radar scanning </li>
-<li>RotateScaleFade: up and down. </li>
-<li>Squeeze: gather up and down. </li>
-<li>Swap: zoom in and switch. </li>
+<li>Radial: radar scanning</li>
+<li>RotateScaleFade: up-down retraction. </li>
+<li>Squeeze: vertical gathering. </li>
+<li>Swap: enlarge and switch.</li>
 <li>Swirl: spiral. </li>
-<li>UndulatingBurnOutSwirl: Water spreading. </li>
-<li>Windowblinds: blinds. </li>
-<li>WipeDown: Wrap downward. </li>
-<li>WipeLeft: Wrap to the left. </li>
-<li>WipeRight: Wrap to the right. </li>
-<li>WipeUp: Wrap up. </li>
-<li>ZoomInCircles: Water ripples. </li>
+<li>UndulatingBurnOutSwirl: Water flow spread. </li>
+<li>Windowblinds: window blind. </li>
+<li>WipeDown: collapse downward. </li>
+<li>WipeLeft: Collapse to the left. </li>
+<li>WipeRight: collapse rightward. </li>
+<li>WipeUp: collapse upward. </li>
+<li>ZoomInCircles: water ripple. </li>
 </ul>
 </li>
 <li>Audio transition operation, used for transition processing between two audio clips:
 <ul>
-<li>AudioFadeInFadeOut : The sound fades in and out. </li>
+<li>AudioFadeInFadeOut: sound fade-in and fade-out.</li>
 </ul>
 </li>
 </ul>
-                     * @param _type Transition type, the values u200bu200bare:
+                     * @param _type Transition type. Valid values:
 <ul>
-<li>Image transition operation, used for transition processing between two video clip images:
+<li>Image transition operation, used for transition processing between two video clip images:</li>
 <ul>
-<li>ImageFadeInFadeOut: image fade in and fade out. </li>
-<li>BowTieHorizontal: horizontal bow tie. </li>
-<li>BowTieVertical: vertical bow tie. </li>
-<li>ButterflyWaveScrawler: Shake. </li>
+<li>ImageFadeInFadeOut: image fade-in and fade-out. </li>
+<li>BowTieHorizontal: horizontal bow. </li>
+<li>BowTieVertical: vertical bow. </li>
+<li>ButterflyWaveScrawler: shake. </li>
 <li>Cannabisleaf: maple leaf. </li>
-<li>Circle: Arc retraction. </li>
-<li>CircleCrop: Circles gather together. </li>
-<li>Circleopen: ellipse gathering. </li>
-<li>Crosswarp: Horizontal warping. </li>
-<li>Cube: Cube. </li>
-<li>DoomScreenTransition: Curtain. </li>
+<li>Circle: retract and release in an arc. </li>
+<li>CircleCrop: Ring gather. </li>
+<li>Circleopen: ellipse gather. </li>
+<li>Crosswarp: horizontal warping. </li>
+<li>Cube: cube. </li>
+<li>DoomScreenTransition: curtain. </li>
 <li>Doorway: Porch. </li>
-<li>Dreamy: Wave. </li>
-<li>DreamyZoom: Horizontal zoom. </li>
-<li>FilmBurn: Fire Burning Cloud. </li>
-<li>GlitchMemories: Glitch. </li>
+<li>Dreamy: wave. </li>
+<li>DreamyZoom: horizontal gathering. </li>
+<li>FilmBurn: Burning clouds. </li>
+<li>GlitchMemories: Jitter. </li>
 <li>Heart: heart shape. </li>
 <li>InvertedPageCurl: Page turning. </li>
-<li>Luma: Corrosion. </li>
-<li>Mosaic: Nine-square grid. </li>
-<li>Pinwheel: Windmill. </li>
-<li>PolarFunction: elliptical diffusion. </li>
+<li>Luma: Corrode. </li>
+<li>Mosaic: nine-grid. </li>
+<li>Pinwheel: windmill. </li>
+<li>PolarFunction: elliptic diffusion. </li>
 <li>PolkaDotsCurtain: Arc diffusion. </li>
-<li>Radial: radar scanning </li>
-<li>RotateScaleFade: up and down. </li>
-<li>Squeeze: gather up and down. </li>
-<li>Swap: zoom in and switch. </li>
+<li>Radial: radar scanning</li>
+<li>RotateScaleFade: up-down retraction. </li>
+<li>Squeeze: vertical gathering. </li>
+<li>Swap: enlarge and switch.</li>
 <li>Swirl: spiral. </li>
-<li>UndulatingBurnOutSwirl: Water spreading. </li>
-<li>Windowblinds: blinds. </li>
-<li>WipeDown: Wrap downward. </li>
-<li>WipeLeft: Wrap to the left. </li>
-<li>WipeRight: Wrap to the right. </li>
-<li>WipeUp: Wrap up. </li>
-<li>ZoomInCircles: Water ripples. </li>
+<li>UndulatingBurnOutSwirl: Water flow spread. </li>
+<li>Windowblinds: window blind. </li>
+<li>WipeDown: collapse downward. </li>
+<li>WipeLeft: Collapse to the left. </li>
+<li>WipeRight: collapse rightward. </li>
+<li>WipeUp: collapse upward. </li>
+<li>ZoomInCircles: water ripple. </li>
 </ul>
 </li>
 <li>Audio transition operation, used for transition processing between two audio clips:
 <ul>
-<li>AudioFadeInFadeOut : The sound fades in and out. </li>
+<li>AudioFadeInFadeOut: sound fade-in and fade-out.</li>
 </ul>
 </li>
 </ul>
@@ -254,50 +254,50 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Transition type, the values u200bu200bare:
+                     * Transition type. Valid values:
 <ul>
-<li>Image transition operation, used for transition processing between two video clip images:
+<li>Image transition operation, used for transition processing between two video clip images:</li>
 <ul>
-<li>ImageFadeInFadeOut: image fade in and fade out. </li>
-<li>BowTieHorizontal: horizontal bow tie. </li>
-<li>BowTieVertical: vertical bow tie. </li>
-<li>ButterflyWaveScrawler: Shake. </li>
+<li>ImageFadeInFadeOut: image fade-in and fade-out. </li>
+<li>BowTieHorizontal: horizontal bow. </li>
+<li>BowTieVertical: vertical bow. </li>
+<li>ButterflyWaveScrawler: shake. </li>
 <li>Cannabisleaf: maple leaf. </li>
-<li>Circle: Arc retraction. </li>
-<li>CircleCrop: Circles gather together. </li>
-<li>Circleopen: ellipse gathering. </li>
-<li>Crosswarp: Horizontal warping. </li>
-<li>Cube: Cube. </li>
-<li>DoomScreenTransition: Curtain. </li>
+<li>Circle: retract and release in an arc. </li>
+<li>CircleCrop: Ring gather. </li>
+<li>Circleopen: ellipse gather. </li>
+<li>Crosswarp: horizontal warping. </li>
+<li>Cube: cube. </li>
+<li>DoomScreenTransition: curtain. </li>
 <li>Doorway: Porch. </li>
-<li>Dreamy: Wave. </li>
-<li>DreamyZoom: Horizontal zoom. </li>
-<li>FilmBurn: Fire Burning Cloud. </li>
-<li>GlitchMemories: Glitch. </li>
+<li>Dreamy: wave. </li>
+<li>DreamyZoom: horizontal gathering. </li>
+<li>FilmBurn: Burning clouds. </li>
+<li>GlitchMemories: Jitter. </li>
 <li>Heart: heart shape. </li>
 <li>InvertedPageCurl: Page turning. </li>
-<li>Luma: Corrosion. </li>
-<li>Mosaic: Nine-square grid. </li>
-<li>Pinwheel: Windmill. </li>
-<li>PolarFunction: elliptical diffusion. </li>
+<li>Luma: Corrode. </li>
+<li>Mosaic: nine-grid. </li>
+<li>Pinwheel: windmill. </li>
+<li>PolarFunction: elliptic diffusion. </li>
 <li>PolkaDotsCurtain: Arc diffusion. </li>
-<li>Radial: radar scanning </li>
-<li>RotateScaleFade: up and down. </li>
-<li>Squeeze: gather up and down. </li>
-<li>Swap: zoom in and switch. </li>
+<li>Radial: radar scanning</li>
+<li>RotateScaleFade: up-down retraction. </li>
+<li>Squeeze: vertical gathering. </li>
+<li>Swap: enlarge and switch.</li>
 <li>Swirl: spiral. </li>
-<li>UndulatingBurnOutSwirl: Water spreading. </li>
-<li>Windowblinds: blinds. </li>
-<li>WipeDown: Wrap downward. </li>
-<li>WipeLeft: Wrap to the left. </li>
-<li>WipeRight: Wrap to the right. </li>
-<li>WipeUp: Wrap up. </li>
-<li>ZoomInCircles: Water ripples. </li>
+<li>UndulatingBurnOutSwirl: Water flow spread. </li>
+<li>Windowblinds: window blind. </li>
+<li>WipeDown: collapse downward. </li>
+<li>WipeLeft: Collapse to the left. </li>
+<li>WipeRight: collapse rightward. </li>
+<li>WipeUp: collapse upward. </li>
+<li>ZoomInCircles: water ripple. </li>
 </ul>
 </li>
 <li>Audio transition operation, used for transition processing between two audio clips:
 <ul>
-<li>AudioFadeInFadeOut : The sound fades in and out. </li>
+<li>AudioFadeInFadeOut: sound fade-in and fade-out.</li>
 </ul>
 </li>
 </ul>

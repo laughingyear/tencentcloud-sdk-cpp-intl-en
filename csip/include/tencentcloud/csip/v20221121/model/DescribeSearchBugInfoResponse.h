@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vulnerability and asset information
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Data Vulnerability and asset information
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Vulnerability information and asset information
+                     * @return Data Vulnerability information and asset information
                      * 
                      */
                     DataSearchBug GetData() const;
@@ -61,8 +59,8 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取Status code. Valid values: 0: successful; others: failed.
-                     * @return ReturnCode Status code. Valid values: 0: successful; others: failed.
+                     * 获取Status value. 0: query successful. Non-zero: query failed.
+                     * @return ReturnCode Status value. 0: query successful. Non-zero: query failed.
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -75,8 +73,8 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取Status message. Valid values: success: successful query; fail: failed query.
-                     * @return ReturnMsg Status message. Valid values: success: successful query; fail: failed query.
+                     * 获取Status information. success: query succeeded. fail: query failed.
+                     * @return ReturnMsg Status information. success: query succeeded. fail: query failed.
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -91,20 +89,19 @@ Note: This field may return·null, indicating that no valid values can be obtain
                 private:
 
                     /**
-                     * Vulnerability and asset information
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Vulnerability information and asset information
                      */
                     DataSearchBug m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * Status code. Valid values: 0: successful; others: failed.
+                     * Status value. 0: query successful. Non-zero: query failed.
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * Status message. Valid values: success: successful query; fail: failed query.
+                     * Status information. success: query succeeded. fail: query failed.
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;

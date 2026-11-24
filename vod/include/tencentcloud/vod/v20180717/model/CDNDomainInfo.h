@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CDN domain name information
+                * cdn domain information
                 */
                 class CDNDomainInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Domain.
-                     * @return Domain Domain.
+                     * 获取Domain name.
+                     * @return Domain Domain name.
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置Domain.
-                     * @param _domain Domain.
+                     * 设置Domain name.
+                     * @param _domain Domain name.
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取Deployment status.
-                     * @return DeployStatus Deployment status.
+                     * 获取Deployment state.
+                     * @return DeployStatus Deployment state.
                      * 
                      */
                     std::string GetDeployStatus() const;
 
                     /**
-                     * 设置Deployment status.
-                     * @param _deployStatus Deployment status.
+                     * 设置Deployment state.
+                     * @param _deployStatus Deployment state.
                      * 
                      */
                     void SetDeployStatus(const std::string& _deployStatus);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取Create Time
-                     * @return CreateTime Create Time
+                     * 获取Creation time.
+                     * @return CreateTime Creation time.
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Create Time
-                     * @param _createTime Create Time
+                     * 设置Creation time.
+                     * @param _createTime Creation time.
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -132,19 +132,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取CDN domain name configuration information. 
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Config CDN domain name configuration information. 
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取cdn domain configuration information.
+                     * @return Config cdn domain configuration information.
                      * 
                      */
                     CDNDomainConfig GetConfig() const;
 
                     /**
-                     * 设置CDN domain name configuration information. 
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _config CDN domain name configuration information. 
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置cdn domain configuration information.
+                     * @param _config cdn domain configuration information.
                      * 
                      */
                     void SetConfig(const CDNDomainConfig& _config);
@@ -159,13 +155,13 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * Domain.
+                     * Domain name.
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * Deployment status.
+                     * Deployment state.
                      */
                     std::string m_deployStatus;
                     bool m_deployStatusHasBeenSet;
@@ -177,14 +173,13 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * Create Time
+                     * Creation time.
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * CDN domain name configuration information. 
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * cdn domain configuration information.
                      */
                     CDNDomainConfig m_config;
                     bool m_configHasBeenSet;

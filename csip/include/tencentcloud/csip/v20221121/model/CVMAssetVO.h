@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/Tag.h>
+#include <tencentcloud/csip/v20221121/model/Element.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,16 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Details of a server asset
+                * Host Asset Information
+
+Enumeration of host protection status. The left side is a constant, and the right side is the display.
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
                 */
                 class CVMAssetVO : public AbstractModel
                 {
@@ -49,18 +59,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Asset ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return AssetId Asset ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置Asset ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _assetId Asset ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -74,18 +80,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Asset name
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return AssetName Asset name
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置Asset name
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _assetName Asset name
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -99,18 +101,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Asset type
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return AssetType Asset type
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置Asset type
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _assetType Asset type
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -123,19 +121,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AssetTypeHasBeenSet() const;
 
                     /**
-                     * 获取Region
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Region Region
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Region.
+                     * @return Region Region.
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置Region
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _region Region
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Region.
+                     * @param _region Region.
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -149,18 +143,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Protection status
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return CWPStatus Protection status
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     uint64_t GetCWPStatus() const;
 
                     /**
                      * 设置Protection status
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _cWPStatus Protection status
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetCWPStatus(const uint64_t& _cWPStatus);
@@ -174,18 +164,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Asset creation time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return AssetCreateTime Asset creation time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetAssetCreateTime() const;
 
                     /**
                      * 设置Asset creation time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _assetCreateTime Asset creation time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAssetCreateTime(const std::string& _assetCreateTime);
@@ -198,19 +184,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AssetCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Public IP
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return PublicIp Public IP
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Public IP address
+                     * @return PublicIp Public IP address
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置Public IP
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _publicIp Public IP
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Public IP address
+                     * @param _publicIp Public IP address
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -224,18 +206,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Private IP
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return PrivateIp Private IP
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置Private IP
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _privateIp Private IP
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -248,15 +226,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return VpcId 
+                     * 获取vpc id
+                     * @return VpcId vpc id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置
-                     * @param _vpcId 
+                     * 设置vpc id
+                     * @param _vpcId vpc id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -269,19 +247,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return VpcName VPC name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取VPC Name
+                     * @return VpcName VPC Name
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置VPC name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _vpcName VPC name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置VPC Name
+                     * @param _vpcName VPC Name
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -294,19 +268,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取App ID
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return AppId App ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取App ID information
+                     * @return AppId App ID information
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置App ID
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _appId App ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置App ID information
+                     * @param _appId App ID information
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -319,19 +289,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取User UIN
+                     * @return Uin User UIN
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置User UIN
+                     * @param _uin User UIN
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -344,19 +310,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取User name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return NickName User name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Nickname.
+                     * @return NickName Nickname.
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置User name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _nickName User name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Nickname.
+                     * @param _nickName Nickname.
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -370,18 +332,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Availability zone
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return AvailableArea Availability zone
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetAvailableArea() const;
 
                     /**
                      * 设置Availability zone
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _availableArea Availability zone
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetAvailableArea(const std::string& _availableArea);
@@ -394,19 +352,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AvailableAreaHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsCore Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Core or Not
+                     * @return IsCore Core or Not
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
-                     * 设置Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isCore Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Core or Not
+                     * @param _isCore Core or Not
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -420,18 +374,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Subnet ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return SubnetId Subnet ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置Subnet ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _subnetId Subnet ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -444,19 +394,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Subnet name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return SubnetName Subnet name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Subnet Name
+                     * @return SubnetName Subnet Name
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置Subnet name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _subnetName Subnet name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Subnet Name
+                     * @param _subnetName Subnet Name
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -469,19 +415,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取UUID of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return InstanceUuid UUID of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Host security Agent UUID
+                     * @return InstanceUuid Host security Agent UUID
                      * 
                      */
                     std::string GetInstanceUuid() const;
 
                     /**
-                     * 设置UUID of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _instanceUuid UUID of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Host security Agent UUID
+                     * @param _instanceUuid Host security Agent UUID
                      * 
                      */
                     void SetInstanceUuid(const std::string& _instanceUuid);
@@ -494,19 +436,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InstanceUuidHasBeenSet() const;
 
                     /**
-                     * 获取QUuid of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return InstanceQUuid QUuid of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取CVM UUID
+                     * @return InstanceQUuid CVM UUID
                      * 
                      */
                     std::string GetInstanceQUuid() const;
 
                     /**
-                     * 设置QUuid of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _instanceQUuid QUuid of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置CVM UUID
+                     * @param _instanceQUuid CVM UUID
                      * 
                      */
                     void SetInstanceQUuid(const std::string& _instanceQUuid);
@@ -519,19 +457,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InstanceQUuidHasBeenSet() const;
 
                     /**
-                     * 获取OS name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return OsName OS name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取OS Name
+                     * @return OsName OS Name
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置OS name
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _osName OS name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置OS Name
+                     * @param _osName OS Name
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -544,19 +478,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取Number of partitions
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return PartitionCount Number of partitions
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Partition
+                     * @return PartitionCount Partition
                      * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
-                     * 设置Number of partitions
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _partitionCount Number of partitions
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Partition
+                     * @param _partitionCount Partition
                      * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
@@ -569,19 +499,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool PartitionCountHasBeenSet() const;
 
                     /**
-                     * 获取CPU information
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CPUInfo CPU information
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取CPU Information
+                     * @return CPUInfo CPU Information
                      * 
                      */
                     std::string GetCPUInfo() const;
 
                     /**
-                     * 设置CPU information
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cPUInfo CPU information
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置CPU Information
+                     * @param _cPUInfo CPU Information
                      * 
                      */
                     void SetCPUInfo(const std::string& _cPUInfo);
@@ -594,19 +520,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CPUInfoHasBeenSet() const;
 
                     /**
-                     * 获取CPU size
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CPUSize CPU size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取CPU Size
+                     * @return CPUSize CPU Size
                      * 
                      */
                     uint64_t GetCPUSize() const;
 
                     /**
-                     * 设置CPU size
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cPUSize CPU size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置CPU Size
+                     * @param _cPUSize CPU Size
                      * 
                      */
                     void SetCPUSize(const uint64_t& _cPUSize);
@@ -619,19 +541,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CPUSizeHasBeenSet() const;
 
                     /**
-                     * 获取CPU load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CPULoad CPU load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取CPU Load
+                     * @return CPULoad CPU Load
                      * 
                      */
                     std::string GetCPULoad() const;
 
                     /**
-                     * 设置CPU load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cPULoad CPU load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置CPU Load
+                     * @param _cPULoad CPU Load
                      * 
                      */
                     void SetCPULoad(const std::string& _cPULoad);
@@ -644,19 +562,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CPULoadHasBeenSet() const;
 
                     /**
-                     * 获取Memory size
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return MemorySize Memory size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Memory size.
+                     * @return MemorySize Memory size.
                      * 
                      */
                     std::string GetMemorySize() const;
 
                     /**
-                     * 设置Memory size
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _memorySize Memory size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Memory size.
+                     * @param _memorySize Memory size.
                      * 
                      */
                     void SetMemorySize(const std::string& _memorySize);
@@ -669,19 +583,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool MemorySizeHasBeenSet() const;
 
                     /**
-                     * 获取Memory load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return MemoryLoad Memory load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Memory Load
+                     * @return MemoryLoad Memory Load
                      * 
                      */
                     std::string GetMemoryLoad() const;
 
                     /**
-                     * 设置Memory load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _memoryLoad Memory load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Memory Load
+                     * @param _memoryLoad Memory Load
                      * 
                      */
                     void SetMemoryLoad(const std::string& _memoryLoad);
@@ -694,19 +604,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool MemoryLoadHasBeenSet() const;
 
                     /**
-                     * 获取Disk size.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return DiskSize Disk size.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Hard disk size.
+                     * @return DiskSize Hard disk size.
                      * 
                      */
                     std::string GetDiskSize() const;
 
                     /**
-                     * 设置Disk size.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _diskSize Disk size.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Hard disk size.
+                     * @param _diskSize Hard disk size.
                      * 
                      */
                     void SetDiskSize(const std::string& _diskSize);
@@ -719,19 +625,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取Disk load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return DiskLoad Disk load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Hard Disk Load
+                     * @return DiskLoad Hard Disk Load
                      * 
                      */
                     std::string GetDiskLoad() const;
 
                     /**
-                     * 设置Disk load
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _diskLoad Disk load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Hard Disk Load
+                     * @param _diskLoad Hard Disk Load
                      * 
                      */
                     void SetDiskLoad(const std::string& _diskLoad);
@@ -744,19 +646,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DiskLoadHasBeenSet() const;
 
                     /**
-                     * 获取Number of accounts
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return AccountCount Number of accounts
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Number of Accounts
+                     * @return AccountCount Number of Accounts
                      * 
                      */
                     std::string GetAccountCount() const;
 
                     /**
-                     * 设置Number of accounts
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _accountCount Number of accounts
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Number of Accounts
+                     * @param _accountCount Number of Accounts
                      * 
                      */
                     void SetAccountCount(const std::string& _accountCount);
@@ -769,19 +667,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AccountCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of processes
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return ProcessCount Number of processes
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Number of Processes
+                     * @return ProcessCount Number of Processes
                      * 
                      */
                     std::string GetProcessCount() const;
 
                     /**
-                     * 设置Number of processes
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _processCount Number of processes
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Number of Processes
+                     * @param _processCount Number of Processes
                      * 
                      */
                     void SetProcessCount(const std::string& _processCount);
@@ -794,19 +688,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ProcessCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of applications
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return AppCount Number of applications
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Software application
+                     * @return AppCount Software application
                      * 
                      */
                     std::string GetAppCount() const;
 
                     /**
-                     * 设置Number of applications
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _appCount Number of applications
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Software application
+                     * @param _appCount Software application
                      * 
                      */
                     void SetAppCount(const std::string& _appCount);
@@ -819,19 +709,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AppCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of listened ports.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return PortCount Number of listened ports.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Listening port
+                     * @return PortCount Listening port
                      * 
                      */
                     uint64_t GetPortCount() const;
 
                     /**
-                     * 设置Number of listened ports.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _portCount Number of listened ports.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Listening port
+                     * @param _portCount Listening port
                      * 
                      */
                     void SetPortCount(const uint64_t& _portCount);
@@ -844,19 +730,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool PortCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of network attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Attack Number of network attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Network attack
+                     * @return Attack Network attack
                      * 
                      */
                     uint64_t GetAttack() const;
 
                     /**
-                     * 设置Number of network attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _attack Number of network attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Network attack
+                     * @param _attack Network attack
                      * 
                      */
                     void SetAttack(const uint64_t& _attack);
@@ -869,19 +751,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AttackHasBeenSet() const;
 
                     /**
-                     * 获取Number of network access requests
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Access Number of network access requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Network access
+                     * @return Access Network access
                      * 
                      */
                     uint64_t GetAccess() const;
 
                     /**
-                     * 设置Number of network access requests
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _access Number of network access requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Network access
+                     * @param _access Network access
                      * 
                      */
                     void SetAccess(const uint64_t& _access);
@@ -894,19 +772,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AccessHasBeenSet() const;
 
                     /**
-                     * 获取Number of blocked attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Intercept Number of blocked attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Network Interception
+                     * @return Intercept Network Interception
                      * 
                      */
                     uint64_t GetIntercept() const;
 
                     /**
-                     * 设置Number of blocked attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _intercept Number of blocked attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Network Interception
+                     * @param _intercept Network Interception
                      * 
                      */
                     void SetIntercept(const uint64_t& _intercept);
@@ -920,18 +794,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Inbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return InBandwidth Inbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetInBandwidth() const;
 
                     /**
                      * 设置Inbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _inBandwidth Inbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetInBandwidth(const std::string& _inBandwidth);
@@ -944,19 +814,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取OutInbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return OutBandwidth OutInbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Outbound peak bandwidth
+                     * @return OutBandwidth Outbound peak bandwidth
                      * 
                      */
                     std::string GetOutBandwidth() const;
 
                     /**
-                     * 设置OutInbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _outBandwidth OutInbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Outbound peak bandwidth
+                     * @param _outBandwidth Outbound peak bandwidth
                      * 
                      */
                     void SetOutBandwidth(const std::string& _outBandwidth);
@@ -970,18 +836,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Total inbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return InFlow Total inbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetInFlow() const;
 
                     /**
                      * 设置Total inbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _inFlow Total inbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetInFlow(const std::string& _inFlow);
@@ -994,19 +856,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool InFlowHasBeenSet() const;
 
                     /**
-                     * 获取Total outbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return OutFlow Total outbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Outbound cumulative traffic
+                     * @return OutFlow Outbound cumulative traffic
                      * 
                      */
                     std::string GetOutFlow() const;
 
                     /**
-                     * 设置Total outbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _outFlow Total outbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Outbound cumulative traffic
+                     * @param _outFlow Outbound cumulative traffic
                      * 
                      */
                     void SetOutFlow(const std::string& _outFlow);
@@ -1020,18 +878,14 @@ Note: This field may return·null, indicating that no valid values can be obtain
 
                     /**
                      * 获取Last scan time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @return LastScanTime Last scan time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置Last scan time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * @param _lastScanTime Last scan time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -1044,19 +898,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool LastScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取Proactive malicious outgoing requests
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return NetWorkOut Proactive malicious outgoing requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Malicious outgoing request
+                     * @return NetWorkOut Malicious outgoing request
                      * 
                      */
                     uint64_t GetNetWorkOut() const;
 
                     /**
-                     * 设置Proactive malicious outgoing requests
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _netWorkOut Proactive malicious outgoing requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Malicious outgoing request
+                     * @param _netWorkOut Malicious outgoing request
                      * 
                      */
                     void SetNetWorkOut(const uint64_t& _netWorkOut);
@@ -1069,19 +919,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool NetWorkOutHasBeenSet() const;
 
                     /**
-                     * 获取Port risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return PortRisk Port risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Port risk
+                     * @return PortRisk Port risk
                      * 
                      */
                     uint64_t GetPortRisk() const;
 
                     /**
-                     * 设置Port risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _portRisk Port risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Port risk
+                     * @param _portRisk Port risk
                      * 
                      */
                     void SetPortRisk(const uint64_t& _portRisk);
@@ -1094,19 +940,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool PortRiskHasBeenSet() const;
 
                     /**
-                     * 获取Vulnerabilities
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return VulnerabilityRisk Vulnerabilities
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Vulnerability risk
+                     * @return VulnerabilityRisk Vulnerability risk
                      * 
                      */
                     uint64_t GetVulnerabilityRisk() const;
 
                     /**
-                     * 设置Vulnerabilities
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _vulnerabilityRisk Vulnerabilities
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Vulnerability risk
+                     * @param _vulnerabilityRisk Vulnerability risk
                      * 
                      */
                     void SetVulnerabilityRisk(const uint64_t& _vulnerabilityRisk);
@@ -1119,19 +961,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool VulnerabilityRiskHasBeenSet() const;
 
                     /**
-                     * 获取Configuraiton risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return ConfigurationRisk Configuraiton risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Configuration risk
+                     * @return ConfigurationRisk Configuration risk
                      * 
                      */
                     uint64_t GetConfigurationRisk() const;
 
                     /**
-                     * 设置Configuraiton risks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _configurationRisk Configuraiton risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Configuration risk
+                     * @param _configurationRisk Configuration risk
                      * 
                      */
                     void SetConfigurationRisk(const uint64_t& _configurationRisk);
@@ -1144,19 +982,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ConfigurationRiskHasBeenSet() const;
 
                     /**
-                     * 获取Number of scan tasks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return ScanTask Number of scan tasks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Scan Task Count
+                     * @return ScanTask Scan Task Count
                      * 
                      */
                     uint64_t GetScanTask() const;
 
                     /**
-                     * 设置Number of scan tasks
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _scanTask Number of scan tasks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Scan Task Count
+                     * @param _scanTask Scan Task Count
                      * 
                      */
                     void SetScanTask(const uint64_t& _scanTask);
@@ -1169,19 +1003,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ScanTaskHasBeenSet() const;
 
                     /**
-                     * 获取Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Tag.
+                     * @return Tag Tag.
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
-                     * 设置Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Tag.
+                     * @param _tag Tag.
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -1194,19 +1024,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取Member ID
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return MemberId Member ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取memberId
+                     * @return MemberId memberId
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
-                     * 设置Member ID
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _memberId Member ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置memberId
+                     * @param _memberId memberId
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -1219,19 +1045,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取Full name of the operating system
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Os Full name of the operating system
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Full OS Name
+                     * @return Os Full OS Name
                      * 
                      */
                     std::string GetOs() const;
 
                     /**
-                     * 设置Full name of the operating system
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _os Full name of the operating system
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Full OS Name
+                     * @param _os Full OS Name
                      * 
                      */
                     void SetOs(const std::string& _os);
@@ -1244,19 +1066,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool OsHasBeenSet() const;
 
                     /**
-                     * 获取Risk exposure
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return RiskExposure Risk exposure
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Risk service exposure
+                     * @return RiskExposure Risk service exposure
                      * 
                      */
                     int64_t GetRiskExposure() const;
 
                     /**
-                     * 设置Risk exposure
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _riskExposure Risk exposure
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Risk service exposure
+                     * @param _riskExposure Risk service exposure
                      * 
                      */
                     void SetRiskExposure(const int64_t& _riskExposure);
@@ -1269,19 +1087,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool RiskExposureHasBeenSet() const;
 
                     /**
-                     * 获取BAS toolkit status. `0`: Not installed; `1`: Installed; `2`: Offline.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return BASAgentStatus BAS toolkit status. `0`: Not installed; `1`: Installed; `2`: Offline.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Simulated Attack Tool Status. 0 indicates not installed. 1 indicates installed. 2 indicates offline.
+                     * @return BASAgentStatus Simulated Attack Tool Status. 0 indicates not installed. 1 indicates installed. 2 indicates offline.
                      * 
                      */
                     int64_t GetBASAgentStatus() const;
 
                     /**
-                     * 设置BAS toolkit status. `0`: Not installed; `1`: Installed; `2`: Offline.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _bASAgentStatus BAS toolkit status. `0`: Not installed; `1`: Installed; `2`: Offline.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Simulated Attack Tool Status. 0 indicates not installed. 1 indicates installed. 2 indicates offline.
+                     * @param _bASAgentStatus Simulated Attack Tool Status. 0 indicates not installed. 1 indicates installed. 2 indicates offline.
                      * 
                      */
                     void SetBASAgentStatus(const int64_t& _bASAgentStatus);
@@ -1294,19 +1108,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool BASAgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取`1`: New asset; `0`: Not a new asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsNewAsset `1`: New asset; `0`: Not a new asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取1-New Asset; 0-Not a New Asset
+                     * @return IsNewAsset 1-New Asset; 0-Not a New Asset
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
-                     * 设置`1`: New asset; `0`: Not a new asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isNewAsset `1`: New asset; `0`: Not a new asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置1-New Asset; 0-Not a New Asset
+                     * @param _isNewAsset 1-New Asset; 0-Not a New Asset
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -1318,363 +1128,780 @@ Note: This field may return·null, indicating that no valid values can be obtain
                      */
                     bool IsNewAssetHasBeenSet() const;
 
+                    /**
+                     * 获取0: not installed; 1: installed; 2: installing
+                     * @return CVMAgentStatus 0: not installed; 1: installed; 2: installing
+                     * 
+                     */
+                    int64_t GetCVMAgentStatus() const;
+
+                    /**
+                     * 设置0: not installed; 1: installed; 2: installing
+                     * @param _cVMAgentStatus 0: not installed; 1: installed; 2: installing
+                     * 
+                     */
+                    void SetCVMAgentStatus(const int64_t& _cVMAgentStatus);
+
+                    /**
+                     * 判断参数 CVMAgentStatus 是否已赋值
+                     * @return CVMAgentStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMAgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1: Enable; 0: Not enabled
+                     * @return CVMStatus 1: Enable; 0: Not enabled
+                     * 
+                     */
+                    int64_t GetCVMStatus() const;
+
+                    /**
+                     * 设置1: Enable; 0: Not enabled
+                     * @param _cVMStatus 1: Enable; 0: Not enabled
+                     * 
+                     */
+                    void SetCVMStatus(const int64_t& _cVMStatus);
+
+                    /**
+                     * 判断参数 CVMStatus 是否已赋值
+                     * @return CVMStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1: Installed on the client 0: Not installed 2: Agentless
+                     * @return DefenseModel 1: Installed on the client 0: Not installed 2: Agentless
+                     * 
+                     */
+                    int64_t GetDefenseModel() const;
+
+                    /**
+                     * 设置1: Installed on the client 0: Not installed 2: Agentless
+                     * @param _defenseModel 1: Installed on the client 0: Not installed 2: Agentless
+                     * 
+                     */
+                    void SetDefenseModel(const int64_t& _defenseModel);
+
+                    /**
+                     * 判断参数 DefenseModel 是否已赋值
+                     * @return DefenseModel 是否已赋值
+                     * 
+                     */
+                    bool DefenseModelHasBeenSet() const;
+
+                    /**
+                     * 获取1: installed; 0: not installed
+                     * @return TatStatus 1: installed; 0: not installed
+                     * 
+                     */
+                    int64_t GetTatStatus() const;
+
+                    /**
+                     * 设置1: installed; 0: not installed
+                     * @param _tatStatus 1: installed; 0: not installed
+                     * 
+                     */
+                    void SetTatStatus(const int64_t& _tatStatus);
+
+                    /**
+                     * 判断参数 TatStatus 是否已赋值
+                     * @return TatStatus 是否已赋值
+                     * 
+                     */
+                    bool TatStatusHasBeenSet() const;
+
+                    /**
+                     * 获取cpu trend chart
+                     * @return CpuTrend cpu trend chart
+                     * 
+                     */
+                    std::vector<Element> GetCpuTrend() const;
+
+                    /**
+                     * 设置cpu trend chart
+                     * @param _cpuTrend cpu trend chart
+                     * 
+                     */
+                    void SetCpuTrend(const std::vector<Element>& _cpuTrend);
+
+                    /**
+                     * 判断参数 CpuTrend 是否已赋值
+                     * @return CpuTrend 是否已赋值
+                     * 
+                     */
+                    bool CpuTrendHasBeenSet() const;
+
+                    /**
+                     * 获取Memory trend chart
+                     * @return MemoryTrend Memory trend chart
+                     * 
+                     */
+                    std::vector<Element> GetMemoryTrend() const;
+
+                    /**
+                     * 设置Memory trend chart
+                     * @param _memoryTrend Memory trend chart
+                     * 
+                     */
+                    void SetMemoryTrend(const std::vector<Element>& _memoryTrend);
+
+                    /**
+                     * 判断参数 MemoryTrend 是否已赋值
+                     * @return MemoryTrend 是否已赋值
+                     * 
+                     */
+                    bool MemoryTrendHasBeenSet() const;
+
+                    /**
+                     * 获取1: agent online 0: agent offline 2: Host offline
+                     * @return AgentStatus 1: agent online 0: agent offline 2: Host offline
+                     * 
+                     */
+                    int64_t GetAgentStatus() const;
+
+                    /**
+                     * 设置1: agent online 0: agent offline 2: Host offline
+                     * @param _agentStatus 1: agent online 0: agent offline 2: Host offline
+                     * 
+                     */
+                    void SetAgentStatus(const int64_t& _agentStatus);
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取Number of protection shutdowns this month
+                     * @return CloseDefenseCount Number of protection shutdowns this month
+                     * 
+                     */
+                    int64_t GetCloseDefenseCount() const;
+
+                    /**
+                     * 设置Number of protection shutdowns this month
+                     * @param _closeDefenseCount Number of protection shutdowns this month
+                     * 
+                     */
+                    void SetCloseDefenseCount(const int64_t& _closeDefenseCount);
+
+                    /**
+                     * 判断参数 CloseDefenseCount 是否已赋值
+                     * @return CloseDefenseCount 是否已赋值
+                     * 
+                     */
+                    bool CloseDefenseCountHasBeenSet() const;
+
+                    /**
+                     * 获取Running status.
+                     * @return InstanceState Running status.
+                     * 
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置Running status.
+                     * @param _instanceState Running status.
+                     * 
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
+                    /**
+                     * 获取Security group data
+                     * @return SecurityGroupIds Security group data
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置Security group data
+                     * @param _securityGroupIds Security group data
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取Physical memory usage in KB
+                     * @return AgentMemRss Physical memory usage in KB
+                     * 
+                     */
+                    int64_t GetAgentMemRss() const;
+
+                    /**
+                     * 设置Physical memory usage in KB
+                     * @param _agentMemRss Physical memory usage in KB
+                     * 
+                     */
+                    void SetAgentMemRss(const int64_t& _agentMemRss);
+
+                    /**
+                     * 判断参数 AgentMemRss 是否已赋值
+                     * @return AgentMemRss 是否已赋值
+                     * 
+                     */
+                    bool AgentMemRssHasBeenSet() const;
+
+                    /**
+                     * 获取CPU utilization percentage
+                     * @return AgentCpuPer CPU utilization percentage
+                     * 
+                     */
+                    double GetAgentCpuPer() const;
+
+                    /**
+                     * 设置CPU utilization percentage
+                     * @param _agentCpuPer CPU utilization percentage
+                     * 
+                     */
+                    void SetAgentCpuPer(const double& _agentCpuPer);
+
+                    /**
+                     * 判断参数 AgentCpuPer 是否已赋值
+                     * @return AgentCpuPer 是否已赋值
+                     * 
+                     */
+                    bool AgentCpuPerHasBeenSet() const;
+
+                    /**
+                     * 获取appid that the cvm actually belongs to
+                     * @return RealAppid appid that the cvm actually belongs to
+                     * 
+                     */
+                    int64_t GetRealAppid() const;
+
+                    /**
+                     * 设置appid that the cvm actually belongs to
+                     * @param _realAppid appid that the cvm actually belongs to
+                     * 
+                     */
+                    void SetRealAppid(const int64_t& _realAppid);
+
+                    /**
+                     * 判断参数 RealAppid 是否已赋值
+                     * @return RealAppid 是否已赋值
+                     * 
+                     */
+                    bool RealAppidHasBeenSet() const;
+
+                    /**
+                     * 获取Cloud asset type: 0: Tencent Cloud, 1: aws, 2: azure
+                     * @return CloudType Cloud asset type: 0: Tencent Cloud, 1: aws, 2: azure
+                     * 
+                     */
+                    int64_t GetCloudType() const;
+
+                    /**
+                     * 设置Cloud asset type: 0: Tencent Cloud, 1: aws, 2: azure
+                     * @param _cloudType Cloud asset type: 0: Tencent Cloud, 1: aws, 2: azure
+                     * 
+                     */
+                    void SetCloudType(const int64_t& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Host Protection Status Enumeration
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
+                     * @return ProtectStatus Host Protection Status Enumeration
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
+                     * 
+                     */
+                    int64_t GetProtectStatus() const;
+
+                    /**
+                     * 设置Host Protection Status Enumeration
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
+                     * @param _protectStatus Host Protection Status Enumeration
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
+                     * 
+                     */
+                    void SetProtectStatus(const int64_t& _protectStatus);
+
+                    /**
+                     * 判断参数 ProtectStatus 是否已赋值
+                     * @return ProtectStatus 是否已赋值
+                     * 
+                     */
+                    bool ProtectStatusHasBeenSet() const;
+
+                    /**
+                     * 获取Last offline time
+                     * @return OfflineTime Last offline time
+                     * 
+                     */
+                    std::string GetOfflineTime() const;
+
+                    /**
+                     * 设置Last offline time
+                     * @param _offlineTime Last offline time
+                     * 
+                     */
+                    void SetOfflineTime(const std::string& _offlineTime);
+
+                    /**
+                     * 判断参数 OfflineTime 是否已赋值
+                     * @return OfflineTime 是否已赋值
+                     * 
+                     */
+                    bool OfflineTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * Asset ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
                      * Asset name
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * Asset type
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
-                     * Region
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Region.
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * Protection status
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     uint64_t m_cWPStatus;
                     bool m_cWPStatusHasBeenSet;
 
                     /**
                      * Asset creation time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_assetCreateTime;
                     bool m_assetCreateTimeHasBeenSet;
 
                     /**
-                     * Public IP
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Public IP address
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * Private IP
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * 
+                     * vpc id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * VPC name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * VPC Name
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * App ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * App ID information
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * User UIN
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * User name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Nickname.
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * Availability zone
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_availableArea;
                     bool m_availableAreaHasBeenSet;
 
                     /**
-                     * Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Core or Not
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * Subnet ID
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * Subnet name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Subnet Name
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * UUID of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Host security Agent UUID
                      */
                     std::string m_instanceUuid;
                     bool m_instanceUuidHasBeenSet;
 
                     /**
-                     * QUuid of the instance
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * CVM UUID
                      */
                     std::string m_instanceQUuid;
                     bool m_instanceQUuidHasBeenSet;
 
                     /**
-                     * OS name
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * OS Name
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * Number of partitions
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Partition
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
 
                     /**
-                     * CPU information
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * CPU Information
                      */
                     std::string m_cPUInfo;
                     bool m_cPUInfoHasBeenSet;
 
                     /**
-                     * CPU size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * CPU Size
                      */
                     uint64_t m_cPUSize;
                     bool m_cPUSizeHasBeenSet;
 
                     /**
-                     * CPU load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * CPU Load
                      */
                     std::string m_cPULoad;
                     bool m_cPULoadHasBeenSet;
 
                     /**
-                     * Memory size
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Memory size.
                      */
                     std::string m_memorySize;
                     bool m_memorySizeHasBeenSet;
 
                     /**
-                     * Memory load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Memory Load
                      */
                     std::string m_memoryLoad;
                     bool m_memoryLoadHasBeenSet;
 
                     /**
-                     * Disk size.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Hard disk size.
                      */
                     std::string m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * Disk load
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Hard Disk Load
                      */
                     std::string m_diskLoad;
                     bool m_diskLoadHasBeenSet;
 
                     /**
-                     * Number of accounts
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Number of Accounts
                      */
                     std::string m_accountCount;
                     bool m_accountCountHasBeenSet;
 
                     /**
-                     * Number of processes
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Number of Processes
                      */
                     std::string m_processCount;
                     bool m_processCountHasBeenSet;
 
                     /**
-                     * Number of applications
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Software application
                      */
                     std::string m_appCount;
                     bool m_appCountHasBeenSet;
 
                     /**
-                     * Number of listened ports.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Listening port
                      */
                     uint64_t m_portCount;
                     bool m_portCountHasBeenSet;
 
                     /**
-                     * Number of network attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Network attack
                      */
                     uint64_t m_attack;
                     bool m_attackHasBeenSet;
 
                     /**
-                     * Number of network access requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Network access
                      */
                     uint64_t m_access;
                     bool m_accessHasBeenSet;
 
                     /**
-                     * Number of blocked attacks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Network Interception
                      */
                     uint64_t m_intercept;
                     bool m_interceptHasBeenSet;
 
                     /**
                      * Inbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_inBandwidth;
                     bool m_inBandwidthHasBeenSet;
 
                     /**
-                     * OutInbound peak bandwidth
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Outbound peak bandwidth
                      */
                     std::string m_outBandwidth;
                     bool m_outBandwidthHasBeenSet;
 
                     /**
                      * Total inbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_inFlow;
                     bool m_inFlowHasBeenSet;
 
                     /**
-                     * Total outbound traffic
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Outbound cumulative traffic
                      */
                     std::string m_outFlow;
                     bool m_outFlowHasBeenSet;
 
                     /**
                      * Last scan time
-Note: This field may return·null, indicating that no valid values can be obtained.
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
-                     * Proactive malicious outgoing requests
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Malicious outgoing request
                      */
                     uint64_t m_netWorkOut;
                     bool m_netWorkOutHasBeenSet;
 
                     /**
-                     * Port risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Port risk
                      */
                     uint64_t m_portRisk;
                     bool m_portRiskHasBeenSet;
 
                     /**
-                     * Vulnerabilities
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Vulnerability risk
                      */
                     uint64_t m_vulnerabilityRisk;
                     bool m_vulnerabilityRiskHasBeenSet;
 
                     /**
-                     * Configuraiton risks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Configuration risk
                      */
                     uint64_t m_configurationRisk;
                     bool m_configurationRiskHasBeenSet;
 
                     /**
-                     * Number of scan tasks
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Scan Task Count
                      */
                     uint64_t m_scanTask;
                     bool m_scanTaskHasBeenSet;
 
                     /**
-                     * Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Tag.
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * Member ID
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * memberId
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * Full name of the operating system
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Full OS Name
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
 
                     /**
-                     * Risk exposure
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Risk service exposure
                      */
                     int64_t m_riskExposure;
                     bool m_riskExposureHasBeenSet;
 
                     /**
-                     * BAS toolkit status. `0`: Not installed; `1`: Installed; `2`: Offline.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Simulated Attack Tool Status. 0 indicates not installed. 1 indicates installed. 2 indicates offline.
                      */
                     int64_t m_bASAgentStatus;
                     bool m_bASAgentStatusHasBeenSet;
 
                     /**
-                     * `1`: New asset; `0`: Not a new asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 1-New Asset; 0-Not a New Asset
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
+
+                    /**
+                     * 0: not installed; 1: installed; 2: installing
+                     */
+                    int64_t m_cVMAgentStatus;
+                    bool m_cVMAgentStatusHasBeenSet;
+
+                    /**
+                     * 1: Enable; 0: Not enabled
+                     */
+                    int64_t m_cVMStatus;
+                    bool m_cVMStatusHasBeenSet;
+
+                    /**
+                     * 1: Installed on the client 0: Not installed 2: Agentless
+                     */
+                    int64_t m_defenseModel;
+                    bool m_defenseModelHasBeenSet;
+
+                    /**
+                     * 1: installed; 0: not installed
+                     */
+                    int64_t m_tatStatus;
+                    bool m_tatStatusHasBeenSet;
+
+                    /**
+                     * cpu trend chart
+                     */
+                    std::vector<Element> m_cpuTrend;
+                    bool m_cpuTrendHasBeenSet;
+
+                    /**
+                     * Memory trend chart
+                     */
+                    std::vector<Element> m_memoryTrend;
+                    bool m_memoryTrendHasBeenSet;
+
+                    /**
+                     * 1: agent online 0: agent offline 2: Host offline
+                     */
+                    int64_t m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
+
+                    /**
+                     * Number of protection shutdowns this month
+                     */
+                    int64_t m_closeDefenseCount;
+                    bool m_closeDefenseCountHasBeenSet;
+
+                    /**
+                     * Running status.
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * Security group data
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * Physical memory usage in KB
+                     */
+                    int64_t m_agentMemRss;
+                    bool m_agentMemRssHasBeenSet;
+
+                    /**
+                     * CPU utilization percentage
+                     */
+                    double m_agentCpuPer;
+                    bool m_agentCpuPerHasBeenSet;
+
+                    /**
+                     * appid that the cvm actually belongs to
+                     */
+                    int64_t m_realAppid;
+                    bool m_realAppidHasBeenSet;
+
+                    /**
+                     * Cloud asset type: 0: Tencent Cloud, 1: aws, 2: azure
+                     */
+                    int64_t m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * Host Protection Status Enumeration
+0: not installed
+1: In basic edition protection
+2: In inclusive edition protection
+3: Protection by pro edition
+4: Flagship edition protection
+5: offline
+6: Shutdown
+                     */
+                    int64_t m_protectStatus;
+                    bool m_protectStatusHasBeenSet;
+
+                    /**
+                     * Last offline time
+                     */
+                    std::string m_offlineTime;
+                    bool m_offlineTimeHasBeenSet;
 
                 };
             }

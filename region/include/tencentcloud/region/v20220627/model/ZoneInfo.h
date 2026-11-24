@@ -60,15 +60,13 @@ The names of availability zones across the network are as follows:.
 <li> ap-shenzhen-fsi-1 </li>
 <li> ap-shenzhen-fsi-2 </li>
 <li> ap-shenzhen-fsi-3 </li>
-<Li> ap-guangzhou-1 (sold-out)</li>.
-<Li> ap-guangzhou-2 (resource out of stock)</li>.
+<Li> ap-guangzhou-1 (sold-out)</li>
 <li> ap-guangzhou-3 </li>
 <li> ap-guangzhou-4 </li>
 <li> ap-guangzhou-6 </li>
 <li> ap-tokyo-1 </li>
 <li> ap-singapore-1 </li>
 <li> ap-singapore-2 </li>
-<li> ap-shanghai-fsi-1 </li>
 <li> ap-shanghai-fsi-2 </li>
 <li> ap-shanghai-fsi-3 </li>
 <li> ap-bangkok-1 </li>
@@ -104,15 +102,13 @@ The names of availability zones across the network are as follows:.
 <li> ap-shenzhen-fsi-1 </li>
 <li> ap-shenzhen-fsi-2 </li>
 <li> ap-shenzhen-fsi-3 </li>
-<Li> ap-guangzhou-1 (sold-out)</li>.
-<Li> ap-guangzhou-2 (resource out of stock)</li>.
+<Li> ap-guangzhou-1 (sold-out)</li>
 <li> ap-guangzhou-3 </li>
 <li> ap-guangzhou-4 </li>
 <li> ap-guangzhou-6 </li>
 <li> ap-tokyo-1 </li>
 <li> ap-singapore-1 </li>
 <li> ap-singapore-2 </li>
-<li> ap-shanghai-fsi-1 </li>
 <li> ap-shanghai-fsi-2 </li>
 <li> ap-shanghai-fsi-3 </li>
 <li> ap-bangkok-1 </li>
@@ -153,15 +149,13 @@ The names of availability zones across the network are as follows:.
 <li> ap-shenzhen-fsi-1 </li>
 <li> ap-shenzhen-fsi-2 </li>
 <li> ap-shenzhen-fsi-3 </li>
-<Li> ap-guangzhou-1 (sold-out)</li>.
-<Li> ap-guangzhou-2 (resource out of stock)</li>.
+<Li> ap-guangzhou-1 (sold-out)</li>
 <li> ap-guangzhou-3 </li>
 <li> ap-guangzhou-4 </li>
 <li> ap-guangzhou-6 </li>
 <li> ap-tokyo-1 </li>
 <li> ap-singapore-1 </li>
 <li> ap-singapore-2 </li>
-<li> ap-shanghai-fsi-1 </li>
 <li> ap-shanghai-fsi-2 </li>
 <li> ap-shanghai-fsi-3 </li>
 <li> ap-bangkok-1 </li>
@@ -197,15 +191,13 @@ The names of availability zones across the network are as follows:.
 <li> ap-shenzhen-fsi-1 </li>
 <li> ap-shenzhen-fsi-2 </li>
 <li> ap-shenzhen-fsi-3 </li>
-<Li> ap-guangzhou-1 (sold-out)</li>.
-<Li> ap-guangzhou-2 (resource out of stock)</li>.
+<Li> ap-guangzhou-1 (sold-out)</li>
 <li> ap-guangzhou-3 </li>
 <li> ap-guangzhou-4 </li>
 <li> ap-guangzhou-6 </li>
 <li> ap-tokyo-1 </li>
 <li> ap-singapore-1 </li>
 <li> ap-singapore-2 </li>
-<li> ap-shanghai-fsi-1 </li>
 <li> ap-shanghai-fsi-2 </li>
 <li> ap-shanghai-fsi-3 </li>
 <li> ap-bangkok-1 </li>
@@ -468,15 +460,13 @@ The names of availability zones across the network are as follows:.
 <li> ap-shenzhen-fsi-1 </li>
 <li> ap-shenzhen-fsi-2 </li>
 <li> ap-shenzhen-fsi-3 </li>
-<Li> ap-guangzhou-1 (sold-out)</li>.
-<Li> ap-guangzhou-2 (resource out of stock)</li>.
+<Li> ap-guangzhou-1 (sold-out)</li>
 <li> ap-guangzhou-3 </li>
 <li> ap-guangzhou-4 </li>
 <li> ap-guangzhou-6 </li>
 <li> ap-tokyo-1 </li>
 <li> ap-singapore-1 </li>
 <li> ap-singapore-2 </li>
-<li> ap-shanghai-fsi-1 </li>
 <li> ap-shanghai-fsi-2 </li>
 <li> ap-shanghai-fsi-3 </li>
 <li> ap-bangkok-1 </li>

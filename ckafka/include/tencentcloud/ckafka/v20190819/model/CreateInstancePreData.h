@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The value returned by `CreateInstancePre` is 0, which is fixed and cannot be used as the query condition of `CheckTaskStatus`. It is only used to ensure the consistency with the backend data structure.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return FlowId The value returned by `CreateInstancePre` is 0, which is fixed and cannot be used as the query condition of `CheckTaskStatus`. It is only used to ensure the consistency with the backend data structure.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>CreateInstancePre returns fixed as 0 and cannot be used as a query condition for CheckTaskStatus. It is merely to ensure alignment with the backend data structure.</p>
+                     * @return FlowId <p>CreateInstancePre returns fixed as 0 and cannot be used as a query condition for CheckTaskStatus. It is merely to ensure alignment with the backend data structure.</p>
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置The value returned by `CreateInstancePre` is 0, which is fixed and cannot be used as the query condition of `CheckTaskStatus`. It is only used to ensure the consistency with the backend data structure.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _flowId The value returned by `CreateInstancePre` is 0, which is fixed and cannot be used as the query condition of `CheckTaskStatus`. It is only used to ensure the consistency with the backend data structure.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>CreateInstancePre returns fixed as 0 and cannot be used as a query condition for CheckTaskStatus. It is merely to ensure alignment with the backend data structure.</p>
+                     * @param _flowId <p>CreateInstancePre returns fixed as 0 and cannot be used as a query condition for CheckTaskStatus. It is merely to ensure alignment with the backend data structure.</p>
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -73,19 +69,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取Order number list.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return DealNames Order number list.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Order number list</p>
+                     * @return DealNames <p>Order number list</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
-                     * 设置Order number list.
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _dealNames Order number list.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Order number list</p>
+                     * @param _dealNames <p>Order number list</p>
                      * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
@@ -98,15 +90,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取Instance ID. When multiple instances are purchased, the ID of the first one is returned by default . Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return InstanceId Instance ID. When multiple instances are purchased, the ID of the first one is returned by default . Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster instance Id of ckafka. When you purchase multiple instances, the first instance Id is returned by default.</p>
+                     * @return InstanceId <p>Cluster instance Id of ckafka. When you purchase multiple instances, the first instance Id is returned by default.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Instance ID. When multiple instances are purchased, the ID of the first one is returned by default . Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _instanceId Instance ID. When multiple instances are purchased, the ID of the first one is returned by default . Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster instance Id of ckafka. When you purchase multiple instances, the first instance Id is returned by default.</p>
+                     * @param _instanceId <p>Cluster instance Id of ckafka. When you purchase multiple instances, the first instance Id is returned by default.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -119,15 +111,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Mapping between orders and the purchased instances.  Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DealNameInstanceIdMapping Mapping between orders and the purchased instances.  Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Order and purchase mapping list corresponding to the instance</p>
+                     * @return DealNameInstanceIdMapping <p>Order and purchase mapping list corresponding to the instance</p>
                      * 
                      */
                     std::vector<DealInstanceDTO> GetDealNameInstanceIdMapping() const;
 
                     /**
-                     * 设置Mapping between orders and the purchased instances.  Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _dealNameInstanceIdMapping Mapping between orders and the purchased instances.  Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Order and purchase mapping list corresponding to the instance</p>
+                     * @param _dealNameInstanceIdMapping <p>Order and purchase mapping list corresponding to the instance</p>
                      * 
                      */
                     void SetDealNameInstanceIdMapping(const std::vector<DealInstanceDTO>& _dealNameInstanceIdMapping);
@@ -139,33 +131,58 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                      */
                     bool DealNameInstanceIdMappingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Event ID returned by CAM authentication</p>
+                     * @return EventId <p>Event ID returned by CAM authentication</p>
+                     * 
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置<p>Event ID returned by CAM authentication</p>
+                     * @param _eventId <p>Event ID returned by CAM authentication</p>
+                     * 
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     * 
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The value returned by `CreateInstancePre` is 0, which is fixed and cannot be used as the query condition of `CheckTaskStatus`. It is only used to ensure the consistency with the backend data structure.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>CreateInstancePre returns fixed as 0 and cannot be used as a query condition for CheckTaskStatus. It is merely to ensure alignment with the backend data structure.</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * Order number list.
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Order number list</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * Instance ID. When multiple instances are purchased, the ID of the first one is returned by default . Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster instance Id of ckafka. When you purchase multiple instances, the first instance Id is returned by default.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Mapping between orders and the purchased instances.  Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Order and purchase mapping list corresponding to the instance</p>
                      */
                     std::vector<DealInstanceDTO> m_dealNameInstanceIdMapping;
                     bool m_dealNameInstanceIdMappingHasBeenSet;
+
+                    /**
+                     * <p>Event ID returned by CAM authentication</p>
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

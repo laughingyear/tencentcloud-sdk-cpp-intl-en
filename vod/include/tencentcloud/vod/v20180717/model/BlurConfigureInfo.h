@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for video blur detection.
+                * Control parameters for video frame blur detection.
                 */
                 class BlurConfigureInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Video screen blur detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
-                     * @return Switch Video screen blur detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * 获取Video frame blur detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
+                     * @return Switch Video frame blur detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Video screen blur detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
-                     * @param _switch Video screen blur detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * 设置Video frame blur detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
+                     * @param _switch Video frame blur detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Video screen blur detection switch, optional values:
-<li>ON: turn on;</li>
-<li>OFF: turn off. </li>
+                     * Video frame blur detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

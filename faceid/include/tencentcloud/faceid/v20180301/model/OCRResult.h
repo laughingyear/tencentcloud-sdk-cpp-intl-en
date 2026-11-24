@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The content of a single license in the license information.
+                * Content of a single document in the document information
                 */
                 class OCRResult : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Is the indentity verification or OCR process passed
-                     * @return IsPass Is the indentity verification or OCR process passed
+                     * 获取<p>Whether the identity authentication or OCR process is successful.</p>
+                     * @return IsPass <p>Whether the identity authentication or OCR process is successful.</p>
                      * 
                      */
                     bool GetIsPass() const;
 
                     /**
-                     * 设置Is the indentity verification or OCR process passed
-                     * @param _isPass Is the indentity verification or OCR process passed
+                     * 设置<p>Whether the identity authentication or OCR process is successful.</p>
+                     * @param _isPass <p>Whether the identity authentication or OCR process is successful.</p>
                      * 
                      */
                     void SetIsPass(const bool& _isPass);
@@ -70,19 +70,15 @@ namespace TencentCloud
                     bool IsPassHasBeenSet() const;
 
                     /**
-                     * 获取The Base64 of ID card image
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CardImageBase64 The Base64 of ID card image
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Base64 of the front image of the identity document</p>
+                     * @return CardImageBase64 <p>Base64 of the front image of the identity document</p>
                      * 
                      */
                     std::string GetCardImageBase64() const;
 
                     /**
-                     * 设置The Base64 of ID card image
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _cardImageBase64 The Base64 of ID card image
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Base64 of the front image of the identity document</p>
+                     * @param _cardImageBase64 <p>Base64 of the front image of the identity document</p>
                      * 
                      */
                     void SetCardImageBase64(const std::string& _cardImageBase64);
@@ -95,15 +91,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CardImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取OCR result of the ID card.
-                     * @return CardInfo OCR result of the ID card.
+                     * 获取<p>ID document recognition result</p>
+                     * @return CardInfo <p>ID document recognition result</p>
                      * @deprecated
                      */
                     CardInfo GetCardInfo() const;
 
                     /**
-                     * 设置OCR result of the ID card.
-                     * @param _cardInfo OCR result of the ID card.
+                     * 设置<p>ID document recognition result</p>
+                     * @param _cardInfo <p>ID document recognition result</p>
                      * @deprecated
                      */
                     void SetCardInfo(const CardInfo& _cardInfo);
@@ -116,15 +112,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CardInfoHasBeenSet() const;
 
                     /**
-                     * 获取OCR result of the ID card.
-                     * @return NormalCardInfo OCR result of the ID card.
+                     * 获取<p>ID document recognition result (when CheckMode value is 4, the OriginalCardInfo field is returned; in other scenarios, the current field is returned)</p>
+                     * @return NormalCardInfo <p>ID document recognition result (when CheckMode value is 4, the OriginalCardInfo field is returned; in other scenarios, the current field is returned)</p>
                      * 
                      */
                     NormalCardInfo GetNormalCardInfo() const;
 
                     /**
-                     * 设置OCR result of the ID card.
-                     * @param _normalCardInfo OCR result of the ID card.
+                     * 设置<p>ID document recognition result (when CheckMode value is 4, the OriginalCardInfo field is returned; in other scenarios, the current field is returned)</p>
+                     * @param _normalCardInfo <p>ID document recognition result (when CheckMode value is 4, the OriginalCardInfo field is returned; in other scenarios, the current field is returned)</p>
                      * 
                      */
                     void SetNormalCardInfo(const NormalCardInfo& _normalCardInfo);
@@ -137,15 +133,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool NormalCardInfoHasBeenSet() const;
 
                     /**
-                     * 获取The request id
-                     * @return RequestId The request id
+                     * 获取<p>Request id</p>
+                     * @return RequestId <p>Request id</p>
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置The request id
-                     * @param _requestId The request id
+                     * 设置<p>Request id</p>
+                     * @param _requestId <p>Request id</p>
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -158,15 +154,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取Base64 of cropped image of ID card
-                     * @return CardCutImageBase64 Base64 of cropped image of ID card
+                     * 获取<p>Base64 of the front cropped image of the identity document</p>
+                     * @return CardCutImageBase64 <p>Base64 of the front cropped image of the identity document</p>
                      * 
                      */
                     std::string GetCardCutImageBase64() const;
 
                     /**
-                     * 设置Base64 of cropped image of ID card
-                     * @param _cardCutImageBase64 Base64 of cropped image of ID card
+                     * 设置<p>Base64 of the front cropped image of the identity document</p>
+                     * @param _cardCutImageBase64 <p>Base64 of the front cropped image of the identity document</p>
                      * 
                      */
                     void SetCardCutImageBase64(const std::string& _cardCutImageBase64);
@@ -179,15 +175,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CardCutImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取Base64 of the cropped image on the reverse side of the ID card
-                     * @return CardBackCutImageBase64 Base64 of the cropped image on the reverse side of the ID card
+                     * 获取<p>Base64 of the edge-cropped image of the back of an identity document</p>
+                     * @return CardBackCutImageBase64 <p>Base64 of the edge-cropped image of the back of an identity document</p>
                      * 
                      */
                     std::string GetCardBackCutImageBase64() const;
 
                     /**
-                     * 设置Base64 of the cropped image on the reverse side of the ID card
-                     * @param _cardBackCutImageBase64 Base64 of the cropped image on the reverse side of the ID card
+                     * 设置<p>Base64 of the edge-cropped image of the back of an identity document</p>
+                     * @param _cardBackCutImageBase64 <p>Base64 of the edge-cropped image of the back of an identity document</p>
                      * 
                      */
                     void SetCardBackCutImageBase64(const std::string& _cardBackCutImageBase64);
@@ -200,47 +196,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CardBackCutImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取Card Warning Information
-
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
-                     * @return WarnCardInfos Card Warning Information
-
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+                     * 获取<p>Alarm code</p><p>Enumeration value:</p><ul><li>-9101: alarm for incomplete document border</li><li>-9102: alarm for document photocopy</li><li>-9103: alarm for document rephotographing</li><li>-9104: document PS alarm</li><li>-9107: document reflective alarm</li><li>-9108: alarm for blurry document</li><li>-9109: alarm capability not enabled</li></ul>
+                     * @return WarnCardInfos <p>Alarm code</p><p>Enumeration value:</p><ul><li>-9101: alarm for incomplete document border</li><li>-9102: alarm for document photocopy</li><li>-9103: alarm for document rephotographing</li><li>-9104: document PS alarm</li><li>-9107: document reflective alarm</li><li>-9108: alarm for blurry document</li><li>-9109: alarm capability not enabled</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
 
                     /**
-                     * 设置Card Warning Information
-
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
-                     * @param _warnCardInfos Card Warning Information
-
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+                     * 设置<p>Alarm code</p><p>Enumeration value:</p><ul><li>-9101: alarm for incomplete document border</li><li>-9102: alarm for document photocopy</li><li>-9103: alarm for document rephotographing</li><li>-9104: document PS alarm</li><li>-9107: document reflective alarm</li><li>-9108: alarm for blurry document</li><li>-9109: alarm capability not enabled</li></ul>
+                     * @param _warnCardInfos <p>Alarm code</p><p>Enumeration value:</p><ul><li>-9101: alarm for incomplete document border</li><li>-9102: alarm for document photocopy</li><li>-9103: alarm for document rephotographing</li><li>-9104: document PS alarm</li><li>-9107: document reflective alarm</li><li>-9108: alarm for blurry document</li><li>-9109: alarm capability not enabled</li></ul>
                      * 
                      */
                     void SetWarnCardInfos(const std::vector<int64_t>& _warnCardInfos);
@@ -252,64 +216,178 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool WarnCardInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Original document recognition information (when CheckMode value is 4, the current field will be returned)</p>
+                     * @return OriginalCardInfo <p>Original document recognition information (when CheckMode value is 4, the current field will be returned)</p>
+                     * 
+                     */
+                    std::string GetOriginalCardInfo() const;
+
+                    /**
+                     * 设置<p>Original document recognition information (when CheckMode value is 4, the current field will be returned)</p>
+                     * @param _originalCardInfo <p>Original document recognition information (when CheckMode value is 4, the current field will be returned)</p>
+                     * 
+                     */
+                    void SetOriginalCardInfo(const std::string& _originalCardInfo);
+
+                    /**
+                     * 判断参数 OriginalCardInfo 是否已赋值
+                     * @return OriginalCardInfo 是否已赋值
+                     * 
+                     */
+                    bool OriginalCardInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Portrait matting in the document</p>
+                     * @return HeadImageBase64 <p>Portrait matting in the document</p>
+                     * 
+                     */
+                    std::string GetHeadImageBase64() const;
+
+                    /**
+                     * 设置<p>Portrait matting in the document</p>
+                     * @param _headImageBase64 <p>Portrait matting in the document</p>
+                     * 
+                     */
+                    void SetHeadImageBase64(const std::string& _headImageBase64);
+
+                    /**
+                     * 判断参数 HeadImageBase64 是否已赋值
+                     * @return HeadImageBase64 是否已赋值
+                     * 
+                     */
+                    bool HeadImageBase64HasBeenSet() const;
+
+                    /**
+                     * 获取<p>Base64 of the back image of the identity document</p>
+                     * @return CardBackImageBase64 <p>Base64 of the back image of the identity document</p>
+                     * 
+                     */
+                    std::string GetCardBackImageBase64() const;
+
+                    /**
+                     * 设置<p>Base64 of the back image of the identity document</p>
+                     * @param _cardBackImageBase64 <p>Base64 of the back image of the identity document</p>
+                     * 
+                     */
+                    void SetCardBackImageBase64(const std::string& _cardBackImageBase64);
+
+                    /**
+                     * 判断参数 CardBackImageBase64 是否已赋值
+                     * @return CardBackImageBase64 是否已赋值
+                     * 
+                     */
+                    bool CardBackImageBase64HasBeenSet() const;
+
+                    /**
+                     * 获取Card verification status:
+PROCESSING: Verification is in progress.
+COMPLETED: Verification completed with no alerts.
+ABNORMAL: Verification completed with alerts raised.
+                     * @return CardResultStatus Card verification status:
+PROCESSING: Verification is in progress.
+COMPLETED: Verification completed with no alerts.
+ABNORMAL: Verification completed with alerts raised.
+                     * 
+                     */
+                    std::string GetCardResultStatus() const;
+
+                    /**
+                     * 设置Card verification status:
+PROCESSING: Verification is in progress.
+COMPLETED: Verification completed with no alerts.
+ABNORMAL: Verification completed with alerts raised.
+                     * @param _cardResultStatus Card verification status:
+PROCESSING: Verification is in progress.
+COMPLETED: Verification completed with no alerts.
+ABNORMAL: Verification completed with alerts raised.
+                     * 
+                     */
+                    void SetCardResultStatus(const std::string& _cardResultStatus);
+
+                    /**
+                     * 判断参数 CardResultStatus 是否已赋值
+                     * @return CardResultStatus 是否已赋值
+                     * 
+                     */
+                    bool CardResultStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Is the indentity verification or OCR process passed
+                     * <p>Whether the identity authentication or OCR process is successful.</p>
                      */
                     bool m_isPass;
                     bool m_isPassHasBeenSet;
 
                     /**
-                     * The Base64 of ID card image
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Base64 of the front image of the identity document</p>
                      */
                     std::string m_cardImageBase64;
                     bool m_cardImageBase64HasBeenSet;
 
                     /**
-                     * OCR result of the ID card.
+                     * <p>ID document recognition result</p>
                      */
                     CardInfo m_cardInfo;
                     bool m_cardInfoHasBeenSet;
 
                     /**
-                     * OCR result of the ID card.
+                     * <p>ID document recognition result (when CheckMode value is 4, the OriginalCardInfo field is returned; in other scenarios, the current field is returned)</p>
                      */
                     NormalCardInfo m_normalCardInfo;
                     bool m_normalCardInfoHasBeenSet;
 
                     /**
-                     * The request id
+                     * <p>Request id</p>
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * Base64 of cropped image of ID card
+                     * <p>Base64 of the front cropped image of the identity document</p>
                      */
                     std::string m_cardCutImageBase64;
                     bool m_cardCutImageBase64HasBeenSet;
 
                     /**
-                     * Base64 of the cropped image on the reverse side of the ID card
+                     * <p>Base64 of the edge-cropped image of the back of an identity document</p>
                      */
                     std::string m_cardBackCutImageBase64;
                     bool m_cardBackCutImageBase64HasBeenSet;
 
                     /**
-                     * Card Warning Information
-
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9104 Alarm for PS certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+                     * <p>Alarm code</p><p>Enumeration value:</p><ul><li>-9101: alarm for incomplete document border</li><li>-9102: alarm for document photocopy</li><li>-9103: alarm for document rephotographing</li><li>-9104: document PS alarm</li><li>-9107: document reflective alarm</li><li>-9108: alarm for blurry document</li><li>-9109: alarm capability not enabled</li></ul>
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * <p>Original document recognition information (when CheckMode value is 4, the current field will be returned)</p>
+                     */
+                    std::string m_originalCardInfo;
+                    bool m_originalCardInfoHasBeenSet;
+
+                    /**
+                     * <p>Portrait matting in the document</p>
+                     */
+                    std::string m_headImageBase64;
+                    bool m_headImageBase64HasBeenSet;
+
+                    /**
+                     * <p>Base64 of the back image of the identity document</p>
+                     */
+                    std::string m_cardBackImageBase64;
+                    bool m_cardBackImageBase64HasBeenSet;
+
+                    /**
+                     * Card verification status:
+PROCESSING: Verification is in progress.
+COMPLETED: Verification completed with no alerts.
+ABNORMAL: Verification completed with alerts raised.
+                     */
+                    std::string m_cardResultStatus;
+                    bool m_cardResultStatusHasBeenSet;
 
                 };
             }

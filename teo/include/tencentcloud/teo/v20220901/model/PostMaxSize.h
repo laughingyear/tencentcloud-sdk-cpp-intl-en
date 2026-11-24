@@ -76,19 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Maximum size. Value range: 1-500 MB.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MaxSize Maximum size. Value range: 1-500 MB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Specifies the maximum limit. this field is valid only when Switch is on. value range: 1MB to 800MB. unit: byte.
+                     * @return MaxSize Specifies the maximum limit. this field is valid only when Switch is on. value range: 1MB to 800MB. unit: byte.
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置Maximum size. Value range: 1-500 MB.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _maxSize Maximum size. Value range: 1-500 MB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Specifies the maximum limit. this field is valid only when Switch is on. value range: 1MB to 800MB. unit: byte.
+                     * @param _maxSize Specifies the maximum limit. this field is valid only when Switch is on. value range: 1MB to 800MB. unit: byte.
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -111,8 +107,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Maximum size. Value range: 1-500 MB.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Specifies the maximum limit. this field is valid only when Switch is on. value range: 1MB to 800MB. unit: byte.
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The output of a task to get file attributes.
+                * File attribute retrieval task output
                 */
                 class DescribeFileAttributesTaskOutput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The MD5 hash of the file.
-                     * @return Md5 The MD5 hash of the file.
+                     * 获取Md5 value of the media file.
+                     * @return Md5 Md5 value of the media file.
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置The MD5 hash of the file.
-                     * @param _md5 The MD5 hash of the file.
+                     * 设置Md5 value of the media file.
+                     * @param _md5 Md5 value of the media file.
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取The Sha1 value of the media file.
-                     * @return Sha1 The Sha1 value of the media file.
+                     * 获取Sha1 value of the media file.
+                     * @return Sha1 Sha1 value of the media file.
                      * 
                      */
                     std::string GetSha1() const;
 
                     /**
-                     * 设置The Sha1 value of the media file.
-                     * @param _sha1 The Sha1 value of the media file.
+                     * 设置Sha1 value of the media file.
+                     * @param _sha1 Sha1 value of the media file.
                      * 
                      */
                     void SetSha1(const std::string& _sha1);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The MD5 hash of the file.
+                     * Md5 value of the media file.
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * The Sha1 value of the media file.
+                     * Sha1 value of the media file.
                      */
                     std::string m_sha1;
                     bool m_sha1HasBeenSet;

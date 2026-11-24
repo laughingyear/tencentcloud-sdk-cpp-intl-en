@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CloseAuditServiceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CloseAuditServiceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateAccountUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateAccountUserResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskRequest.h>
@@ -33,22 +37,74 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateInstanceRoleRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateInstanceRoleResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateInstanceUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateInstanceUserResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateLogDownloadTaskRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateLogDownloadTaskResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteDBBackupsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteDBBackupsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteInstanceRoleRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteInstanceRoleResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteInstanceUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteInstanceUserResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteLogDownloadTaskRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteLogDownloadTaskResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditConfigRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditConfigResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditLogFilesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditLogsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupRulesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupRulesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBBackupsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNamespaceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNamespaceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceRolesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceRolesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceSSLRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceSSLResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceUsersRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceUsersResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribePasswordRotationRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribePasswordRotationResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h>
@@ -57,6 +113,16 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnablePasswordRotationRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnablePasswordRotationResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableWanServiceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableWanServiceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h>
@@ -65,14 +131,26 @@
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/InstanceEnableSSLRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/InstanceEnableSSLResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/KillOpsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/KillOpsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceAzRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceAzResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RenameInstanceRequest.h>
@@ -81,6 +159,24 @@
 #include <tencentcloud/mongodb/v20190725/model/RenewDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/UpdateInstanceRoleRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/UpdateInstanceRoleResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/UpdateInstanceUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/UpdateInstanceUserResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/UpgradeDbInstanceVersionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/UpgradeDbInstanceVersionResponse.h>
 
 
 namespace TencentCloud
@@ -98,6 +194,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssignProjectResponse> AssignProjectOutcome;
                 typedef std::future<AssignProjectOutcome> AssignProjectOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::AssignProjectRequest&, AssignProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
+                typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccountUserResponse> CreateAccountUserOutcome;
+                typedef std::future<CreateAccountUserOutcome> CreateAccountUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateAccountUserRequest&, CreateAccountUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBackupDBInstanceResponse> CreateBackupDBInstanceOutcome;
                 typedef std::future<CreateBackupDBInstanceOutcome> CreateBackupDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateBackupDBInstanceRequest&, CreateBackupDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupDBInstanceAsyncHandler;
@@ -110,15 +212,60 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBInstanceParamTplResponse> CreateDBInstanceParamTplOutcome;
+                typedef std::future<CreateDBInstanceParamTplOutcome> CreateDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceParamTplRequest&, CreateDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceParamTplAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceRoleResponse> CreateInstanceRoleOutcome;
+                typedef std::future<CreateInstanceRoleOutcome> CreateInstanceRoleOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateInstanceRoleRequest&, CreateInstanceRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceUserResponse> CreateInstanceUserOutcome;
+                typedef std::future<CreateInstanceUserOutcome> CreateInstanceUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateInstanceUserRequest&, CreateInstanceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLogDownloadTaskResponse> CreateLogDownloadTaskOutcome;
+                typedef std::future<CreateLogDownloadTaskOutcome> CreateLogDownloadTaskOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateLogDownloadTaskRequest&, CreateLogDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountUserResponse> DeleteAccountUserOutcome;
+                typedef std::future<DeleteAccountUserOutcome> DeleteAccountUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteAccountUserRequest&, DeleteAccountUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBBackupsResponse> DeleteDBBackupsOutcome;
+                typedef std::future<DeleteDBBackupsOutcome> DeleteDBBackupsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteDBBackupsRequest&, DeleteDBBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBBackupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceRoleResponse> DeleteInstanceRoleOutcome;
+                typedef std::future<DeleteInstanceRoleOutcome> DeleteInstanceRoleOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteInstanceRoleRequest&, DeleteInstanceRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceUserResponse> DeleteInstanceUserOutcome;
+                typedef std::future<DeleteInstanceUserOutcome> DeleteInstanceUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteInstanceUserRequest&, DeleteInstanceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLogDownloadTaskResponse> DeleteLogDownloadTaskOutcome;
+                typedef std::future<DeleteLogDownloadTaskOutcome> DeleteLogDownloadTaskOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteLogDownloadTaskRequest&, DeleteLogDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountUsersResponse> DescribeAccountUsersOutcome;
+                typedef std::future<DescribeAccountUsersOutcome> DescribeAccountUsersOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAccountUsersRequest&, DescribeAccountUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
                 typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditConfigResponse> DescribeAuditConfigOutcome;
+                typedef std::future<DescribeAuditConfigOutcome> DescribeAuditConfigOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAuditConfigRequest&, DescribeAuditConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
+                typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogsResponse> DescribeAuditLogsOutcome;
+                typedef std::future<DescribeAuditLogsOutcome> DescribeAuditLogsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAuditLogsRequest&, DescribeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadTaskResponse> DescribeBackupDownloadTaskOutcome;
                 typedef std::future<DescribeBackupDownloadTaskOutcome> DescribeBackupDownloadTaskOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeBackupDownloadTaskRequest&, DescribeBackupDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupRulesResponse> DescribeBackupRulesOutcome;
+                typedef std::future<DescribeBackupRulesOutcome> DescribeBackupRulesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeBackupRulesRequest&, DescribeBackupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientConnectionsResponse> DescribeClientConnectionsOutcome;
                 typedef std::future<DescribeClientConnectionsOutcome> DescribeClientConnectionsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeClientConnectionsRequest&, DescribeClientConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientConnectionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCurrentOpResponse> DescribeCurrentOpOutcome;
+                typedef std::future<DescribeCurrentOpOutcome> DescribeCurrentOpOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeCurrentOpRequest&, DescribeCurrentOpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentOpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBBackupsResponse> DescribeDBBackupsOutcome;
                 typedef std::future<DescribeDBBackupsOutcome> DescribeDBBackupsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBBackupsRequest&, DescribeDBBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBBackupsAsyncHandler;
@@ -128,12 +275,45 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceNamespaceResponse> DescribeDBInstanceNamespaceOutcome;
                 typedef std::future<DescribeDBInstanceNamespaceOutcome> DescribeDBInstanceNamespaceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceNamespaceRequest&, DescribeDBInstanceNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceNodePropertyResponse> DescribeDBInstanceNodePropertyOutcome;
+                typedef std::future<DescribeDBInstanceNodePropertyOutcome> DescribeDBInstanceNodePropertyOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceNodePropertyRequest&, DescribeDBInstanceNodePropertyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNodePropertyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceParamTplResponse> DescribeDBInstanceParamTplOutcome;
+                typedef std::future<DescribeDBInstanceParamTplOutcome> DescribeDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceParamTplRequest&, DescribeDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParamTplAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceParamTplDetailResponse> DescribeDBInstanceParamTplDetailOutcome;
+                typedef std::future<DescribeDBInstanceParamTplDetailOutcome> DescribeDBInstanceParamTplDetailOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceParamTplDetailRequest&, DescribeDBInstanceParamTplDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParamTplDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDetailedSlowLogsResponse> DescribeDetailedSlowLogsOutcome;
+                typedef std::future<DescribeDetailedSlowLogsOutcome> DescribeDetailedSlowLogsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDetailedSlowLogsRequest&, DescribeDetailedSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailedSlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceRolesResponse> DescribeInstanceRolesOutcome;
+                typedef std::future<DescribeInstanceRolesOutcome> DescribeInstanceRolesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceRolesRequest&, DescribeInstanceRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSSLResponse> DescribeInstanceSSLOutcome;
+                typedef std::future<DescribeInstanceSSLOutcome> DescribeInstanceSSLOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceSSLRequest&, DescribeInstanceSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSSLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceUsersResponse> DescribeInstanceUsersOutcome;
+                typedef std::future<DescribeInstanceUsersOutcome> DescribeInstanceUsersOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceUsersRequest&, DescribeInstanceUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogDownloadTasksResponse> DescribeLogDownloadTasksOutcome;
+                typedef std::future<DescribeLogDownloadTasksOutcome> DescribeLogDownloadTasksOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeLogDownloadTasksRequest&, DescribeLogDownloadTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogDownloadTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMongodbLogsResponse> DescribeMongodbLogsOutcome;
+                typedef std::future<DescribeMongodbLogsOutcome> DescribeMongodbLogsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeMongodbLogsRequest&, DescribeMongodbLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongodbLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePasswordRotationResponse> DescribePasswordRotationOutcome;
+                typedef std::future<DescribePasswordRotationOutcome> DescribePasswordRotationOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribePasswordRotationRequest&, DescribePasswordRotationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePasswordRotationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSRVConnectionDomainResponse> DescribeSRVConnectionDomainOutcome;
+                typedef std::future<DescribeSRVConnectionDomainOutcome> DescribeSRVConnectionDomainOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeSRVConnectionDomainRequest&, DescribeSRVConnectionDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSRVConnectionDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupResponse> DescribeSecurityGroupOutcome;
                 typedef std::future<DescribeSecurityGroupOutcome> DescribeSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSecurityGroupRequest&, DescribeSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAsyncHandler;
@@ -146,6 +326,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpecInfoResponse> DescribeSpecInfoOutcome;
                 typedef std::future<DescribeSpecInfoOutcome> DescribeSpecInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSpecInfoRequest&, DescribeSpecInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableSRVConnectionUrlResponse> DisableSRVConnectionUrlOutcome;
+                typedef std::future<DisableSRVConnectionUrlOutcome> DisableSRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DisableSRVConnectionUrlRequest&, DisableSRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableSRVConnectionUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePasswordRotationResponse> EnablePasswordRotationOutcome;
+                typedef std::future<EnablePasswordRotationOutcome> EnablePasswordRotationOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnablePasswordRotationRequest&, EnablePasswordRotationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePasswordRotationAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableSRVConnectionUrlResponse> EnableSRVConnectionUrlOutcome;
+                typedef std::future<EnableSRVConnectionUrlOutcome> EnableSRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableSRVConnectionUrlRequest&, EnableSRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSRVConnectionUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableTransparentDataEncryptionResponse> EnableTransparentDataEncryptionOutcome;
+                typedef std::future<EnableTransparentDataEncryptionOutcome> EnableTransparentDataEncryptionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableTransparentDataEncryptionRequest&, EnableTransparentDataEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransparentDataEncryptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableWanServiceResponse> EnableWanServiceOutcome;
+                typedef std::future<EnableWanServiceOutcome> EnableWanServiceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableWanServiceRequest&, EnableWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWanServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::FlushInstanceRouterConfigResponse> FlushInstanceRouterConfigOutcome;
                 typedef std::future<FlushInstanceRouterConfigOutcome> FlushInstanceRouterConfigOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::FlushInstanceRouterConfigRequest&, FlushInstanceRouterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushInstanceRouterConfigAsyncHandler;
@@ -158,9 +353,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRenewDBInstancesResponse> InquirePriceRenewDBInstancesOutcome;
                 typedef std::future<InquirePriceRenewDBInstancesOutcome> InquirePriceRenewDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::InquirePriceRenewDBInstancesRequest&, InquirePriceRenewDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstanceEnableSSLResponse> InstanceEnableSSLOutcome;
+                typedef std::future<InstanceEnableSSLOutcome> InstanceEnableSSLOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::InstanceEnableSSLRequest&, InstanceEnableSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstanceEnableSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateDBInstanceResponse> IsolateDBInstanceOutcome;
                 typedef std::future<IsolateDBInstanceOutcome> IsolateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::IsolateDBInstanceRequest&, IsolateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::KillOpsResponse> KillOpsOutcome;
+                typedef std::future<KillOpsOutcome> KillOpsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::KillOpsRequest&, KillOpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillOpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupExpireTimeResponse> ModifyBackupExpireTimeOutcome;
+                typedef std::future<ModifyBackupExpireTimeOutcome> ModifyBackupExpireTimeOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyBackupExpireTimeRequest&, ModifyBackupExpireTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupExpireTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNetworkAddressResponse> ModifyDBInstanceNetworkAddressOutcome;
                 typedef std::future<ModifyDBInstanceNetworkAddressOutcome> ModifyDBInstanceNetworkAddressOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceNetworkAddressRequest&, ModifyDBInstanceNetworkAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAddressAsyncHandler;
@@ -170,6 +374,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSpecResponse> ModifyDBInstanceSpecOutcome;
                 typedef std::future<ModifyDBInstanceSpecOutcome> ModifyDBInstanceSpecOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceSpecRequest&, ModifyDBInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceAzResponse> ModifyInstanceAzOutcome;
+                typedef std::future<ModifyInstanceAzOutcome> ModifyInstanceAzOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyInstanceAzRequest&, ModifyInstanceAzOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAzAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
+                typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySRVConnectionUrlResponse> ModifySRVConnectionUrlOutcome;
+                typedef std::future<ModifySRVConnectionUrlOutcome> ModifySRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifySRVConnectionUrlRequest&, ModifySRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySRVConnectionUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::OfflineIsolatedDBInstanceResponse> OfflineIsolatedDBInstanceOutcome;
                 typedef std::future<OfflineIsolatedDBInstanceOutcome> OfflineIsolatedDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::OfflineIsolatedDBInstanceRequest&, OfflineIsolatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineIsolatedDBInstanceAsyncHandler;
@@ -182,6 +395,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetDBInstancePasswordResponse> ResetDBInstancePasswordOutcome;
                 typedef std::future<ResetDBInstancePasswordOutcome> ResetDBInstancePasswordOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ResetDBInstancePasswordRequest&, ResetDBInstancePasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDBInstancePasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreDBInstanceResponse> RestoreDBInstanceOutcome;
+                typedef std::future<RestoreDBInstanceOutcome> RestoreDBInstanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::RestoreDBInstanceRequest&, RestoreDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
+                typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetDBInstanceDeletionProtectionResponse> SetDBInstanceDeletionProtectionOutcome;
+                typedef std::future<SetDBInstanceDeletionProtectionOutcome> SetDBInstanceDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetDBInstanceDeletionProtectionRequest&, SetDBInstanceDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDBInstanceDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetInstanceMaintenanceResponse> SetInstanceMaintenanceOutcome;
+                typedef std::future<SetInstanceMaintenanceOutcome> SetInstanceMaintenanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetInstanceMaintenanceRequest&, SetInstanceMaintenanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceMaintenanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDBInstancesResponse> TerminateDBInstancesOutcome;
+                typedef std::future<TerminateDBInstancesOutcome> TerminateDBInstancesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::TerminateDBInstancesRequest&, TerminateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateInstanceRoleResponse> UpdateInstanceRoleOutcome;
+                typedef std::future<UpdateInstanceRoleOutcome> UpdateInstanceRoleOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::UpdateInstanceRoleRequest&, UpdateInstanceRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateInstanceUserResponse> UpdateInstanceUserOutcome;
+                typedef std::future<UpdateInstanceUserOutcome> UpdateInstanceUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::UpdateInstanceUserRequest&, UpdateInstanceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeDBInstanceKernelVersionResponse> UpgradeDBInstanceKernelVersionOutcome;
+                typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, UpgradeDBInstanceKernelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeDbInstanceVersionResponse> UpgradeDbInstanceVersionOutcome;
+                typedef std::future<UpgradeDbInstanceVersionOutcome> UpgradeDbInstanceVersionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::UpgradeDbInstanceVersionRequest&, UpgradeDbInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDbInstanceVersionAsyncHandler;
 
 
 
@@ -193,6 +433,24 @@ namespace TencentCloud
                 AssignProjectOutcome AssignProject(const Model::AssignProjectRequest &request);
                 void AssignProjectAsync(const Model::AssignProjectRequest& request, const AssignProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssignProjectOutcomeCallable AssignProjectCallable(const Model::AssignProjectRequest& request);
+
+                /**
+                 *This API is used to close the audit service.
+                 * @param req CloseAuditServiceRequest
+                 * @return CloseAuditServiceOutcome
+                 */
+                CloseAuditServiceOutcome CloseAuditService(const Model::CloseAuditServiceRequest &request);
+                void CloseAuditServiceAsync(const Model::CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseAuditServiceOutcomeCallable CloseAuditServiceCallable(const Model::CloseAuditServiceRequest& request);
+
+                /**
+                 *This API is used to customize an account to access the instance.
+                 * @param req CreateAccountUserRequest
+                 * @return CreateAccountUserOutcome
+                 */
+                CreateAccountUserOutcome CreateAccountUser(const Model::CreateAccountUserRequest &request);
+                void CreateAccountUserAsync(const Model::CreateAccountUserRequest& request, const CreateAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccountUserOutcomeCallable CreateAccountUserCallable(const Model::CreateAccountUserRequest& request);
 
                 /**
                  *This API is used to back up an instance.
@@ -213,7 +471,7 @@ namespace TencentCloud
                 CreateBackupDownloadTaskOutcomeCallable CreateBackupDownloadTaskCallable(const Model::CreateBackupDownloadTaskRequest& request);
 
                 /**
-                 *This API is used to create a monthly subscription TencentDB for MongoDB instance. The purchasable specifications supported by this API can be obtained through the `DescribeSpecInfo` API.
+                 *This API is used to create a yearly/monthly subscription TencentDB for MongoDB instance. The [DescribeSpecInfo](https://www.tencentcloud.com/document/product/240/34701) API can be called to query and obtain the supported sales specifications.
                  * @param req CreateDBInstanceRequest
                  * @return CreateDBInstanceOutcome
                  */
@@ -231,6 +489,97 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
 
                 /**
+                 *This API is used to create a parameter template for TencentDB for MongoDB.
+**Description:** The CreateDBInstanceParamTpl API is in public beta. During this period, this API is only applicable to beta test participants.
+                 * @param req CreateDBInstanceParamTplRequest
+                 * @return CreateDBInstanceParamTplOutcome
+                 */
+                CreateDBInstanceParamTplOutcome CreateDBInstanceParamTpl(const Model::CreateDBInstanceParamTplRequest &request);
+                void CreateDBInstanceParamTplAsync(const Model::CreateDBInstanceParamTplRequest& request, const CreateDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBInstanceParamTplOutcomeCallable CreateDBInstanceParamTplCallable(const Model::CreateDBInstanceParamTplRequest& request);
+
+                /**
+                 *Create a database role
+                 * @param req CreateInstanceRoleRequest
+                 * @return CreateInstanceRoleOutcome
+                 */
+                CreateInstanceRoleOutcome CreateInstanceRole(const Model::CreateInstanceRoleRequest &request);
+                void CreateInstanceRoleAsync(const Model::CreateInstanceRoleRequest& request, const CreateInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceRoleOutcomeCallable CreateInstanceRoleCallable(const Model::CreateInstanceRoleRequest& request);
+
+                /**
+                 *Create a database account
+                 * @param req CreateInstanceUserRequest
+                 * @return CreateInstanceUserOutcome
+                 */
+                CreateInstanceUserOutcome CreateInstanceUser(const Model::CreateInstanceUserRequest &request);
+                void CreateInstanceUserAsync(const Model::CreateInstanceUserRequest& request, const CreateInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceUserOutcomeCallable CreateInstanceUserCallable(const Model::CreateInstanceUserRequest& request);
+
+                /**
+                 *This API is used to create a log download task.
+                 * @param req CreateLogDownloadTaskRequest
+                 * @return CreateLogDownloadTaskOutcome
+                 */
+                CreateLogDownloadTaskOutcome CreateLogDownloadTask(const Model::CreateLogDownloadTaskRequest &request);
+                void CreateLogDownloadTaskAsync(const Model::CreateLogDownloadTaskRequest& request, const CreateLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLogDownloadTaskOutcomeCallable CreateLogDownloadTaskCallable(const Model::CreateLogDownloadTaskRequest& request);
+
+                /**
+                 *This API is used to delete a custom account of an instance.
+                 * @param req DeleteAccountUserRequest
+                 * @return DeleteAccountUserOutcome
+                 */
+                DeleteAccountUserOutcome DeleteAccountUser(const Model::DeleteAccountUserRequest &request);
+                void DeleteAccountUserAsync(const Model::DeleteAccountUserRequest& request, const DeleteAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountUserOutcomeCallable DeleteAccountUserCallable(const Model::DeleteAccountUserRequest& request);
+
+                /**
+                 *This API is used to delete full backups.
+                 * @param req DeleteDBBackupsRequest
+                 * @return DeleteDBBackupsOutcome
+                 */
+                DeleteDBBackupsOutcome DeleteDBBackups(const Model::DeleteDBBackupsRequest &request);
+                void DeleteDBBackupsAsync(const Model::DeleteDBBackupsRequest& request, const DeleteDBBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBBackupsOutcomeCallable DeleteDBBackupsCallable(const Model::DeleteDBBackupsRequest& request);
+
+                /**
+                 *Delete role
+                 * @param req DeleteInstanceRoleRequest
+                 * @return DeleteInstanceRoleOutcome
+                 */
+                DeleteInstanceRoleOutcome DeleteInstanceRole(const Model::DeleteInstanceRoleRequest &request);
+                void DeleteInstanceRoleAsync(const Model::DeleteInstanceRoleRequest& request, const DeleteInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceRoleOutcomeCallable DeleteInstanceRoleCallable(const Model::DeleteInstanceRoleRequest& request);
+
+                /**
+                 *This API is used to delete a database account.
+                 * @param req DeleteInstanceUserRequest
+                 * @return DeleteInstanceUserOutcome
+                 */
+                DeleteInstanceUserOutcome DeleteInstanceUser(const Model::DeleteInstanceUserRequest &request);
+                void DeleteInstanceUserAsync(const Model::DeleteInstanceUserRequest& request, const DeleteInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceUserOutcomeCallable DeleteInstanceUserCallable(const Model::DeleteInstanceUserRequest& request);
+
+                /**
+                 *This API is used to delete a log download task.
+                 * @param req DeleteLogDownloadTaskRequest
+                 * @return DeleteLogDownloadTaskOutcome
+                 */
+                DeleteLogDownloadTaskOutcome DeleteLogDownloadTask(const Model::DeleteLogDownloadTaskRequest &request);
+                void DeleteLogDownloadTaskAsync(const Model::DeleteLogDownloadTaskRequest& request, const DeleteLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogDownloadTaskOutcomeCallable DeleteLogDownloadTaskCallable(const Model::DeleteLogDownloadTaskRequest& request);
+
+                /**
+                 *This API is used to obtain all accounts of the current instance.
+                 * @param req DescribeAccountUsersRequest
+                 * @return DescribeAccountUsersOutcome
+                 */
+                DescribeAccountUsersOutcome DescribeAccountUsers(const Model::DescribeAccountUsersRequest &request);
+                void DescribeAccountUsersAsync(const Model::DescribeAccountUsersRequest& request, const DescribeAccountUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountUsersOutcomeCallable DescribeAccountUsersCallable(const Model::DescribeAccountUsersRequest& request);
+
+                /**
                  *This API is used to query the asynchronous task status.
                  * @param req DescribeAsyncRequestInfoRequest
                  * @return DescribeAsyncRequestInfoOutcome
@@ -240,13 +589,49 @@ namespace TencentCloud
                 DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
 
                 /**
-                 *This API is used to query backup download task information.
+                 *This API is used to query the service configurations for a TencentDB audit policy, including the audit log retention period.
+                 * @param req DescribeAuditConfigRequest
+                 * @return DescribeAuditConfigOutcome
+                 */
+                DescribeAuditConfigOutcome DescribeAuditConfig(const Model::DescribeAuditConfigRequest &request);
+                void DescribeAuditConfigAsync(const Model::DescribeAuditConfigRequest& request, const DescribeAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditConfigOutcomeCallable DescribeAuditConfigCallable(const Model::DescribeAuditConfigRequest& request);
+
+                /**
+                 *This API is used to query audit log files of a cloud database instance.
+                 * @param req DescribeAuditLogFilesRequest
+                 * @return DescribeAuditLogFilesOutcome
+                 */
+                DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
+                void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *This API is used to query database audit logs.
+                 * @param req DescribeAuditLogsRequest
+                 * @return DescribeAuditLogsOutcome
+                 */
+                DescribeAuditLogsOutcome DescribeAuditLogs(const Model::DescribeAuditLogsRequest &request);
+                void DescribeAuditLogsAsync(const Model::DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
+
+                /**
+                 *This API is used to query information about the backup download task.
                  * @param req DescribeBackupDownloadTaskRequest
                  * @return DescribeBackupDownloadTaskOutcome
                  */
                 DescribeBackupDownloadTaskOutcome DescribeBackupDownloadTask(const Model::DescribeBackupDownloadTaskRequest &request);
                 void DescribeBackupDownloadTaskAsync(const Model::DescribeBackupDownloadTaskRequest& request, const DescribeBackupDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupDownloadTaskOutcomeCallable DescribeBackupDownloadTaskCallable(const Model::DescribeBackupDownloadTaskRequest& request);
+
+                /**
+                 *This API is used to obtain the automatic backup configuration information of an instance.
+                 * @param req DescribeBackupRulesRequest
+                 * @return DescribeBackupRulesOutcome
+                 */
+                DescribeBackupRulesOutcome DescribeBackupRules(const Model::DescribeBackupRulesRequest &request);
+                void DescribeBackupRulesAsync(const Model::DescribeBackupRulesRequest& request, const DescribeBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupRulesOutcomeCallable DescribeBackupRulesCallable(const Model::DescribeBackupRulesRequest& request);
 
                 /**
                  *This API is used to query the client connection information on an instance, including the IP address for connection and the number of connections.
@@ -256,6 +641,15 @@ namespace TencentCloud
                 DescribeClientConnectionsOutcome DescribeClientConnections(const Model::DescribeClientConnectionsRequest &request);
                 void DescribeClientConnectionsAsync(const Model::DescribeClientConnectionsRequest& request, const DescribeClientConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientConnectionsOutcomeCallable DescribeClientConnectionsCallable(const Model::DescribeClientConnectionsRequest& request);
+
+                /**
+                 *This API is used to query the operation currently being performed on a TencentDB for MongoDB instance.
+                 * @param req DescribeCurrentOpRequest
+                 * @return DescribeCurrentOpOutcome
+                 */
+                DescribeCurrentOpOutcome DescribeCurrentOp(const Model::DescribeCurrentOpRequest &request);
+                void DescribeCurrentOpAsync(const Model::DescribeCurrentOpRequest& request, const DescribeCurrentOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurrentOpOutcomeCallable DescribeCurrentOpCallable(const Model::DescribeCurrentOpRequest& request);
 
                 /**
                  *This API is used to query the list of instance backups. Currently, only backups created in the last seven days can be queried.
@@ -285,6 +679,35 @@ namespace TencentCloud
                 DescribeDBInstanceNamespaceOutcomeCallable DescribeDBInstanceNamespaceCallable(const Model::DescribeDBInstanceNamespaceRequest& request);
 
                 /**
+                 *This API is used to query node attributes, such as the AZ, node name, address, role, status, delay between primary and secondary nodes, priority, voting right, and tags.
+                 * @param req DescribeDBInstanceNodePropertyRequest
+                 * @return DescribeDBInstanceNodePropertyOutcome
+                 */
+                DescribeDBInstanceNodePropertyOutcome DescribeDBInstanceNodeProperty(const Model::DescribeDBInstanceNodePropertyRequest &request);
+                void DescribeDBInstanceNodePropertyAsync(const Model::DescribeDBInstanceNodePropertyRequest& request, const DescribeDBInstanceNodePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceNodePropertyOutcomeCallable DescribeDBInstanceNodePropertyCallable(const Model::DescribeDBInstanceNodePropertyRequest& request);
+
+                /**
+                 *This API is used to query ALL MongoDB database parameter templates under the current account.
+**Description:** The DescribeDBInstanceParamTpl API is in public beta. During this period, this API is only applicable to beta test participants.
+                 * @param req DescribeDBInstanceParamTplRequest
+                 * @return DescribeDBInstanceParamTplOutcome
+                 */
+                DescribeDBInstanceParamTplOutcome DescribeDBInstanceParamTpl(const Model::DescribeDBInstanceParamTplRequest &request);
+                void DescribeDBInstanceParamTplAsync(const Model::DescribeDBInstanceParamTplRequest& request, const DescribeDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceParamTplOutcomeCallable DescribeDBInstanceParamTplCallable(const Model::DescribeDBInstanceParamTplRequest& request);
+
+                /**
+                 *This API is used to query parameter template details of a cloud database instance for MongoDB.
+**Description:** The DescribeDBInstanceParamTplDetail API is in public beta. During this period, this interface is only applicable to beta test participants.
+                 * @param req DescribeDBInstanceParamTplDetailRequest
+                 * @return DescribeDBInstanceParamTplDetailOutcome
+                 */
+                DescribeDBInstanceParamTplDetailOutcome DescribeDBInstanceParamTplDetail(const Model::DescribeDBInstanceParamTplDetailRequest &request);
+                void DescribeDBInstanceParamTplDetailAsync(const Model::DescribeDBInstanceParamTplDetailRequest& request, const DescribeDBInstanceParamTplDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceParamTplDetailOutcomeCallable DescribeDBInstanceParamTplDetailCallable(const Model::DescribeDBInstanceParamTplDetailRequest& request);
+
+                /**
                  *This API is used to query the list of TencentDB for MongoDB instances. It supports filtering primary instances, disaster recovery instances, and read-only instances by project ID, instance ID, instance status, and other conditions.
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
@@ -294,6 +717,15 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
+                 *This API is used to query slow log details of the instance.
+                 * @param req DescribeDetailedSlowLogsRequest
+                 * @return DescribeDetailedSlowLogsOutcome
+                 */
+                DescribeDetailedSlowLogsOutcome DescribeDetailedSlowLogs(const Model::DescribeDetailedSlowLogsRequest &request);
+                void DescribeDetailedSlowLogsAsync(const Model::DescribeDetailedSlowLogsRequest& request, const DescribeDetailedSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetailedSlowLogsOutcomeCallable DescribeDetailedSlowLogsCallable(const Model::DescribeDetailedSlowLogsRequest& request);
+
+                /**
                  *This API is used to query the list of parameters that can be modified for the current instance.
                  * @param req DescribeInstanceParamsRequest
                  * @return DescribeInstanceParamsOutcome
@@ -301,6 +733,69 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *Obtains the list of roles
+                 * @param req DescribeInstanceRolesRequest
+                 * @return DescribeInstanceRolesOutcome
+                 */
+                DescribeInstanceRolesOutcome DescribeInstanceRoles(const Model::DescribeInstanceRolesRequest &request);
+                void DescribeInstanceRolesAsync(const Model::DescribeInstanceRolesRequest& request, const DescribeInstanceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceRolesOutcomeCallable DescribeInstanceRolesCallable(const Model::DescribeInstanceRolesRequest& request);
+
+                /**
+                 *This API is used to view the enabling status of Secure Sockets Layer (SSL) for an instance.
+                 * @param req DescribeInstanceSSLRequest
+                 * @return DescribeInstanceSSLOutcome
+                 */
+                DescribeInstanceSSLOutcome DescribeInstanceSSL(const Model::DescribeInstanceSSLRequest &request);
+                void DescribeInstanceSSLAsync(const Model::DescribeInstanceSSLRequest& request, const DescribeInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSSLOutcomeCallable DescribeInstanceSSLCallable(const Model::DescribeInstanceSSLRequest& request);
+
+                /**
+                 *This API is used to obtain the list of accounts.
+                 * @param req DescribeInstanceUsersRequest
+                 * @return DescribeInstanceUsersOutcome
+                 */
+                DescribeInstanceUsersOutcome DescribeInstanceUsers(const Model::DescribeInstanceUsersRequest &request);
+                void DescribeInstanceUsersAsync(const Model::DescribeInstanceUsersRequest& request, const DescribeInstanceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceUsersOutcomeCallable DescribeInstanceUsersCallable(const Model::DescribeInstanceUsersRequest& request);
+
+                /**
+                 *This API is used to query a log download task.
+                 * @param req DescribeLogDownloadTasksRequest
+                 * @return DescribeLogDownloadTasksOutcome
+                 */
+                DescribeLogDownloadTasksOutcome DescribeLogDownloadTasks(const Model::DescribeLogDownloadTasksRequest &request);
+                void DescribeLogDownloadTasksAsync(const Model::DescribeLogDownloadTasksRequest& request, const DescribeLogDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogDownloadTasksOutcomeCallable DescribeLogDownloadTasksCallable(const Model::DescribeLogDownloadTasksRequest& request);
+
+                /**
+                 *This API is used to query running logs.
+                 * @param req DescribeMongodbLogsRequest
+                 * @return DescribeMongodbLogsOutcome
+                 */
+                DescribeMongodbLogsOutcome DescribeMongodbLogs(const Model::DescribeMongodbLogsRequest &request);
+                void DescribeMongodbLogsAsync(const Model::DescribeMongodbLogsRequest& request, const DescribeMongodbLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMongodbLogsOutcomeCallable DescribeMongodbLogsCallable(const Model::DescribeMongodbLogsRequest& request);
+
+                /**
+                 *Retrieve the rotation status info
+                 * @param req DescribePasswordRotationRequest
+                 * @return DescribePasswordRotationOutcome
+                 */
+                DescribePasswordRotationOutcome DescribePasswordRotation(const Model::DescribePasswordRotationRequest &request);
+                void DescribePasswordRotationAsync(const Model::DescribePasswordRotationRequest& request, const DescribePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePasswordRotationOutcomeCallable DescribePasswordRotationCallable(const Model::DescribePasswordRotationRequest& request);
+
+                /**
+                 *This API is used to query the current domain information of the MongoDB database.
+                 * @param req DescribeSRVConnectionDomainRequest
+                 * @return DescribeSRVConnectionDomainOutcome
+                 */
+                DescribeSRVConnectionDomainOutcome DescribeSRVConnectionDomain(const Model::DescribeSRVConnectionDomainRequest &request);
+                void DescribeSRVConnectionDomainAsync(const Model::DescribeSRVConnectionDomainRequest& request, const DescribeSRVConnectionDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSRVConnectionDomainOutcomeCallable DescribeSRVConnectionDomainCallable(const Model::DescribeSRVConnectionDomainRequest& request);
 
                 /**
                  *This API is used to query security groups bound to an instance.
@@ -330,13 +825,58 @@ namespace TencentCloud
                 DescribeSlowLogsOutcomeCallable DescribeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request);
 
                 /**
-                 *This API is used to query the purchasable instance specifications.
+                 *This API is used to query the sales specification of an instance.
                  * @param req DescribeSpecInfoRequest
                  * @return DescribeSpecInfoOutcome
                  */
                 DescribeSpecInfoOutcome DescribeSpecInfo(const Model::DescribeSpecInfoRequest &request);
                 void DescribeSpecInfoAsync(const Model::DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecInfoOutcomeCallable DescribeSpecInfoCallable(const Model::DescribeSpecInfoRequest& request);
+
+                /**
+                 *This API is used to close the SRV Access Address of the MongoDB database.
+                 * @param req DisableSRVConnectionUrlRequest
+                 * @return DisableSRVConnectionUrlOutcome
+                 */
+                DisableSRVConnectionUrlOutcome DisableSRVConnectionUrl(const Model::DisableSRVConnectionUrlRequest &request);
+                void DisableSRVConnectionUrlAsync(const Model::DisableSRVConnectionUrlRequest& request, const DisableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableSRVConnectionUrlOutcomeCallable DisableSRVConnectionUrlCallable(const Model::DisableSRVConnectionUrlRequest& request);
+
+                /**
+                 *Enable password rotation
+                 * @param req EnablePasswordRotationRequest
+                 * @return EnablePasswordRotationOutcome
+                 */
+                EnablePasswordRotationOutcome EnablePasswordRotation(const Model::EnablePasswordRotationRequest &request);
+                void EnablePasswordRotationAsync(const Model::EnablePasswordRotationRequest& request, const EnablePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePasswordRotationOutcomeCallable EnablePasswordRotationCallable(const Model::EnablePasswordRotationRequest& request);
+
+                /**
+                 *This API is used to enable the SRV Access Address for MongoDB database.
+                 * @param req EnableSRVConnectionUrlRequest
+                 * @return EnableSRVConnectionUrlOutcome
+                 */
+                EnableSRVConnectionUrlOutcome EnableSRVConnectionUrl(const Model::EnableSRVConnectionUrlRequest &request);
+                void EnableSRVConnectionUrlAsync(const Model::EnableSRVConnectionUrlRequest& request, const EnableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableSRVConnectionUrlOutcomeCallable EnableSRVConnectionUrlCallable(const Model::EnableSRVConnectionUrlRequest& request);
+
+                /**
+                 *This API is used to enable the transparent data encryption (TDE) capability for TencentDB for MongoDB.
+                 * @param req EnableTransparentDataEncryptionRequest
+                 * @return EnableTransparentDataEncryptionOutcome
+                 */
+                EnableTransparentDataEncryptionOutcome EnableTransparentDataEncryption(const Model::EnableTransparentDataEncryptionRequest &request);
+                void EnableTransparentDataEncryptionAsync(const Model::EnableTransparentDataEncryptionRequest& request, const EnableTransparentDataEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableTransparentDataEncryptionOutcomeCallable EnableTransparentDataEncryptionCallable(const Model::EnableTransparentDataEncryptionRequest& request);
+
+                /**
+                 *This API is used to enable the public network access address of the current instance.
+                 * @param req EnableWanServiceRequest
+                 * @return EnableWanServiceOutcome
+                 */
+                EnableWanServiceOutcome EnableWanService(const Model::EnableWanServiceRequest &request);
+                void EnableWanServiceAsync(const Model::EnableWanServiceRequest& request, const EnableWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableWanServiceOutcomeCallable EnableWanServiceCallable(const Model::EnableWanServiceRequest& request);
 
                 /**
                  *This API is used to run the `FlushRouterConfig` command on all mongos instances.
@@ -375,13 +915,40 @@ namespace TencentCloud
                 InquirePriceRenewDBInstancesOutcomeCallable InquirePriceRenewDBInstancesCallable(const Model::InquirePriceRenewDBInstancesRequest& request);
 
                 /**
-                 *This API is used to isolate a pay-as-you-go TencentDB for MongoDB instance. An isolated instance is retained in the recycle bin and data can no longer be written to it. After it is isolated for a certain period of time, it will be completely deleted. For the retention period in the recycle bin, please see the terms of service for pay-as-you-go billing. Isolated pay-as-you-go instances cannot be recovered, so please proceed with caution.
+                 *This API is used to set the SSL status for an instance.
+                 * @param req InstanceEnableSSLRequest
+                 * @return InstanceEnableSSLOutcome
+                 */
+                InstanceEnableSSLOutcome InstanceEnableSSL(const Model::InstanceEnableSSLRequest &request);
+                void InstanceEnableSSLAsync(const Model::InstanceEnableSSLRequest& request, const InstanceEnableSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstanceEnableSSLOutcomeCallable InstanceEnableSSLCallable(const Model::InstanceEnableSSLRequest& request);
+
+                /**
+                 *This API is used to isolate a pay-as-you-go TencentDB for MongoDB instance. After isolation, the instance is retained in the recycle bin, and data cannot be written into it. After a certain period of isolation, the instance is deleted permanently. For the retention time in the recycle bin, see the pay-as-you-go service terms. The deleted pay-as-you-go instance cannot be recovered. Proceed with caution.
                  * @param req IsolateDBInstanceRequest
                  * @return IsolateDBInstanceOutcome
                  */
                 IsolateDBInstanceOutcome IsolateDBInstance(const Model::IsolateDBInstanceRequest &request);
                 void IsolateDBInstanceAsync(const Model::IsolateDBInstanceRequest& request, const IsolateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateDBInstanceOutcomeCallable IsolateDBInstanceCallable(const Model::IsolateDBInstanceRequest& request);
+
+                /**
+                 *This API is used to terminate a specific operation performed on a TencentDB for MongoDB instance.
+                 * @param req KillOpsRequest
+                 * @return KillOpsOutcome
+                 */
+                KillOpsOutcome KillOps(const Model::KillOpsRequest &request);
+                void KillOpsAsync(const Model::KillOpsRequest& request, const KillOpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillOpsOutcomeCallable KillOpsCallable(const Model::KillOpsRequest& request);
+
+                /**
+                 *Modify backup expiration time
+                 * @param req ModifyBackupExpireTimeRequest
+                 * @return ModifyBackupExpireTimeOutcome
+                 */
+                ModifyBackupExpireTimeOutcome ModifyBackupExpireTime(const Model::ModifyBackupExpireTimeRequest &request);
+                void ModifyBackupExpireTimeAsync(const Model::ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupExpireTimeOutcomeCallable ModifyBackupExpireTimeCallable(const Model::ModifyBackupExpireTimeRequest& request);
 
                 /**
                  *This API is used to modify the network information on a TencentDB for MongoDB instance. It supports switching from a basic network to a VPC network or from one VPC network to another VPC network.
@@ -402,13 +969,40 @@ namespace TencentCloud
                 ModifyDBInstanceSecurityGroupOutcomeCallable ModifyDBInstanceSecurityGroupCallable(const Model::ModifyDBInstanceSecurityGroupRequest& request);
 
                 /**
-                 *This API is used to adjust the configuration of a TencentDB for MongoDB instance. Saleable specifications supported for this API can be obtained from the DescribeSpecInfo API for querying saleable TencentDB for MongoDB specifications.
+                 *This API is used to adjust the TencentDB for MongoDB instance configuration. The [DescribeSpecInfo](https://www.tencentcloud.com/document/product/240/38567?from_cn_redirect=1) API can be called to query and obtain the supported sales specifications.
                  * @param req ModifyDBInstanceSpecRequest
                  * @return ModifyDBInstanceSpecOutcome
                  */
                 ModifyDBInstanceSpecOutcome ModifyDBInstanceSpec(const Model::ModifyDBInstanceSpecRequest &request);
                 void ModifyDBInstanceSpecAsync(const Model::ModifyDBInstanceSpecRequest& request, const ModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceSpecOutcomeCallable ModifyDBInstanceSpecCallable(const Model::ModifyDBInstanceSpecRequest& request);
+
+                /**
+                 *This API is used to adjust the availability zone distribution of MongoDB cloud database nodes. You can specify the primary AZ and total availability zone distribution info to complete node distribution adjustment.
+                 * @param req ModifyInstanceAzRequest
+                 * @return ModifyInstanceAzOutcome
+                 */
+                ModifyInstanceAzOutcome ModifyInstanceAz(const Model::ModifyInstanceAzRequest &request);
+                void ModifyInstanceAzAsync(const Model::ModifyInstanceAzRequest& request, const ModifyInstanceAzAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceAzOutcomeCallable ModifyInstanceAzCallable(const Model::ModifyInstanceAzRequest& request);
+
+                /**
+                 *This API is used to modify the parameter configuration of a TencentDB for MongoDB instance.
+                 * @param req ModifyInstanceParamsRequest
+                 * @return ModifyInstanceParamsOutcome
+                 */
+                ModifyInstanceParamsOutcome ModifyInstanceParams(const Model::ModifyInstanceParamsRequest &request);
+                void ModifyInstanceParamsAsync(const Model::ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceParamsOutcomeCallable ModifyInstanceParamsCallable(const Model::ModifyInstanceParamsRequest& request);
+
+                /**
+                 *This API is used to modify the TTL duration of the SRV Access Address for a MongoDB database.
+                 * @param req ModifySRVConnectionUrlRequest
+                 * @return ModifySRVConnectionUrlOutcome
+                 */
+                ModifySRVConnectionUrlOutcome ModifySRVConnectionUrl(const Model::ModifySRVConnectionUrlRequest &request);
+                void ModifySRVConnectionUrlAsync(const Model::ModifySRVConnectionUrlRequest& request, const ModifySRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySRVConnectionUrlOutcomeCallable ModifySRVConnectionUrlCallable(const Model::ModifySRVConnectionUrlRequest& request);
 
                 /**
                  *This API is used to deactivate isolated TencentDB instances immediately. The instances must be in isolated status.
@@ -438,13 +1032,95 @@ namespace TencentCloud
                 RenewDBInstancesOutcomeCallable RenewDBInstancesCallable(const Model::RenewDBInstancesRequest& request);
 
                 /**
-                 *This API is used to modify instance password.
+                 *This API is used to reset the instance access password.
                  * @param req ResetDBInstancePasswordRequest
                  * @return ResetDBInstancePasswordOutcome
                  */
                 ResetDBInstancePasswordOutcome ResetDBInstancePassword(const Model::ResetDBInstancePasswordRequest &request);
                 void ResetDBInstancePasswordAsync(const Model::ResetDBInstancePasswordRequest& request, const ResetDBInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetDBInstancePasswordOutcomeCallable ResetDBInstancePasswordCallable(const Model::ResetDBInstancePasswordRequest& request);
+
+                /**
+                 *This API is used to rollback the database instance to a specified time point.
+                 * @param req RestoreDBInstanceRequest
+                 * @return RestoreDBInstanceOutcome
+                 */
+                RestoreDBInstanceOutcome RestoreDBInstance(const Model::RestoreDBInstanceRequest &request);
+                void RestoreDBInstanceAsync(const Model::RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreDBInstanceOutcomeCallable RestoreDBInstanceCallable(const Model::RestoreDBInstanceRequest& request);
+
+                /**
+                 *This API is used to set the account permissions of an instance.
+                 * @param req SetAccountUserPrivilegeRequest
+                 * @return SetAccountUserPrivilegeOutcome
+                 */
+                SetAccountUserPrivilegeOutcome SetAccountUserPrivilege(const Model::SetAccountUserPrivilegeRequest &request);
+                void SetAccountUserPrivilegeAsync(const Model::SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAccountUserPrivilegeOutcomeCallable SetAccountUserPrivilegeCallable(const Model::SetAccountUserPrivilegeRequest& request);
+
+                /**
+                 *This API is used to set instance termination protection.
+                 * @param req SetDBInstanceDeletionProtectionRequest
+                 * @return SetDBInstanceDeletionProtectionOutcome
+                 */
+                SetDBInstanceDeletionProtectionOutcome SetDBInstanceDeletionProtection(const Model::SetDBInstanceDeletionProtectionRequest &request);
+                void SetDBInstanceDeletionProtectionAsync(const Model::SetDBInstanceDeletionProtectionRequest& request, const SetDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDBInstanceDeletionProtectionOutcomeCallable SetDBInstanceDeletionProtectionCallable(const Model::SetDBInstanceDeletionProtectionRequest& request);
+
+                /**
+                 *This API is used to set the instance maintenance window.
+                 * @param req SetInstanceMaintenanceRequest
+                 * @return SetInstanceMaintenanceOutcome
+                 */
+                SetInstanceMaintenanceOutcome SetInstanceMaintenance(const Model::SetInstanceMaintenanceRequest &request);
+                void SetInstanceMaintenanceAsync(const Model::SetInstanceMaintenanceRequest& request, const SetInstanceMaintenanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetInstanceMaintenanceOutcomeCallable SetInstanceMaintenanceCallable(const Model::SetInstanceMaintenanceRequest& request);
+
+                /**
+                 *This API is used to terminate monthly subscription billing instances.
+                 * @param req TerminateDBInstancesRequest
+                 * @return TerminateDBInstancesOutcome
+                 */
+                TerminateDBInstancesOutcome TerminateDBInstances(const Model::TerminateDBInstancesRequest &request);
+                void TerminateDBInstancesAsync(const Model::TerminateDBInstancesRequest& request, const TerminateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDBInstancesOutcomeCallable TerminateDBInstancesCallable(const Model::TerminateDBInstancesRequest& request);
+
+                /**
+                 *This API is used to update a database role.
+                 * @param req UpdateInstanceRoleRequest
+                 * @return UpdateInstanceRoleOutcome
+                 */
+                UpdateInstanceRoleOutcome UpdateInstanceRole(const Model::UpdateInstanceRoleRequest &request);
+                void UpdateInstanceRoleAsync(const Model::UpdateInstanceRoleRequest& request, const UpdateInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateInstanceRoleOutcomeCallable UpdateInstanceRoleCallable(const Model::UpdateInstanceRoleRequest& request);
+
+                /**
+                 *Update database account
+                 * @param req UpdateInstanceUserRequest
+                 * @return UpdateInstanceUserOutcome
+                 */
+                UpdateInstanceUserOutcome UpdateInstanceUser(const Model::UpdateInstanceUserRequest &request);
+                void UpdateInstanceUserAsync(const Model::UpdateInstanceUserRequest& request, const UpdateInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateInstanceUserOutcomeCallable UpdateInstanceUserCallable(const Model::UpdateInstanceUserRequest& request);
+
+                /**
+                 *This API is used to upgrade the kernel version of the database instance.
+                 * @param req UpgradeDBInstanceKernelVersionRequest
+                 * @return UpgradeDBInstanceKernelVersionOutcome
+                 */
+                UpgradeDBInstanceKernelVersionOutcome UpgradeDBInstanceKernelVersion(const Model::UpgradeDBInstanceKernelVersionRequest &request);
+                void UpgradeDBInstanceKernelVersionAsync(const Model::UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeDBInstanceKernelVersionOutcomeCallable UpgradeDBInstanceKernelVersionCallable(const Model::UpgradeDBInstanceKernelVersionRequest& request);
+
+                /**
+                 *This API is used to upgrade database version.
+**Description**: Upgrade to version 3.6 and above is supported. Only upgrading from a lower version to a higher version step by step is allowed. Cross-version upgrade or version downgrade is not supported.
+                 * @param req UpgradeDbInstanceVersionRequest
+                 * @return UpgradeDbInstanceVersionOutcome
+                 */
+                UpgradeDbInstanceVersionOutcome UpgradeDbInstanceVersion(const Model::UpgradeDbInstanceVersionRequest &request);
+                void UpgradeDbInstanceVersionAsync(const Model::UpgradeDbInstanceVersionRequest& request, const UpgradeDbInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeDbInstanceVersionOutcomeCallable UpgradeDbInstanceVersionCallable(const Model::UpgradeDbInstanceVersionRequest& request);
 
             };
         }

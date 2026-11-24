@@ -71,22 +71,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Task status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @return Status Task status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Task status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * @param _status Task status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -99,23 +99,23 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code
+                     * 获取Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-                     * @return ErrCode Error code
+<li>Other values: Failed.</li>
+                     * @return ErrCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other values: Failed.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code
+                     * 设置Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-                     * @param _errCode Error code
+<li>Other values: Failed.</li>
+                     * @param _errCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other values: Failed.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Input of video editing task.
-                     * @return Input Input of video editing task.
+                     * 获取Input for a video editing task.
+                     * @return Input Input for a video editing task.
                      * 
                      */
                     EditMediaTaskInput GetInput() const;
 
                     /**
-                     * 设置Input of video editing task.
-                     * @param _input Input of video editing task.
+                     * 设置Input for a video editing task.
+                     * @param _input Input for a video editing task.
                      * 
                      */
                     void SetInput(const EditMediaTaskInput& _input);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output of video editing task.
-                     * @return Output Output of video editing task.
+                     * 获取Output of the video editing task.
+                     * @return Output Output of the video editing task.
                      * 
                      */
                     EditMediaTaskOutput GetOutput() const;
 
                     /**
-                     * 设置Output of video editing task.
-                     * @param _output Output of video editing task.
+                     * 设置Output of the video editing task.
+                     * @param _output Output of the video editing task.
                      * 
                      */
                     void SetOutput(const EditMediaTaskOutput& _output);
@@ -200,16 +200,16 @@ namespace TencentCloud
 
                     /**
                      * Task status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code
+                     * Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
+<li>Other values: Failed.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
@@ -221,13 +221,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Input of video editing task.
+                     * Input for a video editing task.
                      */
                     EditMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output of video editing task.
+                     * Output of the video editing task.
                      */
                     EditMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;

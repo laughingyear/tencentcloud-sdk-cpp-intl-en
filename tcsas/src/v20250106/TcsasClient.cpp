@@ -62,25 +62,232 @@ TcsasClient::AddTeamMemberOutcome TcsasClient::AddTeamMember(const AddTeamMember
 
 void TcsasClient::AddTeamMemberAsync(const AddTeamMemberRequest& request, const AddTeamMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddTeamMember(request), context);
-    };
+    using Req = const AddTeamMemberRequest&;
+    using Resp = AddTeamMemberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddTeamMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::AddTeamMemberOutcomeCallable TcsasClient::AddTeamMemberCallable(const AddTeamMemberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddTeamMemberOutcome()>>(
-        [this, request]()
-        {
-            return this->AddTeamMember(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<AddTeamMemberOutcome>>();
+    AddTeamMemberAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const AddTeamMemberRequest&,
+        AddTeamMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::ApproveMNPPaymentEnableOutcome TcsasClient::ApproveMNPPaymentEnable(const ApproveMNPPaymentEnableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApproveMNPPaymentEnable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApproveMNPPaymentEnableResponse rsp = ApproveMNPPaymentEnableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApproveMNPPaymentEnableOutcome(rsp);
+        else
+            return ApproveMNPPaymentEnableOutcome(o.GetError());
+    }
+    else
+    {
+        return ApproveMNPPaymentEnableOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ApproveMNPPaymentEnableAsync(const ApproveMNPPaymentEnableRequest& request, const ApproveMNPPaymentEnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ApproveMNPPaymentEnableRequest&;
+    using Resp = ApproveMNPPaymentEnableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ApproveMNPPaymentEnable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ApproveMNPPaymentEnableOutcomeCallable TcsasClient::ApproveMNPPaymentEnableCallable(const ApproveMNPPaymentEnableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ApproveMNPPaymentEnableOutcome>>();
+    ApproveMNPPaymentEnableAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ApproveMNPPaymentEnableRequest&,
+        ApproveMNPPaymentEnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ApprovePaymentMerchantBindingOutcome TcsasClient::ApprovePaymentMerchantBinding(const ApprovePaymentMerchantBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApprovePaymentMerchantBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApprovePaymentMerchantBindingResponse rsp = ApprovePaymentMerchantBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApprovePaymentMerchantBindingOutcome(rsp);
+        else
+            return ApprovePaymentMerchantBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return ApprovePaymentMerchantBindingOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ApprovePaymentMerchantBindingAsync(const ApprovePaymentMerchantBindingRequest& request, const ApprovePaymentMerchantBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ApprovePaymentMerchantBindingRequest&;
+    using Resp = ApprovePaymentMerchantBindingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ApprovePaymentMerchantBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ApprovePaymentMerchantBindingOutcomeCallable TcsasClient::ApprovePaymentMerchantBindingCallable(const ApprovePaymentMerchantBindingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ApprovePaymentMerchantBindingOutcome>>();
+    ApprovePaymentMerchantBindingAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ApprovePaymentMerchantBindingRequest&,
+        ApprovePaymentMerchantBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ChangePaymentBoundMerchantOutcome TcsasClient::ChangePaymentBoundMerchant(const ChangePaymentBoundMerchantRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangePaymentBoundMerchant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangePaymentBoundMerchantResponse rsp = ChangePaymentBoundMerchantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangePaymentBoundMerchantOutcome(rsp);
+        else
+            return ChangePaymentBoundMerchantOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangePaymentBoundMerchantOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ChangePaymentBoundMerchantAsync(const ChangePaymentBoundMerchantRequest& request, const ChangePaymentBoundMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ChangePaymentBoundMerchantRequest&;
+    using Resp = ChangePaymentBoundMerchantResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ChangePaymentBoundMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ChangePaymentBoundMerchantOutcomeCallable TcsasClient::ChangePaymentBoundMerchantCallable(const ChangePaymentBoundMerchantRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ChangePaymentBoundMerchantOutcome>>();
+    ChangePaymentBoundMerchantAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ChangePaymentBoundMerchantRequest&,
+        ChangePaymentBoundMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ConfigureMNGPreviewOutcome TcsasClient::ConfigureMNGPreview(const ConfigureMNGPreviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfigureMNGPreview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfigureMNGPreviewResponse rsp = ConfigureMNGPreviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfigureMNGPreviewOutcome(rsp);
+        else
+            return ConfigureMNGPreviewOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfigureMNGPreviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ConfigureMNGPreviewAsync(const ConfigureMNGPreviewRequest& request, const ConfigureMNGPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ConfigureMNGPreviewRequest&;
+    using Resp = ConfigureMNGPreviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ConfigureMNGPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ConfigureMNGPreviewOutcomeCallable TcsasClient::ConfigureMNGPreviewCallable(const ConfigureMNGPreviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ConfigureMNGPreviewOutcome>>();
+    ConfigureMNGPreviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ConfigureMNGPreviewRequest&,
+        ConfigureMNGPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ConfigureMNPPreviewOutcome TcsasClient::ConfigureMNPPreview(const ConfigureMNPPreviewRequest &request)
@@ -105,25 +312,32 @@ TcsasClient::ConfigureMNPPreviewOutcome TcsasClient::ConfigureMNPPreview(const C
 
 void TcsasClient::ConfigureMNPPreviewAsync(const ConfigureMNPPreviewRequest& request, const ConfigureMNPPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfigureMNPPreview(request), context);
-    };
+    using Req = const ConfigureMNPPreviewRequest&;
+    using Resp = ConfigureMNPPreviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfigureMNPPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ConfigureMNPPreviewOutcomeCallable TcsasClient::ConfigureMNPPreviewCallable(const ConfigureMNPPreviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfigureMNPPreviewOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfigureMNPPreview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfigureMNPPreviewOutcome>>();
+    ConfigureMNPPreviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ConfigureMNPPreviewRequest&,
+        ConfigureMNPPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateApplicationOutcome TcsasClient::CreateApplication(const CreateApplicationRequest &request)
@@ -148,25 +362,82 @@ TcsasClient::CreateApplicationOutcome TcsasClient::CreateApplication(const Creat
 
 void TcsasClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApplication(request), context);
-    };
+    using Req = const CreateApplicationRequest&;
+    using Resp = CreateApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateApplicationOutcomeCallable TcsasClient::CreateApplicationCallable(const CreateApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApplication(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateApplicationOutcome>>();
+    CreateApplicationAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateApplicationRequest&,
+        CreateApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::CreateApplicationConfigOutcome TcsasClient::CreateApplicationConfig(const CreateApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApplicationConfigResponse rsp = CreateApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApplicationConfigOutcome(rsp);
+        else
+            return CreateApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateApplicationConfigAsync(const CreateApplicationConfigRequest& request, const CreateApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateApplicationConfigRequest&;
+    using Resp = CreateApplicationConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateApplicationConfigOutcomeCallable TcsasClient::CreateApplicationConfigCallable(const CreateApplicationConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateApplicationConfigOutcome>>();
+    CreateApplicationConfigAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateApplicationConfigRequest&,
+        CreateApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateApplicationSensitiveAPIOutcome TcsasClient::CreateApplicationSensitiveAPI(const CreateApplicationSensitiveAPIRequest &request)
@@ -191,25 +462,32 @@ TcsasClient::CreateApplicationSensitiveAPIOutcome TcsasClient::CreateApplication
 
 void TcsasClient::CreateApplicationSensitiveAPIAsync(const CreateApplicationSensitiveAPIRequest& request, const CreateApplicationSensitiveAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApplicationSensitiveAPI(request), context);
-    };
+    using Req = const CreateApplicationSensitiveAPIRequest&;
+    using Resp = CreateApplicationSensitiveAPIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApplicationSensitiveAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateApplicationSensitiveAPIOutcomeCallable TcsasClient::CreateApplicationSensitiveAPICallable(const CreateApplicationSensitiveAPIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApplicationSensitiveAPIOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApplicationSensitiveAPI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApplicationSensitiveAPIOutcome>>();
+    CreateApplicationSensitiveAPIAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateApplicationSensitiveAPIRequest&,
+        CreateApplicationSensitiveAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateGlobalDomainACLOutcome TcsasClient::CreateGlobalDomainACL(const CreateGlobalDomainACLRequest &request)
@@ -234,25 +512,382 @@ TcsasClient::CreateGlobalDomainACLOutcome TcsasClient::CreateGlobalDomainACL(con
 
 void TcsasClient::CreateGlobalDomainACLAsync(const CreateGlobalDomainACLRequest& request, const CreateGlobalDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateGlobalDomainACL(request), context);
-    };
+    using Req = const CreateGlobalDomainACLRequest&;
+    using Resp = CreateGlobalDomainACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateGlobalDomainACLOutcomeCallable TcsasClient::CreateGlobalDomainACLCallable(const CreateGlobalDomainACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateGlobalDomainACLOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateGlobalDomainACL(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateGlobalDomainACLOutcome>>();
+    CreateGlobalDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateGlobalDomainACLRequest&,
+        CreateGlobalDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::CreateMNGOutcome TcsasClient::CreateMNG(const CreateMNGRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNG");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGResponse rsp = CreateMNGResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGOutcome(rsp);
+        else
+            return CreateMNGOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGAsync(const CreateMNGRequest& request, const CreateMNGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGRequest&;
+    using Resp = CreateMNGResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNG", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGOutcomeCallable TcsasClient::CreateMNGCallable(const CreateMNGRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGOutcome>>();
+    CreateMNGAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGRequest&,
+        CreateMNGOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGAppSecretOutcome TcsasClient::CreateMNGAppSecret(const CreateMNGAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGAppSecretResponse rsp = CreateMNGAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGAppSecretOutcome(rsp);
+        else
+            return CreateMNGAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGAppSecretAsync(const CreateMNGAppSecretRequest& request, const CreateMNGAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGAppSecretRequest&;
+    using Resp = CreateMNGAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGAppSecretOutcomeCallable TcsasClient::CreateMNGAppSecretCallable(const CreateMNGAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGAppSecretOutcome>>();
+    CreateMNGAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGAppSecretRequest&,
+        CreateMNGAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGApprovalOutcome TcsasClient::CreateMNGApproval(const CreateMNGApprovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGApproval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGApprovalResponse rsp = CreateMNGApprovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGApprovalOutcome(rsp);
+        else
+            return CreateMNGApprovalOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGApprovalOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGApprovalAsync(const CreateMNGApprovalRequest& request, const CreateMNGApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGApprovalRequest&;
+    using Resp = CreateMNGApprovalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGApprovalOutcomeCallable TcsasClient::CreateMNGApprovalCallable(const CreateMNGApprovalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGApprovalOutcome>>();
+    CreateMNGApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGApprovalRequest&,
+        CreateMNGApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGDomainACLOutcome TcsasClient::CreateMNGDomainACL(const CreateMNGDomainACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGDomainACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGDomainACLResponse rsp = CreateMNGDomainACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGDomainACLOutcome(rsp);
+        else
+            return CreateMNGDomainACLOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGDomainACLOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGDomainACLAsync(const CreateMNGDomainACLRequest& request, const CreateMNGDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGDomainACLRequest&;
+    using Resp = CreateMNGDomainACLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGDomainACLOutcomeCallable TcsasClient::CreateMNGDomainACLCallable(const CreateMNGDomainACLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGDomainACLOutcome>>();
+    CreateMNGDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGDomainACLRequest&,
+        CreateMNGDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGSensitiveAPIPermissionApprovalOutcome TcsasClient::CreateMNGSensitiveAPIPermissionApproval(const CreateMNGSensitiveAPIPermissionApprovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGSensitiveAPIPermissionApproval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGSensitiveAPIPermissionApprovalResponse rsp = CreateMNGSensitiveAPIPermissionApprovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGSensitiveAPIPermissionApprovalOutcome(rsp);
+        else
+            return CreateMNGSensitiveAPIPermissionApprovalOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGSensitiveAPIPermissionApprovalOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGSensitiveAPIPermissionApprovalAsync(const CreateMNGSensitiveAPIPermissionApprovalRequest& request, const CreateMNGSensitiveAPIPermissionApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGSensitiveAPIPermissionApprovalRequest&;
+    using Resp = CreateMNGSensitiveAPIPermissionApprovalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGSensitiveAPIPermissionApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGSensitiveAPIPermissionApprovalOutcomeCallable TcsasClient::CreateMNGSensitiveAPIPermissionApprovalCallable(const CreateMNGSensitiveAPIPermissionApprovalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGSensitiveAPIPermissionApprovalOutcome>>();
+    CreateMNGSensitiveAPIPermissionApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGSensitiveAPIPermissionApprovalRequest&,
+        CreateMNGSensitiveAPIPermissionApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGSubscribeMessageTemplateOutcome TcsasClient::CreateMNGSubscribeMessageTemplate(const CreateMNGSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGSubscribeMessageTemplateResponse rsp = CreateMNGSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGSubscribeMessageTemplateOutcome(rsp);
+        else
+            return CreateMNGSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGSubscribeMessageTemplateAsync(const CreateMNGSubscribeMessageTemplateRequest& request, const CreateMNGSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGSubscribeMessageTemplateRequest&;
+    using Resp = CreateMNGSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGSubscribeMessageTemplateOutcomeCallable TcsasClient::CreateMNGSubscribeMessageTemplateCallable(const CreateMNGSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGSubscribeMessageTemplateOutcome>>();
+    CreateMNGSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGSubscribeMessageTemplateRequest&,
+        CreateMNGSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::CreateMNGVersionOutcome TcsasClient::CreateMNGVersion(const CreateMNGVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNGVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNGVersionResponse rsp = CreateMNGVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNGVersionOutcome(rsp);
+        else
+            return CreateMNGVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNGVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNGVersionAsync(const CreateMNGVersionRequest& request, const CreateMNGVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNGVersionRequest&;
+    using Resp = CreateMNGVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNGVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNGVersionOutcomeCallable TcsasClient::CreateMNGVersionCallable(const CreateMNGVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNGVersionOutcome>>();
+    CreateMNGVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNGVersionRequest&,
+        CreateMNGVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateMNPOutcome TcsasClient::CreateMNP(const CreateMNPRequest &request)
@@ -277,25 +912,82 @@ TcsasClient::CreateMNPOutcome TcsasClient::CreateMNP(const CreateMNPRequest &req
 
 void TcsasClient::CreateMNPAsync(const CreateMNPRequest& request, const CreateMNPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMNP(request), context);
-    };
+    using Req = const CreateMNPRequest&;
+    using Resp = CreateMNPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMNP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateMNPOutcomeCallable TcsasClient::CreateMNPCallable(const CreateMNPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMNPOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMNP(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateMNPOutcome>>();
+    CreateMNPAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPRequest&,
+        CreateMNPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::CreateMNPAppSecretOutcome TcsasClient::CreateMNPAppSecret(const CreateMNPAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNPAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNPAppSecretResponse rsp = CreateMNPAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNPAppSecretOutcome(rsp);
+        else
+            return CreateMNPAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNPAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNPAppSecretAsync(const CreateMNPAppSecretRequest& request, const CreateMNPAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNPAppSecretRequest&;
+    using Resp = CreateMNPAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNPAppSecretOutcomeCallable TcsasClient::CreateMNPAppSecretCallable(const CreateMNPAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNPAppSecretOutcome>>();
+    CreateMNPAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPAppSecretRequest&,
+        CreateMNPAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateMNPApprovalOutcome TcsasClient::CreateMNPApproval(const CreateMNPApprovalRequest &request)
@@ -320,25 +1012,32 @@ TcsasClient::CreateMNPApprovalOutcome TcsasClient::CreateMNPApproval(const Creat
 
 void TcsasClient::CreateMNPApprovalAsync(const CreateMNPApprovalRequest& request, const CreateMNPApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMNPApproval(request), context);
-    };
+    using Req = const CreateMNPApprovalRequest&;
+    using Resp = CreateMNPApprovalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateMNPApprovalOutcomeCallable TcsasClient::CreateMNPApprovalCallable(const CreateMNPApprovalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMNPApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMNPApproval(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMNPApprovalOutcome>>();
+    CreateMNPApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPApprovalRequest&,
+        CreateMNPApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateMNPDomainACLOutcome TcsasClient::CreateMNPDomainACL(const CreateMNPDomainACLRequest &request)
@@ -363,25 +1062,82 @@ TcsasClient::CreateMNPDomainACLOutcome TcsasClient::CreateMNPDomainACL(const Cre
 
 void TcsasClient::CreateMNPDomainACLAsync(const CreateMNPDomainACLRequest& request, const CreateMNPDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMNPDomainACL(request), context);
-    };
+    using Req = const CreateMNPDomainACLRequest&;
+    using Resp = CreateMNPDomainACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateMNPDomainACLOutcomeCallable TcsasClient::CreateMNPDomainACLCallable(const CreateMNPDomainACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMNPDomainACLOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMNPDomainACL(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateMNPDomainACLOutcome>>();
+    CreateMNPDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPDomainACLRequest&,
+        CreateMNPDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::CreateMNPSecretKeyOutcome TcsasClient::CreateMNPSecretKey(const CreateMNPSecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNPSecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNPSecretKeyResponse rsp = CreateMNPSecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNPSecretKeyOutcome(rsp);
+        else
+            return CreateMNPSecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNPSecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNPSecretKeyAsync(const CreateMNPSecretKeyRequest& request, const CreateMNPSecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNPSecretKeyRequest&;
+    using Resp = CreateMNPSecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPSecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNPSecretKeyOutcomeCallable TcsasClient::CreateMNPSecretKeyCallable(const CreateMNPSecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNPSecretKeyOutcome>>();
+    CreateMNPSecretKeyAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPSecretKeyRequest&,
+        CreateMNPSecretKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::CreateMNPSensitiveAPIPermissionApproval(const CreateMNPSensitiveAPIPermissionApprovalRequest &request)
@@ -406,25 +1162,82 @@ TcsasClient::CreateMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::CreateM
 
 void TcsasClient::CreateMNPSensitiveAPIPermissionApprovalAsync(const CreateMNPSensitiveAPIPermissionApprovalRequest& request, const CreateMNPSensitiveAPIPermissionApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMNPSensitiveAPIPermissionApproval(request), context);
-    };
+    using Req = const CreateMNPSensitiveAPIPermissionApprovalRequest&;
+    using Resp = CreateMNPSensitiveAPIPermissionApprovalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPSensitiveAPIPermissionApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateMNPSensitiveAPIPermissionApprovalOutcomeCallable TcsasClient::CreateMNPSensitiveAPIPermissionApprovalCallable(const CreateMNPSensitiveAPIPermissionApprovalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMNPSensitiveAPIPermissionApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMNPSensitiveAPIPermissionApproval(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateMNPSensitiveAPIPermissionApprovalOutcome>>();
+    CreateMNPSensitiveAPIPermissionApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPSensitiveAPIPermissionApprovalRequest&,
+        CreateMNPSensitiveAPIPermissionApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::CreateMNPSubscribeMessageTemplateOutcome TcsasClient::CreateMNPSubscribeMessageTemplate(const CreateMNPSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMNPSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMNPSubscribeMessageTemplateResponse rsp = CreateMNPSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMNPSubscribeMessageTemplateOutcome(rsp);
+        else
+            return CreateMNPSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMNPSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::CreateMNPSubscribeMessageTemplateAsync(const CreateMNPSubscribeMessageTemplateRequest& request, const CreateMNPSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMNPSubscribeMessageTemplateRequest&;
+    using Resp = CreateMNPSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::CreateMNPSubscribeMessageTemplateOutcomeCallable TcsasClient::CreateMNPSubscribeMessageTemplateCallable(const CreateMNPSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMNPSubscribeMessageTemplateOutcome>>();
+    CreateMNPSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPSubscribeMessageTemplateRequest&,
+        CreateMNPSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateMNPVersionOutcome TcsasClient::CreateMNPVersion(const CreateMNPVersionRequest &request)
@@ -449,25 +1262,32 @@ TcsasClient::CreateMNPVersionOutcome TcsasClient::CreateMNPVersion(const CreateM
 
 void TcsasClient::CreateMNPVersionAsync(const CreateMNPVersionRequest& request, const CreateMNPVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMNPVersion(request), context);
-    };
+    using Req = const CreateMNPVersionRequest&;
+    using Resp = CreateMNPVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMNPVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateMNPVersionOutcomeCallable TcsasClient::CreateMNPVersionCallable(const CreateMNPVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMNPVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMNPVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMNPVersionOutcome>>();
+    CreateMNPVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateMNPVersionRequest&,
+        CreateMNPVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreatePresetKeyOutcome TcsasClient::CreatePresetKey(const CreatePresetKeyRequest &request)
@@ -492,25 +1312,32 @@ TcsasClient::CreatePresetKeyOutcome TcsasClient::CreatePresetKey(const CreatePre
 
 void TcsasClient::CreatePresetKeyAsync(const CreatePresetKeyRequest& request, const CreatePresetKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePresetKey(request), context);
-    };
+    using Req = const CreatePresetKeyRequest&;
+    using Resp = CreatePresetKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePresetKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreatePresetKeyOutcomeCallable TcsasClient::CreatePresetKeyCallable(const CreatePresetKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePresetKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePresetKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePresetKeyOutcome>>();
+    CreatePresetKeyAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreatePresetKeyRequest&,
+        CreatePresetKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateTeamOutcome TcsasClient::CreateTeam(const CreateTeamRequest &request)
@@ -535,25 +1362,32 @@ TcsasClient::CreateTeamOutcome TcsasClient::CreateTeam(const CreateTeamRequest &
 
 void TcsasClient::CreateTeamAsync(const CreateTeamRequest& request, const CreateTeamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTeam(request), context);
-    };
+    using Req = const CreateTeamRequest&;
+    using Resp = CreateTeamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTeam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateTeamOutcomeCallable TcsasClient::CreateTeamCallable(const CreateTeamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTeamOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTeam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTeamOutcome>>();
+    CreateTeamAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateTeamRequest&,
+        CreateTeamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::CreateUserOutcome TcsasClient::CreateUser(const CreateUserRequest &request)
@@ -578,25 +1412,32 @@ TcsasClient::CreateUserOutcome TcsasClient::CreateUser(const CreateUserRequest &
 
 void TcsasClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::CreateUserOutcomeCallable TcsasClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteApplicationOutcome TcsasClient::DeleteApplication(const DeleteApplicationRequest &request)
@@ -621,25 +1462,32 @@ TcsasClient::DeleteApplicationOutcome TcsasClient::DeleteApplication(const Delet
 
 void TcsasClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApplication(request), context);
-    };
+    using Req = const DeleteApplicationRequest&;
+    using Resp = DeleteApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteApplicationOutcomeCallable TcsasClient::DeleteApplicationCallable(const DeleteApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApplication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApplicationOutcome>>();
+    DeleteApplicationAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteApplicationRequest&,
+        DeleteApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteApplicationSensitiveAPIOutcome TcsasClient::DeleteApplicationSensitiveAPI(const DeleteApplicationSensitiveAPIRequest &request)
@@ -664,25 +1512,32 @@ TcsasClient::DeleteApplicationSensitiveAPIOutcome TcsasClient::DeleteApplication
 
 void TcsasClient::DeleteApplicationSensitiveAPIAsync(const DeleteApplicationSensitiveAPIRequest& request, const DeleteApplicationSensitiveAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApplicationSensitiveAPI(request), context);
-    };
+    using Req = const DeleteApplicationSensitiveAPIRequest&;
+    using Resp = DeleteApplicationSensitiveAPIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApplicationSensitiveAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteApplicationSensitiveAPIOutcomeCallable TcsasClient::DeleteApplicationSensitiveAPICallable(const DeleteApplicationSensitiveAPIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApplicationSensitiveAPIOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApplicationSensitiveAPI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApplicationSensitiveAPIOutcome>>();
+    DeleteApplicationSensitiveAPIAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteApplicationSensitiveAPIRequest&,
+        DeleteApplicationSensitiveAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteGlobalDomainOutcome TcsasClient::DeleteGlobalDomain(const DeleteGlobalDomainRequest &request)
@@ -707,25 +1562,132 @@ TcsasClient::DeleteGlobalDomainOutcome TcsasClient::DeleteGlobalDomain(const Del
 
 void TcsasClient::DeleteGlobalDomainAsync(const DeleteGlobalDomainRequest& request, const DeleteGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGlobalDomain(request), context);
-    };
+    using Req = const DeleteGlobalDomainRequest&;
+    using Resp = DeleteGlobalDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlobalDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteGlobalDomainOutcomeCallable TcsasClient::DeleteGlobalDomainCallable(const DeleteGlobalDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGlobalDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGlobalDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteGlobalDomainOutcome>>();
+    DeleteGlobalDomainAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteGlobalDomainRequest&,
+        DeleteGlobalDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DeleteMNGOutcome TcsasClient::DeleteMNG(const DeleteMNGRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMNG");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMNGResponse rsp = DeleteMNGResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMNGOutcome(rsp);
+        else
+            return DeleteMNGOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMNGOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DeleteMNGAsync(const DeleteMNGRequest& request, const DeleteMNGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMNGRequest&;
+    using Resp = DeleteMNGResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMNG", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DeleteMNGOutcomeCallable TcsasClient::DeleteMNGCallable(const DeleteMNGRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMNGOutcome>>();
+    DeleteMNGAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteMNGRequest&,
+        DeleteMNGOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DeleteMNGSubscribeMessageTemplateOutcome TcsasClient::DeleteMNGSubscribeMessageTemplate(const DeleteMNGSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMNGSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMNGSubscribeMessageTemplateResponse rsp = DeleteMNGSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMNGSubscribeMessageTemplateOutcome(rsp);
+        else
+            return DeleteMNGSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMNGSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DeleteMNGSubscribeMessageTemplateAsync(const DeleteMNGSubscribeMessageTemplateRequest& request, const DeleteMNGSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMNGSubscribeMessageTemplateRequest&;
+    using Resp = DeleteMNGSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMNGSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DeleteMNGSubscribeMessageTemplateOutcomeCallable TcsasClient::DeleteMNGSubscribeMessageTemplateCallable(const DeleteMNGSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMNGSubscribeMessageTemplateOutcome>>();
+    DeleteMNGSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteMNGSubscribeMessageTemplateRequest&,
+        DeleteMNGSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteMNPOutcome TcsasClient::DeleteMNP(const DeleteMNPRequest &request)
@@ -750,25 +1712,82 @@ TcsasClient::DeleteMNPOutcome TcsasClient::DeleteMNP(const DeleteMNPRequest &req
 
 void TcsasClient::DeleteMNPAsync(const DeleteMNPRequest& request, const DeleteMNPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMNP(request), context);
-    };
+    using Req = const DeleteMNPRequest&;
+    using Resp = DeleteMNPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMNP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteMNPOutcomeCallable TcsasClient::DeleteMNPCallable(const DeleteMNPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMNPOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMNP(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteMNPOutcome>>();
+    DeleteMNPAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteMNPRequest&,
+        DeleteMNPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DeleteMNPSubscribeMessageTemplateOutcome TcsasClient::DeleteMNPSubscribeMessageTemplate(const DeleteMNPSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMNPSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMNPSubscribeMessageTemplateResponse rsp = DeleteMNPSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMNPSubscribeMessageTemplateOutcome(rsp);
+        else
+            return DeleteMNPSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMNPSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DeleteMNPSubscribeMessageTemplateAsync(const DeleteMNPSubscribeMessageTemplateRequest& request, const DeleteMNPSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMNPSubscribeMessageTemplateRequest&;
+    using Resp = DeleteMNPSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMNPSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DeleteMNPSubscribeMessageTemplateOutcomeCallable TcsasClient::DeleteMNPSubscribeMessageTemplateCallable(const DeleteMNPSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMNPSubscribeMessageTemplateOutcome>>();
+    DeleteMNPSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteMNPSubscribeMessageTemplateRequest&,
+        DeleteMNPSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteTeamOutcome TcsasClient::DeleteTeam(const DeleteTeamRequest &request)
@@ -793,25 +1812,32 @@ TcsasClient::DeleteTeamOutcome TcsasClient::DeleteTeam(const DeleteTeamRequest &
 
 void TcsasClient::DeleteTeamAsync(const DeleteTeamRequest& request, const DeleteTeamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTeam(request), context);
-    };
+    using Req = const DeleteTeamRequest&;
+    using Resp = DeleteTeamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTeam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteTeamOutcomeCallable TcsasClient::DeleteTeamCallable(const DeleteTeamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTeamOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTeam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTeamOutcome>>();
+    DeleteTeamAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteTeamRequest&,
+        DeleteTeamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteTeamMemberOutcome TcsasClient::DeleteTeamMember(const DeleteTeamMemberRequest &request)
@@ -836,25 +1862,32 @@ TcsasClient::DeleteTeamMemberOutcome TcsasClient::DeleteTeamMember(const DeleteT
 
 void TcsasClient::DeleteTeamMemberAsync(const DeleteTeamMemberRequest& request, const DeleteTeamMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTeamMember(request), context);
-    };
+    using Req = const DeleteTeamMemberRequest&;
+    using Resp = DeleteTeamMemberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTeamMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteTeamMemberOutcomeCallable TcsasClient::DeleteTeamMemberCallable(const DeleteTeamMemberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTeamMemberOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTeamMember(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTeamMemberOutcome>>();
+    DeleteTeamMemberAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteTeamMemberRequest&,
+        DeleteTeamMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DeleteUserOutcome TcsasClient::DeleteUser(const DeleteUserRequest &request)
@@ -879,25 +1912,232 @@ TcsasClient::DeleteUserOutcome TcsasClient::DeleteUser(const DeleteUserRequest &
 
 void TcsasClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUser(request), context);
-    };
+    using Req = const DeleteUserRequest&;
+    using Resp = DeleteUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DeleteUserOutcomeCallable TcsasClient::DeleteUserCallable(const DeleteUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUser(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DeleteUserOutcome>>();
+    DeleteUserAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DeleteUserRequest&,
+        DeleteUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeAPPDataDetailLineChartOutcome TcsasClient::DescribeAPPDataDetailLineChart(const DescribeAPPDataDetailLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPPDataDetailLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPPDataDetailLineChartResponse rsp = DescribeAPPDataDetailLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPPDataDetailLineChartOutcome(rsp);
+        else
+            return DescribeAPPDataDetailLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPPDataDetailLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeAPPDataDetailLineChartAsync(const DescribeAPPDataDetailLineChartRequest& request, const DescribeAPPDataDetailLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAPPDataDetailLineChartRequest&;
+    using Resp = DescribeAPPDataDetailLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAPPDataDetailLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeAPPDataDetailLineChartOutcomeCallable TcsasClient::DescribeAPPDataDetailLineChartCallable(const DescribeAPPDataDetailLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAPPDataDetailLineChartOutcome>>();
+    DescribeAPPDataDetailLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeAPPDataDetailLineChartRequest&,
+        DescribeAPPDataDetailLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeAPPDataOverviewOutcome TcsasClient::DescribeAPPDataOverview(const DescribeAPPDataOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPPDataOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPPDataOverviewResponse rsp = DescribeAPPDataOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPPDataOverviewOutcome(rsp);
+        else
+            return DescribeAPPDataOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPPDataOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeAPPDataOverviewAsync(const DescribeAPPDataOverviewRequest& request, const DescribeAPPDataOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAPPDataOverviewRequest&;
+    using Resp = DescribeAPPDataOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAPPDataOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeAPPDataOverviewOutcomeCallable TcsasClient::DescribeAPPDataOverviewCallable(const DescribeAPPDataOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAPPDataOverviewOutcome>>();
+    DescribeAPPDataOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeAPPDataOverviewRequest&,
+        DescribeAPPDataOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeAdvertisingLineChartOutcome TcsasClient::DescribeAdvertisingLineChart(const DescribeAdvertisingLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAdvertisingLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAdvertisingLineChartResponse rsp = DescribeAdvertisingLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAdvertisingLineChartOutcome(rsp);
+        else
+            return DescribeAdvertisingLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAdvertisingLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeAdvertisingLineChartAsync(const DescribeAdvertisingLineChartRequest& request, const DescribeAdvertisingLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAdvertisingLineChartRequest&;
+    using Resp = DescribeAdvertisingLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAdvertisingLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeAdvertisingLineChartOutcomeCallable TcsasClient::DescribeAdvertisingLineChartCallable(const DescribeAdvertisingLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAdvertisingLineChartOutcome>>();
+    DescribeAdvertisingLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeAdvertisingLineChartRequest&,
+        DescribeAdvertisingLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeAdvertisingOverviewOutcome TcsasClient::DescribeAdvertisingOverview(const DescribeAdvertisingOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAdvertisingOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAdvertisingOverviewResponse rsp = DescribeAdvertisingOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAdvertisingOverviewOutcome(rsp);
+        else
+            return DescribeAdvertisingOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAdvertisingOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeAdvertisingOverviewAsync(const DescribeAdvertisingOverviewRequest& request, const DescribeAdvertisingOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAdvertisingOverviewRequest&;
+    using Resp = DescribeAdvertisingOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAdvertisingOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeAdvertisingOverviewOutcomeCallable TcsasClient::DescribeAdvertisingOverviewCallable(const DescribeAdvertisingOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAdvertisingOverviewOutcome>>();
+    DescribeAdvertisingOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeAdvertisingOverviewRequest&,
+        DescribeAdvertisingOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeApplicationOutcome TcsasClient::DescribeApplication(const DescribeApplicationRequest &request)
@@ -922,25 +2162,32 @@ TcsasClient::DescribeApplicationOutcome TcsasClient::DescribeApplication(const D
 
 void TcsasClient::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplication(request), context);
-    };
+    using Req = const DescribeApplicationRequest&;
+    using Resp = DescribeApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeApplicationOutcomeCallable TcsasClient::DescribeApplicationCallable(const DescribeApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApplicationOutcome>>();
+    DescribeApplicationAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationRequest&,
+        DescribeApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeApplicationConfigFileOutcome TcsasClient::DescribeApplicationConfigFile(const DescribeApplicationConfigFileRequest &request)
@@ -965,25 +2212,82 @@ TcsasClient::DescribeApplicationConfigFileOutcome TcsasClient::DescribeApplicati
 
 void TcsasClient::DescribeApplicationConfigFileAsync(const DescribeApplicationConfigFileRequest& request, const DescribeApplicationConfigFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplicationConfigFile(request), context);
-    };
+    using Req = const DescribeApplicationConfigFileRequest&;
+    using Resp = DescribeApplicationConfigFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationConfigFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeApplicationConfigFileOutcomeCallable TcsasClient::DescribeApplicationConfigFileCallable(const DescribeApplicationConfigFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationConfigFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplicationConfigFile(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeApplicationConfigFileOutcome>>();
+    DescribeApplicationConfigFileAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationConfigFileRequest&,
+        DescribeApplicationConfigFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeApplicationConfigInfosOutcome TcsasClient::DescribeApplicationConfigInfos(const DescribeApplicationConfigInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationConfigInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationConfigInfosResponse rsp = DescribeApplicationConfigInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationConfigInfosOutcome(rsp);
+        else
+            return DescribeApplicationConfigInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationConfigInfosOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeApplicationConfigInfosAsync(const DescribeApplicationConfigInfosRequest& request, const DescribeApplicationConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationConfigInfosRequest&;
+    using Resp = DescribeApplicationConfigInfosResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationConfigInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeApplicationConfigInfosOutcomeCallable TcsasClient::DescribeApplicationConfigInfosCallable(const DescribeApplicationConfigInfosRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationConfigInfosOutcome>>();
+    DescribeApplicationConfigInfosAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationConfigInfosRequest&,
+        DescribeApplicationConfigInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeApplicationListOutcome TcsasClient::DescribeApplicationList(const DescribeApplicationListRequest &request)
@@ -1008,25 +2312,82 @@ TcsasClient::DescribeApplicationListOutcome TcsasClient::DescribeApplicationList
 
 void TcsasClient::DescribeApplicationListAsync(const DescribeApplicationListRequest& request, const DescribeApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplicationList(request), context);
-    };
+    using Req = const DescribeApplicationListRequest&;
+    using Resp = DescribeApplicationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeApplicationListOutcomeCallable TcsasClient::DescribeApplicationListCallable(const DescribeApplicationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplicationList(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeApplicationListOutcome>>();
+    DescribeApplicationListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationListRequest&,
+        DescribeApplicationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeApplicationMNPListOutcome TcsasClient::DescribeApplicationMNPList(const DescribeApplicationMNPListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationMNPList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationMNPListResponse rsp = DescribeApplicationMNPListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationMNPListOutcome(rsp);
+        else
+            return DescribeApplicationMNPListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationMNPListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeApplicationMNPListAsync(const DescribeApplicationMNPListRequest& request, const DescribeApplicationMNPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationMNPListRequest&;
+    using Resp = DescribeApplicationMNPListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationMNPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeApplicationMNPListOutcomeCallable TcsasClient::DescribeApplicationMNPListCallable(const DescribeApplicationMNPListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationMNPListOutcome>>();
+    DescribeApplicationMNPListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationMNPListRequest&,
+        DescribeApplicationMNPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeApplicationSensitiveAPIListOutcome TcsasClient::DescribeApplicationSensitiveAPIList(const DescribeApplicationSensitiveAPIListRequest &request)
@@ -1051,25 +2412,32 @@ TcsasClient::DescribeApplicationSensitiveAPIListOutcome TcsasClient::DescribeApp
 
 void TcsasClient::DescribeApplicationSensitiveAPIListAsync(const DescribeApplicationSensitiveAPIListRequest& request, const DescribeApplicationSensitiveAPIListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplicationSensitiveAPIList(request), context);
-    };
+    using Req = const DescribeApplicationSensitiveAPIListRequest&;
+    using Resp = DescribeApplicationSensitiveAPIListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationSensitiveAPIList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeApplicationSensitiveAPIListOutcomeCallable TcsasClient::DescribeApplicationSensitiveAPIListCallable(const DescribeApplicationSensitiveAPIListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationSensitiveAPIListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplicationSensitiveAPIList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApplicationSensitiveAPIListOutcome>>();
+    DescribeApplicationSensitiveAPIListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeApplicationSensitiveAPIListRequest&,
+        DescribeApplicationSensitiveAPIListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeGlobalDomainACLOutcome TcsasClient::DescribeGlobalDomainACL(const DescribeGlobalDomainACLRequest &request)
@@ -1094,25 +2462,1782 @@ TcsasClient::DescribeGlobalDomainACLOutcome TcsasClient::DescribeGlobalDomainACL
 
 void TcsasClient::DescribeGlobalDomainACLAsync(const DescribeGlobalDomainACLRequest& request, const DescribeGlobalDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGlobalDomainACL(request), context);
-    };
+    using Req = const DescribeGlobalDomainACLRequest&;
+    using Resp = DescribeGlobalDomainACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeGlobalDomainACLOutcomeCallable TcsasClient::DescribeGlobalDomainACLCallable(const DescribeGlobalDomainACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGlobalDomainACLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGlobalDomainACL(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeGlobalDomainACLOutcome>>();
+    DescribeGlobalDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeGlobalDomainACLRequest&,
+        DescribeGlobalDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeGlobalOverviewDataSummaryOutcome TcsasClient::DescribeGlobalOverviewDataSummary(const DescribeGlobalOverviewDataSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalOverviewDataSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalOverviewDataSummaryResponse rsp = DescribeGlobalOverviewDataSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalOverviewDataSummaryOutcome(rsp);
+        else
+            return DescribeGlobalOverviewDataSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalOverviewDataSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeGlobalOverviewDataSummaryAsync(const DescribeGlobalOverviewDataSummaryRequest& request, const DescribeGlobalOverviewDataSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalOverviewDataSummaryRequest&;
+    using Resp = DescribeGlobalOverviewDataSummaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalOverviewDataSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeGlobalOverviewDataSummaryOutcomeCallable TcsasClient::DescribeGlobalOverviewDataSummaryCallable(const DescribeGlobalOverviewDataSummaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalOverviewDataSummaryOutcome>>();
+    DescribeGlobalOverviewDataSummaryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeGlobalOverviewDataSummaryRequest&,
+        DescribeGlobalOverviewDataSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeGlobalOverviewReportDetailOutcome TcsasClient::DescribeGlobalOverviewReportDetail(const DescribeGlobalOverviewReportDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalOverviewReportDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalOverviewReportDetailResponse rsp = DescribeGlobalOverviewReportDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalOverviewReportDetailOutcome(rsp);
+        else
+            return DescribeGlobalOverviewReportDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalOverviewReportDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeGlobalOverviewReportDetailAsync(const DescribeGlobalOverviewReportDetailRequest& request, const DescribeGlobalOverviewReportDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalOverviewReportDetailRequest&;
+    using Resp = DescribeGlobalOverviewReportDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalOverviewReportDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeGlobalOverviewReportDetailOutcomeCallable TcsasClient::DescribeGlobalOverviewReportDetailCallable(const DescribeGlobalOverviewReportDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalOverviewReportDetailOutcome>>();
+    DescribeGlobalOverviewReportDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeGlobalOverviewReportDetailRequest&,
+        DescribeGlobalOverviewReportDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGOutcome TcsasClient::DescribeMNG(const DescribeMNGRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNG");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGResponse rsp = DescribeMNGResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGOutcome(rsp);
+        else
+            return DescribeMNGOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAsync(const DescribeMNGRequest& request, const DescribeMNGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGRequest&;
+    using Resp = DescribeMNGResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNG", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGOutcomeCallable TcsasClient::DescribeMNGCallable(const DescribeMNGRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGOutcome>>();
+    DescribeMNGAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGRequest&,
+        DescribeMNGOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAccessAnalysisDetailOutcome TcsasClient::DescribeMNGAccessAnalysisDetail(const DescribeMNGAccessAnalysisDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAccessAnalysisDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAccessAnalysisDetailResponse rsp = DescribeMNGAccessAnalysisDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAccessAnalysisDetailOutcome(rsp);
+        else
+            return DescribeMNGAccessAnalysisDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAccessAnalysisDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAccessAnalysisDetailAsync(const DescribeMNGAccessAnalysisDetailRequest& request, const DescribeMNGAccessAnalysisDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAccessAnalysisDetailRequest&;
+    using Resp = DescribeMNGAccessAnalysisDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAccessAnalysisDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAccessAnalysisDetailOutcomeCallable TcsasClient::DescribeMNGAccessAnalysisDetailCallable(const DescribeMNGAccessAnalysisDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAccessAnalysisDetailOutcome>>();
+    DescribeMNGAccessAnalysisDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAccessAnalysisDetailRequest&,
+        DescribeMNGAccessAnalysisDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAccessAnalysisLineChartOutcome TcsasClient::DescribeMNGAccessAnalysisLineChart(const DescribeMNGAccessAnalysisLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAccessAnalysisLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAccessAnalysisLineChartResponse rsp = DescribeMNGAccessAnalysisLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAccessAnalysisLineChartOutcome(rsp);
+        else
+            return DescribeMNGAccessAnalysisLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAccessAnalysisLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAccessAnalysisLineChartAsync(const DescribeMNGAccessAnalysisLineChartRequest& request, const DescribeMNGAccessAnalysisLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAccessAnalysisLineChartRequest&;
+    using Resp = DescribeMNGAccessAnalysisLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAccessAnalysisLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAccessAnalysisLineChartOutcomeCallable TcsasClient::DescribeMNGAccessAnalysisLineChartCallable(const DescribeMNGAccessAnalysisLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAccessAnalysisLineChartOutcome>>();
+    DescribeMNGAccessAnalysisLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAccessAnalysisLineChartRequest&,
+        DescribeMNGAccessAnalysisLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAccessAnalysisOverviewOutcome TcsasClient::DescribeMNGAccessAnalysisOverview(const DescribeMNGAccessAnalysisOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAccessAnalysisOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAccessAnalysisOverviewResponse rsp = DescribeMNGAccessAnalysisOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAccessAnalysisOverviewOutcome(rsp);
+        else
+            return DescribeMNGAccessAnalysisOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAccessAnalysisOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAccessAnalysisOverviewAsync(const DescribeMNGAccessAnalysisOverviewRequest& request, const DescribeMNGAccessAnalysisOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAccessAnalysisOverviewRequest&;
+    using Resp = DescribeMNGAccessAnalysisOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAccessAnalysisOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAccessAnalysisOverviewOutcomeCallable TcsasClient::DescribeMNGAccessAnalysisOverviewCallable(const DescribeMNGAccessAnalysisOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAccessAnalysisOverviewOutcome>>();
+    DescribeMNGAccessAnalysisOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAccessAnalysisOverviewRequest&,
+        DescribeMNGAccessAnalysisOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGActiveUserRealTimeStatisticsOutcome TcsasClient::DescribeMNGActiveUserRealTimeStatistics(const DescribeMNGActiveUserRealTimeStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGActiveUserRealTimeStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGActiveUserRealTimeStatisticsResponse rsp = DescribeMNGActiveUserRealTimeStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGActiveUserRealTimeStatisticsOutcome(rsp);
+        else
+            return DescribeMNGActiveUserRealTimeStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGActiveUserRealTimeStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGActiveUserRealTimeStatisticsAsync(const DescribeMNGActiveUserRealTimeStatisticsRequest& request, const DescribeMNGActiveUserRealTimeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGActiveUserRealTimeStatisticsRequest&;
+    using Resp = DescribeMNGActiveUserRealTimeStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGActiveUserRealTimeStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGActiveUserRealTimeStatisticsOutcomeCallable TcsasClient::DescribeMNGActiveUserRealTimeStatisticsCallable(const DescribeMNGActiveUserRealTimeStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGActiveUserRealTimeStatisticsOutcome>>();
+    DescribeMNGActiveUserRealTimeStatisticsAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGActiveUserRealTimeStatisticsRequest&,
+        DescribeMNGActiveUserRealTimeStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAdvertisingDetailOutcome TcsasClient::DescribeMNGAdvertisingDetail(const DescribeMNGAdvertisingDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAdvertisingDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAdvertisingDetailResponse rsp = DescribeMNGAdvertisingDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAdvertisingDetailOutcome(rsp);
+        else
+            return DescribeMNGAdvertisingDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAdvertisingDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAdvertisingDetailAsync(const DescribeMNGAdvertisingDetailRequest& request, const DescribeMNGAdvertisingDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAdvertisingDetailRequest&;
+    using Resp = DescribeMNGAdvertisingDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAdvertisingDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAdvertisingDetailOutcomeCallable TcsasClient::DescribeMNGAdvertisingDetailCallable(const DescribeMNGAdvertisingDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAdvertisingDetailOutcome>>();
+    DescribeMNGAdvertisingDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAdvertisingDetailRequest&,
+        DescribeMNGAdvertisingDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAdvertisingLineChartOutcome TcsasClient::DescribeMNGAdvertisingLineChart(const DescribeMNGAdvertisingLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAdvertisingLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAdvertisingLineChartResponse rsp = DescribeMNGAdvertisingLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAdvertisingLineChartOutcome(rsp);
+        else
+            return DescribeMNGAdvertisingLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAdvertisingLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAdvertisingLineChartAsync(const DescribeMNGAdvertisingLineChartRequest& request, const DescribeMNGAdvertisingLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAdvertisingLineChartRequest&;
+    using Resp = DescribeMNGAdvertisingLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAdvertisingLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAdvertisingLineChartOutcomeCallable TcsasClient::DescribeMNGAdvertisingLineChartCallable(const DescribeMNGAdvertisingLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAdvertisingLineChartOutcome>>();
+    DescribeMNGAdvertisingLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAdvertisingLineChartRequest&,
+        DescribeMNGAdvertisingLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAdvertisingOverviewOutcome TcsasClient::DescribeMNGAdvertisingOverview(const DescribeMNGAdvertisingOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAdvertisingOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAdvertisingOverviewResponse rsp = DescribeMNGAdvertisingOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAdvertisingOverviewOutcome(rsp);
+        else
+            return DescribeMNGAdvertisingOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAdvertisingOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAdvertisingOverviewAsync(const DescribeMNGAdvertisingOverviewRequest& request, const DescribeMNGAdvertisingOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAdvertisingOverviewRequest&;
+    using Resp = DescribeMNGAdvertisingOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAdvertisingOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAdvertisingOverviewOutcomeCallable TcsasClient::DescribeMNGAdvertisingOverviewCallable(const DescribeMNGAdvertisingOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAdvertisingOverviewOutcome>>();
+    DescribeMNGAdvertisingOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAdvertisingOverviewRequest&,
+        DescribeMNGAdvertisingOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAllStageVersionsOutcome TcsasClient::DescribeMNGAllStageVersions(const DescribeMNGAllStageVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAllStageVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAllStageVersionsResponse rsp = DescribeMNGAllStageVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAllStageVersionsOutcome(rsp);
+        else
+            return DescribeMNGAllStageVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAllStageVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAllStageVersionsAsync(const DescribeMNGAllStageVersionsRequest& request, const DescribeMNGAllStageVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAllStageVersionsRequest&;
+    using Resp = DescribeMNGAllStageVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAllStageVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAllStageVersionsOutcomeCallable TcsasClient::DescribeMNGAllStageVersionsCallable(const DescribeMNGAllStageVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAllStageVersionsOutcome>>();
+    DescribeMNGAllStageVersionsAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAllStageVersionsRequest&,
+        DescribeMNGAllStageVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGAppSecretOutcome TcsasClient::DescribeMNGAppSecret(const DescribeMNGAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGAppSecretResponse rsp = DescribeMNGAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGAppSecretOutcome(rsp);
+        else
+            return DescribeMNGAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGAppSecretAsync(const DescribeMNGAppSecretRequest& request, const DescribeMNGAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGAppSecretRequest&;
+    using Resp = DescribeMNGAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGAppSecretOutcomeCallable TcsasClient::DescribeMNGAppSecretCallable(const DescribeMNGAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGAppSecretOutcome>>();
+    DescribeMNGAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGAppSecretRequest&,
+        DescribeMNGAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGCategoryOutcome TcsasClient::DescribeMNGCategory(const DescribeMNGCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGCategoryResponse rsp = DescribeMNGCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGCategoryOutcome(rsp);
+        else
+            return DescribeMNGCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGCategoryOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGCategoryAsync(const DescribeMNGCategoryRequest& request, const DescribeMNGCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGCategoryRequest&;
+    using Resp = DescribeMNGCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGCategoryOutcomeCallable TcsasClient::DescribeMNGCategoryCallable(const DescribeMNGCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGCategoryOutcome>>();
+    DescribeMNGCategoryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGCategoryRequest&,
+        DescribeMNGCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGDomainACLOutcome TcsasClient::DescribeMNGDomainACL(const DescribeMNGDomainACLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGDomainACL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGDomainACLResponse rsp = DescribeMNGDomainACLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGDomainACLOutcome(rsp);
+        else
+            return DescribeMNGDomainACLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGDomainACLOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGDomainACLAsync(const DescribeMNGDomainACLRequest& request, const DescribeMNGDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGDomainACLRequest&;
+    using Resp = DescribeMNGDomainACLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGDomainACLOutcomeCallable TcsasClient::DescribeMNGDomainACLCallable(const DescribeMNGDomainACLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGDomainACLOutcome>>();
+    DescribeMNGDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGDomainACLRequest&,
+        DescribeMNGDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGListOutcome TcsasClient::DescribeMNGList(const DescribeMNGListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGListResponse rsp = DescribeMNGListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGListOutcome(rsp);
+        else
+            return DescribeMNGListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGListAsync(const DescribeMNGListRequest& request, const DescribeMNGListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGListRequest&;
+    using Resp = DescribeMNGListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGListOutcomeCallable TcsasClient::DescribeMNGListCallable(const DescribeMNGListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGListOutcome>>();
+    DescribeMNGListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGListRequest&,
+        DescribeMNGListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGMAUDataDetailOutcome TcsasClient::DescribeMNGMAUDataDetail(const DescribeMNGMAUDataDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGMAUDataDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGMAUDataDetailResponse rsp = DescribeMNGMAUDataDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGMAUDataDetailOutcome(rsp);
+        else
+            return DescribeMNGMAUDataDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGMAUDataDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGMAUDataDetailAsync(const DescribeMNGMAUDataDetailRequest& request, const DescribeMNGMAUDataDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGMAUDataDetailRequest&;
+    using Resp = DescribeMNGMAUDataDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGMAUDataDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGMAUDataDetailOutcomeCallable TcsasClient::DescribeMNGMAUDataDetailCallable(const DescribeMNGMAUDataDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGMAUDataDetailOutcome>>();
+    DescribeMNGMAUDataDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGMAUDataDetailRequest&,
+        DescribeMNGMAUDataDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGMAULineChartOutcome TcsasClient::DescribeMNGMAULineChart(const DescribeMNGMAULineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGMAULineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGMAULineChartResponse rsp = DescribeMNGMAULineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGMAULineChartOutcome(rsp);
+        else
+            return DescribeMNGMAULineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGMAULineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGMAULineChartAsync(const DescribeMNGMAULineChartRequest& request, const DescribeMNGMAULineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGMAULineChartRequest&;
+    using Resp = DescribeMNGMAULineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGMAULineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGMAULineChartOutcomeCallable TcsasClient::DescribeMNGMAULineChartCallable(const DescribeMNGMAULineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGMAULineChartOutcome>>();
+    DescribeMNGMAULineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGMAULineChartRequest&,
+        DescribeMNGMAULineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGMAUMonthlyComparisonMetricCardOutcome TcsasClient::DescribeMNGMAUMonthlyComparisonMetricCard(const DescribeMNGMAUMonthlyComparisonMetricCardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGMAUMonthlyComparisonMetricCard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGMAUMonthlyComparisonMetricCardResponse rsp = DescribeMNGMAUMonthlyComparisonMetricCardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGMAUMonthlyComparisonMetricCardOutcome(rsp);
+        else
+            return DescribeMNGMAUMonthlyComparisonMetricCardOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGMAUMonthlyComparisonMetricCardOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGMAUMonthlyComparisonMetricCardAsync(const DescribeMNGMAUMonthlyComparisonMetricCardRequest& request, const DescribeMNGMAUMonthlyComparisonMetricCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGMAUMonthlyComparisonMetricCardRequest&;
+    using Resp = DescribeMNGMAUMonthlyComparisonMetricCardResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGMAUMonthlyComparisonMetricCard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGMAUMonthlyComparisonMetricCardOutcomeCallable TcsasClient::DescribeMNGMAUMonthlyComparisonMetricCardCallable(const DescribeMNGMAUMonthlyComparisonMetricCardRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGMAUMonthlyComparisonMetricCardOutcome>>();
+    DescribeMNGMAUMonthlyComparisonMetricCardAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGMAUMonthlyComparisonMetricCardRequest&,
+        DescribeMNGMAUMonthlyComparisonMetricCardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGOfflinePackageURLOutcome TcsasClient::DescribeMNGOfflinePackageURL(const DescribeMNGOfflinePackageURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGOfflinePackageURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGOfflinePackageURLResponse rsp = DescribeMNGOfflinePackageURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGOfflinePackageURLOutcome(rsp);
+        else
+            return DescribeMNGOfflinePackageURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGOfflinePackageURLOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGOfflinePackageURLAsync(const DescribeMNGOfflinePackageURLRequest& request, const DescribeMNGOfflinePackageURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGOfflinePackageURLRequest&;
+    using Resp = DescribeMNGOfflinePackageURLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGOfflinePackageURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGOfflinePackageURLOutcomeCallable TcsasClient::DescribeMNGOfflinePackageURLCallable(const DescribeMNGOfflinePackageURLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGOfflinePackageURLOutcome>>();
+    DescribeMNGOfflinePackageURLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGOfflinePackageURLRequest&,
+        DescribeMNGOfflinePackageURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGPaymentLineChartOutcome TcsasClient::DescribeMNGPaymentLineChart(const DescribeMNGPaymentLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGPaymentLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGPaymentLineChartResponse rsp = DescribeMNGPaymentLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGPaymentLineChartOutcome(rsp);
+        else
+            return DescribeMNGPaymentLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGPaymentLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGPaymentLineChartAsync(const DescribeMNGPaymentLineChartRequest& request, const DescribeMNGPaymentLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGPaymentLineChartRequest&;
+    using Resp = DescribeMNGPaymentLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGPaymentLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGPaymentLineChartOutcomeCallable TcsasClient::DescribeMNGPaymentLineChartCallable(const DescribeMNGPaymentLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGPaymentLineChartOutcome>>();
+    DescribeMNGPaymentLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGPaymentLineChartRequest&,
+        DescribeMNGPaymentLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGPaymentOverviewOutcome TcsasClient::DescribeMNGPaymentOverview(const DescribeMNGPaymentOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGPaymentOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGPaymentOverviewResponse rsp = DescribeMNGPaymentOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGPaymentOverviewOutcome(rsp);
+        else
+            return DescribeMNGPaymentOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGPaymentOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGPaymentOverviewAsync(const DescribeMNGPaymentOverviewRequest& request, const DescribeMNGPaymentOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGPaymentOverviewRequest&;
+    using Resp = DescribeMNGPaymentOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGPaymentOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGPaymentOverviewOutcomeCallable TcsasClient::DescribeMNGPaymentOverviewCallable(const DescribeMNGPaymentOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGPaymentOverviewOutcome>>();
+    DescribeMNGPaymentOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGPaymentOverviewRequest&,
+        DescribeMNGPaymentOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGPaymentReportDetailOutcome TcsasClient::DescribeMNGPaymentReportDetail(const DescribeMNGPaymentReportDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGPaymentReportDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGPaymentReportDetailResponse rsp = DescribeMNGPaymentReportDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGPaymentReportDetailOutcome(rsp);
+        else
+            return DescribeMNGPaymentReportDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGPaymentReportDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGPaymentReportDetailAsync(const DescribeMNGPaymentReportDetailRequest& request, const DescribeMNGPaymentReportDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGPaymentReportDetailRequest&;
+    using Resp = DescribeMNGPaymentReportDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGPaymentReportDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGPaymentReportDetailOutcomeCallable TcsasClient::DescribeMNGPaymentReportDetailCallable(const DescribeMNGPaymentReportDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGPaymentReportDetailOutcome>>();
+    DescribeMNGPaymentReportDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGPaymentReportDetailRequest&,
+        DescribeMNGPaymentReportDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGPaymentRetentionAnalysisOutcome TcsasClient::DescribeMNGPaymentRetentionAnalysis(const DescribeMNGPaymentRetentionAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGPaymentRetentionAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGPaymentRetentionAnalysisResponse rsp = DescribeMNGPaymentRetentionAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGPaymentRetentionAnalysisOutcome(rsp);
+        else
+            return DescribeMNGPaymentRetentionAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGPaymentRetentionAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGPaymentRetentionAnalysisAsync(const DescribeMNGPaymentRetentionAnalysisRequest& request, const DescribeMNGPaymentRetentionAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGPaymentRetentionAnalysisRequest&;
+    using Resp = DescribeMNGPaymentRetentionAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGPaymentRetentionAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGPaymentRetentionAnalysisOutcomeCallable TcsasClient::DescribeMNGPaymentRetentionAnalysisCallable(const DescribeMNGPaymentRetentionAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGPaymentRetentionAnalysisOutcome>>();
+    DescribeMNGPaymentRetentionAnalysisAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGPaymentRetentionAnalysisRequest&,
+        DescribeMNGPaymentRetentionAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGPreviewOutcome TcsasClient::DescribeMNGPreview(const DescribeMNGPreviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGPreview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGPreviewResponse rsp = DescribeMNGPreviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGPreviewOutcome(rsp);
+        else
+            return DescribeMNGPreviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGPreviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGPreviewAsync(const DescribeMNGPreviewRequest& request, const DescribeMNGPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGPreviewRequest&;
+    using Resp = DescribeMNGPreviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGPreviewOutcomeCallable TcsasClient::DescribeMNGPreviewCallable(const DescribeMNGPreviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGPreviewOutcome>>();
+    DescribeMNGPreviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGPreviewRequest&,
+        DescribeMNGPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGReleasedVersionHistoryOutcome TcsasClient::DescribeMNGReleasedVersionHistory(const DescribeMNGReleasedVersionHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGReleasedVersionHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGReleasedVersionHistoryResponse rsp = DescribeMNGReleasedVersionHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGReleasedVersionHistoryOutcome(rsp);
+        else
+            return DescribeMNGReleasedVersionHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGReleasedVersionHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGReleasedVersionHistoryAsync(const DescribeMNGReleasedVersionHistoryRequest& request, const DescribeMNGReleasedVersionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGReleasedVersionHistoryRequest&;
+    using Resp = DescribeMNGReleasedVersionHistoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGReleasedVersionHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGReleasedVersionHistoryOutcomeCallable TcsasClient::DescribeMNGReleasedVersionHistoryCallable(const DescribeMNGReleasedVersionHistoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGReleasedVersionHistoryOutcome>>();
+    DescribeMNGReleasedVersionHistoryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGReleasedVersionHistoryRequest&,
+        DescribeMNGReleasedVersionHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGRetentionDataOutcome TcsasClient::DescribeMNGRetentionData(const DescribeMNGRetentionDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGRetentionData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGRetentionDataResponse rsp = DescribeMNGRetentionDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGRetentionDataOutcome(rsp);
+        else
+            return DescribeMNGRetentionDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGRetentionDataOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGRetentionDataAsync(const DescribeMNGRetentionDataRequest& request, const DescribeMNGRetentionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGRetentionDataRequest&;
+    using Resp = DescribeMNGRetentionDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGRetentionData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGRetentionDataOutcomeCallable TcsasClient::DescribeMNGRetentionDataCallable(const DescribeMNGRetentionDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGRetentionDataOutcome>>();
+    DescribeMNGRetentionDataAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGRetentionDataRequest&,
+        DescribeMNGRetentionDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSensitiveAPIPermissionApprovalOutcome TcsasClient::DescribeMNGSensitiveAPIPermissionApproval(const DescribeMNGSensitiveAPIPermissionApprovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSensitiveAPIPermissionApproval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSensitiveAPIPermissionApprovalResponse rsp = DescribeMNGSensitiveAPIPermissionApprovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSensitiveAPIPermissionApprovalOutcome(rsp);
+        else
+            return DescribeMNGSensitiveAPIPermissionApprovalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSensitiveAPIPermissionApprovalOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSensitiveAPIPermissionApprovalAsync(const DescribeMNGSensitiveAPIPermissionApprovalRequest& request, const DescribeMNGSensitiveAPIPermissionApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSensitiveAPIPermissionApprovalRequest&;
+    using Resp = DescribeMNGSensitiveAPIPermissionApprovalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSensitiveAPIPermissionApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSensitiveAPIPermissionApprovalOutcomeCallable TcsasClient::DescribeMNGSensitiveAPIPermissionApprovalCallable(const DescribeMNGSensitiveAPIPermissionApprovalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSensitiveAPIPermissionApprovalOutcome>>();
+    DescribeMNGSensitiveAPIPermissionApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSensitiveAPIPermissionApprovalRequest&,
+        DescribeMNGSensitiveAPIPermissionApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSensitiveAPIPermissionListOutcome TcsasClient::DescribeMNGSensitiveAPIPermissionList(const DescribeMNGSensitiveAPIPermissionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSensitiveAPIPermissionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSensitiveAPIPermissionListResponse rsp = DescribeMNGSensitiveAPIPermissionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSensitiveAPIPermissionListOutcome(rsp);
+        else
+            return DescribeMNGSensitiveAPIPermissionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSensitiveAPIPermissionListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSensitiveAPIPermissionListAsync(const DescribeMNGSensitiveAPIPermissionListRequest& request, const DescribeMNGSensitiveAPIPermissionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSensitiveAPIPermissionListRequest&;
+    using Resp = DescribeMNGSensitiveAPIPermissionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSensitiveAPIPermissionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSensitiveAPIPermissionListOutcomeCallable TcsasClient::DescribeMNGSensitiveAPIPermissionListCallable(const DescribeMNGSensitiveAPIPermissionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSensitiveAPIPermissionListOutcome>>();
+    DescribeMNGSensitiveAPIPermissionListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSensitiveAPIPermissionListRequest&,
+        DescribeMNGSensitiveAPIPermissionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateOutcome TcsasClient::DescribeMNGSubscribeMessageTemplate(const DescribeMNGSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSubscribeMessageTemplateResponse rsp = DescribeMNGSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSubscribeMessageTemplateOutcome(rsp);
+        else
+            return DescribeMNGSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSubscribeMessageTemplateAsync(const DescribeMNGSubscribeMessageTemplateRequest& request, const DescribeMNGSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSubscribeMessageTemplateRequest&;
+    using Resp = DescribeMNGSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateOutcomeCallable TcsasClient::DescribeMNGSubscribeMessageTemplateCallable(const DescribeMNGSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSubscribeMessageTemplateOutcome>>();
+    DescribeMNGSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSubscribeMessageTemplateRequest&,
+        DescribeMNGSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryOutcome TcsasClient::DescribeMNGSubscribeMessageTemplateLibrary(const DescribeMNGSubscribeMessageTemplateLibraryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSubscribeMessageTemplateLibrary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSubscribeMessageTemplateLibraryResponse rsp = DescribeMNGSubscribeMessageTemplateLibraryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSubscribeMessageTemplateLibraryOutcome(rsp);
+        else
+            return DescribeMNGSubscribeMessageTemplateLibraryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSubscribeMessageTemplateLibraryOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryAsync(const DescribeMNGSubscribeMessageTemplateLibraryRequest& request, const DescribeMNGSubscribeMessageTemplateLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSubscribeMessageTemplateLibraryRequest&;
+    using Resp = DescribeMNGSubscribeMessageTemplateLibraryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSubscribeMessageTemplateLibrary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryOutcomeCallable TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryCallable(const DescribeMNGSubscribeMessageTemplateLibraryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSubscribeMessageTemplateLibraryOutcome>>();
+    DescribeMNGSubscribeMessageTemplateLibraryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSubscribeMessageTemplateLibraryRequest&,
+        DescribeMNGSubscribeMessageTemplateLibraryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryListOutcome TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryList(const DescribeMNGSubscribeMessageTemplateLibraryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSubscribeMessageTemplateLibraryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSubscribeMessageTemplateLibraryListResponse rsp = DescribeMNGSubscribeMessageTemplateLibraryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSubscribeMessageTemplateLibraryListOutcome(rsp);
+        else
+            return DescribeMNGSubscribeMessageTemplateLibraryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSubscribeMessageTemplateLibraryListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryListAsync(const DescribeMNGSubscribeMessageTemplateLibraryListRequest& request, const DescribeMNGSubscribeMessageTemplateLibraryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSubscribeMessageTemplateLibraryListRequest&;
+    using Resp = DescribeMNGSubscribeMessageTemplateLibraryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSubscribeMessageTemplateLibraryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryListOutcomeCallable TcsasClient::DescribeMNGSubscribeMessageTemplateLibraryListCallable(const DescribeMNGSubscribeMessageTemplateLibraryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSubscribeMessageTemplateLibraryListOutcome>>();
+    DescribeMNGSubscribeMessageTemplateLibraryListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSubscribeMessageTemplateLibraryListRequest&,
+        DescribeMNGSubscribeMessageTemplateLibraryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateListOutcome TcsasClient::DescribeMNGSubscribeMessageTemplateList(const DescribeMNGSubscribeMessageTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGSubscribeMessageTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGSubscribeMessageTemplateListResponse rsp = DescribeMNGSubscribeMessageTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGSubscribeMessageTemplateListOutcome(rsp);
+        else
+            return DescribeMNGSubscribeMessageTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGSubscribeMessageTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGSubscribeMessageTemplateListAsync(const DescribeMNGSubscribeMessageTemplateListRequest& request, const DescribeMNGSubscribeMessageTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGSubscribeMessageTemplateListRequest&;
+    using Resp = DescribeMNGSubscribeMessageTemplateListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGSubscribeMessageTemplateList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGSubscribeMessageTemplateListOutcomeCallable TcsasClient::DescribeMNGSubscribeMessageTemplateListCallable(const DescribeMNGSubscribeMessageTemplateListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGSubscribeMessageTemplateListOutcome>>();
+    DescribeMNGSubscribeMessageTemplateListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGSubscribeMessageTemplateListRequest&,
+        DescribeMNGSubscribeMessageTemplateListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGVersionOutcome TcsasClient::DescribeMNGVersion(const DescribeMNGVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGVersionResponse rsp = DescribeMNGVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGVersionOutcome(rsp);
+        else
+            return DescribeMNGVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGVersionAsync(const DescribeMNGVersionRequest& request, const DescribeMNGVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGVersionRequest&;
+    using Resp = DescribeMNGVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGVersionOutcomeCallable TcsasClient::DescribeMNGVersionCallable(const DescribeMNGVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGVersionOutcome>>();
+    DescribeMNGVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGVersionRequest&,
+        DescribeMNGVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGVersionAuditDetailOutcome TcsasClient::DescribeMNGVersionAuditDetail(const DescribeMNGVersionAuditDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGVersionAuditDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGVersionAuditDetailResponse rsp = DescribeMNGVersionAuditDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGVersionAuditDetailOutcome(rsp);
+        else
+            return DescribeMNGVersionAuditDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGVersionAuditDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGVersionAuditDetailAsync(const DescribeMNGVersionAuditDetailRequest& request, const DescribeMNGVersionAuditDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGVersionAuditDetailRequest&;
+    using Resp = DescribeMNGVersionAuditDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGVersionAuditDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGVersionAuditDetailOutcomeCallable TcsasClient::DescribeMNGVersionAuditDetailCallable(const DescribeMNGVersionAuditDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGVersionAuditDetailOutcome>>();
+    DescribeMNGVersionAuditDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGVersionAuditDetailRequest&,
+        DescribeMNGVersionAuditDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNGVersionAuditListOutcome TcsasClient::DescribeMNGVersionAuditList(const DescribeMNGVersionAuditListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNGVersionAuditList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNGVersionAuditListResponse rsp = DescribeMNGVersionAuditListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNGVersionAuditListOutcome(rsp);
+        else
+            return DescribeMNGVersionAuditListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNGVersionAuditListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNGVersionAuditListAsync(const DescribeMNGVersionAuditListRequest& request, const DescribeMNGVersionAuditListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNGVersionAuditListRequest&;
+    using Resp = DescribeMNGVersionAuditListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNGVersionAuditList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNGVersionAuditListOutcomeCallable TcsasClient::DescribeMNGVersionAuditListCallable(const DescribeMNGVersionAuditListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNGVersionAuditListOutcome>>();
+    DescribeMNGVersionAuditListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNGVersionAuditListRequest&,
+        DescribeMNGVersionAuditListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPOutcome TcsasClient::DescribeMNP(const DescribeMNPRequest &request)
@@ -1137,25 +4262,182 @@ TcsasClient::DescribeMNPOutcome TcsasClient::DescribeMNP(const DescribeMNPReques
 
 void TcsasClient::DescribeMNPAsync(const DescribeMNPRequest& request, const DescribeMNPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNP(request), context);
-    };
+    using Req = const DescribeMNPRequest&;
+    using Resp = DescribeMNPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPOutcomeCallable TcsasClient::DescribeMNPCallable(const DescribeMNPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNP(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPOutcome>>();
+    DescribeMNPAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPRequest&,
+        DescribeMNPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPAccessAnalysisOverviewOutcome TcsasClient::DescribeMNPAccessAnalysisOverview(const DescribeMNPAccessAnalysisOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPAccessAnalysisOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPAccessAnalysisOverviewResponse rsp = DescribeMNPAccessAnalysisOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPAccessAnalysisOverviewOutcome(rsp);
+        else
+            return DescribeMNPAccessAnalysisOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPAccessAnalysisOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPAccessAnalysisOverviewAsync(const DescribeMNPAccessAnalysisOverviewRequest& request, const DescribeMNPAccessAnalysisOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPAccessAnalysisOverviewRequest&;
+    using Resp = DescribeMNPAccessAnalysisOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPAccessAnalysisOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPAccessAnalysisOverviewOutcomeCallable TcsasClient::DescribeMNPAccessAnalysisOverviewCallable(const DescribeMNPAccessAnalysisOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPAccessAnalysisOverviewOutcome>>();
+    DescribeMNPAccessAnalysisOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPAccessAnalysisOverviewRequest&,
+        DescribeMNPAccessAnalysisOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPActiveUserRealTimeStatisticsOutcome TcsasClient::DescribeMNPActiveUserRealTimeStatistics(const DescribeMNPActiveUserRealTimeStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPActiveUserRealTimeStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPActiveUserRealTimeStatisticsResponse rsp = DescribeMNPActiveUserRealTimeStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPActiveUserRealTimeStatisticsOutcome(rsp);
+        else
+            return DescribeMNPActiveUserRealTimeStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPActiveUserRealTimeStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPActiveUserRealTimeStatisticsAsync(const DescribeMNPActiveUserRealTimeStatisticsRequest& request, const DescribeMNPActiveUserRealTimeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPActiveUserRealTimeStatisticsRequest&;
+    using Resp = DescribeMNPActiveUserRealTimeStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPActiveUserRealTimeStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPActiveUserRealTimeStatisticsOutcomeCallable TcsasClient::DescribeMNPActiveUserRealTimeStatisticsCallable(const DescribeMNPActiveUserRealTimeStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPActiveUserRealTimeStatisticsOutcome>>();
+    DescribeMNPActiveUserRealTimeStatisticsAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPActiveUserRealTimeStatisticsRequest&,
+        DescribeMNPActiveUserRealTimeStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPAdvertisingDetailOutcome TcsasClient::DescribeMNPAdvertisingDetail(const DescribeMNPAdvertisingDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPAdvertisingDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPAdvertisingDetailResponse rsp = DescribeMNPAdvertisingDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPAdvertisingDetailOutcome(rsp);
+        else
+            return DescribeMNPAdvertisingDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPAdvertisingDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPAdvertisingDetailAsync(const DescribeMNPAdvertisingDetailRequest& request, const DescribeMNPAdvertisingDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPAdvertisingDetailRequest&;
+    using Resp = DescribeMNPAdvertisingDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPAdvertisingDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPAdvertisingDetailOutcomeCallable TcsasClient::DescribeMNPAdvertisingDetailCallable(const DescribeMNPAdvertisingDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPAdvertisingDetailOutcome>>();
+    DescribeMNPAdvertisingDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPAdvertisingDetailRequest&,
+        DescribeMNPAdvertisingDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPAllStageVersionsOutcome TcsasClient::DescribeMNPAllStageVersions(const DescribeMNPAllStageVersionsRequest &request)
@@ -1180,25 +4462,82 @@ TcsasClient::DescribeMNPAllStageVersionsOutcome TcsasClient::DescribeMNPAllStage
 
 void TcsasClient::DescribeMNPAllStageVersionsAsync(const DescribeMNPAllStageVersionsRequest& request, const DescribeMNPAllStageVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPAllStageVersions(request), context);
-    };
+    using Req = const DescribeMNPAllStageVersionsRequest&;
+    using Resp = DescribeMNPAllStageVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPAllStageVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPAllStageVersionsOutcomeCallable TcsasClient::DescribeMNPAllStageVersionsCallable(const DescribeMNPAllStageVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPAllStageVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPAllStageVersions(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPAllStageVersionsOutcome>>();
+    DescribeMNPAllStageVersionsAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPAllStageVersionsRequest&,
+        DescribeMNPAllStageVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPAppSecretOutcome TcsasClient::DescribeMNPAppSecret(const DescribeMNPAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPAppSecretResponse rsp = DescribeMNPAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPAppSecretOutcome(rsp);
+        else
+            return DescribeMNPAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPAppSecretAsync(const DescribeMNPAppSecretRequest& request, const DescribeMNPAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPAppSecretRequest&;
+    using Resp = DescribeMNPAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPAppSecretOutcomeCallable TcsasClient::DescribeMNPAppSecretCallable(const DescribeMNPAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPAppSecretOutcome>>();
+    DescribeMNPAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPAppSecretRequest&,
+        DescribeMNPAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPApprovalListOutcome TcsasClient::DescribeMNPApprovalList(const DescribeMNPApprovalListRequest &request)
@@ -1223,25 +4562,32 @@ TcsasClient::DescribeMNPApprovalListOutcome TcsasClient::DescribeMNPApprovalList
 
 void TcsasClient::DescribeMNPApprovalListAsync(const DescribeMNPApprovalListRequest& request, const DescribeMNPApprovalListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPApprovalList(request), context);
-    };
+    using Req = const DescribeMNPApprovalListRequest&;
+    using Resp = DescribeMNPApprovalListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPApprovalList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPApprovalListOutcomeCallable TcsasClient::DescribeMNPApprovalListCallable(const DescribeMNPApprovalListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPApprovalListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPApprovalList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPApprovalListOutcome>>();
+    DescribeMNPApprovalListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPApprovalListRequest&,
+        DescribeMNPApprovalListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPCategoryOutcome TcsasClient::DescribeMNPCategory(const DescribeMNPCategoryRequest &request)
@@ -1266,25 +4612,32 @@ TcsasClient::DescribeMNPCategoryOutcome TcsasClient::DescribeMNPCategory(const D
 
 void TcsasClient::DescribeMNPCategoryAsync(const DescribeMNPCategoryRequest& request, const DescribeMNPCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPCategory(request), context);
-    };
+    using Req = const DescribeMNPCategoryRequest&;
+    using Resp = DescribeMNPCategoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPCategoryOutcomeCallable TcsasClient::DescribeMNPCategoryCallable(const DescribeMNPCategoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPCategoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPCategory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPCategoryOutcome>>();
+    DescribeMNPCategoryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPCategoryRequest&,
+        DescribeMNPCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPDomainACLOutcome TcsasClient::DescribeMNPDomainACL(const DescribeMNPDomainACLRequest &request)
@@ -1309,25 +4662,32 @@ TcsasClient::DescribeMNPDomainACLOutcome TcsasClient::DescribeMNPDomainACL(const
 
 void TcsasClient::DescribeMNPDomainACLAsync(const DescribeMNPDomainACLRequest& request, const DescribeMNPDomainACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPDomainACL(request), context);
-    };
+    using Req = const DescribeMNPDomainACLRequest&;
+    using Resp = DescribeMNPDomainACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPDomainACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPDomainACLOutcomeCallable TcsasClient::DescribeMNPDomainACLCallable(const DescribeMNPDomainACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPDomainACLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPDomainACL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPDomainACLOutcome>>();
+    DescribeMNPDomainACLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPDomainACLRequest&,
+        DescribeMNPDomainACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPListOutcome TcsasClient::DescribeMNPList(const DescribeMNPListRequest &request)
@@ -1352,25 +4712,182 @@ TcsasClient::DescribeMNPListOutcome TcsasClient::DescribeMNPList(const DescribeM
 
 void TcsasClient::DescribeMNPListAsync(const DescribeMNPListRequest& request, const DescribeMNPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPList(request), context);
-    };
+    using Req = const DescribeMNPListRequest&;
+    using Resp = DescribeMNPListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPListOutcomeCallable TcsasClient::DescribeMNPListCallable(const DescribeMNPListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPList(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPListOutcome>>();
+    DescribeMNPListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPListRequest&,
+        DescribeMNPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPMAUDataDetailOutcome TcsasClient::DescribeMNPMAUDataDetail(const DescribeMNPMAUDataDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPMAUDataDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPMAUDataDetailResponse rsp = DescribeMNPMAUDataDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPMAUDataDetailOutcome(rsp);
+        else
+            return DescribeMNPMAUDataDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPMAUDataDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPMAUDataDetailAsync(const DescribeMNPMAUDataDetailRequest& request, const DescribeMNPMAUDataDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPMAUDataDetailRequest&;
+    using Resp = DescribeMNPMAUDataDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPMAUDataDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPMAUDataDetailOutcomeCallable TcsasClient::DescribeMNPMAUDataDetailCallable(const DescribeMNPMAUDataDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPMAUDataDetailOutcome>>();
+    DescribeMNPMAUDataDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPMAUDataDetailRequest&,
+        DescribeMNPMAUDataDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPMAULineChartOutcome TcsasClient::DescribeMNPMAULineChart(const DescribeMNPMAULineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPMAULineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPMAULineChartResponse rsp = DescribeMNPMAULineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPMAULineChartOutcome(rsp);
+        else
+            return DescribeMNPMAULineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPMAULineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPMAULineChartAsync(const DescribeMNPMAULineChartRequest& request, const DescribeMNPMAULineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPMAULineChartRequest&;
+    using Resp = DescribeMNPMAULineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPMAULineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPMAULineChartOutcomeCallable TcsasClient::DescribeMNPMAULineChartCallable(const DescribeMNPMAULineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPMAULineChartOutcome>>();
+    DescribeMNPMAULineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPMAULineChartRequest&,
+        DescribeMNPMAULineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPMAUMetricCardOutcome TcsasClient::DescribeMNPMAUMetricCard(const DescribeMNPMAUMetricCardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPMAUMetricCard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPMAUMetricCardResponse rsp = DescribeMNPMAUMetricCardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPMAUMetricCardOutcome(rsp);
+        else
+            return DescribeMNPMAUMetricCardOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPMAUMetricCardOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPMAUMetricCardAsync(const DescribeMNPMAUMetricCardRequest& request, const DescribeMNPMAUMetricCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPMAUMetricCardRequest&;
+    using Resp = DescribeMNPMAUMetricCardResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPMAUMetricCard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPMAUMetricCardOutcomeCallable TcsasClient::DescribeMNPMAUMetricCardCallable(const DescribeMNPMAUMetricCardRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPMAUMetricCardOutcome>>();
+    DescribeMNPMAUMetricCardAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPMAUMetricCardRequest&,
+        DescribeMNPMAUMetricCardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPOfflinePackageURLOutcome TcsasClient::DescribeMNPOfflinePackageURL(const DescribeMNPOfflinePackageURLRequest &request)
@@ -1395,25 +4912,132 @@ TcsasClient::DescribeMNPOfflinePackageURLOutcome TcsasClient::DescribeMNPOffline
 
 void TcsasClient::DescribeMNPOfflinePackageURLAsync(const DescribeMNPOfflinePackageURLRequest& request, const DescribeMNPOfflinePackageURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPOfflinePackageURL(request), context);
-    };
+    using Req = const DescribeMNPOfflinePackageURLRequest&;
+    using Resp = DescribeMNPOfflinePackageURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPOfflinePackageURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPOfflinePackageURLOutcomeCallable TcsasClient::DescribeMNPOfflinePackageURLCallable(const DescribeMNPOfflinePackageURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPOfflinePackageURLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPOfflinePackageURL(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPOfflinePackageURLOutcome>>();
+    DescribeMNPOfflinePackageURLAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPOfflinePackageURLRequest&,
+        DescribeMNPOfflinePackageURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPPageAnalysisDetailOutcome TcsasClient::DescribeMNPPageAnalysisDetail(const DescribeMNPPageAnalysisDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPPageAnalysisDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPPageAnalysisDetailResponse rsp = DescribeMNPPageAnalysisDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPPageAnalysisDetailOutcome(rsp);
+        else
+            return DescribeMNPPageAnalysisDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPPageAnalysisDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPPageAnalysisDetailAsync(const DescribeMNPPageAnalysisDetailRequest& request, const DescribeMNPPageAnalysisDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPPageAnalysisDetailRequest&;
+    using Resp = DescribeMNPPageAnalysisDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPPageAnalysisDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPPageAnalysisDetailOutcomeCallable TcsasClient::DescribeMNPPageAnalysisDetailCallable(const DescribeMNPPageAnalysisDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPPageAnalysisDetailOutcome>>();
+    DescribeMNPPageAnalysisDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPPageAnalysisDetailRequest&,
+        DescribeMNPPageAnalysisDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPPaymentApprovalInfoOutcome TcsasClient::DescribeMNPPaymentApprovalInfo(const DescribeMNPPaymentApprovalInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPPaymentApprovalInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPPaymentApprovalInfoResponse rsp = DescribeMNPPaymentApprovalInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPPaymentApprovalInfoOutcome(rsp);
+        else
+            return DescribeMNPPaymentApprovalInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPPaymentApprovalInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPPaymentApprovalInfoAsync(const DescribeMNPPaymentApprovalInfoRequest& request, const DescribeMNPPaymentApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPPaymentApprovalInfoRequest&;
+    using Resp = DescribeMNPPaymentApprovalInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPPaymentApprovalInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPPaymentApprovalInfoOutcomeCallable TcsasClient::DescribeMNPPaymentApprovalInfoCallable(const DescribeMNPPaymentApprovalInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPPaymentApprovalInfoOutcome>>();
+    DescribeMNPPaymentApprovalInfoAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPPaymentApprovalInfoRequest&,
+        DescribeMNPPaymentApprovalInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPPreviewOutcome TcsasClient::DescribeMNPPreview(const DescribeMNPPreviewRequest &request)
@@ -1438,25 +5062,32 @@ TcsasClient::DescribeMNPPreviewOutcome TcsasClient::DescribeMNPPreview(const Des
 
 void TcsasClient::DescribeMNPPreviewAsync(const DescribeMNPPreviewRequest& request, const DescribeMNPPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPPreview(request), context);
-    };
+    using Req = const DescribeMNPPreviewRequest&;
+    using Resp = DescribeMNPPreviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPPreviewOutcomeCallable TcsasClient::DescribeMNPPreviewCallable(const DescribeMNPPreviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPPreviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPPreview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPPreviewOutcome>>();
+    DescribeMNPPreviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPPreviewRequest&,
+        DescribeMNPPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPReleasedVersionHistoryOutcome TcsasClient::DescribeMNPReleasedVersionHistory(const DescribeMNPReleasedVersionHistoryRequest &request)
@@ -1481,25 +5112,182 @@ TcsasClient::DescribeMNPReleasedVersionHistoryOutcome TcsasClient::DescribeMNPRe
 
 void TcsasClient::DescribeMNPReleasedVersionHistoryAsync(const DescribeMNPReleasedVersionHistoryRequest& request, const DescribeMNPReleasedVersionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPReleasedVersionHistory(request), context);
-    };
+    using Req = const DescribeMNPReleasedVersionHistoryRequest&;
+    using Resp = DescribeMNPReleasedVersionHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPReleasedVersionHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPReleasedVersionHistoryOutcomeCallable TcsasClient::DescribeMNPReleasedVersionHistoryCallable(const DescribeMNPReleasedVersionHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPReleasedVersionHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPReleasedVersionHistory(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPReleasedVersionHistoryOutcome>>();
+    DescribeMNPReleasedVersionHistoryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPReleasedVersionHistoryRequest&,
+        DescribeMNPReleasedVersionHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPReportDataLineChartOutcome TcsasClient::DescribeMNPReportDataLineChart(const DescribeMNPReportDataLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPReportDataLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPReportDataLineChartResponse rsp = DescribeMNPReportDataLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPReportDataLineChartOutcome(rsp);
+        else
+            return DescribeMNPReportDataLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPReportDataLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPReportDataLineChartAsync(const DescribeMNPReportDataLineChartRequest& request, const DescribeMNPReportDataLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPReportDataLineChartRequest&;
+    using Resp = DescribeMNPReportDataLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPReportDataLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPReportDataLineChartOutcomeCallable TcsasClient::DescribeMNPReportDataLineChartCallable(const DescribeMNPReportDataLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPReportDataLineChartOutcome>>();
+    DescribeMNPReportDataLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPReportDataLineChartRequest&,
+        DescribeMNPReportDataLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPReportDetailOutcome TcsasClient::DescribeMNPReportDetail(const DescribeMNPReportDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPReportDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPReportDetailResponse rsp = DescribeMNPReportDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPReportDetailOutcome(rsp);
+        else
+            return DescribeMNPReportDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPReportDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPReportDetailAsync(const DescribeMNPReportDetailRequest& request, const DescribeMNPReportDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPReportDetailRequest&;
+    using Resp = DescribeMNPReportDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPReportDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPReportDetailOutcomeCallable TcsasClient::DescribeMNPReportDetailCallable(const DescribeMNPReportDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPReportDetailOutcome>>();
+    DescribeMNPReportDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPReportDetailRequest&,
+        DescribeMNPReportDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPRetentionDataOutcome TcsasClient::DescribeMNPRetentionData(const DescribeMNPRetentionDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPRetentionData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPRetentionDataResponse rsp = DescribeMNPRetentionDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPRetentionDataOutcome(rsp);
+        else
+            return DescribeMNPRetentionDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPRetentionDataOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPRetentionDataAsync(const DescribeMNPRetentionDataRequest& request, const DescribeMNPRetentionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPRetentionDataRequest&;
+    using Resp = DescribeMNPRetentionDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPRetentionData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPRetentionDataOutcomeCallable TcsasClient::DescribeMNPRetentionDataCallable(const DescribeMNPRetentionDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPRetentionDataOutcome>>();
+    DescribeMNPRetentionDataAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPRetentionDataRequest&,
+        DescribeMNPRetentionDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::DescribeMNPSensitiveAPIPermissionApproval(const DescribeMNPSensitiveAPIPermissionApprovalRequest &request)
@@ -1524,25 +5312,32 @@ TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::Descr
 
 void TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalAsync(const DescribeMNPSensitiveAPIPermissionApprovalRequest& request, const DescribeMNPSensitiveAPIPermissionApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPSensitiveAPIPermissionApproval(request), context);
-    };
+    using Req = const DescribeMNPSensitiveAPIPermissionApprovalRequest&;
+    using Resp = DescribeMNPSensitiveAPIPermissionApprovalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSensitiveAPIPermissionApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalOutcomeCallable TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalCallable(const DescribeMNPSensitiveAPIPermissionApprovalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPSensitiveAPIPermissionApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPSensitiveAPIPermissionApproval(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPSensitiveAPIPermissionApprovalOutcome>>();
+    DescribeMNPSensitiveAPIPermissionApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSensitiveAPIPermissionApprovalRequest&,
+        DescribeMNPSensitiveAPIPermissionApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalListOutcome TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalList(const DescribeMNPSensitiveAPIPermissionApprovalListRequest &request)
@@ -1567,25 +5362,32 @@ TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalListOutcome TcsasClient::D
 
 void TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalListAsync(const DescribeMNPSensitiveAPIPermissionApprovalListRequest& request, const DescribeMNPSensitiveAPIPermissionApprovalListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPSensitiveAPIPermissionApprovalList(request), context);
-    };
+    using Req = const DescribeMNPSensitiveAPIPermissionApprovalListRequest&;
+    using Resp = DescribeMNPSensitiveAPIPermissionApprovalListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSensitiveAPIPermissionApprovalList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalListOutcomeCallable TcsasClient::DescribeMNPSensitiveAPIPermissionApprovalListCallable(const DescribeMNPSensitiveAPIPermissionApprovalListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPSensitiveAPIPermissionApprovalListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPSensitiveAPIPermissionApprovalList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMNPSensitiveAPIPermissionApprovalListOutcome>>();
+    DescribeMNPSensitiveAPIPermissionApprovalListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSensitiveAPIPermissionApprovalListRequest&,
+        DescribeMNPSensitiveAPIPermissionApprovalListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionListOutcome TcsasClient::DescribeMNPSensitiveAPIPermissionList(const DescribeMNPSensitiveAPIPermissionListRequest &request)
@@ -1610,25 +5412,232 @@ TcsasClient::DescribeMNPSensitiveAPIPermissionListOutcome TcsasClient::DescribeM
 
 void TcsasClient::DescribeMNPSensitiveAPIPermissionListAsync(const DescribeMNPSensitiveAPIPermissionListRequest& request, const DescribeMNPSensitiveAPIPermissionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPSensitiveAPIPermissionList(request), context);
-    };
+    using Req = const DescribeMNPSensitiveAPIPermissionListRequest&;
+    using Resp = DescribeMNPSensitiveAPIPermissionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSensitiveAPIPermissionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPSensitiveAPIPermissionListOutcomeCallable TcsasClient::DescribeMNPSensitiveAPIPermissionListCallable(const DescribeMNPSensitiveAPIPermissionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPSensitiveAPIPermissionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPSensitiveAPIPermissionList(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPSensitiveAPIPermissionListOutcome>>();
+    DescribeMNPSensitiveAPIPermissionListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSensitiveAPIPermissionListRequest&,
+        DescribeMNPSensitiveAPIPermissionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPSubscribeMessageTemplateOutcome TcsasClient::DescribeMNPSubscribeMessageTemplate(const DescribeMNPSubscribeMessageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPSubscribeMessageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPSubscribeMessageTemplateResponse rsp = DescribeMNPSubscribeMessageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPSubscribeMessageTemplateOutcome(rsp);
+        else
+            return DescribeMNPSubscribeMessageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPSubscribeMessageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPSubscribeMessageTemplateAsync(const DescribeMNPSubscribeMessageTemplateRequest& request, const DescribeMNPSubscribeMessageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPSubscribeMessageTemplateRequest&;
+    using Resp = DescribeMNPSubscribeMessageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSubscribeMessageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateOutcomeCallable TcsasClient::DescribeMNPSubscribeMessageTemplateCallable(const DescribeMNPSubscribeMessageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPSubscribeMessageTemplateOutcome>>();
+    DescribeMNPSubscribeMessageTemplateAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSubscribeMessageTemplateRequest&,
+        DescribeMNPSubscribeMessageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryOutcome TcsasClient::DescribeMNPSubscribeMessageTemplateLibrary(const DescribeMNPSubscribeMessageTemplateLibraryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPSubscribeMessageTemplateLibrary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPSubscribeMessageTemplateLibraryResponse rsp = DescribeMNPSubscribeMessageTemplateLibraryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPSubscribeMessageTemplateLibraryOutcome(rsp);
+        else
+            return DescribeMNPSubscribeMessageTemplateLibraryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPSubscribeMessageTemplateLibraryOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryAsync(const DescribeMNPSubscribeMessageTemplateLibraryRequest& request, const DescribeMNPSubscribeMessageTemplateLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPSubscribeMessageTemplateLibraryRequest&;
+    using Resp = DescribeMNPSubscribeMessageTemplateLibraryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSubscribeMessageTemplateLibrary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryOutcomeCallable TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryCallable(const DescribeMNPSubscribeMessageTemplateLibraryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPSubscribeMessageTemplateLibraryOutcome>>();
+    DescribeMNPSubscribeMessageTemplateLibraryAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSubscribeMessageTemplateLibraryRequest&,
+        DescribeMNPSubscribeMessageTemplateLibraryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryListOutcome TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryList(const DescribeMNPSubscribeMessageTemplateLibraryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPSubscribeMessageTemplateLibraryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPSubscribeMessageTemplateLibraryListResponse rsp = DescribeMNPSubscribeMessageTemplateLibraryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPSubscribeMessageTemplateLibraryListOutcome(rsp);
+        else
+            return DescribeMNPSubscribeMessageTemplateLibraryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPSubscribeMessageTemplateLibraryListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryListAsync(const DescribeMNPSubscribeMessageTemplateLibraryListRequest& request, const DescribeMNPSubscribeMessageTemplateLibraryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPSubscribeMessageTemplateLibraryListRequest&;
+    using Resp = DescribeMNPSubscribeMessageTemplateLibraryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSubscribeMessageTemplateLibraryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryListOutcomeCallable TcsasClient::DescribeMNPSubscribeMessageTemplateLibraryListCallable(const DescribeMNPSubscribeMessageTemplateLibraryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPSubscribeMessageTemplateLibraryListOutcome>>();
+    DescribeMNPSubscribeMessageTemplateLibraryListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSubscribeMessageTemplateLibraryListRequest&,
+        DescribeMNPSubscribeMessageTemplateLibraryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateListOutcome TcsasClient::DescribeMNPSubscribeMessageTemplateList(const DescribeMNPSubscribeMessageTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPSubscribeMessageTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPSubscribeMessageTemplateListResponse rsp = DescribeMNPSubscribeMessageTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPSubscribeMessageTemplateListOutcome(rsp);
+        else
+            return DescribeMNPSubscribeMessageTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPSubscribeMessageTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPSubscribeMessageTemplateListAsync(const DescribeMNPSubscribeMessageTemplateListRequest& request, const DescribeMNPSubscribeMessageTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPSubscribeMessageTemplateListRequest&;
+    using Resp = DescribeMNPSubscribeMessageTemplateListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPSubscribeMessageTemplateList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPSubscribeMessageTemplateListOutcomeCallable TcsasClient::DescribeMNPSubscribeMessageTemplateListCallable(const DescribeMNPSubscribeMessageTemplateListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPSubscribeMessageTemplateListOutcome>>();
+    DescribeMNPSubscribeMessageTemplateListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPSubscribeMessageTemplateListRequest&,
+        DescribeMNPSubscribeMessageTemplateListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeMNPVersionOutcome TcsasClient::DescribeMNPVersion(const DescribeMNPVersionRequest &request)
@@ -1653,25 +5662,282 @@ TcsasClient::DescribeMNPVersionOutcome TcsasClient::DescribeMNPVersion(const Des
 
 void TcsasClient::DescribeMNPVersionAsync(const DescribeMNPVersionRequest& request, const DescribeMNPVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMNPVersion(request), context);
-    };
+    using Req = const DescribeMNPVersionRequest&;
+    using Resp = DescribeMNPVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeMNPVersionOutcomeCallable TcsasClient::DescribeMNPVersionCallable(const DescribeMNPVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMNPVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMNPVersion(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeMNPVersionOutcome>>();
+    DescribeMNPVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPVersionRequest&,
+        DescribeMNPVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DescribeMNPVersionAuditDetailOutcome TcsasClient::DescribeMNPVersionAuditDetail(const DescribeMNPVersionAuditDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPVersionAuditDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPVersionAuditDetailResponse rsp = DescribeMNPVersionAuditDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPVersionAuditDetailOutcome(rsp);
+        else
+            return DescribeMNPVersionAuditDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPVersionAuditDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPVersionAuditDetailAsync(const DescribeMNPVersionAuditDetailRequest& request, const DescribeMNPVersionAuditDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPVersionAuditDetailRequest&;
+    using Resp = DescribeMNPVersionAuditDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPVersionAuditDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPVersionAuditDetailOutcomeCallable TcsasClient::DescribeMNPVersionAuditDetailCallable(const DescribeMNPVersionAuditDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPVersionAuditDetailOutcome>>();
+    DescribeMNPVersionAuditDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPVersionAuditDetailRequest&,
+        DescribeMNPVersionAuditDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribeMNPVersionAuditListOutcome TcsasClient::DescribeMNPVersionAuditList(const DescribeMNPVersionAuditListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMNPVersionAuditList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMNPVersionAuditListResponse rsp = DescribeMNPVersionAuditListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMNPVersionAuditListOutcome(rsp);
+        else
+            return DescribeMNPVersionAuditListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMNPVersionAuditListOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribeMNPVersionAuditListAsync(const DescribeMNPVersionAuditListRequest& request, const DescribeMNPVersionAuditListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMNPVersionAuditListRequest&;
+    using Resp = DescribeMNPVersionAuditListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMNPVersionAuditList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribeMNPVersionAuditListOutcomeCallable TcsasClient::DescribeMNPVersionAuditListCallable(const DescribeMNPVersionAuditListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMNPVersionAuditListOutcome>>();
+    DescribeMNPVersionAuditListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeMNPVersionAuditListRequest&,
+        DescribeMNPVersionAuditListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribePaymentDataDetailOutcome TcsasClient::DescribePaymentDataDetail(const DescribePaymentDataDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePaymentDataDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePaymentDataDetailResponse rsp = DescribePaymentDataDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePaymentDataDetailOutcome(rsp);
+        else
+            return DescribePaymentDataDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePaymentDataDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribePaymentDataDetailAsync(const DescribePaymentDataDetailRequest& request, const DescribePaymentDataDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePaymentDataDetailRequest&;
+    using Resp = DescribePaymentDataDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePaymentDataDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribePaymentDataDetailOutcomeCallable TcsasClient::DescribePaymentDataDetailCallable(const DescribePaymentDataDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePaymentDataDetailOutcome>>();
+    DescribePaymentDataDetailAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribePaymentDataDetailRequest&,
+        DescribePaymentDataDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribePaymentDataLineChartOutcome TcsasClient::DescribePaymentDataLineChart(const DescribePaymentDataLineChartRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePaymentDataLineChart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePaymentDataLineChartResponse rsp = DescribePaymentDataLineChartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePaymentDataLineChartOutcome(rsp);
+        else
+            return DescribePaymentDataLineChartOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePaymentDataLineChartOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribePaymentDataLineChartAsync(const DescribePaymentDataLineChartRequest& request, const DescribePaymentDataLineChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePaymentDataLineChartRequest&;
+    using Resp = DescribePaymentDataLineChartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePaymentDataLineChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribePaymentDataLineChartOutcomeCallable TcsasClient::DescribePaymentDataLineChartCallable(const DescribePaymentDataLineChartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePaymentDataLineChartOutcome>>();
+    DescribePaymentDataLineChartAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribePaymentDataLineChartRequest&,
+        DescribePaymentDataLineChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::DescribePaymentDataOverviewOutcome TcsasClient::DescribePaymentDataOverview(const DescribePaymentDataOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePaymentDataOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePaymentDataOverviewResponse rsp = DescribePaymentDataOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePaymentDataOverviewOutcome(rsp);
+        else
+            return DescribePaymentDataOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePaymentDataOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DescribePaymentDataOverviewAsync(const DescribePaymentDataOverviewRequest& request, const DescribePaymentDataOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePaymentDataOverviewRequest&;
+    using Resp = DescribePaymentDataOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePaymentDataOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DescribePaymentDataOverviewOutcomeCallable TcsasClient::DescribePaymentDataOverviewCallable(const DescribePaymentDataOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePaymentDataOverviewOutcome>>();
+    DescribePaymentDataOverviewAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribePaymentDataOverviewRequest&,
+        DescribePaymentDataOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeRoleListOutcome TcsasClient::DescribeRoleList(const DescribeRoleListRequest &request)
@@ -1696,25 +5962,32 @@ TcsasClient::DescribeRoleListOutcome TcsasClient::DescribeRoleList(const Describ
 
 void TcsasClient::DescribeRoleListAsync(const DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRoleList(request), context);
-    };
+    using Req = const DescribeRoleListRequest&;
+    using Resp = DescribeRoleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeRoleListOutcomeCallable TcsasClient::DescribeRoleListCallable(const DescribeRoleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRoleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRoleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRoleListOutcome>>();
+    DescribeRoleListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeRoleListRequest&,
+        DescribeRoleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeTeamOutcome TcsasClient::DescribeTeam(const DescribeTeamRequest &request)
@@ -1739,25 +6012,32 @@ TcsasClient::DescribeTeamOutcome TcsasClient::DescribeTeam(const DescribeTeamReq
 
 void TcsasClient::DescribeTeamAsync(const DescribeTeamRequest& request, const DescribeTeamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTeam(request), context);
-    };
+    using Req = const DescribeTeamRequest&;
+    using Resp = DescribeTeamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTeam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeTeamOutcomeCallable TcsasClient::DescribeTeamCallable(const DescribeTeamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTeamOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTeam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTeamOutcome>>();
+    DescribeTeamAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeTeamRequest&,
+        DescribeTeamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeTeamListOutcome TcsasClient::DescribeTeamList(const DescribeTeamListRequest &request)
@@ -1782,25 +6062,32 @@ TcsasClient::DescribeTeamListOutcome TcsasClient::DescribeTeamList(const Describ
 
 void TcsasClient::DescribeTeamListAsync(const DescribeTeamListRequest& request, const DescribeTeamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTeamList(request), context);
-    };
+    using Req = const DescribeTeamListRequest&;
+    using Resp = DescribeTeamListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTeamList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeTeamListOutcomeCallable TcsasClient::DescribeTeamListCallable(const DescribeTeamListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTeamListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTeamList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTeamListOutcome>>();
+    DescribeTeamListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeTeamListRequest&,
+        DescribeTeamListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeTeamMemberListOutcome TcsasClient::DescribeTeamMemberList(const DescribeTeamMemberListRequest &request)
@@ -1825,25 +6112,32 @@ TcsasClient::DescribeTeamMemberListOutcome TcsasClient::DescribeTeamMemberList(c
 
 void TcsasClient::DescribeTeamMemberListAsync(const DescribeTeamMemberListRequest& request, const DescribeTeamMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTeamMemberList(request), context);
-    };
+    using Req = const DescribeTeamMemberListRequest&;
+    using Resp = DescribeTeamMemberListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTeamMemberList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeTeamMemberListOutcomeCallable TcsasClient::DescribeTeamMemberListCallable(const DescribeTeamMemberListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTeamMemberListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTeamMemberList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTeamMemberListOutcome>>();
+    DescribeTeamMemberListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeTeamMemberListRequest&,
+        DescribeTeamMemberListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeTempSecret4UploadFile2CosOutcome TcsasClient::DescribeTempSecret4UploadFile2Cos(const DescribeTempSecret4UploadFile2CosRequest &request)
@@ -1868,25 +6162,32 @@ TcsasClient::DescribeTempSecret4UploadFile2CosOutcome TcsasClient::DescribeTempS
 
 void TcsasClient::DescribeTempSecret4UploadFile2CosAsync(const DescribeTempSecret4UploadFile2CosRequest& request, const DescribeTempSecret4UploadFile2CosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTempSecret4UploadFile2Cos(request), context);
-    };
+    using Req = const DescribeTempSecret4UploadFile2CosRequest&;
+    using Resp = DescribeTempSecret4UploadFile2CosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTempSecret4UploadFile2Cos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeTempSecret4UploadFile2CosOutcomeCallable TcsasClient::DescribeTempSecret4UploadFile2CosCallable(const DescribeTempSecret4UploadFile2CosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTempSecret4UploadFile2CosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTempSecret4UploadFile2Cos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTempSecret4UploadFile2CosOutcome>>();
+    DescribeTempSecret4UploadFile2CosAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeTempSecret4UploadFile2CosRequest&,
+        DescribeTempSecret4UploadFile2CosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeUserOutcome TcsasClient::DescribeUser(const DescribeUserRequest &request)
@@ -1911,25 +6212,32 @@ TcsasClient::DescribeUserOutcome TcsasClient::DescribeUser(const DescribeUserReq
 
 void TcsasClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUser(request), context);
-    };
+    using Req = const DescribeUserRequest&;
+    using Resp = DescribeUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeUserOutcomeCallable TcsasClient::DescribeUserCallable(const DescribeUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserOutcome>>();
+    DescribeUserAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeUserRequest&,
+        DescribeUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DescribeUserListOutcome TcsasClient::DescribeUserList(const DescribeUserListRequest &request)
@@ -1954,25 +6262,32 @@ TcsasClient::DescribeUserListOutcome TcsasClient::DescribeUserList(const Describ
 
 void TcsasClient::DescribeUserListAsync(const DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserList(request), context);
-    };
+    using Req = const DescribeUserListRequest&;
+    using Resp = DescribeUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DescribeUserListOutcomeCallable TcsasClient::DescribeUserListCallable(const DescribeUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserListOutcome>>();
+    DescribeUserListAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DescribeUserListRequest&,
+        DescribeUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::DisableApplicationSensitiveAPIOutcome TcsasClient::DisableApplicationSensitiveAPI(const DisableApplicationSensitiveAPIRequest &request)
@@ -1997,25 +6312,82 @@ TcsasClient::DisableApplicationSensitiveAPIOutcome TcsasClient::DisableApplicati
 
 void TcsasClient::DisableApplicationSensitiveAPIAsync(const DisableApplicationSensitiveAPIRequest& request, const DisableApplicationSensitiveAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableApplicationSensitiveAPI(request), context);
-    };
+    using Req = const DisableApplicationSensitiveAPIRequest&;
+    using Resp = DisableApplicationSensitiveAPIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableApplicationSensitiveAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::DisableApplicationSensitiveAPIOutcomeCallable TcsasClient::DisableApplicationSensitiveAPICallable(const DisableApplicationSensitiveAPIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableApplicationSensitiveAPIOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableApplicationSensitiveAPI(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DisableApplicationSensitiveAPIOutcome>>();
+    DisableApplicationSensitiveAPIAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DisableApplicationSensitiveAPIRequest&,
+        DisableApplicationSensitiveAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::DisableMNPPaymentOutcome TcsasClient::DisableMNPPayment(const DisableMNPPaymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableMNPPayment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableMNPPaymentResponse rsp = DisableMNPPaymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableMNPPaymentOutcome(rsp);
+        else
+            return DisableMNPPaymentOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableMNPPaymentOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::DisableMNPPaymentAsync(const DisableMNPPaymentRequest& request, const DisableMNPPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisableMNPPaymentRequest&;
+    using Resp = DisableMNPPaymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisableMNPPayment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::DisableMNPPaymentOutcomeCallable TcsasClient::DisableMNPPaymentCallable(const DisableMNPPaymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisableMNPPaymentOutcome>>();
+    DisableMNPPaymentAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const DisableMNPPaymentRequest&,
+        DisableMNPPaymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::EnableApplicationSensitiveAPIOutcome TcsasClient::EnableApplicationSensitiveAPI(const EnableApplicationSensitiveAPIRequest &request)
@@ -2040,25 +6412,32 @@ TcsasClient::EnableApplicationSensitiveAPIOutcome TcsasClient::EnableApplication
 
 void TcsasClient::EnableApplicationSensitiveAPIAsync(const EnableApplicationSensitiveAPIRequest& request, const EnableApplicationSensitiveAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableApplicationSensitiveAPI(request), context);
-    };
+    using Req = const EnableApplicationSensitiveAPIRequest&;
+    using Resp = EnableApplicationSensitiveAPIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableApplicationSensitiveAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::EnableApplicationSensitiveAPIOutcomeCallable TcsasClient::EnableApplicationSensitiveAPICallable(const EnableApplicationSensitiveAPIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableApplicationSensitiveAPIOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableApplicationSensitiveAPI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableApplicationSensitiveAPIOutcome>>();
+    EnableApplicationSensitiveAPIAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const EnableApplicationSensitiveAPIRequest&,
+        EnableApplicationSensitiveAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyApplicationOutcome TcsasClient::ModifyApplication(const ModifyApplicationRequest &request)
@@ -2083,25 +6462,82 @@ TcsasClient::ModifyApplicationOutcome TcsasClient::ModifyApplication(const Modif
 
 void TcsasClient::ModifyApplicationAsync(const ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApplication(request), context);
-    };
+    using Req = const ModifyApplicationRequest&;
+    using Resp = ModifyApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyApplicationOutcomeCallable TcsasClient::ModifyApplicationCallable(const ModifyApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApplication(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyApplicationOutcome>>();
+    ModifyApplicationAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyApplicationRequest&,
+        ModifyApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::ModifyApplicationConfigOutcome TcsasClient::ModifyApplicationConfig(const ModifyApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationConfigResponse rsp = ModifyApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationConfigOutcome(rsp);
+        else
+            return ModifyApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ModifyApplicationConfigAsync(const ModifyApplicationConfigRequest& request, const ModifyApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyApplicationConfigRequest&;
+    using Resp = ModifyApplicationConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ModifyApplicationConfigOutcomeCallable TcsasClient::ModifyApplicationConfigCallable(const ModifyApplicationConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyApplicationConfigOutcome>>();
+    ModifyApplicationConfigAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyApplicationConfigRequest&,
+        ModifyApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyGlobalDomainOutcome TcsasClient::ModifyGlobalDomain(const ModifyGlobalDomainRequest &request)
@@ -2126,25 +6562,182 @@ TcsasClient::ModifyGlobalDomainOutcome TcsasClient::ModifyGlobalDomain(const Mod
 
 void TcsasClient::ModifyGlobalDomainAsync(const ModifyGlobalDomainRequest& request, const ModifyGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyGlobalDomain(request), context);
-    };
+    using Req = const ModifyGlobalDomainRequest&;
+    using Resp = ModifyGlobalDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyGlobalDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyGlobalDomainOutcomeCallable TcsasClient::ModifyGlobalDomainCallable(const ModifyGlobalDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyGlobalDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyGlobalDomain(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyGlobalDomainOutcome>>();
+    ModifyGlobalDomainAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyGlobalDomainRequest&,
+        ModifyGlobalDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::ModifyMNGOutcome TcsasClient::ModifyMNG(const ModifyMNGRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMNG");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMNGResponse rsp = ModifyMNGResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMNGOutcome(rsp);
+        else
+            return ModifyMNGOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMNGOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ModifyMNGAsync(const ModifyMNGRequest& request, const ModifyMNGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMNGRequest&;
+    using Resp = ModifyMNGResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNG", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ModifyMNGOutcomeCallable TcsasClient::ModifyMNGCallable(const ModifyMNGRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMNGOutcome>>();
+    ModifyMNGAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNGRequest&,
+        ModifyMNGOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ModifyMNGAppSecretStatusOutcome TcsasClient::ModifyMNGAppSecretStatus(const ModifyMNGAppSecretStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMNGAppSecretStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMNGAppSecretStatusResponse rsp = ModifyMNGAppSecretStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMNGAppSecretStatusOutcome(rsp);
+        else
+            return ModifyMNGAppSecretStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMNGAppSecretStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ModifyMNGAppSecretStatusAsync(const ModifyMNGAppSecretStatusRequest& request, const ModifyMNGAppSecretStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMNGAppSecretStatusRequest&;
+    using Resp = ModifyMNGAppSecretStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNGAppSecretStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ModifyMNGAppSecretStatusOutcomeCallable TcsasClient::ModifyMNGAppSecretStatusCallable(const ModifyMNGAppSecretStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMNGAppSecretStatusOutcome>>();
+    ModifyMNGAppSecretStatusAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNGAppSecretStatusRequest&,
+        ModifyMNGAppSecretStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ModifyMNGDomainOutcome TcsasClient::ModifyMNGDomain(const ModifyMNGDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMNGDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMNGDomainResponse rsp = ModifyMNGDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMNGDomainOutcome(rsp);
+        else
+            return ModifyMNGDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMNGDomainOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ModifyMNGDomainAsync(const ModifyMNGDomainRequest& request, const ModifyMNGDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMNGDomainRequest&;
+    using Resp = ModifyMNGDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNGDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ModifyMNGDomainOutcomeCallable TcsasClient::ModifyMNGDomainCallable(const ModifyMNGDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMNGDomainOutcome>>();
+    ModifyMNGDomainAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNGDomainRequest&,
+        ModifyMNGDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyMNPOutcome TcsasClient::ModifyMNP(const ModifyMNPRequest &request)
@@ -2169,25 +6762,82 @@ TcsasClient::ModifyMNPOutcome TcsasClient::ModifyMNP(const ModifyMNPRequest &req
 
 void TcsasClient::ModifyMNPAsync(const ModifyMNPRequest& request, const ModifyMNPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMNP(request), context);
-    };
+    using Req = const ModifyMNPRequest&;
+    using Resp = ModifyMNPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyMNPOutcomeCallable TcsasClient::ModifyMNPCallable(const ModifyMNPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMNPOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMNP(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyMNPOutcome>>();
+    ModifyMNPAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNPRequest&,
+        ModifyMNPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::ModifyMNPAppSecretStatusOutcome TcsasClient::ModifyMNPAppSecretStatus(const ModifyMNPAppSecretStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMNPAppSecretStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMNPAppSecretStatusResponse rsp = ModifyMNPAppSecretStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMNPAppSecretStatusOutcome(rsp);
+        else
+            return ModifyMNPAppSecretStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMNPAppSecretStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ModifyMNPAppSecretStatusAsync(const ModifyMNPAppSecretStatusRequest& request, const ModifyMNPAppSecretStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMNPAppSecretStatusRequest&;
+    using Resp = ModifyMNPAppSecretStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNPAppSecretStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ModifyMNPAppSecretStatusOutcomeCallable TcsasClient::ModifyMNPAppSecretStatusCallable(const ModifyMNPAppSecretStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMNPAppSecretStatusOutcome>>();
+    ModifyMNPAppSecretStatusAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNPAppSecretStatusRequest&,
+        ModifyMNPAppSecretStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyMNPDomainOutcome TcsasClient::ModifyMNPDomain(const ModifyMNPDomainRequest &request)
@@ -2212,25 +6862,32 @@ TcsasClient::ModifyMNPDomainOutcome TcsasClient::ModifyMNPDomain(const ModifyMNP
 
 void TcsasClient::ModifyMNPDomainAsync(const ModifyMNPDomainRequest& request, const ModifyMNPDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMNPDomain(request), context);
-    };
+    using Req = const ModifyMNPDomainRequest&;
+    using Resp = ModifyMNPDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMNPDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyMNPDomainOutcomeCallable TcsasClient::ModifyMNPDomainCallable(const ModifyMNPDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMNPDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMNPDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMNPDomainOutcome>>();
+    ModifyMNPDomainAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyMNPDomainRequest&,
+        ModifyMNPDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyTeamOutcome TcsasClient::ModifyTeam(const ModifyTeamRequest &request)
@@ -2255,25 +6912,32 @@ TcsasClient::ModifyTeamOutcome TcsasClient::ModifyTeam(const ModifyTeamRequest &
 
 void TcsasClient::ModifyTeamAsync(const ModifyTeamRequest& request, const ModifyTeamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTeam(request), context);
-    };
+    using Req = const ModifyTeamRequest&;
+    using Resp = ModifyTeamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTeam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyTeamOutcomeCallable TcsasClient::ModifyTeamCallable(const ModifyTeamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTeamOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTeam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTeamOutcome>>();
+    ModifyTeamAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyTeamRequest&,
+        ModifyTeamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyTeamMemberOutcome TcsasClient::ModifyTeamMember(const ModifyTeamMemberRequest &request)
@@ -2298,25 +6962,32 @@ TcsasClient::ModifyTeamMemberOutcome TcsasClient::ModifyTeamMember(const ModifyT
 
 void TcsasClient::ModifyTeamMemberAsync(const ModifyTeamMemberRequest& request, const ModifyTeamMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTeamMember(request), context);
-    };
+    using Req = const ModifyTeamMemberRequest&;
+    using Resp = ModifyTeamMemberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTeamMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyTeamMemberOutcomeCallable TcsasClient::ModifyTeamMemberCallable(const ModifyTeamMemberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTeamMemberOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTeamMember(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTeamMemberOutcome>>();
+    ModifyTeamMemberAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyTeamMemberRequest&,
+        ModifyTeamMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ModifyUserOutcome TcsasClient::ModifyUser(const ModifyUserRequest &request)
@@ -2341,25 +7012,32 @@ TcsasClient::ModifyUserOutcome TcsasClient::ModifyUser(const ModifyUserRequest &
 
 void TcsasClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUser(request), context);
-    };
+    using Req = const ModifyUserRequest&;
+    using Resp = ModifyUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ModifyUserOutcomeCallable TcsasClient::ModifyUserCallable(const ModifyUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
+    ModifyUserAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ModifyUserRequest&,
+        ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ProcessMNPApprovalOutcome TcsasClient::ProcessMNPApproval(const ProcessMNPApprovalRequest &request)
@@ -2384,25 +7062,32 @@ TcsasClient::ProcessMNPApprovalOutcome TcsasClient::ProcessMNPApproval(const Pro
 
 void TcsasClient::ProcessMNPApprovalAsync(const ProcessMNPApprovalRequest& request, const ProcessMNPApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProcessMNPApproval(request), context);
-    };
+    using Req = const ProcessMNPApprovalRequest&;
+    using Resp = ProcessMNPApprovalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProcessMNPApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ProcessMNPApprovalOutcomeCallable TcsasClient::ProcessMNPApprovalCallable(const ProcessMNPApprovalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProcessMNPApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->ProcessMNPApproval(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ProcessMNPApprovalOutcome>>();
+    ProcessMNPApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ProcessMNPApprovalRequest&,
+        ProcessMNPApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ProcessMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::ProcessMNPSensitiveAPIPermissionApproval(const ProcessMNPSensitiveAPIPermissionApprovalRequest &request)
@@ -2427,25 +7112,132 @@ TcsasClient::ProcessMNPSensitiveAPIPermissionApprovalOutcome TcsasClient::Proces
 
 void TcsasClient::ProcessMNPSensitiveAPIPermissionApprovalAsync(const ProcessMNPSensitiveAPIPermissionApprovalRequest& request, const ProcessMNPSensitiveAPIPermissionApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProcessMNPSensitiveAPIPermissionApproval(request), context);
-    };
+    using Req = const ProcessMNPSensitiveAPIPermissionApprovalRequest&;
+    using Resp = ProcessMNPSensitiveAPIPermissionApprovalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProcessMNPSensitiveAPIPermissionApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ProcessMNPSensitiveAPIPermissionApprovalOutcomeCallable TcsasClient::ProcessMNPSensitiveAPIPermissionApprovalCallable(const ProcessMNPSensitiveAPIPermissionApprovalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProcessMNPSensitiveAPIPermissionApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->ProcessMNPSensitiveAPIPermissionApproval(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ProcessMNPSensitiveAPIPermissionApprovalOutcome>>();
+    ProcessMNPSensitiveAPIPermissionApprovalAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ProcessMNPSensitiveAPIPermissionApprovalRequest&,
+        ProcessMNPSensitiveAPIPermissionApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::QueryMNPMerchantInfoOutcome TcsasClient::QueryMNPMerchantInfo(const QueryMNPMerchantInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMNPMerchantInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMNPMerchantInfoResponse rsp = QueryMNPMerchantInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMNPMerchantInfoOutcome(rsp);
+        else
+            return QueryMNPMerchantInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMNPMerchantInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::QueryMNPMerchantInfoAsync(const QueryMNPMerchantInfoRequest& request, const QueryMNPMerchantInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryMNPMerchantInfoRequest&;
+    using Resp = QueryMNPMerchantInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryMNPMerchantInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::QueryMNPMerchantInfoOutcomeCallable TcsasClient::QueryMNPMerchantInfoCallable(const QueryMNPMerchantInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryMNPMerchantInfoOutcome>>();
+    QueryMNPMerchantInfoAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const QueryMNPMerchantInfoRequest&,
+        QueryMNPMerchantInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ReleaseMNGVersionOutcome TcsasClient::ReleaseMNGVersion(const ReleaseMNGVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseMNGVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseMNGVersionResponse rsp = ReleaseMNGVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseMNGVersionOutcome(rsp);
+        else
+            return ReleaseMNGVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseMNGVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ReleaseMNGVersionAsync(const ReleaseMNGVersionRequest& request, const ReleaseMNGVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReleaseMNGVersionRequest&;
+    using Resp = ReleaseMNGVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReleaseMNGVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ReleaseMNGVersionOutcomeCallable TcsasClient::ReleaseMNGVersionCallable(const ReleaseMNGVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReleaseMNGVersionOutcome>>();
+    ReleaseMNGVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ReleaseMNGVersionRequest&,
+        ReleaseMNGVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::ReleaseMNPVersionOutcome TcsasClient::ReleaseMNPVersion(const ReleaseMNPVersionRequest &request)
@@ -2470,25 +7262,82 @@ TcsasClient::ReleaseMNPVersionOutcome TcsasClient::ReleaseMNPVersion(const Relea
 
 void TcsasClient::ReleaseMNPVersionAsync(const ReleaseMNPVersionRequest& request, const ReleaseMNPVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseMNPVersion(request), context);
-    };
+    using Req = const ReleaseMNPVersionRequest&;
+    using Resp = ReleaseMNPVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseMNPVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::ReleaseMNPVersionOutcomeCallable TcsasClient::ReleaseMNPVersionCallable(const ReleaseMNPVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseMNPVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseMNPVersion(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ReleaseMNPVersionOutcome>>();
+    ReleaseMNPVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ReleaseMNPVersionRequest&,
+        ReleaseMNPVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::RemoveMNGOutcome TcsasClient::RemoveMNG(const RemoveMNGRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveMNG");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveMNGResponse rsp = RemoveMNGResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveMNGOutcome(rsp);
+        else
+            return RemoveMNGOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveMNGOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::RemoveMNGAsync(const RemoveMNGRequest& request, const RemoveMNGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveMNGRequest&;
+    using Resp = RemoveMNGResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveMNG", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::RemoveMNGOutcomeCallable TcsasClient::RemoveMNGCallable(const RemoveMNGRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveMNGOutcome>>();
+    RemoveMNGAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RemoveMNGRequest&,
+        RemoveMNGOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::RemoveMNPOutcome TcsasClient::RemoveMNP(const RemoveMNPRequest &request)
@@ -2513,25 +7362,282 @@ TcsasClient::RemoveMNPOutcome TcsasClient::RemoveMNP(const RemoveMNPRequest &req
 
 void TcsasClient::RemoveMNPAsync(const RemoveMNPRequest& request, const RemoveMNPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveMNP(request), context);
-    };
+    using Req = const RemoveMNPRequest&;
+    using Resp = RemoveMNPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveMNP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::RemoveMNPOutcomeCallable TcsasClient::RemoveMNPCallable(const RemoveMNPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveMNPOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveMNP(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<RemoveMNPOutcome>>();
+    RemoveMNPAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RemoveMNPRequest&,
+        RemoveMNPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::RequestPaymentEnableOutcome TcsasClient::RequestPaymentEnable(const RequestPaymentEnableRequest &request)
+{
+    auto outcome = MakeRequest(request, "RequestPaymentEnable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RequestPaymentEnableResponse rsp = RequestPaymentEnableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RequestPaymentEnableOutcome(rsp);
+        else
+            return RequestPaymentEnableOutcome(o.GetError());
+    }
+    else
+    {
+        return RequestPaymentEnableOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::RequestPaymentEnableAsync(const RequestPaymentEnableRequest& request, const RequestPaymentEnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RequestPaymentEnableRequest&;
+    using Resp = RequestPaymentEnableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RequestPaymentEnable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::RequestPaymentEnableOutcomeCallable TcsasClient::RequestPaymentEnableCallable(const RequestPaymentEnableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RequestPaymentEnableOutcome>>();
+    RequestPaymentEnableAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RequestPaymentEnableRequest&,
+        RequestPaymentEnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::RequestPaymentMerchantBindingOutcome TcsasClient::RequestPaymentMerchantBinding(const RequestPaymentMerchantBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "RequestPaymentMerchantBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RequestPaymentMerchantBindingResponse rsp = RequestPaymentMerchantBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RequestPaymentMerchantBindingOutcome(rsp);
+        else
+            return RequestPaymentMerchantBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return RequestPaymentMerchantBindingOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::RequestPaymentMerchantBindingAsync(const RequestPaymentMerchantBindingRequest& request, const RequestPaymentMerchantBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RequestPaymentMerchantBindingRequest&;
+    using Resp = RequestPaymentMerchantBindingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RequestPaymentMerchantBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::RequestPaymentMerchantBindingOutcomeCallable TcsasClient::RequestPaymentMerchantBindingCallable(const RequestPaymentMerchantBindingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RequestPaymentMerchantBindingOutcome>>();
+    RequestPaymentMerchantBindingAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RequestPaymentMerchantBindingRequest&,
+        RequestPaymentMerchantBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ResetMNGAppSecretOutcome TcsasClient::ResetMNGAppSecret(const ResetMNGAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetMNGAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetMNGAppSecretResponse rsp = ResetMNGAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetMNGAppSecretOutcome(rsp);
+        else
+            return ResetMNGAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetMNGAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ResetMNGAppSecretAsync(const ResetMNGAppSecretRequest& request, const ResetMNGAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResetMNGAppSecretRequest&;
+    using Resp = ResetMNGAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResetMNGAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ResetMNGAppSecretOutcomeCallable TcsasClient::ResetMNGAppSecretCallable(const ResetMNGAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResetMNGAppSecretOutcome>>();
+    ResetMNGAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ResetMNGAppSecretRequest&,
+        ResetMNGAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::ResetMNPAppSecretOutcome TcsasClient::ResetMNPAppSecret(const ResetMNPAppSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetMNPAppSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetMNPAppSecretResponse rsp = ResetMNPAppSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetMNPAppSecretOutcome(rsp);
+        else
+            return ResetMNPAppSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetMNPAppSecretOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::ResetMNPAppSecretAsync(const ResetMNPAppSecretRequest& request, const ResetMNPAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResetMNPAppSecretRequest&;
+    using Resp = ResetMNPAppSecretResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResetMNPAppSecret", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::ResetMNPAppSecretOutcomeCallable TcsasClient::ResetMNPAppSecretCallable(const ResetMNPAppSecretRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResetMNPAppSecretOutcome>>();
+    ResetMNPAppSecretAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const ResetMNPAppSecretRequest&,
+        ResetMNPAppSecretOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::RollbackMNGVersionOutcome TcsasClient::RollbackMNGVersion(const RollbackMNGVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackMNGVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackMNGVersionResponse rsp = RollbackMNGVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackMNGVersionOutcome(rsp);
+        else
+            return RollbackMNGVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackMNGVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::RollbackMNGVersionAsync(const RollbackMNGVersionRequest& request, const RollbackMNGVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RollbackMNGVersionRequest&;
+    using Resp = RollbackMNGVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RollbackMNGVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::RollbackMNGVersionOutcomeCallable TcsasClient::RollbackMNGVersionCallable(const RollbackMNGVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RollbackMNGVersionOutcome>>();
+    RollbackMNGVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RollbackMNGVersionRequest&,
+        RollbackMNGVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcsasClient::RollbackMNPVersionOutcome TcsasClient::RollbackMNPVersion(const RollbackMNPVersionRequest &request)
@@ -2556,24 +7662,131 @@ TcsasClient::RollbackMNPVersionOutcome TcsasClient::RollbackMNPVersion(const Rol
 
 void TcsasClient::RollbackMNPVersionAsync(const RollbackMNPVersionRequest& request, const RollbackMNPVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackMNPVersion(request), context);
-    };
+    using Req = const RollbackMNPVersionRequest&;
+    using Resp = RollbackMNPVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackMNPVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcsasClient::RollbackMNPVersionOutcomeCallable TcsasClient::RollbackMNPVersionCallable(const RollbackMNPVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackMNPVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackMNPVersion(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<RollbackMNPVersionOutcome>>();
+    RollbackMNPVersionAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const RollbackMNPVersionRequest&,
+        RollbackMNPVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+TcsasClient::UnbindMNPPaymentMerchantOutcome TcsasClient::UnbindMNPPaymentMerchant(const UnbindMNPPaymentMerchantRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindMNPPaymentMerchant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindMNPPaymentMerchantResponse rsp = UnbindMNPPaymentMerchantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindMNPPaymentMerchantOutcome(rsp);
+        else
+            return UnbindMNPPaymentMerchantOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindMNPPaymentMerchantOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::UnbindMNPPaymentMerchantAsync(const UnbindMNPPaymentMerchantRequest& request, const UnbindMNPPaymentMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindMNPPaymentMerchantRequest&;
+    using Resp = UnbindMNPPaymentMerchantResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindMNPPaymentMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::UnbindMNPPaymentMerchantOutcomeCallable TcsasClient::UnbindMNPPaymentMerchantCallable(const UnbindMNPPaymentMerchantRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindMNPPaymentMerchantOutcome>>();
+    UnbindMNPPaymentMerchantAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const UnbindMNPPaymentMerchantRequest&,
+        UnbindMNPPaymentMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcsasClient::UnbindPaymentMerchantOutcome TcsasClient::UnbindPaymentMerchant(const UnbindPaymentMerchantRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindPaymentMerchant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindPaymentMerchantResponse rsp = UnbindPaymentMerchantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindPaymentMerchantOutcome(rsp);
+        else
+            return UnbindPaymentMerchantOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindPaymentMerchantOutcome(outcome.GetError());
+    }
+}
+
+void TcsasClient::UnbindPaymentMerchantAsync(const UnbindPaymentMerchantRequest& request, const UnbindPaymentMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindPaymentMerchantRequest&;
+    using Resp = UnbindPaymentMerchantResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindPaymentMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcsasClient::UnbindPaymentMerchantOutcomeCallable TcsasClient::UnbindPaymentMerchantCallable(const UnbindPaymentMerchantRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindPaymentMerchantOutcome>>();
+    UnbindPaymentMerchantAsync(
+    request,
+    [prom](
+        const TcsasClient*,
+        const UnbindPaymentMerchantRequest&,
+        UnbindPaymentMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

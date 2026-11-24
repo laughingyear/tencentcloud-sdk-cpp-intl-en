@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The moderation result for politically sensitive content in an image.
+                * Task result type of image moderation involving inappropriate information.
                 */
                 class PoliticalImageResult : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The confidence score for the moderation result. Value range: 0-100.
-                     * @return Confidence The confidence score for the moderation result. Value range: 0-100.
+                     * 获取Authentication involves scoring inappropriate information, with a score from 0 to 100.
+                     * @return Confidence Authentication involves scoring inappropriate information, with a score from 0 to 100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置The confidence score for the moderation result. Value range: 0-100.
-                     * @param _confidence The confidence score for the moderation result. Value range: 0-100.
+                     * 设置Authentication involves scoring inappropriate information, with a score from 0 to 100.
+                     * @param _confidence Authentication involves scoring inappropriate information, with a score from 0 to 100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取The suggestion for handling the detected politically sensitive content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion The suggestion for handling the detected politically sensitive content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 获取Result suggestions for authentication involving inappropriate information, value ranges from...to...
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
+                     * @return Suggestion Result suggestions for authentication involving inappropriate information, value ranges from...to...
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置The suggestion for handling the detected politically sensitive content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion The suggestion for handling the detected politically sensitive content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 设置Result suggestions for authentication involving inappropriate information, value ranges from...to...
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
+                     * @param _suggestion Result suggestions for authentication involving inappropriate information, value ranges from...to...
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -101,15 +101,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取The name of the politically sensitive content or banned icon detected.
-                     * @return Name The name of the politically sensitive content or banned icon detected.
+                     * 获取Involves inappropriate information and violative icon names.
+                     * @return Name Involves inappropriate information and violative icon names.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置The name of the politically sensitive content or banned icon detected.
-                     * @param _name The name of the politically sensitive content or banned icon detected.
+                     * 设置Involves inappropriate information and violative icon names.
+                     * @param _name Involves inappropriate information and violative icon names.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -122,15 +122,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取The coordinates (pixel) of the top-left and bottom-right corners of the frame where the politically sensitive content or banned icon appears. Format: [x1, y1, x2, y2].
-                     * @return AreaCoordSet The coordinates (pixel) of the top-left and bottom-right corners of the frame where the politically sensitive content or banned icon appears. Format: [x1, y1, x2, y2].
+                     * 获取Coordinates of the area where inappropriate information or violation icons appear (pixel level), [x1, y1, x2, y2], i.e., coordinates of the top-left corner and bottom-right corner.
+                     * @return AreaCoordSet Coordinates of the area where inappropriate information or violation icons appear (pixel level), [x1, y1, x2, y2], i.e., coordinates of the top-left corner and bottom-right corner.
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置The coordinates (pixel) of the top-left and bottom-right corners of the frame where the politically sensitive content or banned icon appears. Format: [x1, y1, x2, y2].
-                     * @param _areaCoordSet The coordinates (pixel) of the top-left and bottom-right corners of the frame where the politically sensitive content or banned icon appears. Format: [x1, y1, x2, y2].
+                     * 设置Coordinates of the area where inappropriate information or violation icons appear (pixel level), [x1, y1, x2, y2], i.e., coordinates of the top-left corner and bottom-right corner.
+                     * @param _areaCoordSet Coordinates of the area where inappropriate information or violation icons appear (pixel level), [x1, y1, x2, y2], i.e., coordinates of the top-left corner and bottom-right corner.
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -145,28 +145,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The confidence score for the moderation result. Value range: 0-100.
+                     * Authentication involves scoring inappropriate information, with a score from 0 to 100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * The suggestion for handling the detected politically sensitive content. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * Result suggestions for authentication involving inappropriate information, value ranges from...to...
+<li>pass;</li>
+<li>review;</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * The name of the politically sensitive content or banned icon detected.
+                     * Involves inappropriate information and violative icon names.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * The coordinates (pixel) of the top-left and bottom-right corners of the frame where the politically sensitive content or banned icon appears. Format: [x1, y1, x2, y2].
+                     * Coordinates of the area where inappropriate information or violation icons appear (pixel level), [x1, y1, x2, y2], i.e., coordinates of the top-left corner and bottom-right corner.
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Custom header key.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @return Key Custom header key.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 获取Custom header Key.
+                     * @return Key Custom header Key.
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置Custom header key.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @param _key Custom header key.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 设置Custom header Key.
+                     * @param _key Custom header Key.
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -72,19 +68,15 @@ Note: This field may return null, which indicates a failure to obtain a valid va
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Custom header value.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @return Value Custom header value.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 获取Value of the custom header.
+                     * @return Value Value of the custom header.
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置Custom header value.
-Note: This field may return null, which indicates a failure to obtain a valid value.
-                     * @param _value Custom header value.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * 设置Value of the custom header.
+                     * @param _value Value of the custom header.
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -99,15 +91,13 @@ Note: This field may return null, which indicates a failure to obtain a valid va
                 private:
 
                     /**
-                     * Custom header key.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * Custom header Key.
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * Custom header value.
-Note: This field may return null, which indicates a failure to obtain a valid value.
+                     * Value of the custom header.
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

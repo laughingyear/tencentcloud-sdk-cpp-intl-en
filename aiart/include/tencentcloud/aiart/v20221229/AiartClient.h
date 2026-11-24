@@ -23,8 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
-#include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/ChangeClothesRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h>
 
 
 namespace TencentCloud
@@ -39,21 +39,21 @@ namespace TencentCloud
                 AiartClient(const Credential &credential, const std::string &region);
                 AiartClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::ImageToImageResponse> ImageToImageOutcome;
-                typedef std::future<ImageToImageOutcome> ImageToImageOutcomeCallable;
-                typedef std::function<void(const AiartClient*, const Model::ImageToImageRequest&, ImageToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChangeClothesResponse> ChangeClothesOutcome;
+                typedef std::future<ChangeClothesOutcome> ChangeClothesOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ChangeClothesRequest&, ChangeClothesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeClothesAsyncHandler;
 
 
 
                 /**
-                 *This API is used to transfer the image style based on the image to image technology. Images with small figures, complex gestures or too many figures are not recommended.
-It supports 3 concurrency by default, which means that up to 3 submitted tasks can be processed simultaneously. Subsequent tasks can be processed only after ongoing ones are completed.
-                 * @param req ImageToImageRequest
-                 * @return ImageToImageOutcome
+                 *This API is used to generate the images of the model changing clothes based on the model photo and the clothes image.
+It supports 1 concurrency by default, which means that up to 1 submitted task can be processed simultaneously. Subsequent tasks can be processed only after ongoing ones are completed.
+                 * @param req ChangeClothesRequest
+                 * @return ChangeClothesOutcome
                  */
-                ImageToImageOutcome ImageToImage(const Model::ImageToImageRequest &request);
-                void ImageToImageAsync(const Model::ImageToImageRequest& request, const ImageToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ImageToImageOutcomeCallable ImageToImageCallable(const Model::ImageToImageRequest& request);
+                ChangeClothesOutcome ChangeClothes(const Model::ChangeClothesRequest &request);
+                void ChangeClothesAsync(const Model::ChangeClothesRequest& request, const ChangeClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeClothesOutcomeCallable ChangeClothesCallable(const Model::ChangeClothesRequest& request);
 
             };
         }

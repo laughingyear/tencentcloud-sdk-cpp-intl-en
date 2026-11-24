@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Event notification configuration of a task.
+                * Event notification configuration for task processing.
                 */
                 class LiveStreamTaskNotifyConfig : public AbstractModel
                 {
@@ -48,34 +48,30 @@ namespace TencentCloud
 
                     /**
                      * 获取Notification type:
+TDMQ-CMQ: message queue.
+"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://www.tencentcloud.com/document/product/862/39229?from_cn_redirect=1).
 
-"CMQ": Callback messages are written to the CMQ queue; 
-"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://intl.cloud.tencent.com/document/product/862/39229?from_cn_redirect=1).
-
-<font color="red">Note: If left blank, it is CMQ by default. To use the other type, you need to fill in the corresponding type value.</font>
+<Font color="red"> Note: if it is unspecified or left blank, no callback will be sent. To send a callback, fill in the corresponding type value. </font>
                      * @return NotifyType Notification type:
+TDMQ-CMQ: message queue.
+"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://www.tencentcloud.com/document/product/862/39229?from_cn_redirect=1).
 
-"CMQ": Callback messages are written to the CMQ queue; 
-"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://intl.cloud.tencent.com/document/product/862/39229?from_cn_redirect=1).
-
-<font color="red">Note: If left blank, it is CMQ by default. To use the other type, you need to fill in the corresponding type value.</font>
+<Font color="red"> Note: if it is unspecified or left blank, no callback will be sent. To send a callback, fill in the corresponding type value. </font>
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
                      * 设置Notification type:
+TDMQ-CMQ: message queue.
+"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://www.tencentcloud.com/document/product/862/39229?from_cn_redirect=1).
 
-"CMQ": Callback messages are written to the CMQ queue; 
-"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://intl.cloud.tencent.com/document/product/862/39229?from_cn_redirect=1).
-
-<font color="red">Note: If left blank, it is CMQ by default. To use the other type, you need to fill in the corresponding type value.</font>
+<Font color="red"> Note: if it is unspecified or left blank, no callback will be sent. To send a callback, fill in the corresponding type value. </font>
                      * @param _notifyType Notification type:
+TDMQ-CMQ: message queue.
+"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://www.tencentcloud.com/document/product/862/39229?from_cn_redirect=1).
 
-"CMQ": Callback messages are written to the CMQ queue; 
-"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://intl.cloud.tencent.com/document/product/862/39229?from_cn_redirect=1).
-
-<font color="red">Note: If left blank, it is CMQ by default. To use the other type, you need to fill in the corresponding type value.</font>
+<Font color="red"> Note: if it is unspecified or left blank, no callback will be sent. To send a callback, fill in the corresponding type value. </font>
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -88,15 +84,15 @@ namespace TencentCloud
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取HTTP callback URL, required if `NotifyType` is set to `URL`
-                     * @return NotifyUrl HTTP callback URL, required if `NotifyType` is set to `URL`
+                     * 获取HTTP callback URL. This is required if NotifyType is URL.
+                     * @return NotifyUrl HTTP callback URL. This is required if NotifyType is URL.
                      * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
-                     * 设置HTTP callback URL, required if `NotifyType` is set to `URL`
-                     * @param _notifyUrl HTTP callback URL, required if `NotifyType` is set to `URL`
+                     * 设置HTTP callback URL. This is required if NotifyType is URL.
+                     * @param _notifyUrl HTTP callback URL. This is required if NotifyType is URL.
                      * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
@@ -109,15 +105,15 @@ namespace TencentCloud
                     bool NotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取CMQ model. There are two types: `Queue` and `Topic`. Currently, only `Queue` is supported.
-                     * @return CmqModel CMQ model. There are two types: `Queue` and `Topic`. Currently, only `Queue` is supported.
+                     * 获取Queue and Topic models are provided.
+                     * @return CmqModel Queue and Topic models are provided.
                      * 
                      */
                     std::string GetCmqModel() const;
 
                     /**
-                     * 设置CMQ model. There are two types: `Queue` and `Topic`. Currently, only `Queue` is supported.
-                     * @param _cmqModel CMQ model. There are two types: `Queue` and `Topic`. Currently, only `Queue` is supported.
+                     * 设置Queue and Topic models are provided.
+                     * @param _cmqModel Queue and Topic models are provided.
                      * 
                      */
                     void SetCmqModel(const std::string& _cmqModel);
@@ -130,15 +126,15 @@ namespace TencentCloud
                     bool CmqModelHasBeenSet() const;
 
                     /**
-                     * 获取CMQ region, such as `sh` and `bj`.
-                     * @return CmqRegion CMQ region, such as `sh` and `bj`.
+                     * 获取Region when NotifyType is set to TDMQ-CMQ. For example, sh or bj.
+                     * @return CmqRegion Region when NotifyType is set to TDMQ-CMQ. For example, sh or bj.
                      * 
                      */
                     std::string GetCmqRegion() const;
 
                     /**
-                     * 设置CMQ region, such as `sh` and `bj`.
-                     * @param _cmqRegion CMQ region, such as `sh` and `bj`.
+                     * 设置Region when NotifyType is set to TDMQ-CMQ. For example, sh or bj.
+                     * @param _cmqRegion Region when NotifyType is set to TDMQ-CMQ. For example, sh or bj.
                      * 
                      */
                     void SetCmqRegion(const std::string& _cmqRegion);
@@ -151,15 +147,15 @@ namespace TencentCloud
                     bool CmqRegionHasBeenSet() const;
 
                     /**
-                     * 获取This parameter is valid when the model is `Queue`, indicating the name of the CMQ queue for receiving event notifications.
-                     * @return QueueName This parameter is valid when the model is `Queue`, indicating the name of the CMQ queue for receiving event notifications.
+                     * 获取This field is valid when the model is Queue. It indicates the name of the TDMQ for CMQ queue for receiving event notifications.
+                     * @return QueueName This field is valid when the model is Queue. It indicates the name of the TDMQ for CMQ queue for receiving event notifications.
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置This parameter is valid when the model is `Queue`, indicating the name of the CMQ queue for receiving event notifications.
-                     * @param _queueName This parameter is valid when the model is `Queue`, indicating the name of the CMQ queue for receiving event notifications.
+                     * 设置This field is valid when the model is Queue. It indicates the name of the TDMQ for CMQ queue for receiving event notifications.
+                     * @param _queueName This field is valid when the model is Queue. It indicates the name of the TDMQ for CMQ queue for receiving event notifications.
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -172,15 +168,15 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取This parameter is valid when the model is `Topic`, indicating the name of the CMQ topic for receiving event notifications.
-                     * @return TopicName This parameter is valid when the model is `Topic`, indicating the name of the CMQ topic for receiving event notifications.
+                     * 获取This field is valid when the model is Topic. It indicates the name of the TDMQ for CMQ topic for receiving event notifications.
+                     * @return TopicName This field is valid when the model is Topic. It indicates the name of the TDMQ for CMQ topic for receiving event notifications.
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置This parameter is valid when the model is `Topic`, indicating the name of the CMQ topic for receiving event notifications.
-                     * @param _topicName This parameter is valid when the model is `Topic`, indicating the name of the CMQ topic for receiving event notifications.
+                     * 设置This field is valid when the model is Topic. It indicates the name of the TDMQ for CMQ topic for receiving event notifications.
+                     * @param _topicName This field is valid when the model is Topic. It indicates the name of the TDMQ for CMQ topic for receiving event notifications.
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -194,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Key used to generate a callback signature.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return NotifyKey Key used to generate a callback signature.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetNotifyKey() const;
 
                     /**
                      * 设置Key used to generate a callback signature.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _notifyKey Key used to generate a callback signature.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetNotifyKey(const std::string& _notifyKey);
@@ -221,48 +213,46 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Notification type:
+TDMQ-CMQ: message queue.
+"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://www.tencentcloud.com/document/product/862/39229?from_cn_redirect=1).
 
-"CMQ": Callback messages are written to the CMQ queue; 
-"URL": When a URL is specified, the HTTP callback is pushed to the address specified by NotifyUrl. The callback protocol is http+json. The content of the packet body is the same as the output parameters of the [ParseLiveStreamProcessNotification API](https://intl.cloud.tencent.com/document/product/862/39229?from_cn_redirect=1).
-
-<font color="red">Note: If left blank, it is CMQ by default. To use the other type, you need to fill in the corresponding type value.</font>
+<Font color="red"> Note: if it is unspecified or left blank, no callback will be sent. To send a callback, fill in the corresponding type value. </font>
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * HTTP callback URL, required if `NotifyType` is set to `URL`
+                     * HTTP callback URL. This is required if NotifyType is URL.
                      */
                     std::string m_notifyUrl;
                     bool m_notifyUrlHasBeenSet;
 
                     /**
-                     * CMQ model. There are two types: `Queue` and `Topic`. Currently, only `Queue` is supported.
+                     * Queue and Topic models are provided.
                      */
                     std::string m_cmqModel;
                     bool m_cmqModelHasBeenSet;
 
                     /**
-                     * CMQ region, such as `sh` and `bj`.
+                     * Region when NotifyType is set to TDMQ-CMQ. For example, sh or bj.
                      */
                     std::string m_cmqRegion;
                     bool m_cmqRegionHasBeenSet;
 
                     /**
-                     * This parameter is valid when the model is `Queue`, indicating the name of the CMQ queue for receiving event notifications.
+                     * This field is valid when the model is Queue. It indicates the name of the TDMQ for CMQ queue for receiving event notifications.
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * This parameter is valid when the model is `Topic`, indicating the name of the CMQ topic for receiving event notifications.
+                     * This field is valid when the model is Topic. It indicates the name of the TDMQ for CMQ topic for receiving event notifications.
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * Key used to generate a callback signature.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_notifyKey;
                     bool m_notifyKeyHasBeenSet;

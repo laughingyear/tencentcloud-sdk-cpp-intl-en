@@ -49,50 +49,66 @@ namespace TencentCloud
 
                     /**
                      * 获取The final verification result code.
-0: Success.
-1001: Failed to call the liveness detection engine.
+0: Succeeded.
+1001: Failed to call the liveness engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
                      * @return ErrorCode The final verification result code.
-0: Success.
-1001: Failed to call the liveness detection engine.
+0: Succeeded.
+1001: Failed to call the liveness engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
                      * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 设置The final verification result code.
-0: Success.
-1001: Failed to call the liveness detection engine.
+0: Succeeded.
+1001: Failed to call the liveness engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
                      * @param _errorCode The final verification result code.
-0: Success.
-1001: Failed to call the liveness detection engine.
+0: Succeeded.
+1001: Failed to call the liveness engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
                      * 
                      */
                     void SetErrorCode(const std::string& _errorCode);
@@ -147,15 +163,15 @@ namespace TencentCloud
                     bool LiveDataHasBeenSet() const;
 
                     /**
-                     * 获取The download URL of the video used for verification, which is valid for 10 minutes.
-                     * @return LiveVideo The download URL of the video used for verification, which is valid for 10 minutes.
+                     * 获取The download URL of the video used for verification, which contains specific color reflection effects, is valid for 10 minutes.
+                     * @return LiveVideo The download URL of the video used for verification, which contains specific color reflection effects, is valid for 10 minutes.
                      * 
                      */
                     FileInfo GetLiveVideo() const;
 
                     /**
-                     * 设置The download URL of the video used for verification, which is valid for 10 minutes.
-                     * @param _liveVideo The download URL of the video used for verification, which is valid for 10 minutes.
+                     * 设置The download URL of the video used for verification, which contains specific color reflection effects, is valid for 10 minutes.
+                     * @param _liveVideo The download URL of the video used for verification, which contains specific color reflection effects, is valid for 10 minutes.
                      * 
                      */
                     void SetLiveVideo(const FileInfo& _liveVideo);
@@ -168,14 +184,43 @@ namespace TencentCloud
                     bool LiveVideoHasBeenSet() const;
 
                     /**
+                     * 获取Records the specific action performed by the user, used for AI Face Shield analysis.
+                     * @return ActionVideo Records the specific action performed by the user, used for AI Face Shield analysis.
+                     * 
+                     */
+                    FileInfo GetActionVideo() const;
+
+                    /**
+                     * 设置Records the specific action performed by the user, used for AI Face Shield analysis.
+                     * @param _actionVideo Records the specific action performed by the user, used for AI Face Shield analysis.
+                     * 
+                     */
+                    void SetActionVideo(const FileInfo& _actionVideo);
+
+                    /**
+                     * 判断参数 ActionVideo 是否已赋值
+                     * @return ActionVideo 是否已赋值
+                     * 
+                     */
+                    bool ActionVideoHasBeenSet() const;
+
+                    /**
                      * 获取The liveness detection result code.
 0: Success.
 1001: Failed to call the liveness detection engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+
                      * @return LiveErrorCode The liveness detection result code.
 0: Success.
 1001: Failed to call the liveness detection engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+
                      * 
                      */
                     std::string GetLiveErrorCode() const;
@@ -184,11 +229,19 @@ namespace TencentCloud
                      * 设置The liveness detection result code.
 0: Success.
 1001: Failed to call the liveness detection engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+
                      * @param _liveErrorCode The liveness detection result code.
 0: Success.
 1001: Failed to call the liveness detection engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+
                      * 
                      */
                     void SetLiveErrorCode(const std::string& _liveErrorCode);
@@ -270,21 +323,23 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * 获取The face comparison result code.
 0: Success.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
 Note: This field may return null, indicating that no valid value can be obtained.
                      * @return CompareErrorCode The face comparison result code.
 0: Success.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
 Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
@@ -293,21 +348,23 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * 设置The face comparison result code.
 0: Success.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
 Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _compareErrorCode The face comparison result code.
 0: Success.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
 Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
@@ -437,19 +494,96 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool RequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取Describes the detailed reason for the current liveness detection failure. Output only when SdkVersion is PLUS. Details are as follows:
+01 - User kept eyes closed throughout the process.
+02 - User failed to complete the specified action.
+03 - Suspected photo replay attack.
+04 - Suspected synthetic image.
+05 - Suspected synthetic video.
+06 - Suspected synthetic action.
+07 - Suspected fraud template.
+08 - Suspected watermark existence.
+09 - Light verification failed.
+10 - Face verification failed.
+11 - Poor face quality.
+12 - Unqualified collection quality.
+13 - Suspected adversarial sample attack.
+                     * @return LivenessInfoTag Describes the detailed reason for the current liveness detection failure. Output only when SdkVersion is PLUS. Details are as follows:
+01 - User kept eyes closed throughout the process.
+02 - User failed to complete the specified action.
+03 - Suspected photo replay attack.
+04 - Suspected synthetic image.
+05 - Suspected synthetic video.
+06 - Suspected synthetic action.
+07 - Suspected fraud template.
+08 - Suspected watermark existence.
+09 - Light verification failed.
+10 - Face verification failed.
+11 - Poor face quality.
+12 - Unqualified collection quality.
+13 - Suspected adversarial sample attack.
+                     * 
+                     */
+                    std::vector<std::string> GetLivenessInfoTag() const;
+
+                    /**
+                     * 设置Describes the detailed reason for the current liveness detection failure. Output only when SdkVersion is PLUS. Details are as follows:
+01 - User kept eyes closed throughout the process.
+02 - User failed to complete the specified action.
+03 - Suspected photo replay attack.
+04 - Suspected synthetic image.
+05 - Suspected synthetic video.
+06 - Suspected synthetic action.
+07 - Suspected fraud template.
+08 - Suspected watermark existence.
+09 - Light verification failed.
+10 - Face verification failed.
+11 - Poor face quality.
+12 - Unqualified collection quality.
+13 - Suspected adversarial sample attack.
+                     * @param _livenessInfoTag Describes the detailed reason for the current liveness detection failure. Output only when SdkVersion is PLUS. Details are as follows:
+01 - User kept eyes closed throughout the process.
+02 - User failed to complete the specified action.
+03 - Suspected photo replay attack.
+04 - Suspected synthetic image.
+05 - Suspected synthetic video.
+06 - Suspected synthetic action.
+07 - Suspected fraud template.
+08 - Suspected watermark existence.
+09 - Light verification failed.
+10 - Face verification failed.
+11 - Poor face quality.
+12 - Unqualified collection quality.
+13 - Suspected adversarial sample attack.
+                     * 
+                     */
+                    void SetLivenessInfoTag(const std::vector<std::string>& _livenessInfoTag);
+
+                    /**
+                     * 判断参数 LivenessInfoTag 是否已赋值
+                     * @return LivenessInfoTag 是否已赋值
+                     * 
+                     */
+                    bool LivenessInfoTagHasBeenSet() const;
+
                 private:
 
                     /**
                      * The final verification result code.
-0: Success.
-1001: Failed to call the liveness detection engine.
+0: Succeeded.
+1001: Failed to call the liveness engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
@@ -467,16 +601,26 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_liveDataHasBeenSet;
 
                     /**
-                     * The download URL of the video used for verification, which is valid for 10 minutes.
+                     * The download URL of the video used for verification, which contains specific color reflection effects, is valid for 10 minutes.
                      */
                     FileInfo m_liveVideo;
                     bool m_liveVideoHasBeenSet;
 
                     /**
+                     * Records the specific action performed by the user, used for AI Face Shield analysis.
+                     */
+                    FileInfo m_actionVideo;
+                    bool m_actionVideoHasBeenSet;
+
+                    /**
                      * The liveness detection result code.
 0: Success.
 1001: Failed to call the liveness detection engine.
+1002: Suspected spoofed recording.
 1004: Face detection failed.
+1005: Liveness detection failed.
+1201: Lighting is too dark or overexposed.
+
                      */
                     std::string m_liveErrorCode;
                     bool m_liveErrorCodeHasBeenSet;
@@ -503,12 +647,13 @@ Note: This field may return null, indicating that no valid value can be obtained
                     /**
                      * The face comparison result code.
 0: Success.
-2004: The uploaded face image is too large or too small.
-2012: The face is not fully exposed.
-2013: No face is detected.
-2014: The resolution of the uploaded image is too low . Please upload a new one.
+2004: The image passed in is too large or too small.
+2012: Multiple faces detected.
+2013: No face was detected, or the face detected was incomplete.
+2014: The image resolution is too low or the quality does not meet the requirements.
 2015: Face comparison failed.
-2016: The similarity did not reach the passing standard.
+2016: The similarity did not reach the standard passing threshold.
+2017: Facial occlusion detected.
 Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_compareErrorCode;
@@ -546,6 +691,25 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
+
+                    /**
+                     * Describes the detailed reason for the current liveness detection failure. Output only when SdkVersion is PLUS. Details are as follows:
+01 - User kept eyes closed throughout the process.
+02 - User failed to complete the specified action.
+03 - Suspected photo replay attack.
+04 - Suspected synthetic image.
+05 - Suspected synthetic video.
+06 - Suspected synthetic action.
+07 - Suspected fraud template.
+08 - Suspected watermark existence.
+09 - Light verification failed.
+10 - Face verification failed.
+11 - Poor face quality.
+12 - Unqualified collection quality.
+13 - Suspected adversarial sample attack.
+                     */
+                    std::vector<std::string> m_livenessInfoTag;
+                    bool m_livenessInfoTagHasBeenSet;
 
                 };
             }

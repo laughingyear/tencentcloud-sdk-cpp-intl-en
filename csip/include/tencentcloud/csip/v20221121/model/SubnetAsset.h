@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Subnet assets
+                * Subnet Assets
                 */
                 class SubnetAsset : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取UIN
-                     * @return Uin UIN
+                     * 获取uin
+                     * @return Uin uin
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置UIN
-                     * @param _uin UIN
+                     * 设置uin
+                     * @param _uin uin
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AssetNameHasBeenSet() const;
 
                     /**
-                     * 获取Region
-                     * @return Region Region
+                     * 获取Region.
+                     * @return Region Region.
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置Region
-                     * @param _region Region
+                     * 设置Region.
+                     * @param _region Region.
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取VPC id
+                     * @return VpcId VPC id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置VPC id
+                     * @param _vpcId VPC id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC name
-                     * @return VpcName VPC name
+                     * 获取VPC Name
+                     * @return VpcName VPC Name
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置VPC name
-                     * @param _vpcName VPC name
+                     * 设置VPC Name
+                     * @param _vpcName VPC Name
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -195,19 +195,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Tag.
+                     * @return Tag Tag.
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
-                     * 设置Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _tag Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Tag.
+                     * @param _tag Tag.
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -220,15 +216,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取User name
-                     * @return Nick User name
+                     * 获取Nickname
+                     * @return Nick Nickname
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置User name
-                     * @param _nick User name
+                     * 设置Nickname
+                     * @param _nick Nickname
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -241,15 +237,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取CIDR block
-                     * @return CIDR CIDR block
+                     * 获取cidr
+                     * @return CIDR cidr
                      * 
                      */
                     std::string GetCIDR() const;
 
                     /**
-                     * 设置CIDR block
-                     * @param _cIDR CIDR block
+                     * 设置cidr
+                     * @param _cIDR cidr
                      * 
                      */
                     void SetCIDR(const std::string& _cIDR);
@@ -283,15 +279,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取Number of CVMs
-                     * @return CVM Number of CVMs
+                     * 获取CVM Count
+                     * @return CVM CVM Count
                      * 
                      */
                     int64_t GetCVM() const;
 
                     /**
-                     * 设置Number of CVMs
-                     * @param _cVM Number of CVMs
+                     * 设置CVM Count
+                     * @param _cVM CVM Count
                      * 
                      */
                     void SetCVM(const int64_t& _cVM);
@@ -304,15 +300,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CVMHasBeenSet() const;
 
                     /**
-                     * 获取Number of available IPs
-                     * @return AvailableIp Number of available IPs
+                     * 获取Available IP Count
+                     * @return AvailableIp Available IP Count
                      * 
                      */
                     int64_t GetAvailableIp() const;
 
                     /**
-                     * 设置Number of available IPs
-                     * @param _availableIp Number of available IPs
+                     * 设置Available IP Count
+                     * @param _availableIp Available IP Count
                      * 
                      */
                     void SetAvailableIp(const int64_t& _availableIp);
@@ -325,15 +321,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AvailableIpHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-                     * @return CreateTime Creation time
+                     * 获取Creation time.
+                     * @return CreateTime Creation time.
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-                     * @param _createTime Creation time
+                     * 设置Creation time.
+                     * @param _createTime Creation time.
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -346,15 +342,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Configuration risks
-                     * @return ConfigureRisk Configuration risks
+                     * 获取Configuration risk
+                     * @return ConfigureRisk Configuration risk
                      * 
                      */
                     int64_t GetConfigureRisk() const;
 
                     /**
-                     * 设置Configuration risks
-                     * @param _configureRisk Configuration risks
+                     * 设置Configuration risk
+                     * @param _configureRisk Configuration risk
                      * 
                      */
                     void SetConfigureRisk(const int64_t& _configureRisk);
@@ -367,15 +363,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool ConfigureRiskHasBeenSet() const;
 
                     /**
-                     * 获取Number of tasks.
-                     * @return ScanTask Number of tasks.
+                     * 获取Number of tasks
+                     * @return ScanTask Number of tasks
                      * 
                      */
                     int64_t GetScanTask() const;
 
                     /**
-                     * 设置Number of tasks.
-                     * @param _scanTask Number of tasks.
+                     * 设置Number of tasks
+                     * @param _scanTask Number of tasks
                      * 
                      */
                     void SetScanTask(const int64_t& _scanTask);
@@ -409,19 +405,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool LastScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsCore Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Core or Not
+                     * @return IsCore Core or Not
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
-                     * 设置Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isCore Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Core or Not
+                     * @param _isCore Core or Not
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -434,19 +426,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool IsCoreHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return IsNewAsset Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取New Asset or Not. 1: New
+                     * @return IsNewAsset New Asset or Not. 1: New
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
-                     * 设置Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _isNewAsset Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置New Asset or Not. 1: New
+                     * @param _isNewAsset New Asset or Not. 1: New
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -467,7 +455,7 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * UIN
+                     * uin
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
@@ -485,38 +473,37 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_assetNameHasBeenSet;
 
                     /**
-                     * Region
+                     * Region.
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * VPC id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * VPC name
+                     * VPC Name
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * Tags
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Tag.
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * User name
+                     * Nickname
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * CIDR block
+                     * cidr
                      */
                     std::string m_cIDR;
                     bool m_cIDRHasBeenSet;
@@ -528,31 +515,31 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * Number of CVMs
+                     * CVM Count
                      */
                     int64_t m_cVM;
                     bool m_cVMHasBeenSet;
 
                     /**
-                     * Number of available IPs
+                     * Available IP Count
                      */
                     int64_t m_availableIp;
                     bool m_availableIpHasBeenSet;
 
                     /**
-                     * Creation time
+                     * Creation time.
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Configuration risks
+                     * Configuration risk
                      */
                     int64_t m_configureRisk;
                     bool m_configureRiskHasBeenSet;
 
                     /**
-                     * Number of tasks.
+                     * Number of tasks
                      */
                     int64_t m_scanTask;
                     bool m_scanTaskHasBeenSet;
@@ -564,15 +551,13 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
-                     * Whether it's a critical asset
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Core or Not
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
-                     * Whether it's a newly-added asset. Values: `1` (Yes), `0` (No)
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * New Asset or Not. 1: New
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Domain name for acceleration setting
-                     * @return Domain Domain name for acceleration setting
+                     * 获取<p>Domains requiring acceleration configuration.</p>
+                     * @return Domain <p>Domains requiring acceleration configuration.</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置Domain name for acceleration setting
-                     * @param _domain Domain name for acceleration setting
+                     * 设置<p>Domains requiring acceleration configuration.</p>
+                     * @param _domain <p>Domains requiring acceleration configuration.</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取Region. Valid values:
-<li>`Chinese Mainland`</li>
-<li>`Outside Chinese Mainland`</li>
-<li>`Global`</li>
-                     * @return Area Region. Valid values:
-<li>`Chinese Mainland`</li>
-<li>`Outside Chinese Mainland`</li>
-<li>`Global`</li>
+                     * 获取<p>Region. Available values:</p><li>Chinese Mainland: within the Chinese mainland (excluding Hong Kong (China), Macao (China), and Taiwan (China)).</li><li>Outside Chinese Mainland: outside the Chinese mainland.</li><li>Global: around the world.</li>
+                     * @return Area <p>Region. Available values:</p><li>Chinese Mainland: within the Chinese mainland (excluding Hong Kong (China), Macao (China), and Taiwan (China)).</li><li>Outside Chinese Mainland: outside the Chinese mainland.</li><li>Global: around the world.</li>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置Region. Valid values:
-<li>`Chinese Mainland`</li>
-<li>`Outside Chinese Mainland`</li>
-<li>`Global`</li>
-                     * @param _area Region. Valid values:
-<li>`Chinese Mainland`</li>
-<li>`Outside Chinese Mainland`</li>
-<li>`Global`</li>
+                     * 设置<p>Region. Available values:</p><li>Chinese Mainland: within the Chinese mainland (excluding Hong Kong (China), Macao (China), and Taiwan (China)).</li><li>Outside Chinese Mainland: outside the Chinese mainland.</li><li>Global: around the world.</li>
+                     * @param _area <p>Region. Available values:</p><li>Chinese Mainland: within the Chinese mainland (excluding Hong Kong (China), Macao (China), and Taiwan (China)).</li><li>Outside Chinese Mainland: outside the Chinese mainland.</li><li>Global: around the world.</li>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -97,23 +85,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable or disable domain name acceleration for the selected region. Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
-                     * @return Status Whether to enable or disable domain name acceleration for the selected region. Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * 获取<p>Enable or disable domain name acceleration for the selected region. Available values:</p><li>Enabled: Enable.</li><li>Disabled: Disable.</li>
+                     * @return Status <p>Enable or disable domain name acceleration for the selected region. Available values:</p><li>Enabled: Enable.</li><li>Disabled: Disable.</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Whether to enable or disable domain name acceleration for the selected region. Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
-                     * @param _status Whether to enable or disable domain name acceleration for the selected region. Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * 设置<p>Enable or disable domain name acceleration for the selected region. Available values:</p><li>Enabled: Enable.</li><li>Disabled: Disable.</li>
+                     * @param _status <p>Enable or disable domain name acceleration for the selected region. Available values:</p><li>Enabled: Enable.</li><li>Disabled: Disable.</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -126,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @return SubAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
+                     * @param _subAppId <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -149,30 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Domain name for acceleration setting
+                     * <p>Domains requiring acceleration configuration.</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * Region. Valid values:
-<li>`Chinese Mainland`</li>
-<li>`Outside Chinese Mainland`</li>
-<li>`Global`</li>
+                     * <p>Region. Available values:</p><li>Chinese Mainland: within the Chinese mainland (excluding Hong Kong (China), Macao (China), and Taiwan (China)).</li><li>Outside Chinese Mainland: outside the Chinese mainland.</li><li>Global: around the world.</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * Whether to enable or disable domain name acceleration for the selected region. Valid values:
-<li>`Enabled`: enable</li>
-<li>`Disabled`: disable</li>
+                     * <p>Enable or disable domain name acceleration for the selected region. Available values:</p><li>Enabled: Enable.</li><li>Disabled: Disable.</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>Video-on-demand (VOD) <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. For customers who activate on-demand services after December 25, 2023, this field must be filled in as the app ID when accessing resources in on-demand applications (whether the default application or a newly created application).</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

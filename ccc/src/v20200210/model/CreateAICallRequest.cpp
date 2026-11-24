@@ -51,7 +51,18 @@ CreateAICallRequest::CreateAICallRequest() :
     m_vadSilenceTimeHasBeenSet(false),
     m_extractConfigHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_topPHasBeenSet(false),
+    m_vadLevelHasBeenSet(false),
+    m_toneWordHasBeenSet(false),
+    m_enableComplianceAudioHasBeenSet(false),
+    m_enableVoicemailDetectionHasBeenSet(false),
+    m_voicemailActionHasBeenSet(false),
+    m_lLMExtraBodyHasBeenSet(false),
+    m_maxCallDurationMsHasBeenSet(false),
+    m_maxRingTimeoutSecondHasBeenSet(false),
+    m_ambientSoundTypeHasBeenSet(false),
+    m_ambientSoundVolumeHasBeenSet(false)
 {
 }
 
@@ -330,6 +341,95 @@ string CreateAICallRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_topP, allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vadLevel, allocator);
+    }
+
+    if (m_toneWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToneWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_toneWord.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableComplianceAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableComplianceAudio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableComplianceAudio, allocator);
+    }
+
+    if (m_enableVoicemailDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableVoicemailDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableVoicemailDetection, allocator);
+    }
+
+    if (m_voicemailActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicemailAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_voicemailAction, allocator);
+    }
+
+    if (m_lLMExtraBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMExtraBody";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lLMExtraBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxCallDurationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCallDurationMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxCallDurationMs, allocator);
+    }
+
+    if (m_maxRingTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRingTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
+    }
+
+    if (m_ambientSoundTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmbientSoundType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ambientSoundType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ambientSoundVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmbientSoundVolume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ambientSoundVolume, allocator);
     }
 
 
@@ -802,6 +902,182 @@ void CreateAICallRequest::SetVariables(const vector<Variable>& _variables)
 bool CreateAICallRequest::VariablesHasBeenSet() const
 {
     return m_variablesHasBeenSet;
+}
+
+double CreateAICallRequest::GetTopP() const
+{
+    return m_topP;
+}
+
+void CreateAICallRequest::SetTopP(const double& _topP)
+{
+    m_topP = _topP;
+    m_topPHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TopPHasBeenSet() const
+{
+    return m_topPHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void CreateAICallRequest::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
+}
+
+ToneWordInfo CreateAICallRequest::GetToneWord() const
+{
+    return m_toneWord;
+}
+
+void CreateAICallRequest::SetToneWord(const ToneWordInfo& _toneWord)
+{
+    m_toneWord = _toneWord;
+    m_toneWordHasBeenSet = true;
+}
+
+bool CreateAICallRequest::ToneWordHasBeenSet() const
+{
+    return m_toneWordHasBeenSet;
+}
+
+bool CreateAICallRequest::GetEnableComplianceAudio() const
+{
+    return m_enableComplianceAudio;
+}
+
+void CreateAICallRequest::SetEnableComplianceAudio(const bool& _enableComplianceAudio)
+{
+    m_enableComplianceAudio = _enableComplianceAudio;
+    m_enableComplianceAudioHasBeenSet = true;
+}
+
+bool CreateAICallRequest::EnableComplianceAudioHasBeenSet() const
+{
+    return m_enableComplianceAudioHasBeenSet;
+}
+
+bool CreateAICallRequest::GetEnableVoicemailDetection() const
+{
+    return m_enableVoicemailDetection;
+}
+
+void CreateAICallRequest::SetEnableVoicemailDetection(const bool& _enableVoicemailDetection)
+{
+    m_enableVoicemailDetection = _enableVoicemailDetection;
+    m_enableVoicemailDetectionHasBeenSet = true;
+}
+
+bool CreateAICallRequest::EnableVoicemailDetectionHasBeenSet() const
+{
+    return m_enableVoicemailDetectionHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetVoicemailAction() const
+{
+    return m_voicemailAction;
+}
+
+void CreateAICallRequest::SetVoicemailAction(const uint64_t& _voicemailAction)
+{
+    m_voicemailAction = _voicemailAction;
+    m_voicemailActionHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VoicemailActionHasBeenSet() const
+{
+    return m_voicemailActionHasBeenSet;
+}
+
+string CreateAICallRequest::GetLLMExtraBody() const
+{
+    return m_lLMExtraBody;
+}
+
+void CreateAICallRequest::SetLLMExtraBody(const string& _lLMExtraBody)
+{
+    m_lLMExtraBody = _lLMExtraBody;
+    m_lLMExtraBodyHasBeenSet = true;
+}
+
+bool CreateAICallRequest::LLMExtraBodyHasBeenSet() const
+{
+    return m_lLMExtraBodyHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetMaxCallDurationMs() const
+{
+    return m_maxCallDurationMs;
+}
+
+void CreateAICallRequest::SetMaxCallDurationMs(const uint64_t& _maxCallDurationMs)
+{
+    m_maxCallDurationMs = _maxCallDurationMs;
+    m_maxCallDurationMsHasBeenSet = true;
+}
+
+bool CreateAICallRequest::MaxCallDurationMsHasBeenSet() const
+{
+    return m_maxCallDurationMsHasBeenSet;
+}
+
+int64_t CreateAICallRequest::GetMaxRingTimeoutSecond() const
+{
+    return m_maxRingTimeoutSecond;
+}
+
+void CreateAICallRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond)
+{
+    m_maxRingTimeoutSecond = _maxRingTimeoutSecond;
+    m_maxRingTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateAICallRequest::MaxRingTimeoutSecondHasBeenSet() const
+{
+    return m_maxRingTimeoutSecondHasBeenSet;
+}
+
+string CreateAICallRequest::GetAmbientSoundType() const
+{
+    return m_ambientSoundType;
+}
+
+void CreateAICallRequest::SetAmbientSoundType(const string& _ambientSoundType)
+{
+    m_ambientSoundType = _ambientSoundType;
+    m_ambientSoundTypeHasBeenSet = true;
+}
+
+bool CreateAICallRequest::AmbientSoundTypeHasBeenSet() const
+{
+    return m_ambientSoundTypeHasBeenSet;
+}
+
+double CreateAICallRequest::GetAmbientSoundVolume() const
+{
+    return m_ambientSoundVolume;
+}
+
+void CreateAICallRequest::SetAmbientSoundVolume(const double& _ambientSoundVolume)
+{
+    m_ambientSoundVolume = _ambientSoundVolume;
+    m_ambientSoundVolumeHasBeenSet = true;
+}
+
+bool CreateAICallRequest::AmbientSoundVolumeHasBeenSet() const
+{
+    return m_ambientSoundVolumeHasBeenSet;
 }
 
 

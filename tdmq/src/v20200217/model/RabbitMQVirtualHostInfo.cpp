@@ -28,10 +28,15 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_virtualHostStatisticsHasBeenSet(false),
+    m_traceFlagHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHeapCountHasBeenSet(false),
     m_messageRateInHasBeenSet(false),
-    m_messageRateOutHasBeenSet(false)
+    m_messageRateOutHasBeenSet(false),
+    m_mirrorQueuePolicyFlagHasBeenSet(false),
+    m_createTsHasBeenSet(false),
+    m_modifyTsHasBeenSet(false),
+    m_quotaHasBeenSet(false)
 {
 }
 
@@ -120,6 +125,16 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         m_virtualHostStatisticsHasBeenSet = true;
     }
 
+    if (value.HasMember("TraceFlag") && !value["TraceFlag"].IsNull())
+    {
+        if (!value["TraceFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.TraceFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceFlag = value["TraceFlag"].GetBool();
+        m_traceFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsString())
@@ -158,6 +173,53 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         }
         m_messageRateOut = value["MessageRateOut"].GetDouble();
         m_messageRateOutHasBeenSet = true;
+    }
+
+    if (value.HasMember("MirrorQueuePolicyFlag") && !value["MirrorQueuePolicyFlag"].IsNull())
+    {
+        if (!value["MirrorQueuePolicyFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.MirrorQueuePolicyFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mirrorQueuePolicyFlag = value["MirrorQueuePolicyFlag"].GetBool();
+        m_mirrorQueuePolicyFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTs") && !value["CreateTs"].IsNull())
+    {
+        if (!value["CreateTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.CreateTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTs = value["CreateTs"].GetUint64();
+        m_createTsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTs") && !value["ModifyTs"].IsNull())
+    {
+        if (!value["ModifyTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.ModifyTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTs = value["ModifyTs"].GetUint64();
+        m_modifyTsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quota") && !value["Quota"].IsNull())
+    {
+        if (!value["Quota"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.Quota` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quota.Deserialize(value["Quota"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaHasBeenSet = true;
     }
 
 
@@ -229,6 +291,14 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         m_virtualHostStatistics.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_traceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceFlag, allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -259,6 +329,39 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "MessageRateOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageRateOut, allocator);
+    }
+
+    if (m_mirrorQueuePolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MirrorQueuePolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
+    }
+
+    if (m_createTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTs, allocator);
+    }
+
+    if (m_modifyTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyTs, allocator);
+    }
+
+    if (m_quotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quota.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -376,6 +479,22 @@ bool RabbitMQVirtualHostInfo::VirtualHostStatisticsHasBeenSet() const
     return m_virtualHostStatisticsHasBeenSet;
 }
 
+bool RabbitMQVirtualHostInfo::GetTraceFlag() const
+{
+    return m_traceFlag;
+}
+
+void RabbitMQVirtualHostInfo::SetTraceFlag(const bool& _traceFlag)
+{
+    m_traceFlag = _traceFlag;
+    m_traceFlagHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::TraceFlagHasBeenSet() const
+{
+    return m_traceFlagHasBeenSet;
+}
+
 string RabbitMQVirtualHostInfo::GetStatus() const
 {
     return m_status;
@@ -438,5 +557,69 @@ void RabbitMQVirtualHostInfo::SetMessageRateOut(const double& _messageRateOut)
 bool RabbitMQVirtualHostInfo::MessageRateOutHasBeenSet() const
 {
     return m_messageRateOutHasBeenSet;
+}
+
+bool RabbitMQVirtualHostInfo::GetMirrorQueuePolicyFlag() const
+{
+    return m_mirrorQueuePolicyFlag;
+}
+
+void RabbitMQVirtualHostInfo::SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag)
+{
+    m_mirrorQueuePolicyFlag = _mirrorQueuePolicyFlag;
+    m_mirrorQueuePolicyFlagHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::MirrorQueuePolicyFlagHasBeenSet() const
+{
+    return m_mirrorQueuePolicyFlagHasBeenSet;
+}
+
+uint64_t RabbitMQVirtualHostInfo::GetCreateTs() const
+{
+    return m_createTs;
+}
+
+void RabbitMQVirtualHostInfo::SetCreateTs(const uint64_t& _createTs)
+{
+    m_createTs = _createTs;
+    m_createTsHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::CreateTsHasBeenSet() const
+{
+    return m_createTsHasBeenSet;
+}
+
+uint64_t RabbitMQVirtualHostInfo::GetModifyTs() const
+{
+    return m_modifyTs;
+}
+
+void RabbitMQVirtualHostInfo::SetModifyTs(const uint64_t& _modifyTs)
+{
+    m_modifyTs = _modifyTs;
+    m_modifyTsHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::ModifyTsHasBeenSet() const
+{
+    return m_modifyTsHasBeenSet;
+}
+
+RabbitMQVHostBaseQuota RabbitMQVirtualHostInfo::GetQuota() const
+{
+    return m_quota;
+}
+
+void RabbitMQVirtualHostInfo::SetQuota(const RabbitMQVHostBaseQuota& _quota)
+{
+    m_quota = _quota;
+    m_quotaHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::QuotaHasBeenSet() const
+{
+    return m_quotaHasBeenSet;
 }
 

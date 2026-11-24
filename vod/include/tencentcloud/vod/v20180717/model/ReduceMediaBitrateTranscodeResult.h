@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of a transcoding (bitrate reduction) task.
+                * Transcoding result type of a bitrate reduction task
                 */
                 class ReduceMediaBitrateTranscodeResult : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @return Status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置The task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @param _status The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
-                     * @return ErrCodeExt The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
-                     * @param _errCodeExt The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取The error message.
-                     * @return Message The error message.
+                     * 获取Error message.
+                     * @return Message Error message.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置The error message.
-                     * @param _message The error message.
+                     * 设置Error message.
+                     * @param _message Error message.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取The input of a transcoding task.
-                     * @return Input The input of a transcoding task.
+                     * 获取Input of the transcoding task.
+                     * @return Input Input of the transcoding task.
                      * 
                      */
                     TranscodeTaskInput GetInput() const;
 
                     /**
-                     * 设置The input of a transcoding task.
-                     * @param _input The input of a transcoding task.
+                     * 设置Input of the transcoding task.
+                     * @param _input Input of the transcoding task.
                      * 
                      */
                     void SetInput(const TranscodeTaskInput& _input);
@@ -133,19 +133,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取The output of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Output The output of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Transcoding task output.
+                     * @return Output Transcoding task output.
                      * 
                      */
                     MediaTranscodeItem GetOutput() const;
 
                     /**
-                     * 设置The output of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _output The output of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Transcoding task output.
+                     * @param _output Transcoding task output.
                      * 
                      */
                     void SetOutput(const MediaTranscodeItem& _output);
@@ -158,15 +154,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The transcoding progress. Value range: 0-100.
-                     * @return Progress The transcoding progress. Value range: 0-100.
+                     * 获取Transcoding progress, with a value range of [0-100].
+                     * @return Progress Transcoding progress, with a value range of [0-100].
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置The transcoding progress. Value range: 0-100.
-                     * @param _progress The transcoding progress. Value range: 0-100.
+                     * 设置Transcoding progress, with a value range of [0-100].
+                     * @param _progress Transcoding progress, with a value range of [0-100].
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -179,15 +175,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取The start time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return BeginProcessTime The start time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取Transcoding task start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return BeginProcessTime Transcoding task start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
-                     * 设置The start time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _beginProcessTime The start time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置Transcoding task start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _beginProcessTime Transcoding task start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -200,15 +196,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取The end time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return FinishTime The end time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取Transcoding task completion time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return FinishTime Transcoding task completion time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置The end time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _finishTime The end time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置Transcoding task completion time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _finishTime Transcoding task completion time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -223,50 +219,49 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * The error code. An empty string indicates the task is successful; other values indicate that the task failed. For details, see [Video processing error codes](https://intl.cloud.tencent.com/document/product/266/39145?lang=en&pg=#video-processing).
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * The error message.
+                     * Error message.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * The input of a transcoding task.
+                     * Input of the transcoding task.
                      */
                     TranscodeTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * The output of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Transcoding task output.
                      */
                     MediaTranscodeItem m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The transcoding progress. Value range: 0-100.
+                     * Transcoding progress, with a value range of [0-100].
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * The start time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * Transcoding task start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * The end time of the transcoding task, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * Transcoding task completion time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

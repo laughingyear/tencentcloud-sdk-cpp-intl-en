@@ -28,6 +28,9 @@
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h>
 #include <tencentcloud/emr/v20190103/model/TopologyInfo.h>
+#include <tencentcloud/emr/v20190103/model/EmrProductConfigDetail.h>
+#include <tencentcloud/emr/v20190103/model/ClusterRelationMeta.h>
+#include <tencentcloud/emr/v20190103/model/CustomMetaDBInfo.h>
 
 
 namespace TencentCloud
@@ -39,7 +42,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Cluster instance information
+                * Cluster information.
                 */
                 class ClusterInstancesInfo : public AbstractModel
                 {
@@ -51,19 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Id ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>ID.</p>
+                     * @return Id <p>ID.</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _id ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>ID.</p>
+                     * @param _id <p>ID.</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -76,19 +75,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Cluster ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ClusterId Cluster ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster ID.</p>
+                     * @return ClusterId <p>Cluster ID.</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置Cluster ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _clusterId Cluster ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster ID.</p>
+                     * @param _clusterId <p>Cluster ID.</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -101,44 +96,36 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Title
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Ftitle Title
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 获取<p>Title.</p>
+                     * @return Ftitle <p>Title.</p>
+                     * @deprecated
                      */
                     std::string GetFtitle() const;
 
                     /**
-                     * 设置Title
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _ftitle Title
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 设置<p>Title.</p>
+                     * @param _ftitle <p>Title.</p>
+                     * @deprecated
                      */
                     void SetFtitle(const std::string& _ftitle);
 
                     /**
                      * 判断参数 Ftitle 是否已赋值
                      * @return Ftitle 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FtitleHasBeenSet() const;
 
                     /**
-                     * 获取Cluster name
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ClusterName Cluster name
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster name.</p>
+                     * @return ClusterName <p>Cluster name.</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置Cluster name
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _clusterName Cluster name
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster name.</p>
+                     * @param _clusterName <p>Cluster name.</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -151,19 +138,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return RegionId Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Region ID.</p>
+                     * @return RegionId <p>Region ID.</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _regionId Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Region ID.</p>
+                     * @param _regionId <p>Region ID.</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -176,19 +159,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ZoneId Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Region ID.</p>
+                     * @return ZoneId <p>Region ID.</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _zoneId Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Region ID.</p>
+                     * @param _zoneId <p>Region ID.</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -201,19 +180,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取User APPID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AppId User APPID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User APPID.</p>
+                     * @return AppId <p>User APPID.</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置User APPID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _appId User APPID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User APPID.</p>
+                     * @param _appId <p>User APPID.</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -226,19 +201,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取User UIN
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Uin User UIN
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User UIN.</p>
+                     * @return Uin <p>User UIN.</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置User UIN
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _uin User UIN
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User UIN.</p>
+                     * @param _uin <p>User UIN.</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -251,19 +222,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取Project ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ProjectId Project ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Project ID.</p>
+                     * @return ProjectId <p>Project ID.</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置Project ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _projectId Project ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Project ID.</p>
+                     * @param _projectId <p>Project ID.</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -276,19 +243,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取Cluster `VPCID`
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return VpcId Cluster `VPCID`
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster VPC ID.</p>
+                     * @return VpcId <p>Cluster VPC ID.</p>
                      * 
                      */
                     int64_t GetVpcId() const;
 
                     /**
-                     * 设置Cluster `VPCID`
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _vpcId Cluster `VPCID`
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster VPC ID.</p>
+                     * @param _vpcId <p>Cluster VPC ID.</p>
                      * 
                      */
                     void SetVpcId(const int64_t& _vpcId);
@@ -301,19 +264,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取Subnet ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SubnetId Subnet ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Subnet ID.</p>
+                     * @return SubnetId <p>Subnet ID.</p>
                      * 
                      */
                     int64_t GetSubnetId() const;
 
                     /**
-                     * 设置Subnet ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _subnetId Subnet ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Subnet ID.</p>
+                     * @param _subnetId <p>Subnet ID.</p>
                      * 
                      */
                     void SetSubnetId(const int64_t& _subnetId);
@@ -326,127 +285,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Instance status code. Value range:
-<li>2: cluster running</li>
-<li>3: creating cluster.</li>
-<li>4: scaling out cluster.</li>
-<li>5: adding router node in cluster.</li>
-<li>6: installing component in cluster.</li>
-<li>7: cluster executing command.</li>
-<li>8: restarting service.</li>
-<li>9: entering maintenance.</li>
-<li>10: suspending service.</li>
-<li>11: exiting maintenance.</li>
-<li>12: exiting suspension.</li>
-<li>13: delivering configuration.</li>
-<li>14: terminating cluster.</li>
-<li>15: terminating core node.</li>
-<li>16: terminating task node.</li>
-<li>17: terminating router node.</li>
-<li>18: changing webproxy password.</li>
-<li>19: isolating cluster.</li>
-<li>20: resuming cluster.</li>
-<li>21: repossessing cluster.</li>
-<li>22: waiting for configuration adjustment.</li>
-<li>23: cluster isolated.</li>
-<li>24: removing node.</li>
-<li>33: waiting for refund.</li>
-<li>34: refunded.</li>
-<li>301: creation failed.</li>
-<li>302: scale-out failed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Status Instance status code. Value range:
-<li>2: cluster running</li>
-<li>3: creating cluster.</li>
-<li>4: scaling out cluster.</li>
-<li>5: adding router node in cluster.</li>
-<li>6: installing component in cluster.</li>
-<li>7: cluster executing command.</li>
-<li>8: restarting service.</li>
-<li>9: entering maintenance.</li>
-<li>10: suspending service.</li>
-<li>11: exiting maintenance.</li>
-<li>12: exiting suspension.</li>
-<li>13: delivering configuration.</li>
-<li>14: terminating cluster.</li>
-<li>15: terminating core node.</li>
-<li>16: terminating task node.</li>
-<li>17: terminating router node.</li>
-<li>18: changing webproxy password.</li>
-<li>19: isolating cluster.</li>
-<li>20: resuming cluster.</li>
-<li>21: repossessing cluster.</li>
-<li>22: waiting for configuration adjustment.</li>
-<li>23: cluster isolated.</li>
-<li>24: removing node.</li>
-<li>33: waiting for refund.</li>
-<li>34: refunded.</li>
-<li>301: creation failed.</li>
-<li>302: scale-out failed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Status code of the instance. Valid values:</p><li>2: The cluster is running.</li><li>3: The cluster is being created.</li><li>4: The cluster is being scaled out.</li><li>5: Router nodes are being added to the cluster.</li><li>6: Components are being installed in the cluster.</li><li>7: The cluster is executing a command.</li><li>8: The service is being restarted.</li><li>9: The cluster is entering maintenance.</li><li>10: The service is being paused.</li><li>11: The cluster is exiting maintenance.</li><li>12: The cluster is exiting the pause status.</li><li>13: The configuration is being delivered.</li><li>14: The cluster is being terminated.</li><li>15: Core nodes are being terminated.</li><li>16: Task nodes are being terminated.</li><li>17: Router nodes are being terminated.</li><li>18: The webproxy password is being changed.</li><li>19: The cluster is being isolated.</li><li>20: The cluster is being reconciled.</li><li>21: The cluster is being reclaimed.</li><li>22: The configuration change is waiting.</li><li>23: The cluster has been isolated.</li><li>24: Nodes are being scaled in.</li><li>33: The cluster is waiting for a refund.</li><li>34: The cluster has been refunded.</li><li>301: Creation failed.</li><li>302: Scale-out failed.</li>
+                     * @return Status <p>Status code of the instance. Valid values:</p><li>2: The cluster is running.</li><li>3: The cluster is being created.</li><li>4: The cluster is being scaled out.</li><li>5: Router nodes are being added to the cluster.</li><li>6: Components are being installed in the cluster.</li><li>7: The cluster is executing a command.</li><li>8: The service is being restarted.</li><li>9: The cluster is entering maintenance.</li><li>10: The service is being paused.</li><li>11: The cluster is exiting maintenance.</li><li>12: The cluster is exiting the pause status.</li><li>13: The configuration is being delivered.</li><li>14: The cluster is being terminated.</li><li>15: Core nodes are being terminated.</li><li>16: Task nodes are being terminated.</li><li>17: Router nodes are being terminated.</li><li>18: The webproxy password is being changed.</li><li>19: The cluster is being isolated.</li><li>20: The cluster is being reconciled.</li><li>21: The cluster is being reclaimed.</li><li>22: The configuration change is waiting.</li><li>23: The cluster has been isolated.</li><li>24: Nodes are being scaled in.</li><li>33: The cluster is waiting for a refund.</li><li>34: The cluster has been refunded.</li><li>301: Creation failed.</li><li>302: Scale-out failed.</li>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Instance status code. Value range:
-<li>2: cluster running</li>
-<li>3: creating cluster.</li>
-<li>4: scaling out cluster.</li>
-<li>5: adding router node in cluster.</li>
-<li>6: installing component in cluster.</li>
-<li>7: cluster executing command.</li>
-<li>8: restarting service.</li>
-<li>9: entering maintenance.</li>
-<li>10: suspending service.</li>
-<li>11: exiting maintenance.</li>
-<li>12: exiting suspension.</li>
-<li>13: delivering configuration.</li>
-<li>14: terminating cluster.</li>
-<li>15: terminating core node.</li>
-<li>16: terminating task node.</li>
-<li>17: terminating router node.</li>
-<li>18: changing webproxy password.</li>
-<li>19: isolating cluster.</li>
-<li>20: resuming cluster.</li>
-<li>21: repossessing cluster.</li>
-<li>22: waiting for configuration adjustment.</li>
-<li>23: cluster isolated.</li>
-<li>24: removing node.</li>
-<li>33: waiting for refund.</li>
-<li>34: refunded.</li>
-<li>301: creation failed.</li>
-<li>302: scale-out failed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _status Instance status code. Value range:
-<li>2: cluster running</li>
-<li>3: creating cluster.</li>
-<li>4: scaling out cluster.</li>
-<li>5: adding router node in cluster.</li>
-<li>6: installing component in cluster.</li>
-<li>7: cluster executing command.</li>
-<li>8: restarting service.</li>
-<li>9: entering maintenance.</li>
-<li>10: suspending service.</li>
-<li>11: exiting maintenance.</li>
-<li>12: exiting suspension.</li>
-<li>13: delivering configuration.</li>
-<li>14: terminating cluster.</li>
-<li>15: terminating core node.</li>
-<li>16: terminating task node.</li>
-<li>17: terminating router node.</li>
-<li>18: changing webproxy password.</li>
-<li>19: isolating cluster.</li>
-<li>20: resuming cluster.</li>
-<li>21: repossessing cluster.</li>
-<li>22: waiting for configuration adjustment.</li>
-<li>23: cluster isolated.</li>
-<li>24: removing node.</li>
-<li>33: waiting for refund.</li>
-<li>34: refunded.</li>
-<li>301: creation failed.</li>
-<li>302: scale-out failed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Status code of the instance. Valid values:</p><li>2: The cluster is running.</li><li>3: The cluster is being created.</li><li>4: The cluster is being scaled out.</li><li>5: Router nodes are being added to the cluster.</li><li>6: Components are being installed in the cluster.</li><li>7: The cluster is executing a command.</li><li>8: The service is being restarted.</li><li>9: The cluster is entering maintenance.</li><li>10: The service is being paused.</li><li>11: The cluster is exiting maintenance.</li><li>12: The cluster is exiting the pause status.</li><li>13: The configuration is being delivered.</li><li>14: The cluster is being terminated.</li><li>15: Core nodes are being terminated.</li><li>16: Task nodes are being terminated.</li><li>17: Router nodes are being terminated.</li><li>18: The webproxy password is being changed.</li><li>19: The cluster is being isolated.</li><li>20: The cluster is being reconciled.</li><li>21: The cluster is being reclaimed.</li><li>22: The configuration change is waiting.</li><li>23: The cluster has been isolated.</li><li>24: Nodes are being scaled in.</li><li>33: The cluster is waiting for a refund.</li><li>34: The cluster has been refunded.</li><li>301: Creation failed.</li><li>302: Scale-out failed.</li>
+                     * @param _status <p>Status code of the instance. Valid values:</p><li>2: The cluster is running.</li><li>3: The cluster is being created.</li><li>4: The cluster is being scaled out.</li><li>5: Router nodes are being added to the cluster.</li><li>6: Components are being installed in the cluster.</li><li>7: The cluster is executing a command.</li><li>8: The service is being restarted.</li><li>9: The cluster is entering maintenance.</li><li>10: The service is being paused.</li><li>11: The cluster is exiting maintenance.</li><li>12: The cluster is exiting the pause status.</li><li>13: The configuration is being delivered.</li><li>14: The cluster is being terminated.</li><li>15: Core nodes are being terminated.</li><li>16: Task nodes are being terminated.</li><li>17: Router nodes are being terminated.</li><li>18: The webproxy password is being changed.</li><li>19: The cluster is being isolated.</li><li>20: The cluster is being reconciled.</li><li>21: The cluster is being reclaimed.</li><li>22: The configuration change is waiting.</li><li>23: The cluster has been isolated.</li><li>24: Nodes are being scaled in.</li><li>33: The cluster is waiting for a refund.</li><li>34: The cluster has been refunded.</li><li>301: Creation failed.</li><li>302: Scale-out failed.</li>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -459,19 +306,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AddTime Creation time
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Addition time.</p>
+                     * @return AddTime <p>Addition time.</p>
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置Creation time
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _addTime Creation time
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Addition time.</p>
+                     * @param _addTime <p>Addition time.</p>
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -484,19 +327,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取Execution duration
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return RunTime Execution duration
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Execution duration.</p>
+                     * @return RunTime <p>Execution duration.</p>
                      * 
                      */
                     std::string GetRunTime() const;
 
                     /**
-                     * 设置Execution duration
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _runTime Execution duration
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Execution duration.</p>
+                     * @param _runTime <p>Execution duration.</p>
                      * 
                      */
                     void SetRunTime(const std::string& _runTime);
@@ -509,44 +348,36 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool RunTimeHasBeenSet() const;
 
                     /**
-                     * 获取Cluster product configuration information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Config Cluster product configuration information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 获取<p>Cluster product configuration information.</p>
+                     * @return Config <p>Cluster product configuration information.</p>
+                     * @deprecated
                      */
                     EmrProductConfigOutter GetConfig() const;
 
                     /**
-                     * 设置Cluster product configuration information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _config Cluster product configuration information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * 
+                     * 设置<p>Cluster product configuration information.</p>
+                     * @param _config <p>Cluster product configuration information.</p>
+                     * @deprecated
                      */
                     void SetConfig(const EmrProductConfigOutter& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取Public IP of master node
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return MasterIp Public IP of master node
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Public IP address of the Master node.</p>
+                     * @return MasterIp <p>Public IP address of the Master node.</p>
                      * 
                      */
                     std::string GetMasterIp() const;
 
                     /**
-                     * 设置Public IP of master node
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _masterIp Public IP of master node
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Public IP address of the Master node.</p>
+                     * @param _masterIp <p>Public IP address of the Master node.</p>
                      * 
                      */
                     void SetMasterIp(const std::string& _masterIp);
@@ -559,19 +390,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MasterIpHasBeenSet() const;
 
                     /**
-                     * 获取EMR version
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return EmrVersion EMR version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>EMR version.</p>
+                     * @return EmrVersion <p>EMR version.</p>
                      * 
                      */
                     std::string GetEmrVersion() const;
 
                     /**
-                     * 设置EMR version
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _emrVersion EMR version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>EMR version.</p>
+                     * @param _emrVersion <p>EMR version.</p>
                      * 
                      */
                     void SetEmrVersion(const std::string& _emrVersion);
@@ -584,19 +411,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool EmrVersionHasBeenSet() const;
 
                     /**
-                     * 获取Billing mode
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ChargeType Billing mode
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Billing mode.</p>
+                     * @return ChargeType <p>Billing mode.</p>
                      * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
-                     * 设置Billing mode
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _chargeType Billing mode
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Billing mode.</p>
+                     * @param _chargeType <p>Billing mode.</p>
                      * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
@@ -609,19 +432,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取Transaction version
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TradeVersion Transaction version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Transaction version.</p>
+                     * @return TradeVersion <p>Transaction version.</p>
                      * 
                      */
                     int64_t GetTradeVersion() const;
 
                     /**
-                     * 设置Transaction version
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tradeVersion Transaction version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Transaction version.</p>
+                     * @param _tradeVersion <p>Transaction version.</p>
                      * 
                      */
                     void SetTradeVersion(const int64_t& _tradeVersion);
@@ -634,19 +453,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TradeVersionHasBeenSet() const;
 
                     /**
-                     * 获取Resource order ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ResourceOrderId Resource order ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Resource order ID.</p>
+                     * @return ResourceOrderId <p>Resource order ID.</p>
                      * 
                      */
                     int64_t GetResourceOrderId() const;
 
                     /**
-                     * 设置Resource order ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _resourceOrderId Resource order ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Resource order ID.</p>
+                     * @param _resourceOrderId <p>Resource order ID.</p>
                      * 
                      */
                     void SetResourceOrderId(const int64_t& _resourceOrderId);
@@ -659,19 +474,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ResourceOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取Whether this is a paid cluster
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return IsTradeCluster Whether this is a paid cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether it is a billable cluster.</p>
+                     * @return IsTradeCluster <p>Whether it is a billable cluster.</p>
                      * 
                      */
                     int64_t GetIsTradeCluster() const;
 
                     /**
-                     * 设置Whether this is a paid cluster
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _isTradeCluster Whether this is a paid cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether it is a billable cluster.</p>
+                     * @param _isTradeCluster <p>Whether it is a billable cluster.</p>
                      * 
                      */
                     void SetIsTradeCluster(const int64_t& _isTradeCluster);
@@ -684,19 +495,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool IsTradeClusterHasBeenSet() const;
 
                     /**
-                     * 获取Alarm information for cluster error
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AlarmInfo Alarm information for cluster error
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster error status alarm information.</p>
+                     * @return AlarmInfo <p>Cluster error status alarm information.</p>
                      * 
                      */
                     std::string GetAlarmInfo() const;
 
                     /**
-                     * 设置Alarm information for cluster error
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _alarmInfo Alarm information for cluster error
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster error status alarm information.</p>
+                     * @param _alarmInfo <p>Cluster error status alarm information.</p>
                      * 
                      */
                     void SetAlarmInfo(const std::string& _alarmInfo);
@@ -709,19 +516,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AlarmInfoHasBeenSet() const;
 
                     /**
-                     * 获取Whether the new architecture is used
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return IsWoodpeckerCluster Whether the new architecture is used
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether a new architecture is used.</p>
+                     * @return IsWoodpeckerCluster <p>Whether a new architecture is used.</p>
                      * 
                      */
                     int64_t GetIsWoodpeckerCluster() const;
 
                     /**
-                     * 设置Whether the new architecture is used
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _isWoodpeckerCluster Whether the new architecture is used
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether a new architecture is used.</p>
+                     * @param _isWoodpeckerCluster <p>Whether a new architecture is used.</p>
                      * 
                      */
                     void SetIsWoodpeckerCluster(const int64_t& _isWoodpeckerCluster);
@@ -734,19 +537,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool IsWoodpeckerClusterHasBeenSet() const;
 
                     /**
-                     * 获取Metadatabase information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return MetaDb Metadatabase information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Meta database information.</p>
+                     * @return MetaDb <p>Meta database information.</p>
                      * 
                      */
                     std::string GetMetaDb() const;
 
                     /**
-                     * 设置Metadatabase information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _metaDb Metadatabase information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Meta database information.</p>
+                     * @param _metaDb <p>Meta database information.</p>
                      * 
                      */
                     void SetMetaDb(const std::string& _metaDb);
@@ -759,19 +558,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MetaDbHasBeenSet() const;
 
                     /**
-                     * 获取Tag information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Tags Tag information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Tag information.</p>
+                     * @return Tags <p>Tag information.</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置Tag information
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tags Tag information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Tag information.</p>
+                     * @param _tags <p>Tag information.</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -784,19 +579,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取Hive metadata
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return HiveMetaDb Hive metadata
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Hive metadata information.</p>
+                     * @return HiveMetaDb <p>Hive metadata information.</p>
                      * 
                      */
                     std::string GetHiveMetaDb() const;
 
                     /**
-                     * 设置Hive metadata
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _hiveMetaDb Hive metadata
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Hive metadata information.</p>
+                     * @param _hiveMetaDb <p>Hive metadata information.</p>
                      * 
                      */
                     void SetHiveMetaDb(const std::string& _hiveMetaDb);
@@ -809,19 +600,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool HiveMetaDbHasBeenSet() const;
 
                     /**
-                     * 获取Cluster type: EMR, CLICKHOUSE, DRUID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ServiceClass Cluster type: EMR, CLICKHOUSE, DRUID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster type. Valid values: EMR, CLICKHOUSE, and DRUID.</p>
+                     * @return ServiceClass <p>Cluster type. Valid values: EMR, CLICKHOUSE, and DRUID.</p>
                      * 
                      */
                     std::string GetServiceClass() const;
 
                     /**
-                     * 设置Cluster type: EMR, CLICKHOUSE, DRUID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _serviceClass Cluster type: EMR, CLICKHOUSE, DRUID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster type. Valid values: EMR, CLICKHOUSE, and DRUID.</p>
+                     * @param _serviceClass <p>Cluster type. Valid values: EMR, CLICKHOUSE, and DRUID.</p>
                      * 
                      */
                     void SetServiceClass(const std::string& _serviceClass);
@@ -834,19 +621,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ServiceClassHasBeenSet() const;
 
                     /**
-                     * 获取Alias serialization of all nodes in cluster
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AliasInfo Alias serialization of all nodes in cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Serialization of the aliases of all nodes in the cluster.</p>
+                     * @return AliasInfo <p>Serialization of the aliases of all nodes in the cluster.</p>
                      * 
                      */
                     std::string GetAliasInfo() const;
 
                     /**
-                     * 设置Alias serialization of all nodes in cluster
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _aliasInfo Alias serialization of all nodes in cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Serialization of the aliases of all nodes in the cluster.</p>
+                     * @param _aliasInfo <p>Serialization of the aliases of all nodes in the cluster.</p>
                      * 
                      */
                     void SetAliasInfo(const std::string& _aliasInfo);
@@ -859,19 +642,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AliasInfoHasBeenSet() const;
 
                     /**
-                     * 获取Cluster version ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ProductId Cluster version ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster version ID.</p>
+                     * @return ProductId <p>Cluster version ID.</p>
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
-                     * 设置Cluster version ID
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _productId Cluster version ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster version ID.</p>
+                     * @param _productId <p>Cluster version ID.</p>
                      * 
                      */
                     void SetProductId(const int64_t& _productId);
@@ -884,19 +663,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取Availability zone
-Note: this field may return `null`, indicating that no valid value can be obtained.
-                     * @return Zone Availability zone
-Note: this field may return `null`, indicating that no valid value can be obtained.
+                     * 获取<p>Region ID.</p>
+                     * @return Zone <p>Region ID.</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置Availability zone
-Note: this field may return `null`, indicating that no valid value can be obtained.
-                     * @param _zone Availability zone
-Note: this field may return `null`, indicating that no valid value can be obtained.
+                     * 设置<p>Region ID.</p>
+                     * @param _zone <p>Region ID.</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -909,19 +684,15 @@ Note: this field may return `null`, indicating that no valid value can be obtain
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取Scenario name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return SceneName Scenario name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>Scenario name.</p>
+                     * @return SceneName <p>Scenario name.</p>
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
-                     * 设置Scenario name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _sceneName Scenario name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>Scenario name.</p>
+                     * @param _sceneName <p>Scenario name.</p>
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -934,19 +705,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool SceneNameHasBeenSet() const;
 
                     /**
-                     * 获取Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return SceneServiceClass Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>Scenario-based cluster type.</p>
+                     * @return SceneServiceClass <p>Scenario-based cluster type.</p>
                      * 
                      */
                     std::string GetSceneServiceClass() const;
 
                     /**
-                     * 设置Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _sceneServiceClass Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>Scenario-based cluster type.</p>
+                     * @param _sceneServiceClass <p>Scenario-based cluster type.</p>
                      * 
                      */
                     void SetSceneServiceClass(const std::string& _sceneServiceClass);
@@ -959,19 +726,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool SceneServiceClassHasBeenSet() const;
 
                     /**
-                     * 获取Scenario-based EMR version
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return SceneEmrVersion Scenario-based EMR version
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>Scenario-based EMR version.</p>
+                     * @return SceneEmrVersion <p>Scenario-based EMR version.</p>
                      * 
                      */
                     std::string GetSceneEmrVersion() const;
 
                     /**
-                     * 设置Scenario-based EMR version
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _sceneEmrVersion Scenario-based EMR version
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>Scenario-based EMR version.</p>
+                     * @param _sceneEmrVersion <p>Scenario-based EMR version.</p>
                      * 
                      */
                     void SetSceneEmrVersion(const std::string& _sceneEmrVersion);
@@ -984,19 +747,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool SceneEmrVersionHasBeenSet() const;
 
                     /**
-                     * 获取Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return DisplayName Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>Scenario-based cluster type.</p>
+                     * @return DisplayName <p>Scenario-based cluster type.</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _displayName Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>Scenario-based cluster type.</p>
+                     * @param _displayName <p>Scenario-based cluster type.</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -1009,19 +768,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return VpcName VPC name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>vpc name</p>
+                     * @return VpcName <p>vpc name</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置VPC name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _vpcName VPC name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>vpc name</p>
+                     * @param _vpcName <p>vpc name</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -1034,19 +789,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取Subnet name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return SubnetName Subnet name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>subnet name</p>
+                     * @return SubnetName <p>subnet name</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置Subnet name
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _subnetName Subnet name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>subnet name</p>
+                     * @param _subnetName <p>subnet name</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -1059,19 +810,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取Cluster dependency
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return ClusterExternalServiceInfo Cluster dependency
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取<p>Cluster dependency.</p>
+                     * @return ClusterExternalServiceInfo <p>Cluster dependency.</p>
                      * 
                      */
                     std::vector<ClusterExternalServiceInfo> GetClusterExternalServiceInfo() const;
 
                     /**
-                     * 设置Cluster dependency
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _clusterExternalServiceInfo Cluster dependency
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置<p>Cluster dependency.</p>
+                     * @param _clusterExternalServiceInfo <p>Cluster dependency.</p>
                      * 
                      */
                     void SetClusterExternalServiceInfo(const std::vector<ClusterExternalServiceInfo>& _clusterExternalServiceInfo);
@@ -1084,19 +831,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool ClusterExternalServiceInfoHasBeenSet() const;
 
                     /**
-                     * 获取The VPC ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return UniqVpcId The VPC ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Cluster VPC ID, string type.</p>
+                     * @return UniqVpcId <p>Cluster VPC ID, string type.</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置The VPC ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _uniqVpcId The VPC ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Cluster VPC ID, string type.</p>
+                     * @param _uniqVpcId <p>Cluster VPC ID, string type.</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -1109,19 +852,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取The subnet ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return UniqSubnetId The subnet ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Subnet ID, string type.</p>
+                     * @return UniqSubnetId <p>Subnet ID, string type.</p>
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置The subnet ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _uniqSubnetId The subnet ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Subnet ID, string type.</p>
+                     * @param _uniqSubnetId <p>Subnet ID, string type.</p>
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -1134,19 +873,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Node information
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return TopologyInfoList Node information
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Node information.</p>
+                     * @return TopologyInfoList <p>Node information.</p>
                      * 
                      */
                     std::vector<TopologyInfo> GetTopologyInfoList() const;
 
                     /**
-                     * 设置Node information
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _topologyInfoList Node information
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Node information.</p>
+                     * @param _topologyInfoList <p>Node information.</p>
                      * 
                      */
                     void SetTopologyInfoList(const std::vector<TopologyInfo>& _topologyInfoList);
@@ -1159,19 +894,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool TopologyInfoListHasBeenSet() const;
 
                     /**
-                     * 获取Multi-AZ cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @return IsMultiZoneCluster Multi-AZ cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Whether it is a cross-AZ cluster.</p>
+                     * @return IsMultiZoneCluster <p>Whether it is a cross-AZ cluster.</p>
                      * 
                      */
                     bool GetIsMultiZoneCluster() const;
 
                     /**
-                     * 设置Multi-AZ cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
-                     * @param _isMultiZoneCluster Multi-AZ cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Whether it is a cross-AZ cluster.</p>
+                     * @param _isMultiZoneCluster <p>Whether it is a cross-AZ cluster.</p>
                      * 
                      */
                     void SetIsMultiZoneCluster(const bool& _isMultiZoneCluster);
@@ -1184,19 +915,15 @@ Note: This field may return `null`, indicating that no valid values can be obtai
                     bool IsMultiZoneClusterHasBeenSet() const;
 
                     /**
-                     * 获取Whether the feature of automatic abnormal node replacement is enabled.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return IsCvmReplace Whether the feature of automatic abnormal node replacement is enabled.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether automatic compensation for abnormal nodes is enabled.</p>
+                     * @return IsCvmReplace <p>Whether automatic compensation for abnormal nodes is enabled.</p>
                      * 
                      */
                     bool GetIsCvmReplace() const;
 
                     /**
-                     * 设置Whether the feature of automatic abnormal node replacement is enabled.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _isCvmReplace Whether the feature of automatic abnormal node replacement is enabled.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether automatic compensation for abnormal nodes is enabled.</p>
+                     * @param _isCvmReplace <p>Whether automatic compensation for abnormal nodes is enabled.</p>
                      * 
                      */
                     void SetIsCvmReplace(const bool& _isCvmReplace);
@@ -1208,328 +935,448 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool IsCvmReplaceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Title.</p>
+                     * @return ClusterTitle <p>Title.</p>
+                     * 
+                     */
+                    std::string GetClusterTitle() const;
+
+                    /**
+                     * 设置<p>Title.</p>
+                     * @param _clusterTitle <p>Title.</p>
+                     * 
+                     */
+                    void SetClusterTitle(const std::string& _clusterTitle);
+
+                    /**
+                     * 判断参数 ClusterTitle 是否已赋值
+                     * @return ClusterTitle 是否已赋值
+                     * 
+                     */
+                    bool ClusterTitleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Cluster product configuration information.</p>
+                     * @return ConfigDetail <p>Cluster product configuration information.</p>
+                     * 
+                     */
+                    EmrProductConfigDetail GetConfigDetail() const;
+
+                    /**
+                     * 设置<p>Cluster product configuration information.</p>
+                     * @param _configDetail <p>Cluster product configuration information.</p>
+                     * 
+                     */
+                    void SetConfigDetail(const EmrProductConfigDetail& _configDetail);
+
+                    /**
+                     * 判断参数 ConfigDetail 是否已赋值
+                     * @return ConfigDetail 是否已赋值
+                     * 
+                     */
+                    bool ConfigDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Number of file systems bound to the cluster.</p>
+                     * @return BindFileSystemNum <p>Number of file systems bound to the cluster.</p>
+                     * 
+                     */
+                    int64_t GetBindFileSystemNum() const;
+
+                    /**
+                     * 设置<p>Number of file systems bound to the cluster.</p>
+                     * @param _bindFileSystemNum <p>Number of file systems bound to the cluster.</p>
+                     * 
+                     */
+                    void SetBindFileSystemNum(const int64_t& _bindFileSystemNum);
+
+                    /**
+                     * 判断参数 BindFileSystemNum 是否已赋值
+                     * @return BindFileSystemNum 是否已赋值
+                     * 
+                     */
+                    bool BindFileSystemNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Binding list of the RSS cluster.</p>
+                     * @return ClusterRelationInfoList <p>Binding list of the RSS cluster.</p>
+                     * 
+                     */
+                    std::vector<ClusterRelationMeta> GetClusterRelationInfoList() const;
+
+                    /**
+                     * 设置<p>Binding list of the RSS cluster.</p>
+                     * @param _clusterRelationInfoList <p>Binding list of the RSS cluster.</p>
+                     * 
+                     */
+                    void SetClusterRelationInfoList(const std::vector<ClusterRelationMeta>& _clusterRelationInfoList);
+
+                    /**
+                     * 判断参数 ClusterRelationInfoList 是否已赋值
+                     * @return ClusterRelationInfoList 是否已赋值
+                     * 
+                     */
+                    bool ClusterRelationInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Redis information.</p>
+                     * @return RedisId <p>Redis information.</p>
+                     * 
+                     */
+                    std::string GetRedisId() const;
+
+                    /**
+                     * 设置<p>Redis information.</p>
+                     * @param _redisId <p>Redis information.</p>
+                     * 
+                     */
+                    void SetRedisId(const std::string& _redisId);
+
+                    /**
+                     * 判断参数 RedisId 是否已赋值
+                     * @return RedisId 是否已赋值
+                     * 
+                     */
+                    bool RedisIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether IO fault self-healing is enabled.</p>
+                     * @return IsIOHungSelfRecovery <p>Whether IO fault self-healing is enabled.</p>
+                     * 
+                     */
+                    bool GetIsIOHungSelfRecovery() const;
+
+                    /**
+                     * 设置<p>Whether IO fault self-healing is enabled.</p>
+                     * @param _isIOHungSelfRecovery <p>Whether IO fault self-healing is enabled.</p>
+                     * 
+                     */
+                    void SetIsIOHungSelfRecovery(const bool& _isIOHungSelfRecovery);
+
+                    /**
+                     * 判断参数 IsIOHungSelfRecovery 是否已赋值
+                     * @return IsIOHungSelfRecovery 是否已赋值
+                     * 
+                     */
+                    bool IsIOHungSelfRecoveryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Metadata information.</p>
+                     * @return MetaDBGroupInfo <p>Metadata information.</p>
+                     * 
+                     */
+                    std::vector<CustomMetaDBInfo> GetMetaDBGroupInfo() const;
+
+                    /**
+                     * 设置<p>Metadata information.</p>
+                     * @param _metaDBGroupInfo <p>Metadata information.</p>
+                     * 
+                     */
+                    void SetMetaDBGroupInfo(const std::vector<CustomMetaDBInfo>& _metaDBGroupInfo);
+
+                    /**
+                     * 判断参数 MetaDBGroupInfo 是否已赋值
+                     * @return MetaDBGroupInfo 是否已赋值
+                     * 
+                     */
+                    bool MetaDBGroupInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>ID.</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * Cluster ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster ID.</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Title
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Title.</p>
                      */
                     std::string m_ftitle;
                     bool m_ftitleHasBeenSet;
 
                     /**
-                     * Cluster name
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster name.</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Region ID.</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * Region ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Region ID.</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * User APPID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>User APPID.</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * User UIN
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>User UIN.</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * Project ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Project ID.</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * Cluster `VPCID`
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster VPC ID.</p>
                      */
                     int64_t m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * Subnet ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Subnet ID.</p>
                      */
                     int64_t m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * Instance status code. Value range:
-<li>2: cluster running</li>
-<li>3: creating cluster.</li>
-<li>4: scaling out cluster.</li>
-<li>5: adding router node in cluster.</li>
-<li>6: installing component in cluster.</li>
-<li>7: cluster executing command.</li>
-<li>8: restarting service.</li>
-<li>9: entering maintenance.</li>
-<li>10: suspending service.</li>
-<li>11: exiting maintenance.</li>
-<li>12: exiting suspension.</li>
-<li>13: delivering configuration.</li>
-<li>14: terminating cluster.</li>
-<li>15: terminating core node.</li>
-<li>16: terminating task node.</li>
-<li>17: terminating router node.</li>
-<li>18: changing webproxy password.</li>
-<li>19: isolating cluster.</li>
-<li>20: resuming cluster.</li>
-<li>21: repossessing cluster.</li>
-<li>22: waiting for configuration adjustment.</li>
-<li>23: cluster isolated.</li>
-<li>24: removing node.</li>
-<li>33: waiting for refund.</li>
-<li>34: refunded.</li>
-<li>301: creation failed.</li>
-<li>302: scale-out failed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Status code of the instance. Valid values:</p><li>2: The cluster is running.</li><li>3: The cluster is being created.</li><li>4: The cluster is being scaled out.</li><li>5: Router nodes are being added to the cluster.</li><li>6: Components are being installed in the cluster.</li><li>7: The cluster is executing a command.</li><li>8: The service is being restarted.</li><li>9: The cluster is entering maintenance.</li><li>10: The service is being paused.</li><li>11: The cluster is exiting maintenance.</li><li>12: The cluster is exiting the pause status.</li><li>13: The configuration is being delivered.</li><li>14: The cluster is being terminated.</li><li>15: Core nodes are being terminated.</li><li>16: Task nodes are being terminated.</li><li>17: Router nodes are being terminated.</li><li>18: The webproxy password is being changed.</li><li>19: The cluster is being isolated.</li><li>20: The cluster is being reconciled.</li><li>21: The cluster is being reclaimed.</li><li>22: The configuration change is waiting.</li><li>23: The cluster has been isolated.</li><li>24: Nodes are being scaled in.</li><li>33: The cluster is waiting for a refund.</li><li>34: The cluster has been refunded.</li><li>301: Creation failed.</li><li>302: Scale-out failed.</li>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Creation time
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Addition time.</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * Execution duration
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Execution duration.</p>
                      */
                     std::string m_runTime;
                     bool m_runTimeHasBeenSet;
 
                     /**
-                     * Cluster product configuration information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster product configuration information.</p>
                      */
                     EmrProductConfigOutter m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * Public IP of master node
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Public IP address of the Master node.</p>
                      */
                     std::string m_masterIp;
                     bool m_masterIpHasBeenSet;
 
                     /**
-                     * EMR version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>EMR version.</p>
                      */
                     std::string m_emrVersion;
                     bool m_emrVersionHasBeenSet;
 
                     /**
-                     * Billing mode
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Billing mode.</p>
                      */
                     int64_t m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * Transaction version
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Transaction version.</p>
                      */
                     int64_t m_tradeVersion;
                     bool m_tradeVersionHasBeenSet;
 
                     /**
-                     * Resource order ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Resource order ID.</p>
                      */
                     int64_t m_resourceOrderId;
                     bool m_resourceOrderIdHasBeenSet;
 
                     /**
-                     * Whether this is a paid cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Whether it is a billable cluster.</p>
                      */
                     int64_t m_isTradeCluster;
                     bool m_isTradeClusterHasBeenSet;
 
                     /**
-                     * Alarm information for cluster error
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster error status alarm information.</p>
                      */
                     std::string m_alarmInfo;
                     bool m_alarmInfoHasBeenSet;
 
                     /**
-                     * Whether the new architecture is used
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Whether a new architecture is used.</p>
                      */
                     int64_t m_isWoodpeckerCluster;
                     bool m_isWoodpeckerClusterHasBeenSet;
 
                     /**
-                     * Metadatabase information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Meta database information.</p>
                      */
                     std::string m_metaDb;
                     bool m_metaDbHasBeenSet;
 
                     /**
-                     * Tag information
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Tag information.</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * Hive metadata
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Hive metadata information.</p>
                      */
                     std::string m_hiveMetaDb;
                     bool m_hiveMetaDbHasBeenSet;
 
                     /**
-                     * Cluster type: EMR, CLICKHOUSE, DRUID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster type. Valid values: EMR, CLICKHOUSE, and DRUID.</p>
                      */
                     std::string m_serviceClass;
                     bool m_serviceClassHasBeenSet;
 
                     /**
-                     * Alias serialization of all nodes in cluster
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Serialization of the aliases of all nodes in the cluster.</p>
                      */
                     std::string m_aliasInfo;
                     bool m_aliasInfoHasBeenSet;
 
                     /**
-                     * Cluster version ID
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Cluster version ID.</p>
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * Availability zone
-Note: this field may return `null`, indicating that no valid value can be obtained.
+                     * <p>Region ID.</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * Scenario name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>Scenario name.</p>
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
-                     * Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>Scenario-based cluster type.</p>
                      */
                     std::string m_sceneServiceClass;
                     bool m_sceneServiceClassHasBeenSet;
 
                     /**
-                     * Scenario-based EMR version
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>Scenario-based EMR version.</p>
                      */
                     std::string m_sceneEmrVersion;
                     bool m_sceneEmrVersionHasBeenSet;
 
                     /**
-                     * Scenario-based cluster type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>Scenario-based cluster type.</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * VPC name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>vpc name</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * Subnet name
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>subnet name</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * Cluster dependency
-Note: This field may return `null`, indicating that no valid value was found.
+                     * <p>Cluster dependency.</p>
                      */
                     std::vector<ClusterExternalServiceInfo> m_clusterExternalServiceInfo;
                     bool m_clusterExternalServiceInfoHasBeenSet;
 
                     /**
-                     * The VPC ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Cluster VPC ID, string type.</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * The subnet ID string type of the cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Subnet ID, string type.</p>
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * Node information
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Node information.</p>
                      */
                     std::vector<TopologyInfo> m_topologyInfoList;
                     bool m_topologyInfoListHasBeenSet;
 
                     /**
-                     * Multi-AZ cluster
-Note: This field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Whether it is a cross-AZ cluster.</p>
                      */
                     bool m_isMultiZoneCluster;
                     bool m_isMultiZoneClusterHasBeenSet;
 
                     /**
-                     * Whether the feature of automatic abnormal node replacement is enabled.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Whether automatic compensation for abnormal nodes is enabled.</p>
                      */
                     bool m_isCvmReplace;
                     bool m_isCvmReplaceHasBeenSet;
+
+                    /**
+                     * <p>Title.</p>
+                     */
+                    std::string m_clusterTitle;
+                    bool m_clusterTitleHasBeenSet;
+
+                    /**
+                     * <p>Cluster product configuration information.</p>
+                     */
+                    EmrProductConfigDetail m_configDetail;
+                    bool m_configDetailHasBeenSet;
+
+                    /**
+                     * <p>Number of file systems bound to the cluster.</p>
+                     */
+                    int64_t m_bindFileSystemNum;
+                    bool m_bindFileSystemNumHasBeenSet;
+
+                    /**
+                     * <p>Binding list of the RSS cluster.</p>
+                     */
+                    std::vector<ClusterRelationMeta> m_clusterRelationInfoList;
+                    bool m_clusterRelationInfoListHasBeenSet;
+
+                    /**
+                     * <p>Redis information.</p>
+                     */
+                    std::string m_redisId;
+                    bool m_redisIdHasBeenSet;
+
+                    /**
+                     * <p>Whether IO fault self-healing is enabled.</p>
+                     */
+                    bool m_isIOHungSelfRecovery;
+                    bool m_isIOHungSelfRecoveryHasBeenSet;
+
+                    /**
+                     * <p>Metadata information.</p>
+                     */
+                    std::vector<CustomMetaDBInfo> m_metaDBGroupInfo;
+                    bool m_metaDBGroupInfoHasBeenSet;
 
                 };
             }

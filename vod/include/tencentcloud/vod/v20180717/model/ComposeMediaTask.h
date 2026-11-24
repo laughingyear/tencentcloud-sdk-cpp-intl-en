@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Media file composing task information
+                * Media file production task information
                 */
                 class ComposeMediaTask : public AbstractModel
                 {
@@ -71,27 +71,23 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
+                     * @return Status Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _status Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
+                     * @param _status Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -104,27 +100,23 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code
+                     * 获取Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Error code
+<li>Other value: failure.</li>
+                     * @return ErrCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code
+                     * 设置Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Error code
+<li>Other value: failure.</li>
+                     * @param _errCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -138,18 +130,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -162,15 +150,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Progress of a media file composing task. Value range: [0, 100]
-                     * @return Progress Progress of a media file composing task. Value range: [0, 100]
+                     * 获取Progress of the media file creation task, in the range of [0,100].
+                     * @return Progress Progress of the media file creation task, in the range of [0,100].
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置Progress of a media file composing task. Value range: [0, 100]
-                     * @param _progress Progress of a media file composing task. Value range: [0, 100]
+                     * 设置Progress of the media file creation task, in the range of [0,100].
+                     * @param _progress Progress of the media file creation task, in the range of [0,100].
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -183,19 +171,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取Input of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Input Input of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Input of a media file creation task.
+                     * @return Input Input of a media file creation task.
                      * 
                      */
                     ComposeMediaTaskInput GetInput() const;
 
                     /**
-                     * 设置Input of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _input Input of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Input of a media file creation task.
+                     * @param _input Input of a media file creation task.
                      * 
                      */
                     void SetInput(const ComposeMediaTaskInput& _input);
@@ -208,19 +192,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Output Output of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Output of the media file creation task.
+                     * @return Output Output of the media file creation task.
                      * 
                      */
                     ComposeMediaTaskOutput GetOutput() const;
 
                     /**
-                     * 设置Output of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _output Output of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Output of the media file creation task.
+                     * @param _output Output of the media file creation task.
                      * 
                      */
                     void SetOutput(const ComposeMediaTaskOutput& _output);
@@ -233,19 +213,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The metadata of the output video.
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return MetaData The metadata of the output video.
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取Metadata of the output video.
+                     * @return MetaData Metadata of the output video.
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置The metadata of the output video.
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _metaData The metadata of the output video.
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置Metadata of the output video.
+                     * @param _metaData Metadata of the output video.
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -258,15 +234,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is not carried or is left empty, no deduplication will be performed.
-                     * @return SessionId ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is not carried or is left empty, no deduplication will be performed.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is not carried or is left empty, no deduplication will be performed.
-                     * @param _sessionId ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is not carried or is left empty, no deduplication will be performed.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -279,15 +255,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this parameter. It can contain up to 1000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this parameter. It can contain up to 1000 characters.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this parameter. It can contain up to 1000 characters.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this parameter. It can contain up to 1000 characters.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -308,65 +284,59 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Task flow status. Valid values:
-<li>PROCESSING: processing;</li>
-<li>FINISH: completed.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code
+                     * Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Progress of a media file composing task. Value range: [0, 100]
+                     * Progress of the media file creation task, in the range of [0,100].
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * Input of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Input of a media file creation task.
                      */
                     ComposeMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output of media file composing task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Output of the media file creation task.
                      */
                     ComposeMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The metadata of the output video.
-Note: This field may return `null`, indicating that no valid value was found.
+                     * Metadata of the output video.
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is not carried or is left empty, no deduplication will be performed.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this parameter. It can contain up to 1000 characters.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

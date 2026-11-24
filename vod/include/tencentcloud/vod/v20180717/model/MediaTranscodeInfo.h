@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Transcoding information of VOD file
+                * Transcoding information of a VOD file
                 */
                 class MediaTranscodeInfo : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Information set of transcoding with each specification. Each element represents a result of transcoding with a specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TranscodeSet Information set of transcoding with each specification. Each element represents a result of transcoding with a specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Transcoding information collection for each specification. Each element represents the transcoding result of a specification.
+                     * @return TranscodeSet Transcoding information collection for each specification. Each element represents the transcoding result of a specification.
                      * 
                      */
                     std::vector<MediaTranscodeItem> GetTranscodeSet() const;
 
                     /**
-                     * 设置Information set of transcoding with each specification. Each element represents a result of transcoding with a specification.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _transcodeSet Information set of transcoding with each specification. Each element represents a result of transcoding with a specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Transcoding information collection for each specification. Each element represents the transcoding result of a specification.
+                     * @param _transcodeSet Transcoding information collection for each specification. Each element represents the transcoding result of a specification.
                      * 
                      */
                     void SetTranscodeSet(const std::vector<MediaTranscodeItem>& _transcodeSet);
@@ -75,8 +71,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Information set of transcoding with each specification. Each element represents a result of transcoding with a specification.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Transcoding information collection for each specification. Each element represents the transcoding result of a specification.
                      */
                     std::vector<MediaTranscodeItem> m_transcodeSet;
                     bool m_transcodeSetHasBeenSet;

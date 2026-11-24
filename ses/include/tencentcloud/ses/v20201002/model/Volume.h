@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Date
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return SendDate Date
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Date</p>
+                     * @return SendDate <p>Date</p>
                      * 
                      */
                     std::string GetSendDate() const;
 
                     /**
-                     * 设置Date
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _sendDate Date
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Date</p>
+                     * @param _sendDate <p>Date</p>
                      * 
                      */
                     void SetSendDate(const std::string& _sendDate);
@@ -72,15 +68,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool SendDateHasBeenSet() const;
 
                     /**
-                     * 获取Number of email requests.
-                     * @return RequestCount Number of email requests.
+                     * 获取<p>Request quantity by email</p>
+                     * @return RequestCount <p>Request quantity by email</p>
                      * 
                      */
                     uint64_t GetRequestCount() const;
 
                     /**
-                     * 设置Number of email requests.
-                     * @param _requestCount Number of email requests.
+                     * 设置<p>Request quantity by email</p>
+                     * @param _requestCount <p>Request quantity by email</p>
                      * 
                      */
                     void SetRequestCount(const uint64_t& _requestCount);
@@ -93,15 +89,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool RequestCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of email requests accepted by Tencent Cloud.
-                     * @return AcceptedCount Number of email requests accepted by Tencent Cloud.
+                     * 获取<p>Tencent Cloud pass count</p>
+                     * @return AcceptedCount <p>Tencent Cloud pass count</p>
                      * 
                      */
                     uint64_t GetAcceptedCount() const;
 
                     /**
-                     * 设置Number of email requests accepted by Tencent Cloud.
-                     * @param _acceptedCount Number of email requests accepted by Tencent Cloud.
+                     * 设置<p>Tencent Cloud pass count</p>
+                     * @param _acceptedCount <p>Tencent Cloud pass count</p>
                      * 
                      */
                     void SetAcceptedCount(const uint64_t& _acceptedCount);
@@ -114,15 +110,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool AcceptedCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of delivered emails.
-                     * @return DeliveredCount Number of delivered emails.
+                     * 获取<p>Delivery quantity</p>
+                     * @return DeliveredCount <p>Delivery quantity</p>
                      * 
                      */
                     uint64_t GetDeliveredCount() const;
 
                     /**
-                     * 设置Number of delivered emails.
-                     * @param _deliveredCount Number of delivered emails.
+                     * 设置<p>Delivery quantity</p>
+                     * @param _deliveredCount <p>Delivery quantity</p>
                      * 
                      */
                     void SetDeliveredCount(const uint64_t& _deliveredCount);
@@ -135,15 +131,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool DeliveredCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of users (deduplicated) who opened emails.
-                     * @return OpenedCount Number of users (deduplicated) who opened emails.
+                     * 获取<p>Total number of times emails were opened</p>
+                     * @return OpenedCount <p>Total number of times emails were opened</p>
                      * 
                      */
                     uint64_t GetOpenedCount() const;
 
                     /**
-                     * 设置Number of users (deduplicated) who opened emails.
-                     * @param _openedCount Number of users (deduplicated) who opened emails.
+                     * 设置<p>Total number of times emails were opened</p>
+                     * @param _openedCount <p>Total number of times emails were opened</p>
                      * 
                      */
                     void SetOpenedCount(const uint64_t& _openedCount);
@@ -156,15 +152,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool OpenedCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of recipients who clicked on links in emails.
-                     * @return ClickedCount Number of recipients who clicked on links in emails.
+                     * 获取<p>Number of users who clicked the link in the mail</p>
+                     * @return ClickedCount <p>Number of users who clicked the link in the mail</p>
                      * 
                      */
                     uint64_t GetClickedCount() const;
 
                     /**
-                     * 设置Number of recipients who clicked on links in emails.
-                     * @param _clickedCount Number of recipients who clicked on links in emails.
+                     * 设置<p>Number of users who clicked the link in the mail</p>
+                     * @param _clickedCount <p>Number of users who clicked the link in the mail</p>
                      * 
                      */
                     void SetClickedCount(const uint64_t& _clickedCount);
@@ -177,15 +173,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool ClickedCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of bounced emails.
-                     * @return BounceCount Number of bounced emails.
+                     * 获取<p>Bounced count</p>
+                     * @return BounceCount <p>Bounced count</p>
                      * 
                      */
                     uint64_t GetBounceCount() const;
 
                     /**
-                     * 设置Number of bounced emails.
-                     * @param _bounceCount Number of bounced emails.
+                     * 设置<p>Bounced count</p>
+                     * @param _bounceCount <p>Bounced count</p>
                      * 
                      */
                     void SetBounceCount(const uint64_t& _bounceCount);
@@ -198,19 +194,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool BounceCountHasBeenSet() const;
 
                     /**
-                     * 获取Number of users who canceled subscriptions.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return UnsubscribeCount Number of users who canceled subscriptions.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Number of users for unsubscription</p>
+                     * @return UnsubscribeCount <p>Number of users for unsubscription</p>
                      * 
                      */
                     uint64_t GetUnsubscribeCount() const;
 
                     /**
-                     * 设置Number of users who canceled subscriptions.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _unsubscribeCount Number of users who canceled subscriptions.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Number of users for unsubscription</p>
+                     * @param _unsubscribeCount <p>Number of users for unsubscription</p>
                      * 
                      */
                     void SetUnsubscribeCount(const uint64_t& _unsubscribeCount);
@@ -225,51 +217,49 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                 private:
 
                     /**
-                     * Date
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Date</p>
                      */
                     std::string m_sendDate;
                     bool m_sendDateHasBeenSet;
 
                     /**
-                     * Number of email requests.
+                     * <p>Request quantity by email</p>
                      */
                     uint64_t m_requestCount;
                     bool m_requestCountHasBeenSet;
 
                     /**
-                     * Number of email requests accepted by Tencent Cloud.
+                     * <p>Tencent Cloud pass count</p>
                      */
                     uint64_t m_acceptedCount;
                     bool m_acceptedCountHasBeenSet;
 
                     /**
-                     * Number of delivered emails.
+                     * <p>Delivery quantity</p>
                      */
                     uint64_t m_deliveredCount;
                     bool m_deliveredCountHasBeenSet;
 
                     /**
-                     * Number of users (deduplicated) who opened emails.
+                     * <p>Total number of times emails were opened</p>
                      */
                     uint64_t m_openedCount;
                     bool m_openedCountHasBeenSet;
 
                     /**
-                     * Number of recipients who clicked on links in emails.
+                     * <p>Number of users who clicked the link in the mail</p>
                      */
                     uint64_t m_clickedCount;
                     bool m_clickedCountHasBeenSet;
 
                     /**
-                     * Number of bounced emails.
+                     * <p>Bounced count</p>
                      */
                     uint64_t m_bounceCount;
                     bool m_bounceCountHasBeenSet;
 
                     /**
-                     * Number of users who canceled subscriptions.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Number of users for unsubscription</p>
                      */
                     uint64_t m_unsubscribeCount;
                     bool m_unsubscribeCountHasBeenSet;

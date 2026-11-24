@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Input information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Input Input information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     SmartSubtitleTaskResultInput GetInput() const;
 
                     /**
                      * 设置Input information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _input Input information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetInput(const SmartSubtitleTaskResultInput& _input);
@@ -75,18 +71,14 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * 获取Output information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return Outputs Output information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::vector<SmartSubtitleTaskBatchOutput> GetOutputs() const;
 
                     /**
                      * 设置Output information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _outputs Output information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetOutputs(const std::vector<SmartSubtitleTaskBatchOutput>& _outputs);
@@ -102,14 +94,12 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * Input information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     SmartSubtitleTaskResultInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * Output information for smart subtitle tasks.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::vector<SmartSubtitleTaskBatchOutput> m_outputs;
                     bool m_outputsHasBeenSet;

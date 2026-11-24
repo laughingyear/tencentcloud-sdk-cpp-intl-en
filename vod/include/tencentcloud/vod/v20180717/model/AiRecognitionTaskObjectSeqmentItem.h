@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Start time offset of recognized segment in seconds.
-                     * @return StartTimeOffset Start time offset of recognized segment in seconds.
+                     * 获取<p>Start time offset of the recognized segment, in seconds.</p>
+                     * @return StartTimeOffset <p>Start time offset of the recognized segment, in seconds.</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Start time offset of recognized segment in seconds.
-                     * @param _startTimeOffset Start time offset of recognized segment in seconds.
+                     * 设置<p>Start time offset of the recognized segment, in seconds.</p>
+                     * @param _startTimeOffset <p>Start time offset of the recognized segment, in seconds.</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取End time offset of recognition segment in seconds.
-                     * @return EndTimeOffset End time offset of recognition segment in seconds.
+                     * 获取<p>End time offset of the recognized segment, in seconds.</p>
+                     * @return EndTimeOffset <p>End time offset of the recognized segment, in seconds.</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置End time offset of recognition segment in seconds.
-                     * @param _endTimeOffset End time offset of recognition segment in seconds.
+                     * 设置<p>End time offset of the recognized segment, in seconds.</p>
+                     * @param _endTimeOffset <p>End time offset of the recognized segment, in seconds.</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of recognized segment. Value range: 0-100.
-                     * @return Confidence Confidence of recognized segment. Value range: 0-100.
+                     * 获取<p>Confidence of the recognized segment. Value range: 0–100.</p>
+                     * @return Confidence <p>Confidence of the recognized segment. Value range: 0–100.</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of recognized segment. Value range: 0-100.
-                     * @param _confidence Confidence of recognized segment. Value range: 0-100.
+                     * 设置<p>Confidence of the recognized segment. Value range: 0–100.</p>
+                     * @param _confidence <p>Confidence of the recognized segment. Value range: 0–100.</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Zone coordinates of recognition result. The array contains four elements: [x1,y1,x2,y2], i.e., the horizontal and vertical coordinates of the top-left and bottom-right corners.
-                     * @return AreaCoordSet Zone coordinates of recognition result. The array contains four elements: [x1,y1,x2,y2], i.e., the horizontal and vertical coordinates of the top-left and bottom-right corners.
+                     * 获取<p>Area coordinates of the recognition result. The array contains 4 elements [x1,y1,x2,y2], representing the horizontal and vertical coordinates of the top-left corner and bottom-right corner.</p>
+                     * @return AreaCoordSet <p>Area coordinates of the recognition result. The array contains 4 elements [x1,y1,x2,y2], representing the horizontal and vertical coordinates of the top-left corner and bottom-right corner.</p>
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置Zone coordinates of recognition result. The array contains four elements: [x1,y1,x2,y2], i.e., the horizontal and vertical coordinates of the top-left and bottom-right corners.
-                     * @param _areaCoordSet Zone coordinates of recognition result. The array contains four elements: [x1,y1,x2,y2], i.e., the horizontal and vertical coordinates of the top-left and bottom-right corners.
+                     * 设置<p>Area coordinates of the recognition result. The array contains 4 elements [x1,y1,x2,y2], representing the horizontal and vertical coordinates of the top-left corner and bottom-right corner.</p>
+                     * @param _areaCoordSet <p>Area coordinates of the recognition result. The array contains 4 elements [x1,y1,x2,y2], representing the horizontal and vertical coordinates of the top-left corner and bottom-right corner.</p>
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Start time offset of recognized segment in seconds.
+                     * <p>Start time offset of the recognized segment, in seconds.</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * End time offset of recognition segment in seconds.
+                     * <p>End time offset of the recognized segment, in seconds.</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * Confidence of recognized segment. Value range: 0-100.
+                     * <p>Confidence of the recognized segment. Value range: 0–100.</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Zone coordinates of recognition result. The array contains four elements: [x1,y1,x2,y2], i.e., the horizontal and vertical coordinates of the top-left and bottom-right corners.
+                     * <p>Area coordinates of the recognition result. The array contains 4 elements [x1,y1,x2,y2], representing the horizontal and vertical coordinates of the top-left corner and bottom-right corner.</p>
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

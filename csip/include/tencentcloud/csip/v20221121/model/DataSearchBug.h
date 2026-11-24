@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/BugInfoDetail.h>
 #include <tencentcloud/csip/v20221121/model/AssetInfoDetail.h>
+#include <tencentcloud/csip/v20221121/model/ProductSupport.h>
 
 
 namespace TencentCloud
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Vulnerability and asset information
+                * Vulnerability and Asset Information
                 */
                 class DataSearchBug : public AbstractModel
                 {
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Query status code
-                     * @return StateCode Query status code
+                     * 获取Return to Query Status
+                     * @return StateCode Return to Query Status
                      * 
                      */
                     std::string GetStateCode() const;
 
                     /**
-                     * 设置Query status code
-                     * @param _stateCode Query status code
+                     * 设置Return to Query Status
+                     * @param _stateCode Return to Query Status
                      * 
                      */
                     void SetStateCode(const std::string& _stateCode);
@@ -70,19 +71,15 @@ namespace TencentCloud
                     bool StateCodeHasBeenSet() const;
 
                     /**
-                     * 获取 
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return DataBug  
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Vulnerability details
+                     * @return DataBug Vulnerability details
                      * 
                      */
                     std::vector<BugInfoDetail> GetDataBug() const;
 
                     /**
-                     * 设置 
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _dataBug  
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Vulnerability details
+                     * @param _dataBug Vulnerability details
                      * 
                      */
                     void SetDataBug(const std::vector<BugInfoDetail>& _dataBug);
@@ -95,19 +92,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DataBugHasBeenSet() const;
 
                     /**
-                     * 获取None
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return DataAsset None
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Vulnerability impact asset details
+                     * @return DataAsset Vulnerability impact asset details
                      * 
                      */
                     std::vector<AssetInfoDetail> GetDataAsset() const;
 
                     /**
-                     * 设置None
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _dataAsset None
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Vulnerability impact asset details
+                     * @param _dataAsset Vulnerability impact asset details
                      * 
                      */
                     void SetDataAsset(const std::vector<AssetInfoDetail>& _dataAsset);
@@ -120,19 +113,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool DataAssetHasBeenSet() const;
 
                     /**
-                     * 获取`true`: Support vulnerability scan; `false`: Do not support vulnerability scan
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return VSSScan `true`: Support vulnerability scan; `false`: Do not support vulnerability scan
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取True supports scanning. False does not support scanning.
+                     * @return VSSScan True supports scanning. False does not support scanning.
                      * 
                      */
                     bool GetVSSScan() const;
 
                     /**
-                     * 设置`true`: Support vulnerability scan; `false`: Do not support vulnerability scan
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _vSSScan `true`: Support vulnerability scan; `false`: Do not support vulnerability scan
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置True supports scanning. False does not support scanning.
+                     * @param _vSSScan True supports scanning. False does not support scanning.
                      * 
                      */
                     void SetVSSScan(const bool& _vSSScan);
@@ -145,19 +134,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool VSSScanHasBeenSet() const;
 
                     /**
-                     * 获取`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CWPScan `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取0-Not Supported; 1-Supported
+                     * @return CWPScan 0-Not Supported; 1-Supported
                      * 
                      */
                     std::string GetCWPScan() const;
 
                     /**
-                     * 设置`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cWPScan `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置0-Not Supported; 1-Supported
+                     * @param _cWPScan 0-Not Supported; 1-Supported
                      * 
                      */
                     void SetCWPScan(const std::string& _cWPScan);
@@ -170,19 +155,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CWPScanHasBeenSet() const;
 
                     /**
-                     * 获取`1`: Support virtual patches; `0` or null: Do not support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CFWPatch `1`: Support virtual patches; `0` or null: Do not support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取1 indicates virtual patches supported, 0 or null indicates not supported.
+                     * @return CFWPatch 1 indicates virtual patches supported, 0 or null indicates not supported.
                      * 
                      */
                     std::string GetCFWPatch() const;
 
                     /**
-                     * 设置`1`: Support virtual patches; `0` or null: Do not support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cFWPatch `1`: Support virtual patches; `0` or null: Do not support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置1 indicates virtual patches supported, 0 or null indicates not supported.
+                     * @param _cFWPatch 1 indicates virtual patches supported, 0 or null indicates not supported.
                      * 
                      */
                     void SetCFWPatch(const std::string& _cFWPatch);
@@ -195,19 +176,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool CFWPatchHasBeenSet() const;
 
                     /**
-                     * 获取`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return WafPatch `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取0-Not Supported; 1-Supported
+                     * @return WafPatch 0-Not Supported; 1-Supported
                      * 
                      */
                     int64_t GetWafPatch() const;
 
                     /**
-                     * 设置`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _wafPatch `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置0-Not Supported; 1-Supported
+                     * @param _wafPatch 0-Not Supported; 1-Supported
                      * 
                      */
                     void SetWafPatch(const int64_t& _wafPatch);
@@ -220,19 +197,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool WafPatchHasBeenSet() const;
 
                     /**
-                     * 获取`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return CWPFix `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取0-Not Supported; 1-Supported
+                     * @return CWPFix 0-Not Supported; 1-Supported
                      * 
                      */
                     int64_t GetCWPFix() const;
 
                     /**
-                     * 设置`0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _cWPFix `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置0-Not Supported; 1-Supported
+                     * @param _cWPFix 0-Not Supported; 1-Supported
                      * 
                      */
                     void SetCWPFix(const int64_t& _cWPFix);
@@ -244,62 +217,109 @@ Note: This field may return·null, indicating that no valid values can be obtain
                      */
                     bool CWPFixHasBeenSet() const;
 
+                    /**
+                     * 获取Product support status
+                     * @return DataSupport Product support status
+                     * 
+                     */
+                    std::vector<ProductSupport> GetDataSupport() const;
+
+                    /**
+                     * 设置Product support status
+                     * @param _dataSupport Product support status
+                     * 
+                     */
+                    void SetDataSupport(const std::vector<ProductSupport>& _dataSupport);
+
+                    /**
+                     * 判断参数 DataSupport 是否已赋值
+                     * @return DataSupport 是否已赋值
+                     * 
+                     */
+                    bool DataSupportHasBeenSet() const;
+
+                    /**
+                     * 获取cveId
+                     * @return CveId cveId
+                     * 
+                     */
+                    std::string GetCveId() const;
+
+                    /**
+                     * 设置cveId
+                     * @param _cveId cveId
+                     * 
+                     */
+                    void SetCveId(const std::string& _cveId);
+
+                    /**
+                     * 判断参数 CveId 是否已赋值
+                     * @return CveId 是否已赋值
+                     * 
+                     */
+                    bool CveIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Query status code
+                     * Return to Query Status
                      */
                     std::string m_stateCode;
                     bool m_stateCodeHasBeenSet;
 
                     /**
-                     *  
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Vulnerability details
                      */
                     std::vector<BugInfoDetail> m_dataBug;
                     bool m_dataBugHasBeenSet;
 
                     /**
-                     * None
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Vulnerability impact asset details
                      */
                     std::vector<AssetInfoDetail> m_dataAsset;
                     bool m_dataAssetHasBeenSet;
 
                     /**
-                     * `true`: Support vulnerability scan; `false`: Do not support vulnerability scan
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * True supports scanning. False does not support scanning.
                      */
                     bool m_vSSScan;
                     bool m_vSSScanHasBeenSet;
 
                     /**
-                     * `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 0-Not Supported; 1-Supported
                      */
                     std::string m_cWPScan;
                     bool m_cWPScanHasBeenSet;
 
                     /**
-                     * `1`: Support virtual patches; `0` or null: Do not support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 1 indicates virtual patches supported, 0 or null indicates not supported.
                      */
                     std::string m_cFWPatch;
                     bool m_cFWPatchHasBeenSet;
 
                     /**
-                     * `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 0-Not Supported; 1-Supported
                      */
                     int64_t m_wafPatch;
                     bool m_wafPatchHasBeenSet;
 
                     /**
-                     * `0`: Do not support; `1`: Support
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 0-Not Supported; 1-Supported
                      */
                     int64_t m_cWPFix;
                     bool m_cWPFixHasBeenSet;
+
+                    /**
+                     * Product support status
+                     */
+                    std::vector<ProductSupport> m_dataSupport;
+                    bool m_dataSupportHasBeenSet;
+
+                    /**
+                     * cveId
+                     */
+                    std::string m_cveId;
+                    bool m_cveIdHasBeenSet;
 
                 };
             }

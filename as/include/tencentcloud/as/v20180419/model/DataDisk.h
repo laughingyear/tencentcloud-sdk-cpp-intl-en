@@ -47,47 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Data disk type. For restrictions on the data disk type, see [cloud block storage types](https://intl.cloud.tencent.com/document/product/362/2353?from_cn_redirect=1). Valid values:
-<li>LOCAL_BASIC: Local Disk.</li>
-<li>LOCAL_SSD: Local SSD.</li>
-<li>CLOUD_BASIC: Basic Cloud Disk.</li>
-<li>CLOUD_PREMIUM: Premium Disk.</li>
-<li>CLOUD_SSD: Cloud SSD.</li>
-<li>CLOUD_HSSD: Enhanced SSD.</li>
-<li>CLOUD_TSSD: Tremendous SSD.</li>
-The default value is consistent with the system disk type (SystemDisk.DiskType).
-                     * @return DiskType Data disk type. For restrictions on the data disk type, see [cloud block storage types](https://intl.cloud.tencent.com/document/product/362/2353?from_cn_redirect=1). Valid values:
-<li>LOCAL_BASIC: Local Disk.</li>
-<li>LOCAL_SSD: Local SSD.</li>
-<li>CLOUD_BASIC: Basic Cloud Disk.</li>
-<li>CLOUD_PREMIUM: Premium Disk.</li>
-<li>CLOUD_SSD: Cloud SSD.</li>
-<li>CLOUD_HSSD: Enhanced SSD.</li>
-<li>CLOUD_TSSD: Tremendous SSD.</li>
-The default value is consistent with the system disk type (SystemDisk.DiskType).
+                     * 获取<p>Data disk type. For detailed restrictions on data disk types, see <a href="https://www.tencentcloud.com/document/product/362/2353?from_cn_redirect=1">Cloud Disk Types</a>. Value range:</p><li>LOCAL_BASIC: local hard disk</li><li>LOCAL_SSD: local SSD</li><li>CLOUD_BASIC: basic cloud disk</li><li>CLOUD_PREMIUM: high-performance cloud block storage</li><li>CLOUD_SSD: SSD cloud disk</li><li>CLOUD_HSSD: enhanced SSD cloud disk</li><li>CLOUD_TSSD: ultra-fast SSD CBS</li><li>CLOUD_BSSD: universal SSD cloud disk</li>The default value is consistent with the system disk type (SystemDisk.DiskType).
+                     * @return DiskType <p>Data disk type. For detailed restrictions on data disk types, see <a href="https://www.tencentcloud.com/document/product/362/2353?from_cn_redirect=1">Cloud Disk Types</a>. Value range:</p><li>LOCAL_BASIC: local hard disk</li><li>LOCAL_SSD: local SSD</li><li>CLOUD_BASIC: basic cloud disk</li><li>CLOUD_PREMIUM: high-performance cloud block storage</li><li>CLOUD_SSD: SSD cloud disk</li><li>CLOUD_HSSD: enhanced SSD cloud disk</li><li>CLOUD_TSSD: ultra-fast SSD CBS</li><li>CLOUD_BSSD: universal SSD cloud disk</li>The default value is consistent with the system disk type (SystemDisk.DiskType).
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置Data disk type. For restrictions on the data disk type, see [cloud block storage types](https://intl.cloud.tencent.com/document/product/362/2353?from_cn_redirect=1). Valid values:
-<li>LOCAL_BASIC: Local Disk.</li>
-<li>LOCAL_SSD: Local SSD.</li>
-<li>CLOUD_BASIC: Basic Cloud Disk.</li>
-<li>CLOUD_PREMIUM: Premium Disk.</li>
-<li>CLOUD_SSD: Cloud SSD.</li>
-<li>CLOUD_HSSD: Enhanced SSD.</li>
-<li>CLOUD_TSSD: Tremendous SSD.</li>
-The default value is consistent with the system disk type (SystemDisk.DiskType).
-                     * @param _diskType Data disk type. For restrictions on the data disk type, see [cloud block storage types](https://intl.cloud.tencent.com/document/product/362/2353?from_cn_redirect=1). Valid values:
-<li>LOCAL_BASIC: Local Disk.</li>
-<li>LOCAL_SSD: Local SSD.</li>
-<li>CLOUD_BASIC: Basic Cloud Disk.</li>
-<li>CLOUD_PREMIUM: Premium Disk.</li>
-<li>CLOUD_SSD: Cloud SSD.</li>
-<li>CLOUD_HSSD: Enhanced SSD.</li>
-<li>CLOUD_TSSD: Tremendous SSD.</li>
-The default value is consistent with the system disk type (SystemDisk.DiskType).
+                     * 设置<p>Data disk type. For detailed restrictions on data disk types, see <a href="https://www.tencentcloud.com/document/product/362/2353?from_cn_redirect=1">Cloud Disk Types</a>. Value range:</p><li>LOCAL_BASIC: local hard disk</li><li>LOCAL_SSD: local SSD</li><li>CLOUD_BASIC: basic cloud disk</li><li>CLOUD_PREMIUM: high-performance cloud block storage</li><li>CLOUD_SSD: SSD cloud disk</li><li>CLOUD_HSSD: enhanced SSD cloud disk</li><li>CLOUD_TSSD: ultra-fast SSD CBS</li><li>CLOUD_BSSD: universal SSD cloud disk</li>The default value is consistent with the system disk type (SystemDisk.DiskType).
+                     * @param _diskType <p>Data disk type. For detailed restrictions on data disk types, see <a href="https://www.tencentcloud.com/document/product/362/2353?from_cn_redirect=1">Cloud Disk Types</a>. Value range:</p><li>LOCAL_BASIC: local hard disk</li><li>LOCAL_SSD: local SSD</li><li>CLOUD_BASIC: basic cloud disk</li><li>CLOUD_PREMIUM: high-performance cloud block storage</li><li>CLOUD_SSD: SSD cloud disk</li><li>CLOUD_HSSD: enhanced SSD cloud disk</li><li>CLOUD_TSSD: ultra-fast SSD CBS</li><li>CLOUD_BSSD: universal SSD cloud disk</li>The default value is consistent with the system disk type (SystemDisk.DiskType).
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -100,15 +68,15 @@ The default value is consistent with the system disk type (SystemDisk.DiskType).
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取Data disk size, in GB. The minimum adjustment step size is 10 GB. The value range varies according to the data disk type. For specific restrictions, see [CVM instance configuration](https://intl.cloud.tencent.com/document/product/213/2177?from_cn_redirect=1). Default value: 0, which means that no data disk is purchased. For more restrictions, see the product documentation.
-                     * @return DiskSize Data disk size, in GB. The minimum adjustment step size is 10 GB. The value range varies according to the data disk type. For specific restrictions, see [CVM instance configuration](https://intl.cloud.tencent.com/document/product/213/2177?from_cn_redirect=1). Default value: 0, which means that no data disk is purchased. For more restrictions, see the product documentation.
+                     * 获取<p>Data disk size, in GB. The value range varies according to the data disk type. For specific restrictions, see <a href="https://www.tencentcloud.com/document/product/213/2177?from_cn_redirect=1">CVM instance configuration</a>. Default value: 0, which means that no data disk is purchased. For more restrictions, see the <a href="https://www.tencentcloud.com/document/product/362/5145?from_cn_redirect=1">product documentation</a>.</p>
+                     * @return DiskSize <p>Data disk size, in GB. The value range varies according to the data disk type. For specific restrictions, see <a href="https://www.tencentcloud.com/document/product/213/2177?from_cn_redirect=1">CVM instance configuration</a>. Default value: 0, which means that no data disk is purchased. For more restrictions, see the <a href="https://www.tencentcloud.com/document/product/362/5145?from_cn_redirect=1">product documentation</a>.</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置Data disk size, in GB. The minimum adjustment step size is 10 GB. The value range varies according to the data disk type. For specific restrictions, see [CVM instance configuration](https://intl.cloud.tencent.com/document/product/213/2177?from_cn_redirect=1). Default value: 0, which means that no data disk is purchased. For more restrictions, see the product documentation.
-                     * @param _diskSize Data disk size, in GB. The minimum adjustment step size is 10 GB. The value range varies according to the data disk type. For specific restrictions, see [CVM instance configuration](https://intl.cloud.tencent.com/document/product/213/2177?from_cn_redirect=1). Default value: 0, which means that no data disk is purchased. For more restrictions, see the product documentation.
+                     * 设置<p>Data disk size, in GB. The value range varies according to the data disk type. For specific restrictions, see <a href="https://www.tencentcloud.com/document/product/213/2177?from_cn_redirect=1">CVM instance configuration</a>. Default value: 0, which means that no data disk is purchased. For more restrictions, see the <a href="https://www.tencentcloud.com/document/product/362/5145?from_cn_redirect=1">product documentation</a>.</p>
+                     * @param _diskSize <p>Data disk size, in GB. The value range varies according to the data disk type. For specific restrictions, see <a href="https://www.tencentcloud.com/document/product/213/2177?from_cn_redirect=1">CVM instance configuration</a>. Default value: 0, which means that no data disk is purchased. For more restrictions, see the <a href="https://www.tencentcloud.com/document/product/362/5145?from_cn_redirect=1">product documentation</a>.</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -121,19 +89,15 @@ The default value is consistent with the system disk type (SystemDisk.DiskType).
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取Data disk snapshot ID, such as `snap-l8psqwnt`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SnapshotId Data disk snapshot ID, such as `snap-l8psqwnt`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Data disk snapshot ID, obtain this parameter through the <a href="https://www.tencentcloud.com/document/product/362/15647?from_cn_redirect=1">DescribeSnapshots</a> API.</p>
+                     * @return SnapshotId <p>Data disk snapshot ID, obtain this parameter through the <a href="https://www.tencentcloud.com/document/product/362/15647?from_cn_redirect=1">DescribeSnapshots</a> API.</p>
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置Data disk snapshot ID, such as `snap-l8psqwnt`.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _snapshotId Data disk snapshot ID, such as `snap-l8psqwnt`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Data disk snapshot ID, obtain this parameter through the <a href="https://www.tencentcloud.com/document/product/362/15647?from_cn_redirect=1">DescribeSnapshots</a> API.</p>
+                     * @param _snapshotId <p>Data disk snapshot ID, obtain this parameter through the <a href="https://www.tencentcloud.com/document/product/362/15647?from_cn_redirect=1">DescribeSnapshots</a> API.</p>
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -146,27 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取Whether the data disk is terminated along with the instance. Valid values:
-<li>TRUE: When the instance is terminated, the data disk is also terminated. This option is only supported for hourly postpaid cloud disks.</li>
-<li>FALSE: When the instance is terminated, the data disk is retained.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DeleteWithInstance Whether the data disk is terminated along with the instance. Valid values:
-<li>TRUE: When the instance is terminated, the data disk is also terminated. This option is only supported for hourly postpaid cloud disks.</li>
-<li>FALSE: When the instance is terminated, the data disk is retained.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether the data disk is destroyed with the instance. Value ranges from:</p><li>TRUE: When the instance is terminated, destroy the data disk. Only hourly postpaid cloud disks are supported.</li><li>FALSE: When the instance is terminated, retain the data disk.</li>
+                     * @return DeleteWithInstance <p>Whether the data disk is destroyed with the instance. Value ranges from:</p><li>TRUE: When the instance is terminated, destroy the data disk. Only hourly postpaid cloud disks are supported.</li><li>FALSE: When the instance is terminated, retain the data disk.</li>
                      * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
-                     * 设置Whether the data disk is terminated along with the instance. Valid values:
-<li>TRUE: When the instance is terminated, the data disk is also terminated. This option is only supported for hourly postpaid cloud disks.</li>
-<li>FALSE: When the instance is terminated, the data disk is retained.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _deleteWithInstance Whether the data disk is terminated along with the instance. Valid values:
-<li>TRUE: When the instance is terminated, the data disk is also terminated. This option is only supported for hourly postpaid cloud disks.</li>
-<li>FALSE: When the instance is terminated, the data disk is retained.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether the data disk is destroyed with the instance. Value ranges from:</p><li>TRUE: When the instance is terminated, destroy the data disk. Only hourly postpaid cloud disks are supported.</li><li>FALSE: When the instance is terminated, retain the data disk.</li>
+                     * @param _deleteWithInstance <p>Whether the data disk is destroyed with the instance. Value ranges from:</p><li>TRUE: When the instance is terminated, destroy the data disk. Only hourly postpaid cloud disks are supported.</li><li>FALSE: When the instance is terminated, retain the data disk.</li>
                      * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
@@ -179,27 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DeleteWithInstanceHasBeenSet() const;
 
                     /**
-                     * 获取Whether the data disk is encrypted. Valid values:
-<li>TRUE: Encrypted.</li>
-<li>FALSE: Not encrypted.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Encrypt Whether the data disk is encrypted. Valid values:
-<li>TRUE: Encrypted.</li>
-<li>FALSE: Not encrypted.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Whether to encrypt the data disk. TRUE means encrypted, FALSE means not encrypted; the specific disk type, region, and KMS rules are validated by CVM.</p>
+                     * @return Encrypt <p>Whether to encrypt the data disk. TRUE means encrypted, FALSE means not encrypted; the specific disk type, region, and KMS rules are validated by CVM.</p>
                      * 
                      */
                     bool GetEncrypt() const;
 
                     /**
-                     * 设置Whether the data disk is encrypted. Valid values:
-<li>TRUE: Encrypted.</li>
-<li>FALSE: Not encrypted.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _encrypt Whether the data disk is encrypted. Valid values:
-<li>TRUE: Encrypted.</li>
-<li>FALSE: Not encrypted.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Whether to encrypt the data disk. TRUE means encrypted, FALSE means not encrypted; the specific disk type, region, and KMS rules are validated by CVM.</p>
+                     * @param _encrypt <p>Whether to encrypt the data disk. TRUE means encrypted, FALSE means not encrypted; the specific disk type, region, and KMS rules are validated by CVM.</p>
                      * 
                      */
                     void SetEncrypt(const bool& _encrypt);
@@ -212,23 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool EncryptHasBeenSet() const;
 
                     /**
-                     * 获取Cloud disk performance (MB/s). This parameter is used to purchase extra performance for the cloud disk. For details on the feature and limits, see [Enhanced SSD Performance](https://intl.cloud.tencent.com/document/product/362/51896?from_cn_redirect=1#. E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96 .E6.80.A7.E8.83.BD).
-This feature is only available to enhanced SSD (`CLOUD_HSSD`) and tremendous SSD (`CLOUD_TSSD`) disks with a capacity greater than 460 GB.
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @return ThroughputPerformance Cloud disk performance (MB/s). This parameter is used to purchase extra performance for the cloud disk. For details on the feature and limits, see [Enhanced SSD Performance](https://intl.cloud.tencent.com/document/product/362/51896?from_cn_redirect=1#. E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96 .E6.80.A7.E8.83.BD).
-This feature is only available to enhanced SSD (`CLOUD_HSSD`) and tremendous SSD (`CLOUD_TSSD`) disks with a capacity greater than 460 GB.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 获取<p>Cloud disk performance, unit: MB/s. Using this parameter can purchase additional performance for cloud disks. For feature introduction and type limitations, see: <a href="https://www.tencentcloud.com/document/product/362/51896?from_cn_redirect=1#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD">enhanced SSD cloud disk additional performance note</a>.<br>Currently only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD cloud disks (CLOUD_HSSD) with capacity &gt; 460 GB.</p>
+                     * @return ThroughputPerformance <p>Cloud disk performance, unit: MB/s. Using this parameter can purchase additional performance for cloud disks. For feature introduction and type limitations, see: <a href="https://www.tencentcloud.com/document/product/362/51896?from_cn_redirect=1#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD">enhanced SSD cloud disk additional performance note</a>.<br>Currently only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD cloud disks (CLOUD_HSSD) with capacity &gt; 460 GB.</p>
                      * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置Cloud disk performance (MB/s). This parameter is used to purchase extra performance for the cloud disk. For details on the feature and limits, see [Enhanced SSD Performance](https://intl.cloud.tencent.com/document/product/362/51896?from_cn_redirect=1#. E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96 .E6.80.A7.E8.83.BD).
-This feature is only available to enhanced SSD (`CLOUD_HSSD`) and tremendous SSD (`CLOUD_TSSD`) disks with a capacity greater than 460 GB.
-Note: This field may return `null`, indicating that no valid value can be obtained.
-                     * @param _throughputPerformance Cloud disk performance (MB/s). This parameter is used to purchase extra performance for the cloud disk. For details on the feature and limits, see [Enhanced SSD Performance](https://intl.cloud.tencent.com/document/product/362/51896?from_cn_redirect=1#. E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96 .E6.80.A7.E8.83.BD).
-This feature is only available to enhanced SSD (`CLOUD_HSSD`) and tremendous SSD (`CLOUD_TSSD`) disks with a capacity greater than 460 GB.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * 设置<p>Cloud disk performance, unit: MB/s. Using this parameter can purchase additional performance for cloud disks. For feature introduction and type limitations, see: <a href="https://www.tencentcloud.com/document/product/362/51896?from_cn_redirect=1#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD">enhanced SSD cloud disk additional performance note</a>.<br>Currently only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD cloud disks (CLOUD_HSSD) with capacity &gt; 460 GB.</p>
+                     * @param _throughputPerformance <p>Cloud disk performance, unit: MB/s. Using this parameter can purchase additional performance for cloud disks. For feature introduction and type limitations, see: <a href="https://www.tencentcloud.com/document/product/362/51896?from_cn_redirect=1#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD">enhanced SSD cloud disk additional performance note</a>.<br>Currently only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD cloud disks (CLOUD_HSSD) with capacity &gt; 460 GB.</p>
                      * 
                      */
                     void SetThroughputPerformance(const uint64_t& _throughputPerformance);
@@ -241,27 +173,15 @@ Note: This field may return `null`, indicating that no valid value can be obtain
                     bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
-                     * 获取Burst performance: Whether to enable burst performance. The default value is false.
-
-Note: This feature is in beta test and requires a ticket to be submitted for usage.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return BurstPerformance Burst performance: Whether to enable burst performance. The default value is false.
-
-Note: This feature is in beta test and requires a ticket to be submitted for usage.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Burst performance. Whether to enable burst performance. The default value is false. Currently, this parameter only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD CLOUD disk (CLOUD_HSSD) with capacity greater than 460 GB.<br>Note: In beta test. Requires ticket submission before usage.</p>
+                     * @return BurstPerformance <p>Burst performance. Whether to enable burst performance. The default value is false. Currently, this parameter only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD CLOUD disk (CLOUD_HSSD) with capacity greater than 460 GB.<br>Note: In beta test. Requires ticket submission before usage.</p>
                      * 
                      */
                     bool GetBurstPerformance() const;
 
                     /**
-                     * 设置Burst performance: Whether to enable burst performance. The default value is false.
-
-Note: This feature is in beta test and requires a ticket to be submitted for usage.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _burstPerformance Burst performance: Whether to enable burst performance. The default value is false.
-
-Note: This feature is in beta test and requires a ticket to be submitted for usage.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Burst performance. Whether to enable burst performance. The default value is false. Currently, this parameter only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD CLOUD disk (CLOUD_HSSD) with capacity greater than 460 GB.<br>Note: In beta test. Requires ticket submission before usage.</p>
+                     * @param _burstPerformance <p>Burst performance. Whether to enable burst performance. The default value is false. Currently, this parameter only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD CLOUD disk (CLOUD_HSSD) with capacity greater than 460 GB.<br>Note: In beta test. Requires ticket submission before usage.</p>
                      * 
                      */
                     void SetBurstPerformance(const bool& _burstPerformance);
@@ -273,69 +193,76 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool BurstPerformanceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>KMS Key ID used for data disk encryption. The key validity, permission, as well as adaptability to disk type and region are validated by CVM.</p>
+                     * @return KmsKeyId <p>KMS Key ID used for data disk encryption. The key validity, permission, as well as adaptability to disk type and region are validated by CVM.</p>
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置<p>KMS Key ID used for data disk encryption. The key validity, permission, as well as adaptability to disk type and region are validated by CVM.</p>
+                     * @param _kmsKeyId <p>KMS Key ID used for data disk encryption. The key validity, permission, as well as adaptability to disk type and region are validated by CVM.</p>
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Data disk type. For restrictions on the data disk type, see [cloud block storage types](https://intl.cloud.tencent.com/document/product/362/2353?from_cn_redirect=1). Valid values:
-<li>LOCAL_BASIC: Local Disk.</li>
-<li>LOCAL_SSD: Local SSD.</li>
-<li>CLOUD_BASIC: Basic Cloud Disk.</li>
-<li>CLOUD_PREMIUM: Premium Disk.</li>
-<li>CLOUD_SSD: Cloud SSD.</li>
-<li>CLOUD_HSSD: Enhanced SSD.</li>
-<li>CLOUD_TSSD: Tremendous SSD.</li>
-The default value is consistent with the system disk type (SystemDisk.DiskType).
+                     * <p>Data disk type. For detailed restrictions on data disk types, see <a href="https://www.tencentcloud.com/document/product/362/2353?from_cn_redirect=1">Cloud Disk Types</a>. Value range:</p><li>LOCAL_BASIC: local hard disk</li><li>LOCAL_SSD: local SSD</li><li>CLOUD_BASIC: basic cloud disk</li><li>CLOUD_PREMIUM: high-performance cloud block storage</li><li>CLOUD_SSD: SSD cloud disk</li><li>CLOUD_HSSD: enhanced SSD cloud disk</li><li>CLOUD_TSSD: ultra-fast SSD CBS</li><li>CLOUD_BSSD: universal SSD cloud disk</li>The default value is consistent with the system disk type (SystemDisk.DiskType).
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * Data disk size, in GB. The minimum adjustment step size is 10 GB. The value range varies according to the data disk type. For specific restrictions, see [CVM instance configuration](https://intl.cloud.tencent.com/document/product/213/2177?from_cn_redirect=1). Default value: 0, which means that no data disk is purchased. For more restrictions, see the product documentation.
+                     * <p>Data disk size, in GB. The value range varies according to the data disk type. For specific restrictions, see <a href="https://www.tencentcloud.com/document/product/213/2177?from_cn_redirect=1">CVM instance configuration</a>. Default value: 0, which means that no data disk is purchased. For more restrictions, see the <a href="https://www.tencentcloud.com/document/product/362/5145?from_cn_redirect=1">product documentation</a>.</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * Data disk snapshot ID, such as `snap-l8psqwnt`.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Data disk snapshot ID, obtain this parameter through the <a href="https://www.tencentcloud.com/document/product/362/15647?from_cn_redirect=1">DescribeSnapshots</a> API.</p>
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * Whether the data disk is terminated along with the instance. Valid values:
-<li>TRUE: When the instance is terminated, the data disk is also terminated. This option is only supported for hourly postpaid cloud disks.</li>
-<li>FALSE: When the instance is terminated, the data disk is retained.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Whether the data disk is destroyed with the instance. Value ranges from:</p><li>TRUE: When the instance is terminated, destroy the data disk. Only hourly postpaid cloud disks are supported.</li><li>FALSE: When the instance is terminated, retain the data disk.</li>
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
 
                     /**
-                     * Whether the data disk is encrypted. Valid values:
-<li>TRUE: Encrypted.</li>
-<li>FALSE: Not encrypted.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Whether to encrypt the data disk. TRUE means encrypted, FALSE means not encrypted; the specific disk type, region, and KMS rules are validated by CVM.</p>
                      */
                     bool m_encrypt;
                     bool m_encryptHasBeenSet;
 
                     /**
-                     * Cloud disk performance (MB/s). This parameter is used to purchase extra performance for the cloud disk. For details on the feature and limits, see [Enhanced SSD Performance](https://intl.cloud.tencent.com/document/product/362/51896?from_cn_redirect=1#. E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96 .E6.80.A7.E8.83.BD).
-This feature is only available to enhanced SSD (`CLOUD_HSSD`) and tremendous SSD (`CLOUD_TSSD`) disks with a capacity greater than 460 GB.
-Note: This field may return `null`, indicating that no valid value can be obtained.
+                     * <p>Cloud disk performance, unit: MB/s. Using this parameter can purchase additional performance for cloud disks. For feature introduction and type limitations, see: <a href="https://www.tencentcloud.com/document/product/362/51896?from_cn_redirect=1#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD">enhanced SSD cloud disk additional performance note</a>.<br>Currently only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD cloud disks (CLOUD_HSSD) with capacity &gt; 460 GB.</p>
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
 
                     /**
-                     * Burst performance: Whether to enable burst performance. The default value is false.
-
-Note: This feature is in beta test and requires a ticket to be submitted for usage.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Burst performance. Whether to enable burst performance. The default value is false. Currently, this parameter only supports Extreme CBS (CLOUD_TSSD) and enhanced SSD CLOUD disk (CLOUD_HSSD) with capacity greater than 460 GB.<br>Note: In beta test. Requires ticket submission before usage.</p>
                      */
                     bool m_burstPerformance;
                     bool m_burstPerformanceHasBeenSet;
+
+                    /**
+                     * <p>KMS Key ID used for data disk encryption. The key validity, permission, as well as adaptability to disk type and region are validated by CVM.</p>
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

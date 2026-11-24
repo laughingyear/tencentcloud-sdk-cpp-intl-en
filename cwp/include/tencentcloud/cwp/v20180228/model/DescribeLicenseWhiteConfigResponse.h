@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ultimate Edition configuration information
-                     * @return FlagShip Ultimate Edition configuration information
+                     * 获取<p>Ultimate Edition configuration information</p>
+                     * @return FlagShip <p>Ultimate Edition configuration information</p>
                      * 
                      */
                     VersionWhiteConfig GetFlagShip() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FlagShipHasBeenSet() const;
 
                     /**
-                     * 获取Pro Edition configuration information
-                     * @return Professional Pro Edition configuration information
+                     * 获取<p>Pro Edition configuration information</p>
+                     * @return Professional <p>Pro Edition configuration information</p>
                      * 
                      */
                     VersionWhiteConfig GetProfessional() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ProfessionalHasBeenSet() const;
 
                     /**
-                     * 获取Inclusive Edition configuration information
-                     * @return PrattWhitney Inclusive Edition configuration information
+                     * 获取<p>Lightweight Edition configuration information</p>
+                     * @return PrattWhitney <p>Lightweight Edition configuration information</p>
                      * 
                      */
                     VersionWhiteConfig GetPrattWhitney() const;
@@ -86,25 +86,65 @@ namespace TencentCloud
                      */
                     bool PrattWhitneyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>License package configuration message</p>
+                     * @return RASP <p>License package configuration message</p>
+                     * 
+                     */
+                    VersionWhiteConfig GetRASP() const;
+
+                    /**
+                     * 判断参数 RASP 是否已赋值
+                     * @return RASP 是否已赋值
+                     * 
+                     */
+                    bool RASPHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Log analysis configuration information</p>
+                     * @return LOG <p>Log analysis configuration information</p>
+                     * 
+                     */
+                    VersionWhiteConfig GetLOG() const;
+
+                    /**
+                     * 判断参数 LOG 是否已赋值
+                     * @return LOG 是否已赋值
+                     * 
+                     */
+                    bool LOGHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Ultimate Edition configuration information
+                     * <p>Ultimate Edition configuration information</p>
                      */
                     VersionWhiteConfig m_flagShip;
                     bool m_flagShipHasBeenSet;
 
                     /**
-                     * Pro Edition configuration information
+                     * <p>Pro Edition configuration information</p>
                      */
                     VersionWhiteConfig m_professional;
                     bool m_professionalHasBeenSet;
 
                     /**
-                     * Inclusive Edition configuration information
+                     * <p>Lightweight Edition configuration information</p>
                      */
                     VersionWhiteConfig m_prattWhitney;
                     bool m_prattWhitneyHasBeenSet;
+
+                    /**
+                     * <p>License package configuration message</p>
+                     */
+                    VersionWhiteConfig m_rASP;
+                    bool m_rASPHasBeenSet;
+
+                    /**
+                     * <p>Log analysis configuration information</p>
+                     */
+                    VersionWhiteConfig m_lOG;
+                    bool m_lOGHasBeenSet;
 
                 };
             }

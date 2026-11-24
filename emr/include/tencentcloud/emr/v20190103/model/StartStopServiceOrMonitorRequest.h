@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/OpScope.h>
 #include <tencentcloud/emr/v20190103/model/StrategyConfig.h>
+#include <tencentcloud/emr/v20190103/model/StopParams.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The cluster ID.
-                     * @return InstanceId The cluster ID.
+                     * 获取Cluster ID.
+                     * @return InstanceId Cluster ID.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置The cluster ID.
-                     * @param _instanceId The cluster ID.
+                     * 设置Cluster ID.
+                     * @param _instanceId Cluster ID.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,35 +67,35 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取The operation type. Valid values:
-<li>StartService: Start service</li>
-<li>StopService: Stop service</li>
-<li>StartMonitor: Start maintenance</li>
-<li>StopMonitor: Stop maintenance</li>
-<li>RestartService: Restart service. If this type is selected, "StrategyConfig" is required.</li>
-                     * @return OpType The operation type. Valid values:
-<li>StartService: Start service</li>
-<li>StopService: Stop service</li>
-<li>StartMonitor: Start maintenance</li>
-<li>StopMonitor: Stop maintenance</li>
-<li>RestartService: Restart service. If this type is selected, "StrategyConfig" is required.</li>
+                     * 获取Operation type. Valid values:
+<li>StartService: Start the service.</li>
+<li>StopService: Stop the service.</li>
+<li>StartMonitor: Exit maintenance.</li>
+<li>StopMonitor: Enter maintenance.</li>
+<li>RestartService: Restart the service. If RestartService is selected as the operation type, StrategyConfig (operation policy) is required.</li>
+                     * @return OpType Operation type. Valid values:
+<li>StartService: Start the service.</li>
+<li>StopService: Stop the service.</li>
+<li>StartMonitor: Exit maintenance.</li>
+<li>StopMonitor: Enter maintenance.</li>
+<li>RestartService: Restart the service. If RestartService is selected as the operation type, StrategyConfig (operation policy) is required.</li>
                      * 
                      */
                     std::string GetOpType() const;
 
                     /**
-                     * 设置The operation type. Valid values:
-<li>StartService: Start service</li>
-<li>StopService: Stop service</li>
-<li>StartMonitor: Start maintenance</li>
-<li>StopMonitor: Stop maintenance</li>
-<li>RestartService: Restart service. If this type is selected, "StrategyConfig" is required.</li>
-                     * @param _opType The operation type. Valid values:
-<li>StartService: Start service</li>
-<li>StopService: Stop service</li>
-<li>StartMonitor: Start maintenance</li>
-<li>StopMonitor: Stop maintenance</li>
-<li>RestartService: Restart service. If this type is selected, "StrategyConfig" is required.</li>
+                     * 设置Operation type. Valid values:
+<li>StartService: Start the service.</li>
+<li>StopService: Stop the service.</li>
+<li>StartMonitor: Exit maintenance.</li>
+<li>StopMonitor: Enter maintenance.</li>
+<li>RestartService: Restart the service. If RestartService is selected as the operation type, StrategyConfig (operation policy) is required.</li>
+                     * @param _opType Operation type. Valid values:
+<li>StartService: Start the service.</li>
+<li>StopService: Stop the service.</li>
+<li>StartMonitor: Exit maintenance.</li>
+<li>StopMonitor: Enter maintenance.</li>
+<li>RestartService: Restart the service. If RestartService is selected as the operation type, StrategyConfig (operation policy) is required.</li>
                      * 
                      */
                     void SetOpType(const std::string& _opType);
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool OpTypeHasBeenSet() const;
 
                     /**
-                     * 获取The operation scope.
-                     * @return OpScope The operation scope.
+                     * 获取Operation scope.
+                     * @return OpScope Operation scope.
                      * 
                      */
                     OpScope GetOpScope() const;
 
                     /**
-                     * 设置The operation scope.
-                     * @param _opScope The operation scope.
+                     * 设置Operation scope.
+                     * @param _opScope Operation scope.
                      * 
                      */
                     void SetOpScope(const OpScope& _opScope);
@@ -128,15 +129,15 @@ namespace TencentCloud
                     bool OpScopeHasBeenSet() const;
 
                     /**
-                     * 获取The operation policy.
-                     * @return StrategyConfig The operation policy.
+                     * 获取Operation policy.
+                     * @return StrategyConfig Operation policy.
                      * 
                      */
                     StrategyConfig GetStrategyConfig() const;
 
                     /**
-                     * 设置The operation policy.
-                     * @param _strategyConfig The operation policy.
+                     * 设置Operation policy.
+                     * @param _strategyConfig Operation policy.
                      * 
                      */
                     void SetStrategyConfig(const StrategyConfig& _strategyConfig);
@@ -148,36 +149,90 @@ namespace TencentCloud
                      */
                     bool StrategyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取Parameters used for suspending services.
+                     * @return StopParams Parameters used for suspending services.
+                     * 
+                     */
+                    StopParams GetStopParams() const;
+
+                    /**
+                     * 设置Parameters used for suspending services.
+                     * @param _stopParams Parameters used for suspending services.
+                     * 
+                     */
+                    void SetStopParams(const StopParams& _stopParams);
+
+                    /**
+                     * 判断参数 StopParams 是否已赋值
+                     * @return StopParams 是否已赋值
+                     * 
+                     */
+                    bool StopParamsHasBeenSet() const;
+
+                    /**
+                     * 获取This parameter is available only when OpType is <li>StopMonitor</li>. true indicates that the system enters the maintenance mode but still monitors processes without starting them.
+                     * @return KeepMonitorButNotRecoverProcess This parameter is available only when OpType is <li>StopMonitor</li>. true indicates that the system enters the maintenance mode but still monitors processes without starting them.
+                     * 
+                     */
+                    bool GetKeepMonitorButNotRecoverProcess() const;
+
+                    /**
+                     * 设置This parameter is available only when OpType is <li>StopMonitor</li>. true indicates that the system enters the maintenance mode but still monitors processes without starting them.
+                     * @param _keepMonitorButNotRecoverProcess This parameter is available only when OpType is <li>StopMonitor</li>. true indicates that the system enters the maintenance mode but still monitors processes without starting them.
+                     * 
+                     */
+                    void SetKeepMonitorButNotRecoverProcess(const bool& _keepMonitorButNotRecoverProcess);
+
+                    /**
+                     * 判断参数 KeepMonitorButNotRecoverProcess 是否已赋值
+                     * @return KeepMonitorButNotRecoverProcess 是否已赋值
+                     * 
+                     */
+                    bool KeepMonitorButNotRecoverProcessHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The cluster ID.
+                     * Cluster ID.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * The operation type. Valid values:
-<li>StartService: Start service</li>
-<li>StopService: Stop service</li>
-<li>StartMonitor: Start maintenance</li>
-<li>StopMonitor: Stop maintenance</li>
-<li>RestartService: Restart service. If this type is selected, "StrategyConfig" is required.</li>
+                     * Operation type. Valid values:
+<li>StartService: Start the service.</li>
+<li>StopService: Stop the service.</li>
+<li>StartMonitor: Exit maintenance.</li>
+<li>StopMonitor: Enter maintenance.</li>
+<li>RestartService: Restart the service. If RestartService is selected as the operation type, StrategyConfig (operation policy) is required.</li>
                      */
                     std::string m_opType;
                     bool m_opTypeHasBeenSet;
 
                     /**
-                     * The operation scope.
+                     * Operation scope.
                      */
                     OpScope m_opScope;
                     bool m_opScopeHasBeenSet;
 
                     /**
-                     * The operation policy.
+                     * Operation policy.
                      */
                     StrategyConfig m_strategyConfig;
                     bool m_strategyConfigHasBeenSet;
+
+                    /**
+                     * Parameters used for suspending services.
+                     */
+                    StopParams m_stopParams;
+                    bool m_stopParamsHasBeenSet;
+
+                    /**
+                     * This parameter is available only when OpType is <li>StopMonitor</li>. true indicates that the system enters the maintenance mode but still monitors processes without starting them.
+                     */
+                    bool m_keepMonitorButNotRecoverProcess;
+                    bool m_keepMonitorButNotRecoverProcessHasBeenSet;
 
                 };
             }

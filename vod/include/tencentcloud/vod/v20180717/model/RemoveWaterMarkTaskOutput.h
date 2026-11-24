@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The output of a watermark removal task.
+                * Output of the intelligent watermark removal task.
                 */
                 class RemoveWaterMarkTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The file ID.
-                     * @return FileId The file ID.
+                     * 获取Media file ID.
+                     * @return FileId Media file ID.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置The file ID.
-                     * @param _fileId The file ID.
+                     * 设置Media file ID.
+                     * @param _fileId Media file ID.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取The file type, such as MP4 or MP3.
-                     * @return FileType The file type, such as MP4 or MP3.
+                     * 获取File type, such as mp4 and mp3.
+                     * @return FileType File type, such as mp4 and mp3.
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置The file type, such as MP4 or MP3.
-                     * @param _fileType The file type, such as MP4 or MP3.
+                     * 设置File type, such as mp4 and mp3.
+                     * @param _fileType File type, such as mp4 and mp3.
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取The playback URL of the output file.
-                     * @return FileUrl The playback URL of the output file.
+                     * 获取Media file playback address.
+                     * @return FileUrl Media file playback address.
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置The playback URL of the output file.
-                     * @param _fileUrl The playback URL of the output file.
+                     * 设置Media file playback address.
+                     * @param _fileUrl Media file playback address.
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取The filename, which can be up to 64 characters long.
-                     * @return MediaName The filename, which can be up to 64 characters long.
+                     * 获取Filename. It can contain up to 64 characters.
+                     * @return MediaName Filename. It can contain up to 64 characters.
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置The filename, which can be up to 64 characters long.
-                     * @param _mediaName The filename, which can be up to 64 characters long.
+                     * 设置Filename. It can contain up to 64 characters.
+                     * @param _mediaName Filename. It can contain up to 64 characters.
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取The metadata of the video, including size, duration, video stream information, and audio stream information.
-                     * @return MetaData The metadata of the video, including size, duration, video stream information, and audio stream information.
+                     * 获取Meta information, including size, duration, video stream information, and audio stream information.
+                     * @return MetaData Meta information, including size, duration, video stream information, and audio stream information.
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置The metadata of the video, including size, duration, video stream information, and audio stream information.
-                     * @param _metaData The metadata of the video, including size, duration, video stream information, and audio stream information.
+                     * 设置Meta information, including size, duration, video stream information, and audio stream information.
+                     * @param _metaData Meta information, including size, duration, video stream information, and audio stream information.
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The file ID.
+                     * Media file ID.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * The file type, such as MP4 or MP3.
+                     * File type, such as mp4 and mp3.
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * The playback URL of the output file.
+                     * Media file playback address.
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * The filename, which can be up to 64 characters long.
+                     * Filename. It can contain up to 64 characters.
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * The metadata of the video, including size, duration, video stream information, and audio stream information.
+                     * Meta information, including size, duration, video stream information, and audio stream information.
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

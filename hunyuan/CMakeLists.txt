@@ -1,0 +1,158 @@
+#
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(hunyuan_public_header
+  include/tencentcloud/hunyuan/v20230901/HunyuanClient.h
+  )
+
+set(hunyuan_public_header_model
+  include/tencentcloud/hunyuan/v20230901/model/Convert3DFormatRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/ViewImage.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DProJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuan3DPartJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DRapidJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/TranslationChoice.h
+  include/tencentcloud/hunyuan/v20230901/model/ChatTranslationsResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DTextureEditJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/Usage.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DRapidJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitAutoRiggingJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeAutoRiggingJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/ChatTranslationsRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DTextureEditJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DUVJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DTextureEditJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/File3D.h
+  include/tencentcloud/hunyuan/v20230901/model/PromptTokensDetails.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitConvert3DFormatJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/InputFile3D.h
+  include/tencentcloud/hunyuan/v20230901/model/TranslationDelta.h
+  include/tencentcloud/hunyuan/v20230901/model/TranslationMessage.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DRapidJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitAutoRiggingJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DUVJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuan3DPartJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DProJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeHunyuanTo3DUVJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/Convert3DFormatResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeHunyuanTo3DUVJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuan3DPartJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DTextureEditJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/Reference.h
+  include/tencentcloud/hunyuan/v20230901/model/ImageInfo.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DProJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitConvert3DFormatJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DProJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuan3DPartJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeConvert3DFormatJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeAutoRiggingJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DRapidJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/DescribeConvert3DFormatJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobRequest.h
+  )
+
+set(hunyuan_src
+  src/v20230901/HunyuanClient.cpp
+  src/v20230901/model/Convert3DFormatRequest.cpp
+  src/v20230901/model/Submit3DSmartTopologyJobRequest.cpp
+  src/v20230901/model/ViewImage.cpp
+  src/v20230901/model/QueryHunyuanTo3DProJobRequest.cpp
+  src/v20230901/model/QueryHunyuan3DPartJobResponse.cpp
+  src/v20230901/model/QueryHunyuanTo3DRapidJobResponse.cpp
+  src/v20230901/model/TranslationChoice.cpp
+  src/v20230901/model/ChatTranslationsResponse.cpp
+  src/v20230901/model/SubmitHunyuanTo3DTextureEditJobRequest.cpp
+  src/v20230901/model/Usage.cpp
+  src/v20230901/model/SubmitHunyuanTo3DRapidJobResponse.cpp
+  src/v20230901/model/SubmitAutoRiggingJobResponse.cpp
+  src/v20230901/model/DescribeAutoRiggingJobResponse.cpp
+  src/v20230901/model/ChatTranslationsRequest.cpp
+  src/v20230901/model/QueryHunyuanTo3DTextureEditJobResponse.cpp
+  src/v20230901/model/SubmitHunyuanTo3DUVJobRequest.cpp
+  src/v20230901/model/Submit3DSmartTopologyJobResponse.cpp
+  src/v20230901/model/SubmitHunyuanTo3DTextureEditJobResponse.cpp
+  src/v20230901/model/File3D.cpp
+  src/v20230901/model/PromptTokensDetails.cpp
+  src/v20230901/model/SubmitConvert3DFormatJobRequest.cpp
+  src/v20230901/model/InputFile3D.cpp
+  src/v20230901/model/TranslationDelta.cpp
+  src/v20230901/model/TranslationMessage.cpp
+  src/v20230901/model/SubmitHunyuanTo3DRapidJobRequest.cpp
+  src/v20230901/model/SubmitAutoRiggingJobRequest.cpp
+  src/v20230901/model/SubmitHunyuanTo3DUVJobResponse.cpp
+  src/v20230901/model/SubmitHunyuan3DPartJobResponse.cpp
+  src/v20230901/model/SubmitHunyuanTo3DProJobRequest.cpp
+  src/v20230901/model/DescribeHunyuanTo3DUVJobResponse.cpp
+  src/v20230901/model/Convert3DFormatResponse.cpp
+  src/v20230901/model/DescribeHunyuanTo3DUVJobRequest.cpp
+  src/v20230901/model/SubmitHunyuan3DPartJobRequest.cpp
+  src/v20230901/model/Describe3DSmartTopologyJobResponse.cpp
+  src/v20230901/model/QueryHunyuanTo3DTextureEditJobRequest.cpp
+  src/v20230901/model/Reference.cpp
+  src/v20230901/model/ImageInfo.cpp
+  src/v20230901/model/SubmitHunyuanTo3DProJobResponse.cpp
+  src/v20230901/model/ErrorMsg.cpp
+  src/v20230901/model/SubmitConvert3DFormatJobResponse.cpp
+  src/v20230901/model/QueryHunyuanTo3DProJobResponse.cpp
+  src/v20230901/model/QueryHunyuan3DPartJobRequest.cpp
+  src/v20230901/model/DescribeConvert3DFormatJobRequest.cpp
+  src/v20230901/model/DescribeAutoRiggingJobRequest.cpp
+  src/v20230901/model/QueryHunyuanTo3DRapidJobRequest.cpp
+  src/v20230901/model/DescribeConvert3DFormatJobResponse.cpp
+  src/v20230901/model/Describe3DSmartTopologyJobRequest.cpp
+  )
+
+set(hunyuan_include
+    include/tencentcloud/hunyuan
+  )
+
+add_library(hunyuan ${LIB_TYPE}
+  ${hunyuan_public_header}
+  ${hunyuan_public_header_model}
+  ${hunyuan_src})
+
+set_target_properties(hunyuan
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}hunyuan
+  )
+
+target_include_directories(hunyuan
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(hunyuan
+  core)
+
+#install(FILES ${hunyuan_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/hunyuan/v20230901)
+#install(FILES ${hunyuan_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/hunyuan/v20230901/model)
+install(DIRECTORY ${hunyuan_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS hunyuan
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

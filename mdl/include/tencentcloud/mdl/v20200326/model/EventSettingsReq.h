@@ -29,6 +29,8 @@
 #include <tencentcloud/mdl/v20200326/model/TimedMetadataInfo.h>
 #include <tencentcloud/mdl/v20200326/model/StaticImageActivateSetting.h>
 #include <tencentcloud/mdl/v20200326/model/StaticImageDeactivateSetting.h>
+#include <tencentcloud/mdl/v20200326/model/MotionGraphicsActivateSetting.h>
+#include <tencentcloud/mdl/v20200326/model/AdBreakSetting.h>
 
 
 namespace TencentCloud
@@ -73,15 +75,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`
-                     * @return InputAttachment ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`
+                     * 获取ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`.
+                     * @return InputAttachment ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`.
                      * 
                      */
                     std::string GetInputAttachment() const;
 
                     /**
-                     * 设置ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`
-                     * @param _inputAttachment ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`
+                     * 设置ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`.
+                     * @param _inputAttachment ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`.
                      * 
                      */
                     void SetInputAttachment(const std::string& _inputAttachment);
@@ -92,6 +94,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InputAttachmentHasBeenSet() const;
+
+                    /**
+                     * 获取When the type is FIXED_PTS, it is mandatory and defaults to 0
+                     * @return PipelineId When the type is FIXED_PTS, it is mandatory and defaults to 0
+                     * 
+                     */
+                    int64_t GetPipelineId() const;
+
+                    /**
+                     * 设置When the type is FIXED_PTS, it is mandatory and defaults to 0
+                     * @param _pipelineId When the type is FIXED_PTS, it is mandatory and defaults to 0
+                     * 
+                     */
+                    void SetPipelineId(const int64_t& _pipelineId);
+
+                    /**
+                     * 判断参数 PipelineId 是否已赋值
+                     * @return PipelineId 是否已赋值
+                     * 
+                     */
+                    bool PipelineIdHasBeenSet() const;
 
                     /**
                      * 获取Name of the output group to attach. This parameter is required if `EventType` is `TIMED_RECORD`.
@@ -282,6 +305,48 @@ namespace TencentCloud
                      */
                     bool StaticImageDeactivateSettingHasBeenSet() const;
 
+                    /**
+                     * 获取Dynamic graphic overlay activate configuration
+                     * @return MotionGraphicsActivateSetting Dynamic graphic overlay activate configuration
+                     * 
+                     */
+                    MotionGraphicsActivateSetting GetMotionGraphicsActivateSetting() const;
+
+                    /**
+                     * 设置Dynamic graphic overlay activate configuration
+                     * @param _motionGraphicsActivateSetting Dynamic graphic overlay activate configuration
+                     * 
+                     */
+                    void SetMotionGraphicsActivateSetting(const MotionGraphicsActivateSetting& _motionGraphicsActivateSetting);
+
+                    /**
+                     * 判断参数 MotionGraphicsActivateSetting 是否已赋值
+                     * @return MotionGraphicsActivateSetting 是否已赋值
+                     * 
+                     */
+                    bool MotionGraphicsActivateSettingHasBeenSet() const;
+
+                    /**
+                     * 获取Ad Settings
+                     * @return AdBreakSetting Ad Settings
+                     * 
+                     */
+                    AdBreakSetting GetAdBreakSetting() const;
+
+                    /**
+                     * 设置Ad Settings
+                     * @param _adBreakSetting Ad Settings
+                     * 
+                     */
+                    void SetAdBreakSetting(const AdBreakSetting& _adBreakSetting);
+
+                    /**
+                     * 判断参数 AdBreakSetting 是否已赋值
+                     * @return AdBreakSetting 是否已赋值
+                     * 
+                     */
+                    bool AdBreakSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,10 +356,16 @@ namespace TencentCloud
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`
+                     * ID of the input to attach, which is required if `EventType` is `INPUT_SWITCH`.
                      */
                     std::string m_inputAttachment;
                     bool m_inputAttachmentHasBeenSet;
+
+                    /**
+                     * When the type is FIXED_PTS, it is mandatory and defaults to 0
+                     */
+                    int64_t m_pipelineId;
+                    bool m_pipelineIdHasBeenSet;
 
                     /**
                      * Name of the output group to attach. This parameter is required if `EventType` is `TIMED_RECORD`.
@@ -349,6 +420,18 @@ namespace TencentCloud
                      */
                     StaticImageDeactivateSetting m_staticImageDeactivateSetting;
                     bool m_staticImageDeactivateSettingHasBeenSet;
+
+                    /**
+                     * Dynamic graphic overlay activate configuration
+                     */
+                    MotionGraphicsActivateSetting m_motionGraphicsActivateSetting;
+                    bool m_motionGraphicsActivateSettingHasBeenSet;
+
+                    /**
+                     * Ad Settings
+                     */
+                    AdBreakSetting m_adBreakSetting;
+                    bool m_adBreakSettingHasBeenSet;
 
                 };
             }

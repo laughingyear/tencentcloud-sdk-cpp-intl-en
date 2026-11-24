@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number.
-                     * @return TotalCount Total number.
+                     * 获取<p>Total number</p>
+                     * @return TotalCount <p>Total number</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取The trace structure containing the query results spans. the string after the opentelemetry standard trace structure is hashed. first, the trace is converted into a json string using ptrace.jsonmarshaler, then compressed with gzip, and finally converted into a base64 standard string.
-                     * @return Spans The trace structure containing the query results spans. the string after the opentelemetry standard trace structure is hashed. first, the trace is converted into a json string using ptrace.jsonmarshaler, then compressed with gzip, and finally converted into a base64 standard string.
+                     * 获取<p>The Spans field contains all content of the link data. Since the data is compressed, perform the following three steps to restore the original text.</p><ol><li>Decode the text in the Spans field with Base64 to get the compressed byte[].</li><li>Decompress the compressed byte[] with gzip to get the byte array before compression.</li><li>Convert the byte array before compression to text using the UTF-8 character set.</li></ol>
+                     * @return Spans <p>The Spans field contains all content of the link data. Since the data is compressed, perform the following three steps to restore the original text.</p><ol><li>Decode the text in the Spans field with Base64 to get the compressed byte[].</li><li>Decompress the compressed byte[] with gzip to get the byte array before compression.</li><li>Convert the byte array before compression to text using the UTF-8 character set.</li></ol>
                      * 
                      */
                     std::string GetSpans() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Total number.
+                     * <p>Total number</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * The trace structure containing the query results spans. the string after the opentelemetry standard trace structure is hashed. first, the trace is converted into a json string using ptrace.jsonmarshaler, then compressed with gzip, and finally converted into a base64 standard string.
+                     * <p>The Spans field contains all content of the link data. Since the data is compressed, perform the following three steps to restore the original text.</p><ol><li>Decode the text in the Spans field with Base64 to get the compressed byte[].</li><li>Decompress the compressed byte[] with gzip to get the byte array before compression.</li><li>Convert the byte array before compression to text using the UTF-8 character set.</li></ol>
                      */
                     std::string m_spans;
                     bool m_spansHasBeenSet;

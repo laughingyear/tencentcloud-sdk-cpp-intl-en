@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The token used to identify an SDK-based verification process. It is valid for 7,200s and can be used to get the verification result after the process is completed.
-                     * @return SdkToken The token used to identify an SDK-based verification process. It is valid for 7,200s and can be used to get the verification result after the process is completed.
+                     * 获取A token that identifies an SDK verification process. the validity time is 10 minutes. after the process is complete, the token can be used to retrieve the verification result
+                     * @return SdkToken A token that identifies an SDK verification process. the validity time is 10 minutes. after the process is complete, the token can be used to retrieve the verification result
                      * 
                      */
                     std::string GetSdkToken() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool SdkTokenHasBeenSet() const;
 
+                    /**
+                     * 获取Encrypted string of server-side parameters
+                     * @return ServerParamInfo Encrypted string of server-side parameters
+                     * 
+                     */
+                    std::string GetServerParamInfo() const;
+
+                    /**
+                     * 判断参数 ServerParamInfo 是否已赋值
+                     * @return ServerParamInfo 是否已赋值
+                     * 
+                     */
+                    bool ServerParamInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The token used to identify an SDK-based verification process. It is valid for 7,200s and can be used to get the verification result after the process is completed.
+                     * A token that identifies an SDK verification process. the validity time is 10 minutes. after the process is complete, the token can be used to retrieve the verification result
                      */
                     std::string m_sdkToken;
                     bool m_sdkTokenHasBeenSet;
+
+                    /**
+                     * Encrypted string of server-side parameters
+                     */
+                    std::string m_serverParamInfo;
+                    bool m_serverParamInfoHasBeenSet;
 
                 };
             }

@@ -511,30 +511,28 @@ namespace TencentCloud
 
                     /**
                      * 获取Transaction type
-
 Modify network mode adjust bandwidth mode.
 Adjust bandwidth size.
-`Refund`: refund.
+Refund: refund.
 downgrade.
 upgrade configuration.
 renew.
 purchase.
-preMoveOut monthly subscription resource migration out.
-preMoveIn specifies the monthly subscription resources to migrate.
+preMoveOut yearly/monthly subscription resource migration out.
+preMoveIn specifies the yearly/monthly subscription resources to migrate.
 preToPost specifies the prepaid to postpaid conversion.
 postMoveOut specifies the pay-as-you-go resources to be migrated out.
 postMoveIn specifies the pay-as-you-go resources for inbound migration.
                      * @return Action Transaction type
-
 Modify network mode adjust bandwidth mode.
 Adjust bandwidth size.
-`Refund`: refund.
+Refund: refund.
 downgrade.
 upgrade configuration.
 renew.
 purchase.
-preMoveOut monthly subscription resource migration out.
-preMoveIn specifies the monthly subscription resources to migrate.
+preMoveOut yearly/monthly subscription resource migration out.
+preMoveIn specifies the yearly/monthly subscription resources to migrate.
 preToPost specifies the prepaid to postpaid conversion.
 postMoveOut specifies the pay-as-you-go resources to be migrated out.
 postMoveIn specifies the pay-as-you-go resources for inbound migration.
@@ -544,30 +542,28 @@ postMoveIn specifies the pay-as-you-go resources for inbound migration.
 
                     /**
                      * 设置Transaction type
-
 Modify network mode adjust bandwidth mode.
 Adjust bandwidth size.
-`Refund`: refund.
+Refund: refund.
 downgrade.
 upgrade configuration.
 renew.
 purchase.
-preMoveOut monthly subscription resource migration out.
-preMoveIn specifies the monthly subscription resources to migrate.
+preMoveOut yearly/monthly subscription resource migration out.
+preMoveIn specifies the yearly/monthly subscription resources to migrate.
 preToPost specifies the prepaid to postpaid conversion.
 postMoveOut specifies the pay-as-you-go resources to be migrated out.
 postMoveIn specifies the pay-as-you-go resources for inbound migration.
                      * @param _action Transaction type
-
 Modify network mode adjust bandwidth mode.
 Adjust bandwidth size.
-`Refund`: refund.
+Refund: refund.
 downgrade.
 upgrade configuration.
 renew.
 purchase.
-preMoveOut monthly subscription resource migration out.
-preMoveIn specifies the monthly subscription resources to migrate.
+preMoveOut yearly/monthly subscription resource migration out.
+preMoveIn specifies the yearly/monthly subscription resources to migrate.
 preToPost specifies the prepaid to postpaid conversion.
 postMoveOut specifies the pay-as-you-go resources to be migrated out.
 postMoveIn specifies the pay-as-you-go resources for inbound migration.
@@ -648,6 +644,27 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      * 
                      */
                     bool ResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Availability zone Id corresponding to the order
+                     * @return ZoneCode Availability zone Id corresponding to the order
+                     * 
+                     */
+                    std::string GetZoneCode() const;
+
+                    /**
+                     * 设置Availability zone Id corresponding to the order
+                     * @param _zoneCode Availability zone Id corresponding to the order
+                     * 
+                     */
+                    void SetZoneCode(const std::string& _zoneCode);
+
+                    /**
+                     * 判断参数 ZoneCode 是否已赋值
+                     * @return ZoneCode 是否已赋值
+                     * 
+                     */
+                    bool ZoneCodeHasBeenSet() const;
 
                 private:
 
@@ -785,16 +802,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Transaction type
-
 Modify network mode adjust bandwidth mode.
 Adjust bandwidth size.
-`Refund`: refund.
+Refund: refund.
 downgrade.
 upgrade configuration.
 renew.
 purchase.
-preMoveOut monthly subscription resource migration out.
-preMoveIn specifies the monthly subscription resources to migrate.
+preMoveOut yearly/monthly subscription resource migration out.
+preMoveIn specifies the yearly/monthly subscription resources to migrate.
 preToPost specifies the prepaid to postpaid conversion.
 postMoveOut specifies the pay-as-you-go resources to be migrated out.
 postMoveIn specifies the pay-as-you-go resources for inbound migration.
@@ -820,6 +836,12 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     std::vector<std::string> m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * Availability zone Id corresponding to the order
+                     */
+                    std::string m_zoneCode;
+                    bool m_zoneCodeHasBeenSet;
 
                 };
             }

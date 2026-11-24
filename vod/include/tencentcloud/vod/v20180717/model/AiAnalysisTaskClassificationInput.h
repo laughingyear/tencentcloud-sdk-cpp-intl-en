@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input type of intelligent categorization task
+                * Intelligent classification task input type.
                 */
                 class AiAnalysisTaskClassificationInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Intelligent video categorization template ID.
-                     * @return Definition Intelligent video categorization template ID.
+                     * 获取Video intelligent classification template ID.
+                     * @return Definition Video intelligent classification template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Intelligent video categorization template ID.
-                     * @param _definition Intelligent video categorization template ID.
+                     * 设置Video intelligent classification template ID.
+                     * @param _definition Video intelligent classification template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Intelligent video categorization template ID.
+                     * Video intelligent classification template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

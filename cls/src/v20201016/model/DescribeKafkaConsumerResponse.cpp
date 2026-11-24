@@ -27,7 +27,11 @@ DescribeKafkaConsumerResponse::DescribeKafkaConsumerResponse() :
     m_statusHasBeenSet(false),
     m_topicIDHasBeenSet(false),
     m_compressionHasBeenSet(false),
-    m_consumerContentHasBeenSet(false)
+    m_consumerContentHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_enableInternetConsumeHasBeenSet(false),
+    m_enableIntranetConsumeHasBeenSet(false),
+    m_scopeTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +116,46 @@ CoreInternalOutcome DescribeKafkaConsumerResponse::Deserialize(const string &pay
         m_consumerContentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HasServicesLog") && !rsp["HasServicesLog"].IsNull())
+    {
+        if (!rsp["HasServicesLog"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasServicesLog` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasServicesLog = rsp["HasServicesLog"].GetUint64();
+        m_hasServicesLogHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableInternetConsume") && !rsp["EnableInternetConsume"].IsNull())
+    {
+        if (!rsp["EnableInternetConsume"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableInternetConsume` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableInternetConsume = rsp["EnableInternetConsume"].GetBool();
+        m_enableInternetConsumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableIntranetConsume") && !rsp["EnableIntranetConsume"].IsNull())
+    {
+        if (!rsp["EnableIntranetConsume"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableIntranetConsume` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableIntranetConsume = rsp["EnableIntranetConsume"].GetBool();
+        m_enableIntranetConsumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScopeType") && !rsp["ScopeType"].IsNull())
+    {
+        if (!rsp["ScopeType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScopeType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scopeType = rsp["ScopeType"].GetUint64();
+        m_scopeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +197,38 @@ string DescribeKafkaConsumerResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_consumerContent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_enableInternetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableInternetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableInternetConsume, allocator);
+    }
+
+    if (m_enableIntranetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableIntranetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableIntranetConsume, allocator);
+    }
+
+    if (m_scopeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScopeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scopeType, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +281,46 @@ KafkaConsumerContent DescribeKafkaConsumerResponse::GetConsumerContent() const
 bool DescribeKafkaConsumerResponse::ConsumerContentHasBeenSet() const
 {
     return m_consumerContentHasBeenSet;
+}
+
+uint64_t DescribeKafkaConsumerResponse::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+bool DescribeKafkaConsumerResponse::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
+bool DescribeKafkaConsumerResponse::GetEnableInternetConsume() const
+{
+    return m_enableInternetConsume;
+}
+
+bool DescribeKafkaConsumerResponse::EnableInternetConsumeHasBeenSet() const
+{
+    return m_enableInternetConsumeHasBeenSet;
+}
+
+bool DescribeKafkaConsumerResponse::GetEnableIntranetConsume() const
+{
+    return m_enableIntranetConsume;
+}
+
+bool DescribeKafkaConsumerResponse::EnableIntranetConsumeHasBeenSet() const
+{
+    return m_enableIntranetConsumeHasBeenSet;
+}
+
+uint64_t DescribeKafkaConsumerResponse::GetScopeType() const
+{
+    return m_scopeType;
+}
+
+bool DescribeKafkaConsumerResponse::ScopeTypeHasBeenSet() const
+{
+    return m_scopeTypeHasBeenSet;
 }
 
 

@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cluster backup download limit information.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return BackupLimitClusterRestrictions Cluster backup download limit information.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Backup download limit info for cluster
+                     * @return BackupLimitClusterRestrictions Backup download limit info for cluster
                      * 
                      */
                     std::vector<BackupLimitClusterRestriction> GetBackupLimitClusterRestrictions() const;
@@ -61,8 +59,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool BackupLimitClusterRestrictionsHasBeenSet() const;
 
                     /**
-                     * 获取Total number of entries
-                     * @return TotalCount Total number of entries
+                     * 获取Total number of entries.
+                     * @return TotalCount Total number of entries.
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,14 +75,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Cluster backup download limit information.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Backup download limit info for cluster
                      */
                     std::vector<BackupLimitClusterRestriction> m_backupLimitClusterRestrictions;
                     bool m_backupLimitClusterRestrictionsHasBeenSet;
 
                     /**
-                     * Total number of entries
+                     * Total number of entries.
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

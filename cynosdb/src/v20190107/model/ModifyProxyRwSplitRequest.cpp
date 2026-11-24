@@ -37,7 +37,11 @@ ModifyProxyRwSplitRequest::ModifyProxyRwSplitRequest() :
     m_accessModeHasBeenSet(false),
     m_openConnectionPoolHasBeenSet(false),
     m_connectionPoolTypeHasBeenSet(false),
-    m_connectionPoolTimeOutHasBeenSet(false)
+    m_connectionPoolTimeOutHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false),
+    m_loadBalanceModeHasBeenSet(false),
+    m_transAllSplitHasBeenSet(false)
 {
 }
 
@@ -173,6 +177,38 @@ string ModifyProxyRwSplitRequest::ToJsonString() const
         string key = "ConnectionPoolTimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_connectionPoolTimeOut, allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apNodeAsRoNode, allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apQueryToOtherNode, allocator);
+    }
+
+    if (m_loadBalanceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transAllSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransAllSplit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transAllSplit, allocator);
     }
 
 
@@ -421,6 +457,70 @@ void ModifyProxyRwSplitRequest::SetConnectionPoolTimeOut(const int64_t& _connect
 bool ModifyProxyRwSplitRequest::ConnectionPoolTimeOutHasBeenSet() const
 {
     return m_connectionPoolTimeOutHasBeenSet;
+}
+
+bool ModifyProxyRwSplitRequest::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void ModifyProxyRwSplitRequest::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+bool ModifyProxyRwSplitRequest::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void ModifyProxyRwSplitRequest::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
+}
+
+string ModifyProxyRwSplitRequest::GetLoadBalanceMode() const
+{
+    return m_loadBalanceMode;
+}
+
+void ModifyProxyRwSplitRequest::SetLoadBalanceMode(const string& _loadBalanceMode)
+{
+    m_loadBalanceMode = _loadBalanceMode;
+    m_loadBalanceModeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::LoadBalanceModeHasBeenSet() const
+{
+    return m_loadBalanceModeHasBeenSet;
+}
+
+bool ModifyProxyRwSplitRequest::GetTransAllSplit() const
+{
+    return m_transAllSplit;
+}
+
+void ModifyProxyRwSplitRequest::SetTransAllSplit(const bool& _transAllSplit)
+{
+    m_transAllSplit = _transAllSplit;
+    m_transAllSplitHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::TransAllSplitHasBeenSet() const
+{
+    return m_transAllSplitHasBeenSet;
 }
 
 

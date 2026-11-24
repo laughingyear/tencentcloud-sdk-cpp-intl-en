@@ -40,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AI-based intelligent analysis template details
+                * Details of the AI intelligent analysis template
                 */
                 class AIAnalysisTemplateItem : public AbstractModel
                 {
@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of intelligent analysis template.
-                     * @return Definition Unique ID of intelligent analysis template.
+                     * 获取Unique identifier of the intelligent analysis template.
+                     * @return Definition Unique identifier of the intelligent analysis template.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of intelligent analysis template.
-                     * @param _definition Unique ID of intelligent analysis template.
+                     * 设置Unique identifier of the intelligent analysis template.
+                     * @param _definition Unique identifier of the intelligent analysis template.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Intelligent analysis template name.
-                     * @return Name Intelligent analysis template name.
+                     * 获取Name of the intelligent analysis template.
+                     * @return Name Name of the intelligent analysis template.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Intelligent analysis template name.
-                     * @param _name Intelligent analysis template name.
+                     * 设置Name of the intelligent analysis template.
+                     * @param _name Name of the intelligent analysis template.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Intelligent analysis template description.
-                     * @return Comment Intelligent analysis template description.
+                     * 获取Description of the intelligent analysis template.
+                     * @return Comment Description of the intelligent analysis template.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Intelligent analysis template description.
-                     * @param _comment Intelligent analysis template description.
+                     * 设置Description of the intelligent analysis template.
+                     * @param _comment Description of the intelligent analysis template.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -115,19 +115,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of intelligent categorization task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ClassificationConfigure Control parameter of intelligent categorization task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent Classification Task Control Parameters.
+                     * @return ClassificationConfigure Intelligent Classification Task Control Parameters.
                      * 
                      */
                     ClassificationConfigureInfo GetClassificationConfigure() const;
 
                     /**
-                     * 设置Control parameter of intelligent categorization task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _classificationConfigure Control parameter of intelligent categorization task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent Classification Task Control Parameters.
+                     * @param _classificationConfigure Intelligent Classification Task Control Parameters.
                      * 
                      */
                     void SetClassificationConfigure(const ClassificationConfigureInfo& _classificationConfigure);
@@ -140,19 +136,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ClassificationConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of intelligent tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TagConfigure Control parameter of intelligent tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent tag task control parameter.
+                     * @return TagConfigure Intelligent tag task control parameter.
                      * 
                      */
                     TagConfigureInfo GetTagConfigure() const;
 
                     /**
-                     * 设置Control parameter of intelligent tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _tagConfigure Control parameter of intelligent tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent tag task control parameter.
+                     * @param _tagConfigure Intelligent tag task control parameter.
                      * 
                      */
                     void SetTagConfigure(const TagConfigureInfo& _tagConfigure);
@@ -165,19 +157,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TagConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of intelligent cover generating task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return CoverConfigure Control parameter of intelligent cover generating task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent cover task control parameters.
+                     * @return CoverConfigure Intelligent cover task control parameters.
                      * 
                      */
                     CoverConfigureInfo GetCoverConfigure() const;
 
                     /**
-                     * 设置Control parameter of intelligent cover generating task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _coverConfigure Control parameter of intelligent cover generating task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent cover task control parameters.
+                     * @param _coverConfigure Intelligent cover task control parameters.
                      * 
                      */
                     void SetCoverConfigure(const CoverConfigureInfo& _coverConfigure);
@@ -190,19 +178,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CoverConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of intelligent frame-specific tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FrameTagConfigure Control parameter of intelligent frame-specific tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Intelligent frame tagging task control parameter.
+                     * @return FrameTagConfigure Intelligent frame tagging task control parameter.
                      * 
                      */
                     FrameTagConfigureInfo GetFrameTagConfigure() const;
 
                     /**
-                     * 设置Control parameter of intelligent frame-specific tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _frameTagConfigure Control parameter of intelligent frame-specific tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Intelligent frame tagging task control parameter.
+                     * @param _frameTagConfigure Intelligent frame tagging task control parameter.
                      * 
                      */
                     void SetFrameTagConfigure(const FrameTagConfigureInfo& _frameTagConfigure);
@@ -215,15 +199,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FrameTagConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Control parameter of an intelligent highlight generating task.
-                     * @return HighlightConfigure Control parameter of an intelligent highlight generating task.
+                     * 获取Control parameters for the intelligent highlights compilation task.
+                     * @return HighlightConfigure Control parameters for the intelligent highlights compilation task.
                      * 
                      */
                     HighlightsConfigureInfo GetHighlightConfigure() const;
 
                     /**
-                     * 设置Control parameter of an intelligent highlight generating task.
-                     * @param _highlightConfigure Control parameter of an intelligent highlight generating task.
+                     * 设置Control parameters for the intelligent highlights compilation task.
+                     * @param _highlightConfigure Control parameters for the intelligent highlights compilation task.
                      * 
                      */
                     void SetHighlightConfigure(const HighlightsConfigureInfo& _highlightConfigure);
@@ -236,15 +220,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool HighlightConfigureHasBeenSet() const;
 
                     /**
-                     * 获取Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Template creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Template creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -257,15 +241,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return UpdateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template last modified time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return UpdateTime Template last modified time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _updateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template last modified time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _updateTime Template last modified time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -280,65 +264,61 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Unique ID of intelligent analysis template.
+                     * Unique identifier of the intelligent analysis template.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Intelligent analysis template name.
+                     * Name of the intelligent analysis template.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Intelligent analysis template description.
+                     * Description of the intelligent analysis template.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Control parameter of intelligent categorization task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Intelligent Classification Task Control Parameters.
                      */
                     ClassificationConfigureInfo m_classificationConfigure;
                     bool m_classificationConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of intelligent tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Intelligent tag task control parameter.
                      */
                     TagConfigureInfo m_tagConfigure;
                     bool m_tagConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of intelligent cover generating task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Intelligent cover task control parameters.
                      */
                     CoverConfigureInfo m_coverConfigure;
                     bool m_coverConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of intelligent frame-specific tagging task.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Intelligent frame tagging task control parameter.
                      */
                     FrameTagConfigureInfo m_frameTagConfigure;
                     bool m_frameTagConfigureHasBeenSet;
 
                     /**
-                     * Control parameter of an intelligent highlight generating task.
+                     * Control parameters for the intelligent highlights compilation task.
                      */
                     HighlightsConfigureInfo m_highlightConfigure;
                     bool m_highlightConfigureHasBeenSet;
 
                     /**
-                     * Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template last modified time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

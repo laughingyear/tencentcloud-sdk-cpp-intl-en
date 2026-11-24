@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The unique identifier of the playlist.
-                     * @return RoundPlayId The unique identifier of the playlist.
+                     * 获取Carousel playlist unique identifier.
+                     * @return RoundPlayId Carousel playlist unique identifier.
                      * 
                      */
                     std::string GetRoundPlayId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool RoundPlayIdHasBeenSet() const;
 
                     /**
-                     * 获取The playlist playback url.
-                     * @return Url The playlist playback url.
+                     * 获取Carousel playback address.
+                     * @return Url Carousel playback address.
                      * 
                      */
                     std::string GetUrl() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The unique identifier of the playlist.
+                     * Carousel playlist unique identifier.
                      */
                     std::string m_roundPlayId;
                     bool m_roundPlayIdHasBeenSet;
 
                     /**
-                     * The playlist playback url.
+                     * Carousel playback address.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

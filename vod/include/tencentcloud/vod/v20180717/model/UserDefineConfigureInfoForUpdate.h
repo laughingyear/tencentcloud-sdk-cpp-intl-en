@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Parameters for custom recognition
+                * User-customized audio/video moderation task control parameters.
                 */
                 class UserDefineConfigureInfoForUpdate : public AbstractModel
                 {
@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Parameters for custom facial recognition
-                     * @return FaceReviewInfo Parameters for custom facial recognition
+                     * 获取Control parameter for user-defined character audio/video moderation.
+                     * @return FaceReviewInfo Control parameter for user-defined character audio/video moderation.
                      * 
                      */
                     UserDefineFaceReviewTemplateInfoForUpdate GetFaceReviewInfo() const;
 
                     /**
-                     * 设置Parameters for custom facial recognition
-                     * @param _faceReviewInfo Parameters for custom facial recognition
+                     * 设置Control parameter for user-defined character audio/video moderation.
+                     * @param _faceReviewInfo Control parameter for user-defined character audio/video moderation.
                      * 
                      */
                     void SetFaceReviewInfo(const UserDefineFaceReviewTemplateInfoForUpdate& _faceReviewInfo);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool FaceReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for custom ASR-based recognition
-                     * @return AsrReviewInfo Parameters for custom ASR-based recognition
+                     * 获取User-customized voice audio and video review control parameter.
+                     * @return AsrReviewInfo User-customized voice audio and video review control parameter.
                      * 
                      */
                     UserDefineAsrTextReviewTemplateInfoForUpdate GetAsrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for custom ASR-based recognition
-                     * @param _asrReviewInfo Parameters for custom ASR-based recognition
+                     * 设置User-customized voice audio and video review control parameter.
+                     * @param _asrReviewInfo User-customized voice audio and video review control parameter.
                      * 
                      */
                     void SetAsrReviewInfo(const UserDefineAsrTextReviewTemplateInfoForUpdate& _asrReviewInfo);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取Parameters for custom OCR-based recognition
-                     * @return OcrReviewInfo Parameters for custom OCR-based recognition
+                     * 获取User-customized control parameters for text, audio, and video moderation.
+                     * @return OcrReviewInfo User-customized control parameters for text, audio, and video moderation.
                      * 
                      */
                     UserDefineOcrTextReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
-                     * 设置Parameters for custom OCR-based recognition
-                     * @param _ocrReviewInfo Parameters for custom OCR-based recognition
+                     * 设置User-customized control parameters for text, audio, and video moderation.
+                     * @param _ocrReviewInfo User-customized control parameters for text, audio, and video moderation.
                      * 
                      */
                     void SetOcrReviewInfo(const UserDefineOcrTextReviewTemplateInfoForUpdate& _ocrReviewInfo);
@@ -115,19 +115,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Parameters for custom facial recognition
+                     * Control parameter for user-defined character audio/video moderation.
                      */
                     UserDefineFaceReviewTemplateInfoForUpdate m_faceReviewInfo;
                     bool m_faceReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for custom ASR-based recognition
+                     * User-customized voice audio and video review control parameter.
                      */
                     UserDefineAsrTextReviewTemplateInfoForUpdate m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
-                     * Parameters for custom OCR-based recognition
+                     * User-customized control parameters for text, audio, and video moderation.
                      */
                     UserDefineOcrTextReviewTemplateInfoForUpdate m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

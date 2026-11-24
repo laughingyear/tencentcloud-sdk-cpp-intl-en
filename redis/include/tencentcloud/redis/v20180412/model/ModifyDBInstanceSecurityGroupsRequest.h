@@ -65,22 +65,26 @@ namespace TencentCloud
 
                     /**
                      * 获取Security group ID list. Replace it with a new one, which is an array of one or more security group IDs.
-- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/239/41260?from_cn_redirect=1) first.
+- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://www.tencentcloud.com/document/product/239/41260?from_cn_redirect=1) first.
 - To replace the security group, obtain the security group ID on the [security group](https://console.tencentcloud.com/vpc/security-group) page of the console.
+  **Note:** This input parameter performs a full replacement on all existing collections but not an incremental update. To modify it, import the expected full collections.
                      * @return SecurityGroupIds Security group ID list. Replace it with a new one, which is an array of one or more security group IDs.
-- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/239/41260?from_cn_redirect=1) first.
+- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://www.tencentcloud.com/document/product/239/41260?from_cn_redirect=1) first.
 - To replace the security group, obtain the security group ID on the [security group](https://console.tencentcloud.com/vpc/security-group) page of the console.
+  **Note:** This input parameter performs a full replacement on all existing collections but not an incremental update. To modify it, import the expected full collections.
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置Security group ID list. Replace it with a new one, which is an array of one or more security group IDs.
-- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/239/41260?from_cn_redirect=1) first.
+- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://www.tencentcloud.com/document/product/239/41260?from_cn_redirect=1) first.
 - To replace the security group, obtain the security group ID on the [security group](https://console.tencentcloud.com/vpc/security-group) page of the console.
+  **Note:** This input parameter performs a full replacement on all existing collections but not an incremental update. To modify it, import the expected full collections.
                      * @param _securityGroupIds Security group ID list. Replace it with a new one, which is an array of one or more security group IDs.
-- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/239/41260?from_cn_redirect=1) first.
+- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://www.tencentcloud.com/document/product/239/41260?from_cn_redirect=1) first.
 - To replace the security group, obtain the security group ID on the [security group](https://console.tencentcloud.com/vpc/security-group) page of the console.
+  **Note:** This input parameter performs a full replacement on all existing collections but not an incremental update. To modify it, import the expected full collections.
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -123,8 +127,9 @@ namespace TencentCloud
 
                     /**
                      * Security group ID list. Replace it with a new one, which is an array of one or more security group IDs.
-- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/239/41260?from_cn_redirect=1) first.
+- To configure a security group for an instance for the first time, bind the security group through the API [AssociateSecurityGroups](https://www.tencentcloud.com/document/product/239/41260?from_cn_redirect=1) first.
 - To replace the security group, obtain the security group ID on the [security group](https://console.tencentcloud.com/vpc/security-group) page of the console.
+  **Note:** This input parameter performs a full replacement on all existing collections but not an incremental update. To modify it, import the expected full collections.
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

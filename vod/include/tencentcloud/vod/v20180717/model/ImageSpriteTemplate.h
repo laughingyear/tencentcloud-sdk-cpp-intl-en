@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Details of an image sprite generating template
+                * Sprite sheet template details
                 */
                 class ImageSpriteTemplate : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of an image sprite generating template.
-                     * @return Definition Unique ID of an image sprite generating template.
+                     * 获取Sprite template unique identifier.
+                     * @return Definition Sprite template unique identifier.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of an image sprite generating template.
-                     * @param _definition Unique ID of an image sprite generating template.
+                     * 设置Sprite template unique identifier.
+                     * @param _definition Sprite template unique identifier.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -69,10 +69,10 @@ namespace TencentCloud
 
                     /**
                      * 获取Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * @return Type Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * 
                      */
@@ -80,10 +80,10 @@ namespace TencentCloud
 
                     /**
                      * 设置Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * @param _type Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      * 
                      */
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Name of an image sprite generating template.
-                     * @return Name Name of an image sprite generating template.
+                     * 获取Sprite sheet template name.
+                     * @return Name Sprite sheet template name.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Name of an image sprite generating template.
-                     * @param _name Name of an image sprite generating template.
+                     * 设置Sprite sheet template name.
+                     * @param _name Sprite sheet template name.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -118,34 +118,34 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the width (or long side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 获取Maximum width (or long side) of small images in sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @return Width Maximum value of the width (or long side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @return Width Maximum width (or long side) of small images in sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置Maximum value of the width (or long side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 设置Maximum width (or long side) of small images in sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @param _width Maximum value of the width (or long side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @param _width Maximum width (or long side) of small images in sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
@@ -159,34 +159,34 @@ Default value: 0.
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Maximum value of the height (or short side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 获取Maximum height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @return Height Maximum value of the height (or short side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @return Height Maximum height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置Maximum value of the height (or short side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * 设置Maximum height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
-                     * @param _height Maximum value of the height (or short side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * @param _height Maximum height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      * 
                      */
@@ -200,26 +200,26 @@ Default value: 0.
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 获取Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side.</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
-                     * @return ResolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @return ResolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side.</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      * 
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
-                     * 设置Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * 设置Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side.</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
-                     * @param _resolutionAdaptive Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * @param _resolutionAdaptive Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side.</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      * 
                      */
@@ -275,15 +275,15 @@ Default value: open.
                     bool SampleIntervalHasBeenSet() const;
 
                     /**
-                     * 获取Subimage row count of an image sprite.
-                     * @return RowCount Subimage row count of an image sprite.
+                     * 获取Number of rows of small images in the sprite image.
+                     * @return RowCount Number of rows of small images in the sprite image.
                      * 
                      */
                     uint64_t GetRowCount() const;
 
                     /**
-                     * 设置Subimage row count of an image sprite.
-                     * @param _rowCount Subimage row count of an image sprite.
+                     * 设置Number of rows of small images in the sprite image.
+                     * @param _rowCount Number of rows of small images in the sprite image.
                      * 
                      */
                     void SetRowCount(const uint64_t& _rowCount);
@@ -296,15 +296,15 @@ Default value: open.
                     bool RowCountHasBeenSet() const;
 
                     /**
-                     * 获取Subimage column count of an image sprite.
-                     * @return ColumnCount Subimage column count of an image sprite.
+                     * 获取Number of columns of small images in the sprite image.
+                     * @return ColumnCount Number of columns of small images in the sprite image.
                      * 
                      */
                     uint64_t GetColumnCount() const;
 
                     /**
-                     * 设置Subimage column count of an image sprite.
-                     * @param _columnCount Subimage column count of an image sprite.
+                     * 设置Number of columns of small images in the sprite image.
+                     * @param _columnCount Number of columns of small images in the sprite image.
                      * 
                      */
                     void SetColumnCount(const uint64_t& _columnCount);
@@ -317,15 +317,15 @@ Default value: open.
                     bool ColumnCountHasBeenSet() const;
 
                     /**
-                     * 获取Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template creation time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Template creation time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template creation time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Template creation time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -338,15 +338,15 @@ Default value: open.
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return UpdateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Template last modified time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return UpdateTime Template last modified time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _updateTime Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Template last modified time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _updateTime Template last modified time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -359,26 +359,26 @@ Default value: open.
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
+                     * 获取Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li>
+<li>black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
 Default value: black.
-                     * @return FillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
+                     * @return FillType Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li>
+<li>black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
 Default value: black.
                      * 
                      */
                     std::string GetFillType() const;
 
                     /**
-                     * 设置Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
+                     * 设置Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li>
+<li>black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
 Default value: black.
-                     * @param _fillType Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
+                     * @param _fillType Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li>
+<li>black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
 Default value: black.
                      * 
                      */
@@ -392,15 +392,15 @@ Default value: black.
                     bool FillTypeHasBeenSet() const;
 
                     /**
-                     * 获取Template description.
-                     * @return Comment Template description.
+                     * 获取Template description information.
+                     * @return Comment Template description information.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description.
-                     * @param _comment Template description.
+                     * 设置Template description information.
+                     * @param _comment Template description information.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -413,15 +413,15 @@ Default value: black.
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取The image format.
-                     * @return Format The image format.
+                     * 获取Image format.
+                     * @return Format Image format.
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置The image format.
-                     * @param _format The image format.
+                     * 设置Image format.
+                     * @param _format Image format.
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -436,51 +436,51 @@ Default value: black.
                 private:
 
                     /**
-                     * Unique ID of an image sprite generating template.
+                     * Sprite template unique identifier.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * Template type. Valid values:
-<li>Preset: preset template;</li>
+<li>Preset: system-preset template;</li>
 <li>Custom: custom template.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Name of an image sprite generating template.
+                     * Sprite sheet template name.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Maximum value of the width (or long side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * Maximum width (or long side) of small images in sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Maximum value of the height (or short side) of a subimage in an image sprite in px. Value range: 0 and [128, 4,096].
-<li>If both `Width` and `Height` are 0, the resolution will be the same as that of the source video;</li>
-<li>If `Width` is 0, but `Height` is not 0, `Width` will be proportionally scaled;</li>
-<li>If `Width` is not 0, but `Height` is 0, `Height` will be proportionally scaled;</li>
-<li>If both `Width` and `Height` are not 0, the custom resolution will be used.</li>
+                     * Maximum height (or short side) of small images in the sprite image. Value range: 0 and [128, 4096]. Unit: px.
+<li>If both Width and Height are 0, the resolution is the same as the source.</li>
+<li>If Width is 0 but Height is not 0, the width will be proportionally scaled.</li>
+<li>If Width is not 0 but Height is 0, the height will be proportionally scaled.</li>
+<li>If both Width and Height are not 0, the resolution is as specified by the user.</li>
 Default value: 0.
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Resolution adaption. Valid values:
-<li>open: enabled. In this case, `Width` represents the long side of a video, while `Height` the short side;</li>
-<li>close: disabled. In this case, `Width` represents the width of a video, while `Height` the height.</li>
+                     * Resolution adaptation. Available values:
+<li>open: enable. At this point, Width represents the long side of the video, and Height represents the short side.</li>
+<li>close: closed. At this point, Width represents the video width, and Height indicates the video height.</li>
 Default value: open.
                      */
                     std::string m_resolutionAdaptive;
@@ -499,46 +499,46 @@ Default value: open.
                     bool m_sampleIntervalHasBeenSet;
 
                     /**
-                     * Subimage row count of an image sprite.
+                     * Number of rows of small images in the sprite image.
                      */
                     uint64_t m_rowCount;
                     bool m_rowCountHasBeenSet;
 
                     /**
-                     * Subimage column count of an image sprite.
+                     * Number of columns of small images in the sprite image.
                      */
                     uint64_t m_columnCount;
                     bool m_columnCountHasBeenSet;
 
                     /**
-                     * Creation time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template creation time. Use the [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Last modified time of template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Template last modified time in ISO date format (https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * Fill type. "Fill" refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported:
-<li> stretch: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer";</li>
-<li>black: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks.</li>
+                     * Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, possibly causing the transcoded video to be "squashed" or "stretched";</li>
+<li>black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
 Default value: black.
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;
 
                     /**
-                     * Template description.
+                     * Template description information.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * The image format.
+                     * Image format.
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

@@ -1,0 +1,96 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/csip/v20221121/model/ModifyPayConfigRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Csip::V20221121::Model;
+using namespace std;
+
+ModifyPayConfigRequest::ModifyPayConfigRequest() :
+    m_hostConfigHasBeenSet(false),
+    m_containerConfigHasBeenSet(false)
+{
+}
+
+string ModifyPayConfigRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_hostConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_containerConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_containerConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+HostAutoScaleConfig ModifyPayConfigRequest::GetHostConfig() const
+{
+    return m_hostConfig;
+}
+
+void ModifyPayConfigRequest::SetHostConfig(const HostAutoScaleConfig& _hostConfig)
+{
+    m_hostConfig = _hostConfig;
+    m_hostConfigHasBeenSet = true;
+}
+
+bool ModifyPayConfigRequest::HostConfigHasBeenSet() const
+{
+    return m_hostConfigHasBeenSet;
+}
+
+ContainerAutoScaleConfig ModifyPayConfigRequest::GetContainerConfig() const
+{
+    return m_containerConfig;
+}
+
+void ModifyPayConfigRequest::SetContainerConfig(const ContainerAutoScaleConfig& _containerConfig)
+{
+    m_containerConfig = _containerConfig;
+    m_containerConfigHasBeenSet = true;
+}
+
+bool ModifyPayConfigRequest::ContainerConfigHasBeenSet() const
+{
+    return m_containerConfigHasBeenSet;
+}
+
+

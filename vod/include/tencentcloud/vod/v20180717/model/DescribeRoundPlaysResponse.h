@@ -45,22 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The total number of carousel broadcast playlists that meet the filter criteria. deprecated. for batch inquiries, please use the scrolltoken parameter.
-                     * @return TotalCount The total number of carousel broadcast playlists that meet the filter criteria. deprecated. for batch inquiries, please use the scrolltoken parameter.
-                     * 
+                     * 获取<p>Total number of carousel playlists meeting filtering criteria. Deprecated. For batch query, please use the ScrollToken parameter.</p>
+                     * @return TotalCount <p>Total number of carousel playlists meeting filtering criteria. Deprecated. For batch query, please use the ScrollToken parameter.</p>
+                     * @deprecated
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取The details of the playlist.
-                     * @return RoundPlaySet The details of the playlist.
+                     * 获取<p>Carousel playlist details list.</p>
+                     * @return RoundPlaySet <p>Carousel playlist details list.</p>
                      * 
                      */
                     std::vector<RoundPlayInfo> GetRoundPlaySet() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool RoundPlaySetHasBeenSet() const;
 
                     /**
-                     * 获取Scrolling identifier. if a request does not return all the data entries, this field indicates the id of the next entry. if this field is empty, there is no more data.
-                     * @return ScrollToken Scrolling identifier. if a request does not return all the data entries, this field indicates the id of the next entry. if this field is empty, there is no more data.
+                     * 获取<p>Pagination identifier. If a request does not return all the data entries, this field indicates the ID of the next entry. If this field is empty, there is no more data.</p>
+                     * @return ScrollToken <p>Pagination identifier. If a request does not return all the data entries, this field indicates the ID of the next entry. If this field is empty, there is no more data.</p>
                      * 
                      */
                     std::string GetScrollToken() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The total number of carousel broadcast playlists that meet the filter criteria. deprecated. for batch inquiries, please use the scrolltoken parameter.
+                     * <p>Total number of carousel playlists meeting filtering criteria. Deprecated. For batch query, please use the ScrollToken parameter.</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * The details of the playlist.
+                     * <p>Carousel playlist details list.</p>
                      */
                     std::vector<RoundPlayInfo> m_roundPlaySet;
                     bool m_roundPlaySetHasBeenSet;
 
                     /**
-                     * Scrolling identifier. if a request does not return all the data entries, this field indicates the id of the next entry. if this field is empty, there is no more data.
+                     * <p>Pagination identifier. If a request does not return all the data entries, this field indicates the ID of the next entry. If this field is empty, there is no more data.</p>
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;

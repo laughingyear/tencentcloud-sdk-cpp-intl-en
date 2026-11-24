@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Authentication-free information.
                 */
                 class AnonymousInfo : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return Operations 
+                     * 获取Operation list. Valid values: trackLog: log upload through JS/HTTP; realtimeProducer: log upload through Kafka protocol.
+                     * @return Operations Operation list. Valid values: trackLog: log upload through JS/HTTP; realtimeProducer: log upload through Kafka protocol.
                      * 
                      */
                     std::vector<std::string> GetOperations() const;
 
                     /**
-                     * 设置
-                     * @param _operations 
+                     * 设置Operation list. Valid values: trackLog: log upload through JS/HTTP; realtimeProducer: log upload through Kafka protocol.
+                     * @param _operations Operation list. Valid values: trackLog: log upload through JS/HTTP; realtimeProducer: log upload through Kafka protocol.
                      * 
                      */
                     void SetOperations(const std::vector<std::string>& _operations);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool OperationsHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Conditions 
+                     * 获取List of conditions.
+                     * @return Conditions List of conditions.
                      * 
                      */
                     std::vector<ConditionInfo> GetConditions() const;
 
                     /**
-                     * 设置
-                     * @param _conditions 
+                     * 设置List of conditions.
+                     * @param _conditions List of conditions.
                      * 
                      */
                     void SetConditions(const std::vector<ConditionInfo>& _conditions);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * Operation list. Valid values: trackLog: log upload through JS/HTTP; realtimeProducer: log upload through Kafka protocol.
                      */
                     std::vector<std::string> m_operations;
                     bool m_operationsHasBeenSet;
 
                     /**
-                     * 
+                     * List of conditions.
                      */
                     std::vector<ConditionInfo> m_conditions;
                     bool m_conditionsHasBeenSet;

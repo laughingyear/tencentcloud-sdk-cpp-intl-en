@@ -34,7 +34,10 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleReviewTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleAnalysisTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleExecRuleTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleSmartSubtitleTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/AIDubbingTaskResult.h>
 
 
 namespace TencentCloud
@@ -46,7 +49,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The execution results of the subtasks of a scheme.
+                * Output of the orchestration subtask
                 */
                 class ActivityResItem : public AbstractModel
                 {
@@ -58,19 +61,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The result of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TranscodeTask The result of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Transcoding task output</p>
+                     * @return TranscodeTask <p>Transcoding task output</p>
                      * 
                      */
                     MediaProcessTaskTranscodeResult GetTranscodeTask() const;
 
                     /**
-                     * 设置The result of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _transcodeTask The result of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Transcoding task output</p>
+                     * @param _transcodeTask <p>Transcoding task output</p>
                      * 
                      */
                     void SetTranscodeTask(const MediaProcessTaskTranscodeResult& _transcodeTask);
@@ -83,19 +82,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TranscodeTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of an animated image generating task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AnimatedGraphicTask The result of an animated image generating task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Output of rotating image tasks</p>
+                     * @return AnimatedGraphicTask <p>Output of rotating image tasks</p>
                      * 
                      */
                     MediaProcessTaskAnimatedGraphicResult GetAnimatedGraphicTask() const;
 
                     /**
-                     * 设置The result of an animated image generating task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _animatedGraphicTask The result of an animated image generating task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Output of rotating image tasks</p>
+                     * @param _animatedGraphicTask <p>Output of rotating image tasks</p>
                      * 
                      */
                     void SetAnimatedGraphicTask(const MediaProcessTaskAnimatedGraphicResult& _animatedGraphicTask);
@@ -108,19 +103,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AnimatedGraphicTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of a time point screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SnapshotByTimeOffsetTask The result of a time point screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Time point screenshot task output</p>
+                     * @return SnapshotByTimeOffsetTask <p>Time point screenshot task output</p>
                      * 
                      */
                     MediaProcessTaskSnapshotByTimeOffsetResult GetSnapshotByTimeOffsetTask() const;
 
                     /**
-                     * 设置The result of a time point screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _snapshotByTimeOffsetTask The result of a time point screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Time point screenshot task output</p>
+                     * @param _snapshotByTimeOffsetTask <p>Time point screenshot task output</p>
                      * 
                      */
                     void SetSnapshotByTimeOffsetTask(const MediaProcessTaskSnapshotByTimeOffsetResult& _snapshotByTimeOffsetTask);
@@ -133,19 +124,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of a sampled screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SampleSnapshotTask The result of a sampled screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Output of sampling screenshot task</p>
+                     * @return SampleSnapshotTask <p>Output of sampling screenshot task</p>
                      * 
                      */
                     MediaProcessTaskSampleSnapshotResult GetSampleSnapshotTask() const;
 
                     /**
-                     * 设置The result of a sampled screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _sampleSnapshotTask The result of a sampled screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Output of sampling screenshot task</p>
+                     * @param _sampleSnapshotTask <p>Output of sampling screenshot task</p>
                      * 
                      */
                     void SetSampleSnapshotTask(const MediaProcessTaskSampleSnapshotResult& _sampleSnapshotTask);
@@ -158,19 +145,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SampleSnapshotTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of an image sprite task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ImageSpriteTask The result of an image sprite task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Image sprite output</p>
+                     * @return ImageSpriteTask <p>Image sprite output</p>
                      * 
                      */
                     MediaProcessTaskImageSpriteResult GetImageSpriteTask() const;
 
                     /**
-                     * 设置The result of an image sprite task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _imageSpriteTask The result of an image sprite task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Image sprite output</p>
+                     * @param _imageSpriteTask <p>Image sprite output</p>
                      * 
                      */
                     void SetImageSpriteTask(const MediaProcessTaskImageSpriteResult& _imageSpriteTask);
@@ -183,19 +166,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ImageSpriteTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of an adaptive bitrate streaming task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AdaptiveDynamicStreamingTask The result of an adaptive bitrate streaming task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Adaptive bitrate streaming task output</p>
+                     * @return AdaptiveDynamicStreamingTask <p>Adaptive bitrate streaming task output</p>
                      * 
                      */
                     MediaProcessTaskAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
-                     * 设置The result of an adaptive bitrate streaming task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _adaptiveDynamicStreamingTask The result of an adaptive bitrate streaming task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Adaptive bitrate streaming task output</p>
+                     * @param _adaptiveDynamicStreamingTask <p>Adaptive bitrate streaming task output</p>
                      * 
                      */
                     void SetAdaptiveDynamicStreamingTask(const MediaProcessTaskAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
@@ -208,19 +187,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AdaptiveDynamicStreamingTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of a content recognition task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return RecognitionTask The result of a content recognition task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Identification task output</p>
+                     * @return RecognitionTask <p>Identification task output</p>
                      * 
                      */
                     ScheduleRecognitionTaskResult GetRecognitionTask() const;
 
                     /**
-                     * 设置The result of a content recognition task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _recognitionTask The result of a content recognition task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Identification task output</p>
+                     * @param _recognitionTask <p>Identification task output</p>
                      * 
                      */
                     void SetRecognitionTask(const ScheduleRecognitionTaskResult& _recognitionTask);
@@ -233,19 +208,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool RecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of a content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ReviewTask The result of a content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Review task output</p>
+                     * @return ReviewTask <p>Review task output</p>
                      * 
                      */
                     ScheduleReviewTaskResult GetReviewTask() const;
 
                     /**
-                     * 设置The result of a content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _reviewTask The result of a content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Review task output</p>
+                     * @param _reviewTask <p>Review task output</p>
                      * 
                      */
                     void SetReviewTask(const ScheduleReviewTaskResult& _reviewTask);
@@ -258,19 +229,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取The result of a content analysis task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AnalysisTask The result of a content analysis task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Analysis task output</p>
+                     * @return AnalysisTask <p>Analysis task output</p>
                      * 
                      */
                     ScheduleAnalysisTaskResult GetAnalysisTask() const;
 
                     /**
-                     * 设置The result of a content analysis task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _analysisTask The result of a content analysis task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Analysis task output</p>
+                     * @param _analysisTask <p>Analysis task output</p>
                      * 
                      */
                     void SetAnalysisTask(const ScheduleAnalysisTaskResult& _analysisTask);
@@ -283,19 +250,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取Media quality inspection task output.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return QualityControlTask Media quality inspection task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Media quality inspection task output</p>
+                     * @return QualityControlTask <p>Media quality inspection task output</p>
                      * 
                      */
                     ScheduleQualityControlTaskResult GetQualityControlTask() const;
 
                     /**
-                     * 设置Media quality inspection task output.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _qualityControlTask Media quality inspection task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Media quality inspection task output</p>
+                     * @param _qualityControlTask <p>Media quality inspection task output</p>
                      * 
                      */
                     void SetQualityControlTask(const ScheduleQualityControlTaskResult& _qualityControlTask);
@@ -308,19 +271,36 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool QualityControlTaskHasBeenSet() const;
 
                     /**
-                     * 获取Smart subtitle task output.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return SmartSubtitlesTask Smart subtitle task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Conditional judgment task output</p>
+                     * @return ExecRuleTask <p>Conditional judgment task output</p>
+                     * 
+                     */
+                    ScheduleExecRuleTaskResult GetExecRuleTask() const;
+
+                    /**
+                     * 设置<p>Conditional judgment task output</p>
+                     * @param _execRuleTask <p>Conditional judgment task output</p>
+                     * 
+                     */
+                    void SetExecRuleTask(const ScheduleExecRuleTaskResult& _execRuleTask);
+
+                    /**
+                     * 判断参数 ExecRuleTask 是否已赋值
+                     * @return ExecRuleTask 是否已赋值
+                     * 
+                     */
+                    bool ExecRuleTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Smart subtitle task output</p>
+                     * @return SmartSubtitlesTask <p>Smart subtitle task output</p>
                      * 
                      */
                     ScheduleSmartSubtitleTaskResult GetSmartSubtitlesTask() const;
 
                     /**
-                     * 设置Smart subtitle task output.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _smartSubtitlesTask Smart subtitle task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Smart subtitle task output</p>
+                     * @param _smartSubtitlesTask <p>Smart subtitle task output</p>
                      * 
                      */
                     void SetSmartSubtitlesTask(const ScheduleSmartSubtitleTaskResult& _smartSubtitlesTask);
@@ -332,84 +312,133 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool SmartSubtitlesTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Output of the intelligent erasure task</p>
+                     * @return SmartEraseTask <p>Output of the intelligent erasure task</p>
+                     * 
+                     */
+                    SmartEraseTaskResult GetSmartEraseTask() const;
+
+                    /**
+                     * 设置<p>Output of the intelligent erasure task</p>
+                     * @param _smartEraseTask <p>Output of the intelligent erasure task</p>
+                     * 
+                     */
+                    void SetSmartEraseTask(const SmartEraseTaskResult& _smartEraseTask);
+
+                    /**
+                     * 判断参数 SmartEraseTask 是否已赋值
+                     * @return SmartEraseTask 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AI dubbing task output.</p>
+                     * @return AIDubbingTask <p>AI dubbing task output.</p>
+                     * 
+                     */
+                    AIDubbingTaskResult GetAIDubbingTask() const;
+
+                    /**
+                     * 设置<p>AI dubbing task output.</p>
+                     * @param _aIDubbingTask <p>AI dubbing task output.</p>
+                     * 
+                     */
+                    void SetAIDubbingTask(const AIDubbingTaskResult& _aIDubbingTask);
+
+                    /**
+                     * 判断参数 AIDubbingTask 是否已赋值
+                     * @return AIDubbingTask 是否已赋值
+                     * 
+                     */
+                    bool AIDubbingTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The result of a transcoding task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Transcoding task output</p>
                      */
                     MediaProcessTaskTranscodeResult m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
-                     * The result of an animated image generating task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Output of rotating image tasks</p>
                      */
                     MediaProcessTaskAnimatedGraphicResult m_animatedGraphicTask;
                     bool m_animatedGraphicTaskHasBeenSet;
 
                     /**
-                     * The result of a time point screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Time point screenshot task output</p>
                      */
                     MediaProcessTaskSnapshotByTimeOffsetResult m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
 
                     /**
-                     * The result of a sampled screenshot task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Output of sampling screenshot task</p>
                      */
                     MediaProcessTaskSampleSnapshotResult m_sampleSnapshotTask;
                     bool m_sampleSnapshotTaskHasBeenSet;
 
                     /**
-                     * The result of an image sprite task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Image sprite output</p>
                      */
                     MediaProcessTaskImageSpriteResult m_imageSpriteTask;
                     bool m_imageSpriteTaskHasBeenSet;
 
                     /**
-                     * The result of an adaptive bitrate streaming task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Adaptive bitrate streaming task output</p>
                      */
                     MediaProcessTaskAdaptiveDynamicStreamingResult m_adaptiveDynamicStreamingTask;
                     bool m_adaptiveDynamicStreamingTaskHasBeenSet;
 
                     /**
-                     * The result of a content recognition task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Identification task output</p>
                      */
                     ScheduleRecognitionTaskResult m_recognitionTask;
                     bool m_recognitionTaskHasBeenSet;
 
                     /**
-                     * The result of a content moderation task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Review task output</p>
                      */
                     ScheduleReviewTaskResult m_reviewTask;
                     bool m_reviewTaskHasBeenSet;
 
                     /**
-                     * The result of a content analysis task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Analysis task output</p>
                      */
                     ScheduleAnalysisTaskResult m_analysisTask;
                     bool m_analysisTaskHasBeenSet;
 
                     /**
-                     * Media quality inspection task output.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Media quality inspection task output</p>
                      */
                     ScheduleQualityControlTaskResult m_qualityControlTask;
                     bool m_qualityControlTaskHasBeenSet;
 
                     /**
-                     * Smart subtitle task output.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Conditional judgment task output</p>
+                     */
+                    ScheduleExecRuleTaskResult m_execRuleTask;
+                    bool m_execRuleTaskHasBeenSet;
+
+                    /**
+                     * <p>Smart subtitle task output</p>
                      */
                     ScheduleSmartSubtitleTaskResult m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
+                     * <p>Output of the intelligent erasure task</p>
+                     */
+                    SmartEraseTaskResult m_smartEraseTask;
+                    bool m_smartEraseTaskHasBeenSet;
+
+                    /**
+                     * <p>AI dubbing task output.</p>
+                     */
+                    AIDubbingTaskResult m_aIDubbingTask;
+                    bool m_aIDubbingTaskHasBeenSet;
 
                 };
             }

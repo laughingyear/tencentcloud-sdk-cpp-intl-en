@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HeadTail template ID.
-                     * @return Definition HeadTail template ID.
+                     * 获取Opening and ending template ID.
+                     * @return Definition Opening and ending template ID.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置HeadTail template ID.
-                     * @param _definition HeadTail template ID.
+                     * 设置Opening and ending template ID.
+                     * @param _definition Opening and ending template ID.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Template name, length limit is 64 characters. Not passing means not modifying.
-                     * @return Name Template name, length limit is 64 characters. Not passing means not modifying.
+                     * 获取Template name. Length limited to 64 characters. If not passed, no modification is made.
+                     * @return Name Template name. Length limited to 64 characters. If not passed, no modification is made.
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Template name, length limit is 64 characters. Not passing means not modifying.
-                     * @param _name Template name, length limit is 64 characters. Not passing means not modifying.
+                     * 设置Template name. Length limited to 64 characters. If not passed, no modification is made.
+                     * @param _name Template name. Length limited to 64 characters. If not passed, no modification is made.
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Template description, limited to 256 characters. Passing nothing means no modification, passing empty means clearing it.
-                     * @return Comment Template description, limited to 256 characters. Passing nothing means no modification, passing empty means clearing it.
+                     * 获取Template description. Length limited to 256 characters. If not passed, no modification is made. If passed empty, the description is cleared.
+                     * @return Comment Template description. Length limited to 256 characters. If not passed, no modification is made. If passed empty, the description is cleared.
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description, limited to 256 characters. Passing nothing means no modification, passing empty means clearing it.
-                     * @param _comment Template description, limited to 256 characters. Passing nothing means no modification, passing empty means clearing it.
+                     * 设置Template description. Length limited to 256 characters. If not passed, no modification is made. If passed empty, the description is cleared.
+                     * @param _comment Template description. Length limited to 256 characters. If not passed, no modification is made. If passed empty, the description is cleared.
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Title candidate list, fill in the FileId of the video. When transcoding, the title closest to the aspect ratio of the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
-                     * @return HeadCandidateSet Title candidate list, fill in the FileId of the video. When transcoding, the title closest to the aspect ratio of the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * 获取Opening candidate list. Fill in the FileId of the video. During transcoding, the opening closest to the aspect ratio of the main content is automatically selected. If the aspect ratios are identical, the candidate positioned towards the front takes precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification, while passing an empty array means clearing.
+                     * @return HeadCandidateSet Opening candidate list. Fill in the FileId of the video. During transcoding, the opening closest to the aspect ratio of the main content is automatically selected. If the aspect ratios are identical, the candidate positioned towards the front takes precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification, while passing an empty array means clearing.
                      * 
                      */
                     std::vector<std::string> GetHeadCandidateSet() const;
 
                     /**
-                     * 设置Title candidate list, fill in the FileId of the video. When transcoding, the title closest to the aspect ratio of the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
-                     * @param _headCandidateSet Title candidate list, fill in the FileId of the video. When transcoding, the title closest to the aspect ratio of the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * 设置Opening candidate list. Fill in the FileId of the video. During transcoding, the opening closest to the aspect ratio of the main content is automatically selected. If the aspect ratios are identical, the candidate positioned towards the front takes precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification, while passing an empty array means clearing.
+                     * @param _headCandidateSet Opening candidate list. Fill in the FileId of the video. During transcoding, the opening closest to the aspect ratio of the main content is automatically selected. If the aspect ratios are identical, the candidate positioned towards the front takes precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification, while passing an empty array means clearing.
                      * 
                      */
                     void SetHeadCandidateSet(const std::vector<std::string>& _headCandidateSet);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool HeadCandidateSetHasBeenSet() const;
 
                     /**
-                     * 获取Ending candidate list, fill in the FileId of the video. When transcoding, the ending with the aspect ratio closest to the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
-                     * @return TailCandidateSet Ending candidate list, fill in the FileId of the video. When transcoding, the ending with the aspect ratio closest to the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * 获取Ending candidate list. Fill in the FileId of the video. During transcoding, the ending with the aspect ratio closest to the main content is automatically selected. If the aspect ratios are identical, candidates positioned towards the front take precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification. Passing an empty array means clearing.
+                     * @return TailCandidateSet Ending candidate list. Fill in the FileId of the video. During transcoding, the ending with the aspect ratio closest to the main content is automatically selected. If the aspect ratios are identical, candidates positioned towards the front take precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification. Passing an empty array means clearing.
                      * 
                      */
                     std::vector<std::string> GetTailCandidateSet() const;
 
                     /**
-                     * 设置Ending candidate list, fill in the FileId of the video. When transcoding, the ending with the aspect ratio closest to the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
-                     * @param _tailCandidateSet Ending candidate list, fill in the FileId of the video. When transcoding, the ending with the aspect ratio closest to the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * 设置Ending candidate list. Fill in the FileId of the video. During transcoding, the ending with the aspect ratio closest to the main content is automatically selected. If the aspect ratios are identical, candidates positioned towards the front take precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification. Passing an empty array means clearing.
+                     * @param _tailCandidateSet Ending candidate list. Fill in the FileId of the video. During transcoding, the ending with the aspect ratio closest to the main content is automatically selected. If the aspect ratios are identical, candidates positioned towards the front take precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification. Passing an empty array means clearing.
                      * 
                      */
                     void SetTailCandidateSet(const std::vector<std::string>& _tailCandidateSet);
@@ -169,35 +169,35 @@ namespace TencentCloud
                     bool TailCandidateSetHasBeenSet() const;
 
                     /**
-                     * 获取Padding method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the transcoding processing method is "padding". Optional filling method:
-<li> stretch: stretch, stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li> 
-<li> gauss: Gaussian blur, keep the video aspect ratio unchanged, use Gaussian blur for the remaining edges; </li>
-<li> white: leave blank, keep the video aspect ratio unchanged, use the remaining edges for the edge Use white filling; </li>
-<li> black: Leave black, keep the video aspect ratio unchanged, and fill the remaining edges with black. </li>
-The default value is not to be modified.
-                     * @return FillType Padding method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the transcoding processing method is "padding". Optional filling method:
-<li> stretch: stretch, stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li> 
-<li> gauss: Gaussian blur, keep the video aspect ratio unchanged, use Gaussian blur for the remaining edges; </li>
-<li> white: leave blank, keep the video aspect ratio unchanged, use the remaining edges for the edge Use white filling; </li>
-<li> black: Leave black, keep the video aspect ratio unchanged, and fill the remaining edges with black. </li>
-The default value is not to be modified.
+                     * 获取Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li>
+<li> gauss: Gaussian blur, maintain video aspect ratio, and use Gaussian blur for the remaining edge part;</li>
+<li> white: leave blank, maintain video aspect ratio, and fill the remaining edges with white;</li>
+<li> black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
+The default value is no modification.
+                     * @return FillType Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li>
+<li> gauss: Gaussian blur, maintain video aspect ratio, and use Gaussian blur for the remaining edge part;</li>
+<li> white: leave blank, maintain video aspect ratio, and fill the remaining edges with white;</li>
+<li> black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
+The default value is no modification.
                      * 
                      */
                     std::string GetFillType() const;
 
                     /**
-                     * 设置Padding method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the transcoding processing method is "padding". Optional filling method:
-<li> stretch: stretch, stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li> 
-<li> gauss: Gaussian blur, keep the video aspect ratio unchanged, use Gaussian blur for the remaining edges; </li>
-<li> white: leave blank, keep the video aspect ratio unchanged, use the remaining edges for the edge Use white filling; </li>
-<li> black: Leave black, keep the video aspect ratio unchanged, and fill the remaining edges with black. </li>
-The default value is not to be modified.
-                     * @param _fillType Padding method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the transcoding processing method is "padding". Optional filling method:
-<li> stretch: stretch, stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li> 
-<li> gauss: Gaussian blur, keep the video aspect ratio unchanged, use Gaussian blur for the remaining edges; </li>
-<li> white: leave blank, keep the video aspect ratio unchanged, use the remaining edges for the edge Use white filling; </li>
-<li> black: Leave black, keep the video aspect ratio unchanged, and fill the remaining edges with black. </li>
-The default value is not to be modified.
+                     * 设置Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li>
+<li> gauss: Gaussian blur, maintain video aspect ratio, and use Gaussian blur for the remaining edge part;</li>
+<li> white: leave blank, maintain video aspect ratio, and fill the remaining edges with white;</li>
+<li> black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
+The default value is no modification.
+                     * @param _fillType Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li>
+<li> gauss: Gaussian blur, maintain video aspect ratio, and use Gaussian blur for the remaining edge part;</li>
+<li> white: leave blank, maintain video aspect ratio, and fill the remaining edges with white;</li>
+<li> black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
+The default value is no modification.
                      * 
                      */
                     void SetFillType(const std::string& _fillType);
@@ -212,48 +212,48 @@ The default value is not to be modified.
                 private:
 
                     /**
-                     * HeadTail template ID.
+                     * Opening and ending template ID.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * Template name, length limit is 64 characters. Not passing means not modifying.
+                     * Template name. Length limited to 64 characters. If not passed, no modification is made.
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Template description, limited to 256 characters. Passing nothing means no modification, passing empty means clearing it.
+                     * Template description. Length limited to 256 characters. If not passed, no modification is made. If passed empty, the description is cleared.
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Title candidate list, fill in the FileId of the video. When transcoding, the title closest to the aspect ratio of the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * Opening candidate list. Fill in the FileId of the video. During transcoding, the opening closest to the aspect ratio of the main content is automatically selected. If the aspect ratios are identical, the candidate positioned towards the front takes precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification, while passing an empty array means clearing.
                      */
                     std::vector<std::string> m_headCandidateSet;
                     bool m_headCandidateSetHasBeenSet;
 
                     /**
-                     * Ending candidate list, fill in the FileId of the video. When transcoding, the ending with the aspect ratio closest to the feature film will be automatically selected (when the aspect ratio is the same, the front candidate will take precedence). Supports up to 5 candidate titles. Not passing it means no modification, passing an empty array means clearing it.
+                     * Ending candidate list. Fill in the FileId of the video. During transcoding, the ending with the aspect ratio closest to the main content is automatically selected. If the aspect ratios are identical, candidates positioned towards the front take precedence. A maximum of 5 title candidates is supported. Not passing this parameter means no modification. Passing an empty array means clearing.
                      */
                     std::vector<std::string> m_tailCandidateSet;
                     bool m_tailCandidateSetHasBeenSet;
 
                     /**
-                     * Padding method. When the video stream configuration width and height parameters are inconsistent with the aspect ratio of the original video, the transcoding processing method is "padding". Optional filling method:
-<li> stretch: stretch, stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li> 
-<li> gauss: Gaussian blur, keep the video aspect ratio unchanged, use Gaussian blur for the remaining edges; </li>
-<li> white: leave blank, keep the video aspect ratio unchanged, use the remaining edges for the edge Use white filling; </li>
-<li> black: Leave black, keep the video aspect ratio unchanged, and fill the remaining edges with black. </li>
-The default value is not to be modified.
+                     * Filling method. When the aspect ratio of the video stream configuration width and height parameters is inconsistent with that of the original video, the processing method for transcoding is "padding". Optional filling methods:
+<li> stretch: Stretch each frame to fill the entire screen, which may cause the transcoded video to be "squashed" or "stretched";</li>
+<li> gauss: Gaussian blur, maintain video aspect ratio, and use Gaussian blur for the remaining edge part;</li>
+<li> white: leave blank, maintain video aspect ratio, and fill the remaining edges with white;</li>
+<li> black: Fill with black. Maintain the video aspect ratio and fill the remaining edges with black.</li>
+The default value is no modification.
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Task overview information
+                * Task summary information.
                 */
                 class TaskSimpleInfo : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Task status. Valid values: `WAITING` (waiting), `PROCESSING` (processing), `FINISH` (completed)
-                     * @return Status Task status. Valid values: `WAITING` (waiting), `PROCESSING` (processing), `FINISH` (completed)
+                     * 获取Task status. Valid values: WAITING (Waiting), PROCESSING (Processing), FINISH (Completed), ABORTED (Terminated).
+                     * @return Status Task status. Valid values: WAITING (Waiting), PROCESSING (Processing), FINISH (Completed), ABORTED (Terminated).
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status. Valid values: `WAITING` (waiting), `PROCESSING` (processing), `FINISH` (completed)
-                     * @param _status Task status. Valid values: `WAITING` (waiting), `PROCESSING` (processing), `FINISH` (completed)
+                     * 设置Task status. Valid values: WAITING (Waiting), PROCESSING (Processing), FINISH (Completed), ABORTED (Terminated).
+                     * @param _status Task status. Valid values: WAITING (Waiting), PROCESSING (Processing), FINISH (Completed), ABORTED (Terminated).
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Video ID
-                     * @return FileId Video ID
+                     * 获取Video ID.
+                     * @return FileId Video ID.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置Video ID
-                     * @param _fileId Video ID
+                     * 设置Video ID.
+                     * @param _fileId Video ID.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -110,59 +110,67 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取The task type. Valid values:
-<li>`Procedure`: Video processing</li>
-<li>`EditMedia`: Video editing</li>
-<li>`ReduceMediaBitrate`: Bitrate reduction</li>
-<li>`WechatDistribute`: Publishing to Weixin</li>
-<li> `ReviewAudioVideo`: Moderation</li>
-Task types for v2017:
-<li>`Transcode`: Transcoding</li>
-<li>`SnapshotByTimeOffset`: Screencapturing</li>
-<li>`Concat`: Video splicing</li>
-<li>`Clip`: Video clipping</li>
-<li>`ImageSprites`: Image sprite generating</li>
-                     * @return TaskType The task type. Valid values:
-<li>`Procedure`: Video processing</li>
-<li>`EditMedia`: Video editing</li>
-<li>`ReduceMediaBitrate`: Bitrate reduction</li>
-<li>`WechatDistribute`: Publishing to Weixin</li>
-<li> `ReviewAudioVideo`: Moderation</li>
-Task types for v2017:
-<li>`Transcode`: Transcoding</li>
-<li>`SnapshotByTimeOffset`: Screencapturing</li>
-<li>`Concat`: Video splicing</li>
-<li>`Clip`: Video clipping</li>
-<li>`ImageSprites`: Image sprite generating</li>
+                     * 获取Task type. Value:
+<li>Procedure: video processing task;</li>
+<li>EditMedia: video editing task;</li>
+<li>ReduceMediaBitrate: bitrate reduction task;</li>
+<li>WechatDistribute: publishing on WeChat task;</li>
+<li>ReviewAudioVideo: audio/video moderation task;</li>
+<li>MPSWorkflowTask: MPS video processing task.</li>
+Task types compatible with the 2017 version:
+<li>Transcode: video transcoding task;</li>
+<li>SnapshotByTimeOffset: video screencapturing task;</li>
+<li>Concat: video splicing job;</li>
+<li>Clip: video clipping task;</li>
+<li>ImageSprites: capture CSS sprites task.</li>
+
+                     * @return TaskType Task type. Value:
+<li>Procedure: video processing task;</li>
+<li>EditMedia: video editing task;</li>
+<li>ReduceMediaBitrate: bitrate reduction task;</li>
+<li>WechatDistribute: publishing on WeChat task;</li>
+<li>ReviewAudioVideo: audio/video moderation task;</li>
+<li>MPSWorkflowTask: MPS video processing task.</li>
+Task types compatible with the 2017 version:
+<li>Transcode: video transcoding task;</li>
+<li>SnapshotByTimeOffset: video screencapturing task;</li>
+<li>Concat: video splicing job;</li>
+<li>Clip: video clipping task;</li>
+<li>ImageSprites: capture CSS sprites task.</li>
+
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置The task type. Valid values:
-<li>`Procedure`: Video processing</li>
-<li>`EditMedia`: Video editing</li>
-<li>`ReduceMediaBitrate`: Bitrate reduction</li>
-<li>`WechatDistribute`: Publishing to Weixin</li>
-<li> `ReviewAudioVideo`: Moderation</li>
-Task types for v2017:
-<li>`Transcode`: Transcoding</li>
-<li>`SnapshotByTimeOffset`: Screencapturing</li>
-<li>`Concat`: Video splicing</li>
-<li>`Clip`: Video clipping</li>
-<li>`ImageSprites`: Image sprite generating</li>
-                     * @param _taskType The task type. Valid values:
-<li>`Procedure`: Video processing</li>
-<li>`EditMedia`: Video editing</li>
-<li>`ReduceMediaBitrate`: Bitrate reduction</li>
-<li>`WechatDistribute`: Publishing to Weixin</li>
-<li> `ReviewAudioVideo`: Moderation</li>
-Task types for v2017:
-<li>`Transcode`: Transcoding</li>
-<li>`SnapshotByTimeOffset`: Screencapturing</li>
-<li>`Concat`: Video splicing</li>
-<li>`Clip`: Video clipping</li>
-<li>`ImageSprites`: Image sprite generating</li>
+                     * 设置Task type. Value:
+<li>Procedure: video processing task;</li>
+<li>EditMedia: video editing task;</li>
+<li>ReduceMediaBitrate: bitrate reduction task;</li>
+<li>WechatDistribute: publishing on WeChat task;</li>
+<li>ReviewAudioVideo: audio/video moderation task;</li>
+<li>MPSWorkflowTask: MPS video processing task.</li>
+Task types compatible with the 2017 version:
+<li>Transcode: video transcoding task;</li>
+<li>SnapshotByTimeOffset: video screencapturing task;</li>
+<li>Concat: video splicing job;</li>
+<li>Clip: video clipping task;</li>
+<li>ImageSprites: capture CSS sprites task.</li>
+
+                     * @param _taskType Task type. Value:
+<li>Procedure: video processing task;</li>
+<li>EditMedia: video editing task;</li>
+<li>ReduceMediaBitrate: bitrate reduction task;</li>
+<li>WechatDistribute: publishing on WeChat task;</li>
+<li>ReviewAudioVideo: audio/video moderation task;</li>
+<li>MPSWorkflowTask: MPS video processing task.</li>
+Task types compatible with the 2017 version:
+<li>Transcode: video transcoding task;</li>
+<li>SnapshotByTimeOffset: video screencapturing task;</li>
+<li>Concat: video splicing job;</li>
+<li>Clip: video clipping task;</li>
+<li>ImageSprites: capture CSS sprites task.</li>
+
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -175,15 +183,15 @@ Task types for v2017:
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取Creation time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return CreateTime Creation time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Task creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return CreateTime Task creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _createTime Creation time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Task creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _createTime Task creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -196,15 +204,15 @@ Task types for v2017:
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been started yet, this field will be empty.
-                     * @return BeginProcessTime Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been started yet, this field will be empty.
+                     * 获取Task execution start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not started, this field is empty.
+                     * @return BeginProcessTime Task execution start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not started, this field is empty.
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
-                     * 设置Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been started yet, this field will be empty.
-                     * @param _beginProcessTime Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been started yet, this field will be empty.
+                     * 设置Task execution start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not started, this field is empty.
+                     * @param _beginProcessTime Task execution start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not started, this field is empty.
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -217,15 +225,15 @@ Task types for v2017:
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取End time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been completed yet, this field will be empty.
-                     * @return FinishTime End time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been completed yet, this field will be empty.
+                     * 获取Task end time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task is not completed yet, this field is empty.
+                     * @return FinishTime Task end time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task is not completed yet, this field is empty.
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置End time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been completed yet, this field will be empty.
-                     * @param _finishTime End time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been completed yet, this field will be empty.
+                     * 设置Task end time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task is not completed yet, this field is empty.
+                     * @param _finishTime Task end time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task is not completed yet, this field is empty.
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -238,15 +246,15 @@ Task types for v2017:
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取ID used for deduplication if there was a request with the same ID in the last seven days.
-                     * @return SessionId ID used for deduplication if there was a request with the same ID in the last seven days.
+                     * 获取Identification code for deduplication, if there has been a request with the same identifier within the past seven days.
+                     * @return SessionId Identification code for deduplication, if there has been a request with the same identifier within the past seven days.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置ID used for deduplication if there was a request with the same ID in the last seven days.
-                     * @param _sessionId ID used for deduplication if there was a request with the same ID in the last seven days.
+                     * 设置Identification code for deduplication, if there has been a request with the same identifier within the past seven days.
+                     * @param _sessionId Identification code for deduplication, if there has been a request with the same identifier within the past seven days.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -259,15 +267,15 @@ Task types for v2017:
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取Source context, which is used to pass through the user request information.
-                     * @return SessionContext Source context, which is used to pass through the user request information.
+                     * 获取Source context, used to pass through user request information.
+                     * @return SessionContext Source context, used to pass through user request information.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置Source context, which is used to pass through the user request information.
-                     * @param _sessionContext Source context, which is used to pass through the user request information.
+                     * 设置Source context, used to pass through user request information.
+                     * @param _sessionContext Source context, used to pass through user request information.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -288,60 +296,62 @@ Task types for v2017:
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Task status. Valid values: `WAITING` (waiting), `PROCESSING` (processing), `FINISH` (completed)
+                     * Task status. Valid values: WAITING (Waiting), PROCESSING (Processing), FINISH (Completed), ABORTED (Terminated).
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Video ID
+                     * Video ID.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * The task type. Valid values:
-<li>`Procedure`: Video processing</li>
-<li>`EditMedia`: Video editing</li>
-<li>`ReduceMediaBitrate`: Bitrate reduction</li>
-<li>`WechatDistribute`: Publishing to Weixin</li>
-<li> `ReviewAudioVideo`: Moderation</li>
-Task types for v2017:
-<li>`Transcode`: Transcoding</li>
-<li>`SnapshotByTimeOffset`: Screencapturing</li>
-<li>`Concat`: Video splicing</li>
-<li>`Clip`: Video clipping</li>
-<li>`ImageSprites`: Image sprite generating</li>
+                     * Task type. Value:
+<li>Procedure: video processing task;</li>
+<li>EditMedia: video editing task;</li>
+<li>ReduceMediaBitrate: bitrate reduction task;</li>
+<li>WechatDistribute: publishing on WeChat task;</li>
+<li>ReviewAudioVideo: audio/video moderation task;</li>
+<li>MPSWorkflowTask: MPS video processing task.</li>
+Task types compatible with the 2017 version:
+<li>Transcode: video transcoding task;</li>
+<li>SnapshotByTimeOffset: video screencapturing task;</li>
+<li>Concat: video splicing job;</li>
+<li>Clip: video clipping task;</li>
+<li>ImageSprites: capture CSS sprites task.</li>
+
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * Creation time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Task creation time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been started yet, this field will be empty.
+                     * Task execution start time in [ISO datetime format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not started, this field is empty.
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * End time of task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I). If the task has not been completed yet, this field will be empty.
+                     * Task end time in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I). If the task is not completed yet, this field is empty.
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * ID used for deduplication if there was a request with the same ID in the last seven days.
+                     * Identification code for deduplication, if there has been a request with the same identifier within the past seven days.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * Source context, which is used to pass through the user request information.
+                     * Source context, used to pass through user request information.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

@@ -38,7 +38,10 @@ ScheduledSqlTaskInfo::ScheduledSqlTaskInfo() :
     m_processTimeWindowHasBeenSet(false),
     m_processDelayHasBeenSet(false),
     m_srcTopicRegionHasBeenSet(false),
-    m_syntaxRuleHasBeenSet(false)
+    m_syntaxRuleHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_fullQueryHasBeenSet(false),
+    m_processPeriodUnitHasBeenSet(false)
 {
 }
 
@@ -234,6 +237,36 @@ CoreInternalOutcome ScheduledSqlTaskInfo::Deserialize(const rapidjson::Value &va
         m_syntaxRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("HasServicesLog") && !value["HasServicesLog"].IsNull())
+    {
+        if (!value["HasServicesLog"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlTaskInfo.HasServicesLog` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasServicesLog = value["HasServicesLog"].GetUint64();
+        m_hasServicesLogHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullQuery") && !value["FullQuery"].IsNull())
+    {
+        if (!value["FullQuery"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlTaskInfo.FullQuery` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullQuery = value["FullQuery"].GetUint64();
+        m_fullQueryHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcessPeriodUnit") && !value["ProcessPeriodUnit"].IsNull())
+    {
+        if (!value["ProcessPeriodUnit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlTaskInfo.ProcessPeriodUnit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processPeriodUnit = value["ProcessPeriodUnit"].GetInt64();
+        m_processPeriodUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +417,30 @@ void ScheduledSqlTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_fullQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullQuery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullQuery, allocator);
+    }
+
+    if (m_processPeriodUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPeriodUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processPeriodUnit, allocator);
     }
 
 }
@@ -675,5 +732,53 @@ void ScheduledSqlTaskInfo::SetSyntaxRule(const uint64_t& _syntaxRule)
 bool ScheduledSqlTaskInfo::SyntaxRuleHasBeenSet() const
 {
     return m_syntaxRuleHasBeenSet;
+}
+
+uint64_t ScheduledSqlTaskInfo::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void ScheduledSqlTaskInfo::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool ScheduledSqlTaskInfo::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
+uint64_t ScheduledSqlTaskInfo::GetFullQuery() const
+{
+    return m_fullQuery;
+}
+
+void ScheduledSqlTaskInfo::SetFullQuery(const uint64_t& _fullQuery)
+{
+    m_fullQuery = _fullQuery;
+    m_fullQueryHasBeenSet = true;
+}
+
+bool ScheduledSqlTaskInfo::FullQueryHasBeenSet() const
+{
+    return m_fullQueryHasBeenSet;
+}
+
+int64_t ScheduledSqlTaskInfo::GetProcessPeriodUnit() const
+{
+    return m_processPeriodUnit;
+}
+
+void ScheduledSqlTaskInfo::SetProcessPeriodUnit(const int64_t& _processPeriodUnit)
+{
+    m_processPeriodUnit = _processPeriodUnit;
+    m_processPeriodUnitHasBeenSet = true;
+}
+
+bool ScheduledSqlTaskInfo::ProcessPeriodUnitHasBeenSet() const
+{
+    return m_processPeriodUnitHasBeenSet;
 }
 

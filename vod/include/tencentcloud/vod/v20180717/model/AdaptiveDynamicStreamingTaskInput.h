@@ -27,6 +27,9 @@
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/SubtitleInfoInput.h>
+#include <tencentcloud/vod/v20180717/model/ThirdPartyDrmInfo.h>
 
 
 namespace TencentCloud
@@ -38,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameter type of adaptive bitrate streaming
+                * Input parameter type for video to adaptive bitrate stream
                 */
                 class AdaptiveDynamicStreamingTaskInput : public AbstractModel
                 {
@@ -50,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Adaptive bitrate streaming template ID.
-                     * @return Definition Adaptive bitrate streaming template ID.
+                     * 获取<p>Adaptive bitrate streaming template ID.</p>
+                     * @return Definition <p>Adaptive bitrate streaming template ID.</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Adaptive bitrate streaming template ID.
-                     * @param _definition Adaptive bitrate streaming template ID.
+                     * 设置<p>Adaptive bitrate streaming template ID.</p>
+                     * @param _definition <p>Adaptive bitrate streaming template ID.</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -71,19 +74,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return WatermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Watermark list. Up to 10 image or text watermarks are supported.</p>
+                     * @return WatermarkSet <p>Watermark list. Up to 10 image or text watermarks are supported.</p>
                      * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
-                     * 设置List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _watermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Watermark list. Up to 10 image or text watermarks are supported.</p>
+                     * @param _watermarkSet <p>Watermark list. Up to 10 image or text watermarks are supported.</p>
                      * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
@@ -96,15 +95,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取Digital watermark.
-                     * @return TraceWatermark Digital watermark.
+                     * 获取<p>Traceable watermark.</p>
+                     * @return TraceWatermark <p>Traceable watermark.</p>
                      * 
                      */
                     TraceWatermarkInput GetTraceWatermark() const;
 
                     /**
-                     * 设置Digital watermark.
-                     * @param _traceWatermark Digital watermark.
+                     * 设置<p>Traceable watermark.</p>
+                     * @param _traceWatermark <p>Traceable watermark.</p>
                      * 
                      */
                     void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
@@ -117,15 +116,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TraceWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取CopyRight Watermark.
-                     * @return CopyRightWatermark CopyRight Watermark.
+                     * 获取<p>Copyright watermark.</p>
+                     * @return CopyRightWatermark <p>Copyright watermark.</p>
                      * 
                      */
                     CopyRightWatermarkInput GetCopyRightWatermark() const;
 
                     /**
-                     * 设置CopyRight Watermark.
-                     * @param _copyRightWatermark CopyRight Watermark.
+                     * 设置<p>Copyright watermark.</p>
+                     * @param _copyRightWatermark <p>Copyright watermark.</p>
                      * 
                      */
                     void SetCopyRightWatermark(const CopyRightWatermarkInput& _copyRightWatermark);
@@ -138,15 +137,36 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool CopyRightWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取List of subtitle IDs (maximum: 16)
-                     * @return SubtitleSet List of subtitle IDs (maximum: 16)
+                     * 获取<p>Digital watermark.</p>
+                     * @return BlindWatermark <p>Digital watermark.</p>
+                     * 
+                     */
+                    BlindWatermarkInput GetBlindWatermark() const;
+
+                    /**
+                     * 设置<p>Digital watermark.</p>
+                     * @param _blindWatermark <p>Digital watermark.</p>
+                     * 
+                     */
+                    void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
+
+                    /**
+                     * 判断参数 BlindWatermark 是否已赋值
+                     * @return BlindWatermark 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkHasBeenSet() const;
+
+                    /**
+                     * 获取<p>External subtitle list. The element is Subtitle ID. Supports multiple subtitles, up to 16.</p>
+                     * @return SubtitleSet <p>External subtitle list. The element is Subtitle ID. Supports multiple subtitles, up to 16.</p>
                      * 
                      */
                     std::vector<std::string> GetSubtitleSet() const;
 
                     /**
-                     * 设置List of subtitle IDs (maximum: 16)
-                     * @param _subtitleSet List of subtitle IDs (maximum: 16)
+                     * 设置<p>External subtitle list. The element is Subtitle ID. Supports multiple subtitles, up to 16.</p>
+                     * @param _subtitleSet <p>External subtitle list. The element is Subtitle ID. Supports multiple subtitles, up to 16.</p>
                      * 
                      */
                     void SetSubtitleSet(const std::vector<std::string>& _subtitleSet);
@@ -158,38 +178,97 @@ Note: this field may return null, indicating that no valid values can be obtaine
                      */
                     bool SubtitleSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Subtitle suppression information list. Up to 2 supported.</p>
+                     * @return SubtitleInfoSet <p>Subtitle suppression information list. Up to 2 supported.</p>
+                     * 
+                     */
+                    std::vector<SubtitleInfoInput> GetSubtitleInfoSet() const;
+
+                    /**
+                     * 设置<p>Subtitle suppression information list. Up to 2 supported.</p>
+                     * @param _subtitleInfoSet <p>Subtitle suppression information list. Up to 2 supported.</p>
+                     * 
+                     */
+                    void SetSubtitleInfoSet(const std::vector<SubtitleInfoInput>& _subtitleInfoSet);
+
+                    /**
+                     * 判断参数 SubtitleInfoSet 是否已赋值
+                     * @return SubtitleInfoSet 是否已赋值
+                     * 
+                     */
+                    bool SubtitleInfoSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Third-party DRM encryption information. It is not currently supported to initiate tasks using third-party DRM information via task flow.</p>
+                     * @return DrmInfo <p>Third-party DRM encryption information. It is not currently supported to initiate tasks using third-party DRM information via task flow.</p>
+                     * 
+                     */
+                    ThirdPartyDrmInfo GetDrmInfo() const;
+
+                    /**
+                     * 设置<p>Third-party DRM encryption information. It is not currently supported to initiate tasks using third-party DRM information via task flow.</p>
+                     * @param _drmInfo <p>Third-party DRM encryption information. It is not currently supported to initiate tasks using third-party DRM information via task flow.</p>
+                     * 
+                     */
+                    void SetDrmInfo(const ThirdPartyDrmInfo& _drmInfo);
+
+                    /**
+                     * 判断参数 DrmInfo 是否已赋值
+                     * @return DrmInfo 是否已赋值
+                     * 
+                     */
+                    bool DrmInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Adaptive bitrate streaming template ID.
+                     * <p>Adaptive bitrate streaming template ID.</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Watermark list. Up to 10 image or text watermarks are supported.</p>
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * Digital watermark.
+                     * <p>Traceable watermark.</p>
                      */
                     TraceWatermarkInput m_traceWatermark;
                     bool m_traceWatermarkHasBeenSet;
 
                     /**
-                     * CopyRight Watermark.
+                     * <p>Copyright watermark.</p>
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;
 
                     /**
-                     * List of subtitle IDs (maximum: 16)
+                     * <p>Digital watermark.</p>
+                     */
+                    BlindWatermarkInput m_blindWatermark;
+                    bool m_blindWatermarkHasBeenSet;
+
+                    /**
+                     * <p>External subtitle list. The element is Subtitle ID. Supports multiple subtitles, up to 16.</p>
                      */
                     std::vector<std::string> m_subtitleSet;
                     bool m_subtitleSetHasBeenSet;
+
+                    /**
+                     * <p>Subtitle suppression information list. Up to 2 supported.</p>
+                     */
+                    std::vector<SubtitleInfoInput> m_subtitleInfoSet;
+                    bool m_subtitleInfoSetHasBeenSet;
+
+                    /**
+                     * <p>Third-party DRM encryption information. It is not currently supported to initiate tasks using third-party DRM information via task flow.</p>
+                     */
+                    ThirdPartyDrmInfo m_drmInfo;
+                    bool m_drmInfoHasBeenSet;
 
                 };
             }

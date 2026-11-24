@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information about the sensitive content detected based on ASR.
+                * Sensitive information in Asr text
                 */
                 class AiReviewPoliticalAsrTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The confidence score for the ASR-based detection of sensitive information. Value range: 0-100.
-                     * @return Confidence The confidence score for the ASR-based detection of sensitive information. Value range: 0-100.
+                     * 获取Sensitive score of the Asr text. Value range: 0–100.
+                     * @return Confidence Sensitive score of the Asr text. Value range: 0–100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置The confidence score for the ASR-based detection of sensitive information. Value range: 0-100.
-                     * @param _confidence The confidence score for the ASR-based detection of sensitive information. Value range: 0-100.
+                     * 设置Sensitive score of the Asr text. Value range: 0–100.
+                     * @param _confidence Sensitive score of the Asr text. Value range: 0–100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,27 +69,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取The suggestion for handling the sensitive information detected based on ASR. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion The suggestion for handling the sensitive information detected based on ASR. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 获取Sensitive result suggestions for Asr text. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @return Suggestion Sensitive result suggestions for Asr text. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置The suggestion for handling the sensitive information detected based on ASR. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion The suggestion for handling the sensitive information detected based on ASR. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 设置Sensitive result suggestions for Asr text. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @param _suggestion Sensitive result suggestions for Asr text. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -102,15 +102,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取The video segments that contain sensitive information detected based on ASR.
-                     * @return SegmentSet The video segments that contain sensitive information detected based on ASR.
+                     * 获取List of video segments with sensitive Asr text.
+                     * @return SegmentSet List of video segments with sensitive Asr text.
                      * 
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置The video segments that contain sensitive information detected based on ASR.
-                     * @param _segmentSet The video segments that contain sensitive information detected based on ASR.
+                     * 设置List of video segments with sensitive Asr text.
+                     * @param _segmentSet List of video segments with sensitive Asr text.
                      * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewAsrTextSegmentItem>& _segmentSet);
@@ -125,22 +125,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The confidence score for the ASR-based detection of sensitive information. Value range: 0-100.
+                     * Sensitive score of the Asr text. Value range: 0–100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * The suggestion for handling the sensitive information detected based on ASR. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * Sensitive result suggestions for Asr text. Value range:
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * The video segments that contain sensitive information detected based on ASR.
+                     * List of video segments with sensitive Asr text.
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

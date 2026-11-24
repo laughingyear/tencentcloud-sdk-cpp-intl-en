@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tcsas::V20250106::Model;
 using namespace std;
 
-CreatePresetKeyRequest::CreatePresetKeyRequest()
+CreatePresetKeyRequest::CreatePresetKeyRequest() :
+    m_platformIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string CreatePresetKeyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_platformIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlatformId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platformId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string CreatePresetKeyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePresetKeyRequest::GetPlatformId() const
+{
+    return m_platformId;
+}
+
+void CreatePresetKeyRequest::SetPlatformId(const string& _platformId)
+{
+    m_platformId = _platformId;
+    m_platformIdHasBeenSet = true;
+}
+
+bool CreatePresetKeyRequest::PlatformIdHasBeenSet() const
+{
+    return m_platformIdHasBeenSet;
+}
 
 

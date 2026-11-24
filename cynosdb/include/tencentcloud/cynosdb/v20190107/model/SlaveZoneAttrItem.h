@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 
+                * Availability zone attribute item
                 */
                 class SlaveZoneAttrItem : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取binlog synchronization mode.
-                     * @return BinlogSyncWay binlog synchronization mode.
+                     * 获取binlog synchronization mode
+                     * @return BinlogSyncWay binlog synchronization mode
                      * 
                      */
                     std::string GetBinlogSyncWay() const;
 
                     /**
-                     * 设置binlog synchronization mode.
-                     * @param _binlogSyncWay binlog synchronization mode.
+                     * 设置binlog synchronization mode
+                     * @param _binlogSyncWay binlog synchronization mode
                      * 
                      */
                     void SetBinlogSyncWay(const std::string& _binlogSyncWay);
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool BinlogSyncWayHasBeenSet() const;
 
+                    /**
+                     * 获取Semi-sync timeout period, in milliseconds.
+                     * @return SemiSyncTimeout Semi-sync timeout period, in milliseconds.
+                     * 
+                     */
+                    int64_t GetSemiSyncTimeout() const;
+
+                    /**
+                     * 设置Semi-sync timeout period, in milliseconds.
+                     * @param _semiSyncTimeout Semi-sync timeout period, in milliseconds.
+                     * 
+                     */
+                    void SetSemiSyncTimeout(const int64_t& _semiSyncTimeout);
+
+                    /**
+                     * 判断参数 SemiSyncTimeout 是否已赋值
+                     * @return SemiSyncTimeout 是否已赋值
+                     * 
+                     */
+                    bool SemiSyncTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,10 +118,16 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * binlog synchronization mode.
+                     * binlog synchronization mode
                      */
                     std::string m_binlogSyncWay;
                     bool m_binlogSyncWayHasBeenSet;
+
+                    /**
+                     * Semi-sync timeout period, in milliseconds.
+                     */
+                    int64_t m_semiSyncTimeout;
+                    bool m_semiSyncTimeoutHasBeenSet;
 
                 };
             }

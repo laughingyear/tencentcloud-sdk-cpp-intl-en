@@ -25,7 +25,9 @@ using namespace std;
 ControlAIConversationRequest::ControlAIConversationRequest() :
     m_taskIdHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_serverPushTextHasBeenSet(false)
+    m_serverPushTextHasBeenSet(false),
+    m_invokeLLMHasBeenSet(false),
+    m_transparentDataHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,24 @@ string ControlAIConversationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverPushText.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_invokeLLMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvokeLLM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_invokeLLM.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_transparentDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransparentData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transparentData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +135,38 @@ void ControlAIConversationRequest::SetServerPushText(const ServerPushText& _serv
 bool ControlAIConversationRequest::ServerPushTextHasBeenSet() const
 {
     return m_serverPushTextHasBeenSet;
+}
+
+InvokeLLM ControlAIConversationRequest::GetInvokeLLM() const
+{
+    return m_invokeLLM;
+}
+
+void ControlAIConversationRequest::SetInvokeLLM(const InvokeLLM& _invokeLLM)
+{
+    m_invokeLLM = _invokeLLM;
+    m_invokeLLMHasBeenSet = true;
+}
+
+bool ControlAIConversationRequest::InvokeLLMHasBeenSet() const
+{
+    return m_invokeLLMHasBeenSet;
+}
+
+TransparentData ControlAIConversationRequest::GetTransparentData() const
+{
+    return m_transparentData;
+}
+
+void ControlAIConversationRequest::SetTransparentData(const TransparentData& _transparentData)
+{
+    m_transparentData = _transparentData;
+    m_transparentDataHasBeenSet = true;
+}
+
+bool ControlAIConversationRequest::TransparentDataHasBeenSet() const
+{
+    return m_transparentDataHasBeenSet;
 }
 
 

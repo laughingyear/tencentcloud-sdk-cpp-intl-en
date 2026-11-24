@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Suspected attack detail
+                * Suspected attack risk details
                 */
                 class AttackRiskDetail : public AbstractModel
                 {
@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Suspected attack trace types
-SuspectedSpoofingAttack: Suspected spoofing attack
- SuspectedSynthesisImage: Suspected synthesis image SuspectedSynthesisVideo: Suspected synthesis video SuspectedeAnomalyAttack: Suspected anomaly attack SuspectedAdversarialAttack: Suspected adversarial attack SuspectedBlackIndustry: Suspected batch generation attack
-SuspectedWatermark: Suspected watermark
-                     * @return Type Suspected attack trace types
-SuspectedSpoofingAttack: Suspected spoofing attack
- SuspectedSynthesisImage: Suspected synthesis image SuspectedSynthesisVideo: Suspected synthesis video SuspectedeAnomalyAttack: Suspected anomaly attack SuspectedAdversarialAttack: Suspected adversarial attack SuspectedBlackIndustry: Suspected batch generation attack
-SuspectedWatermark: Suspected watermark
+                     * 获取<p>Types of suspected attack traces. The specific types are as follows:<br>SuspectedSpoofingAttack: Recapture attack<br>SuspectedSynthesisImage: Suspected synthetic image<br>SuspectedSynthesisVideo: Suspected synthetic video<br>SuspectedAnomalyAttack: Suspected non-live facial features<br>SuspectedAdversarialAttack: Suspected adversarial example attack<br>SuspectedBlackIndustry: Suspected batch template attack from black market operations<br>SuspectedWatermark: Suspected watermark presence</p>
+                     * @return Type <p>Types of suspected attack traces. The specific types are as follows:<br>SuspectedSpoofingAttack: Recapture attack<br>SuspectedSynthesisImage: Suspected synthetic image<br>SuspectedSynthesisVideo: Suspected synthetic video<br>SuspectedAnomalyAttack: Suspected non-live facial features<br>SuspectedAdversarialAttack: Suspected adversarial example attack<br>SuspectedBlackIndustry: Suspected batch template attack from black market operations<br>SuspectedWatermark: Suspected watermark presence</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Suspected attack trace types
-SuspectedSpoofingAttack: Suspected spoofing attack
- SuspectedSynthesisImage: Suspected synthesis image SuspectedSynthesisVideo: Suspected synthesis video SuspectedeAnomalyAttack: Suspected anomaly attack SuspectedAdversarialAttack: Suspected adversarial attack SuspectedBlackIndustry: Suspected batch generation attack
-SuspectedWatermark: Suspected watermark
-                     * @param _type Suspected attack trace types
-SuspectedSpoofingAttack: Suspected spoofing attack
- SuspectedSynthesisImage: Suspected synthesis image SuspectedSynthesisVideo: Suspected synthesis video SuspectedeAnomalyAttack: Suspected anomaly attack SuspectedAdversarialAttack: Suspected adversarial attack SuspectedBlackIndustry: Suspected batch generation attack
-SuspectedWatermark: Suspected watermark
+                     * 设置<p>Types of suspected attack traces. The specific types are as follows:<br>SuspectedSpoofingAttack: Recapture attack<br>SuspectedSynthesisImage: Suspected synthetic image<br>SuspectedSynthesisVideo: Suspected synthetic video<br>SuspectedAnomalyAttack: Suspected non-live facial features<br>SuspectedAdversarialAttack: Suspected adversarial example attack<br>SuspectedBlackIndustry: Suspected batch template attack from black market operations<br>SuspectedWatermark: Suspected watermark presence</p>
+                     * @param _type <p>Types of suspected attack traces. The specific types are as follows:<br>SuspectedSpoofingAttack: Recapture attack<br>SuspectedSynthesisImage: Suspected synthetic image<br>SuspectedSynthesisVideo: Suspected synthetic video<br>SuspectedAnomalyAttack: Suspected non-live facial features<br>SuspectedAdversarialAttack: Suspected adversarial example attack<br>SuspectedBlackIndustry: Suspected batch template attack from black market operations<br>SuspectedWatermark: Suspected watermark presence</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -82,10 +70,7 @@ SuspectedWatermark: Suspected watermark
                 private:
 
                     /**
-                     * Suspected attack trace types
-SuspectedSpoofingAttack: Suspected spoofing attack
- SuspectedSynthesisImage: Suspected synthesis image SuspectedSynthesisVideo: Suspected synthesis video SuspectedeAnomalyAttack: Suspected anomaly attack SuspectedAdversarialAttack: Suspected adversarial attack SuspectedBlackIndustry: Suspected batch generation attack
-SuspectedWatermark: Suspected watermark
+                     * <p>Types of suspected attack traces. The specific types are as follows:<br>SuspectedSpoofingAttack: Recapture attack<br>SuspectedSynthesisImage: Suspected synthetic image<br>SuspectedSynthesisVideo: Suspected synthetic video<br>SuspectedAnomalyAttack: Suspected non-live facial features<br>SuspectedAdversarialAttack: Suspected adversarial example attack<br>SuspectedBlackIndustry: Suspected batch template attack from black market operations<br>SuspectedWatermark: Suspected watermark presence</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

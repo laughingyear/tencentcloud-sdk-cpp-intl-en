@@ -40,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Segment information of media track
+                * Segment information of the media track.
                 */
                 class MediaTrackItem : public AbstractModel
                 {
@@ -52,16 +52,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Segment type. Valid values:
-<li>Video: video segment.</li>
-<li>Audio: audio segment.</li>
-<li>Sticker: sticker segment.</li>
+                     * 获取Fragment type. Valid values:
+<li>Video: video clip.</li>
+<li>Audio: audio recording clip.</li>
+<li>Sticker: texture segment.</li>
 <li>Transition: transition.</li>
 <li>Empty: empty segment.</li>
-                     * @return Type Segment type. Valid values:
-<li>Video: video segment.</li>
-<li>Audio: audio segment.</li>
-<li>Sticker: sticker segment.</li>
+                     * @return Type Fragment type. Valid values:
+<li>Video: video clip.</li>
+<li>Audio: audio recording clip.</li>
+<li>Sticker: texture segment.</li>
 <li>Transition: transition.</li>
 <li>Empty: empty segment.</li>
                      * 
@@ -69,16 +69,16 @@ namespace TencentCloud
                     std::string GetType() const;
 
                     /**
-                     * 设置Segment type. Valid values:
-<li>Video: video segment.</li>
-<li>Audio: audio segment.</li>
-<li>Sticker: sticker segment.</li>
+                     * 设置Fragment type. Valid values:
+<li>Video: video clip.</li>
+<li>Audio: audio recording clip.</li>
+<li>Sticker: texture segment.</li>
 <li>Transition: transition.</li>
 <li>Empty: empty segment.</li>
-                     * @param _type Segment type. Valid values:
-<li>Video: video segment.</li>
-<li>Audio: audio segment.</li>
-<li>Sticker: sticker segment.</li>
+                     * @param _type Fragment type. Valid values:
+<li>Video: video clip.</li>
+<li>Audio: audio recording clip.</li>
+<li>Sticker: texture segment.</li>
 <li>Transition: transition.</li>
 <li>Empty: empty segment.</li>
                      * 
@@ -93,19 +93,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Video segment, which is valid if `Type` is `Video`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return VideoItem Video segment, which is valid if `Type` is `Video`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Video clip. Valid when Type is Video.
+                     * @return VideoItem Video clip. Valid when Type is Video.
                      * 
                      */
                     VideoTrackItem GetVideoItem() const;
 
                     /**
-                     * 设置Video segment, which is valid if `Type` is `Video`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _videoItem Video segment, which is valid if `Type` is `Video`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Video clip. Valid when Type is Video.
+                     * @param _videoItem Video clip. Valid when Type is Video.
                      * 
                      */
                     void SetVideoItem(const VideoTrackItem& _videoItem);
@@ -118,19 +114,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool VideoItemHasBeenSet() const;
 
                     /**
-                     * 获取Audio segment, which is valid if `Type` is `Audio`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return AudioItem Audio segment, which is valid if `Type` is `Audio`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Audio clip. Valid when Type is Audio.
+                     * @return AudioItem Audio clip. Valid when Type is Audio.
                      * 
                      */
                     AudioTrackItem GetAudioItem() const;
 
                     /**
-                     * 设置Audio segment, which is valid if `Type` is `Audio`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _audioItem Audio segment, which is valid if `Type` is `Audio`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Audio clip. Valid when Type is Audio.
+                     * @param _audioItem Audio clip. Valid when Type is Audio.
                      * 
                      */
                     void SetAudioItem(const AudioTrackItem& _audioItem);
@@ -143,19 +135,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool AudioItemHasBeenSet() const;
 
                     /**
-                     * 获取Sticker segment, which is valid if `Type` is `Sticker`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return StickerItem Sticker segment, which is valid if `Type` is `Sticker`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Texture segment. Valid when Type is Sticker.
+                     * @return StickerItem Texture segment. Valid when Type is Sticker.
                      * 
                      */
                     StickerTrackItem GetStickerItem() const;
 
                     /**
-                     * 设置Sticker segment, which is valid if `Type` is `Sticker`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _stickerItem Sticker segment, which is valid if `Type` is `Sticker`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Texture segment. Valid when Type is Sticker.
+                     * @param _stickerItem Texture segment. Valid when Type is Sticker.
                      * 
                      */
                     void SetStickerItem(const StickerTrackItem& _stickerItem);
@@ -168,19 +156,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool StickerItemHasBeenSet() const;
 
                     /**
-                     * 获取Transition, which is valid if `Type` is `Transition`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return TransitionItem Transition, which is valid if `Type` is `Transition`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Transition. Valid when Type is Transition.
+                     * @return TransitionItem Transition. Valid when Type is Transition.
                      * 
                      */
                     MediaTransitionItem GetTransitionItem() const;
 
                     /**
-                     * 设置Transition, which is valid if `Type` is `Transition`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _transitionItem Transition, which is valid if `Type` is `Transition`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Transition. Valid when Type is Transition.
+                     * @param _transitionItem Transition. Valid when Type is Transition.
                      * 
                      */
                     void SetTransitionItem(const MediaTransitionItem& _transitionItem);
@@ -193,23 +177,19 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool TransitionItemHasBeenSet() const;
 
                     /**
-                     * 获取Empty segment, which is valid if `Type` is `Empty`. It is used as placeholder on time axis. <li>If you want a period of silence between two audio segments, you can use `EmptyTrackItem` to hold the place.</li>
-<li>Use `EmptyTrackItem` as a placeholder to locate an item.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return EmptyItem Empty segment, which is valid if `Type` is `Empty`. It is used as placeholder on time axis. <li>If you want a period of silence between two audio segments, you can use `EmptyTrackItem` to hold the place.</li>
-<li>Use `EmptyTrackItem` as a placeholder to locate an item.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Empty segment. Valid when Type = Empty. The empty segment is used as a placeholder on the timeline.<li>If a period of silence is required between two audio clips, you can use EmptyTrackItem as a placeholder.</li>
+<li>Use EmptyTrackItem as a placeholder to locate a certain Item.</li>
+                     * @return EmptyItem Empty segment. Valid when Type = Empty. The empty segment is used as a placeholder on the timeline.<li>If a period of silence is required between two audio clips, you can use EmptyTrackItem as a placeholder.</li>
+<li>Use EmptyTrackItem as a placeholder to locate a certain Item.</li>
                      * 
                      */
                     EmptyTrackItem GetEmptyItem() const;
 
                     /**
-                     * 设置Empty segment, which is valid if `Type` is `Empty`. It is used as placeholder on time axis. <li>If you want a period of silence between two audio segments, you can use `EmptyTrackItem` to hold the place.</li>
-<li>Use `EmptyTrackItem` as a placeholder to locate an item.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _emptyItem Empty segment, which is valid if `Type` is `Empty`. It is used as placeholder on time axis. <li>If you want a period of silence between two audio segments, you can use `EmptyTrackItem` to hold the place.</li>
-<li>Use `EmptyTrackItem` as a placeholder to locate an item.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Empty segment. Valid when Type = Empty. The empty segment is used as a placeholder on the timeline.<li>If a period of silence is required between two audio clips, you can use EmptyTrackItem as a placeholder.</li>
+<li>Use EmptyTrackItem as a placeholder to locate a certain Item.</li>
+                     * @param _emptyItem Empty segment. Valid when Type = Empty. The empty segment is used as a placeholder on the timeline.<li>If a period of silence is required between two audio clips, you can use EmptyTrackItem as a placeholder.</li>
+<li>Use EmptyTrackItem as a placeholder to locate a certain Item.</li>
                      * 
                      */
                     void SetEmptyItem(const EmptyTrackItem& _emptyItem);
@@ -224,10 +204,10 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Segment type. Valid values:
-<li>Video: video segment.</li>
-<li>Audio: audio segment.</li>
-<li>Sticker: sticker segment.</li>
+                     * Fragment type. Valid values:
+<li>Video: video clip.</li>
+<li>Audio: audio recording clip.</li>
+<li>Sticker: texture segment.</li>
 <li>Transition: transition.</li>
 <li>Empty: empty segment.</li>
                      */
@@ -235,37 +215,32 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Video segment, which is valid if `Type` is `Video`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Video clip. Valid when Type is Video.
                      */
                     VideoTrackItem m_videoItem;
                     bool m_videoItemHasBeenSet;
 
                     /**
-                     * Audio segment, which is valid if `Type` is `Audio`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Audio clip. Valid when Type is Audio.
                      */
                     AudioTrackItem m_audioItem;
                     bool m_audioItemHasBeenSet;
 
                     /**
-                     * Sticker segment, which is valid if `Type` is `Sticker`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Texture segment. Valid when Type is Sticker.
                      */
                     StickerTrackItem m_stickerItem;
                     bool m_stickerItemHasBeenSet;
 
                     /**
-                     * Transition, which is valid if `Type` is `Transition`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Transition. Valid when Type is Transition.
                      */
                     MediaTransitionItem m_transitionItem;
                     bool m_transitionItemHasBeenSet;
 
                     /**
-                     * Empty segment, which is valid if `Type` is `Empty`. It is used as placeholder on time axis. <li>If you want a period of silence between two audio segments, you can use `EmptyTrackItem` to hold the place.</li>
-<li>Use `EmptyTrackItem` as a placeholder to locate an item.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Empty segment. Valid when Type = Empty. The empty segment is used as a placeholder on the timeline.<li>If a period of silence is required between two audio clips, you can use EmptyTrackItem as a placeholder.</li>
+<li>Use EmptyTrackItem as a placeholder to locate a certain Item.</li>
                      */
                     EmptyTrackItem m_emptyItem;
                     bool m_emptyItemHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for detecting low brightness and overexposure of video.
+                * Control parameters for low-light and overexposure detection in video frames.
                 */
                 class AbnormalLightingConfigureInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取low brightness and overexposure inspection switch, optional values: 
-<li>ON: enabled;</li> 
-<li>OFF: disabled.</li>
-                     * @return Switch low brightness and overexposure inspection switch, optional values: 
-<li>ON: enabled;</li> 
-<li>OFF: disabled.</li>
+                     * 获取Video low-light and overexposure detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
+                     * @return Switch Video low-light and overexposure detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置low brightness and overexposure inspection switch, optional values: 
-<li>ON: enabled;</li> 
-<li>OFF: disabled.</li>
-                     * @param _switch low brightness and overexposure inspection switch, optional values: 
-<li>ON: enabled;</li> 
-<li>OFF: disabled.</li>
+                     * 设置Video low-light and overexposure detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
+                     * @param _switch Video low-light and overexposure detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * low brightness and overexposure inspection switch, optional values: 
-<li>ON: enabled;</li> 
-<li>OFF: disabled.</li>
+                     * Video low-light and overexposure detection switch. Available values:
+<li>ON: enabled;</li>
+<li>OFF: disabled</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

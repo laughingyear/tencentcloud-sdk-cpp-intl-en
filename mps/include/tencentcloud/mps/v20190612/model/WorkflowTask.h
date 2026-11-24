@@ -32,6 +32,8 @@
 #include <tencentcloud/mps/v20190612/model/AiRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/AIDubbingTaskResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +45,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of the media processing task.
+                * Media processing task information
                 */
                 class WorkflowTask : public AbstractModel
                 {
@@ -55,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The media processing task ID.
-                     * @return TaskId The media processing task ID.
+                     * 获取<p>Media processing task ID.</p>
+                     * @return TaskId <p>Media processing task ID.</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置The media processing task ID.
-                     * @param _taskId The media processing task ID.
+                     * 设置<p>Media processing task ID.</p>
+                     * @param _taskId <p>Media processing task ID.</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -76,23 +78,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Task flow status. Valid values:
-<li>PROCESSING: Processing;</li>
-<li>FINISH: Completed.</li>
-                     * @return Status Task flow status. Valid values:
-<li>PROCESSING: Processing;</li>
-<li>FINISH: Completed.</li>
+                     * 获取<p>Task flow status. Valid values: </p><li>PROCESSING: Processing; </li><li>FINISH: Completed.</li>
+                     * @return Status <p>Task flow status. Valid values: </p><li>PROCESSING: Processing; </li><li>FINISH: Completed.</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task flow status. Valid values:
-<li>PROCESSING: Processing;</li>
-<li>FINISH: Completed.</li>
-                     * @param _status Task flow status. Valid values:
-<li>PROCESSING: Processing;</li>
-<li>FINISH: Completed.</li>
+                     * 设置<p>Task flow status. Valid values: </p><li>PROCESSING: Processing; </li><li>FINISH: Completed.</li>
+                     * @param _status <p>Task flow status. Valid values: </p><li>PROCESSING: Processing; </li><li>FINISH: Completed.</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -105,15 +99,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取If the value returned is not 0, there was a source error. If 0 is returned, refer to the error codes of the corresponding task type.
-                     * @return ErrCode If the value returned is not 0, there was a source error. If 0 is returned, refer to the error codes of the corresponding task type.
+                     * 获取<p>Returns a non-zero error code when a source error occurs. If 0 is returned, use the ErrCode of each specific task.</p>
+                     * @return ErrCode <p>Returns a non-zero error code when a source error occurs. If 0 is returned, use the ErrCode of each specific task.</p>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置If the value returned is not 0, there was a source error. If 0 is returned, refer to the error codes of the corresponding task type.
-                     * @param _errCode If the value returned is not 0, there was a source error. If 0 is returned, refer to the error codes of the corresponding task type.
+                     * 设置<p>Returns a non-zero error code when a source error occurs. If 0 is returned, use the ErrCode of each specific task.</p>
+                     * @param _errCode <p>Returns a non-zero error code when a source error occurs. If 0 is returned, use the ErrCode of each specific task.</p>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -126,15 +120,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取Except those for source errors, error messages vary with task type.
-                     * @return Message Except those for source errors, error messages vary with task type.
+                     * 获取<p>Returns the corresponding error Message when a source error occurs. Otherwise, use the Message of each specific task.</p>
+                     * @return Message <p>Returns the corresponding error Message when a source error occurs. Otherwise, use the Message of each specific task.</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置Except those for source errors, error messages vary with task type.
-                     * @param _message Except those for source errors, error messages vary with task type.
+                     * 设置<p>Returns the corresponding error Message when a source error occurs. Otherwise, use the Message of each specific task.</p>
+                     * @param _message <p>Returns the corresponding error Message when a source error occurs. Otherwise, use the Message of each specific task.</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -147,19 +141,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取The information of the file processed.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return InputInfo The information of the file processed.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Target file information of media processing.</p>
+                     * @return InputInfo <p>Target file information of media processing.</p>
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置The information of the file processed.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _inputInfo The information of the file processed.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Target file information of media processing.</p>
+                     * @param _inputInfo <p>Target file information of media processing.</p>
                      * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -172,19 +162,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取Metadata of a source video.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MetaData Metadata of a source video.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Metadata of the original video.</p>
+                     * @return MetaData <p>Metadata of the original video.</p>
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置Metadata of a source video.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _metaData Metadata of a source video.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Metadata of the original video.</p>
+                     * @param _metaData <p>Metadata of the original video.</p>
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -197,15 +183,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取The execution status and result of the media processing task.
-                     * @return MediaProcessResultSet The execution status and result of the media processing task.
+                     * 获取<p>Execution status and result of the media processing task.</p>
+                     * @return MediaProcessResultSet <p>Execution status and result of the media processing task.</p>
                      * 
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
-                     * 设置The execution status and result of the media processing task.
-                     * @param _mediaProcessResultSet The execution status and result of the media processing task.
+                     * 设置<p>Execution status and result of the media processing task.</p>
+                     * @param _mediaProcessResultSet <p>Execution status and result of the media processing task.</p>
                      * 
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
@@ -218,15 +204,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of a video content audit task.
-                     * @return AiContentReviewResultSet Execution status and result of a video content audit task.
+                     * 获取<p>Execution status and results of the video content review task.</p>
+                     * @return AiContentReviewResultSet <p>Execution status and results of the video content review task.</p>
                      * 
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
-                     * 设置Execution status and result of a video content audit task.
-                     * @param _aiContentReviewResultSet Execution status and result of a video content audit task.
+                     * 设置<p>Execution status and results of the video content review task.</p>
+                     * @param _aiContentReviewResultSet <p>Execution status and results of the video content review task.</p>
                      * 
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
@@ -239,15 +225,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AiContentReviewResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of video content analysis task.
-                     * @return AiAnalysisResultSet Execution status and result of video content analysis task.
+                     * 获取<p>Execution status and results of the video content analysis task.</p>
+                     * @return AiAnalysisResultSet <p>Execution status and results of the video content analysis task.</p>
                      * 
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
-                     * 设置Execution status and result of video content analysis task.
-                     * @param _aiAnalysisResultSet Execution status and result of video content analysis task.
+                     * 设置<p>Execution status and results of the video content analysis task.</p>
+                     * @param _aiAnalysisResultSet <p>Execution status and results of the video content analysis task.</p>
                      * 
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
@@ -260,15 +246,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AiAnalysisResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and result of a video content recognition task.
-                     * @return AiRecognitionResultSet Execution status and result of a video content recognition task.
+                     * 获取<p>Execution status and results of the video content recognition task.</p>
+                     * @return AiRecognitionResultSet <p>Execution status and results of the video content recognition task.</p>
                      * 
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
-                     * 设置Execution status and result of a video content recognition task.
-                     * @param _aiRecognitionResultSet Execution status and result of a video content recognition task.
+                     * 设置<p>Execution status and results of the video content recognition task.</p>
+                     * @param _aiRecognitionResultSet <p>Execution status and results of the video content recognition task.</p>
                      * 
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
@@ -281,19 +267,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AiRecognitionResultSetHasBeenSet() const;
 
                     /**
-                     * 获取Execution status and results of a media quality inspection task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AiQualityControlTaskResult Execution status and results of a media quality inspection task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Execution status and results of a media quality inspection task.</p>
+                     * @return AiQualityControlTaskResult <p>Execution status and results of a media quality inspection task.</p>
                      * 
                      */
                     ScheduleQualityControlTaskResult GetAiQualityControlTaskResult() const;
 
                     /**
-                     * 设置Execution status and results of a media quality inspection task.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _aiQualityControlTaskResult Execution status and results of a media quality inspection task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Execution status and results of a media quality inspection task.</p>
+                     * @param _aiQualityControlTaskResult <p>Execution status and results of a media quality inspection task.</p>
                      * 
                      */
                     void SetAiQualityControlTaskResult(const ScheduleQualityControlTaskResult& _aiQualityControlTaskResult);
@@ -306,19 +288,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AiQualityControlTaskResultHasBeenSet() const;
 
                     /**
-                     * 获取Execution result of the smart subtitle task.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return SmartSubtitlesTaskResult Execution result of the smart subtitle task.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Execution result of the smart subtitle task</p>
+                     * @return SmartSubtitlesTaskResult <p>Execution result of the smart subtitle task</p>
                      * 
                      */
                     std::vector<SmartSubtitlesResult> GetSmartSubtitlesTaskResult() const;
 
                     /**
-                     * 设置Execution result of the smart subtitle task.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _smartSubtitlesTaskResult Execution result of the smart subtitle task.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Execution result of the smart subtitle task</p>
+                     * @param _smartSubtitlesTaskResult <p>Execution result of the smart subtitle task</p>
                      * 
                      */
                     void SetSmartSubtitlesTaskResult(const std::vector<SmartSubtitlesResult>& _smartSubtitlesTaskResult);
@@ -330,85 +308,133 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool SmartSubtitlesTaskResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Outcome of the intelligent erasure task</p>
+                     * @return SmartEraseTaskResult <p>Outcome of the intelligent erasure task</p>
+                     * 
+                     */
+                    SmartEraseTaskResult GetSmartEraseTaskResult() const;
+
+                    /**
+                     * 设置<p>Outcome of the intelligent erasure task</p>
+                     * @param _smartEraseTaskResult <p>Outcome of the intelligent erasure task</p>
+                     * 
+                     */
+                    void SetSmartEraseTaskResult(const SmartEraseTaskResult& _smartEraseTaskResult);
+
+                    /**
+                     * 判断参数 SmartEraseTaskResult 是否已赋值
+                     * @return SmartEraseTaskResult 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskResultHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Outcome of the AI dubbing task.</p>
+                     * @return AiDubbingTaskResult <p>Outcome of the AI dubbing task.</p>
+                     * 
+                     */
+                    AIDubbingTaskResult GetAiDubbingTaskResult() const;
+
+                    /**
+                     * 设置<p>Outcome of the AI dubbing task.</p>
+                     * @param _aiDubbingTaskResult <p>Outcome of the AI dubbing task.</p>
+                     * 
+                     */
+                    void SetAiDubbingTaskResult(const AIDubbingTaskResult& _aiDubbingTaskResult);
+
+                    /**
+                     * 判断参数 AiDubbingTaskResult 是否已赋值
+                     * @return AiDubbingTaskResult 是否已赋值
+                     * 
+                     */
+                    bool AiDubbingTaskResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The media processing task ID.
+                     * <p>Media processing task ID.</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Task flow status. Valid values:
-<li>PROCESSING: Processing;</li>
-<li>FINISH: Completed.</li>
+                     * <p>Task flow status. Valid values: </p><li>PROCESSING: Processing; </li><li>FINISH: Completed.</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * If the value returned is not 0, there was a source error. If 0 is returned, refer to the error codes of the corresponding task type.
+                     * <p>Returns a non-zero error code when a source error occurs. If 0 is returned, use the ErrCode of each specific task.</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * Except those for source errors, error messages vary with task type.
+                     * <p>Returns the corresponding error Message when a source error occurs. Otherwise, use the Message of each specific task.</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * The information of the file processed.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Target file information of media processing.</p>
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * Metadata of a source video.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Metadata of the original video.</p>
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * The execution status and result of the media processing task.
+                     * <p>Execution status and result of the media processing task.</p>
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
-                     * Execution status and result of a video content audit task.
+                     * <p>Execution status and results of the video content review task.</p>
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;
 
                     /**
-                     * Execution status and result of video content analysis task.
+                     * <p>Execution status and results of the video content analysis task.</p>
                      */
                     std::vector<AiAnalysisResult> m_aiAnalysisResultSet;
                     bool m_aiAnalysisResultSetHasBeenSet;
 
                     /**
-                     * Execution status and result of a video content recognition task.
+                     * <p>Execution status and results of the video content recognition task.</p>
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;
 
                     /**
-                     * Execution status and results of a media quality inspection task.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Execution status and results of a media quality inspection task.</p>
                      */
                     ScheduleQualityControlTaskResult m_aiQualityControlTaskResult;
                     bool m_aiQualityControlTaskResultHasBeenSet;
 
                     /**
-                     * Execution result of the smart subtitle task.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Execution result of the smart subtitle task</p>
                      */
                     std::vector<SmartSubtitlesResult> m_smartSubtitlesTaskResult;
                     bool m_smartSubtitlesTaskResultHasBeenSet;
+
+                    /**
+                     * <p>Outcome of the intelligent erasure task</p>
+                     */
+                    SmartEraseTaskResult m_smartEraseTaskResult;
+                    bool m_smartEraseTaskResultHasBeenSet;
+
+                    /**
+                     * <p>Outcome of the AI dubbing task.</p>
+                     */
+                    AIDubbingTaskResult m_aiDubbingTaskResult;
+                    bool m_aiDubbingTaskResultHasBeenSet;
 
                 };
             }

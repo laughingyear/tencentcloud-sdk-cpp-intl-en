@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeTempSecret4UploadFile2CosRequest::DescribeTempSecret4UploadFile2CosRequest() :
     m_businessNameHasBeenSet(false),
-    m_suffixHasBeenSet(false)
+    m_suffixHasBeenSet(false),
+    m_platformIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeTempSecret4UploadFile2CosRequest::ToJsonString() const
         string key = "Suffix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_suffix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlatformId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platformId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeTempSecret4UploadFile2CosRequest::SetSuffix(const string& _suffix)
 bool DescribeTempSecret4UploadFile2CosRequest::SuffixHasBeenSet() const
 {
     return m_suffixHasBeenSet;
+}
+
+string DescribeTempSecret4UploadFile2CosRequest::GetPlatformId() const
+{
+    return m_platformId;
+}
+
+void DescribeTempSecret4UploadFile2CosRequest::SetPlatformId(const string& _platformId)
+{
+    m_platformId = _platformId;
+    m_platformIdHasBeenSet = true;
+}
+
+bool DescribeTempSecret4UploadFile2CosRequest::PlatformIdHasBeenSet() const
+{
+    return m_platformIdHasBeenSet;
 }
 
 

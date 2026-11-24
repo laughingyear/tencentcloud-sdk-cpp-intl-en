@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Remaster task ID
-                     * @return TaskId Remaster task ID
+                     * 获取Audio and video quality regeneration task ID.
+                     * @return TaskId Audio and video quality regeneration task ID.
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Remaster task ID
+                     * Audio and video quality regeneration task ID.
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

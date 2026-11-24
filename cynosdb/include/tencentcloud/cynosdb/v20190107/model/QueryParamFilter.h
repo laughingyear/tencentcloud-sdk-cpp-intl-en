@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Filters for query
+                * Query parameter filter
                 */
                 class QueryParamFilter : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @return Names Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 获取Search field. Currently supports: ProxyGroupId
+                     * @return Names Search field. Currently supports: ProxyGroupId
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @param _names Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 设置Search field. Currently supports: ProxyGroupId
+                     * @param _names Search field. Currently supports: ProxyGroupId
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NamesHasBeenSet() const;
 
                     /**
-                     * 获取Search string
-                     * @return Values Search string
+                     * 获取String for search.
+                     * @return Values String for search.
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置Search string
-                     * @param _values Search string
+                     * 设置String for search.
+                     * @param _values String for search.
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取Whether to use exact match
-                     * @return ExactMatch Whether to use exact match
+                     * 获取Whether to match exactly.
+                     * @return ExactMatch Whether to match exactly.
                      * 
                      */
                     bool GetExactMatch() const;
 
                     /**
-                     * 设置Whether to use exact match
-                     * @param _exactMatch Whether to use exact match
+                     * 设置Whether to match exactly.
+                     * @param _exactMatch Whether to match exactly.
                      * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Search field. Valid values: "InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * Search field. Currently supports: ProxyGroupId
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
 
                     /**
-                     * Search string
+                     * String for search.
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * Whether to use exact match
+                     * Whether to match exactly.
                      */
                     bool m_exactMatch;
                     bool m_exactMatchHasBeenSet;

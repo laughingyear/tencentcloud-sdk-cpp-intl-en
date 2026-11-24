@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The instance ID.
-                     * @return InstanceId The instance ID.
+                     * 获取Instance ID.
+                     * @return InstanceId Instance ID.
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置The instance ID.
-                     * @param _instanceId The instance ID.
+                     * 设置Instance ID.
+                     * @param _instanceId Instance ID.
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,31 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Parameter for record filtration. Valid values: "StartTime", "EndTime" and "StrategyName". StartTime and EndTime support the time format of 2006-01-02 15:04:05 or 2006/01/02 15:04:05.
-                     * @return Filters Parameter for record filtration. Valid values: "StartTime", "EndTime" and "StrategyName". StartTime and EndTime support the time format of 2006-01-02 15:04:05 or 2006/01/02 15:04:05.
+                     * 获取Record filter parameter, which can only be "StartTime", "EndTime", "StrategyName", "ActionStatus", or "ScaleAction".
+Time format. Either 2006-01-02 15:04:05 or 2006/01/02 15:04:05 for StartTime and EndTime.
+ActionStatus: 0 (INITED), 1 (SUCCESS), 2 (FAILED), 3 (LIMITED_SUCCESSED), 4 (IN_PROCESS), and 5 (IN_RETRY).
+ScaleAction: 1 (scale-out) and 2 (scale-in).
+
+                     * @return Filters Record filter parameter, which can only be "StartTime", "EndTime", "StrategyName", "ActionStatus", or "ScaleAction".
+Time format. Either 2006-01-02 15:04:05 or 2006/01/02 15:04:05 for StartTime and EndTime.
+ActionStatus: 0 (INITED), 1 (SUCCESS), 2 (FAILED), 3 (LIMITED_SUCCESSED), 4 (IN_PROCESS), and 5 (IN_RETRY).
+ScaleAction: 1 (scale-out) and 2 (scale-in).
+
                      * 
                      */
                     std::vector<KeyValue> GetFilters() const;
 
                     /**
-                     * 设置Parameter for record filtration. Valid values: "StartTime", "EndTime" and "StrategyName". StartTime and EndTime support the time format of 2006-01-02 15:04:05 or 2006/01/02 15:04:05.
-                     * @param _filters Parameter for record filtration. Valid values: "StartTime", "EndTime" and "StrategyName". StartTime and EndTime support the time format of 2006-01-02 15:04:05 or 2006/01/02 15:04:05.
+                     * 设置Record filter parameter, which can only be "StartTime", "EndTime", "StrategyName", "ActionStatus", or "ScaleAction".
+Time format. Either 2006-01-02 15:04:05 or 2006/01/02 15:04:05 for StartTime and EndTime.
+ActionStatus: 0 (INITED), 1 (SUCCESS), 2 (FAILED), 3 (LIMITED_SUCCESSED), 4 (IN_PROCESS), and 5 (IN_RETRY).
+ScaleAction: 1 (scale-out) and 2 (scale-in).
+
+                     * @param _filters Record filter parameter, which can only be "StartTime", "EndTime", "StrategyName", "ActionStatus", or "ScaleAction".
+Time format. Either 2006-01-02 15:04:05 or 2006/01/02 15:04:05 for StartTime and EndTime.
+ActionStatus: 0 (INITED), 1 (SUCCESS), 2 (FAILED), 3 (LIMITED_SUCCESSED), 4 (IN_PROCESS), and 5 (IN_RETRY).
+ScaleAction: 1 (scale-out) and 2 (scale-in).
+
                      * 
                      */
                     void SetFilters(const std::vector<KeyValue>& _filters);
@@ -86,15 +102,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取Pagination parameters.
-                     * @return Offset Pagination parameters.
+                     * 获取Pagination parameter.
+                     * @return Offset Pagination parameter.
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置Pagination parameters.
-                     * @param _offset Pagination parameters.
+                     * 设置Pagination parameter.
+                     * @param _offset Pagination parameter.
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +123,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Pagination parameters. Maximum value: 100
-                     * @return Limit Pagination parameters. Maximum value: 100
+                     * 获取Number of entries per page. Maximum value: 100.
+                     * @return Limit Number of entries per page. Maximum value: 100.
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置Pagination parameters. Maximum value: 100
-                     * @param _limit Pagination parameters. Maximum value: 100
+                     * 设置Number of entries per page. Maximum value: 100.
+                     * @param _limit Number of entries per page. Maximum value: 100.
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,31 +143,89 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取Whether it is an auto scaling (0) or managed scaling (1) operation.
+                     * @return RecordSource Whether it is an auto scaling (0) or managed scaling (1) operation.
+                     * 
+                     */
+                    int64_t GetRecordSource() const;
+
+                    /**
+                     * 设置Whether it is an auto scaling (0) or managed scaling (1) operation.
+                     * @param _recordSource Whether it is an auto scaling (0) or managed scaling (1) operation.
+                     * 
+                     */
+                    void SetRecordSource(const int64_t& _recordSource);
+
+                    /**
+                     * 判断参数 RecordSource 是否已赋值
+                     * @return RecordSource 是否已赋值
+                     * 
+                     */
+                    bool RecordSourceHasBeenSet() const;
+
+                    /**
+                     * 获取Whether to sort data in ascending order. Valid values: 1 (yes) and 0 (no).
+                     * @return Asc Whether to sort data in ascending order. Valid values: 1 (yes) and 0 (no).
+                     * 
+                     */
+                    int64_t GetAsc() const;
+
+                    /**
+                     * 设置Whether to sort data in ascending order. Valid values: 1 (yes) and 0 (no).
+                     * @param _asc Whether to sort data in ascending order. Valid values: 1 (yes) and 0 (no).
+                     * 
+                     */
+                    void SetAsc(const int64_t& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     * 
+                     */
+                    bool AscHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The instance ID.
+                     * Instance ID.
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Parameter for record filtration. Valid values: "StartTime", "EndTime" and "StrategyName". StartTime and EndTime support the time format of 2006-01-02 15:04:05 or 2006/01/02 15:04:05.
+                     * Record filter parameter, which can only be "StartTime", "EndTime", "StrategyName", "ActionStatus", or "ScaleAction".
+Time format. Either 2006-01-02 15:04:05 or 2006/01/02 15:04:05 for StartTime and EndTime.
+ActionStatus: 0 (INITED), 1 (SUCCESS), 2 (FAILED), 3 (LIMITED_SUCCESSED), 4 (IN_PROCESS), and 5 (IN_RETRY).
+ScaleAction: 1 (scale-out) and 2 (scale-in).
+
                      */
                     std::vector<KeyValue> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * Pagination parameters.
+                     * Pagination parameter.
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Pagination parameters. Maximum value: 100
+                     * Number of entries per page. Maximum value: 100.
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * Whether it is an auto scaling (0) or managed scaling (1) operation.
+                     */
+                    int64_t m_recordSource;
+                    bool m_recordSourceHasBeenSet;
+
+                    /**
+                     * Whether to sort data in ascending order. Valid values: 1 (yes) and 0 (no).
+                     */
+                    int64_t m_asc;
+                    bool m_ascHasBeenSet;
 
                 };
             }

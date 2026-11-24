@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent tagging
+                * Intelligent tag result information.
                 */
                 class MediaAiAnalysisTagItem : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of tag between 0 and 100.
-                     * @return Confidence Confidence of tag between 0 and 100.
+                     * 获取Confidence of the tag, with a value range from 0 to 100.
+                     * @return Confidence Confidence of the tag, with a value range from 0 to 100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of tag between 0 and 100.
-                     * @param _confidence Confidence of tag between 0 and 100.
+                     * 设置Confidence of the tag, with a value range from 0 to 100.
+                     * @param _confidence Confidence of the tag, with a value range from 0 to 100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取Varies based on different types.
+                     * @return SpecialInfo Varies based on different types.
+                     * 
+                     */
+                    std::string GetSpecialInfo() const;
+
+                    /**
+                     * 设置Varies based on different types.
+                     * @param _specialInfo Varies based on different types.
+                     * 
+                     */
+                    void SetSpecialInfo(const std::string& _specialInfo);
+
+                    /**
+                     * 判断参数 SpecialInfo 是否已赋值
+                     * @return SpecialInfo 是否已赋值
+                     * 
+                     */
+                    bool SpecialInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,10 +118,16 @@ namespace TencentCloud
                     bool m_tagHasBeenSet;
 
                     /**
-                     * Confidence of tag between 0 and 100.
+                     * Confidence of the tag, with a value range from 0 to 100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * Varies based on different types.
+                     */
+                    std::string m_specialInfo;
+                    bool m_specialInfoHasBeenSet;
 
                 };
             }

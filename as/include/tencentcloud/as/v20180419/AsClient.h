@@ -91,6 +91,8 @@
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyRequest.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExitStandbyRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableAutoScalingGroupResponse> EnableAutoScalingGroupOutcome;
                 typedef std::future<EnableAutoScalingGroupOutcome> EnableAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::EnableAutoScalingGroupRequest&, EnableAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoScalingGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnterStandbyResponse> EnterStandbyOutcome;
+                typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::EnterStandbyRequest&, EnterStandbyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnterStandbyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteScalingPolicyResponse> ExecuteScalingPolicyOutcome;
                 typedef std::future<ExecuteScalingPolicyOutcome> ExecuteScalingPolicyOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ExecuteScalingPolicyRequest&, ExecuteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteScalingPolicyAsyncHandler;
@@ -326,10 +331,9 @@ namespace TencentCloud
 
 
                 /**
-                 *This API is used to add CVM instances to an auto scaling group.
+                 *This interface (AttachInstances) is used to add CVM instances to a scaling group.
 * Only CVM instances in `RUNNING` or `STOPPED` status can be added.
-* The added CVM instances must in the same VPC as the scaling group.
-
+This API is used to ensure added CVM instances match the VPC network of the scaling group.
                  * @param req AttachInstancesRequest
                  * @return AttachInstancesOutcome
                  */
@@ -348,10 +352,11 @@ namespace TencentCloud
 
                 /**
                  *This API is used to cancel the instance refresh activity of the scaling group.
-* The batches that have already been refreshed or are currently being refreshed remain unaffected, but the batches pending refresh will be canceled.
-* If a refresh fails, the affected instances will remain in the secondary status, and require manual intervention to exit the secondary status or terminate the instances.
-* Rollback operations are not allowed after cancellation, and recovery is also unsupported.
-* The instances temporarily scaled out due to the MaxSurge parameter are automatically terminated after cancellation.
+* The batches that have already been refreshed remain unaffected, but the batches pending refresh will be canceled.
+* If a batch is currently refreshing, cancellation is not allowed. You can suspend the event and wait until the current batch finishes before canceling.
+This API is used to refresh the failed instances. If a refresh fails, the affected instances will remain in standby status, and require manual intervention to exit the standby status or terminate the instances.
+* Rollback operations are not allowed after cancellation, and recovery is unsupported.
+Temporarily expanded instances due to the maxSurge parameter are automatically destroyed after cancellation.
 * During scale-in, all instances have already been updated and cannot be canceled.
                  * @param req CancelInstanceRefreshRequest
                  * @return CancelInstanceRefreshOutcome
@@ -391,8 +396,6 @@ namespace TencentCloud
 
                 /**
                  *This API is used to create launch configurations and scaling groups based on an instance.
-
-Note: for a scaling group that is created based on a monthly-subscribed instance, the instances added for scale-out are pay-as-you-go instance.
                  * @param req CreateAutoScalingGroupFromInstanceRequest
                  * @return CreateAutoScalingGroupFromInstanceOutcome
                  */
@@ -401,11 +404,11 @@ Note: for a scaling group that is created based on a monthly-subscribed instance
                 CreateAutoScalingGroupFromInstanceOutcomeCallable CreateAutoScalingGroupFromInstanceCallable(const Model::CreateAutoScalingGroupFromInstanceRequest& request);
 
                 /**
-                 *This API is used to create a launch configuration.
+                 *This API is used to create a new launch configuration.
 
-* To modify a launch configuration, please use `ModifyLaunchConfigurationAttributes`.
+* Launch configuration can be partially modified through [ModifyLaunchConfigurationAttributes](https://www.tencentcloud.com/document/api/377/31298?from_cn_redirect=1). If a new launch configuration is needed, it is advisable to create a new one.
 
-* Up to 20 launch configurations can be created for each project. For more information, see [Usage Limits](https://intl.cloud.tencent.com/document/product/377/3120?from_cn_redirect=1).
+* A maximum of 50 launch configurations can be created per region by default. For details, see usage limits (https://www.tencentcloud.com/document/product/377/3120?from_cn_redirect=1).
                  * @param req CreateLaunchConfigurationRequest
                  * @return CreateLaunchConfigurationOutcome
                  */
@@ -414,11 +417,11 @@ Note: for a scaling group that is created based on a monthly-subscribed instance
                 CreateLaunchConfigurationOutcomeCallable CreateLaunchConfigurationCallable(const Model::CreateLaunchConfigurationRequest& request);
 
                 /**
-                 *This API is used to create a lifecycle hook.
+                 *This interface (CreateLifecycleHook) is used for creating a lifecycle hook.
 
-* You can configure notifications or automation commands (TAT) for the lifecycle hook.
+* You can configure notifications or automation commands for the lifecycle hook.
 
-If you configured a notification, Auto Scaling will notify the TDMQ queue of the following information:
+If you configured a notification, Auto Scaling will notify the TDMQ Message Queue of the following information:.
 
 ```
 {
@@ -426,11 +429,11 @@ If you configured a notification, Auto Scaling will notify the TDMQ queue of the
 	"Time": "2019-03-14T10:15:11Z",
 	"AppId": "1251783334",
 	"ActivityId": "asa-fznnvrja",
-	"AutoScalingGroupId": "asg-rrrrtttt",
-	"LifecycleHookId": "ash-xxxxyyyy",
+	"AutoScalingGroupId": "asg-ft6y7u8n",
+	"LifecycleHookId": "ash-p9i7y6t5",
 	"LifecycleHookName": "my-hook",
 	"LifecycleActionToken": "3080e1c9-0efe-4dd7-ad3b-90cd6618298f",
-	"InstanceId": "ins-aaaabbbb",
+	"InstanceId": "ins-y6dr5e43",
 	"LifecycleTransition": "INSTANCE_LAUNCHING",
 	"NotificationMetadata": ""
 }
@@ -443,30 +446,30 @@ If you configured a notification, Auto Scaling will notify the TDMQ queue of the
                 CreateLifecycleHookOutcomeCallable CreateLifecycleHookCallable(const Model::CreateLifecycleHookRequest& request);
 
                 /**
-                 *This API is used to create a notification policy.
-When the notification is sent to a CMQ topic or queue, the following contents are included:
+                 *This API is used to create a notification.
+This API is used to send notifications to a CMQ topic or queue with the following message content:.
 ```
 {
     "Service": "Tencent Cloud Auto Scaling",
-    "CreatedTime": "2021-10-11T10:15:11Z", // Activity creation time
+"CreatedTime": "2021-10-11T10:15:11Z", // Activity creation time.
     "AppId": "100000000",
-    "ActivityId": "asa-fznnvrja", // Scaling activity ID
-    "AutoScalingGroupId": "asg-pc2oqu2z", // Scaling group ID
-    "ActivityType": "SCALE_OUT",  // Scaling activity type
-    "StatusCode": "SUCCESSFUL",   // Scaling activity result
+"ActivityId": "asa-fznnvrja", // scaling activity ID.
+This API is used to specify the scaling group ID.
+"ActivityType": "SCALE_OUT",  // scaling activity type.
+"StatusCode": "SUCCESSFUL".
     "Description": "Activity was launched in response to a difference between desired capacity and actual capacity,
-    scale out 1 instance(s).", // Scaling activity description
-    "StartTime": "2021-10-11T10:15:11Z",  // Activity starting time
-    "EndTime": "2021-10-11T10:15:32Z",    // Activity ending time
-    "DetailedStatusMessageSet": [ // A collection of failed attempts during the scaling process (Failed attempts are allowed in a successful scaling activity)
+This API is used to scale out 1 instance.
+This API is used to set the activity start time.
+"EndTime": "2021-10-11T10:15:32Z",    // activity end time.
+"DetailedStatusMessageSet": [ // Collection of activity internal errors (non-empty does not mean activity failure).
         {
             "Code": "InvalidInstanceType",
-            "Zone": "ap-guangzhou-2",
+            "Zone": "ap-guangzhou-6",
             "InstanceId": "",
             "InstanceChargeType": "POSTPAID_BY_HOUR",
             "SubnetId": "subnet-4t5mgeuu",
-            "Message": "The specified instance type `S5.LARGE8` is invalid in `subnet-4t5mgeuu`, `ap-guangzhou-2`.",
-            "InstanceType": "S5.LARGE8",
+            "Message": "The specified instance type `S5.LARGE8` is invalid in `subnet-4t5mgeuu`, `ap-guangzhou-6`.",
+            "InstanceType": "S5.LARGE8"
         }
     ]
 }
@@ -479,7 +482,8 @@ When the notification is sent to a CMQ topic or queue, the following contents ar
                 CreateNotificationConfigurationOutcomeCallable CreateNotificationConfigurationCallable(const Model::CreateNotificationConfigurationRequest& request);
 
                 /**
-                 *This API (CreateScalingPolicy) is used to create an alarm trigger policy.
+                 *This API is used to create an alarm-triggered scaling policy.
+-The target tracking policy triggers scale-out when the specified type of metric exceeds the threshold (target value) for 3 consecutive cycles (1 minute each). It triggers auto scale-down when the specified type of metric is below the threshold (80% of the target value) for 15 consecutive cycles (1 minute each).
                  * @param req CreateScalingPolicyRequest
                  * @return CreateScalingPolicyOutcome
                  */
@@ -508,8 +512,7 @@ When the notification is sent to a CMQ topic or queue, the following contents ar
                 /**
                  *This API (DeleteLaunchConfiguration) is used to delete a launch configuration.
 
-* If the launch configuration is active in an auto scaling group, it cannot be deleted.
-
+* If the launch configuration is active in a scaling group, it cannot be deleted.
                  * @param req DeleteLaunchConfigurationRequest
                  * @return DeleteLaunchConfigurationOutcome
                  */
@@ -563,7 +566,7 @@ When the notification is sent to a CMQ topic or queue, the following contents ar
                 DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request);
 
                 /**
-                 *This API (DescribeAutoScalingActivities) is used to query the activity history of an auto scaling group.
+                 *This API is used to query the scaling activities of the scaling group. Currently, only scaling operations from the past two years are saved.
                  * @param req DescribeAutoScalingActivitiesRequest
                  * @return DescribeAutoScalingActivitiesOutcome
                  */
@@ -732,6 +735,18 @@ If the parameter is empty, a certain number (specified by `Limit` and 20 by defa
                 EnableAutoScalingGroupOutcomeCallable EnableAutoScalingGroupCallable(const Model::EnableAutoScalingGroupRequest& request);
 
                 /**
+                 *This API is used to set instances within the scaling group to standby status.
+Instances in standby status have a CLB weight value of 0 and will not be selected for scaling in, unhealthy replacement, or refresh operation.
+This API is used to call the Auto Scaling power-on/power-off API which may change the standby status, while the Cloud Virtual Machine server power on/off API will not affect it.
+The instance enters standby status, and the scaling group attempts to lower the expected number of instances, which will not be less than the minimum value.
+                 * @param req EnterStandbyRequest
+                 * @return EnterStandbyOutcome
+                 */
+                EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest &request);
+                void EnterStandbyAsync(const Model::EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request);
+
+                /**
                  *This API is used to execute a scaling policy.
 
 * The scaling policy can be executed based on the scaling policy ID.
@@ -745,9 +760,10 @@ If the parameter is empty, a certain number (specified by `Limit` and 20 by defa
                 ExecuteScalingPolicyOutcomeCallable ExecuteScalingPolicyCallable(const Model::ExecuteScalingPolicyRequest& request);
 
                 /**
-                 *This API is used to exit instances from the standby status in the scaling group.
-* When an instance is in standby status, its load balancer weight is set to 0. Upon exiting the standby status, the weight value automatically gets restored.
-* Initiating power-on/power-off actions on instances that are in standby status also results in them exiting from the standby status.
+                 *This API is used to exit instances from standby status in the scaling group.
+* After exiting standby status, the instance enters running state and the CLB weight value is restored to the default value.
+This API is used to call the Auto Scaling power-on/power-off API which may change the standby status, while the Cloud Virtual Machine server power on/off API will not affect it.
+After instances exit standby status, the scaling group will raise the expected number of instances. The new expected number cannot exceed the maximum value.
                  * @param req ExitStandbyRequest
                  * @return ExitStandbyOutcome
                  */
@@ -774,10 +790,9 @@ If the parameter is empty, a certain number (specified by `Limit` and 20 by defa
                 ModifyDesiredCapacityOutcomeCallable ModifyDesiredCapacityCallable(const Model::ModifyDesiredCapacityRequest& request);
 
                 /**
-                 *This API (ModifyLaunchConfigurationAttributes) is used to modify some attributes of a launch configuration.
+                 *This API (ModifyLaunchConfigurationAttributes) is used to modify part of a launch configuration's attributes.
 
-* The changes of launch configuration do not affect the existing instances. New instances will be created based on the modified configuration.
-* This API supports modifying certain simple types of attributes.
+This API is used to modify the startup configuration. Existing instances scaled out using this configuration will not change, while newly added instances using this launch configuration will scale out according to the new configuration.
                  * @param req ModifyLaunchConfigurationAttributesRequest
                  * @return ModifyLaunchConfigurationAttributesOutcome
                  */
@@ -884,9 +899,9 @@ If the parameter is empty, a certain number (specified by `Limit` and 20 by defa
                 /**
                  *This API is used to reduce the specified number of instances from the scaling group.
 * There is no on going scaling task.
-* This API is valid even when the scaling group is disabled. For more details, see [DisableAutoScalingGroup](https://intl.cloud.tencent.com/document/api/377/20435?from_cn_redirect=1).
-* You can specify the instances to remove in the scale-in activity by using `TerminationPolicies`. For more information, see [Scaling In Policies](https://intl.cloud.tencent.com/document/product/377/8563?from_cn_redirect=1).
-* Only the `IN_SERVICE` instances will be reduced. To reduce instances in other statues, use the [`DetachInstances`](https://intl.cloud.tencent.com/document/api/377/31011?from_cn_redirect=1) or [`RemoveInstances`](https://intl.cloud.tencent.com/document/api/377/31005?from_cn_redirect=1) API.
+* This API is valid even when the scaling group is disabled. For more details, see [DisableAutoScalingGroup](https://intl.cloud.tencent.com/document/product/377/31010).
+* You can specify the instances to remove in the scale-in activity by using `TerminationPolicies`. For more information, see [Scaling In Policies](https://intl.cloud.tencent.com/document/product/377/8563).
+* Only the `IN_SERVICE` instances will be reduced. To reduce instances in other statues, use the [`DetachInstances`](https://intl.cloud.tencent.com/document/api/377/31011) or [`RemoveInstances`](https://intl.cloud.tencent.com/document/api/377/31005) API.
 * The desired capacity will be reduced accordingly. The new desired capacity should be no less than the minimum capacity.
 * If the scale-in activity failed or partially succeeded, the final desired capacity only deducts the instances that have been reduced successfully.
                  * @param req ScaleInInstancesRequest

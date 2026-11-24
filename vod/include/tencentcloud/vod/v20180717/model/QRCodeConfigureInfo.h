@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameters for QR code detection in video.
+                * Control parameters for video frame QR code detection.
                 */
                 class QRCodeConfigureInfo : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取QR code inspection switch, optional values:
+                     * 获取QR code detection switch for video frames. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
-                     * @return Switch QR code inspection switch, optional values:
+<li>OFF: disabled</li>
+                     * @return Switch QR code detection switch for video frames. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置QR code inspection switch, optional values:
+                     * 设置QR code detection switch for video frames. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
-                     * @param _switch QR code inspection switch, optional values:
+<li>OFF: disabled</li>
+                     * @param _switch QR code detection switch for video frames. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disabled</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -78,9 +78,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * QR code inspection switch, optional values:
+                     * QR code detection switch for video frames. Available values:
 <li>ON: enabled;</li>
-<li>OFF: disabled.</li>
+<li>OFF: disabled</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Release on WeChat task information
+                * WeChat publishing task information
                 */
                 class WechatPublishTask : public AbstractModel
                 {
@@ -69,12 +69,12 @@ namespace TencentCloud
 
                     /**
                      * 获取Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING: waiting.
+PROCESSING: Processing;
 FINISH: completed.
                      * @return Status Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING: waiting.
+PROCESSING: Processing;
 FINISH: completed.
                      * 
                      */
@@ -82,12 +82,12 @@ FINISH: completed.
 
                     /**
                      * 设置Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING: waiting.
+PROCESSING: Processing;
 FINISH: completed.
                      * @param _status Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING: waiting.
+PROCESSING: Processing;
 FINISH: completed.
                      * 
                      */
@@ -101,27 +101,23 @@ FINISH: completed.
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code
+                     * 获取Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ErrCode Error code
+<li>Other value: failure.</li>
+                     * @return ErrCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code
+                     * 设置Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _errCode Error code
+<li>Other value: failure.</li>
+                     * @param _errCode Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -135,18 +131,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -159,19 +151,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取ID of published video file.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return FileId ID of published video file.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Video file ID to publish.
+                     * @return FileId Video file ID to publish.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置ID of published video file.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _fileId ID of published video file.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Video file ID to publish.
+                     * @param _fileId Video file ID to publish.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -184,19 +172,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Release on WeChat template ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Definition Release on WeChat template ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Template ID for publishing on WeChat.
+                     * @return Definition Template ID for publishing on WeChat.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Release on WeChat template ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _definition Release on WeChat template ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Template ID for publishing on WeChat.
+                     * @param _definition Template ID for publishing on WeChat.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -209,19 +193,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取ID of the transcoding template corresponding to the published video. 0 represents the source video.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return SourceDefinition ID of the transcoding template corresponding to the published video. 0 represents the source video.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Transcoding template ID of the published video. 0 represents the original video.
+                     * @return SourceDefinition Transcoding template ID of the published video. 0 represents the original video.
                      * 
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
-                     * 设置ID of the transcoding template corresponding to the published video. 0 represents the source video.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _sourceDefinition ID of the transcoding template corresponding to the published video. 0 represents the source video.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Transcoding template ID of the published video. 0 represents the original video.
+                     * @param _sourceDefinition Transcoding template ID of the published video. 0 represents the original video.
                      * 
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
@@ -234,35 +214,31 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool SourceDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Release on WeChat status. Valid values:
-<li>FAIL: failure;</li>
-<li>SUCCESS: success;</li>
-<li>AUDITNOTPASS: rejected</li>
-<li>NOTTRIGGERED: release on WeChat not initiated yet.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return WechatStatus Release on WeChat status. Valid values:
-<li>FAIL: failure;</li>
-<li>SUCCESS: success;</li>
-<li>AUDITNOTPASS: rejected</li>
-<li>NOTTRIGGERED: release on WeChat not initiated yet.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取WeChat publishing status. Valid values:
+<li>FAIL: Failed;</li>
+<li>SUCCESS: Succeeded;</li>
+<li>AUDITNOTPASS: failed to pass moderation;</li>
+<li>NOTTRIGGERED: Publishing on WeChat has not been initiated.</li>
+                     * @return WechatStatus WeChat publishing status. Valid values:
+<li>FAIL: Failed;</li>
+<li>SUCCESS: Succeeded;</li>
+<li>AUDITNOTPASS: failed to pass moderation;</li>
+<li>NOTTRIGGERED: Publishing on WeChat has not been initiated.</li>
                      * 
                      */
                     std::string GetWechatStatus() const;
 
                     /**
-                     * 设置Release on WeChat status. Valid values:
-<li>FAIL: failure;</li>
-<li>SUCCESS: success;</li>
-<li>AUDITNOTPASS: rejected</li>
-<li>NOTTRIGGERED: release on WeChat not initiated yet.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _wechatStatus Release on WeChat status. Valid values:
-<li>FAIL: failure;</li>
-<li>SUCCESS: success;</li>
-<li>AUDITNOTPASS: rejected</li>
-<li>NOTTRIGGERED: release on WeChat not initiated yet.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置WeChat publishing status. Valid values:
+<li>FAIL: Failed;</li>
+<li>SUCCESS: Succeeded;</li>
+<li>AUDITNOTPASS: failed to pass moderation;</li>
+<li>NOTTRIGGERED: Publishing on WeChat has not been initiated.</li>
+                     * @param _wechatStatus WeChat publishing status. Valid values:
+<li>FAIL: Failed;</li>
+<li>SUCCESS: Succeeded;</li>
+<li>AUDITNOTPASS: failed to pass moderation;</li>
+<li>NOTTRIGGERED: Publishing on WeChat has not been initiated.</li>
                      * 
                      */
                     void SetWechatStatus(const std::string& _wechatStatus);
@@ -275,19 +251,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool WechatStatusHasBeenSet() const;
 
                     /**
-                     * 获取WeChat `Vid`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return WechatVid WeChat `Vid`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取WeChat Vid.
+                     * @return WechatVid WeChat Vid.
                      * 
                      */
                     std::string GetWechatVid() const;
 
                     /**
-                     * 设置WeChat `Vid`.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _wechatVid WeChat `Vid`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置WeChat Vid.
+                     * @param _wechatVid WeChat Vid.
                      * 
                      */
                     void SetWechatVid(const std::string& _wechatVid);
@@ -301,18 +273,14 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取WeChat address.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return WechatUrl WeChat address.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetWechatUrl() const;
 
                     /**
                      * 设置WeChat address.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _wechatUrl WeChat address.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetWechatUrl(const std::string& _wechatUrl);
@@ -334,71 +302,63 @@ Note: this field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Task status. Valid values:
-WAITING: waiting;
-PROCESSING: processing;
+WAITING: waiting.
+PROCESSING: Processing;
 FINISH: completed.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code
+                     * Error code.
 <li>0: success;</li>
-<li>Other values: failure.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+<li>Other value: failure.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * ID of published video file.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Video file ID to publish.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Release on WeChat template ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Template ID for publishing on WeChat.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * ID of the transcoding template corresponding to the published video. 0 represents the source video.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Transcoding template ID of the published video. 0 represents the original video.
                      */
                     uint64_t m_sourceDefinition;
                     bool m_sourceDefinitionHasBeenSet;
 
                     /**
-                     * Release on WeChat status. Valid values:
-<li>FAIL: failure;</li>
-<li>SUCCESS: success;</li>
-<li>AUDITNOTPASS: rejected</li>
-<li>NOTTRIGGERED: release on WeChat not initiated yet.</li>
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * WeChat publishing status. Valid values:
+<li>FAIL: Failed;</li>
+<li>SUCCESS: Succeeded;</li>
+<li>AUDITNOTPASS: failed to pass moderation;</li>
+<li>NOTTRIGGERED: Publishing on WeChat has not been initiated.</li>
                      */
                     std::string m_wechatStatus;
                     bool m_wechatStatusHasBeenSet;
 
                     /**
-                     * WeChat `Vid`.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * WeChat Vid.
                      */
                     std::string m_wechatVid;
                     bool m_wechatVidHasBeenSet;
 
                     /**
                      * WeChat address.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_wechatUrl;
                     bool m_wechatUrlHasBeenSet;

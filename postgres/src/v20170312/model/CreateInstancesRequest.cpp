@@ -23,7 +23,6 @@ using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
 CreateInstancesRequest::CreateInstancesRequest() :
-    m_zoneHasBeenSet(false),
     m_specCodeHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
@@ -31,6 +30,7 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_charsetHasBeenSet(false),
     m_adminNameHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
+    m_zoneHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
     m_dBKernelVersionHasBeenSet(false),
@@ -49,10 +49,13 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_needSupportTDEHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
     m_kMSRegionHasBeenSet(false),
+    m_kMSClusterIdHasBeenSet(false),
     m_dBEngineHasBeenSet(false),
     m_dBEngineConfigHasBeenSet(false),
     m_syncModeHasBeenSet(false),
-    m_needSupportIpv6HasBeenSet(false)
+    m_needSupportIpv6HasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -62,14 +65,6 @@ string CreateInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_specCodeHasBeenSet)
     {
@@ -125,6 +120,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "AdminPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_adminPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dBMajorVersionHasBeenSet)
@@ -295,6 +298,14 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_kMSRegion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_kMSClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kMSClusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dBEngineHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -327,6 +338,22 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_needSupportIpv6, allocator);
     }
 
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -334,22 +361,6 @@ string CreateInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateInstancesRequest::GetZone() const
-{
-    return m_zone;
-}
-
-void CreateInstancesRequest::SetZone(const string& _zone)
-{
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::ZoneHasBeenSet() const
-{
-    return m_zoneHasBeenSet;
-}
 
 string CreateInstancesRequest::GetSpecCode() const
 {
@@ -461,6 +472,22 @@ void CreateInstancesRequest::SetAdminPassword(const string& _adminPassword)
 bool CreateInstancesRequest::AdminPasswordHasBeenSet() const
 {
     return m_adminPasswordHasBeenSet;
+}
+
+string CreateInstancesRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateInstancesRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 string CreateInstancesRequest::GetDBMajorVersion() const
@@ -751,6 +778,22 @@ bool CreateInstancesRequest::KMSRegionHasBeenSet() const
     return m_kMSRegionHasBeenSet;
 }
 
+string CreateInstancesRequest::GetKMSClusterId() const
+{
+    return m_kMSClusterId;
+}
+
+void CreateInstancesRequest::SetKMSClusterId(const string& _kMSClusterId)
+{
+    m_kMSClusterId = _kMSClusterId;
+    m_kMSClusterIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::KMSClusterIdHasBeenSet() const
+{
+    return m_kMSClusterIdHasBeenSet;
+}
+
 string CreateInstancesRequest::GetDBEngine() const
 {
     return m_dBEngine;
@@ -813,6 +856,38 @@ void CreateInstancesRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6
 bool CreateInstancesRequest::NeedSupportIpv6HasBeenSet() const
 {
     return m_needSupportIpv6HasBeenSet;
+}
+
+bool CreateInstancesRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateInstancesRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
+}
+
+string CreateInstancesRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateInstancesRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

@@ -62,25 +62,132 @@ MongodbClient::AssignProjectOutcome MongodbClient::AssignProject(const AssignPro
 
 void MongodbClient::AssignProjectAsync(const AssignProjectRequest& request, const AssignProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignProject(request), context);
-    };
+    using Req = const AssignProjectRequest&;
+    using Resp = AssignProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::AssignProjectOutcomeCallable MongodbClient::AssignProjectCallable(const AssignProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignProject(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<AssignProjectOutcome>>();
+    AssignProjectAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const AssignProjectRequest&,
+        AssignProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::CloseAuditServiceOutcome MongodbClient::CloseAuditService(const CloseAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAuditServiceResponse rsp = CloseAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAuditServiceOutcome(rsp);
+        else
+            return CloseAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseAuditServiceRequest&;
+    using Resp = CloseAuditServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CloseAuditServiceOutcomeCallable MongodbClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseAuditServiceOutcome>>();
+    CloseAuditServiceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CloseAuditServiceRequest&,
+        CloseAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::CreateAccountUserOutcome MongodbClient::CreateAccountUser(const CreateAccountUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccountUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountUserResponse rsp = CreateAccountUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountUserOutcome(rsp);
+        else
+            return CreateAccountUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateAccountUserAsync(const CreateAccountUserRequest& request, const CreateAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAccountUserRequest&;
+    using Resp = CreateAccountUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAccountUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateAccountUserOutcomeCallable MongodbClient::CreateAccountUserCallable(const CreateAccountUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAccountUserOutcome>>();
+    CreateAccountUserAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateAccountUserRequest&,
+        CreateAccountUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::CreateBackupDBInstanceOutcome MongodbClient::CreateBackupDBInstance(const CreateBackupDBInstanceRequest &request)
@@ -105,25 +212,32 @@ MongodbClient::CreateBackupDBInstanceOutcome MongodbClient::CreateBackupDBInstan
 
 void MongodbClient::CreateBackupDBInstanceAsync(const CreateBackupDBInstanceRequest& request, const CreateBackupDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackupDBInstance(request), context);
-    };
+    using Req = const CreateBackupDBInstanceRequest&;
+    using Resp = CreateBackupDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::CreateBackupDBInstanceOutcomeCallable MongodbClient::CreateBackupDBInstanceCallable(const CreateBackupDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackupDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupDBInstanceOutcome>>();
+    CreateBackupDBInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateBackupDBInstanceRequest&,
+        CreateBackupDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::CreateBackupDownloadTaskOutcome MongodbClient::CreateBackupDownloadTask(const CreateBackupDownloadTaskRequest &request)
@@ -148,25 +262,32 @@ MongodbClient::CreateBackupDownloadTaskOutcome MongodbClient::CreateBackupDownlo
 
 void MongodbClient::CreateBackupDownloadTaskAsync(const CreateBackupDownloadTaskRequest& request, const CreateBackupDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackupDownloadTask(request), context);
-    };
+    using Req = const CreateBackupDownloadTaskRequest&;
+    using Resp = CreateBackupDownloadTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::CreateBackupDownloadTaskOutcomeCallable MongodbClient::CreateBackupDownloadTaskCallable(const CreateBackupDownloadTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupDownloadTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackupDownloadTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupDownloadTaskOutcome>>();
+    CreateBackupDownloadTaskAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateBackupDownloadTaskRequest&,
+        CreateBackupDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::CreateDBInstanceOutcome MongodbClient::CreateDBInstance(const CreateDBInstanceRequest &request)
@@ -191,25 +312,32 @@ MongodbClient::CreateDBInstanceOutcome MongodbClient::CreateDBInstance(const Cre
 
 void MongodbClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request, const CreateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDBInstance(request), context);
-    };
+    using Req = const CreateDBInstanceRequest&;
+    using Resp = CreateDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::CreateDBInstanceOutcomeCallable MongodbClient::CreateDBInstanceCallable(const CreateDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDBInstanceOutcome>>();
+    CreateDBInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateDBInstanceRequest&,
+        CreateDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::CreateDBInstanceHourOutcome MongodbClient::CreateDBInstanceHour(const CreateDBInstanceHourRequest &request)
@@ -234,25 +362,532 @@ MongodbClient::CreateDBInstanceHourOutcome MongodbClient::CreateDBInstanceHour(c
 
 void MongodbClient::CreateDBInstanceHourAsync(const CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDBInstanceHour(request), context);
-    };
+    using Req = const CreateDBInstanceHourRequest&;
+    using Resp = CreateDBInstanceHourResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstanceHour", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstanceHourCallable(const CreateDBInstanceHourRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDBInstanceHourOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDBInstanceHour(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<CreateDBInstanceHourOutcome>>();
+    CreateDBInstanceHourAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateDBInstanceHourRequest&,
+        CreateDBInstanceHourOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::CreateDBInstanceParamTplOutcome MongodbClient::CreateDBInstanceParamTpl(const CreateDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBInstanceParamTplResponse rsp = CreateDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBInstanceParamTplOutcome(rsp);
+        else
+            return CreateDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateDBInstanceParamTplAsync(const CreateDBInstanceParamTplRequest& request, const CreateDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDBInstanceParamTplRequest&;
+    using Resp = CreateDBInstanceParamTplResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstanceParamTpl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateDBInstanceParamTplOutcomeCallable MongodbClient::CreateDBInstanceParamTplCallable(const CreateDBInstanceParamTplRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDBInstanceParamTplOutcome>>();
+    CreateDBInstanceParamTplAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateDBInstanceParamTplRequest&,
+        CreateDBInstanceParamTplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::CreateInstanceRoleOutcome MongodbClient::CreateInstanceRole(const CreateInstanceRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceRoleResponse rsp = CreateInstanceRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceRoleOutcome(rsp);
+        else
+            return CreateInstanceRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceRoleOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateInstanceRoleAsync(const CreateInstanceRoleRequest& request, const CreateInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInstanceRoleRequest&;
+    using Resp = CreateInstanceRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateInstanceRoleOutcomeCallable MongodbClient::CreateInstanceRoleCallable(const CreateInstanceRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInstanceRoleOutcome>>();
+    CreateInstanceRoleAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateInstanceRoleRequest&,
+        CreateInstanceRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::CreateInstanceUserOutcome MongodbClient::CreateInstanceUser(const CreateInstanceUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceUserResponse rsp = CreateInstanceUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceUserOutcome(rsp);
+        else
+            return CreateInstanceUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateInstanceUserAsync(const CreateInstanceUserRequest& request, const CreateInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInstanceUserRequest&;
+    using Resp = CreateInstanceUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateInstanceUserOutcomeCallable MongodbClient::CreateInstanceUserCallable(const CreateInstanceUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInstanceUserOutcome>>();
+    CreateInstanceUserAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateInstanceUserRequest&,
+        CreateInstanceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::CreateLogDownloadTaskOutcome MongodbClient::CreateLogDownloadTask(const CreateLogDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLogDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLogDownloadTaskResponse rsp = CreateLogDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLogDownloadTaskOutcome(rsp);
+        else
+            return CreateLogDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLogDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateLogDownloadTaskAsync(const CreateLogDownloadTaskRequest& request, const CreateLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLogDownloadTaskRequest&;
+    using Resp = CreateLogDownloadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLogDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateLogDownloadTaskOutcomeCallable MongodbClient::CreateLogDownloadTaskCallable(const CreateLogDownloadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLogDownloadTaskOutcome>>();
+    CreateLogDownloadTaskAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateLogDownloadTaskRequest&,
+        CreateLogDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DeleteAccountUserOutcome MongodbClient::DeleteAccountUser(const DeleteAccountUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountUserResponse rsp = DeleteAccountUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountUserOutcome(rsp);
+        else
+            return DeleteAccountUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteAccountUserAsync(const DeleteAccountUserRequest& request, const DeleteAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAccountUserRequest&;
+    using Resp = DeleteAccountUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccountUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteAccountUserOutcomeCallable MongodbClient::DeleteAccountUserCallable(const DeleteAccountUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAccountUserOutcome>>();
+    DeleteAccountUserAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteAccountUserRequest&,
+        DeleteAccountUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DeleteDBBackupsOutcome MongodbClient::DeleteDBBackups(const DeleteDBBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDBBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDBBackupsResponse rsp = DeleteDBBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDBBackupsOutcome(rsp);
+        else
+            return DeleteDBBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDBBackupsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteDBBackupsAsync(const DeleteDBBackupsRequest& request, const DeleteDBBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDBBackupsRequest&;
+    using Resp = DeleteDBBackupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDBBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteDBBackupsOutcomeCallable MongodbClient::DeleteDBBackupsCallable(const DeleteDBBackupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDBBackupsOutcome>>();
+    DeleteDBBackupsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteDBBackupsRequest&,
+        DeleteDBBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DeleteInstanceRoleOutcome MongodbClient::DeleteInstanceRole(const DeleteInstanceRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstanceRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceRoleResponse rsp = DeleteInstanceRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceRoleOutcome(rsp);
+        else
+            return DeleteInstanceRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceRoleOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteInstanceRoleAsync(const DeleteInstanceRoleRequest& request, const DeleteInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInstanceRoleRequest&;
+    using Resp = DeleteInstanceRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstanceRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteInstanceRoleOutcomeCallable MongodbClient::DeleteInstanceRoleCallable(const DeleteInstanceRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInstanceRoleOutcome>>();
+    DeleteInstanceRoleAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteInstanceRoleRequest&,
+        DeleteInstanceRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DeleteInstanceUserOutcome MongodbClient::DeleteInstanceUser(const DeleteInstanceUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstanceUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceUserResponse rsp = DeleteInstanceUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceUserOutcome(rsp);
+        else
+            return DeleteInstanceUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteInstanceUserAsync(const DeleteInstanceUserRequest& request, const DeleteInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInstanceUserRequest&;
+    using Resp = DeleteInstanceUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstanceUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteInstanceUserOutcomeCallable MongodbClient::DeleteInstanceUserCallable(const DeleteInstanceUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInstanceUserOutcome>>();
+    DeleteInstanceUserAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteInstanceUserRequest&,
+        DeleteInstanceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DeleteLogDownloadTaskOutcome MongodbClient::DeleteLogDownloadTask(const DeleteLogDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLogDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogDownloadTaskResponse rsp = DeleteLogDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogDownloadTaskOutcome(rsp);
+        else
+            return DeleteLogDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteLogDownloadTaskAsync(const DeleteLogDownloadTaskRequest& request, const DeleteLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLogDownloadTaskRequest&;
+    using Resp = DeleteLogDownloadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLogDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteLogDownloadTaskOutcomeCallable MongodbClient::DeleteLogDownloadTaskCallable(const DeleteLogDownloadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLogDownloadTaskOutcome>>();
+    DeleteLogDownloadTaskAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteLogDownloadTaskRequest&,
+        DeleteLogDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeAccountUsersOutcome MongodbClient::DescribeAccountUsers(const DescribeAccountUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountUsersResponse rsp = DescribeAccountUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountUsersOutcome(rsp);
+        else
+            return DescribeAccountUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountUsersOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAccountUsersAsync(const DescribeAccountUsersRequest& request, const DescribeAccountUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountUsersRequest&;
+    using Resp = DescribeAccountUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeAccountUsersOutcomeCallable MongodbClient::DescribeAccountUsersCallable(const DescribeAccountUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountUsersOutcome>>();
+    DescribeAccountUsersAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeAccountUsersRequest&,
+        DescribeAccountUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeAsyncRequestInfoOutcome MongodbClient::DescribeAsyncRequestInfo(const DescribeAsyncRequestInfoRequest &request)
@@ -277,25 +912,182 @@ MongodbClient::DescribeAsyncRequestInfoOutcome MongodbClient::DescribeAsyncReque
 
 void MongodbClient::DescribeAsyncRequestInfoAsync(const DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAsyncRequestInfo(request), context);
-    };
+    using Req = const DescribeAsyncRequestInfoRequest&;
+    using Resp = DescribeAsyncRequestInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAsyncRequestInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeAsyncRequestInfoOutcomeCallable MongodbClient::DescribeAsyncRequestInfoCallable(const DescribeAsyncRequestInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAsyncRequestInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAsyncRequestInfo(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeAsyncRequestInfoOutcome>>();
+    DescribeAsyncRequestInfoAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeAsyncRequestInfoRequest&,
+        DescribeAsyncRequestInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeAuditConfigOutcome MongodbClient::DescribeAuditConfig(const DescribeAuditConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditConfigResponse rsp = DescribeAuditConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditConfigOutcome(rsp);
+        else
+            return DescribeAuditConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditConfigOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAuditConfigAsync(const DescribeAuditConfigRequest& request, const DescribeAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditConfigRequest&;
+    using Resp = DescribeAuditConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeAuditConfigOutcomeCallable MongodbClient::DescribeAuditConfigCallable(const DescribeAuditConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditConfigOutcome>>();
+    DescribeAuditConfigAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeAuditConfigRequest&,
+        DescribeAuditConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeAuditLogFilesOutcome MongodbClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogFilesResponse rsp = DescribeAuditLogFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogFilesOutcome(rsp);
+        else
+            return DescribeAuditLogFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogFilesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAuditLogFilesAsync(const DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogFilesRequest&;
+    using Resp = DescribeAuditLogFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeAuditLogFilesOutcomeCallable MongodbClient::DescribeAuditLogFilesCallable(const DescribeAuditLogFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogFilesOutcome>>();
+    DescribeAuditLogFilesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeAuditLogFilesRequest&,
+        DescribeAuditLogFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeAuditLogsOutcome MongodbClient::DescribeAuditLogs(const DescribeAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogsResponse rsp = DescribeAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogsOutcome(rsp);
+        else
+            return DescribeAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogsRequest&;
+    using Resp = DescribeAuditLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeAuditLogsOutcomeCallable MongodbClient::DescribeAuditLogsCallable(const DescribeAuditLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogsOutcome>>();
+    DescribeAuditLogsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeAuditLogsRequest&,
+        DescribeAuditLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeBackupDownloadTaskOutcome MongodbClient::DescribeBackupDownloadTask(const DescribeBackupDownloadTaskRequest &request)
@@ -320,25 +1112,82 @@ MongodbClient::DescribeBackupDownloadTaskOutcome MongodbClient::DescribeBackupDo
 
 void MongodbClient::DescribeBackupDownloadTaskAsync(const DescribeBackupDownloadTaskRequest& request, const DescribeBackupDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupDownloadTask(request), context);
-    };
+    using Req = const DescribeBackupDownloadTaskRequest&;
+    using Resp = DescribeBackupDownloadTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeBackupDownloadTaskOutcomeCallable MongodbClient::DescribeBackupDownloadTaskCallable(const DescribeBackupDownloadTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupDownloadTask(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeBackupDownloadTaskOutcome>>();
+    DescribeBackupDownloadTaskAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeBackupDownloadTaskRequest&,
+        DescribeBackupDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeBackupRulesOutcome MongodbClient::DescribeBackupRules(const DescribeBackupRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupRulesResponse rsp = DescribeBackupRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupRulesOutcome(rsp);
+        else
+            return DescribeBackupRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupRulesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeBackupRulesAsync(const DescribeBackupRulesRequest& request, const DescribeBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupRulesRequest&;
+    using Resp = DescribeBackupRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeBackupRulesOutcomeCallable MongodbClient::DescribeBackupRulesCallable(const DescribeBackupRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupRulesOutcome>>();
+    DescribeBackupRulesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeBackupRulesRequest&,
+        DescribeBackupRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeClientConnectionsOutcome MongodbClient::DescribeClientConnections(const DescribeClientConnectionsRequest &request)
@@ -363,25 +1212,82 @@ MongodbClient::DescribeClientConnectionsOutcome MongodbClient::DescribeClientCon
 
 void MongodbClient::DescribeClientConnectionsAsync(const DescribeClientConnectionsRequest& request, const DescribeClientConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientConnections(request), context);
-    };
+    using Req = const DescribeClientConnectionsRequest&;
+    using Resp = DescribeClientConnectionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientConnections", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeClientConnectionsOutcomeCallable MongodbClient::DescribeClientConnectionsCallable(const DescribeClientConnectionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientConnectionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientConnections(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeClientConnectionsOutcome>>();
+    DescribeClientConnectionsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeClientConnectionsRequest&,
+        DescribeClientConnectionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeCurrentOpOutcome MongodbClient::DescribeCurrentOp(const DescribeCurrentOpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurrentOp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurrentOpResponse rsp = DescribeCurrentOpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurrentOpOutcome(rsp);
+        else
+            return DescribeCurrentOpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurrentOpOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeCurrentOpAsync(const DescribeCurrentOpRequest& request, const DescribeCurrentOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCurrentOpRequest&;
+    using Resp = DescribeCurrentOpResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCurrentOp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeCurrentOpOutcomeCallable MongodbClient::DescribeCurrentOpCallable(const DescribeCurrentOpRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCurrentOpOutcome>>();
+    DescribeCurrentOpAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeCurrentOpRequest&,
+        DescribeCurrentOpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeDBBackupsOutcome MongodbClient::DescribeDBBackups(const DescribeDBBackupsRequest &request)
@@ -406,25 +1312,32 @@ MongodbClient::DescribeDBBackupsOutcome MongodbClient::DescribeDBBackups(const D
 
 void MongodbClient::DescribeDBBackupsAsync(const DescribeDBBackupsRequest& request, const DescribeDBBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBBackups(request), context);
-    };
+    using Req = const DescribeDBBackupsRequest&;
+    using Resp = DescribeDBBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeDBBackupsOutcomeCallable MongodbClient::DescribeDBBackupsCallable(const DescribeDBBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBBackupsOutcome>>();
+    DescribeDBBackupsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBBackupsRequest&,
+        DescribeDBBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeDBInstanceDealOutcome MongodbClient::DescribeDBInstanceDeal(const DescribeDBInstanceDealRequest &request)
@@ -449,25 +1362,32 @@ MongodbClient::DescribeDBInstanceDealOutcome MongodbClient::DescribeDBInstanceDe
 
 void MongodbClient::DescribeDBInstanceDealAsync(const DescribeDBInstanceDealRequest& request, const DescribeDBInstanceDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstanceDeal(request), context);
-    };
+    using Req = const DescribeDBInstanceDealRequest&;
+    using Resp = DescribeDBInstanceDealResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceDeal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeDBInstanceDealOutcomeCallable MongodbClient::DescribeDBInstanceDealCallable(const DescribeDBInstanceDealRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDealOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstanceDeal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceDealOutcome>>();
+    DescribeDBInstanceDealAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceDealRequest&,
+        DescribeDBInstanceDealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeDBInstanceNamespaceOutcome MongodbClient::DescribeDBInstanceNamespace(const DescribeDBInstanceNamespaceRequest &request)
@@ -492,25 +1412,182 @@ MongodbClient::DescribeDBInstanceNamespaceOutcome MongodbClient::DescribeDBInsta
 
 void MongodbClient::DescribeDBInstanceNamespaceAsync(const DescribeDBInstanceNamespaceRequest& request, const DescribeDBInstanceNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstanceNamespace(request), context);
-    };
+    using Req = const DescribeDBInstanceNamespaceRequest&;
+    using Resp = DescribeDBInstanceNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeDBInstanceNamespaceOutcomeCallable MongodbClient::DescribeDBInstanceNamespaceCallable(const DescribeDBInstanceNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstanceNamespace(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceNamespaceOutcome>>();
+    DescribeDBInstanceNamespaceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceNamespaceRequest&,
+        DescribeDBInstanceNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeDBInstanceNodePropertyOutcome MongodbClient::DescribeDBInstanceNodeProperty(const DescribeDBInstanceNodePropertyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceNodeProperty");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceNodePropertyResponse rsp = DescribeDBInstanceNodePropertyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceNodePropertyOutcome(rsp);
+        else
+            return DescribeDBInstanceNodePropertyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceNodePropertyOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceNodePropertyAsync(const DescribeDBInstanceNodePropertyRequest& request, const DescribeDBInstanceNodePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstanceNodePropertyRequest&;
+    using Resp = DescribeDBInstanceNodePropertyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceNodeProperty", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeDBInstanceNodePropertyOutcomeCallable MongodbClient::DescribeDBInstanceNodePropertyCallable(const DescribeDBInstanceNodePropertyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceNodePropertyOutcome>>();
+    DescribeDBInstanceNodePropertyAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceNodePropertyRequest&,
+        DescribeDBInstanceNodePropertyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeDBInstanceParamTplOutcome MongodbClient::DescribeDBInstanceParamTpl(const DescribeDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceParamTplResponse rsp = DescribeDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceParamTplOutcome(rsp);
+        else
+            return DescribeDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceParamTplAsync(const DescribeDBInstanceParamTplRequest& request, const DescribeDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstanceParamTplRequest&;
+    using Resp = DescribeDBInstanceParamTplResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceParamTpl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeDBInstanceParamTplOutcomeCallable MongodbClient::DescribeDBInstanceParamTplCallable(const DescribeDBInstanceParamTplRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceParamTplOutcome>>();
+    DescribeDBInstanceParamTplAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceParamTplRequest&,
+        DescribeDBInstanceParamTplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeDBInstanceParamTplDetailOutcome MongodbClient::DescribeDBInstanceParamTplDetail(const DescribeDBInstanceParamTplDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceParamTplDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceParamTplDetailResponse rsp = DescribeDBInstanceParamTplDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceParamTplDetailOutcome(rsp);
+        else
+            return DescribeDBInstanceParamTplDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceParamTplDetailOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceParamTplDetailAsync(const DescribeDBInstanceParamTplDetailRequest& request, const DescribeDBInstanceParamTplDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstanceParamTplDetailRequest&;
+    using Resp = DescribeDBInstanceParamTplDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceParamTplDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeDBInstanceParamTplDetailOutcomeCallable MongodbClient::DescribeDBInstanceParamTplDetailCallable(const DescribeDBInstanceParamTplDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceParamTplDetailOutcome>>();
+    DescribeDBInstanceParamTplDetailAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceParamTplDetailRequest&,
+        DescribeDBInstanceParamTplDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
@@ -535,25 +1612,82 @@ MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(con
 
 void MongodbClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstances(request), context);
-    };
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeDBInstancesOutcomeCallable MongodbClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstances(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeDetailedSlowLogsOutcome MongodbClient::DescribeDetailedSlowLogs(const DescribeDetailedSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDetailedSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDetailedSlowLogsResponse rsp = DescribeDetailedSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDetailedSlowLogsOutcome(rsp);
+        else
+            return DescribeDetailedSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDetailedSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDetailedSlowLogsAsync(const DescribeDetailedSlowLogsRequest& request, const DescribeDetailedSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDetailedSlowLogsRequest&;
+    using Resp = DescribeDetailedSlowLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDetailedSlowLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeDetailedSlowLogsOutcomeCallable MongodbClient::DescribeDetailedSlowLogsCallable(const DescribeDetailedSlowLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDetailedSlowLogsOutcome>>();
+    DescribeDetailedSlowLogsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDetailedSlowLogsRequest&,
+        DescribeDetailedSlowLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeInstanceParamsOutcome MongodbClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
@@ -578,25 +1712,382 @@ MongodbClient::DescribeInstanceParamsOutcome MongodbClient::DescribeInstancePara
 
 void MongodbClient::DescribeInstanceParamsAsync(const DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParams(request), context);
-    };
+    using Req = const DescribeInstanceParamsRequest&;
+    using Resp = DescribeInstanceParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeInstanceParamsOutcomeCallable MongodbClient::DescribeInstanceParamsCallable(const DescribeInstanceParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParams(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamsOutcome>>();
+    DescribeInstanceParamsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeInstanceParamsRequest&,
+        DescribeInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DescribeInstanceRolesOutcome MongodbClient::DescribeInstanceRoles(const DescribeInstanceRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceRolesResponse rsp = DescribeInstanceRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceRolesOutcome(rsp);
+        else
+            return DescribeInstanceRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceRolesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeInstanceRolesAsync(const DescribeInstanceRolesRequest& request, const DescribeInstanceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceRolesRequest&;
+    using Resp = DescribeInstanceRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeInstanceRolesOutcomeCallable MongodbClient::DescribeInstanceRolesCallable(const DescribeInstanceRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceRolesOutcome>>();
+    DescribeInstanceRolesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeInstanceRolesRequest&,
+        DescribeInstanceRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeInstanceSSLOutcome MongodbClient::DescribeInstanceSSL(const DescribeInstanceSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSSLResponse rsp = DescribeInstanceSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSSLOutcome(rsp);
+        else
+            return DescribeInstanceSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSSLOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeInstanceSSLAsync(const DescribeInstanceSSLRequest& request, const DescribeInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceSSLRequest&;
+    using Resp = DescribeInstanceSSLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeInstanceSSLOutcomeCallable MongodbClient::DescribeInstanceSSLCallable(const DescribeInstanceSSLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSSLOutcome>>();
+    DescribeInstanceSSLAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeInstanceSSLRequest&,
+        DescribeInstanceSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeInstanceUsersOutcome MongodbClient::DescribeInstanceUsers(const DescribeInstanceUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceUsersResponse rsp = DescribeInstanceUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceUsersOutcome(rsp);
+        else
+            return DescribeInstanceUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceUsersOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeInstanceUsersAsync(const DescribeInstanceUsersRequest& request, const DescribeInstanceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceUsersRequest&;
+    using Resp = DescribeInstanceUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeInstanceUsersOutcomeCallable MongodbClient::DescribeInstanceUsersCallable(const DescribeInstanceUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceUsersOutcome>>();
+    DescribeInstanceUsersAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeInstanceUsersRequest&,
+        DescribeInstanceUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeLogDownloadTasksOutcome MongodbClient::DescribeLogDownloadTasks(const DescribeLogDownloadTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogDownloadTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogDownloadTasksResponse rsp = DescribeLogDownloadTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogDownloadTasksOutcome(rsp);
+        else
+            return DescribeLogDownloadTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogDownloadTasksOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeLogDownloadTasksAsync(const DescribeLogDownloadTasksRequest& request, const DescribeLogDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogDownloadTasksRequest&;
+    using Resp = DescribeLogDownloadTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogDownloadTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeLogDownloadTasksOutcomeCallable MongodbClient::DescribeLogDownloadTasksCallable(const DescribeLogDownloadTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogDownloadTasksOutcome>>();
+    DescribeLogDownloadTasksAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeLogDownloadTasksRequest&,
+        DescribeLogDownloadTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeMongodbLogsOutcome MongodbClient::DescribeMongodbLogs(const DescribeMongodbLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMongodbLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMongodbLogsResponse rsp = DescribeMongodbLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMongodbLogsOutcome(rsp);
+        else
+            return DescribeMongodbLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMongodbLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeMongodbLogsAsync(const DescribeMongodbLogsRequest& request, const DescribeMongodbLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMongodbLogsRequest&;
+    using Resp = DescribeMongodbLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMongodbLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeMongodbLogsOutcomeCallable MongodbClient::DescribeMongodbLogsCallable(const DescribeMongodbLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMongodbLogsOutcome>>();
+    DescribeMongodbLogsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeMongodbLogsRequest&,
+        DescribeMongodbLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribePasswordRotationOutcome MongodbClient::DescribePasswordRotation(const DescribePasswordRotationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePasswordRotation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePasswordRotationResponse rsp = DescribePasswordRotationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePasswordRotationOutcome(rsp);
+        else
+            return DescribePasswordRotationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePasswordRotationOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribePasswordRotationAsync(const DescribePasswordRotationRequest& request, const DescribePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePasswordRotationRequest&;
+    using Resp = DescribePasswordRotationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePasswordRotation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribePasswordRotationOutcomeCallable MongodbClient::DescribePasswordRotationCallable(const DescribePasswordRotationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePasswordRotationOutcome>>();
+    DescribePasswordRotationAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribePasswordRotationRequest&,
+        DescribePasswordRotationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeSRVConnectionDomainOutcome MongodbClient::DescribeSRVConnectionDomain(const DescribeSRVConnectionDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSRVConnectionDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSRVConnectionDomainResponse rsp = DescribeSRVConnectionDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSRVConnectionDomainOutcome(rsp);
+        else
+            return DescribeSRVConnectionDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSRVConnectionDomainOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeSRVConnectionDomainAsync(const DescribeSRVConnectionDomainRequest& request, const DescribeSRVConnectionDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSRVConnectionDomainRequest&;
+    using Resp = DescribeSRVConnectionDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSRVConnectionDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeSRVConnectionDomainOutcomeCallable MongodbClient::DescribeSRVConnectionDomainCallable(const DescribeSRVConnectionDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSRVConnectionDomainOutcome>>();
+    DescribeSRVConnectionDomainAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeSRVConnectionDomainRequest&,
+        DescribeSRVConnectionDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeSecurityGroupOutcome MongodbClient::DescribeSecurityGroup(const DescribeSecurityGroupRequest &request)
@@ -621,25 +2112,32 @@ MongodbClient::DescribeSecurityGroupOutcome MongodbClient::DescribeSecurityGroup
 
 void MongodbClient::DescribeSecurityGroupAsync(const DescribeSecurityGroupRequest& request, const DescribeSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityGroup(request), context);
-    };
+    using Req = const DescribeSecurityGroupRequest&;
+    using Resp = DescribeSecurityGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeSecurityGroupOutcomeCallable MongodbClient::DescribeSecurityGroupCallable(const DescribeSecurityGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupOutcome>>();
+    DescribeSecurityGroupAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeSecurityGroupRequest&,
+        DescribeSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeSlowLogPatternsOutcome MongodbClient::DescribeSlowLogPatterns(const DescribeSlowLogPatternsRequest &request)
@@ -664,25 +2162,32 @@ MongodbClient::DescribeSlowLogPatternsOutcome MongodbClient::DescribeSlowLogPatt
 
 void MongodbClient::DescribeSlowLogPatternsAsync(const DescribeSlowLogPatternsRequest& request, const DescribeSlowLogPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlowLogPatterns(request), context);
-    };
+    using Req = const DescribeSlowLogPatternsRequest&;
+    using Resp = DescribeSlowLogPatternsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlowLogPatterns", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeSlowLogPatternsOutcomeCallable MongodbClient::DescribeSlowLogPatternsCallable(const DescribeSlowLogPatternsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlowLogPatternsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlowLogPatterns(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlowLogPatternsOutcome>>();
+    DescribeSlowLogPatternsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeSlowLogPatternsRequest&,
+        DescribeSlowLogPatternsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeSlowLogsOutcome MongodbClient::DescribeSlowLogs(const DescribeSlowLogsRequest &request)
@@ -707,25 +2212,32 @@ MongodbClient::DescribeSlowLogsOutcome MongodbClient::DescribeSlowLogs(const Des
 
 void MongodbClient::DescribeSlowLogsAsync(const DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlowLogs(request), context);
-    };
+    using Req = const DescribeSlowLogsRequest&;
+    using Resp = DescribeSlowLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlowLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeSlowLogsOutcomeCallable MongodbClient::DescribeSlowLogsCallable(const DescribeSlowLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlowLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlowLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlowLogsOutcome>>();
+    DescribeSlowLogsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeSlowLogsRequest&,
+        DescribeSlowLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::DescribeSpecInfoOutcome MongodbClient::DescribeSpecInfo(const DescribeSpecInfoRequest &request)
@@ -750,25 +2262,282 @@ MongodbClient::DescribeSpecInfoOutcome MongodbClient::DescribeSpecInfo(const Des
 
 void MongodbClient::DescribeSpecInfoAsync(const DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpecInfo(request), context);
-    };
+    using Req = const DescribeSpecInfoRequest&;
+    using Resp = DescribeSpecInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpecInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::DescribeSpecInfoOutcomeCallable MongodbClient::DescribeSpecInfoCallable(const DescribeSpecInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpecInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpecInfo(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<DescribeSpecInfoOutcome>>();
+    DescribeSpecInfoAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeSpecInfoRequest&,
+        DescribeSpecInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::DisableSRVConnectionUrlOutcome MongodbClient::DisableSRVConnectionUrl(const DisableSRVConnectionUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableSRVConnectionUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableSRVConnectionUrlResponse rsp = DisableSRVConnectionUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableSRVConnectionUrlOutcome(rsp);
+        else
+            return DisableSRVConnectionUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableSRVConnectionUrlOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DisableSRVConnectionUrlAsync(const DisableSRVConnectionUrlRequest& request, const DisableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisableSRVConnectionUrlRequest&;
+    using Resp = DisableSRVConnectionUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisableSRVConnectionUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DisableSRVConnectionUrlOutcomeCallable MongodbClient::DisableSRVConnectionUrlCallable(const DisableSRVConnectionUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisableSRVConnectionUrlOutcome>>();
+    DisableSRVConnectionUrlAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DisableSRVConnectionUrlRequest&,
+        DisableSRVConnectionUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::EnablePasswordRotationOutcome MongodbClient::EnablePasswordRotation(const EnablePasswordRotationRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePasswordRotation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePasswordRotationResponse rsp = EnablePasswordRotationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePasswordRotationOutcome(rsp);
+        else
+            return EnablePasswordRotationOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePasswordRotationOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnablePasswordRotationAsync(const EnablePasswordRotationRequest& request, const EnablePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnablePasswordRotationRequest&;
+    using Resp = EnablePasswordRotationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnablePasswordRotation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnablePasswordRotationOutcomeCallable MongodbClient::EnablePasswordRotationCallable(const EnablePasswordRotationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnablePasswordRotationOutcome>>();
+    EnablePasswordRotationAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnablePasswordRotationRequest&,
+        EnablePasswordRotationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::EnableSRVConnectionUrlOutcome MongodbClient::EnableSRVConnectionUrl(const EnableSRVConnectionUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableSRVConnectionUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableSRVConnectionUrlResponse rsp = EnableSRVConnectionUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableSRVConnectionUrlOutcome(rsp);
+        else
+            return EnableSRVConnectionUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableSRVConnectionUrlOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnableSRVConnectionUrlAsync(const EnableSRVConnectionUrlRequest& request, const EnableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableSRVConnectionUrlRequest&;
+    using Resp = EnableSRVConnectionUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableSRVConnectionUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnableSRVConnectionUrlOutcomeCallable MongodbClient::EnableSRVConnectionUrlCallable(const EnableSRVConnectionUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableSRVConnectionUrlOutcome>>();
+    EnableSRVConnectionUrlAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnableSRVConnectionUrlRequest&,
+        EnableSRVConnectionUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::EnableTransparentDataEncryptionOutcome MongodbClient::EnableTransparentDataEncryption(const EnableTransparentDataEncryptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTransparentDataEncryption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTransparentDataEncryptionResponse rsp = EnableTransparentDataEncryptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTransparentDataEncryptionOutcome(rsp);
+        else
+            return EnableTransparentDataEncryptionOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTransparentDataEncryptionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnableTransparentDataEncryptionAsync(const EnableTransparentDataEncryptionRequest& request, const EnableTransparentDataEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableTransparentDataEncryptionRequest&;
+    using Resp = EnableTransparentDataEncryptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableTransparentDataEncryption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnableTransparentDataEncryptionOutcomeCallable MongodbClient::EnableTransparentDataEncryptionCallable(const EnableTransparentDataEncryptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableTransparentDataEncryptionOutcome>>();
+    EnableTransparentDataEncryptionAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnableTransparentDataEncryptionRequest&,
+        EnableTransparentDataEncryptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::EnableWanServiceOutcome MongodbClient::EnableWanService(const EnableWanServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableWanService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableWanServiceResponse rsp = EnableWanServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableWanServiceOutcome(rsp);
+        else
+            return EnableWanServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableWanServiceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnableWanServiceAsync(const EnableWanServiceRequest& request, const EnableWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableWanServiceRequest&;
+    using Resp = EnableWanServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableWanService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnableWanServiceOutcomeCallable MongodbClient::EnableWanServiceCallable(const EnableWanServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableWanServiceOutcome>>();
+    EnableWanServiceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnableWanServiceRequest&,
+        EnableWanServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::FlushInstanceRouterConfigOutcome MongodbClient::FlushInstanceRouterConfig(const FlushInstanceRouterConfigRequest &request)
@@ -793,25 +2562,32 @@ MongodbClient::FlushInstanceRouterConfigOutcome MongodbClient::FlushInstanceRout
 
 void MongodbClient::FlushInstanceRouterConfigAsync(const FlushInstanceRouterConfigRequest& request, const FlushInstanceRouterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FlushInstanceRouterConfig(request), context);
-    };
+    using Req = const FlushInstanceRouterConfigRequest&;
+    using Resp = FlushInstanceRouterConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FlushInstanceRouterConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::FlushInstanceRouterConfigOutcomeCallable MongodbClient::FlushInstanceRouterConfigCallable(const FlushInstanceRouterConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FlushInstanceRouterConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->FlushInstanceRouterConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FlushInstanceRouterConfigOutcome>>();
+    FlushInstanceRouterConfigAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const FlushInstanceRouterConfigRequest&,
+        FlushInstanceRouterConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::InquirePriceCreateDBInstancesOutcome MongodbClient::InquirePriceCreateDBInstances(const InquirePriceCreateDBInstancesRequest &request)
@@ -836,25 +2612,32 @@ MongodbClient::InquirePriceCreateDBInstancesOutcome MongodbClient::InquirePriceC
 
 void MongodbClient::InquirePriceCreateDBInstancesAsync(const InquirePriceCreateDBInstancesRequest& request, const InquirePriceCreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceCreateDBInstances(request), context);
-    };
+    using Req = const InquirePriceCreateDBInstancesRequest&;
+    using Resp = InquirePriceCreateDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::InquirePriceCreateDBInstancesOutcomeCallable MongodbClient::InquirePriceCreateDBInstancesCallable(const InquirePriceCreateDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceCreateDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceCreateDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateDBInstancesOutcome>>();
+    InquirePriceCreateDBInstancesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const InquirePriceCreateDBInstancesRequest&,
+        InquirePriceCreateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::InquirePriceModifyDBInstanceSpecOutcome MongodbClient::InquirePriceModifyDBInstanceSpec(const InquirePriceModifyDBInstanceSpecRequest &request)
@@ -879,25 +2662,32 @@ MongodbClient::InquirePriceModifyDBInstanceSpecOutcome MongodbClient::InquirePri
 
 void MongodbClient::InquirePriceModifyDBInstanceSpecAsync(const InquirePriceModifyDBInstanceSpecRequest& request, const InquirePriceModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceModifyDBInstanceSpec(request), context);
-    };
+    using Req = const InquirePriceModifyDBInstanceSpecRequest&;
+    using Resp = InquirePriceModifyDBInstanceSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceModifyDBInstanceSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::InquirePriceModifyDBInstanceSpecOutcomeCallable MongodbClient::InquirePriceModifyDBInstanceSpecCallable(const InquirePriceModifyDBInstanceSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceModifyDBInstanceSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceModifyDBInstanceSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceModifyDBInstanceSpecOutcome>>();
+    InquirePriceModifyDBInstanceSpecAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const InquirePriceModifyDBInstanceSpecRequest&,
+        InquirePriceModifyDBInstanceSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::InquirePriceRenewDBInstancesOutcome MongodbClient::InquirePriceRenewDBInstances(const InquirePriceRenewDBInstancesRequest &request)
@@ -922,25 +2712,82 @@ MongodbClient::InquirePriceRenewDBInstancesOutcome MongodbClient::InquirePriceRe
 
 void MongodbClient::InquirePriceRenewDBInstancesAsync(const InquirePriceRenewDBInstancesRequest& request, const InquirePriceRenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceRenewDBInstances(request), context);
-    };
+    using Req = const InquirePriceRenewDBInstancesRequest&;
+    using Resp = InquirePriceRenewDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenewDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::InquirePriceRenewDBInstancesOutcomeCallable MongodbClient::InquirePriceRenewDBInstancesCallable(const InquirePriceRenewDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceRenewDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceRenewDBInstances(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewDBInstancesOutcome>>();
+    InquirePriceRenewDBInstancesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const InquirePriceRenewDBInstancesRequest&,
+        InquirePriceRenewDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::InstanceEnableSSLOutcome MongodbClient::InstanceEnableSSL(const InstanceEnableSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstanceEnableSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstanceEnableSSLResponse rsp = InstanceEnableSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstanceEnableSSLOutcome(rsp);
+        else
+            return InstanceEnableSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return InstanceEnableSSLOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::InstanceEnableSSLAsync(const InstanceEnableSSLRequest& request, const InstanceEnableSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstanceEnableSSLRequest&;
+    using Resp = InstanceEnableSSLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstanceEnableSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::InstanceEnableSSLOutcomeCallable MongodbClient::InstanceEnableSSLCallable(const InstanceEnableSSLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstanceEnableSSLOutcome>>();
+    InstanceEnableSSLAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const InstanceEnableSSLRequest&,
+        InstanceEnableSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::IsolateDBInstanceOutcome MongodbClient::IsolateDBInstance(const IsolateDBInstanceRequest &request)
@@ -965,25 +2812,132 @@ MongodbClient::IsolateDBInstanceOutcome MongodbClient::IsolateDBInstance(const I
 
 void MongodbClient::IsolateDBInstanceAsync(const IsolateDBInstanceRequest& request, const IsolateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateDBInstance(request), context);
-    };
+    using Req = const IsolateDBInstanceRequest&;
+    using Resp = IsolateDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::IsolateDBInstanceOutcomeCallable MongodbClient::IsolateDBInstanceCallable(const IsolateDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateDBInstance(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<IsolateDBInstanceOutcome>>();
+    IsolateDBInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const IsolateDBInstanceRequest&,
+        IsolateDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::KillOpsOutcome MongodbClient::KillOps(const KillOpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "KillOps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KillOpsResponse rsp = KillOpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KillOpsOutcome(rsp);
+        else
+            return KillOpsOutcome(o.GetError());
+    }
+    else
+    {
+        return KillOpsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::KillOpsAsync(const KillOpsRequest& request, const KillOpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const KillOpsRequest&;
+    using Resp = KillOpsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "KillOps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::KillOpsOutcomeCallable MongodbClient::KillOpsCallable(const KillOpsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<KillOpsOutcome>>();
+    KillOpsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const KillOpsRequest&,
+        KillOpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ModifyBackupExpireTimeOutcome MongodbClient::ModifyBackupExpireTime(const ModifyBackupExpireTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupExpireTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupExpireTimeResponse rsp = ModifyBackupExpireTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupExpireTimeOutcome(rsp);
+        else
+            return ModifyBackupExpireTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupExpireTimeOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyBackupExpireTimeAsync(const ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBackupExpireTimeRequest&;
+    using Resp = ModifyBackupExpireTimeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupExpireTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyBackupExpireTimeOutcomeCallable MongodbClient::ModifyBackupExpireTimeCallable(const ModifyBackupExpireTimeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBackupExpireTimeOutcome>>();
+    ModifyBackupExpireTimeAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyBackupExpireTimeRequest&,
+        ModifyBackupExpireTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::ModifyDBInstanceNetworkAddressOutcome MongodbClient::ModifyDBInstanceNetworkAddress(const ModifyDBInstanceNetworkAddressRequest &request)
@@ -1008,25 +2962,32 @@ MongodbClient::ModifyDBInstanceNetworkAddressOutcome MongodbClient::ModifyDBInst
 
 void MongodbClient::ModifyDBInstanceNetworkAddressAsync(const ModifyDBInstanceNetworkAddressRequest& request, const ModifyDBInstanceNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceNetworkAddress(request), context);
-    };
+    using Req = const ModifyDBInstanceNetworkAddressRequest&;
+    using Resp = ModifyDBInstanceNetworkAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceNetworkAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::ModifyDBInstanceNetworkAddressOutcomeCallable MongodbClient::ModifyDBInstanceNetworkAddressCallable(const ModifyDBInstanceNetworkAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNetworkAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceNetworkAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceNetworkAddressOutcome>>();
+    ModifyDBInstanceNetworkAddressAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyDBInstanceNetworkAddressRequest&,
+        ModifyDBInstanceNetworkAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::ModifyDBInstanceSecurityGroupOutcome MongodbClient::ModifyDBInstanceSecurityGroup(const ModifyDBInstanceSecurityGroupRequest &request)
@@ -1051,25 +3012,32 @@ MongodbClient::ModifyDBInstanceSecurityGroupOutcome MongodbClient::ModifyDBInsta
 
 void MongodbClient::ModifyDBInstanceSecurityGroupAsync(const ModifyDBInstanceSecurityGroupRequest& request, const ModifyDBInstanceSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSecurityGroup(request), context);
-    };
+    using Req = const ModifyDBInstanceSecurityGroupRequest&;
+    using Resp = ModifyDBInstanceSecurityGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::ModifyDBInstanceSecurityGroupOutcomeCallable MongodbClient::ModifyDBInstanceSecurityGroupCallable(const ModifyDBInstanceSecurityGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSecurityGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSecurityGroupOutcome>>();
+    ModifyDBInstanceSecurityGroupAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyDBInstanceSecurityGroupRequest&,
+        ModifyDBInstanceSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::ModifyDBInstanceSpecOutcome MongodbClient::ModifyDBInstanceSpec(const ModifyDBInstanceSpecRequest &request)
@@ -1094,25 +3062,182 @@ MongodbClient::ModifyDBInstanceSpecOutcome MongodbClient::ModifyDBInstanceSpec(c
 
 void MongodbClient::ModifyDBInstanceSpecAsync(const ModifyDBInstanceSpecRequest& request, const ModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSpec(request), context);
-    };
+    using Req = const ModifyDBInstanceSpecRequest&;
+    using Resp = ModifyDBInstanceSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::ModifyDBInstanceSpecOutcomeCallable MongodbClient::ModifyDBInstanceSpecCallable(const ModifyDBInstanceSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSpec(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSpecOutcome>>();
+    ModifyDBInstanceSpecAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyDBInstanceSpecRequest&,
+        ModifyDBInstanceSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::ModifyInstanceAzOutcome MongodbClient::ModifyInstanceAz(const ModifyInstanceAzRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAz");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAzResponse rsp = ModifyInstanceAzResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAzOutcome(rsp);
+        else
+            return ModifyInstanceAzOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAzOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyInstanceAzAsync(const ModifyInstanceAzRequest& request, const ModifyInstanceAzAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceAzRequest&;
+    using Resp = ModifyInstanceAzResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceAz", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyInstanceAzOutcomeCallable MongodbClient::ModifyInstanceAzCallable(const ModifyInstanceAzRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceAzOutcome>>();
+    ModifyInstanceAzAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyInstanceAzRequest&,
+        ModifyInstanceAzOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ModifyInstanceParamsOutcome MongodbClient::ModifyInstanceParams(const ModifyInstanceParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceParamsResponse rsp = ModifyInstanceParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceParamsOutcome(rsp);
+        else
+            return ModifyInstanceParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceParamsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyInstanceParamsAsync(const ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceParamsRequest&;
+    using Resp = ModifyInstanceParamsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyInstanceParamsOutcomeCallable MongodbClient::ModifyInstanceParamsCallable(const ModifyInstanceParamsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceParamsOutcome>>();
+    ModifyInstanceParamsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyInstanceParamsRequest&,
+        ModifyInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ModifySRVConnectionUrlOutcome MongodbClient::ModifySRVConnectionUrl(const ModifySRVConnectionUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySRVConnectionUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySRVConnectionUrlResponse rsp = ModifySRVConnectionUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySRVConnectionUrlOutcome(rsp);
+        else
+            return ModifySRVConnectionUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySRVConnectionUrlOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifySRVConnectionUrlAsync(const ModifySRVConnectionUrlRequest& request, const ModifySRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySRVConnectionUrlRequest&;
+    using Resp = ModifySRVConnectionUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySRVConnectionUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifySRVConnectionUrlOutcomeCallable MongodbClient::ModifySRVConnectionUrlCallable(const ModifySRVConnectionUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySRVConnectionUrlOutcome>>();
+    ModifySRVConnectionUrlAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifySRVConnectionUrlRequest&,
+        ModifySRVConnectionUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::OfflineIsolatedDBInstanceOutcome MongodbClient::OfflineIsolatedDBInstance(const OfflineIsolatedDBInstanceRequest &request)
@@ -1137,25 +3262,32 @@ MongodbClient::OfflineIsolatedDBInstanceOutcome MongodbClient::OfflineIsolatedDB
 
 void MongodbClient::OfflineIsolatedDBInstanceAsync(const OfflineIsolatedDBInstanceRequest& request, const OfflineIsolatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OfflineIsolatedDBInstance(request), context);
-    };
+    using Req = const OfflineIsolatedDBInstanceRequest&;
+    using Resp = OfflineIsolatedDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OfflineIsolatedDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::OfflineIsolatedDBInstanceOutcomeCallable MongodbClient::OfflineIsolatedDBInstanceCallable(const OfflineIsolatedDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OfflineIsolatedDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->OfflineIsolatedDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OfflineIsolatedDBInstanceOutcome>>();
+    OfflineIsolatedDBInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const OfflineIsolatedDBInstanceRequest&,
+        OfflineIsolatedDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::RenameInstanceOutcome MongodbClient::RenameInstance(const RenameInstanceRequest &request)
@@ -1180,25 +3312,32 @@ MongodbClient::RenameInstanceOutcome MongodbClient::RenameInstance(const RenameI
 
 void MongodbClient::RenameInstanceAsync(const RenameInstanceRequest& request, const RenameInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenameInstance(request), context);
-    };
+    using Req = const RenameInstanceRequest&;
+    using Resp = RenameInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenameInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::RenameInstanceOutcomeCallable MongodbClient::RenameInstanceCallable(const RenameInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenameInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RenameInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenameInstanceOutcome>>();
+    RenameInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const RenameInstanceRequest&,
+        RenameInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::RenewDBInstancesOutcome MongodbClient::RenewDBInstances(const RenewDBInstancesRequest &request)
@@ -1223,25 +3362,32 @@ MongodbClient::RenewDBInstancesOutcome MongodbClient::RenewDBInstances(const Ren
 
 void MongodbClient::RenewDBInstancesAsync(const RenewDBInstancesRequest& request, const RenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewDBInstances(request), context);
-    };
+    using Req = const RenewDBInstancesRequest&;
+    using Resp = RenewDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::RenewDBInstancesOutcomeCallable MongodbClient::RenewDBInstancesCallable(const RenewDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewDBInstancesOutcome>>();
+    RenewDBInstancesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const RenewDBInstancesRequest&,
+        RenewDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MongodbClient::ResetDBInstancePasswordOutcome MongodbClient::ResetDBInstancePassword(const ResetDBInstancePasswordRequest &request)
@@ -1266,24 +3412,481 @@ MongodbClient::ResetDBInstancePasswordOutcome MongodbClient::ResetDBInstancePass
 
 void MongodbClient::ResetDBInstancePasswordAsync(const ResetDBInstancePasswordRequest& request, const ResetDBInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetDBInstancePassword(request), context);
-    };
+    using Req = const ResetDBInstancePasswordRequest&;
+    using Resp = ResetDBInstancePasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetDBInstancePassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MongodbClient::ResetDBInstancePasswordOutcomeCallable MongodbClient::ResetDBInstancePasswordCallable(const ResetDBInstancePasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetDBInstancePasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetDBInstancePassword(request);
-        }
-    );
+    const auto prom = std::make_shared<std::promise<ResetDBInstancePasswordOutcome>>();
+    ResetDBInstancePasswordAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ResetDBInstancePasswordRequest&,
+        ResetDBInstancePasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
 
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+MongodbClient::RestoreDBInstanceOutcome MongodbClient::RestoreDBInstance(const RestoreDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestoreDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestoreDBInstanceResponse rsp = RestoreDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestoreDBInstanceOutcome(rsp);
+        else
+            return RestoreDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RestoreDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::RestoreDBInstanceAsync(const RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RestoreDBInstanceRequest&;
+    using Resp = RestoreDBInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RestoreDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::RestoreDBInstanceOutcomeCallable MongodbClient::RestoreDBInstanceCallable(const RestoreDBInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RestoreDBInstanceOutcome>>();
+    RestoreDBInstanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const RestoreDBInstanceRequest&,
+        RestoreDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::SetAccountUserPrivilegeOutcome MongodbClient::SetAccountUserPrivilege(const SetAccountUserPrivilegeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAccountUserPrivilege");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAccountUserPrivilegeResponse rsp = SetAccountUserPrivilegeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAccountUserPrivilegeOutcome(rsp);
+        else
+            return SetAccountUserPrivilegeOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAccountUserPrivilegeOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetAccountUserPrivilegeAsync(const SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetAccountUserPrivilegeRequest&;
+    using Resp = SetAccountUserPrivilegeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetAccountUserPrivilege", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::SetAccountUserPrivilegeOutcomeCallable MongodbClient::SetAccountUserPrivilegeCallable(const SetAccountUserPrivilegeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetAccountUserPrivilegeOutcome>>();
+    SetAccountUserPrivilegeAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const SetAccountUserPrivilegeRequest&,
+        SetAccountUserPrivilegeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::SetDBInstanceDeletionProtectionOutcome MongodbClient::SetDBInstanceDeletionProtection(const SetDBInstanceDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDBInstanceDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDBInstanceDeletionProtectionResponse rsp = SetDBInstanceDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDBInstanceDeletionProtectionOutcome(rsp);
+        else
+            return SetDBInstanceDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDBInstanceDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetDBInstanceDeletionProtectionAsync(const SetDBInstanceDeletionProtectionRequest& request, const SetDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetDBInstanceDeletionProtectionRequest&;
+    using Resp = SetDBInstanceDeletionProtectionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetDBInstanceDeletionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::SetDBInstanceDeletionProtectionOutcomeCallable MongodbClient::SetDBInstanceDeletionProtectionCallable(const SetDBInstanceDeletionProtectionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetDBInstanceDeletionProtectionOutcome>>();
+    SetDBInstanceDeletionProtectionAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const SetDBInstanceDeletionProtectionRequest&,
+        SetDBInstanceDeletionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::SetInstanceMaintenanceOutcome MongodbClient::SetInstanceMaintenance(const SetInstanceMaintenanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetInstanceMaintenance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetInstanceMaintenanceResponse rsp = SetInstanceMaintenanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetInstanceMaintenanceOutcome(rsp);
+        else
+            return SetInstanceMaintenanceOutcome(o.GetError());
+    }
+    else
+    {
+        return SetInstanceMaintenanceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetInstanceMaintenanceAsync(const SetInstanceMaintenanceRequest& request, const SetInstanceMaintenanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetInstanceMaintenanceRequest&;
+    using Resp = SetInstanceMaintenanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetInstanceMaintenance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::SetInstanceMaintenanceOutcomeCallable MongodbClient::SetInstanceMaintenanceCallable(const SetInstanceMaintenanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetInstanceMaintenanceOutcome>>();
+    SetInstanceMaintenanceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const SetInstanceMaintenanceRequest&,
+        SetInstanceMaintenanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::TerminateDBInstancesOutcome MongodbClient::TerminateDBInstances(const TerminateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateDBInstancesResponse rsp = TerminateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateDBInstancesOutcome(rsp);
+        else
+            return TerminateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::TerminateDBInstancesAsync(const TerminateDBInstancesRequest& request, const TerminateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TerminateDBInstancesRequest&;
+    using Resp = TerminateDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TerminateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::TerminateDBInstancesOutcomeCallable MongodbClient::TerminateDBInstancesCallable(const TerminateDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TerminateDBInstancesOutcome>>();
+    TerminateDBInstancesAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const TerminateDBInstancesRequest&,
+        TerminateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::UpdateInstanceRoleOutcome MongodbClient::UpdateInstanceRole(const UpdateInstanceRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateInstanceRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateInstanceRoleResponse rsp = UpdateInstanceRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateInstanceRoleOutcome(rsp);
+        else
+            return UpdateInstanceRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateInstanceRoleOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpdateInstanceRoleAsync(const UpdateInstanceRoleRequest& request, const UpdateInstanceRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateInstanceRoleRequest&;
+    using Resp = UpdateInstanceRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateInstanceRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::UpdateInstanceRoleOutcomeCallable MongodbClient::UpdateInstanceRoleCallable(const UpdateInstanceRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateInstanceRoleOutcome>>();
+    UpdateInstanceRoleAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const UpdateInstanceRoleRequest&,
+        UpdateInstanceRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::UpdateInstanceUserOutcome MongodbClient::UpdateInstanceUser(const UpdateInstanceUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateInstanceUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateInstanceUserResponse rsp = UpdateInstanceUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateInstanceUserOutcome(rsp);
+        else
+            return UpdateInstanceUserOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateInstanceUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpdateInstanceUserAsync(const UpdateInstanceUserRequest& request, const UpdateInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateInstanceUserRequest&;
+    using Resp = UpdateInstanceUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateInstanceUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::UpdateInstanceUserOutcomeCallable MongodbClient::UpdateInstanceUserCallable(const UpdateInstanceUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateInstanceUserOutcome>>();
+    UpdateInstanceUserAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const UpdateInstanceUserRequest&,
+        UpdateInstanceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::UpgradeDBInstanceKernelVersionOutcome MongodbClient::UpgradeDBInstanceKernelVersion(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDBInstanceKernelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDBInstanceKernelVersionResponse rsp = UpgradeDBInstanceKernelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDBInstanceKernelVersionOutcome(rsp);
+        else
+            return UpgradeDBInstanceKernelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDBInstanceKernelVersionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpgradeDBInstanceKernelVersionAsync(const UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeDBInstanceKernelVersionRequest&;
+    using Resp = UpgradeDBInstanceKernelVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeDBInstanceKernelVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::UpgradeDBInstanceKernelVersionOutcomeCallable MongodbClient::UpgradeDBInstanceKernelVersionCallable(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeDBInstanceKernelVersionOutcome>>();
+    UpgradeDBInstanceKernelVersionAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const UpgradeDBInstanceKernelVersionRequest&,
+        UpgradeDBInstanceKernelVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::UpgradeDbInstanceVersionOutcome MongodbClient::UpgradeDbInstanceVersion(const UpgradeDbInstanceVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDbInstanceVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDbInstanceVersionResponse rsp = UpgradeDbInstanceVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDbInstanceVersionOutcome(rsp);
+        else
+            return UpgradeDbInstanceVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDbInstanceVersionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpgradeDbInstanceVersionAsync(const UpgradeDbInstanceVersionRequest& request, const UpgradeDbInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeDbInstanceVersionRequest&;
+    using Resp = UpgradeDbInstanceVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeDbInstanceVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::UpgradeDbInstanceVersionOutcomeCallable MongodbClient::UpgradeDbInstanceVersionCallable(const UpgradeDbInstanceVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeDbInstanceVersionOutcome>>();
+    UpgradeDbInstanceVersionAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const UpgradeDbInstanceVersionRequest&,
+        UpgradeDbInstanceVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

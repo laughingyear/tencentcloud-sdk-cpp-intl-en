@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Instance ID.
-                     * @return InstanceId Instance ID.
+                     * 获取<p>Instance ID.</p>
+                     * @return InstanceId <p>Instance ID.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Order number.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DealNames Order number.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Order number.</p>
+                     * @return DealNames <p>Order number.</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -74,10 +72,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取Client token.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ClientToken Client token.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Client token.</p>
+                     * @return ClientToken <p>Client token.</p>
                      * 
                      */
                     std::string GetClientToken() const;
@@ -90,10 +86,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取Scale-out workflow ID.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return FlowId Scale-out workflow ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Scale-out flow ID.</p>
+                     * @return FlowId <p>Scale-out flow ID.</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -106,10 +100,8 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取Big order ID.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return BillId Big order ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Large order number.</p>
+                     * @return BillId <p>Large order number.</p>
                      * 
                      */
                     std::string GetBillId() const;
@@ -121,41 +113,57 @@ Note: This field may return null, indicating that no valid values can be obtaine
                      */
                     bool BillIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TraceId for the scale-out.</p>
+                     * @return TraceId <p>TraceId for the scale-out.</p>
+                     * 
+                     */
+                    std::string GetTraceId() const;
+
+                    /**
+                     * 判断参数 TraceId 是否已赋值
+                     * @return TraceId 是否已赋值
+                     * 
+                     */
+                    bool TraceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Instance ID.
+                     * <p>Instance ID.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Order number.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Order number.</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * Client token.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Client token.</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * Scale-out workflow ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Scale-out flow ID.</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * Big order ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Large order number.</p>
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
+
+                    /**
+                     * <p>TraceId for the scale-out.</p>
+                     */
+                    std::string m_traceId;
+                    bool m_traceIdHasBeenSet;
 
                 };
             }

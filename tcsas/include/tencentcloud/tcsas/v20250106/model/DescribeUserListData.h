@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * User list data
+                * User list data.
                 */
                 class DescribeUserListData : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取User ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserId User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User ID.</p>
+                     * @return UserId <p>User ID.</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置User ID
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userId User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User ID.</p>
+                     * @param _userId <p>User ID.</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取User account
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserAccount User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User account.</p>
+                     * @return UserAccount <p>User account.</p>
                      * 
                      */
                     std::string GetUserAccount() const;
 
                     /**
-                     * 设置User account
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userAccount User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User account.</p>
+                     * @param _userAccount <p>User account.</p>
                      * 
                      */
                     void SetUserAccount(const std::string& _userAccount);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserAccountHasBeenSet() const;
 
                     /**
-                     * 获取Account type. 1: Super admin; 2: Platform admin; 3: Member
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AccountType Account type. 1: Super admin; 2: Platform admin; 3: Member
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取User account type. Valid values: 1: Super admin; 2: Platform admin; 3: Regular member.
+                     * @return AccountType User account type. Valid values: 1: Super admin; 2: Platform admin; 3: Regular member.
                      * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
-                     * 设置Account type. 1: Super admin; 2: Platform admin; 3: Member
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _accountType Account type. 1: Super admin; 2: Platform admin; 3: Member
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置User account type. Valid values: 1: Super admin; 2: Platform admin; 3: Regular member.
+                     * @param _accountType User account type. Valid values: 1: Super admin; 2: Platform admin; 3: Regular member.
                      * 
                      */
                     void SetAccountType(const int64_t& _accountType);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取User name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return UserName User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>User name.</p>
+                     * @return UserName <p>User name.</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置User name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _userName User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>User name.</p>
+                     * @param _userName <p>User name.</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return CreateTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Creation time.</p>
+                     * @return CreateTime <p>Creation time.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _createTime Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Creation time.</p>
+                     * @param _createTime <p>Creation time.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Status. 1: Normal; 2: Disabled
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Status Status. 1: Normal; 2: Disabled
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Status. Valid values: 1: Active; 2: Disabled.
+                     * @return Status Status. Valid values: 1: Active; 2: Disabled.
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Status. 1: Normal; 2: Disabled
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _status Status. 1: Normal; 2: Disabled
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Status. Valid values: 1: Active; 2: Disabled.
+                     * @param _status Status. Valid values: 1: Active; 2: Disabled.
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -197,19 +173,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TeamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Team name.</p>
+                     * @return TeamName <p>Team name.</p>
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置Team name
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _teamName Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Team name.</p>
+                     * @param _teamName <p>Team name.</p>
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -224,50 +196,43 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * User ID
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>User ID.</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * User account
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>User account.</p>
                      */
                     std::string m_userAccount;
                     bool m_userAccountHasBeenSet;
 
                     /**
-                     * Account type. 1: Super admin; 2: Platform admin; 3: Member
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * User account type. Valid values: 1: Super admin; 2: Platform admin; 3: Regular member.
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * User name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>User name.</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * Creation time
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Creation time.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Status. 1: Normal; 2: Disabled
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Status. Valid values: 1: Active; 2: Disabled.
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Team name
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Team name.</p>
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;

@@ -69,8 +69,12 @@
 #include <tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CheckGatewayFlowMonitorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CheckGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CheckTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CheckTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateAddressTemplateRequest.h>
@@ -115,6 +119,12 @@
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRoutesRequest.h>
@@ -135,6 +145,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointRequest.h>
@@ -187,6 +199,12 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRoutesRequest.h>
@@ -205,6 +223,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
@@ -287,8 +307,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectStatesRequest.h>
@@ -305,6 +329,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfacesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeReserveIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeReserveIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTablesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupAssociationStatisticsRequest.h>
@@ -333,6 +359,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressRequest.h>
@@ -497,6 +525,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateIpAddressesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRoutePolicyAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRoutePolicyAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySecurityGroupAttributeRequest.h>
@@ -513,6 +543,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h>
@@ -547,10 +579,16 @@
 #include <tencentcloud/vpc/v20170312/model/RenewVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceDirectConnectGatewayCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceDirectConnectGatewayCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutesWithRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutesWithRoutePolicyResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPolicyRequest.h>
@@ -559,8 +597,18 @@
 #include <tencentcloud/vpc/v20170312/model/ResetAttachCcnInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorFilterRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorFilterResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorSrcsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorSrcsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorTargetRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorTargetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthRequest.h>
@@ -573,6 +621,10 @@
 #include <tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagRequest.h>
 #include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagResponse.h>
+#include <tencentcloud/vpc/v20170312/model/StartTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/StartTrafficMirrorResponse.h>
+#include <tencentcloud/vpc/v20170312/model/StopTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/StopTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6AddressesRequest.h>
@@ -583,6 +635,10 @@
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorAllFilterRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorAllFilterResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
@@ -668,9 +724,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAssistantCidrResponse> CheckAssistantCidrOutcome;
                 typedef std::future<CheckAssistantCidrOutcome> CheckAssistantCidrOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckAssistantCidrRequest&, CheckAssistantCidrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAssistantCidrAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckGatewayFlowMonitorResponse> CheckGatewayFlowMonitorOutcome;
+                typedef std::future<CheckGatewayFlowMonitorOutcome> CheckGatewayFlowMonitorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CheckGatewayFlowMonitorRequest&, CheckGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckGatewayFlowMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckNetDetectStateResponse> CheckNetDetectStateOutcome;
                 typedef std::future<CheckNetDetectStateOutcome> CheckNetDetectStateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckNetDetectStateRequest&, CheckNetDetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetDetectStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckTrafficMirrorResponse> CheckTrafficMirrorOutcome;
+                typedef std::future<CheckTrafficMirrorOutcome> CheckTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CheckTrafficMirrorRequest&, CheckTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloneSecurityGroupResponse> CloneSecurityGroupOutcome;
                 typedef std::future<CloneSecurityGroupOutcome> CloneSecurityGroupOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CloneSecurityGroupRequest&, CloneSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneSecurityGroupAsyncHandler;
@@ -737,6 +799,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReserveIpAddressesResponse> CreateReserveIpAddressesOutcome;
                 typedef std::future<CreateReserveIpAddressesOutcome> CreateReserveIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateReserveIpAddressesRequest&, CreateReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReserveIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyResponse> CreateRoutePolicyOutcome;
+                typedef std::future<CreateRoutePolicyOutcome> CreateRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyRequest&, CreateRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyAssociationsResponse> CreateRoutePolicyAssociationsOutcome;
+                typedef std::future<CreateRoutePolicyAssociationsOutcome> CreateRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyAssociationsRequest&, CreateRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyEntriesResponse> CreateRoutePolicyEntriesOutcome;
+                typedef std::future<CreateRoutePolicyEntriesOutcome> CreateRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyEntriesRequest&, CreateRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRouteTableResponse> CreateRouteTableOutcome;
                 typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateRouteTableRequest&, CreateRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteTableAsyncHandler;
@@ -767,6 +838,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSubnetsResponse> CreateSubnetsOutcome;
                 typedef std::future<CreateSubnetsOutcome> CreateSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateSubnetsRequest&, CreateSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTrafficMirrorResponse> CreateTrafficMirrorOutcome;
+                typedef std::future<CreateTrafficMirrorOutcome> CreateTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateTrafficMirrorRequest&, CreateTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVpcResponse> CreateVpcOutcome;
                 typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpcRequest&, CreateVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAsyncHandler;
@@ -845,6 +919,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteReserveIpAddressesResponse> DeleteReserveIpAddressesOutcome;
                 typedef std::future<DeleteReserveIpAddressesOutcome> DeleteReserveIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteReserveIpAddressesRequest&, DeleteReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReserveIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyResponse> DeleteRoutePolicyOutcome;
+                typedef std::future<DeleteRoutePolicyOutcome> DeleteRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyRequest&, DeleteRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyAssociationsResponse> DeleteRoutePolicyAssociationsOutcome;
+                typedef std::future<DeleteRoutePolicyAssociationsOutcome> DeleteRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyAssociationsRequest&, DeleteRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyEntriesResponse> DeleteRoutePolicyEntriesOutcome;
+                typedef std::future<DeleteRoutePolicyEntriesOutcome> DeleteRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyEntriesRequest&, DeleteRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRouteTableResponse> DeleteRouteTableOutcome;
                 typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteRouteTableRequest&, DeleteRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTableAsyncHandler;
@@ -872,6 +955,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTemplateMemberResponse> DeleteTemplateMemberOutcome;
                 typedef std::future<DeleteTemplateMemberOutcome> DeleteTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTemplateMemberRequest&, DeleteTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTrafficMirrorResponse> DeleteTrafficMirrorOutcome;
+                typedef std::future<DeleteTrafficMirrorOutcome> DeleteTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteTrafficMirrorRequest&, DeleteTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrafficPackagesResponse> DeleteTrafficPackagesOutcome;
                 typedef std::future<DeleteTrafficPackagesOutcome> DeleteTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTrafficPackagesRequest&, DeleteTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficPackagesAsyncHandler;
@@ -995,9 +1081,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatGatewayDirectConnectGatewayRouteResponse> DescribeNatGatewayDirectConnectGatewayRouteOutcome;
                 typedef std::future<DescribeNatGatewayDirectConnectGatewayRouteOutcome> DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest&, DescribeNatGatewayDirectConnectGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatGatewayFlowMonitorDetailResponse> DescribeNatGatewayFlowMonitorDetailOutcome;
+                typedef std::future<DescribeNatGatewayFlowMonitorDetailOutcome> DescribeNatGatewayFlowMonitorDetailOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayFlowMonitorDetailRequest&, DescribeNatGatewayFlowMonitorDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayFlowMonitorDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaySourceIpTranslationNatRulesResponse> DescribeNatGatewaySourceIpTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewaySourceIpTranslationNatRulesOutcome> DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest&, DescribeNatGatewaySourceIpTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatGatewayZonesResponse> DescribeNatGatewayZonesOutcome;
+                typedef std::future<DescribeNatGatewayZonesOutcome> DescribeNatGatewayZonesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayZonesRequest&, DescribeNatGatewayZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayZonesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaysResponse> DescribeNatGatewaysOutcome;
                 typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaysRequest&, DescribeNatGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
@@ -1022,6 +1114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReserveIpAddressesResponse> DescribeReserveIpAddressesOutcome;
                 typedef std::future<DescribeReserveIpAddressesOutcome> DescribeReserveIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeReserveIpAddressesRequest&, DescribeReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReserveIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoutePolicyEntriesResponse> DescribeRoutePolicyEntriesOutcome;
+                typedef std::future<DescribeRoutePolicyEntriesOutcome> DescribeRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeRoutePolicyEntriesRequest&, DescribeRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteTablesResponse> DescribeRouteTablesOutcome;
                 typedef std::future<DescribeRouteTablesOutcome> DescribeRouteTablesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteTablesRequest&, DescribeRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTablesAsyncHandler;
@@ -1064,6 +1159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrafficMirrorsResponse> DescribeTrafficMirrorsOutcome;
+                typedef std::future<DescribeTrafficMirrorsOutcome> DescribeTrafficMirrorsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTrafficMirrorsRequest&, DescribeTrafficMirrorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficMirrorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
@@ -1310,6 +1408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReserveIpAddressResponse> ModifyReserveIpAddressOutcome;
                 typedef std::future<ModifyReserveIpAddressOutcome> ModifyReserveIpAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyReserveIpAddressRequest&, ModifyReserveIpAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReserveIpAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoutePolicyAttributeResponse> ModifyRoutePolicyAttributeOutcome;
+                typedef std::future<ModifyRoutePolicyAttributeOutcome> ModifyRoutePolicyAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyRoutePolicyAttributeRequest&, ModifyRoutePolicyAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoutePolicyAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
                 typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
@@ -1334,6 +1435,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTemplateMemberResponse> ModifyTemplateMemberOutcome;
                 typedef std::future<ModifyTemplateMemberOutcome> ModifyTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyTemplateMemberRequest&, ModifyTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTrafficMirrorAttributeResponse> ModifyTrafficMirrorAttributeOutcome;
+                typedef std::future<ModifyTrafficMirrorAttributeOutcome> ModifyTrafficMirrorAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyTrafficMirrorAttributeRequest&, ModifyTrafficMirrorAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrafficMirrorAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
@@ -1385,12 +1489,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReplaceDirectConnectGatewayCcnRoutesResponse> ReplaceDirectConnectGatewayCcnRoutesOutcome;
                 typedef std::future<ReplaceDirectConnectGatewayCcnRoutesOutcome> ReplaceDirectConnectGatewayCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceDirectConnectGatewayCcnRoutesRequest&, ReplaceDirectConnectGatewayCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceDirectConnectGatewayCcnRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutePolicyAssociationsResponse> ReplaceRoutePolicyAssociationsOutcome;
+                typedef std::future<ReplaceRoutePolicyAssociationsOutcome> ReplaceRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutePolicyAssociationsRequest&, ReplaceRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutePolicyEntriesResponse> ReplaceRoutePolicyEntriesOutcome;
+                typedef std::future<ReplaceRoutePolicyEntriesOutcome> ReplaceRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutePolicyEntriesRequest&, ReplaceRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationOutcome;
                 typedef std::future<ReplaceRouteTableAssociationOutcome> ReplaceRouteTableAssociationOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceRouteTableAssociationRequest&, ReplaceRouteTableAssociationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRouteTableAssociationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceRoutesResponse> ReplaceRoutesOutcome;
                 typedef std::future<ReplaceRoutesOutcome> ReplaceRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceRoutesRequest&, ReplaceRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutesWithRoutePolicyResponse> ReplaceRoutesWithRoutePolicyOutcome;
+                typedef std::future<ReplaceRoutesWithRoutePolicyOutcome> ReplaceRoutesWithRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutesWithRoutePolicyRequest&, ReplaceRoutesWithRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutesWithRoutePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceSecurityGroupPoliciesResponse> ReplaceSecurityGroupPoliciesOutcome;
                 typedef std::future<ReplaceSecurityGroupPoliciesOutcome> ReplaceSecurityGroupPoliciesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceSecurityGroupPoliciesRequest&, ReplaceSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceSecurityGroupPoliciesAsyncHandler;
@@ -1403,9 +1516,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetNatGatewayConnectionResponse> ResetNatGatewayConnectionOutcome;
                 typedef std::future<ResetNatGatewayConnectionOutcome> ResetNatGatewayConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetNatGatewayConnectionRequest&, ResetNatGatewayConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetNatGatewayConnectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetRoutePolicyAssociationsResponse> ResetRoutePolicyAssociationsOutcome;
+                typedef std::future<ResetRoutePolicyAssociationsOutcome> ResetRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetRoutePolicyAssociationsRequest&, ResetRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetRoutePolicyEntriesResponse> ResetRoutePolicyEntriesOutcome;
+                typedef std::future<ResetRoutePolicyEntriesOutcome> ResetRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetRoutePolicyEntriesRequest&, ResetRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetRoutesResponse> ResetRoutesOutcome;
                 typedef std::future<ResetRoutesOutcome> ResetRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetRoutesRequest&, ResetRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorFilterResponse> ResetTrafficMirrorFilterOutcome;
+                typedef std::future<ResetTrafficMirrorFilterOutcome> ResetTrafficMirrorFilterOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorFilterRequest&, ResetTrafficMirrorFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorSrcsResponse> ResetTrafficMirrorSrcsOutcome;
+                typedef std::future<ResetTrafficMirrorSrcsOutcome> ResetTrafficMirrorSrcsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorSrcsRequest&, ResetTrafficMirrorSrcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorSrcsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorTargetResponse> ResetTrafficMirrorTargetOutcome;
+                typedef std::future<ResetTrafficMirrorTargetOutcome> ResetTrafficMirrorTargetOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorTargetRequest&, ResetTrafficMirrorTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetVpnConnectionResponse> ResetVpnConnectionOutcome;
                 typedef std::future<ResetVpnConnectionOutcome> ResetVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetVpnConnectionRequest&, ResetVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetVpnConnectionAsyncHandler;
@@ -1424,6 +1552,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetVpnGatewaysRenewFlagResponse> SetVpnGatewaysRenewFlagOutcome;
                 typedef std::future<SetVpnGatewaysRenewFlagOutcome> SetVpnGatewaysRenewFlagOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::SetVpnGatewaysRenewFlagRequest&, SetVpnGatewaysRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVpnGatewaysRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartTrafficMirrorResponse> StartTrafficMirrorOutcome;
+                typedef std::future<StartTrafficMirrorOutcome> StartTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::StartTrafficMirrorRequest&, StartTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartTrafficMirrorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopTrafficMirrorResponse> StopTrafficMirrorOutcome;
+                typedef std::future<StopTrafficMirrorOutcome> StopTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::StopTrafficMirrorRequest&, StopTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::TransformAddressResponse> TransformAddressOutcome;
                 typedef std::future<TransformAddressOutcome> TransformAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::TransformAddressRequest&, TransformAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransformAddressAsyncHandler;
@@ -1439,6 +1573,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesOutcome;
                 typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UnassignPrivateIpAddressesRequest&, UnassignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnassignPrivateIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTrafficMirrorAllFilterResponse> UpdateTrafficMirrorAllFilterOutcome;
+                typedef std::future<UpdateTrafficMirrorAllFilterOutcome> UpdateTrafficMirrorAllFilterOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UpdateTrafficMirrorAllFilterRequest&, UpdateTrafficMirrorAllFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTrafficMirrorAllFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTrafficMirrorDirectionResponse> UpdateTrafficMirrorDirectionOutcome;
+                typedef std::future<UpdateTrafficMirrorDirectionOutcome> UpdateTrafficMirrorDirectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UpdateTrafficMirrorDirectionRequest&, UpdateTrafficMirrorDirectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTrafficMirrorDirectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
                 typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
@@ -1703,6 +1843,15 @@ This API is completed asynchronously. If you need to query the execution result 
                 CheckAssistantCidrOutcomeCallable CheckAssistantCidrCallable(const Model::CheckAssistantCidrRequest& request);
 
                 /**
+                 *This API is used to query whether the gateway traffic monitoring is enabled.
+                 * @param req CheckGatewayFlowMonitorRequest
+                 * @return CheckGatewayFlowMonitorOutcome
+                 */
+                CheckGatewayFlowMonitorOutcome CheckGatewayFlowMonitor(const Model::CheckGatewayFlowMonitorRequest &request);
+                void CheckGatewayFlowMonitorAsync(const Model::CheckGatewayFlowMonitorRequest& request, const CheckGatewayFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckGatewayFlowMonitorOutcomeCallable CheckGatewayFlowMonitorCallable(const Model::CheckGatewayFlowMonitorRequest& request);
+
+                /**
                  *This API is used to verify the network detection status.
                  * @param req CheckNetDetectStateRequest
                  * @return CheckNetDetectStateOutcome
@@ -1710,6 +1859,15 @@ This API is completed asynchronously. If you need to query the execution result 
                 CheckNetDetectStateOutcome CheckNetDetectState(const Model::CheckNetDetectStateRequest &request);
                 void CheckNetDetectStateAsync(const Model::CheckNetDetectStateRequest& request, const CheckNetDetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckNetDetectStateOutcomeCallable CheckNetDetectStateCallable(const Model::CheckNetDetectStateRequest& request);
+
+                /**
+                 *This API is used to check the collector and receiver for traffic mirroring (public IP address type).
+                 * @param req CheckTrafficMirrorRequest
+                 * @return CheckTrafficMirrorOutcome
+                 */
+                CheckTrafficMirrorOutcome CheckTrafficMirror(const Model::CheckTrafficMirrorRequest &request);
+                void CheckTrafficMirrorAsync(const Model::CheckTrafficMirrorRequest& request, const CheckTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckTrafficMirrorOutcomeCallable CheckTrafficMirrorCallable(const Model::CheckTrafficMirrorRequest& request);
 
                 /**
                  *This API is used to create a security group with the same rule configurations as an existing security group. The cloning only copies the security group and its rules, but not the security group tags.
@@ -1936,6 +2094,33 @@ Before taking actions on a NAT gateway, ensure that it has been successfully cre
                 CreateReserveIpAddressesOutcomeCallable CreateReserveIpAddressesCallable(const Model::CreateReserveIpAddressesRequest& request);
 
                 /**
+                 *This API is used to create a VPC route reception policy, including name, description and policy entries.
+                 * @param req CreateRoutePolicyRequest
+                 * @return CreateRoutePolicyOutcome
+                 */
+                CreateRoutePolicyOutcome CreateRoutePolicy(const Model::CreateRoutePolicyRequest &request);
+                void CreateRoutePolicyAsync(const Model::CreateRoutePolicyRequest& request, const CreateRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyOutcomeCallable CreateRoutePolicyCallable(const Model::CreateRoutePolicyRequest& request);
+
+                /**
+                 *This API is used to create route reception policy bindings (the binding relationship between policy instances and route table instances as well as set priorities).
+                 * @param req CreateRoutePolicyAssociationsRequest
+                 * @return CreateRoutePolicyAssociationsOutcome
+                 */
+                CreateRoutePolicyAssociationsOutcome CreateRoutePolicyAssociations(const Model::CreateRoutePolicyAssociationsRequest &request);
+                void CreateRoutePolicyAssociationsAsync(const Model::CreateRoutePolicyAssociationsRequest& request, const CreateRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyAssociationsOutcomeCallable CreateRoutePolicyAssociationsCallable(const Model::CreateRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *This API is used to create route reception policy entries.
+                 * @param req CreateRoutePolicyEntriesRequest
+                 * @return CreateRoutePolicyEntriesOutcome
+                 */
+                CreateRoutePolicyEntriesOutcome CreateRoutePolicyEntries(const Model::CreateRoutePolicyEntriesRequest &request);
+                void CreateRoutePolicyEntriesAsync(const Model::CreateRoutePolicyEntriesRequest& request, const CreateRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyEntriesOutcomeCallable CreateRoutePolicyEntriesCallable(const Model::CreateRoutePolicyEntriesRequest& request);
+
+                /**
                  *This API is used to create a route table.
 * After the VPC instance has been created, the system creates a default route table with which all newly created subnets will be associated. By default, you can use this route table to manage your routing policies. If you have multiple routing policies, you can call the API for creating route tables to create more route tables to manage these routing policies.
 * You can bind a tag when creating a route table. The tag list in the response indicates the tags that have been successfully added.
@@ -2070,6 +2255,15 @@ Description:
                 CreateSubnetsOutcome CreateSubnets(const Model::CreateSubnetsRequest &request);
                 void CreateSubnetsAsync(const Model::CreateSubnetsRequest& request, const CreateSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSubnetsOutcomeCallable CreateSubnetsCallable(const Model::CreateSubnetsRequest& request);
+
+                /**
+                 *This API is used to create a traffic mirroring instance.
+                 * @param req CreateTrafficMirrorRequest
+                 * @return CreateTrafficMirrorOutcome
+                 */
+                CreateTrafficMirrorOutcome CreateTrafficMirror(const Model::CreateTrafficMirrorRequest &request);
+                void CreateTrafficMirrorAsync(const Model::CreateTrafficMirrorRequest& request, const CreateTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTrafficMirrorOutcomeCallable CreateTrafficMirrorCallable(const Model::CreateTrafficMirrorRequest& request);
 
                 /**
                  *This API is used to create a VPC instance.
@@ -2247,7 +2441,7 @@ This API is completed asynchronously. If you need to query the execution result 
 
                 /**
                  *This API is used to delete a NAT gateway.
-When a NAT gateway is deleted, all routes containing this gateway are deleted automatically, and the elastic IP is unbound.
+When a NAT gateway is deleted, all routes containing this gateway are deleted automatically, and associated EIPs are unbound.When deleting a NAT gateway, you need to unbind the associated EIPs. Therefore, the caller must have CAM permissions for vpc:DisassociateAddress and vpc:ModifyAddressesBandwidth.
                  * @param req DeleteNatGatewayRequest
                  * @return DeleteNatGatewayOutcome
                  */
@@ -2321,6 +2515,33 @@ This API is completed asynchronously. If you need to query the execution result 
                 DeleteReserveIpAddressesOutcome DeleteReserveIpAddresses(const Model::DeleteReserveIpAddressesRequest &request);
                 void DeleteReserveIpAddressesAsync(const Model::DeleteReserveIpAddressesRequest& request, const DeleteReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteReserveIpAddressesOutcomeCallable DeleteReserveIpAddressesCallable(const Model::DeleteReserveIpAddressesRequest& request);
+
+                /**
+                 *This API is used to delete a route reception policy and entries.
+                 * @param req DeleteRoutePolicyRequest
+                 * @return DeleteRoutePolicyOutcome
+                 */
+                DeleteRoutePolicyOutcome DeleteRoutePolicy(const Model::DeleteRoutePolicyRequest &request);
+                void DeleteRoutePolicyAsync(const Model::DeleteRoutePolicyRequest& request, const DeleteRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyOutcomeCallable DeleteRoutePolicyCallable(const Model::DeleteRoutePolicyRequest& request);
+
+                /**
+                 *This API is used to delete route reception policy bindings (the binding relationship between route reception policy objects and route tables).
+                 * @param req DeleteRoutePolicyAssociationsRequest
+                 * @return DeleteRoutePolicyAssociationsOutcome
+                 */
+                DeleteRoutePolicyAssociationsOutcome DeleteRoutePolicyAssociations(const Model::DeleteRoutePolicyAssociationsRequest &request);
+                void DeleteRoutePolicyAssociationsAsync(const Model::DeleteRoutePolicyAssociationsRequest& request, const DeleteRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyAssociationsOutcomeCallable DeleteRoutePolicyAssociationsCallable(const Model::DeleteRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *This API is used to delete route reception policy entries.
+                 * @param req DeleteRoutePolicyEntriesRequest
+                 * @return DeleteRoutePolicyEntriesOutcome
+                 */
+                DeleteRoutePolicyEntriesOutcome DeleteRoutePolicyEntries(const Model::DeleteRoutePolicyEntriesRequest &request);
+                void DeleteRoutePolicyEntriesAsync(const Model::DeleteRoutePolicyEntriesRequest& request, const DeleteRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyEntriesOutcomeCallable DeleteRoutePolicyEntriesCallable(const Model::DeleteRoutePolicyEntriesRequest& request);
 
                 /**
                  *This API is used to delete a route table.
@@ -2407,6 +2628,15 @@ This API is completed asynchronously. If you need to query the execution result 
                 DeleteTemplateMemberOutcome DeleteTemplateMember(const Model::DeleteTemplateMemberRequest &request);
                 void DeleteTemplateMemberAsync(const Model::DeleteTemplateMemberRequest& request, const DeleteTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTemplateMemberOutcomeCallable DeleteTemplateMemberCallable(const Model::DeleteTemplateMemberRequest& request);
+
+                /**
+                 *This API is used to delete a traffic mirroring instance.
+                 * @param req DeleteTrafficMirrorRequest
+                 * @return DeleteTrafficMirrorOutcome
+                 */
+                DeleteTrafficMirrorOutcome DeleteTrafficMirror(const Model::DeleteTrafficMirrorRequest &request);
+                void DeleteTrafficMirrorAsync(const Model::DeleteTrafficMirrorRequest& request, const DeleteTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTrafficMirrorOutcomeCallable DeleteTrafficMirrorCallable(const Model::DeleteTrafficMirrorRequest& request);
 
                 /**
                  *This API is used to delete traffic packages. Note that only non-valid traffic packages can be deleted. 
@@ -2558,8 +2788,7 @@ This API is completed asynchronously. If you need to query the execution result 
                 DescribeBandwidthPackageQuotaOutcomeCallable DescribeBandwidthPackageQuotaCallable(const Model::DescribeBandwidthPackageQuotaRequest& request);
 
                 /**
-                 *This API is used to query resources in a bandwidth package based on the unique package ID. You can filter the result by specifying conditions and paginate the query results.
-
+                 *This API is used to query the list of resources in a Bandwidth Package according to its unique ID, support conditional filtering of query results and paging query.
                  * @param req DescribeBandwidthPackageResourcesRequest
                  * @return DescribeBandwidthPackageResourcesOutcome
                  */
@@ -2795,6 +3024,17 @@ This API is used to check the jumbo frame status before and after instance migra
                 DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable DescribeNatGatewayDirectConnectGatewayRouteCallable(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest& request);
 
                 /**
+                 *This API is used to query the traffic monitoring details of a NAT gateway.
+
+- You can only use this API to query a single gateway instance. The input parameter `NatGatewayId` supports at most one value, and it must be passed.- If the gateway has traffic, but no data is returned when this API is called, please check whether gateway traffic monitoring is enabled in the corresponding gateway details page in the console.
+                 * @param req DescribeNatGatewayFlowMonitorDetailRequest
+                 * @return DescribeNatGatewayFlowMonitorDetailOutcome
+                 */
+                DescribeNatGatewayFlowMonitorDetailOutcome DescribeNatGatewayFlowMonitorDetail(const Model::DescribeNatGatewayFlowMonitorDetailRequest &request);
+                void DescribeNatGatewayFlowMonitorDetailAsync(const Model::DescribeNatGatewayFlowMonitorDetailRequest& request, const DescribeNatGatewayFlowMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewayFlowMonitorDetailOutcomeCallable DescribeNatGatewayFlowMonitorDetailCallable(const Model::DescribeNatGatewayFlowMonitorDetailRequest& request);
+
+                /**
                  *This API is used to query the NAT gateway's SNAT forwarding rules.
                  * @param req DescribeNatGatewaySourceIpTranslationNatRulesRequest
                  * @return DescribeNatGatewaySourceIpTranslationNatRulesOutcome
@@ -2802,6 +3042,15 @@ This API is used to check the jumbo frame status before and after instance migra
                 DescribeNatGatewaySourceIpTranslationNatRulesOutcome DescribeNatGatewaySourceIpTranslationNatRules(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest &request);
                 void DescribeNatGatewaySourceIpTranslationNatRulesAsync(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request, const DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable DescribeNatGatewaySourceIpTranslationNatRulesCallable(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request);
+
+                /**
+                 *This API is used to query the information of saleable availability zones (AZs) for NAT gateways.
+                 * @param req DescribeNatGatewayZonesRequest
+                 * @return DescribeNatGatewayZonesOutcome
+                 */
+                DescribeNatGatewayZonesOutcome DescribeNatGatewayZones(const Model::DescribeNatGatewayZonesRequest &request);
+                void DescribeNatGatewayZonesAsync(const Model::DescribeNatGatewayZonesRequest& request, const DescribeNatGatewayZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewayZonesOutcomeCallable DescribeNatGatewayZonesCallable(const Model::DescribeNatGatewayZonesRequest& request);
 
                 /**
                  *This API is used to query NAT gateways.
@@ -2874,6 +3123,15 @@ This API is used to check the jumbo frame status before and after instance migra
                 DescribeReserveIpAddressesOutcome DescribeReserveIpAddresses(const Model::DescribeReserveIpAddressesRequest &request);
                 void DescribeReserveIpAddressesAsync(const Model::DescribeReserveIpAddressesRequest& request, const DescribeReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReserveIpAddressesOutcomeCallable DescribeReserveIpAddressesCallable(const Model::DescribeReserveIpAddressesRequest& request);
+
+                /**
+                 *This API is used to query the route reception policy entry list.
+                 * @param req DescribeRoutePolicyEntriesRequest
+                 * @return DescribeRoutePolicyEntriesOutcome
+                 */
+                DescribeRoutePolicyEntriesOutcome DescribeRoutePolicyEntries(const Model::DescribeRoutePolicyEntriesRequest &request);
+                void DescribeRoutePolicyEntriesAsync(const Model::DescribeRoutePolicyEntriesRequest& request, const DescribeRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoutePolicyEntriesOutcomeCallable DescribeRoutePolicyEntriesCallable(const Model::DescribeRoutePolicyEntriesRequest& request);
 
                 /**
                  *This API is used to query route tables.
@@ -3000,6 +3258,15 @@ This API is used to check the jumbo frame status before and after instance migra
                 DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
                 void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
+
+                /**
+                 *This API is used to query the information of a traffic mirroring instance.
+                 * @param req DescribeTrafficMirrorsRequest
+                 * @return DescribeTrafficMirrorsOutcome
+                 */
+                DescribeTrafficMirrorsOutcome DescribeTrafficMirrors(const Model::DescribeTrafficMirrorsRequest &request);
+                void DescribeTrafficMirrorsAsync(const Model::DescribeTrafficMirrorsRequest& request, const DescribeTrafficMirrorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrafficMirrorsOutcomeCallable DescribeTrafficMirrorsCallable(const Model::DescribeTrafficMirrorsRequest& request);
 
                 /**
                  *This API is used to query the details of shared traffic packages.
@@ -3773,6 +4040,15 @@ This API is completed asynchronously. If you need to query the execution result 
                 ModifyReserveIpAddressOutcomeCallable ModifyReserveIpAddressCallable(const Model::ModifyReserveIpAddressRequest& request);
 
                 /**
+                 *This API is used to modify the route reception policy attribute.
+                 * @param req ModifyRoutePolicyAttributeRequest
+                 * @return ModifyRoutePolicyAttributeOutcome
+                 */
+                ModifyRoutePolicyAttributeOutcome ModifyRoutePolicyAttribute(const Model::ModifyRoutePolicyAttributeRequest &request);
+                void ModifyRoutePolicyAttributeAsync(const Model::ModifyRoutePolicyAttributeRequest& request, const ModifyRoutePolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoutePolicyAttributeOutcomeCallable ModifyRoutePolicyAttributeCallable(const Model::ModifyRoutePolicyAttributeRequest& request);
+
+                /**
                  *This API (ModifyRouteTableAttribute) is used to modify the attributes of a route table.
                  * @param req ModifyRouteTableAttributeRequest
                  * @return ModifyRouteTableAttributeOutcome
@@ -3860,6 +4136,16 @@ This API is completed asynchronously. If you need to query the execution result 
                 ModifyTemplateMemberOutcomeCallable ModifyTemplateMemberCallable(const Model::ModifyTemplateMemberRequest& request);
 
                 /**
+                 *This API is used to modify the attributes of a traffic mirroring instance.
+Note: Only the name and description can be modified.
+                 * @param req ModifyTrafficMirrorAttributeRequest
+                 * @return ModifyTrafficMirrorAttributeOutcome
+                 */
+                ModifyTrafficMirrorAttributeOutcome ModifyTrafficMirrorAttribute(const Model::ModifyTrafficMirrorAttributeRequest &request);
+                void ModifyTrafficMirrorAttributeAsync(const Model::ModifyTrafficMirrorAttributeRequest& request, const ModifyTrafficMirrorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTrafficMirrorAttributeOutcomeCallable ModifyTrafficMirrorAttributeCallable(const Model::ModifyTrafficMirrorAttributeRequest& request);
+
+                /**
                  *This API (ModifyVpcAttribute) is used to modify VPC attributes.
                  * @param req ModifyVpcAttributeRequest
                  * @return ModifyVpcAttributeOutcome
@@ -3943,7 +4229,7 @@ This API is completed asynchronously. If you need to query the execution result 
                 NotifyRoutesOutcomeCallable NotifyRoutesCallable(const Model::NotifyRoutesRequest& request);
 
                 /**
-                 *This API is used to refresh the route between a NAT gateway and  Direct Connect and update the associated route table.
+                 *This API is used to refresh the route between a NAT gateway and Direct Connect and update the associated route table.
                  * @param req RefreshDirectConnectGatewayRouteToNatGatewayRequest
                  * @return RefreshDirectConnectGatewayRouteToNatGatewayOutcome
                  */
@@ -4006,7 +4292,7 @@ This API is completed asynchronously. If you need to query the execution result 
                 RemoveBandwidthPackageResourcesOutcomeCallable RemoveBandwidthPackageResourcesCallable(const Model::RemoveBandwidthPackageResourcesRequest& request);
 
                 /**
-                 *This API (RenewVpnGateway) is used to renew prepaid (monthly subscription) VPN gateways. Currently, only IPSEC gateways are supported.
+                 *This API (RenewVpnGateway) is used to renew prepaid (yearly/monthly subscription) VPN gateways. Currently, only IPSEC gateways are supported.
                  * @param req RenewVpnGatewayRequest
                  * @return RenewVpnGatewayOutcome
                  */
@@ -4022,6 +4308,24 @@ This API is completed asynchronously. If you need to query the execution result 
                 ReplaceDirectConnectGatewayCcnRoutesOutcome ReplaceDirectConnectGatewayCcnRoutes(const Model::ReplaceDirectConnectGatewayCcnRoutesRequest &request);
                 void ReplaceDirectConnectGatewayCcnRoutesAsync(const Model::ReplaceDirectConnectGatewayCcnRoutesRequest& request, const ReplaceDirectConnectGatewayCcnRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceDirectConnectGatewayCcnRoutesOutcomeCallable ReplaceDirectConnectGatewayCcnRoutesCallable(const Model::ReplaceDirectConnectGatewayCcnRoutesRequest& request);
+
+                /**
+                 *This API is used to modify the binding Priority (Priority) based on the route reception policy instance ID (RoutePolicyId) and route table instance ID (RouteTableId), supporting batch modification.
+                 * @param req ReplaceRoutePolicyAssociationsRequest
+                 * @return ReplaceRoutePolicyAssociationsOutcome
+                 */
+                ReplaceRoutePolicyAssociationsOutcome ReplaceRoutePolicyAssociations(const Model::ReplaceRoutePolicyAssociationsRequest &request);
+                void ReplaceRoutePolicyAssociationsAsync(const Model::ReplaceRoutePolicyAssociationsRequest& request, const ReplaceRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutePolicyAssociationsOutcomeCallable ReplaceRoutePolicyAssociationsCallable(const Model::ReplaceRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *This API is used to modify specified routing policy entries based on route reception policy rule ID and supports batch modification.
+                 * @param req ReplaceRoutePolicyEntriesRequest
+                 * @return ReplaceRoutePolicyEntriesOutcome
+                 */
+                ReplaceRoutePolicyEntriesOutcome ReplaceRoutePolicyEntries(const Model::ReplaceRoutePolicyEntriesRequest &request);
+                void ReplaceRoutePolicyEntriesAsync(const Model::ReplaceRoutePolicyEntriesRequest& request, const ReplaceRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutePolicyEntriesOutcomeCallable ReplaceRoutePolicyEntriesCallable(const Model::ReplaceRoutePolicyEntriesRequest& request);
 
                 /**
                  *This API (ReplaceRouteTableAssociation) is used to modify the route table associated with a subnet.
@@ -4041,6 +4345,15 @@ This API is completed asynchronously. If you need to query the execution result 
                 ReplaceRoutesOutcome ReplaceRoutes(const Model::ReplaceRoutesRequest &request);
                 void ReplaceRoutesAsync(const Model::ReplaceRoutesRequest& request, const ReplaceRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceRoutesOutcomeCallable ReplaceRoutesCallable(const Model::ReplaceRoutesRequest& request);
+
+                /**
+                 *This API (ReplaceRoutes) modifies the specified routing policy (Route) based on the routing policy ID (RouteId), supporting batch modifications.
+                 * @param req ReplaceRoutesWithRoutePolicyRequest
+                 * @return ReplaceRoutesWithRoutePolicyOutcome
+                 */
+                ReplaceRoutesWithRoutePolicyOutcome ReplaceRoutesWithRoutePolicy(const Model::ReplaceRoutesWithRoutePolicyRequest &request);
+                void ReplaceRoutesWithRoutePolicyAsync(const Model::ReplaceRoutesWithRoutePolicyRequest& request, const ReplaceRoutesWithRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutesWithRoutePolicyOutcomeCallable ReplaceRoutesWithRoutePolicyCallable(const Model::ReplaceRoutesWithRoutePolicyRequest& request);
 
                 /**
                  *This API is used to batch modify security group policies.
@@ -4081,6 +4394,24 @@ Only one policy in a single direction can be replaced in each request, and the P
                 ResetNatGatewayConnectionOutcomeCallable ResetNatGatewayConnectionCallable(const Model::ResetNatGatewayConnectionRequest& request);
 
                 /**
+                 *This API is used to unbind the routing policy instance already bound to a specific route table instance, set up alarms for the new binding routing policy and priority.
+                 * @param req ResetRoutePolicyAssociationsRequest
+                 * @return ResetRoutePolicyAssociationsOutcome
+                 */
+                ResetRoutePolicyAssociationsOutcome ResetRoutePolicyAssociations(const Model::ResetRoutePolicyAssociationsRequest &request);
+                void ResetRoutePolicyAssociationsAsync(const Model::ResetRoutePolicyAssociationsRequest& request, const ResetRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRoutePolicyAssociationsOutcomeCallable ResetRoutePolicyAssociationsCallable(const Model::ResetRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *This API is used to reset the designated route reception policy entry based on the rule ID and supports batch modification.
+                 * @param req ResetRoutePolicyEntriesRequest
+                 * @return ResetRoutePolicyEntriesOutcome
+                 */
+                ResetRoutePolicyEntriesOutcome ResetRoutePolicyEntries(const Model::ResetRoutePolicyEntriesRequest &request);
+                void ResetRoutePolicyEntriesAsync(const Model::ResetRoutePolicyEntriesRequest& request, const ResetRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRoutePolicyEntriesOutcomeCallable ResetRoutePolicyEntriesCallable(const Model::ResetRoutePolicyEntriesRequest& request);
+
+                /**
                  *This API (ResetRoutes) is used to reset the name of a route table and all its routing policies.<br />
 Note: When this API is called, all routing policies in the current route table are deleted before new routing policies are saved, which may incur network interruption.
                  * @param req ResetRoutesRequest
@@ -4089,6 +4420,34 @@ Note: When this API is called, all routing policies in the current route table a
                 ResetRoutesOutcome ResetRoutes(const Model::ResetRoutesRequest &request);
                 void ResetRoutesAsync(const Model::ResetRoutesRequest& request, const ResetRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetRoutesOutcomeCallable ResetRoutesCallable(const Model::ResetRoutesRequest& request);
+
+                /**
+                 *This API is used to update a traffic mirroring instance filter rule.
+Note: A traffic mirroring instance cannot simultaneously support filtering based on NAT gateway and five tuple rules.
+                 * @param req ResetTrafficMirrorFilterRequest
+                 * @return ResetTrafficMirrorFilterOutcome
+                 */
+                ResetTrafficMirrorFilterOutcome ResetTrafficMirrorFilter(const Model::ResetTrafficMirrorFilterRequest &request);
+                void ResetTrafficMirrorFilterAsync(const Model::ResetTrafficMirrorFilterRequest& request, const ResetTrafficMirrorFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorFilterOutcomeCallable ResetTrafficMirrorFilterCallable(const Model::ResetTrafficMirrorFilterRequest& request);
+
+                /**
+                 *This API is used to reset the collection object of a traffic mirroring instance.
+                 * @param req ResetTrafficMirrorSrcsRequest
+                 * @return ResetTrafficMirrorSrcsOutcome
+                 */
+                ResetTrafficMirrorSrcsOutcome ResetTrafficMirrorSrcs(const Model::ResetTrafficMirrorSrcsRequest &request);
+                void ResetTrafficMirrorSrcsAsync(const Model::ResetTrafficMirrorSrcsRequest& request, const ResetTrafficMirrorSrcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorSrcsOutcomeCallable ResetTrafficMirrorSrcsCallable(const Model::ResetTrafficMirrorSrcsRequest& request);
+
+                /**
+                 *This API is used to update the receiving destination information of a traffic mirroring instance.
+                 * @param req ResetTrafficMirrorTargetRequest
+                 * @return ResetTrafficMirrorTargetOutcome
+                 */
+                ResetTrafficMirrorTargetOutcome ResetTrafficMirrorTarget(const Model::ResetTrafficMirrorTargetRequest &request);
+                void ResetTrafficMirrorTargetAsync(const Model::ResetTrafficMirrorTargetRequest& request, const ResetTrafficMirrorTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorTargetOutcomeCallable ResetTrafficMirrorTargetCallable(const Model::ResetTrafficMirrorTargetRequest& request);
 
                 /**
                  *The API is used to reset a VPN tunnel.
@@ -4146,6 +4505,24 @@ Note: Starting from Dec 15, 2022, CAM authorization is required for a sub-accoun
                 SetVpnGatewaysRenewFlagOutcomeCallable SetVpnGatewaysRenewFlagCallable(const Model::SetVpnGatewaysRenewFlagRequest& request);
 
                 /**
+                 *This API is used to start a traffic mirroring instance.
+                 * @param req StartTrafficMirrorRequest
+                 * @return StartTrafficMirrorOutcome
+                 */
+                StartTrafficMirrorOutcome StartTrafficMirror(const Model::StartTrafficMirrorRequest &request);
+                void StartTrafficMirrorAsync(const Model::StartTrafficMirrorRequest& request, const StartTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartTrafficMirrorOutcomeCallable StartTrafficMirrorCallable(const Model::StartTrafficMirrorRequest& request);
+
+                /**
+                 *This API is used to stop a traffic mirroring instance.
+                 * @param req StopTrafficMirrorRequest
+                 * @return StopTrafficMirrorOutcome
+                 */
+                StopTrafficMirrorOutcome StopTrafficMirror(const Model::StopTrafficMirrorRequest &request);
+                void StopTrafficMirrorAsync(const Model::StopTrafficMirrorRequest& request, const StopTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTrafficMirrorOutcomeCallable StopTrafficMirrorCallable(const Model::StopTrafficMirrorRequest& request);
+
+                /**
                  *This API is used to convert a common public IP into an [Elastic IP](https://intl.cloud.tencent.com/document/product/213/1941?from_cn_redirect=1) (EIP for short).
 * Tencent Cloud limits the number of times that a user can unbind EIPs and reassign public IPs in each region per day. For more information, see product introduction of [Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733?from_cn_redirect=1). The preceding quota can be obtained through the API [DescribeAddressQuota](https://intl.cloud.tencent.com/document/product/215/16701).
                  * @param req TransformAddressRequest
@@ -4196,6 +4573,24 @@ This API is completed asynchronously. If you need to query the execution result 
                 UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest &request);
                 void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request);
+
+                /**
+                 *This API is used to update the filter rule or collection object of a traffic mirroring instance.
+                 * @param req UpdateTrafficMirrorAllFilterRequest
+                 * @return UpdateTrafficMirrorAllFilterOutcome
+                 */
+                UpdateTrafficMirrorAllFilterOutcome UpdateTrafficMirrorAllFilter(const Model::UpdateTrafficMirrorAllFilterRequest &request);
+                void UpdateTrafficMirrorAllFilterAsync(const Model::UpdateTrafficMirrorAllFilterRequest& request, const UpdateTrafficMirrorAllFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTrafficMirrorAllFilterOutcomeCallable UpdateTrafficMirrorAllFilterCallable(const Model::UpdateTrafficMirrorAllFilterRequest& request);
+
+                /**
+                 *This API is used to update the collection direction of a traffic mirroring instance.
+                 * @param req UpdateTrafficMirrorDirectionRequest
+                 * @return UpdateTrafficMirrorDirectionOutcome
+                 */
+                UpdateTrafficMirrorDirectionOutcome UpdateTrafficMirrorDirection(const Model::UpdateTrafficMirrorDirectionRequest &request);
+                void UpdateTrafficMirrorDirectionAsync(const Model::UpdateTrafficMirrorDirectionRequest& request, const UpdateTrafficMirrorDirectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTrafficMirrorDirectionOutcomeCallable UpdateTrafficMirrorDirectionCallable(const Model::UpdateTrafficMirrorDirectionRequest& request);
 
                 /**
                  *This API is used to withdraw a route from CCN. 

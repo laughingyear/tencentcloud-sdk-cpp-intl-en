@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Extract copyright watermark
+                * Copyright Watermark Extraction Task.
                 */
                 class ExtractCopyRightWatermarkTask : public AbstractModel
                 {
@@ -70,23 +70,23 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Task status, values:
+                     * 获取Task status. Valid values:
 <li>PROCESSING: Processing;</li>
-<li>FINISH: Completed. </li>
-                     * @return Status Task status, values:
+<li>FINISH: completed</li>
+                     * @return Status Task status. Valid values:
 <li>PROCESSING: Processing;</li>
-<li>FINISH: Completed. </li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status, values:
+                     * 设置Task status. Valid values:
 <li>PROCESSING: Processing;</li>
-<li>FINISH: Completed. </li>
-                     * @param _status Task status, values:
+<li>FINISH: completed</li>
+                     * @param _status Task status. Valid values:
 <li>PROCESSING: Processing;</li>
-<li>FINISH: Completed. </li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -99,27 +99,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code, 0 means success, other values u200bu200bmean failure:
-<li>40000: The input parameters are illegal, please check the input parameters;</li>
-<li>60000: Source file error (such as video data damage), Please confirm whether the source file is normal;</li>
-<li>70000: Internal service error, it is recommended to try again. </li>
-                     * @return ErrCode Error code, 0 means success, other values u200bu200bmean failure:
-<li>40000: The input parameters are illegal, please check the input parameters;</li>
-<li>60000: Source file error (such as video data damage), Please confirm whether the source file is normal;</li>
-<li>70000: Internal service error, it is recommended to try again. </li>
+                     * 获取Error code. 0 indicates success, and other values indicate failure:
+<li>40000: invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data damage). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @return ErrCode Error code. 0 indicates success, and other values indicate failure:
+<li>40000: invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data damage). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code, 0 means success, other values u200bu200bmean failure:
-<li>40000: The input parameters are illegal, please check the input parameters;</li>
-<li>60000: Source file error (such as video data damage), Please confirm whether the source file is normal;</li>
-<li>70000: Internal service error, it is recommended to try again. </li>
-                     * @param _errCode Error code, 0 means success, other values u200bu200bmean failure:
-<li>40000: The input parameters are illegal, please check the input parameters;</li>
-<li>60000: Source file error (such as video data damage), Please confirm whether the source file is normal;</li>
-<li>70000: Internal service error, it is recommended to try again. </li>
+                     * 设置Error code. 0 indicates success, and other values indicate failure:
+<li>40000: invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data damage). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
+                     * @param _errCode Error code. 0 indicates success, and other values indicate failure:
+<li>40000: invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data damage). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates success. Other values u200bu200bindicate failure. For values, please refer to [Video Processing Error Code](https://www.tencentcloud.com/document/product/266/39145) list.
-                     * @return ErrCodeExt Error code. An empty string indicates success. Other values u200bu200bindicate failure. For values, please refer to [Video Processing Error Code](https://www.tencentcloud.com/document/product/266/39145) list.
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates success. Other values u200bu200bindicate failure. For values, please refer to [Video Processing Error Code](https://www.tencentcloud.com/document/product/266/39145) list.
-                     * @param _errCodeExt Error code. An empty string indicates success. Other values u200bu200bindicate failure. For values, please refer to [Video Processing Error Code](https://www.tencentcloud.com/document/product/266/39145) list.
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -174,19 +174,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取Extract copyright watermark task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Input Extract copyright watermark task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Input information of the copyright watermark extraction task.
+                     * @return Input Input information of the copyright watermark extraction task.
                      * 
                      */
                     ExtractCopyRightWatermarkTaskInput GetInput() const;
 
                     /**
-                     * 设置Extract copyright watermark task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _input Extract copyright watermark task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Input information of the copyright watermark extraction task.
+                     * @param _input Input information of the copyright watermark extraction task.
                      * 
                      */
                     void SetInput(const ExtractCopyRightWatermarkTaskInput& _input);
@@ -199,19 +195,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Extract copyright watermark task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return Output Extract copyright watermark task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取Output information of the copyright watermark extraction task.
+                     * @return Output Output information of the copyright watermark extraction task.
                      * 
                      */
                     ExtractCopyRightWatermarkTaskOutput GetOutput() const;
 
                     /**
-                     * 设置Extract copyright watermark task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _output Extract copyright watermark task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置Output information of the copyright watermark extraction task.
+                     * @param _output Output information of the copyright watermark extraction task.
                      * 
                      */
                     void SetOutput(const ExtractCopyRightWatermarkTaskOutput& _output);
@@ -224,15 +216,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取Identification code used for deduplication. If there is a request for the same identification code within seven days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
-                     * @return SessionId Identification code used for deduplication. If there is a request for the same identification code within seven days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * 获取An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @return SessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置Identification code used for deduplication. If there is a request for the same identification code within seven days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
-                     * @param _sessionId Identification code used for deduplication. If there is a request for the same identification code within seven days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * 设置An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
+                     * @param _sessionId An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -245,15 +237,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取Source context, used to transparently transmit user request information. The task flow status change callback will return the value of this field, which can be up to 1000 characters.
-                     * @return SessionContext Source context, used to transparently transmit user request information. The task flow status change callback will return the value of this field, which can be up to 1000 characters.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置Source context, used to transparently transmit user request information. The task flow status change callback will return the value of this field, which can be up to 1000 characters.
-                     * @param _sessionContext Source context, used to transparently transmit user request information. The task flow status change callback will return the value of this field, which can be up to 1000 characters.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -274,18 +266,18 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Task status, values:
+                     * Task status. Valid values:
 <li>PROCESSING: Processing;</li>
-<li>FINISH: Completed. </li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code, 0 means success, other values u200bu200bmean failure:
-<li>40000: The input parameters are illegal, please check the input parameters;</li>
-<li>60000: Source file error (such as video data damage), Please confirm whether the source file is normal;</li>
-<li>70000: Internal service error, it is recommended to try again. </li>
+                     * Error code. 0 indicates success, and other values indicate failure:
+<li>40000: invalid input parameters. Check the input parameters;</li>
+<li>60000: Source file error (for example, video data damage). Confirm whether the source file is normal;</li>
+<li>70000: internal service error. Retry is recommended.</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
@@ -297,33 +289,31 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates success. Other values u200bu200bindicate failure. For values, please refer to [Video Processing Error Code](https://www.tencentcloud.com/document/product/266/39145) list.
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * Extract copyright watermark task input information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Input information of the copyright watermark extraction task.
                      */
                     ExtractCopyRightWatermarkTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Extract copyright watermark task output information.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * Output information of the copyright watermark extraction task.
                      */
                     ExtractCopyRightWatermarkTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * Identification code used for deduplication. If there is a request for the same identification code within seven days, this request will return an error. The maximum length is 50 characters, without or with an empty string to indicate no deduplication.
+                     * An identifier for deduplication. If there has been a request with the same identifier within the past seven days, an error will be returned for the current request. The maximum length is 50 characters. Leaving it blank or using a null string indicates no deduplication is required.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * Source context, used to transparently transmit user request information. The task flow status change callback will return the value of this field, which can be up to 1000 characters.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

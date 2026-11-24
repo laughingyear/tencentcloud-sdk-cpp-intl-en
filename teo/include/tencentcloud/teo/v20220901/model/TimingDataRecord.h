@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/TimingTypeValue.h>
+#include <tencentcloud/teo/v20220901/model/FloatTimingTypeValue.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The time-series data
+                * Data information of time series
                 */
                 class TimingDataRecord : public AbstractModel
                 {
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The query dimension value.
-                     * @return TypeKey The query dimension value.
+                     * 获取Query the dimension value.
+                     * @return TypeKey Query the dimension value.
                      * 
                      */
                     std::string GetTypeKey() const;
 
                     /**
-                     * 设置The query dimension value.
-                     * @param _typeKey The query dimension value.
+                     * 设置Query the dimension value.
+                     * @param _typeKey Query the dimension value.
                      * 
                      */
                     void SetTypeKey(const std::string& _typeKey);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool TypeKeyHasBeenSet() const;
 
                     /**
-                     * 获取Detailed time series data
-                     * @return TypeValue Detailed time series data
+                     * 获取Detailed time series data of the <code>Integer</code> type. If the value type of the query metric is <code>Integer</code>, the corresponding time series data will be returned in this field.<br> **Note**: If the value type of the query metric is unclear, data will be returned in this field by default.
+                     * @return TypeValue Detailed time series data of the <code>Integer</code> type. If the value type of the query metric is <code>Integer</code>, the corresponding time series data will be returned in this field.<br> **Note**: If the value type of the query metric is unclear, data will be returned in this field by default.
                      * 
                      */
                     std::vector<TimingTypeValue> GetTypeValue() const;
 
                     /**
-                     * 设置Detailed time series data
-                     * @param _typeValue Detailed time series data
+                     * 设置Detailed time series data of the <code>Integer</code> type. If the value type of the query metric is <code>Integer</code>, the corresponding time series data will be returned in this field.<br> **Note**: If the value type of the query metric is unclear, data will be returned in this field by default.
+                     * @param _typeValue Detailed time series data of the <code>Integer</code> type. If the value type of the query metric is <code>Integer</code>, the corresponding time series data will be returned in this field.<br> **Note**: If the value type of the query metric is unclear, data will be returned in this field by default.
                      * 
                      */
                     void SetTypeValue(const std::vector<TimingTypeValue>& _typeValue);
@@ -89,19 +90,46 @@ namespace TencentCloud
                      */
                     bool TypeValueHasBeenSet() const;
 
+                    /**
+                     * 获取Detailed time series data of <code>Float</code> type. For metrics whose query metric value type is <code>Float</code>, the corresponding time series data is returned in this field.
+                     * @return FloatTypeValue Detailed time series data of <code>Float</code> type. For metrics whose query metric value type is <code>Float</code>, the corresponding time series data is returned in this field.
+                     * 
+                     */
+                    std::vector<FloatTimingTypeValue> GetFloatTypeValue() const;
+
+                    /**
+                     * 设置Detailed time series data of <code>Float</code> type. For metrics whose query metric value type is <code>Float</code>, the corresponding time series data is returned in this field.
+                     * @param _floatTypeValue Detailed time series data of <code>Float</code> type. For metrics whose query metric value type is <code>Float</code>, the corresponding time series data is returned in this field.
+                     * 
+                     */
+                    void SetFloatTypeValue(const std::vector<FloatTimingTypeValue>& _floatTypeValue);
+
+                    /**
+                     * 判断参数 FloatTypeValue 是否已赋值
+                     * @return FloatTypeValue 是否已赋值
+                     * 
+                     */
+                    bool FloatTypeValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The query dimension value.
+                     * Query the dimension value.
                      */
                     std::string m_typeKey;
                     bool m_typeKeyHasBeenSet;
 
                     /**
-                     * Detailed time series data
+                     * Detailed time series data of the <code>Integer</code> type. If the value type of the query metric is <code>Integer</code>, the corresponding time series data will be returned in this field.<br> **Note**: If the value type of the query metric is unclear, data will be returned in this field by default.
                      */
                     std::vector<TimingTypeValue> m_typeValue;
                     bool m_typeValueHasBeenSet;
+
+                    /**
+                     * Detailed time series data of <code>Float</code> type. For metrics whose query metric value type is <code>Float</code>, the corresponding time series data is returned in this field.
+                     */
+                    std::vector<FloatTimingTypeValue> m_floatTypeValue;
+                    bool m_floatTypeValueHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Unified operation success ID - integer
+                * Unified ID data returned on successful operation (Integer type).
                 */
                 class ResourceIdInfo : public AbstractModel
                 {
@@ -47,31 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Resource ID
-0: No preview
-1. A preview is currently available and uploaded by the current user.
-2. A preview is currently available and uploaded by another user.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ResourceId Resource ID
-0: No preview
-1. A preview is currently available and uploaded by the current user.
-2. A preview is currently available and uploaded by another user.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Resource ID returned by the operation. Valid values: 0: No preview exists; 1: Preview exists and was uploaded by the current user; 2: Preview exists and was uploaded by another user. Example value: 2940.
+                     * @return ResourceId Resource ID returned by the operation. Valid values: 0: No preview exists; 1: Preview exists and was uploaded by the current user; 2: Preview exists and was uploaded by another user. Example value: 2940.
                      * 
                      */
                     int64_t GetResourceId() const;
 
                     /**
-                     * 设置Resource ID
-0: No preview
-1. A preview is currently available and uploaded by the current user.
-2. A preview is currently available and uploaded by another user.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _resourceId Resource ID
-0: No preview
-1. A preview is currently available and uploaded by the current user.
-2. A preview is currently available and uploaded by another user.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Resource ID returned by the operation. Valid values: 0: No preview exists; 1: Preview exists and was uploaded by the current user; 2: Preview exists and was uploaded by another user. Example value: 2940.
+                     * @param _resourceId Resource ID returned by the operation. Valid values: 0: No preview exists; 1: Preview exists and was uploaded by the current user; 2: Preview exists and was uploaded by another user. Example value: 2940.
                      * 
                      */
                     void SetResourceId(const int64_t& _resourceId);
@@ -86,11 +70,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Resource ID
-0: No preview
-1. A preview is currently available and uploaded by the current user.
-2. A preview is currently available and uploaded by another user.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Resource ID returned by the operation. Valid values: 0: No preview exists; 1: Preview exists and was uploaded by the current user; 2: Preview exists and was uploaded by another user. Example value: 2940.
                      */
                     int64_t m_resourceId;
                     bool m_resourceIdHasBeenSet;

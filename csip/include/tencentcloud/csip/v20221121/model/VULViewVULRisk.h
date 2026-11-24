@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Details of a vulnerability
+                * Vulnerability Risk Objects from Vulnerability's Perspective
                 */
                 class VULViewVULRisk : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Port
-                     * @return Port Port
+                     * 获取Port.
+                     * @return Port Port.
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置Port
-                     * @param _port Port
+                     * 设置Port.
+                     * @param _port Port.
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取Affected assets
-                     * @return NoHandleCount Affected assets
+                     * 获取Affect assets
+                     * @return NoHandleCount Affect assets
                      * 
                      */
                     int64_t GetNoHandleCount() const;
 
                     /**
-                     * 设置Affected assets
-                     * @param _noHandleCount Affected assets
+                     * 设置Affect assets
+                     * @param _noHandleCount Affect assets
                      * 
                      */
                     void SetNoHandleCount(const int64_t& _noHandleCount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NoHandleCountHasBeenSet() const;
 
                     /**
-                     * 获取Risk level
-                     * @return Level Risk level
+                     * 获取Risk level. low: low risk, high: high risk, middle: medium risk, info: notification, extreme: critical.
+                     * @return Level Risk level. low: low risk, high: high risk, middle: medium risk, info: notification, extreme: critical.
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置Risk level
-                     * @param _level Risk level
+                     * 设置Risk level. low: low risk, high: high risk, middle: medium risk, info: notification, extreme: critical.
+                     * @param _level Risk level. low: low risk, high: high risk, middle: medium risk, info: notification, extreme: critical.
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取Components
-                     * @return Component Components
+                     * 获取Component
+                     * @return Component Component
                      * 
                      */
                     std::string GetComponent() const;
 
                     /**
-                     * 设置Components
-                     * @param _component Components
+                     * 设置Component
+                     * @param _component Component
                      * 
                      */
                     void SetComponent(const std::string& _component);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ComponentHasBeenSet() const;
 
                     /**
-                     * 获取Last detected 
-                     * @return RecentTime Last detected 
+                     * 获取Latest Recognition Time
+                     * @return RecentTime Latest Recognition Time
                      * 
                      */
                     std::string GetRecentTime() const;
 
                     /**
-                     * 设置Last detected 
-                     * @param _recentTime Last detected 
+                     * 设置Latest Recognition Time
+                     * @param _recentTime Latest Recognition Time
                      * 
                      */
                     void SetRecentTime(const std::string& _recentTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RecentTimeHasBeenSet() const;
 
                     /**
-                     * 获取First detected
-                     * @return FirstTime First detected
+                     * 获取First Recognition Time
+                     * @return FirstTime First Recognition Time
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
-                     * 设置First detected
-                     * @param _firstTime First detected
+                     * 设置First Recognition Time
+                     * @param _firstTime First Recognition Time
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool FirstTimeHasBeenSet() const;
 
                     /**
-                     * 获取Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
-                     * @return AffectAssetCount Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * 获取Number of Affected Assets
+                     * @return AffectAssetCount Number of Affected Assets
                      * 
                      */
                     uint64_t GetAffectAssetCount() const;
 
                     /**
-                     * 设置Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
-                     * @param _affectAssetCount Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * 设置Number of Affected Assets
+                     * @param _affectAssetCount Number of Affected Assets
                      * 
                      */
                     void SetAffectAssetCount(const uint64_t& _affectAssetCount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AffectAssetCountHasBeenSet() const;
 
                     /**
-                     * 获取Unique ID of the asset
-                     * @return Id Unique ID of the asset
+                     * 获取Risk ID
+                     * @return Id Risk ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Unique ID of the asset
-                     * @param _id Unique ID of the asset
+                     * 设置Risk ID
+                     * @param _id Risk ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Asset sub-category
-                     * @return From Asset sub-category
+                     * 获取Scan Source. See API Return Enumeration Type for details.
+                     * @return From Scan Source. See API Return Enumeration Type for details.
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置Asset sub-category
-                     * @param _from Asset sub-category
+                     * 设置Scan Source. See API Return Enumeration Type for details.
+                     * @param _from Scan Source. See API Return Enumeration Type for details.
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取Frontend index
-                     * @return Index Frontend index
+                     * 获取Front-end Index
+                     * @return Index Front-end Index
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
-                     * 设置Frontend index
-                     * @param _index Frontend index
+                     * 设置Front-end Index
+                     * @param _index Front-end Index
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool VULNameHasBeenSet() const;
 
                     /**
-                     * 获取CVE number
-                     * @return CVE CVE number
+                     * 获取cve
+                     * @return CVE cve
                      * 
                      */
                     std::string GetCVE() const;
 
                     /**
-                     * 设置CVE number
-                     * @param _cVE CVE number
+                     * 设置cve
+                     * @param _cVE cve
                      * 
                      */
                     void SetCVE(const std::string& _cVE);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool DescribeHasBeenSet() const;
 
                     /**
-                     * 获取Pay load
-                     * @return Payload Pay load
+                     * 获取Vulnerability Payload
+                     * @return Payload Vulnerability Payload
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置Pay load
-                     * @param _payload Pay load
+                     * 设置Vulnerability Payload
+                     * @param _payload Vulnerability Payload
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool PayloadHasBeenSet() const;
 
                     /**
-                     * 获取Affected components
-                     * @return AppName Affected components
+                     * 获取Vulnerability Impact Component
+                     * @return AppName Vulnerability Impact Component
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置Affected components
-                     * @param _appName Affected components
+                     * 设置Vulnerability Impact Component
+                     * @param _appName Vulnerability Impact Component
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取Reference information of the vulnerability
-                     * @return References Reference information of the vulnerability
+                     * 获取Technical reference
+                     * @return References Technical reference
                      * 
                      */
                     std::string GetReferences() const;
 
                     /**
-                     * 设置Reference information of the vulnerability
-                     * @param _references Reference information of the vulnerability
+                     * 设置Technical reference
+                     * @param _references Technical reference
                      * 
                      */
                     void SetReferences(const std::string& _references);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool ReferencesHasBeenSet() const;
 
                     /**
-                     * 获取Affected version
-                     * @return AppVersion Affected version
+                     * 获取Affected versions
+                     * @return AppVersion Affected versions
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
-                     * 设置Affected version
-                     * @param _appVersion Affected version
+                     * 设置Affected versions
+                     * @param _appVersion Affected versions
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取Vulnerability URL
-                     * @return VULURL Vulnerability URL
+                     * 获取Risk Points
+                     * @return VULURL Risk Points
                      * 
                      */
                     std::string GetVULURL() const;
 
                     /**
-                     * 设置Vulnerability URL
-                     * @param _vULURL Vulnerability URL
+                     * 设置Risk Points
+                     * @param _vULURL Risk Points
                      * 
                      */
                     void SetVULURL(const std::string& _vULURL);
@@ -446,19 +446,15 @@ namespace TencentCloud
                     bool VULURLHasBeenSet() const;
 
                     /**
-                     * 获取User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Nick User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取User Nickname
+                     * @return Nick User Nickname
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _nick User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置User Nickname
+                     * @param _nick User Nickname
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -471,15 +467,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取User `appid`
-                     * @return AppId User `appid`
+                     * 获取User appid.
+                     * @return AppId User appid.
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置User `appid`
-                     * @param _appId User `appid`
+                     * 设置User appid.
+                     * @param _appId User appid.
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -492,19 +488,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取User UIN
+                     * @return Uin User UIN
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _uin User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置User UIN
+                     * @param _uin User UIN
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -517,19 +509,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取Fix suggestion
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return Fix Fix suggestion
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Fixing suggestion
+                     * @return Fix Fixing suggestion
                      * 
                      */
                     std::string GetFix() const;
 
                     /**
-                     * 设置Fix suggestion
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _fix Fix suggestion
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Fixing suggestion
+                     * @param _fix Fixing suggestion
                      * 
                      */
                     void SetFix(const std::string& _fix);
@@ -542,19 +530,15 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool FixHasBeenSet() const;
 
                     /**
-                     * 获取Whether it's an emergency vulnerability. Values: `1` (emergency vulnerability); `0` (non-emergency vulnerability
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @return EMGCVulType Whether it's an emergency vulnerability. Values: `1` (emergency vulnerability); `0` (non-emergency vulnerability
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 获取Emergency Vulnerability Type. 1-Emergency Vulnerability; 0-Non-emergency Vulnerability.
+                     * @return EMGCVulType Emergency Vulnerability Type. 1-Emergency Vulnerability; 0-Non-emergency Vulnerability.
                      * 
                      */
                     int64_t GetEMGCVulType() const;
 
                     /**
-                     * 设置Whether it's an emergency vulnerability. Values: `1` (emergency vulnerability); `0` (non-emergency vulnerability
-Note: This field may return·null, indicating that no valid values can be obtained.
-                     * @param _eMGCVulType Whether it's an emergency vulnerability. Values: `1` (emergency vulnerability); `0` (non-emergency vulnerability
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * 设置Emergency Vulnerability Type. 1-Emergency Vulnerability; 0-Non-emergency Vulnerability.
+                     * @param _eMGCVulType Emergency Vulnerability Type. 1-Emergency Vulnerability; 0-Non-emergency Vulnerability.
                      * 
                      */
                     void SetEMGCVulType(const int64_t& _eMGCVulType);
@@ -569,61 +553,61 @@ Note: This field may return·null, indicating that no valid values can be obtain
                 private:
 
                     /**
-                     * Port
+                     * Port.
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * Affected assets
+                     * Affect assets
                      */
                     int64_t m_noHandleCount;
                     bool m_noHandleCountHasBeenSet;
 
                     /**
-                     * Risk level
+                     * Risk level. low: low risk, high: high risk, middle: medium risk, info: notification, extreme: critical.
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * Components
+                     * Component
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
-                     * Last detected 
+                     * Latest Recognition Time
                      */
                     std::string m_recentTime;
                     bool m_recentTimeHasBeenSet;
 
                     /**
-                     * First detected
+                     * First Recognition Time
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;
 
                     /**
-                     * Status of the risk. `0`: Not handled, `1`: Handled; `2`: Ignored
+                     * Number of Affected Assets
                      */
                     uint64_t m_affectAssetCount;
                     bool m_affectAssetCountHasBeenSet;
 
                     /**
-                     * Unique ID of the asset
+                     * Risk ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * Asset sub-category
+                     * Scan Source. See API Return Enumeration Type for details.
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * Frontend index
+                     * Front-end Index
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
@@ -641,7 +625,7 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_vULNameHasBeenSet;
 
                     /**
-                     * CVE number
+                     * cve
                      */
                     std::string m_cVE;
                     bool m_cVEHasBeenSet;
@@ -653,65 +637,61 @@ Note: This field may return·null, indicating that no valid values can be obtain
                     bool m_describeHasBeenSet;
 
                     /**
-                     * Pay load
+                     * Vulnerability Payload
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
 
                     /**
-                     * Affected components
+                     * Vulnerability Impact Component
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * Reference information of the vulnerability
+                     * Technical reference
                      */
                     std::string m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
-                     * Affected version
+                     * Affected versions
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * Vulnerability URL
+                     * Risk Points
                      */
                     std::string m_vULURL;
                     bool m_vULURLHasBeenSet;
 
                     /**
-                     * User name.
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * User Nickname
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * User `appid`
+                     * User appid.
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * User `uin`
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * User UIN
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * Fix suggestion
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Fixing suggestion
                      */
                     std::string m_fix;
                     bool m_fixHasBeenSet;
 
                     /**
-                     * Whether it's an emergency vulnerability. Values: `1` (emergency vulnerability); `0` (non-emergency vulnerability
-Note: This field may return·null, indicating that no valid values can be obtained.
+                     * Emergency Vulnerability Type. 1-Emergency Vulnerability; 0-Non-emergency Vulnerability.
                      */
                     int64_t m_eMGCVulType;
                     bool m_eMGCVulTypeHasBeenSet;

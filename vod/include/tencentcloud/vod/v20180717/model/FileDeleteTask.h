@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * File deleting task
+                * File deletion task
                 */
                 class FileDeleteTask : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of IDs of deleted files.
-                     * @return FileIdSet List of IDs of deleted files.
+                     * 获取<p>List of file IDs to delete.</p>
+                     * @return FileIdSet <p>List of file IDs to delete.</p>
                      * 
                      */
                     std::vector<std::string> GetFileIdSet() const;
 
                     /**
-                     * 设置List of IDs of deleted files.
-                     * @param _fileIdSet List of IDs of deleted files.
+                     * 设置<p>List of file IDs to delete.</p>
+                     * @param _fileIdSet <p>List of file IDs to delete.</p>
                      * 
                      */
                     void SetFileIdSet(const std::vector<std::string>& _fileIdSet);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FileIdSetHasBeenSet() const;
 
                     /**
-                     * 获取The information of the files deleted.
-                     * @return FileDeleteResultInfo The information of the files deleted.
+                     * 获取<p>List of result information for deleting files.</p>
+                     * @return FileDeleteResultInfo <p>List of result information for deleting files.</p>
                      * 
                      */
                     std::vector<FileDeleteResultItem> GetFileDeleteResultInfo() const;
 
                     /**
-                     * 设置The information of the files deleted.
-                     * @param _fileDeleteResultInfo The information of the files deleted.
+                     * 设置<p>List of result information for deleting files.</p>
+                     * @param _fileDeleteResultInfo <p>List of result information for deleting files.</p>
                      * 
                      */
                     void SetFileDeleteResultInfo(const std::vector<FileDeleteResultItem>& _fileDeleteResultInfo);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of IDs of deleted files.
+                     * <p>List of file IDs to delete.</p>
                      */
                     std::vector<std::string> m_fileIdSet;
                     bool m_fileIdSetHasBeenSet;
 
                     /**
-                     * The information of the files deleted.
+                     * <p>List of result information for deleting files.</p>
                      */
                     std::vector<FileDeleteResultItem> m_fileDeleteResultInfo;
                     bool m_fileDeleteResultInfoHasBeenSet;

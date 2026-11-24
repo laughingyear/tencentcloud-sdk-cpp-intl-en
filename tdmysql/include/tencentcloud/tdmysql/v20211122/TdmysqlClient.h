@@ -1,0 +1,818 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TDMYSQL_V20211122_TDMYSQLCLIENT_H_
+#define TENCENTCLOUD_TDMYSQL_V20211122_TDMYSQLCLIENT_H_
+
+#include <functional>
+#include <future>
+#include <tencentcloud/core/AbstractClient.h>
+#include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/profile/ClientProfile.h>
+#include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tdmysql/v20211122/model/BreakStandbyDBInstanceRelationRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/BreakStandbyDBInstanceRelationResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateCloneInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateCloneInstanceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateDBInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateDBInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateDBSBackupRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateDBSBackupResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateStandbyDBInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateStandbyDBInstanceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateUsersRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/CreateUsersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DeleteUsersRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DeleteUsersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBCharsetsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBCharsetsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupPolicyRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupPolicyResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupSetsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupSetsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsDetailRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsDetailResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabasesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeFlowRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeFlowResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeFlowTypesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeFlowTypesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeInstanceDataReservedSpaceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeInstanceDataReservedSpaceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeInstanceSSLStatusRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeInstanceSSLStatusResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeMaintenanceWindowRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeMaintenanceWindowResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSaleInfoRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSaleInfoResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSlowLogsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSlowLogsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSpecsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeSpecsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeStandbyDBInstanceRelationDetailRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeStandbyDBInstanceRelationDetailResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeUserPrivilegesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeUserPrivilegesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeUsersRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeUsersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DestroyInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DestroyInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ExpandInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ExpandInstanceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceVPortRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceVPortResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBParametersRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBParametersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupPolicyRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupPolicyResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceDataReservedSpaceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceDataReservedSpaceResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceNetworkRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceNetworkResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceSSLStatusRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyInstanceSSLStatusResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ResetDbaAdminPrivilegesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ResetDbaAdminPrivilegesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/RestartDBInstancesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/RestartDBInstancesResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/UpgradeInstanceRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/UpgradeInstanceResponse.h>
+
+
+namespace TencentCloud
+{
+    namespace Tdmysql
+    {
+        namespace V20211122
+        {
+            class TdmysqlClient : public AbstractClient
+            {
+            public:
+                TdmysqlClient(const Credential &credential, const std::string &region);
+                TdmysqlClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
+
+                typedef Outcome<Core::Error, Model::BreakStandbyDBInstanceRelationResponse> BreakStandbyDBInstanceRelationOutcome;
+                typedef std::future<BreakStandbyDBInstanceRelationOutcome> BreakStandbyDBInstanceRelationOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::BreakStandbyDBInstanceRelationRequest&, BreakStandbyDBInstanceRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BreakStandbyDBInstanceRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelIsolateDBInstancesResponse> CancelIsolateDBInstancesOutcome;
+                typedef std::future<CancelIsolateDBInstancesOutcome> CancelIsolateDBInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CancelIsolateDBInstancesRequest&, CancelIsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelIsolateDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloneInstanceResponse> CreateCloneInstanceOutcome;
+                typedef std::future<CreateCloneInstanceOutcome> CreateCloneInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CreateCloneInstanceRequest&, CreateCloneInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloneInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
+                typedef std::future<CreateDBInstancesOutcome> CreateDBInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CreateDBInstancesRequest&, CreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBSBackupResponse> CreateDBSBackupOutcome;
+                typedef std::future<CreateDBSBackupOutcome> CreateDBSBackupOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CreateDBSBackupRequest&, CreateDBSBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBSBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStandbyDBInstanceResponse> CreateStandbyDBInstanceOutcome;
+                typedef std::future<CreateStandbyDBInstanceOutcome> CreateStandbyDBInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CreateStandbyDBInstanceRequest&, CreateStandbyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStandbyDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUsersResponse> CreateUsersOutcome;
+                typedef std::future<CreateUsersOutcome> CreateUsersOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::CreateUsersRequest&, CreateUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBSBackupSetsResponse> DeleteDBSBackupSetsOutcome;
+                typedef std::future<DeleteDBSBackupSetsOutcome> DeleteDBSBackupSetsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DeleteDBSBackupSetsRequest&, DeleteDBSBackupSetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBSBackupSetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
+                typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCharsetsResponse> DescribeDBCharsetsOutcome;
+                typedef std::future<DescribeDBCharsetsOutcome> DescribeDBCharsetsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBCharsetsRequest&, DescribeDBCharsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCharsetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBEnginesResponse> DescribeDBEnginesOutcome;
+                typedef std::future<DescribeDBEnginesOutcome> DescribeDBEnginesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBEnginesRequest&, DescribeDBEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBEnginesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceDetailResponse> DescribeDBInstanceDetailOutcome;
+                typedef std::future<DescribeDBInstanceDetailOutcome> DescribeDBInstanceDetailOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBInstanceDetailRequest&, DescribeDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
+                typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
+                typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSArchiveLogsResponse> DescribeDBSArchiveLogsOutcome;
+                typedef std::future<DescribeDBSArchiveLogsOutcome> DescribeDBSArchiveLogsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSArchiveLogsRequest&, DescribeDBSArchiveLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSArchiveLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSAvailableRecoveryTimeResponse> DescribeDBSAvailableRecoveryTimeOutcome;
+                typedef std::future<DescribeDBSAvailableRecoveryTimeOutcome> DescribeDBSAvailableRecoveryTimeOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSAvailableRecoveryTimeRequest&, DescribeDBSAvailableRecoveryTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSAvailableRecoveryTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSBackupPolicyResponse> DescribeDBSBackupPolicyOutcome;
+                typedef std::future<DescribeDBSBackupPolicyOutcome> DescribeDBSBackupPolicyOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSBackupPolicyRequest&, DescribeDBSBackupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSBackupPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSBackupSetsResponse> DescribeDBSBackupSetsOutcome;
+                typedef std::future<DescribeDBSBackupSetsOutcome> DescribeDBSBackupSetsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSBackupSetsRequest&, DescribeDBSBackupSetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSBackupSetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSBackupStatisticsResponse> DescribeDBSBackupStatisticsOutcome;
+                typedef std::future<DescribeDBSBackupStatisticsOutcome> DescribeDBSBackupStatisticsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSBackupStatisticsRequest&, DescribeDBSBackupStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSBackupStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSBackupStatisticsDetailResponse> DescribeDBSBackupStatisticsDetailOutcome;
+                typedef std::future<DescribeDBSBackupStatisticsDetailOutcome> DescribeDBSBackupStatisticsDetailOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSBackupStatisticsDetailRequest&, DescribeDBSBackupStatisticsDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSBackupStatisticsDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSCloneInstancesResponse> DescribeDBSCloneInstancesOutcome;
+                typedef std::future<DescribeDBSCloneInstancesOutcome> DescribeDBSCloneInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSCloneInstancesRequest&, DescribeDBSCloneInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSCloneInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
+                typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseObjectsResponse> DescribeDatabaseObjectsOutcome;
+                typedef std::future<DescribeDatabaseObjectsOutcome> DescribeDatabaseObjectsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDatabaseObjectsRequest&, DescribeDatabaseObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseObjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
+                typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
+                typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowTypesResponse> DescribeFlowTypesOutcome;
+                typedef std::future<DescribeFlowTypesOutcome> DescribeFlowTypesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeFlowTypesRequest&, DescribeFlowTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceDataReservedSpaceResponse> DescribeInstanceDataReservedSpaceOutcome;
+                typedef std::future<DescribeInstanceDataReservedSpaceOutcome> DescribeInstanceDataReservedSpaceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeInstanceDataReservedSpaceRequest&, DescribeInstanceDataReservedSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDataReservedSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSSLStatusResponse> DescribeInstanceSSLStatusOutcome;
+                typedef std::future<DescribeInstanceSSLStatusOutcome> DescribeInstanceSSLStatusOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeInstanceSSLStatusRequest&, DescribeInstanceSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSSLStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMaintenanceWindowResponse> DescribeMaintenanceWindowOutcome;
+                typedef std::future<DescribeMaintenanceWindowOutcome> DescribeMaintenanceWindowOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeMaintenanceWindowRequest&, DescribeMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSaleInfoResponse> DescribeSaleInfoOutcome;
+                typedef std::future<DescribeSaleInfoOutcome> DescribeSaleInfoOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeSaleInfoRequest&, DescribeSaleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSlowLogsResponse> DescribeSlowLogsOutcome;
+                typedef std::future<DescribeSlowLogsOutcome> DescribeSlowLogsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeSlowLogsRequest&, DescribeSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpecsResponse> DescribeSpecsOutcome;
+                typedef std::future<DescribeSpecsOutcome> DescribeSpecsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeSpecsRequest&, DescribeSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStandbyDBInstanceRelationDetailResponse> DescribeStandbyDBInstanceRelationDetailOutcome;
+                typedef std::future<DescribeStandbyDBInstanceRelationDetailOutcome> DescribeStandbyDBInstanceRelationDetailOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeStandbyDBInstanceRelationDetailRequest&, DescribeStandbyDBInstanceRelationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandbyDBInstanceRelationDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserPrivilegesResponse> DescribeUserPrivilegesOutcome;
+                typedef std::future<DescribeUserPrivilegesOutcome> DescribeUserPrivilegesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeUserPrivilegesRequest&, DescribeUserPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
+                typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyInstancesResponse> DestroyInstancesOutcome;
+                typedef std::future<DestroyInstancesOutcome> DestroyInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DestroyInstancesRequest&, DestroyInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExpandInstanceResponse> ExpandInstanceOutcome;
+                typedef std::future<ExpandInstanceOutcome> ExpandInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ExpandInstanceRequest&, ExpandInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateDBInstanceResponse> IsolateDBInstanceOutcome;
+                typedef std::future<IsolateDBInstanceOutcome> IsolateDBInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::IsolateDBInstanceRequest&, IsolateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoRenewFlagResponse> ModifyAutoRenewFlagOutcome;
+                typedef std::future<ModifyAutoRenewFlagOutcome> ModifyAutoRenewFlagOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyAutoRenewFlagRequest&, ModifyAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceResponse> ModifyDBInstanceOutcome;
+                typedef std::future<ModifyDBInstanceOutcome> ModifyDBInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBInstanceRequest&, ModifyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
+                typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceVPortResponse> ModifyDBInstanceVPortOutcome;
+                typedef std::future<ModifyDBInstanceVPortOutcome> ModifyDBInstanceVPortOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBInstanceVPortRequest&, ModifyDBInstanceVPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceVPortAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBParametersResponse> ModifyDBParametersOutcome;
+                typedef std::future<ModifyDBParametersOutcome> ModifyDBParametersOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBParametersRequest&, ModifyDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBParametersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBSBackupPolicyResponse> ModifyDBSBackupPolicyOutcome;
+                typedef std::future<ModifyDBSBackupPolicyOutcome> ModifyDBSBackupPolicyOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBSBackupPolicyRequest&, ModifyDBSBackupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBSBackupPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBSBackupSetCommentResponse> ModifyDBSBackupSetCommentOutcome;
+                typedef std::future<ModifyDBSBackupSetCommentOutcome> ModifyDBSBackupSetCommentOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBSBackupSetCommentRequest&, ModifyDBSBackupSetCommentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBSBackupSetCommentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceDataReservedSpaceResponse> ModifyInstanceDataReservedSpaceOutcome;
+                typedef std::future<ModifyInstanceDataReservedSpaceOutcome> ModifyInstanceDataReservedSpaceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyInstanceDataReservedSpaceRequest&, ModifyInstanceDataReservedSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceDataReservedSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNameResponse> ModifyInstanceNameOutcome;
+                typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyInstanceNameRequest&, ModifyInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNetworkResponse> ModifyInstanceNetworkOutcome;
+                typedef std::future<ModifyInstanceNetworkOutcome> ModifyInstanceNetworkOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyInstanceNetworkRequest&, ModifyInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceSSLStatusResponse> ModifyInstanceSSLStatusOutcome;
+                typedef std::future<ModifyInstanceSSLStatusOutcome> ModifyInstanceSSLStatusOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyInstanceSSLStatusRequest&, ModifyInstanceSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceSSLStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
+                typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserPrivilegesResponse> ModifyUserPrivilegesOutcome;
+                typedef std::future<ModifyUserPrivilegesOutcome> ModifyUserPrivilegesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ModifyUserPrivilegesRequest&, ModifyUserPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetDbaAdminPrivilegesResponse> ResetDbaAdminPrivilegesOutcome;
+                typedef std::future<ResetDbaAdminPrivilegesOutcome> ResetDbaAdminPrivilegesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ResetDbaAdminPrivilegesRequest&, ResetDbaAdminPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDbaAdminPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetUsersPasswordResponse> ResetUsersPasswordOutcome;
+                typedef std::future<ResetUsersPasswordOutcome> ResetUsersPasswordOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::ResetUsersPasswordRequest&, ResetUsersPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUsersPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartDBInstancesResponse> RestartDBInstancesOutcome;
+                typedef std::future<RestartDBInstancesOutcome> RestartDBInstancesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::RestartDBInstancesRequest&, RestartDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
+                typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+
+
+
+                /**
+                 *This API is used to terminate the replication between the primary instance and the disaster recovery instance.
+                 * @param req BreakStandbyDBInstanceRelationRequest
+                 * @return BreakStandbyDBInstanceRelationOutcome
+                 */
+                BreakStandbyDBInstanceRelationOutcome BreakStandbyDBInstanceRelation(const Model::BreakStandbyDBInstanceRelationRequest &request);
+                void BreakStandbyDBInstanceRelationAsync(const Model::BreakStandbyDBInstanceRelationRequest& request, const BreakStandbyDBInstanceRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BreakStandbyDBInstanceRelationOutcomeCallable BreakStandbyDBInstanceRelationCallable(const Model::BreakStandbyDBInstanceRelationRequest& request);
+
+                /**
+                 *This API is used to lift isolation for instances in batch.
+                 * @param req CancelIsolateDBInstancesRequest
+                 * @return CancelIsolateDBInstancesOutcome
+                 */
+                CancelIsolateDBInstancesOutcome CancelIsolateDBInstances(const Model::CancelIsolateDBInstancesRequest &request);
+                void CancelIsolateDBInstancesAsync(const Model::CancelIsolateDBInstancesRequest& request, const CancelIsolateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelIsolateDBInstancesOutcomeCallable CancelIsolateDBInstancesCallable(const Model::CancelIsolateDBInstancesRequest& request);
+
+                /**
+                 *This API is used to create clone instances.
+                 * @param req CreateCloneInstanceRequest
+                 * @return CreateCloneInstanceOutcome
+                 */
+                CreateCloneInstanceOutcome CreateCloneInstance(const Model::CreateCloneInstanceRequest &request);
+                void CreateCloneInstanceAsync(const Model::CreateCloneInstanceRequest& request, const CreateCloneInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloneInstanceOutcomeCallable CreateCloneInstanceCallable(const Model::CreateCloneInstanceRequest& request);
+
+                /**
+                 *This API is used to batch create instances.
+                 * @param req CreateDBInstancesRequest
+                 * @return CreateDBInstancesOutcome
+                 */
+                CreateDBInstancesOutcome CreateDBInstances(const Model::CreateDBInstancesRequest &request);
+                void CreateDBInstancesAsync(const Model::CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBInstancesOutcomeCallable CreateDBInstancesCallable(const Model::CreateDBInstancesRequest& request);
+
+                /**
+                 *This API is used to create a manual backup of an instance.
+                 * @param req CreateDBSBackupRequest
+                 * @return CreateDBSBackupOutcome
+                 */
+                CreateDBSBackupOutcome CreateDBSBackup(const Model::CreateDBSBackupRequest &request);
+                void CreateDBSBackupAsync(const Model::CreateDBSBackupRequest& request, const CreateDBSBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBSBackupOutcomeCallable CreateDBSBackupCallable(const Model::CreateDBSBackupRequest& request);
+
+                /**
+                 *This API is used to create disaster recovery instances in batches.
+                 * @param req CreateStandbyDBInstanceRequest
+                 * @return CreateStandbyDBInstanceOutcome
+                 */
+                CreateStandbyDBInstanceOutcome CreateStandbyDBInstance(const Model::CreateStandbyDBInstanceRequest &request);
+                void CreateStandbyDBInstanceAsync(const Model::CreateStandbyDBInstanceRequest& request, const CreateStandbyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStandbyDBInstanceOutcomeCallable CreateStandbyDBInstanceCallable(const Model::CreateStandbyDBInstanceRequest& request);
+
+                /**
+                 *This API is used to create users in batches.
+                 * @param req CreateUsersRequest
+                 * @return CreateUsersOutcome
+                 */
+                CreateUsersOutcome CreateUsers(const Model::CreateUsersRequest &request);
+                void CreateUsersAsync(const Model::CreateUsersRequest& request, const CreateUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUsersOutcomeCallable CreateUsersCallable(const Model::CreateUsersRequest& request);
+
+                /**
+                 *This API is used to delete manual backups of instances.
+                 * @param req DeleteDBSBackupSetsRequest
+                 * @return DeleteDBSBackupSetsOutcome
+                 */
+                DeleteDBSBackupSetsOutcome DeleteDBSBackupSets(const Model::DeleteDBSBackupSetsRequest &request);
+                void DeleteDBSBackupSetsAsync(const Model::DeleteDBSBackupSetsRequest& request, const DeleteDBSBackupSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBSBackupSetsOutcomeCallable DeleteDBSBackupSetsCallable(const Model::DeleteDBSBackupSetsRequest& request);
+
+                /**
+                 *This API is used to batch delete users.
+                 * @param req DeleteUsersRequest
+                 * @return DeleteUsersOutcome
+                 */
+                DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
+                void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
+
+                /**
+                 *This API is used to query supported character sets.
+                 * @param req DescribeDBCharsetsRequest
+                 * @return DescribeDBCharsetsOutcome
+                 */
+                DescribeDBCharsetsOutcome DescribeDBCharsets(const Model::DescribeDBCharsetsRequest &request);
+                void DescribeDBCharsetsAsync(const Model::DescribeDBCharsetsRequest& request, const DescribeDBCharsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCharsetsOutcomeCallable DescribeDBCharsetsCallable(const Model::DescribeDBCharsetsRequest& request);
+
+                /**
+                 *This API is used to obtain the DB engine version list.
+                 * @param req DescribeDBEnginesRequest
+                 * @return DescribeDBEnginesOutcome
+                 */
+                DescribeDBEnginesOutcome DescribeDBEngines(const Model::DescribeDBEnginesRequest &request);
+                void DescribeDBEnginesAsync(const Model::DescribeDBEnginesRequest& request, const DescribeDBEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBEnginesOutcomeCallable DescribeDBEnginesCallable(const Model::DescribeDBEnginesRequest& request);
+
+                /**
+                 *This API is used to query instance details.
+                 * @param req DescribeDBInstanceDetailRequest
+                 * @return DescribeDBInstanceDetailOutcome
+                 */
+                DescribeDBInstanceDetailOutcome DescribeDBInstanceDetail(const Model::DescribeDBInstanceDetailRequest &request);
+                void DescribeDBInstanceDetailAsync(const Model::DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceDetailOutcomeCallable DescribeDBInstanceDetailCallable(const Model::DescribeDBInstanceDetailRequest& request);
+
+                /**
+                 *This API is used to query instance list.
+                 * @param req DescribeDBInstancesRequest
+                 * @return DescribeDBInstancesOutcome
+                 */
+                DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest &request);
+                void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
+
+                /**
+                 *This API is used to obtain the current parameter settings of the instance.
+                 * @param req DescribeDBParametersRequest
+                 * @return DescribeDBParametersOutcome
+                 */
+                DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest &request);
+                void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
+
+                /**
+                 *This API is used to query instance archived WAL log list.
+                 * @param req DescribeDBSArchiveLogsRequest
+                 * @return DescribeDBSArchiveLogsOutcome
+                 */
+                DescribeDBSArchiveLogsOutcome DescribeDBSArchiveLogs(const Model::DescribeDBSArchiveLogsRequest &request);
+                void DescribeDBSArchiveLogsAsync(const Model::DescribeDBSArchiveLogsRequest& request, const DescribeDBSArchiveLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSArchiveLogsOutcomeCallable DescribeDBSArchiveLogsCallable(const Model::DescribeDBSArchiveLogsRequest& request);
+
+                /**
+                 *This API is used to obtain the recoverable time.
+                 * @param req DescribeDBSAvailableRecoveryTimeRequest
+                 * @return DescribeDBSAvailableRecoveryTimeOutcome
+                 */
+                DescribeDBSAvailableRecoveryTimeOutcome DescribeDBSAvailableRecoveryTime(const Model::DescribeDBSAvailableRecoveryTimeRequest &request);
+                void DescribeDBSAvailableRecoveryTimeAsync(const Model::DescribeDBSAvailableRecoveryTimeRequest& request, const DescribeDBSAvailableRecoveryTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSAvailableRecoveryTimeOutcomeCallable DescribeDBSAvailableRecoveryTimeCallable(const Model::DescribeDBSAvailableRecoveryTimeRequest& request);
+
+                /**
+                 *Query an instance backup strategy
+                 * @param req DescribeDBSBackupPolicyRequest
+                 * @return DescribeDBSBackupPolicyOutcome
+                 */
+                DescribeDBSBackupPolicyOutcome DescribeDBSBackupPolicy(const Model::DescribeDBSBackupPolicyRequest &request);
+                void DescribeDBSBackupPolicyAsync(const Model::DescribeDBSBackupPolicyRequest& request, const DescribeDBSBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSBackupPolicyOutcomeCallable DescribeDBSBackupPolicyCallable(const Model::DescribeDBSBackupPolicyRequest& request);
+
+                /**
+                 *This API is used to query instance backup set information.
+                 * @param req DescribeDBSBackupSetsRequest
+                 * @return DescribeDBSBackupSetsOutcome
+                 */
+                DescribeDBSBackupSetsOutcome DescribeDBSBackupSets(const Model::DescribeDBSBackupSetsRequest &request);
+                void DescribeDBSBackupSetsAsync(const Model::DescribeDBSBackupSetsRequest& request, const DescribeDBSBackupSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSBackupSetsOutcomeCallable DescribeDBSBackupSetsCallable(const Model::DescribeDBSBackupSetsRequest& request);
+
+                /**
+                 *This API is used to query instance backup space overview.
+                 * @param req DescribeDBSBackupStatisticsRequest
+                 * @return DescribeDBSBackupStatisticsOutcome
+                 */
+                DescribeDBSBackupStatisticsOutcome DescribeDBSBackupStatistics(const Model::DescribeDBSBackupStatisticsRequest &request);
+                void DescribeDBSBackupStatisticsAsync(const Model::DescribeDBSBackupStatisticsRequest& request, const DescribeDBSBackupStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSBackupStatisticsOutcomeCallable DescribeDBSBackupStatisticsCallable(const Model::DescribeDBSBackupStatisticsRequest& request);
+
+                /**
+                 *This API is used to query backup set statistical detail.
+                 * @param req DescribeDBSBackupStatisticsDetailRequest
+                 * @return DescribeDBSBackupStatisticsDetailOutcome
+                 */
+                DescribeDBSBackupStatisticsDetailOutcome DescribeDBSBackupStatisticsDetail(const Model::DescribeDBSBackupStatisticsDetailRequest &request);
+                void DescribeDBSBackupStatisticsDetailAsync(const Model::DescribeDBSBackupStatisticsDetailRequest& request, const DescribeDBSBackupStatisticsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSBackupStatisticsDetailOutcomeCallable DescribeDBSBackupStatisticsDetailCallable(const Model::DescribeDBSBackupStatisticsDetailRequest& request);
+
+                /**
+                 *Query clone list
+                 * @param req DescribeDBSCloneInstancesRequest
+                 * @return DescribeDBSCloneInstancesOutcome
+                 */
+                DescribeDBSCloneInstancesOutcome DescribeDBSCloneInstances(const Model::DescribeDBSCloneInstancesRequest &request);
+                void DescribeDBSCloneInstancesAsync(const Model::DescribeDBSCloneInstancesRequest& request, const DescribeDBSCloneInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSCloneInstancesOutcomeCallable DescribeDBSCloneInstancesCallable(const Model::DescribeDBSCloneInstancesRequest& request);
+
+                /**
+                 *This API is used to query instance security group information.
+                 * @param req DescribeDBSecurityGroupsRequest
+                 * @return DescribeDBSecurityGroupsOutcome
+                 */
+                DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
+                void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
+                 *This API is used to query the object list in the database of a cloud database instance, including table, stored procedure, view and function.
+                 * @param req DescribeDatabaseObjectsRequest
+                 * @return DescribeDatabaseObjectsOutcome
+                 */
+                DescribeDatabaseObjectsOutcome DescribeDatabaseObjects(const Model::DescribeDatabaseObjectsRequest &request);
+                void DescribeDatabaseObjectsAsync(const Model::DescribeDatabaseObjectsRequest& request, const DescribeDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseObjectsOutcomeCallable DescribeDatabaseObjectsCallable(const Model::DescribeDatabaseObjectsRequest& request);
+
+                /**
+                 *This API is used to query the database list of a cloud database instance.
+                 * @param req DescribeDatabasesRequest
+                 * @return DescribeDatabasesOutcome
+                 */
+                DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
+                void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *This API is used to query the process status of an asynchronous task.
+                 * @param req DescribeFlowRequest
+                 * @return DescribeFlowOutcome
+                 */
+                DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest &request);
+                void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
+
+                /**
+                 *This API is used to obtain all task types.
+                 * @param req DescribeFlowTypesRequest
+                 * @return DescribeFlowTypesOutcome
+                 */
+                DescribeFlowTypesOutcome DescribeFlowTypes(const Model::DescribeFlowTypesRequest &request);
+                void DescribeFlowTypesAsync(const Model::DescribeFlowTypesRequest& request, const DescribeFlowTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowTypesOutcomeCallable DescribeFlowTypesCallable(const Model::DescribeFlowTypesRequest& request);
+
+                /**
+                 *This API is used to query the data retention space of an instance.
+                 * @param req DescribeInstanceDataReservedSpaceRequest
+                 * @return DescribeInstanceDataReservedSpaceOutcome
+                 */
+                DescribeInstanceDataReservedSpaceOutcome DescribeInstanceDataReservedSpace(const Model::DescribeInstanceDataReservedSpaceRequest &request);
+                void DescribeInstanceDataReservedSpaceAsync(const Model::DescribeInstanceDataReservedSpaceRequest& request, const DescribeInstanceDataReservedSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceDataReservedSpaceOutcomeCallable DescribeInstanceDataReservedSpaceCallable(const Model::DescribeInstanceDataReservedSpaceRequest& request);
+
+                /**
+                 *This API is used to query the SSL status of an instance.
+                 * @param req DescribeInstanceSSLStatusRequest
+                 * @return DescribeInstanceSSLStatusOutcome
+                 */
+                DescribeInstanceSSLStatusOutcome DescribeInstanceSSLStatus(const Model::DescribeInstanceSSLStatusRequest &request);
+                void DescribeInstanceSSLStatusAsync(const Model::DescribeInstanceSSLStatusRequest& request, const DescribeInstanceSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSSLStatusOutcomeCallable DescribeInstanceSSLStatusCallable(const Model::DescribeInstanceSSLStatusRequest& request);
+
+                /**
+                 *Query maintenance time window configurations
+                 * @param req DescribeMaintenanceWindowRequest
+                 * @return DescribeMaintenanceWindowOutcome
+                 */
+                DescribeMaintenanceWindowOutcome DescribeMaintenanceWindow(const Model::DescribeMaintenanceWindowRequest &request);
+                void DescribeMaintenanceWindowAsync(const Model::DescribeMaintenanceWindowRequest& request, const DescribeMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
+
+                /**
+                 *This API is used to query available regions.
+                 * @param req DescribeSaleInfoRequest
+                 * @return DescribeSaleInfoOutcome
+                 */
+                DescribeSaleInfoOutcome DescribeSaleInfo(const Model::DescribeSaleInfoRequest &request);
+                void DescribeSaleInfoAsync(const Model::DescribeSaleInfoRequest& request, const DescribeSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSaleInfoOutcomeCallable DescribeSaleInfoCallable(const Model::DescribeSaleInfoRequest& request);
+
+                /**
+                 *This API is used to query slow logs.
+                 * @param req DescribeSlowLogsRequest
+                 * @return DescribeSlowLogsOutcome
+                 */
+                DescribeSlowLogsOutcome DescribeSlowLogs(const Model::DescribeSlowLogsRequest &request);
+                void DescribeSlowLogsAsync(const Model::DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogsOutcomeCallable DescribeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request);
+
+                /**
+                 *This API is used to query sales specifications.
+                 * @param req DescribeSpecsRequest
+                 * @return DescribeSpecsOutcome
+                 */
+                DescribeSpecsOutcome DescribeSpecs(const Model::DescribeSpecsRequest &request);
+                void DescribeSpecsAsync(const Model::DescribeSpecsRequest& request, const DescribeSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecsOutcomeCallable DescribeSpecsCallable(const Model::DescribeSpecsRequest& request);
+
+                /**
+                 *This API is used to query disaster recovery connection relationships of an instance.
+                 * @param req DescribeStandbyDBInstanceRelationDetailRequest
+                 * @return DescribeStandbyDBInstanceRelationDetailOutcome
+                 */
+                DescribeStandbyDBInstanceRelationDetailOutcome DescribeStandbyDBInstanceRelationDetail(const Model::DescribeStandbyDBInstanceRelationDetailRequest &request);
+                void DescribeStandbyDBInstanceRelationDetailAsync(const Model::DescribeStandbyDBInstanceRelationDetailRequest& request, const DescribeStandbyDBInstanceRelationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStandbyDBInstanceRelationDetailOutcomeCallable DescribeStandbyDBInstanceRelationDetailCallable(const Model::DescribeStandbyDBInstanceRelationDetailRequest& request);
+
+                /**
+                 *This API is used to query user permissions.
+                 * @param req DescribeUserPrivilegesRequest
+                 * @return DescribeUserPrivilegesOutcome
+                 */
+                DescribeUserPrivilegesOutcome DescribeUserPrivileges(const Model::DescribeUserPrivilegesRequest &request);
+                void DescribeUserPrivilegesAsync(const Model::DescribeUserPrivilegesRequest& request, const DescribeUserPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserPrivilegesOutcomeCallable DescribeUserPrivilegesCallable(const Model::DescribeUserPrivilegesRequest& request);
+
+                /**
+                 *This API is used to query user list.
+                 * @param req DescribeUsersRequest
+                 * @return DescribeUsersOutcome
+                 */
+                DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest &request);
+                void DescribeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request);
+
+                /**
+                 *This API is used to destroy instances in batch.
+                 * @param req DestroyInstancesRequest
+                 * @return DestroyInstancesOutcome
+                 */
+                DestroyInstancesOutcome DestroyInstances(const Model::DestroyInstancesRequest &request);
+                void DestroyInstancesAsync(const Model::DestroyInstancesRequest& request, const DestroyInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyInstancesOutcomeCallable DestroyInstancesCallable(const Model::DestroyInstancesRequest& request);
+
+                /**
+                 *This API is used to horizontally scale out instances.
+                 * @param req ExpandInstanceRequest
+                 * @return ExpandInstanceOutcome
+                 */
+                ExpandInstanceOutcome ExpandInstance(const Model::ExpandInstanceRequest &request);
+                void ExpandInstanceAsync(const Model::ExpandInstanceRequest& request, const ExpandInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExpandInstanceOutcomeCallable ExpandInstanceCallable(const Model::ExpandInstanceRequest& request);
+
+                /**
+                 *This API is used to batch isolate instances.
+                 * @param req IsolateDBInstanceRequest
+                 * @return IsolateDBInstanceOutcome
+                 */
+                IsolateDBInstanceOutcome IsolateDBInstance(const Model::IsolateDBInstanceRequest &request);
+                void IsolateDBInstanceAsync(const Model::IsolateDBInstanceRequest& request, const IsolateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateDBInstanceOutcomeCallable IsolateDBInstanceCallable(const Model::IsolateDBInstanceRequest& request);
+
+                /**
+                 *This API is used to modify the auto-renewal flag.
+                 * @param req ModifyAutoRenewFlagRequest
+                 * @return ModifyAutoRenewFlagOutcome
+                 */
+                ModifyAutoRenewFlagOutcome ModifyAutoRenewFlag(const Model::ModifyAutoRenewFlagRequest &request);
+                void ModifyAutoRenewFlagAsync(const Model::ModifyAutoRenewFlagRequest& request, const ModifyAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoRenewFlagOutcomeCallable ModifyAutoRenewFlagCallable(const Model::ModifyAutoRenewFlagRequest& request);
+
+                /**
+                 *This API is used to modify instance configurations. It combines the ability to vertically and horizontally modify instances, and supports composite modifications of CPU, memory, disk, number of nodes, availability zone, and storage type. It supports DryRun precheck mode, allowing you to obtain the modification plan without actual execution.
+                 * @param req ModifyDBInstanceRequest
+                 * @return ModifyDBInstanceOutcome
+                 */
+                ModifyDBInstanceOutcome ModifyDBInstance(const Model::ModifyDBInstanceRequest &request);
+                void ModifyDBInstanceAsync(const Model::ModifyDBInstanceRequest& request, const ModifyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceOutcomeCallable ModifyDBInstanceCallable(const Model::ModifyDBInstanceRequest& request);
+
+                /**
+                 *This API is used to modify cloud database security groups.
+                 * @param req ModifyDBInstanceSecurityGroupsRequest
+                 * @return ModifyDBInstanceSecurityGroupsOutcome
+                 */
+                ModifyDBInstanceSecurityGroupsOutcome ModifyDBInstanceSecurityGroups(const Model::ModifyDBInstanceSecurityGroupsRequest &request);
+                void ModifyDBInstanceSecurityGroupsAsync(const Model::ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
+
+                /**
+                 *This API is used to modify the VPC port of an instance.
+                 * @param req ModifyDBInstanceVPortRequest
+                 * @return ModifyDBInstanceVPortOutcome
+                 */
+                ModifyDBInstanceVPortOutcome ModifyDBInstanceVPort(const Model::ModifyDBInstanceVPortRequest &request);
+                void ModifyDBInstanceVPortAsync(const Model::ModifyDBInstanceVPortRequest& request, const ModifyDBInstanceVPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceVPortOutcomeCallable ModifyDBInstanceVPortCallable(const Model::ModifyDBInstanceVPortRequest& request);
+
+                /**
+                 *This API is used to modify instance parameters.
+                 * @param req ModifyDBParametersRequest
+                 * @return ModifyDBParametersOutcome
+                 */
+                ModifyDBParametersOutcome ModifyDBParameters(const Model::ModifyDBParametersRequest &request);
+                void ModifyDBParametersAsync(const Model::ModifyDBParametersRequest& request, const ModifyDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBParametersOutcomeCallable ModifyDBParametersCallable(const Model::ModifyDBParametersRequest& request);
+
+                /**
+                 *This API is used to modify the instance backup strategy.
+                 * @param req ModifyDBSBackupPolicyRequest
+                 * @return ModifyDBSBackupPolicyOutcome
+                 */
+                ModifyDBSBackupPolicyOutcome ModifyDBSBackupPolicy(const Model::ModifyDBSBackupPolicyRequest &request);
+                void ModifyDBSBackupPolicyAsync(const Model::ModifyDBSBackupPolicyRequest& request, const ModifyDBSBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBSBackupPolicyOutcomeCallable ModifyDBSBackupPolicyCallable(const Model::ModifyDBSBackupPolicyRequest& request);
+
+                /**
+                 *This API is used to modify backup notes of an instance.
+                 * @param req ModifyDBSBackupSetCommentRequest
+                 * @return ModifyDBSBackupSetCommentOutcome
+                 */
+                ModifyDBSBackupSetCommentOutcome ModifyDBSBackupSetComment(const Model::ModifyDBSBackupSetCommentRequest &request);
+                void ModifyDBSBackupSetCommentAsync(const Model::ModifyDBSBackupSetCommentRequest& request, const ModifyDBSBackupSetCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBSBackupSetCommentOutcomeCallable ModifyDBSBackupSetCommentCallable(const Model::ModifyDBSBackupSetCommentRequest& request);
+
+                /**
+                 *This API is used to modify the reserved space for instance data.
+                 * @param req ModifyInstanceDataReservedSpaceRequest
+                 * @return ModifyInstanceDataReservedSpaceOutcome
+                 */
+                ModifyInstanceDataReservedSpaceOutcome ModifyInstanceDataReservedSpace(const Model::ModifyInstanceDataReservedSpaceRequest &request);
+                void ModifyInstanceDataReservedSpaceAsync(const Model::ModifyInstanceDataReservedSpaceRequest& request, const ModifyInstanceDataReservedSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceDataReservedSpaceOutcomeCallable ModifyInstanceDataReservedSpaceCallable(const Model::ModifyInstanceDataReservedSpaceRequest& request);
+
+                /**
+                 *This API is used to modify instance name.
+                 * @param req ModifyInstanceNameRequest
+                 * @return ModifyInstanceNameOutcome
+                 */
+                ModifyInstanceNameOutcome ModifyInstanceName(const Model::ModifyInstanceNameRequest &request);
+                void ModifyInstanceNameAsync(const Model::ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNameOutcomeCallable ModifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request);
+
+                /**
+                 *This API is used to modify the network to which the instance belongs.
+                 * @param req ModifyInstanceNetworkRequest
+                 * @return ModifyInstanceNetworkOutcome
+                 */
+                ModifyInstanceNetworkOutcome ModifyInstanceNetwork(const Model::ModifyInstanceNetworkRequest &request);
+                void ModifyInstanceNetworkAsync(const Model::ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNetworkOutcomeCallable ModifyInstanceNetworkCallable(const Model::ModifyInstanceNetworkRequest& request);
+
+                /**
+                 *This API is used to enable or disable the SSL feature of an instance.
+                 * @param req ModifyInstanceSSLStatusRequest
+                 * @return ModifyInstanceSSLStatusOutcome
+                 */
+                ModifyInstanceSSLStatusOutcome ModifyInstanceSSLStatus(const Model::ModifyInstanceSSLStatusRequest &request);
+                void ModifyInstanceSSLStatusAsync(const Model::ModifyInstanceSSLStatusRequest& request, const ModifyInstanceSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceSSLStatusOutcomeCallable ModifyInstanceSSLStatusCallable(const Model::ModifyInstanceSSLStatusRequest& request);
+
+                /**
+                 *Add new or modify instance maintenance time window configurations
+                 * @param req ModifyMaintenanceWindowRequest
+                 * @return ModifyMaintenanceWindowOutcome
+                 */
+                ModifyMaintenanceWindowOutcome ModifyMaintenanceWindow(const Model::ModifyMaintenanceWindowRequest &request);
+                void ModifyMaintenanceWindowAsync(const Model::ModifyMaintenanceWindowRequest& request, const ModifyMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMaintenanceWindowOutcomeCallable ModifyMaintenanceWindowCallable(const Model::ModifyMaintenanceWindowRequest& request);
+
+                /**
+                 *This API is used to modify user permissions.
+                 * @param req ModifyUserPrivilegesRequest
+                 * @return ModifyUserPrivilegesOutcome
+                 */
+                ModifyUserPrivilegesOutcome ModifyUserPrivileges(const Model::ModifyUserPrivilegesRequest &request);
+                void ModifyUserPrivilegesAsync(const Model::ModifyUserPrivilegesRequest& request, const ModifyUserPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserPrivilegesOutcomeCallable ModifyUserPrivilegesCallable(const Model::ModifyUserPrivilegesRequest& request);
+
+                /**
+                 *Reset the permissions of the dbaadmin account.
+                 * @param req ResetDbaAdminPrivilegesRequest
+                 * @return ResetDbaAdminPrivilegesOutcome
+                 */
+                ResetDbaAdminPrivilegesOutcome ResetDbaAdminPrivileges(const Model::ResetDbaAdminPrivilegesRequest &request);
+                void ResetDbaAdminPrivilegesAsync(const Model::ResetDbaAdminPrivilegesRequest& request, const ResetDbaAdminPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDbaAdminPrivilegesOutcomeCallable ResetDbaAdminPrivilegesCallable(const Model::ResetDbaAdminPrivilegesRequest& request);
+
+                /**
+                 *This API is used to batch reset user password.
+                 * @param req ResetUsersPasswordRequest
+                 * @return ResetUsersPasswordOutcome
+                 */
+                ResetUsersPasswordOutcome ResetUsersPassword(const Model::ResetUsersPasswordRequest &request);
+                void ResetUsersPasswordAsync(const Model::ResetUsersPasswordRequest& request, const ResetUsersPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetUsersPasswordOutcomeCallable ResetUsersPasswordCallable(const Model::ResetUsersPasswordRequest& request);
+
+                /**
+                 *This API is used to restart database instances.
+                 * @param req RestartDBInstancesRequest
+                 * @return RestartDBInstancesOutcome
+                 */
+                RestartDBInstancesOutcome RestartDBInstances(const Model::RestartDBInstancesRequest &request);
+                void RestartDBInstancesAsync(const Model::RestartDBInstancesRequest& request, const RestartDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartDBInstancesOutcomeCallable RestartDBInstancesCallable(const Model::RestartDBInstancesRequest& request);
+
+                /**
+                 *This API is used to scale up a TDSQL Boundless instance, which can be a primary instance or a disaster recovery instance.
+                 * @param req UpgradeInstanceRequest
+                 * @return UpgradeInstanceOutcome
+                 */
+                UpgradeInstanceOutcome UpgradeInstance(const Model::UpgradeInstanceRequest &request);
+                void UpgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
+
+            };
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TDMYSQL_V20211122_TDMYSQLCLIENT_H_

@@ -76,7 +76,10 @@ LoadBalancer::LoadBalancer() :
     m_attributeFlagsHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_exclusiveHasBeenSet(false)
+    m_exclusiveHasBeenSet(false),
+    m_targetCountHasBeenSet(false),
+    m_associateEndpointHasBeenSet(false),
+    m_availableZoneAffinityInfoHasBeenSet(false)
 {
 }
 
@@ -732,6 +735,43 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_exclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetCount") && !value["TargetCount"].IsNull())
+    {
+        if (!value["TargetCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.TargetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCount = value["TargetCount"].GetUint64();
+        m_targetCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociateEndpoint") && !value["AssociateEndpoint"].IsNull())
+    {
+        if (!value["AssociateEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AssociateEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_associateEndpoint = string(value["AssociateEndpoint"].GetString());
+        m_associateEndpointHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailableZoneAffinityInfo") && !value["AvailableZoneAffinityInfo"].IsNull())
+    {
+        if (!value["AvailableZoneAffinityInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AvailableZoneAffinityInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_availableZoneAffinityInfo.Deserialize(value["AvailableZoneAffinityInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_availableZoneAffinityInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1237,6 +1277,31 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
+    }
+
+    if (m_targetCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetCount, allocator);
+    }
+
+    if (m_associateEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableZoneAffinityInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableZoneAffinityInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_availableZoneAffinityInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2136,5 +2201,53 @@ void LoadBalancer::SetExclusive(const uint64_t& _exclusive)
 bool LoadBalancer::ExclusiveHasBeenSet() const
 {
     return m_exclusiveHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetTargetCount() const
+{
+    return m_targetCount;
+}
+
+void LoadBalancer::SetTargetCount(const uint64_t& _targetCount)
+{
+    m_targetCount = _targetCount;
+    m_targetCountHasBeenSet = true;
+}
+
+bool LoadBalancer::TargetCountHasBeenSet() const
+{
+    return m_targetCountHasBeenSet;
+}
+
+string LoadBalancer::GetAssociateEndpoint() const
+{
+    return m_associateEndpoint;
+}
+
+void LoadBalancer::SetAssociateEndpoint(const string& _associateEndpoint)
+{
+    m_associateEndpoint = _associateEndpoint;
+    m_associateEndpointHasBeenSet = true;
+}
+
+bool LoadBalancer::AssociateEndpointHasBeenSet() const
+{
+    return m_associateEndpointHasBeenSet;
+}
+
+AvailableZoneAffinityInfo LoadBalancer::GetAvailableZoneAffinityInfo() const
+{
+    return m_availableZoneAffinityInfo;
+}
+
+void LoadBalancer::SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo)
+{
+    m_availableZoneAffinityInfo = _availableZoneAffinityInfo;
+    m_availableZoneAffinityInfoHasBeenSet = true;
+}
+
+bool LoadBalancer::AvailableZoneAffinityInfoHasBeenSet() const
+{
+    return m_availableZoneAffinityInfoHasBeenSet;
 }
 

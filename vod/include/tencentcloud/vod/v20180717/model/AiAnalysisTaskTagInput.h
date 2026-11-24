@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input type of intelligent tagging task
+                * Intelligent tag task input type.
                 */
                 class AiAnalysisTaskTagInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Intelligent video tagging template ID.
-                     * @return Definition Intelligent video tagging template ID.
+                     * 获取Video intelligent tag template ID.
+                     * @return Definition Video intelligent tag template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Intelligent video tagging template ID.
-                     * @param _definition Intelligent video tagging template ID.
+                     * 设置Video intelligent tag template ID.
+                     * @param _definition Video intelligent tag template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Intelligent video tagging template ID.
+                     * Video intelligent tag template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

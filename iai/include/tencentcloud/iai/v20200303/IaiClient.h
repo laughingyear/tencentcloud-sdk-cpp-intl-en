@@ -49,8 +49,6 @@
 #include <tencentcloud/iai/v20200303/model/DetectFaceAttributesResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectFaceSimilarityRequest.h>
 #include <tencentcloud/iai/v20200303/model/DetectFaceSimilarityResponse.h>
-#include <tencentcloud/iai/v20200303/model/DetectLiveFaceRequest.h>
-#include <tencentcloud/iai/v20200303/model/DetectLiveFaceResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateResponse.h>
 #include <tencentcloud/iai/v20200303/model/GetGroupInfoRequest.h>
@@ -134,9 +132,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectFaceSimilarityResponse> DetectFaceSimilarityOutcome;
                 typedef std::future<DetectFaceSimilarityOutcome> DetectFaceSimilarityOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectFaceSimilarityRequest&, DetectFaceSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceSimilarityAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectLiveFaceResponse> DetectLiveFaceOutcome;
-                typedef std::future<DetectLiveFaceOutcome> DetectLiveFaceOutcomeCallable;
-                typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceRequest&, DetectLiveFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectLiveFaceAccurateResponse> DetectLiveFaceAccurateOutcome;
                 typedef std::future<DetectLiveFaceAccurateOutcome> DetectLiveFaceAccurateOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceAccurateRequest&, DetectLiveFaceAccurateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAccurateAsyncHandler;
@@ -188,8 +183,7 @@ namespace TencentCloud
                 /**
                  *This API is used to perform facial feature localization (aka facial keypoint localization) on a given image and calculate 90 facial keypoints that make up the contour of the face, including eyebrows (8 points on the left and 8 on the right), eyes (8 points on the left and 8 on the right), nose (13 points), mouth (22 points), face contour (21 points), and eyeballs or pupils (2 points).
 
->     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
+>- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
                  * @param req AnalyzeFaceRequest
                  * @return AnalyzeFaceOutcome
                  */
@@ -213,8 +207,7 @@ If you need to judge "whether the person in the image is someone specified" in s
 
                 /**
                  *This API is used to copy a person in a group to another group (without copying the description). One person can exist in up to 100 groups at the same time.
->     
-- Note: in the case that the version of the algorithm model was 2.0 when the person was created, the copy operation will fail if the target group is not of algorithm model 2.0.
+>- Note: in the case that the version of the algorithm model was 2.0 when the person was created, the copy operation will fail if the target group is not of algorithm model 2.0.
                  * @param req CopyPersonRequest
                  * @return CopyPersonOutcome
                  */
@@ -223,10 +216,10 @@ If you need to judge "whether the person in the image is someone specified" in s
                 CopyPersonOutcomeCallable CopyPersonCallable(const Model::CopyPersonRequest& request);
 
                 /**
-                 *This API is used to add a set of face images to a person. One person can have up to 5 images. If a person exists in multiple groups, the images will be added to all those groups for the person.
+                 *Add a group of human face images to a person. A person allows up to 5 images. If the person exists across multiple person libraries, the images will be added to the person in ALL libraries.
 
 >     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
+- For the signature method in public parameters, please use the V3 version. In other words, set the SignatureMethod parameter to TC3-HMAC-SHA256.
                  * @param req CreateFaceRequest
                  * @return CreateFaceOutcome
                  */
@@ -249,10 +242,10 @@ The maximum number of faces that can be included in one group varies by algorith
                 CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
 
                 /**
-                 *This API is used to create a person and add face, name, gender, and other related information.
+                 *Create a person and add a human face, name, sex, and other information related to the person.
 
 >     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
+- Please use the V3 version of the signature method in public parameters. In other words, set the SignatureMethod parameter to TC3-HMAC-SHA256.
                  * @param req CreatePersonRequest
                  * @return CreatePersonOutcome
                  */
@@ -311,8 +304,7 @@ The face quality information is mainly used to evaluate the quality of the input
 
 4. Face fusion: this is to ensure the quality of the uploaded face images to improve the fusion effect.
 
->     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
+>- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
                  * @param req DetectFaceRequest
                  * @return DetectFaceOutcome
                  */
@@ -350,8 +342,12 @@ Use this API for corresponding face detection and attribute analysis.
                 DetectFaceAttributesOutcomeCallable DetectFaceAttributesCallable(const Model::DetectFaceAttributesRequest& request);
 
                 /**
-                 *Compare the faces in the two pictures for similarity and return the face similarity score. If you need to determine "whether this person is someone", that is, to verify whether the person in a picture is someone with a known identity, such as a common face login scenario, it is recommended to use [VerifyFace] (https://www.tencentcloud.com/document/product/1059/36972) or [VerifyPerson] (https://www.tencentcloud.com/document/product/1059/36971) inferface. 
-Please use the V3 version for the signature method in the public parameters, that is, configure the SignatureMethod parameter to TC3-HMAC-SHA256
+                 *This API is used to perform similarity comparison between human faces in two images and return the facial similarity score.
+
+If you need to judge whether a person is a specific individual, that is, to verify whether a person in an image is a known identity, for example in common log in scenarios such as face verification, we recommend using the face verification (https://www.tencentcloud.com/document/product/867/44983?from_cn_redirect=1) or person verification (https://www.tencentcloud.com/document/product/867/44982?from_cn_redirect=1) api.
+
+>     
+- Please use the V3 version for the signature method in the public parameters. In other words, set the SignatureMethod parameter to TC3-HMAC-SHA256.
                  * @param req DetectFaceSimilarityRequest
                  * @return DetectFaceSimilarityOutcome
                  */
@@ -360,31 +356,11 @@ Please use the V3 version for the signature method in the public parameters, tha
                 DetectFaceSimilarityOutcomeCallable DetectFaceSimilarityCallable(const Model::DetectFaceSimilarityRequest& request);
 
                 /**
-                 *This API is used to detect the liveness of a face in a static image uploaded by a user. Compared with dynamic liveness detection, static liveness detection does not require moving lips, shaking head, or blinking for recognition.
+                 *This API is used to perform anti-rephotograph liveness detection on user-uploaded static images to determine whether they are rephotographs.
 
-Image-based liveness detection is suitable for scenarios where the image is a selfie or the requirement for attack defense is not high. If you have a higher security requirement for liveness detection, please use [FaceID](https://intl.cloud.tencent.com/product/faceid?from_cn_redirect=1).
+Compared with existing static liveness detection services, the high-precision version enhances defense against attacks such as HD screens, cropped paper, and 3D masks while maintaining a high real person pass rate. Its attack interception rate is about 4-5 times that of similar types of products in the industry. It also supports face verification in different use cases, meets image-based liveness detection requirements for various scenarios on mobile and PC, and is applicable to different liveness detection applications across industries.
 
->     
-- The aspect ratio of the image should be close to 3:4 (width:height); otherwise, the score returned for the image will be meaningless. This API is suitable for selfie scenarios, and the score returned in other scenarios will be meaningless.
-
->
-- During the process, please directly face the camera and keep a suitable distance to completely display your face in the recognition frame. During the recognition, keep your device still and fully show your face. You are advised to perform the detection in an environment with appropriate light and without filters.
-
->     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the parameter `SignatureMethod` to `TC3-HMAC-SHA256`.
-                 * @param req DetectLiveFaceRequest
-                 * @return DetectLiveFaceOutcome
-                 */
-                DetectLiveFaceOutcome DetectLiveFace(const Model::DetectLiveFaceRequest &request);
-                void DetectLiveFaceAsync(const Model::DetectLiveFaceRequest& request, const DetectLiveFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectLiveFaceOutcomeCallable DetectLiveFaceCallable(const Model::DetectLiveFaceRequest& request);
-
-                /**
-                 *This API is used to detect the liveness of faces in images uploaded by users and determine whether these images are photographed.
-
-Compared with normal Image-based Liveness Detection services, this API enhances the defense capability against attacks from HD screens, printed photos, and 3D masks, as well as improves attack blocking four to five times the competing products, while maintaining high accuracy. It also supports face verification in different use cases, and satisfies the image-based liveness detection needs on mobile or PCs, making it ideal for liveness detection applications in various industries.
-
-Pay-as-you-go billing officially started for this API at 00:00, August 1, 2022. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/867/17640?from_cn_redirect=1).
+The face static liveness detection (high-precision version) API officially starts billing from 00:00 on August 1, 2022, using the postpaid pay-as-you-go billing mode. For details, see Billing Overview (https://www.tencentcloud.com/document/product/867/17640?from_cn_redirect=1).
                  * @param req DetectLiveFaceAccurateRequest
                  * @return DetectLiveFaceAccurateOutcome
                  */
@@ -465,22 +441,24 @@ Pay-as-you-go billing officially started for this API at 00:00, August 1, 2022. 
                 ModifyPersonGroupInfoOutcomeCallable ModifyPersonGroupInfoCallable(const Model::ModifyPersonGroupInfoRequest& request);
 
                 /**
-                 *This API is used to recognize top K persons in one or more groups who are similar to the person in a given image and rank the similarity in descending order.
+                 *This API is used to recognize the top K most similar persons in one or more person libraries for a face image to be recognized, and sort the recognition results by similarity in descending order.
 
-Up to 10 faces in an image can be recognized at a time, and up to 100 groups can be searched in at a time.
+This API is used to recognize up to 10 human faces in an image at a time and search across 100 person libraries at a time.
 
-The maximum number of faces in groups that can be searched for at a time is subject to the algorithm model version (`FaceModelVersion`) of groups, which is 1 million for v2.0 or 3 million for v3.0.
+The total number of human faces in a person library for a single search is related to the algorithm model version of the person library. For a person library with algorithm model version 2.0, the total number of human faces in a single search should not exceed 1 million. For a person library with algorithm model version 3.0, the total number of human faces in a single search should not exceed 3 million.
 
-This API recognizes each face image of a person as an independent one. By contrast, the [SearchPersons](https://intl.cloud.tencent.com/document/product/867/44992?from_cn_redirect=1) and [SearchPersonsReturnsByGroup](https://intl.cloud.tencent.com/document/product/867/44991?from_cn_redirect=1) APIs fuse the features of all face images of a person; for example, if a person has 4 face images, they will fuse the features of the 4 face images and generate the summarized facial features of the person to make the search more accurate.
+Unlike the [Person search](https://www.tencentcloud.com/document/product/867/44992?from_cn_redirect=1) and [Person search by database return](https://www.tencentcloud.com/document/product/867/44991?from_cn_redirect=1) APIs, this API verifies each Face under a Person as a separate individual. The Person search and Person search by database return APIs perform fusion feature processing on all faces under a Person. For example, if a Person has 4 faces, the [Person search](https://www.tencentcloud.com/document/product/867/44992?from_cn_redirect=1) and [Person search by database return](https://www.tencentcloud.com/document/product/867/44991?from_cn_redirect=1) APIs will fuse the features of the 4 faces to generate the characteristics of this Person, making the search more accurate.
 
 
-This API should be used together with [Group Management APIs](https://intl.cloud.tencent.com/document/product/867/45015?from_cn_redirect=1).
+This interface should be used in conjunction with the personnel database management API (https://www.tencentcloud.com/document/product/867/45015?from_cn_redirect=1).
+
+**Note:** If a person library has not been called for over 1 year, the platform will delete its resources to ensure user information security.
 
 >     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the parameter `SignatureMethod` to `TC3-HMAC-SHA256`.
+- Use the V3 signature method in public parameters. In other words, set the SignatureMethod parameter to TC3-HMAC-SHA256.
 
 >     
-- You cannot search for groups using different algorithm model versions (`FaceModelVersion`) at a time.
+-Cannot search person libraries of different algorithm model versions (FaceModelVersion) at the same time.
                  * @param req SearchFacesRequest
                  * @return SearchFacesOutcome
                  */
@@ -513,17 +491,17 @@ This API should be used together with [Group Management APIs](https://intl.cloud
                 SearchFacesReturnsByGroupOutcomeCallable SearchFacesReturnsByGroupCallable(const Model::SearchFacesReturnsByGroupRequest& request);
 
                 /**
-                 *This API is used to recognize top K persons in one or more groups who are similar to the person in a given image and rank the similarity in a descending order.
+                 *This API is used to recognize the top K most similar persons in one or more person libraries for a face image to be recognized, and sort them by similarity in descending order.
 
-Up to 10 faces in an image can be recognized at a time, and up to 100 groups can be searched in at a time.
+This API is used to recognize up to 10 human faces in an image at a time and search across 100 person libraries at a time.
 
-The maximum number of faces in groups that can be searched for at a time is subject to the group's algorithm model version (`FaceModelVersion`), which is 1 million for v2.0 or 3 million for v3.0.
+The total number of faces in a person library for a single search is related to the algorithm model version of the person library. For a person library with algorithm model version 2.0, the total number of faces in a single search should not exceed 1 million. For a person library with algorithm model version 3.0, the total number of faces in a single search should not exceed 3 million.
 
-This API fuses the features of all face images of a person; for example, if a person has 4 face images, it will fuse the features of the 4 face images and generate the summarized facial features of the person to make the person search (i.e., judging whether the face image to be recognized is of a specified person) more accurate. By contrast, the [SearchFaces](https://intl.cloud.tencent.com/document/product/867/44994?from_cn_redirect=1) and [SearchFacesReturnsByGroup](https://intl.cloud.tencent.com/document/product/867/44993?from_cn_redirect=1) APIs recognize each face image of a person as an independent one for search.
-
+This API is used to perform fusion feature processing on all faces under a Person. For example, if a Person has 4 faces, this API will fuse the features of the 4 faces to generate the corresponding features of this Person, making Person search (confirming that the Face image to be identified belongs to a certain Person) more accurate. In contrast, [Face search](https://www.tencentcloud.com/document/product/867/44994?from_cn_redirect=1) and [Face search by group return API](https://www.tencentcloud.com/document/product/867/44993?from_cn_redirect=1) search for each Face under the Person as a separate individual.
+**Note:** If a person library has no calls for more than 1 year, the platform will delete its resources to ensure User Information Security.
 >     
-- Please use the signature algorithm v3 to calculate the signature in the common parameters, that is, set the `SignatureMethod` parameter to `TC3-HMAC-SHA256`.
-- This feature is available only to groups whose algorithm model version (`FaceModelVersion`) is 3.0.
+- Use the V3 signature method in public parameters. In other words, set the SignatureMethod parameter to TC3-HMAC-SHA256.
+-Only person libraries with algorithm model version (FaceModelVersion) 3.0 are supported.
                  * @param req SearchPersonsRequest
                  * @return SearchPersonsOutcome
                  */

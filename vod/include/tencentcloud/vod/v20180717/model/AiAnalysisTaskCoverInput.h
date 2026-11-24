@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input type of intelligent categorization task
+                * Intelligent classification task input type.
                 */
                 class AiAnalysisTaskCoverInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Intelligent video cover generating template ID.
-                     * @return Definition Intelligent video cover generating template ID.
+                     * 获取Video intelligent cover template ID.
+                     * @return Definition Video intelligent cover template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Intelligent video cover generating template ID.
-                     * @param _definition Intelligent video cover generating template ID.
+                     * 设置Video intelligent cover template ID.
+                     * @param _definition Video intelligent cover template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Intelligent video cover generating template ID.
+                     * Video intelligent cover template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

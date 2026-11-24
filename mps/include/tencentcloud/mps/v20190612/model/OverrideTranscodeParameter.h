@@ -41,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Custom specification parameters for video processing, which are used to override corresponding parameters in templates.
+                * Specification parameters for custom transcoding. Used to override the corresponding parameter values in the template.
                 */
                 class OverrideTranscodeParameter : public AbstractModel
                 {
@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, and m4a; mp3, flac, ogg, and m4a are formats of audio files.
-                     * @return Container Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, and m4a; mp3, flac, ogg, and m4a are formats of audio files.
+                     * 获取Muxing format. Available values: mp4, flv, hls, mp3, flac, ogg, and m4a. Among them, mp3, flac, ogg, and m4a are for audio-only files.
+                     * @return Container Muxing format. Available values: mp4, flv, hls, mp3, flac, ogg, and m4a. Among them, mp3, flac, ogg, and m4a are for audio-only files.
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, and m4a; mp3, flac, ogg, and m4a are formats of audio files.
-                     * @param _container Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, and m4a; mp3, flac, ogg, and m4a are formats of audio files.
+                     * 设置Muxing format. Available values: mp4, flv, hls, mp3, flac, ogg, and m4a. Among them, mp3, flac, ogg, and m4a are for audio-only files.
+                     * @param _container Muxing format. Available values: mp4, flv, hls, mp3, flac, ogg, and m4a. Among them, mp3, flac, ogg, and m4a are for audio-only files.
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -74,23 +74,23 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @return RemoveVideo Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 获取Indicates whether to remove video data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
+                     * @return RemoveVideo Indicates whether to remove video data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      * 
                      */
                     uint64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @param _removeVideo Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 设置Indicates whether to remove video data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
+                     * @param _removeVideo Indicates whether to remove video data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      * 
                      */
                     void SetRemoveVideo(const uint64_t& _removeVideo);
@@ -103,23 +103,23 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @return RemoveAudio Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 获取Indicates whether to remove audio data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
+                     * @return RemoveAudio Indicates whether to remove audio data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      * 
                      */
                     uint64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @param _removeAudio Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 设置Indicates whether to remove audio data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
+                     * @param _removeAudio Indicates whether to remove audio data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      * 
                      */
                     void SetRemoveAudio(const uint64_t& _removeAudio);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取Video stream configuration parameter.
-                     * @return VideoTemplate Video stream configuration parameter.
+                     * 获取Video stream configuration parameters.
+                     * @return VideoTemplate Video stream configuration parameters.
                      * 
                      */
                     VideoTemplateInfoForUpdate GetVideoTemplate() const;
 
                     /**
-                     * 设置Video stream configuration parameter.
-                     * @param _videoTemplate Video stream configuration parameter.
+                     * 设置Video stream configuration parameters.
+                     * @param _videoTemplate Video stream configuration parameters.
                      * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfoForUpdate& _videoTemplate);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool VideoTemplateHasBeenSet() const;
 
                     /**
-                     * 获取Audio stream configuration parameter.
-                     * @return AudioTemplate Audio stream configuration parameter.
+                     * 获取Audio stream configuration parameters.
+                     * @return AudioTemplate Audio stream configuration parameters.
                      * 
                      */
                     AudioTemplateInfoForUpdate GetAudioTemplate() const;
 
                     /**
-                     * 设置Audio stream configuration parameter.
-                     * @param _audioTemplate Audio stream configuration parameter.
+                     * 设置Audio stream configuration parameters.
+                     * @param _audioTemplate Audio stream configuration parameters.
                      * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfoForUpdate& _audioTemplate);
@@ -174,19 +174,15 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取The TSC transcoding parameters.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TEHDConfig The TSC transcoding parameters.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Top Speed Codec transcoding parameters.
+                     * @return TEHDConfig Top Speed Codec transcoding parameters.
                      * 
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
-                     * 设置The TSC transcoding parameters.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _tEHDConfig The TSC transcoding parameters.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Top Speed Codec transcoding parameters.
+                     * @param _tEHDConfig Top Speed Codec transcoding parameters.
                      * 
                      */
                     void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
@@ -199,19 +195,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TEHDConfigHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle settings.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return SubtitleTemplate The subtitle settings.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Subtitle stream configuration parameters.
+                     * @return SubtitleTemplate Subtitle stream configuration parameters.
                      * 
                      */
                     SubtitleTemplate GetSubtitleTemplate() const;
 
                     /**
-                     * 设置The subtitle settings.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _subtitleTemplate The subtitle settings.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Subtitle stream configuration parameters.
+                     * @param _subtitleTemplate Subtitle stream configuration parameters.
                      * 
                      */
                     void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
@@ -224,19 +216,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SubtitleTemplateHasBeenSet() const;
 
                     /**
-                     * 获取The information of the external audio track to add.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AddonAudioStream The information of the external audio track to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取External audio track parameter.
+                     * @return AddonAudioStream External audio track parameter.
                      * 
                      */
                     std::vector<MediaInputInfo> GetAddonAudioStream() const;
 
                     /**
-                     * 设置The information of the external audio track to add.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _addonAudioStream The information of the external audio track to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置External audio track parameter.
+                     * @param _addonAudioStream External audio track parameter.
                      * 
                      */
                     void SetAddonAudioStream(const std::vector<MediaInputInfo>& _addonAudioStream);
@@ -249,19 +237,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool AddonAudioStreamHasBeenSet() const;
 
                     /**
-                     * 获取An extended field for transcoding.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return StdExtInfo An extended field for transcoding.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Transcoding extension field.
+                     * @return StdExtInfo Transcoding extension field.
                      * 
                      */
                     std::string GetStdExtInfo() const;
 
                     /**
-                     * 设置An extended field for transcoding.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _stdExtInfo An extended field for transcoding.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Transcoding extension field.
+                     * @param _stdExtInfo Transcoding extension field.
                      * 
                      */
                     void SetStdExtInfo(const std::string& _stdExtInfo);
@@ -274,19 +258,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool StdExtInfoHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle file to add.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return AddOnSubtitles The subtitle file to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Subtitle file to be inserted.
+                     * @return AddOnSubtitles Subtitle file to be inserted.
                      * 
                      */
                     std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
 
                     /**
-                     * 设置The subtitle file to add.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _addOnSubtitles The subtitle file to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Subtitle file to be inserted.
+                     * @param _addOnSubtitles Subtitle file to be inserted.
                      * 
                      */
                     void SetAddOnSubtitles(const std::vector<AddOnSubtitle>& _addOnSubtitles);
@@ -301,70 +281,65 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, and m4a; mp3, flac, ogg, and m4a are formats of audio files.
+                     * Muxing format. Available values: mp4, flv, hls, mp3, flac, ogg, and m4a. Among them, mp3, flac, ogg, and m4a are for audio-only files.
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * Indicates whether to remove video data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      */
                     uint64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * Indicates whether to remove audio data. Parameter value:
+<li>0: retention</li>
+<li>1: Remove.</li>
                      */
                     uint64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * Video stream configuration parameter.
+                     * Video stream configuration parameters.
                      */
                     VideoTemplateInfoForUpdate m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
-                     * Audio stream configuration parameter.
+                     * Audio stream configuration parameters.
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * The TSC transcoding parameters.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Top Speed Codec transcoding parameters.
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
 
                     /**
-                     * The subtitle settings.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Subtitle stream configuration parameters.
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;
 
                     /**
-                     * The information of the external audio track to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * External audio track parameter.
                      */
                     std::vector<MediaInputInfo> m_addonAudioStream;
                     bool m_addonAudioStreamHasBeenSet;
 
                     /**
-                     * An extended field for transcoding.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Transcoding extension field.
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;
 
                     /**
-                     * The subtitle file to add.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Subtitle file to be inserted.
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
                     bool m_addOnSubtitlesHasBeenSet;

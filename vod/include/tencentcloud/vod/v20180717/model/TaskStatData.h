@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video processing task statistics.
+                * Statistical data of video processing tasks.
                 */
                 class TaskStatData : public AbstractModel
                 {
@@ -49,71 +49,83 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task Type.
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing: Video editing</li>
-< li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li>
-<li> ContentRecognition: Content Recognize</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
+                     * 获取Task type.
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: watermark removal</li>
+<li> ExtractTraceWatermark: extract watermark.</li>
 <li> AddTraceWatermark: Add watermark</li>
-<li> RebuildMedia : Audio and video quality reborn</li>
-<li> QualityInspect: Media quality inspection</li>
-<li>Transcode: transcoding, including normal transcoding, ultra-fast high-definition and video editing (not recommended)</li>
-<li>Transcode: li>
-                     * @return TaskType Task Type.
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing: Video editing</li>
-< li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li>
-<li> ContentRecognition: Content Recognize</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommended)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+                     * @return TaskType Task type.
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: watermark removal</li>
+<li> ExtractTraceWatermark: extract watermark.</li>
 <li> AddTraceWatermark: Add watermark</li>
-<li> RebuildMedia : Audio and video quality reborn</li>
-<li> QualityInspect: Media quality inspection</li>
-<li>Transcode: transcoding, including normal transcoding, ultra-fast high-definition and video editing (not recommended)</li>
-<li>Transcode: li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommended)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置Task Type.
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing: Video editing</li>
-< li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li>
-<li> ContentRecognition: Content Recognize</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
+                     * 设置Task type.
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: watermark removal</li>
+<li> ExtractTraceWatermark: extract watermark.</li>
 <li> AddTraceWatermark: Add watermark</li>
-<li> RebuildMedia : Audio and video quality reborn</li>
-<li> QualityInspect: Media quality inspection</li>
-<li>Transcode: transcoding, including normal transcoding, ultra-fast high-definition and video editing (not recommended)</li>
-<li>Transcode: li>
-                     * @param _taskType Task Type.
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing: Video editing</li>
-< li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li>
-<li> ContentRecognition: Content Recognize</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommended)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
+                     * @param _taskType Task type.
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: watermark removal</li>
+<li> ExtractTraceWatermark: extract watermark.</li>
 <li> AddTraceWatermark: Add watermark</li>
-<li> RebuildMedia : Audio and video quality reborn</li>
-<li> QualityInspect: Media quality inspection</li>
-<li>Transcode: transcoding, including normal transcoding, ultra-fast high-definition and video editing (not recommended)</li>
-<li>Transcode: li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommended)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -126,15 +138,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取Task statistics overview (usage unit: second).
-                     * @return Summary Task statistics overview (usage unit: second).
+                     * 获取Statistical data overview of the number of tasks. Amount unit: seconds.
+                     * @return Summary Statistical data overview of the number of tasks. Amount unit: seconds.
                      * 
                      */
                     std::vector<TaskStatDataItem> GetSummary() const;
 
                     /**
-                     * 设置Task statistics overview (usage unit: second).
-                     * @param _summary Task statistics overview (usage unit: second).
+                     * 设置Statistical data overview of the number of tasks. Amount unit: seconds.
+                     * @param _summary Statistical data overview of the number of tasks. Amount unit: seconds.
                      * 
                      */
                     void SetSummary(const std::vector<TaskStatDataItem>& _summary);
@@ -147,223 +159,267 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取The usage statistics for different task types.
-Transcoding:
-<li>`Remuxing`</li>
-<li>`Audio` (audio transcoding)</li>
-<li>`Standard.H264.SD`</li>
-<li>`Standard.H264.HD`</li>
-<li>`Standard.H264.FHD`</li>
-<li>`Standard.H264.2K`</li>
-<li>`Standard.H264.4K`</li>
-<li>`Standard.H265.SD`</li>
-<li>`Standard.H265.HD`</li>
-<li>`Standard.H265.FHD`</li>
-<li>`Standard.H265.2K`</li>
-<li>`Standard.H265.4K`</li>
-<li>`TESHD-10.H264.SD` (H.264 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.HD` (H.264 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.2K` (H.264 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.4K` (H.264 4K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.SD` (H.265 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.HD` (H.265 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.2K` (H.265 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.4K` (H.265 4K Top Speed Codec transcoding)</li>
-<li>`Edit.Audio`</li>
-<li>`Edit.H264.SD` (H.264 SD video editing)</li>
-<li>`Edit.H264.HD` (H.264 HD video editing)</li>
-<li>`Edit.H264.FHD` (H.264 FHD video editing)</li>
-<li>`Edit.H264.2K` (H.264 2K video editing)</li>
-<li>`Edit.H264.4K` (H.264 4K video editing)</li>
-<li>`Edit.H265.SD` (H.265 SD video editing)</li>
-<li>`Edit.H265.HD` (H.265 HD video editing)</li>
-<li>`Edit.H265.FHD` (H.265 FHD video editing)</li>
-<li>`Edit.H265.2K` (H.265 2K video editing)</li>
-<li>`Edit.H265.4K` (H.265 4K video editing)</li>
-<li>`Edit.TESHD-10.H264.SD` (H.264 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.HD` (H.264 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.2K` (H.264 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.4K` (H.264 4K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.SD` (H.265 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.HD` (H.265 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.2K` (H.265 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.4K` (H.265 4K Top Speed Codec video editing)</li>
-The watermark removal/remaster specifications. Valid values:
-<li>`480P` (short side ≤ 480 px)</li>
-<li>`720P` (short side ≤ 720 px)</li>
-<li>`1080P` (short side ≤ 1080 px)</li>
-<li>`2K` (short side ≤ 1440 px)</li>
-<li>`4K` (short side ≤ 2160 px)</li>
-<li>`8K` (short side ≤ 4320 px)</li>
-<li>`audio`</li>
-                     * @return Details The usage statistics for different task types.
-Transcoding:
-<li>`Remuxing`</li>
-<li>`Audio` (audio transcoding)</li>
-<li>`Standard.H264.SD`</li>
-<li>`Standard.H264.HD`</li>
-<li>`Standard.H264.FHD`</li>
-<li>`Standard.H264.2K`</li>
-<li>`Standard.H264.4K`</li>
-<li>`Standard.H265.SD`</li>
-<li>`Standard.H265.HD`</li>
-<li>`Standard.H265.FHD`</li>
-<li>`Standard.H265.2K`</li>
-<li>`Standard.H265.4K`</li>
-<li>`TESHD-10.H264.SD` (H.264 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.HD` (H.264 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.2K` (H.264 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.4K` (H.264 4K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.SD` (H.265 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.HD` (H.265 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.2K` (H.265 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.4K` (H.265 4K Top Speed Codec transcoding)</li>
-<li>`Edit.Audio`</li>
-<li>`Edit.H264.SD` (H.264 SD video editing)</li>
-<li>`Edit.H264.HD` (H.264 HD video editing)</li>
-<li>`Edit.H264.FHD` (H.264 FHD video editing)</li>
-<li>`Edit.H264.2K` (H.264 2K video editing)</li>
-<li>`Edit.H264.4K` (H.264 4K video editing)</li>
-<li>`Edit.H265.SD` (H.265 SD video editing)</li>
-<li>`Edit.H265.HD` (H.265 HD video editing)</li>
-<li>`Edit.H265.FHD` (H.265 FHD video editing)</li>
-<li>`Edit.H265.2K` (H.265 2K video editing)</li>
-<li>`Edit.H265.4K` (H.265 4K video editing)</li>
-<li>`Edit.TESHD-10.H264.SD` (H.264 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.HD` (H.264 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.2K` (H.264 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.4K` (H.264 4K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.SD` (H.265 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.HD` (H.265 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.2K` (H.265 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.4K` (H.265 4K Top Speed Codec video editing)</li>
-The watermark removal/remaster specifications. Valid values:
-<li>`480P` (short side ≤ 480 px)</li>
-<li>`720P` (short side ≤ 720 px)</li>
-<li>`1080P` (short side ≤ 1080 px)</li>
-<li>`2K` (short side ≤ 1440 px)</li>
-<li>`4K` (short side ≤ 2160 px)</li>
-<li>`8K` (short side ≤ 4320 px)</li>
-<li>`audio`</li>
+                     * 获取Details of task statistics data for varying specifications.
+Transcoding specification:
+<li>Remuxing: transmuxing</li>
+<li>Audio: audio transcoding.</li>
+<li>Standard.H264.SD: H.264 encoding for SD transcoding</li>
+<li>Standard.H264.HD: H.264 encoding for high-definition transcoding</li>
+<li>Standard.H264.FHD: H.264 encoding for full high-definition transcoding</li>
+<li>Standard.H264.2K: H.264 encoding 2K transcode.</li>
+<li>Standard.H264.4K: H.264 encoding 4K transcode</li>
+<li>Standard.H265.SD: H.265 encoding mode SD transcoding</li>
+<li>Standard.H265.HD: H.265 encoding high-definition transcoding.</li>
+<li>Standard.H265.FHD: H.265 encoding for full high-definition transcoding</li>
+<li>Standard.H265.2K: H.265 encoding 2K transcode.</li>
+<li>Standard.H265.4K: H.265 encoding 4K transcode</li>
+<li>TESHD-10.H264.SD: H.264 encoding SD TSC transcoding</li>
+<li>TESHD-10.H264.HD: H.264 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H264.FHD: H.264 full HD TSC transcoding</li>
+<li>TESHD-10.H264.2K: H.264 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H264.4K: H.264 encoding 4K TSC transcoding</li>
+<li>TESHD-10.H265.SD: H.265 encoding SD TSC transcoding</li>
+<li>TESHD-10.H265.HD: H.265 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H265.FHD: H.265 encoding full HD TSC transcoding</li>
+<li>TESHD-10.H265.2K: H.265 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H265.4K: H.265 encoding 4K TSC transcoding</li>
+<li>Edit.Audio: audio editing</li>
+<li>Edit.H264.SD: H.264 encoding for SD video editing</li>
+<li>Edit.H264.HD: H.264 encoding for high-definition video editing</li>
+<li>Edit.H264.FHD: Full HD video editing with H.264 encoding</li>
+<li>Edit.H264.2K: H.264 encoding 2K video editing</li>
+<li>Edit.H264.4K: H.264 encoding for 4K video editing</li>
+<li>Edit.H265.SD: H.265 encoding SD video editing</li>
+<li>Edit.H265.HD: H.265 encoding for high-definition video editing</li>
+<li>Edit.H265.FHD: Full HD video editing with H.265 encoding</li>
+<li>Edit.H265.2K: H.265 encoding 2K video editing</li>
+<li>Edit.H265.4K: H.265 encoding 4K video editing</li>
+<li>Edit.TESHD-10.H264.SD: H.264 encoding for SD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.HD: H.264 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.FHD: H.264 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.2K: H.264 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.4K: H.264 encoding 4K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.SD: H.265 encoding for standard definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.HD: H.265 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.FHD: H.265 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.2K: H.265 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.4K: H.265 encoding 4K extremely fast high-definition video editing</li>
+Watermark removal and audio and video quality revival specifications:
+<li>480P: short side ≤ 480px</li>
+<li>720P: Short side ≤ 720px</li>
+<li>1080P: Short side ≤ 1080px</li>
+<li>2K: Short side ≤ 1440px</li>
+<li>4K: short side ≤ 2160px</li>
+<li>8K: short side ≤ 4320px</li>
+<li>Audio: audio.</li>
+Real-time transcoding specification:
+<li>JITTranscoding.H264.SD: H.264 encoding standard definition JIT transcoding.</li>
+<li>JITTranscoding.H264.HD: H.264 encoding high-definition JIT transcoding</li>
+<li>JITTranscoding.H264.FHD: H.264 encoding full HD JIT transcoding</li>
+<li>JITTranscoding.H264.2K: H.264 encoding 2K JIT transcoding</li>
+<li>JITTranscoding.Audio: JIT audio transcoding</li>
+<li>JITTranscoding.Copy: remux JIT transcoding</li>
+Video screenshot specification:
+<li>SnapshotByTimeOffset: time point screenshot.</li>
+<li>SampleSnapshot: sampled screenshot</li>
+<li>ImageSprite: sprite.</li>
+                     * @return Details Details of task statistics data for varying specifications.
+Transcoding specification:
+<li>Remuxing: transmuxing</li>
+<li>Audio: audio transcoding.</li>
+<li>Standard.H264.SD: H.264 encoding for SD transcoding</li>
+<li>Standard.H264.HD: H.264 encoding for high-definition transcoding</li>
+<li>Standard.H264.FHD: H.264 encoding for full high-definition transcoding</li>
+<li>Standard.H264.2K: H.264 encoding 2K transcode.</li>
+<li>Standard.H264.4K: H.264 encoding 4K transcode</li>
+<li>Standard.H265.SD: H.265 encoding mode SD transcoding</li>
+<li>Standard.H265.HD: H.265 encoding high-definition transcoding.</li>
+<li>Standard.H265.FHD: H.265 encoding for full high-definition transcoding</li>
+<li>Standard.H265.2K: H.265 encoding 2K transcode.</li>
+<li>Standard.H265.4K: H.265 encoding 4K transcode</li>
+<li>TESHD-10.H264.SD: H.264 encoding SD TSC transcoding</li>
+<li>TESHD-10.H264.HD: H.264 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H264.FHD: H.264 full HD TSC transcoding</li>
+<li>TESHD-10.H264.2K: H.264 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H264.4K: H.264 encoding 4K TSC transcoding</li>
+<li>TESHD-10.H265.SD: H.265 encoding SD TSC transcoding</li>
+<li>TESHD-10.H265.HD: H.265 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H265.FHD: H.265 encoding full HD TSC transcoding</li>
+<li>TESHD-10.H265.2K: H.265 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H265.4K: H.265 encoding 4K TSC transcoding</li>
+<li>Edit.Audio: audio editing</li>
+<li>Edit.H264.SD: H.264 encoding for SD video editing</li>
+<li>Edit.H264.HD: H.264 encoding for high-definition video editing</li>
+<li>Edit.H264.FHD: Full HD video editing with H.264 encoding</li>
+<li>Edit.H264.2K: H.264 encoding 2K video editing</li>
+<li>Edit.H264.4K: H.264 encoding for 4K video editing</li>
+<li>Edit.H265.SD: H.265 encoding SD video editing</li>
+<li>Edit.H265.HD: H.265 encoding for high-definition video editing</li>
+<li>Edit.H265.FHD: Full HD video editing with H.265 encoding</li>
+<li>Edit.H265.2K: H.265 encoding 2K video editing</li>
+<li>Edit.H265.4K: H.265 encoding 4K video editing</li>
+<li>Edit.TESHD-10.H264.SD: H.264 encoding for SD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.HD: H.264 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.FHD: H.264 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.2K: H.264 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.4K: H.264 encoding 4K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.SD: H.265 encoding for standard definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.HD: H.265 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.FHD: H.265 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.2K: H.265 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.4K: H.265 encoding 4K extremely fast high-definition video editing</li>
+Watermark removal and audio and video quality revival specifications:
+<li>480P: short side ≤ 480px</li>
+<li>720P: Short side ≤ 720px</li>
+<li>1080P: Short side ≤ 1080px</li>
+<li>2K: Short side ≤ 1440px</li>
+<li>4K: short side ≤ 2160px</li>
+<li>8K: short side ≤ 4320px</li>
+<li>Audio: audio.</li>
+Real-time transcoding specification:
+<li>JITTranscoding.H264.SD: H.264 encoding standard definition JIT transcoding.</li>
+<li>JITTranscoding.H264.HD: H.264 encoding high-definition JIT transcoding</li>
+<li>JITTranscoding.H264.FHD: H.264 encoding full HD JIT transcoding</li>
+<li>JITTranscoding.H264.2K: H.264 encoding 2K JIT transcoding</li>
+<li>JITTranscoding.Audio: JIT audio transcoding</li>
+<li>JITTranscoding.Copy: remux JIT transcoding</li>
+Video screenshot specification:
+<li>SnapshotByTimeOffset: time point screenshot.</li>
+<li>SampleSnapshot: sampled screenshot</li>
+<li>ImageSprite: sprite.</li>
                      * 
                      */
                     std::vector<SpecificationDataItem> GetDetails() const;
 
                     /**
-                     * 设置The usage statistics for different task types.
-Transcoding:
-<li>`Remuxing`</li>
-<li>`Audio` (audio transcoding)</li>
-<li>`Standard.H264.SD`</li>
-<li>`Standard.H264.HD`</li>
-<li>`Standard.H264.FHD`</li>
-<li>`Standard.H264.2K`</li>
-<li>`Standard.H264.4K`</li>
-<li>`Standard.H265.SD`</li>
-<li>`Standard.H265.HD`</li>
-<li>`Standard.H265.FHD`</li>
-<li>`Standard.H265.2K`</li>
-<li>`Standard.H265.4K`</li>
-<li>`TESHD-10.H264.SD` (H.264 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.HD` (H.264 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.2K` (H.264 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.4K` (H.264 4K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.SD` (H.265 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.HD` (H.265 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.2K` (H.265 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.4K` (H.265 4K Top Speed Codec transcoding)</li>
-<li>`Edit.Audio`</li>
-<li>`Edit.H264.SD` (H.264 SD video editing)</li>
-<li>`Edit.H264.HD` (H.264 HD video editing)</li>
-<li>`Edit.H264.FHD` (H.264 FHD video editing)</li>
-<li>`Edit.H264.2K` (H.264 2K video editing)</li>
-<li>`Edit.H264.4K` (H.264 4K video editing)</li>
-<li>`Edit.H265.SD` (H.265 SD video editing)</li>
-<li>`Edit.H265.HD` (H.265 HD video editing)</li>
-<li>`Edit.H265.FHD` (H.265 FHD video editing)</li>
-<li>`Edit.H265.2K` (H.265 2K video editing)</li>
-<li>`Edit.H265.4K` (H.265 4K video editing)</li>
-<li>`Edit.TESHD-10.H264.SD` (H.264 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.HD` (H.264 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.2K` (H.264 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.4K` (H.264 4K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.SD` (H.265 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.HD` (H.265 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.2K` (H.265 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.4K` (H.265 4K Top Speed Codec video editing)</li>
-The watermark removal/remaster specifications. Valid values:
-<li>`480P` (short side ≤ 480 px)</li>
-<li>`720P` (short side ≤ 720 px)</li>
-<li>`1080P` (short side ≤ 1080 px)</li>
-<li>`2K` (short side ≤ 1440 px)</li>
-<li>`4K` (short side ≤ 2160 px)</li>
-<li>`8K` (short side ≤ 4320 px)</li>
-<li>`audio`</li>
-                     * @param _details The usage statistics for different task types.
-Transcoding:
-<li>`Remuxing`</li>
-<li>`Audio` (audio transcoding)</li>
-<li>`Standard.H264.SD`</li>
-<li>`Standard.H264.HD`</li>
-<li>`Standard.H264.FHD`</li>
-<li>`Standard.H264.2K`</li>
-<li>`Standard.H264.4K`</li>
-<li>`Standard.H265.SD`</li>
-<li>`Standard.H265.HD`</li>
-<li>`Standard.H265.FHD`</li>
-<li>`Standard.H265.2K`</li>
-<li>`Standard.H265.4K`</li>
-<li>`TESHD-10.H264.SD` (H.264 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.HD` (H.264 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.2K` (H.264 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.4K` (H.264 4K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.SD` (H.265 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.HD` (H.265 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.2K` (H.265 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.4K` (H.265 4K Top Speed Codec transcoding)</li>
-<li>`Edit.Audio`</li>
-<li>`Edit.H264.SD` (H.264 SD video editing)</li>
-<li>`Edit.H264.HD` (H.264 HD video editing)</li>
-<li>`Edit.H264.FHD` (H.264 FHD video editing)</li>
-<li>`Edit.H264.2K` (H.264 2K video editing)</li>
-<li>`Edit.H264.4K` (H.264 4K video editing)</li>
-<li>`Edit.H265.SD` (H.265 SD video editing)</li>
-<li>`Edit.H265.HD` (H.265 HD video editing)</li>
-<li>`Edit.H265.FHD` (H.265 FHD video editing)</li>
-<li>`Edit.H265.2K` (H.265 2K video editing)</li>
-<li>`Edit.H265.4K` (H.265 4K video editing)</li>
-<li>`Edit.TESHD-10.H264.SD` (H.264 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.HD` (H.264 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.2K` (H.264 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.4K` (H.264 4K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.SD` (H.265 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.HD` (H.265 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.2K` (H.265 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.4K` (H.265 4K Top Speed Codec video editing)</li>
-The watermark removal/remaster specifications. Valid values:
-<li>`480P` (short side ≤ 480 px)</li>
-<li>`720P` (short side ≤ 720 px)</li>
-<li>`1080P` (short side ≤ 1080 px)</li>
-<li>`2K` (short side ≤ 1440 px)</li>
-<li>`4K` (short side ≤ 2160 px)</li>
-<li>`8K` (short side ≤ 4320 px)</li>
-<li>`audio`</li>
+                     * 设置Details of task statistics data for varying specifications.
+Transcoding specification:
+<li>Remuxing: transmuxing</li>
+<li>Audio: audio transcoding.</li>
+<li>Standard.H264.SD: H.264 encoding for SD transcoding</li>
+<li>Standard.H264.HD: H.264 encoding for high-definition transcoding</li>
+<li>Standard.H264.FHD: H.264 encoding for full high-definition transcoding</li>
+<li>Standard.H264.2K: H.264 encoding 2K transcode.</li>
+<li>Standard.H264.4K: H.264 encoding 4K transcode</li>
+<li>Standard.H265.SD: H.265 encoding mode SD transcoding</li>
+<li>Standard.H265.HD: H.265 encoding high-definition transcoding.</li>
+<li>Standard.H265.FHD: H.265 encoding for full high-definition transcoding</li>
+<li>Standard.H265.2K: H.265 encoding 2K transcode.</li>
+<li>Standard.H265.4K: H.265 encoding 4K transcode</li>
+<li>TESHD-10.H264.SD: H.264 encoding SD TSC transcoding</li>
+<li>TESHD-10.H264.HD: H.264 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H264.FHD: H.264 full HD TSC transcoding</li>
+<li>TESHD-10.H264.2K: H.264 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H264.4K: H.264 encoding 4K TSC transcoding</li>
+<li>TESHD-10.H265.SD: H.265 encoding SD TSC transcoding</li>
+<li>TESHD-10.H265.HD: H.265 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H265.FHD: H.265 encoding full HD TSC transcoding</li>
+<li>TESHD-10.H265.2K: H.265 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H265.4K: H.265 encoding 4K TSC transcoding</li>
+<li>Edit.Audio: audio editing</li>
+<li>Edit.H264.SD: H.264 encoding for SD video editing</li>
+<li>Edit.H264.HD: H.264 encoding for high-definition video editing</li>
+<li>Edit.H264.FHD: Full HD video editing with H.264 encoding</li>
+<li>Edit.H264.2K: H.264 encoding 2K video editing</li>
+<li>Edit.H264.4K: H.264 encoding for 4K video editing</li>
+<li>Edit.H265.SD: H.265 encoding SD video editing</li>
+<li>Edit.H265.HD: H.265 encoding for high-definition video editing</li>
+<li>Edit.H265.FHD: Full HD video editing with H.265 encoding</li>
+<li>Edit.H265.2K: H.265 encoding 2K video editing</li>
+<li>Edit.H265.4K: H.265 encoding 4K video editing</li>
+<li>Edit.TESHD-10.H264.SD: H.264 encoding for SD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.HD: H.264 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.FHD: H.264 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.2K: H.264 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.4K: H.264 encoding 4K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.SD: H.265 encoding for standard definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.HD: H.265 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.FHD: H.265 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.2K: H.265 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.4K: H.265 encoding 4K extremely fast high-definition video editing</li>
+Watermark removal and audio and video quality revival specifications:
+<li>480P: short side ≤ 480px</li>
+<li>720P: Short side ≤ 720px</li>
+<li>1080P: Short side ≤ 1080px</li>
+<li>2K: Short side ≤ 1440px</li>
+<li>4K: short side ≤ 2160px</li>
+<li>8K: short side ≤ 4320px</li>
+<li>Audio: audio.</li>
+Real-time transcoding specification:
+<li>JITTranscoding.H264.SD: H.264 encoding standard definition JIT transcoding.</li>
+<li>JITTranscoding.H264.HD: H.264 encoding high-definition JIT transcoding</li>
+<li>JITTranscoding.H264.FHD: H.264 encoding full HD JIT transcoding</li>
+<li>JITTranscoding.H264.2K: H.264 encoding 2K JIT transcoding</li>
+<li>JITTranscoding.Audio: JIT audio transcoding</li>
+<li>JITTranscoding.Copy: remux JIT transcoding</li>
+Video screenshot specification:
+<li>SnapshotByTimeOffset: time point screenshot.</li>
+<li>SampleSnapshot: sampled screenshot</li>
+<li>ImageSprite: sprite.</li>
+                     * @param _details Details of task statistics data for varying specifications.
+Transcoding specification:
+<li>Remuxing: transmuxing</li>
+<li>Audio: audio transcoding.</li>
+<li>Standard.H264.SD: H.264 encoding for SD transcoding</li>
+<li>Standard.H264.HD: H.264 encoding for high-definition transcoding</li>
+<li>Standard.H264.FHD: H.264 encoding for full high-definition transcoding</li>
+<li>Standard.H264.2K: H.264 encoding 2K transcode.</li>
+<li>Standard.H264.4K: H.264 encoding 4K transcode</li>
+<li>Standard.H265.SD: H.265 encoding mode SD transcoding</li>
+<li>Standard.H265.HD: H.265 encoding high-definition transcoding.</li>
+<li>Standard.H265.FHD: H.265 encoding for full high-definition transcoding</li>
+<li>Standard.H265.2K: H.265 encoding 2K transcode.</li>
+<li>Standard.H265.4K: H.265 encoding 4K transcode</li>
+<li>TESHD-10.H264.SD: H.264 encoding SD TSC transcoding</li>
+<li>TESHD-10.H264.HD: H.264 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H264.FHD: H.264 full HD TSC transcoding</li>
+<li>TESHD-10.H264.2K: H.264 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H264.4K: H.264 encoding 4K TSC transcoding</li>
+<li>TESHD-10.H265.SD: H.265 encoding SD TSC transcoding</li>
+<li>TESHD-10.H265.HD: H.265 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H265.FHD: H.265 encoding full HD TSC transcoding</li>
+<li>TESHD-10.H265.2K: H.265 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H265.4K: H.265 encoding 4K TSC transcoding</li>
+<li>Edit.Audio: audio editing</li>
+<li>Edit.H264.SD: H.264 encoding for SD video editing</li>
+<li>Edit.H264.HD: H.264 encoding for high-definition video editing</li>
+<li>Edit.H264.FHD: Full HD video editing with H.264 encoding</li>
+<li>Edit.H264.2K: H.264 encoding 2K video editing</li>
+<li>Edit.H264.4K: H.264 encoding for 4K video editing</li>
+<li>Edit.H265.SD: H.265 encoding SD video editing</li>
+<li>Edit.H265.HD: H.265 encoding for high-definition video editing</li>
+<li>Edit.H265.FHD: Full HD video editing with H.265 encoding</li>
+<li>Edit.H265.2K: H.265 encoding 2K video editing</li>
+<li>Edit.H265.4K: H.265 encoding 4K video editing</li>
+<li>Edit.TESHD-10.H264.SD: H.264 encoding for SD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.HD: H.264 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.FHD: H.264 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.2K: H.264 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.4K: H.264 encoding 4K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.SD: H.265 encoding for standard definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.HD: H.265 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.FHD: H.265 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.2K: H.265 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.4K: H.265 encoding 4K extremely fast high-definition video editing</li>
+Watermark removal and audio and video quality revival specifications:
+<li>480P: short side ≤ 480px</li>
+<li>720P: Short side ≤ 720px</li>
+<li>1080P: Short side ≤ 1080px</li>
+<li>2K: Short side ≤ 1440px</li>
+<li>4K: short side ≤ 2160px</li>
+<li>8K: short side ≤ 4320px</li>
+<li>Audio: audio.</li>
+Real-time transcoding specification:
+<li>JITTranscoding.H264.SD: H.264 encoding standard definition JIT transcoding.</li>
+<li>JITTranscoding.H264.HD: H.264 encoding high-definition JIT transcoding</li>
+<li>JITTranscoding.H264.FHD: H.264 encoding full HD JIT transcoding</li>
+<li>JITTranscoding.H264.2K: H.264 encoding 2K JIT transcoding</li>
+<li>JITTranscoding.Audio: JIT audio transcoding</li>
+<li>JITTranscoding.Copy: remux JIT transcoding</li>
+Video screenshot specification:
+<li>SnapshotByTimeOffset: time point screenshot.</li>
+<li>SampleSnapshot: sampled screenshot</li>
+<li>ImageSprite: sprite.</li>
                      * 
                      */
                     void SetDetails(const std::vector<SpecificationDataItem>& _details);
@@ -378,85 +434,99 @@ The watermark removal/remaster specifications. Valid values:
                 private:
 
                     /**
-                     * Task Type.
-<li> Transcoding: Normal transcoding</li>
-<li> Transcoding-TESHD: Extremely fast high-definition transcoding</li>
-<li> Editing: Video editing</li>
-< li> Editing-TESHD: Extremely fast high-definition video editing</li>
-<li> AdaptiveBitrateStreaming: Adaptive bitrate streaming</li>
-<li> ContentAudit: Content audit</li>
-<li> ContentRecognition: Content Recognize</li>
-<li> RemoveWatermark: Remove watermark</li>
-<li> ExtractTraceWatermark: Extract watermark</li>
+                     * Task type.
+<li> Transcoding: standard transcoding.</li>
+<li> Transcoding-TESHD: TSC transcoding.</li>
+<li> Editing: video editing</li>
+<li> Editing-TESHD: extremely fast high-definition video editing</li>
+<li> AdaptiveBitrateStreaming: adaptive bitrate streaming.</li>
+<li> ContentAudit: content moderation.</li>
+<li>ContentRecognition: content recognition.</li>
+<li> RemoveWatermark: watermark removal</li>
+<li> ExtractTraceWatermark: extract watermark.</li>
 <li> AddTraceWatermark: Add watermark</li>
-<li> RebuildMedia : Audio and video quality reborn</li>
-<li> QualityInspect: Media quality inspection</li>
-<li>Transcode: transcoding, including normal transcoding, ultra-fast high-definition and video editing (not recommended)</li>
-<li>Transcode: li>
+<li> RebuildMedia: audio and video quality revival</li>
+<li> QualityInspect: audio and video quality inspection</li>
+<li>Transcode: Transcoding, including standard transcoding, top speed Codec, and video editing (not recommended)</li>
+<li>VoiceTranslation: speech translation</li>
+<li>JITTranscoding: JIT transcoding</li>
+<li>VideoSnapshot: video screenshot.</li>
+<li>JITEncryption: real-time encryption</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * Task statistics overview (usage unit: second).
+                     * Statistical data overview of the number of tasks. Amount unit: seconds.
                      */
                     std::vector<TaskStatDataItem> m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * The usage statistics for different task types.
-Transcoding:
-<li>`Remuxing`</li>
-<li>`Audio` (audio transcoding)</li>
-<li>`Standard.H264.SD`</li>
-<li>`Standard.H264.HD`</li>
-<li>`Standard.H264.FHD`</li>
-<li>`Standard.H264.2K`</li>
-<li>`Standard.H264.4K`</li>
-<li>`Standard.H265.SD`</li>
-<li>`Standard.H265.HD`</li>
-<li>`Standard.H265.FHD`</li>
-<li>`Standard.H265.2K`</li>
-<li>`Standard.H265.4K`</li>
-<li>`TESHD-10.H264.SD` (H.264 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.HD` (H.264 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.2K` (H.264 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H264.4K` (H.264 4K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.SD` (H.265 SD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.HD` (H.265 HD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.2K` (H.265 2K Top Speed Codec transcoding)</li>
-<li>`TESHD-10.H265.4K` (H.265 4K Top Speed Codec transcoding)</li>
-<li>`Edit.Audio`</li>
-<li>`Edit.H264.SD` (H.264 SD video editing)</li>
-<li>`Edit.H264.HD` (H.264 HD video editing)</li>
-<li>`Edit.H264.FHD` (H.264 FHD video editing)</li>
-<li>`Edit.H264.2K` (H.264 2K video editing)</li>
-<li>`Edit.H264.4K` (H.264 4K video editing)</li>
-<li>`Edit.H265.SD` (H.265 SD video editing)</li>
-<li>`Edit.H265.HD` (H.265 HD video editing)</li>
-<li>`Edit.H265.FHD` (H.265 FHD video editing)</li>
-<li>`Edit.H265.2K` (H.265 2K video editing)</li>
-<li>`Edit.H265.4K` (H.265 4K video editing)</li>
-<li>`Edit.TESHD-10.H264.SD` (H.264 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.HD` (H.264 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.FHD` (H.264 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.2K` (H.264 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H264.4K` (H.264 4K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.SD` (H.265 SD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.HD` (H.265 HD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.FHD` (H.265 FHD Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.2K` (H.265 2K Top Speed Codec video editing)</li>
-<li>`Edit.TESHD-10.H265.4K` (H.265 4K Top Speed Codec video editing)</li>
-The watermark removal/remaster specifications. Valid values:
-<li>`480P` (short side ≤ 480 px)</li>
-<li>`720P` (short side ≤ 720 px)</li>
-<li>`1080P` (short side ≤ 1080 px)</li>
-<li>`2K` (short side ≤ 1440 px)</li>
-<li>`4K` (short side ≤ 2160 px)</li>
-<li>`8K` (short side ≤ 4320 px)</li>
-<li>`audio`</li>
+                     * Details of task statistics data for varying specifications.
+Transcoding specification:
+<li>Remuxing: transmuxing</li>
+<li>Audio: audio transcoding.</li>
+<li>Standard.H264.SD: H.264 encoding for SD transcoding</li>
+<li>Standard.H264.HD: H.264 encoding for high-definition transcoding</li>
+<li>Standard.H264.FHD: H.264 encoding for full high-definition transcoding</li>
+<li>Standard.H264.2K: H.264 encoding 2K transcode.</li>
+<li>Standard.H264.4K: H.264 encoding 4K transcode</li>
+<li>Standard.H265.SD: H.265 encoding mode SD transcoding</li>
+<li>Standard.H265.HD: H.265 encoding high-definition transcoding.</li>
+<li>Standard.H265.FHD: H.265 encoding for full high-definition transcoding</li>
+<li>Standard.H265.2K: H.265 encoding 2K transcode.</li>
+<li>Standard.H265.4K: H.265 encoding 4K transcode</li>
+<li>TESHD-10.H264.SD: H.264 encoding SD TSC transcoding</li>
+<li>TESHD-10.H264.HD: H.264 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H264.FHD: H.264 full HD TSC transcoding</li>
+<li>TESHD-10.H264.2K: H.264 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H264.4K: H.264 encoding 4K TSC transcoding</li>
+<li>TESHD-10.H265.SD: H.265 encoding SD TSC transcoding</li>
+<li>TESHD-10.H265.HD: H.265 encoding high-definition TSC transcoding</li>
+<li>TESHD-10.H265.FHD: H.265 encoding full HD TSC transcoding</li>
+<li>TESHD-10.H265.2K: H.265 encoding 2K TSC transcoding</li>
+<li>TESHD-10.H265.4K: H.265 encoding 4K TSC transcoding</li>
+<li>Edit.Audio: audio editing</li>
+<li>Edit.H264.SD: H.264 encoding for SD video editing</li>
+<li>Edit.H264.HD: H.264 encoding for high-definition video editing</li>
+<li>Edit.H264.FHD: Full HD video editing with H.264 encoding</li>
+<li>Edit.H264.2K: H.264 encoding 2K video editing</li>
+<li>Edit.H264.4K: H.264 encoding for 4K video editing</li>
+<li>Edit.H265.SD: H.265 encoding SD video editing</li>
+<li>Edit.H265.HD: H.265 encoding for high-definition video editing</li>
+<li>Edit.H265.FHD: Full HD video editing with H.265 encoding</li>
+<li>Edit.H265.2K: H.265 encoding 2K video editing</li>
+<li>Edit.H265.4K: H.265 encoding 4K video editing</li>
+<li>Edit.TESHD-10.H264.SD: H.264 encoding for SD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.HD: H.264 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.FHD: H.264 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.2K: H.264 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H264.4K: H.264 encoding 4K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.SD: H.265 encoding for standard definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.HD: H.265 encoding high-definition extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.FHD: H.265 encoding full HD extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.2K: H.265 encoding 2K extremely fast high-definition video editing</li>
+<li>Edit.TESHD-10.H265.4K: H.265 encoding 4K extremely fast high-definition video editing</li>
+Watermark removal and audio and video quality revival specifications:
+<li>480P: short side ≤ 480px</li>
+<li>720P: Short side ≤ 720px</li>
+<li>1080P: Short side ≤ 1080px</li>
+<li>2K: Short side ≤ 1440px</li>
+<li>4K: short side ≤ 2160px</li>
+<li>8K: short side ≤ 4320px</li>
+<li>Audio: audio.</li>
+Real-time transcoding specification:
+<li>JITTranscoding.H264.SD: H.264 encoding standard definition JIT transcoding.</li>
+<li>JITTranscoding.H264.HD: H.264 encoding high-definition JIT transcoding</li>
+<li>JITTranscoding.H264.FHD: H.264 encoding full HD JIT transcoding</li>
+<li>JITTranscoding.H264.2K: H.264 encoding 2K JIT transcoding</li>
+<li>JITTranscoding.Audio: JIT audio transcoding</li>
+<li>JITTranscoding.Copy: remux JIT transcoding</li>
+Video screenshot specification:
+<li>SnapshotByTimeOffset: time point screenshot.</li>
+<li>SampleSnapshot: sampled screenshot</li>
+<li>ImageSprite: sprite.</li>
                      */
                     std::vector<SpecificationDataItem> m_details;
                     bool m_detailsHasBeenSet;

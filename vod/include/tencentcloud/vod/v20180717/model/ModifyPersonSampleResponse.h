@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Information of a sample.
-                     * @return Person Information of a sample.
+                     * 获取Material information.
+                     * @return Person Material information.
                      * 
                      */
                     AiSamplePerson GetPerson() const;
@@ -60,10 +60,8 @@ namespace TencentCloud
                     bool PersonHasBeenSet() const;
 
                     /**
-                     * 获取Information of samples that failed the verification by facial feature positioning.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return FailFaceInfoSet Information of samples that failed the verification by facial feature positioning.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取Information of facial features that failed processing.
+                     * @return FailFaceInfoSet Information of facial features that failed processing.
                      * 
                      */
                     std::vector<AiSampleFailFaceInfo> GetFailFaceInfoSet() const;
@@ -78,14 +76,13 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                 private:
 
                     /**
-                     * Information of a sample.
+                     * Material information.
                      */
                     AiSamplePerson m_person;
                     bool m_personHasBeenSet;
 
                     /**
-                     * Information of samples that failed the verification by facial feature positioning.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * Information of facial features that failed processing.
                      */
                     std::vector<AiSampleFailFaceInfo> m_failFaceInfoSet;
                     bool m_failFaceInfoSetHasBeenSet;

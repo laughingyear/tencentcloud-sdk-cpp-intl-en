@@ -109,6 +109,101 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
+                     * 获取Output path, which can be a relative or absolute path.
+To define the output path, it must end with `.{format}`. For variable names, please refer to [Filename Variable Explanation](https://www.tencentcloud.com/document/product/862/37039?from_cn_redirect=1).
+Relative path example:
+<li>Filename_{Variable name}.{format}.</li>
+<li>Filename.{format}.</li>
+Absolute path example:
+<li>/Custom path/Filename_{Variable name}.{format}</li>
+If not filled in, the default relative path is: {inputName}.{format}.
+                     * @return OutputPath Output path, which can be a relative or absolute path.
+To define the output path, it must end with `.{format}`. For variable names, please refer to [Filename Variable Explanation](https://www.tencentcloud.com/document/product/862/37039?from_cn_redirect=1).
+Relative path example:
+<li>Filename_{Variable name}.{format}.</li>
+<li>Filename.{format}.</li>
+Absolute path example:
+<li>/Custom path/Filename_{Variable name}.{format}</li>
+If not filled in, the default relative path is: {inputName}.{format}.
+                     * 
+                     */
+                    std::string GetOutputPath() const;
+
+                    /**
+                     * 设置Output path, which can be a relative or absolute path.
+To define the output path, it must end with `.{format}`. For variable names, please refer to [Filename Variable Explanation](https://www.tencentcloud.com/document/product/862/37039?from_cn_redirect=1).
+Relative path example:
+<li>Filename_{Variable name}.{format}.</li>
+<li>Filename.{format}.</li>
+Absolute path example:
+<li>/Custom path/Filename_{Variable name}.{format}</li>
+If not filled in, the default relative path is: {inputName}.{format}.
+                     * @param _outputPath Output path, which can be a relative or absolute path.
+To define the output path, it must end with `.{format}`. For variable names, please refer to [Filename Variable Explanation](https://www.tencentcloud.com/document/product/862/37039?from_cn_redirect=1).
+Relative path example:
+<li>Filename_{Variable name}.{format}.</li>
+<li>Filename.{format}.</li>
+Absolute path example:
+<li>/Custom path/Filename_{Variable name}.{format}</li>
+If not filled in, the default relative path is: {inputName}.{format}.
+                     * 
+                     */
+                    void SetOutputPath(const std::string& _outputPath);
+
+                    /**
+                     * 判断参数 OutputPath 是否已赋值
+                     * @return OutputPath 是否已赋值
+                     * 
+                     */
+                    bool OutputPathHasBeenSet() const;
+
+                    /**
+                     * 获取Unique identifier of the image processing template.
+The image template feature is in beta testing. If you want to use it, submit a ticket for application.
+                     * @return Definition Unique identifier of the image processing template.
+The image template feature is in beta testing. If you want to use it, submit a ticket for application.
+                     * 
+                     */
+                    uint64_t GetDefinition() const;
+
+                    /**
+                     * 设置Unique identifier of the image processing template.
+The image template feature is in beta testing. If you want to use it, submit a ticket for application.
+                     * @param _definition Unique identifier of the image processing template.
+The image template feature is in beta testing. If you want to use it, submit a ticket for application.
+                     * 
+                     */
+                    void SetDefinition(const uint64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     * 
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
+                     * 获取Resource ID. Ensure that the corresponding resource is enabled. The default value is the primary resource ID of the account.
+                     * @return ResourceId Resource ID. Ensure that the corresponding resource is enabled. The default value is the primary resource ID of the account.
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置Resource ID. Ensure that the corresponding resource is enabled. The default value is the primary resource ID of the account.
+                     * @param _resourceId Resource ID. Ensure that the corresponding resource is enabled. The default value is the primary resource ID of the account.
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
                      * 获取Image processing parameter.
                      * @return ImageTask Image processing parameter.
                      * 
@@ -128,6 +223,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ImageTaskHasBeenSet() const;
+
+                    /**
+                     * 获取Extended parameters for image processing.
+                     * @return StdExtInfo Extended parameters for image processing.
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置Extended parameters for image processing.
+                     * @param _stdExtInfo Extended parameters for image processing.
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
 
                 private:
 
@@ -150,10 +266,42 @@ namespace TencentCloud
                     bool m_outputDirHasBeenSet;
 
                     /**
+                     * Output path, which can be a relative or absolute path.
+To define the output path, it must end with `.{format}`. For variable names, please refer to [Filename Variable Explanation](https://www.tencentcloud.com/document/product/862/37039?from_cn_redirect=1).
+Relative path example:
+<li>Filename_{Variable name}.{format}.</li>
+<li>Filename.{format}.</li>
+Absolute path example:
+<li>/Custom path/Filename_{Variable name}.{format}</li>
+If not filled in, the default relative path is: {inputName}.{format}.
+                     */
+                    std::string m_outputPath;
+                    bool m_outputPathHasBeenSet;
+
+                    /**
+                     * Unique identifier of the image processing template.
+The image template feature is in beta testing. If you want to use it, submit a ticket for application.
+                     */
+                    uint64_t m_definition;
+                    bool m_definitionHasBeenSet;
+
+                    /**
+                     * Resource ID. Ensure that the corresponding resource is enabled. The default value is the primary resource ID of the account.
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
                      * Image processing parameter.
                      */
                     ImageTaskInput m_imageTask;
                     bool m_imageTaskHasBeenSet;
+
+                    /**
+                     * Extended parameters for image processing.
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

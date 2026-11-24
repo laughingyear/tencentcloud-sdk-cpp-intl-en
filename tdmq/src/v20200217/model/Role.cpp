@@ -25,7 +25,11 @@ Role::Role() :
     m_tokenHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_permTypeHasBeenSet(false),
+    m_tokenTypeHasBeenSet(false),
+    m_secretNameHasBeenSet(false),
+    m_rotateFreqHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,46 @@ CoreInternalOutcome Role::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PermType") && !value["PermType"].IsNull())
+    {
+        if (!value["PermType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Role.PermType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_permType = string(value["PermType"].GetString());
+        m_permTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenType") && !value["TokenType"].IsNull())
+    {
+        if (!value["TokenType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Role.TokenType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenType = string(value["TokenType"].GetString());
+        m_tokenTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretName") && !value["SecretName"].IsNull())
+    {
+        if (!value["SecretName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Role.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretName = string(value["SecretName"].GetString());
+        m_secretNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RotateFreq") && !value["RotateFreq"].IsNull())
+    {
+        if (!value["RotateFreq"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Role.RotateFreq` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotateFreq = value["RotateFreq"].GetUint64();
+        m_rotateFreqHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +173,38 @@ void Role::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rotateFreqHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotateFreq";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rotateFreq, allocator);
     }
 
 }
@@ -212,5 +288,69 @@ void Role::SetUpdateTime(const string& _updateTime)
 bool Role::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Role::GetPermType() const
+{
+    return m_permType;
+}
+
+void Role::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool Role::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
+}
+
+string Role::GetTokenType() const
+{
+    return m_tokenType;
+}
+
+void Role::SetTokenType(const string& _tokenType)
+{
+    m_tokenType = _tokenType;
+    m_tokenTypeHasBeenSet = true;
+}
+
+bool Role::TokenTypeHasBeenSet() const
+{
+    return m_tokenTypeHasBeenSet;
+}
+
+string Role::GetSecretName() const
+{
+    return m_secretName;
+}
+
+void Role::SetSecretName(const string& _secretName)
+{
+    m_secretName = _secretName;
+    m_secretNameHasBeenSet = true;
+}
+
+bool Role::SecretNameHasBeenSet() const
+{
+    return m_secretNameHasBeenSet;
+}
+
+uint64_t Role::GetRotateFreq() const
+{
+    return m_rotateFreq;
+}
+
+void Role::SetRotateFreq(const uint64_t& _rotateFreq)
+{
+    m_rotateFreq = _rotateFreq;
+    m_rotateFreqHasBeenSet = true;
+}
+
+bool Role::RotateFreqHasBeenSet() const
+{
+    return m_rotateFreqHasBeenSet;
 }
 

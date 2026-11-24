@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Type of the query action. `1`: Query emergency vulnerabilities; `2`: Query all vulnerabilities; `3`: Query a specific vulnerability. When `Id=3`, `CVEId` is required. 
-                     * @return Id Type of the query action. `1`: Query emergency vulnerabilities; `2`: Query all vulnerabilities; `3`: Query a specific vulnerability. When `Id=3`, `CVEId` is required. 
+                     * 获取Return urgent vulnerabilities when the value is 1, return the emergency vulnerability list when the value is 2, and use with the CVEId field as input to display the vulnerability data when the value is 3.
+                     * @return Id Return urgent vulnerabilities when the value is 1, return the emergency vulnerability list when the value is 2, and use with the CVEId field as input to display the vulnerability data when the value is 3.
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Type of the query action. `1`: Query emergency vulnerabilities; `2`: Query all vulnerabilities; `3`: Query a specific vulnerability. When `Id=3`, `CVEId` is required. 
-                     * @param _id Type of the query action. `1`: Query emergency vulnerabilities; `2`: Query all vulnerabilities; `3`: Query a specific vulnerability. When `Id=3`, `CVEId` is required. 
+                     * 设置Return urgent vulnerabilities when the value is 1, return the emergency vulnerability list when the value is 2, and use with the CVEId field as input to display the vulnerability data when the value is 3.
+                     * @param _id Return urgent vulnerabilities when the value is 1, return the emergency vulnerability list when the value is 2, and use with the CVEId field as input to display the vulnerability data when the value is 3.
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取CVE number of the vulnerability. It's required when `Id=3`.
-                     * @return CVEId CVE number of the vulnerability. It's required when `Id=3`.
+                     * 获取Pass in this parameter when id=3.
+                     * @return CVEId Pass in this parameter when id=3.
                      * 
                      */
                     std::string GetCVEId() const;
 
                     /**
-                     * 设置CVE number of the vulnerability. It's required when `Id=3`.
-                     * @param _cVEId CVE number of the vulnerability. It's required when `Id=3`.
+                     * 设置Pass in this parameter when id=3.
+                     * @param _cVEId Pass in this parameter when id=3.
                      * 
                      */
                     void SetCVEId(const std::string& _cVEId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Type of the query action. `1`: Query emergency vulnerabilities; `2`: Query all vulnerabilities; `3`: Query a specific vulnerability. When `Id=3`, `CVEId` is required. 
+                     * Return urgent vulnerabilities when the value is 1, return the emergency vulnerability list when the value is 2, and use with the CVEId field as input to display the vulnerability data when the value is 3.
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * CVE number of the vulnerability. It's required when `Id=3`.
+                     * Pass in this parameter when id=3.
                      */
                     std::string m_cVEId;
                     bool m_cVEIdHasBeenSet;

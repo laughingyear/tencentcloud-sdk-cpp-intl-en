@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Opening segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return HeadTimeOffset Opening segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Opening pts.
+                     * @return HeadTimeOffset Opening pts.
                      * 
                      */
                     double GetHeadTimeOffset() const;
 
                     /**
-                     * 设置Opening segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _headTimeOffset Opening segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Opening pts.
+                     * @param _headTimeOffset Opening pts.
                      * 
                      */
                     void SetHeadTimeOffset(const double& _headTimeOffset);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool HeadTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Closing segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TailTimeOffset Closing segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Outro pts.
+                     * @return TailTimeOffset Outro pts.
                      * 
                      */
                     double GetTailTimeOffset() const;
 
                     /**
-                     * 设置Closing segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _tailTimeOffset Closing segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Outro pts.
+                     * @param _tailTimeOffset Outro pts.
                      * 
                      */
                     void SetTailTimeOffset(const double& _tailTimeOffset);
@@ -99,15 +91,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Opening segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Opening pts.
                      */
                     double m_headTimeOffset;
                     bool m_headTimeOffsetHasBeenSet;
 
                     /**
-                     * Closing segment PTS.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Outro pts.
                      */
                     double m_tailTimeOffset;
                     bool m_tailTimeOffsetHasBeenSet;

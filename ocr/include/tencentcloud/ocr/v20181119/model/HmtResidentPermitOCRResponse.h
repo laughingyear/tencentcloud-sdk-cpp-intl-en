@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/PortraitImageInfo.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Name
-                     * @return Name Name
+                     * 获取<p>Name on the document</p>
+                     * @return Name <p>Name on the document</p>
                      * 
                      */
                     std::string GetName() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Gender
-                     * @return Sex Gender
+                     * 获取<p>Gender</p>
+                     * @return Sex <p>Gender</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -72,8 +73,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取Date of birth
-                     * @return Birth Date of birth
+                     * 获取<p>Date of birth</p>
+                     * @return Birth <p>Date of birth</p>
                      * 
                      */
                     std::string GetBirth() const;
@@ -86,8 +87,8 @@ namespace TencentCloud
                     bool BirthHasBeenSet() const;
 
                     /**
-                     * 获取Address
-                     * @return Address Address
+                     * 获取<p>Address</p>
+                     * @return Address <p>Address</p>
                      * 
                      */
                     std::string GetAddress() const;
@@ -100,8 +101,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取ID card number
-                     * @return IdCardNo ID card number
+                     * 获取<p>Identity card number</p>
+                     * @return IdCardNo <p>Identity card number</p>
                      * 
                      */
                     std::string GetIdCardNo() const;
@@ -114,10 +115,8 @@ namespace TencentCloud
                     bool IdCardNoHasBeenSet() const;
 
                     /**
-                     * 获取0: Front side.
-1: Back side.
-                     * @return CardType 0: Front side.
-1: Back side.
+                     * 获取<p>0-Front<br>1-Back</p>
+                     * @return CardType <p>0-Front<br>1-Back</p>
                      * 
                      */
                     int64_t GetCardType() const;
@@ -130,8 +129,8 @@ namespace TencentCloud
                     bool CardTypeHasBeenSet() const;
 
                     /**
-                     * 获取Validity period
-                     * @return ValidDate Validity period
+                     * 获取<p>Document validity period</p>
+                     * @return ValidDate <p>Document validity period</p>
                      * 
                      */
                     std::string GetValidDate() const;
@@ -144,8 +143,8 @@ namespace TencentCloud
                     bool ValidDateHasBeenSet() const;
 
                     /**
-                     * 获取Issuing authority
-                     * @return Authority Issuing authority
+                     * 获取<p>Issuing authority</p>
+                     * @return Authority <p>Issuing authority</p>
                      * 
                      */
                     std::string GetAuthority() const;
@@ -158,8 +157,8 @@ namespace TencentCloud
                     bool AuthorityHasBeenSet() const;
 
                     /**
-                     * 获取Number of issues
-                     * @return VisaNum Number of issues
+                     * 获取<p>Number of issuances</p>
+                     * @return VisaNum <p>Number of issuances</p>
                      * 
                      */
                     std::string GetVisaNum() const;
@@ -172,8 +171,8 @@ namespace TencentCloud
                     bool VisaNumHasBeenSet() const;
 
                     /**
-                     * 获取Permit number
-                     * @return PassNo Permit number
+                     * 获取Travel permit number
+                     * @return PassNo Travel permit number
                      * 
                      */
                     std::string GetPassNo() const;
@@ -185,68 +184,122 @@ namespace TencentCloud
                      */
                     bool PassNoHasBeenSet() const;
 
+                    /**
+                     * 获取Portrait image and coordinate information
+                     * @return PortraitImageInfo Portrait image and coordinate information
+                     * 
+                     */
+                    PortraitImageInfo GetPortraitImageInfo() const;
+
+                    /**
+                     * 判断参数 PortraitImageInfo 是否已赋值
+                     * @return PortraitImageInfo 是否已赋值
+                     * 
+                     */
+                    bool PortraitImageInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Card Warning Information
+
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
+                     * @return WarnCardInfos Card Warning Information
+
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
+                     * 
+                     */
+                    std::vector<int64_t> GetWarnCardInfos() const;
+
+                    /**
+                     * 判断参数 WarnCardInfos 是否已赋值
+                     * @return WarnCardInfos 是否已赋值
+                     * 
+                     */
+                    bool WarnCardInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Name
+                     * <p>Name on the document</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Gender
+                     * <p>Gender</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * Date of birth
+                     * <p>Date of birth</p>
                      */
                     std::string m_birth;
                     bool m_birthHasBeenSet;
 
                     /**
-                     * Address
+                     * <p>Address</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * ID card number
+                     * <p>Identity card number</p>
                      */
                     std::string m_idCardNo;
                     bool m_idCardNoHasBeenSet;
 
                     /**
-                     * 0: Front side.
-1: Back side.
+                     * <p>0-Front<br>1-Back</p>
                      */
                     int64_t m_cardType;
                     bool m_cardTypeHasBeenSet;
 
                     /**
-                     * Validity period
+                     * <p>Document validity period</p>
                      */
                     std::string m_validDate;
                     bool m_validDateHasBeenSet;
 
                     /**
-                     * Issuing authority
+                     * <p>Issuing authority</p>
                      */
                     std::string m_authority;
                     bool m_authorityHasBeenSet;
 
                     /**
-                     * Number of issues
+                     * <p>Number of issuances</p>
                      */
                     std::string m_visaNum;
                     bool m_visaNumHasBeenSet;
 
                     /**
-                     * Permit number
+                     * Travel permit number
                      */
                     std::string m_passNo;
                     bool m_passNoHasBeenSet;
+
+                    /**
+                     * Portrait image and coordinate information
+                     */
+                    PortraitImageInfo m_portraitImageInfo;
+                    bool m_portraitImageInfoHasBeenSet;
+
+                    /**
+                     * Card Warning Information
+
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
+                     */
+                    std::vector<int64_t> m_warnCardInfos;
+                    bool m_warnCardInfosHasBeenSet;
 
                 };
             }

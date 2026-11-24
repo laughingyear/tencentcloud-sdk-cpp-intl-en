@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The result for OCR-based image moderation.
+                * Task result type of the Image Ocr text identification information.
                 */
                 class ContentReviewOcrResult : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The confidence score for the OCR-based moderation result. Value range: 0-100.
-                     * @return Confidence The confidence score for the OCR-based moderation result. Value range: 0-100.
+                     * 获取<p>Score of Ocr text identification result. Value range: 0-100.</p>
+                     * @return Confidence <p>Score of Ocr text identification result. Value range: 0-100.</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置The confidence score for the OCR-based moderation result. Value range: 0-100.
-                     * @param _confidence The confidence score for the OCR-based moderation result. Value range: 0-100.
+                     * 设置<p>Score of Ocr text identification result. Value range: 0-100.</p>
+                     * @param _confidence <p>Score of Ocr text identification result. Value range: 0-100.</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,27 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取The suggestion for handling the suspicious content detected based on OCR. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion The suggestion for handling the suspicious content detected based on OCR. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 获取<p>Result suggestions for Ocr text identification. Value range:</p><li>pass;</li><li>review;</li><li>block.</li>
+                     * @return Suggestion <p>Result suggestions for Ocr text identification. Value range:</p><li>pass;</li><li>review;</li><li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置The suggestion for handling the suspicious content detected based on OCR. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion The suggestion for handling the suspicious content detected based on OCR. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * 设置<p>Result suggestions for Ocr text identification. Value range:</p><li>pass;</li><li>review;</li><li>block.</li>
+                     * @param _suggestion <p>Result suggestions for Ocr text identification. Value range:</p><li>pass;</li><li>review;</li><li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -101,15 +89,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取The list of suspicious keywords detected based on OCR.
-                     * @return KeywordSet The list of suspicious keywords detected based on OCR.
+                     * 获取<p>List of suspicious keywords for Ocr text identification.</p>
+                     * @return KeywordSet <p>List of suspicious keywords for Ocr text identification.</p>
                      * 
                      */
                     std::vector<std::string> GetKeywordSet() const;
 
                     /**
-                     * 设置The list of suspicious keywords detected based on OCR.
-                     * @param _keywordSet The list of suspicious keywords detected based on OCR.
+                     * 设置<p>List of suspicious keywords for Ocr text identification.</p>
+                     * @param _keywordSet <p>List of suspicious keywords for Ocr text identification.</p>
                      * 
                      */
                     void SetKeywordSet(const std::vector<std::string>& _keywordSet);
@@ -122,15 +110,15 @@ namespace TencentCloud
                     bool KeywordSetHasBeenSet() const;
 
                     /**
-                     * 获取The coordinates (pixel) of the top-left and bottom-right corners of the frame where a suspicious keyword appears. Format: [x1, y1, x2, y2].
-                     * @return AreaCoordSet The coordinates (pixel) of the top-left and bottom-right corners of the frame where a suspicious keyword appears. Format: [x1, y1, x2, y2].
+                     * 获取<p>Area coordinates (pixel level) where the suspected text appears in Ocr text identification, [x1, y1, x2, y2], which are the coordinates of the top-left corner and the bottom-right corner.</p>
+                     * @return AreaCoordSet <p>Area coordinates (pixel level) where the suspected text appears in Ocr text identification, [x1, y1, x2, y2], which are the coordinates of the top-left corner and the bottom-right corner.</p>
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置The coordinates (pixel) of the top-left and bottom-right corners of the frame where a suspicious keyword appears. Format: [x1, y1, x2, y2].
-                     * @param _areaCoordSet The coordinates (pixel) of the top-left and bottom-right corners of the frame where a suspicious keyword appears. Format: [x1, y1, x2, y2].
+                     * 设置<p>Area coordinates (pixel level) where the suspected text appears in Ocr text identification, [x1, y1, x2, y2], which are the coordinates of the top-left corner and the bottom-right corner.</p>
+                     * @param _areaCoordSet <p>Area coordinates (pixel level) where the suspected text appears in Ocr text identification, [x1, y1, x2, y2], which are the coordinates of the top-left corner and the bottom-right corner.</p>
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -145,28 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The confidence score for the OCR-based moderation result. Value range: 0-100.
+                     * <p>Score of Ocr text identification result. Value range: 0-100.</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * The suggestion for handling the suspicious content detected based on OCR. Valid values:
-<li>pass/li>
-<li>review</li>
-<li>block</li>
+                     * <p>Result suggestions for Ocr text identification. Value range:</p><li>pass;</li><li>review;</li><li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * The list of suspicious keywords detected based on OCR.
+                     * <p>List of suspicious keywords for Ocr text identification.</p>
                      */
                     std::vector<std::string> m_keywordSet;
                     bool m_keywordSetHasBeenSet;
 
                     /**
-                     * The coordinates (pixel) of the top-left and bottom-right corners of the frame where a suspicious keyword appears. Format: [x1, y1, x2, y2].
+                     * <p>Area coordinates (pixel level) where the suspected text appears in Ocr text identification, [x1, y1, x2, y2], which are the coordinates of the top-left corner and the bottom-right corner.</p>
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

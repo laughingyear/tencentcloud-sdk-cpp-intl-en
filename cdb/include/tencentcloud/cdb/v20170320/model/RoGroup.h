@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Read-only group mode. Valid values: `alone` (the system assigns a read-only group automatically), `allinone` (a new read-only group will be created), `join` (an existing read-only group will be used).
-                     * @return RoGroupMode Read-only group mode. Valid values: `alone` (the system assigns a read-only group automatically), `allinone` (a new read-only group will be created), `join` (an existing read-only group will be used).
+                     * 获取<p>Read-only group mode. Available values are: alone-automatic allocation by the system; allinone-create a read-only group; join-use an existing read-only group.</p>
+                     * @return RoGroupMode <p>Read-only group mode. Available values are: alone-automatic allocation by the system; allinone-create a read-only group; join-use an existing read-only group.</p>
                      * 
                      */
                     std::string GetRoGroupMode() const;
 
                     /**
-                     * 设置Read-only group mode. Valid values: `alone` (the system assigns a read-only group automatically), `allinone` (a new read-only group will be created), `join` (an existing read-only group will be used).
-                     * @param _roGroupMode Read-only group mode. Valid values: `alone` (the system assigns a read-only group automatically), `allinone` (a new read-only group will be created), `join` (an existing read-only group will be used).
+                     * 设置<p>Read-only group mode. Available values are: alone-automatic allocation by the system; allinone-create a read-only group; join-use an existing read-only group.</p>
+                     * @param _roGroupMode <p>Read-only group mode. Available values are: alone-automatic allocation by the system; allinone-create a read-only group; join-use an existing read-only group.</p>
                      * 
                      */
                     void SetRoGroupMode(const std::string& _roGroupMode);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RoGroupModeHasBeenSet() const;
 
                     /**
-                     * 获取Read-only group ID.
-                     * @return RoGroupId Read-only group ID.
+                     * 获取<p>Read-only group ID.<br>Note: If the data structure is used during instance purchase, this item is required only when the read-only group mode is set to join.</p>
+                     * @return RoGroupId <p>Read-only group ID.<br>Note: If the data structure is used during instance purchase, this item is required only when the read-only group mode is set to join.</p>
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置Read-only group ID.
-                     * @param _roGroupId Read-only group ID.
+                     * 设置<p>Read-only group ID.<br>Note: If the data structure is used during instance purchase, this item is required only when the read-only group mode is set to join.</p>
+                     * @param _roGroupId <p>Read-only group ID.<br>Note: If the data structure is used during instance purchase, this item is required only when the read-only group mode is set to join.</p>
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RoGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取Read-only group name.
-                     * @return RoGroupName Read-only group name.
+                     * 获取<p>Read-only group name.</p>
+                     * @return RoGroupName <p>Read-only group name.</p>
                      * 
                      */
                     std::string GetRoGroupName() const;
 
                     /**
-                     * 设置Read-only group name.
-                     * @param _roGroupName Read-only group name.
+                     * 设置<p>Read-only group name.</p>
+                     * @param _roGroupName <p>Read-only group name.</p>
                      * 
                      */
                     void SetRoGroupName(const std::string& _roGroupName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RoGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable the function of isolating an instance that exceeds the latency threshold. If it is enabled, when the latency between the read-only instance and the primary instance exceeds the latency threshold, the read-only instance will be isolated. Valid values: 1 (enabled), 0 (not enabled)
-                     * @return RoOfflineDelay Whether to enable the function of isolating an instance that exceeds the latency threshold. If it is enabled, when the latency between the read-only instance and the primary instance exceeds the latency threshold, the read-only instance will be isolated. Valid values: 1 (enabled), 0 (not enabled)
+                     * 获取<p>Whether to enable the feature to isolate an instance that exceeds the latency threshold. After enabling this feature, if the delay between a read-only instance and the primary instance exceeds the delay threshold, the read-only instance will be isolated. Available values: 1-enable; 0-disable.</p>
+                     * @return RoOfflineDelay <p>Whether to enable the feature to isolate an instance that exceeds the latency threshold. After enabling this feature, if the delay between a read-only instance and the primary instance exceeds the delay threshold, the read-only instance will be isolated. Available values: 1-enable; 0-disable.</p>
                      * 
                      */
                     int64_t GetRoOfflineDelay() const;
 
                     /**
-                     * 设置Whether to enable the function of isolating an instance that exceeds the latency threshold. If it is enabled, when the latency between the read-only instance and the primary instance exceeds the latency threshold, the read-only instance will be isolated. Valid values: 1 (enabled), 0 (not enabled)
-                     * @param _roOfflineDelay Whether to enable the function of isolating an instance that exceeds the latency threshold. If it is enabled, when the latency between the read-only instance and the primary instance exceeds the latency threshold, the read-only instance will be isolated. Valid values: 1 (enabled), 0 (not enabled)
+                     * 设置<p>Whether to enable the feature to isolate an instance that exceeds the latency threshold. After enabling this feature, if the delay between a read-only instance and the primary instance exceeds the delay threshold, the read-only instance will be isolated. Available values: 1-enable; 0-disable.</p>
+                     * @param _roOfflineDelay <p>Whether to enable the feature to isolate an instance that exceeds the latency threshold. After enabling this feature, if the delay between a read-only instance and the primary instance exceeds the delay threshold, the read-only instance will be isolated. Available values: 1-enable; 0-disable.</p>
                      * 
                      */
                     void SetRoOfflineDelay(const int64_t& _roOfflineDelay);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取Latency threshold
-                     * @return RoMaxDelayTime Latency threshold
+                     * 获取<p>Delay threshold, in seconds. Value range: 1–10000. The value is an integer.</p>
+                     * @return RoMaxDelayTime <p>Delay threshold, in seconds. Value range: 1–10000. The value is an integer.</p>
                      * 
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置Latency threshold
-                     * @param _roMaxDelayTime Latency threshold
+                     * 设置<p>Delay threshold, in seconds. Value range: 1–10000. The value is an integer.</p>
+                     * @param _roMaxDelayTime <p>Delay threshold, in seconds. Value range: 1–10000. The value is an integer.</p>
                      * 
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RoMaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取Minimum number of instances to be retained. If the number of the purchased read-only instances is smaller than the set value, they will not be removed.
-                     * @return MinRoInGroup Minimum number of instances to be retained. If the number of the purchased read-only instances is smaller than the set value, they will not be removed.
+                     * 获取<p>Minimum number of instances to retain. If the number of read-only instances purchased is less than the set number, removal will not occur.</p>
+                     * @return MinRoInGroup <p>Minimum number of instances to retain. If the number of read-only instances purchased is less than the set number, removal will not occur.</p>
                      * 
                      */
                     int64_t GetMinRoInGroup() const;
 
                     /**
-                     * 设置Minimum number of instances to be retained. If the number of the purchased read-only instances is smaller than the set value, they will not be removed.
-                     * @param _minRoInGroup Minimum number of instances to be retained. If the number of the purchased read-only instances is smaller than the set value, they will not be removed.
+                     * 设置<p>Minimum number of instances to retain. If the number of read-only instances purchased is less than the set number, removal will not occur.</p>
+                     * @param _minRoInGroup <p>Minimum number of instances to retain. If the number of read-only instances purchased is less than the set number, removal will not occur.</p>
                      * 
                      */
                     void SetMinRoInGroup(const int64_t& _minRoInGroup);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool MinRoInGroupHasBeenSet() const;
 
                     /**
-                     * 获取Read/write weight distribution mode. Valid values: `system` (weights are assigned by the system automatically), `custom` (weights are customized)
-                     * @return WeightMode Read/write weight distribution mode. Valid values: `system` (weights are assigned by the system automatically), `custom` (weights are customized)
+                     * 获取<p>Read-write weight allocation mode. Available values: system-automatic allocation by the system; custom-customization.</p>
+                     * @return WeightMode <p>Read-write weight allocation mode. Available values: system-automatic allocation by the system; custom-customization.</p>
                      * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置Read/write weight distribution mode. Valid values: `system` (weights are assigned by the system automatically), `custom` (weights are customized)
-                     * @param _weightMode Read/write weight distribution mode. Valid values: `system` (weights are assigned by the system automatically), `custom` (weights are customized)
+                     * 设置<p>Read-write weight allocation mode. Available values: system-automatic allocation by the system; custom-customization.</p>
+                     * @param _weightMode <p>Read-write weight allocation mode. Available values: system-automatic allocation by the system; custom-customization.</p>
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取This field has been disused. To view the weight of a read-only instance, check the `Weight` value in the `RoInstances` field.
-                     * @return Weight This field has been disused. To view the weight of a read-only instance, check the `Weight` value in the `RoInstances` field.
+                     * 获取<p>This field is deprecated and meaningless. To view the weight of a read-only instance, check the Weight value in the RoInstances field.</p>
+                     * @return Weight <p>This field is deprecated and meaningless. To view the weight of a read-only instance, check the Weight value in the RoInstances field.</p>
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置This field has been disused. To view the weight of a read-only instance, check the `Weight` value in the `RoInstances` field.
-                     * @param _weight This field has been disused. To view the weight of a read-only instance, check the `Weight` value in the `RoInstances` field.
+                     * 设置<p>This field is deprecated and meaningless. To view the weight of a read-only instance, check the Weight value in the RoInstances field.</p>
+                     * @param _weight <p>This field is deprecated and meaningless. To view the weight of a read-only instance, check the Weight value in the RoInstances field.</p>
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取Details of read-only instances in read-only group
-                     * @return RoInstances Details of read-only instances in read-only group
+                     * 获取<p>Details of read-only instances in the read-only group.</p>
+                     * @return RoInstances <p>Details of read-only instances in the read-only group.</p>
                      * 
                      */
                     std::vector<RoInstanceInfo> GetRoInstances() const;
 
                     /**
-                     * 设置Details of read-only instances in read-only group
-                     * @param _roInstances Details of read-only instances in read-only group
+                     * 设置<p>Details of read-only instances in the read-only group.</p>
+                     * @param _roInstances <p>Details of read-only instances in the read-only group.</p>
                      * 
                      */
                     void SetRoInstances(const std::vector<RoInstanceInfo>& _roInstances);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool RoInstancesHasBeenSet() const;
 
                     /**
-                     * 获取Private IP of read-only group.
-                     * @return Vip Private IP of read-only group.
+                     * 获取<p>Private IP address of the read-only group.</p>
+                     * @return Vip <p>Private IP address of the read-only group.</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置Private IP of read-only group.
-                     * @param _vip Private IP of read-only group.
+                     * 设置<p>Private IP address of the read-only group.</p>
+                     * @param _vip <p>Private IP address of the read-only group.</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取Private network port number of read-only group.
-                     * @return Vport Private network port number of read-only group.
+                     * 获取<p>Private network port number of the read-only group.</p>
+                     * @return Vport <p>Private network port number of the read-only group.</p>
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置Private network port number of read-only group.
-                     * @param _vport Private network port number of read-only group.
+                     * 设置<p>Private network port number of the read-only group.</p>
+                     * @param _vport <p>Private network port number of the read-only group.</p>
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -279,19 +279,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return UniqVpcId VPC ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>VPC ID.</p>
+                     * @return UniqVpcId <p>VPC ID.</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置VPC ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _uniqVpcId VPC ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>VPC ID.</p>
+                     * @param _uniqVpcId <p>VPC ID.</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -304,19 +300,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取Subnet ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return UniqSubnetId Subnet ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Subnet ID.</p>
+                     * @return UniqSubnetId <p>Subnet ID.</p>
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置Subnet ID.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _uniqSubnetId Subnet ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Subnet ID.</p>
+                     * @param _uniqSubnetId <p>Subnet ID.</p>
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -329,19 +321,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Read-only group region.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return RoGroupRegion Read-only group region.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Region of the read-only group.</p>
+                     * @return RoGroupRegion <p>Region of the read-only group.</p>
                      * 
                      */
                     std::string GetRoGroupRegion() const;
 
                     /**
-                     * 设置Read-only group region.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _roGroupRegion Read-only group region.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Region of the read-only group.</p>
+                     * @param _roGroupRegion <p>Region of the read-only group.</p>
                      * 
                      */
                     void SetRoGroupRegion(const std::string& _roGroupRegion);
@@ -354,19 +342,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool RoGroupRegionHasBeenSet() const;
 
                     /**
-                     * 获取Read-only group AZ.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return RoGroupZone Read-only group AZ.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>AZ of the read-only group.</p>
+                     * @return RoGroupZone <p>AZ of the read-only group.</p>
                      * 
                      */
                     std::string GetRoGroupZone() const;
 
                     /**
-                     * 设置Read-only group AZ.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _roGroupZone Read-only group AZ.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>AZ of the read-only group.</p>
+                     * @param _roGroupZone <p>AZ of the read-only group.</p>
                      * 
                      */
                     void SetRoGroupZone(const std::string& _roGroupZone);
@@ -379,19 +363,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool RoGroupZoneHasBeenSet() const;
 
                     /**
-                     * 获取Replication delay.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return DelayReplicationTime Replication delay.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取<p>Replication delay time, in seconds. Value range: 1–259200. The value is an integer.</p>
+                     * @return DelayReplicationTime <p>Replication delay time, in seconds. Value range: 1–259200. The value is an integer.</p>
                      * 
                      */
                     int64_t GetDelayReplicationTime() const;
 
                     /**
-                     * 设置Replication delay.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _delayReplicationTime Replication delay.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置<p>Replication delay time, in seconds. Value range: 1–259200. The value is an integer.</p>
+                     * @param _delayReplicationTime <p>Replication delay time, in seconds. Value range: 1–259200. The value is an integer.</p>
                      * 
                      */
                     void SetDelayReplicationTime(const int64_t& _delayReplicationTime);
@@ -406,102 +386,97 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                 private:
 
                     /**
-                     * Read-only group mode. Valid values: `alone` (the system assigns a read-only group automatically), `allinone` (a new read-only group will be created), `join` (an existing read-only group will be used).
+                     * <p>Read-only group mode. Available values are: alone-automatic allocation by the system; allinone-create a read-only group; join-use an existing read-only group.</p>
                      */
                     std::string m_roGroupMode;
                     bool m_roGroupModeHasBeenSet;
 
                     /**
-                     * Read-only group ID.
+                     * <p>Read-only group ID.<br>Note: If the data structure is used during instance purchase, this item is required only when the read-only group mode is set to join.</p>
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;
 
                     /**
-                     * Read-only group name.
+                     * <p>Read-only group name.</p>
                      */
                     std::string m_roGroupName;
                     bool m_roGroupNameHasBeenSet;
 
                     /**
-                     * Whether to enable the function of isolating an instance that exceeds the latency threshold. If it is enabled, when the latency between the read-only instance and the primary instance exceeds the latency threshold, the read-only instance will be isolated. Valid values: 1 (enabled), 0 (not enabled)
+                     * <p>Whether to enable the feature to isolate an instance that exceeds the latency threshold. After enabling this feature, if the delay between a read-only instance and the primary instance exceeds the delay threshold, the read-only instance will be isolated. Available values: 1-enable; 0-disable.</p>
                      */
                     int64_t m_roOfflineDelay;
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * Latency threshold
+                     * <p>Delay threshold, in seconds. Value range: 1–10000. The value is an integer.</p>
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
 
                     /**
-                     * Minimum number of instances to be retained. If the number of the purchased read-only instances is smaller than the set value, they will not be removed.
+                     * <p>Minimum number of instances to retain. If the number of read-only instances purchased is less than the set number, removal will not occur.</p>
                      */
                     int64_t m_minRoInGroup;
                     bool m_minRoInGroupHasBeenSet;
 
                     /**
-                     * Read/write weight distribution mode. Valid values: `system` (weights are assigned by the system automatically), `custom` (weights are customized)
+                     * <p>Read-write weight allocation mode. Available values: system-automatic allocation by the system; custom-customization.</p>
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * This field has been disused. To view the weight of a read-only instance, check the `Weight` value in the `RoInstances` field.
+                     * <p>This field is deprecated and meaningless. To view the weight of a read-only instance, check the Weight value in the RoInstances field.</p>
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * Details of read-only instances in read-only group
+                     * <p>Details of read-only instances in the read-only group.</p>
                      */
                     std::vector<RoInstanceInfo> m_roInstances;
                     bool m_roInstancesHasBeenSet;
 
                     /**
-                     * Private IP of read-only group.
+                     * <p>Private IP address of the read-only group.</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * Private network port number of read-only group.
+                     * <p>Private network port number of the read-only group.</p>
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * VPC ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>VPC ID.</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * Subnet ID.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Subnet ID.</p>
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * Read-only group region.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>Region of the read-only group.</p>
                      */
                     std::string m_roGroupRegion;
                     bool m_roGroupRegionHasBeenSet;
 
                     /**
-                     * Read-only group AZ.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * <p>AZ of the read-only group.</p>
                      */
                     std::string m_roGroupZone;
                     bool m_roGroupZoneHasBeenSet;
 
                     /**
-                     * Replication delay.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * <p>Replication delay time, in seconds. Value range: 1–259200. The value is an integer.</p>
                      */
                     int64_t m_delayReplicationTime;
                     bool m_delayReplicationTimeHasBeenSet;

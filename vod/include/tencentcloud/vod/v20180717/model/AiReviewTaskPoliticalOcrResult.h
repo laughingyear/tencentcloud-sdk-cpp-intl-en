@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result for OCR-based recognition of politically sensitive content
+                * Result type for tasks involving inappropriate information or rule violations in Ocr text in audio/video moderation
                 */
                 class AiReviewTaskPoliticalOcrResult : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @return Status Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 获取Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @return Status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task status. Valid values: PROCESSING, SUCCESS, FAIL.
-                     * @param _status Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * 设置Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
+                     * @param _status Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @return ErrCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @param _errCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @return ErrCode Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 获取Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @return ErrCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @param _errCode Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 设置Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @param _errCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @return Message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * @param _message Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -137,15 +133,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取Input for OCR-based recognition of politically sensitive content
-                     * @return Input Input for OCR-based recognition of politically sensitive content
+                     * 获取Task input for tasks involving inappropriate information in Ocr text in audio/video moderation.
+                     * @return Input Task input for tasks involving inappropriate information in Ocr text in audio/video moderation.
                      * 
                      */
                     AiReviewPoliticalOcrTaskInput GetInput() const;
 
                     /**
-                     * 设置Input for OCR-based recognition of politically sensitive content
-                     * @param _input Input for OCR-based recognition of politically sensitive content
+                     * 设置Task input for tasks involving inappropriate information in Ocr text in audio/video moderation.
+                     * @param _input Task input for tasks involving inappropriate information in Ocr text in audio/video moderation.
                      * 
                      */
                     void SetInput(const AiReviewPoliticalOcrTaskInput& _input);
@@ -158,19 +154,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output for OCR-based recognition of politically sensitive content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @return Output Output for OCR-based recognition of politically sensitive content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 获取Task output of audio/video moderation involving inappropriate information in Ocr text.
+                     * @return Output Task output of audio/video moderation involving inappropriate information in Ocr text.
                      * 
                      */
                     AiReviewPoliticalOcrTaskOutput GetOutput() const;
 
                     /**
-                     * 设置Output for OCR-based recognition of politically sensitive content
-Note: This field may return `null`, indicating that no valid value can be found.
-                     * @param _output Output for OCR-based recognition of politically sensitive content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * 设置Task output of audio/video moderation involving inappropriate information in Ocr text.
+                     * @param _output Task output of audio/video moderation involving inappropriate information in Ocr text.
                      * 
                      */
                     void SetOutput(const AiReviewPoliticalOcrTaskOutput& _output);
@@ -183,15 +175,15 @@ Note: This field may return `null`, indicating that no valid value can be found.
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取Audio and video review OCR text involves the task progress of inappropriate information, the value range is [0-100].
-                     * @return Progress Audio and video review OCR text involves the task progress of inappropriate information, the value range is [0-100].
+                     * 获取Progress of the Ocr text task involving inappropriate information in audio/video moderation. Value range: 0-100.
+                     * @return Progress Progress of the Ocr text task involving inappropriate information in audio/video moderation. Value range: 0-100.
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置Audio and video review OCR text involves the task progress of inappropriate information, the value range is [0-100].
-                     * @param _progress Audio and video review OCR text involves the task progress of inappropriate information, the value range is [0-100].
+                     * 设置Progress of the Ocr text task involving inappropriate information in audio/video moderation. Value range: 0-100.
+                     * @param _progress Progress of the Ocr text task involving inappropriate information in audio/video moderation. Value range: 0-100.
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -206,45 +198,43 @@ Note: This field may return `null`, indicating that no valid value can be found.
                 private:
 
                     /**
-                     * Task status. Valid values: PROCESSING, SUCCESS, FAIL.
+                     * Task status. Valid values are PROCESSING, SUCCESS, and FAIL.
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * Error code. 0 indicates the task is successful; other values indicate failure. You’re not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * Error message.
-Note: this field may return null, indicating that no valid values can be obtained.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * Input for OCR-based recognition of politically sensitive content
+                     * Task input for tasks involving inappropriate information in Ocr text in audio/video moderation.
                      */
                     AiReviewPoliticalOcrTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output for OCR-based recognition of politically sensitive content
-Note: This field may return `null`, indicating that no valid value can be found.
+                     * Task output of audio/video moderation involving inappropriate information in Ocr text.
                      */
                     AiReviewPoliticalOcrTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * Audio and video review OCR text involves the task progress of inappropriate information, the value range is [0-100].
+                     * Progress of the Ocr text task involving inappropriate information in audio/video moderation. Value range: 0-100.
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;

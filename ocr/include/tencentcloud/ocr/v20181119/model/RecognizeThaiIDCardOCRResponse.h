@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ThaiNameHasBeenSet() const;
 
                     /**
-                     * 获取Name in English
-                     * @return EnFirstName Name in English
+                     * 获取First name in English
+                     * @return EnFirstName First name in English
                      * 
                      */
                     std::string GetEnFirstName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool EnFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取Name in English
-                     * @return EnLastName Name in English
+                     * 获取Last name in English
+                     * @return EnLastName Last name in English
                      * 
                      */
                     std::string GetEnLastName() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取LaserID in the back of the card.
-                     * @return LaserID LaserID in the back of the card.
+                     * 获取Laser ID on the back of the card
+                     * @return LaserID Laser ID on the back of the card
                      * 
                      */
                     std::string GetLaserID() const;
@@ -256,20 +256,22 @@ namespace TencentCloud
                     /**
                      * 获取Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      * @return WarnCardInfos Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
@@ -282,20 +284,76 @@ namespace TencentCloud
                     bool WarnCardInfosHasBeenSet() const;
 
                     /**
-                     * 获取Field confidence:
- { "ID": { "Confidence": 0.9999 }, "ThaiName": { "Confidence": 0.9996 } }
-                     * @return AdvancedInfo Field confidence:
- { "ID": { "Confidence": 0.9999 }, "ThaiName": { "Confidence": 0.9996 } }
-                     * 
+                     * 获取<p>This field is deprecated and will always return "1". It is not recommended for use.</p>
+                     * @return AdvancedInfo <p>This field is deprecated and will always return "1". It is not recommended for use.</p>
+                     * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdvancedInfoHasBeenSet() const;
+
+                    /**
+                     * 获取The number of cards detected in the input image provided via ImageBase64 parameter.(Currently supported only in ap-bangkok region)
+                     * @return CardCount The number of cards detected in the input image provided via ImageBase64 parameter.(Currently supported only in ap-bangkok region)
+                     * 
+                     */
+                    int64_t GetCardCount() const;
+
+                    /**
+                     * 判断参数 CardCount 是否已赋值
+                     * @return CardCount 是否已赋值
+                     * 
+                     */
+                    bool CardCountHasBeenSet() const;
+
+                    /**
+                     * 获取The card information field complete or not
+true: complete; false: incomplete
+                     * @return IsComplete The card information field complete or not
+true: complete; false: incomplete
+                     * 
+                     */
+                    bool GetIsComplete() const;
+
+                    /**
+                     * 判断参数 IsComplete 是否已赋值
+                     * @return IsComplete 是否已赋值
+                     * 
+                     */
+                    bool IsCompleteHasBeenSet() const;
+
+                    /**
+                     * 获取First name in Thai
+                     * @return ThaiFirstName First name in Thai
+                     * 
+                     */
+                    std::string GetThaiFirstName() const;
+
+                    /**
+                     * 判断参数 ThaiFirstName 是否已赋值
+                     * @return ThaiFirstName 是否已赋值
+                     * 
+                     */
+                    bool ThaiFirstNameHasBeenSet() const;
+
+                    /**
+                     * 获取Last name in Thai
+                     * @return ThaiLastName Last name in Thai
+                     * 
+                     */
+                    std::string GetThaiLastName() const;
+
+                    /**
+                     * 判断参数 ThaiLastName 是否已赋值
+                     * @return ThaiLastName 是否已赋值
+                     * 
+                     */
+                    bool ThaiLastNameHasBeenSet() const;
 
                 private:
 
@@ -312,13 +370,13 @@ namespace TencentCloud
                     bool m_thaiNameHasBeenSet;
 
                     /**
-                     * Name in English
+                     * First name in English
                      */
                     std::string m_enFirstName;
                     bool m_enFirstNameHasBeenSet;
 
                     /**
-                     * Name in English
+                     * Last name in English
                      */
                     std::string m_enLastName;
                     bool m_enLastNameHasBeenSet;
@@ -378,7 +436,7 @@ namespace TencentCloud
                     bool m_addressHasBeenSet;
 
                     /**
-                     * LaserID in the back of the card.
+                     * Laser ID on the back of the card
                      */
                     std::string m_laserID;
                     bool m_laserIDHasBeenSet;
@@ -392,22 +450,47 @@ namespace TencentCloud
                     /**
                      * Card Warning Information
 
--9101 Alarm for covered certificate,
--9102 Alarm for photocopied certificate,
--9103 Alarm for photographed certificate,
--9107 Alarm for reflective certificate,
--9108 Alarm for blurry image,
--9109 This capability is not enabled.
+-9101 Alarm for covered certificate
+-9102 Alarm for photocopied certificate
+-9103 Alarm for photographed certificate
+-9104 Alarm for tamper certificate
+-9107 Alarm for reflective certificate
+-9108 Alarm for blurry certificate
+-9109 This capability is not enabled. Please contact customer support to activate the alert service
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
 
                     /**
-                     * Field confidence:
- { "ID": { "Confidence": 0.9999 }, "ThaiName": { "Confidence": 0.9996 } }
+                     * <p>This field is deprecated and will always return "1". It is not recommended for use.</p>
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * The number of cards detected in the input image provided via ImageBase64 parameter.(Currently supported only in ap-bangkok region)
+                     */
+                    int64_t m_cardCount;
+                    bool m_cardCountHasBeenSet;
+
+                    /**
+                     * The card information field complete or not
+true: complete; false: incomplete
+                     */
+                    bool m_isComplete;
+                    bool m_isCompleteHasBeenSet;
+
+                    /**
+                     * First name in Thai
+                     */
+                    std::string m_thaiFirstName;
+                    bool m_thaiFirstNameHasBeenSet;
+
+                    /**
+                     * Last name in Thai
+                     */
+                    std::string m_thaiLastName;
+                    bool m_thaiLastNameHasBeenSet;
 
                 };
             }

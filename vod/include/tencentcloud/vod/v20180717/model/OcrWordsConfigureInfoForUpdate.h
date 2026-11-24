@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Control parameter of text keyword recognition.
+                * Text keyword recognition control parameters.
                 */
                 class OcrWordsConfigureInfoForUpdate : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Switch of text keyword recognition task. Valid values:
-<li>ON: enables text keyword recognition task;</li>
-<li>OFF: disables text keyword recognition task.</li>
-                     * @return Switch Switch of text keyword recognition task. Valid values:
-<li>ON: enables text keyword recognition task;</li>
-<li>OFF: disables text keyword recognition task.</li>
+                     * 获取Text keyword recognition task switch. Available values:
+<li>ON: enable the text keyword recognition task</li>
+<li>OFF: Disable the text keyword recognition task.</li>
+                     * @return Switch Text keyword recognition task switch. Available values:
+<li>ON: enable the text keyword recognition task</li>
+<li>OFF: Disable the text keyword recognition task.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Switch of text keyword recognition task. Valid values:
-<li>ON: enables text keyword recognition task;</li>
-<li>OFF: disables text keyword recognition task.</li>
-                     * @param _switch Switch of text keyword recognition task. Valid values:
-<li>ON: enables text keyword recognition task;</li>
-<li>OFF: disables text keyword recognition task.</li>
+                     * 设置Text keyword recognition task switch. Available values:
+<li>ON: enable the text keyword recognition task</li>
+<li>OFF: Disable the text keyword recognition task.</li>
+                     * @param _switch Text keyword recognition task switch. Available values:
+<li>ON: enable the text keyword recognition task</li>
+<li>OFF: Disable the text keyword recognition task.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,19 +76,19 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取Keyword filter tag, which specifies the keyword tag that needs to be returned. If this parameter is left empty or a blank value is entered, all results will be returned.
-There can be up to 10 tags, each with a length limit of 16 characters.
-                     * @return LabelSet Keyword filter tag, which specifies the keyword tag that needs to be returned. If this parameter is left empty or a blank value is entered, all results will be returned.
-There can be up to 10 tags, each with a length limit of 16 characters.
+                     * 获取Keyword filtering tag. Specify the tag of keywords to return. If this parameter is not specified or is empty, all results are returned.
+The number of tags can be up to 10, and each tag can contain up to 16 characters.
+                     * @return LabelSet Keyword filtering tag. Specify the tag of keywords to return. If this parameter is not specified or is empty, all results are returned.
+The number of tags can be up to 10, and each tag can contain up to 16 characters.
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置Keyword filter tag, which specifies the keyword tag that needs to be returned. If this parameter is left empty or a blank value is entered, all results will be returned.
-There can be up to 10 tags, each with a length limit of 16 characters.
-                     * @param _labelSet Keyword filter tag, which specifies the keyword tag that needs to be returned. If this parameter is left empty or a blank value is entered, all results will be returned.
-There can be up to 10 tags, each with a length limit of 16 characters.
+                     * 设置Keyword filtering tag. Specify the tag of keywords to return. If this parameter is not specified or is empty, all results are returned.
+The number of tags can be up to 10, and each tag can contain up to 16 characters.
+                     * @param _labelSet Keyword filtering tag. Specify the tag of keywords to return. If this parameter is not specified or is empty, all results are returned.
+The number of tags can be up to 10, and each tag can contain up to 16 characters.
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -103,16 +103,16 @@ There can be up to 10 tags, each with a length limit of 16 characters.
                 private:
 
                     /**
-                     * Switch of text keyword recognition task. Valid values:
-<li>ON: enables text keyword recognition task;</li>
-<li>OFF: disables text keyword recognition task.</li>
+                     * Text keyword recognition task switch. Available values:
+<li>ON: enable the text keyword recognition task</li>
+<li>OFF: Disable the text keyword recognition task.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * Keyword filter tag, which specifies the keyword tag that needs to be returned. If this parameter is left empty or a blank value is entered, all results will be returned.
-There can be up to 10 tags, each with a length limit of 16 characters.
+                     * Keyword filtering tag. Specify the tag of keywords to return. If this parameter is not specified or is empty, all results are returned.
+The number of tags can be up to 10, and each tag can contain up to 16 characters.
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;

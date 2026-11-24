@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * VOD video file editing information
+                * Edit information of VOD video files
                 */
                 class EditMediaFileInfo : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取Offset time of the start of the video clip, unit: seconds.
-                     * @return StartTimeOffset Offset time of the start of the video clip, unit: seconds.
+                     * 获取Start time offset of video editing, in seconds.
+                     * @return StartTimeOffset Start time offset of video editing, in seconds.
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置Offset time of the start of the video clip, unit: seconds.
-                     * @param _startTimeOffset Offset time of the start of the video clip, unit: seconds.
+                     * 设置Start time offset of video editing, in seconds.
+                     * @param _startTimeOffset Start time offset of video editing, in seconds.
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取Offset time at the end of the video clip, unit: seconds.
-                     * @return EndTimeOffset Offset time at the end of the video clip, unit: seconds.
+                     * 获取End time offset of video editing, in seconds.
+                     * @return EndTimeOffset End time offset of video editing, in seconds.
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置Offset time at the end of the video clip, unit: seconds.
-                     * @param _endTimeOffset Offset time at the end of the video clip, unit: seconds.
+                     * 设置End time offset of video editing, in seconds.
+                     * @param _endTimeOffset End time offset of video editing, in seconds.
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * Offset time of the start of the video clip, unit: seconds.
+                     * Start time offset of video editing, in seconds.
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * Offset time at the end of the video clip, unit: seconds.
+                     * End time offset of video editing, in seconds.
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

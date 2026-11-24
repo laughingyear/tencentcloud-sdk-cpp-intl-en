@@ -41,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Database proxy group details
+                * Detailed information of the database proxy group
                 */
                 class ProxyGroupInfo : public AbstractModel
                 {
@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Database proxy group.
-                     * @return ProxyGroup Database proxy group.
+                     * 获取Database Proxy Group
+                     * @return ProxyGroup Database Proxy Group
                      * 
                      */
                     ProxyGroup GetProxyGroup() const;
 
                     /**
-                     * 设置Database proxy group.
-                     * @param _proxyGroup Database proxy group.
+                     * 设置Database Proxy Group
+                     * @param _proxyGroup Database Proxy Group
                      * 
                      */
                     void SetProxyGroup(const ProxyGroup& _proxyGroup);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool ProxyGroupHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy group read-write separation information.
-                     * @return ProxyGroupRwInfo Database proxy group read-write separation information.
+                     * 获取Read-write separation info of the Database Proxy Group
+                     * @return ProxyGroupRwInfo Read-write separation info of the Database Proxy Group
                      * 
                      */
                     ProxyGroupRwInfo GetProxyGroupRwInfo() const;
 
                     /**
-                     * 设置Database proxy group read-write separation information.
-                     * @param _proxyGroupRwInfo Database proxy group read-write separation information.
+                     * 设置Read-write separation info of the Database Proxy Group
+                     * @param _proxyGroupRwInfo Read-write separation info of the Database Proxy Group
                      * 
                      */
                     void SetProxyGroupRwInfo(const ProxyGroupRwInfo& _proxyGroupRwInfo);
@@ -95,19 +95,15 @@ namespace TencentCloud
                     bool ProxyGroupRwInfoHasBeenSet() const;
 
                     /**
-                     * 获取Node information of the database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return ProxyNodes Node information of the database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Database proxy node info
+                     * @return ProxyNodes Database proxy node info
                      * 
                      */
                     std::vector<ProxyNodeInfo> GetProxyNodes() const;
 
                     /**
-                     * 设置Node information of the database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _proxyNodes Node information of the database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Database proxy node info
+                     * @param _proxyNodes Database proxy node info
                      * 
                      */
                     void SetProxyNodes(const std::vector<ProxyNodeInfo>& _proxyNodes);
@@ -120,15 +116,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ProxyNodesHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy connection pool information.
-                     * @return ConnectionPool Database proxy connection pool information.
+                     * 获取Database proxy connection pool information
+                     * @return ConnectionPool Database proxy connection pool information
                      * 
                      */
                     ProxyConnectionPoolInfo GetConnectionPool() const;
 
                     /**
-                     * 设置Database proxy connection pool information.
-                     * @param _connectionPool Database proxy connection pool information.
+                     * 设置Database proxy connection pool information
+                     * @param _connectionPool Database proxy connection pool information
                      * 
                      */
                     void SetConnectionPool(const ProxyConnectionPoolInfo& _connectionPool);
@@ -141,19 +137,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool ConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取Network information for database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return NetAddrInfos Network information for database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Database proxy network info
+                     * @return NetAddrInfos Database proxy network info
                      * 
                      */
                     std::vector<NetAddr> GetNetAddrInfos() const;
 
                     /**
-                     * 设置Network information for database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _netAddrInfos Network information for database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Database proxy network info
+                     * @param _netAddrInfos Database proxy network info
                      * 
                      */
                     void SetNetAddrInfos(const std::vector<NetAddr>& _netAddrInfos);
@@ -166,15 +158,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool NetAddrInfosHasBeenSet() const;
 
                     /**
-                     * 获取Database proxy task set.
-                     * @return Tasks Database proxy task set.
+                     * 获取Task set of the database proxy
+                     * @return Tasks Task set of the database proxy
                      * 
                      */
                     std::vector<ObjectTask> GetTasks() const;
 
                     /**
-                     * 设置Database proxy task set.
-                     * @param _tasks Database proxy task set.
+                     * 设置Task set of the database proxy
+                     * @param _tasks Task set of the database proxy
                      * 
                      */
                     void SetTasks(const std::vector<ObjectTask>& _tasks);
@@ -189,39 +181,37 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Database proxy group.
+                     * Database Proxy Group
                      */
                     ProxyGroup m_proxyGroup;
                     bool m_proxyGroupHasBeenSet;
 
                     /**
-                     * Database proxy group read-write separation information.
+                     * Read-write separation info of the Database Proxy Group
                      */
                     ProxyGroupRwInfo m_proxyGroupRwInfo;
                     bool m_proxyGroupRwInfoHasBeenSet;
 
                     /**
-                     * Node information of the database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Database proxy node info
                      */
                     std::vector<ProxyNodeInfo> m_proxyNodes;
                     bool m_proxyNodesHasBeenSet;
 
                     /**
-                     * Database proxy connection pool information.
+                     * Database proxy connection pool information
                      */
                     ProxyConnectionPoolInfo m_connectionPool;
                     bool m_connectionPoolHasBeenSet;
 
                     /**
-                     * Network information for database proxy
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Database proxy network info
                      */
                     std::vector<NetAddr> m_netAddrInfos;
                     bool m_netAddrInfosHasBeenSet;
 
                     /**
-                     * Database proxy task set.
+                     * Task set of the database proxy
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;

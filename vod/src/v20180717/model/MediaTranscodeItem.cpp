@@ -33,7 +33,9 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_videoStreamSetHasBeenSet(false),
     m_audioStreamSetHasBeenSet(false),
     m_digitalWatermarkTypeHasBeenSet(false),
-    m_copyRightWatermarkTextHasBeenSet(false)
+    m_copyRightWatermarkTextHasBeenSet(false),
+    m_blindWatermarkDefinitionHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -192,6 +194,26 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_copyRightWatermarkTextHasBeenSet = true;
     }
 
+    if (value.HasMember("BlindWatermarkDefinition") && !value["BlindWatermarkDefinition"].IsNull())
+    {
+        if (!value["BlindWatermarkDefinition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.BlindWatermarkDefinition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blindWatermarkDefinition = value["BlindWatermarkDefinition"].GetInt64();
+        m_blindWatermarkDefinitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -315,6 +337,22 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CopyRightWatermarkText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_copyRightWatermarkText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blindWatermarkDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlindWatermarkDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blindWatermarkDefinition, allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -526,5 +564,37 @@ void MediaTranscodeItem::SetCopyRightWatermarkText(const string& _copyRightWater
 bool MediaTranscodeItem::CopyRightWatermarkTextHasBeenSet() const
 {
     return m_copyRightWatermarkTextHasBeenSet;
+}
+
+int64_t MediaTranscodeItem::GetBlindWatermarkDefinition() const
+{
+    return m_blindWatermarkDefinition;
+}
+
+void MediaTranscodeItem::SetBlindWatermarkDefinition(const int64_t& _blindWatermarkDefinition)
+{
+    m_blindWatermarkDefinition = _blindWatermarkDefinition;
+    m_blindWatermarkDefinitionHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::BlindWatermarkDefinitionHasBeenSet() const
+{
+    return m_blindWatermarkDefinitionHasBeenSet;
+}
+
+string MediaTranscodeItem::GetFileId() const
+{
+    return m_fileId;
+}
+
+void MediaTranscodeItem::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

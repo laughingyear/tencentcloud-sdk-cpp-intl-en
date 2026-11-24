@@ -1,0 +1,219 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AIGCAUDIOOUTPUTCONFIG_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_AIGCAUDIOOUTPUTCONFIG_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Vod
+    {
+        namespace V20180717
+        {
+            namespace Model
+            {
+                /**
+                * Output media file configuration for AIGC sound effect tasks.
+                */
+                class AigcAudioOutputConfig : public AbstractModel
+                {
+                public:
+                    AigcAudioOutputConfig();
+                    ~AigcAudioOutputConfig() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>Storage mode</p><p>Enumeration values:</p><ul><li>Temporary: temporary storage. The generated video file will not be stored in VOD. You can obtain a temporary access URL in the event notification, with a valid period of 7 days.</li><li>Permanent: permanent storage. The generated video file will be stored in VOD. You can obtain the FileId in the event notification.</li></ul><p>Default value: Temporary</p>
+                     * @return StorageMode <p>Storage mode</p><p>Enumeration values:</p><ul><li>Temporary: temporary storage. The generated video file will not be stored in VOD. You can obtain a temporary access URL in the event notification, with a valid period of 7 days.</li><li>Permanent: permanent storage. The generated video file will be stored in VOD. You can obtain the FileId in the event notification.</li></ul><p>Default value: Temporary</p>
+                     * 
+                     */
+                    std::string GetStorageMode() const;
+
+                    /**
+                     * 设置<p>Storage mode</p><p>Enumeration values:</p><ul><li>Temporary: temporary storage. The generated video file will not be stored in VOD. You can obtain a temporary access URL in the event notification, with a valid period of 7 days.</li><li>Permanent: permanent storage. The generated video file will be stored in VOD. You can obtain the FileId in the event notification.</li></ul><p>Default value: Temporary</p>
+                     * @param _storageMode <p>Storage mode</p><p>Enumeration values:</p><ul><li>Temporary: temporary storage. The generated video file will not be stored in VOD. You can obtain a temporary access URL in the event notification, with a valid period of 7 days.</li><li>Permanent: permanent storage. The generated video file will be stored in VOD. You can obtain the FileId in the event notification.</li></ul><p>Default value: Temporary</p>
+                     * 
+                     */
+                    void SetStorageMode(const std::string& _storageMode);
+
+                    /**
+                     * 判断参数 StorageMode 是否已赋值
+                     * @return StorageMode 是否已赋值
+                     * 
+                     */
+                    bool StorageModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Output filename. It can contain up to 64 characters. By default, the system specifies the filename.</p>
+                     * @return MediaName <p>Output filename. It can contain up to 64 characters. By default, the system specifies the filename.</p>
+                     * 
+                     */
+                    std::string GetMediaName() const;
+
+                    /**
+                     * 设置<p>Output filename. It can contain up to 64 characters. By default, the system specifies the filename.</p>
+                     * @param _mediaName <p>Output filename. It can contain up to 64 characters. By default, the system specifies the filename.</p>
+                     * 
+                     */
+                    void SetMediaName(const std::string& _mediaName);
+
+                    /**
+                     * 判断参数 MediaName 是否已赋值
+                     * @return MediaName 是否已赋值
+                     * 
+                     */
+                    bool MediaNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">create category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>
+                     * @return ClassId <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">create category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>
+                     * 
+                     */
+                    int64_t GetClassId() const;
+
+                    /**
+                     * 设置<p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">create category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>
+                     * @param _classId <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">create category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>
+                     * 
+                     */
+                    void SetClassId(const int64_t& _classId);
+
+                    /**
+                     * 判断参数 ClassId 是否已赋值
+                     * @return ClassId 是否已赋值
+                     * 
+                     */
+                    bool ClassIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Expiry date of the output file. The file will be deleted after this time. The default is permanent with no expiration. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @return ExpireTime <p>Expiry date of the output file. The file will be deleted after this time. The default is permanent with no expiration. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置<p>Expiry date of the output file. The file will be deleted after this time. The default is permanent with no expiration. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * @param _expireTime <p>Expiry date of the output file. The file will be deleted after this time. The default is permanent with no expiration. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Audio duration. Not filled in by default.</p><p>Value range: [0, 60]</p>
+                     * @return Duration <p>Audio duration. Not filled in by default.</p><p>Value range: [0, 60]</p>
+                     * 
+                     */
+                    int64_t GetDuration() const;
+
+                    /**
+                     * 设置<p>Audio duration. Not filled in by default.</p><p>Value range: [0, 60]</p>
+                     * @param _duration <p>Audio duration. Not filled in by default.</p><p>Value range: [0, 60]</p>
+                     * 
+                     */
+                    void SetDuration(const int64_t& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Output audio format. By default, this is not specified.</p>
+                     * @return OutputAudioFormat <p>Output audio format. By default, this is not specified.</p>
+                     * 
+                     */
+                    std::string GetOutputAudioFormat() const;
+
+                    /**
+                     * 设置<p>Output audio format. By default, this is not specified.</p>
+                     * @param _outputAudioFormat <p>Output audio format. By default, this is not specified.</p>
+                     * 
+                     */
+                    void SetOutputAudioFormat(const std::string& _outputAudioFormat);
+
+                    /**
+                     * 判断参数 OutputAudioFormat 是否已赋值
+                     * @return OutputAudioFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputAudioFormatHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>Storage mode</p><p>Enumeration values:</p><ul><li>Temporary: temporary storage. The generated video file will not be stored in VOD. You can obtain a temporary access URL in the event notification, with a valid period of 7 days.</li><li>Permanent: permanent storage. The generated video file will be stored in VOD. You can obtain the FileId in the event notification.</li></ul><p>Default value: Temporary</p>
+                     */
+                    std::string m_storageMode;
+                    bool m_storageModeHasBeenSet;
+
+                    /**
+                     * <p>Output filename. It can contain up to 64 characters. By default, the system specifies the filename.</p>
+                     */
+                    std::string m_mediaName;
+                    bool m_mediaNameHasBeenSet;
+
+                    /**
+                     * <p>Category ID, used to categorize and manage media. You can create a category through the <a href="https://www.tencentcloud.com/document/product/266/7812?from_cn_redirect=1">create category</a> API to obtain the category ID.</p><li>Default value: 0, indicating other categories.</li>
+                     */
+                    int64_t m_classId;
+                    bool m_classIdHasBeenSet;
+
+                    /**
+                     * <p>Expiry date of the output file. The file will be deleted after this time. The default is permanent with no expiration. The format follows the ISO 8601 standard. For details, see <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format description</a>.</p>
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>Audio duration. Not filled in by default.</p><p>Value range: [0, 60]</p>
+                     */
+                    int64_t m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * <p>Output audio format. By default, this is not specified.</p>
+                     */
+                    std::string m_outputAudioFormat;
+                    bool m_outputAudioFormatHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AIGCAUDIOOUTPUTCONFIG_H_

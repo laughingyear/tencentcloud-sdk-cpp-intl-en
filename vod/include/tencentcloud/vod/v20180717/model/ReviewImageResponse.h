@@ -46,24 +46,24 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The image moderation result. <font color=red>Note: This parameter is no longer used. Please use `MediaReviewResult` instead.</font>
-                     * @return ReviewResultSet The image moderation result. <font color=red>Note: This parameter is no longer used. Please use `MediaReviewResult` instead.</font>
-                     * 
+                     * 获取Image moderation job result.
+<font color=red>Note: This field is deprecated. It is recommended to use MediaReviewResult.</font>
+                     * @return ReviewResultSet Image moderation job result.
+<font color=red>Note: This field is deprecated. It is recommended to use MediaReviewResult.</font>
+                     * @deprecated
                      */
                     std::vector<ContentReviewResult> GetReviewResultSet() const;
 
                     /**
                      * 判断参数 ReviewResultSet 是否已赋值
                      * @return ReviewResultSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReviewResultSetHasBeenSet() const;
 
                     /**
-                     * 获取The image moderation result.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return MediaReviewResult The image moderation result.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Image moderation job result.
+                     * @return MediaReviewResult Image moderation job result.
                      * 
                      */
                     ReviewImageResult GetMediaReviewResult() const;
@@ -78,14 +78,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The image moderation result. <font color=red>Note: This parameter is no longer used. Please use `MediaReviewResult` instead.</font>
+                     * Image moderation job result.
+<font color=red>Note: This field is deprecated. It is recommended to use MediaReviewResult.</font>
                      */
                     std::vector<ContentReviewResult> m_reviewResultSet;
                     bool m_reviewResultSetHasBeenSet;
 
                     /**
-                     * The image moderation result.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Image moderation job result.
                      */
                     ReviewImageResult m_mediaReviewResult;
                     bool m_mediaReviewResultHasBeenSet;

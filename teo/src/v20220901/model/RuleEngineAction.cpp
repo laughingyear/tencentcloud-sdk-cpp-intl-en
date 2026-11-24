@@ -34,10 +34,12 @@ RuleEngineAction::RuleEngineAction() :
     m_statusCodeCacheParametersHasBeenSet(false),
     m_offlineCacheParametersHasBeenSet(false),
     m_smartRoutingParametersHasBeenSet(false),
+    m_advancedOriginRoutingParametersHasBeenSet(false),
     m_rangeOriginPullParametersHasBeenSet(false),
     m_upstreamHTTP2ParametersHasBeenSet(false),
     m_hostHeaderParametersHasBeenSet(false),
     m_forceRedirectHTTPSParametersHasBeenSet(false),
+    m_originPullProtocolParametersHasBeenSet(false),
     m_compressionParametersHasBeenSet(false),
     m_hSTSParametersHasBeenSet(false),
     m_clientIPHeaderParametersHasBeenSet(false),
@@ -47,15 +49,21 @@ RuleEngineAction::RuleEngineAction() :
     m_clientIPCountryParametersHasBeenSet(false),
     m_upstreamFollowRedirectParametersHasBeenSet(false),
     m_upstreamRequestParametersHasBeenSet(false),
+    m_shieldParametersHasBeenSet(false),
     m_tLSConfigParametersHasBeenSet(false),
     m_modifyOriginParametersHasBeenSet(false),
+    m_siteFailoverParametersHasBeenSet(false),
     m_hTTPUpstreamTimeoutParametersHasBeenSet(false),
     m_httpResponseParametersHasBeenSet(false),
     m_errorPageParametersHasBeenSet(false),
     m_modifyResponseHeaderParametersHasBeenSet(false),
     m_modifyRequestHeaderParametersHasBeenSet(false),
     m_responseSpeedLimitParametersHasBeenSet(false),
-    m_setContentIdentifierParametersHasBeenSet(false)
+    m_setContentIdentifierParametersHasBeenSet(false),
+    m_varyParametersHasBeenSet(false),
+    m_contentCompressionParametersHasBeenSet(false),
+    m_originAuthenticationParametersHasBeenSet(false),
+    m_customActionParametersHasBeenSet(false)
 {
 }
 
@@ -278,6 +286,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_smartRoutingParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedOriginRoutingParameters") && !value["AdvancedOriginRoutingParameters"].IsNull())
+    {
+        if (!value["AdvancedOriginRoutingParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.AdvancedOriginRoutingParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedOriginRoutingParameters.Deserialize(value["AdvancedOriginRoutingParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedOriginRoutingParametersHasBeenSet = true;
+    }
+
     if (value.HasMember("RangeOriginPullParameters") && !value["RangeOriginPullParameters"].IsNull())
     {
         if (!value["RangeOriginPullParameters"].IsObject())
@@ -344,6 +369,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_forceRedirectHTTPSParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginPullProtocolParameters") && !value["OriginPullProtocolParameters"].IsNull())
+    {
+        if (!value["OriginPullProtocolParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.OriginPullProtocolParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originPullProtocolParameters.Deserialize(value["OriginPullProtocolParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originPullProtocolParametersHasBeenSet = true;
     }
 
     if (value.HasMember("CompressionParameters") && !value["CompressionParameters"].IsNull())
@@ -499,6 +541,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_upstreamRequestParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("ShieldParameters") && !value["ShieldParameters"].IsNull())
+    {
+        if (!value["ShieldParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.ShieldParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_shieldParameters.Deserialize(value["ShieldParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_shieldParametersHasBeenSet = true;
+    }
+
     if (value.HasMember("TLSConfigParameters") && !value["TLSConfigParameters"].IsNull())
     {
         if (!value["TLSConfigParameters"].IsObject())
@@ -531,6 +590,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_modifyOriginParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("SiteFailoverParameters") && !value["SiteFailoverParameters"].IsNull())
+    {
+        if (!value["SiteFailoverParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.SiteFailoverParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_siteFailoverParameters.Deserialize(value["SiteFailoverParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_siteFailoverParametersHasBeenSet = true;
     }
 
     if (value.HasMember("HTTPUpstreamTimeoutParameters") && !value["HTTPUpstreamTimeoutParameters"].IsNull())
@@ -650,6 +726,74 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_setContentIdentifierParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("VaryParameters") && !value["VaryParameters"].IsNull())
+    {
+        if (!value["VaryParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.VaryParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_varyParameters.Deserialize(value["VaryParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_varyParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentCompressionParameters") && !value["ContentCompressionParameters"].IsNull())
+    {
+        if (!value["ContentCompressionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.ContentCompressionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_contentCompressionParameters.Deserialize(value["ContentCompressionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_contentCompressionParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginAuthenticationParameters") && !value["OriginAuthenticationParameters"].IsNull())
+    {
+        if (!value["OriginAuthenticationParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.OriginAuthenticationParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originAuthenticationParameters.Deserialize(value["OriginAuthenticationParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originAuthenticationParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomActionParameters") && !value["CustomActionParameters"].IsNull())
+    {
+        if (!value["CustomActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.CustomActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customActionParameters.Deserialize(value["CustomActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customActionParametersHasBeenSet = true;
     }
 
 
@@ -775,6 +919,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_smartRoutingParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_advancedOriginRoutingParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOriginRoutingParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedOriginRoutingParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_rangeOriginPullParametersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -809,6 +962,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_forceRedirectHTTPSParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originPullProtocolParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPullProtocolParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_originPullProtocolParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_compressionParametersHasBeenSet)
@@ -892,6 +1054,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_upstreamRequestParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_shieldParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShieldParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_shieldParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_tLSConfigParametersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -908,6 +1079,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modifyOriginParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_siteFailoverParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SiteFailoverParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_siteFailoverParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hTTPUpstreamTimeoutParametersHasBeenSet)
@@ -971,6 +1151,42 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setContentIdentifierParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_varyParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaryParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_varyParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_contentCompressionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentCompressionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_contentCompressionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originAuthenticationParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginAuthenticationParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_originAuthenticationParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1184,6 +1400,22 @@ bool RuleEngineAction::SmartRoutingParametersHasBeenSet() const
     return m_smartRoutingParametersHasBeenSet;
 }
 
+AdvancedOriginRoutingParameters RuleEngineAction::GetAdvancedOriginRoutingParameters() const
+{
+    return m_advancedOriginRoutingParameters;
+}
+
+void RuleEngineAction::SetAdvancedOriginRoutingParameters(const AdvancedOriginRoutingParameters& _advancedOriginRoutingParameters)
+{
+    m_advancedOriginRoutingParameters = _advancedOriginRoutingParameters;
+    m_advancedOriginRoutingParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::AdvancedOriginRoutingParametersHasBeenSet() const
+{
+    return m_advancedOriginRoutingParametersHasBeenSet;
+}
+
 RangeOriginPullParameters RuleEngineAction::GetRangeOriginPullParameters() const
 {
     return m_rangeOriginPullParameters;
@@ -1246,6 +1478,22 @@ void RuleEngineAction::SetForceRedirectHTTPSParameters(const ForceRedirectHTTPSP
 bool RuleEngineAction::ForceRedirectHTTPSParametersHasBeenSet() const
 {
     return m_forceRedirectHTTPSParametersHasBeenSet;
+}
+
+OriginPullProtocolParameters RuleEngineAction::GetOriginPullProtocolParameters() const
+{
+    return m_originPullProtocolParameters;
+}
+
+void RuleEngineAction::SetOriginPullProtocolParameters(const OriginPullProtocolParameters& _originPullProtocolParameters)
+{
+    m_originPullProtocolParameters = _originPullProtocolParameters;
+    m_originPullProtocolParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::OriginPullProtocolParametersHasBeenSet() const
+{
+    return m_originPullProtocolParametersHasBeenSet;
 }
 
 CompressionParameters RuleEngineAction::GetCompressionParameters() const
@@ -1392,6 +1640,22 @@ bool RuleEngineAction::UpstreamRequestParametersHasBeenSet() const
     return m_upstreamRequestParametersHasBeenSet;
 }
 
+ShieldParameters RuleEngineAction::GetShieldParameters() const
+{
+    return m_shieldParameters;
+}
+
+void RuleEngineAction::SetShieldParameters(const ShieldParameters& _shieldParameters)
+{
+    m_shieldParameters = _shieldParameters;
+    m_shieldParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::ShieldParametersHasBeenSet() const
+{
+    return m_shieldParametersHasBeenSet;
+}
+
 TLSConfigParameters RuleEngineAction::GetTLSConfigParameters() const
 {
     return m_tLSConfigParameters;
@@ -1422,6 +1686,22 @@ void RuleEngineAction::SetModifyOriginParameters(const ModifyOriginParameters& _
 bool RuleEngineAction::ModifyOriginParametersHasBeenSet() const
 {
     return m_modifyOriginParametersHasBeenSet;
+}
+
+SiteFailoverParameters RuleEngineAction::GetSiteFailoverParameters() const
+{
+    return m_siteFailoverParameters;
+}
+
+void RuleEngineAction::SetSiteFailoverParameters(const SiteFailoverParameters& _siteFailoverParameters)
+{
+    m_siteFailoverParameters = _siteFailoverParameters;
+    m_siteFailoverParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::SiteFailoverParametersHasBeenSet() const
+{
+    return m_siteFailoverParametersHasBeenSet;
 }
 
 HTTPUpstreamTimeoutParameters RuleEngineAction::GetHTTPUpstreamTimeoutParameters() const
@@ -1534,5 +1814,69 @@ void RuleEngineAction::SetSetContentIdentifierParameters(const SetContentIdentif
 bool RuleEngineAction::SetContentIdentifierParametersHasBeenSet() const
 {
     return m_setContentIdentifierParametersHasBeenSet;
+}
+
+VaryParameters RuleEngineAction::GetVaryParameters() const
+{
+    return m_varyParameters;
+}
+
+void RuleEngineAction::SetVaryParameters(const VaryParameters& _varyParameters)
+{
+    m_varyParameters = _varyParameters;
+    m_varyParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::VaryParametersHasBeenSet() const
+{
+    return m_varyParametersHasBeenSet;
+}
+
+ContentCompressionParameters RuleEngineAction::GetContentCompressionParameters() const
+{
+    return m_contentCompressionParameters;
+}
+
+void RuleEngineAction::SetContentCompressionParameters(const ContentCompressionParameters& _contentCompressionParameters)
+{
+    m_contentCompressionParameters = _contentCompressionParameters;
+    m_contentCompressionParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::ContentCompressionParametersHasBeenSet() const
+{
+    return m_contentCompressionParametersHasBeenSet;
+}
+
+OriginAuthenticationParameters RuleEngineAction::GetOriginAuthenticationParameters() const
+{
+    return m_originAuthenticationParameters;
+}
+
+void RuleEngineAction::SetOriginAuthenticationParameters(const OriginAuthenticationParameters& _originAuthenticationParameters)
+{
+    m_originAuthenticationParameters = _originAuthenticationParameters;
+    m_originAuthenticationParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::OriginAuthenticationParametersHasBeenSet() const
+{
+    return m_originAuthenticationParametersHasBeenSet;
+}
+
+CustomActionParameters RuleEngineAction::GetCustomActionParameters() const
+{
+    return m_customActionParameters;
+}
+
+void RuleEngineAction::SetCustomActionParameters(const CustomActionParameters& _customActionParameters)
+{
+    m_customActionParameters = _customActionParameters;
+    m_customActionParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::CustomActionParametersHasBeenSet() const
+{
+    return m_customActionParametersHasBeenSet;
 }
 

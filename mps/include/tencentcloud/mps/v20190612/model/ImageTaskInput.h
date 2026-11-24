@@ -27,6 +27,14 @@
 #include <tencentcloud/mps/v20190612/model/ImageEncodeConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageEraseConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiPosterSuiteConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiCutoutConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiExpansionConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiStoryboardConfig.h>
+#include <tencentcloud/mps/v20190612/model/UnderstandImageConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageQualityConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiComposeConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiDecomposeConfig.h>
 
 
 namespace TencentCloud
@@ -50,19 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Image encoding configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return EncodeConfig Image encoding configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Image encoding configuration.</p>
+                     * @return EncodeConfig <p>Image encoding configuration.</p>
                      * 
                      */
                     ImageEncodeConfig GetEncodeConfig() const;
 
                     /**
-                     * 设置Image encoding configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _encodeConfig Image encoding configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Image encoding configuration.</p>
+                     * @param _encodeConfig <p>Image encoding configuration.</p>
                      * 
                      */
                     void SetEncodeConfig(const ImageEncodeConfig& _encodeConfig);
@@ -75,19 +79,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool EncodeConfigHasBeenSet() const;
 
                     /**
-                     * 获取Image enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return EnhanceConfig Image enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Image enhancement configuration.</p>
+                     * @return EnhanceConfig <p>Image enhancement configuration.</p>
                      * 
                      */
                     ImageEnhanceConfig GetEnhanceConfig() const;
 
                     /**
-                     * 设置Image enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _enhanceConfig Image enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Image enhancement configuration.</p>
+                     * @param _enhanceConfig <p>Image enhancement configuration.</p>
                      * 
                      */
                     void SetEnhanceConfig(const ImageEnhanceConfig& _enhanceConfig);
@@ -100,19 +100,15 @@ Note: This field may return null, indicating that no valid value can be obtained
                     bool EnhanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取Image erasing configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return EraseConfig Image erasing configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Image erasing configuration.</p>
+                     * @return EraseConfig <p>Image erasing configuration.</p>
                      * 
                      */
                     ImageEraseConfig GetEraseConfig() const;
 
                     /**
-                     * 设置Image erasing configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _eraseConfig Image erasing configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Image erasing configuration.</p>
+                     * @param _eraseConfig <p>Image erasing configuration.</p>
                      * 
                      */
                     void SetEraseConfig(const ImageEraseConfig& _eraseConfig);
@@ -124,28 +120,241 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool EraseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI image set configuration.</p>
+                     * @return AiPosterSuiteConfig <p>AI image set configuration.</p>
+                     * 
+                     */
+                    AiPosterSuiteConfig GetAiPosterSuiteConfig() const;
+
+                    /**
+                     * 设置<p>AI image set configuration.</p>
+                     * @param _aiPosterSuiteConfig <p>AI image set configuration.</p>
+                     * 
+                     */
+                    void SetAiPosterSuiteConfig(const AiPosterSuiteConfig& _aiPosterSuiteConfig);
+
+                    /**
+                     * 判断参数 AiPosterSuiteConfig 是否已赋值
+                     * @return AiPosterSuiteConfig 是否已赋值
+                     * 
+                     */
+                    bool AiPosterSuiteConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ai cutout configuration</p>
+                     * @return AiCutoutConfig <p>Ai cutout configuration</p>
+                     * 
+                     */
+                    AiCutoutConfig GetAiCutoutConfig() const;
+
+                    /**
+                     * 设置<p>Ai cutout configuration</p>
+                     * @param _aiCutoutConfig <p>Ai cutout configuration</p>
+                     * 
+                     */
+                    void SetAiCutoutConfig(const AiCutoutConfig& _aiCutoutConfig);
+
+                    /**
+                     * 判断参数 AiCutoutConfig 是否已赋值
+                     * @return AiCutoutConfig 是否已赋值
+                     * 
+                     */
+                    bool AiCutoutConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ai outpainting configuration</p>
+                     * @return AiExpansionConfig <p>Ai outpainting configuration</p>
+                     * 
+                     */
+                    AiExpansionConfig GetAiExpansionConfig() const;
+
+                    /**
+                     * 设置<p>Ai outpainting configuration</p>
+                     * @param _aiExpansionConfig <p>Ai outpainting configuration</p>
+                     * 
+                     */
+                    void SetAiExpansionConfig(const AiExpansionConfig& _aiExpansionConfig);
+
+                    /**
+                     * 判断参数 AiExpansionConfig 是否已赋值
+                     * @return AiExpansionConfig 是否已赋值
+                     * 
+                     */
+                    bool AiExpansionConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ai storyboard deconstruction configuration</p>
+                     * @return AiStoryboardConfig <p>Ai storyboard deconstruction configuration</p>
+                     * 
+                     */
+                    AiStoryboardConfig GetAiStoryboardConfig() const;
+
+                    /**
+                     * 设置<p>Ai storyboard deconstruction configuration</p>
+                     * @param _aiStoryboardConfig <p>Ai storyboard deconstruction configuration</p>
+                     * 
+                     */
+                    void SetAiStoryboardConfig(const AiStoryboardConfig& _aiStoryboardConfig);
+
+                    /**
+                     * 判断参数 AiStoryboardConfig 是否已赋值
+                     * @return AiStoryboardConfig 是否已赋值
+                     * 
+                     */
+                    bool AiStoryboardConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Image understanding configuration</p>
+                     * @return UnderstandImageConfig <p>Image understanding configuration</p>
+                     * 
+                     */
+                    UnderstandImageConfig GetUnderstandImageConfig() const;
+
+                    /**
+                     * 设置<p>Image understanding configuration</p>
+                     * @param _understandImageConfig <p>Image understanding configuration</p>
+                     * 
+                     */
+                    void SetUnderstandImageConfig(const UnderstandImageConfig& _understandImageConfig);
+
+                    /**
+                     * 判断参数 UnderstandImageConfig 是否已赋值
+                     * @return UnderstandImageConfig 是否已赋值
+                     * 
+                     */
+                    bool UnderstandImageConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Image quality assessment configuration</p>
+                     * @return ImageQualityConfig <p>Image quality assessment configuration</p>
+                     * 
+                     */
+                    ImageQualityConfig GetImageQualityConfig() const;
+
+                    /**
+                     * 设置<p>Image quality assessment configuration</p>
+                     * @param _imageQualityConfig <p>Image quality assessment configuration</p>
+                     * 
+                     */
+                    void SetImageQualityConfig(const ImageQualityConfig& _imageQualityConfig);
+
+                    /**
+                     * 判断参数 ImageQualityConfig 是否已赋值
+                     * @return ImageQualityConfig 是否已赋值
+                     * 
+                     */
+                    bool ImageQualityConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Layer fusion configuration.</p>
+                     * @return AiComposeConfig <p>Layer fusion configuration.</p>
+                     * 
+                     */
+                    AiComposeConfig GetAiComposeConfig() const;
+
+                    /**
+                     * 设置<p>Layer fusion configuration.</p>
+                     * @param _aiComposeConfig <p>Layer fusion configuration.</p>
+                     * 
+                     */
+                    void SetAiComposeConfig(const AiComposeConfig& _aiComposeConfig);
+
+                    /**
+                     * 判断参数 AiComposeConfig 是否已赋值
+                     * @return AiComposeConfig 是否已赋值
+                     * 
+                     */
+                    bool AiComposeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Layer separation configuration.</p>
+                     * @return AiDecomposeConfig <p>Layer separation configuration.</p>
+                     * 
+                     */
+                    AiDecomposeConfig GetAiDecomposeConfig() const;
+
+                    /**
+                     * 设置<p>Layer separation configuration.</p>
+                     * @param _aiDecomposeConfig <p>Layer separation configuration.</p>
+                     * 
+                     */
+                    void SetAiDecomposeConfig(const AiDecomposeConfig& _aiDecomposeConfig);
+
+                    /**
+                     * 判断参数 AiDecomposeConfig 是否已赋值
+                     * @return AiDecomposeConfig 是否已赋值
+                     * 
+                     */
+                    bool AiDecomposeConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Image encoding configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Image encoding configuration.</p>
                      */
                     ImageEncodeConfig m_encodeConfig;
                     bool m_encodeConfigHasBeenSet;
 
                     /**
-                     * Image enhancement configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Image enhancement configuration.</p>
                      */
                     ImageEnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
 
                     /**
-                     * Image erasing configuration.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Image erasing configuration.</p>
                      */
                     ImageEraseConfig m_eraseConfig;
                     bool m_eraseConfigHasBeenSet;
+
+                    /**
+                     * <p>AI image set configuration.</p>
+                     */
+                    AiPosterSuiteConfig m_aiPosterSuiteConfig;
+                    bool m_aiPosterSuiteConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai cutout configuration</p>
+                     */
+                    AiCutoutConfig m_aiCutoutConfig;
+                    bool m_aiCutoutConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai outpainting configuration</p>
+                     */
+                    AiExpansionConfig m_aiExpansionConfig;
+                    bool m_aiExpansionConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai storyboard deconstruction configuration</p>
+                     */
+                    AiStoryboardConfig m_aiStoryboardConfig;
+                    bool m_aiStoryboardConfigHasBeenSet;
+
+                    /**
+                     * <p>Image understanding configuration</p>
+                     */
+                    UnderstandImageConfig m_understandImageConfig;
+                    bool m_understandImageConfigHasBeenSet;
+
+                    /**
+                     * <p>Image quality assessment configuration</p>
+                     */
+                    ImageQualityConfig m_imageQualityConfig;
+                    bool m_imageQualityConfigHasBeenSet;
+
+                    /**
+                     * <p>Layer fusion configuration.</p>
+                     */
+                    AiComposeConfig m_aiComposeConfig;
+                    bool m_aiComposeConfigHasBeenSet;
+
+                    /**
+                     * <p>Layer separation configuration.</p>
+                     */
+                    AiDecomposeConfig m_aiDecomposeConfig;
+                    bool m_aiDecomposeConfigHasBeenSet;
 
                 };
             }

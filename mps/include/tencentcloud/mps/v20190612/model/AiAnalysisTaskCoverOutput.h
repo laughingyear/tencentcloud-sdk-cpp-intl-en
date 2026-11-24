@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Result information of intelligent cover generating
+                * Intelligent cover result information.
                 */
                 class AiAnalysisTaskCoverOutput : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取List of intelligently generated covers.
-                     * @return CoverSet List of intelligently generated covers.
+                     * 获取List of smart covers.
+                     * @return CoverSet List of smart covers.
                      * 
                      */
                     std::vector<MediaAiAnalysisCoverItem> GetCoverSet() const;
 
                     /**
-                     * 设置List of intelligently generated covers.
-                     * @param _coverSet List of intelligently generated covers.
+                     * 设置List of smart covers.
+                     * @param _coverSet List of smart covers.
                      * 
                      */
                     void SetCoverSet(const std::vector<MediaAiAnalysisCoverItem>& _coverSet);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CoverSetHasBeenSet() const;
 
                     /**
-                     * 获取Storage location of intelligently generated cover.
-                     * @return OutputStorage Storage location of intelligently generated cover.
+                     * 获取Storage location of the intelligent cover.
+                     * @return OutputStorage Storage location of the intelligent cover.
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置Storage location of intelligently generated cover.
-                     * @param _outputStorage Storage location of intelligently generated cover.
+                     * 设置Storage location of the intelligent cover.
+                     * @param _outputStorage Storage location of the intelligent cover.
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -93,13 +93,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * List of intelligently generated covers.
+                     * List of smart covers.
                      */
                     std::vector<MediaAiAnalysisCoverItem> m_coverSet;
                     bool m_coverSetHasBeenSet;
 
                     /**
-                     * Storage location of intelligently generated cover.
+                     * Storage location of the intelligent cover.
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;

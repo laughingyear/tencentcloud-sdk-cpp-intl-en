@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  
+                * Mini Program Audio and Video review information unit
                 */
                 class MediaMiniProgramReviewInfoItem : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Template ID, which is the ID of the transcoding template corresponding to the video published on WeChat Mini Program. 0 represents the source video.
-                     * @return Definition Template ID, which is the ID of the transcoding template corresponding to the video published on WeChat Mini Program. 0 represents the source video.
+                     * 获取Template ID. The transcoding template ID corresponding to the video released in the mini program. 0 indicates the original video.
+                     * @return Definition Template ID. The transcoding template ID corresponding to the video released in the mini program. 0 indicates the original video.
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Template ID, which is the ID of the transcoding template corresponding to the video published on WeChat Mini Program. 0 represents the source video.
-                     * @param _definition Template ID, which is the ID of the transcoding template corresponding to the video published on WeChat Mini Program. 0 represents the source video.
+                     * 设置Template ID. The transcoding template ID corresponding to the video released in the mini program. 0 indicates the original video.
+                     * @param _definition Template ID. The transcoding template ID corresponding to the video released in the mini program. 0 indicates the original video.
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -91,19 +91,15 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取Video playback address for WeChat Mini Program audit
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return Url Video playback address for WeChat Mini Program audit
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Video playback address for Mini Program Audio and Video review.
+                     * @return Url Video playback address for Mini Program Audio and Video review.
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Video playback address for WeChat Mini Program audit
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _url Video playback address for WeChat Mini Program audit
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Video playback address for Mini Program Audio and Video review.
+                     * @param _url Video playback address for Mini Program Audio and Video review.
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -116,23 +112,23 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Status of video release on WeChat Mini Program
-<li>Pass: succeeded.</li>
-<li>Rejected: rejected.</li>
-                     * @return ReviewResult Status of video release on WeChat Mini Program
-<li>Pass: succeeded.</li>
-<li>Rejected: rejected.</li>
+                     * 获取Mini program video publishing status:
+<li>Pass: Succeeded.</li>
+<li>Rejected: failed.</li>
+                     * @return ReviewResult Mini program video publishing status:
+<li>Pass: Succeeded.</li>
+<li>Rejected: failed.</li>
                      * 
                      */
                     std::string GetReviewResult() const;
 
                     /**
-                     * 设置Status of video release on WeChat Mini Program
-<li>Pass: succeeded.</li>
-<li>Rejected: rejected.</li>
-                     * @param _reviewResult Status of video release on WeChat Mini Program
-<li>Pass: succeeded.</li>
-<li>Rejected: rejected.</li>
+                     * 设置Mini program video publishing status:
+<li>Pass: Succeeded.</li>
+<li>Rejected: failed.</li>
+                     * @param _reviewResult Mini program video publishing status:
+<li>Pass: Succeeded.</li>
+<li>Rejected: failed.</li>
                      * 
                      */
                     void SetReviewResult(const std::string& _reviewResult);
@@ -145,19 +141,15 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool ReviewResultHasBeenSet() const;
 
                     /**
-                     * 获取WeChat Mini Program audit element.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return ReviewSummary WeChat Mini Program audit element.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Mini Program Audio and Video review element.
+                     * @return ReviewSummary Mini Program Audio and Video review element.
                      * 
                      */
                     std::vector<MediaMiniProgramReviewElem> GetReviewSummary() const;
 
                     /**
-                     * 设置WeChat Mini Program audit element.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _reviewSummary WeChat Mini Program audit element.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Mini Program Audio and Video review element.
+                     * @param _reviewSummary Mini Program Audio and Video review element.
                      * 
                      */
                     void SetReviewSummary(const std::vector<MediaMiniProgramReviewElem>& _reviewSummary);
@@ -172,7 +164,7 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Template ID, which is the ID of the transcoding template corresponding to the video published on WeChat Mini Program. 0 represents the source video.
+                     * Template ID. The transcoding template ID corresponding to the video released in the mini program. 0 indicates the original video.
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -184,23 +176,21 @@ Note: this field may return null, indicating that no valid values can be obtaine
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * Video playback address for WeChat Mini Program audit
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Video playback address for Mini Program Audio and Video review.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Status of video release on WeChat Mini Program
-<li>Pass: succeeded.</li>
-<li>Rejected: rejected.</li>
+                     * Mini program video publishing status:
+<li>Pass: Succeeded.</li>
+<li>Rejected: failed.</li>
                      */
                     std::string m_reviewResult;
                     bool m_reviewResultHasBeenSet;
 
                     /**
-                     * WeChat Mini Program audit element.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Mini Program Audio and Video review element.
                      */
                     std::vector<MediaMiniProgramReviewElem> m_reviewSummary;
                     bool m_reviewSummaryHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取The value “1” indicates a non-partitioned topic (a topic with no partitions) will be created. A value between 1 (exclusive) and 128 (inclusive) indicates the partition count of a partitioned topic.
-                     * @return Partitions The value “1” indicates a non-partitioned topic (a topic with no partitions) will be created. A value between 1 (exclusive) and 128 (inclusive) indicates the partition count of a partitioned topic.
+                     * 获取The input parameter is 1, which means creating a non-partitioned topic with no partition. if the input parameter is greater than 1, it indicates the number of partitions for a partitioned topic, and the maximum cannot exceed 32.
+                     * @return Partitions The input parameter is 1, which means creating a non-partitioned topic with no partition. if the input parameter is greater than 1, it indicates the number of partitions for a partitioned topic, and the maximum cannot exceed 32.
                      * 
                      */
                     uint64_t GetPartitions() const;
 
                     /**
-                     * 设置The value “1” indicates a non-partitioned topic (a topic with no partitions) will be created. A value between 1 (exclusive) and 128 (inclusive) indicates the partition count of a partitioned topic.
-                     * @param _partitions The value “1” indicates a non-partitioned topic (a topic with no partitions) will be created. A value between 1 (exclusive) and 128 (inclusive) indicates the partition count of a partitioned topic.
+                     * 设置The input parameter is 1, which means creating a non-partitioned topic with no partition. if the input parameter is greater than 1, it indicates the number of partitions for a partitioned topic, and the maximum cannot exceed 32.
+                     * @param _partitions The input parameter is 1, which means creating a non-partitioned topic with no partition. if the input parameter is greater than 1, it indicates the number of partitions for a partitioned topic, and the maximum cannot exceed 32.
                      * 
                      */
                     void SetPartitions(const uint64_t& _partitions);
@@ -104,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PartitionsHasBeenSet() const;
+
+                    /**
+                     * 获取Pulsar cluster ID
+                     * @return ClusterId Pulsar cluster ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar cluster ID
+                     * @param _clusterId Pulsar cluster ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Remarks (up to 128 characters).
@@ -168,27 +190,6 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取Pulsar cluster ID
-                     * @return ClusterId Pulsar cluster ID
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置Pulsar cluster ID
-                     * @param _clusterId Pulsar cluster ID
-                     * 
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取Pulsar topic type.
 `0`: Non-persistent and non-partitioned
 `1`: Non-persistent and partitioned
@@ -225,6 +226,153 @@ namespace TencentCloud
                      */
                     bool PulsarTopicTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Retention period for unconsumed messages in seconds. value ranges from 60 seconds to 15 days.
+                     * @return MsgTTL Retention period for unconsumed messages in seconds. value ranges from 60 seconds to 15 days.
+                     * 
+                     */
+                    uint64_t GetMsgTTL() const;
+
+                    /**
+                     * 设置Retention period for unconsumed messages in seconds. value ranges from 60 seconds to 15 days.
+                     * @param _msgTTL Retention period for unconsumed messages in seconds. value ranges from 60 seconds to 15 days.
+                     * 
+                     */
+                    void SetMsgTTL(const uint64_t& _msgTTL);
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
+                    /**
+                     * 获取Default if not passed is native policy. DefaultPolicy means when the subscription reaches the maximum unacknowledged messages of 5000, the server will stop pushing messages to all consumers under the current subscription. DynamicPolicy means dynamically adjust the maximum unacknowledged messages of the subscription, with the specific quota being the maximum between 5000 and the number of consumers multiplied by 20. the default maximum unacknowledged message count per consumer is 20. exceeding this limit only affects that consumer and does not affect other consumers.
+                     * @return UnackPolicy Default if not passed is native policy. DefaultPolicy means when the subscription reaches the maximum unacknowledged messages of 5000, the server will stop pushing messages to all consumers under the current subscription. DynamicPolicy means dynamically adjust the maximum unacknowledged messages of the subscription, with the specific quota being the maximum between 5000 and the number of consumers multiplied by 20. the default maximum unacknowledged message count per consumer is 20. exceeding this limit only affects that consumer and does not affect other consumers.
+                     * 
+                     */
+                    std::string GetUnackPolicy() const;
+
+                    /**
+                     * 设置Default if not passed is native policy. DefaultPolicy means when the subscription reaches the maximum unacknowledged messages of 5000, the server will stop pushing messages to all consumers under the current subscription. DynamicPolicy means dynamically adjust the maximum unacknowledged messages of the subscription, with the specific quota being the maximum between 5000 and the number of consumers multiplied by 20. the default maximum unacknowledged message count per consumer is 20. exceeding this limit only affects that consumer and does not affect other consumers.
+                     * @param _unackPolicy Default if not passed is native policy. DefaultPolicy means when the subscription reaches the maximum unacknowledged messages of 5000, the server will stop pushing messages to all consumers under the current subscription. DynamicPolicy means dynamically adjust the maximum unacknowledged messages of the subscription, with the specific quota being the maximum between 5000 and the number of consumers multiplied by 20. the default maximum unacknowledged message count per consumer is 20. exceeding this limit only affects that consumer and does not affect other consumers.
+                     * 
+                     */
+                    void SetUnackPolicy(const std::string& _unackPolicy);
+
+                    /**
+                     * 判断参数 UnackPolicy 是否已赋值
+                     * @return UnackPolicy 是否已赋值
+                     * 
+                     */
+                    bool UnackPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取Whether exception consumer isolation is enabled.
+                     * @return IsolateConsumerEnable Whether exception consumer isolation is enabled.
+                     * 
+                     */
+                    bool GetIsolateConsumerEnable() const;
+
+                    /**
+                     * 设置Whether exception consumer isolation is enabled.
+                     * @param _isolateConsumerEnable Whether exception consumer isolation is enabled.
+                     * 
+                     */
+                    void SetIsolateConsumerEnable(const bool& _isolateConsumerEnable);
+
+                    /**
+                     * 判断参数 IsolateConsumerEnable 是否已赋值
+                     * @return IsolateConsumerEnable 是否已赋值
+                     * 
+                     */
+                    bool IsolateConsumerEnableHasBeenSet() const;
+
+                    /**
+                     * 获取Specifies the consumer Ack timeout period in seconds. value range: 60-(3600*24).
+                     * @return AckTimeOut Specifies the consumer Ack timeout period in seconds. value range: 60-(3600*24).
+                     * 
+                     */
+                    int64_t GetAckTimeOut() const;
+
+                    /**
+                     * 设置Specifies the consumer Ack timeout period in seconds. value range: 60-(3600*24).
+                     * @param _ackTimeOut Specifies the consumer Ack timeout period in seconds. value range: 60-(3600*24).
+                     * 
+                     */
+                    void SetAckTimeOut(const int64_t& _ackTimeOut);
+
+                    /**
+                     * 判断参数 AckTimeOut 是否已赋值
+                     * @return AckTimeOut 是否已赋值
+                     * 
+                     */
+                    bool AckTimeOutHasBeenSet() const;
+
+                    /**
+                     * 获取Pulsar topic message Type 0: composite message 1: regular message 2: delayed message
+                     * @return PulsarTopicMessageType Pulsar topic message Type 0: composite message 1: regular message 2: delayed message
+                     * 
+                     */
+                    int64_t GetPulsarTopicMessageType() const;
+
+                    /**
+                     * 设置Pulsar topic message Type 0: composite message 1: regular message 2: delayed message
+                     * @param _pulsarTopicMessageType Pulsar topic message Type 0: composite message 1: regular message 2: delayed message
+                     * 
+                     */
+                    void SetPulsarTopicMessageType(const int64_t& _pulsarTopicMessageType);
+
+                    /**
+                     * 判断参数 PulsarTopicMessageType 是否已赋值
+                     * @return PulsarTopicMessageType 是否已赋值
+                     * 
+                     */
+                    bool PulsarTopicMessageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Theme tag
+                     * @return Tags Theme tag
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置Theme tag
+                     * @param _tags Theme tag
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取defaultPolicy/timingwheelPolicy defaults to the community edition delayed message delivery policy if not passed
+                     * @return DelayMessagePolicy defaultPolicy/timingwheelPolicy defaults to the community edition delayed message delivery policy if not passed
+                     * 
+                     */
+                    std::string GetDelayMessagePolicy() const;
+
+                    /**
+                     * 设置defaultPolicy/timingwheelPolicy defaults to the community edition delayed message delivery policy if not passed
+                     * @param _delayMessagePolicy defaultPolicy/timingwheelPolicy defaults to the community edition delayed message delivery policy if not passed
+                     * 
+                     */
+                    void SetDelayMessagePolicy(const std::string& _delayMessagePolicy);
+
+                    /**
+                     * 判断参数 DelayMessagePolicy 是否已赋值
+                     * @return DelayMessagePolicy 是否已赋值
+                     * 
+                     */
+                    bool DelayMessagePolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,10 +388,16 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * The value “1” indicates a non-partitioned topic (a topic with no partitions) will be created. A value between 1 (exclusive) and 128 (inclusive) indicates the partition count of a partitioned topic.
+                     * The input parameter is 1, which means creating a non-partitioned topic with no partition. if the input parameter is greater than 1, it indicates the number of partitions for a partitioned topic, and the maximum cannot exceed 32.
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;
+
+                    /**
+                     * Pulsar cluster ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * Remarks (up to 128 characters).
@@ -263,12 +417,6 @@ namespace TencentCloud
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * Pulsar cluster ID
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
-
-                    /**
                      * Pulsar topic type.
 `0`: Non-persistent and non-partitioned
 `1`: Non-persistent and partitioned
@@ -277,6 +425,48 @@ namespace TencentCloud
                      */
                     int64_t m_pulsarTopicType;
                     bool m_pulsarTopicTypeHasBeenSet;
+
+                    /**
+                     * Retention period for unconsumed messages in seconds. value ranges from 60 seconds to 15 days.
+                     */
+                    uint64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
+
+                    /**
+                     * Default if not passed is native policy. DefaultPolicy means when the subscription reaches the maximum unacknowledged messages of 5000, the server will stop pushing messages to all consumers under the current subscription. DynamicPolicy means dynamically adjust the maximum unacknowledged messages of the subscription, with the specific quota being the maximum between 5000 and the number of consumers multiplied by 20. the default maximum unacknowledged message count per consumer is 20. exceeding this limit only affects that consumer and does not affect other consumers.
+                     */
+                    std::string m_unackPolicy;
+                    bool m_unackPolicyHasBeenSet;
+
+                    /**
+                     * Whether exception consumer isolation is enabled.
+                     */
+                    bool m_isolateConsumerEnable;
+                    bool m_isolateConsumerEnableHasBeenSet;
+
+                    /**
+                     * Specifies the consumer Ack timeout period in seconds. value range: 60-(3600*24).
+                     */
+                    int64_t m_ackTimeOut;
+                    bool m_ackTimeOutHasBeenSet;
+
+                    /**
+                     * Pulsar topic message Type 0: composite message 1: regular message 2: delayed message
+                     */
+                    int64_t m_pulsarTopicMessageType;
+                    bool m_pulsarTopicMessageTypeHasBeenSet;
+
+                    /**
+                     * Theme tag
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * defaultPolicy/timingwheelPolicy defaults to the community edition delayed message delivery policy if not passed
+                     */
+                    std::string m_delayMessagePolicy;
+                    bool m_delayMessagePolicyHasBeenSet;
 
                 };
             }

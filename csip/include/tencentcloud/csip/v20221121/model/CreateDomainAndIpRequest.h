@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取Asset tags
-                     * @return Tags Asset tags
+                     * 获取Group Account Member ID
+                     * @return MemberId Group Account Member ID
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置Group Account Member ID
+                     * @param _memberId Group Account Member ID
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取Asset tag
+                     * @return Tags Asset tag
                      * 
                      */
                     std::vector<AssetTag> GetTags() const;
 
                     /**
-                     * 设置Asset tags
-                     * @param _tags Asset tags
+                     * 设置Asset tag
+                     * @param _tags Asset tag
                      * 
                      */
                     void SetTags(const std::vector<AssetTag>& _tags);
@@ -94,7 +115,13 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * Asset tags
+                     * Group Account Member ID
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * Asset tag
                      */
                     std::vector<AssetTag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of a video splitting task.
+                * Video splitting task information.
                 */
                 class SplitMediaTaskSegmentInfo : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Input information of a video splitting task.
-                     * @return Input Input information of a video splitting task.
+                     * 获取Input information of the video splitting task.
+                     * @return Input Input information of the video splitting task.
                      * 
                      */
                     SplitMediaTaskInput GetInput() const;
 
                     /**
-                     * 设置Input information of a video splitting task.
-                     * @param _input Input information of a video splitting task.
+                     * 设置Input information of the video splitting task.
+                     * @param _input Input information of the video splitting task.
                      * 
                      */
                     void SetInput(const SplitMediaTaskInput& _input);
@@ -70,19 +70,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取Output information of a video splitting task.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @return Output Output information of a video splitting task.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 获取Output information of the video splitting task.
+                     * @return Output Output information of the video splitting task.
                      * 
                      */
                     TaskOutputMediaInfo GetOutput() const;
 
                     /**
-                     * 设置Output information of a video splitting task.
-Note: this field may return `null`, indicating that no valid values can be obtained.
-                     * @param _output Output information of a video splitting task.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * 设置Output information of the video splitting task.
+                     * @param _output Output information of the video splitting task.
                      * 
                      */
                     void SetOutput(const TaskOutputMediaInfo& _output);
@@ -95,15 +91,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
-                     * @return ProcedureTaskId The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * 获取Task ID of the task type `Procedure`. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), initiate the task when the task flow template specifies one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`.
+                     * @return ProcedureTaskId Task ID of the task type `Procedure`. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), initiate the task when the task flow template specifies one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`.
                      * 
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
-                     * 设置The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
-                     * @param _procedureTaskId The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * 设置Task ID of the task type `Procedure`. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), initiate the task when the task flow template specifies one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`.
+                     * @param _procedureTaskId Task ID of the task type `Procedure`. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), initiate the task when the task flow template specifies one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`.
                      * 
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
@@ -116,15 +112,15 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                     bool ProcedureTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
-                     * @return ReviewAudioVideoTaskId The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * 获取Task ID of the `ReviewAudioVideo` type. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), the task is triggered when `ReviewAudioVideoTask` is specified in the task flow template.
+                     * @return ReviewAudioVideoTaskId Task ID of the `ReviewAudioVideo` type. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), the task is triggered when `ReviewAudioVideoTask` is specified in the task flow template.
                      * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
 
                     /**
-                     * 设置The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
-                     * @param _reviewAudioVideoTaskId The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * 设置Task ID of the `ReviewAudioVideo` type. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), the task is triggered when `ReviewAudioVideoTask` is specified in the task flow template.
+                     * @param _reviewAudioVideoTaskId Task ID of the `ReviewAudioVideo` type. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), the task is triggered when `ReviewAudioVideoTask` is specified in the task flow template.
                      * 
                      */
                     void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
@@ -139,26 +135,25 @@ Note: this field may return `null`, indicating that no valid values can be obtai
                 private:
 
                     /**
-                     * Input information of a video splitting task.
+                     * Input information of the video splitting task.
                      */
                     SplitMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * Output information of a video splitting task.
-Note: this field may return `null`, indicating that no valid values can be obtained.
+                     * Output information of the video splitting task.
                      */
                     TaskOutputMediaInfo m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * The task ID for the task type `Procedure`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`, the task specified by this parameter will be executed.
+                     * Task ID of the task type `Procedure`. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), initiate the task when the task flow template specifies one or more of `MediaProcessTask`, `AiAnalysisTask`, and `AiRecognitionTask`.
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
 
                     /**
-                     * The task ID for the task type `ReviewAudioVideo`. If a task flow (`ProcedureName`) is specified by [SplitMedia](https://intl.cloud.tencent.com/document/api/266/51098?from_cn_redirect=1), and the task flow includes `ReviewAudioVideoTask`, the task specified by this parameter will be executed.
+                     * Task ID of the `ReviewAudioVideo` type. If a task flow template (`ProcedureName`) is specified in the video split task information list when initiating a video splitting task (https://www.tencentcloud.com/document/api/266/51098?from_cn_redirect=1), the task is triggered when `ReviewAudioVideoTask` is specified in the task flow template.
                      */
                     std::string m_reviewAudioVideoTaskId;
                     bool m_reviewAudioVideoTaskIdHasBeenSet;

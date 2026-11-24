@@ -47,11 +47,13 @@ namespace TencentCloud
 1: OCR + liveness detection + face comparison
 2: Liveness detection + face comparison
 3: Liveness detection
+4: OCR
 Default value: 1
                      * @return CheckMode The verification mode. Valid values:
 1: OCR + liveness detection + face comparison
 2: Liveness detection + face comparison
 3: Liveness detection
+4: OCR
 Default value: 1
                      * 
                      */
@@ -62,11 +64,13 @@ Default value: 1
 1: OCR + liveness detection + face comparison
 2: Liveness detection + face comparison
 3: Liveness detection
+4: OCR
 Default value: 1
                      * @param _checkMode The verification mode. Valid values:
 1: OCR + liveness detection + face comparison
 2: Liveness detection + face comparison
 3: Liveness detection
+4: OCR
 Default value: 1
                      * 
                      */
@@ -121,99 +125,71 @@ Default value: 4
                     bool SecurityLevelHasBeenSet() const;
 
                     /**
-                     * 获取The identity document type. Valid values: 
-1. HK (default): Identity card of Hong Kong (China)
-2. ML: Malaysian identity card
-3. IndonesiaIDCard: Indonesian identity card
-4. PhilippinesVoteID: Philippine voters ID card
-5. PhilippinesDrivingLicense: Philippine driver's license
-6. PhilippinesTinID: Philippine TIN ID card
-7. PhilippinesSSSID: Philippine SSS ID card
-8. PhilippinesUMID: Philippine UMID card
-9. MLIDPassport: Passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions
-10..MacaoIDCard: Macao ID Card
-11.ThailandIDCard: Thailand ID Card
-12.MainlandIDCard: Mainland ID Card
-13.SingaporeIDCard: Singapore ID Card
-14.JapanIDCard: Japan ID Card
-15.MLDrivingLicense: Malaysian Driving License
-16.IndonesiaDrivingLicense: Indonesia Driving License
-17.ThailandDrivingLicense: Thailand Driving License
-18.SingaporeDrivingLicense: Singapore Driving License
-19.JapanDrivingLicense: Japan Driving License
-20.TaiWanIDCard:Taiwan ID Card
-21.HMTPermit: exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan
-                     * @return IdCardType The identity document type. Valid values: 
-1. HK (default): Identity card of Hong Kong (China)
-2. ML: Malaysian identity card
-3. IndonesiaIDCard: Indonesian identity card
-4. PhilippinesVoteID: Philippine voters ID card
-5. PhilippinesDrivingLicense: Philippine driver's license
-6. PhilippinesTinID: Philippine TIN ID card
-7. PhilippinesSSSID: Philippine SSS ID card
-8. PhilippinesUMID: Philippine UMID card
-9. MLIDPassport: Passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions
-10..MacaoIDCard: Macao ID Card
-11.ThailandIDCard: Thailand ID Card
-12.MainlandIDCard: Mainland ID Card
-13.SingaporeIDCard: Singapore ID Card
-14.JapanIDCard: Japan ID Card
-15.MLDrivingLicense: Malaysian Driving License
-16.IndonesiaDrivingLicense: Indonesia Driving License
-17.ThailandDrivingLicense: Thailand Driving License
-18.SingaporeDrivingLicense: Singapore Driving License
-19.JapanDrivingLicense: Japan Driving License
-20.TaiWanIDCard:Taiwan ID Card
-21.HMTPermit: exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan
+                     * 获取Specifies the identity document type used for authentication. Valid values:
+
+1. HK (default): Hong Kong (China) Identity Card.
+2. ML: Malaysia Identity Card.
+3. IndonesiaIDCard: Indonesia Identity Card.
+4. PhilippinesVoteID: Philippines Voter's ID.
+5. PhilippinesDrivingLicense: Philippines Driving License.
+6. PhilippinesTinID: Philippines TIN ID.
+7. PhilippinesSSSID: Philippines SSS ID.
+8. PhilippinesUMID: Philippines UMID.
+9. MLIDPassport: Passports of Hong Kong (China), Macao (China), and Taiwan (China), as well as overseas regions.
+10. ThailandIDCard: Thailand Identity Card.
+11. MainlandIDCard: Chinese Mainland Identity Card.
+12. SingaporeIDCard: Singapore Identity Card.
+13. HMTPermit: Travel Permit for Hong Kong (China), Macao (China), and Taiwan (China).
+                     * @return IdCardType Specifies the identity document type used for authentication. Valid values:
+
+1. HK (default): Hong Kong (China) Identity Card.
+2. ML: Malaysia Identity Card.
+3. IndonesiaIDCard: Indonesia Identity Card.
+4. PhilippinesVoteID: Philippines Voter's ID.
+5. PhilippinesDrivingLicense: Philippines Driving License.
+6. PhilippinesTinID: Philippines TIN ID.
+7. PhilippinesSSSID: Philippines SSS ID.
+8. PhilippinesUMID: Philippines UMID.
+9. MLIDPassport: Passports of Hong Kong (China), Macao (China), and Taiwan (China), as well as overseas regions.
+10. ThailandIDCard: Thailand Identity Card.
+11. MainlandIDCard: Chinese Mainland Identity Card.
+12. SingaporeIDCard: Singapore Identity Card.
+13. HMTPermit: Travel Permit for Hong Kong (China), Macao (China), and Taiwan (China).
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置The identity document type. Valid values: 
-1. HK (default): Identity card of Hong Kong (China)
-2. ML: Malaysian identity card
-3. IndonesiaIDCard: Indonesian identity card
-4. PhilippinesVoteID: Philippine voters ID card
-5. PhilippinesDrivingLicense: Philippine driver's license
-6. PhilippinesTinID: Philippine TIN ID card
-7. PhilippinesSSSID: Philippine SSS ID card
-8. PhilippinesUMID: Philippine UMID card
-9. MLIDPassport: Passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions
-10..MacaoIDCard: Macao ID Card
-11.ThailandIDCard: Thailand ID Card
-12.MainlandIDCard: Mainland ID Card
-13.SingaporeIDCard: Singapore ID Card
-14.JapanIDCard: Japan ID Card
-15.MLDrivingLicense: Malaysian Driving License
-16.IndonesiaDrivingLicense: Indonesia Driving License
-17.ThailandDrivingLicense: Thailand Driving License
-18.SingaporeDrivingLicense: Singapore Driving License
-19.JapanDrivingLicense: Japan Driving License
-20.TaiWanIDCard:Taiwan ID Card
-21.HMTPermit: exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan
-                     * @param _idCardType The identity document type. Valid values: 
-1. HK (default): Identity card of Hong Kong (China)
-2. ML: Malaysian identity card
-3. IndonesiaIDCard: Indonesian identity card
-4. PhilippinesVoteID: Philippine voters ID card
-5. PhilippinesDrivingLicense: Philippine driver's license
-6. PhilippinesTinID: Philippine TIN ID card
-7. PhilippinesSSSID: Philippine SSS ID card
-8. PhilippinesUMID: Philippine UMID card
-9. MLIDPassport: Passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions
-10..MacaoIDCard: Macao ID Card
-11.ThailandIDCard: Thailand ID Card
-12.MainlandIDCard: Mainland ID Card
-13.SingaporeIDCard: Singapore ID Card
-14.JapanIDCard: Japan ID Card
-15.MLDrivingLicense: Malaysian Driving License
-16.IndonesiaDrivingLicense: Indonesia Driving License
-17.ThailandDrivingLicense: Thailand Driving License
-18.SingaporeDrivingLicense: Singapore Driving License
-19.JapanDrivingLicense: Japan Driving License
-20.TaiWanIDCard:Taiwan ID Card
-21.HMTPermit: exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan
+                     * 设置Specifies the identity document type used for authentication. Valid values:
+
+1. HK (default): Hong Kong (China) Identity Card.
+2. ML: Malaysia Identity Card.
+3. IndonesiaIDCard: Indonesia Identity Card.
+4. PhilippinesVoteID: Philippines Voter's ID.
+5. PhilippinesDrivingLicense: Philippines Driving License.
+6. PhilippinesTinID: Philippines TIN ID.
+7. PhilippinesSSSID: Philippines SSS ID.
+8. PhilippinesUMID: Philippines UMID.
+9. MLIDPassport: Passports of Hong Kong (China), Macao (China), and Taiwan (China), as well as overseas regions.
+10. ThailandIDCard: Thailand Identity Card.
+11. MainlandIDCard: Chinese Mainland Identity Card.
+12. SingaporeIDCard: Singapore Identity Card.
+13. HMTPermit: Travel Permit for Hong Kong (China), Macao (China), and Taiwan (China).
+                     * @param _idCardType Specifies the identity document type used for authentication. Valid values:
+
+1. HK (default): Hong Kong (China) Identity Card.
+2. ML: Malaysia Identity Card.
+3. IndonesiaIDCard: Indonesia Identity Card.
+4. PhilippinesVoteID: Philippines Voter's ID.
+5. PhilippinesDrivingLicense: Philippines Driving License.
+6. PhilippinesTinID: Philippines TIN ID.
+7. PhilippinesSSSID: Philippines SSS ID.
+8. PhilippinesUMID: Philippines UMID.
+9. MLIDPassport: Passports of Hong Kong (China), Macao (China), and Taiwan (China), as well as overseas regions.
+10. ThailandIDCard: Thailand Identity Card.
+11. MainlandIDCard: Chinese Mainland Identity Card.
+12. SingaporeIDCard: Singapore Identity Card.
+13. HMTPermit: Travel Permit for Hong Kong (China), Macao (China), and Taiwan (China).
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -268,15 +244,15 @@ Default value: 4
                     bool NeedVerifyIdCardHasBeenSet() const;
 
                     /**
-                     * 获取Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). (Currently, this parameter is not applied.)
-                     * @return DisableChangeOcrResult Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). (Currently, this parameter is not applied.)
+                     * 获取Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). 
+                     * @return DisableChangeOcrResult Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). 
                      * 
                      */
                     bool GetDisableChangeOcrResult() const;
 
                     /**
-                     * 设置Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). (Currently, this parameter is not applied.)
-                     * @param _disableChangeOcrResult Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). (Currently, this parameter is not applied.)
+                     * 设置Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). 
+                     * @param _disableChangeOcrResult Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). 
                      * 
                      */
                     void SetDisableChangeOcrResult(const bool& _disableChangeOcrResult);
@@ -290,18 +266,14 @@ Default value: 4
 
                     /**
                      * 获取Whether to disable the OCR warnings. Default value: `false` (not disable), where OCR warnings are enabled and the OCR result will not be returned if there is a warning.
-This feature applies only to Hong Kong (China) identity cards, Malaysian identity cards, and passports.
                      * @return DisableCheckOcrWarnings Whether to disable the OCR warnings. Default value: `false` (not disable), where OCR warnings are enabled and the OCR result will not be returned if there is a warning.
-This feature applies only to Hong Kong (China) identity cards, Malaysian identity cards, and passports.
                      * 
                      */
                     bool GetDisableCheckOcrWarnings() const;
 
                     /**
                      * 设置Whether to disable the OCR warnings. Default value: `false` (not disable), where OCR warnings are enabled and the OCR result will not be returned if there is a warning.
-This feature applies only to Hong Kong (China) identity cards, Malaysian identity cards, and passports.
                      * @param _disableCheckOcrWarnings Whether to disable the OCR warnings. Default value: `false` (not disable), where OCR warnings are enabled and the OCR result will not be returned if there is a warning.
-This feature applies only to Hong Kong (China) identity cards, Malaysian identity cards, and passports.
                      * 
                      */
                     void SetDisableCheckOcrWarnings(const bool& _disableCheckOcrWarnings);
@@ -312,6 +284,31 @@ This feature applies only to Hong Kong (China) identity cards, Malaysian identit
                      * 
                      */
                     bool DisableCheckOcrWarningsHasBeenSet() const;
+
+                    /**
+                     * 获取Customize which alarm codes to block. If left blank, all alarm codes will be blocked by default.
+Optional alarm codes are: -9101 (occlusion or incomplete border), -9102 (photocopying), -9103 (screen capture by camera), -9104 (image editing/PS modification), -9107 (glare/reflection), -9108 (blurriness), -8101 (information format check),-8102(information consistency check).
+                     * @return SelectedWarningCodes Customize which alarm codes to block. If left blank, all alarm codes will be blocked by default.
+Optional alarm codes are: -9101 (occlusion or incomplete border), -9102 (photocopying), -9103 (screen capture by camera), -9104 (image editing/PS modification), -9107 (glare/reflection), -9108 (blurriness), -8101 (information format check),-8102(information consistency check).
+                     * 
+                     */
+                    std::vector<int64_t> GetSelectedWarningCodes() const;
+
+                    /**
+                     * 设置Customize which alarm codes to block. If left blank, all alarm codes will be blocked by default.
+Optional alarm codes are: -9101 (occlusion or incomplete border), -9102 (photocopying), -9103 (screen capture by camera), -9104 (image editing/PS modification), -9107 (glare/reflection), -9108 (blurriness), -8101 (information format check),-8102(information consistency check).
+                     * @param _selectedWarningCodes Customize which alarm codes to block. If left blank, all alarm codes will be blocked by default.
+Optional alarm codes are: -9101 (occlusion or incomplete border), -9102 (photocopying), -9103 (screen capture by camera), -9104 (image editing/PS modification), -9107 (glare/reflection), -9108 (blurriness), -8101 (information format check),-8102(information consistency check).
+                     * 
+                     */
+                    void SetSelectedWarningCodes(const std::vector<int64_t>& _selectedWarningCodes);
+
+                    /**
+                     * 判断参数 SelectedWarningCodes 是否已赋值
+                     * @return SelectedWarningCodes 是否已赋值
+                     * 
+                     */
+                    bool SelectedWarningCodesHasBeenSet() const;
 
                     /**
                      * 获取A passthrough field, which is returned together with the verification result and can contain up to 1,024 bits.
@@ -333,6 +330,43 @@ This feature applies only to Hong Kong (China) identity cards, Malaysian identit
                      * 
                      */
                     bool ExtraHasBeenSet() const;
+
+                    /**
+                     * 获取BASIC: Basic version (Default).
+ENHANCED: Enhance version, enable additional output of device risk level field.
+PRO: Pro version, enable additional output of attack type fields.
+PLUS: Plus version, enable additional output of device risk level and attack type fields.
+Please contact us to access enhance version & plus version.	
+                     * @return SdkVersion BASIC: Basic version (Default).
+ENHANCED: Enhance version, enable additional output of device risk level field.
+PRO: Pro version, enable additional output of attack type fields.
+PLUS: Plus version, enable additional output of device risk level and attack type fields.
+Please contact us to access enhance version & plus version.	
+                     * 
+                     */
+                    std::string GetSdkVersion() const;
+
+                    /**
+                     * 设置BASIC: Basic version (Default).
+ENHANCED: Enhance version, enable additional output of device risk level field.
+PRO: Pro version, enable additional output of attack type fields.
+PLUS: Plus version, enable additional output of device risk level and attack type fields.
+Please contact us to access enhance version & plus version.	
+                     * @param _sdkVersion BASIC: Basic version (Default).
+ENHANCED: Enhance version, enable additional output of device risk level field.
+PRO: Pro version, enable additional output of attack type fields.
+PLUS: Plus version, enable additional output of device risk level and attack type fields.
+Please contact us to access enhance version & plus version.	
+                     * 
+                     */
+                    void SetSdkVersion(const std::string& _sdkVersion);
+
+                    /**
+                     * 判断参数 SdkVersion 是否已赋值
+                     * @return SdkVersion 是否已赋值
+                     * 
+                     */
+                    bool SdkVersionHasBeenSet() const;
 
                     /**
                      * 获取This interface is used to control th action sequences.
@@ -391,6 +425,335 @@ The default value is blink. The different action types passed in this parameter 
                      */
                     bool ActionListHasBeenSet() const;
 
+                    /**
+                     * 获取Whether expired identity documents are permitted to proceed to the liveness detection process. This parameter only takes effect when the document type is Hong Kong Identity Card (HKID).
+true (default value): Expired HKID is allowed to enter the liveness process.
+false : Expired HKID is rejected and cannot enter the liveness process.
+                     * @return AllowExpiredDocument Whether expired identity documents are permitted to proceed to the liveness detection process. This parameter only takes effect when the document type is Hong Kong Identity Card (HKID).
+true (default value): Expired HKID is allowed to enter the liveness process.
+false : Expired HKID is rejected and cannot enter the liveness process.
+                     * 
+                     */
+                    bool GetAllowExpiredDocument() const;
+
+                    /**
+                     * 设置Whether expired identity documents are permitted to proceed to the liveness detection process. This parameter only takes effect when the document type is Hong Kong Identity Card (HKID).
+true (default value): Expired HKID is allowed to enter the liveness process.
+false : Expired HKID is rejected and cannot enter the liveness process.
+                     * @param _allowExpiredDocument Whether expired identity documents are permitted to proceed to the liveness detection process. This parameter only takes effect when the document type is Hong Kong Identity Card (HKID).
+true (default value): Expired HKID is allowed to enter the liveness process.
+false : Expired HKID is rejected and cannot enter the liveness process.
+                     * 
+                     */
+                    void SetAllowExpiredDocument(const bool& _allowExpiredDocument);
+
+                    /**
+                     * 判断参数 AllowExpiredDocument 是否已赋值
+                     * @return AllowExpiredDocument 是否已赋值
+                     * 
+                     */
+                    bool AllowExpiredDocumentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Controls visibility of the final result page</p><p>Enumeration values:</p><ul><li>true: Do not display the result page</li><li>false: Display the result page</li></ul><p>Default value: false</p>
+                     * @return SkipResultPage <p>Controls visibility of the final result page</p><p>Enumeration values:</p><ul><li>true: Do not display the result page</li><li>false: Display the result page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetSkipResultPage() const;
+
+                    /**
+                     * 设置<p>Controls visibility of the final result page</p><p>Enumeration values:</p><ul><li>true: Do not display the result page</li><li>false: Display the result page</li></ul><p>Default value: false</p>
+                     * @param _skipResultPage <p>Controls visibility of the final result page</p><p>Enumeration values:</p><ul><li>true: Do not display the result page</li><li>false: Display the result page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    void SetSkipResultPage(const bool& _skipResultPage);
+
+                    /**
+                     * 判断参数 SkipResultPage 是否已赋值
+                     * @return SkipResultPage 是否已赋值
+                     * 
+                     */
+                    bool SkipResultPageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Identified fields displayed during document OCR</p><p>Parameter format: ["ChineseName","FullName"]</p><p>Input constraints: <strong>Supported field names by document type:</strong><br><strong>HK (Hong Kong Identity Card):</strong> "ChineseName","FullName","LicenseNumber","Birthday","Sex", "IssuedDate", "Permanent", "Symbol", "CurrentIssueDate"<br><strong>ML (Malaysia Identity Card):</strong> "FullName","LicenseNumber","Sex", "Birthday", "Type", "FormattedAddress"<br><strong>IndonesiaIDCard (Indonesia Identity Card):</strong> "LicenseNumber","FullName","Sex", "Birthday", "FormattedAddress", "Nationality", "DueDate", "IssuedDate", "Street", "Village","Area","Province","City","MaritalStatus", "BloodType", "Religion", "Occupation"<br><strong>PhilippinesVoteID (Philippines Voter's ID):</strong> "FirstName","LastName","Birthday"<br><strong>PhilippinesDrivingLicense (Philippines Driving License):</strong> "LastName","FirstName","MiddleName","Sex","Birthday"<br><strong>PhilippinesTinID (Philippines TIN ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesSSSID (Philippines SSS ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesUMID (Philippines UMID):</strong> "Surname", "MiddleName", "GivenName", "Sex", "Birthday"<br><strong>MLIDPassport (Passports of Hong Kong, Macao, Taiwan and overseas regions):</strong> "LicenseNumber","FullName", "Surname", "GivenName", "Birthday", "Sex","DateOfExpiration","IssuingCountry"<br><strong>ThailandIDCard (Thailand Identity Card):</strong> "FullName", "LastName", "FirstName", "FormattedAddress", "LicenseNumber", "Birthday", "ExpirationDate", "IssuedDate", "RegistrationNumber", "Religion", "ThaiBirthday", "ThaiExpirationDate", "ThaiIssueDate"<br><strong>MainlandIDCard (Chinese Mainland Identity Card):</strong> "LicenseNumber", "FullName", "Sex", "Nation", "Birthday", "FormattedAddress"<br><strong>SingaporeIDCard (Singapore Identity Card):</strong> "ChineseName","Sex","Birthday","LicenseNumber","Nationality","FullName","Address"<br><strong>HMTPermit (Mainland Travel Permit for Hong Kong and Macao Residents / Mainland Travel Permit for Taiwan Residents):</strong> "Name", "EnglishName", "Sex", "Number", "ValidDate", "Birthday"</p><p>If no fields are specified, all identified fields will be displayed by default.</p>
+
+                     * @return CardOcrDisplayFields <p>Identified fields displayed during document OCR</p><p>Parameter format: ["ChineseName","FullName"]</p><p>Input constraints: <strong>Supported field names by document type:</strong><br><strong>HK (Hong Kong Identity Card):</strong> "ChineseName","FullName","LicenseNumber","Birthday","Sex", "IssuedDate", "Permanent", "Symbol", "CurrentIssueDate"<br><strong>ML (Malaysia Identity Card):</strong> "FullName","LicenseNumber","Sex", "Birthday", "Type", "FormattedAddress"<br><strong>IndonesiaIDCard (Indonesia Identity Card):</strong> "LicenseNumber","FullName","Sex", "Birthday", "FormattedAddress", "Nationality", "DueDate", "IssuedDate", "Street", "Village","Area","Province","City","MaritalStatus", "BloodType", "Religion", "Occupation"<br><strong>PhilippinesVoteID (Philippines Voter's ID):</strong> "FirstName","LastName","Birthday"<br><strong>PhilippinesDrivingLicense (Philippines Driving License):</strong> "LastName","FirstName","MiddleName","Sex","Birthday"<br><strong>PhilippinesTinID (Philippines TIN ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesSSSID (Philippines SSS ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesUMID (Philippines UMID):</strong> "Surname", "MiddleName", "GivenName", "Sex", "Birthday"<br><strong>MLIDPassport (Passports of Hong Kong, Macao, Taiwan and overseas regions):</strong> "LicenseNumber","FullName", "Surname", "GivenName", "Birthday", "Sex","DateOfExpiration","IssuingCountry"<br><strong>ThailandIDCard (Thailand Identity Card):</strong> "FullName", "LastName", "FirstName", "FormattedAddress", "LicenseNumber", "Birthday", "ExpirationDate", "IssuedDate", "RegistrationNumber", "Religion", "ThaiBirthday", "ThaiExpirationDate", "ThaiIssueDate"<br><strong>MainlandIDCard (Chinese Mainland Identity Card):</strong> "LicenseNumber", "FullName", "Sex", "Nation", "Birthday", "FormattedAddress"<br><strong>SingaporeIDCard (Singapore Identity Card):</strong> "ChineseName","Sex","Birthday","LicenseNumber","Nationality","FullName","Address"<br><strong>HMTPermit (Mainland Travel Permit for Hong Kong and Macao Residents / Mainland Travel Permit for Taiwan Residents):</strong> "Name", "EnglishName", "Sex", "Number", "ValidDate", "Birthday"</p><p>If no fields are specified, all identified fields will be displayed by default.</p>
+
+                     * 
+                     */
+                    std::vector<std::string> GetCardOcrDisplayFields() const;
+
+                    /**
+                     * 设置<p>Identified fields displayed during document OCR</p><p>Parameter format: ["ChineseName","FullName"]</p><p>Input constraints: <strong>Supported field names by document type:</strong><br><strong>HK (Hong Kong Identity Card):</strong> "ChineseName","FullName","LicenseNumber","Birthday","Sex", "IssuedDate", "Permanent", "Symbol", "CurrentIssueDate"<br><strong>ML (Malaysia Identity Card):</strong> "FullName","LicenseNumber","Sex", "Birthday", "Type", "FormattedAddress"<br><strong>IndonesiaIDCard (Indonesia Identity Card):</strong> "LicenseNumber","FullName","Sex", "Birthday", "FormattedAddress", "Nationality", "DueDate", "IssuedDate", "Street", "Village","Area","Province","City","MaritalStatus", "BloodType", "Religion", "Occupation"<br><strong>PhilippinesVoteID (Philippines Voter's ID):</strong> "FirstName","LastName","Birthday"<br><strong>PhilippinesDrivingLicense (Philippines Driving License):</strong> "LastName","FirstName","MiddleName","Sex","Birthday"<br><strong>PhilippinesTinID (Philippines TIN ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesSSSID (Philippines SSS ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesUMID (Philippines UMID):</strong> "Surname", "MiddleName", "GivenName", "Sex", "Birthday"<br><strong>MLIDPassport (Passports of Hong Kong, Macao, Taiwan and overseas regions):</strong> "LicenseNumber","FullName", "Surname", "GivenName", "Birthday", "Sex","DateOfExpiration","IssuingCountry"<br><strong>ThailandIDCard (Thailand Identity Card):</strong> "FullName", "LastName", "FirstName", "FormattedAddress", "LicenseNumber", "Birthday", "ExpirationDate", "IssuedDate", "RegistrationNumber", "Religion", "ThaiBirthday", "ThaiExpirationDate", "ThaiIssueDate"<br><strong>MainlandIDCard (Chinese Mainland Identity Card):</strong> "LicenseNumber", "FullName", "Sex", "Nation", "Birthday", "FormattedAddress"<br><strong>SingaporeIDCard (Singapore Identity Card):</strong> "ChineseName","Sex","Birthday","LicenseNumber","Nationality","FullName","Address"<br><strong>HMTPermit (Mainland Travel Permit for Hong Kong and Macao Residents / Mainland Travel Permit for Taiwan Residents):</strong> "Name", "EnglishName", "Sex", "Number", "ValidDate", "Birthday"</p><p>If no fields are specified, all identified fields will be displayed by default.</p>
+
+                     * @param _cardOcrDisplayFields <p>Identified fields displayed during document OCR</p><p>Parameter format: ["ChineseName","FullName"]</p><p>Input constraints: <strong>Supported field names by document type:</strong><br><strong>HK (Hong Kong Identity Card):</strong> "ChineseName","FullName","LicenseNumber","Birthday","Sex", "IssuedDate", "Permanent", "Symbol", "CurrentIssueDate"<br><strong>ML (Malaysia Identity Card):</strong> "FullName","LicenseNumber","Sex", "Birthday", "Type", "FormattedAddress"<br><strong>IndonesiaIDCard (Indonesia Identity Card):</strong> "LicenseNumber","FullName","Sex", "Birthday", "FormattedAddress", "Nationality", "DueDate", "IssuedDate", "Street", "Village","Area","Province","City","MaritalStatus", "BloodType", "Religion", "Occupation"<br><strong>PhilippinesVoteID (Philippines Voter's ID):</strong> "FirstName","LastName","Birthday"<br><strong>PhilippinesDrivingLicense (Philippines Driving License):</strong> "LastName","FirstName","MiddleName","Sex","Birthday"<br><strong>PhilippinesTinID (Philippines TIN ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesSSSID (Philippines SSS ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesUMID (Philippines UMID):</strong> "Surname", "MiddleName", "GivenName", "Sex", "Birthday"<br><strong>MLIDPassport (Passports of Hong Kong, Macao, Taiwan and overseas regions):</strong> "LicenseNumber","FullName", "Surname", "GivenName", "Birthday", "Sex","DateOfExpiration","IssuingCountry"<br><strong>ThailandIDCard (Thailand Identity Card):</strong> "FullName", "LastName", "FirstName", "FormattedAddress", "LicenseNumber", "Birthday", "ExpirationDate", "IssuedDate", "RegistrationNumber", "Religion", "ThaiBirthday", "ThaiExpirationDate", "ThaiIssueDate"<br><strong>MainlandIDCard (Chinese Mainland Identity Card):</strong> "LicenseNumber", "FullName", "Sex", "Nation", "Birthday", "FormattedAddress"<br><strong>SingaporeIDCard (Singapore Identity Card):</strong> "ChineseName","Sex","Birthday","LicenseNumber","Nationality","FullName","Address"<br><strong>HMTPermit (Mainland Travel Permit for Hong Kong and Macao Residents / Mainland Travel Permit for Taiwan Residents):</strong> "Name", "EnglishName", "Sex", "Number", "ValidDate", "Birthday"</p><p>If no fields are specified, all identified fields will be displayed by default.</p>
+
+                     * 
+                     */
+                    void SetCardOcrDisplayFields(const std::vector<std::string>& _cardOcrDisplayFields);
+
+                    /**
+                     * 判断参数 CardOcrDisplayFields 是否已赋值
+                     * @return CardOcrDisplayFields 是否已赋值
+                     * 
+                     */
+                    bool CardOcrDisplayFieldsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Liveness retry attempts</p><p>Value range: [1, 5]</p><p>Default value: 5</p>
+                     * @return RetryLimit <p>Liveness retry attempts</p><p>Value range: [1, 5]</p><p>Default value: 5</p>
+                     * 
+                     */
+                    int64_t GetRetryLimit() const;
+
+                    /**
+                     * 设置<p>Liveness retry attempts</p><p>Value range: [1, 5]</p><p>Default value: 5</p>
+                     * @param _retryLimit <p>Liveness retry attempts</p><p>Value range: [1, 5]</p><p>Default value: 5</p>
+                     * 
+                     */
+                    void SetRetryLimit(const int64_t& _retryLimit);
+
+                    /**
+                     * 判断参数 RetryLimit 是否已赋值
+                     * @return RetryLimit 是否已赋值
+                     * 
+                     */
+                    bool RetryLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Enable multi-image anti-spoofing for single-angle Identity Document Recognition</p><p>Default value: false</p><p>true - Enabled; false - Disabled</p>
+                     * @return EnableForgeryDetectionImages <p>Enable multi-image anti-spoofing for single-angle Identity Document Recognition</p><p>Default value: false</p><p>true - Enabled; false - Disabled</p>
+                     * 
+                     */
+                    bool GetEnableForgeryDetectionImages() const;
+
+                    /**
+                     * 设置<p>Enable multi-image anti-spoofing for single-angle Identity Document Recognition</p><p>Default value: false</p><p>true - Enabled; false - Disabled</p>
+                     * @param _enableForgeryDetectionImages <p>Enable multi-image anti-spoofing for single-angle Identity Document Recognition</p><p>Default value: false</p><p>true - Enabled; false - Disabled</p>
+                     * 
+                     */
+                    void SetEnableForgeryDetectionImages(const bool& _enableForgeryDetectionImages);
+
+                    /**
+                     * 判断参数 EnableForgeryDetectionImages 是否已赋值
+                     * @return EnableForgeryDetectionImages 是否已赋值
+                     * 
+                     */
+                    bool EnableForgeryDetectionImagesHasBeenSet() const;
+
+                    /**
+                     * 获取Encrypted metadata generated by the SDK
+                     * @return MetaData Encrypted metadata generated by the SDK
+                     * 
+                     */
+                    std::string GetMetaData() const;
+
+                    /**
+                     * 设置Encrypted metadata generated by the SDK
+                     * @param _metaData Encrypted metadata generated by the SDK
+                     * 
+                     */
+                    void SetMetaData(const std::string& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     * 
+                     */
+                    bool MetaDataHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Controls visibility of the launch page</p><p>Enumeration values:</p><ul><li>true: Do not display the launch page</li><li>false: Display the launch page</li></ul><p>Default value: false</p>
+                     * @return SkipLaunchPage <p>Controls visibility of the launch page</p><p>Enumeration values:</p><ul><li>true: Do not display the launch page</li><li>false: Display the launch page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetSkipLaunchPage() const;
+
+                    /**
+                     * 设置<p>Controls visibility of the launch page</p><p>Enumeration values:</p><ul><li>true: Do not display the launch page</li><li>false: Display the launch page</li></ul><p>Default value: false</p>
+                     * @param _skipLaunchPage <p>Controls visibility of the launch page</p><p>Enumeration values:</p><ul><li>true: Do not display the launch page</li><li>false: Display the launch page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    void SetSkipLaunchPage(const bool& _skipLaunchPage);
+
+                    /**
+                     * 判断参数 SkipLaunchPage 是否已赋值
+                     * @return SkipLaunchPage 是否已赋值
+                     * 
+                     */
+                    bool SkipLaunchPageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Controls visibility of the information confirmation page </p><p>Enumeration values:</p><ul><li>true: Do not display the information confirmation page</li><li>false: Display the information confirmation page</li></ul><p>Default value: false</p>
+                     * @return SkipOcrConfirmPage <p>Controls visibility of the information confirmation page </p><p>Enumeration values:</p><ul><li>true: Do not display the information confirmation page</li><li>false: Display the information confirmation page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetSkipOcrConfirmPage() const;
+
+                    /**
+                     * 设置<p>Controls visibility of the information confirmation page </p><p>Enumeration values:</p><ul><li>true: Do not display the information confirmation page</li><li>false: Display the information confirmation page</li></ul><p>Default value: false</p>
+                     * @param _skipOcrConfirmPage <p>Controls visibility of the information confirmation page </p><p>Enumeration values:</p><ul><li>true: Do not display the information confirmation page</li><li>false: Display the information confirmation page</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    void SetSkipOcrConfirmPage(const bool& _skipOcrConfirmPage);
+
+                    /**
+                     * 判断参数 SkipOcrConfirmPage 是否已赋值
+                     * @return SkipOcrConfirmPage 是否已赋值
+                     * 
+                     */
+                    bool SkipOcrConfirmPageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Controls whether to hide the top progress bar across all pages of the entire process </p><p>Enumeration values:</p><ul><li>true: Do not display the progress bar</li><li>false: Display the progress bar</li></ul><p>Default value: false</p>
+                     * @return HideProgressBar <p>Controls whether to hide the top progress bar across all pages of the entire process </p><p>Enumeration values:</p><ul><li>true: Do not display the progress bar</li><li>false: Display the progress bar</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetHideProgressBar() const;
+
+                    /**
+                     * 设置<p>Controls whether to hide the top progress bar across all pages of the entire process </p><p>Enumeration values:</p><ul><li>true: Do not display the progress bar</li><li>false: Display the progress bar</li></ul><p>Default value: false</p>
+                     * @param _hideProgressBar <p>Controls whether to hide the top progress bar across all pages of the entire process </p><p>Enumeration values:</p><ul><li>true: Do not display the progress bar</li><li>false: Display the progress bar</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    void SetHideProgressBar(const bool& _hideProgressBar);
+
+                    /**
+                     * 判断参数 HideProgressBar 是否已赋值
+                     * @return HideProgressBar 是否已赋值
+                     * 
+                     */
+                    bool HideProgressBarHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether uploading photos from the album is permitted for verification during the ID validation phase (prohibited when single-angle multi-image forgery detection is enabled)
+ </p><p>Enumeration values:</p><ul><li>true: Album photo upload for verification enabled</li><li>false: Album photo upload for verification disabled</li></ul><p>Default value: false</p>
+                     * @return AllowUploadPhoto <p>Whether uploading photos from the album is permitted for verification during the ID validation phase (prohibited when single-angle multi-image forgery detection is enabled)
+ </p><p>Enumeration values:</p><ul><li>true: Album photo upload for verification enabled</li><li>false: Album photo upload for verification disabled</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    bool GetAllowUploadPhoto() const;
+
+                    /**
+                     * 设置<p>Whether uploading photos from the album is permitted for verification during the ID validation phase (prohibited when single-angle multi-image forgery detection is enabled)
+ </p><p>Enumeration values:</p><ul><li>true: Album photo upload for verification enabled</li><li>false: Album photo upload for verification disabled</li></ul><p>Default value: false</p>
+                     * @param _allowUploadPhoto <p>Whether uploading photos from the album is permitted for verification during the ID validation phase (prohibited when single-angle multi-image forgery detection is enabled)
+ </p><p>Enumeration values:</p><ul><li>true: Album photo upload for verification enabled</li><li>false: Album photo upload for verification disabled</li></ul><p>Default value: false</p>
+                     * 
+                     */
+                    void SetAllowUploadPhoto(const bool& _allowUploadPhoto);
+
+                    /**
+                     * 判断参数 AllowUploadPhoto 是否已赋值
+                     * @return AllowUploadPhoto 是否已赋值
+                     * 
+                     */
+                    bool AllowUploadPhotoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to enable Bank of Thailand-specific background detection.<br>This parameter requires whitelist activation; please contact us to request access before it can take effect.</p><p>Default value: false
+
+                     * @return EnableBotBgDetection <p>Whether to enable Bank of Thailand-specific background detection.<br>This parameter requires whitelist activation; please contact us to request access before it can take effect.</p><p>Default value: false
+
+                     * 
+                     */
+                    bool GetEnableBotBgDetection() const;
+
+                    /**
+                     * 设置<p>Whether to enable Bank of Thailand-specific background detection.<br>This parameter requires whitelist activation; please contact us to request access before it can take effect.</p><p>Default value: false
+
+                     * @param _enableBotBgDetection <p>Whether to enable Bank of Thailand-specific background detection.<br>This parameter requires whitelist activation; please contact us to request access before it can take effect.</p><p>Default value: false
+
+                     * 
+                     */
+                    void SetEnableBotBgDetection(const bool& _enableBotBgDetection);
+
+                    /**
+                     * 判断参数 EnableBotBgDetection 是否已赋值
+                     * @return EnableBotBgDetection 是否已赋值
+                     * 
+                     */
+                    bool EnableBotBgDetectionHasBeenSet() const;
+
+                    /**
+                     * 获取OCR Auto Capture Mode Timeout (ms)
+Value Range: [5000, 180000]
+Default Value: 20000
+Values less than 5000 will be clamped to 5000; values greater than 180000 will be clamped to 180000
+                     * @return OcrAutoDetectTimeout OCR Auto Capture Mode Timeout (ms)
+Value Range: [5000, 180000]
+Default Value: 20000
+Values less than 5000 will be clamped to 5000; values greater than 180000 will be clamped to 180000
+                     * 
+                     */
+                    int64_t GetOcrAutoDetectTimeout() const;
+
+                    /**
+                     * 设置OCR Auto Capture Mode Timeout (ms)
+Value Range: [5000, 180000]
+Default Value: 20000
+Values less than 5000 will be clamped to 5000; values greater than 180000 will be clamped to 180000
+                     * @param _ocrAutoDetectTimeout OCR Auto Capture Mode Timeout (ms)
+Value Range: [5000, 180000]
+Default Value: 20000
+Values less than 5000 will be clamped to 5000; values greater than 180000 will be clamped to 180000
+                     * 
+                     */
+                    void SetOcrAutoDetectTimeout(const int64_t& _ocrAutoDetectTimeout);
+
+                    /**
+                     * 判断参数 OcrAutoDetectTimeout 是否已赋值
+                     * @return OcrAutoDetectTimeout 是否已赋值
+                     * 
+                     */
+                    bool OcrAutoDetectTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取OCR Capture Mode
+Enum Values:
+<li>OCR_DETECT_MANUAL: Manual capture mode. Recognition starts after the user taps to take a photo.</li>
+<li>OCR_DETECT_AUTO_MANUAL: Auto recognition mode. The system performs automatic recognition; fallback to manual photo capture is available upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO: Auto-only recognition mode. The system performs automatic recognition; no fallback to manual photo capture upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO_MULTI: Multi-shot auto-only recognition mode. The system automatically captures multiple document images with flash enabled.
+Default Value: OCR_DETECT_AUTO_MANUAL
+                     * @return OcrModeType OCR Capture Mode
+Enum Values:
+<li>OCR_DETECT_MANUAL: Manual capture mode. Recognition starts after the user taps to take a photo.</li>
+<li>OCR_DETECT_AUTO_MANUAL: Auto recognition mode. The system performs automatic recognition; fallback to manual photo capture is available upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO: Auto-only recognition mode. The system performs automatic recognition; no fallback to manual photo capture upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO_MULTI: Multi-shot auto-only recognition mode. The system automatically captures multiple document images with flash enabled.
+Default Value: OCR_DETECT_AUTO_MANUAL
+                     * 
+                     */
+                    std::string GetOcrModeType() const;
+
+                    /**
+                     * 设置OCR Capture Mode
+Enum Values:
+<li>OCR_DETECT_MANUAL: Manual capture mode. Recognition starts after the user taps to take a photo.</li>
+<li>OCR_DETECT_AUTO_MANUAL: Auto recognition mode. The system performs automatic recognition; fallback to manual photo capture is available upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO: Auto-only recognition mode. The system performs automatic recognition; no fallback to manual photo capture upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO_MULTI: Multi-shot auto-only recognition mode. The system automatically captures multiple document images with flash enabled.
+Default Value: OCR_DETECT_AUTO_MANUAL
+                     * @param _ocrModeType OCR Capture Mode
+Enum Values:
+<li>OCR_DETECT_MANUAL: Manual capture mode. Recognition starts after the user taps to take a photo.</li>
+<li>OCR_DETECT_AUTO_MANUAL: Auto recognition mode. The system performs automatic recognition; fallback to manual photo capture is available upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO: Auto-only recognition mode. The system performs automatic recognition; no fallback to manual photo capture upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO_MULTI: Multi-shot auto-only recognition mode. The system automatically captures multiple document images with flash enabled.
+Default Value: OCR_DETECT_AUTO_MANUAL
+                     * 
+                     */
+                    void SetOcrModeType(const std::string& _ocrModeType);
+
+                    /**
+                     * 判断参数 OcrModeType 是否已赋值
+                     * @return OcrModeType 是否已赋值
+                     * 
+                     */
+                    bool OcrModeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +761,7 @@ The default value is blink. The different action types passed in this parameter 
 1: OCR + liveness detection + face comparison
 2: Liveness detection + face comparison
 3: Liveness detection
+4: OCR
 Default value: 1
                      */
                     int64_t m_checkMode;
@@ -415,28 +779,21 @@ Default value: 4
                     bool m_securityLevelHasBeenSet;
 
                     /**
-                     * The identity document type. Valid values: 
-1. HK (default): Identity card of Hong Kong (China)
-2. ML: Malaysian identity card
-3. IndonesiaIDCard: Indonesian identity card
-4. PhilippinesVoteID: Philippine voters ID card
-5. PhilippinesDrivingLicense: Philippine driver's license
-6. PhilippinesTinID: Philippine TIN ID card
-7. PhilippinesSSSID: Philippine SSS ID card
-8. PhilippinesUMID: Philippine UMID card
-9. MLIDPassport: Passport issued in Hong Kong/Macao/Taiwan (China) or other countries/regions
-10..MacaoIDCard: Macao ID Card
-11.ThailandIDCard: Thailand ID Card
-12.MainlandIDCard: Mainland ID Card
-13.SingaporeIDCard: Singapore ID Card
-14.JapanIDCard: Japan ID Card
-15.MLDrivingLicense: Malaysian Driving License
-16.IndonesiaDrivingLicense: Indonesia Driving License
-17.ThailandDrivingLicense: Thailand Driving License
-18.SingaporeDrivingLicense: Singapore Driving License
-19.JapanDrivingLicense: Japan Driving License
-20.TaiWanIDCard:Taiwan ID Card
-21.HMTPermit: exit/entry permit (card) for traveling to and from Hong Kong, Macao, or Taiwan
+                     * Specifies the identity document type used for authentication. Valid values:
+
+1. HK (default): Hong Kong (China) Identity Card.
+2. ML: Malaysia Identity Card.
+3. IndonesiaIDCard: Indonesia Identity Card.
+4. PhilippinesVoteID: Philippines Voter's ID.
+5. PhilippinesDrivingLicense: Philippines Driving License.
+6. PhilippinesTinID: Philippines TIN ID.
+7. PhilippinesSSSID: Philippines SSS ID.
+8. PhilippinesUMID: Philippines UMID.
+9. MLIDPassport: Passports of Hong Kong (China), Macao (China), and Taiwan (China), as well as overseas regions.
+10. ThailandIDCard: Thailand Identity Card.
+11. MainlandIDCard: Chinese Mainland Identity Card.
+12. SingaporeIDCard: Singapore Identity Card.
+13. HMTPermit: Travel Permit for Hong Kong (China), Macao (China), and Taiwan (China).
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
@@ -454,23 +811,39 @@ Default value: 4
                     bool m_needVerifyIdCardHasBeenSet;
 
                     /**
-                     * Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). (Currently, this parameter is not applied.)
+                     * Whether to forbid the modification of the OCR result by users. Default value: `false` (modification allowed). 
                      */
                     bool m_disableChangeOcrResult;
                     bool m_disableChangeOcrResultHasBeenSet;
 
                     /**
                      * Whether to disable the OCR warnings. Default value: `false` (not disable), where OCR warnings are enabled and the OCR result will not be returned if there is a warning.
-This feature applies only to Hong Kong (China) identity cards, Malaysian identity cards, and passports.
                      */
                     bool m_disableCheckOcrWarnings;
                     bool m_disableCheckOcrWarningsHasBeenSet;
+
+                    /**
+                     * Customize which alarm codes to block. If left blank, all alarm codes will be blocked by default.
+Optional alarm codes are: -9101 (occlusion or incomplete border), -9102 (photocopying), -9103 (screen capture by camera), -9104 (image editing/PS modification), -9107 (glare/reflection), -9108 (blurriness), -8101 (information format check),-8102(information consistency check).
+                     */
+                    std::vector<int64_t> m_selectedWarningCodes;
+                    bool m_selectedWarningCodesHasBeenSet;
 
                     /**
                      * A passthrough field, which is returned together with the verification result and can contain up to 1,024 bits.
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * BASIC: Basic version (Default).
+ENHANCED: Enhance version, enable additional output of device risk level field.
+PRO: Pro version, enable additional output of attack type fields.
+PLUS: Plus version, enable additional output of device risk level and attack type fields.
+Please contact us to access enhance version & plus version.	
+                     */
+                    std::string m_sdkVersion;
+                    bool m_sdkVersionHasBeenSet;
 
                     /**
                      * This interface is used to control th action sequences.
@@ -486,6 +859,98 @@ The default value is blink. The different action types passed in this parameter 
                      */
                     std::string m_actionList;
                     bool m_actionListHasBeenSet;
+
+                    /**
+                     * Whether expired identity documents are permitted to proceed to the liveness detection process. This parameter only takes effect when the document type is Hong Kong Identity Card (HKID).
+true (default value): Expired HKID is allowed to enter the liveness process.
+false : Expired HKID is rejected and cannot enter the liveness process.
+                     */
+                    bool m_allowExpiredDocument;
+                    bool m_allowExpiredDocumentHasBeenSet;
+
+                    /**
+                     * <p>Controls visibility of the final result page</p><p>Enumeration values:</p><ul><li>true: Do not display the result page</li><li>false: Display the result page</li></ul><p>Default value: false</p>
+                     */
+                    bool m_skipResultPage;
+                    bool m_skipResultPageHasBeenSet;
+
+                    /**
+                     * <p>Identified fields displayed during document OCR</p><p>Parameter format: ["ChineseName","FullName"]</p><p>Input constraints: <strong>Supported field names by document type:</strong><br><strong>HK (Hong Kong Identity Card):</strong> "ChineseName","FullName","LicenseNumber","Birthday","Sex", "IssuedDate", "Permanent", "Symbol", "CurrentIssueDate"<br><strong>ML (Malaysia Identity Card):</strong> "FullName","LicenseNumber","Sex", "Birthday", "Type", "FormattedAddress"<br><strong>IndonesiaIDCard (Indonesia Identity Card):</strong> "LicenseNumber","FullName","Sex", "Birthday", "FormattedAddress", "Nationality", "DueDate", "IssuedDate", "Street", "Village","Area","Province","City","MaritalStatus", "BloodType", "Religion", "Occupation"<br><strong>PhilippinesVoteID (Philippines Voter's ID):</strong> "FirstName","LastName","Birthday"<br><strong>PhilippinesDrivingLicense (Philippines Driving License):</strong> "LastName","FirstName","MiddleName","Sex","Birthday"<br><strong>PhilippinesTinID (Philippines TIN ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesSSSID (Philippines SSS ID):</strong> "LicenseNumber", "FullName", "Birthday"<br><strong>PhilippinesUMID (Philippines UMID):</strong> "Surname", "MiddleName", "GivenName", "Sex", "Birthday"<br><strong>MLIDPassport (Passports of Hong Kong, Macao, Taiwan and overseas regions):</strong> "LicenseNumber","FullName", "Surname", "GivenName", "Birthday", "Sex","DateOfExpiration","IssuingCountry"<br><strong>ThailandIDCard (Thailand Identity Card):</strong> "FullName", "LastName", "FirstName", "FormattedAddress", "LicenseNumber", "Birthday", "ExpirationDate", "IssuedDate", "RegistrationNumber", "Religion", "ThaiBirthday", "ThaiExpirationDate", "ThaiIssueDate"<br><strong>MainlandIDCard (Chinese Mainland Identity Card):</strong> "LicenseNumber", "FullName", "Sex", "Nation", "Birthday", "FormattedAddress"<br><strong>SingaporeIDCard (Singapore Identity Card):</strong> "ChineseName","Sex","Birthday","LicenseNumber","Nationality","FullName","Address"<br><strong>HMTPermit (Mainland Travel Permit for Hong Kong and Macao Residents / Mainland Travel Permit for Taiwan Residents):</strong> "Name", "EnglishName", "Sex", "Number", "ValidDate", "Birthday"</p><p>If no fields are specified, all identified fields will be displayed by default.</p>
+
+                     */
+                    std::vector<std::string> m_cardOcrDisplayFields;
+                    bool m_cardOcrDisplayFieldsHasBeenSet;
+
+                    /**
+                     * <p>Liveness retry attempts</p><p>Value range: [1, 5]</p><p>Default value: 5</p>
+                     */
+                    int64_t m_retryLimit;
+                    bool m_retryLimitHasBeenSet;
+
+                    /**
+                     * <p>Enable multi-image anti-spoofing for single-angle Identity Document Recognition</p><p>Default value: false</p><p>true - Enabled; false - Disabled</p>
+                     */
+                    bool m_enableForgeryDetectionImages;
+                    bool m_enableForgeryDetectionImagesHasBeenSet;
+
+                    /**
+                     * Encrypted metadata generated by the SDK
+                     */
+                    std::string m_metaData;
+                    bool m_metaDataHasBeenSet;
+
+                    /**
+                     * <p>Controls visibility of the launch page</p><p>Enumeration values:</p><ul><li>true: Do not display the launch page</li><li>false: Display the launch page</li></ul><p>Default value: false</p>
+                     */
+                    bool m_skipLaunchPage;
+                    bool m_skipLaunchPageHasBeenSet;
+
+                    /**
+                     * <p>Controls visibility of the information confirmation page </p><p>Enumeration values:</p><ul><li>true: Do not display the information confirmation page</li><li>false: Display the information confirmation page</li></ul><p>Default value: false</p>
+                     */
+                    bool m_skipOcrConfirmPage;
+                    bool m_skipOcrConfirmPageHasBeenSet;
+
+                    /**
+                     * <p>Controls whether to hide the top progress bar across all pages of the entire process </p><p>Enumeration values:</p><ul><li>true: Do not display the progress bar</li><li>false: Display the progress bar</li></ul><p>Default value: false</p>
+                     */
+                    bool m_hideProgressBar;
+                    bool m_hideProgressBarHasBeenSet;
+
+                    /**
+                     * <p>Whether uploading photos from the album is permitted for verification during the ID validation phase (prohibited when single-angle multi-image forgery detection is enabled)
+ </p><p>Enumeration values:</p><ul><li>true: Album photo upload for verification enabled</li><li>false: Album photo upload for verification disabled</li></ul><p>Default value: false</p>
+                     */
+                    bool m_allowUploadPhoto;
+                    bool m_allowUploadPhotoHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable Bank of Thailand-specific background detection.<br>This parameter requires whitelist activation; please contact us to request access before it can take effect.</p><p>Default value: false
+
+                     */
+                    bool m_enableBotBgDetection;
+                    bool m_enableBotBgDetectionHasBeenSet;
+
+                    /**
+                     * OCR Auto Capture Mode Timeout (ms)
+Value Range: [5000, 180000]
+Default Value: 20000
+Values less than 5000 will be clamped to 5000; values greater than 180000 will be clamped to 180000
+                     */
+                    int64_t m_ocrAutoDetectTimeout;
+                    bool m_ocrAutoDetectTimeoutHasBeenSet;
+
+                    /**
+                     * OCR Capture Mode
+Enum Values:
+<li>OCR_DETECT_MANUAL: Manual capture mode. Recognition starts after the user taps to take a photo.</li>
+<li>OCR_DETECT_AUTO_MANUAL: Auto recognition mode. The system performs automatic recognition; fallback to manual photo capture is available upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO: Auto-only recognition mode. The system performs automatic recognition; no fallback to manual photo capture upon recognition timeout.</li>
+<li>OCR_DETECT_AUTO_MULTI: Multi-shot auto-only recognition mode. The system automatically captures multiple document images with flash enabled.
+Default Value: OCR_DETECT_AUTO_MANUAL
+                     */
+                    std::string m_ocrModeType;
+                    bool m_ocrModeTypeHasBeenSet;
 
                 };
             }

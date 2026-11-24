@@ -44,18 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Start time 
-Example :2016-01-01 00:00:00
+Example :2016-01-01 00:00:00.
                      * @return StartTime Start time 
-Example :2016-01-01 00:00:00
+Example :2016-01-01 00:00:00.
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置Start time 
-Example :2016-01-01 00:00:00
+Example :2016-01-01 00:00:00.
                      * @param _startTime Start time 
-Example :2016-01-01 00:00:00
+Example :2016-01-01 00:00:00.
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -145,11 +145,11 @@ Status of the order
 2: paid 
 3: shipment in progress
 4: shipped
-5`: Shipment Failed
-6`: Refunded
-7`: Ticket closed
-8`: Order expired
-9`: Order invalid
+5: Shipment Failed
+6: Refunded
+7: Ticket closed
+8: Order expired
+9: Order invalid
 10: product invalidated
 11: third-party payment refused
 12: payment in process
@@ -159,11 +159,11 @@ Status of the order
 2: paid 
 3: shipment in progress
 4: shipped
-5`: Shipment Failed
-6`: Refunded
-7`: Ticket closed
-8`: Order expired
-9`: Order invalid
+5: Shipment Failed
+6: Refunded
+7: Ticket closed
+8: Order expired
+9: Order invalid
 10: product invalidated
 11: third-party payment refused
 12: payment in process
@@ -178,11 +178,11 @@ Status of the order
 2: paid 
 3: shipment in progress
 4: shipped
-5`: Shipment Failed
-6`: Refunded
-7`: Ticket closed
-8`: Order expired
-9`: Order invalid
+5: Shipment Failed
+6: Refunded
+7: Ticket closed
+8: Order expired
+9: Order invalid
 10: product invalidated
 11: third-party payment refused
 12: payment in process
@@ -192,11 +192,11 @@ Status of the order
 2: paid 
 3: shipment in progress
 4: shipped
-5`: Shipment Failed
-6`: Refunded
-7`: Ticket closed
-8`: Order expired
-9`: Order invalid
+5: Shipment Failed
+6: Refunded
+7: Ticket closed
+8: Order expired
+9: Order invalid
 10: product invalidated
 11: third-party payment refused
 12: payment in process
@@ -286,11 +286,32 @@ Example:ins-a2bb34
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取Order status
+                     * @return StatusSet Order status
+                     * 
+                     */
+                    std::vector<int64_t> GetStatusSet() const;
+
+                    /**
+                     * 设置Order status
+                     * @param _statusSet Order status
+                     * 
+                     */
+                    void SetStatusSet(const std::vector<int64_t>& _statusSet);
+
+                    /**
+                     * 判断参数 StatusSet 是否已赋值
+                     * @return StatusSet 是否已赋值
+                     * 
+                     */
+                    bool StatusSetHasBeenSet() const;
+
                 private:
 
                     /**
                      * Start time 
-Example :2016-01-01 00:00:00
+Example :2016-01-01 00:00:00.
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -322,11 +343,11 @@ Status of the order
 2: paid 
 3: shipment in progress
 4: shipped
-5`: Shipment Failed
-6`: Refunded
-7`: Ticket closed
-8`: Order expired
-9`: Order invalid
+5: Shipment Failed
+6: Refunded
+7: Ticket closed
+8: Order expired
+9: Order invalid
 10: product invalidated
 11: third-party payment refused
 12: payment in process
@@ -354,6 +375,12 @@ Example:ins-a2bb34
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * Order status
+                     */
+                    std::vector<int64_t> m_statusSet;
+                    bool m_statusSetHasBeenSet;
 
                 };
             }

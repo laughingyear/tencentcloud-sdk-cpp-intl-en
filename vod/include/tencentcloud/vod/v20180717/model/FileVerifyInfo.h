@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取File verification URL guidance.
-                     * @return FileVerifyUrl File verification URL guidance.
+                     * 获取File validation URL guide.
+                     * @return FileVerifyUrl File validation URL guide.
                      * 
                      */
                     std::string GetFileVerifyUrl() const;
 
                     /**
-                     * 设置File verification URL guidance.
-                     * @param _fileVerifyUrl File verification URL guidance.
+                     * 设置File validation URL guide.
+                     * @param _fileVerifyUrl File validation URL guide.
                      * 
                      */
                     void SetFileVerifyUrl(const std::string& _fileVerifyUrl);
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取File verification file name.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @return FileVerifyName File verification file name.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     std::string GetFileVerifyName() const;
 
                     /**
                      * 设置File verification file name.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * @param _fileVerifyName File verification file name.
-Note: This field may return null, indicating that no valid value can be obtained.
                      * 
                      */
                     void SetFileVerifyName(const std::string& _fileVerifyName);
@@ -116,7 +112,7 @@ Note: This field may return null, indicating that no valid value can be obtained
                 private:
 
                     /**
-                     * File verification URL guidance.
+                     * File validation URL guide.
                      */
                     std::string m_fileVerifyUrl;
                     bool m_fileVerifyUrlHasBeenSet;
@@ -129,7 +125,6 @@ Note: This field may return null, indicating that no valid value can be obtained
 
                     /**
                      * File verification file name.
-Note: This field may return null, indicating that no valid value can be obtained.
                      */
                     std::string m_fileVerifyName;
                     bool m_fileVerifyNameHasBeenSet;

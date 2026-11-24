@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The information of the subtitles to add.
+                * External subtitle.
                 */
                 class AddOnSubtitle : public AbstractModel
                 {
@@ -48,31 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The mode. Valid values:
-<li>`subtitle-stream`: Add a subtitle track.</li>
-<li>`close-caption-708`: Embed CEA-708 subtitles in SEI frames.</li>
-<li>`close-caption-608`: Embed CEA-608 subtitles in SEI frames.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Type The mode. Valid values:
-<li>`subtitle-stream`: Add a subtitle track.</li>
-<li>`close-caption-708`: Embed CEA-708 subtitles in SEI frames.</li>
-<li>`close-caption-608`: Embed CEA-608 subtitles in SEI frames.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Insertion method. Valid values:</p><li>subtitle-stream: Inserts a subtitle track.</li><li>close-caption-708: Encodes CEA-708 subtitles into SEI frames.</li><li>close-caption-608: Encodes CEA-608 subtitles into SEI frames.</li>
+                     * @return Type <p>Insertion method. Valid values:</p><li>subtitle-stream: Inserts a subtitle track.</li><li>close-caption-708: Encodes CEA-708 subtitles into SEI frames.</li><li>close-caption-608: Encodes CEA-608 subtitles into SEI frames.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置The mode. Valid values:
-<li>`subtitle-stream`: Add a subtitle track.</li>
-<li>`close-caption-708`: Embed CEA-708 subtitles in SEI frames.</li>
-<li>`close-caption-608`: Embed CEA-608 subtitles in SEI frames.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _type The mode. Valid values:
-<li>`subtitle-stream`: Add a subtitle track.</li>
-<li>`close-caption-708`: Embed CEA-708 subtitles in SEI frames.</li>
-<li>`close-caption-608`: Embed CEA-608 subtitles in SEI frames.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Insertion method. Valid values:</p><li>subtitle-stream: Inserts a subtitle track.</li><li>close-caption-708: Encodes CEA-708 subtitles into SEI frames.</li><li>close-caption-608: Encodes CEA-608 subtitles into SEI frames.</li>
+                     * @param _type <p>Insertion method. Valid values:</p><li>subtitle-stream: Inserts a subtitle track.</li><li>close-caption-708: Encodes CEA-708 subtitles into SEI frames.</li><li>close-caption-608: Encodes CEA-608 subtitles into SEI frames.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -85,19 +69,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取The subtitle file.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Subtitle The subtitle file.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Subtitle file.</p>
+                     * @return Subtitle <p>Subtitle file.</p>
                      * 
                      */
                     MediaInputInfo GetSubtitle() const;
 
                     /**
-                     * 设置The subtitle file.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _subtitle The subtitle file.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Subtitle file.</p>
+                     * @param _subtitle <p>Subtitle file.</p>
                      * 
                      */
                     void SetSubtitle(const MediaInputInfo& _subtitle);
@@ -110,23 +90,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool SubtitleHasBeenSet() const;
 
                     /**
-                     * 获取Subtitle name.
-Note: supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and parentheses. Max 64 characters.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @return SubtitleName Subtitle name.
-Note: supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and parentheses. Max 64 characters.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 获取<p>Subtitle name.<br>Note: Only Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and brackets are supported. The length cannot exceed 64 characters.</p>
+                     * @return SubtitleName <p>Subtitle name.<br>Note: Only Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and brackets are supported. The length cannot exceed 64 characters.</p>
                      * 
                      */
                     std::string GetSubtitleName() const;
 
                     /**
-                     * 设置Subtitle name.
-Note: supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and parentheses. Max 64 characters.
-Note: This field may return null, indicating that no valid value can be obtained.
-                     * @param _subtitleName Subtitle name.
-Note: supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and parentheses. Max 64 characters.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * 设置<p>Subtitle name.<br>Note: Only Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and brackets are supported. The length cannot exceed 64 characters.</p>
+                     * @param _subtitleName <p>Subtitle name.<br>Note: Only Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and brackets are supported. The length cannot exceed 64 characters.</p>
                      * 
                      */
                     void SetSubtitleName(const std::string& _subtitleName);
@@ -138,32 +110,106 @@ Note: This field may return null, indicating that no valid value can be obtained
                      */
                     bool SubtitleNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Subtitle language, such as eng.</p>
+                     * @return SubtitleLanguage <p>Subtitle language, such as eng.</p>
+                     * 
+                     */
+                    std::string GetSubtitleLanguage() const;
+
+                    /**
+                     * 设置<p>Subtitle language, such as eng.</p>
+                     * @param _subtitleLanguage <p>Subtitle language, such as eng.</p>
+                     * 
+                     */
+                    void SetSubtitleLanguage(const std::string& _subtitleLanguage);
+
+                    /**
+                     * 判断参数 SubtitleLanguage 是否已赋值
+                     * @return SubtitleLanguage 是否已赋值
+                     * 
+                     */
+                    bool SubtitleLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Subtitle output format. Valid values: {&quot;WebVTT&quot;,&quot;TTML&quot;}.<br>Default value: &quot;WebVTT&quot;.</p>
+                     * @return OutputFormat <p>Subtitle output format. Valid values: {&quot;WebVTT&quot;,&quot;TTML&quot;}.<br>Default value: &quot;WebVTT&quot;.</p>
+                     * 
+                     */
+                    std::string GetOutputFormat() const;
+
+                    /**
+                     * 设置<p>Subtitle output format. Valid values: {&quot;WebVTT&quot;,&quot;TTML&quot;}.<br>Default value: &quot;WebVTT&quot;.</p>
+                     * @param _outputFormat <p>Subtitle output format. Valid values: {&quot;WebVTT&quot;,&quot;TTML&quot;}.<br>Default value: &quot;WebVTT&quot;.</p>
+                     * 
+                     */
+                    void SetOutputFormat(const std::string& _outputFormat);
+
+                    /**
+                     * 判断参数 OutputFormat 是否已赋值
+                     * @return OutputFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Default subtitle track. When set to true, the current subtitle is designated as the default subtitle track. A maximum of 1 default subtitle track can be specified.<br>Default value: false.</p>
+                     * @return DefaultTrack <p>Default subtitle track. When set to true, the current subtitle is designated as the default subtitle track. A maximum of 1 default subtitle track can be specified.<br>Default value: false.</p>
+                     * 
+                     */
+                    bool GetDefaultTrack() const;
+
+                    /**
+                     * 设置<p>Default subtitle track. When set to true, the current subtitle is designated as the default subtitle track. A maximum of 1 default subtitle track can be specified.<br>Default value: false.</p>
+                     * @param _defaultTrack <p>Default subtitle track. When set to true, the current subtitle is designated as the default subtitle track. A maximum of 1 default subtitle track can be specified.<br>Default value: false.</p>
+                     * 
+                     */
+                    void SetDefaultTrack(const bool& _defaultTrack);
+
+                    /**
+                     * 判断参数 DefaultTrack 是否已赋值
+                     * @return DefaultTrack 是否已赋值
+                     * 
+                     */
+                    bool DefaultTrackHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The mode. Valid values:
-<li>`subtitle-stream`: Add a subtitle track.</li>
-<li>`close-caption-708`: Embed CEA-708 subtitles in SEI frames.</li>
-<li>`close-caption-608`: Embed CEA-608 subtitles in SEI frames.</li>
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Insertion method. Valid values:</p><li>subtitle-stream: Inserts a subtitle track.</li><li>close-caption-708: Encodes CEA-708 subtitles into SEI frames.</li><li>close-caption-608: Encodes CEA-608 subtitles into SEI frames.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * The subtitle file.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Subtitle file.</p>
                      */
                     MediaInputInfo m_subtitle;
                     bool m_subtitleHasBeenSet;
 
                     /**
-                     * Subtitle name.
-Note: supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and parentheses. Max 64 characters.
-Note: This field may return null, indicating that no valid value can be obtained.
+                     * <p>Subtitle name.<br>Note: Only Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), periods (.), and brackets are supported. The length cannot exceed 64 characters.</p>
                      */
                     std::string m_subtitleName;
                     bool m_subtitleNameHasBeenSet;
+
+                    /**
+                     * <p>Subtitle language, such as eng.</p>
+                     */
+                    std::string m_subtitleLanguage;
+                    bool m_subtitleLanguageHasBeenSet;
+
+                    /**
+                     * <p>Subtitle output format. Valid values: {&quot;WebVTT&quot;,&quot;TTML&quot;}.<br>Default value: &quot;WebVTT&quot;.</p>
+                     */
+                    std::string m_outputFormat;
+                    bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * <p>Default subtitle track. When set to true, the current subtitle is designated as the default subtitle track. A maximum of 1 default subtitle track can be specified.<br>Default value: false.</p>
+                     */
+                    bool m_defaultTrack;
+                    bool m_defaultTrackHasBeenSet;
 
                 };
             }

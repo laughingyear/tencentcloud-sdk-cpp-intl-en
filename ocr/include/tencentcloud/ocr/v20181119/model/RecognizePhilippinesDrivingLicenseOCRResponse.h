@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The Base64-encoded identity photo.
-                     * @return HeadPortrait The Base64-encoded identity photo.
+                     * 获取Base64 encoded result of portrait photo.
+                     * @return HeadPortrait Base64 encoded result of portrait photo.
                      * 
                      */
                     TextDetectionResult GetHeadPortrait() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool HeadPortraitHasBeenSet() const;
 
                     /**
-                     * 获取The full name.
-                     * @return Name The full name.
+                     * 获取Full name of the license holder.
+                     * @return Name Full name of the license holder.
                      * 
                      */
                     TextDetectionResult GetName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取The last name.
-                     * @return LastName The last name.
+                     * 获取Last name / surname of the license holder.
+                     * @return LastName Last name / surname of the license holder.
                      * 
                      */
                     TextDetectionResult GetLastName() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LastNameHasBeenSet() const;
 
                     /**
-                     * 获取The first name.
-                     * @return FirstName The first name.
+                     * 获取First name of the license holder.
+                     * @return FirstName First name of the license holder.
                      * 
                      */
                     TextDetectionResult GetFirstName() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool FirstNameHasBeenSet() const;
 
                     /**
-                     * 获取The middle name.
-                     * @return MiddleName The middle name.
+                     * 获取Middle name of the license holder.
+                     * @return MiddleName Middle name of the license holder.
                      * 
                      */
                     TextDetectionResult GetMiddleName() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool MiddleNameHasBeenSet() const;
 
                     /**
-                     * 获取The nationality.
-                     * @return Nationality The nationality.
+                     * 获取Nationality of the license holder.
+                     * @return Nationality Nationality of the license holder.
                      * 
                      */
                     TextDetectionResult GetNationality() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取The gender.
-                     * @return Sex The gender.
+                     * 获取Gender.
+                     * @return Sex Gender.
                      * 
                      */
                     TextDetectionResult GetSex() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取The address.
-                     * @return Address The address.
+                     * 获取Address of the license holder.
+                     * @return Address Address of the license holder.
                      * 
                      */
                     TextDetectionResult GetAddress() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取The license No.
-                     * @return LicenseNo The license No.
+                     * 获取Driver's license number.
+                     * @return LicenseNo Driver's license number.
                      * 
                      */
                     TextDetectionResult GetLicenseNo() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool LicenseNoHasBeenSet() const;
 
                     /**
-                     * 获取The expiration date.
-                     * @return ExpiresDate The expiration date.
+                     * 获取Expiration date of the driver's license.
+                     * @return ExpiresDate Expiration date of the driver's license.
                      * 
                      */
                     TextDetectionResult GetExpiresDate() const;
@@ -185,8 +185,8 @@ namespace TencentCloud
                     bool ExpiresDateHasBeenSet() const;
 
                     /**
-                     * 获取The agency code.
-                     * @return AgencyCode The agency code.
+                     * 获取Code of the issuing agency.
+                     * @return AgencyCode Code of the issuing agency.
                      * 
                      */
                     TextDetectionResult GetAgencyCode() const;
@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool AgencyCodeHasBeenSet() const;
 
                     /**
-                     * 获取The date of birth.
-                     * @return Birthday The date of birth.
+                     * 获取Date of birth of the license holder.
+                     * @return Birthday Date of birth of the license holder.
                      * 
                      */
                     TextDetectionResult GetBirthday() const;
@@ -212,79 +212,219 @@ namespace TencentCloud
                      */
                     bool BirthdayHasBeenSet() const;
 
+                    /**
+                     * 获取Blood type of the  license holder.
+                     * @return BloodType Blood type of the  license holder.
+                     * 
+                     */
+                    TextDetectionResult GetBloodType() const;
+
+                    /**
+                     * 判断参数 BloodType 是否已赋值
+                     * @return BloodType 是否已赋值
+                     * 
+                     */
+                    bool BloodTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Height of the license holder, in metres as printed on the card (e.g. 1.69).
+                     * @return Height Height of the license holder, in metres as printed on the card (e.g. 1.69).
+                     * 
+                     */
+                    TextDetectionResult GetHeight() const;
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     * 
+                     */
+                    bool HeightHasBeenSet() const;
+
+                    /**
+                     * 获取Weight of the license holder, in kilograms (e.g. 65).
+                     * @return Weight Weight of the license holder, in kilograms (e.g. 65).
+                     * 
+                     */
+                    TextDetectionResult GetWeight() const;
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取Eye color of the license holder (e.g. BLACK).
+                     * @return EyeColor Eye color of the license holder (e.g. BLACK).
+                     * 
+                     */
+                    TextDetectionResult GetEyeColor() const;
+
+                    /**
+                     * 判断参数 EyeColor 是否已赋值
+                     * @return EyeColor 是否已赋值
+                     * 
+                     */
+                    bool EyeColorHasBeenSet() const;
+
+                    /**
+                     * 获取Driver's license codes indicating the vehicle categories the license holder is authorized to operate (e.g. A, A1, B, B1, B2, C, D, BE, CE).
+                     * @return DLCodes Driver's license codes indicating the vehicle categories the license holder is authorized to operate (e.g. A, A1, B, B1, B2, C, D, BE, CE).
+                     * 
+                     */
+                    TextDetectionResult GetDLCodes() const;
+
+                    /**
+                     * 判断参数 DLCodes 是否已赋值
+                     * @return DLCodes 是否已赋值
+                     * 
+                     */
+                    bool DLCodesHasBeenSet() const;
+
+                    /**
+                     * 获取Restrictions that limit the license holder's driving privileges, such as transmission type (AT / MT) or vehicle-class limits.
+                     * @return Restrictions Restrictions that limit the license holder's driving privileges, such as transmission type (AT / MT) or vehicle-class limits.
+                     * 
+                     */
+                    TextDetectionResult GetRestrictions() const;
+
+                    /**
+                     * 判断参数 Restrictions 是否已赋值
+                     * @return Restrictions 是否已赋值
+                     * 
+                     */
+                    bool RestrictionsHasBeenSet() const;
+
+                    /**
+                     * 获取Driving conditions of the license holder (e.g. A = must wear glasses, D = daytime driving only).
+                     * @return Conditions Driving conditions of the license holder (e.g. A = must wear glasses, D = daytime driving only).
+                     * 
+                     */
+                    TextDetectionResult GetConditions() const;
+
+                    /**
+                     * 判断参数 Conditions 是否已赋值
+                     * @return Conditions 是否已赋值
+                     * 
+                     */
+                    bool ConditionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * The Base64-encoded identity photo.
+                     * Base64 encoded result of portrait photo.
                      */
                     TextDetectionResult m_headPortrait;
                     bool m_headPortraitHasBeenSet;
 
                     /**
-                     * The full name.
+                     * Full name of the license holder.
                      */
                     TextDetectionResult m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * The last name.
+                     * Last name / surname of the license holder.
                      */
                     TextDetectionResult m_lastName;
                     bool m_lastNameHasBeenSet;
 
                     /**
-                     * The first name.
+                     * First name of the license holder.
                      */
                     TextDetectionResult m_firstName;
                     bool m_firstNameHasBeenSet;
 
                     /**
-                     * The middle name.
+                     * Middle name of the license holder.
                      */
                     TextDetectionResult m_middleName;
                     bool m_middleNameHasBeenSet;
 
                     /**
-                     * The nationality.
+                     * Nationality of the license holder.
                      */
                     TextDetectionResult m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * The gender.
+                     * Gender.
                      */
                     TextDetectionResult m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * The address.
+                     * Address of the license holder.
                      */
                     TextDetectionResult m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * The license No.
+                     * Driver's license number.
                      */
                     TextDetectionResult m_licenseNo;
                     bool m_licenseNoHasBeenSet;
 
                     /**
-                     * The expiration date.
+                     * Expiration date of the driver's license.
                      */
                     TextDetectionResult m_expiresDate;
                     bool m_expiresDateHasBeenSet;
 
                     /**
-                     * The agency code.
+                     * Code of the issuing agency.
                      */
                     TextDetectionResult m_agencyCode;
                     bool m_agencyCodeHasBeenSet;
 
                     /**
-                     * The date of birth.
+                     * Date of birth of the license holder.
                      */
                     TextDetectionResult m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * Blood type of the  license holder.
+                     */
+                    TextDetectionResult m_bloodType;
+                    bool m_bloodTypeHasBeenSet;
+
+                    /**
+                     * Height of the license holder, in metres as printed on the card (e.g. 1.69).
+                     */
+                    TextDetectionResult m_height;
+                    bool m_heightHasBeenSet;
+
+                    /**
+                     * Weight of the license holder, in kilograms (e.g. 65).
+                     */
+                    TextDetectionResult m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * Eye color of the license holder (e.g. BLACK).
+                     */
+                    TextDetectionResult m_eyeColor;
+                    bool m_eyeColorHasBeenSet;
+
+                    /**
+                     * Driver's license codes indicating the vehicle categories the license holder is authorized to operate (e.g. A, A1, B, B1, B2, C, D, BE, CE).
+                     */
+                    TextDetectionResult m_dLCodes;
+                    bool m_dLCodesHasBeenSet;
+
+                    /**
+                     * Restrictions that limit the license holder's driving privileges, such as transmission type (AT / MT) or vehicle-class limits.
+                     */
+                    TextDetectionResult m_restrictions;
+                    bool m_restrictionsHasBeenSet;
+
+                    /**
+                     * Driving conditions of the license holder (e.g. A = must wear glasses, D = daytime driving only).
+                     */
+                    TextDetectionResult m_conditions;
+                    bool m_conditionsHasBeenSet;
 
                 };
             }

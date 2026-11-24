@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Encryption key id.
-                     * @return KeyId Encryption key id.
+                     * 获取Encryption key id
+                     * @return KeyId Encryption key id
                      * 
                      */
                     std::string GetKeyId() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取Encryption key region.
+                     * 获取Encryption key region
 
-                     * @return KeyRegion Encryption key region.
+                     * @return KeyRegion Encryption key region
 
                      * 
                      */
@@ -73,20 +73,60 @@ namespace TencentCloud
                      */
                     bool KeyRegionHasBeenSet() const;
 
+                    /**
+                     * 获取Key type
+                     * @return KeyType Key type
+                     * 
+                     */
+                    std::string GetKeyType() const;
+
+                    /**
+                     * 判断参数 KeyType 是否已赋值
+                     * @return KeyType 是否已赋值
+                     * 
+                     */
+                    bool KeyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Whether global encryption is enabled
+                     * @return IsOpenGlobalEncryption Whether global encryption is enabled
+                     * 
+                     */
+                    bool GetIsOpenGlobalEncryption() const;
+
+                    /**
+                     * 判断参数 IsOpenGlobalEncryption 是否已赋值
+                     * @return IsOpenGlobalEncryption 是否已赋值
+                     * 
+                     */
+                    bool IsOpenGlobalEncryptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Encryption key id.
+                     * Encryption key id
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * Encryption key region.
+                     * Encryption key region
 
                      */
                     std::string m_keyRegion;
                     bool m_keyRegionHasBeenSet;
+
+                    /**
+                     * Key type
+                     */
+                    std::string m_keyType;
+                    bool m_keyTypeHasBeenSet;
+
+                    /**
+                     * Whether global encryption is enabled
+                     */
+                    bool m_isOpenGlobalEncryption;
+                    bool m_isOpenGlobalEncryptionHasBeenSet;
 
                 };
             }

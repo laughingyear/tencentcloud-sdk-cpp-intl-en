@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AI-based sample management - face information.
+                * AI sample management, face information.
                 */
                 class AiSampleFaceInfo : public AbstractModel
                 {

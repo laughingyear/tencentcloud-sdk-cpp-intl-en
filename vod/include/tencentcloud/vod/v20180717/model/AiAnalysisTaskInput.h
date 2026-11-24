@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameter type of AI-based intelligent video analysis
+                * Input parameter type for AI smart video analysis
                 */
                 class AiAnalysisTaskInput : public AbstractModel
                 {

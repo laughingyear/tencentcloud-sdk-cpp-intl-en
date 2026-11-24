@@ -27,7 +27,11 @@ GetFaceIdTokenIntlRequest::GetFaceIdTokenIntlRequest() :
     m_secureLevelHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_actionListHasBeenSet(false)
+    m_actionListHasBeenSet(false),
+    m_sdkVersionHasBeenSet(false),
+    m_retryLimitHasBeenSet(false),
+    m_enableBotBgDetectionHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -76,6 +80,38 @@ string GetFaceIdTokenIntlRequest::ToJsonString() const
         string key = "ActionList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_actionList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sdkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retryLimit, allocator);
+    }
+
+    if (m_enableBotBgDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBotBgDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBotBgDetection, allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +200,70 @@ void GetFaceIdTokenIntlRequest::SetActionList(const string& _actionList)
 bool GetFaceIdTokenIntlRequest::ActionListHasBeenSet() const
 {
     return m_actionListHasBeenSet;
+}
+
+string GetFaceIdTokenIntlRequest::GetSdkVersion() const
+{
+    return m_sdkVersion;
+}
+
+void GetFaceIdTokenIntlRequest::SetSdkVersion(const string& _sdkVersion)
+{
+    m_sdkVersion = _sdkVersion;
+    m_sdkVersionHasBeenSet = true;
+}
+
+bool GetFaceIdTokenIntlRequest::SdkVersionHasBeenSet() const
+{
+    return m_sdkVersionHasBeenSet;
+}
+
+int64_t GetFaceIdTokenIntlRequest::GetRetryLimit() const
+{
+    return m_retryLimit;
+}
+
+void GetFaceIdTokenIntlRequest::SetRetryLimit(const int64_t& _retryLimit)
+{
+    m_retryLimit = _retryLimit;
+    m_retryLimitHasBeenSet = true;
+}
+
+bool GetFaceIdTokenIntlRequest::RetryLimitHasBeenSet() const
+{
+    return m_retryLimitHasBeenSet;
+}
+
+bool GetFaceIdTokenIntlRequest::GetEnableBotBgDetection() const
+{
+    return m_enableBotBgDetection;
+}
+
+void GetFaceIdTokenIntlRequest::SetEnableBotBgDetection(const bool& _enableBotBgDetection)
+{
+    m_enableBotBgDetection = _enableBotBgDetection;
+    m_enableBotBgDetectionHasBeenSet = true;
+}
+
+bool GetFaceIdTokenIntlRequest::EnableBotBgDetectionHasBeenSet() const
+{
+    return m_enableBotBgDetectionHasBeenSet;
+}
+
+string GetFaceIdTokenIntlRequest::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void GetFaceIdTokenIntlRequest::SetMetaData(const string& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool GetFaceIdTokenIntlRequest::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 
 

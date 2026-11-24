@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of the video stream in a VOD file
+                * Video stream information of VOD files
                 */
                 class MediaVideoStreamItem : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Bitrate of a video stream in bps.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Bitrate Bitrate of a video stream in bps.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Bitrate of the video stream. Unit: bps.
+                     * @return Bitrate Bitrate of the video stream. Unit: bps.
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置Bitrate of a video stream in bps.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _bitrate Bitrate of a video stream in bps.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Bitrate of the video stream. Unit: bps.
+                     * @param _bitrate Bitrate of the video stream. Unit: bps.
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -72,19 +68,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取Height of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Height Height of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Height of the video stream. Unit: px.
+                     * @return Height Height of the video stream. Unit: px.
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置Height of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _height Height of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Height of the video stream. Unit: px.
+                     * @param _height Height of the video stream. Unit: px.
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -97,19 +89,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取Width of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Width Width of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Video stream width. Unit: px.
+                     * @return Width Video stream width. Unit: px.
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置Width of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _width Width of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Video stream width. Unit: px.
+                     * @param _width Video stream width. Unit: px.
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -122,19 +110,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取Video stream codec, such as h264.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Codec Video stream codec, such as h264.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Video stream encoding format, for example, h264.
+                     * @return Codec Video stream encoding format, for example, h264.
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置Video stream codec, such as h264.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _codec Video stream codec, such as h264.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Video stream encoding format, for example, h264.
+                     * @param _codec Video stream encoding format, for example, h264.
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -147,19 +131,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取Frame rate in Hz.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Fps Frame rate in Hz.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Frame rate. Measurement unit: hz.
+                     * @return Fps Frame rate. Measurement unit: hz.
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置Frame rate in Hz.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _fps Frame rate in Hz.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Frame rate. Measurement unit: hz.
+                     * @param _fps Frame rate. Measurement unit: hz.
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -172,19 +152,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取Color primaries
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @return ColorPrimaries Color primaries
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 获取Colorspace.
+                     * @return ColorPrimaries Colorspace.
                      * 
                      */
                     std::string GetColorPrimaries() const;
 
                     /**
-                     * 设置Color primaries
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @param _colorPrimaries Color primaries
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 设置Colorspace.
+                     * @param _colorPrimaries Colorspace.
                      * 
                      */
                     void SetColorPrimaries(const std::string& _colorPrimaries);
@@ -197,19 +173,15 @@ Note: this field may return `null`, indicating that no valid value was found.
                     bool ColorPrimariesHasBeenSet() const;
 
                     /**
-                     * 获取Color space
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @return ColorSpace Color space
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 获取Colorspace.
+                     * @return ColorSpace Colorspace.
                      * 
                      */
                     std::string GetColorSpace() const;
 
                     /**
-                     * 设置Color space
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @param _colorSpace Color space
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 设置Colorspace.
+                     * @param _colorSpace Colorspace.
                      * 
                      */
                     void SetColorSpace(const std::string& _colorSpace);
@@ -222,19 +194,15 @@ Note: this field may return `null`, indicating that no valid value was found.
                     bool ColorSpaceHasBeenSet() const;
 
                     /**
-                     * 获取Color transfer
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @return ColorTransfer Color transfer
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 获取Colorspace.
+                     * @return ColorTransfer Colorspace.
                      * 
                      */
                     std::string GetColorTransfer() const;
 
                     /**
-                     * 设置Color transfer
-Note: this field may return `null`, indicating that no valid value was found.
-                     * @param _colorTransfer Color transfer
-Note: this field may return `null`, indicating that no valid value was found.
+                     * 设置Colorspace.
+                     * @param _colorTransfer Colorspace.
                      * 
                      */
                     void SetColorTransfer(const std::string& _colorTransfer);
@@ -247,19 +215,15 @@ Note: this field may return `null`, indicating that no valid value was found.
                     bool ColorTransferHasBeenSet() const;
 
                     /**
-                     * 获取HDR type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @return HdrType HDR type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 获取HDR type.
+                     * @return HdrType HDR type.
                      * 
                      */
                     std::string GetHdrType() const;
 
                     /**
-                     * 设置HDR type
-Note: This field may return `null`, indicating that no valid value was found.
-                     * @param _hdrType HDR type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * 设置HDR type.
+                     * @param _hdrType HDR type.
                      * 
                      */
                     void SetHdrType(const std::string& _hdrType);
@@ -272,15 +236,15 @@ Note: This field may return `null`, indicating that no valid value was found.
                     bool HdrTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Codecs 
+                     * 获取Video Codecs.
+                     * @return Codecs Video Codecs.
                      * 
                      */
                     std::string GetCodecs() const;
 
                     /**
-                     * 设置
-                     * @param _codecs 
+                     * 设置Video Codecs.
+                     * @param _codecs Video Codecs.
                      * 
                      */
                     void SetCodecs(const std::string& _codecs);
@@ -294,18 +258,14 @@ Note: This field may return `null`, indicating that no valid value was found.
 
                     /**
                      * 获取Numerator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return FpsNumerator Numerator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetFpsNumerator() const;
 
                     /**
                      * 设置Numerator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _fpsNumerator Numerator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetFpsNumerator(const int64_t& _fpsNumerator);
@@ -319,18 +279,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Denominator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return FpsDenominator Denominator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     int64_t GetFpsDenominator() const;
 
                     /**
                      * 设置Denominator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _fpsDenominator Denominator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetFpsDenominator(const int64_t& _fpsDenominator);
@@ -345,84 +301,73 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Bitrate of a video stream in bps.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Bitrate of the video stream. Unit: bps.
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * Height of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Height of the video stream. Unit: px.
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * Width of a video stream in px.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Video stream width. Unit: px.
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * Video stream codec, such as h264.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Video stream encoding format, for example, h264.
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * Frame rate in Hz.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Frame rate. Measurement unit: hz.
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * Color primaries
-Note: this field may return `null`, indicating that no valid value was found.
+                     * Colorspace.
                      */
                     std::string m_colorPrimaries;
                     bool m_colorPrimariesHasBeenSet;
 
                     /**
-                     * Color space
-Note: this field may return `null`, indicating that no valid value was found.
+                     * Colorspace.
                      */
                     std::string m_colorSpace;
                     bool m_colorSpaceHasBeenSet;
 
                     /**
-                     * Color transfer
-Note: this field may return `null`, indicating that no valid value was found.
+                     * Colorspace.
                      */
                     std::string m_colorTransfer;
                     bool m_colorTransferHasBeenSet;
 
                     /**
-                     * HDR type
-Note: This field may return `null`, indicating that no valid value was found.
+                     * HDR type.
                      */
                     std::string m_hdrType;
                     bool m_hdrTypeHasBeenSet;
 
                     /**
-                     * 
+                     * Video Codecs.
                      */
                     std::string m_codecs;
                     bool m_codecsHasBeenSet;
 
                     /**
                      * Numerator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_fpsNumerator;
                     bool m_fpsNumeratorHasBeenSet;
 
                     /**
                      * Denominator of the frame rate.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     int64_t m_fpsDenominator;
                     bool m_fpsDenominatorHasBeenSet;

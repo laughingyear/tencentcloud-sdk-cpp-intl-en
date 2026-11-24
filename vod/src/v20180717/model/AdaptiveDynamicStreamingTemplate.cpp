@@ -28,12 +28,14 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_formatHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
     m_drmKeyProviderHasBeenSet(false),
+    m_drmEncryptTypeHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_segmentTypeHasBeenSet(false)
+    m_segmentTypeHasBeenSet(false),
+    m_segmentDurationHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         m_drmKeyProviderHasBeenSet = true;
     }
 
+    if (value.HasMember("DrmEncryptType") && !value["DrmEncryptType"].IsNull())
+    {
+        if (!value["DrmEncryptType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DrmEncryptType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drmEncryptType = string(value["DrmEncryptType"].GetString());
+        m_drmEncryptTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("StreamInfos") && !value["StreamInfos"].IsNull())
     {
         if (!value["StreamInfos"].IsArray())
@@ -182,6 +194,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         m_segmentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentDuration") && !value["SegmentDuration"].IsNull())
+    {
+        if (!value["SegmentDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.SegmentDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentDuration = value["SegmentDuration"].GetInt64();
+        m_segmentDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -245,6 +267,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         value.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_drmEncryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmEncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drmEncryptType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_streamInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -298,6 +328,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_segmentDuration, allocator);
     }
 
 }
@@ -415,6 +453,22 @@ bool AdaptiveDynamicStreamingTemplate::DrmKeyProviderHasBeenSet() const
     return m_drmKeyProviderHasBeenSet;
 }
 
+string AdaptiveDynamicStreamingTemplate::GetDrmEncryptType() const
+{
+    return m_drmEncryptType;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetDrmEncryptType(const string& _drmEncryptType)
+{
+    m_drmEncryptType = _drmEncryptType;
+    m_drmEncryptTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::DrmEncryptTypeHasBeenSet() const
+{
+    return m_drmEncryptTypeHasBeenSet;
+}
+
 vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTemplate::GetStreamInfos() const
 {
     return m_streamInfos;
@@ -509,5 +563,21 @@ void AdaptiveDynamicStreamingTemplate::SetSegmentType(const string& _segmentType
 bool AdaptiveDynamicStreamingTemplate::SegmentTypeHasBeenSet() const
 {
     return m_segmentTypeHasBeenSet;
+}
+
+int64_t AdaptiveDynamicStreamingTemplate::GetSegmentDuration() const
+{
+    return m_segmentDuration;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetSegmentDuration(const int64_t& _segmentDuration)
+{
+    m_segmentDuration = _segmentDuration;
+    m_segmentDurationHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::SegmentDurationHasBeenSet() const
+{
+    return m_segmentDurationHasBeenSet;
 }
 

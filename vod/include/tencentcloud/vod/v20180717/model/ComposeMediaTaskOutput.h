@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output of media file composing task.
+                * Output of the media file creation task.
                 */
                 class ComposeMediaTaskOutput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取File type, such as mp4 and mp3.
-                     * @return FileType File type, such as mp4 and mp3.
+                     * 获取File type, for example, mp4 and mp3.
+                     * @return FileType File type, for example, mp4 and mp3.
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置File type, such as mp4 and mp3.
-                     * @param _fileType File type, such as mp4 and mp3.
+                     * 设置File type, for example, mp4 and mp3.
+                     * @param _fileType File type, for example, mp4 and mp3.
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Filename of up to 64 characters.
-                     * @return MediaName Filename of up to 64 characters.
+                     * 获取File name, up to 64 characters.
+                     * @return MediaName File name, up to 64 characters.
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置Filename of up to 64 characters.
-                     * @param _mediaName Filename of up to 64 characters.
+                     * 设置File name, up to 64 characters.
+                     * @param _mediaName File name, up to 64 characters.
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -131,19 +131,19 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [category creating](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-<li>Default value: 0, which means "Other".</li>
-                     * @return ClassId Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [category creating](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-<li>Default value: 0, which means "Other".</li>
+                     * 获取Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
+                     * @return ClassId Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [category creating](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-<li>Default value: 0, which means "Other".</li>
-                     * @param _classId Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [category creating](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-<li>Default value: 0, which means "Other".</li>
+                     * 设置Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
+                     * @param _classId Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of output media file in ISO 8601 format, after which the file will be deleted. Files will never expire by default. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @return ExpireTime Expiration time of output media file in ISO 8601 format, after which the file will be deleted. Files will never expire by default. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 获取Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is based on the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return ExpireTime Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is based on the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置Expiration time of output media file in ISO 8601 format, after which the file will be deleted. Files will never expire by default. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
-                     * @param _expireTime Expiration time of output media file in ISO 8601 format, after which the file will be deleted. Files will never expire by default. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * 设置Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is based on the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _expireTime Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is based on the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -179,7 +179,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * File type, such as mp4 and mp3.
+                     * File type, for example, mp4 and mp3.
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
@@ -197,20 +197,20 @@ namespace TencentCloud
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * Filename of up to 64 characters.
+                     * File name, up to 64 characters.
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the [category creating](https://intl.cloud.tencent.com/document/product/266/7812?from_cn_redirect=1) API.
-<li>Default value: 0, which means "Other".</li>
+                     * Category ID, used to categorize and manage media. You can create a category and obtain the category ID through the [create category](https://www.tencentcloud.com/document/product/266/7812) API.
+<li>Default value: 0, indicate other categories.</li>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * Expiration time of output media file in ISO 8601 format, after which the file will be deleted. Files will never expire by default. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * Expiry date of the output file. The file will be deleted after this time. It never expires by default. The format is based on the ISO 8601 standard. For details, see [ISO date format description](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

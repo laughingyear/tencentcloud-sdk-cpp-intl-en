@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Blocking enabling status:
-0: disabled 
-1: advanced blocking
-2: basic blocking (block only malicious IP addresses in the intelligence database)
-                     * @return Status Blocking enabling status:
-0: disabled 
-1: advanced blocking
-2: basic blocking (block only malicious IP addresses in the intelligence database)
+                     * 获取<p>(Deprecated) Blocking switch status: 0 -- Off; 1 -- Advanced blocking; 2 -- Basic blocking (blocks only blacklisted IPs in the intelligence database)</p>
+                     * @return Status <p>(Deprecated) Blocking switch status: 0 -- Off; 1 -- Advanced blocking; 2 -- Basic blocking (blocks only blacklisted IPs in the intelligence database)</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -64,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Whether to display the pop-up prompt. False: no; true: yes.
-                     * @return ShowTips Whether to display the pop-up prompt. False: no; true: yes.
+                     * 获取<p>Whether to show pop-up prompts. false: disabled; true: enabled</p>
+                     * @return ShowTips <p>Whether to show pop-up prompts. false: disabled; true: enabled</p>
                      * 
                      */
                     bool GetShowTips() const;
@@ -78,8 +72,8 @@ namespace TencentCloud
                     bool ShowTipsHasBeenSet() const;
 
                     /**
-                     * 获取Whether to enable intelligent over-allowing mode
-                     * @return OpenSmartMode Whether to enable intelligent over-allowing mode
+                     * 获取<p>Whether to enable intelligent allowlisting mode</p>
+                     * @return OpenSmartMode <p>Whether to enable intelligent allowlisting mode</p>
                      * 
                      */
                     bool GetOpenSmartMode() const;
@@ -91,28 +85,85 @@ namespace TencentCloud
                      */
                     bool OpenSmartModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Whether to enable threat-intelligence IP blocking</p>
+                     * @return BanBlackIp <p>Whether to enable threat-intelligence IP blocking</p>
+                     * 
+                     */
+                    bool GetBanBlackIp() const;
+
+                    /**
+                     * 判断参数 BanBlackIp 是否已赋值
+                     * @return BanBlackIp 是否已赋值
+                     * 
+                     */
+                    bool BanBlackIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to enable vulnerability-related IP blocking</p>
+                     * @return BanVulIp <p>Whether to enable vulnerability-related IP blocking</p>
+                     * 
+                     */
+                    bool GetBanVulIp() const;
+
+                    /**
+                     * 判断参数 BanVulIp 是否已赋值
+                     * @return BanVulIp 是否已赋值
+                     * 
+                     */
+                    bool BanVulIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Whether to enable rule blocking</p>
+                     * @return BanByRule <p>Whether to enable rule blocking</p>
+                     * 
+                     */
+                    bool GetBanByRule() const;
+
+                    /**
+                     * 判断参数 BanByRule 是否已赋值
+                     * @return BanByRule 是否已赋值
+                     * 
+                     */
+                    bool BanByRuleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Blocking enabling status:
-0: disabled 
-1: advanced blocking
-2: basic blocking (block only malicious IP addresses in the intelligence database)
+                     * <p>(Deprecated) Blocking switch status: 0 -- Off; 1 -- Advanced blocking; 2 -- Basic blocking (blocks only blacklisted IPs in the intelligence database)</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Whether to display the pop-up prompt. False: no; true: yes.
+                     * <p>Whether to show pop-up prompts. false: disabled; true: enabled</p>
                      */
                     bool m_showTips;
                     bool m_showTipsHasBeenSet;
 
                     /**
-                     * Whether to enable intelligent over-allowing mode
+                     * <p>Whether to enable intelligent allowlisting mode</p>
                      */
                     bool m_openSmartMode;
                     bool m_openSmartModeHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable threat-intelligence IP blocking</p>
+                     */
+                    bool m_banBlackIp;
+                    bool m_banBlackIpHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable vulnerability-related IP blocking</p>
+                     */
+                    bool m_banVulIp;
+                    bool m_banVulIpHasBeenSet;
+
+                    /**
+                     * <p>Whether to enable rule blocking</p>
+                     */
+                    bool m_banByRule;
+                    bool m_banByRuleHasBeenSet;
 
                 };
             }

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Custom rule configuration.
+                * Custom rule under the Web protection feature.
                 */
                 class CustomRule : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The custom rule name.
-                     * @return Name The custom rule name.
+                     * 获取<p>Name of the custom rule.</p>
+                     * @return Name <p>Name of the custom rule.</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置The custom rule name.
-                     * @param _name The custom rule name.
+                     * 设置<p>Name of the custom rule.</p>
+                     * @param _name <p>Name of the custom rule.</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取The specifics of the custom rule, must comply with the expression grammar, please refer to product documentation for details.
-                     * @return Condition The specifics of the custom rule, must comply with the expression grammar, please refer to product documentation for details.
+                     * 获取<p>The specific content of the custom rule must comply with the expression grammar. For detailed specifications, see the <a href="https://www.tencentcloud.com/document/product/1552/125343?from_cn_redirect=1">product document</a>.</p>
+                     * @return Condition <p>The specific content of the custom rule must comply with the expression grammar. For detailed specifications, see the <a href="https://www.tencentcloud.com/document/product/1552/125343?from_cn_redirect=1">product document</a>.</p>
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置The specifics of the custom rule, must comply with the expression grammar, please refer to product documentation for details.
-                     * @param _condition The specifics of the custom rule, must comply with the expression grammar, please refer to product documentation for details.
+                     * 设置<p>The specific content of the custom rule must comply with the expression grammar. For detailed specifications, see the <a href="https://www.tencentcloud.com/document/product/1552/125343?from_cn_redirect=1">product document</a>.</p>
+                     * @param _condition <p>The specific content of the custom rule must comply with the expression grammar. For detailed specifications, see the <a href="https://www.tencentcloud.com/document/product/1552/125343?from_cn_redirect=1">product document</a>.</p>
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取Action for custom rules. The Name parameter of SecurityAction supports: <li>`Deny`: block;</li> <li>`Monitor`: observe;</li> <li>`ReturnCustomPage`: block with customized page;</li> <li>`Redirect`: Redirect to URL;</li> <li>`BlockIP`: IP blocking;</li> <li>`JSChallenge`: JavaScript challenge;</li> <li>`ManagedChallenge`: managed challenge;</li> <li>`Allow`: Allow.</li>.
-                     * @return Action Action for custom rules. The Name parameter of SecurityAction supports: <li>`Deny`: block;</li> <li>`Monitor`: observe;</li> <li>`ReturnCustomPage`: block with customized page;</li> <li>`Redirect`: Redirect to URL;</li> <li>`BlockIP`: IP blocking;</li> <li>`JSChallenge`: JavaScript challenge;</li> <li>`ManagedChallenge`: managed challenge;</li> <li>`Allow`: Allow.</li>.
+                     * 获取<p>Handling action of the custom rule. SecurityAction.Name values are as follows:</p><ul><li>Allow: allow, where AllowActionParameters supports MinDelayTime and MaxDelayTime configuration;</li><li>Deny: block, where DenyActionParameters supports BlockIp, ReturnCustomPage, and Stall configuration;</li><li>Monitor: observe;</li><li>Challenge: challenge, where ChallengeActionParameters.ChallengeOption supports JSChallenge and ManagedChallenge;</li><li>Redirect: redirect to a URL.</li></ul>
+                     * @return Action <p>Handling action of the custom rule. SecurityAction.Name values are as follows:</p><ul><li>Allow: allow, where AllowActionParameters supports MinDelayTime and MaxDelayTime configuration;</li><li>Deny: block, where DenyActionParameters supports BlockIp, ReturnCustomPage, and Stall configuration;</li><li>Monitor: observe;</li><li>Challenge: challenge, where ChallengeActionParameters.ChallengeOption supports JSChallenge and ManagedChallenge;</li><li>Redirect: redirect to a URL.</li></ul>
                      * 
                      */
                     SecurityAction GetAction() const;
 
                     /**
-                     * 设置Action for custom rules. The Name parameter of SecurityAction supports: <li>`Deny`: block;</li> <li>`Monitor`: observe;</li> <li>`ReturnCustomPage`: block with customized page;</li> <li>`Redirect`: Redirect to URL;</li> <li>`BlockIP`: IP blocking;</li> <li>`JSChallenge`: JavaScript challenge;</li> <li>`ManagedChallenge`: managed challenge;</li> <li>`Allow`: Allow.</li>.
-                     * @param _action Action for custom rules. The Name parameter of SecurityAction supports: <li>`Deny`: block;</li> <li>`Monitor`: observe;</li> <li>`ReturnCustomPage`: block with customized page;</li> <li>`Redirect`: Redirect to URL;</li> <li>`BlockIP`: IP blocking;</li> <li>`JSChallenge`: JavaScript challenge;</li> <li>`ManagedChallenge`: managed challenge;</li> <li>`Allow`: Allow.</li>.
+                     * 设置<p>Handling action of the custom rule. SecurityAction.Name values are as follows:</p><ul><li>Allow: allow, where AllowActionParameters supports MinDelayTime and MaxDelayTime configuration;</li><li>Deny: block, where DenyActionParameters supports BlockIp, ReturnCustomPage, and Stall configuration;</li><li>Monitor: observe;</li><li>Challenge: challenge, where ChallengeActionParameters.ChallengeOption supports JSChallenge and ManagedChallenge;</li><li>Redirect: redirect to a URL.</li></ul>
+                     * @param _action <p>Handling action of the custom rule. SecurityAction.Name values are as follows:</p><ul><li>Allow: allow, where AllowActionParameters supports MinDelayTime and MaxDelayTime configuration;</li><li>Deny: block, where DenyActionParameters supports BlockIp, ReturnCustomPage, and Stall configuration;</li><li>Monitor: observe;</li><li>Challenge: challenge, where ChallengeActionParameters.ChallengeOption supports JSChallenge and ManagedChallenge;</li><li>Redirect: redirect to a URL.</li></ul>
                      * 
                      */
                     void SetAction(const SecurityAction& _action);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取The custom rule status. Values: <li>`on`: enabled</li> <li>`off`: disabled</li>.
-                     * @return Enabled The custom rule status. Values: <li>`on`: enabled</li> <li>`off`: disabled</li>.
+                     * 获取<p>Whether the custom rule is enabled. Valid values: <ul><li>on: Enable;</li><li>off: Disable.</li></ul></p>
+                     * @return Enabled <p>Whether the custom rule is enabled. Valid values: <ul><li>on: Enable;</li><li>off: Disable.</li></ul></p>
                      * 
                      */
                     std::string GetEnabled() const;
 
                     /**
-                     * 设置The custom rule status. Values: <li>`on`: enabled</li> <li>`off`: disabled</li>.
-                     * @param _enabled The custom rule status. Values: <li>`on`: enabled</li> <li>`off`: disabled</li>.
+                     * 设置<p>Whether the custom rule is enabled. Valid values: <ul><li>on: Enable;</li><li>off: Disable.</li></ul></p>
+                     * @param _enabled <p>Whether the custom rule is enabled. Valid values: <ul><li>on: Enable;</li><li>off: Disable.</li></ul></p>
                      * 
                      */
                     void SetEnabled(const std::string& _enabled);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取Custom rule ID. <br>Different rule configuration operations are supported by rule ID : <br> - Add a new rule: ID is empty or the ID parameter is not specified; <br> - Modify an existing rule: specify the rule ID that needs to be updated/modified; <br> - Delete an existing rule: existing rules not included in the Rules parameter will be deleted.
-                     * @return Id Custom rule ID. <br>Different rule configuration operations are supported by rule ID : <br> - Add a new rule: ID is empty or the ID parameter is not specified; <br> - Modify an existing rule: specify the rule ID that needs to be updated/modified; <br> - Delete an existing rule: existing rules not included in the Rules parameter will be deleted.
+                     * 获取<p>ID of the custom rule. You can perform different rule configuration operations by rule ID: <ul><li>Add a new rule: leave the ID empty or do not specify the ID parameter;</li><li>Modify an existing rule: specify the rule ID that needs to be updated/modified;</li><li>Delete an existing rule: existing rules not included in the Rules list in the CustomRules parameter will be deleted.</li></ul></p>
+                     * @return Id <p>ID of the custom rule. You can perform different rule configuration operations by rule ID: <ul><li>Add a new rule: leave the ID empty or do not specify the ID parameter;</li><li>Modify an existing rule: specify the rule ID that needs to be updated/modified;</li><li>Delete an existing rule: existing rules not included in the Rules list in the CustomRules parameter will be deleted.</li></ul></p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Custom rule ID. <br>Different rule configuration operations are supported by rule ID : <br> - Add a new rule: ID is empty or the ID parameter is not specified; <br> - Modify an existing rule: specify the rule ID that needs to be updated/modified; <br> - Delete an existing rule: existing rules not included in the Rules parameter will be deleted.
-                     * @param _id Custom rule ID. <br>Different rule configuration operations are supported by rule ID : <br> - Add a new rule: ID is empty or the ID parameter is not specified; <br> - Modify an existing rule: specify the rule ID that needs to be updated/modified; <br> - Delete an existing rule: existing rules not included in the Rules parameter will be deleted.
+                     * 设置<p>ID of the custom rule. You can perform different rule configuration operations by rule ID: <ul><li>Add a new rule: leave the ID empty or do not specify the ID parameter;</li><li>Modify an existing rule: specify the rule ID that needs to be updated/modified;</li><li>Delete an existing rule: existing rules not included in the Rules list in the CustomRules parameter will be deleted.</li></ul></p>
+                     * @param _id <p>ID of the custom rule. You can perform different rule configuration operations by rule ID: <ul><li>Add a new rule: leave the ID empty or do not specify the ID parameter;</li><li>Modify an existing rule: specify the rule ID that needs to be updated/modified;</li><li>Delete an existing rule: existing rules not included in the Rules list in the CustomRules parameter will be deleted.</li></ul></p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Type of custom rule. Values: <li>`BasicAccessRule`: basic access control;</li> <li>`PreciseMatchRule`: exact custom rule, default;</li> <li>`ManagedAccessRule`: expert customized rule, output parameter only.</li>The default value is PreciseMatchRule.
-                     * @return RuleType Type of custom rule. Values: <li>`BasicAccessRule`: basic access control;</li> <li>`PreciseMatchRule`: exact custom rule, default;</li> <li>`ManagedAccessRule`: expert customized rule, output parameter only.</li>The default value is PreciseMatchRule.
+                     * 获取<p>Type of the custom rule. Valid values: <ul><li>BasicAccessRule: basic access control;</li><li>PreciseMatchRule: exact matching rule;</li><li>ManagedAccessRule: expert customized rule, supported only for output parameters.</li></ul>Note: If RuleType is not specified, it defaults to <code>PreciseMatchRule</code>.</p>
+                     * @return RuleType <p>Type of the custom rule. Valid values: <ul><li>BasicAccessRule: basic access control;</li><li>PreciseMatchRule: exact matching rule;</li><li>ManagedAccessRule: expert customized rule, supported only for output parameters.</li></ul>Note: If RuleType is not specified, it defaults to <code>PreciseMatchRule</code>.</p>
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置Type of custom rule. Values: <li>`BasicAccessRule`: basic access control;</li> <li>`PreciseMatchRule`: exact custom rule, default;</li> <li>`ManagedAccessRule`: expert customized rule, output parameter only.</li>The default value is PreciseMatchRule.
-                     * @param _ruleType Type of custom rule. Values: <li>`BasicAccessRule`: basic access control;</li> <li>`PreciseMatchRule`: exact custom rule, default;</li> <li>`ManagedAccessRule`: expert customized rule, output parameter only.</li>The default value is PreciseMatchRule.
+                     * 设置<p>Type of the custom rule. Valid values: <ul><li>BasicAccessRule: basic access control;</li><li>PreciseMatchRule: exact matching rule;</li><li>ManagedAccessRule: expert customized rule, supported only for output parameters.</li></ul>Note: If RuleType is not specified, it defaults to <code>PreciseMatchRule</code>.</p>
+                     * @param _ruleType <p>Type of the custom rule. Valid values: <ul><li>BasicAccessRule: basic access control;</li><li>PreciseMatchRule: exact matching rule;</li><li>ManagedAccessRule: expert customized rule, supported only for output parameters.</li></ul>Note: If RuleType is not specified, it defaults to <code>PreciseMatchRule</code>.</p>
                      * 
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取Customize the priority of custom rule. Range: 0-100, the default value is 0, this parameter only supports PreciseMatchRule.
-                     * @return Priority Customize the priority of custom rule. Range: 0-100, the default value is 0, this parameter only supports PreciseMatchRule.
+                     * 获取<p>Priority of custom rules, ranging from 0 to 100, with a default value of 0. Only exact matching rules (<code>PreciseMatchRule</code>) are supported.</p>
+                     * @return Priority <p>Priority of custom rules, ranging from 0 to 100, with a default value of 0. Only exact matching rules (<code>PreciseMatchRule</code>) are supported.</p>
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置Customize the priority of custom rule. Range: 0-100, the default value is 0, this parameter only supports PreciseMatchRule.
-                     * @param _priority Customize the priority of custom rule. Range: 0-100, the default value is 0, this parameter only supports PreciseMatchRule.
+                     * 设置<p>Priority of custom rules, ranging from 0 to 100, with a default value of 0. Only exact matching rules (<code>PreciseMatchRule</code>) are supported.</p>
+                     * @param _priority <p>Priority of custom rules, ranging from 0 to 100, with a default value of 0. Only exact matching rules (<code>PreciseMatchRule</code>) are supported.</p>
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -197,43 +197,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The custom rule name.
+                     * <p>Name of the custom rule.</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * The specifics of the custom rule, must comply with the expression grammar, please refer to product documentation for details.
+                     * <p>The specific content of the custom rule must comply with the expression grammar. For detailed specifications, see the <a href="https://www.tencentcloud.com/document/product/1552/125343?from_cn_redirect=1">product document</a>.</p>
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * Action for custom rules. The Name parameter of SecurityAction supports: <li>`Deny`: block;</li> <li>`Monitor`: observe;</li> <li>`ReturnCustomPage`: block with customized page;</li> <li>`Redirect`: Redirect to URL;</li> <li>`BlockIP`: IP blocking;</li> <li>`JSChallenge`: JavaScript challenge;</li> <li>`ManagedChallenge`: managed challenge;</li> <li>`Allow`: Allow.</li>.
+                     * <p>Handling action of the custom rule. SecurityAction.Name values are as follows:</p><ul><li>Allow: allow, where AllowActionParameters supports MinDelayTime and MaxDelayTime configuration;</li><li>Deny: block, where DenyActionParameters supports BlockIp, ReturnCustomPage, and Stall configuration;</li><li>Monitor: observe;</li><li>Challenge: challenge, where ChallengeActionParameters.ChallengeOption supports JSChallenge and ManagedChallenge;</li><li>Redirect: redirect to a URL.</li></ul>
                      */
                     SecurityAction m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * The custom rule status. Values: <li>`on`: enabled</li> <li>`off`: disabled</li>.
+                     * <p>Whether the custom rule is enabled. Valid values: <ul><li>on: Enable;</li><li>off: Disable.</li></ul></p>
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * Custom rule ID. <br>Different rule configuration operations are supported by rule ID : <br> - Add a new rule: ID is empty or the ID parameter is not specified; <br> - Modify an existing rule: specify the rule ID that needs to be updated/modified; <br> - Delete an existing rule: existing rules not included in the Rules parameter will be deleted.
+                     * <p>ID of the custom rule. You can perform different rule configuration operations by rule ID: <ul><li>Add a new rule: leave the ID empty or do not specify the ID parameter;</li><li>Modify an existing rule: specify the rule ID that needs to be updated/modified;</li><li>Delete an existing rule: existing rules not included in the Rules list in the CustomRules parameter will be deleted.</li></ul></p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * Type of custom rule. Values: <li>`BasicAccessRule`: basic access control;</li> <li>`PreciseMatchRule`: exact custom rule, default;</li> <li>`ManagedAccessRule`: expert customized rule, output parameter only.</li>The default value is PreciseMatchRule.
+                     * <p>Type of the custom rule. Valid values: <ul><li>BasicAccessRule: basic access control;</li><li>PreciseMatchRule: exact matching rule;</li><li>ManagedAccessRule: expert customized rule, supported only for output parameters.</li></ul>Note: If RuleType is not specified, it defaults to <code>PreciseMatchRule</code>.</p>
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * Customize the priority of custom rule. Range: 0-100, the default value is 0, this parameter only supports PreciseMatchRule.
+                     * <p>Priority of custom rules, ranging from 0 to 100, with a default value of 0. Only exact matching rules (<code>PreciseMatchRule</code>) are supported.</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;

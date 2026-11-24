@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/AudioTemplateInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/TEHDConfigForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceConfigForUpdate.h>
 
 
 namespace TencentCloud
@@ -46,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Unique ID of transcoding template.
-                     * @return Definition Unique ID of transcoding template.
+                     * 获取<p>Unique identifier of the transcoding template.</p>
+                     * @return Definition <p>Unique identifier of the transcoding template.</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Unique ID of transcoding template.
-                     * @param _definition Unique ID of transcoding template.
+                     * 设置<p>Unique identifier of the transcoding template.</p>
+                     * @param _definition <p>Unique identifier of the transcoding template.</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<p><b>On-demand video <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID to access resources in on-demand applications, whether default or newly created.</b></p>
+                     * @return SubAppId <p><b>On-demand video <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID to access resources in on-demand applications, whether default or newly created.</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<p><b>On-demand video <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID to access resources in on-demand applications, whether default or newly created.</b></p>
+                     * @param _subAppId <p><b>On-demand video <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID to access resources in on-demand applications, whether default or newly created.</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -88,15 +89,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取The container format. Valid values: `mp4`, `flv`, `hls`, `mp3`, `flac`, `ogg`, `m4a`, `wav` ( `mp3`, `flac`, `ogg`, `m4a`, and `wav` are audio file formats).
-                     * @return Container The container format. Valid values: `mp4`, `flv`, `hls`, `mp3`, `flac`, `ogg`, `m4a`, `wav` ( `mp3`, `flac`, `ogg`, `m4a`, and `wav` are audio file formats).
+                     * 获取<p>Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, m4a, and wav. Among them, mp3, flac, ogg, m4a, and wav are for audio-only files.</p>
+                     * @return Container <p>Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, m4a, and wav. Among them, mp3, flac, ogg, m4a, and wav are for audio-only files.</p>
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置The container format. Valid values: `mp4`, `flv`, `hls`, `mp3`, `flac`, `ogg`, `m4a`, `wav` ( `mp3`, `flac`, `ogg`, `m4a`, and `wav` are audio file formats).
-                     * @param _container The container format. Valid values: `mp4`, `flv`, `hls`, `mp3`, `flac`, `ogg`, `m4a`, `wav` ( `mp3`, `flac`, `ogg`, `m4a`, and `wav` are audio file formats).
+                     * 设置<p>Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, m4a, and wav. Among them, mp3, flac, ogg, m4a, and wav are for audio-only files.</p>
+                     * @param _container <p>Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, m4a, and wav. Among them, mp3, flac, ogg, m4a, and wav are for audio-only files.</p>
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -109,15 +110,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取Transcoding template name. Length limit: 64 characters.
-                     * @return Name Transcoding template name. Length limit: 64 characters.
+                     * 获取<p>Transcoding template name. Length limit: 64 characters.</p>
+                     * @return Name <p>Transcoding template name. Length limit: 64 characters.</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Transcoding template name. Length limit: 64 characters.
-                     * @param _name Transcoding template name. Length limit: 64 characters.
+                     * 设置<p>Transcoding template name. Length limit: 64 characters.</p>
+                     * @param _name <p>Transcoding template name. Length limit: 64 characters.</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Template description. Length limit: 256 characters.
-                     * @return Comment Template description. Length limit: 256 characters.
+                     * 获取<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @return Comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description. Length limit: 256 characters.
-                     * @param _comment Template description. Length limit: 256 characters.
+                     * 设置<p>Transcoding template description. Length limit: 256 characters.</p>
+                     * @param _comment <p>Transcoding template description. Length limit: 256 characters.</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -151,23 +152,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @return RemoveVideo Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 获取<p>Indicates whether to remove video data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
+                     * @return RemoveVideo <p>Indicates whether to remove video data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      * 
                      */
                     int64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @param _removeVideo Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 设置<p>Indicates whether to remove video data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
+                     * @param _removeVideo <p>Indicates whether to remove video data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
@@ -180,23 +173,15 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @return RemoveAudio Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 获取<p>Indicates whether to remove audio data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
+                     * @return RemoveAudio <p>Indicates whether to remove audio data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      * 
                      */
                     int64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
-                     * @param _removeAudio Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * 设置<p>Indicates whether to remove audio data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
+                     * @param _removeAudio <p>Indicates whether to remove audio data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
@@ -209,15 +194,15 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取Video stream configuration parameter.
-                     * @return VideoTemplate Video stream configuration parameter.
+                     * 获取<p>Video stream configuration parameters.</p>
+                     * @return VideoTemplate <p>Video stream configuration parameters.</p>
                      * 
                      */
                     VideoTemplateInfoForUpdate GetVideoTemplate() const;
 
                     /**
-                     * 设置Video stream configuration parameter.
-                     * @param _videoTemplate Video stream configuration parameter.
+                     * 设置<p>Video stream configuration parameters.</p>
+                     * @param _videoTemplate <p>Video stream configuration parameters.</p>
                      * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfoForUpdate& _videoTemplate);
@@ -230,15 +215,15 @@ namespace TencentCloud
                     bool VideoTemplateHasBeenSet() const;
 
                     /**
-                     * 获取Audio stream configuration parameter.
-                     * @return AudioTemplate Audio stream configuration parameter.
+                     * 获取<p>Audio stream configuration parameters.</p>
+                     * @return AudioTemplate <p>Audio stream configuration parameters.</p>
                      * 
                      */
                     AudioTemplateInfoForUpdate GetAudioTemplate() const;
 
                     /**
-                     * 设置Audio stream configuration parameter.
-                     * @param _audioTemplate Audio stream configuration parameter.
+                     * 设置<p>Audio stream configuration parameters.</p>
+                     * @param _audioTemplate <p>Audio stream configuration parameters.</p>
                      * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfoForUpdate& _audioTemplate);
@@ -251,15 +236,15 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取TESHD transcoding parameter.
-                     * @return TEHDConfig TESHD transcoding parameter.
+                     * 获取<p>Top Speed Codec transcoding parameters.</p>
+                     * @return TEHDConfig <p>Top Speed Codec transcoding parameters.</p>
                      * 
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
-                     * 设置TESHD transcoding parameter.
-                     * @param _tEHDConfig TESHD transcoding parameter.
+                     * 设置<p>Top Speed Codec transcoding parameters.</p>
+                     * @param _tEHDConfig <p>Top Speed Codec transcoding parameters.</p>
                      * 
                      */
                     void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
@@ -272,23 +257,36 @@ namespace TencentCloud
                     bool TEHDConfigHasBeenSet() const;
 
                     /**
-                     * 获取The segment type. This parameter is valid only if `Container` is `hls`. Valid values:
-<li>ts: TS segment</li>
-<li>fmp4: fMP4 segment</li>
-                     * @return SegmentType The segment type. This parameter is valid only if `Container` is `hls`. Valid values:
-<li>ts: TS segment</li>
-<li>fmp4: fMP4 segment</li>
+                     * 获取<p>Audio/video enhancement configurations.</p>
+                     * @return EnhanceConfig <p>Audio/video enhancement configurations.</p>
+                     * 
+                     */
+                    EnhanceConfigForUpdate GetEnhanceConfig() const;
+
+                    /**
+                     * 设置<p>Audio/video enhancement configurations.</p>
+                     * @param _enhanceConfig <p>Audio/video enhancement configurations.</p>
+                     * 
+                     */
+                    void SetEnhanceConfig(const EnhanceConfigForUpdate& _enhanceConfig);
+
+                    /**
+                     * 判断参数 EnhanceConfig 是否已赋值
+                     * @return EnhanceConfig 是否已赋值
+                     * 
+                     */
+                    bool EnhanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Segment type. Valid when Container is hls. Available values:</p><li>ts: ts slicing;</li><li>fmp4: fmp4 slicing.</li>
+                     * @return SegmentType <p>Segment type. Valid when Container is hls. Available values:</p><li>ts: ts slicing;</li><li>fmp4: fmp4 slicing.</li>
                      * 
                      */
                     std::string GetSegmentType() const;
 
                     /**
-                     * 设置The segment type. This parameter is valid only if `Container` is `hls`. Valid values:
-<li>ts: TS segment</li>
-<li>fmp4: fMP4 segment</li>
-                     * @param _segmentType The segment type. This parameter is valid only if `Container` is `hls`. Valid values:
-<li>ts: TS segment</li>
-<li>fmp4: fMP4 segment</li>
+                     * 设置<p>Segment type. Valid when Container is hls. Available values:</p><li>ts: ts slicing;</li><li>fmp4: fmp4 slicing.</li>
+                     * @param _segmentType <p>Segment type. Valid when Container is hls. Available values:</p><li>ts: ts slicing;</li><li>fmp4: fmp4 slicing.</li>
                      * 
                      */
                     void SetSegmentType(const std::string& _segmentType);
@@ -300,79 +298,106 @@ namespace TencentCloud
                      */
                     bool SegmentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Extended parameter.</p>
+                     * @return StdExtInfo <p>Extended parameter.</p>
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置<p>Extended parameter.</p>
+                     * @param _stdExtInfo <p>Extended parameter.</p>
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Unique ID of transcoding template.
+                     * <p>Unique identifier of the transcoding template.</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <p><b>On-demand video <a href="https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1">application</a> ID. Customers who activate on-demand services from December 25, 2023 must fill in this field with the app ID to access resources in on-demand applications, whether default or newly created.</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * The container format. Valid values: `mp4`, `flv`, `hls`, `mp3`, `flac`, `ogg`, `m4a`, `wav` ( `mp3`, `flac`, `ogg`, `m4a`, and `wav` are audio file formats).
+                     * <p>Container format. Valid values: mp4, flv, hls, mp3, flac, ogg, m4a, and wav. Among them, mp3, flac, ogg, m4a, and wav are for audio-only files.</p>
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * Transcoding template name. Length limit: 64 characters.
+                     * <p>Transcoding template name. Length limit: 64 characters.</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Template description. Length limit: 256 characters.
+                     * <p>Transcoding template description. Length limit: 256 characters.</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Whether to remove video data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * <p>Indicates whether to remove video data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      */
                     int64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * Whether to remove audio data. Valid values:
-<li>0: retain</li>
-<li>1: remove</li>
+                     * <p>Indicates whether to remove audio data. Valid values:</p><li>0: Data is reserved.</li><li>1: Data is removed.</li>
                      */
                     int64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * Video stream configuration parameter.
+                     * <p>Video stream configuration parameters.</p>
                      */
                     VideoTemplateInfoForUpdate m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
-                     * Audio stream configuration parameter.
+                     * <p>Audio stream configuration parameters.</p>
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * TESHD transcoding parameter.
+                     * <p>Top Speed Codec transcoding parameters.</p>
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
 
                     /**
-                     * The segment type. This parameter is valid only if `Container` is `hls`. Valid values:
-<li>ts: TS segment</li>
-<li>fmp4: fMP4 segment</li>
+                     * <p>Audio/video enhancement configurations.</p>
+                     */
+                    EnhanceConfigForUpdate m_enhanceConfig;
+                    bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * <p>Segment type. Valid when Container is hls. Available values:</p><li>ts: ts slicing;</li><li>fmp4: fmp4 slicing.</li>
                      */
                     std::string m_segmentType;
                     bool m_segmentTypeHasBeenSet;
+
+                    /**
+                     * <p>Extended parameter.</p>
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

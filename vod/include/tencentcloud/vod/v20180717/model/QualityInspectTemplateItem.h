@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/QualityInspectConfig.h>
+#include <tencentcloud/vod/v20180717/model/QualityInspectStrategy.h>
 #include <tencentcloud/vod/v20180717/model/JitterConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/BlurConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/AbnormalLightingConfigureInfo.h>
@@ -45,7 +47,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Media quality inspection template details.
+                * Audio and video quality detection template details.
                 */
                 class QualityInspectTemplateItem : public AbstractModel
                 {
@@ -57,15 +59,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Media quality inspection template ID.
-                     * @return Definition Media quality inspection template ID.
+                     * 获取<p>Template ID.</p>
+                     * @return Definition <p>Template ID.</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置Media quality inspection template ID.
-                     * @param _definition Media quality inspection template ID.
+                     * 设置<p>Template ID.</p>
+                     * @param _definition <p>Template ID.</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -78,15 +80,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Template Type, available options: <li>Preset: Preset Template;</li> <li>Custom: User Custom Template.</li>
-                     * @return Type Template Type, available options: <li>Preset: Preset Template;</li> <li>Custom: User Custom Template.</li>
+                     * 获取<p>Template type. Available values:</p><li>Preset: preset template;</li><li>Custom: custom template.</li>
+                     * @return Type <p>Template type. Available values:</p><li>Preset: preset template;</li><li>Custom: custom template.</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置Template Type, available options: <li>Preset: Preset Template;</li> <li>Custom: User Custom Template.</li>
-                     * @param _type Template Type, available options: <li>Preset: Preset Template;</li> <li>Custom: User Custom Template.</li>
+                     * 设置<p>Template type. Available values:</p><li>Preset: preset template;</li><li>Custom: custom template.</li>
+                     * @param _type <p>Template type. Available values:</p><li>Preset: preset template;</li><li>Custom: custom template.</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -99,15 +101,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Media quality inspection template name.
-                     * @return Name Media quality inspection template name.
+                     * 获取<p>Template name.</p>
+                     * @return Name <p>Template name.</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Media quality inspection template name.
-                     * @param _name Media quality inspection template name.
+                     * 设置<p>Template name.</p>
+                     * @param _name <p>Template name.</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -120,15 +122,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Template description. 
-                     * @return Comment Template description. 
+                     * 获取<p>Template description.</p>
+                     * @return Comment <p>Template description.</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置Template description. 
-                     * @param _comment Template description. 
+                     * 设置<p>Template description.</p>
+                     * @param _comment <p>Template description.</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -141,246 +143,57 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取Frame interval, unit in seconds.
-                     * @return ScreenshotInterval Frame interval, unit in seconds.
+                     * 获取<p>Configuration parameters for audio and video quality detection.</p>
+                     * @return Configs <p>Configuration parameters for audio and video quality detection.</p>
                      * 
                      */
-                    double GetScreenshotInterval() const;
+                    std::vector<QualityInspectConfig> GetConfigs() const;
 
                     /**
-                     * 设置Frame interval, unit in seconds.
-                     * @param _screenshotInterval Frame interval, unit in seconds.
+                     * 设置<p>Configuration parameters for audio and video quality detection.</p>
+                     * @param _configs <p>Configuration parameters for audio and video quality detection.</p>
                      * 
                      */
-                    void SetScreenshotInterval(const double& _screenshotInterval);
+                    void SetConfigs(const std::vector<QualityInspectConfig>& _configs);
 
                     /**
-                     * 判断参数 ScreenshotInterval 是否已赋值
-                     * @return ScreenshotInterval 是否已赋值
+                     * 判断参数 Configs 是否已赋值
+                     * @return Configs 是否已赋值
                      * 
                      */
-                    bool ScreenshotIntervalHasBeenSet() const;
+                    bool ConfigsHasBeenSet() const;
 
                     /**
-                     * 获取Control parameters for detecting video jitter and ghosting.
-                     * @return JitterConfigure Control parameters for detecting video jitter and ghosting.
+                     * 获取<p>Spot check policy for audio and video quality inspection.</p>
+                     * @return Strategy <p>Spot check policy for audio and video quality inspection.</p>
                      * 
                      */
-                    JitterConfigureInfo GetJitterConfigure() const;
+                    QualityInspectStrategy GetStrategy() const;
 
                     /**
-                     * 设置Control parameters for detecting video jitter and ghosting.
-                     * @param _jitterConfigure Control parameters for detecting video jitter and ghosting.
+                     * 设置<p>Spot check policy for audio and video quality inspection.</p>
+                     * @param _strategy <p>Spot check policy for audio and video quality inspection.</p>
                      * 
                      */
-                    void SetJitterConfigure(const JitterConfigureInfo& _jitterConfigure);
+                    void SetStrategy(const QualityInspectStrategy& _strategy);
 
                     /**
-                     * 判断参数 JitterConfigure 是否已赋值
-                     * @return JitterConfigure 是否已赋值
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
                      * 
                      */
-                    bool JitterConfigureHasBeenSet() const;
+                    bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取Control parameters for detecting video blur.
-                     * @return BlurConfigure Control parameters for detecting video blur.
-                     * 
-                     */
-                    BlurConfigureInfo GetBlurConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting video blur.
-                     * @param _blurConfigure Control parameters for detecting video blur.
-                     * 
-                     */
-                    void SetBlurConfigure(const BlurConfigureInfo& _blurConfigure);
-
-                    /**
-                     * 判断参数 BlurConfigure 是否已赋值
-                     * @return BlurConfigure 是否已赋值
-                     * 
-                     */
-                    bool BlurConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for detecting low brightness and overexposure of video.
-                     * @return AbnormalLightingConfigure Control parameters for detecting low brightness and overexposure of video.
-                     * 
-                     */
-                    AbnormalLightingConfigureInfo GetAbnormalLightingConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting low brightness and overexposure of video.
-                     * @param _abnormalLightingConfigure Control parameters for detecting low brightness and overexposure of video.
-                     * 
-                     */
-                    void SetAbnormalLightingConfigure(const AbnormalLightingConfigureInfo& _abnormalLightingConfigure);
-
-                    /**
-                     * 判断参数 AbnormalLightingConfigure 是否已赋值
-                     * @return AbnormalLightingConfigure 是否已赋值
-                     * 
-                     */
-                    bool AbnormalLightingConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for detecting video crash.
-                     * @return CrashScreenConfigure Control parameters for detecting video crash.
-                     * 
-                     */
-                    CrashScreenConfigureInfo GetCrashScreenConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting video crash.
-                     * @param _crashScreenConfigure Control parameters for detecting video crash.
-                     * 
-                     */
-                    void SetCrashScreenConfigure(const CrashScreenConfigureInfo& _crashScreenConfigure);
-
-                    /**
-                     * 判断参数 CrashScreenConfigure 是否已赋值
-                     * @return CrashScreenConfigure 是否已赋值
-                     * 
-                     */
-                    bool CrashScreenConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for detecting video black edges, white edges, black screen, and white screen.
-                     * @return BlackWhiteEdgeConfigure Control parameters for detecting video black edges, white edges, black screen, and white screen.
-                     * 
-                     */
-                    BlackWhiteEdgeConfigureInfo GetBlackWhiteEdgeConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting video black edges, white edges, black screen, and white screen.
-                     * @param _blackWhiteEdgeConfigure Control parameters for detecting video black edges, white edges, black screen, and white screen.
-                     * 
-                     */
-                    void SetBlackWhiteEdgeConfigure(const BlackWhiteEdgeConfigureInfo& _blackWhiteEdgeConfigure);
-
-                    /**
-                     * 判断参数 BlackWhiteEdgeConfigure 是否已赋值
-                     * @return BlackWhiteEdgeConfigure 是否已赋值
-                     * 
-                     */
-                    bool BlackWhiteEdgeConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for detecting video noise.
-                     * @return NoiseConfigure Control parameters for detecting video noise.
-                     * 
-                     */
-                    NoiseConfigureInfo GetNoiseConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting video noise.
-                     * @param _noiseConfigure Control parameters for detecting video noise.
-                     * 
-                     */
-                    void SetNoiseConfigure(const NoiseConfigureInfo& _noiseConfigure);
-
-                    /**
-                     * 判断参数 NoiseConfigure 是否已赋值
-                     * @return NoiseConfigure 是否已赋值
-                     * 
-                     */
-                    bool NoiseConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for detecting video mosaic.
-                     * @return MosaicConfigure Control parameters for detecting video mosaic.
-                     * 
-                     */
-                    MosaicConfigureInfo GetMosaicConfigure() const;
-
-                    /**
-                     * 设置Control parameters for detecting video mosaic.
-                     * @param _mosaicConfigure Control parameters for detecting video mosaic.
-                     * 
-                     */
-                    void SetMosaicConfigure(const MosaicConfigureInfo& _mosaicConfigure);
-
-                    /**
-                     * 判断参数 MosaicConfigure 是否已赋值
-                     * @return MosaicConfigure 是否已赋值
-                     * 
-                     */
-                    bool MosaicConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for QR code detection in video.
-                     * @return QRCodeConfigure Control parameters for QR code detection in video.
-                     * 
-                     */
-                    QRCodeConfigureInfo GetQRCodeConfigure() const;
-
-                    /**
-                     * 设置Control parameters for QR code detection in video.
-                     * @param _qRCodeConfigure Control parameters for QR code detection in video.
-                     * 
-                     */
-                    void SetQRCodeConfigure(const QRCodeConfigureInfo& _qRCodeConfigure);
-
-                    /**
-                     * 判断参数 QRCodeConfigure 是否已赋值
-                     * @return QRCodeConfigure 是否已赋值
-                     * 
-                     */
-                    bool QRCodeConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for video quality evaluation.
-                     * @return QualityEvaluationConfigure Control parameters for video quality evaluation.
-                     * 
-                     */
-                    QualityEvaluationConfigureInfo GetQualityEvaluationConfigure() const;
-
-                    /**
-                     * 设置Control parameters for video quality evaluation.
-                     * @param _qualityEvaluationConfigure Control parameters for video quality evaluation.
-                     * 
-                     */
-                    void SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure);
-
-                    /**
-                     * 判断参数 QualityEvaluationConfigure 是否已赋值
-                     * @return QualityEvaluationConfigure 是否已赋值
-                     * 
-                     */
-                    bool QualityEvaluationConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Control parameters for audio (mutes, bass, blast sound).
-                     * @return VoiceConfigure Control parameters for audio (mutes, bass, blast sound).
-                     * 
-                     */
-                    VoiceConfigureInfo GetVoiceConfigure() const;
-
-                    /**
-                     * 设置Control parameters for audio (mutes, bass, blast sound).
-                     * @param _voiceConfigure Control parameters for audio (mutes, bass, blast sound).
-                     * 
-                     */
-                    void SetVoiceConfigure(const VoiceConfigureInfo& _voiceConfigure);
-
-                    /**
-                     * 判断参数 VoiceConfigure 是否已赋值
-                     * @return VoiceConfigure 是否已赋值
-                     * 
-                     */
-                    bool VoiceConfigureHasBeenSet() const;
-
-                    /**
-                     * 获取Template Creation Time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return CreateTime Template Creation Time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取<p>Template creation time, in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
+                     * @return CreateTime <p>Template creation time, in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置Template Creation Time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _createTime Template Creation Time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置<p>Template creation time, in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
+                     * @param _createTime <p>Template creation time, in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -393,15 +206,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Template Modification time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @return UpdateTime Template Modification time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 获取<p>Template last modified time in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
+                     * @return UpdateTime <p>Template last modified time in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置Template Modification time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
-                     * @param _updateTime Template Modification time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * 设置<p>Template last modified time in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
+                     * @param _updateTime <p>Template last modified time in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -413,109 +226,352 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Frame interception interval in seconds.</p>
+                     * @return ScreenshotInterval <p>(Not recommended. Use Configs as an alternative.) Frame interception interval in seconds.</p>
+                     * 
+                     */
+                    double GetScreenshotInterval() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Frame interception interval in seconds.</p>
+                     * @param _screenshotInterval <p>(Not recommended. Use Configs as an alternative.) Frame interception interval in seconds.</p>
+                     * 
+                     */
+                    void SetScreenshotInterval(const double& _screenshotInterval);
+
+                    /**
+                     * 判断参数 ScreenshotInterval 是否已赋值
+                     * @return ScreenshotInterval 是否已赋值
+                     * 
+                     */
+                    bool ScreenshotIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame jitter and ghosting detection.</p>
+                     * @return JitterConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame jitter and ghosting detection.</p>
+                     * 
+                     */
+                    JitterConfigureInfo GetJitterConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame jitter and ghosting detection.</p>
+                     * @param _jitterConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame jitter and ghosting detection.</p>
+                     * 
+                     */
+                    void SetJitterConfigure(const JitterConfigureInfo& _jitterConfigure);
+
+                    /**
+                     * 判断参数 JitterConfigure 是否已赋值
+                     * @return JitterConfigure 是否已赋值
+                     * 
+                     */
+                    bool JitterConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame blur detection.</p>
+                     * @return BlurConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame blur detection.</p>
+                     * 
+                     */
+                    BlurConfigureInfo GetBlurConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame blur detection.</p>
+                     * @param _blurConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame blur detection.</p>
+                     * 
+                     */
+                    void SetBlurConfigure(const BlurConfigureInfo& _blurConfigure);
+
+                    /**
+                     * 判断参数 BlurConfigure 是否已赋值
+                     * @return BlurConfigure 是否已赋值
+                     * 
+                     */
+                    bool BlurConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs instead.) Control parameters for low-light and overexposure detection in video frames.</p>
+                     * @return AbnormalLightingConfigure <p>(Not recommended. Use Configs instead.) Control parameters for low-light and overexposure detection in video frames.</p>
+                     * 
+                     */
+                    AbnormalLightingConfigureInfo GetAbnormalLightingConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs instead.) Control parameters for low-light and overexposure detection in video frames.</p>
+                     * @param _abnormalLightingConfigure <p>(Not recommended. Use Configs instead.) Control parameters for low-light and overexposure detection in video frames.</p>
+                     * 
+                     */
+                    void SetAbnormalLightingConfigure(const AbnormalLightingConfigureInfo& _abnormalLightingConfigure);
+
+                    /**
+                     * 判断参数 AbnormalLightingConfigure 是否已赋值
+                     * @return AbnormalLightingConfigure 是否已赋值
+                     * 
+                     */
+                    bool AbnormalLightingConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for video footage distortion detection.</p>
+                     * @return CrashScreenConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video footage distortion detection.</p>
+                     * 
+                     */
+                    CrashScreenConfigureInfo GetCrashScreenConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for video footage distortion detection.</p>
+                     * @param _crashScreenConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video footage distortion detection.</p>
+                     * 
+                     */
+                    void SetCrashScreenConfigure(const CrashScreenConfigureInfo& _crashScreenConfigure);
+
+                    /**
+                     * 判断参数 CrashScreenConfigure 是否已赋值
+                     * @return CrashScreenConfigure 是否已赋值
+                     * 
+                     */
+                    bool CrashScreenConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Control parameters for detecting black edges, white edges, black screen, and white screen in video picture.</p>
+                     * @return BlackWhiteEdgeConfigure <p>Control parameters for detecting black edges, white edges, black screen, and white screen in video picture.</p>
+                     * 
+                     */
+                    BlackWhiteEdgeConfigureInfo GetBlackWhiteEdgeConfigure() const;
+
+                    /**
+                     * 设置<p>Control parameters for detecting black edges, white edges, black screen, and white screen in video picture.</p>
+                     * @param _blackWhiteEdgeConfigure <p>Control parameters for detecting black edges, white edges, black screen, and white screen in video picture.</p>
+                     * 
+                     */
+                    void SetBlackWhiteEdgeConfigure(const BlackWhiteEdgeConfigureInfo& _blackWhiteEdgeConfigure);
+
+                    /**
+                     * 判断参数 BlackWhiteEdgeConfigure 是否已赋值
+                     * @return BlackWhiteEdgeConfigure 是否已赋值
+                     * 
+                     */
+                    bool BlackWhiteEdgeConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame noise detection.</p>
+                     * @return NoiseConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame noise detection.</p>
+                     * 
+                     */
+                    NoiseConfigureInfo GetNoiseConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame noise detection.</p>
+                     * @param _noiseConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame noise detection.</p>
+                     * 
+                     */
+                    void SetNoiseConfigure(const NoiseConfigureInfo& _noiseConfigure);
+
+                    /**
+                     * 判断参数 NoiseConfigure 是否已赋值
+                     * @return NoiseConfigure 是否已赋值
+                     * 
+                     */
+                    bool NoiseConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs instead.) Control parameters for video frame mosaic detection.</p>
+                     * @return MosaicConfigure <p>(Not recommended. Use Configs instead.) Control parameters for video frame mosaic detection.</p>
+                     * 
+                     */
+                    MosaicConfigureInfo GetMosaicConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs instead.) Control parameters for video frame mosaic detection.</p>
+                     * @param _mosaicConfigure <p>(Not recommended. Use Configs instead.) Control parameters for video frame mosaic detection.</p>
+                     * 
+                     */
+                    void SetMosaicConfigure(const MosaicConfigureInfo& _mosaicConfigure);
+
+                    /**
+                     * 判断参数 MosaicConfigure 是否已赋值
+                     * @return MosaicConfigure 是否已赋值
+                     * 
+                     */
+                    bool MosaicConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame QR code detection.</p>
+                     * @return QRCodeConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame QR code detection.</p>
+                     * 
+                     */
+                    QRCodeConfigureInfo GetQRCodeConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame QR code detection.</p>
+                     * @param _qRCodeConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame QR code detection.</p>
+                     * 
+                     */
+                    void SetQRCodeConfigure(const QRCodeConfigureInfo& _qRCodeConfigure);
+
+                    /**
+                     * 判断参数 QRCodeConfigure 是否已赋值
+                     * @return QRCodeConfigure 是否已赋值
+                     * 
+                     */
+                    bool QRCodeConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs instead.) Control parameters for video frame quality evaluation.</p>
+                     * @return QualityEvaluationConfigure <p>(Not recommended. Use Configs instead.) Control parameters for video frame quality evaluation.</p>
+                     * 
+                     */
+                    QualityEvaluationConfigureInfo GetQualityEvaluationConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs instead.) Control parameters for video frame quality evaluation.</p>
+                     * @param _qualityEvaluationConfigure <p>(Not recommended. Use Configs instead.) Control parameters for video frame quality evaluation.</p>
+                     * 
+                     */
+                    void SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure);
+
+                    /**
+                     * 判断参数 QualityEvaluationConfigure 是否已赋值
+                     * @return QualityEvaluationConfigure 是否已赋值
+                     * 
+                     */
+                    bool QualityEvaluationConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取<p>(Not recommended. Use Configs as an alternative.) Control parameters for audio (mute, bass, pop) detection.</p>
+                     * @return VoiceConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for audio (mute, bass, pop) detection.</p>
+                     * 
+                     */
+                    VoiceConfigureInfo GetVoiceConfigure() const;
+
+                    /**
+                     * 设置<p>(Not recommended. Use Configs as an alternative.) Control parameters for audio (mute, bass, pop) detection.</p>
+                     * @param _voiceConfigure <p>(Not recommended. Use Configs as an alternative.) Control parameters for audio (mute, bass, pop) detection.</p>
+                     * 
+                     */
+                    void SetVoiceConfigure(const VoiceConfigureInfo& _voiceConfigure);
+
+                    /**
+                     * 判断参数 VoiceConfigure 是否已赋值
+                     * @return VoiceConfigure 是否已赋值
+                     * 
+                     */
+                    bool VoiceConfigureHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Media quality inspection template ID.
+                     * <p>Template ID.</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Template Type, available options: <li>Preset: Preset Template;</li> <li>Custom: User Custom Template.</li>
+                     * <p>Template type. Available values:</p><li>Preset: preset template;</li><li>Custom: custom template.</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Media quality inspection template name.
+                     * <p>Template name.</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Template description. 
+                     * <p>Template description.</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * Frame interval, unit in seconds.
+                     * <p>Configuration parameters for audio and video quality detection.</p>
                      */
-                    double m_screenshotInterval;
-                    bool m_screenshotIntervalHasBeenSet;
+                    std::vector<QualityInspectConfig> m_configs;
+                    bool m_configsHasBeenSet;
 
                     /**
-                     * Control parameters for detecting video jitter and ghosting.
+                     * <p>Spot check policy for audio and video quality inspection.</p>
                      */
-                    JitterConfigureInfo m_jitterConfigure;
-                    bool m_jitterConfigureHasBeenSet;
+                    QualityInspectStrategy m_strategy;
+                    bool m_strategyHasBeenSet;
 
                     /**
-                     * Control parameters for detecting video blur.
-                     */
-                    BlurConfigureInfo m_blurConfigure;
-                    bool m_blurConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for detecting low brightness and overexposure of video.
-                     */
-                    AbnormalLightingConfigureInfo m_abnormalLightingConfigure;
-                    bool m_abnormalLightingConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for detecting video crash.
-                     */
-                    CrashScreenConfigureInfo m_crashScreenConfigure;
-                    bool m_crashScreenConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for detecting video black edges, white edges, black screen, and white screen.
-                     */
-                    BlackWhiteEdgeConfigureInfo m_blackWhiteEdgeConfigure;
-                    bool m_blackWhiteEdgeConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for detecting video noise.
-                     */
-                    NoiseConfigureInfo m_noiseConfigure;
-                    bool m_noiseConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for detecting video mosaic.
-                     */
-                    MosaicConfigureInfo m_mosaicConfigure;
-                    bool m_mosaicConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for QR code detection in video.
-                     */
-                    QRCodeConfigureInfo m_qRCodeConfigure;
-                    bool m_qRCodeConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for video quality evaluation.
-                     */
-                    QualityEvaluationConfigureInfo m_qualityEvaluationConfigure;
-                    bool m_qualityEvaluationConfigureHasBeenSet;
-
-                    /**
-                     * Control parameters for audio (mutes, bass, blast sound).
-                     */
-                    VoiceConfigureInfo m_voiceConfigure;
-                    bool m_voiceConfigureHasBeenSet;
-
-                    /**
-                     * Template Creation Time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * <p>Template creation time, in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Template Modification time, using [ISO date format](https://www.tencentcloud.com/document/product/266/11732#iso-date-format).
+                     * <p>Template last modified time in <a href="https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I">ISO date format</a>.</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Frame interception interval in seconds.</p>
+                     */
+                    double m_screenshotInterval;
+                    bool m_screenshotIntervalHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame jitter and ghosting detection.</p>
+                     */
+                    JitterConfigureInfo m_jitterConfigure;
+                    bool m_jitterConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame blur detection.</p>
+                     */
+                    BlurConfigureInfo m_blurConfigure;
+                    bool m_blurConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs instead.) Control parameters for low-light and overexposure detection in video frames.</p>
+                     */
+                    AbnormalLightingConfigureInfo m_abnormalLightingConfigure;
+                    bool m_abnormalLightingConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for video footage distortion detection.</p>
+                     */
+                    CrashScreenConfigureInfo m_crashScreenConfigure;
+                    bool m_crashScreenConfigureHasBeenSet;
+
+                    /**
+                     * <p>Control parameters for detecting black edges, white edges, black screen, and white screen in video picture.</p>
+                     */
+                    BlackWhiteEdgeConfigureInfo m_blackWhiteEdgeConfigure;
+                    bool m_blackWhiteEdgeConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame noise detection.</p>
+                     */
+                    NoiseConfigureInfo m_noiseConfigure;
+                    bool m_noiseConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs instead.) Control parameters for video frame mosaic detection.</p>
+                     */
+                    MosaicConfigureInfo m_mosaicConfigure;
+                    bool m_mosaicConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for video frame QR code detection.</p>
+                     */
+                    QRCodeConfigureInfo m_qRCodeConfigure;
+                    bool m_qRCodeConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs instead.) Control parameters for video frame quality evaluation.</p>
+                     */
+                    QualityEvaluationConfigureInfo m_qualityEvaluationConfigure;
+                    bool m_qualityEvaluationConfigureHasBeenSet;
+
+                    /**
+                     * <p>(Not recommended. Use Configs as an alternative.) Control parameters for audio (mute, bass, pop) detection.</p>
+                     */
+                    VoiceConfigureInfo m_voiceConfigure;
+                    bool m_voiceConfigureHasBeenSet;
 
                 };
             }

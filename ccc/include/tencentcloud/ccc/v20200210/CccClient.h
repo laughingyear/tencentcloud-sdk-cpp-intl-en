@@ -27,10 +27,14 @@
 #include <tencentcloud/ccc/v20200210/model/AbortAgentCruiseDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallInInterfaceRequest.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallInInterfaceResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ControlAIConversationRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ControlAIConversationResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAIAgentCallRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAIAgentCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAICallRequest.h>
@@ -57,6 +61,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteCCCSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionRequest.h>
@@ -65,6 +71,10 @@
 #include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAgentInfoListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAgentInfoListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAnalysisResultRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAnalysisResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAILatencyRequest.h>
@@ -97,10 +107,14 @@
 #include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSessionDetailRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeSessionDetailResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusHistoryRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusHistoryResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
@@ -125,14 +139,22 @@
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordResponse.h>
+#include <tencentcloud/ccc/v20200210/model/PauseAutoCalloutTaskRequest.h>
+#include <tencentcloud/ccc/v20200210/model/PauseAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/PlaySoundCallRequest.h>
+#include <tencentcloud/ccc/v20200210/model/PlaySoundCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineRequest.h>
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ResumeAutoCalloutTaskRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ResumeAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/SetStaffStatusRequest.h>
+#include <tencentcloud/ccc/v20200210/model/SetStaffStatusResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/TransferToManualRequest.h>
@@ -167,12 +189,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AbortPredictiveDialingCampaignResponse> AbortPredictiveDialingCampaignOutcome;
                 typedef std::future<AbortPredictiveDialingCampaignOutcome> AbortPredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::AbortPredictiveDialingCampaignRequest&, AbortPredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AbortPredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindNumberCallInInterfaceResponse> BindNumberCallInInterfaceOutcome;
+                typedef std::future<BindNumberCallInInterfaceOutcome> BindNumberCallInInterfaceOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::BindNumberCallInInterfaceRequest&, BindNumberCallInInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallInInterfaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindNumberCallOutSkillGroupResponse> BindNumberCallOutSkillGroupOutcome;
                 typedef std::future<BindNumberCallOutSkillGroupOutcome> BindNumberCallOutSkillGroupOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindNumberCallOutSkillGroupRequest&, BindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallOutSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindStaffSkillGroupListResponse> BindStaffSkillGroupListOutcome;
                 typedef std::future<BindStaffSkillGroupListOutcome> BindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindStaffSkillGroupListRequest&, BindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStaffSkillGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
+                typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAIAgentCallResponse> CreateAIAgentCallOutcome;
                 typedef std::future<CreateAIAgentCallOutcome> CreateAIAgentCallOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateAIAgentCallRequest&, CreateAIAgentCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIAgentCallAsyncHandler;
@@ -212,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStaffResponse> CreateStaffOutcome;
                 typedef std::future<CreateStaffOutcome> CreateStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateStaffRequest&, CreateStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserSigResponse> CreateUserSigOutcome;
+                typedef std::future<CreateUserSigOutcome> CreateUserSigOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateUserSigRequest&, CreateUserSigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCCSkillGroupResponse> DeleteCCCSkillGroupOutcome;
                 typedef std::future<DeleteCCCSkillGroupOutcome> DeleteCCCSkillGroupOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteCCCSkillGroupRequest&, DeleteCCCSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCCSkillGroupAsyncHandler;
@@ -224,6 +255,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentInfoListResponse> DescribeAIAgentInfoListOutcome;
+                typedef std::future<DescribeAIAgentInfoListOutcome> DescribeAIAgentInfoListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAIAgentInfoListRequest&, DescribeAIAgentInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAnalysisResultResponse> DescribeAIAnalysisResultOutcome;
+                typedef std::future<DescribeAIAnalysisResultOutcome> DescribeAIAnalysisResultOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAIAnalysisResultRequest&, DescribeAIAnalysisResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAnalysisResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAICallExtractResultResponse> DescribeAICallExtractResultOutcome;
                 typedef std::future<DescribeAICallExtractResultOutcome> DescribeAICallExtractResultOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAICallExtractResultRequest&, DescribeAICallExtractResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICallExtractResultAsyncHandler;
@@ -272,12 +309,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectedTelCdrResponse> DescribeProtectedTelCdrOutcome;
                 typedef std::future<DescribeProtectedTelCdrOutcome> DescribeProtectedTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeProtectedTelCdrRequest&, DescribeProtectedTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectedTelCdrAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionDetailResponse> DescribeSessionDetailOutcome;
+                typedef std::future<DescribeSessionDetailOutcome> DescribeSessionDetailOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeSessionDetailRequest&, DescribeSessionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillGroupInfoListResponse> DescribeSkillGroupInfoListOutcome;
                 typedef std::future<DescribeSkillGroupInfoListOutcome> DescribeSkillGroupInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeSkillGroupInfoListRequest&, DescribeSkillGroupInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillGroupInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStaffInfoListResponse> DescribeStaffInfoListOutcome;
                 typedef std::future<DescribeStaffInfoListOutcome> DescribeStaffInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeStaffInfoListRequest&, DescribeStaffInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStaffStatusHistoryResponse> DescribeStaffStatusHistoryOutcome;
+                typedef std::future<DescribeStaffStatusHistoryOutcome> DescribeStaffStatusHistoryOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeStaffStatusHistoryRequest&, DescribeStaffStatusHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffStatusHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStaffStatusMetricsResponse> DescribeStaffStatusMetricsOutcome;
                 typedef std::future<DescribeStaffStatusMetricsOutcome> DescribeStaffStatusMetricsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeStaffStatusMetricsRequest&, DescribeStaffStatusMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffStatusMetricsAsyncHandler;
@@ -314,18 +357,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStaffPasswordResponse> ModifyStaffPasswordOutcome;
                 typedef std::future<ModifyStaffPasswordOutcome> ModifyStaffPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffPasswordRequest&, ModifyStaffPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseAutoCalloutTaskResponse> PauseAutoCalloutTaskOutcome;
+                typedef std::future<PauseAutoCalloutTaskOutcome> PauseAutoCalloutTaskOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::PauseAutoCalloutTaskRequest&, PauseAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseAutoCalloutTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::PausePredictiveDialingCampaignResponse> PausePredictiveDialingCampaignOutcome;
                 typedef std::future<PausePredictiveDialingCampaignOutcome> PausePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::PausePredictiveDialingCampaignRequest&, PausePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PausePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::PlaySoundCallResponse> PlaySoundCallOutcome;
+                typedef std::future<PlaySoundCallOutcome> PlaySoundCallOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::PlaySoundCallRequest&, PlaySoundCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlaySoundCallAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetExtensionPasswordResponse> ResetExtensionPasswordOutcome;
                 typedef std::future<ResetExtensionPasswordOutcome> ResetExtensionPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResetExtensionPasswordRequest&, ResetExtensionPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetExtensionPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestoreMemberOnlineResponse> RestoreMemberOnlineOutcome;
                 typedef std::future<RestoreMemberOnlineOutcome> RestoreMemberOnlineOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::RestoreMemberOnlineRequest&, RestoreMemberOnlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMemberOnlineAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeAutoCalloutTaskResponse> ResumeAutoCalloutTaskOutcome;
+                typedef std::future<ResumeAutoCalloutTaskOutcome> ResumeAutoCalloutTaskOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ResumeAutoCalloutTaskRequest&, ResumeAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeAutoCalloutTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumePredictiveDialingCampaignResponse> ResumePredictiveDialingCampaignOutcome;
                 typedef std::future<ResumePredictiveDialingCampaignOutcome> ResumePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResumePredictiveDialingCampaignRequest&, ResumePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetStaffStatusResponse> SetStaffStatusOutcome;
+                typedef std::future<SetStaffStatusOutcome> SetStaffStatusOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::SetStaffStatusRequest&, SetStaffStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetStaffStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
@@ -369,6 +424,15 @@ namespace TencentCloud
                 AbortPredictiveDialingCampaignOutcomeCallable AbortPredictiveDialingCampaignCallable(const Model::AbortPredictiveDialingCampaignRequest& request);
 
                 /**
+                 *This API is used to bind a number to a callback API for incoming calls.
+                 * @param req BindNumberCallInInterfaceRequest
+                 * @return BindNumberCallInInterfaceOutcome
+                 */
+                BindNumberCallInInterfaceOutcome BindNumberCallInInterface(const Model::BindNumberCallInInterfaceRequest &request);
+                void BindNumberCallInInterfaceAsync(const Model::BindNumberCallInInterfaceRequest& request, const BindNumberCallInInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindNumberCallInInterfaceOutcomeCallable BindNumberCallInInterfaceCallable(const Model::BindNumberCallInInterfaceRequest& request);
+
+                /**
                  *This API is used to bind outbound skill group of number.
                  * @param req BindNumberCallOutSkillGroupRequest
                  * @return BindNumberCallOutSkillGroupOutcome
@@ -387,9 +451,18 @@ namespace TencentCloud
                 BindStaffSkillGroupListOutcomeCallable BindStaffSkillGroupListCallable(const Model::BindStaffSkillGroupListRequest& request);
 
                 /**
-                 *This API is used to initiate outbound calls using an AI model, limited to owned phone numbers only. Currently, a limited-time free trial of Advanced Agents is available.
+                 *This API is used to provide server-side robot control feature.
+                 * @param req ControlAIConversationRequest
+                 * @return ControlAIConversationOutcome
+                 */
+                ControlAIConversationOutcome ControlAIConversation(const Model::ControlAIConversationRequest &request);
+                void ControlAIConversationAsync(const Model::ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlAIConversationOutcomeCallable ControlAIConversationCallable(const Model::ControlAIConversationRequest& request);
 
-Before initiating a call, please ensure your AI model is compatible with OpenAI, Azure, or Minimax protocols, and visit the model provider's website to obtain relevant authentication information. For detailed feature descriptions, please refer to the documentation [Tencent Cloud Contact Center AI Call Platform](https://www.tencentcloud.com/document/product/1229/70681).
+                /**
+                 *Used to create one-time Intelligent Agent outbound calls. You can create a voice Intelligent Agent in the management console - Intelligent Agent Management and perform dialogue process configuration (https://www.tencentcloud.com/document/product/679/119796?from_cn_redirect=1). This API is used to initiate a single outbound call task with a configured Intelligent Agent. To create batch Intelligent Agent outbound call tasks, refer to the documentation for creating automatic outbound call tasks (https://www.tencentcloud.com/document/product/679/69194?from_cn_redirect=1).
+
+The feature requires purchase of the Intelligent Agent call package and is only available for own telephone number. For details, refer to the [Intelligent Agent Call Purchase Guide](https://www.tencentcloud.com/document/product/1229/59535?from_cn_redirect=1).
                  * @param req CreateAIAgentCallRequest
                  * @return CreateAIAgentCallOutcome
                  */
@@ -398,9 +471,9 @@ Before initiating a call, please ensure your AI model is compatible with OpenAI,
                 CreateAIAgentCallOutcomeCallable CreateAIAgentCallCallable(const Model::CreateAIAgentCallRequest& request);
 
                 /**
-                 *Used to make outbound calls by invoking AI models, limited to the use of proprietary phone numbers. Currently, the Advanced version seats are available for a **limited time** free trial.
+                 *This API is used to **call the AI model directly** to trigger a **single** outbound call. It supports configuring the model, prompt content, voice, and all call elements through API parameters.
 
-Before initiating a call, please ensure your AI model is compatible with OpenAI, Azure, or Minimax protocols, and visit the model provider's website to obtain relevant authentication information. For detailed feature descriptions, please refer to the documentation [Tencent Cloud Contact Center AI Call Platform](https://www.tencentcloud.com/document/product/1229/66889).
+The feature requires purchase of the Intelligent Agent call package and is only available for own telephone numbers. For details, refer to the [Intelligent Agent Call Purchase Guide](https://www.tencentcloud.com/document/product/1229/59535?from_cn_redirect=1).
                  * @param req CreateAICallRequest
                  * @return CreateAICallOutcome
                  */
@@ -427,7 +500,9 @@ Before initiating a call, please ensure your AI model is compatible with OpenAI,
                 CreateAgentCruiseDialingCampaignOutcomeCallable CreateAgentCruiseDialingCampaignCallable(const Model::CreateAgentCruiseDialingCampaignRequest& request);
 
                 /**
-                 *This API is used to create the automatic outbound call task.
+                 *This API is used to create bulk automatic outbound calls. The system will automatically initiate outbound calls to the designated called number list based on task configuration. This API can call the configured Intelligent Agent to perform batch outbound call tasks. You can create a voice Intelligent Agent in the management console-Intelligent Agent Management and configure the dialogue process (https://www.tencentcloud.com/document/product/679/119796?from_cn_redirect=1). To create a single Intelligent Agent outbound call task, refer to the documentation (https://www.tencentcloud.com/document/product/679/115681?from_cn_redirect=1).
+
+The feature requires purchase of the Intelligent Agent call package and is only available for own telephone number.
                  * @param req CreateAutoCalloutTaskRequest
                  * @return CreateAutoCalloutTaskOutcome
                  */
@@ -512,6 +587,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 CreateStaffOutcomeCallable CreateStaffCallable(const Model::CreateStaffRequest& request);
 
                 /**
+                 *This API is used to create a user data signature.
+                 * @param req CreateUserSigRequest
+                 * @return CreateUserSigOutcome
+                 */
+                CreateUserSigOutcome CreateUserSig(const Model::CreateUserSigRequest &request);
+                void CreateUserSigAsync(const Model::CreateUserSigRequest& request, const CreateUserSigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserSigOutcomeCallable CreateUserSigCallable(const Model::CreateUserSigRequest& request);
+
+                /**
                  *This API is used to delete a skill group.
                  * @param req DeleteCCCSkillGroupRequest
                  * @return DeleteCCCSkillGroupOutcome
@@ -548,7 +632,25 @@ This API is used to make calls. Currently, the agent side can only call the user
                 DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
 
                 /**
-                 *Obtain AI call content extraction result
+                 *This API is used to query the information list of configured Intelligent Agents under a specified instance (SdkAppId) by paging, including basic information such as Intelligent Agent ID and name.
+                 * @param req DescribeAIAgentInfoListRequest
+                 * @return DescribeAIAgentInfoListOutcome
+                 */
+                DescribeAIAgentInfoListOutcome DescribeAIAgentInfoList(const Model::DescribeAIAgentInfoListRequest &request);
+                void DescribeAIAgentInfoListAsync(const Model::DescribeAIAgentInfoListRequest& request, const DescribeAIAgentInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentInfoListOutcomeCallable DescribeAIAgentInfoListCallable(const Model::DescribeAIAgentInfoListRequest& request);
+
+                /**
+                 *This API is used to obtain AI Conversation Analytics results.
+                 * @param req DescribeAIAnalysisResultRequest
+                 * @return DescribeAIAnalysisResultOutcome
+                 */
+                DescribeAIAnalysisResultOutcome DescribeAIAnalysisResult(const Model::DescribeAIAnalysisResultRequest &request);
+                void DescribeAIAnalysisResultAsync(const Model::DescribeAIAnalysisResultRequest& request, const DescribeAIAnalysisResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAnalysisResultOutcomeCallable DescribeAIAnalysisResultCallable(const Model::DescribeAIAnalysisResultRequest& request);
+
+                /**
+                 *This API is used to query specified session's post-call Tag results by Session ID after the Intelligent Agent call session ends. Related post-call Tags need to be configured in advance in the management console. For details, please refer to post-call Tags (https://www.tencentcloud.com/document/product/679/119800?from_cn_redirect=1).
                  * @param req DescribeAICallExtractResultRequest
                  * @return DescribeAICallExtractResultOutcome
                  */
@@ -557,7 +659,11 @@ This API is used to make calls. Currently, the agent side can only call the user
                 DescribeAICallExtractResultOutcomeCallable DescribeAICallExtractResultCallable(const Model::DescribeAICallExtractResultRequest& request);
 
                 /**
-                 *This API is used to obtain AI latency information.
+                 *Call this API to query the processing latency detail and stats of specified Session by Session ID within a specific time period. The latency info includes:.
+-End-to-end (ETE) delay: Statistics of the overall duration from user voice input to AI returning a complete response.
+-ASR latency: statistics of the processing time consumption required for voice input to be recognized as text.
+-LLM latency: Statistics of inference latency for AI model to generate text content.
+-Text To Speech (TTS) latency: Statistics of text conversion to speech audio synthesis duration.
                  * @param req DescribeAILatencyRequest
                  * @return DescribeAILatencyOutcome
                  */
@@ -575,7 +681,8 @@ This API is used to make calls. Currently, the agent side can only call the user
                 DescribeAgentCruiseDialingCampaignOutcomeCallable DescribeAgentCruiseDialingCampaignCallable(const Model::DescribeAgentCruiseDialingCampaignRequest& request);
 
                 /**
-                 *This API is used to query automatic outbound call task details.
+                 *This API is used to query detailed information of an automatic outbound call task by TaskId, including basic configuration, start and end time, name list, execution status, and call status.
+This API is usually used together with Create Bulk Automatic Outbound Call Task (https://www.tencentcloud.com/document/product/679/69194?from_cn_redirect=1) to check whether the task configuration takes effect, the current task status, and real-time progress during execution once created.
                  * @param req DescribeAutoCalloutTaskRequest
                  * @return DescribeAutoCalloutTaskOutcome
                  */
@@ -692,6 +799,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 DescribeProtectedTelCdrOutcomeCallable DescribeProtectedTelCdrCallable(const Model::DescribeProtectedTelCdrRequest& request);
 
                 /**
+                 *This API is used to query call details for a single call by session id and timestamp after call ends, including caller and contact information, voice recording.
+                 * @param req DescribeSessionDetailRequest
+                 * @return DescribeSessionDetailOutcome
+                 */
+                DescribeSessionDetailOutcome DescribeSessionDetail(const Model::DescribeSessionDetailRequest &request);
+                void DescribeSessionDetailAsync(const Model::DescribeSessionDetailRequest& request, const DescribeSessionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionDetailOutcomeCallable DescribeSessionDetailCallable(const Model::DescribeSessionDetailRequest& request);
+
+                /**
                  *This API is used to access the skill group information list.
                  * @param req DescribeSkillGroupInfoListRequest
                  * @return DescribeSkillGroupInfoListOutcome
@@ -708,6 +824,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 DescribeStaffInfoListOutcome DescribeStaffInfoList(const Model::DescribeStaffInfoListRequest &request);
                 void DescribeStaffInfoListAsync(const Model::DescribeStaffInfoListRequest& request, const DescribeStaffInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStaffInfoListOutcomeCallable DescribeStaffInfoListCallable(const Model::DescribeStaffInfoListRequest& request);
+
+                /**
+                 *This API is used to query agent status history.
+                 * @param req DescribeStaffStatusHistoryRequest
+                 * @return DescribeStaffStatusHistoryOutcome
+                 */
+                DescribeStaffStatusHistoryOutcome DescribeStaffStatusHistory(const Model::DescribeStaffStatusHistoryRequest &request);
+                void DescribeStaffStatusHistoryAsync(const Model::DescribeStaffStatusHistoryRequest& request, const DescribeStaffStatusHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStaffStatusHistoryOutcomeCallable DescribeStaffStatusHistoryCallable(const Model::DescribeStaffStatusHistoryRequest& request);
 
                 /**
                  *This API is used to access the real-time status statistics metrics of the agent.
@@ -818,6 +943,16 @@ This API is used to make calls. Currently, the agent side can only call the user
                 ModifyStaffPasswordOutcomeCallable ModifyStaffPasswordCallable(const Model::ModifyStaffPasswordRequest& request);
 
                 /**
+                 *This API is used to suspend an ongoing automatic outbound call task by TaskId. After calling this API, the task will be temporarily interrupted and no longer initiate new outbound call requests; initiated calls are not affected.
+A paused task can continue execution via the [Restore Suspended Automatic Outbound Call Task](https://www.tencentcloud.com/document/product/679/125356?from_cn_redirect=1) API. If needed, refer to [Stop Automatic Outbound Call Task](https://www.tencentcloud.com/document/product/679/69192?from_cn_redirect=1) to permanently terminate the task.
+                 * @param req PauseAutoCalloutTaskRequest
+                 * @return PauseAutoCalloutTaskOutcome
+                 */
+                PauseAutoCalloutTaskOutcome PauseAutoCalloutTask(const Model::PauseAutoCalloutTaskRequest &request);
+                void PauseAutoCalloutTaskAsync(const Model::PauseAutoCalloutTaskRequest& request, const PauseAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseAutoCalloutTaskOutcomeCallable PauseAutoCalloutTaskCallable(const Model::PauseAutoCalloutTaskRequest& request);
+
+                /**
                  *This API is used to pause the predictive outbound call task.
                  * @param req PausePredictiveDialingCampaignRequest
                  * @return PausePredictiveDialingCampaignOutcome
@@ -825,6 +960,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 PausePredictiveDialingCampaignOutcome PausePredictiveDialingCampaign(const Model::PausePredictiveDialingCampaignRequest &request);
                 void PausePredictiveDialingCampaignAsync(const Model::PausePredictiveDialingCampaignRequest& request, const PausePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PausePredictiveDialingCampaignOutcomeCallable PausePredictiveDialingCampaignCallable(const Model::PausePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *This API is used to perform playback for a session in a call with an agent.
+                 * @param req PlaySoundCallRequest
+                 * @return PlaySoundCallOutcome
+                 */
+                PlaySoundCallOutcome PlaySoundCall(const Model::PlaySoundCallRequest &request);
+                void PlaySoundCallAsync(const Model::PlaySoundCallRequest& request, const PlaySoundCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PlaySoundCallOutcomeCallable PlaySoundCallCallable(const Model::PlaySoundCallRequest& request);
 
                 /**
                  *This API is used to reset the telephone register password.
@@ -845,6 +989,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 RestoreMemberOnlineOutcomeCallable RestoreMemberOnlineCallable(const Model::RestoreMemberOnlineRequest& request);
 
                 /**
+                 *This API is used to restore a paused automatic outbound call task by TaskId. This API is suitable for scenarios where you need to continue execution of the remaining outbound call plan after calling Suspend Automatic Outbound Call Task. After a successful call, the task will resume from the paused state and re-initiate incomplete outbound requests.
+                 * @param req ResumeAutoCalloutTaskRequest
+                 * @return ResumeAutoCalloutTaskOutcome
+                 */
+                ResumeAutoCalloutTaskOutcome ResumeAutoCalloutTask(const Model::ResumeAutoCalloutTaskRequest &request);
+                void ResumeAutoCalloutTaskAsync(const Model::ResumeAutoCalloutTaskRequest& request, const ResumeAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeAutoCalloutTaskOutcomeCallable ResumeAutoCalloutTaskCallable(const Model::ResumeAutoCalloutTaskRequest& request);
+
+                /**
                  *This API is used to resume the predictive outbound call task.
                  * @param req ResumePredictiveDialingCampaignRequest
                  * @return ResumePredictiveDialingCampaignOutcome
@@ -852,6 +1005,15 @@ This API is used to make calls. Currently, the agent side can only call the user
                 ResumePredictiveDialingCampaignOutcome ResumePredictiveDialingCampaign(const Model::ResumePredictiveDialingCampaignRequest &request);
                 void ResumePredictiveDialingCampaignAsync(const Model::ResumePredictiveDialingCampaignRequest& request, const ResumePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumePredictiveDialingCampaignOutcomeCallable ResumePredictiveDialingCampaignCallable(const Model::ResumePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *This API is used to set staff status.
+                 * @param req SetStaffStatusRequest
+                 * @return SetStaffStatusOutcome
+                 */
+                SetStaffStatusOutcome SetStaffStatus(const Model::SetStaffStatusRequest &request);
+                void SetStaffStatusAsync(const Model::SetStaffStatusRequest& request, const SetStaffStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetStaffStatusOutcomeCallable SetStaffStatusCallable(const Model::SetStaffStatusRequest& request);
 
                 /**
                  *This API is used to stop the automatic outbound call task.

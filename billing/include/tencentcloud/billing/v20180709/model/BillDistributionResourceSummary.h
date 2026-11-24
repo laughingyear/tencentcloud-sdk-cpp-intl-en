@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ProductCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取Billing mode: The billing mode, which can be monthly subscription or pay-as-you-go.
-                     * @return PayModeName Billing mode: The billing mode, which can be monthly subscription or pay-as-you-go.
+                     * 获取Billing mode: The billing mode, which can be yearly/monthly subscription or pay-as-you-go.
+                     * @return PayModeName Billing mode: The billing mode, which can be yearly/monthly subscription or pay-as-you-go.
                      * 
                      */
                     std::string GetPayModeName() const;
 
                     /**
-                     * 设置Billing mode: The billing mode, which can be monthly subscription or pay-as-you-go.
-                     * @param _payModeName Billing mode: The billing mode, which can be monthly subscription or pay-as-you-go.
+                     * 设置Billing mode: The billing mode, which can be yearly/monthly subscription or pay-as-you-go.
+                     * @param _payModeName Billing mode: The billing mode, which can be yearly/monthly subscription or pay-as-you-go.
                      * 
                      */
                     void SetPayModeName(const std::string& _payModeName);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取Transaction type, which can be monthly subscription purchase, monthly subscription renewal, pay-as-you-go deduction, etc.
-                     * @return ActionTypeName Transaction type, which can be monthly subscription purchase, monthly subscription renewal, pay-as-you-go deduction, etc.
+                     * 获取Transaction type, which can be yearly/monthly subscription purchase, yearly/monthly subscription renewal, pay-as-you-go deduction, etc.
+                     * @return ActionTypeName Transaction type, which can be yearly/monthly subscription purchase, yearly/monthly subscription renewal, pay-as-you-go deduction, etc.
                      * 
                      */
                     std::string GetActionTypeName() const;
 
                     /**
-                     * 设置Transaction type, which can be monthly subscription purchase, monthly subscription renewal, pay-as-you-go deduction, etc.
-                     * @param _actionTypeName Transaction type, which can be monthly subscription purchase, monthly subscription renewal, pay-as-you-go deduction, etc.
+                     * 设置Transaction type, which can be yearly/monthly subscription purchase, yearly/monthly subscription renewal, pay-as-you-go deduction, etc.
+                     * @param _actionTypeName Transaction type, which can be yearly/monthly subscription purchase, yearly/monthly subscription renewal, pay-as-you-go deduction, etc.
                      * 
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ActionTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取Order ID: The ID of a monthly subscription order.
-                     * @return OrderId Order ID: The ID of a monthly subscription order.
+                     * 获取Order ID: The ID of a yearly/monthly subscription order.
+                     * @return OrderId Order ID: The ID of a yearly/monthly subscription order.
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置Order ID: The ID of a monthly subscription order.
-                     * @param _orderId Order ID: The ID of a monthly subscription order.
+                     * 设置Order ID: The ID of a yearly/monthly subscription order.
+                     * @param _orderId Order ID: The ID of a yearly/monthly subscription order.
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -531,19 +531,15 @@ namespace TencentCloud
                     bool IncentivePayAmountHasBeenSet() const;
 
                     /**
-                     * 获取Commission credit payment: The amount paid with the user's commission credit.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return TransferPayAmount Commission credit payment: The amount paid with the user's commission credit.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Royalty account expenditure: The amount paid through the royalty account
+                     * @return TransferPayAmount Royalty account expenditure: The amount paid through the royalty account
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
-                     * 设置Commission credit payment: The amount paid with the user's commission credit.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _transferPayAmount Commission credit payment: The amount paid with the user's commission credit.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Royalty account expenditure: The amount paid through the royalty account
+                     * @param _transferPayAmount Royalty account expenditure: The amount paid through the royalty account
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -620,18 +616,14 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * 获取Tag information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @return Tags Tag information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     std::vector<BillTagInfo> GetTags() const;
 
                     /**
                      * 设置Tag information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * @param _tags Tag information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      * 
                      */
                     void SetTags(const std::vector<BillTagInfo>& _tags);
@@ -833,15 +825,15 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool OriginalCostWithSPHasBeenSet() const;
 
                     /**
-                     * 获取Billing monthNote: This field may return null, indicating that no valid values can be obtained.
-                     * @return BillMonth Billing monthNote: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Billing month
+                     * @return BillMonth Billing month
                      * 
                      */
                     std::string GetBillMonth() const;
 
                     /**
-                     * 设置Billing monthNote: This field may return null, indicating that no valid values can be obtained.
-                     * @param _billMonth Billing monthNote: This field may return null, indicating that no valid values can be obtained.
+                     * 设置Billing month
+                     * @param _billMonth Billing month
                      * 
                      */
                     void SetBillMonth(const std::string& _billMonth);
@@ -868,7 +860,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_productCodeNameHasBeenSet;
 
                     /**
-                     * Billing mode: The billing mode, which can be monthly subscription or pay-as-you-go.
+                     * Billing mode: The billing mode, which can be yearly/monthly subscription or pay-as-you-go.
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;
@@ -904,13 +896,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * Transaction type, which can be monthly subscription purchase, monthly subscription renewal, pay-as-you-go deduction, etc.
+                     * Transaction type, which can be yearly/monthly subscription purchase, yearly/monthly subscription renewal, pay-as-you-go deduction, etc.
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;
 
                     /**
-                     * Order ID: The ID of a monthly subscription order.
+                     * Order ID: The ID of a yearly/monthly subscription order.
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
@@ -994,8 +986,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
-                     * Commission credit payment: The amount paid with the user's commission credit.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Royalty account expenditure: The amount paid through the royalty account
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
@@ -1020,7 +1011,6 @@ Note: This field may return null, indicating that no valid values can be obtaine
 
                     /**
                      * Tag information.
-Note: This field may return null, indicating that no valid values can be obtained.
                      */
                     std::vector<BillTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
@@ -1080,7 +1070,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                     bool m_originalCostWithSPHasBeenSet;
 
                     /**
-                     * Billing monthNote: This field may return null, indicating that no valid values can be obtained.
+                     * Billing month
                      */
                     std::string m_billMonth;
                     bool m_billMonthHasBeenSet;

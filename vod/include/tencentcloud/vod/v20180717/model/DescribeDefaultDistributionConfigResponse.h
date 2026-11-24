@@ -1,0 +1,134 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBEDEFAULTDISTRIBUTIONCONFIGRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBEDEFAULTDISTRIBUTIONCONFIGRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Vod
+    {
+        namespace V20180717
+        {
+            namespace Model
+            {
+                /**
+                * DescribeDefaultDistributionConfig response structure.
+                */
+                class DescribeDefaultDistributionConfigResponse : public AbstractModel
+                {
+                public:
+                    DescribeDefaultDistributionConfigResponse();
+                    ~DescribeDefaultDistributionConfigResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>Distribution configured domain name (abandoned).</p>
+                     * @return DomainName <p>Distribution configured domain name (abandoned).</p>
+                     * @deprecated
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     * @deprecated
+                     */
+                    bool DomainNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Distribute the configured domain name.</p>
+                     * @return Domain <p>Distribute the configured domain name.</p>
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Protocol of the distribution configuration, which is HTTP or HTTPS.</p>
+                     * @return Scheme <p>Protocol of the distribution configuration, which is HTTP or HTTPS.</p>
+                     * 
+                     */
+                    std::string GetScheme() const;
+
+                    /**
+                     * 判断参数 Scheme 是否已赋值
+                     * @return Scheme 是否已赋值
+                     * 
+                     */
+                    bool SchemeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Playback key, consisting of upper- and lower-case letters (a - Z) or numbers (0 - 9), with a length between 8 and 20 characters.</p>
+                     * @return PlayKey <p>Playback key, consisting of upper- and lower-case letters (a - Z) or numbers (0 - 9), with a length between 8 and 20 characters.</p>
+                     * 
+                     */
+                    std::string GetPlayKey() const;
+
+                    /**
+                     * 判断参数 PlayKey 是否已赋值
+                     * @return PlayKey 是否已赋值
+                     * 
+                     */
+                    bool PlayKeyHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>Distribution configured domain name (abandoned).</p>
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
+
+                    /**
+                     * <p>Distribute the configured domain name.</p>
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * <p>Protocol of the distribution configuration, which is HTTP or HTTPS.</p>
+                     */
+                    std::string m_scheme;
+                    bool m_schemeHasBeenSet;
+
+                    /**
+                     * <p>Playback key, consisting of upper- and lower-case letters (a - Z) or numbers (0 - 9), with a length between 8 and 20 characters.</p>
+                     */
+                    std::string m_playKey;
+                    bool m_playKeyHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DESCRIBEDEFAULTDISTRIBUTIONCONFIGRESPONSE_H_

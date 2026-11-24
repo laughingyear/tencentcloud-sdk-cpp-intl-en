@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * UserAgent:blacklist/whitelist configuration
+                * UserAgent blocklist and allowlist configuration
                 */
                 class UserAgentFilter : public AbstractModel
                 {
@@ -48,15 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取UserAgent blacklist and whitelist configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @return Switch UserAgent blacklist and whitelist configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 获取UserAgent allowlist/blocklist configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @return Switch UserAgent allowlist/blocklist configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置UserAgent blacklist and whitelist configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
-                     * @param _switch UserAgent blacklist and whitelist configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * 设置UserAgent allowlist/blocklist configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
+                     * @param _switch UserAgent allowlist/blocklist configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -69,15 +77,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取UA blacklist/whitelist effect rule list
-                     * @return FilterRules UA blacklist/whitelist effect rule list
+                     * 获取List of effective UserAgent blocklist/allowlist rules.
+                     * @return FilterRules List of effective UserAgent blocklist/allowlist rules.
                      * 
                      */
                     std::vector<UserAgentFilterRule> GetFilterRules() const;
 
                     /**
-                     * 设置UA blacklist/whitelist effect rule list
-                     * @param _filterRules UA blacklist/whitelist effect rule list
+                     * 设置List of effective UserAgent blocklist/allowlist rules.
+                     * @param _filterRules List of effective UserAgent blocklist/allowlist rules.
                      * 
                      */
                     void SetFilterRules(const std::vector<UserAgentFilterRule>& _filterRules);
@@ -92,13 +100,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * UserAgent blacklist and whitelist configuration switch, the values u200bu200bare: <li>on: on; </li> <li>off: off. </li>
+                     * UserAgent allowlist/blocklist configuration switch. Valid values:
+<li>`on`: Enable;</li>
+<li>`off`: Cache.</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * UA blacklist/whitelist effect rule list
+                     * List of effective UserAgent blocklist/allowlist rules.
                      */
                     std::vector<UserAgentFilterRule> m_filterRules;
                     bool m_filterRulesHasBeenSet;

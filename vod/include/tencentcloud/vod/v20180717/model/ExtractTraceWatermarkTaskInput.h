@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * The input of digital watermark extraction.
+                * Extraction traceability watermark input
                 */
                 class ExtractTraceWatermarkTaskInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The URL of the media on which digital watermark extraction is to be performed.
-                     * @return Url The URL of the media on which digital watermark extraction is to be performed.
+                     * 获取URL of the media requiring watermark extraction.
+                     * @return Url URL of the media requiring watermark extraction.
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置The URL of the media on which digital watermark extraction is to be performed.
-                     * @param _url The URL of the media on which digital watermark extraction is to be performed.
+                     * 设置URL of the media requiring watermark extraction.
+                     * @param _url URL of the media requiring watermark extraction.
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Media file ID. The original media file ID corresponding to the URL.
-                     * @return FileId Media file ID. The original media file ID corresponding to the URL.
+                     * 获取Media file ID. Original media file ID corresponding to the Url.
+                     * @return FileId Media file ID. Original media file ID corresponding to the Url.
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置Media file ID. The original media file ID corresponding to the URL.
-                     * @param _fileId Media file ID. The original media file ID corresponding to the URL.
+                     * 设置Media file ID. Original media file ID corresponding to the Url.
+                     * @param _fileId Media file ID. Original media file ID corresponding to the Url.
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * The URL of the media on which digital watermark extraction is to be performed.
+                     * URL of the media requiring watermark extraction.
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Media file ID. The original media file ID corresponding to the URL.
+                     * Media file ID. Original media file ID corresponding to the Url.
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

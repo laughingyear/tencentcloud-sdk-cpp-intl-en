@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output for OCR-based recognition of politically sensitive content
+                * Ocr text involves inappropriate information
                 */
                 class AiReviewPoliticalOcrTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Confidence score for the OCR-detected politically sensitive content. Value range: 0-100
-                     * @return Confidence Confidence score for the OCR-detected politically sensitive content. Value range: 0-100
+                     * 获取Ocr text involving inappropriate information and rule violation score. The score ranges from 0 to 100.
+                     * @return Confidence Ocr text involving inappropriate information and rule violation score. The score ranges from 0 to 100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence score for the OCR-detected politically sensitive content. Value range: 0-100
-                     * @param _confidence Confidence score for the OCR-detected politically sensitive content. Value range: 0-100
+                     * 设置Ocr text involving inappropriate information and rule violation score. The score ranges from 0 to 100.
+                     * @param _confidence Ocr text involving inappropriate information and rule violation score. The score ranges from 0 to 100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,27 +69,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Processing suggestion for the OCR-detected politically sensitive content. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion Processing suggestion for the OCR-detected politically sensitive content. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 获取Ocr text involving inappropriate information and violation result recommendations. Value ranges from...to...
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @return Suggestion Ocr text involving inappropriate information and violation result recommendations. Value ranges from...to...
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Processing suggestion for the OCR-detected politically sensitive content. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion Processing suggestion for the OCR-detected politically sensitive content. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 设置Ocr text involving inappropriate information and violation result recommendations. Value ranges from...to...
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @param _suggestion Ocr text involving inappropriate information and violation result recommendations. Value ranges from...to...
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -102,19 +102,19 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取List of video segments that contain OCR-detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @return SegmentSet List of video segments that contain OCR-detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 获取List of video segments whose Ocr text involves inappropriate information or is suspected of rule violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @return SegmentSet List of video segments whose Ocr text involves inappropriate information or is suspected of rule violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of video segments that contain OCR-detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @param _segmentSet List of video segments that contain OCR-detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 设置List of video segments whose Ocr text involves inappropriate information or is suspected of rule violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @param _segmentSet List of video segments whose Ocr text involves inappropriate information or is suspected of rule violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for video segments that contain OCR-detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @return SegmentSetFileUrl URL to the file for video segments that contain OCR-detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 获取URL of the segment list file for videos where the Ocr text involves inappropriate information or suspected rule violations. The content of the file is in JSON format, and the data structure is consistent with the fields of SegmentSet. (The file will not be retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
+                     * @return SegmentSetFileUrl URL of the segment list file for videos where the Ocr text involves inappropriate information or suspected rule violations. The content of the file is in JSON format, and the data structure is consistent with the fields of SegmentSet. (The file will not be retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for video segments that contain OCR-detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @param _segmentSetFileUrl URL to the file for video segments that contain OCR-detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 设置URL of the segment list file for videos where the Ocr text involves inappropriate information or suspected rule violations. The content of the file is in JSON format, and the data structure is consistent with the fields of SegmentSet. (The file will not be retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
+                     * @param _segmentSetFileUrl URL of the segment list file for videos where the Ocr text involves inappropriate information or suspected rule violations. The content of the file is in JSON format, and the data structure is consistent with the fields of SegmentSet. (The file will not be retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for video segments that contain OCR-detected politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return SegmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain OCR-detected politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the Segment List File URL for video segments with Ocr text involving inappropriate information or suspected rule violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return SegmentSetFileUrlExpireTime Expiration time of the Segment List File URL for video segments with Ocr text involving inappropriate information or suspected rule violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for video segments that contain OCR-detected politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _segmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain OCR-detected politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the Segment List File URL for video segments with Ocr text involving inappropriate information or suspected rule violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _segmentSetFileUrlExpireTime Expiration time of the Segment List File URL for video segments with Ocr text involving inappropriate information or suspected rule violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
@@ -171,35 +171,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Confidence score for the OCR-detected politically sensitive content. Value range: 0-100
+                     * Ocr text involving inappropriate information and rule violation score. The score ranges from 0 to 100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Processing suggestion for the OCR-detected politically sensitive content. Valid values:
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * Ocr text involving inappropriate information and violation result recommendations. Value ranges from...to...
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * List of video segments that contain OCR-detected politically sensitive content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * List of video segments whose Ocr text involves inappropriate information or is suspected of rule violations.
+<font color=red>Note</font>: This list can only display up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * URL to the file for video segments that contain OCR-detected politically sensitive content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * URL of the segment list file for videos where the Ocr text involves inappropriate information or suspected rule violations. The content of the file is in JSON format, and the data structure is consistent with the fields of SegmentSet. (The file will not be retained permanently and will be deleted after reaching SegmentSetFileUrlExpireTime.)
                      */
                     std::string m_segmentSetFileUrl;
                     bool m_segmentSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for video segments that contain OCR-detected politically sensitive content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the Segment List File URL for video segments with Ocr text involving inappropriate information or suspected rule violations, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;

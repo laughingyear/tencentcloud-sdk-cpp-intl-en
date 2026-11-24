@@ -29,6 +29,10 @@
 #include <tencentcloud/vod/v20180717/model/AttachMediaSubtitlesResponse.h>
 #include <tencentcloud/vod/v20180717/model/CloneCDNDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/CloneCDNDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceSyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceSyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadRequest.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaRequest.h>
@@ -41,10 +45,40 @@
 #include <tencentcloud/vod/v20180717/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioCloneRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioCloneResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcHunyuan3DTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcHunyuan3DTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcQuotaResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcSubjectRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcSubjectResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoRedrawTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoRedrawTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateCDNDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateCDNDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSLogsetRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSLogsetResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSTopicRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSTopicResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskRequest.h>
@@ -63,10 +97,18 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateKnowledgeBaseResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateLLMComprehendTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateLLMComprehendTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateProcessImageAsyncTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateProcessImageAsyncTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateQualityInspectTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateRebuildMediaTemplateRequest.h>
@@ -77,6 +119,10 @@
 #include <tencentcloud/vod/v20180717/model/CreateRoundPlayResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcImageTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcImageTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcVideoTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcVideoTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateStorageRegionRequest.h>
@@ -99,10 +145,20 @@
 #include <tencentcloud/vod/v20180717/model/DeleteAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcAdvancedCustomElementRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcAdvancedCustomElementResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcQuotaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteCDNDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteCDNDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteCLSTopicRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteCLSTopicResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateRequest.h>
@@ -117,12 +173,20 @@
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteKnowledgeBaseResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteProcessImageAsyncTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteProcessImageAsyncTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteRebuildMediaTemplateRequest.h>
@@ -141,6 +205,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteVodDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteVodDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWordSamplesRequest.h>
@@ -151,16 +217,38 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcAdvancedCustomElementsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcAdvancedCustomElementsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcApiTokensRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcApiTokensResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcQuotasRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcQuotasResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcWhitelistRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcWhitelistResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeBlindWatermarkTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeBlindWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNDomainsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNDomainsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSLogsetsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSLogsetsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSPushTargetsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSPushTargetsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSTopicsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSTopicsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeClientUploadAccelerationUsageDataRequest.h>
@@ -169,8 +257,14 @@
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCurrentPlaylistRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCurrentPlaylistResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDefaultDistributionConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDefaultDistributionConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEnhanceMediaTemplatesRequest.h>
@@ -189,8 +283,14 @@
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeKnowledgeBasesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeKnowledgeBasesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeLLMComprehendTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeLLMComprehendTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsRequest.h>
@@ -201,6 +301,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribePersonSamplesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeProcessImageAsyncTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeProcessImageAsyncTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeQualityInspectTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeQualityInspectTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeRebuildMediaTemplatesRequest.h>
@@ -233,10 +335,14 @@
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeVodDomainsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeVodDomainsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVoicesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVoicesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DesignVoiceAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/DesignVoiceAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateRequest.h>
@@ -245,6 +351,8 @@
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaQualityResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
+#include <tencentcloud/vod/v20180717/model/ExtractBlindWatermarkRequest.h>
+#include <tencentcloud/vod/v20180717/model/ExtractBlindWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h>
@@ -255,8 +363,12 @@
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
 #include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistRequest.h>
 #include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistResponse.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeRequest.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeResponse.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityResponse.h>
+#include <tencentcloud/vod/v20180717/model/ListFilesRequest.h>
+#include <tencentcloud/vod/v20180717/model/ListFilesResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/ManageTaskRequest.h>
@@ -267,14 +379,20 @@
 #include <tencentcloud/vod/v20180717/model/ModifyAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyAigcQuotaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyCDNDomainConfigRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyCDNDomainConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyDefaultDistributionConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyDefaultDistributionConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateRequest.h>
@@ -287,12 +405,20 @@
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyKnowledgeBaseResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyProcessImageAsyncTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyProcessImageAsyncTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyQualityInspectTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyRebuildMediaTemplateRequest.h>
@@ -323,8 +449,12 @@
 #include <tencentcloud/vod/v20180717/model/ModifyWordSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/ParseStreamingManifestRequest.h>
 #include <tencentcloud/vod/v20180717/model/ParseStreamingManifestResponse.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPSRequest.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPSResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByProcedureRequest.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByProcedureResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByUrlRequest.h>
@@ -353,6 +483,12 @@
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsRequest.h>
+#include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetAigcWhitelistRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetAigcWhitelistResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetCLSPushTargetRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetCLSPushTargetResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetVodDomainCertificateRequest.h>
@@ -363,6 +499,14 @@
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/StartCDNDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/StartCDNDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechSyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechSyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenRequest.h>
+#include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/UpdateVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/UpdateVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
 
@@ -388,6 +532,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneCDNDomainResponse> CloneCDNDomainOutcome;
                 typedef std::future<CloneCDNDomainOutcome> CloneCDNDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CloneCDNDomainRequest&, CloneCDNDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneCDNDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneVoiceAsyncResponse> CloneVoiceAsyncOutcome;
+                typedef std::future<CloneVoiceAsyncOutcome> CloneVoiceAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CloneVoiceAsyncRequest&, CloneVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneVoiceSyncResponse> CloneVoiceSyncOutcome;
+                typedef std::future<CloneVoiceSyncOutcome> CloneVoiceSyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CloneVoiceSyncRequest&, CloneVoiceSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitUploadResponse> CommitUploadOutcome;
                 typedef std::future<CommitUploadOutcome> CommitUploadOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CommitUploadRequest&, CommitUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitUploadAsyncHandler;
@@ -406,12 +556,57 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdaptiveDynamicStreamingTemplateResponse> CreateAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<CreateAdaptiveDynamicStreamingTemplateOutcome> CreateAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAdaptiveDynamicStreamingTemplateRequest&, CreateAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAdvancedCustomElementResponse> CreateAigcAdvancedCustomElementOutcome;
+                typedef std::future<CreateAigcAdvancedCustomElementOutcome> CreateAigcAdvancedCustomElementOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAdvancedCustomElementRequest&, CreateAigcAdvancedCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAdvancedCustomElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcApiTokenResponse> CreateAigcApiTokenOutcome;
+                typedef std::future<CreateAigcApiTokenOutcome> CreateAigcApiTokenOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcApiTokenRequest&, CreateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAudioCloneResponse> CreateAigcAudioCloneOutcome;
+                typedef std::future<CreateAigcAudioCloneOutcome> CreateAigcAudioCloneOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAudioCloneRequest&, CreateAigcAudioCloneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioCloneAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAudioTaskResponse> CreateAigcAudioTaskOutcome;
+                typedef std::future<CreateAigcAudioTaskOutcome> CreateAigcAudioTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAudioTaskRequest&, CreateAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcCustomElementResponse> CreateAigcCustomElementOutcome;
+                typedef std::future<CreateAigcCustomElementOutcome> CreateAigcCustomElementOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcCustomElementRequest&, CreateAigcCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcCustomVoiceResponse> CreateAigcCustomVoiceOutcome;
+                typedef std::future<CreateAigcCustomVoiceOutcome> CreateAigcCustomVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcCustomVoiceRequest&, CreateAigcCustomVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomVoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcHunyuan3DTaskResponse> CreateAigcHunyuan3DTaskOutcome;
+                typedef std::future<CreateAigcHunyuan3DTaskOutcome> CreateAigcHunyuan3DTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcHunyuan3DTaskRequest&, CreateAigcHunyuan3DTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcHunyuan3DTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcImageTaskResponse> CreateAigcImageTaskOutcome;
+                typedef std::future<CreateAigcImageTaskOutcome> CreateAigcImageTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcImageTaskRequest&, CreateAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcQuotaResponse> CreateAigcQuotaOutcome;
+                typedef std::future<CreateAigcQuotaOutcome> CreateAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcQuotaRequest&, CreateAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcSubjectResponse> CreateAigcSubjectOutcome;
+                typedef std::future<CreateAigcSubjectOutcome> CreateAigcSubjectOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcSubjectRequest&, CreateAigcSubjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcSubjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcVideoRedrawTaskResponse> CreateAigcVideoRedrawTaskOutcome;
+                typedef std::future<CreateAigcVideoRedrawTaskOutcome> CreateAigcVideoRedrawTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcVideoRedrawTaskRequest&, CreateAigcVideoRedrawTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcVideoRedrawTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcVideoTaskResponse> CreateAigcVideoTaskOutcome;
+                typedef std::future<CreateAigcVideoTaskOutcome> CreateAigcVideoTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcVideoTaskRequest&, CreateAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAnimatedGraphicsTemplateResponse> CreateAnimatedGraphicsTemplateOutcome;
                 typedef std::future<CreateAnimatedGraphicsTemplateOutcome> CreateAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAnimatedGraphicsTemplateRequest&, CreateAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnimatedGraphicsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBlindWatermarkTemplateResponse> CreateBlindWatermarkTemplateOutcome;
+                typedef std::future<CreateBlindWatermarkTemplateOutcome> CreateBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateBlindWatermarkTemplateRequest&, CreateBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCDNDomainResponse> CreateCDNDomainOutcome;
                 typedef std::future<CreateCDNDomainOutcome> CreateCDNDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateCDNDomainRequest&, CreateCDNDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCDNDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSLogsetResponse> CreateCLSLogsetOutcome;
+                typedef std::future<CreateCLSLogsetOutcome> CreateCLSLogsetOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateCLSLogsetRequest&, CreateCLSLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSLogsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSTopicResponse> CreateCLSTopicOutcome;
+                typedef std::future<CreateCLSTopicOutcome> CreateCLSTopicOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateCLSTopicRequest&, CreateCLSTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClassResponse> CreateClassOutcome;
                 typedef std::future<CreateClassOutcome> CreateClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateClassRequest&, CreateClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClassAsyncHandler;
@@ -439,12 +634,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKnowledgeBaseResponse> CreateKnowledgeBaseOutcome;
+                typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateKnowledgeBaseRequest&, CreateKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKnowledgeBaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLLMComprehendTemplateResponse> CreateLLMComprehendTemplateOutcome;
+                typedef std::future<CreateLLMComprehendTemplateOutcome> CreateLLMComprehendTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateLLMComprehendTemplateRequest&, CreateLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLLMComprehendTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMPSTemplateResponse> CreateMPSTemplateOutcome;
+                typedef std::future<CreateMPSTemplateOutcome> CreateMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateMPSTemplateRequest&, CreateMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProcedureTemplateResponse> CreateProcedureTemplateOutcome;
                 typedef std::future<CreateProcedureTemplateOutcome> CreateProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateProcedureTemplateRequest&, CreateProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProcessImageAsyncTemplateResponse> CreateProcessImageAsyncTemplateOutcome;
+                typedef std::future<CreateProcessImageAsyncTemplateOutcome> CreateProcessImageAsyncTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateProcessImageAsyncTemplateRequest&, CreateProcessImageAsyncTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcessImageAsyncTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQualityInspectTemplateResponse> CreateQualityInspectTemplateOutcome;
                 typedef std::future<CreateQualityInspectTemplateOutcome> CreateQualityInspectTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateQualityInspectTemplateRequest&, CreateQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityInspectTemplateAsyncHandler;
@@ -460,6 +667,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSampleSnapshotTemplateResponse> CreateSampleSnapshotTemplateOutcome;
                 typedef std::future<CreateSampleSnapshotTemplateOutcome> CreateSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSampleSnapshotTemplateRequest&, CreateSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSampleSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSceneAigcImageTaskResponse> CreateSceneAigcImageTaskOutcome;
+                typedef std::future<CreateSceneAigcImageTaskOutcome> CreateSceneAigcImageTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateSceneAigcImageTaskRequest&, CreateSceneAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSceneAigcVideoTaskResponse> CreateSceneAigcVideoTaskOutcome;
+                typedef std::future<CreateSceneAigcVideoTaskOutcome> CreateSceneAigcVideoTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateSceneAigcVideoTaskRequest&, CreateSceneAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAigcVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotByTimeOffsetTemplateResponse> CreateSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<CreateSnapshotByTimeOffsetTemplateOutcome> CreateSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSnapshotByTimeOffsetTemplateRequest&, CreateSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotByTimeOffsetTemplateAsyncHandler;
@@ -493,12 +706,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAdaptiveDynamicStreamingTemplateResponse> DeleteAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<DeleteAdaptiveDynamicStreamingTemplateOutcome> DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAdaptiveDynamicStreamingTemplateRequest&, DeleteAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcAdvancedCustomElementResponse> DeleteAigcAdvancedCustomElementOutcome;
+                typedef std::future<DeleteAigcAdvancedCustomElementOutcome> DeleteAigcAdvancedCustomElementOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteAigcAdvancedCustomElementRequest&, DeleteAigcAdvancedCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcAdvancedCustomElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcApiTokenResponse> DeleteAigcApiTokenOutcome;
+                typedef std::future<DeleteAigcApiTokenOutcome> DeleteAigcApiTokenOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteAigcApiTokenRequest&, DeleteAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcQuotaResponse> DeleteAigcQuotaOutcome;
+                typedef std::future<DeleteAigcQuotaOutcome> DeleteAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteAigcQuotaRequest&, DeleteAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAnimatedGraphicsTemplateResponse> DeleteAnimatedGraphicsTemplateOutcome;
                 typedef std::future<DeleteAnimatedGraphicsTemplateOutcome> DeleteAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAnimatedGraphicsTemplateRequest&, DeleteAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAnimatedGraphicsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBlindWatermarkTemplateResponse> DeleteBlindWatermarkTemplateOutcome;
+                typedef std::future<DeleteBlindWatermarkTemplateOutcome> DeleteBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteBlindWatermarkTemplateRequest&, DeleteBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCDNDomainResponse> DeleteCDNDomainOutcome;
                 typedef std::future<DeleteCDNDomainOutcome> DeleteCDNDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteCDNDomainRequest&, DeleteCDNDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCDNDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCLSTopicResponse> DeleteCLSTopicOutcome;
+                typedef std::future<DeleteCLSTopicOutcome> DeleteCLSTopicOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteCLSTopicRequest&, DeleteCLSTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCLSTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClassResponse> DeleteClassOutcome;
                 typedef std::future<DeleteClassOutcome> DeleteClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteClassRequest&, DeleteClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClassAsyncHandler;
@@ -520,6 +748,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplateResponse> DeleteJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<DeleteJustInTimeTranscodeTemplateOutcome> DeleteJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteJustInTimeTranscodeTemplateRequest&, DeleteJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseOutcome;
+                typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteKnowledgeBaseRequest&, DeleteKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKnowledgeBaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMComprehendTemplateResponse> DeleteLLMComprehendTemplateOutcome;
+                typedef std::future<DeleteLLMComprehendTemplateOutcome> DeleteLLMComprehendTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteLLMComprehendTemplateRequest&, DeleteLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMComprehendTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMPSTemplateResponse> DeleteMPSTemplateOutcome;
+                typedef std::future<DeleteMPSTemplateOutcome> DeleteMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteMPSTemplateRequest&, DeleteMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
@@ -529,6 +766,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProcedureTemplateResponse> DeleteProcedureTemplateOutcome;
                 typedef std::future<DeleteProcedureTemplateOutcome> DeleteProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteProcedureTemplateRequest&, DeleteProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProcessImageAsyncTemplateResponse> DeleteProcessImageAsyncTemplateOutcome;
+                typedef std::future<DeleteProcessImageAsyncTemplateOutcome> DeleteProcessImageAsyncTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteProcessImageAsyncTemplateRequest&, DeleteProcessImageAsyncTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcessImageAsyncTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQualityInspectTemplateResponse> DeleteQualityInspectTemplateOutcome;
                 typedef std::future<DeleteQualityInspectTemplateOutcome> DeleteQualityInspectTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteQualityInspectTemplateRequest&, DeleteQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityInspectTemplateAsyncHandler;
@@ -556,6 +796,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVodDomainResponse> DeleteVodDomainOutcome;
                 typedef std::future<DeleteVodDomainOutcome> DeleteVodDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteVodDomainRequest&, DeleteVodDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVodDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVoiceResponse> DeleteVoiceOutcome;
+                typedef std::future<DeleteVoiceOutcome> DeleteVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteVoiceRequest&, DeleteVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateOutcome;
                 typedef std::future<DeleteWatermarkTemplateOutcome> DeleteWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteWatermarkTemplateRequest&, DeleteWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkTemplateAsyncHandler;
@@ -571,12 +814,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
                 typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcAdvancedCustomElementsResponse> DescribeAigcAdvancedCustomElementsOutcome;
+                typedef std::future<DescribeAigcAdvancedCustomElementsOutcome> DescribeAigcAdvancedCustomElementsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcAdvancedCustomElementsRequest&, DescribeAigcAdvancedCustomElementsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcAdvancedCustomElementsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcApiTokensResponse> DescribeAigcApiTokensOutcome;
+                typedef std::future<DescribeAigcApiTokensOutcome> DescribeAigcApiTokensOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcApiTokensRequest&, DescribeAigcApiTokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcApiTokensAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcFaceInfoResponse> DescribeAigcFaceInfoOutcome;
+                typedef std::future<DescribeAigcFaceInfoOutcome> DescribeAigcFaceInfoOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcFaceInfoRequest&, DescribeAigcFaceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcFaceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcFaceInfoAsyncResponse> DescribeAigcFaceInfoAsyncOutcome;
+                typedef std::future<DescribeAigcFaceInfoAsyncOutcome> DescribeAigcFaceInfoAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcFaceInfoAsyncRequest&, DescribeAigcFaceInfoAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcFaceInfoAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcQuotasResponse> DescribeAigcQuotasOutcome;
+                typedef std::future<DescribeAigcQuotasOutcome> DescribeAigcQuotasOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcQuotasRequest&, DescribeAigcQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcQuotasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcUsageDataResponse> DescribeAigcUsageDataOutcome;
+                typedef std::future<DescribeAigcUsageDataOutcome> DescribeAigcUsageDataOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcUsageDataRequest&, DescribeAigcUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcWhitelistResponse> DescribeAigcWhitelistOutcome;
+                typedef std::future<DescribeAigcWhitelistOutcome> DescribeAigcWhitelistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcWhitelistRequest&, DescribeAigcWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllClassResponse> DescribeAllClassOutcome;
                 typedef std::future<DescribeAllClassOutcome> DescribeAllClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAllClassRequest&, DescribeAllClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllClassAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnimatedGraphicsTemplatesResponse> DescribeAnimatedGraphicsTemplatesOutcome;
                 typedef std::future<DescribeAnimatedGraphicsTemplatesOutcome> DescribeAnimatedGraphicsTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAnimatedGraphicsTemplatesRequest&, DescribeAnimatedGraphicsTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnimatedGraphicsTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlindWatermarkTemplatesResponse> DescribeBlindWatermarkTemplatesOutcome;
+                typedef std::future<DescribeBlindWatermarkTemplatesOutcome> DescribeBlindWatermarkTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeBlindWatermarkTemplatesRequest&, DescribeBlindWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlindWatermarkTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCDNDomainsResponse> DescribeCDNDomainsOutcome;
                 typedef std::future<DescribeCDNDomainsOutcome> DescribeCDNDomainsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCDNDomainsRequest&, DescribeCDNDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNDomainsAsyncHandler;
@@ -586,6 +853,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCDNUsageDataResponse> DescribeCDNUsageDataOutcome;
                 typedef std::future<DescribeCDNUsageDataOutcome> DescribeCDNUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCDNUsageDataRequest&, DescribeCDNUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSLogsetsResponse> DescribeCLSLogsetsOutcome;
+                typedef std::future<DescribeCLSLogsetsOutcome> DescribeCLSLogsetsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSLogsetsRequest&, DescribeCLSLogsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogsetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSPushTargetsResponse> DescribeCLSPushTargetsOutcome;
+                typedef std::future<DescribeCLSPushTargetsOutcome> DescribeCLSPushTargetsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSPushTargetsRequest&, DescribeCLSPushTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSPushTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSTopicsResponse> DescribeCLSTopicsOutcome;
+                typedef std::future<DescribeCLSTopicsOutcome> DescribeCLSTopicsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSTopicsRequest&, DescribeCLSTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdnLogsResponse> DescribeCdnLogsOutcome;
                 typedef std::future<DescribeCdnLogsOutcome> DescribeCdnLogsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCdnLogsRequest&, DescribeCdnLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnLogsAsyncHandler;
@@ -598,9 +874,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCurrentPlaylistResponse> DescribeCurrentPlaylistOutcome;
                 typedef std::future<DescribeCurrentPlaylistOutcome> DescribeCurrentPlaylistOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCurrentPlaylistRequest&, DescribeCurrentPlaylistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentPlaylistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDailyMediaPlayStatResponse> DescribeDailyMediaPlayStatOutcome;
+                typedef std::future<DescribeDailyMediaPlayStatOutcome> DescribeDailyMediaPlayStatOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDailyMediaPlayStatRequest&, DescribeDailyMediaPlayStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyMediaPlayStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDailyMostPlayedStatResponse> DescribeDailyMostPlayedStatOutcome;
+                typedef std::future<DescribeDailyMostPlayedStatOutcome> DescribeDailyMostPlayedStatOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDailyMostPlayedStatRequest&, DescribeDailyMostPlayedStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyMostPlayedStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDailyPlayStatFileListResponse> DescribeDailyPlayStatFileListOutcome;
                 typedef std::future<DescribeDailyPlayStatFileListOutcome> DescribeDailyPlayStatFileListOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDailyPlayStatFileListRequest&, DescribeDailyPlayStatFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyPlayStatFileListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDefaultDistributionConfigResponse> DescribeDefaultDistributionConfigOutcome;
+                typedef std::future<DescribeDefaultDistributionConfigOutcome> DescribeDefaultDistributionConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDefaultDistributionConfigRequest&, DescribeDefaultDistributionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultDistributionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDrmKeyProviderInfoResponse> DescribeDrmKeyProviderInfoOutcome;
                 typedef std::future<DescribeDrmKeyProviderInfoOutcome> DescribeDrmKeyProviderInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDrmKeyProviderInfoRequest&, DescribeDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmKeyProviderInfoAsyncHandler;
@@ -628,9 +913,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJustInTimeTranscodeTemplatesResponse> DescribeJustInTimeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeJustInTimeTranscodeTemplatesOutcome> DescribeJustInTimeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeJustInTimeTranscodeTemplatesRequest&, DescribeJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJustInTimeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKnowledgeBasesResponse> DescribeKnowledgeBasesOutcome;
+                typedef std::future<DescribeKnowledgeBasesOutcome> DescribeKnowledgeBasesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeKnowledgeBasesRequest&, DescribeKnowledgeBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeBasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMComprehendTemplatesResponse> DescribeLLMComprehendTemplatesOutcome;
+                typedef std::future<DescribeLLMComprehendTemplatesOutcome> DescribeLLMComprehendTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeLLMComprehendTemplatesRequest&, DescribeLLMComprehendTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMComprehendTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLicenseUsageDataResponse> DescribeLicenseUsageDataOutcome;
                 typedef std::future<DescribeLicenseUsageDataOutcome> DescribeLicenseUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeLicenseUsageDataRequest&, DescribeLicenseUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMPSTemplatesResponse> DescribeMPSTemplatesOutcome;
+                typedef std::future<DescribeMPSTemplatesOutcome> DescribeMPSTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeMPSTemplatesRequest&, DescribeMPSTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMPSTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaInfosResponse> DescribeMediaInfosOutcome;
                 typedef std::future<DescribeMediaInfosOutcome> DescribeMediaInfosOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeMediaInfosRequest&, DescribeMediaInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaInfosAsyncHandler;
@@ -646,6 +940,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProcedureTemplatesResponse> DescribeProcedureTemplatesOutcome;
                 typedef std::future<DescribeProcedureTemplatesOutcome> DescribeProcedureTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeProcedureTemplatesRequest&, DescribeProcedureTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcedureTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProcessImageAsyncTemplatesResponse> DescribeProcessImageAsyncTemplatesOutcome;
+                typedef std::future<DescribeProcessImageAsyncTemplatesOutcome> DescribeProcessImageAsyncTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeProcessImageAsyncTemplatesRequest&, DescribeProcessImageAsyncTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcessImageAsyncTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQualityInspectTemplatesResponse> DescribeQualityInspectTemplatesOutcome;
                 typedef std::future<DescribeQualityInspectTemplatesOutcome> DescribeQualityInspectTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeQualityInspectTemplatesRequest&, DescribeQualityInspectTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityInspectTemplatesAsyncHandler;
@@ -694,12 +991,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVodDomainsResponse> DescribeVodDomainsOutcome;
                 typedef std::future<DescribeVodDomainsOutcome> DescribeVodDomainsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeVodDomainsRequest&, DescribeVodDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoicesResponse> DescribeVoicesOutcome;
+                typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeVoicesRequest&, DescribeVoicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWordSamplesResponse> DescribeWordSamplesOutcome;
                 typedef std::future<DescribeWordSamplesOutcome> DescribeWordSamplesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWordSamplesRequest&, DescribeWordSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordSamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DesignVoiceAsyncResponse> DesignVoiceAsyncOutcome;
+                typedef std::future<DesignVoiceAsyncOutcome> DesignVoiceAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DesignVoiceAsyncRequest&, DesignVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DesignVoiceAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
@@ -712,6 +1015,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractBlindWatermarkResponse> ExtractBlindWatermarkOutcome;
+                typedef std::future<ExtractBlindWatermarkOutcome> ExtractBlindWatermarkOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ExtractBlindWatermarkRequest&, ExtractBlindWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractBlindWatermarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExtractCopyRightWatermarkResponse> ExtractCopyRightWatermarkOutcome;
                 typedef std::future<ExtractCopyRightWatermarkOutcome> ExtractCopyRightWatermarkOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExtractCopyRightWatermarkRequest&, ExtractCopyRightWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractCopyRightWatermarkAsyncHandler;
@@ -727,9 +1033,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::HandleCurrentPlaylistResponse> HandleCurrentPlaylistOutcome;
                 typedef std::future<HandleCurrentPlaylistOutcome> HandleCurrentPlaylistOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::HandleCurrentPlaylistRequest&, HandleCurrentPlaylistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HandleCurrentPlaylistAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportMediaKnowledgeResponse> ImportMediaKnowledgeOutcome;
+                typedef std::future<ImportMediaKnowledgeOutcome> ImportMediaKnowledgeOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ImportMediaKnowledgeRequest&, ImportMediaKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportMediaKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::InspectMediaQualityResponse> InspectMediaQualityOutcome;
                 typedef std::future<InspectMediaQualityOutcome> InspectMediaQualityOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::InspectMediaQualityRequest&, InspectMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InspectMediaQualityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListFilesResponse> ListFilesOutcome;
+                typedef std::future<ListFilesOutcome> ListFilesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ListFilesRequest&, ListFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
@@ -745,9 +1057,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAdaptiveDynamicStreamingTemplateResponse> ModifyAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<ModifyAdaptiveDynamicStreamingTemplateOutcome> ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyAdaptiveDynamicStreamingTemplateRequest&, ModifyAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAigcQuotaResponse> ModifyAigcQuotaOutcome;
+                typedef std::future<ModifyAigcQuotaOutcome> ModifyAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyAigcQuotaRequest&, ModifyAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAigcQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAnimatedGraphicsTemplateResponse> ModifyAnimatedGraphicsTemplateOutcome;
                 typedef std::future<ModifyAnimatedGraphicsTemplateOutcome> ModifyAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyAnimatedGraphicsTemplateRequest&, ModifyAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAnimatedGraphicsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBlindWatermarkTemplateResponse> ModifyBlindWatermarkTemplateOutcome;
+                typedef std::future<ModifyBlindWatermarkTemplateOutcome> ModifyBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyBlindWatermarkTemplateRequest&, ModifyBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCDNDomainConfigResponse> ModifyCDNDomainConfigOutcome;
                 typedef std::future<ModifyCDNDomainConfigOutcome> ModifyCDNDomainConfigOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyCDNDomainConfigRequest&, ModifyCDNDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDNDomainConfigAsyncHandler;
@@ -757,6 +1075,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyContentReviewTemplateResponse> ModifyContentReviewTemplateOutcome;
                 typedef std::future<ModifyContentReviewTemplateOutcome> ModifyContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyContentReviewTemplateRequest&, ModifyContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDefaultDistributionConfigResponse> ModifyDefaultDistributionConfigOutcome;
+                typedef std::future<ModifyDefaultDistributionConfigOutcome> ModifyDefaultDistributionConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyDefaultDistributionConfigRequest&, ModifyDefaultDistributionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultDistributionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDefaultStorageRegionResponse> ModifyDefaultStorageRegionOutcome;
                 typedef std::future<ModifyDefaultStorageRegionOutcome> ModifyDefaultStorageRegionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyDefaultStorageRegionRequest&, ModifyDefaultStorageRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultStorageRegionAsyncHandler;
@@ -775,6 +1096,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJustInTimeTranscodeTemplateResponse> ModifyJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<ModifyJustInTimeTranscodeTemplateOutcome> ModifyJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyJustInTimeTranscodeTemplateRequest&, ModifyJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKnowledgeBaseResponse> ModifyKnowledgeBaseOutcome;
+                typedef std::future<ModifyKnowledgeBaseOutcome> ModifyKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyKnowledgeBaseRequest&, ModifyKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKnowledgeBaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMComprehendTemplateResponse> ModifyLLMComprehendTemplateOutcome;
+                typedef std::future<ModifyLLMComprehendTemplateOutcome> ModifyLLMComprehendTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyLLMComprehendTemplateRequest&, ModifyLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMComprehendTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMPSTemplateResponse> ModifyMPSTemplateOutcome;
+                typedef std::future<ModifyMPSTemplateOutcome> ModifyMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyMPSTemplateRequest&, ModifyMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMediaInfoResponse> ModifyMediaInfoOutcome;
                 typedef std::future<ModifyMediaInfoOutcome> ModifyMediaInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyMediaInfoRequest&, ModifyMediaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaInfoAsyncHandler;
@@ -784,6 +1114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProcessImageAsyncTemplateResponse> ModifyProcessImageAsyncTemplateOutcome;
+                typedef std::future<ModifyProcessImageAsyncTemplateOutcome> ModifyProcessImageAsyncTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyProcessImageAsyncTemplateRequest&, ModifyProcessImageAsyncTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProcessImageAsyncTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyQualityInspectTemplateResponse> ModifyQualityInspectTemplateOutcome;
                 typedef std::future<ModifyQualityInspectTemplateOutcome> ModifyQualityInspectTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyQualityInspectTemplateRequest&, ModifyQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQualityInspectTemplateAsyncHandler;
@@ -829,9 +1162,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ParseStreamingManifestResponse> ParseStreamingManifestOutcome;
                 typedef std::future<ParseStreamingManifestOutcome> ParseStreamingManifestOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ParseStreamingManifestRequest&, ParseStreamingManifestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseStreamingManifestAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProcessImageAsyncResponse> ProcessImageAsyncOutcome;
+                typedef std::future<ProcessImageAsyncOutcome> ProcessImageAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ProcessImageAsyncRequest&, ProcessImageAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessImageAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProcessMediaByMPSResponse> ProcessMediaByMPSOutcome;
+                typedef std::future<ProcessMediaByMPSOutcome> ProcessMediaByMPSOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ProcessMediaByMPSRequest&, ProcessMediaByMPSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaByMPSAsyncHandler;
                 typedef Outcome<Core::Error, Model::ProcessMediaByProcedureResponse> ProcessMediaByProcedureOutcome;
                 typedef std::future<ProcessMediaByProcedureOutcome> ProcessMediaByProcedureOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ProcessMediaByProcedureRequest&, ProcessMediaByProcedureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaByProcedureAsyncHandler;
@@ -874,6 +1213,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchMediaResponse> SearchMediaOutcome;
                 typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, SearchMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchMediaBySemanticsResponse> SearchMediaBySemanticsOutcome;
+                typedef std::future<SearchMediaBySemanticsOutcome> SearchMediaBySemanticsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SearchMediaBySemanticsRequest&, SearchMediaBySemanticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaBySemanticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAigcWhitelistResponse> SetAigcWhitelistOutcome;
+                typedef std::future<SetAigcWhitelistOutcome> SetAigcWhitelistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetAigcWhitelistRequest&, SetAigcWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAigcWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetCLSPushTargetResponse> SetCLSPushTargetOutcome;
+                typedef std::future<SetCLSPushTargetOutcome> SetCLSPushTargetOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetCLSPushTargetRequest&, SetCLSPushTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCLSPushTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetDrmKeyProviderInfoResponse> SetDrmKeyProviderInfoOutcome;
                 typedef std::future<SetDrmKeyProviderInfoOutcome> SetDrmKeyProviderInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SetDrmKeyProviderInfoRequest&, SetDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDrmKeyProviderInfoAsyncHandler;
@@ -889,6 +1237,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartCDNDomainResponse> StartCDNDomainOutcome;
                 typedef std::future<StartCDNDomainOutcome> StartCDNDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::StartCDNDomainRequest&, StartCDNDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCDNDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechAsyncResponse> TextToSpeechAsyncOutcome;
+                typedef std::future<TextToSpeechAsyncOutcome> TextToSpeechAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::TextToSpeechAsyncRequest&, TextToSpeechAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechSyncResponse> TextToSpeechSyncOutcome;
+                typedef std::future<TextToSpeechSyncOutcome> TextToSpeechSyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::TextToSpeechSyncRequest&, TextToSpeechSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechSyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAigcApiTokenResponse> UpdateAigcApiTokenOutcome;
+                typedef std::future<UpdateAigcApiTokenOutcome> UpdateAigcApiTokenOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::UpdateAigcApiTokenRequest&, UpdateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateVoiceResponse> UpdateVoiceOutcome;
+                typedef std::future<UpdateVoiceOutcome> UpdateVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::UpdateVoiceRequest&, UpdateVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -896,8 +1256,9 @@ namespace TencentCloud
 
 
                 /**
-                 ** This API is used to apply for uploading a media file (and cover file) to VOD and obtain the metadata of file storage (including upload path and upload signature) for subsequent use by the uploading API.
-* For the detailed upload process, please see [Overview of Upload from Client](https://intl.cloud.tencent.com/document/product/266/9759?from_cn_redirect=1).
+                 *We strongly recommend that you use the [server-side upload SDK](https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1#1.-.E5.8F.91.E8.B5.B7.E4.B8.8A.E4.BC.A0) provided by VOD to upload files. Directly invoking the API for upload is significantly more difficult and involves a much larger workload than using the SDK.
+* This API is used to apply for uploading media files (and cover files), get the meta information for uploading files to VOD (including upload path, upload signature, etc.), for subsequent upload APIs.
+For the upload process, see [Server-Side Upload Overview](https://www.tencentcloud.com/document/product/266/9759?from_cn_redirect=1).
                  * @param req ApplyUploadRequest
                  * @return ApplyUploadOutcome
                  */
@@ -906,7 +1267,7 @@ namespace TencentCloud
                 ApplyUploadOutcomeCallable ApplyUploadCallable(const Model::ApplyUploadRequest& request);
 
                 /**
-                 *This API is used to associate/disassociate subtitles with/from a media file of a specific adaptive bitrate streaming template ID.
+                 *Associate a media asset subtitle with the media output file corresponding to the adaptive bitrate streaming template ID (or disassociate it).
                  * @param req AttachMediaSubtitlesRequest
                  * @return AttachMediaSubtitlesOutcome
                  */
@@ -915,7 +1276,7 @@ namespace TencentCloud
                 AttachMediaSubtitlesOutcomeCallable AttachMediaSubtitlesCallable(const Model::AttachMediaSubtitlesRequest& request);
 
                 /**
-                 *Clone CDN Domain.
+                 *Clone a CDN domain.
                  * @param req CloneCDNDomainRequest
                  * @return CloneCDNDomainOutcome
                  */
@@ -924,7 +1285,25 @@ namespace TencentCloud
                 CloneCDNDomainOutcomeCallable CloneCDNDomainCallable(const Model::CloneCDNDomainRequest& request);
 
                 /**
-                 *This API is used to confirm the result of uploading a media file (and cover file) to VOD, store the media information, and return the playback address and ID of the file.
+                 *This API is used to trigger a voice cloning task. It clones a reference audio to generate an exclusive voice, which can be used for subsequent text to speech. Voice cloning is an asynchronous task. The voice ID and audio audition are generated after task completion.
+                 * @param req CloneVoiceAsyncRequest
+                 * @return CloneVoiceAsyncOutcome
+                 */
+                CloneVoiceAsyncOutcome CloneVoiceAsync(const Model::CloneVoiceAsyncRequest &request);
+                void CloneVoiceAsyncAsync(const Model::CloneVoiceAsyncRequest& request, const CloneVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneVoiceAsyncOutcomeCallable CloneVoiceAsyncCallable(const Model::CloneVoiceAsyncRequest& request);
+
+                /**
+                 *This API is used to trigger a voice cloning task. It clones a reference audio to generate an exclusive voice, which can be used for subsequent text to speech.
+                 * @param req CloneVoiceSyncRequest
+                 * @return CloneVoiceSyncOutcome
+                 */
+                CloneVoiceSyncOutcome CloneVoiceSync(const Model::CloneVoiceSyncRequest &request);
+                void CloneVoiceSyncAsync(const Model::CloneVoiceSyncRequest& request, const CloneVoiceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneVoiceSyncOutcomeCallable CloneVoiceSyncCallable(const Model::CloneVoiceSyncRequest& request);
+
+                /**
+                 *This API is used to confirm the upload result of media files and cover files to Tencent Cloud VOD, store media information, and return the playback address and file ID.
                  * @param req CommitUploadRequest
                  * @return CommitUploadOutcome
                  */
@@ -933,18 +1312,18 @@ namespace TencentCloud
                 CommitUploadOutcomeCallable CommitUploadCallable(const Model::CommitUploadRequest& request);
 
                 /**
-                 *This API is used to compose a media file. You can use it to do the following:
+                 *This API is used to compose media files to achieve the following effects:
 
-1. **Rotation/Flipping**: Rotate a video or image by a specific angle or flip a video or image.
-2. **Audio control**: Increase/Lower the volume of an audio/video file or mute an audio/video file.
-3. **Overlaying**: Overlay videos/images in a specified sequence to achieve the picture-in-picture effect.
-4. **Audio mixing**: Mix the audios of audio/video files.
-5 **Audio extraction**: Extract audio from a video.
-6. **Clipping**: Clip segments from audio/video files according to a specified start and end time.
-7. **Splicing**: Splice videos/audios/images in a specified sequence.
-8. **Transition**: Add transition effects between video segments or images that are spliced together.
+1. **Image rotation**: rotates the image of a video or picture by a certain degree, or flips it in a certain direction.
+2. **Audio control**: Increase or reduce the volume of sound in video or audio, or mute the video.
+3. **Screen Overlay**: Overlay frames from videos and images in sequence, for example, to achieve a Picture-in-Picture effect.
+4. **Audio mixing**: Mix the sound in video and audio together.
+5. **Audio extraction**: Extract audio from the video (visuals are not retained).
+6. **Crop**: Crop a specified time period from video or audio.
+7. **Splicing**: Splice videos, audio, and images in chronological order.
+8. **Transitions**: When stitching multiple videos or images, you can add transition effects between paragraphs.
 
-The output file is in MP4 or MP3 format. In the callback for media composition, the event type is [ComposeMediaComplete](https://intl.cloud.tencent.com/document/product/266/43000?from_cn_redirect=1).
+The muxing format of the composed media can be MP4 (video) or MP3 (audio). If event notification is used, the event notification type is video synthesis completed (https://www.tencentcloud.com/document/product/266/43000?from_cn_redirect=1).
                  * @param req ComposeMediaRequest
                  * @return ComposeMediaOutcome
                  */
@@ -953,9 +1332,9 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 ComposeMediaOutcomeCallable ComposeMediaCallable(const Model::ComposeMediaRequest& request);
 
                 /**
-                 ** After the `PullEvents` API is called to get an event, this API must be called to confirm that the message has been received;
-* After the event handler is obtained, the validity period of waiting for confirmation is 30 seconds. If the wait exceeds 30 seconds, a parameter error will be reported (4000);
-* For more information, please see the [reliable callback](https://intl.cloud.tencent.com/document/product/266/33779?from_cn_redirect=1#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) of event notification.
+                 ** Developers call event notification pull to obtain events, and then must call this API to ACK message received.
+* After the developer obtains the event handler, the validity time for pending confirmation is 30 seconds. If it exceeds 30 seconds, a parameter error (4000) will be reported.
+* For more references on reliable callback of event notification, see [Reliable Callback](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83).
                  * @param req ConfirmEventsRequest
                  * @return ConfirmEventsOutcome
                  */
@@ -964,7 +1343,7 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 ConfirmEventsOutcomeCallable ConfirmEventsCallable(const Model::ConfirmEventsRequest& request);
 
                 /**
-                 *This API is used to create a custom video content analysis template. Up to 50 templates can be created.
+                 *This API is used to create user-defined audio and video content analysis templates. Maximum number: 50. HLS format is not supported currently.
                  * @param req CreateAIAnalysisTemplateRequest
                  * @return CreateAIAnalysisTemplateOutcome
                  */
@@ -973,7 +1352,7 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateAIAnalysisTemplateOutcomeCallable CreateAIAnalysisTemplateCallable(const Model::CreateAIAnalysisTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom video content recognition template. Up to 50 templates can be created.
+                 *This API is used to create user-defined audio and video content recognition templates. Maximum number: 50.
                  * @param req CreateAIRecognitionTemplateRequest
                  * @return CreateAIRecognitionTemplateOutcome
                  */
@@ -982,7 +1361,7 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateAIRecognitionTemplateOutcomeCallable CreateAIRecognitionTemplateCallable(const Model::CreateAIRecognitionTemplateRequest& request);
 
                 /**
-                 *This API is used to create an adaptive bitrate streaming template. Up to 100 templates can be created.
+                 *Create an adaptive bitrate streaming template. Max: 100.
                  * @param req CreateAdaptiveDynamicStreamingTemplateRequest
                  * @return CreateAdaptiveDynamicStreamingTemplateOutcome
                  */
@@ -991,7 +1370,119 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateAdaptiveDynamicStreamingTemplateOutcomeCallable CreateAdaptiveDynamicStreamingTemplateCallable(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom animated image generating template. Up to 16 templates can be created.
+                 *This API is used to create an advanced custom AIGC subject.
+                 * @param req CreateAigcAdvancedCustomElementRequest
+                 * @return CreateAigcAdvancedCustomElementOutcome
+                 */
+                CreateAigcAdvancedCustomElementOutcome CreateAigcAdvancedCustomElement(const Model::CreateAigcAdvancedCustomElementRequest &request);
+                void CreateAigcAdvancedCustomElementAsync(const Model::CreateAigcAdvancedCustomElementRequest& request, const CreateAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAdvancedCustomElementOutcomeCallable CreateAigcAdvancedCustomElementCallable(const Model::CreateAigcAdvancedCustomElementRequest& request);
+
+                /**
+                 *This API is used to create a Token for AIGC API calls. Data sync has a delay once created. It can be queried or deleted after about 30 seconds.
+                 * @param req CreateAigcApiTokenRequest
+                 * @return CreateAigcApiTokenOutcome
+                 */
+                CreateAigcApiTokenOutcome CreateAigcApiToken(const Model::CreateAigcApiTokenRequest &request);
+                void CreateAigcApiTokenAsync(const Model::CreateAigcApiTokenRequest& request, const CreateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcApiTokenOutcomeCallable CreateAigcApiTokenCallable(const Model::CreateAigcApiTokenRequest& request);
+
+                /**
+                 *This API is used to create AIGC voice replication. Note that calling this API incurs fees. Refer to the billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#96b3b59a-f9e1-49e9-966a-bedb70a4bf12).
+                 * @param req CreateAigcAudioCloneRequest
+                 * @return CreateAigcAudioCloneOutcome
+                 */
+                CreateAigcAudioCloneOutcome CreateAigcAudioClone(const Model::CreateAigcAudioCloneRequest &request);
+                void CreateAigcAudioCloneAsync(const Model::CreateAigcAudioCloneRequest& request, const CreateAigcAudioCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAudioCloneOutcomeCallable CreateAigcAudioCloneCallable(const Model::CreateAigcAudioCloneRequest& request);
+
+                /**
+                 *This API is used to create AI audio generation tasks.
+                 * @param req CreateAigcAudioTaskRequest
+                 * @return CreateAigcAudioTaskOutcome
+                 */
+                CreateAigcAudioTaskOutcome CreateAigcAudioTask(const Model::CreateAigcAudioTaskRequest &request);
+                void CreateAigcAudioTaskAsync(const Model::CreateAigcAudioTaskRequest& request, const CreateAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAudioTaskOutcomeCallable CreateAigcAudioTaskCallable(const Model::CreateAigcAudioTaskRequest& request);
+
+                /**
+                 *Call this API to create a subject for a specified model.
+                 * @param req CreateAigcCustomElementRequest
+                 * @return CreateAigcCustomElementOutcome
+                 */
+                CreateAigcCustomElementOutcome CreateAigcCustomElement(const Model::CreateAigcCustomElementRequest &request);
+                void CreateAigcCustomElementAsync(const Model::CreateAigcCustomElementRequest& request, const CreateAigcCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcCustomElementOutcomeCallable CreateAigcCustomElementCallable(const Model::CreateAigcCustomElementRequest& request);
+
+                /**
+                 *This API is used to create AIGC custom voice types. Note that calling this API incurs a fee for creating custom voice types. Refer to the billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#5e5217e8-29fc-467e-ac2d-853648f988b7).
+                 * @param req CreateAigcCustomVoiceRequest
+                 * @return CreateAigcCustomVoiceOutcome
+                 */
+                CreateAigcCustomVoiceOutcome CreateAigcCustomVoice(const Model::CreateAigcCustomVoiceRequest &request);
+                void CreateAigcCustomVoiceAsync(const Model::CreateAigcCustomVoiceRequest& request, const CreateAigcCustomVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcCustomVoiceOutcomeCallable CreateAigcCustomVoiceCallable(const Model::CreateAigcCustomVoiceRequest& request);
+
+                /**
+                 *This API is used to create AIGC Hunyuan 3D tasks.
+                 * @param req CreateAigcHunyuan3DTaskRequest
+                 * @return CreateAigcHunyuan3DTaskOutcome
+                 */
+                CreateAigcHunyuan3DTaskOutcome CreateAigcHunyuan3DTask(const Model::CreateAigcHunyuan3DTaskRequest &request);
+                void CreateAigcHunyuan3DTaskAsync(const Model::CreateAigcHunyuan3DTaskRequest& request, const CreateAigcHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcHunyuan3DTaskOutcomeCallable CreateAigcHunyuan3DTaskCallable(const Model::CreateAigcHunyuan3DTaskRequest& request);
+
+                /**
+                 *This API is used to generate AIGC images. The default limit is 1 concurrent processing. API calls incur actual fees. Refer to the VOD AIGC image generation billing documentation. The feature uses postpaid settlement mode. For daily billing customers, usage on the day is billed on the second day. For monthly settlement customers, the previous month's usage fees are billed on the 1st of the next month.
+                 * @param req CreateAigcImageTaskRequest
+                 * @return CreateAigcImageTaskOutcome
+                 */
+                CreateAigcImageTaskOutcome CreateAigcImageTask(const Model::CreateAigcImageTaskRequest &request);
+                void CreateAigcImageTaskAsync(const Model::CreateAigcImageTaskRequest& request, const CreateAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcImageTaskOutcomeCallable CreateAigcImageTaskCallable(const Model::CreateAigcImageTaskRequest& request);
+
+                /**
+                 *This API is used to create and enable AIGC quota configuration. Quota usage starts accumulating when the quota feature is enabled. Once the quota is reached, AIGC features will no longer be usable.
+
+If the quota is deleted and re-enabled, the amount will be zero and recalculated.
+
+Since content generation in AGC is an asynchronous task, real-time usage data cannot be obtained. Therefore, quota limits may result in some errors, and full precise control over the set limit cannot be achieved.
+                 * @param req CreateAigcQuotaRequest
+                 * @return CreateAigcQuotaOutcome
+                 */
+                CreateAigcQuotaOutcome CreateAigcQuota(const Model::CreateAigcQuotaRequest &request);
+                void CreateAigcQuotaAsync(const Model::CreateAigcQuotaRequest& request, const CreateAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcQuotaOutcomeCallable CreateAigcQuotaCallable(const Model::CreateAigcQuotaRequest& request);
+
+                /**
+                 *This API is used to create AIGC custom subjects (Vidu). Note that calling this API incurs fees. Refer to the billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#96b3b59a-f9e1-49e9-966a-bedb70a4bf12).
+                 * @param req CreateAigcSubjectRequest
+                 * @return CreateAigcSubjectOutcome
+                 */
+                CreateAigcSubjectOutcome CreateAigcSubject(const Model::CreateAigcSubjectRequest &request);
+                void CreateAigcSubjectAsync(const Model::CreateAigcSubjectRequest& request, const CreateAigcSubjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcSubjectOutcomeCallable CreateAigcSubjectCallable(const Model::CreateAigcSubjectRequest& request);
+
+                /**
+                 *This API is used to generate AIGC videos. API calls incur actual fees. Refer to the VOD AIGC video generation billing documentation. The feature uses postpaid settlement. For daily billing customers, usage on the day is billed on the second day. For monthly billing customers, the previous month's usage fees are billed on the 1st of the next month.
+                 * @param req CreateAigcVideoRedrawTaskRequest
+                 * @return CreateAigcVideoRedrawTaskOutcome
+                 */
+                CreateAigcVideoRedrawTaskOutcome CreateAigcVideoRedrawTask(const Model::CreateAigcVideoRedrawTaskRequest &request);
+                void CreateAigcVideoRedrawTaskAsync(const Model::CreateAigcVideoRedrawTaskRequest& request, const CreateAigcVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcVideoRedrawTaskOutcomeCallable CreateAigcVideoRedrawTaskCallable(const Model::CreateAigcVideoRedrawTaskRequest& request);
+
+                /**
+                 *This API is used to generate AIGC videos. The default limit is 1 concurrent processing. API calls incur actual fees. Refer to the VOD AIGC video generation billing documentation. The settlement mode for this feature is pay-as-you-go. For daily billing customers, usage on the day is billed on the second day. For monthly billing customers, the previous month's usage fees are billed on the 1st of the next month.
+                 * @param req CreateAigcVideoTaskRequest
+                 * @return CreateAigcVideoTaskOutcome
+                 */
+                CreateAigcVideoTaskOutcome CreateAigcVideoTask(const Model::CreateAigcVideoTaskRequest &request);
+                void CreateAigcVideoTaskAsync(const Model::CreateAigcVideoTaskRequest& request, const CreateAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcVideoTaskOutcomeCallable CreateAigcVideoTaskCallable(const Model::CreateAigcVideoTaskRequest& request);
+
+                /**
+                 *This API is used to create a user-customized animated image generating template. Maximum number: 16.
                  * @param req CreateAnimatedGraphicsTemplateRequest
                  * @return CreateAnimatedGraphicsTemplateOutcome
                  */
@@ -1000,7 +1491,16 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateAnimatedGraphicsTemplateOutcomeCallable CreateAnimatedGraphicsTemplateCallable(const Model::CreateAnimatedGraphicsTemplateRequest& request);
 
                 /**
-                 *This API is used for adding domain names to VOD. A user can add up to 20 domain names. 1. After the domain name is added successfully, VOD will carry out the deployment of the domain name. It takes approximately 2 minutes for the domain name to change from the deployment status to the online status.
+                 *This API is used to create a user-defined digital watermark template.
+                 * @param req CreateBlindWatermarkTemplateRequest
+                 * @return CreateBlindWatermarkTemplateOutcome
+                 */
+                CreateBlindWatermarkTemplateOutcome CreateBlindWatermarkTemplate(const Model::CreateBlindWatermarkTemplateRequest &request);
+                void CreateBlindWatermarkTemplateAsync(const Model::CreateBlindWatermarkTemplateRequest& request, const CreateBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlindWatermarkTemplateOutcomeCallable CreateBlindWatermarkTemplateCallable(const Model::CreateBlindWatermarkTemplateRequest& request);
+
+                /**
+                 *This API is used to add domain names to VOD. A user can add up to 20 domain names. After the domain name is successfully added, VOD will deploy the domain. It takes about 2 minutes for the domain to change from the deployment state to the online status.
                  * @param req CreateCDNDomainRequest
                  * @return CreateCDNDomainOutcome
                  */
@@ -1009,10 +1509,28 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateCDNDomainOutcomeCallable CreateCDNDomainCallable(const Model::CreateCDNDomainRequest& request);
 
                 /**
-                 ** This API is used to categorize media assets for management;
-* It does not affect the categories of existing media assets. If you want to modify the category of a media asset, call the [ModifyMediaInfo](https://intl.cloud.tencent.com/document/product/266/31762?from_cn_redirect=1) API.
-* There can be up to 4 levels of categories.
-* One category can have up to 500 subcategories under it.
+                 *Create a logset via VOD.
+                 * @param req CreateCLSLogsetRequest
+                 * @return CreateCLSLogsetOutcome
+                 */
+                CreateCLSLogsetOutcome CreateCLSLogset(const Model::CreateCLSLogsetRequest &request);
+                void CreateCLSLogsetAsync(const Model::CreateCLSLogsetRequest& request, const CreateCLSLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSLogsetOutcomeCallable CreateCLSLogsetCallable(const Model::CreateCLSLogsetRequest& request);
+
+                /**
+                 *This API is used to create a CLS log topic under VOD.
+                 * @param req CreateCLSTopicRequest
+                 * @return CreateCLSTopicOutcome
+                 */
+                CreateCLSTopicOutcome CreateCLSTopic(const Model::CreateCLSTopicRequest &request);
+                void CreateCLSTopicAsync(const Model::CreateCLSTopicRequest& request, const CreateCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSTopicOutcomeCallable CreateCLSTopicCallable(const Model::CreateCLSTopicRequest& request);
+
+                /**
+                 ** Used to categorize and manage media;
+* This API does not affect the existing media category. To modify the media category, call the [ModifyMediaInfo](https://www.tencentcloud.com/document/product/266/31762?from_cn_redirect=1) API.
+* The classification hierarchy cannot exceed 4 levels.
+* The number of subcategories in each category must not exceed 500.
                  * @param req CreateClassRequest
                  * @return CreateClassOutcome
                  */
@@ -1021,17 +1539,18 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateClassOutcomeCallable CreateClassCallable(const Model::CreateClassRequest& request);
 
                 /**
-                 *Initiate an adaptive bitrate streaming processing task, with the following features:
-1. Output HLS and MPEG-DASH adaptive streams based on the specified templates;
-2. DRM options for the adaptive bitrate streaming include no encryption, Widevine, or FairPlay.
-3. The output adaptive bitrate streaming can include multiple audio streams in different languages, with each language sourced from different media files.
-4. The output adaptive stream can also include multiple subtitle streams in different languages.
+                 *Initiate complex adaptive bitstream processing tasks. Features include:
+1. Output HLS and DASH adaptive bitrate streams based on the specified adaptive bitrate template;
+2. The content protection solution for adaptive bitrate streams is selectable as unencrypted, Widevine, or FairPlay.
+3. Support adding opening and ending segments;
+4. The output adaptive bitrate stream can contain multilingual audio streams, each language comes from a different media file;
+5. The output adaptive bitrate stream can contain multilingual subtitle streams.
 
-**Notes:**
-1. When using opening/closing credits, the video stream in the opening credit must be synchronized with the audio stream; otherwise, it will result in audio and video desynchronization in the output content.
-2. If the output adaptive bitrate streaming needs to include audio from the main media, the FileId of the main media must be specified in the AudioSet parameter.
-3. Subtitles must be added to the main media beforehand, which can be done through the ModifyMediaInfo API interface or the Video Management page in the console.
-4. Support for TESHD transcoding and watermarking is currently not available.
+Notes:
+1. When using an opening scene, the video stream in the opening scene media needs to align with the audio stream; otherwise, it will cause audio and video synchronization issues in the output content.
+2. If the output adaptive bitrate stream needs to include the audio of the main media, specify the FileId of the main media in the AudioSet parameter.
+3. To use subtitles, add them to the main media first via the ModifyMediaInfo API or the audio and video details page in the console.
+4. Top speed Codec and watermark are not currently supported.
                  * @param req CreateComplexAdaptiveDynamicStreamingTaskRequest
                  * @return CreateComplexAdaptiveDynamicStreamingTaskOutcome
                  */
@@ -1040,8 +1559,8 @@ The output file is in MP4 or MP3 format. In the callback for media composition, 
                 CreateComplexAdaptiveDynamicStreamingTaskOutcomeCallable CreateComplexAdaptiveDynamicStreamingTaskCallable(const Model::CreateComplexAdaptiveDynamicStreamingTaskRequest& request);
 
                 /**
-                 *We have <font color=red>stopped updating</font> this API. Our new moderation templates can moderate audio/video as well as images. For details, see [CreateReviewTemplate](https://intl.cloud.tencent.com/document/api/266/84391?from_cn_redirect=1).
-This API is used to create a custom audio/video moderation template. Up to 50 templates can be created in total.
+                 *This API is <font color=red>no longer maintained</font>. The new version moderation template supports audio/video moderation and image moderation. For details, please see [Create Moderation Template](https://www.tencentcloud.com/document/api/266/84391?from_cn_redirect=1).
+This API is used to create a user-customized audio/video moderation template. Up to 50 templates can be created.
                  * @param req CreateContentReviewTemplateRequest
                  * @return CreateContentReviewTemplateOutcome
                  */
@@ -1050,7 +1569,7 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateContentReviewTemplateOutcomeCallable CreateContentReviewTemplateCallable(const Model::CreateContentReviewTemplateRequest& request);
 
                 /**
-                 *This API is used for generating a subdomain resolution, prompting the customer to add it to the domain name resolution, used for wildcard domain and domain name retrieval verification of ownership.
+                 *This API is used to generate a subdomain name resolution and prompt the customer to add it to the domain name resolution for wildcard domain name and domain name retrieval ownership verification.
                  * @param req CreateDomainVerifyRecordRequest
                  * @return CreateDomainVerifyRecordOutcome
                  */
@@ -1059,7 +1578,8 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateDomainVerifyRecordOutcomeCallable CreateDomainVerifyRecordCallable(const Model::CreateDomainVerifyRecordRequest& request);
 
                 /**
-                 *Create enhance media template.
+                 *This API is no longer maintained. The new version of the [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+Create an audio and video quality rebirth template.
                  * @param req CreateEnhanceMediaTemplateRequest
                  * @return CreateEnhanceMediaTemplateOutcome
                  */
@@ -1068,7 +1588,8 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateEnhanceMediaTemplateOutcomeCallable CreateEnhanceMediaTemplateCallable(const Model::CreateEnhanceMediaTemplateRequest& request);
 
                 /**
-                 *Create HeadTail Template.
+                 *This API is used to create a title and trailer template.
+-Maximum supported template quantity: 100.
                  * @param req CreateHeadTailTemplateRequest
                  * @return CreateHeadTailTemplateOutcome
                  */
@@ -1077,7 +1598,7 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateHeadTailTemplateOutcomeCallable CreateHeadTailTemplateCallable(const Model::CreateHeadTailTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom image processing template. A template can include at most 10 operations, for example, crop-scale-crop-blur-scale-crop-scale-crop-blur-scale. You can have up to 16 image processing templates.
+                 *Create a user-defined image processing template. Maximum quantity: 16. Supports up to ten operations, for example: crop - thumbnail - crop - blur - thumbnail - crop - thumbnail - crop - blur - thumbnail.
                  * @param req CreateImageProcessingTemplateRequest
                  * @return CreateImageProcessingTemplateOutcome
                  */
@@ -1086,7 +1607,7 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateImageProcessingTemplateOutcomeCallable CreateImageProcessingTemplateCallable(const Model::CreateImageProcessingTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom image sprite generating template. Up to 16 templates can be created.
+                 *This API is used to create a user-customized image sprite template. Maximum number: 16.
                  * @param req CreateImageSpriteTemplateRequest
                  * @return CreateImageSpriteTemplateOutcome
                  */
@@ -1095,7 +1616,7 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateImageSpriteTemplateOutcomeCallable CreateImageSpriteTemplateCallable(const Model::CreateImageSpriteTemplateRequest& request);
 
                 /**
-                 *Create Just In Time Transcode Template.
+                 *This API is used to create a just in time transcoding template.
                  * @param req CreateJustInTimeTranscodeTemplateRequest
                  * @return CreateJustInTimeTranscodeTemplateOutcome
                  */
@@ -1104,7 +1625,42 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
 
                 /**
-                 *This API is used to create samples for using facial features positioning and other technologies to perform video processing operations such as content recognition and inappropriate information recognition.
+                 *Create a knowledge base. This API is used to create a new knowledge base for Intelligent Media Assets. Each user can create up to 20 knowledge bases.
+                 * @param req CreateKnowledgeBaseRequest
+                 * @return CreateKnowledgeBaseOutcome
+                 */
+                CreateKnowledgeBaseOutcome CreateKnowledgeBase(const Model::CreateKnowledgeBaseRequest &request);
+                void CreateKnowledgeBaseAsync(const Model::CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKnowledgeBaseOutcomeCallable CreateKnowledgeBaseCallable(const Model::CreateKnowledgeBaseRequest& request);
+
+                /**
+                 *Create a large model parsing template.
+                 * @param req CreateLLMComprehendTemplateRequest
+                 * @return CreateLLMComprehendTemplateOutcome
+                 */
+                CreateLLMComprehendTemplateOutcome CreateLLMComprehendTemplate(const Model::CreateLLMComprehendTemplateRequest &request);
+                void CreateLLMComprehendTemplateAsync(const Model::CreateLLMComprehendTemplateRequest& request, const CreateLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLLMComprehendTemplateOutcomeCallable CreateLLMComprehendTemplateCallable(const Model::CreateLLMComprehendTemplateRequest& request);
+
+                /**
+                 *This API is used to create custom templates for partial features of the ProcessMediaByMPS API.
+When creating a template, fill in the MPS related parameters in JSON format in the MPSCreateTemplateParams parameter. For specific task parameter configuration methods, see the MPS task template related documentation.
+Currently supported MPS features for creating custom templates:
+1. [Audio and video enhancement](https://www.tencentcloud.com/document/product/862/118703?from_cn_redirect=1).
+2. [Media AI](https://www.tencentcloud.com/document/product/862/113756?from_cn_redirect=1)
+
+> Template for tasks created with this method:
+> 1. Template management is still done in the VOD platform.
+> 2. The feature is currently in beta test. If needed, you can contact us for support.
+                 * @param req CreateMPSTemplateRequest
+                 * @return CreateMPSTemplateOutcome
+                 */
+                CreateMPSTemplateOutcome CreateMPSTemplate(const Model::CreateMPSTemplateRequest &request);
+                void CreateMPSTemplateAsync(const Model::CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMPSTemplateOutcomeCallable CreateMPSTemplateCallable(const Model::CreateMPSTemplateRequest& request);
+
+                /**
+                 *This API is used to create material samples for video processing such as content recognition and inappropriate video recognition through facial feature positioning technology.
                  * @param req CreatePersonSampleRequest
                  * @return CreatePersonSampleOutcome
                  */
@@ -1113,7 +1669,7 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreatePersonSampleOutcomeCallable CreatePersonSampleCallable(const Model::CreatePersonSampleRequest& request);
 
                 /**
-                 *This API is used to create a custom task flow template. Up to 50 templates can be created.
+                 *This API is used to create user-defined task flow templates. Template capacity limit: 50.
                  * @param req CreateProcedureTemplateRequest
                  * @return CreateProcedureTemplateOutcome
                  */
@@ -1122,7 +1678,16 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateProcedureTemplateOutcomeCallable CreateProcedureTemplateCallable(const Model::CreateProcedureTemplateRequest& request);
 
                 /**
-                 *Creates media quality inspection template.
+                 *This API is used to create user-customized image asynchronous processing templates. Maximum number: 50. HLS format is not supported currently.
+                 * @param req CreateProcessImageAsyncTemplateRequest
+                 * @return CreateProcessImageAsyncTemplateOutcome
+                 */
+                CreateProcessImageAsyncTemplateOutcome CreateProcessImageAsyncTemplate(const Model::CreateProcessImageAsyncTemplateRequest &request);
+                void CreateProcessImageAsyncTemplateAsync(const Model::CreateProcessImageAsyncTemplateRequest& request, const CreateProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProcessImageAsyncTemplateOutcomeCallable CreateProcessImageAsyncTemplateCallable(const Model::CreateProcessImageAsyncTemplateRequest& request);
+
+                /**
+                 *This API is used to create an audio-visual quality inspection template.
                  * @param req CreateQualityInspectTemplateRequest
                  * @return CreateQualityInspectTemplateOutcome
                  */
@@ -1131,7 +1696,8 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateQualityInspectTemplateOutcomeCallable CreateQualityInspectTemplateCallable(const Model::CreateQualityInspectTemplateRequest& request);
 
                 /**
-                 *Create rebuild media template.
+                 *This API is no longer maintained. The new version of the [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+This API is used to create a video rebirth template.
                  * @param req CreateRebuildMediaTemplateRequest
                  * @return CreateRebuildMediaTemplateOutcome
                  */
@@ -1140,8 +1706,8 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateRebuildMediaTemplateOutcomeCallable CreateRebuildMediaTemplateCallable(const Model::CreateRebuildMediaTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom moderation template. Up to 50 templates can be created in total.
-> The templates can only be used by the APIs [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1).
+                 *This API is used to create user-customized moderation templates. Maximum number: 50.
+>Template is applicable only to the ReviewAudioVideo (https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) and ReviewImage (https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1) APIs.
                  * @param req CreateReviewTemplateRequest
                  * @return CreateReviewTemplateOutcome
                  */
@@ -1150,9 +1716,9 @@ This API is used to create a custom audio/video moderation template. Up to 50 te
                 CreateReviewTemplateOutcomeCallable CreateReviewTemplateCallable(const Model::CreateReviewTemplateRequest& request);
 
                 /**
-                 *This API is used to create a playlist. You can create at most 100 playlists.
-For each video on the list, you can either use the original file or a transcoding file.
-The files must be in HLS format. Preferably, they should have the same bitrate and resolution.
+                 *This API is used to create a carousel playlist. Maximum quantity: 100.
+Each file in the carousel playlist can specify a source file or a transcoded file.
+The designated file must be in hls format. All playlist files should preferably maintain the same bitrate and resolution.
                  * @param req CreateRoundPlayRequest
                  * @return CreateRoundPlayOutcome
                  */
@@ -1161,7 +1727,7 @@ The files must be in HLS format. Preferably, they should have the same bitrate a
                 CreateRoundPlayOutcomeCallable CreateRoundPlayCallable(const Model::CreateRoundPlayRequest& request);
 
                 /**
-                 *This API is used to create a custom sampled screencapturing template. Up to 16 templates can be created.
+                 *This API is used to create a user-customized sampled screenshot template, with a maximum of 16.
                  * @param req CreateSampleSnapshotTemplateRequest
                  * @return CreateSampleSnapshotTemplateOutcome
                  */
@@ -1170,7 +1736,25 @@ The files must be in HLS format. Preferably, they should have the same bitrate a
                 CreateSampleSnapshotTemplateOutcomeCallable CreateSampleSnapshotTemplateCallable(const Model::CreateSampleSnapshotTemplateRequest& request);
 
                 /**
-                 *This API is used to create a custom time point screencapturing template. Up to 16 templates can be created.
+                 *This API is used to generate scenario-based AIGC images. API calls incur actual fees. Refer to the VOD AIGC image generation billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac). The feature uses postpaid settlement. For daily billing customers, usage on the day is billed on the second day. For monthly billing customers, the previous month's usage fees are billed on the 1st of the next month.
+                 * @param req CreateSceneAigcImageTaskRequest
+                 * @return CreateSceneAigcImageTaskOutcome
+                 */
+                CreateSceneAigcImageTaskOutcome CreateSceneAigcImageTask(const Model::CreateSceneAigcImageTaskRequest &request);
+                void CreateSceneAigcImageTaskAsync(const Model::CreateSceneAigcImageTaskRequest& request, const CreateSceneAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSceneAigcImageTaskOutcomeCallable CreateSceneAigcImageTaskCallable(const Model::CreateSceneAigcImageTaskRequest& request);
+
+                /**
+                 *This API is used to generate scenario-based AIGC images. <b>The API is in beta. If needed, please contact us. API calls will incur actual fees.</b>
+                 * @param req CreateSceneAigcVideoTaskRequest
+                 * @return CreateSceneAigcVideoTaskOutcome
+                 */
+                CreateSceneAigcVideoTaskOutcome CreateSceneAigcVideoTask(const Model::CreateSceneAigcVideoTaskRequest &request);
+                void CreateSceneAigcVideoTaskAsync(const Model::CreateSceneAigcVideoTaskRequest& request, const CreateSceneAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSceneAigcVideoTaskOutcomeCallable CreateSceneAigcVideoTaskCallable(const Model::CreateSceneAigcVideoTaskRequest& request);
+
+                /**
+                 *This API is used to create user-customized specified time point screenshot templates. Maximum quantity: 16.
                  * @param req CreateSnapshotByTimeOffsetTemplateRequest
                  * @return CreateSnapshotByTimeOffsetTemplateOutcome
                  */
@@ -1180,8 +1764,8 @@ The files must be in HLS format. Preferably, they should have the same bitrate a
 
                 /**
                  *This API is used to enable storage in a region.
-  1. When you activate VOD, the system will enable storage for you in certain regions. If you need to store data in another region, you can use this API to enable storage in that region.
-  2. You can use the `DescribeStorageRegions` API to query all supported storage regions and the regions you have storage access to currently.
+1. When a user enables the VOD service, storage in partial regions is enabled by default. If necessary, the user can use this API to enable storage in other regions.
+2. The DescribeStorageRegions API can query all storage regions and opened regions.
                  * @param req CreateStorageRegionRequest
                  * @return CreateStorageRegionOutcome
                  */
@@ -1190,7 +1774,7 @@ The files must be in HLS format. Preferably, they should have the same bitrate a
                 CreateStorageRegionOutcomeCallable CreateStorageRegionCallable(const Model::CreateStorageRegionRequest& request);
 
                 /**
-                 *This API is used to create a VOD subapplication.
+                 *This API is used to create a VOD application.
                  * @param req CreateSubAppIdRequest
                  * @return CreateSubAppIdOutcome
                  */
@@ -1199,8 +1783,8 @@ The files must be in HLS format. Preferably, they should have the same bitrate a
                 CreateSubAppIdOutcomeCallable CreateSubAppIdCallable(const Model::CreateSubAppIdRequest& request);
 
                 /**
-                 *We have <font color='red'>stopped updating</font> this API. Currently, you no longer need a player configuration to use player signatures. For details, see [Player Signature](https://intl.cloud.tencent.com/document/product/266/45554?from_cn_redirect=1).
-This API is used to create a player configuration. Up to 100 configurations can be created.
+                 *This API is <font color='red'>no longer maintained</font>. The new version of player signature no longer uses player configuration templates. For details, please see [Player Signature](https://www.tencentcloud.com/document/product/266/45554?from_cn_redirect=1).
+This API is used to create player configurations. Maximum number: 100.
                  * @param req CreateSuperPlayerConfigRequest
                  * @return CreateSuperPlayerConfigOutcome
                  */
@@ -1209,7 +1793,7 @@ This API is used to create a player configuration. Up to 100 configurations can 
                 CreateSuperPlayerConfigOutcomeCallable CreateSuperPlayerConfigCallable(const Model::CreateSuperPlayerConfigRequest& request);
 
                 /**
-                 *This API is used to create a custom transcoding template. Up to 100 templates can be created.
+                 *This API is used to create custom transcoding templates. Maximum quantity: 100.
                  * @param req CreateTranscodeTemplateRequest
                  * @return CreateTranscodeTemplateOutcome
                  */
@@ -1218,8 +1802,8 @@ This API is used to create a player configuration. Up to 100 configurations can 
                 CreateTranscodeTemplateOutcomeCallable CreateTranscodeTemplateCallable(const Model::CreateTranscodeTemplateRequest& request);
 
                 /**
-                 *This API is used to add an acceleration domain name to VOD. One user can add up to 20 domain names.
-1. After a domain name is added, VOD will deploy it, and it takes about 2 minutes for the domain name status to change from `Deploying` to `Online`.
+                 *This API is used to add acceleration domain names to VOD. A user can add up to 20 acceleration domain names.
+1. After the domain name is successfully added, VOD will deploy the domain name. It takes about 2 minutes for the domain name to change from deployment state to online status.
                  * @param req CreateVodDomainRequest
                  * @return CreateVodDomainOutcome
                  */
@@ -1228,7 +1812,7 @@ This API is used to create a player configuration. Up to 100 configurations can 
                 CreateVodDomainOutcomeCallable CreateVodDomainCallable(const Model::CreateVodDomainRequest& request);
 
                 /**
-                 *This API is used to create a custom watermarking template. Up to 1,000 templates can be created.
+                 *This API is used to create a user-defined watermark template with an upper limit of 1000.
                  * @param req CreateWatermarkTemplateRequest
                  * @return CreateWatermarkTemplateOutcome
                  */
@@ -1237,7 +1821,7 @@ This API is used to create a player configuration. Up to 100 configurations can 
                 CreateWatermarkTemplateOutcomeCallable CreateWatermarkTemplateCallable(const Model::CreateWatermarkTemplateRequest& request);
 
                 /**
-                 *This API is used to create keyword samples in batches for using OCR and ASR technologies to perform video processing operations such as content recognition and inappropriate information recognition.
+                 *This API is used to create keyword samples in batches. Samples are used for video processing such as inappropriate content recognition and content recognition through OCR and ASR technology.
                  * @param req CreateWordSamplesRequest
                  * @return CreateWordSamplesOutcome
                  */
@@ -1246,9 +1830,9 @@ This API is used to create a player configuration. Up to 100 configurations can 
                 CreateWordSamplesOutcomeCallable CreateWordSamplesCallable(const Model::CreateWordSamplesRequest& request);
 
                 /**
-                 *This API is used to delete a custom video content analysis template.
+                 *This API is used to delete a user-defined audio and video content analysis template.
 
-Note: templates with an ID below 10000 are preset and cannot be deleted.
+Note: Templates with IDs below 10000 are preset templates and cannot be deleted.
                  * @param req DeleteAIAnalysisTemplateRequest
                  * @return DeleteAIAnalysisTemplateOutcome
                  */
@@ -1257,7 +1841,7 @@ Note: templates with an ID below 10000 are preset and cannot be deleted.
                 DeleteAIAnalysisTemplateOutcomeCallable DeleteAIAnalysisTemplateCallable(const Model::DeleteAIAnalysisTemplateRequest& request);
 
                 /**
-                 *This API is used to delete a custom video content recognition template.
+                 *This API is used to delete a user-defined audio and video content recognition template.
                  * @param req DeleteAIRecognitionTemplateRequest
                  * @return DeleteAIRecognitionTemplateOutcome
                  */
@@ -1266,13 +1850,42 @@ Note: templates with an ID below 10000 are preset and cannot be deleted.
                 DeleteAIRecognitionTemplateOutcomeCallable DeleteAIRecognitionTemplateCallable(const Model::DeleteAIRecognitionTemplateRequest& request);
 
                 /**
-                 *This API is used to delete an adaptive bitrate streaming template.
+                 *Deletes an adaptive bitrate streaming template
                  * @param req DeleteAdaptiveDynamicStreamingTemplateRequest
                  * @return DeleteAdaptiveDynamicStreamingTemplateOutcome
                  */
                 DeleteAdaptiveDynamicStreamingTemplateOutcome DeleteAdaptiveDynamicStreamingTemplate(const Model::DeleteAdaptiveDynamicStreamingTemplateRequest &request);
                 void DeleteAdaptiveDynamicStreamingTemplateAsync(const Model::DeleteAdaptiveDynamicStreamingTemplateRequest& request, const DeleteAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable DeleteAdaptiveDynamicStreamingTemplateCallable(const Model::DeleteAdaptiveDynamicStreamingTemplateRequest& request);
+
+                /**
+                 *This API is used to delete advanced custom AIGC subjects.
+                 * @param req DeleteAigcAdvancedCustomElementRequest
+                 * @return DeleteAigcAdvancedCustomElementOutcome
+                 */
+                DeleteAigcAdvancedCustomElementOutcome DeleteAigcAdvancedCustomElement(const Model::DeleteAigcAdvancedCustomElementRequest &request);
+                void DeleteAigcAdvancedCustomElementAsync(const Model::DeleteAigcAdvancedCustomElementRequest& request, const DeleteAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcAdvancedCustomElementOutcomeCallable DeleteAigcAdvancedCustomElementCallable(const Model::DeleteAigcAdvancedCustomElementRequest& request);
+
+                /**
+                 *Deletes an AIGC API Token. The AIGC quota associated with the Token will also be deleted.
+                 * @param req DeleteAigcApiTokenRequest
+                 * @return DeleteAigcApiTokenOutcome
+                 */
+                DeleteAigcApiTokenOutcome DeleteAigcApiToken(const Model::DeleteAigcApiTokenRequest &request);
+                void DeleteAigcApiTokenAsync(const Model::DeleteAigcApiTokenRequest& request, const DeleteAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcApiTokenOutcomeCallable DeleteAigcApiTokenCallable(const Model::DeleteAigcApiTokenRequest& request);
+
+                /**
+                 *This API is used to delete AIGC quota configurations. Once deleted, AIGC task initiation will no longer be limited.
+
+If the quota is re-enabled after deletion, the amount will be cleared and recalculated.
+                 * @param req DeleteAigcQuotaRequest
+                 * @return DeleteAigcQuotaOutcome
+                 */
+                DeleteAigcQuotaOutcome DeleteAigcQuota(const Model::DeleteAigcQuotaRequest &request);
+                void DeleteAigcQuotaAsync(const Model::DeleteAigcQuotaRequest& request, const DeleteAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcQuotaOutcomeCallable DeleteAigcQuotaCallable(const Model::DeleteAigcQuotaRequest& request);
 
                 /**
                  *This API is used to delete a custom animated image generating template.
@@ -1284,7 +1897,16 @@ Note: templates with an ID below 10000 are preset and cannot be deleted.
                 DeleteAnimatedGraphicsTemplateOutcomeCallable DeleteAnimatedGraphicsTemplateCallable(const Model::DeleteAnimatedGraphicsTemplateRequest& request);
 
                 /**
-                 *Delete CDN Domain
+                 *This API is used to delete a user-defined digital watermark template.
+                 * @param req DeleteBlindWatermarkTemplateRequest
+                 * @return DeleteBlindWatermarkTemplateOutcome
+                 */
+                DeleteBlindWatermarkTemplateOutcome DeleteBlindWatermarkTemplate(const Model::DeleteBlindWatermarkTemplateRequest &request);
+                void DeleteBlindWatermarkTemplateAsync(const Model::DeleteBlindWatermarkTemplateRequest& request, const DeleteBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBlindWatermarkTemplateOutcomeCallable DeleteBlindWatermarkTemplateCallable(const Model::DeleteBlindWatermarkTemplateRequest& request);
+
+                /**
+                 *Delete a CDN domain
                  * @param req DeleteCDNDomainRequest
                  * @return DeleteCDNDomainOutcome
                  */
@@ -1293,8 +1915,17 @@ Note: templates with an ID below 10000 are preset and cannot be deleted.
                 DeleteCDNDomainOutcomeCallable DeleteCDNDomainCallable(const Model::DeleteCDNDomainRequest& request);
 
                 /**
-                 ** A category can be deleted only if it has no subcategories and associated media files;
-* Otherwise, [delete the media files](https://intl.cloud.tencent.com/document/product/266/31764?from_cn_redirect=1) and subcategories first before deleting the category.
+                 *Delete the log topic enabled for VOD.
+                 * @param req DeleteCLSTopicRequest
+                 * @return DeleteCLSTopicOutcome
+                 */
+                DeleteCLSTopicOutcome DeleteCLSTopic(const Model::DeleteCLSTopicRequest &request);
+                void DeleteCLSTopicAsync(const Model::DeleteCLSTopicRequest& request, const DeleteCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCLSTopicOutcomeCallable DeleteCLSTopicCallable(const Model::DeleteCLSTopicRequest& request);
+
+                /**
+                 ** A category can be deleted only when it has no subcategories and no media association.
+* Otherwise, execute [delete media](https://www.tencentcloud.com/document/product/266/31764?from_cn_redirect=1) and subcategories first, then delete the category;
                  * @param req DeleteClassRequest
                  * @return DeleteClassOutcome
                  */
@@ -1303,8 +1934,8 @@ Note: templates with an ID below 10000 are preset and cannot be deleted.
                 DeleteClassOutcomeCallable DeleteClassCallable(const Model::DeleteClassRequest& request);
 
                 /**
-                 *We have <font color=red>stopped updating</font> this API. Our new moderation templates can moderate audio/video as well as images. For details, see [DeleteReviewTemplate](https://intl.cloud.tencent.com/document/api/266/84390?from_cn_redirect=1).
-This API is used to delete a custom audio/video moderation template.
+                 *This API is <font color=red>no longer maintained</font>. The new version of the moderation template supports video moderation and image moderation. For details, please see [Delete Moderation Template](https://www.tencentcloud.com/document/api/266/84390?from_cn_redirect=1).
+Delete a user-customized audio/video moderation template.
                  * @param req DeleteContentReviewTemplateRequest
                  * @return DeleteContentReviewTemplateOutcome
                  */
@@ -1313,7 +1944,8 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteContentReviewTemplateOutcomeCallable DeleteContentReviewTemplateCallable(const Model::DeleteContentReviewTemplateRequest& request);
 
                 /**
-                 *Delete Enhance Media template
+                 *This API is <font color=red>no longer maintained</font>. The new version of [Audio and Video Quality Rebirth](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) interface uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+This API is used to delete an audio and video quality rebirth template.
                  * @param req DeleteEnhanceMediaTemplateRequest
                  * @return DeleteEnhanceMediaTemplateOutcome
                  */
@@ -1322,7 +1954,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteEnhanceMediaTemplateOutcomeCallable DeleteEnhanceMediaTemplateCallable(const Model::DeleteEnhanceMediaTemplateRequest& request);
 
                 /**
-                 *Delete HeadTail Template
+                 *This API is used to delete a title and trailer template.
                  * @param req DeleteHeadTailTemplateRequest
                  * @return DeleteHeadTailTemplateOutcome
                  */
@@ -1331,7 +1963,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteHeadTailTemplateOutcomeCallable DeleteHeadTailTemplateCallable(const Model::DeleteHeadTailTemplateRequest& request);
 
                 /**
-                 *This API is used to delete an image processing template.
+                 *This API is used to delete a user-customized image processing template.
                  * @param req DeleteImageProcessingTemplateRequest
                  * @return DeleteImageProcessingTemplateOutcome
                  */
@@ -1340,7 +1972,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteImageProcessingTemplateOutcomeCallable DeleteImageProcessingTemplateCallable(const Model::DeleteImageProcessingTemplateRequest& request);
 
                 /**
-                 *This API is used to delete an image sprite generating template.
+                 *This API is used to delete an image sprite template.
                  * @param req DeleteImageSpriteTemplateRequest
                  * @return DeleteImageSpriteTemplateOutcome
                  */
@@ -1349,7 +1981,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteImageSpriteTemplateOutcomeCallable DeleteImageSpriteTemplateCallable(const Model::DeleteImageSpriteTemplateRequest& request);
 
                 /**
-                 *Delete Just In Time Transcode Template.
+                 *This API is used to delete a just in time transcoding template.
                  * @param req DeleteJustInTimeTranscodeTemplateRequest
                  * @return DeleteJustInTimeTranscodeTemplateOutcome
                  */
@@ -1358,9 +1990,39 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteJustInTimeTranscodeTemplateOutcomeCallable DeleteJustInTimeTranscodeTemplateCallable(const Model::DeleteJustInTimeTranscodeTemplateRequest& request);
 
                 /**
-                 ** This API is used to delete a media file and its processed files, such as the transcoded video files, image sprites, screenshots, and videos for publishing on WeChat.
-* You can delete the original files, transcoded video files, and videos for publishing on WeChat, etc. of videos with specified IDs.
-* Note: after the original file of a video is deleted, you cannot transcode the video, publish it on WeChat, or perform other operations on it.
+                 *Delete a knowledge base.
+After the API is called, the knowledge base will be in the "Deleting" status, and the deletion operation will be performed in the backend.
+                 * @param req DeleteKnowledgeBaseRequest
+                 * @return DeleteKnowledgeBaseOutcome
+                 */
+                DeleteKnowledgeBaseOutcome DeleteKnowledgeBase(const Model::DeleteKnowledgeBaseRequest &request);
+                void DeleteKnowledgeBaseAsync(const Model::DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteKnowledgeBaseOutcomeCallable DeleteKnowledgeBaseCallable(const Model::DeleteKnowledgeBaseRequest& request);
+
+                /**
+                 *Delete a customized large model parsing template.
+
+Note: Templates with IDs below 10000 are system-preset templates and cannot be deleted.
+                 * @param req DeleteLLMComprehendTemplateRequest
+                 * @return DeleteLLMComprehendTemplateOutcome
+                 */
+                DeleteLLMComprehendTemplateOutcome DeleteLLMComprehendTemplate(const Model::DeleteLLMComprehendTemplateRequest &request);
+                void DeleteLLMComprehendTemplateAsync(const Model::DeleteLLMComprehendTemplateRequest& request, const DeleteLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMComprehendTemplateOutcomeCallable DeleteLLMComprehendTemplateCallable(const Model::DeleteLLMComprehendTemplateRequest& request);
+
+                /**
+                 *This API is used to delete a user-defined MPS task template.
+                 * @param req DeleteMPSTemplateRequest
+                 * @return DeleteMPSTemplateOutcome
+                 */
+                DeleteMPSTemplateOutcome DeleteMPSTemplate(const Model::DeleteMPSTemplateRequest &request);
+                void DeleteMPSTemplateAsync(const Model::DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMPSTemplateOutcomeCallable DeleteMPSTemplateCallable(const Model::DeleteMPSTemplateRequest& request);
+
+                /**
+                 ** Delete media and its corresponding video processing files (raw files, such as transcoded videos, sprite sheets, screenshots, WeChat video releases, etc.);
+* You can individually delete the source file, transcoded video, or WeChat video release under a specified video file ID.
+* Note: After the original file is deleted, you cannot initiate any video processing operations such as transcoding or WeChat publishing.
                  * @param req DeleteMediaRequest
                  * @return DeleteMediaOutcome
                  */
@@ -1369,7 +2031,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteMediaOutcomeCallable DeleteMediaCallable(const Model::DeleteMediaRequest& request);
 
                 /**
-                 *This API is used to delete samples according to sample IDs.
+                 *This API is used to delete material samples based on figure IDs.
                  * @param req DeletePersonSampleRequest
                  * @return DeletePersonSampleOutcome
                  */
@@ -1378,7 +2040,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeletePersonSampleOutcomeCallable DeletePersonSampleCallable(const Model::DeletePersonSampleRequest& request);
 
                 /**
-                 *Delete user-created task flow templates.
+                 *This API is used to delete a user-defined task flow template.
                  * @param req DeleteProcedureTemplateRequest
                  * @return DeleteProcedureTemplateOutcome
                  */
@@ -1387,7 +2049,18 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteProcedureTemplateOutcomeCallable DeleteProcedureTemplateCallable(const Model::DeleteProcedureTemplateRequest& request);
 
                 /**
-                 *Deletes media quality inspection template.
+                 *This API is used to delete a user-customized image asynchronous processing template.
+
+Note: Templates with IDs below 10000 are system-preset templates and cannot be deleted.
+                 * @param req DeleteProcessImageAsyncTemplateRequest
+                 * @return DeleteProcessImageAsyncTemplateOutcome
+                 */
+                DeleteProcessImageAsyncTemplateOutcome DeleteProcessImageAsyncTemplate(const Model::DeleteProcessImageAsyncTemplateRequest &request);
+                void DeleteProcessImageAsyncTemplateAsync(const Model::DeleteProcessImageAsyncTemplateRequest& request, const DeleteProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProcessImageAsyncTemplateOutcomeCallable DeleteProcessImageAsyncTemplateCallable(const Model::DeleteProcessImageAsyncTemplateRequest& request);
+
+                /**
+                 *This API is used to delete an audio-visual quality inspection template.
                  * @param req DeleteQualityInspectTemplateRequest
                  * @return DeleteQualityInspectTemplateOutcome
                  */
@@ -1396,7 +2069,8 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteQualityInspectTemplateOutcomeCallable DeleteQualityInspectTemplateCallable(const Model::DeleteQualityInspectTemplateRequest& request);
 
                 /**
-                 *Delete rebuild media template.
+                 *This API is <font color=red>no longer maintained</font>. The new version of [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+Deletes a video rebirth template.
                  * @param req DeleteRebuildMediaTemplateRequest
                  * @return DeleteRebuildMediaTemplateOutcome
                  */
@@ -1405,8 +2079,8 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteRebuildMediaTemplateOutcomeCallable DeleteRebuildMediaTemplateCallable(const Model::DeleteRebuildMediaTemplateRequest& request);
 
                 /**
-                 *This API is used to delete a custom moderation template.
-> The templates can only be used by the APIs [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1).
+                 *Delete a user-customized moderation template.
+>Template is applicable only to the ReviewAudioVideo (https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) and ReviewImage (https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1) APIs.
                  * @param req DeleteReviewTemplateRequest
                  * @return DeleteReviewTemplateOutcome
                  */
@@ -1415,7 +2089,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteReviewTemplateOutcomeCallable DeleteReviewTemplateCallable(const Model::DeleteReviewTemplateRequest& request);
 
                 /**
-                 *This API is used to delete a playlist.
+                 *This API is used to delete a carousel playlist.
                  * @param req DeleteRoundPlayRequest
                  * @return DeleteRoundPlayOutcome
                  */
@@ -1424,7 +2098,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteRoundPlayOutcomeCallable DeleteRoundPlayCallable(const Model::DeleteRoundPlayRequest& request);
 
                 /**
-                 *This API is used to delete a custom sampled screencapturing template.
+                 *This API is used to delete a user-customized sampled screenshot template.
                  * @param req DeleteSampleSnapshotTemplateRequest
                  * @return DeleteSampleSnapshotTemplateOutcome
                  */
@@ -1433,7 +2107,7 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteSampleSnapshotTemplateOutcomeCallable DeleteSampleSnapshotTemplateCallable(const Model::DeleteSampleSnapshotTemplateRequest& request);
 
                 /**
-                 *This API is used to delete a custom time point screencapturing template.
+                 *This API is used to delete a user-customized specified time point screenshot template.
                  * @param req DeleteSnapshotByTimeOffsetTemplateRequest
                  * @return DeleteSnapshotByTimeOffsetTemplateOutcome
                  */
@@ -1442,9 +2116,9 @@ This API is used to delete a custom audio/video moderation template.
                 DeleteSnapshotByTimeOffsetTemplateOutcomeCallable DeleteSnapshotByTimeOffsetTemplateCallable(const Model::DeleteSnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
-                 *We have <font color='red'>stopped updating</font> this API. Currently, you no longer need a player configuration to use player signatures. For details, see [Player Signature](https://intl.cloud.tencent.com/document/product/266/45554?from_cn_redirect=1).
+                 *This API is <font color='red'>no longer maintained</font>. The new version of player signature no longer uses player configuration templates. For details, please see [Player Signature](https://www.tencentcloud.com/document/product/266/45554?from_cn_redirect=1).
 This API is used to delete a player configuration.  
-*Note: Preset player configurations cannot be deleted.*
+*Note: The system preset player configuration cannot be deleted.*
                  * @param req DeleteSuperPlayerConfigRequest
                  * @return DeleteSuperPlayerConfigOutcome
                  */
@@ -1462,8 +2136,8 @@ This API is used to delete a player configuration.
                 DeleteTranscodeTemplateOutcomeCallable DeleteTranscodeTemplateCallable(const Model::DeleteTranscodeTemplateRequest& request);
 
                 /**
-                 *This API is used to delete an acceleration domain name from VOD.
-1. Before deleting a domain name, disable its acceleration in all regions.
+                 *This API is used to delete VOD acceleration domains.
+1. Before domain deletion, acceleration in all regions must be disabled.
                  * @param req DeleteVodDomainRequest
                  * @return DeleteVodDomainOutcome
                  */
@@ -1472,7 +2146,18 @@ This API is used to delete a player configuration.
                 DeleteVodDomainOutcomeCallable DeleteVodDomainCallable(const Model::DeleteVodDomainRequest& request);
 
                 /**
-                 *This API is used to delete a custom watermarking template.
+                 *Delete a specified voice by voice ID. This operation cannot be undone, and the voice cannot be used for subsequent APIs. Only voices for this account can be deleted. System preset voices cannot be deleted.
+
+Note: Newly designed or cloned voice types cannot be deleted before activation (not found means non-operational). They are activated only after the new voice type is used for TTS once.
+                 * @param req DeleteVoiceRequest
+                 * @return DeleteVoiceOutcome
+                 */
+                DeleteVoiceOutcome DeleteVoice(const Model::DeleteVoiceRequest &request);
+                void DeleteVoiceAsync(const Model::DeleteVoiceRequest& request, const DeleteVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVoiceOutcomeCallable DeleteVoiceCallable(const Model::DeleteVoiceRequest& request);
+
+                /**
+                 *This API is used to delete a user-customized watermark template.
                  * @param req DeleteWatermarkTemplateRequest
                  * @return DeleteWatermarkTemplateOutcome
                  */
@@ -1490,7 +2175,7 @@ This API is used to delete a player configuration.
                 DeleteWordSamplesOutcomeCallable DeleteWordSamplesCallable(const Model::DeleteWordSamplesRequest& request);
 
                 /**
-                 *This API is used to get the list of video content analysis templates based on unique template ID. The returned result includes all eligible custom and [preset video content analysis templates](https://intl.cloud.tencent.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.88.86.E6.9E.90.E6.A8.A1.E6.9D.BF).
+                 *This API is used to get the detail list of audio and video content analysis templates based on their unique identifiers. The returned results include all eligible user-defined audio and video content analysis templates and [system preset audio/video content analysis templates](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.88.86.E6.9E.90.E6.A8.A1.E6.9D.BF).
                  * @param req DescribeAIAnalysisTemplatesRequest
                  * @return DescribeAIAnalysisTemplatesOutcome
                  */
@@ -1499,7 +2184,7 @@ This API is used to delete a player configuration.
                 DescribeAIAnalysisTemplatesOutcomeCallable DescribeAIAnalysisTemplatesCallable(const Model::DescribeAIAnalysisTemplatesRequest& request);
 
                 /**
-                 *This API is used to get the list of video content recognition templates based on unique template ID. The return result includes all eligible custom and [preset video content recognition templates](https://intl.cloud.tencent.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF).
+                 *This API is used to get the list of details of audio/video content recognition templates based on their unique IDs. The returned results include all eligible user-defined audio/video content recognition templates and system preset audio/video content recognition templates.
                  * @param req DescribeAIRecognitionTemplatesRequest
                  * @return DescribeAIRecognitionTemplatesOutcome
                  */
@@ -1508,7 +2193,7 @@ This API is used to delete a player configuration.
                 DescribeAIRecognitionTemplatesOutcomeCallable DescribeAIRecognitionTemplatesCallable(const Model::DescribeAIRecognitionTemplatesRequest& request);
 
                 /**
-                 *This API is used to query the list of transcoding to adaptive bitrate streaming templates and supports paged queries by filters.
+                 *This API is used to query adaptive bitrate streaming templates, and the pagination query is supported based on conditions.
                  * @param req DescribeAdaptiveDynamicStreamingTemplatesRequest
                  * @return DescribeAdaptiveDynamicStreamingTemplatesOutcome
                  */
@@ -1517,7 +2202,73 @@ This API is used to delete a player configuration.
                 DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
 
                 /**
-                 ** This API is used to get the information of all categories.
+                 *This API is used to retrieve advanced custom AIGC subjects.
+                 * @param req DescribeAigcAdvancedCustomElementsRequest
+                 * @return DescribeAigcAdvancedCustomElementsOutcome
+                 */
+                DescribeAigcAdvancedCustomElementsOutcome DescribeAigcAdvancedCustomElements(const Model::DescribeAigcAdvancedCustomElementsRequest &request);
+                void DescribeAigcAdvancedCustomElementsAsync(const Model::DescribeAigcAdvancedCustomElementsRequest& request, const DescribeAigcAdvancedCustomElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcAdvancedCustomElementsOutcomeCallable DescribeAigcAdvancedCustomElementsCallable(const Model::DescribeAigcAdvancedCustomElementsRequest& request);
+
+                /**
+                 *This API is used to query the list of AIGC API Tokens. Data sync has a delay after creation or deletion. The latest data can be queried after about 30 seconds.
+                 * @param req DescribeAigcApiTokensRequest
+                 * @return DescribeAigcApiTokensOutcome
+                 */
+                DescribeAigcApiTokensOutcome DescribeAigcApiTokens(const Model::DescribeAigcApiTokensRequest &request);
+                void DescribeAigcApiTokensAsync(const Model::DescribeAigcApiTokensRequest& request, const DescribeAigcApiTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcApiTokensOutcomeCallable DescribeAigcApiTokensCallable(const Model::DescribeAigcApiTokensRequest& request);
+
+                /**
+                 *This API is used to retrieve AIGC face information. Note that calling this API incurs face recognition fees. Refer to the billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#96b3b59a-f9e1-49e9-966a-bedb70a4bf12).
+                 * @param req DescribeAigcFaceInfoRequest
+                 * @return DescribeAigcFaceInfoOutcome
+                 */
+                DescribeAigcFaceInfoOutcome DescribeAigcFaceInfo(const Model::DescribeAigcFaceInfoRequest &request);
+                void DescribeAigcFaceInfoAsync(const Model::DescribeAigcFaceInfoRequest& request, const DescribeAigcFaceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcFaceInfoOutcomeCallable DescribeAigcFaceInfoCallable(const Model::DescribeAigcFaceInfoRequest& request);
+
+                /**
+                 *This API is used to asynchronously fetch AIGC face information. Note that calling this API incurs face recognition fees. Refer to the billing documentation (https://www.tencentcloud.com/document/product/266/95125?from_cn_redirect=1#96b3b59a-f9e1-49e9-966a-bedb70a4bf12).
+                 * @param req DescribeAigcFaceInfoAsyncRequest
+                 * @return DescribeAigcFaceInfoAsyncOutcome
+                 */
+                DescribeAigcFaceInfoAsyncOutcome DescribeAigcFaceInfoAsync(const Model::DescribeAigcFaceInfoAsyncRequest &request);
+                void DescribeAigcFaceInfoAsyncAsync(const Model::DescribeAigcFaceInfoAsyncRequest& request, const DescribeAigcFaceInfoAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcFaceInfoAsyncOutcomeCallable DescribeAigcFaceInfoAsyncCallable(const Model::DescribeAigcFaceInfoAsyncRequest& request);
+
+                /**
+                 *This API is used to query AIGC quota configurations.
+                 * @param req DescribeAigcQuotasRequest
+                 * @return DescribeAigcQuotasOutcome
+                 */
+                DescribeAigcQuotasOutcome DescribeAigcQuotas(const Model::DescribeAigcQuotasRequest &request);
+                void DescribeAigcQuotasAsync(const Model::DescribeAigcQuotasRequest& request, const DescribeAigcQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcQuotasOutcomeCallable DescribeAigcQuotasCallable(const Model::DescribeAigcQuotasRequest& request);
+
+                /**
+                 *This API is used to return AIGC statistical information within a specified time range.
+1. AIGC statistical data from the last 365 days can be queried.
+   2. The query time span should not exceed 90 days.
+3. If the query time span exceeds 1 day, the data returned is at day granularity. Otherwise, the data returned is at 5-minute granularity.
+                 * @param req DescribeAigcUsageDataRequest
+                 * @return DescribeAigcUsageDataOutcome
+                 */
+                DescribeAigcUsageDataOutcome DescribeAigcUsageData(const Model::DescribeAigcUsageDataRequest &request);
+                void DescribeAigcUsageDataAsync(const Model::DescribeAigcUsageDataRequest& request, const DescribeAigcUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcUsageDataOutcomeCallable DescribeAigcUsageDataCallable(const Model::DescribeAigcUsageDataRequest& request);
+
+                /**
+                 *This API is used to query AIGC allowlist settings.
+                 * @param req DescribeAigcWhitelistRequest
+                 * @return DescribeAigcWhitelistOutcome
+                 */
+                DescribeAigcWhitelistOutcome DescribeAigcWhitelist(const Model::DescribeAigcWhitelistRequest &request);
+                void DescribeAigcWhitelistAsync(const Model::DescribeAigcWhitelistRequest& request, const DescribeAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcWhitelistOutcomeCallable DescribeAigcWhitelistCallable(const Model::DescribeAigcWhitelistRequest& request);
+
+                /**
+                 ** Obtain all classification information of the user.
                  * @param req DescribeAllClassRequest
                  * @return DescribeAllClassOutcome
                  */
@@ -1526,7 +2277,7 @@ This API is used to delete a player configuration.
                 DescribeAllClassOutcomeCallable DescribeAllClassCallable(const Model::DescribeAllClassRequest& request);
 
                 /**
-                 *This API is used to query the list of animated image generating templates and supports paged queries by filters.
+                 *This API is used to query the list of rotating image templates based on conditions with paging.
                  * @param req DescribeAnimatedGraphicsTemplatesRequest
                  * @return DescribeAnimatedGraphicsTemplatesOutcome
                  */
@@ -1535,7 +2286,16 @@ This API is used to delete a player configuration.
                 DescribeAnimatedGraphicsTemplatesOutcomeCallable DescribeAnimatedGraphicsTemplatesCallable(const Model::DescribeAnimatedGraphicsTemplatesRequest& request);
 
                 /**
-                 *Describe CDN Domains
+                 *This API is used to query user-customized digit watermark templates.
+                 * @param req DescribeBlindWatermarkTemplatesRequest
+                 * @return DescribeBlindWatermarkTemplatesOutcome
+                 */
+                DescribeBlindWatermarkTemplatesOutcome DescribeBlindWatermarkTemplates(const Model::DescribeBlindWatermarkTemplatesRequest &request);
+                void DescribeBlindWatermarkTemplatesAsync(const Model::DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlindWatermarkTemplatesOutcomeCallable DescribeBlindWatermarkTemplatesCallable(const Model::DescribeBlindWatermarkTemplatesRequest& request);
+
+                /**
+                 *Queries an on-demand domain name.
                  * @param req DescribeCDNDomainsRequest
                  * @return DescribeCDNDomainsOutcome
                  */
@@ -1544,10 +2304,11 @@ This API is used to delete a player configuration.
                 DescribeCDNDomainsOutcomeCallable DescribeCDNDomainsCallable(const Model::DescribeCDNDomainsRequest& request);
 
                 /**
-                 *This API is used to query CDN bandwidth, traffic, and other data of VOD domain names.
-* The query period is up to 90 days.
-* You can query data of different service regions.
-* You can query data of Chinese mainland by region and ISP.
+                 *This API is used to query CDN bandwidth, traffic, and other stats for a VOD domain.
+* The time span between the query start time and end time should not exceed 90 days.
+* You can query data in different service regions.
+* Statistical data support is available for querying specified regions and carriers within the Chinese mainland.
+* Playback statistics only target VOD domains, excluding EdgeOne domain distribution.
                  * @param req DescribeCDNStatDetailsRequest
                  * @return DescribeCDNStatDetailsOutcome
                  */
@@ -1556,11 +2317,12 @@ This API is used to delete a player configuration.
                 DescribeCDNStatDetailsOutcomeCallable DescribeCDNStatDetailsCallable(const Model::DescribeCDNStatDetailsRequest& request);
 
                 /**
-                 *This API is used to query the CDN statistics of VOD such as traffic and bandwidth.
-   1. Only CDN usage data for the last 365 days can be queried.
-   2. The query time range cannot be more than 90 days.
-   3. The time granularity of usage data can be specified, including 5-minute, 1-hour, and 1-day.
-   4. Traffic refers to the total traffic within the query time granularity, while bandwidth the peak bandwidth.
+                 *This API is used to query VOD CDN traffic, bandwidth, and other stats.
+1. CDN usage data is retained on the system side for 13 months. You can only query usage data from the most recent 365 days through the API. To retrieve historical usage data beyond 365 days, contact us.
+   2. The query time span should not exceed 90 days.
+3. You can specify the time granularity of usage data, supporting 5-minute, 1-hour, and 1-day granularities.
+4. Traffic is the total traffic within the query time granularity, and bandwidth is the peak bandwidth within the query time granularity.
+5. Playback statistics only target VOD domains, excluding EdgeOne domain distribution.
                  * @param req DescribeCDNUsageDataRequest
                  * @return DescribeCDNUsageDataOutcome
                  */
@@ -1569,10 +2331,37 @@ This API is used to delete a player configuration.
                 DescribeCDNUsageDataOutcomeCallable DescribeCDNUsageDataCallable(const Model::DescribeCDNUsageDataRequest& request);
 
                 /**
-                 *This API is used to query the download links of CDN access logs of a VOD domain name.
-    1. Only download links of CDN logs for the last 30 days can be queried.
-    2. By default, CDN generates a log file every hour. If there is no CDN access for a certain hour, no log file will be generated for the hour.    
-    3. A CDN log download link is valid for 24 hours.
+                 *Queries CLS log sets created by VOD.
+                 * @param req DescribeCLSLogsetsRequest
+                 * @return DescribeCLSLogsetsOutcome
+                 */
+                DescribeCLSLogsetsOutcome DescribeCLSLogsets(const Model::DescribeCLSLogsetsRequest &request);
+                void DescribeCLSLogsetsAsync(const Model::DescribeCLSLogsetsRequest& request, const DescribeCLSLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSLogsetsOutcomeCallable DescribeCLSLogsetsCallable(const Model::DescribeCLSLogsetsRequest& request);
+
+                /**
+                 *Queries the destination topic for log delivery under an on-demand domain name.
+                 * @param req DescribeCLSPushTargetsRequest
+                 * @return DescribeCLSPushTargetsOutcome
+                 */
+                DescribeCLSPushTargetsOutcome DescribeCLSPushTargets(const Model::DescribeCLSPushTargetsRequest &request);
+                void DescribeCLSPushTargetsAsync(const Model::DescribeCLSPushTargetsRequest& request, const DescribeCLSPushTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSPushTargetsOutcomeCallable DescribeCLSPushTargetsCallable(const Model::DescribeCLSPushTargetsRequest& request);
+
+                /**
+                 *Queries the list of CLS log topics created by VOD.
+                 * @param req DescribeCLSTopicsRequest
+                 * @return DescribeCLSTopicsOutcome
+                 */
+                DescribeCLSTopicsOutcome DescribeCLSTopics(const Model::DescribeCLSTopicsRequest &request);
+                void DescribeCLSTopicsAsync(const Model::DescribeCLSTopicsRequest& request, const DescribeCLSTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSTopicsOutcomeCallable DescribeCLSTopicsCallable(const Model::DescribeCLSTopicsRequest& request);
+
+                /**
+                 *This API is used to query the download URL of CDN access logs for VOD domains, excluding EdgeOne origin-pull to VOD domains.
+1. This API is used to query CDN log download links for the most recent 30 days.
+2. By default, CDN generates a log file per hour. If there is no CDN access in an hour, no log file is generated.    
+3. The CDN log download link has a validity of 24 hours.
                  * @param req DescribeCdnLogsRequest
                  * @return DescribeCdnLogsOutcome
                  */
@@ -1581,10 +2370,10 @@ This API is used to delete a player configuration.
                 DescribeCdnLogsOutcomeCallable DescribeCdnLogsCallable(const Model::DescribeCdnLogsRequest& request);
 
                 /**
-                 *This interface returns client upload acceleration statistics within the query time range. 
- 1. You can query the client upload acceleration statistics in the last 365 days. 
- 2. The query time span does not exceed 90 days. 
- 3. If the query time span exceeds 1 day, data with day granularity will be returned. Otherwise, data with 5-minute granularity will be returned.
+                 *This API returns client upload acceleration statistics within a specified time range.
+1. Can query client upload acceleration statistics data for the most recent 365 days.
+   2. The query time span should not exceed 90 days.
+3. If the query time span exceeds 1 day, the data is returned at a granularity of 1 day. Otherwise, the data is returned at a granularity of 5 minutes.
                  * @param req DescribeClientUploadAccelerationUsageDataRequest
                  * @return DescribeClientUploadAccelerationUsageDataOutcome
                  */
@@ -1593,8 +2382,8 @@ This API is used to delete a player configuration.
                 DescribeClientUploadAccelerationUsageDataOutcomeCallable DescribeClientUploadAccelerationUsageDataCallable(const Model::DescribeClientUploadAccelerationUsageDataRequest& request);
 
                 /**
-                 *We have <font color=red>stopped updating</font> this API. Our new moderation templates can moderate audio/video as well as images. For details, see [DescribeReviewTemplates](https://intl.cloud.tencent.com/document/api/266/84389?from_cn_redirect=1).
-This API is used to get the information of custom and [preset](https://intl.cloud.tencent.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF) audio/video moderation templates based on template IDs.
+                 *This API is <font color=red>no longer maintained</font>. The new moderation template supports audio/video moderation and image moderation. For details, please see [Query Moderation Template List](https://www.tencentcloud.com/document/api/266/84389?from_cn_redirect=1).
+This API is used to retrieve the list of details of audio/video moderation templates based on their unique identifiers. The returned results include all eligible custom templates and system preset content review templates (https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF).
                  * @param req DescribeContentReviewTemplatesRequest
                  * @return DescribeContentReviewTemplatesOutcome
                  */
@@ -1603,7 +2392,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
 
                 /**
-                 *Query current playlist of the round play.
+                 *Query the carousel current playlist.
                  * @param req DescribeCurrentPlaylistRequest
                  * @return DescribeCurrentPlaylistOutcome
                  */
@@ -1612,14 +2401,43 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeCurrentPlaylistOutcomeCallable DescribeCurrentPlaylistCallable(const Model::DescribeCurrentPlaylistRequest& request);
 
                 /**
-                 *This API is used to query the download links of playback statistics files.
-* You can query the download links of playback statistics files in the past year. The start and end dates for query cannot be more than 90 days apart.
-* Every day, VOD will analyze CDN request logs of the previous day and then generate a playback statistics file.
-* A playback statistics file includes playback times and traffic of media files.
-* Notes on playback times:
-    1. HLS file: VOD counts playback times when M3U8 files are accessed, but not when TS files are accessed.
-    2. Other files (MP4 files for example): VOD does not count playback times when the playback request carries the `range` parameter and the `start` parameter in `range` is not `0`. In other cases, VOD counts playback times.
-* Statistics on playback devices: VOD counts playback times on mobile clients when the playback request carries the `UserAgent` parameter which includes an identifier such as `Android` or `iPhone`. In other cases, VOD counts playback times on PC clients.
+                 *This API is used to query the daily playback statistics within a specified date range.
+* Playback statistics for the past one year can be queried.
+* The time span between the start date and end date can be up to 90 days.
+* Playback statistics only target VOD domains (i.e., distribution from EdgeOne domain names is not included in playback statistics).
+* Due to data delay, you are advised to query the usage data of the previous day after 12:00 noon the next day.
+                 * @param req DescribeDailyMediaPlayStatRequest
+                 * @return DescribeDailyMediaPlayStatOutcome
+                 */
+                DescribeDailyMediaPlayStatOutcome DescribeDailyMediaPlayStat(const Model::DescribeDailyMediaPlayStatRequest &request);
+                void DescribeDailyMediaPlayStatAsync(const Model::DescribeDailyMediaPlayStatRequest& request, const DescribeDailyMediaPlayStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDailyMediaPlayStatOutcomeCallable DescribeDailyMediaPlayStatCallable(const Model::DescribeDailyMediaPlayStatRequest& request);
+
+                /**
+                 *This API is used to query daily playback statistics of the Top 100 media files.
+* Playback statistics from the past one year can be queried.
+* You can query by playback times or traffic volume.
+* Statistical description of the number of plays:
+1. HLS file: The number of plays is counted when an M3U8 file is accessed, but not when a TS file is accessed.
+2. Other files (for example, MP4 files): If a playback request includes the range parameter and the start parameter of range is not equal to 0, the number of plays is not counted. In other cases, the number of plays is counted.
+* Playback statistics only target VOD domains (i.e., distribution from EdgeOne domain names is not included in playback statistics).
+                 * @param req DescribeDailyMostPlayedStatRequest
+                 * @return DescribeDailyMostPlayedStatOutcome
+                 */
+                DescribeDailyMostPlayedStatOutcome DescribeDailyMostPlayedStat(const Model::DescribeDailyMostPlayedStatRequest &request);
+                void DescribeDailyMostPlayedStatAsync(const Model::DescribeDailyMostPlayedStatRequest& request, const DescribeDailyMostPlayedStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDailyMostPlayedStatOutcomeCallable DescribeDailyMostPlayedStatCallable(const Model::DescribeDailyMostPlayedStatRequest& request);
+
+                /**
+                 *This API is used to query the download address of playback statistics files.
+* Can query the playback statistics file download link for the past one year. The time span between the start date and end date of the query is no more than 90 days.
+VOD analyzes and processes the CDN request logs of the previous day to generate playback statistics files.
+The playback statistics file contains statistical information such as the number of plays and total traffic of media files.
+* Statistical description of the number of plays:
+1. HLS file: The number of plays is counted when an M3U8 file is accessed, but not when a TS file is accessed.
+2. Other files (for example, MP4 files): If a playback request includes the range parameter and the start parameter of range is not equal to 0, the number of plays is not counted. In other cases, the number of plays is counted.
+* Statistics of playback devices: If a playback request includes the UserAgent parameter and the UserAgent contains identifiers such as Android or iPhone, it is counted as a mobile playback. Otherwise, it is counted as a PC playback.
+* Playback statistics only target VOD domains (i.e., distribution from EdgeOne domain names is not included in playback statistics).
                  * @param req DescribeDailyPlayStatFileListRequest
                  * @return DescribeDailyPlayStatFileListOutcome
                  */
@@ -1628,7 +2446,18 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeDailyPlayStatFileListOutcomeCallable DescribeDailyPlayStatFileListCallable(const Model::DescribeDailyPlayStatFileListRequest& request);
 
                 /**
-                 *This API is used to query DRM key information.
+                 *This API is used to query the default distribution configuration.
+* Distribution domain name and protocol, i.e., the domain name and protocol in the media file distribution URL. Media files are distributed based on the default distribution configuration.
+Playback key, used to calculate player signature.
+                 * @param req DescribeDefaultDistributionConfigRequest
+                 * @return DescribeDefaultDistributionConfigOutcome
+                 */
+                DescribeDefaultDistributionConfigOutcome DescribeDefaultDistributionConfig(const Model::DescribeDefaultDistributionConfigRequest &request);
+                void DescribeDefaultDistributionConfigAsync(const Model::DescribeDefaultDistributionConfigRequest& request, const DescribeDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDefaultDistributionConfigOutcomeCallable DescribeDefaultDistributionConfigCallable(const Model::DescribeDefaultDistributionConfigRequest& request);
+
+                /**
+                 *This API is used to query DRM key provider information.
                  * @param req DescribeDrmKeyProviderInfoRequest
                  * @return DescribeDrmKeyProviderInfoOutcome
                  */
@@ -1637,7 +2466,8 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeDrmKeyProviderInfoOutcomeCallable DescribeDrmKeyProviderInfoCallable(const Model::DescribeDrmKeyProviderInfoRequest& request);
 
                 /**
-                 *Describe Enhance Media Templates.
+                 *This API is <font color=red>no longer maintained</font>. The new version of [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+This API is used to obtain the audio and video quality regeneration template list.
                  * @param req DescribeEnhanceMediaTemplatesRequest
                  * @return DescribeEnhanceMediaTemplatesOutcome
                  */
@@ -1646,7 +2476,11 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeEnhanceMediaTemplatesOutcomeCallable DescribeEnhanceMediaTemplatesCallable(const Model::DescribeEnhanceMediaTemplatesRequest& request);
 
                 /**
-                 *Tencent Cloud VOD provides customers with services such as media upload, media management, and media processing. During or after the execution of these services, Tencent Cloud VOD also offers various corresponding event notifications to facilitate developers' awareness of the service processing status and to perform subsequent business operations. Developers can use this interface to query the current configuration of event notification reception methods, reception addresses, and which events have callback notification reception enabled.
+                 *Tencent Cloud Video on Demand (VOD) provides customers with media upload, media management, media processing, and other services. During or after these services are executed, VOD also provides various event notifications, helping developers detect service processing status and perform next business operations.
+
+Developers can use this API to query the current configuration of the event notification receiving method, recipient address, and which events have callback notification enabled.
+
+Default API request rate limit: 100 requests/second.
                  * @param req DescribeEventConfigRequest
                  * @return DescribeEventConfigOutcome
                  */
@@ -1655,9 +2489,9 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeEventConfigOutcomeCallable DescribeEventConfigCallable(const Model::DescribeEventConfigRequest& request);
 
                 /**
-                 *This API is used to get file attributes asynchronously.
-- Currently, this API can only get the MD5 hash of a file.
-- If the file queried is in HLS or DASH format, the attributes of the index file will be returned.
+                 *Used to get file attributes asynchronously.
+-Currently only support getting the Md5 and Sha1 of the source file.
+-For HLS or DASH input files, only the attributes of index files are retrieved.
                  * @param req DescribeFileAttributesRequest
                  * @return DescribeFileAttributesOutcome
                  */
@@ -1666,7 +2500,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeFileAttributesOutcomeCallable DescribeFileAttributesCallable(const Model::DescribeFileAttributesRequest& request);
 
                 /**
-                 *Describe HeadTail Templates.
+                 *This API is used to search for title and trailer template lists.
                  * @param req DescribeHeadTailTemplatesRequest
                  * @return DescribeHeadTailTemplatesOutcome
                  */
@@ -1675,7 +2509,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeHeadTailTemplatesOutcomeCallable DescribeHeadTailTemplatesCallable(const Model::DescribeHeadTailTemplatesRequest& request);
 
                 /**
-                 *This API is used to query image processing templates. You can specify the filters as well as the offset to start returning records from.
+                 *This API is used to query the list of image processing templates based on conditions with paging.
                  * @param req DescribeImageProcessingTemplatesRequest
                  * @return DescribeImageProcessingTemplatesOutcome
                  */
@@ -1684,10 +2518,10 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeImageProcessingTemplatesOutcomeCallable DescribeImageProcessingTemplatesCallable(const Model::DescribeImageProcessingTemplatesRequest& request);
 
                 /**
-                 *This interface returns the image review usage information used every day within the query time range.
-   1. You can query the image review statistics for the last 365 days.
-   2. The query time span does not exceed 90 days.
-   3. If the query time span exceeds 1 day, data with a granularity of days will be returned. Otherwise, data with a granularity of 5 minutes will be returned.
+                 *This API is used to return the daily image review usage information within the specified query time range.
+1. Image moderation statistics data from the last 365 days can be queried.
+   2. The query time span should not exceed 90 days.
+3. If the query time span exceeds 1 day, data at a day granularity is returned. Otherwise, data at a 5-minute granularity is returned.
                  * @param req DescribeImageReviewUsageDataRequest
                  * @return DescribeImageReviewUsageDataOutcome
                  */
@@ -1696,7 +2530,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeImageReviewUsageDataOutcomeCallable DescribeImageReviewUsageDataCallable(const Model::DescribeImageReviewUsageDataRequest& request);
 
                 /**
-                 *This API is used to query the list of image sprite generating templates and supports paged queries by filters.
+                 *Query image sprite templates based on conditions with paging.
                  * @param req DescribeImageSpriteTemplatesRequest
                  * @return DescribeImageSpriteTemplatesOutcome
                  */
@@ -1705,7 +2539,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeImageSpriteTemplatesOutcomeCallable DescribeImageSpriteTemplatesCallable(const Model::DescribeImageSpriteTemplatesRequest& request);
 
                 /**
-                 *Describe Just In Time Transcode Templates.
+                 *This API is used to search the instant transcoding template list.
                  * @param req DescribeJustInTimeTranscodeTemplatesRequest
                  * @return DescribeJustInTimeTranscodeTemplatesOutcome
                  */
@@ -1714,10 +2548,28 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeJustInTimeTranscodeTemplatesOutcomeCallable DescribeJustInTimeTranscodeTemplatesCallable(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request);
 
                 /**
-                 *This interface returns information about the number of license requests per day within the query time range.
-   1. You can query the license request statistics in the last 365 days.
-   2. The query time span does not exceed 90 days.
-   3. If the query time span exceeds 1 day, data with a granularity of days will be returned. Otherwise, data with a granularity of 5 minutes will be returned.
+                 *Queries the knowledge base list. Returns all knowledge base information under the specified user.
+                 * @param req DescribeKnowledgeBasesRequest
+                 * @return DescribeKnowledgeBasesOutcome
+                 */
+                DescribeKnowledgeBasesOutcome DescribeKnowledgeBases(const Model::DescribeKnowledgeBasesRequest &request);
+                void DescribeKnowledgeBasesAsync(const Model::DescribeKnowledgeBasesRequest& request, const DescribeKnowledgeBasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKnowledgeBasesOutcomeCallable DescribeKnowledgeBasesCallable(const Model::DescribeKnowledgeBasesRequest& request);
+
+                /**
+                 *According to the unique identifier of the large model parsing template, retrieve the large model parsing template detail list. The returned results include all user-customized large model parsing templates that meet the conditions.
+                 * @param req DescribeLLMComprehendTemplatesRequest
+                 * @return DescribeLLMComprehendTemplatesOutcome
+                 */
+                DescribeLLMComprehendTemplatesOutcome DescribeLLMComprehendTemplates(const Model::DescribeLLMComprehendTemplatesRequest &request);
+                void DescribeLLMComprehendTemplatesAsync(const Model::DescribeLLMComprehendTemplatesRequest& request, const DescribeLLMComprehendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMComprehendTemplatesOutcomeCallable DescribeLLMComprehendTemplatesCallable(const Model::DescribeLLMComprehendTemplatesRequest& request);
+
+                /**
+                 *This API is used to return the daily License request count within the specified query time range.
+1. License request count statistics from the last 365 days can be queried.
+   2. The query time span should not exceed 90 days.
+3. If the query time span exceeds 1 day, data is returned at a daily granularity. Otherwise, data is returned at a 5-minute granularity.
                  * @param req DescribeLicenseUsageDataRequest
                  * @return DescribeLicenseUsageDataOutcome
                  */
@@ -1726,18 +2578,28 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeLicenseUsageDataOutcomeCallable DescribeLicenseUsageDataCallable(const Model::DescribeLicenseUsageDataRequest& request);
 
                 /**
-                 *1. This API is used to get the information of multiple media files. Specifically, the information returned is as follows:
-    1. `basicInfo`: Basic information including the file name, category, playback URL, and thumbnail.
-    2. `metaData`: Metadata including the file size, duration, video stream information, and audio stream information.
-    3. `transcodeInfo`: Transcoding information including the URLs, video stream parameters, and audio stream parameters of transcoding outputs.
-    4. `animatedGraphicsInfo`: The information of the animated images (such as GIF images) generated.
-    5. `sampleSnapshotInfo`: The information of the sampled screenshots generated.
-    6. `imageSpriteInfo`: The information of the image sprites generated.
-    7. `snapshotByTimeOffsetInfo`: The information of the time point screenshots generated.
-    8. `keyFrameDescInfo`: The video timestamp information.
-    9. `adaptiveDynamicStreamingInfo`: Adaptive bitrate information including the specifications, encryption type, and formats of the streams.
-    10. `reviewInfo`: Moderation details for audio/video content and thumbnails.
-2. You can specify what information to return.
+                 *This API is used to query user-customized media processing service task templates.
+To query the template list, fill in the MPS related parameters in MPSDescribeTemplateParams in JSON format. For specific task parameter configuration methods, see the MPS task template documentation.
+                 * @param req DescribeMPSTemplatesRequest
+                 * @return DescribeMPSTemplatesOutcome
+                 */
+                DescribeMPSTemplatesOutcome DescribeMPSTemplates(const Model::DescribeMPSTemplatesRequest &request);
+                void DescribeMPSTemplatesAsync(const Model::DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMPSTemplatesOutcomeCallable DescribeMPSTemplatesCallable(const Model::DescribeMPSTemplatesRequest& request);
+
+                /**
+                 *1. This API can obtain multiple types of info of multiple media files, including:
+1. basicInfo: including media name, category, playback address, cover image, etc.
+2. Meta information (metaData): including size, duration, video stream information, audio stream information, etc.
+3. Transcoding result information (transcodeInfo): including media addresses, video stream parameters, and audio stream parameters of various specifications generated for this media.
+4. Animated graphics info (animatedGraphicsInfo): the animated graphics info after converting a video to GIF (for example, gif).
+5. sampleSnapshotInfo: Screenshot information after sampling a video.
+6. Sprite image information (imageSpriteInfo): the sprite image information after capturing sprite images from a video.
+7. snapshotByTimeOffsetInfo: screenshot information after taking screenshots of the video at specified time points.
+8. Video timestamp information (keyFrameDescInfo): Dotting information set for the video.
+9. Adaptive Bitrate Streaming information (adaptiveDynamicStreamingInfo): including specification, encryption type, packaging format and other related information.
+10. Review information (reviewInfo): includes media moderation and media cover review information.
+2. You can specify to only return partial information in the response.
                  * @param req DescribeMediaInfosRequest
                  * @return DescribeMediaInfosOutcome
                  */
@@ -1746,10 +2608,11 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeMediaInfosOutcomeCallable DescribeMediaInfosCallable(const Model::DescribeMediaInfosRequest& request);
 
                 /**
-                 *This API is used to query the playback statistics of a media file at the specified granularity.
-* You can query playback statistics in the past year.
-* If the granularity is an hour, the start and end time cannot be more than seven days apart.
-* If the granularity is a day, the start and end time cannot be more than 90 days apart.
+                 *This API is used to query playback data of media files by specified time granularity.
+* Playback statistics for the past one year can be queried.
+Time granularity: hr. The max span between the end time and start time is 7 days.
+Time granularity is day, and the maximum span between the end time and start time is 90 days.
+* Playback statistics only target VOD domains, excluding EdgeOne domain distribution.
                  * @param req DescribeMediaPlayStatDetailsRequest
                  * @return DescribeMediaPlayStatDetailsOutcome
                  */
@@ -1758,9 +2621,9 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeMediaPlayStatDetailsOutcomeCallable DescribeMediaPlayStatDetailsCallable(const Model::DescribeMediaPlayStatDetailsRequest& request);
 
                 /**
-                 *This API is used to query the information of video processing usage within the specified time range.
-   1. Statistics on video processing for the last 365 days can be queried.
-   2. The query time range cannot be more than 90 days.
+                 *This API is used to return the daily video processing usage information within the specified query time range.
+1. Video processing usage data is retained for 13 months in the data system. You can only query usage data from the most recent 365 days through the interface. To retrieve historical usage data beyond 365 days, contact us.
+   2. The query time span should not exceed 90 days.
                  * @param req DescribeMediaProcessUsageDataRequest
                  * @return DescribeMediaProcessUsageDataOutcome
                  */
@@ -1769,7 +2632,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeMediaProcessUsageDataOutcomeCallable DescribeMediaProcessUsageDataCallable(const Model::DescribeMediaProcessUsageDataRequest& request);
 
                 /**
-                 *This API is used to query the information of samples and supports paginated queries by sample ID, name, and tag.
+                 *This API is used to query material sample information by material ID, name, or tag with paging.
                  * @param req DescribePersonSamplesRequest
                  * @return DescribePersonSamplesOutcome
                  */
@@ -1778,7 +2641,7 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribePersonSamplesOutcomeCallable DescribePersonSamplesCallable(const Model::DescribePersonSamplesRequest& request);
 
                 /**
-                 *This API is used to get the list of task flow template details by task flow template name.
+                 *This API is used to search the task flow template detail list based on the task flow template name.
                  * @param req DescribeProcedureTemplatesRequest
                  * @return DescribeProcedureTemplatesOutcome
                  */
@@ -1787,7 +2650,16 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeProcedureTemplatesOutcomeCallable DescribeProcedureTemplatesCallable(const Model::DescribeProcedureTemplatesRequest& request);
 
                 /**
-                 *Get media quality inspection Template List.
+                 *This API is used to obtain the template details list for asynchronous image processing based on the Template Unique Identifier. The returned results include all eligible user-customized asynchronous image processing templates.
+                 * @param req DescribeProcessImageAsyncTemplatesRequest
+                 * @return DescribeProcessImageAsyncTemplatesOutcome
+                 */
+                DescribeProcessImageAsyncTemplatesOutcome DescribeProcessImageAsyncTemplates(const Model::DescribeProcessImageAsyncTemplatesRequest &request);
+                void DescribeProcessImageAsyncTemplatesAsync(const Model::DescribeProcessImageAsyncTemplatesRequest& request, const DescribeProcessImageAsyncTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProcessImageAsyncTemplatesOutcomeCallable DescribeProcessImageAsyncTemplatesCallable(const Model::DescribeProcessImageAsyncTemplatesRequest& request);
+
+                /**
+                 *This API is used to query the audio and video quality detection template list.
                  * @param req DescribeQualityInspectTemplatesRequest
                  * @return DescribeQualityInspectTemplatesOutcome
                  */
@@ -1796,7 +2668,8 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeQualityInspectTemplatesOutcomeCallable DescribeQualityInspectTemplatesCallable(const Model::DescribeQualityInspectTemplatesRequest& request);
 
                 /**
-                 *Describe Rebuild Media Templates
+                 *This API is <font color=red>no longer maintained</font>. The new version of the [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+This API is used to query the video rebirth template list.
                  * @param req DescribeRebuildMediaTemplatesRequest
                  * @return DescribeRebuildMediaTemplatesOutcome
                  */
@@ -1805,12 +2678,12 @@ This API is used to get the information of custom and [preset](https://intl.clou
                 DescribeRebuildMediaTemplatesOutcomeCallable DescribeRebuildMediaTemplatesCallable(const Model::DescribeRebuildMediaTemplatesRequest& request);
 
                 /**
-                 *<b>This API is disused and replaced by [DescribeMediaProcessUsageData](https://intl.cloud.tencent.com/document/product/266/41464?from_cn_redirect=1).</b>
+                 *<b>This API is not recommended. Use [DescribeMediaProcessUsageData](https://www.tencentcloud.com/document/product/266/41464?from_cn_redirect=1) as an alternative.</b>
 
-This API returns the video content duration for intelligent recognition in seconds per day within the queried period.
+This API is used to return the daily duration data of video content intelligent identification within the specified query time range. Measurement unit: seconds.
 
-1. The API is used to query statistics on the video content duration for intelligent recognition in the last 365 days.
-2. The query period is up to 90 days.
+1. Intelligent video content identification duration statistics from the last 365 days can be queried.
+2. The query time span should not exceed 90 days.
                  * @param req DescribeReviewDetailsRequest
                  * @return DescribeReviewDetailsOutcome
                  */
@@ -1819,8 +2692,8 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeReviewDetailsOutcomeCallable DescribeReviewDetailsCallable(const Model::DescribeReviewDetailsRequest& request);
 
                 /**
-                 *This API is used to get the information of moderation templates.
-> The templates can only be used by the APIs [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1).
+                 *This API is used to get the moderation template list.
+>Template is applicable only to the [ReviewAudioVideo](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1) APIs.
                  * @param req DescribeReviewTemplatesRequest
                  * @return DescribeReviewTemplatesOutcome
                  */
@@ -1829,7 +2702,7 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeReviewTemplatesOutcomeCallable DescribeReviewTemplatesCallable(const Model::DescribeReviewTemplatesRequest& request);
 
                 /**
-                 *This API is used to query playlists.
+                 *This API is used to get the carousel playlist list.
                  * @param req DescribeRoundPlaysRequest
                  * @return DescribeRoundPlaysOutcome
                  */
@@ -1838,7 +2711,7 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeRoundPlaysOutcomeCallable DescribeRoundPlaysCallable(const Model::DescribeRoundPlaysRequest& request);
 
                 /**
-                 *This API is used to query the list of sampled screencapturing templates and supports paged queries by filters.
+                 *This API is used to query sampled screenshot templates based on conditions with paging.
                  * @param req DescribeSampleSnapshotTemplatesRequest
                  * @return DescribeSampleSnapshotTemplatesOutcome
                  */
@@ -1847,7 +2720,7 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeSampleSnapshotTemplatesOutcomeCallable DescribeSampleSnapshotTemplatesCallable(const Model::DescribeSampleSnapshotTemplatesRequest& request);
 
                 /**
-                 *This API is used to query the list of time point screencapturing templates and supports paged queries by filters.
+                 *This API is used to query specified time point screenshot templates based on conditions with paging.
                  * @param req DescribeSnapshotByTimeOffsetTemplatesRequest
                  * @return DescribeSnapshotByTimeOffsetTemplatesOutcome
                  */
@@ -1856,7 +2729,7 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable DescribeSnapshotByTimeOffsetTemplatesCallable(const Model::DescribeSnapshotByTimeOffsetTemplatesRequest& request);
 
                 /**
-                 *This API is used to query the storage capacity usage and number of files.
+                 *Queries storage space usage and number of files.
                  * @param req DescribeStorageDataRequest
                  * @return DescribeStorageDataOutcome
                  */
@@ -1865,10 +2738,10 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeStorageDataOutcomeCallable DescribeStorageDataCallable(const Model::DescribeStorageDataRequest& request);
 
                 /**
-                 *This API is used to query VOD storage usage in bytes within the query period.
-    1. You can only query storage usage for the last 365 days.
-    2. The query period is up to 90 days.
-    3. The query period at minute-level granularity is up to 7 days.
+                 *This API is used to return the VOD storage space used within a specified time range, in bytes.
+1. Storage usage data is reserved on the system side for 13 months. You can only query usage data from the most recent 365 days through the API. If you need to retrieve historical usage data beyond 365 days, contact us;
+2. The query time span should not exceed 90 days.
+3. The query span at a minute granularity should not exceed 7 days;
                  * @param req DescribeStorageDetailsRequest
                  * @return DescribeStorageDetailsOutcome
                  */
@@ -1877,10 +2750,10 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeStorageDetailsOutcomeCallable DescribeStorageDetailsCallable(const Model::DescribeStorageDetailsRequest& request);
 
                 /**
-                 *This API is used to query the following information:
-  1. All supported storage regions.
-  2. The regions you have storage access to currently.
-  3. The default storage region.
+                 *This API is used to:
+1. Query the list of all storage campuses available for on-demand activation.
+2. Query the list of opened parks.
+3. Query the storage campus used by default.
                  * @param req DescribeStorageRegionsRequest
                  * @return DescribeStorageRegionsOutcome
                  */
@@ -1889,7 +2762,7 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeStorageRegionsOutcomeCallable DescribeStorageRegionsCallable(const Model::DescribeStorageRegionsRequest& request);
 
                 /**
-                 *This API is used to query the list of the primary application and subapplications of the current account.
+                 *This API is used to get the application list of the current account.
                  * @param req DescribeSubAppIdsRequest
                  * @return DescribeSubAppIdsOutcome
                  */
@@ -1898,8 +2771,8 @@ This API returns the video content duration for intelligent recognition in secon
                 DescribeSubAppIdsOutcomeCallable DescribeSubAppIdsCallable(const Model::DescribeSubAppIdsRequest& request);
 
                 /**
-                 *We have <font color='red'>stopped updating</font> this API. Currently, you no longer need a player configuration to use player signatures. For details, see [Player Signature](https://intl.cloud.tencent.com/document/product/266/45554?from_cn_redirect=1).
-This API is used to query player configurations. It supports pagination.
+                 *This API is <font color='red'>no longer maintained</font>. The new version of player signature no longer uses player configuration templates. For details, please see [Player Signature](https://www.tencentcloud.com/document/product/266/45554?from_cn_redirect=1).
+This API is used to query player configurations based on conditions with paging.
                  * @param req DescribeSuperPlayerConfigsRequest
                  * @return DescribeSuperPlayerConfigsOutcome
                  */
@@ -1908,7 +2781,7 @@ This API is used to query player configurations. It supports pagination.
                 DescribeSuperPlayerConfigsOutcomeCallable DescribeSuperPlayerConfigsCallable(const Model::DescribeSuperPlayerConfigsRequest& request);
 
                 /**
-                 *This API is used to query the details of execution status and result of a task submitted in the last 3 days by task ID.
+                 *This API is used to query the details of the task execution status and results by task ID (tasks submitted within the last 3 days can be queried).
                  * @param req DescribeTaskDetailRequest
                  * @return DescribeTaskDetailOutcome
                  */
@@ -1917,9 +2790,9 @@ This API is used to query player configurations. It supports pagination.
                 DescribeTaskDetailOutcomeCallable DescribeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request);
 
                 /**
-                 ** This API is used to query the task list;
-* If there are many data entries in the list, one single call of the API may not be able to pull the entire list. The `ScrollToken` parameter can be used to pull the list in batches;
-* Only tasks in the last three days (72 hours) can be queried.
+                 ** This API is used to query the task list.
+* When the list contains a large amount of data, a single API call cannot pull the entire list. You can use the ScrollToken parameter to pull in batches.
+* Only tasks from the last three days (72 hours) can be queried.
                  * @param req DescribeTasksRequest
                  * @return DescribeTasksOutcome
                  */
@@ -1928,7 +2801,7 @@ This API is used to query player configurations. It supports pagination.
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
 
                 /**
-                 *This API is used to get the list of transcoding templates based on unique template ID. The return result includes all eligible custom and [preset transcoding templates](https://intl.cloud.tencent.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
+                 *This API is used to retrieve the transcoding template detail list based on the transcoding template unique identifier. The returned results include all eligible custom templates and [system preset transcoding templates](https://www.tencentcloud.com/document/product/266/33476?from_cn_redirect=1#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).
                  * @param req DescribeTranscodeTemplatesRequest
                  * @return DescribeTranscodeTemplatesOutcome
                  */
@@ -1937,7 +2810,7 @@ This API is used to query player configurations. It supports pagination.
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
 
                 /**
-                 *This API is used to query the list of VOD domain names.
+                 *This API is used to query the list of on-demand video domain names.
                  * @param req DescribeVodDomainsRequest
                  * @return DescribeVodDomainsOutcome
                  */
@@ -1946,7 +2819,18 @@ This API is used to query player configurations. It supports pagination.
                 DescribeVodDomainsOutcomeCallable DescribeVodDomainsCallable(const Model::DescribeVodDomainsRequest& request);
 
                 /**
-                 *This API is used to query custom watermarking templates and supports paged queries by filters.
+                 *Queries the available timbre list under the current account, supporting filtering by optional conditions such as voice ID, type, name, gender, age, language, tag, and scenario.
+
+Note: Newly designed or cloned voice types cannot be queried before activation. They are activated only after the new voice type is used for TTS once.
+                 * @param req DescribeVoicesRequest
+                 * @return DescribeVoicesOutcome
+                 */
+                DescribeVoicesOutcome DescribeVoices(const Model::DescribeVoicesRequest &request);
+                void DescribeVoicesAsync(const Model::DescribeVoicesRequest& request, const DescribeVoicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoicesOutcomeCallable DescribeVoicesCallable(const Model::DescribeVoicesRequest& request);
+
+                /**
+                 *This API is used to query user-customized watermark templates, and the pagination query is supported based on conditions.
                  * @param req DescribeWatermarkTemplatesRequest
                  * @return DescribeWatermarkTemplatesOutcome
                  */
@@ -1955,7 +2839,7 @@ This API is used to query player configurations. It supports pagination.
                 DescribeWatermarkTemplatesOutcomeCallable DescribeWatermarkTemplatesCallable(const Model::DescribeWatermarkTemplatesRequest& request);
 
                 /**
-                 *This API is used to perform paginated queries of keyword sample information by use case, keyword, and tag.
+                 *This API is used to paging query keyword sample info by scenario, keyword, and tag.
                  * @param req DescribeWordSamplesRequest
                  * @return DescribeWordSamplesOutcome
                  */
@@ -1964,21 +2848,30 @@ This API is used to query player configurations. It supports pagination.
                 DescribeWordSamplesOutcomeCallable DescribeWordSamplesCallable(const Model::DescribeWordSamplesRequest& request);
 
                 /**
-                 *Edit the video (cut, splice, etc.) to generate a new video. The editing functions include:
+                 *This API is used to trigger a voice design task. It generates a custom voice based on a natural language description. You can specify a voice profile at the same time, such as name, gender, age, language, tag, and scenario. If trial text is attached during submission, an audio audition is generated after task completion. Voice design is an asynchronous task. The voice ID is generated after task completion.
+                 * @param req DesignVoiceAsyncRequest
+                 * @return DesignVoiceAsyncOutcome
+                 */
+                DesignVoiceAsyncOutcome DesignVoiceAsync(const Model::DesignVoiceAsyncRequest &request);
+                void DesignVoiceAsyncAsync(const Model::DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DesignVoiceAsyncOutcomeCallable DesignVoiceAsyncCallable(const Model::DesignVoiceAsyncRequest& request);
 
-1. Edit a file in the VOD video to generate a new video;
-2. Splice multiple files to generate a new video;
-3. Edit multiple files and then splice them to generate a new video;
-4. Directly generate a new video for a stream;
-5. Edit a stream to generate a new video. Video;
-6. Splice multiple streams to generate a new video;
-7. Clip and then splice multiple streams to generate a new video. 
+                /**
+                 *This API is used to edit a video, such as clipping and splicing, to generate a new on-demand video. Editing features include:
 
-For the generated new video, you can also specify whether the generated video needs to execute the task flow. 
+1) Edit a file in VOD to generate a new video.
+2) Splice multiple on-demand files to generate a new video.
+3) Edit multiple files in on-demand video and then splice them to generate a new video;
+4. Directly generate a new video for one of the streams in VOD;
+5. Edit one of the on-demand streams to generate a new video;
+6) Splice multiple on-demand streams to generate a new video.
+7) Edit multiple streams in VOD and then splice them to generate a new video.
 
->When editing or splicing live streams, please make sure to do so after the stream is over. Otherwise the resulting video may be incomplete. 
+For the generated new video, you can also specify whether to execute task flow on the generated video.
 
-If event notification is used, the type of event notification is [Video editing completed](https://intl.cloud.tencent.com/document/product/266/33794?from_cn_redirect=1).
+When editing or splicing a live stream, please ensure the stream has ended before operating. Otherwise, the generated video may be incomplete.
+
+If event notification is used, its type is [video editing completed](https://www.tencentcloud.com/document/product/266/33794?from_cn_redirect=1).
                  * @param req EditMediaRequest
                  * @return EditMediaOutcome
                  */
@@ -1987,7 +2880,8 @@ If event notification is used, the type of event notification is [Video editing 
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
 
                 /**
-                 *Enhance Media By Template.
+                 *This API is <font color=red>no longer maintained</font>. Please use the new version of APIs [audio and video quality revival](https://www.tencentcloud.com/document/api/266/102571?from_cn_redirect=1).
+Use a template to initiate audio and video quality revival.
                  * @param req EnhanceMediaByTemplateRequest
                  * @return EnhanceMediaByTemplateOutcome
                  */
@@ -1996,7 +2890,7 @@ If event notification is used, the type of event notification is [Video editing 
                 EnhanceMediaByTemplateOutcomeCallable EnhanceMediaByTemplateCallable(const Model::EnhanceMediaByTemplateRequest& request);
 
                 /**
-                 *Initiate a Remaster task for audio and video media in VOD
+                 *This API is used to trigger an audio and video quality regeneration task for on-demand audio-video media.
                  * @param req EnhanceMediaQualityRequest
                  * @return EnhanceMediaQualityOutcome
                  */
@@ -2005,7 +2899,7 @@ If event notification is used, the type of event notification is [Video editing 
                 EnhanceMediaQualityOutcomeCallable EnhanceMediaQualityCallable(const Model::EnhanceMediaQualityRequest& request);
 
                 /**
-                 *This API is only used in special scenarios of custom development. Unless requested by VOD customer service, please do not call it.
+                 *This API is only used for special scenarios of customized development. Do not call this API unless VOD customer service proactively informs you that you need to use it.
                  * @param req ExecuteFunctionRequest
                  * @return ExecuteFunctionOutcome
                  */
@@ -2014,7 +2908,16 @@ If event notification is used, the type of event notification is [Video editing 
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
-                 *Extract CopyRight Watermark.
+                 *This API is used to initiate a digital watermark extraction task for a video. The extraction result can be queried through DescribeTaskDetail.
+                 * @param req ExtractBlindWatermarkRequest
+                 * @return ExtractBlindWatermarkOutcome
+                 */
+                ExtractBlindWatermarkOutcome ExtractBlindWatermark(const Model::ExtractBlindWatermarkRequest &request);
+                void ExtractBlindWatermarkAsync(const Model::ExtractBlindWatermarkRequest& request, const ExtractBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractBlindWatermarkOutcomeCallable ExtractBlindWatermarkCallable(const Model::ExtractBlindWatermarkRequest& request);
+
+                /**
+                 *If you need source tracing for piracy, see Ghost Watermark (https://www.tencentcloud.com/document/product/266/94228?from_cn_redirect=1).
                  * @param req ExtractCopyRightWatermarkRequest
                  * @return ExtractCopyRightWatermarkOutcome
                  */
@@ -2023,7 +2926,7 @@ If event notification is used, the type of event notification is [Video editing 
                 ExtractCopyRightWatermarkOutcomeCallable ExtractCopyRightWatermarkCallable(const Model::ExtractCopyRightWatermarkRequest& request);
 
                 /**
-                 *This API is used to extract the user ID of a user that distributed a video containing a digital watermark.
+                 *If source tracing for piracy is needed, ghost watermark (https://www.tencentcloud.com/document/product/266/94228?from_cn_redirect=1) is recommended.
                  * @param req ExtractTraceWatermarkRequest
                  * @return ExtractTraceWatermarkOutcome
                  */
@@ -2032,7 +2935,11 @@ If event notification is used, the type of event notification is [Video editing 
                 ExtractTraceWatermarkOutcomeCallable ExtractTraceWatermarkCallable(const Model::ExtractTraceWatermarkRequest& request);
 
                 /**
-                 *Implement quick concatenation and quick clipping for Tencent Cloud VOD's HLS videos to generate new media in HLS format. The video generated by quick concatenation or clipping will produce a new FileId and undergo solidification. After successful solidification, the new video file exists independently of the original input video and is not affected by deletions or other actions on the original video. <font color='red'>Note:</font> Enable the reception of persistence completed event notifications through the ModifyEvent config interface, and a PersistenceComplete type event notification will be received after successful solidification. Before receiving this event notification, operations such as deletion or cooling down of the original input video should not be performed, otherwise, abnormal playback may occur in the video generated by the concatenation and clipping.
+                 *Quickly splice and edit HLS videos in VOD to generate new media in HLS format.
+
+Quickly splice or edit the generated video to generate a new FileId and solidify it. After successful solidification, the new video file exists independent of the original input video and is not affected by the deletion of the original video.
+
+<font color='red'>Note:</font> Enable reception of editing solidification event notifications through the ModifyEventConfig API. After successful solidification, you will receive a PersistenceComplete event notification. Before receiving this event notification, you should not delete or transition the original input video to colder storage. Otherwise, playback of the video generated by splicing and clipping may encounter exceptions.
                  * @param req FastEditMediaRequest
                  * @return FastEditMediaOutcome
                  */
@@ -2041,8 +2948,9 @@ If event notification is used, the type of event notification is [Video editing 
                 FastEditMediaOutcomeCallable FastEditMediaCallable(const Model::FastEditMediaRequest& request);
 
                 /**
-                 ** After a media file is forbidden, except previewing it in the VOD Console, accessing the URLs of its various resources (such as source file, output files, and screenshots) in other scenarios will return error 403.
-  It takes about 5-10 minutes for a forbidding/unblocking operation to take effect across the entire network.
+                 ** After media blocking, except for VOD console preview, accessing URLs of various video resources (raw files, transcoding output files, screenshots, etc.) for other scenarios will return 403.
+It takes about 5 to 10 minutes for the ban/unban operation to take effect across the entire network.
+* Note: Media blocking can only be performed on media stored in standard storage and infrequent storage. Media in infrequent storage must be stored for at least 30 days. If deleted early or changed to another storage class, it is still billed for 30 days. If you block media in infrequent storage and its infrequent storage duration is less than 30 days, early deletion fees will occur. At the same time, after blocking, the infrequent storage duration of the media restarts from the current time. If the media is deleted or changed to another storage class before reaching 30 days, early deletion fees will also occur. For example, media 001 has been in infrequent storage for 10 days. If you block 001 at this point, infrequent storage is still billed for 30 days (early deletion billing duration: 30 - 10 = 20 days). After blocking, the infrequent storage duration of 001 restarts. If 001 is deleted on day 5 after blocking, infrequent storage is still billed for 30 days (early deletion billing duration: 30 - 5 = 25 days). The actual infrequent storage duration of 001 is 10 + 5 = 15 days, while the billed infrequent storage duration is 10 + 20 (early deletion billing) + 5 + 25 (early deletion billing) = 60 days.
                  * @param req ForbidMediaDistributionRequest
                  * @return ForbidMediaDistributionOutcome
                  */
@@ -2051,7 +2959,7 @@ If event notification is used, the type of event notification is [Video editing 
                 ForbidMediaDistributionOutcomeCallable ForbidMediaDistributionCallable(const Model::ForbidMediaDistributionRequest& request);
 
                 /**
-                 *Operate the current play list . Supported operations include:<li> Insert: Insert a playing program into the current playlist.</li><li> Delete: Remove a playing program from the playlist.</li>
+                 *Perform operations on the carousel current playlist. Supported operations: <li> Insert: Insert a program into the current playlist.</li><li> Delete: Delete a program in the playlist.</li>
                  * @param req HandleCurrentPlaylistRequest
                  * @return HandleCurrentPlaylistOutcome
                  */
@@ -2060,7 +2968,16 @@ If event notification is used, the type of event notification is [Video editing 
                 HandleCurrentPlaylistOutcomeCallable HandleCurrentPlaylistCallable(const Model::HandleCurrentPlaylistRequest& request);
 
                 /**
-                 *Initiate media quality inspection task.
+                 *Used to import AI analysis results into the knowledge base.
+                 * @param req ImportMediaKnowledgeRequest
+                 * @return ImportMediaKnowledgeOutcome
+                 */
+                ImportMediaKnowledgeOutcome ImportMediaKnowledge(const Model::ImportMediaKnowledgeRequest &request);
+                void ImportMediaKnowledgeAsync(const Model::ImportMediaKnowledgeRequest& request, const ImportMediaKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportMediaKnowledgeOutcomeCallable ImportMediaKnowledgeCallable(const Model::ImportMediaKnowledgeRequest& request);
+
+                /**
+                 *This API is used to trigger an audio and video quality inspection task for on-demand audio-video media.
                  * @param req InspectMediaQualityRequest
                  * @return InspectMediaQualityOutcome
                  */
@@ -2069,32 +2986,43 @@ If event notification is used, the type of event notification is [Video editing 
                 InspectMediaQualityOutcomeCallable InspectMediaQualityCallable(const Model::InspectMediaQualityRequest& request);
 
                 /**
-                 *Live broadcast real-time editing means that during the live broadcast process (that is, before the live broadcast has ended), customers can select a section of past live broadcast content to generate a new video (HLS format) in real time. Developers can share it immediately, or permanently Save it.
+                 *This API is used to list stored file entries under a sub-app.
+
+**This API is only available in "FileID+Path" mode.**
+                 * @param req ListFilesRequest
+                 * @return ListFilesOutcome
+                 */
+                ListFilesOutcome ListFiles(const Model::ListFilesRequest &request);
+                void ListFilesAsync(const Model::ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFilesOutcomeCallable ListFilesCallable(const Model::ListFilesRequest& request);
+
+                /**
+                 *Live stream clipping refers to generating a new video (HLS format) in real time from a selected segment of the live stream portion during live streaming (when the live stream has not yet ended). Developers can share it immediately or store it for long-term preservation.
 
 Tencent Cloud VOD supports two real-time editing modes:
-- Editing and solidification: Save the edited video as an independent video with an independent FileId; suitable for scenes where the highlight clips are saved for a long time;
-- Editing is not solidified: the edited video is attached to the live broadcast recording file and does not have an independent FileId; it is suitable for scenarios where highlight clips are **temporarily shared**.
+- Edit and solidify: Save the edited video as a standalone video with an independent FileId. This is suitable for long-term preservation of highlight clips.
+- Editing is not solidified: the edited video is attached to the live streaming recording file and has no standalone FileId. It is suitable for scenarios where highlight clips are temporarily shared.
 
-Notice:
-- The prerequisite for using the live broadcast real-time editing function is that the target live stream has the [Time Shift Replay](https://intl.cloud.tencent.com/document/product/267/32742?from_cn_redirect=1) function enabled.
-- Live broadcast real-time editing is based on the m3u8 file generated by live broadcast recording, so its minimum editing accuracy is one ts slice, and it is impossible to achieve second-level or more precise editing accuracy.
-- Since the stream may be interrupted during the live broadcast, the actual video duration generated by editing may be inconsistent with expectations. For example, the time interval for editing a live stream is from 2018-09-20T10:30:00Z to 2018-09-20T10:40:00Z. If the stream is interrupted during this time interval, the duration of the returned media asset file will be Less than 10 minutes, in which case it can be sensed via the output parameter <a href="#p_segmentset">SegmentSet</a>.
+Note:
+- The premise for using the live stream clipping feature is that the target live stream has the time shifting and playback (https://www.tencentcloud.com/document/product/267/32742?from_cn_redirect=1) feature enabled.
+-Live streaming Instant Editing is based on the m3u8 file generated by live recording, so its minimum editing precision is one ts slicing. Second-level or more precise editing precision cannot be achieved.
+-Since stream disconnection may occur during live streaming, the actual video duration generated by editing may differ from the expected duration. For example, if you edit a live stream from 2018-09-20T10:30:00Z to 2018-09-20T10:40:00Z, and stream disconnection occurred during this time interval, the returned media file duration will be less than 10 minutes. In such cases, you can perceive it through the output parameter <a href="#p_segmentset">SegmentSet</a>.
 
-### Clip solidification
-Clip solidification means saving the clipped video into an independent video (with an independent FileId). Its life cycle is not affected by the original live broadcast recording video (even if the original recording video is deleted, the editing results will not be affected in any way); it can also be subjected to secondary processing such as transcoding.
+### Edit solidification
+Clipping persistence refers to saving the edited video as an independent video with its own FileId. Its lifecycle is not subject to any impact from the original live recorded video. Even if the original recorded video is deleted, the clipping result is not affected. You can also transcode it or publish it on WeChat for post-processing.
 
-For example: for a complete football match, the original video recorded live may be as long as 2 hours. To save costs, the customer can store this video for 2 months, but for the "highlight moment" video that is edited in real time during the live broadcast However, you can specify a longer storage period, and at the same time, you can separately transcode the "highlight moments" video and other on-demand operations. At this time, you can choose the solution of real-time editing and solidification of the live broadcast.
+For example, a complete football match may have a live recording lasting over 2 hours. For cost savings, the customer can store the original video for 2 months, but can specify longer storage for the highlight reel from live stream clipping. You can also perform additional on-demand operations on the highlight reel separately, such as transcoding and publishing on WeChat. In this case, you can choose the live stream clipping and persistence solution.
 
-The advantage of editing and curing is that its life cycle is independent of the original recorded video, and can be managed independently and stored for a long time.
+The advantage of solidifying editing is that its lifecycle is independent of the original recorded video, and it can be managed separately and preserved long-term.
 
-<font color='red'>Notice:</font> If solidification is specified during clipping, enable the reception of persistence completed event notifications through the ModifyEventConfig interface. After successful solidification, an event notification of type PersistenceComplete will be received. Before receiving this event notification, operations such as deletion or cooling down of live recording videos should not be performed, otherwise, abnormal playback may occur in the video generated by the clipping.
+<font color='red'>Note:</font> If solidification is specified when editing, enable reception of editing solidification event notifications through the ModifyEventConfig API. After successful solidification, you will receive a PersistenceComplete event notification. Before receiving this event notification, you should not delete or archive the live video recording. Otherwise, playback of the generated video may be abnormal.
 
-### Clips are not solidified
-The editing is not solidified, which means that the result of editing (m3u8 file) and the live recording video share the same ts fragment. The newly generated video is not an independent and complete video (no independent FileId, only playback URL), and its validity period is the same as the live broadcast. The validity period of the complete recorded video is the same. Once the video recorded during the live broadcast is deleted, the clip will also become unplayable.
+### Editing is not solidified
+Non-solidified editing means that the result of editing (m3u8 file) shares the same TS segments with the live video recording. The generated video is not an independent and complete video (no independent FileId, only a playback URL), and its valid period is consistent with that of the full video of the live recording. Once the live recorded video is deleted, this clip will also become unplayable.
 
-The clip is not solidified. Because the clip result is not an independent video, it will not be included in on-demand media asset video management (for example, the total number of videos in the console will not count this clip), and this clip cannot be transcoded separately. Video processing operations.
+Editing is not solidified. Since the clipping result is not an independent video, it is not included in the video management of on-demand media assets. For example, the total number of videos in the console does not count this clip. It is also unable to separately target this clip for any video processing operation such as transcoding or publishing on WeChat.
 
-The advantage of not solidifying editing is that its editing operation is very "lightweight" and does not generate additional storage overhead. However, its disadvantage is that the life cycle is the same as the original recorded video, and further video processing such as transcoding cannot be performed.
+The advantage of not solidifying editing is that the editing operation is relatively "lightweight" and will not generate additional storage overhead. However, its shortcoming is that the lifecycle is the same as the original recorded video, and it is unable to further transcode or perform other video processing.
                  * @param req LiveRealTimeClipRequest
                  * @return LiveRealTimeClipOutcome
                  */
@@ -2103,7 +3031,7 @@ The advantage of not solidifying editing is that its editing operation is very "
                 LiveRealTimeClipOutcomeCallable LiveRealTimeClipCallable(const Model::LiveRealTimeClipRequest& request);
 
                 /**
-                 *This API is used to manage initiated tasks.
+                 *Manage initiated tasks.
                  * @param req ManageTaskRequest
                  * @return ManageTaskOutcome
                  */
@@ -2112,9 +3040,9 @@ The advantage of not solidifying editing is that its editing operation is very "
                 ManageTaskOutcomeCallable ManageTaskCallable(const Model::ManageTaskRequest& request);
 
                 /**
-                 *This API is used to modify a custom video content analysis template.
+                 *This API is used to modify a user-defined audio and video content analysis template.
 
-Note: templates with an ID below 10000 are preset and cannot be modified.
+Note: Templates with IDs below 10000 are preset templates and are not allowed to be modified.
                  * @param req ModifyAIAnalysisTemplateRequest
                  * @return ModifyAIAnalysisTemplateOutcome
                  */
@@ -2123,7 +3051,7 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyAIAnalysisTemplateOutcomeCallable ModifyAIAnalysisTemplateCallable(const Model::ModifyAIAnalysisTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a custom video content recognition template.
+                 *This API is used to modify a user-defined audio and video content recognition template.
                  * @param req ModifyAIRecognitionTemplateRequest
                  * @return ModifyAIRecognitionTemplateOutcome
                  */
@@ -2132,7 +3060,7 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyAIRecognitionTemplateOutcomeCallable ModifyAIRecognitionTemplateCallable(const Model::ModifyAIRecognitionTemplateRequest& request);
 
                 /**
-                 *This API is used to modify an adaptive bitrate streaming template.
+                 *Modifying an Adaptive Bitrate Streaming Template
                  * @param req ModifyAdaptiveDynamicStreamingTemplateRequest
                  * @return ModifyAdaptiveDynamicStreamingTemplateOutcome
                  */
@@ -2141,7 +3069,18 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable ModifyAdaptiveDynamicStreamingTemplateCallable(const Model::ModifyAdaptiveDynamicStreamingTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a custom animated image generating template.
+                 *This API is used to edit AIGC quota configuration. Quota usage accumulates from the start of quota enablement. Once the quota is reached, AIGC features will no longer be usable.
+
+Since content generation in AGC is an asynchronous task, real-time usage data cannot be obtained. Therefore, quota limits may result in some errors, and precise control over the set limit cannot be achieved.
+                 * @param req ModifyAigcQuotaRequest
+                 * @return ModifyAigcQuotaOutcome
+                 */
+                ModifyAigcQuotaOutcome ModifyAigcQuota(const Model::ModifyAigcQuotaRequest &request);
+                void ModifyAigcQuotaAsync(const Model::ModifyAigcQuotaRequest& request, const ModifyAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAigcQuotaOutcomeCallable ModifyAigcQuotaCallable(const Model::ModifyAigcQuotaRequest& request);
+
+                /**
+                 *Modify a custom animated image generating template.
                  * @param req ModifyAnimatedGraphicsTemplateRequest
                  * @return ModifyAnimatedGraphicsTemplateOutcome
                  */
@@ -2150,7 +3089,16 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyAnimatedGraphicsTemplateOutcomeCallable ModifyAnimatedGraphicsTemplateCallable(const Model::ModifyAnimatedGraphicsTemplateRequest& request);
 
                 /**
-                 *Modify CDN Domain Config.
+                 *This API is used to modify a user-defined digital watermark template. The digital watermark type cannot be modified.
+                 * @param req ModifyBlindWatermarkTemplateRequest
+                 * @return ModifyBlindWatermarkTemplateOutcome
+                 */
+                ModifyBlindWatermarkTemplateOutcome ModifyBlindWatermarkTemplate(const Model::ModifyBlindWatermarkTemplateRequest &request);
+                void ModifyBlindWatermarkTemplateAsync(const Model::ModifyBlindWatermarkTemplateRequest& request, const ModifyBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlindWatermarkTemplateOutcomeCallable ModifyBlindWatermarkTemplateCallable(const Model::ModifyBlindWatermarkTemplateRequest& request);
+
+                /**
+                 *This API is used to modify CDN domain configuration.
                  * @param req ModifyCDNDomainConfigRequest
                  * @return ModifyCDNDomainConfigOutcome
                  */
@@ -2159,7 +3107,7 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyCDNDomainConfigOutcomeCallable ModifyCDNDomainConfigCallable(const Model::ModifyCDNDomainConfigRequest& request);
 
                 /**
-                 *This API is used to modify the category of a media file.
+                 *Modifies media classification attributes.
                  * @param req ModifyClassRequest
                  * @return ModifyClassOutcome
                  */
@@ -2168,8 +3116,8 @@ Note: templates with an ID below 10000 are preset and cannot be modified.
                 ModifyClassOutcomeCallable ModifyClassCallable(const Model::ModifyClassRequest& request);
 
                 /**
-                 *We have <font color=red>stopped updating</font> this API. Our new moderation templates can moderate audio/video as well as images. For details, see [ModifyReviewTemplate](https://intl.cloud.tencent.com/document/api/266/84388?from_cn_redirect=1).
-This API is used to modify a custom audio/video moderation template.
+                 *This API is no longer maintained. The new version of the moderation template supports video and image moderation. For details, please see [Modify Moderation Template](https://www.tencentcloud.com/document/API/266/84388?from_cn_redirect=1).
+Modify a user-customized audio/video moderation template.
                  * @param req ModifyContentReviewTemplateRequest
                  * @return ModifyContentReviewTemplateOutcome
                  */
@@ -2178,7 +3126,18 @@ This API is used to modify a custom audio/video moderation template.
                 ModifyContentReviewTemplateOutcomeCallable ModifyContentReviewTemplateCallable(const Model::ModifyContentReviewTemplateRequest& request);
 
                 /**
-                 *This API is used to set the default storage region. A file will be stored in the default region if no region is specified for file upload.
+                 *This API is used to modify the default distribution configuration.
+* Distribution domain name and distribution protocol, which are the domain name and protocol in the media file distribution URL. Media files are distributed based on the default distribution configuration.
+Playback key, used to calculate player signature.
+                 * @param req ModifyDefaultDistributionConfigRequest
+                 * @return ModifyDefaultDistributionConfigOutcome
+                 */
+                ModifyDefaultDistributionConfigOutcome ModifyDefaultDistributionConfig(const Model::ModifyDefaultDistributionConfigRequest &request);
+                void ModifyDefaultDistributionConfigAsync(const Model::ModifyDefaultDistributionConfigRequest& request, const ModifyDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDefaultDistributionConfigOutcomeCallable ModifyDefaultDistributionConfigCallable(const Model::ModifyDefaultDistributionConfigRequest& request);
+
+                /**
+                 *This API is used to set the default storage region. If no region is specified during file upload, files are uploaded to the default region.
                  * @param req ModifyDefaultStorageRegionRequest
                  * @return ModifyDefaultStorageRegionOutcome
                  */
@@ -2187,7 +3146,8 @@ This API is used to modify a custom audio/video moderation template.
                 ModifyDefaultStorageRegionOutcomeCallable ModifyDefaultStorageRegionCallable(const Model::ModifyDefaultStorageRegionRequest& request);
 
                 /**
-                 *Modify enhance media template.
+                 *This API is <font color=red>no longer maintained</font>. The new version of the [audio and video quality revival](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+Modify an audio and video quality rebirth template.
                  * @param req ModifyEnhanceMediaTemplateRequest
                  * @return ModifyEnhanceMediaTemplateOutcome
                  */
@@ -2196,12 +3156,12 @@ This API is used to modify a custom audio/video moderation template.
                 ModifyEnhanceMediaTemplateOutcomeCallable ModifyEnhanceMediaTemplateCallable(const Model::ModifyEnhanceMediaTemplateRequest& request);
 
                 /**
-                 *Tencent Cloud VOD provides customers with media upload, media management, media processing and other services. During or at the end of the execution of these services, Tencent Cloud On-Demand also provides various corresponding event notifications to facilitate developers to perceive the service processing status and Do the next business operation. 
+                 *Tencent Cloud VOD provides customers with media upload, media management, media processing, and other services. During or after the execution of these services, Tencent Cloud VOD also provides various event notifications, allowing developers to sense the service processing status and perform the next business operation.
 
-Developers can achieve this by calling this interface:
-- Set the type of callback notification received. Currently, there is [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948) and [reliable notification based on message queue](https://www.tencentcloud.com/document/product/266/33948) two types. 
-- For [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33948), you can set the address of the 3.0 format callback. For the description of 3.0 format callback, see [Historical Format Callback](https://intl.cloud.tencent.com/document/product/266/33796?from_cn_redirect=1). 
-- Select settings to receive or ignore notification events for specific event services.
+Developers can call this API to:
+- Set the type for receiving callback notifications. There are two types: [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1) and [Reliable Notification Based on Message Queue](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1).
+- For [HTTP callback notification](https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1), you can set the address for 3.0 format callback. For details on 3.0 format callback, see [Historical format callback](https://www.tencentcloud.com/document/product/266/33796?from_cn_redirect=1).
+-Select receipt or ignore settings for notification events of a specific event service.
                  * @param req ModifyEventConfigRequest
                  * @return ModifyEventConfigOutcome
                  */
@@ -2210,7 +3170,7 @@ Developers can achieve this by calling this interface:
                 ModifyEventConfigOutcomeCallable ModifyEventConfigCallable(const Model::ModifyEventConfigRequest& request);
 
                 /**
-                 *Modify HeadTail Template.
+                 *Modify a title and trailer template.
                  * @param req ModifyHeadTailTemplateRequest
                  * @return ModifyHeadTailTemplateOutcome
                  */
@@ -2219,7 +3179,7 @@ Developers can achieve this by calling this interface:
                 ModifyHeadTailTemplateOutcomeCallable ModifyHeadTailTemplateCallable(const Model::ModifyHeadTailTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a custom image sprite generating template.
+                 *Modify a user-customized image sprite template.
                  * @param req ModifyImageSpriteTemplateRequest
                  * @return ModifyImageSpriteTemplateOutcome
                  */
@@ -2228,7 +3188,8 @@ Developers can achieve this by calling this interface:
                 ModifyImageSpriteTemplateOutcomeCallable ModifyImageSpriteTemplateCallable(const Model::ModifyImageSpriteTemplateRequest& request);
 
                 /**
-                 *Modify Just In Time Transcode Template.
+                 *Modify an instant transcoding template.
+-Note: Once a just in time transcoding template is created, modification is not recommended. If parameter modification is needed, adding a new template is recommended.
                  * @param req ModifyJustInTimeTranscodeTemplateRequest
                  * @return ModifyJustInTimeTranscodeTemplateOutcome
                  */
@@ -2237,7 +3198,35 @@ Developers can achieve this by calling this interface:
                 ModifyJustInTimeTranscodeTemplateOutcomeCallable ModifyJustInTimeTranscodeTemplateCallable(const Model::ModifyJustInTimeTranscodeTemplateRequest& request);
 
                 /**
-                 *This API is used to modify the attributes of a media file, including category, name, description, tag, expiration time, timestamp information, video thumbnail, and subtitle information.
+                 *Modify a knowledge base. The name and/or description of the knowledge base can be modified. At least one of the Name or Description fields is required.
+                 * @param req ModifyKnowledgeBaseRequest
+                 * @return ModifyKnowledgeBaseOutcome
+                 */
+                ModifyKnowledgeBaseOutcome ModifyKnowledgeBase(const Model::ModifyKnowledgeBaseRequest &request);
+                void ModifyKnowledgeBaseAsync(const Model::ModifyKnowledgeBaseRequest& request, const ModifyKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKnowledgeBaseOutcomeCallable ModifyKnowledgeBaseCallable(const Model::ModifyKnowledgeBaseRequest& request);
+
+                /**
+                 *Modifies a large model parsing template
+                 * @param req ModifyLLMComprehendTemplateRequest
+                 * @return ModifyLLMComprehendTemplateOutcome
+                 */
+                ModifyLLMComprehendTemplateOutcome ModifyLLMComprehendTemplate(const Model::ModifyLLMComprehendTemplateRequest &request);
+                void ModifyLLMComprehendTemplateAsync(const Model::ModifyLLMComprehendTemplateRequest& request, const ModifyLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMComprehendTemplateOutcomeCallable ModifyLLMComprehendTemplateCallable(const Model::ModifyLLMComprehendTemplateRequest& request);
+
+                /**
+                 *Modify a user-customized MPS task template.
+When modifying a template, fill in the MPS related parameters in JSON format into the MPSModifyTemplateParams parameter. For task parameter configuration methods, refer to the MPS task template documentation.
+                 * @param req ModifyMPSTemplateRequest
+                 * @return ModifyMPSTemplateOutcome
+                 */
+                ModifyMPSTemplateOutcome ModifyMPSTemplate(const Model::ModifyMPSTemplateRequest &request);
+                void ModifyMPSTemplateAsync(const Model::ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMPSTemplateOutcomeCallable ModifyMPSTemplateCallable(const Model::ModifyMPSTemplateRequest& request);
+
+                /**
+                 *This API is used to modify the attributes of a media file, including category, name, description, tag, expiration time, dotting information, video cover, and subtitle information.
                  * @param req ModifyMediaInfoRequest
                  * @return ModifyMediaInfoOutcome
                  */
@@ -2246,19 +3235,19 @@ Developers can achieve this by calling this interface:
                 ModifyMediaInfoOutcomeCallable ModifyMediaInfoCallable(const Model::ModifyMediaInfoRequest& request);
 
                 /**
-                 *This API is used to modify the storage class of media files.
-If the current storage class is STANDARD, it can be changed to one of the following classes:
-<li>STANDARD_IA</li>
-<li>ARCHIVE</li>
-<li>DEEP ARCHIVE</li>
-If the current storage class is STANDARD_IA, it can be changed to one of the following classes:
-<li>STANDARD</li>
-<li>ARCHIVE</li>
-<li>DEEP ARCHIVE</li>
-If the current storage class is ARCHIVE, it can be changed to the following class:
-<li>STANDARD</li>
-If the current storage class is DEEP ARCHIVE, it can be changed to the following class:
-<li>STANDARD</li>
+                 *Modify the storage type of media files.
+When the file storage type is standard storage, it can be modified to the following types:
+<li>Infrequent storage</li>
+<li>Archive storage</li>
+<li>DEEP_ARCHIVE</li>
+When the current storage type of a media file is infrequent storage, it can be modified to the following types:
+<li>Standard storage</li>
+<li>Archive storage</li>
+<li>DEEP_ARCHIVE</li>
+When the current storage type of a media file is archive storage, it can be modified to the following types:
+<li>Standard storage</li>
+When the current storage type of a media file is DEEP_ARCHIVE, it can be modified to the following types:
+<li>Standard storage</li>
                  * @param req ModifyMediaStorageClassRequest
                  * @return ModifyMediaStorageClassOutcome
                  */
@@ -2267,7 +3256,7 @@ If the current storage class is DEEP ARCHIVE, it can be changed to the following
                 ModifyMediaStorageClassOutcomeCallable ModifyMediaStorageClassCallable(const Model::ModifyMediaStorageClassRequest& request);
 
                 /**
-                 *This API is used to modify sample information according to the sample ID. You can modify the name and description, add, delete, and reset facial features or tags. Leave at least one image after deleting facial features. To leave no image, please use the reset operation.
+                 *This API is used to modify material sample information based on the material ID, including the modification of the name and description, as well as the addition, deletion, and reset of facial features and tags. The deletion of facial features must ensure at least 1 image remains. Otherwise, please use the reset operation.
                  * @param req ModifyPersonSampleRequest
                  * @return ModifyPersonSampleOutcome
                  */
@@ -2276,7 +3265,18 @@ If the current storage class is DEEP ARCHIVE, it can be changed to the following
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
 
                 /**
-                 *Modifies media quality inspection template.
+                 *This API is used to modify a user-customized asynchronous image processing template.
+
+Note: Templates with IDs below 10000 are system-preset templates and are not allowed to be modified.
+                 * @param req ModifyProcessImageAsyncTemplateRequest
+                 * @return ModifyProcessImageAsyncTemplateOutcome
+                 */
+                ModifyProcessImageAsyncTemplateOutcome ModifyProcessImageAsyncTemplate(const Model::ModifyProcessImageAsyncTemplateRequest &request);
+                void ModifyProcessImageAsyncTemplateAsync(const Model::ModifyProcessImageAsyncTemplateRequest& request, const ModifyProcessImageAsyncTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProcessImageAsyncTemplateOutcomeCallable ModifyProcessImageAsyncTemplateCallable(const Model::ModifyProcessImageAsyncTemplateRequest& request);
+
+                /**
+                 *Modifies an audio and video quality detection template.
                  * @param req ModifyQualityInspectTemplateRequest
                  * @return ModifyQualityInspectTemplateOutcome
                  */
@@ -2285,7 +3285,8 @@ If the current storage class is DEEP ARCHIVE, it can be changed to the following
                 ModifyQualityInspectTemplateOutcomeCallable ModifyQualityInspectTemplateCallable(const Model::ModifyQualityInspectTemplateRequest& request);
 
                 /**
-                 *Modify Rebuild Media Template.
+                 *This API is <font color=red>no longer maintained</font>. The new version of the [Audio and Video Quality Rebirth](https://www.tencentcloud.com/document/product/266/102571?from_cn_redirect=1) API uses preset templates. For details, see [Audio and Video Quality Rebirth Template](https://www.tencentcloud.com/document/product/266/102586?from_cn_redirect=1#50604b3f-0286-4a10-a3f7-18218116aff7).
+Modify a video rebirth template.
                  * @param req ModifyRebuildMediaTemplateRequest
                  * @return ModifyRebuildMediaTemplateOutcome
                  */
@@ -2294,8 +3295,8 @@ If the current storage class is DEEP ARCHIVE, it can be changed to the following
                 ModifyRebuildMediaTemplateOutcomeCallable ModifyRebuildMediaTemplateCallable(const Model::ModifyRebuildMediaTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a custom moderation template.
-> The templates can only be used by the APIs [ReviewAudioVideo](https://intl.cloud.tencent.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://intl.cloud.tencent.com/document/api/266/73217?from_cn_redirect=1).
+                 *Modify a user-customized moderation template.
+>Template is applicable only to the [ReviewAudioVideo](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) and [ReviewImage](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1) APIs.
                  * @param req ModifyReviewTemplateRequest
                  * @return ModifyReviewTemplateOutcome
                  */
@@ -2304,8 +3305,8 @@ If the current storage class is DEEP ARCHIVE, it can be changed to the following
                 ModifyReviewTemplateOutcomeCallable ModifyReviewTemplateCallable(const Model::ModifyReviewTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a playlist.
-The modification will only take effect for new playback requests. For ongoing playback, the old playlist will be playable for seven days after the modification.
+                 *This API is used to modify a carousel playlist.
+After modification, only new playback requests will take effect. Users already playing can still play the original playlist within 7 days.
                  * @param req ModifyRoundPlayRequest
                  * @return ModifyRoundPlayOutcome
                  */
@@ -2314,7 +3315,7 @@ The modification will only take effect for new playback requests. For ongoing pl
                 ModifyRoundPlayOutcomeCallable ModifyRoundPlayCallable(const Model::ModifyRoundPlayRequest& request);
 
                 /**
-                 *This API is used to modify a custom sampled screencapturing template.
+                 *Modify a custom sampled screenshot template.
                  * @param req ModifySampleSnapshotTemplateRequest
                  * @return ModifySampleSnapshotTemplateOutcome
                  */
@@ -2323,7 +3324,7 @@ The modification will only take effect for new playback requests. For ongoing pl
                 ModifySampleSnapshotTemplateOutcomeCallable ModifySampleSnapshotTemplateCallable(const Model::ModifySampleSnapshotTemplateRequest& request);
 
                 /**
-                 *This API is used to modify a custom time point screencapturing template.
+                 *Modify a user-customized specified time point screenshot template.
                  * @param req ModifySnapshotByTimeOffsetTemplateRequest
                  * @return ModifySnapshotByTimeOffsetTemplateOutcome
                  */
@@ -2332,7 +3333,7 @@ The modification will only take effect for new playback requests. For ongoing pl
                 ModifySnapshotByTimeOffsetTemplateOutcomeCallable ModifySnapshotByTimeOffsetTemplateCallable(const Model::ModifySnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
-                 *This API is used to modify subapplication information, but it is not allowed to modify primary application information.
+                 *This API is used to change application information, but the default application info is not allowed to be modified.
                  * @param req ModifySubAppIdInfoRequest
                  * @return ModifySubAppIdInfoOutcome
                  */
@@ -2341,7 +3342,7 @@ The modification will only take effect for new playback requests. For ongoing pl
                 ModifySubAppIdInfoOutcomeCallable ModifySubAppIdInfoCallable(const Model::ModifySubAppIdInfoRequest& request);
 
                 /**
-                 *This API is used to enable/disable a subapplication. After a subapplication is disabled, its corresponding domain name will be blocked and its access to the console will be restricted.
+                 *This API is used to enable or disable an application. A disabled application will have its corresponding domain blocked and console access restricted.
                  * @param req ModifySubAppIdStatusRequest
                  * @return ModifySubAppIdStatusOutcome
                  */
@@ -2350,8 +3351,8 @@ The modification will only take effect for new playback requests. For ongoing pl
                 ModifySubAppIdStatusOutcomeCallable ModifySubAppIdStatusCallable(const Model::ModifySubAppIdStatusRequest& request);
 
                 /**
-                 *We have <font color='red'>stopped updating</font> this API. Currently, you no longer need a player configuration to use player signatures. For details, see [Player Signature](https://intl.cloud.tencent.com/document/product/266/45554?from_cn_redirect=1).
-This API is used to modify a player configuration.
+                 *This API is <font color='red'>no longer maintained</font>. The new version of player signature no longer uses player configuration templates. For details, please see [Player Signature](https://www.tencentcloud.com/document/product/266/45554?from_cn_redirect=1).
+This API is used to modify player configurations.
                  * @param req ModifySuperPlayerConfigRequest
                  * @return ModifySuperPlayerConfigOutcome
                  */
@@ -2360,7 +3361,7 @@ This API is used to modify a player configuration.
                 ModifySuperPlayerConfigOutcomeCallable ModifySuperPlayerConfigCallable(const Model::ModifySuperPlayerConfigRequest& request);
 
                 /**
-                 *This API is used to modify a custom transcoding template.
+                 *Modify the information of a custom transcoding template.
                  * @param req ModifyTranscodeTemplateRequest
                  * @return ModifyTranscodeTemplateOutcome
                  */
@@ -2369,8 +3370,8 @@ This API is used to modify a player configuration.
                 ModifyTranscodeTemplateOutcomeCallable ModifyTranscodeTemplateCallable(const Model::ModifyTranscodeTemplateRequest& request);
 
                 /**
-                 *This API is used to modify the acceleration region of a domain name on VOD.
-1. You can modify acceleration regions of only domain names whose status is `Online`.
+                 *This API is used to modify the acceleration region of a vod domain.
+1. The acceleration region can be modified only when the domain name deployment state is Online.
                  * @param req ModifyVodDomainAccelerateConfigRequest
                  * @return ModifyVodDomainAccelerateConfigOutcome
                  */
@@ -2379,8 +3380,8 @@ This API is used to modify a player configuration.
                 ModifyVodDomainAccelerateConfigOutcomeCallable ModifyVodDomainAccelerateConfigCallable(const Model::ModifyVodDomainAccelerateConfigRequest& request);
 
                 /**
-                 *This API is used to modify domain name settings, such as the hotlink protection configuration.
-1. You can modify settings of only domain names whose status is `Online`.
+                 *This API is used to modify domain name configuration, including hotlink protection configuration.
+1. The domain name configuration can be modified only when the domain name deployment state is Online.
                  * @param req ModifyVodDomainConfigRequest
                  * @return ModifyVodDomainConfigOutcome
                  */
@@ -2389,7 +3390,7 @@ This API is used to modify a player configuration.
                 ModifyVodDomainConfigOutcomeCallable ModifyVodDomainConfigCallable(const Model::ModifyVodDomainConfigRequest& request);
 
                 /**
-                 *This API is used to modify a custom watermarking template. The watermark type cannot be modified.
+                 *This API is used to modify a user-defined watermark template. The watermark type cannot be modified.
                  * @param req ModifyWatermarkTemplateRequest
                  * @return ModifyWatermarkTemplateOutcome
                  */
@@ -2398,7 +3399,7 @@ This API is used to modify a player configuration.
                 ModifyWatermarkTemplateOutcomeCallable ModifyWatermarkTemplateCallable(const Model::ModifyWatermarkTemplateRequest& request);
 
                 /**
-                 *This API is used to modify the use case and tag of a keyword. The keyword itself cannot be modified, but you can delete it and create another one if needed.
+                 *This API is used to modify the scenario and tags of a keyword. The keyword itself cannot be modified. If modification is needed, delete and rebuild it.
                  * @param req ModifyWordSampleRequest
                  * @return ModifyWordSampleOutcome
                  */
@@ -2407,7 +3408,7 @@ This API is used to modify a player configuration.
                 ModifyWordSampleOutcomeCallable ModifyWordSampleCallable(const Model::ModifyWordSampleRequest& request);
 
                 /**
-                 *This API is used to parse the index file content and return the list of segment files to be uploaded when an HLS video is uploaded. A segment file path must be a relative path of the current directory or subdirectory instead of a URL or absolute path.
+                 *When uploading HLS videos, this API parses the index file content and returns a list of shard files to be uploaded. The shard file path must be a relative path in the current directory or subdirectory. It cannot be a URL or an absolute path.
                  * @param req ParseStreamingManifestRequest
                  * @return ParseStreamingManifestOutcome
                  */
@@ -2416,19 +3417,28 @@ This API is used to modify a player configuration.
                 ParseStreamingManifestOutcomeCallable ParseStreamingManifestCallable(const Model::ParseStreamingManifestRequest& request);
 
                 /**
-                 *Initiate processing tasks for media file in VOD, including: 
-1. Video transcoding (with Watermark); 
-2. Video to animated image; 
-3. Screencapturing the video at specified Time point;
-4. Sampled screenshot of the video;
-5. Generated Image sprite template from the video;
-6. Generated a cover image from the video;
-7. Adaptive Bitrate Streaming for the video (with encryption); 
-8. Content Moderation (offensive Information, unsafe Information, inappropriate Information), it is <font color=red>not recommended</font> to use this API, recommend using [Video moderation(ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/50634) or [Image moderation(ReviewImage)](https://www.tencentcloud.com/document/api/266/47138);
-9. Content analysis (tag, category, cover, frame-by-frame tag);
-10. Content recognition (video intro and outro, face, Text, keyword, voice, Key object).
+                 *This API is used to process image processing tasks.
+                 * @param req ProcessImageAsyncRequest
+                 * @return ProcessImageAsyncOutcome
+                 */
+                ProcessImageAsyncOutcome ProcessImageAsync(const Model::ProcessImageAsyncRequest &request);
+                void ProcessImageAsyncAsync(const Model::ProcessImageAsyncRequest& request, const ProcessImageAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessImageAsyncOutcomeCallable ProcessImageAsyncCallable(const Model::ProcessImageAsyncRequest& request);
 
-If using event notification, the event notification type is [task flow status change](https://www.tencentcloud.com/document/product/266/33953).
+                /**
+                 *This API is used to initiate processing tasks for audio-video media in VOD, with features including:
+1. Video transcoding (watermarked);
+2. Animated image generating;
+3. Screenshot taking at specified time points;
+4. Sampled screenshot taking;
+5. Capture CSS sprites for videos;
+6. Capture a frame from a video as the cover.
+7. Transcoding to adaptive bitrate streaming and encrypting;
+8. Content review (offensive content, unsafe information, inappropriate information). It is <font color=red>not recommended</font> to use this API to initiate it. [Audio/Video Moderation (ReviewAudioVideo)](https://www.tencentcloud.com/document/api/266/80283?from_cn_redirect=1) or [Image Moderation (ReviewImage)](https://www.tencentcloud.com/document/api/266/73217?from_cn_redirect=1) is recommended.
+9. Content analysis (tag, categorization, cover, frame tagging) is not supported for HLS format currently.
+10. Content recognition (video intro and outro, human face, full text, text keyword, full speech, speech keyword, object).
+
+If event notification is used, the event notification type is task flow status change (https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1).
                  * @param req ProcessMediaRequest
                  * @return ProcessMediaOutcome
                  */
@@ -2437,12 +3447,30 @@ If using event notification, the event notification type is [task flow status ch
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
 
                 /**
-                 *This API is used to start a task flow on a video.
+                 *Use the media processing capability of the media processing service (MPS) to initiate media processing for videos in video-on-demand.
+Currently supported MPS features:
+1. Smart subtitling: This feature supports processing offline audio files, video files, and live streams. It can extract source language captions from videos through ASR speech recognition or OCR text recognition, and implement multilingual translation. View details in the Access Guide (https://www.tencentcloud.com/document/product/266/131210?from_cn_redirect=1).
+2. Intelligent erasure: It can blur, mosaic, or seamlessly process elements such as logos, subtitles, human faces, and license plates in video footage, making it easy to spread and share content. The new video generated by this task will be assigned a new FileId and stored in a sub-application of the VOD platform. View details in the Access Guide (https://www.tencentcloud.com/document/product/266/131211?from_cn_redirect=1).
+3. AI analysis: This feature supports one-stop translation (https://www.tencentcloud.com/document/product/266/131212?from_cn_redirect=1), highlights (https://www.tencentcloud.com/document/product/266/131213?from_cn_redirect=1), LLM video summary (https://www.tencentcloud.com/document/product/266/131214?from_cn_redirect=1), LLM audio/video understanding (https://www.tencentcloud.com/document/product/266/131215?from_cn_redirect=1), intelligent splitting (https://www.tencentcloud.com/document/product/266/131216?from_cn_redirect=1), intelligent landscape-to-portrait (https://www.tencentcloud.com/document/product/266/131217?from_cn_redirect=1), video deduplication (https://www.tencentcloud.com/document/product/266/131218?from_cn_redirect=1), and other features.
+
+
+> Video processing task initiated this method:
+> 1. Query task status and results on the VOD platform. Use [DescribeTaskDetail](https://www.tencentcloud.com/document/product/266/33431?from_cn_redirect=1) or [DescribeTasks](https://www.tencentcloud.com/document/product/266/33430?from_cn_redirect=1) to query tasks.
+> 2. The usage and bills of related features will be provided on the PS platform. Before using this feature, start by enabling Media Processing Service (MPS) in the console. For the activation method, see the preliminary operations in the access documentation.
+                 * @param req ProcessMediaByMPSRequest
+                 * @return ProcessMediaByMPSOutcome
+                 */
+                ProcessMediaByMPSOutcome ProcessMediaByMPS(const Model::ProcessMediaByMPSRequest &request);
+                void ProcessMediaByMPSAsync(const Model::ProcessMediaByMPSRequest& request, const ProcessMediaByMPSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessMediaByMPSOutcomeCallable ProcessMediaByMPSCallable(const Model::ProcessMediaByMPSRequest& request);
+
+                /**
+                 *Use a task flow template to initiate processing tasks for videos in VOD.
 There are two ways to create a task flow template:
 1. Create and modify a task flow template in the console;
-2. Create a task flow template using the `CreateProcedureTemplate` API.
+2. Create a task flow template through the task flow template API.
 
-If event notifications are used, the event type for moderation tasks is [ReviewAudioVideoComplete](https://intl.cloud.tencent.com/document/product/266/81258?from_cn_redirect=1), and that for other tasks is [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/9636?from_cn_redirect=1).
+If event notification is used, the type of event notification for tasks other than audio/video moderation tasks is task flow status change (https://www.tencentcloud.com/document/product/266/9636?from_cn_redirect=1); the type of event notification for audio/video moderation tasks is audio/video moderation completed (https://www.tencentcloud.com/document/product/266/81258?from_cn_redirect=1).
                  * @param req ProcessMediaByProcedureRequest
                  * @return ProcessMediaByProcedureOutcome
                  */
@@ -2451,7 +3479,7 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 ProcessMediaByProcedureOutcomeCallable ProcessMediaByProcedureCallable(const Model::ProcessMediaByProcedureRequest& request);
 
                 /**
-                 *This API is <font color='red'>disused</font>, please use [ProcessMedia](https://intl.cloud.tencent.com/document/product/862/37578?from_cn_redirect=1) API of MPS, with the input parameter `InputInfo.UrlInputInfo.Url` set to a video URL.
+                 *This API is <font color='red'>no longer maintained</font>. Please use the [ProcessMedia](https://www.tencentcloud.com/document/product/862/37578?from_cn_redirect=1) API of MPS and specify the video URL in the input parameter InputInfo.UrlInputInfo.Url.
                  * @param req ProcessMediaByUrlRequest
                  * @return ProcessMediaByUrlOutcome
                  */
@@ -2460,12 +3488,12 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 ProcessMediaByUrlOutcomeCallable ProcessMediaByUrlCallable(const Model::ProcessMediaByUrlRequest& request);
 
                 /**
-                 ** This API is used to get event notifications from the business server through [reliable callback](https://intl.cloud.tencent.com/document/product/266/33948).
-* The API gets event data through long polling. That is, if there is any unconsumed event on the server, the event notification will be returned to the requester immediately. If there is no unconsumed event on the server, the request will be suspended in the backend until a new event is generated.
-* The request can be suspended for up to 5 seconds. It's recommended to set the request timeout period to 10 seconds.
-* Event notifications not pulled will be retained for up to 4 days and may be cleared after this period.
-* After the API returns an event, the caller must call the [ConfirmEvents](https://intl.cloud.tencent.com/document/product/266/34184) API within <font color="red">30 seconds</font> to confirm that the event notification has been processed. Otherwise, the event notification will be pulled again after <font color="red">30 seconds</font>.
-* This API can get up to 16 event notifications at a time.
+                 ** This API is used for the business server to get event notifications via reliable callback (https://www.tencentcloud.com/document/product/266/33779?from_cn_redirect=1#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83).
+* The API uses long polling mode. If there are unconsumed events on the server, they will be returned to the requester immediately. If there are no unconsumed events, the request will be suspended in the background until a new event occurs.
+* The request can be suspended for up to 5 seconds. It is advisable to set the timeout to 10 seconds for the requester;
+* Event notifications that are not pulled are retained for up to 4 days. Notifications exceeding this time limit may be purged.
+* If this API returns an event, the caller must call the [Confirm Event Notification](https://www.tencentcloud.com/document/product/266/33434?from_cn_redirect=1) API within <font color="red">30 seconds</font> to confirm that the event notification has been processed. Otherwise, the event notification will be pulled again after <font color="red">30 seconds</font>.
+* Currently, a maximum of 16 event notifications can be obtained per API call.
                  * @param req PullEventsRequest
                  * @return PullEventsOutcome
                  */
@@ -2474,7 +3502,7 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 PullEventsOutcomeCallable PullEventsCallable(const Model::PullEventsRequest& request);
 
                 /**
-                 *This API is used to pull a video on the internet to the VOD platform.
+                 *This API is used to pull a video from the network to the VOD platform.
                  * @param req PullUploadRequest
                  * @return PullUploadOutcome
                  */
@@ -2483,10 +3511,10 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 PullUploadOutcomeCallable PullUploadCallable(const Model::PullUploadRequest& request);
 
                 /**
-                 *1. This API is used to prefetch a list of specified URLs.
-2. The URL domain names must have already been registered with VOD.
-3. Up to 20 URLs can be specified in one request.
-4. By default, the maximum number of URLs that can be refreshed per day is 10,000.
+                 *1. Preheat a specified URL list.
+2. The domain name of the URL must be registered in VOD.
+3. A single request can specify up to 20 URLs.
+4. The default prefetch quota is 10,000 URLs per day.
                  * @param req PushUrlCacheRequest
                  * @return PushUrlCacheOutcome
                  */
@@ -2495,7 +3523,8 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
 
                 /**
-                 *Initiate rebuild media
+                 *The API is <font color=red>no longer maintained</font>. Please use the new version of APIs [Audio and Video Quality Revival](https://www.tencentcloud.com/document/api/266/102571?from_cn_redirect=1).
+This API is used to initiate audio and video quality revival.
                  * @param req RebuildMediaRequest
                  * @return RebuildMediaOutcome
                  */
@@ -2504,7 +3533,8 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 RebuildMediaOutcomeCallable RebuildMediaCallable(const Model::RebuildMediaRequest& request);
 
                 /**
-                 *Rebuild media by template.
+                 *This API is <font color=red>no longer maintained</font>. Please use the new version of APIs [audio and video quality revival](https://www.tencentcloud.com/document/api/266/102571?from_cn_redirect=1).
+Use a template to initiate video rebirth.
                  * @param req RebuildMediaByTemplateRequest
                  * @return RebuildMediaByTemplateOutcome
                  */
@@ -2513,10 +3543,10 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 RebuildMediaByTemplateOutcomeCallable RebuildMediaByTemplateCallable(const Model::RebuildMediaByTemplateRequest& request);
 
                 /**
-                 *1. This API is used to purge URLs.
-2. The URL domain names must have already been registered with VOD.
-3. Up to 20 URLs can be specified in one request.
-4. By default, the maximum number of URLs allowed for purge per day is 100,000.
+                 *1. Refreshes a specified URL list.
+2. The domain name of the URL must be registered in VOD.
+3. A maximum of 20 URLs can be specified per request.
+4. The default refresh quota is 100,000 URLs per day.
                  * @param req RefreshUrlCacheRequest
                  * @return RefreshUrlCacheOutcome
                  */
@@ -2525,7 +3555,7 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 RefreshUrlCacheOutcomeCallable RefreshUrlCacheCallable(const Model::RefreshUrlCacheRequest& request);
 
                 /**
-                 *This API is used to remove watermarks from a video.
+                 *Removes watermarks intelligently
                  * @param req RemoveWatermarkRequest
                  * @return RemoveWatermarkOutcome
                  */
@@ -2534,7 +3564,7 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 RemoveWatermarkOutcomeCallable RemoveWatermarkCallable(const Model::RemoveWatermarkRequest& request);
 
                 /**
-                 *This API is used to modify a custom task flow template.
+                 *Reset the content of the user-defined task flow template.
                  * @param req ResetProcedureTemplateRequest
                  * @return ResetProcedureTemplateOutcome
                  */
@@ -2543,7 +3573,7 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 ResetProcedureTemplateOutcomeCallable ResetProcedureTemplateCallable(const Model::ResetProcedureTemplateRequest& request);
 
                 /**
-                 *This API is used to restore files from ARCHIVE or DEEP ARCHIVE. Files stored in ARCHIVE or DEEP ARCHIVE must be restored before they can be accessed. Restored files are available for a limited period of time.
+                 *When the storage type of a media file is archive storage or deep archive storage, it is inaccessible. If you need access, call this API to unfreeze it. The unfrozen media file is temporarily accessible and becomes inaccessible after the validity period expires.
                  * @param req RestoreMediaRequest
                  * @return RestoreMediaOutcome
                  */
@@ -2552,9 +3582,9 @@ If event notifications are used, the event type for moderation tasks is [ReviewA
                 RestoreMediaOutcomeCallable RestoreMediaCallable(const Model::RestoreMediaRequest& request);
 
                 /**
-                 *This API is used to start a moderation task on a file stored in VOD to detect non-compliant content in images, text, speech, and voice.
+                 *This API is used to initiate moderation tasks for on-demand audio-video media, intelligently detecting violative content in video footage, text in images, text in speech, and sounds.
 
-If event notifications are used, the event type is [ReviewAudioVideoComplete](https://intl.cloud.tencent.com/document/product/266/81258?from_cn_redirect=1).
+If event notification is used, its type is [audio/video moderation completed](https://www.tencentcloud.com/document/product/266/81258?from_cn_redirect=1).
                  * @param req ReviewAudioVideoRequest
                  * @return ReviewAudioVideoOutcome
                  */
@@ -2563,7 +3593,11 @@ If event notifications are used, the event type is [ReviewAudioVideoComplete](ht
                 ReviewAudioVideoOutcomeCallable ReviewAudioVideoCallable(const Model::ReviewAudioVideoRequest& request);
 
                 /**
-                 *This API is used to moderate an image stored in VOD (detect pornographic and terrorist content).><li>The image file must be smaller than 5 MB.</li> ><li>To ensure the accuracy of moderation results, the image resolution must be higher than 256 x 256 px.</li> ><li>The format must be PNG, JPG, JPEG, BMP, GIF, or WEBP.</li>
+                 *Initiate a review task for image files in on-demand video for offensive, unsafe, and inappropriate information.
+
+<li>Supported image file size: file < 5M;</li>
+<li>Supported image file resolution: recommended resolution above 256x256, otherwise review effectiveness may be affected;</li>
+<li>Image file formats supported: PNG, JPG, JPEG, BMP, GIF, WEBP.</li>
                  * @param req ReviewImageRequest
                  * @return ReviewImageOutcome
                  */
@@ -2572,47 +3606,48 @@ If event notifications are used, the event type is [ReviewAudioVideoComplete](ht
                 ReviewImageOutcomeCallable ReviewImageCallable(const Model::ReviewImageRequest& request);
 
                 /**
-                 *Search for media information, supporting multiple condition filtering, as well as sorting and filtering of returned results. This includes:
-- Specify a collection of file IDs (FileIds) to return media with any ID in the collection.
-- Fuzzy search based on multiple media file names (Names) or description information (Descriptions).
-- Search based on multiple file name prefixes (NamePrefixes).
-- Specify a collection of categories (ClassIds, see input parameters) to return media that meets any category in the collection. For example, media categories include movies, TV shows, variety shows, etc., and there are subcategories such as historical films, action films, and romance films under the movie category. If ClassIds specifies movies and TV shows, all subcategories under movies and TV shows will be returned; if ClassIds specifies historical films and action films, only media under these two subcategories will be returned.
-- Specify a collection of tags (Tags, see input parameters) to return media that meets any tag in the collection. For example, media tags include ACG, palace fighting, and ghost animal. If Tags specifies ACG and ghost animal, media that meets any of these two tags will be retrieved.
-- Specify a collection of file types (Categories, see input parameters) to return media that meets any type in the collection. For example, file types include Video (video), Audio (audio), and Image (image). If Categories specifies Video and Audio, media that meets these types will be retrieved.
-- Specify a collection of sources (SourceTypes, see input parameters) to return media that meets any source in the collection. For example, media sources include Record (live recording) and Upload (upload). If SourceTypes specifies Record and Upload, media that meets these sources will be retrieved.
-- Specify a collection of file container formats (MediaTypes, see input parameters) to return media that meets any container format in the collection. For example, container formats include MP4, AVI, MP3, etc. If MediaTypes specifies MP4 and MP3, media that meets these container formats will be retrieved.
-- Specify a collection of file statuses (Status, see input parameters) to return media that meets any status in the collection. For example, file statuses include Normal (normal), SystemForbidden (platform ban), and Forbidden (active ban). If Status specifies Normal and Forbidden, media that meets these statuses will be retrieved.
-- Specify a collection of file moderation results (ReviewResults, see input parameters) to return media that meets any status in the collection. For example, file moderation results include pass (passed) and block (not compliant). If ReviewResults specifies pass and block, media that meets these moderation results will be retrieved.
-- Filter live recorded media by specifying a collection of live streaming codes (StreamIds, see input parameters).
-- Filter media by specifying the creation time range of the media.
-- Filter media by specifying a collection of TRTC application IDs.
-- Filter media by specifying a collection of TRTC room IDs.
+                 *This API is used to search media information with multiple filter criteria, sort and filter returned results, and other features. This includes:
+-Specify the file ID collection FileIds to return media matching any ID in the collection.
+-Do fuzzy search based on multiple media file Names or Descriptions.
+-Search by multiple filename prefixes NamePrefixes.
+- Specify the category collection ClassIds (see input parameters), and media that meet any category in the collection will be returned. For example, media categories include movies, TV series, and variety shows. The movie category has subcategories such as historical films, action films, and romance films. If ClassIds specifies movies and TV series, all subcategories under movies and TV series will be returned. If ClassIds specifies historical films and action films, only media under these two subcategories will be returned.
+- Specify tag collection Tags (see input parameters) to return media that meets any tag in the collection. For example, if media tags include ACG, palace intrigue, and parody remix, and Tags specifies ACG and parody remix, any media that matches either of these two tags will be retrieved.
+-Specify a collection of file types in Categories (see input parameters) to return media that meets any type in the collection. For example, file types include Video, Audio, and Image. If Categories specifies Video and Audio, media that meets these types will be retrieved.
+-Specify the source collection SourceTypes (see input parameters) to return media that meets any source in the collection. For example, media sources include Record (live recording), Upload, and so on. If SourceTypes specifies Record and Upload, media that meets these sources will be retrieved.
+-Specify the file muxing format set MediaTypes (see input parameters), and return media that meet any muxing format in the collection. For example, muxing formats include MP4, AVI, MP3, and so on. If MediaTypes specifies MP4 and MP3, media that comply with these muxing formats will be retrieved.
+-Specify the file status collection Status (see input parameters) to return media that meets any status in the collection. For example, file statuses include Normal, SystemForbidden (Platform Ban), and Forbidden (proactive ban). If Status specifies Normal and Forbidden, media that meets these statuses will be retrieved.
+-Specify the file moderation result set ReviewResults (see input parameters) to return media that meet any status in the collection. For example, file moderation results include pass and block. If ReviewResults specifies pass and block, media that meet these review results will be retrieved.
+-Filter the media of live recording service by the specified collection of live streaming codes StreamIds (see input parameter).
+-Filter media by the create time range of the specified media.
+-Specify a TRTC application ID collection to filter media.
+-Specify a TRTC room ID collection to filter media.
 
-- The above parameters can be combined in any way to search. For example, filter media created between 12:00:00 on December 1, 2018, and 12:00:00 on December 8, 2018, categorized as movies or TV shows, and tagged with palace fighting and suspense. Note that the search logic for elements of any parameter that supports array input is 'or'. The logical relationship between all parameters is 'and'
+-The above parameters can be combined in any way for search. For example, filter media with a creation time between 2018-12-01 12:00:00 and 2018-12-08 12:00:00, categorized as movie or TV series, and tagged with palace intrigue and suspense. Note that for any parameter that supports array input, the search logic between its elements is "OR". The logical relationship between all parameters is "AND".
 
-- Allow to control the type of media information returned through Filters (default to return all information). Optional inputs include:
-    1. Basic information (basicInfo): including media name, category, playback URL, cover image, etc.
-    2. Metadata (metaData): including size, duration, video stream information, audio stream information, etc.
-    3. Transcoding result information (transcodeInfo): including the media addresses, video stream parameters, audio stream parameters, etc., generated by transcoding the media into various specifications.
-    4.  Animated image result information (animatedGraphicsInfo): information on the animated image (such as gif) generated after converting the video.
-    Sampled screenshot information (sampleSnapshotInfo): screenshot information after sampling the video.
-    6. Image sprite information (imageSpriteInfo): image sprite information after generating the sprite from the video.
-    7. Specified time point screenshot information (snapshotByTimeOffsetInfo): screenshot information after capturing the video at specified time points.
-    8. Video timestamp info (keyFrameDescInfo): timestamp information set for the video.
-    9. Adaptive Bitrate Streaming information (adaptiveDynamicStreamingInfo): including specifications, encryption types, muxing formats, and other relevant information.
+-Allow passage of Filters to control the type of media information returned (default return all information). Selectable inputs include:
+1. Basic information (basicInfo): including media name, category, playback address, cover image, etc.
+2. Meta information (metaData): including size, duration, video stream information, and audio stream information.
+3. Transcode result information (transcodeInfo): includes media addresses, video stream parameters, and audio stream parameters of various specifications generated for the transcoded media.
+4. animatedGraphicsInfo: The animated graphics info after converting a video to GIF (for example, gif).
+5. sampleSnapshotInfo: Screenshot information after video sampling.
+6. Sprite image information (imageSpriteInfo): sprite image information after capturing sprite images from a video.
+7. snapshotByTimeOffsetInfo: screenshot information after taking screenshots at specified time points.
+8. Video timestamp information (keyFrameDescInfo): Dotting information set for the video.
+9. Adaptive Bitrate Streaming information (adaptiveDynamicStreamingInfo): includes specification, encryption type, packaging format and other related information.
 
-- Allow sorting the results by creation time and returning them in pages. Pagination is controlled by Offset and Limit (see input parameters).
+-Allow sorting results by creation time and return them in pages. Use Offset and Limit (see input parameters) to control pagination.
 
-<div id="maxResultsDesc">API result count limitation:</div>
-- <b><a href="#p_offset">Offset</a> and <a href="#p_limit">Limit</a> both affect the number of results returned in a single page query. Please pay special attention: when both of these values are missing, this API will return a maximum of 10 query results.</b>
-- <b>Supports up to 5,000 search results, and queries beyond this limit are not supported. If the search result volume is too large, it is recommended to use more refined filtering conditions to reduce search results.</b>
+<div id="maxResultsDesc">API return result count limit:</div>
 
-<br>Not recommended for conditional filtering:
-- (Not recommended: use Names, NamePrefixes, or Descriptions instead) Fuzzy search for media file names or description information with a single text (Text).
-- (Not recommended: use SourceTypes instead) Search for media files with a single source (SourceType).
-- (Not recommended: use StreamIds instead) Search for media files with a single live streaming code (StreamId).
-- (Not recommended: use CreateTime instead) Search for media files with a single start creation time (StartTime).
-- (Not recommended: use CreateTime instead) Search for media files with a single end creation time (EndTime).
+- <b><a href="#p_offset">Offset</a> and <a href="#p_limit">Limit</a> both parameters impact the number of results per pagination query. Special attention: When both values are not specified, this interface returns up to 10 query results only.</b>
+-<b>It supports returning up to 5000 search results. Results beyond this limit are no longer queryable. If the search result volume is too large, use more granular criteria to reduce the search results.</b>
+
+<br>Not recommended conditional filtering:
+-(Not recommended: use Names, NamePrefixes, or Descriptions instead) Specify a single Text to do fuzzy search on media file Names or Descriptions.
+-(Not recommended: use SourceTypes instead) Specify a single media file source SourceType for search.
+-(Not recommended: use StreamIds instead) Specify single push stream live code StreamId for search.
+-(Not recommended: use CreateTime instead) Specify a single starting creation time StartTime to search.
+-(Not recommended: use CreateTime instead) Specify a single ending creation time EndTime to search.
                  * @param req SearchMediaRequest
                  * @return SearchMediaOutcome
                  */
@@ -2621,7 +3656,34 @@ If event notifications are used, the event type is [ReviewAudioVideoComplete](ht
                 SearchMediaOutcomeCallable SearchMediaCallable(const Model::SearchMediaRequest& request);
 
                 /**
-                 *This API is used to configure DRM key information.
+                 *Use natural language to conduct semantic search on media.
+                 * @param req SearchMediaBySemanticsRequest
+                 * @return SearchMediaBySemanticsOutcome
+                 */
+                SearchMediaBySemanticsOutcome SearchMediaBySemantics(const Model::SearchMediaBySemanticsRequest &request);
+                void SearchMediaBySemanticsAsync(const Model::SearchMediaBySemanticsRequest& request, const SearchMediaBySemanticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchMediaBySemanticsOutcomeCallable SearchMediaBySemanticsCallable(const Model::SearchMediaBySemanticsRequest& request);
+
+                /**
+                 *This API is used to modify AIGC allowlist settings.
+                 * @param req SetAigcWhitelistRequest
+                 * @return SetAigcWhitelistOutcome
+                 */
+                SetAigcWhitelistOutcome SetAigcWhitelist(const Model::SetAigcWhitelistRequest &request);
+                void SetAigcWhitelistAsync(const Model::SetAigcWhitelistRequest& request, const SetAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAigcWhitelistOutcomeCallable SetAigcWhitelistCallable(const Model::SetAigcWhitelistRequest& request);
+
+                /**
+                 *Set a delivery target for the VOD domain in CLS.
+                 * @param req SetCLSPushTargetRequest
+                 * @return SetCLSPushTargetOutcome
+                 */
+                SetCLSPushTargetOutcome SetCLSPushTarget(const Model::SetCLSPushTargetRequest &request);
+                void SetCLSPushTargetAsync(const Model::SetCLSPushTargetRequest& request, const SetCLSPushTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetCLSPushTargetOutcomeCallable SetCLSPushTargetCallable(const Model::SetCLSPushTargetRequest& request);
+
+                /**
+                 *Sets DRM key provider information.
                  * @param req SetDrmKeyProviderInfoRequest
                  * @return SetDrmKeyProviderInfoOutcome
                  */
@@ -2630,7 +3692,7 @@ If event notifications are used, the event type is [ReviewAudioVideoComplete](ht
                 SetDrmKeyProviderInfoOutcomeCallable SetDrmKeyProviderInfoCallable(const Model::SetDrmKeyProviderInfoRequest& request);
 
                 /**
-                 *Set Vod Domain Certificate.
+                 *Set the HTTPS certificate for a vod domain.
                  * @param req SetVodDomainCertificateRequest
                  * @return SetVodDomainCertificateOutcome
                  */
@@ -2639,31 +3701,29 @@ If event notifications are used, the event type is [ReviewAudioVideoComplete](ht
                 SetVodDomainCertificateOutcomeCallable SetVodDomainCertificateCallable(const Model::SetVodDomainCertificateRequest& request);
 
                 /**
-                 *This API is used to cut a clip from an HLS video to generate a new video (in HLS format). You can either share the new video or save it.
+                 *Crop an HLS video by time period to generate a new HLS video in real time. Developers can share it immediately or store it for long-term preservation.
 
-VOD supports two types of clipping:
-- Clipping for persistent storage: The video clip is saved as an independent video file with its own `FileId`.
-- Clipping for temporary sharing: The video clip shares `FileId` with the input file.
+Tencent Cloud VOD supports two editing modes:
+-Edit and save: Save the edited video as an independent video with an independent FileId. This is suitable for long-term preservation of highlights.
+- Editing is not solidified: The edited video is attached to the input file and has no standalone FileId. This is suitable for scenarios where highlight clips are shared temporarily.
 
-Notes:
-- Clipping is based on the M3U8 file that contains a list of TS segments, so the smallest clipping unit is one TS segment instead of a second or less.
+This API is used to crop an m3u8 file based on input. Its minimum editing precision is one ts slice, so second-level or more precise editing precision cannot be achieved.
 
+### Edit solidification
+Editing solidification refers to saving an edited video as an independent video with its own FileId. Its lifecycle is not subject to the original input video. Even if the original input video is deleted, the clipping result is not impacted. You can also transcode it or publish it on WeChat.
 
-### Clipping for persistent storage
-In this mode, a video clip is saved as an independent video file with a `FileId`, and its lifecycle is not subject to the input video. Even if the source video is deleted, the video clip still exists. Moreover, the video clip can be transcoded, published on WeChat, and processed in other ways.
+For example, a complete football match raw video may last for 2 hours. For cost savings, a customer can store this video for 2 months, but can specify longer storage for the edited "highlights" video. You can also separately transcode the "highlights" video, publish it on WeChat, and perform other additional on-demand operations. In this case, you can choose the edit and solidify solution.
 
-Suppose you recorded a two-hour football match. You want to save the full video for only two months to save costs, but want to save the highlights for a longer time and perhaps transcode and publish the highlight clip to WeChat. In this case, you can choose clipping for persistent storage.
+The advantage of edit solidification is that its lifecycle is independent of the original input video, allowing separate management and long-term preservation.
 
-The advantage of clipping for persistent storage is that the video clip has a lifecycle independent of the input video and can be managed independently and stored persistently.
+<font color='red'>Note:</font> If solidification is specified when editing, enable reception of editing solidification event notifications through the ModifyEventConfig API. After successful solidification, you will receive a PersistenceComplete event notification. Before receiving this event notification, you should not delete or reduce the storage class of the original input video. Otherwise, playback of the generated video may be abnormal.
 
-<font color='red'>Notice:</font> If solidification is specified during clipping, enable the reception of persistence completed event notifications through the ModifyEventConfig interface. After successful solidification, an event notification of type PersistenceComplete will be received. Before receiving this event notification, operations such as deletion or cooling down of live recording videos should not be performed, otherwise, abnormal playback may occur in the video generated by the clipping.
+### Editing is not solidified
+Editing is not solidified, which means the result of editing (m3u8 file) shares the same TS segments with the original input video. The generated video is not an independent and complete video (no independent FileId, only a playback URL), and its valid period is consistent with that of the original input full video. Once the original input video is deleted, the clip will also become unplayable.
 
-### Clipping for temporary sharing
-The video clip (an M3U8 file) shares the same TS segments with the input video instead of being an independent video. It only has a playback URL but has no `FileId`, and its validity period is the same as that of the input video. Once the input video is deleted, the video clip cannot be played back.
+Editing is not solidified. Since the clipping result is not an independent video, it is not included in video management of on-demand media assets (for example, the total number of videos in the console does not count this video clip), and no video processing operation such as transcoding or WeChat publishing can be performed on this video clip separately.
 
-Because the video clip is not an independent video, it's not displayed as a media asset in the VOD console, and cannot be transcoded or published to WeChat.
-
-Clipping for temporary sharing is lightweight and incurs no additional storage fees. However, the video clip has the same lifecycle as the source recording video and cannot be transcoded or processed in other ways.
+The advantage of non-solidified editing is that the editing operation is Relatively "lightweight" and will not generate additional storage overhead. However, its shortcoming is that the lifecycle is identical to the original recorded video, and it is unable to further perform video processing such as transcoding.
                  * @param req SimpleHlsClipRequest
                  * @return SimpleHlsClipOutcome
                  */
@@ -2672,7 +3732,7 @@ Clipping for temporary sharing is lightweight and incurs no additional storage f
                 SimpleHlsClipOutcomeCallable SimpleHlsClipCallable(const Model::SimpleHlsClipRequest& request);
 
                 /**
-                 *Split the video into strips to generate multiple new videos.
+                 *This API is used to split an on-demand video and generate multiple new on-demand videos.
                  * @param req SplitMediaRequest
                  * @return SplitMediaOutcome
                  */
@@ -2681,7 +3741,7 @@ Clipping for temporary sharing is lightweight and incurs no additional storage f
                 SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
 
                 /**
-                 *This API is used for enabling/disabling the CDN acceleration domain.
+                 *This API is used to enable or disable a CDN acceleration domain name.
                  * @param req StartCDNDomainRequest
                  * @return StartCDNDomainOutcome
                  */
@@ -2690,7 +3750,45 @@ Clipping for temporary sharing is lightweight and incurs no additional storage f
                 StartCDNDomainOutcomeCallable StartCDNDomainCallable(const Model::StartCDNDomainRequest& request);
 
                 /**
-                 *This API is used to verify the domain name resolution value.
+                 *This API is used to initiate a text to speech task, synthesizing text into speech for long text scenarios (up to 200,000 characters). It supports specifying voice tone and synthesis parameters such as speaking rate, volume, pitch, sampling rate, and output format. Text to speech is an asynchronous task, and audio is generated upon completion.
+                 * @param req TextToSpeechAsyncRequest
+                 * @return TextToSpeechAsyncOutcome
+                 */
+                TextToSpeechAsyncOutcome TextToSpeechAsync(const Model::TextToSpeechAsyncRequest &request);
+                void TextToSpeechAsyncAsync(const Model::TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechAsyncOutcomeCallable TextToSpeechAsyncCallable(const Model::TextToSpeechAsyncRequest& request);
+
+                /**
+                 *Initiate a text to speech task to convert text into speech.
+                 * @param req TextToSpeechSyncRequest
+                 * @return TextToSpeechSyncOutcome
+                 */
+                TextToSpeechSyncOutcome TextToSpeechSync(const Model::TextToSpeechSyncRequest &request);
+                void TextToSpeechSyncAsync(const Model::TextToSpeechSyncRequest& request, const TextToSpeechSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechSyncOutcomeCallable TextToSpeechSyncCallable(const Model::TextToSpeechSyncRequest& request);
+
+                /**
+                 *Update the Token for AIGC API calls. Data synchronization has a delay of about 30 seconds after the update.
+                 * @param req UpdateAigcApiTokenRequest
+                 * @return UpdateAigcApiTokenOutcome
+                 */
+                UpdateAigcApiTokenOutcome UpdateAigcApiToken(const Model::UpdateAigcApiTokenRequest &request);
+                void UpdateAigcApiTokenAsync(const Model::UpdateAigcApiTokenRequest& request, const UpdateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAigcApiTokenOutcomeCallable UpdateAigcApiTokenCallable(const Model::UpdateAigcApiTokenRequest& request);
+
+                /**
+                 *This API is used to update the profile information of a voice by voice ID, including name, description, gender, age, language, tags, and scenarios, and return the complete voice information after the update. Only voices under this account can be updated. System preset voices do not support update.
+
+Note: Newly designed or cloned voice types cannot be updated before activation. They are activated only after the new voice type is used for TTS once.
+                 * @param req UpdateVoiceRequest
+                 * @return UpdateVoiceOutcome
+                 */
+                UpdateVoiceOutcome UpdateVoice(const Model::UpdateVoiceRequest &request);
+                void UpdateVoiceAsync(const Model::UpdateVoiceRequest& request, const UpdateVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateVoiceOutcomeCallable UpdateVoiceCallable(const Model::UpdateVoiceRequest& request);
+
+                /**
+                 *This API is used to verify domain name resolution values.
                  * @param req VerifyDomainRecordRequest
                  * @return VerifyDomainRecordOutcome
                  */

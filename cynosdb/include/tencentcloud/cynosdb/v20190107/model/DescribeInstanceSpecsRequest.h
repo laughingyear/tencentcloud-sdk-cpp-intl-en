@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Database type. Valid values: 
-<li> MYSQL </li>
-                     * @return DbType Database type. Valid values: 
-<li> MYSQL </li>
+                     * 获取<p>Database type. Value range: </p><li> MYSQL </li>
+                     * @return DbType <p>Database type. Value range: </p><li> MYSQL </li>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置Database type. Valid values: 
-<li> MYSQL </li>
-                     * @param _dbType Database type. Valid values: 
-<li> MYSQL </li>
+                     * 设置<p>Database type. Value range: </p><li> MYSQL </li>
+                     * @param _dbType <p>Database type. Value range: </p><li> MYSQL </li>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -68,15 +64,15 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取Whether to return the AZ information.
-                     * @return IncludeZoneStocks Whether to return the AZ information.
+                     * 获取<p>Whether to return AZ information</p>
+                     * @return IncludeZoneStocks <p>Whether to return AZ information</p>
                      * 
                      */
                     bool GetIncludeZoneStocks() const;
 
                     /**
-                     * 设置Whether to return the AZ information.
-                     * @param _includeZoneStocks Whether to return the AZ information.
+                     * 设置<p>Whether to return AZ information</p>
+                     * @param _includeZoneStocks <p>Whether to return AZ information</p>
                      * 
                      */
                     void SetIncludeZoneStocks(const bool& _includeZoneStocks);
@@ -88,20 +84,100 @@ namespace TencentCloud
                      */
                     bool IncludeZoneStocksHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Instance Machine Type</p>
+                     * @return DeviceType <p>Instance Machine Type</p>
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置<p>Instance Machine Type</p>
+                     * @param _deviceType <p>Instance Machine Type</p>
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Cluster level. For example, P0, P1. If no availability zone is specified, the query for non-affinity resources will be downgraded for availability zones that do not support affinity.</p>
+                     * @return ClusterLevel <p>Cluster level. For example, P0, P1. If no availability zone is specified, the query for non-affinity resources will be downgraded for availability zones that do not support affinity.</p>
+                     * 
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置<p>Cluster level. For example, P0, P1. If no availability zone is specified, the query for non-affinity resources will be downgraded for availability zones that do not support affinity.</p>
+                     * @param _clusterLevel <p>Cluster level. For example, P0, P1. If no availability zone is specified, the query for non-affinity resources will be downgraded for availability zones that do not support affinity.</p>
+                     * 
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     * 
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AZ.</p>
+                     * @return Zone <p>AZ.</p>
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置<p>AZ.</p>
+                     * @param _zone <p>AZ.</p>
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Database type. Valid values: 
-<li> MYSQL </li>
+                     * <p>Database type. Value range: </p><li> MYSQL </li>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * Whether to return the AZ information.
+                     * <p>Whether to return AZ information</p>
                      */
                     bool m_includeZoneStocks;
                     bool m_includeZoneStocksHasBeenSet;
+
+                    /**
+                     * <p>Instance Machine Type</p>
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * <p>Cluster level. For example, P0, P1. If no availability zone is specified, the query for non-affinity resources will be downgraded for availability zones that do not support affinity.</p>
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * <p>AZ.</p>
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

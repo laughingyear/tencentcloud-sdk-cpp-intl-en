@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Task flow ID (returned for pay-as-you-go or serverless resources. if necessary to sync task status, please use the DescribeFlow api).
-                     * @return FlowId Task flow ID (returned for pay-as-you-go or serverless resources. if necessary to sync task status, please use the DescribeFlow api).
+                     * 获取Task flow ID (returned for postpaid or serverless resources; to sync task status if necessary, please use the DescribeFlow API)
+                     * @return FlowId Task flow ID (returned for postpaid or serverless resources; to sync task status if necessary, please use the DescribeFlow API)
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取Refund order number (returned for prepaid resources. if necessary, synchronize the order status by using the billing product's DescribeDealsByCond to synchronize the order status).
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return DealNames Refund order number (returned for prepaid resources. if necessary, synchronize the order status by using the billing product's DescribeDealsByCond to synchronize the order status).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取Refund order number (returned for prepaid resources. If you need to synchronize the order status, please use the billing product's DescribeDealsByCond to synchronize the order status.)
+                     * @return DealNames Refund order number (returned for prepaid resources. If you need to synchronize the order status, please use the billing product's DescribeDealsByCond to synchronize the order status.)
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -76,14 +74,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Task flow ID (returned for pay-as-you-go or serverless resources. if necessary to sync task status, please use the DescribeFlow api).
+                     * Task flow ID (returned for postpaid or serverless resources; to sync task status if necessary, please use the DescribeFlow API)
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * Refund order number (returned for prepaid resources. if necessary, synchronize the order status by using the billing product's DescribeDealsByCond to synchronize the order status).
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * Refund order number (returned for prepaid resources. If you need to synchronize the order status, please use the billing product's DescribeDealsByCond to synchronize the order status.)
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Information of secondary server 1
-                     * @return First Information of secondary server 1
+                     * 获取<p>Secondary server information of the top spot</p>
+                     * @return First <p>Secondary server information of the top spot</p>
                      * 
                      */
                     SlaveInstanceInfo GetFirst() const;
 
                     /**
-                     * 设置Information of secondary server 1
-                     * @param _first Information of secondary server 1
+                     * 设置<p>Secondary server information of the top spot</p>
+                     * @param _first <p>Secondary server information of the top spot</p>
                      * 
                      */
                     void SetFirst(const SlaveInstanceInfo& _first);
@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool FirstHasBeenSet() const;
 
                     /**
-                     * 获取Information of secondary server 2
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return Second Information of secondary server 2
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Second standby machine information</p>
+                     * @return Second <p>Second standby machine information</p>
                      * 
                      */
                     SlaveInstanceInfo GetSecond() const;
 
                     /**
-                     * 设置Information of secondary server 2
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @param _second Information of secondary server 2
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 设置<p>Second standby machine information</p>
+                     * @param _second <p>Second standby machine information</p>
                      * 
                      */
                     void SetSecond(const SlaveInstanceInfo& _second);
@@ -96,14 +92,13 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Information of secondary server 1
+                     * <p>Secondary server information of the top spot</p>
                      */
                     SlaveInstanceInfo m_first;
                     bool m_firstHasBeenSet;
 
                     /**
-                     * Information of secondary server 2
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Second standby machine information</p>
                      */
                     SlaveInstanceInfo m_second;
                     bool m_secondHasBeenSet;

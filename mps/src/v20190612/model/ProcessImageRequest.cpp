@@ -26,7 +26,11 @@ ProcessImageRequest::ProcessImageRequest() :
     m_inputInfoHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
-    m_imageTaskHasBeenSet(false)
+    m_outputPathHasBeenSet(false),
+    m_definitionHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_imageTaskHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -63,6 +67,30 @@ string ProcessImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_outputDir.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_outputPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,6 +98,14 @@ string ProcessImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -128,6 +164,54 @@ bool ProcessImageRequest::OutputDirHasBeenSet() const
     return m_outputDirHasBeenSet;
 }
 
+string ProcessImageRequest::GetOutputPath() const
+{
+    return m_outputPath;
+}
+
+void ProcessImageRequest::SetOutputPath(const string& _outputPath)
+{
+    m_outputPath = _outputPath;
+    m_outputPathHasBeenSet = true;
+}
+
+bool ProcessImageRequest::OutputPathHasBeenSet() const
+{
+    return m_outputPathHasBeenSet;
+}
+
+uint64_t ProcessImageRequest::GetDefinition() const
+{
+    return m_definition;
+}
+
+void ProcessImageRequest::SetDefinition(const uint64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool ProcessImageRequest::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
+}
+
+string ProcessImageRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ProcessImageRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ProcessImageRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
 ImageTaskInput ProcessImageRequest::GetImageTask() const
 {
     return m_imageTask;
@@ -142,6 +226,22 @@ void ProcessImageRequest::SetImageTask(const ImageTaskInput& _imageTask)
 bool ProcessImageRequest::ImageTaskHasBeenSet() const
 {
     return m_imageTaskHasBeenSet;
+}
+
+string ProcessImageRequest::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void ProcessImageRequest::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool ProcessImageRequest::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 
 

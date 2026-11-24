@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Output for OCR-based recognition of pornographic content
+                * Ocr text involves offensive content
                 */
                 class AiReviewPornOcrTaskOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Confidence score for the OCR-detected pornographic content
-                     * @return Confidence Confidence score for the OCR-detected pornographic content
+                     * 获取Score of Ocr text involving offensive content. Value range: 0–100.
+                     * @return Confidence Score of Ocr text involving offensive content. Value range: 0–100.
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence score for the OCR-detected pornographic content
-                     * @param _confidence Confidence score for the OCR-detected pornographic content
+                     * 设置Score of Ocr text involving offensive content. Value range: 0–100.
+                     * @param _confidence Score of Ocr text involving offensive content. Value range: 0–100.
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,27 +69,27 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Processing suggestion for the OCR-detected pornographic content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @return Suggestion Processing suggestion for the OCR-detected pornographic content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 获取Result suggestions for Ocr text involving offensive content. Value ranges from 0 to 100.
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @return Suggestion Result suggestions for Ocr text involving offensive content. Value ranges from 0 to 100.
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Processing suggestion for the OCR-detected pornographic content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
-                     * @param _suggestion Processing suggestion for the OCR-detected pornographic content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * 设置Result suggestions for Ocr text involving offensive content. Value ranges from 0 to 100.
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
+                     * @param _suggestion Result suggestions for Ocr text involving offensive content. Value ranges from 0 to 100.
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -102,19 +102,19 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取List of video segments that contain OCR-detected pornographic content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @return SegmentSet List of video segments that contain OCR-detected pornographic content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 获取List of video segments whose Ocr text is suspected of involving offensive content.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @return SegmentSet List of video segments whose Ocr text is suspected of involving offensive content.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of video segments that contain OCR-detected pornographic content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
-                     * @param _segmentSet List of video segments that contain OCR-detected pornographic content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * 设置List of video segments whose Ocr text is suspected of involving offensive content.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
+                     * @param _segmentSet List of video segments whose Ocr text is suspected of involving offensive content.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取URL to the file for video segments that contain OCR-detected pornographic content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @return SegmentSetFileUrl URL to the file for video segments that contain OCR-detected pornographic content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 获取URL of the video segment list file whose Ocr text may involve offensive content. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file is not retained permanently. It will be deleted after the time point specified by SegmentSetFileUrlExpireTime is reached.)
+                     * @return SegmentSetFileUrl URL of the video segment list file whose Ocr text may involve offensive content. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file is not retained permanently. It will be deleted after the time point specified by SegmentSetFileUrlExpireTime is reached.)
                      * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
-                     * 设置URL to the file for video segments that contain OCR-detected pornographic content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
-                     * @param _segmentSetFileUrl URL to the file for video segments that contain OCR-detected pornographic content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * 设置URL of the video segment list file whose Ocr text may involve offensive content. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file is not retained permanently. It will be deleted after the time point specified by SegmentSetFileUrlExpireTime is reached.)
+                     * @param _segmentSetFileUrl URL of the video segment list file whose Ocr text may involve offensive content. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file is not retained permanently. It will be deleted after the time point specified by SegmentSetFileUrlExpireTime is reached.)
                      * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取Expiration time of the URL to the file for video segments that contain OCR-detected pornographic content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @return SegmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain OCR-detected pornographic content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 获取Expiration time of the file URL for the video segment list where the Ocr text involves suspected offensive content, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @return SegmentSetFileUrlExpireTime Expiration time of the file URL for the video segment list where the Ocr text involves suspected offensive content, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
-                     * 设置Expiration time of the URL to the file for video segments that contain OCR-detected pornographic content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
-                     * @param _segmentSetFileUrlExpireTime Expiration time of the URL to the file for video segments that contain OCR-detected pornographic content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * 设置Expiration time of the file URL for the video segment list where the Ocr text involves suspected offensive content, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
+                     * @param _segmentSetFileUrlExpireTime Expiration time of the file URL for the video segment list where the Ocr text involves suspected offensive content, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
@@ -171,35 +171,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Confidence score for the OCR-detected pornographic content
+                     * Score of Ocr text involving offensive content. Value range: 0–100.
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Processing suggestion for the OCR-detected pornographic content
-<li>pass</li>
-<li>review</li>
-<li>block</li>
+                     * Result suggestions for Ocr text involving offensive content. Value ranges from 0 to 100.
+<li>pass.</li>
+<li>review.</li>
+<li>block.</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * List of video segments that contain OCR-detected pornographic content
-<font color=red>Note</font>: This list displays the first 100 results at most. You can get all the results from the file at the URL specified by `SegmentSetFileUrl`.
+                     * List of video segments whose Ocr text is suspected of involving offensive content.
+<font color=red>Note</font>: This list can only show up to the first 100 elements. To obtain the complete result, get it from the file corresponding to SegmentSetFileUrl.
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * URL to the file for video segments that contain OCR-detected pornographic content. The file is in JSON format and has the same data structure as `SegmentSet`. Instead of being saved permanently, the file is deleted upon the expiration time specified by `SegmentSetFileUrlExpireTime`.
+                     * URL of the video segment list file whose Ocr text may involve offensive content. The file content is in JSON format, and its data structure is consistent with the SegmentSet fields. (The file is not retained permanently. It will be deleted after the time point specified by SegmentSetFileUrlExpireTime is reached.)
                      */
                     std::string m_segmentSetFileUrl;
                     bool m_segmentSetFileUrlHasBeenSet;
 
                     /**
-                     * Expiration time of the URL to the file for video segments that contain OCR-detected pornographic content, in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732#iso-date-format)
+                     * Expiration time of the file URL for the video segment list where the Ocr text involves suspected offensive content, in [ISO date format](https://www.tencentcloud.com/document/product/266/11732?from_cn_redirect=1#I).
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;

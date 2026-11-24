@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Referer hotlink protection configuration
+                * Referer anti-leech configuration
                 */
                 class RefererAuthPolicy : public AbstractModel
                 {
@@ -47,23 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取[Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/33985) status. Valid values:
-<li>Enabled</li>
-<li>Disabled</li>
-                     * @return Status [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/33985) status. Valid values:
-<li>Enabled</li>
-<li>Disabled</li>
+                     * 获取[Referer hotlink protection](https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enable;</li>
+<li>Disabled: Disabled.</li>
+                     * @return Status [Referer hotlink protection](https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enable;</li>
+<li>Disabled: Disabled.</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置[Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/33985) status. Valid values:
-<li>Enabled</li>
-<li>Disabled</li>
-                     * @param _status [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/33985) status. Valid values:
-<li>Enabled</li>
-<li>Disabled</li>
+                     * 设置[Referer hotlink protection](https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enable;</li>
+<li>Disabled: Disabled.</li>
+                     * @param _status [Referer hotlink protection](https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enable;</li>
+<li>Disabled: Disabled.</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -76,27 +76,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Referer authentication method. Valid values:
-<li>`Black`: blocklist. Any HTTP request carrying a referer in the `Referers` list will be rejected. </li>
-<li>`White`: allowlist. Only HTTP requests carrying referers in the `Referers` list will be accepted.</li>
-When `Status` is set to `Enabled`, `AuthType` must be specified.
-                     * @return AuthType Referer authentication method. Valid values:
-<li>`Black`: blocklist. Any HTTP request carrying a referer in the `Referers` list will be rejected. </li>
-<li>`White`: allowlist. Only HTTP requests carrying referers in the `Referers` list will be accepted.</li>
-When `Status` is set to `Enabled`, `AuthType` must be specified.
+                     * 获取Referer verification type. Available values:
+<li>Black: blocklist method validation. An HTTP request carrying a certain Referer in the Referers list will be rejected.</li>
+<li>White: whitelist method validation. HTTP requests are allowed only when they carry a Referer in the Referers list.</li>
+When Status is Enabled, AuthType must be assigned a value.
+                     * @return AuthType Referer verification type. Available values:
+<li>Black: blocklist method validation. An HTTP request carrying a certain Referer in the Referers list will be rejected.</li>
+<li>White: whitelist method validation. HTTP requests are allowed only when they carry a Referer in the Referers list.</li>
+When Status is Enabled, AuthType must be assigned a value.
                      * 
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置Referer authentication method. Valid values:
-<li>`Black`: blocklist. Any HTTP request carrying a referer in the `Referers` list will be rejected. </li>
-<li>`White`: allowlist. Only HTTP requests carrying referers in the `Referers` list will be accepted.</li>
-When `Status` is set to `Enabled`, `AuthType` must be specified.
-                     * @param _authType Referer authentication method. Valid values:
-<li>`Black`: blocklist. Any HTTP request carrying a referer in the `Referers` list will be rejected. </li>
-<li>`White`: allowlist. Only HTTP requests carrying referers in the `Referers` list will be accepted.</li>
-When `Status` is set to `Enabled`, `AuthType` must be specified.
+                     * 设置Referer verification type. Available values:
+<li>Black: blocklist method validation. An HTTP request carrying a certain Referer in the Referers list will be rejected.</li>
+<li>White: whitelist method validation. HTTP requests are allowed only when they carry a Referer in the Referers list.</li>
+When Status is Enabled, AuthType must be assigned a value.
+                     * @param _authType Referer verification type. Available values:
+<li>Black: blocklist method validation. An HTTP request carrying a certain Referer in the Referers list will be rejected.</li>
+<li>White: whitelist method validation. HTTP requests are allowed only when they carry a Referer in the Referers list.</li>
+When Status is Enabled, AuthType must be assigned a value.
                      * 
                      */
                     void SetAuthType(const std::string& _authType);
@@ -109,15 +109,15 @@ When `Status` is set to `Enabled`, `AuthType` must be specified.
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取The list of referers (up to 20). When `Status` is set to `Enabled`, `Referers` cannot be empty. Enter domain names as referers.
-                     * @return Referers The list of referers (up to 20). When `Status` is set to `Enabled`, `Referers` cannot be empty. Enter domain names as referers.
+                     * 获取List of Referer fields used for verification. Supports up to 400 Referer fields. When Status is Enabled, Referers cannot be an empty array. The format of Referer follows the reference domain format.
+                     * @return Referers List of Referer fields used for verification. Supports up to 400 Referer fields. When Status is Enabled, Referers cannot be an empty array. The format of Referer follows the reference domain format.
                      * 
                      */
                     std::vector<std::string> GetReferers() const;
 
                     /**
-                     * 设置The list of referers (up to 20). When `Status` is set to `Enabled`, `Referers` cannot be empty. Enter domain names as referers.
-                     * @param _referers The list of referers (up to 20). When `Status` is set to `Enabled`, `Referers` cannot be empty. Enter domain names as referers.
+                     * 设置List of Referer fields used for verification. Supports up to 400 Referer fields. When Status is Enabled, Referers cannot be an empty array. The format of Referer follows the reference domain format.
+                     * @param _referers List of Referer fields used for verification. Supports up to 400 Referer fields. When Status is Enabled, Referers cannot be an empty array. The format of Referer follows the reference domain format.
                      * 
                      */
                     void SetReferers(const std::vector<std::string>& _referers);
@@ -130,27 +130,27 @@ When `Status` is set to `Enabled`, `AuthType` must be specified.
                     bool ReferersHasBeenSet() const;
 
                     /**
-                     * 获取Whether to allow requests with empty referer to access this domain name. Valid values:
-<li>`Yes`</li>
-<li>`No`</li>
-When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
-                     * @return BlankRefererAllowed Whether to allow requests with empty referer to access this domain name. Valid values:
-<li>`Yes`</li>
-<li>`No`</li>
-When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
+                     * 获取Whether to allow access to this domain name with a null Referer. Available values:
+<li>Yes: yes.</li>
+<li>No: no.</li>
+When Status is Enabled, BlankRefererAllowed must be assigned a value.
+                     * @return BlankRefererAllowed Whether to allow access to this domain name with a null Referer. Available values:
+<li>Yes: yes.</li>
+<li>No: no.</li>
+When Status is Enabled, BlankRefererAllowed must be assigned a value.
                      * 
                      */
                     std::string GetBlankRefererAllowed() const;
 
                     /**
-                     * 设置Whether to allow requests with empty referer to access this domain name. Valid values:
-<li>`Yes`</li>
-<li>`No`</li>
-When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
-                     * @param _blankRefererAllowed Whether to allow requests with empty referer to access this domain name. Valid values:
-<li>`Yes`</li>
-<li>`No`</li>
-When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
+                     * 设置Whether to allow access to this domain name with a null Referer. Available values:
+<li>Yes: yes.</li>
+<li>No: no.</li>
+When Status is Enabled, BlankRefererAllowed must be assigned a value.
+                     * @param _blankRefererAllowed Whether to allow access to this domain name with a null Referer. Available values:
+<li>Yes: yes.</li>
+<li>No: no.</li>
+When Status is Enabled, BlankRefererAllowed must be assigned a value.
                      * 
                      */
                     void SetBlankRefererAllowed(const std::string& _blankRefererAllowed);
@@ -165,33 +165,33 @@ When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
                 private:
 
                     /**
-                     * [Referer hotlink protection](https://intl.cloud.tencent.com/document/product/266/33985) status. Valid values:
-<li>Enabled</li>
-<li>Disabled</li>
+                     * [Referer hotlink protection](https://www.tencentcloud.com/document/product/266/14046?from_cn_redirect=1) setting status. Available values:
+<li>Enabled: enable;</li>
+<li>Disabled: Disabled.</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Referer authentication method. Valid values:
-<li>`Black`: blocklist. Any HTTP request carrying a referer in the `Referers` list will be rejected. </li>
-<li>`White`: allowlist. Only HTTP requests carrying referers in the `Referers` list will be accepted.</li>
-When `Status` is set to `Enabled`, `AuthType` must be specified.
+                     * Referer verification type. Available values:
+<li>Black: blocklist method validation. An HTTP request carrying a certain Referer in the Referers list will be rejected.</li>
+<li>White: whitelist method validation. HTTP requests are allowed only when they carry a Referer in the Referers list.</li>
+When Status is Enabled, AuthType must be assigned a value.
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * The list of referers (up to 20). When `Status` is set to `Enabled`, `Referers` cannot be empty. Enter domain names as referers.
+                     * List of Referer fields used for verification. Supports up to 400 Referer fields. When Status is Enabled, Referers cannot be an empty array. The format of Referer follows the reference domain format.
                      */
                     std::vector<std::string> m_referers;
                     bool m_referersHasBeenSet;
 
                     /**
-                     * Whether to allow requests with empty referer to access this domain name. Valid values:
-<li>`Yes`</li>
-<li>`No`</li>
-When `Status` is set to `Enabled`, `BlankRefererAllowed` must be specified.
+                     * Whether to allow access to this domain name with a null Referer. Available values:
+<li>Yes: yes.</li>
+<li>No: no.</li>
+When Status is Enabled, BlankRefererAllowed must be assigned a value.
                      */
                     std::string m_blankRefererAllowed;
                     bool m_blankRefererAllowedHasBeenSet;

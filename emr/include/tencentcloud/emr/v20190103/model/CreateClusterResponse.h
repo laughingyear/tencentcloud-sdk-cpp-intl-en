@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取The instance ID.
-Note: This field may return null, indicating that no valid values can be obtained.
-                     * @return InstanceId The instance ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * 获取<p>Instance ID.</p>
+                     * @return InstanceId <p>Instance ID.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -62,8 +60,7 @@ Note: This field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * The instance ID.
-Note: This field may return null, indicating that no valid values can be obtained.
+                     * <p>Instance ID.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

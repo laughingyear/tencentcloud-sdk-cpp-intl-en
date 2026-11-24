@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @return SubAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 获取<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @return SubAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
-                     * @param _subAppId <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * 设置<b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
+                     * @param _subAppId <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,47 +64,47 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<b>Keyword usage. Valid values:</b>
-1. Recognition.Ocr: OCR-based content recognition
-2. Recognition.Asr: ASR-based content recognition
-3. Review.Ocr: OCR-based inappropriate information recognition
-4. Review.Asr: ASR-based inappropriate information recognition
-<b>Valid values can also be:</b>
-5. Recognition: ASR- and OCR-based content recognition; equivalent to 1+2
-6. Review: ASR- and OCR-based inappropriate information recognition; equivalent to 3+4
-You can select multiple elements, which are connected by OR logic. If a use case contains any element in this parameter, the keyword sample will be used.
-                     * @return Usages <b>Keyword usage. Valid values:</b>
-1. Recognition.Ocr: OCR-based content recognition
-2. Recognition.Asr: ASR-based content recognition
-3. Review.Ocr: OCR-based inappropriate information recognition
-4. Review.Asr: ASR-based inappropriate information recognition
-<b>Valid values can also be:</b>
-5. Recognition: ASR- and OCR-based content recognition; equivalent to 1+2
-6. Review: ASR- and OCR-based inappropriate information recognition; equivalent to 3+4
-You can select multiple elements, which are connected by OR logic. If a use case contains any element in this parameter, the keyword sample will be used.
+                     * 获取<b>Keyword application scenario filtering conditions. Available values:</b>
+1. Recognition.Ocr: perform content recognition through OCR.
+2. Recognition.Asr: Perform content recognition through audio recognition technology.
+3. Review.Ocr: Perform inappropriate content recognition through OCR.
+4. Review.Asr: Perform inappropriate content recognition through audio recognition technology.
+<b>Abbreviation merge:</b>
+5. Recognition: Perform content recognition through OCR and audio recognition technology, equivalent to 1+2;
+6. Review: Perform inappropriate content recognition through OCR and audio recognition technology, equivalent to 3+4.
+Multiple selections allowed. The relationship between elements is "or", meaning records where the keyword's application scenario contains any element in this field collection are compliant with the condition.
+                     * @return Usages <b>Keyword application scenario filtering conditions. Available values:</b>
+1. Recognition.Ocr: perform content recognition through OCR.
+2. Recognition.Asr: Perform content recognition through audio recognition technology.
+3. Review.Ocr: Perform inappropriate content recognition through OCR.
+4. Review.Asr: Perform inappropriate content recognition through audio recognition technology.
+<b>Abbreviation merge:</b>
+5. Recognition: Perform content recognition through OCR and audio recognition technology, equivalent to 1+2;
+6. Review: Perform inappropriate content recognition through OCR and audio recognition technology, equivalent to 3+4.
+Multiple selections allowed. The relationship between elements is "or", meaning records where the keyword's application scenario contains any element in this field collection are compliant with the condition.
                      * 
                      */
                     std::vector<std::string> GetUsages() const;
 
                     /**
-                     * 设置<b>Keyword usage. Valid values:</b>
-1. Recognition.Ocr: OCR-based content recognition
-2. Recognition.Asr: ASR-based content recognition
-3. Review.Ocr: OCR-based inappropriate information recognition
-4. Review.Asr: ASR-based inappropriate information recognition
-<b>Valid values can also be:</b>
-5. Recognition: ASR- and OCR-based content recognition; equivalent to 1+2
-6. Review: ASR- and OCR-based inappropriate information recognition; equivalent to 3+4
-You can select multiple elements, which are connected by OR logic. If a use case contains any element in this parameter, the keyword sample will be used.
-                     * @param _usages <b>Keyword usage. Valid values:</b>
-1. Recognition.Ocr: OCR-based content recognition
-2. Recognition.Asr: ASR-based content recognition
-3. Review.Ocr: OCR-based inappropriate information recognition
-4. Review.Asr: ASR-based inappropriate information recognition
-<b>Valid values can also be:</b>
-5. Recognition: ASR- and OCR-based content recognition; equivalent to 1+2
-6. Review: ASR- and OCR-based inappropriate information recognition; equivalent to 3+4
-You can select multiple elements, which are connected by OR logic. If a use case contains any element in this parameter, the keyword sample will be used.
+                     * 设置<b>Keyword application scenario filtering conditions. Available values:</b>
+1. Recognition.Ocr: perform content recognition through OCR.
+2. Recognition.Asr: Perform content recognition through audio recognition technology.
+3. Review.Ocr: Perform inappropriate content recognition through OCR.
+4. Review.Asr: Perform inappropriate content recognition through audio recognition technology.
+<b>Abbreviation merge:</b>
+5. Recognition: Perform content recognition through OCR and audio recognition technology, equivalent to 1+2;
+6. Review: Perform inappropriate content recognition through OCR and audio recognition technology, equivalent to 3+4.
+Multiple selections allowed. The relationship between elements is "or", meaning records where the keyword's application scenario contains any element in this field collection are compliant with the condition.
+                     * @param _usages <b>Keyword application scenario filtering conditions. Available values:</b>
+1. Recognition.Ocr: perform content recognition through OCR.
+2. Recognition.Asr: Perform content recognition through audio recognition technology.
+3. Review.Ocr: Perform inappropriate content recognition through OCR.
+4. Review.Asr: Perform inappropriate content recognition through audio recognition technology.
+<b>Abbreviation merge:</b>
+5. Recognition: Perform content recognition through OCR and audio recognition technology, equivalent to 1+2;
+6. Review: Perform inappropriate content recognition through OCR and audio recognition technology, equivalent to 3+4.
+Multiple selections allowed. The relationship between elements is "or", meaning records where the keyword's application scenario contains any element in this field collection are compliant with the condition.
                      * 
                      */
                     void SetUsages(const std::vector<std::string>& _usages);
@@ -117,15 +117,15 @@ You can select multiple elements, which are connected by OR logic. If a use case
                     bool UsagesHasBeenSet() const;
 
                     /**
-                     * 获取Keyword filter. Array length limit: 100 words.
-                     * @return Keywords Keyword filter. Array length limit: 100 words.
+                     * 获取Keyword filtering conditions. Array length limit: 100 words.
+                     * @return Keywords Keyword filtering conditions. Array length limit: 100 words.
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置Keyword filter. Array length limit: 100 words.
-                     * @param _keywords Keyword filter. Array length limit: 100 words.
+                     * 设置Keyword filtering conditions. Array length limit: 100 words.
+                     * @param _keywords Keyword filtering conditions. Array length limit: 100 words.
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -138,15 +138,15 @@ You can select multiple elements, which are connected by OR logic. If a use case
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取Tag filter. Array length limit: 20 words.
-                     * @return Tags Tag filter. Array length limit: 20 words.
+                     * 获取Tag filtering condition. Array length limit: 20 words.
+                     * @return Tags Tag filtering condition. Array length limit: 20 words.
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置Tag filter. Array length limit: 20 words.
-                     * @param _tags Tag filter. Array length limit: 20 words.
+                     * 设置Tag filtering condition. Array length limit: 20 words.
+                     * @param _tags Tag filtering condition. Array length limit: 20 words.
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -180,15 +180,15 @@ You can select multiple elements, which are connected by OR logic. If a use case
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Number of entries to be returned. Default value: 100. Maximum value: 100.
-                     * @return Limit Number of entries to be returned. Default value: 100. Maximum value: 100.
+                     * 获取Number of returned entries. Default value: 100. Maximum value: 100.
+                     * @return Limit Number of returned entries. Default value: 100. Maximum value: 100.
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Number of entries to be returned. Default value: 100. Maximum value: 100.
-                     * @param _limit Number of entries to be returned. Default value: 100. Maximum value: 100.
+                     * 设置Number of returned entries. Default value: 100. Maximum value: 100.
+                     * @param _limit Number of returned entries. Default value: 100. Maximum value: 100.
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -203,33 +203,33 @@ You can select multiple elements, which are connected by OR logic. If a use case
                 private:
 
                     /**
-                     * <b>The VOD [application](https://intl.cloud.tencent.com/document/product/266/14574) ID. For customers who activate VOD service from December 25, 2023, if they want to access resources in a VOD application (whether it's the default application or a newly created one), they must fill in this field with the application ID.</b>
+                     * <b>VOD [application](https://www.tencentcloud.com/document/product/266/14574?from_cn_redirect=1) ID. For customers who activate VOD after December 25, 2023, this field must be set to the app ID when accessing resources in VOD applications (whether the default application or a newly created application).</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <b>Keyword usage. Valid values:</b>
-1. Recognition.Ocr: OCR-based content recognition
-2. Recognition.Asr: ASR-based content recognition
-3. Review.Ocr: OCR-based inappropriate information recognition
-4. Review.Asr: ASR-based inappropriate information recognition
-<b>Valid values can also be:</b>
-5. Recognition: ASR- and OCR-based content recognition; equivalent to 1+2
-6. Review: ASR- and OCR-based inappropriate information recognition; equivalent to 3+4
-You can select multiple elements, which are connected by OR logic. If a use case contains any element in this parameter, the keyword sample will be used.
+                     * <b>Keyword application scenario filtering conditions. Available values:</b>
+1. Recognition.Ocr: perform content recognition through OCR.
+2. Recognition.Asr: Perform content recognition through audio recognition technology.
+3. Review.Ocr: Perform inappropriate content recognition through OCR.
+4. Review.Asr: Perform inappropriate content recognition through audio recognition technology.
+<b>Abbreviation merge:</b>
+5. Recognition: Perform content recognition through OCR and audio recognition technology, equivalent to 1+2;
+6. Review: Perform inappropriate content recognition through OCR and audio recognition technology, equivalent to 3+4.
+Multiple selections allowed. The relationship between elements is "or", meaning records where the keyword's application scenario contains any element in this field collection are compliant with the condition.
                      */
                     std::vector<std::string> m_usages;
                     bool m_usagesHasBeenSet;
 
                     /**
-                     * Keyword filter. Array length limit: 100 words.
+                     * Keyword filtering conditions. Array length limit: 100 words.
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * Tag filter. Array length limit: 20 words.
+                     * Tag filtering condition. Array length limit: 20 words.
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
@@ -241,7 +241,7 @@ You can select multiple elements, which are connected by OR logic. If a use case
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Number of entries to be returned. Default value: 100. Maximum value: 100.
+                     * Number of returned entries. Default value: 100. Maximum value: 100.
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Video splitting task information. This field has a value only when `TaskType` is `SplitMedia`.
+                * Video splitting task information. This field has a value only when TaskType is SplitMedia.
                 */
                 class SplitMediaTask : public AbstractModel
                 {
@@ -69,23 +69,23 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取Task flow status. Valid values:
-<li>PROCESSING: processing</li>
-<li>FINISH: finished</li>
-                     * @return Status Task flow status. Valid values:
-<li>PROCESSING: processing</li>
-<li>FINISH: finished</li>
+                     * 获取Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
+                     * @return Status Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Task flow status. Valid values:
-<li>PROCESSING: processing</li>
-<li>FINISH: finished</li>
-                     * @param _status Task flow status. Valid values:
-<li>PROCESSING: processing</li>
-<li>FINISH: finished</li>
+                     * 设置Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
+                     * @param _status Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -98,15 +98,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @return ErrCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 获取Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @return ErrCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
-                     * @param _errCodeExt Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * 设置Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
+                     * @param _errCodeExt Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      * 
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
@@ -119,15 +119,15 @@ namespace TencentCloud
                     bool ErrCodeExtHasBeenSet() const;
 
                     /**
-                     * 获取Error code. 0 indicates the task is successful; other values indicate failure. You're not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @return ErrCode Error code. 0 indicates the task is successful; other values indicate failure. You're not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 获取Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @return ErrCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置Error code. 0 indicates the task is successful; other values indicate failure. You're not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
-                     * @param _errCode Error code. 0 indicates the task is successful; other values indicate failure. You're not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * 设置Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
+                     * @param _errCode Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -140,15 +140,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取Error information.
-                     * @return Message Error information.
+                     * 获取Error message.
+                     * @return Message Error message.
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置Error information.
-                     * @param _message Error information.
+                     * 设置Error message.
+                     * @param _message Error message.
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -161,15 +161,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取List of video splitting task details.
-                     * @return FileInfoSet List of video splitting task details.
+                     * 获取Detailed information list of video splitting tasks.
+                     * @return FileInfoSet Detailed information list of video splitting tasks.
                      * 
                      */
                     std::vector<SplitMediaTaskSegmentInfo> GetFileInfoSet() const;
 
                     /**
-                     * 设置List of video splitting task details.
-                     * @param _fileInfoSet List of video splitting task details.
+                     * 设置Detailed information list of video splitting tasks.
+                     * @param _fileInfoSet Detailed information list of video splitting tasks.
                      * 
                      */
                     void SetFileInfoSet(const std::vector<SplitMediaTaskSegmentInfo>& _fileInfoSet);
@@ -182,15 +182,15 @@ namespace TencentCloud
                     bool FileInfoSetHasBeenSet() const;
 
                     /**
-                     * 获取The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1000 characters.
-                     * @return SessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1000 characters.
+                     * 获取Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @return SessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1000 characters.
-                     * @param _sessionContext The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1000 characters.
+                     * 设置Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
+                     * @param _sessionContext Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -203,15 +203,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or set to an empty string, no deduplication will be performed.
-                     * @return SessionId ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or set to an empty string, no deduplication will be performed.
+                     * 获取Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.
+                     * @return SessionId Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or set to an empty string, no deduplication will be performed.
-                     * @param _sessionId ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or set to an empty string, no deduplication will be performed.
+                     * 设置Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.
+                     * @param _sessionId Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -224,15 +224,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取The progress of a video splitting task. Value range: 0-100.
-                     * @return Progress The progress of a video splitting task. Value range: 0-100.
+                     * 获取Video splitting task progress, value ranges from 0 to 100.
+                     * @return Progress Video splitting task progress, value ranges from 0 to 100.
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置The progress of a video splitting task. Value range: 0-100.
-                     * @param _progress The progress of a video splitting task. Value range: 0-100.
+                     * 设置Video splitting task progress, value ranges from 0 to 100.
+                     * @param _progress Video splitting task progress, value ranges from 0 to 100.
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -253,51 +253,51 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * Task flow status. Valid values:
-<li>PROCESSING: processing</li>
-<li>FINISH: finished</li>
+                     * Task stream status. Valid values:
+<li>PROCESSING: Processing;</li>
+<li>FINISH: completed</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Error code. An empty string indicates the task is successful; other values indicate failure. For details, see [Video Processing Error Codes](https://intl.cloud.tencent.com/zh/document/product/266/39145).
+                     * Error code. An empty string indicates success, and other values indicate failure. For values, see [Video Processing Error Codes](https://www.tencentcloud.com/document/product/266/50368?from_cn_redirect=1#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81).
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
 
                     /**
-                     * Error code. 0 indicates the task is successful; other values indicate failure. You're not recommended to use this parameter, but to use the new parameter `ErrCodeExt`.
+                     * Error code. 0 indicates that the task is successful, and other values indicate that the task has failed. (This field is not recommended. Use the new error code field ErrCodeExt instead.)
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * Error information.
+                     * Error message.
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * List of video splitting task details.
+                     * Detailed information list of video splitting tasks.
                      */
                     std::vector<SplitMediaTaskSegmentInfo> m_fileInfoSet;
                     bool m_fileInfoSetHasBeenSet;
 
                     /**
-                     * The source context which is used to pass through the user request information. The task flow status change callback will return the value of this field. It can contain up to 1000 characters.
+                     * Source context, which is used to pass through the user request information. The callback for task flow status changes will return the value of this field. The maximum length is 1,000 characters.
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * ID used for deduplication. If there was a request with the same ID in the last seven days, the current request will return an error. The ID can contain up to 50 characters. If this parameter is left empty or set to an empty string, no deduplication will be performed.
+                     * Identifier for deduplication. If a request with the same identifier has been sent within the past seven days, an error is returned for the current request. The maximum length is 50 characters. If this is not specified or left empty, deduplication is not performed.
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * The progress of a video splitting task. Value range: 0-100.
+                     * Video splitting task progress, value ranges from 0 to 100.
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;

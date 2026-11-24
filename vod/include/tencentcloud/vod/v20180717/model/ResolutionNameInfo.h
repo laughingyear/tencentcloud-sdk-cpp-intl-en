@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Player substream name information
+                * Substream name information of the player
                 */
                 class ResolutionNameInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Length of video short side in px.
-                     * @return MinEdgeLength Length of video short side in px.
+                     * 获取Video short side length. Measurement unit: pixel.
+                     * @return MinEdgeLength Video short side length. Measurement unit: pixel.
                      * 
                      */
                     uint64_t GetMinEdgeLength() const;
 
                     /**
-                     * 设置Length of video short side in px.
-                     * @param _minEdgeLength Length of video short side in px.
+                     * 设置Video short side length. Measurement unit: pixel.
+                     * @param _minEdgeLength Video short side length. Measurement unit: pixel.
                      * 
                      */
                     void SetMinEdgeLength(const uint64_t& _minEdgeLength);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Length of video short side in px.
+                     * Video short side length. Measurement unit: pixel.
                      */
                     uint64_t m_minEdgeLength;
                     bool m_minEdgeLengthHasBeenSet;

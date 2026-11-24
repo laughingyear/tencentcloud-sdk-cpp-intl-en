@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Input parameter type of cover generating task
+                * Task input parameter type for screencapturing for cover image in a video
                 */
                 class CoverBySnapshotTaskInput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Time point screencapturing template ID.
-                     * @return Definition Time point screencapturing template ID.
+                     * 获取Time point screenshot template ID.
+                     * @return Definition Time point screenshot template ID.
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置Time point screencapturing template ID.
-                     * @param _definition Time point screencapturing template ID.
+                     * 设置Time point screenshot template ID.
+                     * @param _definition Time point screenshot template ID.
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -69,23 +69,23 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取Screencapturing mode. Valid values:
-<li>Time: screencaptures by time point</li>
-<li>Percent: screencaptures by percentage</li>
-                     * @return PositionType Screencapturing mode. Valid values:
-<li>Time: screencaptures by time point</li>
-<li>Percent: screencaptures by percentage</li>
+                     * 获取Screenshot type. Valid values:
+<li>Time: screenshot by time point</li>
+<li>Percent: screenshot by percentage</li>
+                     * @return PositionType Screenshot type. Valid values:
+<li>Time: screenshot by time point</li>
+<li>Percent: screenshot by percentage</li>
                      * 
                      */
                     std::string GetPositionType() const;
 
                     /**
-                     * 设置Screencapturing mode. Valid values:
-<li>Time: screencaptures by time point</li>
-<li>Percent: screencaptures by percentage</li>
-                     * @param _positionType Screencapturing mode. Valid values:
-<li>Time: screencaptures by time point</li>
-<li>Percent: screencaptures by percentage</li>
+                     * 设置Screenshot type. Valid values:
+<li>Time: screenshot by time point</li>
+<li>Percent: screenshot by percentage</li>
+                     * @param _positionType Screenshot type. Valid values:
+<li>Time: screenshot by time point</li>
+<li>Percent: screenshot by percentage</li>
                      * 
                      */
                     void SetPositionType(const std::string& _positionType);
@@ -99,22 +99,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Screenshot position:
-<li>For time point screencapturing, this means to take a screenshot at a specified time point (in seconds) and use it as the cover</li>
-<li>For percentage screencapturing, this value means to take a screenshot at a specified percentage of the video duration and use it as the cover</li>
+<li>For time point screenshots, this value indicates the second of the specified video to use as the cover</li>
+<li>For screenshot by percentage, this value indicates the percentage of the video used as the cover.</li>
                      * @return PositionValue Screenshot position:
-<li>For time point screencapturing, this means to take a screenshot at a specified time point (in seconds) and use it as the cover</li>
-<li>For percentage screencapturing, this value means to take a screenshot at a specified percentage of the video duration and use it as the cover</li>
+<li>For time point screenshots, this value indicates the second of the specified video to use as the cover</li>
+<li>For screenshot by percentage, this value indicates the percentage of the video used as the cover.</li>
                      * 
                      */
                     double GetPositionValue() const;
 
                     /**
                      * 设置Screenshot position:
-<li>For time point screencapturing, this means to take a screenshot at a specified time point (in seconds) and use it as the cover</li>
-<li>For percentage screencapturing, this value means to take a screenshot at a specified percentage of the video duration and use it as the cover</li>
+<li>For time point screenshots, this value indicates the second of the specified video to use as the cover</li>
+<li>For screenshot by percentage, this value indicates the percentage of the video used as the cover.</li>
                      * @param _positionValue Screenshot position:
-<li>For time point screencapturing, this means to take a screenshot at a specified time point (in seconds) and use it as the cover</li>
-<li>For percentage screencapturing, this value means to take a screenshot at a specified percentage of the video duration and use it as the cover</li>
+<li>For time point screenshots, this value indicates the second of the specified video to use as the cover</li>
+<li>For screenshot by percentage, this value indicates the percentage of the video used as the cover.</li>
                      * 
                      */
                     void SetPositionValue(const double& _positionValue);
@@ -127,19 +127,15 @@ namespace TencentCloud
                     bool PositionValueHasBeenSet() const;
 
                     /**
-                     * 获取List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @return WatermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 获取Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
+                     * @return WatermarkSet Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
-                     * 设置List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
-                     * @param _watermarkSet List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * 设置Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
+                     * @param _watermarkSet Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
@@ -154,30 +150,29 @@ Note: this field may return null, indicating that no valid values can be obtaine
                 private:
 
                     /**
-                     * Time point screencapturing template ID.
+                     * Time point screenshot template ID.
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * Screencapturing mode. Valid values:
-<li>Time: screencaptures by time point</li>
-<li>Percent: screencaptures by percentage</li>
+                     * Screenshot type. Valid values:
+<li>Time: screenshot by time point</li>
+<li>Percent: screenshot by percentage</li>
                      */
                     std::string m_positionType;
                     bool m_positionTypeHasBeenSet;
 
                     /**
                      * Screenshot position:
-<li>For time point screencapturing, this means to take a screenshot at a specified time point (in seconds) and use it as the cover</li>
-<li>For percentage screencapturing, this value means to take a screenshot at a specified percentage of the video duration and use it as the cover</li>
+<li>For time point screenshots, this value indicates the second of the specified video to use as the cover</li>
+<li>For screenshot by percentage, this value indicates the percentage of the video used as the cover.</li>
                      */
                     double m_positionValue;
                     bool m_positionValueHasBeenSet;
 
                     /**
-                     * List of up to 10 image or text watermarks.
-Note: this field may return null, indicating that no valid values can be obtained.
+                     * Watermark list. Multiple image or text watermarks up to a maximum of 10 are supported.
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Information of an intelligently generated highlight
+                * Intelligent highlight info
                 */
                 class MediaAiAnalysisHighlightItem : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Address of an intelligently generated highlight.
-                     * @return HighlightUrl Address of an intelligently generated highlight.
+                     * 获取<p>Intelligent highlight address.</p>
+                     * @return HighlightUrl <p>Intelligent highlight address.</p>
                      * 
                      */
                     std::string GetHighlightUrl() const;
 
                     /**
-                     * 设置Address of an intelligently generated highlight.
-                     * @param _highlightUrl Address of an intelligently generated highlight.
+                     * 设置<p>Intelligent highlight address.</p>
+                     * @param _highlightUrl <p>Intelligent highlight address.</p>
                      * 
                      */
                     void SetHighlightUrl(const std::string& _highlightUrl);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool HighlightUrlHasBeenSet() const;
 
                     /**
-                     * 获取Address of an intelligently generated highlight cover.
-                     * @return CovImgUrl Address of an intelligently generated highlight cover.
+                     * 获取<p>Intelligent highlight cover address.</p>
+                     * @return CovImgUrl <p>Intelligent highlight cover address.</p>
                      * 
                      */
                     std::string GetCovImgUrl() const;
 
                     /**
-                     * 设置Address of an intelligently generated highlight cover.
-                     * @param _covImgUrl Address of an intelligently generated highlight cover.
+                     * 设置<p>Intelligent highlight cover address.</p>
+                     * @param _covImgUrl <p>Intelligent highlight cover address.</p>
                      * 
                      */
                     void SetCovImgUrl(const std::string& _covImgUrl);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CovImgUrlHasBeenSet() const;
 
                     /**
-                     * 获取Confidence of an intelligently generated highlight between 0 and 100.
-                     * @return Confidence Confidence of an intelligently generated highlight between 0 and 100.
+                     * 获取<p>Confidence of the intelligent highlights, with a value range from 0 to 100.</p>
+                     * @return Confidence <p>Confidence of the intelligent highlights, with a value range from 0 to 100.</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Confidence of an intelligently generated highlight between 0 and 100.
-                     * @param _confidence Confidence of an intelligently generated highlight between 0 and 100.
+                     * 设置<p>Confidence of the intelligent highlights, with a value range from 0 to 100.</p>
+                     * @param _confidence <p>Confidence of the intelligent highlights, with a value range from 0 to 100.</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Duration of an intelligently generated highlight.
-                     * @return Duration Duration of an intelligently generated highlight.
+                     * 获取<p>Duration of intelligent highlights.</p><p>Unit: seconds</p>
+                     * @return Duration <p>Duration of intelligent highlights.</p><p>Unit: seconds</p>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置Duration of an intelligently generated highlight.
-                     * @param _duration Duration of an intelligently generated highlight.
+                     * 设置<p>Duration of intelligent highlights.</p><p>Unit: seconds</p>
+                     * @param _duration <p>Duration of intelligent highlights.</p><p>Unit: seconds</p>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取List of intelligently generated highlight subsegments, which together form a highlight.
-                     * @return SegmentSet List of intelligently generated highlight subsegments, which together form a highlight.
+                     * 获取<p>List of intelligent highlight sub-segments. Highlight clips are generated by concatenating these sub-segments.</p>
+                     * @return SegmentSet <p>List of intelligent highlight sub-segments. Highlight clips are generated by concatenating these sub-segments.</p>
                      * 
                      */
                     std::vector<HighlightSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置List of intelligently generated highlight subsegments, which together form a highlight.
-                     * @param _segmentSet List of intelligently generated highlight subsegments, which together form a highlight.
+                     * 设置<p>List of intelligent highlight sub-segments. Highlight clips are generated by concatenating these sub-segments.</p>
+                     * @param _segmentSet <p>List of intelligent highlight sub-segments. Highlight clips are generated by concatenating these sub-segments.</p>
                      * 
                      */
                     void SetSegmentSet(const std::vector<HighlightSegmentItem>& _segmentSet);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Address of an intelligently generated highlight.
+                     * <p>Intelligent highlight address.</p>
                      */
                     std::string m_highlightUrl;
                     bool m_highlightUrlHasBeenSet;
 
                     /**
-                     * Address of an intelligently generated highlight cover.
+                     * <p>Intelligent highlight cover address.</p>
                      */
                     std::string m_covImgUrl;
                     bool m_covImgUrlHasBeenSet;
 
                     /**
-                     * Confidence of an intelligently generated highlight between 0 and 100.
+                     * <p>Confidence of the intelligent highlights, with a value range from 0 to 100.</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Duration of an intelligently generated highlight.
+                     * <p>Duration of intelligent highlights.</p><p>Unit: seconds</p>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * List of intelligently generated highlight subsegments, which together form a highlight.
+                     * <p>List of intelligent highlight sub-segments. Highlight clips are generated by concatenating these sub-segments.</p>
                      */
                     std::vector<HighlightSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

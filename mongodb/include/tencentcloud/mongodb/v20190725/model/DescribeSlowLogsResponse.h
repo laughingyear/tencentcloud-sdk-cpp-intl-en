@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Total number of slow logs
-                     * @return Count Total number of slow logs
+                     * 获取Total number of slow logs.
+                     * @return Count Total number of slow logs.
                      * 
                      */
                     uint64_t GetCount() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Total number of slow logs
+                     * Total number of slow logs.
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
